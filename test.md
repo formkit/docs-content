@@ -28,7 +28,7 @@ ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis v
 
 <code-example
   name="Example"
-  file="_content/examples/counter-example/counter-example"
+  content="_content/examples/counter-example/counter-example"
   langs="vue,react">
 </code-example>
 
@@ -45,9 +45,12 @@ Litora pellentesque venenatis porttitor quis nec donec mi class, tempor faucibus
 molestie ultricies mollis volutpat. Dis lacus sapien morbi platea fusce facilisi per
 nec inceptos, tempus tempor felis pulvinar pharetra augue vestibulum odio.
 
-```html
-<h1>This is generic inline HTML</h1>
-```
+<code-example
+  name="Example"
+  template="_content/examples/counter-example-partial/counter-example"
+  content="_content/examples/counter-example-partial/counter-example"
+  langs="vue,react">
+</code-example>
 
 Ornare porttitor erat nullam facilisis venenatis augue auctor massa eget, tempor
 egestas id habitant fusce ut leo diam proin, ultrices donec parturient porta nascetur
