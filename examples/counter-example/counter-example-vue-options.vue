@@ -1,7 +1,9 @@
 <template>
   <div class="my-test-component">
     <h1>{{ msg }}</h1>
-    <button @click="increment">Clicks: {{ count }}</button>
+    <button @click="increment">
+      Clicks: {{ count }}
+    </button>
   </div>
 </template>
 

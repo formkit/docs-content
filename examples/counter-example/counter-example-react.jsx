@@ -17,7 +17,9 @@ class Counter extends React.Component {
     return (
       <div>
         <h1>{ this.state.msg }</h1>
-        <button onClick={this.increment}>Clicks: { this.state.count }</button>
+        <button onClick={this.increment}>
+          Clicks: { this.state.count }
+        </button>
       </div>
     );
   }
