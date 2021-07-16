@@ -9,6 +9,13 @@ Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis
 euismod semper. Cras mattis consectetur `purus sit amet` fermentum. Integer posuere
 erat a ante venenatis dapibus posuere velit aliquet.
 
+<callout type="note">
+Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius
+blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus,
+porta ac consectetur ac, vestibulum at eros.
+</callout>
+
 ## A Simple Example
 
 Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna,
@@ -31,6 +38,13 @@ ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis v
   content="_content/examples/counter-example/counter-example"
   langs="vue,react">
 </code-example>
+
+<callout type="warning">
+Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius
+blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus,
+porta ac consectetur ac, vestibulum at eros.
+</callout>
 
 ## Some other headline
 
@@ -57,6 +71,13 @@ egestas id habitant fusce ut leo diam proin, ultrices donec parturient porta nas
 sit urna suspendisse. Sapien turpis in nullam ante eleifend aptent luctus hac ut
 posuere, habitant facilisis mus mollis himenaeos neque eget tempus libero, dictumst
 hendrerit imperdiet euismod sem sit tristique dignissim urna.
+
+<callout type="tip">
+Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius
+blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus,
+porta ac consectetur ac, vestibulum at eros.
+</callout>
 
 Molestie nam class non pretium facilisis tempus tristique imperdiet etiam vestibulum
 magna elementum, tincidunt cursus arcu eu porta consectetur purus in sem enim.
