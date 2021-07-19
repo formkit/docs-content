@@ -17,7 +17,11 @@ class Counter extends React.Component {
     return (
       <div>
         <p>I am an example that only shows a relevant subsection of code.</p>
-        %inject%
+        {/* %partial%::html:: */}
+        <button onClick={this.increment}>
+          Clicks: { this.state.count }
+        </button>
+        {/* %partial% */}
         <p>There is more to my template but it's not revealed in the editor.</p>
       </div>
     );

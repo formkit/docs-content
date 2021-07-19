@@ -1,3 +1,0 @@
-<button onClick={this.increment}>
-  Clicks: { this.state.count }
-</button>

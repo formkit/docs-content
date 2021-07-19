@@ -35,7 +35,7 @@ ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis v
 
 <code-example
   name="Example"
-  content="_content/examples/counter-example/counter-example"
+  file="_content/examples/counter-example/counter-example"
   langs="vue,react">
 </code-example>
 
@@ -61,9 +61,8 @@ nec inceptos, tempus tempor felis pulvinar pharetra augue vestibulum odio.
 
 <code-example
   name="Example"
-  template="_content/examples/counter-example-partial/counter-example"
-  content="_content/examples/counter-example-partial/counter-example"
-  langs="vue,react">
+  file="_content/examples/counter-example-partial/counter-example"
+  langs="vue">
 </code-example>
 
 Ornare porttitor erat nullam facilisis venenatis augue auctor massa eget, tempor
