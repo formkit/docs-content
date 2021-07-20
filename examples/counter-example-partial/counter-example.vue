@@ -13,7 +13,6 @@
   // %partial%::js::
   data () {
     return {
-      msg: 'I am not specific about being options or composition API',
       count: 0
     }
   },

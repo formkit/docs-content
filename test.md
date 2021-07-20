@@ -62,7 +62,7 @@ nec inceptos, tempus tempor felis pulvinar pharetra augue vestibulum odio.
 <code-example
   name="Example"
   file="_content/examples/counter-example-partial/counter-example"
-  langs="vue">
+  langs="vue, react">
 </code-example>
 
 Ornare porttitor erat nullam facilisis venenatis augue auctor massa eget, tempor
