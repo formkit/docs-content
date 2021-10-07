@@ -62,7 +62,10 @@ export default {
 
 <style>
 html {
-  background: linear-gradient(to right, #0f4f5c 2px, #083c47 2px, #083c47 100%);
+  background-color: #132427;
+  background-image:
+    linear-gradient(to right, #0c404b 1px, transparent 1px, transparent 100%),
+    linear-gradient(to bottom, #0c404b 1px, transparent 1px, transparent 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: #fff;
