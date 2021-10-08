@@ -26,25 +26,30 @@ export default {
       output: '',
 // %partial%::js::
 data: {
-  value: 215
+  value: 210
 },
-schema: [
+schema: [ // Capsule Schema Format
   {
     $el: 'label',
     children: 'What is your salary?'
   },
   {
     if: '$value >= 100',
-    then: [{ $el: 'h1', children: ['$value'], attrs: { 'data-range': 'high' } }],
+    then: [{ $el: 'h1', children: ["$",'$value'], attrs: { 'data-range': 'high' } }],
     else: {
       if: '$value > 20',
-      then: [{ $el: 'h2', children: ['$value'], attrs: { 'data-range': 'medium' } }],
+      then: [{ $el: 'h2', children: ["$",'$value'], attrs: { 'data-range': 'medium' } }],
       else: [{ $el: 'h3', children: 'You need a new job!', attrs: { 'data-range': 'low' } }],
     },
   },
   {
     $el: 'footer',
-    children: '© All rights reserved.',
+    children: [
+      {
+        $el: 'small',
+        children: '© All rights reserved.'
+      }
+    ]
   }
 ]
 // %partial%::js::
