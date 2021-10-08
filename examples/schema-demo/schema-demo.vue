@@ -39,7 +39,7 @@ schema: [ // Capsule Schema Format
     then: [{ $el: 'h1', children: ['$format($value)'], attrs: { 'data-range': 'high' } }],
     else: {
       if: '$value >= 10000',
-      then: [{ $el: 'h2', children: ["$",'$value'], attrs: { 'data-range': 'medium' } }],
+      then: [{ $el: 'h2', children: ['$format($value)'], attrs: { 'data-range': 'medium' } }],
       else: [{ $el: 'h3', children: 'You need a new job!', attrs: { 'data-range': 'low' } }],
     },
   },
