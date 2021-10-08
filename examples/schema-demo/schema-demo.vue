@@ -26,7 +26,8 @@ export default {
       output: '',
 // %partial%::js::
 data: {
-  value: 210
+  value: 100000,
+  format: (value) => "$" + value.toLocaleString()
 },
 schema: [ // Capsule Schema Format
   {
@@ -34,10 +35,10 @@ schema: [ // Capsule Schema Format
     children: 'What is your salary?'
   },
   {
-    if: '$value >= 100',
-    then: [{ $el: 'h1', children: ["$",'$value'], attrs: { 'data-range': 'high' } }],
+    if: '$value >= 90000',
+    then: [{ $el: 'h1', children: ['$format($value)'], attrs: { 'data-range': 'high' } }],
     else: {
-      if: '$value > 20',
+      if: '$value >= 10000',
       then: [{ $el: 'h2', children: ["$",'$value'], attrs: { 'data-range': 'medium' } }],
       else: [{ $el: 'h3', children: 'You need a new job!', attrs: { 'data-range': 'low' } }],
     },
