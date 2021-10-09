@@ -35,8 +35,9 @@ ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis v
 
 <code-example
   name="Example"
-  file="_content/examples/counter-example/counter-example"
-  langs="vue,react">
+  file="_content/examples/show-markup/show-markup"
+  langs="vue"
+  layout="row">
 </code-example>
 
 <callout type="warning">
