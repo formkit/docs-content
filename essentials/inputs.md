@@ -16,7 +16,7 @@ There are 4 ways to set the value of an input:
 
 - Using the `value` prop.
 - Using `v-model`.
-- Using FormKit's node `input` method.
+- Using FormKit's node `node.input()` method.
 - Setting the value of a parent `FormKit` component.
 
 ### Using `value` prop
@@ -45,6 +45,27 @@ Using `v-model` allows for two-way reactive data binding with any FormKit input.
   langs="vue">
 </code-example>
 
+### Using `node.input()`
+
+At the heart of every FormKit input is an instance of FormKit Core’s `node`
+object, and using the `node.input()` method is the most efficent mechanism to
+modify the any value. The `node` object can be retrieved when the by bindig to
+the `@node` event when the `FormKit` component is created.
+
+<code-example
+  name="Input v-model"
+  file="/_content/examples/node-input/node-input"
+  langs="vue">
+</code-example>
+
+<callout type="tip">
+Calls to `node.input()` are debounced, and thus asyncrounous (use the `delay prop to change the length of the debounce). You can can `await node.input(val)` to determine when the input has settled.
+</callout>
+
+### Using a parent
+
+
+
 ## Setting attributes
 
 In nearly all cases, any attributes on the `<FormKit>` component will be passed through to the actual input element at the heart of the component. For example:
@@ -66,3 +87,10 @@ name       | `{type}_{n}`| The name of the input as identified in the data objec
 schema     | `{}`        | An object of composition-key to schema partials, where each schema partial is applied to the respective composition-key
 type       | `text`      | The type of input to render.
 validation | `[]`        | A string or an array of [validation rules](/essentials/validation).
+
+## Universal events
+
+Event      | Payload       | Description
+-----------|---------------|----------------------------------------------------
+input      | `any`         | Emitted when the node’s `commit` hook is completed.
+node       | `FormKitNode` | Emitted when the component is setup, this is the internal `FormKitNode` object at the heart of the input.

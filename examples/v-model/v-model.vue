@@ -5,24 +5,29 @@
     help="What is your favorite European city?"
     v-model="city"
   />
-  <button
-    @click="reset"
-    v-if="city !== 'Florence'"
-  >
-    Change “{{ city }}” to Florence
-  </button>
+  <button @click="randomCity">Random City</button>
+  <pre>City: {{ city }}</pre>
 </template>
 
 <script>
 export default {
   data () {
     return {
-      city: 'Florence'
+      city: 'Florence',
+      cities: [
+        'Prauge', 'Rome', 'Berlin',
+        'Amsterdam', 'Barcelona', 'London'
+      ]
     }
   },
   methods: {
-    reset () {
-      this.city = 'Florence'
+    randomCity () {
+      const index = Math.floor(Math.random() * (this.cities.length - 1))
+      if (this.cities[index] !== this.city) {
+        this.city = this.cities[index]
+      } else {
+        this.randomCity()
+      }
     }
   }
 }
