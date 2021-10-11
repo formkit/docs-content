@@ -64,7 +64,13 @@ Calls to `node.input()` are debounced, and thus asyncrounous (use the `delay pro
 
 ### Using a parent
 
+Parent inputs like `list`, `group`, and `form` are also able to directly set the values of any of their children. In fact the value of a parent is just the aggregate value of its children. You can use any of the above methods (`value` prop, `v-model`, or `node.input()`) to set the value of the children.
 
+<code-example
+  name="Parent input"
+  file="/_content/examples/parent-input/parent-input"
+  langs="vue">
+</code-example>
 
 ## Setting attributes
 
