@@ -24,8 +24,8 @@ export default {
       'Macchiato',
     ]
     setInterval(() => {
-      this.node.input(this.coffee[index], index)
-      if (index < this.coffee.length - 1) index++
+      this.node.input(coffee[index])
+      if (index < coffee.length - 1) index++
       else index = 0
     }, 100)
   }
