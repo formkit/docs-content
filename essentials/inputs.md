@@ -74,7 +74,7 @@ Parent inputs like `list`, `group`, and `form` are also able to directly set the
 
 ## Setting attributes
 
-In nearly all cases, any attributes on the `<FormKit>` component will be passed through to the actual input element at the heart of the component. For example:
+In nearly all cases, any attributes set on the `<FormKit>` component will be passed through to the actual input element at the heart of the component. For example:
 
 <code-example
   name="Text input"
@@ -82,17 +82,32 @@ In nearly all cases, any attributes on the `<FormKit>` component will be passed 
   langs="vue">
 </code-example>
 
-## Universal props
+## Composition keys
+
+Inputs are composed of chunks HTML and each of these chunks is assigned to a name called a “composition key”. These composition keys can be used for many purposes like modifying [classes](#classes), [content](/schema), [attributes](/), and DOM elements that inputs are composed of. Many composition keys are universally available while others are specific to a given input type (you can define your own for custom inputs as well). The following table is a comprehensive list of all universally available composition keys:
+
+Composition Key | Description
+----------------|---------------------------------------------------------------
+`outer`         | The outermost wrapping element.
+`wrapper`       | A wrapper around the label and input.
+`label`         | The label of the input.
+`inner`         | A wrapper around the actual input element.
+`help`          | The element containing help text.
+`messages`      | A wrapper around all the messages
+`message`       | The element (or many elements) containing a messages — most often validation and error messages.
+
+## Props
 
 FormKit inputs accept both universal props (ones that apply to all FormKit inputs), and input-specific props. The following table is a comprehensive list of props available to all FormKit inputs.
 
-Prop       |  Default    | Description
------------|-------------|------------------------------------------------------
-delay      | `20`        | Number of milliseconds to debounce an input's value before the `commit` [hook](/essentials/hooks) is dispatched.
-name       | `{type}_{n}`| The name of the input as identified in the data object. This should be unique within a group a fields.
-schema     | `{}`        | An object of composition-key to schema partials, where each schema partial is applied to the respective composition-key
-type       | `text`      | The type of input to render.
-validation | `[]`        | A string or an array of [validation rules](/essentials/validation).
+Prop                |  Default    | Description
+--------------------|-------------|---------------------------------------------
+delay               | `20`        | Number of milliseconds to debounce an input's value before the `commit` [hook](/essentials/hooks) is dispatched.
+name                | `{type}_{n}`| The name of the input as identified in the data object. This should be unique within a group a fields.
+schema              | `{}`        | An object of composition-key to schema partials, where each schema partial is applied to the respective composition-key
+type                | `text`      | The type of input to render.
+validation          | `[]`        | A string or an array of [validation rules](/essentials/validation).
+validation-behavior | `blur`      | Determines when validation messages are displayed. [TK]
 
 ## Universal events
 
