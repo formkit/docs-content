@@ -7,6 +7,7 @@
 
 <script setup>
 import { markRaw } from 'vue'
+
 // A custom component, typically imported from elsewhere
 const CustomComponent = {
   props: ['name'],

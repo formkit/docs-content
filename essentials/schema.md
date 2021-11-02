@@ -11,21 +11,21 @@ A schema is an array of objects, where each object defines a single HTML element
 HTML elements are defined using `$el` property. You can use `$el` to render any HTML element. Attributes can be added with the `attrs` property, and content is
 assigned with the `children` property.
 
-<!-- <code-example
+<example
   name="Schema - elements"
   file="/_content/examples/schema-elements/schema-elements"
   langs="vue"
-  layout="row"
-/> -->
+  layout="row">
+</example>
 
 ### Components ($cmp)
 
 Components can be defined with the `$cmp` property. The `$cmp` property should be a string that references a globally defined component or a component passed
 into the `library` prop.
 
-<code-example
+<example
   name="Schema - components"
   file="/_content/examples/schema-components/schema-components"
   langs="vue"
-  layout="row"
-/>
+  layout="row">
+</example>
