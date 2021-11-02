@@ -112,7 +112,7 @@ Classes can be modified for all [composition-keys](#composition-keys) using any 
 
 - [The `{composition-key}-class` props](#composition-key-class-props).
 - [The `classes` prop](#classes-prop).
-- The `classes` configuration option.
+- [The `classes` configuration option](#classes-configuration).
 - The `rootClasses` configuration function.
 
 The classes follow a strict order of hierarchy — initially classes are produced by the `rootClasses` function. They are can then be modified by the `classes` configuration option, then by the `classes` prop, and finally by the `{composition-key}-class` prop. At each of these stages new classes can be appended, classes can be reset, or classes can be selectively modified.
@@ -169,4 +169,26 @@ The classes prop is similar to the composition-key class prop except it allows s
 name="Classes prop"
 file="/_content/examples/classes-prop/classes-prop"
 tabs="html"
+langs="vue"></example>
+
+### Classes configuration
+
+The classes configuration option is similar to the classes prop, except it applies to all inputs the configuration is applied to. FormKit's unique configuration system allows for you to apply classes globally on your project or just inputs within a certain group or form.
+
+#### Global class configuration
+
+<example
+  name="Global configuration"
+  file="/_content/examples/global-classes/global-classes"
+  mode="editor"
+  :editable="false"
+  :line-numbers="false"
+  langs="vue"></example>
+
+#### Class configuration on a group, list, or form
+
+<example
+name="Classes prop"
+file="/_content/examples/classes-config/classes-config"
+tabs="render,html"
 langs="vue"></example>

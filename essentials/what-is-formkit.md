@@ -1,4 +1,4 @@
-## What is FormKit
+# What is FormKit
 
 FormKit is a tool for Vue and React developers that makes authoring high quality production ready forms 10x faster. It is fundamentally an easy-to-learn form authoring framework that ships with production-ready scaffolding like inputs, validation rules, and error handling.
 
@@ -17,7 +17,7 @@ This leads a mess of copy/paste HTML and home-rolled form components to accompli
 
 ## FormKit’s solutions
 
-FormKit improves form building by providing solutions to __X__ challenges:
+FormKit improves form building by providing solutions to **X** challenges:
 
 ### Easy to learn 📚
 
@@ -45,10 +45,8 @@ Creating accessible forms is a serious challenge. Especially when accessibility 
 
 ### Easy to theme 👩‍🎨
 
-FormKit is made for front end developers. Each DOM element can have its classes changed, attributes manipulated, and position altered. You can even replace an input's entire structure while keeping all of the functionality you need. FormKit is ready for you styles whether you use plain css, Sass, Tailwind or bootstrap.
+FormKit is made for front end developers. Each DOM element can have its classes changed, attributes manipulated, and position altered. You can even replace an input's entire structure while keeping all of the functionality you need. FormKit is ready for your styles whether you use vanilla css, Sass, Tailwind or any other css utility.
 
 ### Easy to extend 🧩
 
-FormKit comes with great production ready defaults, and for many users they'll never need anything other than the default setup, but FormKit is more than just a few inputs. It is a form building _framework_, complete with a hooks, events, plugins, libraries and schemas. Advanced developers can craft their own form systems using FormKit's low level tooling.
-
-
+FormKit comes with great production ready defaults, and for many users they'll never need anything other than the default setup, but FormKit is more than just inputs. It is a form building _framework_, complete with a hooks, events, plugins, libraries and schemas. Advanced developers can craft their own form systems using FormKit's low level tooling.
