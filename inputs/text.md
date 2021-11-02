@@ -1,6 +1,7 @@
 # Text input
 
-Allows a single line of text input.
+The Text input is the  most basic HTML input. It allows a user to enter a single
+line of text.
 
 <code-example
   name="Text input"
@@ -10,9 +11,11 @@ Allows a single line of text input.
 
 ## Props
 
-The text input has no unique props.
+The text input has no unique props but can make use of the following universal
+FormKit props.
 
-[TK] - Universal props
+<props-table>
+</props-table>
 
 ## Composition keys
 
