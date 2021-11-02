@@ -33,12 +33,12 @@ consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing 
 Maecenas `<FormulateInput>` interdum. Nullam id dolor id nibh ultricies vehicula
 ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
 
-<code-example
+<example
   name="Example"
   file="_content/examples/show-markup/show-markup"
   langs="vue"
   layout="row">
-</code-example>
+</example>
 
 <callout type="warning">
 Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius
@@ -60,11 +60,11 @@ Litora pellentesque venenatis porttitor quis nec donec mi class, tempor faucibus
 molestie ultricies mollis volutpat. Dis lacus sapien morbi platea fusce facilisi per
 nec inceptos, tempus tempor felis pulvinar pharetra augue vestibulum odio.
 
-<code-example
+<example
   name="Example"
   file="_content/examples/counter-example-partial/counter-example"
   langs="vue, react">
-</code-example>
+</example>
 
 Ornare porttitor erat nullam facilisis venenatis augue auctor massa eget, tempor
 egestas id habitant fusce ut leo diam proin, ultrices donec parturient porta nascetur

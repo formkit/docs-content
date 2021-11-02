@@ -3,11 +3,11 @@
 The Text input is the  most basic HTML input. It allows a user to enter a single
 line of text.
 
-<code-example
+<example
   name="Text input"
   file="/_content/examples/text-example/text-example"
   langs="vue">
-</code-example>
+</example>
 
 ## Props
 
