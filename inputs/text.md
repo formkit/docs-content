@@ -5,7 +5,7 @@ line of text.
 
 <example
 name="Text input"
-file="/\_content/examples/text/text"
+file="/_content/examples/text/text"
 langs="vue"></example>
 
 ## Props

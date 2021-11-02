@@ -23,21 +23,21 @@ FormKit improves form building by providing solutions to __X__ challenges:
 
 Developers love to learn — but no one enjoys pouring over third party APIs and configuration options. That's why FormKit uses a single component for all of its inputs. `<FormKit>` is the only component you need to know to get started writing high quality forms. And it works just like you would expect an `<input>` tag to work:
 
-<code-example
+<example
   name="Text input"
   file="/_content/examples/simple-text/simple-text"
   langs="vue">
-</code-example>
+</example>
 
 ### Easy to validate ✅
 
 Front end validation that provides instant feedback is an important part of providing a good experience to your users. Unfortunately it can be incredibly tedious to implement even if you're using a great validation library. FormKit takes the pain out of front end validation by baking the rules directly into the inputs.
 
-<code-example
+<example
   name="Text input"
   file="/_content/examples/simple-validation/simple-validation"
   langs="vue">
-</code-example>
+</example>
 
 ### Easy to access ♿️
 
