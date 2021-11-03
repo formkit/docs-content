@@ -113,7 +113,7 @@ Classes can be modified for all [composition-keys](#composition-keys) using any 
 - [The `{composition-key}-class` props](#composition-key-class-props).
 - [The `classes` prop](#classes-prop).
 - [The `classes` configuration option](#classes-configuration).
-- The `rootClasses` configuration function.
+- [The `rootClasses` configuration function](#root-classes-function).
 
 The classes follow a strict order of hierarchy — initially classes are produced by the `rootClasses` function. They are can then be modified by the `classes` configuration option, then by the `classes` prop, and finally by the `{composition-key}-class` prop. At each of these stages new classes can be appended, classes can be reset, or classes can be selectively modified.
 
@@ -192,3 +192,26 @@ name="Classes prop"
 file="/_content/examples/classes-config/classes-config"
 tabs="render,html"
 langs="vue"></example>
+
+### Root classes function
+
+`rootClasses` is a configuration function that is responsible
+for producing the default classes for each element. This function already has a default value which produces all the default classes (like `formkit-outer` and `formkit-label`) that ship with FormKit — so replacing this single function allows you to easily replace all initial classes. This makes it an ideal candidate for writing custom themes when using utility frameworks like Tailwind.
+
+The `rootClasses` function is passed 2 arguments (respectively):
+
+- The [composition key](/essentials/inputs#composition-key) (like `label` or `input`)
+- The [input’s node](/essentials/input-node)
+
+The function will be called once for each composition key and it _must_ return
+an object of classes with boolean values.
+
+<example
+name="Root classes function"
+file="/_content/examples/root-classes/root-classes"
+tabs="html"
+langs="vue"></example>
+
+<callout type="tip">
+Because <code>rootClasses</code> is a configuration option, you can apply it per-input, per group, or globally.
+</callout>
