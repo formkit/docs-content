@@ -1,6 +1,6 @@
 # Email input
 
-The email input uses the browser's [native email input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email).
+The email input uses html's [native email input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email).
 
 <example
   name="Email input"

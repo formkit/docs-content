@@ -1,6 +1,6 @@
 # Color input
 
-The color input uses the browser's [native color picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color) to allow users to easily
+The color input uses the html's [native color picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color) to allow users to easily
 select a hexadecimal color.
 
 <example

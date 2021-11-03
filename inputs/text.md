@@ -1,7 +1,6 @@
 # Text input
 
-The text input is the most basic HTML input. It allows a user to enter a single
-line of text.
+The text input uses html's [native text input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text). It allows a user to enter a single line of text.
 
 <example
 name="Text input"

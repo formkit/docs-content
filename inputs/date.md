@@ -1,6 +1,6 @@
 # Date input
 
-The date input uses the browser's [native date picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date) to allow users to easily
+The date input uses the html's [native date picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date) to allow users to easily
 select a date.
 
 <example
