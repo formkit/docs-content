@@ -21,7 +21,7 @@ The datetime-local input has no unique props but can make use of the following u
 
 ## Composition keys
 
-<reference-table type="compositionKeys" property="composition-key">
+<reference-table type="compositionKeys" primary="composition-key">
 </reference-table>
 
 ## Available utilities

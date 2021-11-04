@@ -24,7 +24,7 @@ FormKit props.
 
 ## Composition keys
 
-<reference-table type="compositionKeys" property="composition-key">
+<reference-table type="compositionKeys" primary="composition-key">
 </reference-table>
 
 ## Available utilities
