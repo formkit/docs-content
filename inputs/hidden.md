@@ -14,7 +14,7 @@ from submitting, but please not that the errors will not be displayed on this
 hidden input.
 </callout>
 
-## Props
+## Props & Attributes
 
 The hidden input has no unique props but can make use of the following universal
 FormKit props.

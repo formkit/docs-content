@@ -1,18 +1,18 @@
 # Number input
 
-The number input uses html's [native number input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number). It allows a user to enter a single line of number.
+The number input uses html's [native number input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number). It allows a user to enter a single integer or decimal value.
 
 <example
 name="Number input"
 file="/_content/examples/number/number"
 langs="vue"></example>
 
-## Props
+## Props & Attributes
 
 The number input has no unique props but can make use of the following universal
-FormKit props.
+FormKit props and native attributes.
 
-<reference-table>
+<reference-table :attrs="['min', 'max', 'step']" input="number">
 </reference-table>
 
 ## Composition keys

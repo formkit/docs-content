@@ -9,17 +9,16 @@ select a date.
   langs="vue">
 </example>
 
-<callout type="warning">
-The internal format of all native date pickers is `YYYY-MM-DD`. This is true
-even though the format of the date displayed to the user may be different. For example U.S. based browsers display date format as `MM/DD/YYYY`.
+<callout type="warning" label="Formatting">
+The internal format of all native date pickers is <code>YYYY-MM-DD</code>. This is true even though the format of the date displayed to the user may be different. For example U.S. based browsers display date format as <code>MM/DD/YYYY</code>.
 </callout>
 
-## Props
+## Props & Attributes
 
 The date input has no unique props but can make use of the following universal
 FormKit props.
 
-<reference-table>
+<reference-table input="date" :attrs="['min', 'max', 'step']">
 </reference-table>
 
 ## Composition keys

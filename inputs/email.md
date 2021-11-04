@@ -8,11 +8,11 @@ The email input uses html's [native email input](https://developer.mozilla.org/e
   langs="vue">
 </example>
 
-## Props
+## Props & Attributes
 
 The email input has no unique props but can make use of the following universal FormKit props.
 
-<reference-table>
+<reference-table input="email" :attrs="['placeholder']">
 </reference-table>
 
 ## Composition keys

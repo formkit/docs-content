@@ -7,12 +7,12 @@ name="Text input"
 file="/_content/examples/text/text"
 langs="vue"></example>
 
-## Props
+## Props & Attributes
 
 The text input has no unique props but can make use of the following universal
 FormKit props.
 
-<reference-table>
+<reference-table input="text" :attrs="['maxlength', 'minlength', 'placeholder']">
 </reference-table>
 
 ## Composition keys

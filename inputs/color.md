@@ -9,7 +9,7 @@ select a hexadecimal color.
   langs="vue">
 </example>
 
-## Props
+## Props & Attributes
 
 The color input has no unique props but can make use of the following universal
 FormKit props.

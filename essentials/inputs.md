@@ -85,7 +85,7 @@ In nearly all cases, any attributes set on the `<FormKit>` component will be pas
   langs="vue">
 </example>
 
-## Props
+## Props & Attributes
 
 FormKit inputs accept both universal props (ones that apply to all FormKit inputs), and input-specific props. The following table is a comprehensive list of props available to all FormKit inputs.
 
