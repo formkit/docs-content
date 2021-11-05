@@ -1,4 +1,4 @@
-# What is FormKit
+# What is FormKit?
 
 FormKit is a tool for Vue and React developers that makes authoring high quality production ready forms 10x faster. It is fundamentally an easy-to-learn form authoring framework that ships with production-ready scaffolding like inputs, validation rules, and error handling.
 
