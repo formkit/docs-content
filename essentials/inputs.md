@@ -69,7 +69,7 @@ Calls to `node.input()` are debounced, and thus asynchronous (use the `delay` pr
 
 ### Using a parent
 
-Parent inputs like `list`, `group`, and `form` are also able to directly set the values of any of their children. In fact the value of a parent is just the aggregate value of its children. You can use any of the above methods (`value` prop, `v-model`, or `node.input()`) to set the value of the children.
+Parent inputs like `list`, `group`, and `form` are also able to directly set the values of any of their children. In fact, the value of a parent is just the aggregate value of its children. You can use any of the above methods (`value` prop, `v-model`, or `node.input()`) to set the value of the children.
 
 <example
   name="Parent input"
@@ -79,29 +79,30 @@ Parent inputs like `list`, `group`, and `form` are also able to directly set the
 
 ## Setting attributes
 
-In nearly all cases, any attributes set on the `<FormKit>` component will be passed through to the actual input element at the heart of the component. For example:
+In nearly all cases, attributes set on the `<FormKit>` component will be passed through to the actual input element at the heart of the component, rather than any wrapping DOM elements. For example:
 
 <example
   name="Text input"
   file="/_content/examples/attributes/attributes"
+  tabs="html"
   langs="vue">
 </example>
 
-## Props & Attributes
+## Props & attributes
 
-FormKit inputs accept both universal props (ones that apply to all FormKit inputs), and input-specific props. The following table is a comprehensive list of props available to all FormKit inputs.
+FormKit inputs accept both _universal_ props (ones that apply to all FormKit inputs), and _input-specific_ props. The following table is a comprehensive list of props available to all FormKit inputs.
 
 <reference-table></reference-table>
 
 ## Events
 
-FormKit inputs emit both universal events (ones that are emitted from all inputs), and input-specific events. The following table is a comprehensive live of events emitted by all FormKit inputs.
+FormKit inputs emit both _universal_ events (ones that are emitted from all inputs), and _input-specific_ events. The following table is a comprehensive live of events emitted by all FormKit inputs.
 
 <reference-table type="events" primary="event"></reference-table>
 
 ## Composition keys
 
-Inputs are composed of chunks HTML and each of these chunks is assigned to a name called a “composition key”. These composition keys can be used for many purposes like modifying [classes](#classes), [content](/schema), [attributes](/schema), and event the [elements](/schema) that inputs are made of.
+Inputs are composed of chunks of HTML and each of these chunks is assigned to a name called a “composition key”. These composition keys can be used for many purposes like modifying [classes](#classes), [content](/essentials/schema), [attributes](#setting-attributes), and event the [elements](/essentials/schema) that inputs are made of.
 
 Many composition keys are universally available while others are specific to a given input type (you can define your own for custom inputs as well). The following table is a comprehensive list of all universally available composition keys:
 
@@ -117,7 +118,7 @@ Classes can be modified for all [composition-keys](#composition-keys) using any 
 - [The `classes` configuration option](#classes-configuration).
 - [The `rootClasses` configuration function](#root-classes-function).
 
-The classes follow a strict order of hierarchy — initially classes are produced by the `rootClasses` function. They are can then be modified by the `classes` configuration option, then by the `classes` prop, and finally by the `{composition-key}-class` prop. At each of these stages new classes can be appended, classes can be reset, or classes can be selectively modified.
+The classes follow a strict hierarchy. Initially, classes are produced by the `rootClasses` function. They can then be modified by the `classes` configuration option, then by the `classes` prop, and finally by the `{composition-key}-class` prop. At each of these stages classes can be [appended](#appending-classes), [reset](#resetting-classes), or [selectively modified](#removing-classes).
 
 ### Appending classes
 
@@ -126,16 +127,6 @@ To append a class, simply return the string you want to append, or provide an ob
 <example
 name="Appending classes"
 file="/_content/examples/append-classes/append-classes"
-tabs="html"
-langs="vue"></example>
-
-### Removing classes
-
-Classes produced by an earlier step in the class hierarchy can be selectively removed by providing an object with the value `false` for the class you want to remove. This includes removing formkit's default `formkit-` prefixed classes.
-
-<example
-name="Removing classes"
-file="/_content/examples/removing-classes/removing-classes"
 tabs="html"
 langs="vue"></example>
 
@@ -149,13 +140,23 @@ file="/_content/examples/resetting-classes/resetting-classes"
 tabs="html"
 langs="vue"></example>
 
+### Removing classes
+
+Classes produced by an earlier step in the class hierarchy can be selectively removed by providing an object with the value `false` for the class you want to remove. This includes removing formkit's default `formkit-` prefixed classes.
+
+<example
+name="Removing classes"
+file="/_content/examples/removing-classes/removing-classes"
+tabs="html"
+langs="vue"></example>
+
 <callout type="tip">
-In addition to the four methods listed above more generalized overrides are also available, like overriding an input’s schema, using the <code>classes</code> node hook, or utilizing slots.
+In addition to the four methods listed above, more generalized overrides are also available, like overriding an input’s schema, using the <code>classes</code> node hook, or utilizing slots.
 </callout>
 
 ### Composition-key class props
 
-The simplest way to modify a the classes of an element inside a FormKit input is via the `{composition-key}-class` props. To add a class to a specific composition key element, like `label`, you simply add the `label-class` prop.
+The simplest way to modify the classes of an element inside a FormKit input is via the `{composition-key}-class` props. To add a class to a specific composition key element, like `label`, you simply add the `label-class` prop.
 
 <example
 name="Composition-key class"
