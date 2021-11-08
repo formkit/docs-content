@@ -1,6 +1,6 @@
 # Email input
 
-The email input uses html's [native email input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email).
+The `email` input uses HTML's [native email input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email).
 
 <example
   name="Email input"
@@ -10,7 +10,7 @@ The email input uses html's [native email input](https://developer.mozilla.org/e
 
 ## Props & Attributes
 
-The email input has no unique props but can make use of the following universal FormKit props.
+The `email` input has no unique props but can make use of the following universal FormKit props.
 
 <reference-table input="email" :attrs="['placeholder']">
 </reference-table>

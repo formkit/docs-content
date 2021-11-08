@@ -4,7 +4,7 @@ FormKit can be downloaded using a package manager like `npm` or `yarn` or it can
 
 ## From npm
 
-Most new projects use a build tool like Vite, Snowpack, or WebPack — this makes installing npm dependencies a piece of cake 🍰.
+Most new projects use a build tool like Vite, Snowpack, or webpack. This makes installing npm dependencies a piece of cake 🍰.
 
 ```sh
 npm install @formkit/vue
@@ -20,7 +20,7 @@ import { plugin, defaultConfig } from '@formkit/vue'
 createApp(App).use(plugin, defaultConfig).mount('#app')
 ```
 
-That's it! You're not ready to use the `<FormKit>` component in your Vue application. The `defaultConfig` includes all of FormKit's inputs, validation rules, and the english language. You can replace the `defaultConfig` with your own configuration — this allows for improved tree-shaking (only include the rules and languages you want to actually use) and more fine-grained control.
+That's it! You're now ready to use the `<FormKit>` component in your Vue application. The `defaultConfig` includes all of FormKit's inputs, validation rules, and the English language. You can replace the `defaultConfig` with your own configuration, which allows for improved tree-shaking (only include the rules and languages you want to actually use) and more fine-grained control.
 
 <callout type="warning" label="Vue 2">
 FormKit only supports Vue 3. If you're required to use Vue 2 on a project, consider using the spiritual ancestor of FormKit — <a href="https://vueformulate.com" target="_blank">Vue Formulate</a>.

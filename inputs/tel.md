@@ -1,6 +1,6 @@
 # Tel input
 
-The tel input uses html's [native tel input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel) and allows a user to enter a telephone number. Telephone numbers can also be entered with standard text inputs but some browsers (especially mobile ones) may improve the experience of entering telephone numbers by showing a different keypad.
+The `tel` input uses HTML's [native tel input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel) and allows a user to enter a telephone number. Telephone numbers can also be entered with standard text inputs but some browsers (especially mobile ones) may improve the experience of entering telephone numbers by showing a different keypad.
 
 <example
 name="Tel input"
@@ -13,7 +13,7 @@ Phone number formats vary <em>greatly</em> around the world (some localities eve
 
 ## Props & Attributes
 
-The tel input has no unique props but can make use of the following universal
+The `tel` input has no unique props but can make use of the following universal
 FormKit props.
 
 <reference-table input="tel" :attrs="['maxlength', 'minlength', 'placeholder']">

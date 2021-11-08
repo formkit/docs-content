@@ -7,6 +7,7 @@
         'bg-red-500': true
       }
     }"
+    help="Please enter your name above."
   />
   <!-- %partial%::html:: -->
 </template>

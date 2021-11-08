@@ -1,7 +1,6 @@
 # Color input
 
-The color input uses the html's [native color picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color) to allow users to easily
-select a hexadecimal color.
+The `color` input uses HTML's [native color picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color) to allow users to easily select a hexadecimal color.
 
 <example
   name="Color input"
@@ -11,7 +10,7 @@ select a hexadecimal color.
 
 ## Props & Attributes
 
-The color input has no unique props but can make use of the following universal
+The `color` input has no unique props but can make use of the following universal
 FormKit props.
 
 <reference-table>

@@ -1,6 +1,6 @@
 # URL input
 
-The url input uses html's [native url input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url). It allows a user to enter a single url.
+The `url` input uses HTML's [native url input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url). It allows a user to enter a single URL.
 
 <example
 name="URL input"
@@ -13,7 +13,7 @@ Although FormKit supports the <code>url</code> input type, the primary reason th
 
 ## Props & Attributes
 
-The url input has no unique props but can make use of the following universal
+The `url` input has no unique props but can make use of the following universal
 FormKit props.
 
 <reference-table input="url" :attrs="['minlength', 'maxlength', 'placeholder']">

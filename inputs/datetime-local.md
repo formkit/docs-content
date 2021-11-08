@@ -1,6 +1,6 @@
 # Datetime-local input
 
-The datetime-local input uses html's [native datetime-local picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local) to allow users to easily select a date and time based on their browser’s locale.
+The datetime-local input uses HTML's [native datetime-local picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local) to allow users to easily select a date and time based on their browser’s locale.
 
 <example
   name="Datetime-local input"
@@ -14,7 +14,7 @@ The internal format of all native datetime-local pickers is <code>YYYY-MM-DDTHH:
 
 ## Props & Attributes
 
-The datetime-local input has no unique props but can make use of the following universal FormKit props.
+The `datetime-local` input has no unique props but can make use of the following universal FormKit props.
 
 <reference-table input="datetime-local" :attrs="['min', 'max', 'step']">
 </reference-table>

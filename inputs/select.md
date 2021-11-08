@@ -1,6 +1,8 @@
 # Select input
 
-The select input uses html's [native select input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/select). Select inputs can be single value selections, or multi-value sections by using the `multiple` attribute. There are 4 ways to provide options to a select input:
+The select input uses html's [native select input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/select). Select inputs can be single value selections, or multi-value sections by using the `multiple` attribute.
+
+There are 4 ways to provide options to a select input:
 
 - A object with value to label pairs
 - An array of strings

@@ -1,6 +1,6 @@
 # Inputs
 
-FormKit’s inputs are similar to HTML inputs but turbocharged with much needed features like labels, help text, validation, and error messages (and much more). Similar to how HTML’s `<input>` tag uses various `type` attributes (ie `<input type="text">` vs `<input type="checkbox">`) FormKit uses the `type` prop for _all_ inputs — in fact **with FormKit there is only 1 component you have to learn**:
+FormKit’s inputs are similar to HTML inputs but turbocharged with much needed features like labels, help text, validation, and error messages (and much more). Similar to how HTML’s `<input>` tag uses various `type` attributes (i.e., `<input type="text">` vs `<input type="checkbox">`) FormKit uses the `type` prop for _all_ inputs. In fact, **with FormKit, there is only 1 component you have to learn**:
 
 <example
   name="Text input"
@@ -8,7 +8,7 @@ FormKit’s inputs are similar to HTML inputs but turbocharged with much needed 
   langs="vue">
 </example>
 
-FormKit inputs are not confined to what is available in "native" HTML. [FormKit Pro](/pro) for example, uses "synthetic" input types like `autocomplete`, `taglist` and `wysiwyg`. Of course, you can write your own inputs too by creating [custom inputs](/guides/custom-input).
+FormKit inputs are not confined to what is available in "native" HTML. The upcoming FormKit Pro represents "synthetic" input types such as `autocomplete`, `taglist` and `wysiwyg`. Of course, you can write your own inputs too by creating [custom inputs](/guides/custom-input).
 
 ## Setting values
 
@@ -51,8 +51,8 @@ Using `v-model` allows for two-way reactive data binding with any FormKit input.
 ### Using `node.input()`
 
 At the heart of every FormKit input is an instance of FormKit Core’s `node`
-object, and using the `node.input()` method is the most efficent mechanism to
-modify the any value. The `node` object can be retrieved when the by bindig to
+object, and using the `node.input()` method is the most efficient mechanism to
+modify any value. The `node` object can be retrieved by binding to
 the `@node` event when the `FormKit` component is created.
 
 <example
@@ -62,12 +62,12 @@ the `@node` event when the `FormKit` component is created.
 </example>
 
 <callout type="tip">
-Calls to `node.input()` are debounced, and thus asyncrounous (use the `delay prop to change the length of the debounce). You can can `await node.input(val)` to determine when the input has settled.
+Calls to <code>node.input()</code> are debounced, and thus asynchronous (use the <code>delay</code> prop to change the length of the debounce). You can <code>await node.input(val)</code> to determine when the input has settled.
 </callout>
 
 ### Using a parent
 
-Parent inputs like `list`, `group`, and `form` are also able to directly set the values of any of their children. In fact the value of a parent is just the aggregate value of its children. You can use any of the above methods (`value` prop, `v-model`, or `node.input()`) to set the value of the children.
+Parent inputs like `list`, `group`, and `form` are also able to directly set the values of any of their children. In fact, the value of a parent is just the aggregate value of its children. You can use any of the above methods (`value` prop, `v-model`, or `node.input()`) to set the value of the children.
 
 <example
   name="Parent input"
@@ -77,29 +77,30 @@ Parent inputs like `list`, `group`, and `form` are also able to directly set the
 
 ## Setting attributes
 
-In nearly all cases, any attributes set on the `<FormKit>` component will be passed through to the actual input element at the heart of the component. For example:
+In nearly all cases, attributes set on the `<FormKit>` component will be passed through to the actual input element at the heart of the component, rather than any wrapping DOM elements. For example:
 
 <example
   name="Text input"
   file="/_content/examples/attributes/attributes"
+  tabs="html"
   langs="vue">
 </example>
 
-## Props & Attributes
+## Props & attributes
 
-FormKit inputs accept both universal props (ones that apply to all FormKit inputs), and input-specific props. The following table is a comprehensive list of props available to all FormKit inputs.
+FormKit inputs accept both _universal_ props (ones that apply to all FormKit inputs), and _input-specific_ props. The following table is a comprehensive list of props available to all FormKit inputs.
 
 <reference-table></reference-table>
 
 ## Events
 
-FormKit inputs emit both universal events (ones that are emitted from all inputs), and input-specific events. The following table is a comprehensive live of events emitted by all FormKit inputs.
+FormKit inputs emit both _universal_ events (ones that are emitted from all inputs), and _input-specific_ events. The following table is a comprehensive live of events emitted by all FormKit inputs.
 
 <reference-table type="events" primary="event"></reference-table>
 
 ## Composition keys
 
-Inputs are composed of chunks HTML and each of these chunks is assigned to a name called a “composition key”. These composition keys can be used for many purposes like modifying [classes](#classes), [content](/schema), [attributes](/schema), and event the [elements](/schema) that inputs are made of.
+Inputs are composed of chunks of HTML and each of these chunks is assigned to a name called a “composition key”. These composition keys can be used for many purposes like modifying [classes](#classes), [content](/essentials/schema), [attributes](#setting-attributes), and event the [elements](/essentials/schema) that inputs are made of.
 
 Many composition keys are universally available while others are specific to a given input type (you can define your own for custom inputs as well). The following table is a comprehensive list of all universally available composition keys:
 
@@ -115,7 +116,7 @@ Classes can be modified for all [composition-keys](#composition-keys) using any 
 - [The `classes` configuration option](#classes-configuration).
 - [The `rootClasses` configuration function](#root-classes-function).
 
-The classes follow a strict order of hierarchy — initially classes are produced by the `rootClasses` function. They are can then be modified by the `classes` configuration option, then by the `classes` prop, and finally by the `{composition-key}-class` prop. At each of these stages new classes can be appended, classes can be reset, or classes can be selectively modified.
+The classes follow a strict hierarchy. Initially, classes are produced by the `rootClasses` function. They can then be modified by the `classes` configuration option, then by the `classes` prop, and finally by the `{composition-key}-class` prop. At each of these stages classes can be [appended](#appending-classes), [reset](#resetting-classes), or [selectively modified](#removing-classes).
 
 ### Appending classes
 
@@ -124,16 +125,6 @@ To append a class, simply return the string you want to append, or provide an ob
 <example
 name="Appending classes"
 file="/_content/examples/append-classes/append-classes"
-tabs="html"
-langs="vue"></example>
-
-### Removing classes
-
-Classes produced by an earlier step in the class hierarchy can be selectively removed by providing an object with the value `false` for the class you want to remove. This includes removing formkit's default `formkit-` prefixed classes.
-
-<example
-name="Removing classes"
-file="/_content/examples/removing-classes/removing-classes"
 tabs="html"
 langs="vue"></example>
 
@@ -147,13 +138,23 @@ file="/_content/examples/resetting-classes/resetting-classes"
 tabs="html"
 langs="vue"></example>
 
+### Removing classes
+
+Classes produced by an earlier step in the class hierarchy can be selectively removed by providing an object with the value `false` for the class you want to remove. This includes removing formkit's default `formkit-` prefixed classes.
+
+<example
+name="Removing classes"
+file="/_content/examples/removing-classes/removing-classes"
+tabs="html"
+langs="vue"></example>
+
 <callout type="tip">
-In addition to the four methods listed above more generalized overrides are also available, like overriding an input’s schema, using the <code>classes</code> node hook, or utilizing slots.
+In addition to the four methods listed above, more generalized overrides are also available, like overriding an input’s schema, using the <code>classes</code> node hook, or utilizing slots.
 </callout>
 
 ### Composition-key class props
 
-The simplest way to modify a the classes of an element inside a FormKit input is via the `{composition-key}-class` props. To add a class to a specific composition key element, like `label`, you simply add the `label-class` prop.
+The simplest way to modify the classes of an element inside a FormKit input is via the `{composition-key}-class` props. To add a class to a specific composition key element, like `label`, you simply add the `label-class` prop.
 
 <example
 name="Composition-key class"
@@ -200,8 +201,8 @@ for producing the default classes for each element. This function already has a 
 
 The `rootClasses` function is passed 2 arguments (respectively):
 
-- The [composition key](#composition-keys) (like `label` or `input`)
-- The [input’s node](/essentials/input-node)
+- The [composition key](#composition-keys) (like `label` or `input`).
+- The [input’s node](/essentials/input-node).
 
 The function will be called once for each composition key and it _must_ return
 an object of classes with boolean values.
