@@ -1,6 +1,6 @@
 # Schema
 
-FormKit's schema is a JSON-serializable data format for storing DOM structures and component implementations including FormKit forms. Although created specifically for implementing forms the format is capable of generating any HTML markup or using any <current-framework></current-framework> components. Schemas are rendered using FormKit's `<FormKitSchema>` component.
+FormKit's schema is a JSON-serializable data format for storing DOM structures and component implementations including FormKit forms. Although created specifically for implementing forms the format is capable of generating any HTML markup or using any components. Schemas are rendered using FormKit's `<FormKitSchema>` component.
 
 ## The basics
 
