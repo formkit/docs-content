@@ -1,6 +1,6 @@
 # Week input
 
-The week `input` uses the `html's` [native week picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/week) to allow users to easily
+The `week` input uses the HTML's [native week picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/week) to allow users to easily
 select a week.
 
 <callout type="danger" label="Compatibility warning">
@@ -19,7 +19,7 @@ The internal format of all native week pickers is <code>YYYY-Www</code> (for exa
 
 ## Props & Attributes
 
-The week input has no unique props but can make use of the following universal
+The `week` input has no unique props but can make use of the following universal
 FormKit props.
 
 <reference-table input="week" :attrs="['min', 'max', 'step']">

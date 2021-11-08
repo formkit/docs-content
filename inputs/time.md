@@ -1,6 +1,6 @@
 # Time input
 
-The time input uses html's [native time input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/time). It allows a user to enter a single line of time.
+The `time` input uses HTML's [native time input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/time). It allows a user to enter a single line of time.
 
 <example
 name="Time input"
@@ -13,7 +13,7 @@ The internal format of all native time pickers is <code>HH:MM</code>. This is tr
 
 ## Props & Attributes
 
-The time input has no unique props but can make use of the following universal
+The `time` input has no unique props but can make use of the following universal
 FormKit props.
 
 <reference-table input="time" :attrs="['max', 'min', 'step']">
