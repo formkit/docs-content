@@ -62,7 +62,7 @@ the `@node` event when the `FormKit` component is created.
 </example>
 
 <callout type="tip">
-Calls to `node.input()` are debounced, and thus asynchronous (use the `delay` prop to change the length of the debounce). You can `await node.input(val)` to determine when the input has settled.
+Calls to <code>node.input()</code> are debounced, and thus asynchronous (use the <code>delay</code> prop to change the length of the debounce). You can <code>await node.input(val)</code> to determine when the input has settled.
 </callout>
 
 ### Using a parent
