@@ -1,6 +1,6 @@
 # Inputs
 
-FormKit’s inputs are similar to HTML inputs but turbocharged with much needed features like labels, help text, validation, and error messages (and much more). Similar to how HTML’s `<input>` tag uses various `type` attributes (ie `<input type="text">` vs `<input type="checkbox">`) FormKit uses the `type` prop for _all_ inputs — in fact **with FormKit there is only 1 component you have to learn**:
+FormKit’s inputs are similar to HTML inputs but turbocharged with much needed features like labels, help text, validation, and error messages (and much more). Similar to how HTML’s `<input>` tag uses various `type` attributes (i.e., `<input type="text">` vs `<input type="checkbox">`) FormKit uses the `type` prop for _all_ inputs. In fact, **with FormKit, there is only 1 component you have to learn**:
 
 <example
   name="Text input"
@@ -8,7 +8,9 @@ FormKit’s inputs are similar to HTML inputs but turbocharged with much needed 
   langs="vue">
 </example>
 
-FormKit inputs are not confined to what is available in "native" HTML. [FormKit Pro](/pro) for example, uses "synthetic" input types like `autocomplete`, `taglist` and `wysiwyg`. Of course, you can write your own inputs too by creating [custom inputs](/guides/custom-input).
+<!-- [FormKit Pro](/pro) for example, uses "synthetic" input types like `autocomplete`, `taglist` and `wysiwyg`.  -->
+
+FormKit inputs are not confined to what is available in "native" HTML. You can write your own inputs by creating [custom inputs](/guides/custom-input).
 
 ## Setting values
 
@@ -51,8 +53,8 @@ Using `v-model` allows for two-way reactive data binding with any FormKit input.
 ### Using `node.input()`
 
 At the heart of every FormKit input is an instance of FormKit Core’s `node`
-object, and using the `node.input()` method is the most efficent mechanism to
-modify the any value. The `node` object can be retrieved when the by bindig to
+object, and using the `node.input()` method is the most efficient mechanism to
+modify any value. The `node` object can be retrieved by binding to
 the `@node` event when the `FormKit` component is created.
 
 <example
@@ -62,7 +64,7 @@ the `@node` event when the `FormKit` component is created.
 </example>
 
 <callout type="tip">
-Calls to `node.input()` are debounced, and thus asyncrounous (use the `delay prop to change the length of the debounce). You can can `await node.input(val)` to determine when the input has settled.
+Calls to `node.input()` are debounced, and thus asynchronous (use the `delay` prop to change the length of the debounce). You can `await node.input(val)` to determine when the input has settled.
 </callout>
 
 ### Using a parent
