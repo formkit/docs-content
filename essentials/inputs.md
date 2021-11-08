@@ -200,7 +200,7 @@ for producing the default classes for each element. This function already has a 
 
 The `rootClasses` function is passed 2 arguments (respectively):
 
-- The [composition key](/essentials/inputs#composition-key) (like `label` or `input`)
+- The [composition key](#composition-keys) (like `label` or `input`)
 - The [input’s node](/essentials/input-node)
 
 The function will be called once for each composition key and it _must_ return
