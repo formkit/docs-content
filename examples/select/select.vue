@@ -3,6 +3,7 @@
   <FormKit
     type="select"
     label="What planet is the largest?"
+    placeholder="Select a planet"
     name="planet"
     :options="{
       mercury: 'Mercury',
@@ -14,7 +15,11 @@
       uranus: 'Uranus',
       neptune: 'Neptune',
     }"
-    value="jupiter"
+    validation="required|is:jupiter"
+    validation-behavior="dirty"
+    :validation-messages="{
+      is: 'Nope! Jupiter is the largest planet'
+    }"
   />
   <!-- %partial%::html:: -->
 </template>
