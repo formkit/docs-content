@@ -8,13 +8,7 @@ FormKit’s inputs are similar to HTML inputs but turbocharged with much needed 
   langs="vue">
 </example>
 
-<<<<<<< HEAD
-<!-- [FormKit Pro](/pro) for example, uses "synthetic" input types like `autocomplete`, `taglist` and `wysiwyg`.  -->
-
-FormKit inputs are not confined to what is available in "native" HTML. You can write your own inputs by creating [custom inputs](/guides/custom-input).
-=======
 FormKit inputs are not confined to what is available in "native" HTML. The upcoming FormKit Pro represents "synthetic" input types such as `autocomplete`, `taglist` and `wysiwyg`. Of course, you can write your own inputs too by creating [custom inputs](/guides/custom-input).
->>>>>>> b4c01db (remove references to React and Pro)
 
 ## Setting values
 
