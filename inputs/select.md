@@ -58,12 +58,12 @@ When using the default slot to output options you cannot use the <code>placehold
 
 ## Props & Attributes
 
-<reference-table input="select" :data="[{prop: 'options', type: 'Array/Object', default: '[]', description: 'An object of value/label pairs or an array of strings, or an array of objects that <em>must</em> contain a label and value property.'}]">
+<reference-table input="select" :data="[{prop: 'options', type: 'Array/Object', default: '[]', description: 'An object of value/label pairs or an array of strings, or an array of objects that <em>must</em> contain a label and value property.'},{prop: 'placeholder', type: 'String', default: 'none', description: 'When defined FormKit injects a non-selectable hidden <code>option</code> tag as the first value of the list to serve as a placeholder.'}]">
 </reference-table>
 
 ## Composition keys
 
-<reference-table type="compositionKeys" primary="composition-key">
+<reference-table type="compositionKeys" primary="composition-key" :data="[{'composition-key': 'option', description: 'Responsible for rendering each option. Context includes an <code>option</code> property with the option being rendered. This object includes <code>label</code> and <code>value</code> properties.'}]">
 </reference-table>
 
 ## Available utilities

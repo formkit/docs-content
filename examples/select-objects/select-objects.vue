@@ -3,8 +3,8 @@
   <FormKit
     type="select"
     label="What country makes the best food?"
-    name="planet"
-    placeholder="Select a planet"
+    name="country"
+    placeholder="Select a country"
     :options="[
       { label: 'France', value: 'fr', attrs: { disabled: true } },
       { label: 'Germany', value: 'de', attrs: { disabled: true } },

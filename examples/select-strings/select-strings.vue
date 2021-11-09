@@ -3,7 +3,7 @@
   <FormKit
     type="select"
     label="What country is the smallest?"
-    name="planet"
+    name="small_country"
     :options="[
       'Monaco',
       'Vatican City',
