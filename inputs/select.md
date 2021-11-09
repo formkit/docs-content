@@ -1,6 +1,6 @@
 # Select input
 
-The select input uses html's [native select input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/select). Select inputs can be single value selections, or multi-value sections by using the `multiple` attribute.
+The select input uses html's [native select element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select). Select inputs can be single value selections, or multi-value sections by using the `multiple` attribute.
 
 There are 4 ways to provide options to a select input:
 
@@ -55,6 +55,15 @@ langs="vue"></example>
 <callout type="warning">
 When using the default slot to output options you cannot use the <code>placeholder</code> or <code>options</code> prop, but they will be available in the <a href="/essentials/context">context object</a> which is exposed to the default slot.
 </callout>
+
+<!-- ## Multiple
+
+The native `select` input also supports a `multiple` attribute that allows for multi-selection. When used with FormKit, this option produces an array of values.
+
+<example
+name="Select input - objects"
+file="/_content/examples/select-multiple/select-multiple"
+langs="vue"></example> -->
 
 ## Props & Attributes
 
