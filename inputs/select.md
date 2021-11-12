@@ -10,6 +10,7 @@ The select input uses html's [native select input](https://developer.mozilla.org
 ## Single selection
 
 Select lists are most commonly used to select a single item from a list of options.
+
 ### Array of strings
 
 The simplest way to provide options is an array of strings. The provided strings will be used for both the label and the value of the option.
@@ -18,7 +19,10 @@ The simplest way to provide options is an array of strings. The provided strings
 name="Select input - strings"
 file="/_content/examples/select-strings/select-strings"
 langs="vue"></example>
+
 ### Value / Label Object
+
+You may also provide the `options` prop where the keys are values and the values of each property are labels.
 
 <example
 name="Select input"
@@ -26,6 +30,8 @@ file="/_content/examples/select/select"
 langs="vue"></example>
 
 ### Array of objects
+
+Them most flexible way to define options is by providing an array of objects. The objects _must_ include `value` and `label` properties — but they may also include a `help` attribute as well as an `attrs` object of additional attributes to apply to each checkbox input tag.
 
 <example
 name="Select input - objects"
@@ -70,7 +76,6 @@ langs="vue"></example>
 <callout type="tip" label="Alternatives">
 Select inputs with the <code>multiple</code> attribute can be challenging for some users because they require holding-down the control or command keys to perform multiple selections. Depending on your audience, you may want to consider using a <a href="/inputs/checkbox">checkbox input with <code>options</code></a> instead.
 </callout>
-
 
 <callout type="warning" label="Multiple with default slot">
 When using the default slot in conjunction with the <code>multiple</code> attribute you must explicitly assign the <code>selected</code> attribute to each option.

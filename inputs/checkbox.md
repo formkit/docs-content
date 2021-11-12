@@ -50,14 +50,12 @@ langs="vue"></example>
 
 ## Props & Attributes
 
-The `checkbox` input has no unique props but can make use of the following universal FormKit props.
-
 <reference-table input="checkbox" :data="[{prop: 'options', type: 'Array/Object', default: '[]', description: 'An object of value/label pairs or an array of strings, or an array of objects that <em>must</em> contain a label and value property.'}, { prop: 'on-value', type: 'any', default: 'true', description: 'The value when the checkbox is checked (single checkboxes only)'}, { prop: 'off-value', type: 'any', default: 'false', description: 'The value when the checkbox is unchecked (single checkboxes only)'}]">
 </reference-table>
 
 ## Composition keys
 
-<reference-table type="compositionKeys" primary="composition-key">
+<reference-table type="compositionKeys" primary="composition-key" :data="[{'composition-key': 'decorator', description: 'Responsible for the element immediately following the input element — usually used for styling.'}, { 'composition-key': 'legend', description: 'Responsible for the fieldset’s legend element.'}, {'composition-key': 'options', description: 'Responsible for the wrapper element around all of the option items'},{'composition-key': 'option', description: 'Responsible for the wrapper around each item in the options.'}]">
 </reference-table>
 
 ## Available utilities
