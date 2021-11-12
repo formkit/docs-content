@@ -13,7 +13,7 @@
     ]"
     help="Select all that apply by holding command (macOS) or control (PC)."
   />
-  <pre>{{ values }}</pre>
+  <pre wrap>{{ values }}</pre>
 </template>
 
 <script setup>
