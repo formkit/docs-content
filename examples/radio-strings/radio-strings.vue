@@ -13,5 +13,5 @@
 
 <script setup>
 import { ref } from 'vue'
-const value = ref('lama')
+const value = ref(undefined)
 </script>
