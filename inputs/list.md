@@ -1,6 +1,6 @@
 # List input
 
-The `list` input allows you to structure data from child inputs as an array. The list itself outputs no markup (by default) and can be used in conjuction with any other type of input — including nested [groups](/inputs/groups) and lists.
+The `list` input allows you to structure data from child inputs as an array. The list itself outputs no markup (by default) and can be used in conjunction with any other type of input — including nested [groups](/inputs/groups) and lists.
 
 <example
 name="List input"
