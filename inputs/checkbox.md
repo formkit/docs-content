@@ -1,0 +1,67 @@
+# Checkbox input
+
+The `checkbox` input uses HTML's [native checkbox input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox). It can display one or many options to a user and is a great way to allow users to select multiple items from a list. FormKit supports both single and multiple checkbox inputs.
+
+## Single checkbox
+
+By default the checkbox type will render a single checkbox and uses `boolean` values.
+
+<example
+name="Checkbox input"
+file="/_content/examples/checkbox-single/checkbox-single"
+langs="vue"></example>
+
+## Multiple checkboxes
+
+To output multiple checkboxes with single input use the `options` prop. Options can be specified 3 ways:
+
+- As an array of strings
+- An object of value/label pairs
+- An array of objects with `label` and `value` properties (the same as a [select input](/inputs/select)).
+
+The value of a checkbox input with multiple `options` is an array of the selected values.
+
+### Array of strings
+
+The simplest way to provide options is an array of strings. The provided strings will be used for both the label and the value of the option.
+
+<example
+name="Checkbox input"
+file="/_content/examples/checkbox-strings/checkbox-strings"
+langs="vue"></example>
+
+### Value / Label object
+
+You may also provide the `options` prop where the keys are values and the values of each property are labels.
+
+<example
+name="Checkbox input"
+file="/_content/examples/checkbox-object/checkbox-object"
+langs="vue"></example>
+
+### Array of objects
+
+Them most flexible way to define options is by providing an array of objects. The objects _must_ include `value` and `label` properties — but they may also include a `help` attribute as well as an `attrs` object of additional attributes to apply to each checkbox input tag.
+
+<example
+name="Checkbox input"
+file="/_content/examples/checkbox-objects/checkbox-objects"
+langs="vue"></example>
+
+## Props & Attributes
+
+The `checkbox` input has no unique props but can make use of the following universal FormKit props.
+
+<reference-table input="checkbox" :data="[{prop: 'options', type: 'Array/Object', default: '[]', description: 'An object of value/label pairs or an array of strings, or an array of objects that <em>must</em> contain a label and value property.'}, { prop: 'on-value', type: 'any', default: 'true', description: 'The value when the checkbox is checked (single checkboxes only)'}, { prop: 'off-value', type: 'any', default: 'false', description: 'The value when the checkbox is unchecked (single checkboxes only)'}]">
+</reference-table>
+
+## Composition keys
+
+<reference-table type="compositionKeys" primary="composition-key">
+</reference-table>
+
+## Available utilities
+
+[TK] - Masks
+
+[TK] - Casts

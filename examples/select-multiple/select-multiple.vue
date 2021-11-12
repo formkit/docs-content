@@ -6,12 +6,12 @@
     label="Serious medical conditions"
     name="country"
     :options="[
-      { label: 'Allergies', value: 'allergies' },
+      { label: 'Outie belly button', value: 'outie' },
       { label: 'Large feet', value: 'lg-feet' },
-      { label: 'Overweight', value: 'overweight' },
+      { label: 'Neck beard', value: 'neard' },
       { label: 'Tiny hands', value: 'trump-hands' },
     ]"
-    help="Please select any serious medical conditions that apply."
+    help="Select all that apply by holding command (macOS) or control (PC)."
   />
   <pre>{{ values }}</pre>
 </template>
