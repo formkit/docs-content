@@ -117,7 +117,7 @@ Schema expressions are limited to the following operators and parenthesis:
 FormKit schema can leverage references and expressions to make schema nodes and attributes conditional. These conditionals can be added in two ways:
 
 - The `if` property on `$el` and `$cmp` nodes.
-- The `if/then/else` logic node
+- The `if/then/else` object
 
 ### The `if` property
 
@@ -149,3 +149,11 @@ Conditional statements can be used to render attributes.
   langs="vue"
   layout="row">
 </example>
+
+## Loops
+
+## Slots
+
+## Events
+
+## FormKit specifics
