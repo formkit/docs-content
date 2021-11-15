@@ -13,6 +13,10 @@ export default {
       [
         {
           $el: 'div', // try an h1!
+          attrs: {
+            style: { color: 'red' },
+            'data-foo': 'bar'
+          },
           children: 'Hello world'
         }
       ]
