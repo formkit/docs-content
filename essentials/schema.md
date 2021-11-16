@@ -75,6 +75,10 @@ Just like JavaScript — you can access properties of a deeply nested object usi
   layout="row">
 </example>
 
+<callout type="note" label="Reserved words">
+Schema references can have any structure or properties, but at the root of the data reference object there are 2 reserved words: <code>$slots</code> and <code>$get</code>.
+</callout>
+
 ## Expressions
 
 Schemas also support expressions like and boolean logic, comparisons and arithmetic. These expressions can be used anywhere a data reference can be used (`attrs`, `props`, conditionals, and `children`).

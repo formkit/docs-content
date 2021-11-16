@@ -1,5 +1,5 @@
 <template>
-  <p>Reveal one question at a time with schema.</p>
+  <p>Order a beverage</p>
   <FormKitSchema :schema="schema" />
 </template>
 
@@ -8,47 +8,46 @@ const schema = [
   {
     $cmp: 'FormKit',
     props: {
-      type: 'text',
-      id: 'year',
-      label: 'What year did WWII end?',
-      validationLabel: 'Year',
-      validation:'required|is:1945'
+      type: 'select',
+      id: 'drink',
+      label: 'Drink',
+      placeholder: 'Pick your drink',
+      options: {
+        coffee: 'Drip coffee',
+        espresso: 'Espresso shot',
+        tea: 'Tea'
+      },
+      validation:'required'
     }
   },
   {
     $cmp: 'FormKit',
-    if: '$get(year).state.valid',
+    if: '$get(drink).value',
     props: {
       type: 'radio',
-      id: 'surrender',
-      label: 'What country surrendered first?',
-      validationLabel: 'Country',
-      validation:'required|is:Italy',
-      options: [
-        'Germany',
-        'Italy',
-        'Japan'
-      ]
+      label: '$: "Drink options (" + $get(drink).value + ")"',
+      options: {
+        if: '$get(drink).value === coffee',
+        then: [
+          'Large',
+          'Medium',
+          'Small'
+        ],
+        else: {
+          if: '$get(drink).value === espresso',
+          then: [
+            'Single shot',
+            'Double shot',
+          ],
+          else: [
+            'Earl grey',
+            'Matcha',
+            'Green tea',
+            'Jasmine'
+          ]
+        }
+      }
     }
-  },
-  {
-    $cmp: 'FormKit',
-    if: '$get(surrender).state.valid',
-    props: {
-      type: 'text',
-      id: 'moon',
-      label: 'When did we land on the moon?',
-      validationLabel: 'year',
-      validation:'required|is:1969',
-    }
-  },
-  {
-    $el: 'h1',
-    if: '$get(moon).state.valid',
-    attrs: {
-      style: { color: 'green' }
-    },
-    children: '100% 🎉'
   }
 ]
 </script>
