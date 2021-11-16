@@ -12,7 +12,7 @@ import { reactive } from 'vue'
 const schema = [
   {
     $el: 'div',
-    // You can use expression to concatenate strings
+    // You can use expressions to concatenate strings
     children: '$: "Qty: " + $count + " x " + $format($price)'
   },
   {
