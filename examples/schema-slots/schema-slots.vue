@@ -4,7 +4,7 @@
     :data="data"
   >
     <template #default="{ label }">
-      <span style="color: green">{{ label }}</span>
+      <span style="width: 6em">{{ label }}</span>
     </template>
   </FormKitSchema>
 </template>
