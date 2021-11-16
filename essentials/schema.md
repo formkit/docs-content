@@ -77,7 +77,7 @@ Just like JavaScript — you can access properties of a deeply nested object usi
 
 ## Expressions
 
-Schemas also support expressions like and boolean logic, comparisons and arithmetic. These expressions can be used anywhere a data reference can be used (`attrs`, `props`, conditionals, and `children`).
+Schemas also support logic in the form of boolean, logical, comparison, and arithmetic expressions. These expressions can be used anywhere a data reference can be used (`attrs`, `props`, conditionals, and `children`).
 
 <example
   name="Schema - expressions"
