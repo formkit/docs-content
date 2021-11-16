@@ -1,5 +1,5 @@
 <template>
-  <p>Order a beverage</p>
+  <h2>Order a beverage</h2>
   <FormKitSchema :schema="schema" />
 </template>
 
