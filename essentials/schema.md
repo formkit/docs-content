@@ -2,7 +2,7 @@
 
 FormKit's schema is a JSON-serializable data format for storing DOM structures and component implementations including FormKit forms. Although created specifically for implementing forms the format is capable of generating any HTML markup or using any third party components. Schemas are rendered using FormKit's `<FormKitSchema>` component.
 
-A schema is an array of objects, where each object defines a single HTML element or component. These two object types have their own structural definition.
+A schema is an array of objects, where each object defines a single HTML element, component, or text node. Simple strings produce text nodes, while components and HTML elements are defined with two different objects (referred to as `$el` and `$cmp`).
 
 ## HTML Elements ($el)
 
@@ -132,7 +132,11 @@ Both `$el` and `$cmp` schema nodes can leverage an `if` property that roughly eq
 
 ### The `if/then/else` object
 
-The `if/then/else` object can be used anywhere you would normally use a schema node to conditionally render one or many nodes at a time, and optionally an `else` statement. You can also nest `if/then/else` objects to create logic equivalent to `else if`.
+The `if/then/else` object allows for more complex conditional logic. It can be used to conditionally render nodes, a list of schema nodes, values of the `attrs` object or values of the `props` object. It is also possible to nest `if/then/else` objects to create more complex structures — similar to an `else if` statement in JavaScript.
+
+#### Using `if/then/else` on schema nodes
+
+You can use the `if/then/else` object anywhere you would normally use a schema node. This includes the root schema array, or the `children` property of another schema node.
 
 <example
   name="Schema - conditional object"
@@ -141,7 +145,9 @@ The `if/then/else` object can be used anywhere you would normally use a schema n
   layout="row">
 </example>
 
-Conditional statements can be used to render attributes.
+#### Using `if/then/else` on attrs and props
+
+You can also use `if/then/else` statements to conditionally output the values of `attrs` or `props`.
 
 <example
   name="Schema - conditional attrs"
@@ -151,6 +157,19 @@ Conditional statements can be used to render attributes.
 </example>
 
 ## Loops
+
+Both `$el` and `$cmp` schema nodes support looping. The loop syntax is similar to `v-for` in Vue and expects an object or array to iterate over and a property to assign the current iteration value to. Optionally, you can also capture the index or property of the current iteration.
+
+<example
+  name="Schema - loops"
+  file="/_content/examples/schema-loops/schema-loops"
+  langs="vue"
+  layout="row">
+</example>
+
+<callout type="tip" label="Casting">
+Sometimes schema expressions need to cast a string to a number. For example, keys are always string values during an iteration, so in the above example it was necessary to cast <code>$key</code> to an integer before adding it to <code>1</code>. To perform this cast, we simply multiplied by 1: <code>$key * 1</code> before performing our addition.
+</callout>
 
 ## Slots
 
