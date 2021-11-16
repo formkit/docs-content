@@ -1,8 +1,8 @@
 # List input
 
-The `list` input allows you to structure data from child inputs as an array. The list itself outputs no markup (by default) and can be used in conjunction with any other type of input — including nested [groups](/inputs/groups) and lists.
+The `list` input allows you to structure data from child inputs as an array. The list itself outputs no markup (by default) and can be used in conjunction with any other type of input — including nested [groups](/inputs/group) and lists.
 
-The value of a list input is an array where each item is the value of the input at that index. Sub-inputs do not need to be of the same type. In addition to structuring data, groups can determine the validation state, provide initial values, and supply plugins and configuration to all of its children.
+The value of a list input is an array where each item is the value of the input at that index. Sub-inputs do not need to be of the same type. In addition to structuring data, lists can determine the validation state, provide initial values, and supply plugins and configuration to all of its children.
 
 <example
 name="List input"
@@ -10,7 +10,7 @@ file="/_content/examples/list/list"
 langs="vue"></example>
 
 <callout type="tip" label="Performance">
-Vue’s handy <code>v-model</code> is fully supported in FormKit with bi-direction data flow even on lists and groups. However, if your form needs extremely high performance consider using the <a href="/essentials/core">core node</a> to read/write instead of v-model.
+Vue’s handy <code>v-model</code> is fully supported in FormKit with bi-directional data flow even on lists and groups. However, if your form needs extremely high performance consider using the <a href="/essentials/core">core node</a> to read/write instead of v-model.
 </callout>
 
 ## Validity of children

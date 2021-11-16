@@ -81,7 +81,7 @@ Schema references can have any structure or properties, but at the root of the d
 
 ## Expressions
 
-Schemas also support expressions like and boolean logic, comparisons and arithmetic. These expressions can be used anywhere a data reference can be used (`attrs`, `props`, conditionals, and `children`).
+Schemas also support logic in the form of boolean, logical, comparison, and arithmetic expressions. These expressions can be used anywhere a data reference can be used (`attrs`, `props`, conditionals, and `children`).
 
 <example
   name="Schema - expressions"
@@ -186,9 +186,9 @@ Schemas can render the slot content of the `<FormKitSchema>` component anywhere 
   layout="row">
 </example>
 
-## FormKit inputs
+## FormKit Inputs
 
-Although schemas can be used for almost any purpose — the primary objective is to empower developers to building complex and dynamic forms using a serializable data format. Using the schema with FormKit inputs covers this use case well.
+Although schemas can be used for almost any purpose — the primary objective is to empower developers to build complex and dynamic forms using a serializable data format. Using the schema with FormKit inputs covers this use case well.
 
 Assuming you globally registered the `FormKit` component — you can render your `FormKit` inputs from schema by using the `$cmp` schema node.
 
@@ -201,7 +201,7 @@ Assuming you globally registered the `FormKit` component — you can render your
 
 ### Accessing other inputs
 
-The schema format has one built-in specific to FormKit inputs — the `$get` function. This builtin allows the schema to access the context object of any other FormKit input (even outside the immediate form) — provided the input in question has an explicitly declared `id` prop. This allows the schema to respond conditionally to the state of your own inputs.
+The schema format has one built-in function specific to FormKit inputs: the `$get` function. This builtin allows the schema to access the context object of any other FormKit input (even outside the immediate form) — provided the input in question has an explicitly declared `id` prop. This allows the schema to respond conditionally to the state of your own inputs.
 
 <example
   name="Schema - formkit"

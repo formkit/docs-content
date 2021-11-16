@@ -11,7 +11,7 @@
     }"
     help="Configure your car’s trim options"
   />
-  <pre wrap>${{ sum }}</pre>
+  <pre wrap>Extra cost: ${{ sum }}</pre>
 </template>
 
 <script setup>

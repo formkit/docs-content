@@ -1,12 +1,12 @@
 <template>
-<FormKitSchema
-  :schema="schema"
-  :data="data"
->
-  <template #default="{ label }">
-    <span style="color: green">{{ label }}</span>
-  </template>
-</FormKitSchema>
+  <FormKitSchema
+    :schema="schema"
+    :data="data"
+  >
+    <template #default="{ label }">
+      <span style="color: green">{{ label }}</span>
+    </template>
+  </FormKitSchema>
 </template>
 
 <script setup>

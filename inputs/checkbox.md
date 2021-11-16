@@ -13,11 +13,11 @@ langs="vue"></example>
 
 ## Multiple checkboxes
 
-To output multiple checkboxes with single input use the `options` prop. Options can be specified 3 ways:
+To output multiple checkboxes with a single input use the `options` prop. Options can be specified 3 ways:
 
-- As an array of strings
+- An array of strings
 - An object of value/label pairs
-- An array of objects with `label` and `value` properties (the same as a [select input](/inputs/select)).
+- An array of objects with `label` and `value` properties (the same as the [select](/inputs/select) and [radio](/inputs/radio) inputs)
 
 The value of a checkbox input with multiple `options` is an array of the selected values.
 
@@ -41,7 +41,7 @@ langs="vue"></example>
 
 ### Array of objects
 
-Them most flexible way to define options is by providing an array of objects. The objects _must_ include `value` and `label` properties — but they may also include a `help` attribute as well as an `attrs` object of additional attributes to apply to each checkbox input tag.
+The most flexible way to define options is by providing an array of objects. The objects _must_ include `value` and `label` properties — but may also include a `help` property as well as an `attrs` object of additional attributes to apply to each checkbox input tag.
 
 <example
 name="Checkbox input"
@@ -50,12 +50,12 @@ langs="vue"></example>
 
 ## Props & Attributes
 
-<reference-table input="checkbox" :data="[{prop: 'options', type: 'Array/Object', default: '[]', description: 'An object of value/label pairs or an array of strings, or an array of objects that <em>must</em> contain a label and value property.'}, { prop: 'on-value', type: 'any', default: 'true', description: 'The value when the checkbox is checked (single checkboxes only)'}, { prop: 'off-value', type: 'any', default: 'false', description: 'The value when the checkbox is unchecked (single checkboxes only)'}]">
+<reference-table input="checkbox" :data="[{prop: 'options', type: 'Array/Object', default: '[]', description: 'An object of value/label pairs or an array of strings, or an array of objects that <em>must</em> contain a label and value property.'}, { prop: 'on-value', type: 'any', default: 'true', description: 'The value when the checkbox is checked (single checkboxes only).'}, { prop: 'off-value', type: 'any', default: 'false', description: 'The value when the checkbox is unchecked (single checkboxes only).'}]">
 </reference-table>
 
 ## Composition keys
 
-<reference-table type="compositionKeys" primary="composition-key" :data="[{'composition-key': 'decorator', description: 'Responsible for the element immediately following the input element — usually used for styling.'}, { 'composition-key': 'legend', description: 'Responsible for the fieldset’s legend element.'}, {'composition-key': 'options', description: 'Responsible for the wrapper element around all of the option items'},{'composition-key': 'option', description: 'Responsible for the wrapper around each item in the options.'}]">
+<reference-table type="compositionKeys" primary="composition-key" :data="[{'composition-key': 'decorator', description: 'Responsible for the element immediately following the input element — usually used for styling.'}, { 'composition-key': 'legend', description: 'Responsible for the fieldset’s legend element.'}, {'composition-key': 'options', description: 'Responsible for the wrapper element around all of the option items.'},{'composition-key': 'option', description: 'Responsible for the wrapper around each item in the options.'}]">
 </reference-table>
 
 ## Available utilities
