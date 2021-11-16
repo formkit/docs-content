@@ -4,7 +4,7 @@ The `checkbox` input uses HTML's [native checkbox input](https://developer.mozil
 
 ## Single checkbox
 
-By default the `checkbox` type will render a single checkbox and uses `boolean` values.
+By default the checkbox type will render a single checkbox and uses `boolean` values.
 
 <example
 name="Checkbox input"

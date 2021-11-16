@@ -1,11 +1,11 @@
 # FormKit Core
 
-At the heart of the FormKit framework is the `@formkit/core` package. This zero dependency package is responsible for nearly all of FormKit's low-level critical functions, a few of them are:
+At the heart of the FormKit framework is the `@formkit/core` package. This zero-dependency package is responsible for nearly all of FormKit's low-level critical functions, a few of them are:
 
 - Configuration
 - Value input/output
 - Event bubbling
-- Plugin managment
+- Plugin management
 - Tree state tracking
 - Message management
 - Lifecycle hooks

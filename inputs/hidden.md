@@ -1,6 +1,6 @@
 # Hidden input
 
-The `hidden` input uses HTML's [native hidden input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/hidden). It is not a visible element, and should only be used to provide data that is not enter by a user.
+The `hidden` input uses HTML's [native hidden input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/hidden). It is not a visible element, and should only be used to provide data that is not entered by a user.
 
 <example
 name="Hidden input"
@@ -22,7 +22,7 @@ FormKit props.
 
 ## Composition keys
 
-Hidden inputs do not render all of the surrounding markup typical of other inputs — as such most composition keys do not apply.
+Hidden inputs do not render all of the surrounding markup typical of other inputs. As such, most composition keys do not apply.
 
 <reference-table type="compositionKeys" primary="composition-key" :without="['outer', 'wrapper', 'label', 'inner', 'help', 'messages', 'message']"></reference-table>
 
