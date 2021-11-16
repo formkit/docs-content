@@ -1,10 +1,10 @@
 # Select input
 
-The select input uses html's [native select input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select). Select inputs can be single value selections, or multi-value sections by using the `multiple` attribute. There are 4 ways to provide options to a select input:
+The select input uses HTML's [native select input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select). Select inputs can be single value selections, or multi-value selections by using the `multiple` attribute. There are 4 ways to provide options to a select input:
 
-- As an array of strings
+- An array of strings
 - An object of value/label pairs
-- An array of objects with `label` and `value` properties (the same as a [checkbox input](/inputs/checkbox)).
+- An array of objects with `label` and `value` properties (the same as the [checkbox](/inputs/checkbox) and [radio](/inputs/radio) inputs)
 - Using `<option>` tags directly inside the `default` slot.
 
 ## Single selection
@@ -20,7 +20,7 @@ name="Select input - strings"
 file="/_content/examples/select-strings/select-strings"
 langs="vue"></example>
 
-### Value / Label Object
+### Value / Label object
 
 You may also provide the `options` prop where the keys are values and the values of each property are labels.
 
@@ -31,7 +31,7 @@ langs="vue"></example>
 
 ### Array of objects
 
-Them most flexible way to define options is by providing an array of objects. The objects _must_ include `value` and `label` properties — but they may also include a `help` attribute as well as an `attrs` object of additional attributes to apply to each checkbox input tag.
+The most flexible way to define options is by providing an array of objects. The objects _must_ include `value` and `label` properties — but may also include a `help` property as well as an `attrs` object of additional attributes to apply to each select input tag.
 
 <example
 name="Select input - objects"
@@ -39,7 +39,7 @@ file="/_content/examples/select-objects/select-objects"
 langs="vue"></example>
 
 <callout type="tip" label="Option attributes">
-To pass additional attributes to each <code>&lt;option&gt;</code> element your object can also contain an <code>attrs</code> property.<br><br>
+To pass additional attributes to each <code>&lt;option&gt;</code> element, your object can also contain an <code>attrs</code> property.<br><br>
 <code class="block">[
   {
     label: 'My Label',
@@ -53,7 +53,7 @@ To pass additional attributes to each <code>&lt;option&gt;</code> element your o
 
 ### Default slot
 
-Sometimes it maybe desirable to manually output the contents of a select list in order to create specialized structures. This can be done by using the `default` slot and explicitly outputting your options.
+Sometimes it may be desirable to manually output the contents of a select list in order to create specialized structures. This can be done by using the `default` slot to explicitly output your options.
 
 <example
 name="Select input - objects"
@@ -61,7 +61,7 @@ file="/_content/examples/select-slot/select-slot"
 langs="vue"></example>
 
 <callout type="warning">
-When using the default slot to output options you should not use the <code>placeholder</code> or <code>options</code> props.
+When using the default slot to output options, you should not use the <code>placeholder</code> or <code>options</code> props.
 </callout>
 
 ## Multiple
@@ -83,7 +83,7 @@ When using the default slot in conjunction with the <code>multiple</code> attrib
 
 ## Props & Attributes
 
-<reference-table input="select" :data="[{prop: 'options', type: 'Array/Object', default: '[]', description: 'An object of value/label pairs or an array of strings, or an array of objects that <em>must</em> contain a label and value property.'},{prop: 'placeholder', type: 'String', default: 'none', description: 'When defined FormKit injects a non-selectable hidden <code>option</code> tag as the first value of the list to serve as a placeholder.'}]">
+<reference-table input="select" :data="[{prop: 'options', type: 'Array/Object', default: '[]', description: 'An object of value/label pairs or an array of strings, or an array of objects that <em>must</em> contain a label and value property.'},{prop: 'placeholder', type: 'String', default: 'none', description: 'When defined, FormKit injects a non-selectable hidden <code>option</code> tag as the first value of the list to serve as a placeholder.'}]">
 </reference-table>
 
 ## Composition keys

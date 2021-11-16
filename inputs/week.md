@@ -4,7 +4,7 @@ The `week` input uses the HTML's [native week picker](https://developer.mozilla.
 select a week.
 
 <callout type="danger" label="Compatibility warning">
-Month inputs are not currently supported in FireFox or Safari.
+Week inputs are not currently supported in FireFox or Safari.
 </callout>
 
 <example
