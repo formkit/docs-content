@@ -6,6 +6,16 @@
     help="I only get the `text` styles because the config has conditional logic"
   />
   <FormKit
+    label="I override my label color"
+    placeholder="I don't like to conform"
+    :classes="{
+      label: {
+        'text-gray-600': false,
+        'text-red-600': true
+      }
+    }"
+  />
+  <FormKit
     label="How much do you like Tailwind?"
     type="radio"
     :options="{

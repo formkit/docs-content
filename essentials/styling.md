@@ -155,6 +155,11 @@ import it and provide it to the `defaultConfig`.
   langs="vue"></example>
 
 ### An example using Tailwind from the global config
+
+Because we have set our Tailwind classes in our global config our inputs now
+inherit the correct class lists automatically. You can override the classes further
+from here - such as in the case of the second text input here.
+
 <example
   name="Global config with Tailwind"
   file="/_content/examples/tailwind-classes/example"
