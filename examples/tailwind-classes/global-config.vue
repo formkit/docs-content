@@ -10,11 +10,15 @@
     .use(plugin, defaultConfig({
       config: {
         rootClasses (compositionKey, node) {
+          // this is an incomplete theme for demonstration purposes
           const type = node.props.type
+          // create a classConfig object that contains either strings or functions
+          // that return strings. We'll loop over the output later to create our
+          // class objects of keys with boolean values.
           const classConfig = {
-            outer: 'mb-5',
+            outer: 'mb-5', // string values apply to everything
             legend: 'block mb-1 font-bold',
-            label () {
+            label () { // functions that return strings allow you to diff on types
               if (type === 'text') { return 'block mb-1 font-bold' }
               if (type === 'radio') { return 'text-sm text-gray-600 mt-0.5' }
             },
@@ -28,22 +32,25 @@
             wrapper () {
               if (type === 'radio') { return 'flex flex-row flex-grow' }
             },
-            help: 'text-xs text-gray-500',
+            help: 'text-xs text-gray-500'
           }
 
-          function createClassObject (classesArray) {
+          // helper function to created class object from strings
+          function createClassObject (classString) {
             const classList = {}
-            return classesArray.split(' ').forEach(className => {
+            return classString.split(' ').forEach(className => {
               classList[className] = true
             })
             return classList
           }
 
           const target = classConfig[compositionKey]
+          // return a class objects from strings and return them for each
+          // composition key defined by inputs in FormKit
           if (typeof target === 'string') {
             return createClassObject(target)
           } else if (typeof target === 'function') {
-            return createClassObject(classConfig[compositionKey]())
+            return createClassObject(target())
           }
         }
       }
