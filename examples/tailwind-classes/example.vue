@@ -14,6 +14,7 @@
         'text-red-600': true
       }
     }"
+    help="Gray label text color removed, red added."
   />
   <FormKit
     label="How much do you like Tailwind?"
