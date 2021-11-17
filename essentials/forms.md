@@ -9,6 +9,7 @@ A `form` tracks the validation state of the form and prevents users from submitt
 <example
   name="Register example"
   file="/_content/examples/register/register"
+  layout="column"
   langs="vue">
 </example>
 
@@ -65,3 +66,14 @@ To submit a form via page request, simply leave off the `@submit` handler. Just 
 <callout type="danger" label="Under development">
 Handling backend errors is still under development and not yet available in FormKit Alpha. We'll send out a notification when it has been implemented. We expect the api to be very similar to <a href="https://vueformulate.com/guide/forms/error-handling/#form-errors">Vue Formulate</a>
 </callout>
+
+## Props
+
+Forms are technically considered `input` types — so they share many of the universal props that standard inputs use.
+
+<reference-table :without="['label', 'help']" :data="[{ prop: 'submit-label', type: 'String', default: 'Submit', description: 'The label to use on the submit button'}, { prop: 'actions', type: 'Boolean', default: 'true', description: 'Whether or not to include the actions bar at the bottom of the form.'}]"></reference-table>
+
+## Composition keys
+
+<reference-table type="compositionKeys" primary="composition-key" :data="[{ 'composition-key': 'form', description: 'Responsible for rendering the <code>form</code> tag and listening to submit events.'}, { 'composition-key': 'actions', description: 'Responsible for a container at the bottom of the form with form actions like the submit button.'}, { 'composition-key': 'submit', description: 'Responsible for a submit button — by default a FormKit input type <code>submit</code>.'}]" :without="['outer', 'wrapper','inner', 'label', 'input','help']">
+</reference-table>

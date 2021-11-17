@@ -72,6 +72,9 @@ p {
   color: #646464;
   line-height: 1.5;
 }
+h1 {
+  margin-top: 0;
+}
 h2 {
   color: green;
 }
@@ -87,7 +90,7 @@ hr {
   padding: 1.5em;
   border: 1px solid #e4e4e4;
   border-radius: 1em;
-  margin-bottom: 1em;
+  margin: 0 auto 1em auto;
 }
 .hide {
   display: none;
