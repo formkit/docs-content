@@ -1,4 +1,5 @@
 <template>
+  <!-- %partial%::html:: -->
   <FormKit
     type="group"
     v-model="address"
@@ -36,6 +37,7 @@
     </div>
   </FormKit>
   <pre wrap>{{ address }}</pre>
+  <!-- %partial% -->
 </template>
 
 <script setup>
