@@ -9,6 +9,8 @@ A `form` tracks the validation state of the form and prevents users from submitt
 <example
   name="Register example"
   file="/_content/examples/register/register"
+  layout="column"
+  data-sandbox-fullsize
   langs="vue">
 </example>
 

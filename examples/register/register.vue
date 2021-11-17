@@ -9,9 +9,8 @@
   >
     <h1>Register!</h1>
     <p>
-      You can put any type of element inside a form,
-      not just FormKit inputs (although only FormKit
-      inputs are included with the submission).
+      You can put any type of element inside a form, not just FormKit inputs (although
+      only FormKit inputs are included with the submission).
     </p>
     <hr>
     <FormKit
