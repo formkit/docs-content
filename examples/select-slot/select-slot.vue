@@ -4,7 +4,7 @@
     type="select"
     label="Where would you prefer to live?"
     name="planet"
-    value="earth"
+    v-model="value"
   >
     <optgroup label="Inner Planets">
       <option value="mercury">Mercury</option>
@@ -19,5 +19,12 @@
       <option value="neptune">Neptune</option>
     </optgroup>
   </FormKit>
+  <pre wrap>{{ value }}</pre>
   <!-- %partial%::html:: -->
 </template>
+
+<script setup>
+import {ref} from 'vue'
+
+const value = ref('earth')
+</script>

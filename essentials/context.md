@@ -101,8 +101,14 @@ Current state of the input:
 
 ```js
 {
+  // true after the input has had focus and lost it
   blurred: boolean,
+  // true after content has been entered by a user
   dirty: boolean,
+  // true after the form has attempted submission
+  submitted: boolean,
+  // true when this input is valid, for groups/lists/forms this is true
+  // when all children are valid
   valid: boolean,
 }
 ```
