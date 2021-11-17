@@ -1,6 +1,6 @@
 # Forms
 
-While you’re free to use `FormKit` inputs by themselves you’ll usually need them grouped into a form. To do this with FormKit you wrap your inputs in a `<FormKit type="form">`.
+While you’re free to use `FormKit` inputs by themselves, you’ll usually want to group them into a form. To do this, you simply wrap your inputs in a `<FormKit type="form">`.
 
 The `form` type will actively collect all the values from child inputs, using the name of each input as the property name in the resulting data object (just like [groups](/inputs/group)). You can also read and write to form values using v-model just as you would on any input.
 
@@ -9,7 +9,6 @@ A `form` tracks the validation state of the form and prevents users from submitt
 <example
   name="Register example"
   file="/_content/examples/register/register"
-  layout="column"
   langs="vue">
 </example>
 
