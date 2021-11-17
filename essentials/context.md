@@ -1,6 +1,6 @@
-# Context
+# Context object
 
-FormKit inputs use a reactive object to expose data to slots, rules, and the underlying [schema](/essentials/schema) that defines the input. This is called the `context` object is found in the each input's [core `node` object](/essentials/core-node) at `node.context`. The context object has the following properties:
+FormKit inputs use a reactive object to expose data to slots, rules, and the underlying [schema](/essentials/schema) that defines the input. This is called the `context` object and is found in the each input's [core `node` object](/essentials/core-node) at `node.context`. The context object has the following properties:
 
 <div data-tight>
 
@@ -45,11 +45,11 @@ A small object of common input handlers for use in the schema. Keep in mind that
 
 ## `help`
 
-The help text of an input provided by the `help` prop.
+The help text of the input provided by the `help` prop.
 
 ## `id`
 
-The unique identifier of an input. This value is auto-generated unless the `id` prop is set.
+The unique identifier of the input. This value is auto-generated unless the `id` prop is set.
 
 ## `label`
 
@@ -57,7 +57,7 @@ The label of the input provided by the `label` prop.
 
 ## `messages`
 
-An object of _visible_ messages. The key of this object is the message name, and the value is a core message object. For example for an input displaying a single failing validation message this object would look like:
+An object of _visible_ messages. The key of this object is the message name, and the value is a core message object. For example, for an input displaying a single failing validation message, this object would look like:
 
 ```js
 {
@@ -108,7 +108,7 @@ Current state of the input:
 ```
 ## `type`
 
-The type of the input provided by the `type` prop. This is the value that should be references when looking of definitions in a library of inputs. Examples of this value: `text`, `select`, or `autocomplete`.
+The type of the input provided by the `type` prop. This is the value that should be referenced when looking up definitions in a library of inputs. Examples of this value: `text`, `select`, or `autocomplete`.
 
 ## `classes`
 

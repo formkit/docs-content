@@ -130,7 +130,7 @@ Because <code>rootClasses</code> is a configuration option, you can apply it per
 ## Tailwind CSS Example
 
 Due to the `rootClasses` function's ability to modify every form within your project
-when used at the global config level it becomes easy to intelligently apply default
+when used at the global config level, it becomes easy to intelligently apply default
 class lists to your inputs.
 
 ### Configuring Tailwind with `rootClasses` in the global config
@@ -156,7 +156,7 @@ import it and provide it to the `defaultConfig`.
 
 ### An example using Tailwind from the global config
 
-Because we have set our Tailwind classes in our global config our inputs now
+Because we have set our Tailwind classes in our global config, our inputs now
 inherit the correct class lists automatically. You can override the classes further
 from here - such as in the case of the second text input here.
 
