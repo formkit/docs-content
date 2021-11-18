@@ -81,7 +81,7 @@ Schema references can have any structure or properties, but at the root of the d
 
 ## Expressions
 
-Schemas also support logic in the form of boolean, logical, comparison, and arithmetic expressions. These expressions can be used anywhere a data reference can be used (`attrs`, `props`, conditionals, and `children`).
+Schemas also support logic in the form of boolean logic, comparison, and arithmetic expressions. These expressions can be used anywhere a data reference can be used (`attrs`, `props`, conditionals, and `children`).
 
 <example
   name="Schema - expressions"
