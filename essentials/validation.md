@@ -219,3 +219,14 @@ Checks that the input’s value matches at least one of the provided arguments.
   langs="vue"
   layout="row">
 </example>
+
+### Length
+
+Checks that the input’s value is over a given length, or between two length values. It works to validate arrays (like [lists](/inputs/list)), objects (like [groups](/inputs/groups)), or string lengths.
+
+<example
+  name="Is"
+  file="/_content/examples/rule-length/rule-length"
+  langs="vue"
+  layout="row">
+</example>
