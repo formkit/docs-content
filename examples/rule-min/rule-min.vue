@@ -4,7 +4,7 @@
   type="text"
   label="Essay"
   validation="min:1000"
-  error-behavior="live"
+  validation-behavior="live"
   :validation-messages="{
     'min': 'Essay must be at least 1500 words 😱'
   }"
