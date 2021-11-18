@@ -97,6 +97,146 @@ To add a validation to a specific input use the `validation-rules` prop.
   layout="row">
 </example>
 
+
+### Customize validation messages
+
+There are several ways to customize your validation message. The most basic of which is to use the <code>validation-label</code> prop — allowing you to change the name of the field as used in the pre-defined validation messages.
+<example
+  name="Custom validation rules"
+  file="/_content/examples/validation-label/validation-label"
+  langs="vue"
+  layout="row">
+</example>
+
+If you need to be more specific you have three options:
+
+- Override a rule’s message function on an individual FormKit input.
+- Globally override a validation rule’s message function.
+#### Custom field-level messages
+##### Using strings
+
+To override a validation message on a single FormKit input, add the validation-messages prop with an object of rule names and a corresponding message.
+
+<example
+  name="Custom validation rules"
+  file="/_content/examples/validation-custom-messages/validation-custom-messages"
+  langs="vue"
+  layout="row">
+</example>
+
+##### Using functions
+
+If you need more power for your validation rules, you can use a function instead of a string. The function is passed a context object.
+
+##### Validation message context object:
+
+| Behavior | Description                                                                                                            |
+| -------- | --------------------
+| args     | An array of arguments from rule definition. For example <code>['Vue', 'React', 'Angular']</code> in the rule definition <code>in:Vue,React,Angular</code>|
+| name     | The name of the field (cascades to <code>validation-name</code> or <code>name</code> or <code>label</code>)                                              |
+| node    | The current value of the field lies in the node  |
+
+
+Let’s re-write the above example using a function instead of a string for even more control of the <code>validation-messages</code> prop.
+
+<example
+  name="Custom validation rules"
+  file="/_content/examples/validation-custom-messages/validation-custom-messages-function"
+  langs="vue"
+  layout="row">
+</example>
+
+#### Globally add/edit validation rule message
+
+If there are validation rule messages you'd like to override across your entire project, you can define those message rules when registering FormKit under the language key you'd like to override.
+
+```js
+import Vue from 'vue'
+import FormKit from '@formkit/vue'
+
+Vue.use(FormKit, {
+  locales: {
+    en: {
+      required ({ name }) {
+        return `Please fill out the ${name} field.`
+      }
+    }
+  }
+})
+```
+
+<callout type="note" label="About localization">
+  If an input is inside a <a href="/essentials/form">form</a>, then <em>all</em> remaining validation messages will be displayed to the end user when a user attempts to submit the form.
+</callout>
+
+#### Custom validation rules
+
+Like with validation messages, rules can be added globally or per-field. Rules are just simple functions that are passed a context object and rule arguments and expected to return or resolve a <code>boolean</code>.
+
+| Behavior | Description                                                           |
+| -------- | ----------------------------------------------------------------------|
+| node     | The value of the field                                                |
+| name     | The name of the field being evaluated.                                |
+
+In addition to the context object, any rule arguments are passed as additional arguments. For example:
+
+```js
+// Given this validation string
+<FormKit
+  validation="myRule:first,second,third"
+/>
+```
+
+```js
+// A rule named "myRule" will be called with the following:
+function myRule (context, ...args) {
+  // args now contains an array ['first', 'second', 'third']
+}
+```
+
+<callout type="note" label="Validation Rule Names">
+  When using custom rules in your <code>template</code> tags you can use <code>snake_case</code> or <code>camelCase</code> for your rule names. Internally, FormKit will coerce <code>snake_case</code> validation rule names into <code>camelCase</code> validation function names. Please ensure that your custom validation rule functions are written as <code>myCustomRule</code> not <code>my_custom_rule</code> in your .js files.
+</callout>
+
+##### Field-level custom validation rules
+
+<example
+  name="Field-level custom validation rules"
+  file="/_content/examples/validation-custom/validation-custom-rules"
+  langs="vue"
+  layout="row">
+</example>
+
+<callout type="note" label="Asynchronous validation">
+  Asynchronous validation rules are completely valid, but keep in mind that forms will wait to trigger their handler until all validation rules have resolved , so try to keep them as snappy as possible. Internally, FormKit does not debounce validation rules, so if you need to perform an expensive asynchronous validation (like an http request) it is recommended that you debounce your validation rule.
+</callout>
+
+##### Global custom validation rules
+
+Global validation rules can be added when FormKit is registered with Vue.
+
+
+```js
+import Vue from 'vue'
+import VueFormulate from '@braid/vue-formulate'
+
+Vue.use(VueFormulate, {
+  rules: {
+    foobar: ({ value }) => ['foo', 'bar'].includes(value)
+  }
+})
+```
+
+#### Validation event
+
+Occasionally it may be useful to know when the validation state of a field or form changes — for these instances, the @validation event can be used on both <code>`<FormKit />`</code> and <code>`<FormKit type="form />`</code>. The event will fire every time there is a change in the validation state of a field.
+
+The payload of the validation event is an object with three properties, the field name, an array of errors, and a boolean hasErrors.
+
+<callout type="warning" label="Important">
+  The validation event does not fire when the visibility of the validation errors change, instead <code>validation</code> events are fired even if the field errors are not currently visible due to the current <code>error-behavior</code>.
+</callout>
+
 ## Available rules
 
 FormKit ships with over 20 production-ready validation rules — covering the vast majority of validation needs. If you don’t find one that meets your exact requirement, you can add a [custom rule](#custom-rules) to suit your needs.
