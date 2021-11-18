@@ -218,9 +218,9 @@ Global validation rules can be added when FormKit is registered with Vue.
 
 ```js
 import Vue from 'vue'
-import VueFormulate from '@braid/vue-formulate'
+import FormKit from '@formkit/vue'
 
-Vue.use(VueFormulate, {
+Vue.use(FormKit, {
   rules: {
     foobar: ({ value }) => ['foo', 'bar'].includes(value)
   }
