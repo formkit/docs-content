@@ -25,9 +25,3 @@ FormKit props.
 Hidden inputs do not render all of the surrounding markup typical of other inputs. As such, most composition keys do not apply.
 
 <reference-table type="compositionKeys" primary="composition-key" :without="['outer', 'wrapper', 'label', 'inner', 'help', 'messages', 'message']"></reference-table>
-
-## Available utilities
-
-[TK] - Masks
-
-[TK] - Casts

@@ -34,9 +34,3 @@ FormKit props.
 
 <reference-table type="compositionKeys" primary="composition-key" :without="['outer','label','inner','input','help','messages','message']">
 </reference-table>
-
-## Available utilities
-
-[TK] - Masks
-
-[TK] - Casts

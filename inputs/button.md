@@ -18,9 +18,3 @@ The `button` input is unique in that it does not actively receive input other th
 
 <reference-table type="compositionKeys" primary="composition-key" :without="['inner']">
 </reference-table>
-
-## Available utilities
-
-[TK] - Masks
-
-[TK] - Casts

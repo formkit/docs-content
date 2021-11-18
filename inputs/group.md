@@ -29,9 +29,3 @@ The `group` input has no unique props but can make use of some of the following 
 
 <reference-table type="compositionKeys" primary="composition-key" :without="['outer','label','inner','input','help','messages','message']">
 </reference-table>
-
-## Available utilities
-
-[TK] - Masks
-
-[TK] - Casts
