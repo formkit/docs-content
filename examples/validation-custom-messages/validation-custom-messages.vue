@@ -1,21 +1,12 @@
 <template>
 <!-- %partial%::html:: -->
 <FormKit
-  type="select"
-  label="Which of these is your favorite modern JavaScript framework?"
-  :options="[
-  	  'Vue',
-	  'React',
-	  'Angular',
-	  'Laravel'
-  ]"
-  value="Vue"
-  placeholder="Select a food type"
-  validation="required|is:Vue,React,Angular"
+  label="NBA G.O.A.T?"
+  placeholder="Jordan, LeBron, Curry etc..."
+  validation="is:Jordan,jordan"
   validation-behavior="live"
   :validation-messages="{
-    required: 'Please pick your favorite framework',
-    is: 'Hey! That isn\'t a JS framework!'
+    is: 'The correct answer is: Jordan.'
   }"
 />
 <!-- %partial%::html:: -->
