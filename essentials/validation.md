@@ -1,10 +1,10 @@
 # Validation
 
-FormKit makes front end validation simple by letting you declare your validation rules directly on your inputs. It’s easy to write custom rules too, but with 20+ production-ready rules to choose from it's rare you'll need to.
+FormKit makes front end validation simple by letting you declare your validation rules directly on your inputs. It’s easy to write custom rules too, but with 20+ production-ready rules to choose from, it's rare you'll need to.
 
 ## Declaring rules
 
-Declaring what validation rules apply to a given input is as simple as providing a `validation` prop. Rules can be declared using one of three syntaxes:
+Declaring which validation rules apply to a given input is as simple as providing a `validation` prop. Rules can be declared using one of three syntaxes:
 
 - String syntax
 - Array syntax
@@ -35,7 +35,7 @@ This is especially helpful if the arguments being provided need to be actual Jav
 
 ## Showing errors
 
-Validation rules are always computed in realtime — meaning a given field is always be either valid or invalid (it is considered invalid while pending async validation rules run). However — the visibility of the validation errors is determined by the `validation-behavior` prop.
+Validation rules are always computed in realtime — meaning a given field will always be either valid or invalid (it is considered invalid while pending async validation rules run). However — the visibility of the validation errors is determined by the `validation-behavior` prop.
 
 | Behavior | Description                                                            |
 | -------- | ---------------------------------------------------------------------- |
@@ -44,12 +44,12 @@ Validation rules are always computed in realtime — meaning a given field is al
 | dirty    | Shown after a user modifies the value of an input.                     |
 
 <callout type="note" label="Form submission">
-If an input is inside a <a href="/essentials/form">form</a> then <em>all</em> remaining validation messages will be displayed to the end user when a user attempts to submit the form.
+If an input is inside a <a href="/essentials/form">form</a>, then <em>all</em> remaining validation messages will be displayed to the end user when a user attempts to submit the form.
 </callout>
 
 ## Available rules
 
-FormKit ships with over 20 production ready validation rules — covering the vast majority of validation needs. If you don’t find one that meets your exact requirement you can add a [custom rule](#custom-rules) to suit your needs.
+FormKit ships with over 20 production-ready validation rules — covering the vast majority of validation needs. If you don’t find one that meets your exact requirement, you can add a [custom rule](#custom-rules) to suit your needs.
 
 - [accepted](#accepted)
 - [alpha](#alpha)
@@ -61,7 +61,7 @@ FormKit ships with over 20 production ready validation rules — covering the v
 - [date_between](#date-between)
 - [date_format](#date-format)
 - [email](#email)
-- [ends_with](#ends_with)
+- [ends_with](#ends-with)
 - [is](#is)
 - [length](#length)
 - [matches](#matches)
@@ -70,12 +70,12 @@ FormKit ships with over 20 production ready validation rules — covering the v
 - [not](#not)
 - [number](#number)
 - [required](#required)
-- [starts_with](#starts_with)
+- [starts_with](#starts-with)
 - [url](#url)
 
 ### Accepted
 
-The value must be `yes`, `on`, `1` or `true`. Useful for checkbox inputs, often where you need to validate if someone has accepted terms.
+The value must be `yes`, `on`, `1` or `true`. Useful for checkbox inputs — often where you need to validate if someone has accepted terms.
 
 <example
   name="Accepted"
@@ -86,7 +86,7 @@ The value must be `yes`, `on`, `1` or `true`. Useful for checkbox inputs, often 
 
 ### Alpha
 
-Checks if a value is only alphabetical characters. There are two character sets latin and default. Latin characters are strictly `[a-zA-Z]` while the default set includes most accented characters as well like: `ä`, `ù`, or `ś`.
+Checks if a value is only alphabetical characters. There are two character sets: latin and default. Latin characters are strictly `[a-zA-Z]` while the default set includes most accented characters as well, such as `ä`, `ù`, or `ś`.
 
 <example
   name="Alpha"
@@ -119,9 +119,12 @@ Checks if a number is (inclusively) between two other numbers. The input value m
 
 ### Confirm
 
-Checks if the value of one input matches the value of another input — often used for password confirmations. The two inputs must be in the same `group` or `form`, and (by default) one of the two input’s names should end with `_confirm`.
+Checks if the value of one input matches the value of another input — often used for password confirmations. There are two ways to specify which input to match:
 
-Alternatively the rule accepts an argument of the `name` of the other input to compare against.
+- Append `_confirm` to the `name` attribute of the second input.
+- Pass the `name` of the first input as an argument to the confirm rule in the second input `confirm:name_of_input_1` (more specific).
+
+Note: the two inputs must be in the same `group` or `form`.
 
 <example
   name="Confirm"
@@ -132,7 +135,7 @@ Alternatively the rule accepts an argument of the `name` of the other input to c
 
 ### Date after
 
-Determines if a date is after the current date or a date supplied by the rule's argument. Dates used can either be JavaScript `Date` objects or strings that can be parsed by `Date.parse()`.
+Determines if a date is after the current date or a date supplied as the rule's argument. Dates used can either be JavaScript `Date` objects or strings that can be parsed by [`Date.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse).
 
 <example
   name="Date after"
@@ -143,7 +146,7 @@ Determines if a date is after the current date or a date supplied by the rule's 
 
 ### Date before
 
-Determines if a date is after the current date or a date supplied by the rule's argument. Dates used can either be JavaScript `Date` objects or strings that can be parsed by `Date.parse()`.
+Determines if a date is before the current date or a date supplied as the rule's argument. Dates used can either be JavaScript `Date` objects or strings that can be parsed by [`Date.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse).
 
 <example
   name="Date before"
@@ -154,7 +157,7 @@ Determines if a date is after the current date or a date supplied by the rule's 
 
 ### Date between
 
-Determines if a date is between the two dates supplied by the rule's arguments. Dates used can either be JavaScript `Date` objects or strings that can be parsed by `Date.parse()`.
+Determines if a date is between (and including) the two dates supplied as the rule's arguments. Dates used can either be JavaScript `Date` objects or strings that can be parsed by [`Date.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse).
 
 <example
   name="Date between"
