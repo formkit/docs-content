@@ -1,20 +1,20 @@
 # Styling
 
-FormKit ships robust and accessible markup - but with no assumptions about your
+FormKit ships robust and accessible markup — but with no assumptions about your
 desired styles. There is an _optional_ base theme (as seen in these docs)
 called `Genesis` that you can use in your projects.
 
-#### Optional Genesis Theme
+#### Optional Genesis theme
 ```js
 import { genesis } from `@formkit/themes`
 ```
 
-## Custom Classes
+## Custom classes
 
-Most users will want to apply their own styles / classes to FormKit's provided markup.
+Most users will want to apply their own styles and classes to FormKit's provided markup.
 FormKit provides numerous methods to apply classes for your project.
 
-Classes can be modified for all [composition-keys](#composition-keys) using any of the following methods (from highest to lowest specificity):
+Classes can be modified for all [composition-keys](/essentials/inputs#composition-keys) using any of the following methods (from highest to lowest specificity):
 
 - [The `{composition-key}-class` props](#composition-key-class-props). (most specific)
 - [The `classes` prop](#classes-prop).
@@ -106,7 +106,7 @@ for producing the default classes for each element. This function already has a 
 
 The `rootClasses` function is passed 2 arguments (respectively):
 
-- The [composition key](#composition-keys) (like `label` or `input`).
+- The [composition key](/essentials/inputs#composition-keys) (like `label` or `input`).
 - The [input’s node](/essentials/input-node).
 
 The function will be called once for each composition key and it _must_ return
@@ -124,7 +124,7 @@ tabs="html"
 langs="vue"></example>
 
 <callout type="tip">
-Because <code>rootClasses</code> is a configuration option, you can apply it per-input, per group, or globally.
+Because <code>rootClasses</code> is a configuration option, you can apply it per input, per group, or globally.
 </callout>
 
 ## Tailwind CSS Example
