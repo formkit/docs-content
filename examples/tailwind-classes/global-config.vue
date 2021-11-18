@@ -3,7 +3,7 @@
   // main.js (your main Vue file)
   import { createApp } from 'vue'
   import App from './App.vue'
-  import { plugin } from '@formkit/vue'
+  import { plugin, defaultConfig } from '@formkit/vue'
   import './index.css' // Styles that include Tailwind from your build process
 
   createApp(App)
