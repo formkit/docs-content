@@ -57,9 +57,3 @@ langs="vue"></example>
 
 <reference-table type="compositionKeys" primary="composition-key" :data="[{'composition-key': 'decorator', description: 'Responsible for the element immediately following the input element — usually used for styling.'}, { 'composition-key': 'legend', description: 'Responsible for the fieldset’s legend element.'}, {'composition-key': 'fieldset', description: 'Responsible for the fieldset when multiple options are available.'}, {'composition-key': 'option', description: 'Responsible for the wrapper around each item in the options.'}, {'composition-key': 'options', description: 'Responsible for the wrapper element around all of the option items.'},{'composition-key': 'option', description: 'Responsible for the wrapper around each item in the options.'}]">
 </reference-table>
-
-## Available utilities
-
-[TK] - Masks
-
-[TK] - Casts

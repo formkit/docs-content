@@ -90,9 +90,3 @@ When using the default slot in conjunction with the <code>multiple</code> attrib
 
 <reference-table type="compositionKeys" primary="composition-key" :data="[{'composition-key': 'option', description: 'Responsible for rendering each option. Context includes an <code>option</code> property with the option being rendered. This object includes <code>label</code> and <code>value</code> properties.'}]">
 </reference-table>
-
-## Available utilities
-
-[TK] - Masks
-
-[TK] - Casts

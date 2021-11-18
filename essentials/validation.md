@@ -283,3 +283,134 @@ Checks that the input’s value is over a given length, or between two length va
   langs="vue"
   layout="row">
 </example>
+
+### Matches
+
+Checks if the input matches a particular value or pattern. If you pass multiple arguments, it checks each until a match is found.
+
+<example
+  name="Is"
+  file="/_content/examples/rule-matches/rule-matches"
+  langs="vue"
+  layout="row">
+</example>
+
+Instead of passing in strings within the validation prop for simple matching, you can template your argument with slashes <code>/</code> to pass in your own regular expression.
+
+<example
+  name="Matches"
+  file="/_content/examples/rule-matches/rule-matches-inline-regex"
+  langs="vue"
+  layout="row">
+</example>
+
+When using the string [String Syntax](#string-syntax) you cannot escape characters used to define the validation rules themselves <code>(|,:)</code>. To use these characters in your regular expressions you must use the alternative [Array Syntax](#array-syntax).
+
+<example
+  name="Matches"
+  file="/_content/examples/rule-matches/rule-matches-array-syntax"
+  langs="vue"
+  layout="row">
+</example>
+
+### Max
+
+Checks that a <code>Number</code> is less than a maximum value. The maximum value defaults to <code>10</code>.
+
+<example
+  name="Max"
+  file="/_content/examples/rule-max/rule-max"
+  langs="vue"
+  layout="row">
+</example>
+
+You can also use this rule to validate that the length of an <code>Array</code> is less than a maximum value.
+
+<example
+  name="Max"
+  file="/_content/examples/rule-max/rule-max-array"
+  langs="vue"
+  layout="row">
+</example>
+
+### Min
+
+Checks that a <code>Number</code> is more than a minimum value. The minimum value defaults to <code>1</code>.
+
+<example
+  name="Max"
+  file="/_content/examples/rule-min/rule-min"
+  langs="vue"
+  layout="row">
+</example>
+
+You can also use this rule to validate that the length of an <code>Array</code> is more than a minimum value.
+
+<example
+  name="Max"
+  file="/_content/examples/rule-min/rule-min-array"
+  langs="vue"
+  layout="row">
+</example>
+
+### Not
+
+Checks to ensure the input data does not match a set of predefined values.
+
+<example
+  name="Not"
+  file="/_content/examples/rule-not/rule-not"
+  langs="vue"
+  layout="row">
+</example>
+
+### Number
+
+Checks if the input is a valid number as evaluated by <code>isNaN()</code>.
+
+<example
+  name="Number"
+  file="/_content/examples/rule-number/rule-number"
+  langs="vue"
+  layout="row">
+</example>
+
+
+### Required
+
+Checks if the input is empty.
+
+<example
+  name="Required"
+  file="/_content/examples/rule-required/rule-required"
+  langs="vue"
+  layout="row">
+</example>
+
+
+### Starts With
+
+Checks if the input starts with one of the provided options.
+
+<example
+  name="starts_with"
+  file="/_content/examples/rule-starts-with/rule-starts-with"
+  langs="vue"
+  layout="row">
+</example>
+
+
+### URL
+
+Checks if the input value appears to be a properly formatted URL including the protocol. This does not check if the URL actually resolves.
+
+<example
+  name="url"
+  file="/_content/examples/rule-url/rule-url"
+  langs="vue"
+  layout="row">
+</example>
+
+
+
+

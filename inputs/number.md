@@ -19,9 +19,3 @@ FormKit props and native attributes.
 
 <reference-table type="compositionKeys" primary="composition-key">
 </reference-table>
-
-## Available utilities
-
-[TK] - Masks
-
-[TK] - Casts
