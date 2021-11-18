@@ -9,6 +9,7 @@
 	  'Angular',
 	  'Laravel'
   ]"
+  value="Vue"
   placeholder="Select a food type"
   validation="required|is:Vue,React,Angular"
   validation-behavior="live"
