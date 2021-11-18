@@ -17,8 +17,6 @@ This leads a mess of copy/paste HTML and home-rolled form components to accompli
 
 ## FormKit’s solutions
 
-FormKit improves form building by providing solutions to **X** challenges:
-
 ### Easy to learn 📚
 
 Developers love to learn — but no one enjoys pouring over third-party APIs and configuration options. That's why FormKit uses a single component for all of its inputs. `<FormKit>` is the only component you need to know to get started — and it works just like you would expect an `<input>` tag to work:
@@ -39,7 +37,7 @@ Front end validation that gives instant feedback is an important part of providi
   langs="vue">
 </example>
 
-### Easy to access ♿️
+### Easy to use ♿️
 
 Creating accessible forms is a serious challenge. Especially when accessibility standards are not always clear and most developers are under time pressure. Ideally, all developers would be well versed in accessibility best practices, but unfortunately that is not the case. To address this, FormKit outputs an opinionated accessible DOM structure. This is different than many popular “renderless” form libraries that provide no markup at all, and rely on developers to supply the inputs themselves.
 
