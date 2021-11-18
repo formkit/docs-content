@@ -50,7 +50,7 @@ $ npm login --scope=@formkit --registry=https://npm.pkg.github.com
 
 ### 2) Adding a `.npmrc` file to your project.
 
-Lastly, you will need to create an `.npmrc` file in your project adjacent to your
+Next, you will need to create an `.npmrc` file in your project adjacent to your
 `package.json` file that sets the `@formkit` scope to Github Packages.
 For this starter project, the `.npmrc` file already exists.
 
