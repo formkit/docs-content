@@ -47,56 +47,6 @@ Validation rules are always computed in realtime — meaning a given field will 
 If an input is inside a <a href="/essentials/form">form</a>, then <em>all</em> remaining validation messages will be displayed to the end user when a user attempts to submit the form.
 </callout>
 
-## Custom rules
-
-Validation rules are functions that accept a [core node](/essentials/core#node) and return a boolean value — `true` for passing and `false` for failing. Additionally, any arguments passed to the validation rule are available as arguments `1-n`. Writing your own is straight forward — for example:
-
-```js
-/**
- * File: my-custom-rules/monday.js
- *
- * A contrived validation rule that ensures the input’s value is monday or mon.
- */
-export default function monday(node) {
-  return node.value === 'monday' || node.value === 'mon'
-}
-```
-
-Once you have a validation function written — you need to register the validation rule with FormKit — either globally or specifically on an input.
-
-### Adding a rule globally
-
-To use a validation rule anywhere in your project, you can specify it wherever your FormKit plugin is registered with Vue.
-
-```js
-import { createApp } from 'vue'
-import App from './App.vue'
-import { plugin, defaultConfig } from '@formkit/vue'
-import monday from './my-custom-rules/monday'
-
-// prettier-ignore
-createApp(App).use(plugin, defaultConfig({
-  rules: { monday },
-})).mount('#app')
-```
-
-Once installed you can use your validation rule in anywhere in your project.
-
-```html
-<FormKit validation="required|monday" />
-```
-
-### Adding a rule via prop
-
-To add a validation to a specific input use the `validation-rules` prop.
-
-<example
-  name="Custom validation rules"
-  file="/_content/examples/validation-custom/validation-custom"
-  langs="vue"
-  layout="row">
-</example>
-
 ## Available rules
 
 FormKit ships with over 20 production-ready validation rules — covering the vast majority of validation needs. If you don’t find one that meets your exact requirement, you can add a [custom rule](#custom-rules) to suit your needs.
@@ -375,7 +325,6 @@ Checks if the input is a valid number as evaluated by <code>isNaN()</code>.
   layout="row">
 </example>
 
-
 ### Required
 
 Checks if the input is empty.
@@ -386,7 +335,6 @@ Checks if the input is empty.
   langs="vue"
   layout="row">
 </example>
-
 
 ### Starts With
 
@@ -399,7 +347,6 @@ Checks if the input starts with one of the provided options.
   layout="row">
 </example>
 
-
 ### URL
 
 Checks if the input value appears to be a properly formatted URL including the protocol. This does not check if the URL actually resolves.
@@ -411,6 +358,52 @@ Checks if the input value appears to be a properly formatted URL including the p
   layout="row">
 </example>
 
+## Custom rules
 
+Validation rules are functions that accept a [core node](/essentials/core#node) and return a boolean value — `true` for passing and `false` for failing. Additionally, any arguments passed to the validation rule are available as arguments `1-n`. Writing your own is straight forward — for example:
 
+```js
+/**
+ * File: my-custom-rules/monday.js
+ *
+ * A contrived validation rule that ensures the input’s value is monday or mon.
+ */
+export default function monday(node) {
+  return node.value === 'monday' || node.value === 'mon'
+}
+```
 
+Once you have a validation function written — you need to register the validation rule with FormKit — either globally or specifically on an input.
+
+### Adding a rule globally
+
+To use a validation rule anywhere in your project, you can specify it wherever your FormKit plugin is registered with Vue.
+
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+import { plugin, defaultConfig } from '@formkit/vue'
+import monday from './my-custom-rules/monday'
+
+// prettier-ignore
+createApp(App).use(plugin, defaultConfig({
+  rules: { monday },
+})).mount('#app')
+```
+
+Once installed you can use your validation rule in anywhere in your project.
+
+```html
+<FormKit validation="required|monday" />
+```
+
+### Adding a rule via prop
+
+To add a validation to a specific input use the `validation-rules` prop.
+
+<example
+  name="Custom validation rules"
+  file="/_content/examples/validation-custom/validation-custom"
+  langs="vue"
+  layout="row">
+</example>
