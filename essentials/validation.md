@@ -4,10 +4,10 @@ FormKit makes front end validation simple by letting you declare your validation
 
 ## Declaring rules
 
-Declaring which validation rules apply to a given input is as simple as providing a `validation` prop. Rules can be declared using one of three syntaxes:
+Declaring which validation rules apply to a given input is as simple as providing a `validation` prop. Rules can be declared using two syntaxes:
 
-- String syntax
-- Array syntax
+- [String syntax](#string-syntax)
+- [Array syntax](#array-syntax)
 
 ### String syntax
 
