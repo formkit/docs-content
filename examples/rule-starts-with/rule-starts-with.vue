@@ -2,7 +2,7 @@
 <!-- %partial%::html:: -->
 <FormKit
   type="text"
-  label="Discord Handle"
+  label="Twitter Handle"
   validation="starts_with:#"
 />
 <!-- %partial%::html:: -->
