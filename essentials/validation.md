@@ -265,7 +265,7 @@ When using the string [String Syntax](#string-syntax) you cannot escape characte
 
 ### Max
 
-Checks that a <code>Number</code> is less than a maximum value. The maximum value defaults to 10.
+Checks that a <code>Number</code> is less than a maximum value. The maximum value defaults to <code>10</code>.
 
 <example
   name="Max"
@@ -274,7 +274,7 @@ Checks that a <code>Number</code> is less than a maximum value. The maximum valu
   layout="row">
 </example>
 
-You can also use this rule to validate the length of an <code>Array</code> is less than a maximum value.
+You can also use this rule to validate that the length of an <code>Array</code> is less than a maximum value.
 
 <example
   name="Max"
@@ -285,7 +285,7 @@ You can also use this rule to validate the length of an <code>Array</code> is le
 
 ### Min
 
-Checks that a <code>Number</code> is more than a minimum value. The minimum value defaults to 1.
+Checks that a <code>Number</code> is more than a minimum value. The minimum value defaults to <code>1</code>.
 
 <example
   name="Max"
@@ -294,7 +294,7 @@ Checks that a <code>Number</code> is more than a minimum value. The minimum valu
   layout="row">
 </example>
 
-You can also use this rule to validate the length of an <code>Array</code> is more than a minimum value.
+You can also use this rule to validate that the length of an <code>Array</code> is more than a minimum value.
 
 <example
   name="Max"
