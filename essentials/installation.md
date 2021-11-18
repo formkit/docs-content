@@ -2,6 +2,10 @@
 
 FormKit can be downloaded using a package manager like `npm` or `yarn` or it can be used directly via CDN.
 
+
+## Alpha group
+
+Thanks for joining the FormKit Alpha Program 🎉 ! Here are special instructions for installing FormKit during the private Alpha.
 ## From npm
 
 Most new projects use a build tool like Vite, Snowpack, or webpack. This makes installing npm dependencies a piece of cake 🍰.
