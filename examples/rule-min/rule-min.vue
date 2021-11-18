@@ -2,9 +2,12 @@
 <!-- %partial%::html:: -->
 <FormKit
   type="text"
-  label="Really good password"
-  validation="min:16,length"
+  label="Essay"
+  validation="min:1000"
   error-behavior="live"
+  :validation-messages="{
+    'min': 'Essay must be at least 1500 words 😱'
+  }"
 />
 <!-- %partial%::html:: -->
 </template>
