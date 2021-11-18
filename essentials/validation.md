@@ -46,10 +46,7 @@ Validation rules are always computed in realtime — meaning a given field will 
 <callout type="note" label="Form submission">
 If an input is inside a <a href="/essentials/form">form</a>, then <em>all</em> remaining validation messages will be displayed to the end user when a user attempts to submit the form.
 </callout>
-<<<<<<< HEAD
-=======
 
->>>>>>> master
 ## Available rules
 
 FormKit ships with over 20 production-ready validation rules — covering the vast majority of validation needs. If you don’t find one that meets your exact requirement, you can add a [custom rule](#custom-rules) to suit your needs.
