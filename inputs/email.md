@@ -19,9 +19,3 @@ The `email` input has no unique props but can make use of the following universa
 
 <reference-table type="compositionKeys" primary="composition-key">
 </reference-table>
-
-## Available utilities
-
-[TK] - Masks
-
-[TK] - Casts

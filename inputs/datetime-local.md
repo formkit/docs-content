@@ -23,9 +23,3 @@ The `datetime-local` input has no unique props but can make use of the following
 
 <reference-table type="compositionKeys" primary="composition-key">
 </reference-table>
-
-## Available utilities
-
-[TK] - Masks
-
-[TK] - Casts
