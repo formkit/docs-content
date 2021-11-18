@@ -11,7 +11,6 @@
   label="Select at least 2 of your interests."
   validation="min:2"
   validation-label="Interests"
-  validation-behavior="live"
 />
 <!-- %partial%::html:: -->
 </template>

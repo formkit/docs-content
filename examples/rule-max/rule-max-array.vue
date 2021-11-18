@@ -11,7 +11,6 @@
   ]"
   label="Select up to 3 pizza toppings"
   validation="max:3"
-  validation-behavior="live"
 />
 <!-- %partial%::html:: -->
 </template>
