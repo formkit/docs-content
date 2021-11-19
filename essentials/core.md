@@ -1,6 +1,8 @@
 # Core
 
-At the heart of the FormKit framework is the `@formkit/core`. This zero-dependency package is responsible for nearly all of FormKit's low-level critical functions, a few of them are:
+<simple-tree></simple-tree>
+
+At the heart of the FormKit framework is `@formkit/core`. This zero-dependency package is responsible for nearly all of FormKit's low-level critical functions, a few of them are:
 
 - Configuration
 - Value input/output
