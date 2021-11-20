@@ -38,9 +38,21 @@ Core nodes are always one of three types (input, list group). These are not the
 
 Most of FormKit’s native inputs have a node type of `input` — they operate on a single value. The value itself can be of any type, objects, arrays, strings, numbers — anything is acceptable — but nodes of type `input` are always leafs. They cannot have children.
 
+```js
+import { createNode } from '@formkit/core'
+
+const input = createNode({
+  type: 'input', // defaults to 'input' if not specified
+  value: 'hello node world',
+})
+
+console.log(input.value)
+// 'hello node world'
+```
+
 ### List
 
-A list is a node that stores an array value. Children of a list node produce a value in the list’s array value. The names of immediate children are ignored — instead each is assigned an index in the list’s array.
+A list is a node that produces an array value. Children of a list node produce a value in the list’s array value. The names of immediate children are ignored — instead each is assigned an index in the list’s array.
 
 ```js
 import { createNode } from '@formkit/core'
@@ -60,4 +72,49 @@ console.log(list.value)
 
 ### Group
 
-A group is a node that stores an object value.
+A group is a node that produces an object value. Children of a group node use their `name` to produce a property of the same name in the groups’s value object.
+
+```js
+import { createNode } from '@formkit/core'
+
+const group = createNode({
+  type: 'group',
+  children: [
+    createNode({ name: 'meat', value: 'turkey' }),
+    createNode({ name: 'greens', value: 'salad' }),
+    createNode({ name: 'sweets', value: 'pie' }),
+  ],
+})
+
+console.log(group.value)
+// { meat: 'turkey', greens: 'salad', sweets: 'pie' }
+```
+
+### Input a value
+
+You can set the initial value of a node by providing the `value` option — but FormKit is all about interactivity — how do we update the value of an already defined node? By using `node.input(value)`.
+
+```js
+import { createNode } from '@formkit/core'
+
+const username = createNode()
+username.input('jordan-goat98')
+console.log(username.value)
+// undefined  👀 wait — what!?
+```
+
+In the above example `username.value` is undefined immediately after it’s set because the input function is asynchronous. However the `node.input()` method returns a promise that resolves when the input is "settled".
+
+```js
+import { createNode } from '@formkit/core'
+
+const username = createNode()
+username.input('jordan-goat98').then(() => {
+  console.log(username.value)
+  // 'jordan-goat98'
+})
+```
+
+<callout type="danger" label="Don’t assign values">
+You cannot <em>directly</em> assign the value of an input <code>node.value = 'foo'</code> — instead you should always use <code>node.input(value)</code>
+</callout>
