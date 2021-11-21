@@ -72,7 +72,7 @@ console.log(list.value)
 
 ### Group
 
-A group is a node that produces an object value. Children of a group node use their `name` to produce a property of the same name in the groups’s value object.
+A group is a node that produces an object value. Children of a group node use their `name` to produce a property of the same name in the groups’s value object — `<FormKit type="form">` is an instance of a group.
 
 ```js
 import { createNode } from '@formkit/core'
@@ -90,9 +90,9 @@ console.log(group.value)
 // { meat: 'turkey', greens: 'salad', sweets: 'pie' }
 ```
 
-### Input a value
+### Setting values
 
-You can set the initial value of a node by providing the `value` option — but FormKit is all about interactivity — how do we update the value of an already defined node? By using `node.input(value)`.
+You can set the initial value of a node by providing the `value` option on `createNode()` — but FormKit is all about interactivity, so how do we update the value of an already defined node? By using `node.input(value)`.
 
 ```js
 import { createNode } from '@formkit/core'
@@ -103,7 +103,7 @@ console.log(username.value)
 // undefined  👀 wait — what!?
 ```
 
-In the above example `username.value` is undefined immediately after it’s set because the input function is asynchronous. However the `node.input()` method returns a promise that resolves when the input is "settled".
+In the above example `username.value` is still undefined immediately after it’s set because `node.input()` is asynchronous. If you need to read the resulting value after calling `node.input()` you can await the returned promise.
 
 ```js
 import { createNode } from '@formkit/core'
@@ -115,6 +115,40 @@ username.input('jordan-goat98').then(() => {
 })
 ```
 
+Because `node.input()` is asynchronous the rest of our form does not need to recompute it’s dependencies on every keystroke. It also allows an opportunity to perform modifications to the unsettled value before it is "committed" to the rest of the form. However — for internal node use only — a `_value` property containing the unsettled value of the input is also available.
+
 <callout type="danger" label="Don’t assign values">
 You cannot <em>directly</em> assign the value of an input <code>node.value = 'foo'</code> — instead you should always use <code>node.input(value)</code>
 </callout>
+
+### Value settlement
+
+Now that we understand `node.input()` is asynchronous lets explore how FormKit solves the "settled tree" problem. Imagine a user quickly types in their email address and hits "enter" very quickly — thus submitting the form. Since `node.input()` is asynchronous incomplete data would likely be submitted. We need a mechanism to know when the whole form has "settled".
+
+To solve this FormKit’s nodes automatically track tree, subtree, and node "disturbance". This means the form (usually the root node) always knows the settlement state of all the inputs it contains.
+
+The following graph illustrates this "disturbance counting". Click on any input node (blue) to simulate calling `node.input()` and notice how the whole form is always aware of how many nodes are "disturbed" at any given time. When the root node has a disturbed count of `0` the form is settled and safe to submit.
+
+<disturbance-tree></disturbance-tree>
+
+To ensure a given tree (form), subtree (group), or node (input) is "settled" you can await the `node.settled` property:
+
+```js
+import { createNode } from '@formkit/node'
+
+const form = createNode({
+  type: 'group',
+  children: [
+    createNode()
+    createNode()
+    createNode()
+  ],
+})
+// ...
+// user interaction:
+async function someEvent () {
+  await form.settled
+  // we now know the form is fully "settled"
+  // and that form.value is accurate.
+}
+```
