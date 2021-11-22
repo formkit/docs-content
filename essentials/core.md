@@ -12,15 +12,15 @@ At the heart of the FormKit framework is `@formkit/core`. This zero-dependency p
 
 ## Architecture
 
-The functionality of FormKit core is not exposed to your application via a centralized instance but rather a distributed set of "nodes" with each input owning its own instance.
+The functionality of FormKit core is not exposed to your application via a centralized instance but rather a distributed set of "nodes" where each node represents a single input.
 
-HTML DOM structure is simply a [general tree](https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/GenTreeIntro.html) and FormKit core nodes mirror this structure. For example, a simple login form could be drawn as the following graph:
+This mirrors HTML — in fact DOM structure is actually a [general tree](https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/GenTreeIntro.html) and FormKit core nodes reflect this structure. For example, a simple login form could be drawn as the following tree graph:
 
 <simple-tree></simple-tree>
 
-In this diagram, a `form` node is a parent to three child nodes — `email`, `password` and `submit`. Each input in the graph "owns" a FormKit core node complete with it's own options, configuration, props, events, plugins, lifecycle hooks etc. This architecture ensures that FormKit’s primary features are decoupled from the rendering framework (Vue) — a key to it’s blazing fast performance.
+In this diagram, a `form` node is a parent to three child nodes — `email`, `password` and `submit`. Each input component in the graph "owns" a FormKit core node, and each node contains it's own options, configuration, props, events, plugins, lifecycle hooks etc. This architecture ensures that FormKit’s primary features are decoupled from the rendering framework (Vue) — a key to reducing side effects and maintaining blazing fast performance.
 
-Additionally, these decentralized nodes allow for tremendous flexibility. For example — one form could use different plugins than the rest of your application, a group input could modify the configuration it’s sub-inputs, and validation rules can be written to use props from another input.
+Additionally, this decentralized architecture allows for tremendous flexibility. For example — one form could use different plugins than the rest of your application, a group input could modify the configuration it’s sub-inputs, and validation rules can even be written to use props from another input.
 
 ## Node
 
@@ -90,6 +90,80 @@ console.log(group.value)
 // { meat: 'turkey', greens: 'salad', sweets: 'pie' }
 ```
 
+### Options
+
+In addition to specifying the `type` of node when calling `createNode()` you can pass pass any of the following options:
+
+| Options  | Default      | Description                                                                    |
+| -------- | ------------ | ------------------------------------------------------------------------------ |
+| children | `[]`         | Child `FormKitNode` instances                                                  |
+| config   | `{}`         | Configuration options, these become the defaults of the `props` object.        |
+| name     | `{type}_{n}` | The name of the node/input                                                     |
+| parent   | null         | The parent `FormKitNode` instance                                              |
+| plugins  | `[]`         | An array of plugin functions                                                   |
+| props    | `{}`         | An object of key/value pairs that represent the current node instance details. |
+| type     | `input`      | The type of `FormKitNode` to create (`list`, `group`, `input`).                |
+| value    | `undefined`  | The initial value of the input                                                 |
+
+### Config & Props
+
+FormKit uses an inheritance based configuration system — any values declared in the `config` option are automatically passed to children of that node, but not passed to siblings or parents. Each node can override it’s inherited values by providing it’s own config — these values will also be inherited by any deeper children. For example:
+
+```js
+const parent = createNode({
+  type: 'group',
+  config: {
+    color: 'yellow',
+  },
+  children: [
+    createNode({
+      type: 'list',
+      config: { color: 'pink' },
+      children: [createNode(), createNode()],
+    }),
+    createNode(),
+  ],
+})
+```
+
+The above code will result in each node having the following configuration:
+
+<config-tree></config-tree>
+
+<callout type="tip" label="Use props to read config">
+It is best practice to read configuration values from <code>node.props</code> rather than <code>node.config</code>. The next section details this feature.
+</callout>
+
+### Props
+
+The `node.props` and `node.config` objects are closely related. `node.config` is best thought of as the initial values for `node.props` — `props` is an arbitrarily shaped object that contains details about the current _instance_ of the node.
+
+The best practice is to always read configuration and prop data from `node.props` even if the original value is defined using `node.config`. Explicitly defined props take precedence over configuration options.
+
+```js
+const child = createNode({
+  props: {
+    flavor: 'cherry',
+  },
+})
+const parent = createNode({
+  type: 'group',
+  config: {
+    size: 'large',
+    flavor: 'grape',
+  },
+  children: [child],
+})
+console.log(child.props.size)
+// outputs: 'large'
+console.log(child.props.flavor)
+// outputs: 'cherry'
+```
+
+<callout type="tip" label="FormKit component props">
+When using the <code>&lt;FormKit&gt;</code> component any props defined for the input <code>type</code> are automatically set as <code>node.props</code> properties. For example: <code>&lt;FormKit label="Email" /&gt;</code> would result in <code>node.props.label</code> being <code>Email</code>.
+</callout>
+
 ### Setting values
 
 You can set the initial value of a node by providing the `value` option on `createNode()` — but FormKit is all about interactivity, so how do we update the value of an already defined node? By using `node.input(value)`.
@@ -151,4 +225,42 @@ async function someEvent () {
   // we now know the form is fully "settled"
   // and that form.value is accurate.
 }
+```
+
+<callout type="tip" label="The form type">
+The <code>&lt;FormKit type="form"&gt;</code> input already incorporates this await behavior. It will not call your <code>@submit</code> handler until your form is completely settled. However when building advanced inputs it can be useful to understand these underlying principles.
+</callout>
+
+## Hooks
+
+Hooks are middleware dispatchers that are triggered during pre-defined lifecycle operations. These hooks allow external code to extend the internal functionality of `@formkit/core`. The following table details all available hooks:
+
+| Hook    | Value                                                                                                   | Description                                                                                                      |
+| ------- | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| classes | <pre><code class="block">{<br> property: string,<br> classes: Record<string, boolean><br>}</code></pre> | Dispatched after all class operations have been run, before final conversion to a string.                        |
+| commit  | `any`                                                                                                   | Dispatched when setting the value of a node _after_ the `input` and debounce of `node.input()` is called.        |
+| error   | `string`                                                                                                | Dispatched when processing a thrown error — errors are generally inputs, and the final output should be a string |
+| init    | `FormKitNode`                                                                                           | Dispatched after the node is initially created but before it is returned in `createNode()`                       |
+| input   | `any`                                                                                                   | Dispatched synchronously on every input event (every keystroke) before `commit`.                                 |
+| prop    | <pre><code class="block">{<br> prop: string,<br> value: any<br>}</code></pre>                           | Dispatched when any prop is being assigned.                                                                      |
+| text    | [`FormKitTextFragment`](https://github.com/formkit/formkit/search?q=FormKitTextFragment)                | Dispatched when a FormKit generated string needs to be displayed — allowing i18n or other plugins to intercept   |
+
+### Hook Middleware
+
+To make use of these hooks, you must register hook middleware. Middleware is simply a function, that accepts 2 arguments — the value of the hook and `next` — a function that calls the next the middleware stack and returns the value.
+
+To register a middleware pass it to the `node.hook` you want to use:
+
+```js
+import { createNode } from '@formkit/core'
+
+const node = createNode()
+
+// This would transform all labels to "Different label!"
+node.hook.prop((payload, next) => {
+  if ((payload.prop = 'label')) {
+    payload.value = 'Different label!'
+  }
+  return next(payload)
+})
 ```
