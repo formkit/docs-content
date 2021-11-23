@@ -264,3 +264,33 @@ node.hook.prop((payload, next) => {
   return next(payload)
 })
 ```
+
+<callout type="tip" label="Use with plugins">
+Hooks can registered anywhere in your application, but the most common place hook are used is in a plugin.
+</callout>
+
+## Plugins
+
+Plugins are the primary mechanism for extending the functionality of FormKit. The concept is simple — a plugin is just a function that accepts a node. These functions are then automatically called when a node is created, or when the plugin is added to the node. Plugins work similar configuration options — they are automatically inherited by children.
+
+```js
+import { createNode } from '@formkit/core'
+
+// A plugin to change a prop value.
+const myPlugin = (node) => {
+  if (node.type === 'group') {
+    node.props.color = 'yellow'
+  } else {
+    node.props.color = 'orange'
+  }
+}
+
+const node = createNode([
+  plugins: [myPlugin],
+  children: [createNode()]
+])
+```
+
+In the example above he plugin is only defined on the parent, but the child also inherits the plugin — the function `myPlugin` will be called twice, once for each node in the graph (which only has two in this example):
+
+<plugin-tree></plugin-tree>

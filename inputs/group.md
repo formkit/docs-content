@@ -11,7 +11,7 @@ langs="vue"></example>
 
 ## Validity of children
 
-Groups are always aware of the validation state of their children (including nested children). You can access this data in the [context](/essentials/context) object of the input (`context.state.valid`).
+Groups are always aware of the validation state of their children (including nested children). You can access this data in the [context](/advanced/context) object of the input (`context.state.valid`).
 
 <example
 name="Group input"
