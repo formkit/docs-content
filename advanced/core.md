@@ -16,7 +16,10 @@ The functionality of FormKit core is not exposed to your application via a centr
 
 This mirrors HTML — in fact DOM structure is actually a [general tree](https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/GenTreeIntro.html) and FormKit core nodes reflect this structure. For example, a simple login form could be drawn as the following tree graph:
 
-<simple-tree></simple-tree>
+<figure>
+  <simple-tree></simple-tree>
+  <figcaption>Hover over each node to see it’s initial options.</figcaption>
+</figure>
 
 In this diagram, a `form` node is a parent to three child nodes — `email`, `password` and `submit`. Each input component in the graph "owns" a FormKit core node, and each node contains it's own options, configuration, props, events, plugins, lifecycle hooks etc. This architecture ensures that FormKit’s primary features are decoupled from the rendering framework (Vue) — a key to reducing side effects and maintaining blazing fast performance.
 
@@ -128,7 +131,10 @@ const parent = createNode({
 
 The above code will result in each node having the following configuration:
 
-<config-tree></config-tree>
+<figure>
+  <config-tree></config-tree>
+  <figcaption>Notice how the list subtree is pink.</figcaption>
+</figure>
 
 <callout type="tip" label="Use props to read config">
 It is best practice to read configuration values from <code>node.props</code> rather than <code>node.config</code>. The next section details this feature.
@@ -203,8 +209,10 @@ To solve this FormKit’s nodes automatically track tree, subtree, and node "dis
 
 The following graph illustrates this "disturbance counting". Click on any input node (blue) to simulate calling `node.input()` and notice how the whole form is always aware of how many nodes are "disturbed" at any given time. When the root node has a disturbed count of `0` the form is settled and safe to submit.
 
-<disturbance-tree></disturbance-tree>
-
+<figure>
+  <disturbance-tree></disturbance-tree>
+  <figcaption>Click on the inputs (blue) to simulate calling a user input.</figcaption>
+</figure>
 To ensure a given tree (form), subtree (group), or node (input) is "settled" you can await the `node.settled` property:
 
 ```js
@@ -293,4 +301,7 @@ const node = createNode([
 
 In the example above he plugin is only defined on the parent, but the child also inherits the plugin — the function `myPlugin` will be called twice, once for each node in the graph (which only has two in this example):
 
-<plugin-tree></plugin-tree>
+<figure>
+  <plugin-tree></plugin-tree>
+  <figcaption>The plugin is inherited by the child, but executed independently.</figcaption>
+</figure>
