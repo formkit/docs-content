@@ -100,7 +100,7 @@ FormKit inputs emit both _universal_ events (ones that are emitted from all inpu
 
 ## Composition keys
 
-Inputs are composed of chunks of HTML and each of these chunks is assigned to a name called a “composition key”. These composition keys can be used for many purposes like modifying [classes](#classes), [content](/essentials/schema), [attributes](#setting-attributes), and even the [elements](/essentials/schema) that inputs are made of.
+Inputs are composed of chunks of HTML and each of these chunks is assigned to a name called a “composition key”. These composition keys can be used for many purposes like modifying [classes](#classes), [content](/advanced/schema), [attributes](#setting-attributes), and even the [elements](/advanced/schema) that inputs are made of.
 
 Many composition keys are universally available while others are specific to a given input type (you can define your own for custom inputs as well). The following table is a comprehensive list of all universally available composition keys:
 
