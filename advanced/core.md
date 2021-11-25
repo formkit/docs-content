@@ -239,6 +239,80 @@ async function someEvent () {
 The <code>&lt;FormKit type="form"&gt;</code> input already incorporates this await behavior. It will not call your <code>@submit</code> handler until your form is completely settled. However when building advanced inputs it can be useful to understand these underlying principles.
 </callout>
 
+## Traversal
+
+To traverse nodes within a group or list use `node.at(address)` — where `address` is the name of the node being accessed (or the relative path to the name). For example:
+
+```js
+import { createNode } from '@formkit/core'
+
+const group = createNode({
+  type: 'group',
+  children: [createNode({ name: 'email' }), createNode({ name: 'password' })],
+})
+
+// Returns the email node
+group.at('email')
+```
+
+If the starting node has siblings, it will attempt to locate a match in the siblings (internally this is what formkit uses for validation rules like `confirm:address`).
+
+```js
+import { createNode } from '@formkit/core'
+
+const email = createNode({ name: 'email' })
+const password = createNode({ name: 'password' })
+const group = createNode({
+  type: 'group',
+  children: [email, password],
+})
+
+// Accesses sibling to return the password node
+email.at('password')
+```
+
+### Deep traversal
+
+You can go deeper than one level by using a dot-syntax relative path. Here's a more complex example:
+
+```js
+import { createNode } from '@formkit/core'
+
+const group = createNode({
+  type: 'group',
+  children: [
+    createNode({ name: 'team' }),
+    createNode({
+      type: 'list',
+      name: 'users',
+      children: [
+        createNode({
+          type: 'group',
+          children: [
+            createNode({ name: 'email' }),
+            createNode({ name: 'password', value: 'foo' }),
+          ],
+        }),
+        createNode({
+          type: 'group',
+          children: [
+            createNode({ name: 'email' }),
+            createNode({ name: 'password', value: 'fbar' }),
+          ],
+        }),
+      ],
+    }),
+  ],
+})
+
+// outputs: 'foo'
+console.log(group.at('users.0.password').value)
+```
+
+Notice how traversing the `list` uses numeric keys, this is because the `list` type uses array indexes automatically.
+
+<traversal-tree></traversal-tree>
+
 ## Hooks
 
 Hooks are middleware dispatchers that are triggered during pre-defined lifecycle operations. These hooks allow external code to extend the internal functionality of `@formkit/core`. The following table details all available hooks:
