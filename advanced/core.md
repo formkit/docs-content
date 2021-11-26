@@ -324,11 +324,12 @@ Node addresses may also be expressed as arrays. For example <code>node.at('foo.b
 
 Also available for use in `node.at()` are a few special "tokens":
 
-| Token     | Description                                                |
-| --------- | ---------------------------------------------------------- |
-| `$parent` | The immediate ancestor of the current node.                |
-| `$root`   | The root node of the tree (the first node with no parent). |
-| `$self`   | The current node in the traversal.                         |
+| Token     | Description                                                                                                                         |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `$parent` | The immediate ancestor of the current node.                                                                                         |
+| `$root`   | The root node of the tree (the first node with no parent).                                                                          |
+| `$self`   | The current node in the traversal.                                                                                                  |
+| `find()`  | A function that performs a breadth first search for a matching value and property. For example: `node.at('$root.find(555, value)')` |
 
 These tokens are used in dot-syntax addresses just like you would use a node’s name:
 
