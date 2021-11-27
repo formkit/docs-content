@@ -102,7 +102,7 @@ In addition to specifying the `type` of node when calling `createNode()`, you ca
 | children | `[]`         | Child `FormKitNode` instances.                                                 |
 | config   | `{}`         | Configuration options. These become the defaults of the `props` object.        |
 | name     | `{type}_{n}` | The name of the node/input.                                                    |
-| parent   | `null`         | The parent `FormKitNode` instance.                                           |
+| parent   | `null`       | The parent `FormKitNode` instance.                                             |
 | plugins  | `[]`         | An array of plugin functions.                                                  |
 | props    | `{}`         | An object of key/value pairs that represent the current node instance details. |
 | type     | `input`      | The type of `FormKitNode` to create (`list`, `group`, or `input`).             |
@@ -239,19 +239,155 @@ async function someEvent () {
 The <code>&lt;FormKit type="form"&gt;</code> input already incorporates this await behavior. It will not call your <code>@submit</code> handler until your form is completely settled. However when building advanced inputs it can be useful to understand these underlying principles.
 </callout>
 
+## Traversal
+
+To traverse nodes within a group or list use `node.at(address)` — where `address` is the `name` of the node being accessed (or the relative path to the name). For example:
+
+```js
+import { createNode } from '@formkit/core'
+
+const group = createNode({
+  type: 'group',
+  children: [createNode({ name: 'email' }), createNode({ name: 'password' })],
+})
+
+// Returns the email node
+group.at('email')
+```
+
+If the starting node has siblings, it will attempt to locate a match in the siblings (internally, this is what FormKit uses for validation rules like `confirm:address`).
+
+```js
+import { createNode } from '@formkit/core'
+
+const email = createNode({ name: 'email' })
+const password = createNode({ name: 'password' })
+const group = createNode({
+  type: 'group',
+  children: [email, password],
+})
+
+// Accesses sibling to return the password node
+email.at('password')
+```
+
+### Deep traversal
+
+You can go deeper than one level by using a dot-syntax relative path. Here's a more complex example:
+
+```js
+import { createNode } from '@formkit/core'
+
+const group = createNode({
+  type: 'group',
+  children: [
+    createNode({ name: 'team' }),
+    createNode({
+      type: 'list',
+      name: 'users',
+      children: [
+        createNode({
+          type: 'group',
+          children: [
+            createNode({ name: 'email' }),
+            createNode({ name: 'password', value: 'foo' }),
+          ],
+        }),
+        createNode({
+          type: 'group',
+          children: [
+            createNode({ name: 'email' }),
+            createNode({ name: 'password', value: 'fbar' }),
+          ],
+        }),
+      ],
+    }),
+  ],
+})
+
+// outputs: 'foo'
+console.log(group.at('users.0.password').value)
+```
+
+Notice how traversing the `list` uses numeric keys, this is because the `list` type uses array indexes automatically.
+
+<figure>
+  <traversal-tree></traversal-tree>
+  <figcaption>Traversal path of <code>group.at('users.0.password')</code> shown in red.</figcaption>
+</figure>
+
+<callout type="tip" label="Array paths">
+Node addresses may also be expressed as arrays. For example <code>node.at('foo.bar')</code> could be expressed as <code>node.at(['foo', 'bar'])</code>.
+</callout>
+
+### Traversal tokens
+
+Also available for use in `node.at()` are a few special "tokens":
+
+| Token     | Description                                                                                                                         |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `$parent` | The immediate ancestor of the current node.                                                                                         |
+| `$root`   | The root node of the tree (the first node with no parent).                                                                          |
+| `$self`   | The current node in the traversal.                                                                                                  |
+| `find()`  | A function that performs a breadth-first search for a matching value and property. For example: `node.at('$root.find(555, value)')` |
+
+These tokens are used in dot-syntax addresses just like you would use a node’s name:
+
+```js
+import { createNode } from '@formkit/core'
+
+const secondEmail = createNode({ name: 'email' })
+
+createNode({
+  type: 'group',
+  children: [
+    createNode({ name: 'team', value: 'charlie@factory.com' }),
+    createNode({
+      type: 'list',
+      name: 'users',
+      children: [
+        createNode({
+          type: 'group',
+          children: [
+            createNode({ name: 'email', value: 'james@peach.com' }),
+            createNode({ name: 'password', value: 'foo' }),
+          ],
+        }),
+        createNode({
+          type: 'group',
+          children: [
+            secondEmail, // We're going to start here.
+            createNode({ name: 'password', value: 'fbar' }),
+          ],
+        }),
+      ],
+    }),
+  ],
+})
+
+// Navigate from the second email to the first
+console.log(secondEmail.at('$parent.$parent.0.email').value)
+// outputs: charlie@factory.com
+```
+
+<figure>
+  <traversal-tree2></traversal-tree2>
+  <figcaption>Traversal path of <code>secondEmail.at('$parent.$parent.0.email')</code> shown in red.</figcaption>
+</figure>
+
 ## Hooks
 
 Hooks are middleware dispatchers that are triggered during pre-defined lifecycle operations. These hooks allow external code to extend the internal functionality of `@formkit/core`. The following table details all available hooks:
 
-| Hook    | Value                                                                                                   | Description                                                                                                      |
-| ------- | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| classes | <pre><code class="block">{<br> property: string,<br> classes: Record<string, boolean><br>}</code></pre> | Dispatched after all class operations have been run, before final conversion to a string.                 |
-| commit  | `any`                                                                                                   | Dispatched when setting the value of a node _after_ the `input` and debounce of `node.input()` is called.           |
-| error   | `string`                                                                                                | Dispatched when processing a thrown error — errors are generally inputs, and the final output should be a string.  |
-| init    | `FormKitNode`                                                                                           | Dispatched after the node is initially created but before it is returned in `createNode()`.                 |
-| input   | `any`                                                                                                   | Dispatched synchronously on every input event (every keystroke) before `commit`.                                 |
-| prop    | <pre><code class="block">{<br> prop: string,<br> value: any<br>}</code></pre>                           | Dispatched when any prop is being assigned.                                                                      |
-| text    | [`FormKitTextFragment`](https://github.com/formkit/formkit/search?q=FormKitTextFragment)                | Dispatched when a FormKit-generated string needs to be displayed — allowing i18n or other plugins to intercept.    |
+| Hook    | Value                                                                                                   | Description                                                                                                       |
+| ------- | ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| classes | <pre><code class="block">{<br> property: string,<br> classes: Record<string, boolean><br>}</code></pre> | Dispatched after all class operations have been run, before final conversion to a string.                         |
+| commit  | `any`                                                                                                   | Dispatched when setting the value of a node _after_ the `input` and debounce of `node.input()` is called.         |
+| error   | `string`                                                                                                | Dispatched when processing a thrown error — errors are generally inputs, and the final output should be a string. |
+| init    | `FormKitNode`                                                                                           | Dispatched after the node is initially created but before it is returned in `createNode()`.                       |
+| input   | `any`                                                                                                   | Dispatched synchronously on every input event (every keystroke) before `commit`.                                  |
+| prop    | <pre><code class="block">{<br> prop: string,<br> value: any<br>}</code></pre>                           | Dispatched when any prop is being assigned.                                                                       |
+| text    | [`FormKitTextFragment`](https://github.com/formkit/formkit/search?q=FormKitTextFragment)                | Dispatched when a FormKit-generated string needs to be displayed — allowing i18n or other plugins to intercept.   |
 
 ### Hook middleware
 
