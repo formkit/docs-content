@@ -241,7 +241,7 @@ The <code>&lt;FormKit type="form"&gt;</code> input already incorporates this awa
 
 ## Traversal
 
-To traverse nodes within a group or list use `node.at(address)` — where `address` is the name of the node being accessed (or the relative path to the name). For example:
+To traverse nodes within a group or list use `node.at(address)` — where `address` is the `name` of the node being accessed (or the relative path to the name). For example:
 
 ```js
 import { createNode } from '@formkit/core'
@@ -255,7 +255,7 @@ const group = createNode({
 group.at('email')
 ```
 
-If the starting node has siblings, it will attempt to locate a match in the siblings (internally this is what formkit uses for validation rules like `confirm:address`).
+If the starting node has siblings, it will attempt to locate a match in the siblings (internally, this is what FormKit uses for validation rules like `confirm:address`).
 
 ```js
 import { createNode } from '@formkit/core'
@@ -313,7 +313,7 @@ Notice how traversing the `list` uses numeric keys, this is because the `list` t
 
 <figure>
   <traversal-tree></traversal-tree>
-  <figcaption>Traversal path of <code>group.at('users.0.password')</code></figcaption>
+  <figcaption>Traversal path of <code>group.at('users.0.password')</code> shown in red.</figcaption>
 </figure>
 
 <callout type="tip" label="Array paths">
@@ -329,7 +329,7 @@ Also available for use in `node.at()` are a few special "tokens":
 | `$parent` | The immediate ancestor of the current node.                                                                                         |
 | `$root`   | The root node of the tree (the first node with no parent).                                                                          |
 | `$self`   | The current node in the traversal.                                                                                                  |
-| `find()`  | A function that performs a breadth first search for a matching value and property. For example: `node.at('$root.find(555, value)')` |
+| `find()`  | A function that performs a breadth-first search for a matching value and property. For example: `node.at('$root.find(555, value)')` |
 
 These tokens are used in dot-syntax addresses just like you would use a node’s name:
 
@@ -372,7 +372,7 @@ console.log(secondEmail.at('$parent.$parent.0.email').value)
 
 <figure>
   <traversal-tree2></traversal-tree2>
-  <figcaption>Traversal path of <code>secondEmail.at('$parent.$parent.0.email')</code></figcaption>
+  <figcaption>Traversal path of <code>secondEmail.at('$parent.$parent.0.email')</code> shown in red.</figcaption>
 </figure>
 
 ## Hooks
