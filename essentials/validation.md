@@ -360,7 +360,7 @@ Checks if the input value appears to be a properly formatted URL including the p
 
 ## Custom rules
 
-Validation rules are functions that accept a [core node](/essentials/core#node) and return a boolean value — `true` for passing and `false` for failing. Additionally, any arguments passed to the validation rule are available as arguments `1-n`. Writing your own is straight forward — for example:
+Validation rules are functions that accept a [core node](/advanced/core#node) and return a boolean value — `true` for passing and `false` for failing. Additionally, any arguments passed to the validation rule are available as arguments `1-n`. Writing your own is straight forward — for example:
 
 ```js
 /**
@@ -452,7 +452,7 @@ If you need more power for your validation rules, you can use a function instead
 | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | args     | An array of arguments passed to the rule. For example <code>['Vue', 'React', 'Angular']</code> from the rule <code>is:Vue,React,Angular</code> |
 | name     | The name of the field (first available from: <code>validation-label</code>, <code>label</code>, then <code>name</code>)                        |
-| node     | The [FormKit core <code>node</code> ](/essentials/core)                                                                                        |
+| node     | The [FormKit core <code>node</code> ](/advanced/core)                                                                                        |
 
 Let’s re-write the above example using a function instead of a string for even more control of the <code>validation-messages</code> prop.
 

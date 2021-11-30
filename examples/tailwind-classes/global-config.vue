@@ -38,9 +38,11 @@
           // helper function to created class object from strings
           function createClassObject (classString) {
             const classList = {}
-            return classString.split(' ').forEach(className => {
-              classList[className] = true
-            })
+            if (classString) {
+              classString.split(' ').forEach(className => {
+                classList[className] = true
+              })
+            }
             return classList
           }
 
@@ -52,6 +54,8 @@
           } else if (typeof target === 'function') {
             return createClassObject(target())
           }
+
+          return {} // if no matches return an empty object
         }
       }
     }))
