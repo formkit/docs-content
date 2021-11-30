@@ -72,7 +72,7 @@ Handling backend errors is still under development and not yet available in Form
 
 Forms are technically considered `input` types — so they share many of the universal props that standard inputs use.
 
-<reference-table :without="['label', 'help']" :data="[{ prop: 'submit-label', type: 'String', default: 'Submit', description: 'The label to use on the submit button.'}, { prop: 'actions', type: 'Boolean', default: 'true', description: 'Whether or not to include the actions bar at the bottom of the form.'}]"></reference-table>
+<reference-table :without="['label', 'help']" :data="[{ prop: 'submit-attrs', type: 'Object', default: '{}', description: 'Attributes or props that should be passed to the submit button.'}, { prop: 'submit-label', type: 'String', default: 'Submit', description: 'The label to use on the submit button.'}, { prop: 'actions', type: 'Boolean', default: 'true', description: 'Whether or not to include the actions bar at the bottom of the form.'}]"></reference-table>
 
 ## Composition keys
 
