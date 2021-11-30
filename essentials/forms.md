@@ -62,6 +62,16 @@ To submit a form via page request, simply leave off the `@submit` handler. Just 
   langs="vue">
 </example>
 
+## Disabling
+
+To disable all the inputs in a given form, including the submit button, you can use the `disabled` prop.
+
+<example
+  name="Disabled example"
+  file="/_content/examples/form-disabled/form-disabled"
+  langs="vue">
+</example>
+
 ## Backend error handling
 
 <callout type="danger" label="Under development">
@@ -72,7 +82,7 @@ Handling backend errors is still under development and not yet available in Form
 
 Forms are technically considered `input` types — so they share many of the universal props that standard inputs use.
 
-<reference-table :without="['label', 'help']" :data="[{ prop: 'submit-attrs', type: 'Object', default: '{}', description: 'Attributes or props that should be passed to the submit button.'}, { prop: 'submit-label', type: 'String', default: 'Submit', description: 'The label to use on the submit button.'}, { prop: 'actions', type: 'Boolean', default: 'true', description: 'Whether or not to include the actions bar at the bottom of the form.'}]"></reference-table>
+<reference-table :without="['label', 'help']" :data="[{ prop: 'disabled', type: 'Boolean', default: 'false', description: 'Disables the form submit button and all the inputs in the form.'}, { prop: 'submit-attrs', type: 'Object', default: '{}', description: 'Attributes or props that should be passed to the submit button.'}, { prop: 'submit-label', type: 'String', default: 'Submit', description: 'The label to use on the submit button.'}, { prop: 'actions', type: 'Boolean', default: 'true', description: 'Whether or not to include the actions bar at the bottom of the form.'}]"></reference-table>
 
 ## Composition keys
 
