@@ -20,9 +20,7 @@ langs="vue"></example>
 
 ## Props & Attributes
 
-The `group` input has no unique props but can make use of some of the following universal FormKit props.
-
-<reference-table input="group" :without="['help', 'label', 'validation', 'validation-behavior', 'validation-label']">
+<reference-table input="group" :data="[{ prop: 'disabled', type: 'Boolean', default: 'false', description: 'Disables all the inputs in the group.'}]" :without="['help', 'label', 'validation', 'validation-behavior', 'validation-label']">
 </reference-table>
 
 ## Composition keys

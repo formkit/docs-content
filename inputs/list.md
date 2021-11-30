@@ -24,10 +24,7 @@ langs="vue"></example>
 
 ## Props & Attributes
 
-The `list` input has no unique props but can make use of the following universal
-FormKit props.
-
-<reference-table input="list" :without="['help', 'label', 'validation', 'validation-behavior', 'validation-label']">
+<reference-table input="list" :data="[{ prop: 'disabled', type: 'Boolean', default: 'false', description: 'Disables all the inputs in the list.'}]" :without="['help', 'label', 'validation', 'validation-behavior', 'validation-label']">
 </reference-table>
 
 ## Composition keys
