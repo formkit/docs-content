@@ -375,6 +375,88 @@ console.log(secondEmail.at('$parent.$parent.0.email').value)
   <figcaption>Traversal path of <code>secondEmail.at('$parent.$parent.0.email')</code> shown in red.</figcaption>
 </figure>
 
+## Events
+
+Nodes have their own events (unrelated to Vue’s events) which are emitted during the node’s lifecycle.
+
+### Add listener
+
+To observe a given event use `node.on()` — for example:
+
+```js
+node.on('prop', ({ payload }) => {
+  console.log(`prop ${payload.prop} was set to ${payload.value}`)
+})
+
+node.props.foo = 'bar'
+// outputs: prop foo was set to bar
+```
+
+Event handler callbacks all receive a single argument of type `FormKitEvent`, the object shape is:
+
+```js
+{
+  // The contents of the event, a string, an object, etc.
+  payload: { cause: 'ice cream', duration: 200 },
+  // The name of the event, this matches the first argument of node.on().
+  name: 'brain-freeze',
+  // Whether or not this event should bubble to the next parent.
+  bubble: true,
+  // The original FormKitNode that emitted the event.
+  origin: node,
+}
+```
+
+`node.on()` will only respond to events emitted by the same node. However, if you would like to also catch events bubbling up from descendants you may append the string `.deep` to the end of your event name:
+
+```js
+import { createNode } from '@formkit/core'
+
+const group = createNode({ type: 'group' })
+
+group.on('created.deep', ({ payload: child }) => {
+  console.log('child node created:', child.name)
+})
+
+const child = createNode({ parent: group, name: 'party-town-usa' })
+// outputs: 'child node created: party-town-usa'
+```
+
+### Remove listener
+
+Every call to register an observer with `node.on()` returns a “receipt” — a randomly generated key — that can be used later on to stop observing that event (similar to [`setTimeout()` and `clearTimeout()`](https://developer.mozilla.org/en-US/docs/Web/API/clearTimeout)) using `node.off(receipt)`.
+
+```js
+const receipt = node.on('input', ({ payload }) => {
+  console.log('received input: ', payload)
+})
+node.input('foobar')
+// outputs: 'received input: foobar'
+node.off(receipt)
+node.input('fizz buzz')
+// no output
+```
+
+### Core events
+
+The following is a comprehensive list of all events emitted by `@formkit/core` — third party code may emit additional events not included here.
+
+| Name                | Payload                        | Bubbles | Description                                                                                                            |
+| ------------------- | ------------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `commit`            | any                            | yes     | Emitted when a nodes value is committed but before it has been transmitted to the rest of the form.                    |
+| `config:{property}` | value                          | yes     | Emitted any time a specific configuration option is set or changed.                                                    |
+| `created`           | `FormKitNode`                  | yes     | Emitted immediately _before_ the node is returned when calling `createNode()` (plugins and features have already run). |
+| `destroying`        | `FormKitNode`                  | yes     | Emitted when the `node.destroy()` is called, after it has been detached from any parents.                              |
+| `input`             | any                            | yes     | Emitted when `node.input()` is called — after the `input` hook has run.                                                |
+| `prop:{propName}`   | value                          | yes     | Emitted any time a specific prop is set or changed.                                                                    |
+| `prop`              | `{ prop: string, value: any }` | yes     | Emitted any time a prop is set or changed.                                                                             |
+
+<callout type="info" label="Prop events on config changes">
+When a configuration option changes any inheriting nodes (including the origin node) that does not override that property in either it’s <code>props</code> object or <code>config</code> object will also emit <code>prop</code> and <code>prop:{propName}</code> events.
+</callout>
+
+### Emitting events
+
 ## Hooks
 
 Hooks are middleware dispatchers that are triggered during pre-defined lifecycle operations. These hooks allow external code to extend the internal functionality of `@formkit/core`. The following table details all available hooks:
