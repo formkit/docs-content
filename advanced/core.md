@@ -556,7 +556,7 @@ Each message (`FormKitMessage` in TypeScript) in the store is an object with the
   key: 'yourkey',
   // (optional) Meta data object about this message (default: {}).
   meta: {
-    // (optional) If set i18n uses this instead of the key to find locale messages.
+    // (optional) If set, i18n uses this instead of the key to find locale messages.
     messageKey: 'i18nKey',
     // (optional) If set, these arguments will be spread to the i18n locale function.
     i18nArgs: [...any],
@@ -583,7 +583,7 @@ A helper function <code>createMessage({})</code> can be imported from <code>@for
 
 ### Read and write messages
 
-To add or update a message use `node.store.set(FormKitMessage)`. Messages are then made available on `node.store.{messageKey}`
+To add or update a message, use `node.store.set(FormKitMessage)`. Messages are then made available on `node.store.{messageKey}`
 
 ```js
 import { createMessage, createNode } from '@formkit/core'
@@ -597,7 +597,7 @@ const message = createMessage({
 node.store.set(message)
 
 console.log(node.store.clickHole.value)
-// outputs: 'Please drink responsibly'
+// outputs: 'Please click 100 times.'
 ```
 
 <callout type="info" label="Message locales">
