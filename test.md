@@ -9,7 +9,7 @@ Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis
 euismod semper. Cras mattis consectetur `purus sit amet` fermentum. Integer posuere
 erat a ante venenatis dapibus posuere velit aliquet.
 
-<callout type="note">
+<callout type="info">
 Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius
 blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Vivamus
 sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus,

@@ -75,7 +75,7 @@ Just like JavaScript — you can access properties of a deeply nested object usi
   layout="row">
 </example>
 
-<callout type="note" label="Reserved words">
+<callout type="info" label="Reserved words">
 Schema references can have any structure or properties, but at the root of the data reference object there are 2 reserved words: <code>$slots</code> and <code>$get</code>.
 </callout>
 
