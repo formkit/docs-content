@@ -52,3 +52,30 @@ FormKit is made for front end developers. Each DOM element can have its [classes
 ### Easy to extend 🧩
 
 FormKit comes with great production-ready defaults, and for many users, the defaults are all they'll never need. But FormKit is more than just inputs. It is a form building _framework_, complete with a [hooks](/advanced/core#hooks), [events](/advanced/core#events), [plugins](/advanced/core#plugins), libraries and [schemas](/advanced/schema). Advanced developers can craft their own form systems using FormKit's low-level tooling.
+
+## What FormKit isn’t
+
+While FormKit does a lot of things, it is not a UI framework or a _layout_ tool. Want inputs next to each other? Cool! Wrap some inputs in a `<div>` and sprinkle on some `flexbox`. While FormKit ships with [default theme](/essentials/styling#optional-genesis-theme), this package assumes you'll still be responsible for most of your form's style and layout. FormKit plays nicely with any UI framework or your custom styles.
+  
+
+## Why not...?
+
+### Vuetify
+
+Vuetify is full UI framework while FormKit is a focused tool for building forms. Some people prefer not to use large UI frameworks, don’t have them on a pre-existing project, don’t want to learn a new framework, or just prefer writing their own narrowly scoped styles. Also, we think composing forms in FormKit is second-to-none.
+
+### Buefy
+
+Similar to Vuetify, Buefy is a full UI framework. If you’re already using Bulma or you're looking for a comprehensive UI solution, it’s a solid choice. FormKit can live alongside any UI framework and still offers the benefits of slick form composition, validation, and error handling to name a few. Even still there are plenty of people who don’t want or need a full UI framework that would benefit from FormKit’s focused approach.
+
+### VeeValidate
+
+VeeValidate is a great option for Vue form validation, and thats it’s primary mission — validation. FormKit makes building high quality forms easier by including validation as a sub-feature of the field composition itself. Building forms with FormKit is super easy and blazing fast — of course if you need the extra validation power, you still have it. You can write any [custom validation logic](/essentials/validation#custom-rules) you want.
+
+### Vuelidate
+
+Yet another great option for form validation, but focused solely on validation. FormKit provides additional scaffolding and features such as accessibility, i18n, and input composition, enabling developers to create complex forms with minimal friction with validation and error handling included.
+
+### vue-form-generator
+
+Generating forms from JSON is great — that's why schema is a sub-feature of FormKit. Simply pass your form schema to the `FormKitSchema` component and voilà! Checkout the documentation [here](/essentials/generation). Now you can use the same tool for form composition and generation! 
