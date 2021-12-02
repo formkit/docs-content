@@ -43,7 +43,7 @@ Validation rules are always computed in realtime — meaning a given field will 
 | live     | Errors are always visible.                                             |
 | dirty    | Shown after a user modifies the value of an input.                     |
 
-<callout type="note" label="Form submission">
+<callout type="info" label="Form submission">
 If an input is inside a <a href="/essentials/form">form</a>, then <em>all</em> remaining validation messages will be displayed to the end user when a user attempts to submit the form.
 </callout>
 

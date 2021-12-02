@@ -375,6 +375,102 @@ console.log(secondEmail.at('$parent.$parent.0.email').value)
   <figcaption>Traversal path of <code>secondEmail.at('$parent.$parent.0.email')</code> shown in red.</figcaption>
 </figure>
 
+## Events
+
+Nodes have their own events which are emitted during the node’s lifecycle (unrelated to Vue’s events).
+
+### Add listener
+
+To observe a given event, use `node.on()`.
+
+```js
+// Listen for any prop being set or changed.
+node.on('prop', ({ payload }) => {
+  console.log(`prop ${payload.prop} was set to ${payload.value}`)
+})
+
+node.props.foo = 'bar'
+// outputs: prop foo was set to bar
+```
+
+Event handler callbacks all receive a single argument of type `FormKitEvent`, the object shape is:
+
+```js
+{
+  // The contents of the event — a string, an object, etc.
+  payload: { cause: 'ice cream', duration: 200 },
+  // The name of the event, this matches the first argument of node.on().
+  name: 'brain-freeze',
+  // Whether or not this event should bubble to the next parent.
+  bubble: true,
+  // The original FormKitNode that emitted the event.
+  origin: node,
+}
+```
+
+Node events (by default) bubble up the node tree, but `node.on()` will only respond to events emitted by the same node. However, if you would like to also catch events bubbling up from descendants you may append the string `.deep` to the end of your event name:
+
+```js
+import { createNode } from '@formkit/core'
+
+const group = createNode({ type: 'group' })
+
+group.on('created.deep', ({ payload: child }) => {
+  console.log('child node created:', child.name)
+})
+
+const child = createNode({ parent: group, name: 'party-town-usa' })
+// outputs: 'child node created: party-town-usa'
+```
+
+### Remove listener
+
+Every call to register an observer with `node.on()` returns a “receipt” — a randomly generated key — that can be used later to stop observing that event (similar to [`setTimeout()` and `clearTimeout()`](https://developer.mozilla.org/en-US/docs/Web/API/clearTimeout)) using `node.off(receipt)`.
+
+```js
+const receipt = node.on('input', ({ payload }) => {
+  console.log('received input: ', payload)
+})
+node.input('foobar')
+// outputs: 'received input: foobar'
+node.off(receipt)
+node.input('fizz buzz')
+// no output
+```
+
+### Core events
+
+The following is a comprehensive list of all events emitted by `@formkit/core`. Third-party code may emit additional events not included here.
+
+| Name                | Payload                         | Bubbles | Description                                                                                                            |
+| ------------------- | ------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `commit`            | any                             | yes     | Emitted when a node's value is committed but before it has been transmitted to the rest of the form.                    |
+| `config:{property}` | any (the value)                 | yes     | Emitted any time a specific configuration option is set or changed.                                                    |
+| `created`           | `FormKitNode`                   | yes     | Emitted immediately _before_ the node is returned when calling `createNode()` (plugins and features have already run). |
+| `defined`           | `FormKitTypeDefinition`         | yes     | Emitted when the node’s "type" is defined, this typically happens during `createNode()`.                               |
+| `destroying`        | `FormKitNode`                   | yes     | Emitted when the `node.destroy()` is called, after it has been detached from any parents.                              |
+| `input`             | any (the value)                 | yes     | Emitted when `node.input()` is called — after the `input` hook has run.                                                |
+| `message-added`     | `FormKitMessage`                | yes     | Emitted when a new `node.store` message was added.                                                                     |
+| `message-removed`   | `FormKitMessage`                | yes     | Emitted when a `node.store` message was removed.                                                                       |
+| `message-updated`   | `FormKitMessage`                | yes     | Emitted when a `node.store` message was changed.                                                                       |
+| `prop:{propName}`   | any (the value)                 | yes     | Emitted any time a specific prop is set or changed.                                                                    |
+| `prop`              | `{ prop: string, value: any }`  | yes     | Emitted any time a prop is set or changed.                                                                             |
+| `text`              | string or `FormKitTextFragment` | no      | Emitted after the `text` hook has run — typically when processing interface text that may have been translated.        |
+
+<callout type="info" label="Prop events on config changes">
+When a configuration option changes, any inheriting nodes (including the origin node) will also emit <code>prop</code> and <code>prop:{propName}</code> events, so long as they do not override that property in their own <code>props</code> or <code>config</code> objects.
+</callout>
+
+### Emitting events
+
+Node events are emitted with `node.emit()`. You can leverage this feature to emit your own synthetic events from your own plugins.
+
+```js
+node.emit('myEvent', payloadGoesHere)
+```
+
+An optional third argument `bubble` is also available. When set to `false`, it prevents your event from bubbling up through the form tree.
+
 ## Hooks
 
 Hooks are middleware dispatchers that are triggered during pre-defined lifecycle operations. These hooks allow external code to extend the internal functionality of `@formkit/core`. The following table details all available hooks:
@@ -441,3 +537,69 @@ In the example above, the plugin is only defined on the parent, but the child al
   <plugin-tree></plugin-tree>
   <figcaption>The plugin is inherited by the child, but executed independently.</figcaption>
 </figure>
+
+## Message store
+
+Each node has its own data store. The objects in these stores are called "messages" and these messages are especially valuable for three primary use cases:
+
+- Displaying information about the node to a user with i18n support (the validation plugin uses it).
+- "Blocking" form submission.
+- General data store for plugin authors.
+
+Each message (`FormKitMessage` in TypeScript) in the store is an object with the following shape:
+
+```js
+{
+  // Whether or not this message blocks form submission (default: false).
+  blocking: true,
+  // Must be a unique string value (default: random string).
+  key: 'yourkey',
+  // (optional) Meta data object about this message (default: {}).
+  meta: {
+    // (optional) If set, i18n uses this instead of the key to find locale messages.
+    messageKey: 'i18nKey',
+    // (optional) If set, these arguments will be spread to the i18n locale function.
+    i18nArgs: [...any],
+    // (optional) If set to false, the message will check for localization.
+    localize: true,
+    // (optional) The message locale (default: node.config.locale)
+    locale: 'en',
+    // Any other meta data your heart desires.
+    ...any
+  },
+  // An arbitrary category this message belongs to (for filtering purposes).
+  // For example: 'validation' or 'success' (default: 'state')
+  type: string,
+  // (optional) should be a string, number, or boolean (default: undefined).
+  value: 'Woops, our server is broken!',
+  // Should this message be shown to end users? (default: true)
+  visible: true
+}
+```
+
+<callout type="tip" label="Create message helper">
+A helper function <code>createMessage({})</code> can be imported from <code>@formkit/core</code> to merge your message data with the above default values to create a new message object.
+</callout>
+
+### Read and write messages
+
+To add or update a message, use `node.store.set(FormKitMessage)`. Messages are then made available on `node.store.{messageKey}`
+
+```js
+import { createMessage, createNode } from '@formkit/core'
+
+const node = createNode()
+const message = createMessage({
+  key: 'clickHole',
+  value: 'Please click 100 times.',
+})
+
+node.store.set(message)
+
+console.log(node.store.clickHole.value)
+// outputs: 'Please click 100 times.'
+```
+
+<callout type="info" label="Message locales">
+Messages will automatically be translated if the <code>@formkit/i18n</code> plugin is installed and a matching key is available in the active locale. <a href="/essentials/internationalization">Read the i18n docs</a>.
+</callout>
