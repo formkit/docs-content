@@ -7,14 +7,10 @@ FormKit can be downloaded using a package manager like `npm` or `yarn` or it can
 Thanks for joining the FormKit Alpha Program 🎉 ! Here are special instructions for installing FormKit during the private Alpha.
 
 <callout type="warning" label="Important Installation Instructions">
-<strong>During the Alpha and Beta phases of development, FormKit packages will be hosted on
-Github Packages</strong>. In order to <code>npm install</code> FormKit you will need to be:
+<strong>During the Alpha and private Beta phases of development, FormKit packages will be hosted on Github Packages</strong>. In order to <code>npm install</code> FormKit you will need to be:
 
-1. Added as a collaborator to the `@formkit/formkit` repo on Github.
-<!-- 2. Authenticated with Github via an `~/.npmrc` entry or via `npm` on the command line. -->
-2. Have an `.npmrc` file for the `@formkit` scope in the root of your project directory.
-
-Follow the instructions below to complete these requirements.
+1. Added as a collaborator to the `@formkit/formkit` repo on Github (you should receive an invite to the organization. If you haven't contact us in discord!).
+2. Authenticated with Github via an `.npmrc` entry or via `npm` on the command line.
 
 </callout>
 
@@ -24,39 +20,21 @@ All active Alpha and Beta members will be added as collaborators to the `@formki
 If you have not been added as a collaborator and believe that this is in error, then please message us via the
 community Discord in the `#formkit-general-chat` channel: https://discord.gg/NZ6nchBDGx
 
-<!-- ### 2) Authenticating with Github Packages
+### 2) Authenticating with Github Packages
 
-In order to download private Github packages via `npm` you will need to [create a
-personal access token (PAT)](https://github.com/settings/tokens) in your Github
-account with at least the `repo` and `read:packages` scopes enabled.
+The simplest configuration is to simply include this `.npmrc` in the root of your project.
 
-Next, you can either add the token to your global `~/.npmrc` file:
-
-```bash
-//npm.pkg.github.com/:_authToken=TOKEN
 ```
-#### — OR —
-
-Sign in via the command line with the `@formkit` scope flag set.
-<strong>the password prompt requires your Personal Access Token, not your GitHub password.</strong>
-
-```bash
-$ npm login --scope=@formkit --registry=https://npm.pkg.github.com
-
-> Username: GITHUB_USERNAME
-> Password: PERSONAL_ACCESS_TOKEN
-> Email: PUBLIC_EMAIL_ADDRESS
-``` -->
-
-### 2) Adding a `.npmrc` file to your project.
-
-Next, you will need to create an `.npmrc` file in your project adjacent to your
-`package.json` file that sets the `@formkit` scope to Github Packages.
-For this starter project, the `.npmrc` file already exists.
-
-```bash
+/npm.pkg.github.com/:_authToken=${FORMKIT_TOKEN}
 @formkit:registry=https://npm.pkg.github.com
 ```
+
+You will need to [create a personal access token (PAT)](https://github.com/settings/tokens) in your Github account with at least the `repo` and `read:packages` scopes enabled — this `FORMKIT_TOKEN` should then be included in your environment. A local `~/.zprofile` or `~/.bash_profile` might look like this:
+
+```sh
+export FORMKIT_TOKEN="ghp_VrX4Jldfghjdfgoiernfx2N7Ji2UZaUc"
+```
+
 ## NPM install
 
 <callout type="warning" label="Important Installation Instructions">
