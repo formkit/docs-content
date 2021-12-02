@@ -381,9 +381,10 @@ Nodes have their own events which are emitted during the node’s lifecycle (unr
 
 ### Add listener
 
-To observe a given event use `node.on()` — for example:
+To observe a given event, use `node.on()`.
 
 ```js
+// Listen for any prop being set or changed.
 node.on('prop', ({ payload }) => {
   console.log(`prop ${payload.prop} was set to ${payload.value}`)
 })
@@ -396,7 +397,7 @@ Event handler callbacks all receive a single argument of type `FormKitEvent`, th
 
 ```js
 {
-  // The contents of the event, a string, an object, etc.
+  // The contents of the event — a string, an object, etc.
   payload: { cause: 'ice cream', duration: 200 },
   // The name of the event, this matches the first argument of node.on().
   name: 'brain-freeze',
@@ -424,7 +425,7 @@ const child = createNode({ parent: group, name: 'party-town-usa' })
 
 ### Remove listener
 
-Every call to register an observer with `node.on()` returns a “receipt” — a randomly generated key — that can be used later on to stop observing that event (similar to [`setTimeout()` and `clearTimeout()`](https://developer.mozilla.org/en-US/docs/Web/API/clearTimeout)) using `node.off(receipt)`.
+Every call to register an observer with `node.on()` returns a “receipt” — a randomly generated key — that can be used later to stop observing that event (similar to [`setTimeout()` and `clearTimeout()`](https://developer.mozilla.org/en-US/docs/Web/API/clearTimeout)) using `node.off(receipt)`.
 
 ```js
 const receipt = node.on('input', ({ payload }) => {
@@ -439,11 +440,11 @@ node.input('fizz buzz')
 
 ### Core events
 
-The following is a comprehensive list of all events emitted by `@formkit/core` — third party code may emit additional events not included here.
+The following is a comprehensive list of all events emitted by `@formkit/core`. Third-party code may emit additional events not included here.
 
 | Name                | Payload                         | Bubbles | Description                                                                                                            |
 | ------------------- | ------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `commit`            | any                             | yes     | Emitted when a nodes value is committed but before it has been transmitted to the rest of the form.                    |
+| `commit`            | any                             | yes     | Emitted when a node's value is committed but before it has been transmitted to the rest of the form.                    |
 | `config:{property}` | any (the value)                 | yes     | Emitted any time a specific configuration option is set or changed.                                                    |
 | `created`           | `FormKitNode`                   | yes     | Emitted immediately _before_ the node is returned when calling `createNode()` (plugins and features have already run). |
 | `defined`           | `FormKitTypeDefinition`         | yes     | Emitted when the node’s "type" is defined, this typically happens during `createNode()`.                               |
@@ -457,7 +458,7 @@ The following is a comprehensive list of all events emitted by `@formkit/core` �
 | `text`              | string or `FormKitTextFragment` | no      | Emitted after the `text` hook has run — typically when processing interface text that may have been translated.        |
 
 <callout type="info" label="Prop events on config changes">
-When a configuration option changes any inheriting nodes (including the origin node) that does not override that property in either it’s <code>props</code> object or <code>config</code> object will also emit <code>prop</code> and <code>prop:{propName}</code> events.
+When a configuration option changes, any inheriting nodes (including the origin node) will also emit <code>prop</code> and <code>prop:{propName}</code> events, so long as they do not override that property in their own <code>props</code> or <code>config</code> objects.
 </callout>
 
 ### Emitting events
@@ -468,7 +469,7 @@ Node events are emitted with `node.emit()`. You can leverage this feature to emi
 node.emit('myEvent', payloadGoesHere)
 ```
 
-An optional third argument `bubble` is also available — when set to `false` it prevents your event from bubbling up through the form tree.
+An optional third argument `bubble` is also available. When set to `false`, it prevents your event from bubbling up through the form tree.
 
 ## Hooks
 
