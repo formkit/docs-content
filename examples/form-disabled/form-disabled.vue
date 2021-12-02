@@ -1,4 +1,5 @@
 <template>
+<!-- try removing the "disabled" attribute below -->
 <FormKit type="form" disabled>
   <FormKit
     label="Username"
