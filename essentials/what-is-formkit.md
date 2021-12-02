@@ -17,9 +17,13 @@ This leads a mess of copy/paste HTML and home-rolled form components to accompli
 
 ## FormKit’s solutions
 
+### Comprehensive 💯
+
+FormKit is designed to be _the_ destination for all your form needs, whether [form styling](/essentials/styling), [validation](/essentials/validation), [generation](/essentials/generation), [error handling](/essentials/forms#backend-error-handling), custom inputs, or a plethora of other requirements. We are continuously adding to the FormKit ecosystem and shipping high-quality tooling for developers' entire form stack. 
+
 ### Easy to learn 📚
 
-Developers love to learn — but no one enjoys pouring over third-party APIs and configuration options. That's why FormKit uses a single component for all of its inputs. `<FormKit>` is the only component you need to know to get started — and it works just like you would expect an `<input>` tag to work:
+Developers love to learn — but no one enjoys pouring over third-party APIs and configuration options. That's why FormKit uses a single component for all of its [inputs]/essentials/inputs. `<FormKit>` is the only component you need to know to get started — and it works just like you would expect an `<input>` tag to work:
 
 <example
   name="Text input"
@@ -29,7 +33,7 @@ Developers love to learn — but no one enjoys pouring over third-party APIs and
 
 ### Easy to validate ✅
 
-Front end validation that gives instant feedback is an important part of providing a good experience to your users. Unfortunately, it can be incredibly tedious to implement even if you're using a great validation library. FormKit takes the pain out of front end validation by baking the rules directly into the inputs.
+Front end [validation](/essentials/validation) that gives instant feedback is an important part of providing a good experience to your users. Unfortunately, it can be incredibly tedious to implement even if you're using a great validation library. FormKit takes the pain out of front end validation by baking the [rules](/essentials/validation#available-rules) directly into the inputs.
 
 <example
   name="Text input"
@@ -43,8 +47,8 @@ Creating accessible forms is a serious challenge. Especially when accessibility 
 
 ### Easy to theme 👩‍🎨
 
-FormKit is made for front end developers. Each DOM element can have its classes changed, attributes manipulated, and position altered. You can even replace an input's entire structure while keeping all of the functionality you need. FormKit is ready for your styles whether you use vanilla CSS, Sass, Tailwind or any other CSS utility.
+FormKit is made for front end developers. Each DOM element can have its [classes changed](/essentials/styling#custom-classes), [attributes manipulated](/essentials/inputs#setting-attributes), and position altered. You can even replace an input's entire structure while keeping all of the functionality you need. FormKit is ready for your styles whether you use vanilla CSS, Sass, [Tailwind](/essentials/styling#tailwind-css-example) or any other CSS utility.
 
 ### Easy to extend 🧩
 
-FormKit comes with great production-ready defaults, and for many users, the defaults are all they'll never need. But FormKit is more than just inputs. It is a form building _framework_, complete with a hooks, events, plugins, libraries and schemas. Advanced developers can craft their own form systems using FormKit's low-level tooling.
+FormKit comes with great production-ready defaults, and for many users, the defaults are all they'll never need. But FormKit is more than just inputs. It is a form building _framework_, complete with a [hooks](/advanced/core#hooks), [events](/advanced/core#events), [plugins](/advanced/core#plugins), libraries and [schemas](/advanced/schema). Advanced developers can craft their own form systems using FormKit's low-level tooling.
