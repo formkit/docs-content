@@ -14,5 +14,6 @@
 
 <script setup>
 import { ref } from 'vue'
-const value = ref(50)
-</script>]
+const value = ref(6)
+</script>
+]
