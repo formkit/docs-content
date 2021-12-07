@@ -643,7 +643,7 @@ Messages will automatically be translated if the <code>@formkit/i18n</code> plug
 
 One of the keys to FormKit’s performance is it’s ability to efficiently count messages matching a given criteria (in the [store](#message-store)), and then keep a running tally of those messages as changes are made (including from child nodes). These counter are created using `node.ledger`.
 
-### Creating a new counter
+### Creating a counter
 
 Lets say we want to count how many messages are currently being displayed. We could do this by counting messages with the `visible` property set to `true`.
 
@@ -652,6 +652,10 @@ Lets say we want to count how many messages are currently being displayed. We co
   file="/_content/examples/count-visible/count-visible"
   langs="vue">
 </example>
+
+Notice the second argument of `node.ledger.count()` is a function. This function accepts a message as an argument and expects the return value to be a boolean, indicating whether that message should be counted or not. This allows you to craft arbitrary counters for any message type.
+
+When using a counter on a `group` or `list` node, the counter will propigate down the tree and sum the value of all messages passing the criteria function and begin tracking that count moving forward.
 
 <callout type="tip" label="Validation counter">
 The validation plugin already declares a counter called <code>blocking</code> which counts the blocking property of all messages. This is how the FormKit’s forms know if all their children are "valid".
