@@ -57,7 +57,8 @@ For this starter project, the `.npmrc` file already exists.
 ```bash
 @formkit:registry=https://npm.pkg.github.com
 ```
-## NPM install
+
+## Install
 
 <callout type="warning" label="Important Installation Instructions">
 During the Alpha and Beta program you must complete the <a href="#alpha-group-setup">authentication steps above</a>
@@ -79,6 +80,10 @@ import { plugin, defaultConfig } from '@formkit/vue'
 
 createApp(App).use(plugin, defaultConfig).mount('#app')
 ```
+
+<callout type="tip" label="Default theme">
+If you’d like to install the default FormKit theme, please follow the installation instructions on <a href="/essentials/styling">the styling documentation</a>.
+</callout>
 
 That's it! You're now ready to use the `<FormKit>` component in your Vue application. The `defaultConfig` includes all of FormKit's inputs, validation rules, and the English language. You can replace the `defaultConfig` with your own configuration, which allows for improved tree-shaking (only include the rules and languages you want to actually use) and more fine-grained control.
 

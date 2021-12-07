@@ -239,6 +239,42 @@ async function someEvent () {
 The <code>&lt;FormKit type="form"&gt;</code> input already incorporates this await behavior. It will not call your <code>@submit</code> handler until your form is completely settled. However when building advanced inputs it can be useful to understand these underlying principles.
 </callout>
 
+### Getting a component’s node
+
+Sometimes it can be helpful to get the underlying instance of a node from the Vue `<FormKit>` component. There are two primary methods of fetching an input’s node.
+
+- Using the Vue plugin’s `$formkit.get()` (or `getNode()` for composition API)
+- Using the `@node` event.
+
+#### Using `this.$formkit.get()`
+
+When using FormKit with the Vue plugin (recommended), you can access a node by assigning it an `id` and then accessing it by that property.
+
+<callout type="warning">
+You must assign the input an <code>id</code> to use this method.
+</callout>
+
+<example
+  name="Get core node"
+  file="/_content/examples/node-get/node-get"
+  langs="vue">
+</example>
+
+<callout type="info" label="Composition API">
+When using Vue’s composition API, you don’t have access to <code>this</code> within <code>setup</code>. You can access the same <code>getNode()</code> function by importing it from <code>@formkit/core</code>.<br><br>
+<code>import { getNode } from '@formkit/core'</code>
+</callout>
+
+#### Using the node event
+
+Another way to get the underlying `node` is to listen to the `@node` event which is emitted only once when the component first initializes the node.
+
+<example
+  name="Node event"
+  file="/_content/examples/node-event/node-event"
+  langs="vue">
+</example>
+
 ## Traversal
 
 To traverse nodes within a group or list use `node.at(address)` — where `address` is the `name` of the node being accessed (or the relative path to the name). For example:
@@ -601,4 +637,22 @@ console.log(node.store.clickHole.value)
 
 <callout type="info" label="Message locales">
 Messages will automatically be translated if the <code>@formkit/i18n</code> plugin is installed and a matching key is available in the active locale. <a href="/essentials/internationalization">Read the i18n docs</a>.
+</callout>
+
+## Ledger
+
+One of the keys to FormKit’s performance is it’s ability to efficiently count messages matching a given criteria (in the [store](#message-store)), and then keep a running tally of those messages as changes are made (including from child nodes). These counter are created using `node.ledger`.
+
+### Creating a new counter
+
+Lets say we want to count how many messages are currently being displayed. We could do this by counting messages with the `visible` property set to `true`.
+
+<example
+  name="Count visible"
+  file="/_content/examples/count-visible/count-visible"
+  langs="vue">
+</example>
+
+<callout type="tip" label="Validation counter">
+The validation plugin already declares a counter called <code>blocking</code> which counts the blocking property of all messages. This is how the FormKit’s forms know if all their children are "valid".
 </callout>

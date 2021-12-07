@@ -50,10 +50,8 @@ Using `v-model` allows for two-way reactive data binding with any FormKit input.
 
 ### Using `node.input()`
 
-At the heart of every FormKit input is an instance of FormKit Core’s `node`
-object, and using the `node.input()` method is the most efficient mechanism to
-modify any value. The `node` object can be retrieved by binding to
-the `@node` event when the `FormKit` component is created.
+At the heart of every FormKit input is an instance of [FormKit’s `node`
+object](/advanced/core#node), and using the `node.input()` method is the most efficient mechanism to modify any input’s value (read more about [getting an instance of the node object](/advanced/core#getting-a-components-node)).
 
 <example
   name="Input v-model"
