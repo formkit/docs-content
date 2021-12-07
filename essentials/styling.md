@@ -163,4 +163,5 @@ from here - such as in the case of the second text input here.
 <example
   name="Global config with Tailwind"
   file="/_content/examples/tailwind-classes/example"
-  langs="vue"></example>
+  langs="vue"
+  css-framework="tailwind"></example>

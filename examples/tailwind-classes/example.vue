@@ -26,12 +26,21 @@
     help="I only get the `radio` styles because the config has conditional logic"
   />
   <!-- %partial% -->
-  <!-- %head% -->
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-  <!-- %head% -->
 </template>
 
-<!-- %config% --><script>
+<script type="tailwind-config">
+// this script tag is special magic for the FormKit example editor.
+// this is not how you actually set Tailwind config in your project.
+{
+  theme: {
+    // your tailwind config stuff here
+  }
+}
+</script>
+
+<script type="formkit-config">
+// this script tag is special magic for the FormKit example editor.
+// this is not how you actually set FormKit config in your project.
 {
   config: {
     rootClasses (compositionKey, node) {
@@ -73,4 +82,4 @@
     }
   }
 }
-</script><!-- %config% -->
+</script>
