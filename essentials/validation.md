@@ -17,7 +17,7 @@ Validation rules can be declared by specifying each desired rule name separated 
   name="Validation strings"
   file="/_content/examples/validation-strings/validation-strings"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Array syntax
@@ -30,7 +30,7 @@ This is especially helpful if the arguments being provided need to be actual Jav
   name="Validation arrays"
   file="/_content/examples/validation-arrays/validation-arrays"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ## Showing errors
@@ -81,7 +81,7 @@ The value must be `yes`, `on`, `1` or `true`. Useful for checkbox inputs — oft
   name="Accepted"
   file="/_content/examples/rule-accepted/rule-accepted"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Alpha
@@ -92,7 +92,7 @@ Checks if a value is only alphabetical characters. There are two character sets:
   name="Alpha"
   file="/_content/examples/rule-alpha/rule-alpha"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Alphanumeric
@@ -103,7 +103,7 @@ Checks if a value is only made of alphabetical characters or numeric digits. For
   name="Alphanumeric"
   file="/_content/examples/rule-alphanumeric/rule-alphanumeric"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Between
@@ -114,7 +114,7 @@ Checks if a number is (inclusively) between two other numbers. The input value m
   name="Between"
   file="/_content/examples/rule-between/rule-between"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Confirm
@@ -130,7 +130,7 @@ Note: the two inputs must be in the same `group` or `form`.
   name="Confirm"
   file="/_content/examples/rule-confirm/rule-confirm"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Date after
@@ -141,7 +141,7 @@ Determines if a date is after the current date or a date supplied as the rule's 
   name="Date after"
   file="/_content/examples/rule-date-after/rule-date-after"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Date before
@@ -152,7 +152,7 @@ Determines if a date is before the current date or a date supplied as the rule's
   name="Date before"
   file="/_content/examples/rule-date-before/rule-date-before"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Date between
@@ -163,7 +163,7 @@ Determines if a date is between (and including) the two dates supplied as the ru
   name="Date between"
   file="/_content/examples/rule-date-between/rule-date-between"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Date format
@@ -187,7 +187,7 @@ Native date inputs always output the same format <code>YYYY-MM-DD ...</code> eve
   name="Date format"
   file="/_content/examples/rule-date-format/rule-date-format"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Email
@@ -198,7 +198,7 @@ Checks if the input contains a valid email address.
   name="Email"
   file="/_content/examples/rule-email/rule-email"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Ends with
@@ -209,7 +209,7 @@ Checks if the input’s value ends with a given substring.
   name="Ends with"
   file="/_content/examples/rule-ends-with/rule-ends-with"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Is
@@ -220,7 +220,7 @@ Checks that the input’s value matches at least one of the provided arguments.
   name="Is"
   file="/_content/examples/rule-is/rule-is"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Length
@@ -231,7 +231,7 @@ Checks that the input’s value is over a given length, or between two length va
   name="Is"
   file="/_content/examples/rule-length/rule-length"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Matches
@@ -242,7 +242,7 @@ Checks if the input matches a particular value or pattern. If you pass multiple 
   name="Is"
   file="/_content/examples/rule-matches/rule-matches"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 Instead of passing in strings within the validation prop for simple matching, you can template your argument with slashes <code>/</code> to pass in your own regular expression.
@@ -251,7 +251,7 @@ Instead of passing in strings within the validation prop for simple matching, yo
   name="Matches"
   file="/_content/examples/rule-matches/rule-matches-inline-regex"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 When using the string [String Syntax](#string-syntax) you cannot escape characters used to define the validation rules themselves <code>(|,:)</code>. To use these characters in your regular expressions you must use the alternative [Array Syntax](#array-syntax).
@@ -260,7 +260,7 @@ When using the string [String Syntax](#string-syntax) you cannot escape characte
   name="Matches"
   file="/_content/examples/rule-matches/rule-matches-array-syntax"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Max
@@ -271,7 +271,7 @@ Checks that a <code>Number</code> is less than a maximum value. The maximum valu
   name="Max"
   file="/_content/examples/rule-max/rule-max"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 You can also use this rule to validate that the length of an <code>Array</code> is less than a maximum value.
@@ -280,7 +280,7 @@ You can also use this rule to validate that the length of an <code>Array</code> 
   name="Max"
   file="/_content/examples/rule-max/rule-max-array"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Min
@@ -291,7 +291,7 @@ Checks that a <code>Number</code> is more than a minimum value. The minimum valu
   name="Max"
   file="/_content/examples/rule-min/rule-min"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 You can also use this rule to validate that the length of an <code>Array</code> is more than a minimum value.
@@ -300,7 +300,7 @@ You can also use this rule to validate that the length of an <code>Array</code> 
   name="Max"
   file="/_content/examples/rule-min/rule-min-array"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Not
@@ -311,7 +311,7 @@ Checks to ensure the input data does not match a set of predefined values.
   name="Not"
   file="/_content/examples/rule-not/rule-not"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Number
@@ -322,7 +322,7 @@ Checks if the input is a valid number as evaluated by <code>isNaN()</code>.
   name="Number"
   file="/_content/examples/rule-number/rule-number"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Required
@@ -333,7 +333,7 @@ Checks if the input is empty.
   name="Required"
   file="/_content/examples/rule-required/rule-required"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Starts With
@@ -344,7 +344,7 @@ Checks if the input starts with one of the provided options.
   name="starts_with"
   file="/_content/examples/rule-starts-with/rule-starts-with"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### URL
@@ -355,7 +355,7 @@ Checks if the input value appears to be a properly formatted URL including the p
   name="url"
   file="/_content/examples/rule-url/rule-url"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ## Custom rules
@@ -405,7 +405,7 @@ To add a validation to a specific input use the `validation-rules` prop.
   name="Custom validation rules"
   file="/_content/examples/validation-custom/validation-custom"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 <callout type="tip" label="Custom message">
@@ -419,7 +419,7 @@ There are several ways to customize your validation message. The most basic of w
   name="Custom validation rules"
   file="/_content/examples/validation-label/validation-label"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 If you need to be more specific you have two options:
@@ -439,7 +439,7 @@ To override a validation message on a single FormKit input, add the `validation-
   name="Custom validation rules"
   file="/_content/examples/validation-custom-messages/validation-custom-messages"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 #### Using functions
@@ -460,7 +460,7 @@ Let’s re-write the above example using a function instead of a string for even
   name="Custom validation rules"
   file="/_content/examples/validation-custom-messages/validation-custom-messages-function"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Global validation message
