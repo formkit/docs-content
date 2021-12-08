@@ -12,7 +12,7 @@ Although flags are <a href="http://www.flagsarenotlanguages.com/blog/why-flags-d
 
 ## Using a locale
 
-FormKit’s `defaultConfig` includes the english locale by default — to add an additional locale, import it from `@formkit/i18n` and append it to the `locales` option wherever you initialized the FormKit plugin. To set the active locale specify it with the `locale` option:
+FormKit’s `defaultConfig` includes the english locale by default — to add an additional locale, import it from `@formkit/i18n` and append it to the `locales` option when you initialized the FormKit plugin. To set the active locale specify it with the `locale` option:
 
 ```js
 import { createApp } from 'vue'
@@ -32,6 +32,17 @@ app.use(
 )
 app.mount('#app')
 ```
+
+<!-- ## Changing the active locale
+
+There are two ways to change your active locale:
+
+- Using `this.$formkit.setLocale()` from the Vue plugin.
+- Directly modifying the root `config` object.
+
+### Using `setLocale`
+
+When using Vue’s options API you have access to `this.$formkit` which contains a purpose-built method `setLocale()` which globally changes the current locale. -->
 
 ## Adding your language
 

@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.0.0-alpha.3
+
+### December 7, 2021
+
+#### 🎉 New features
+
+- New `$formkit.setLocale()` reactively changes the language of all displayed messages.
+- Adds 🇫🇷 French and 🇩🇪 German locales (thank you [@HoreKk](https://github.com/HoreKk) and [@digitalkaoz](https://github.com/digitalkaoz))
+- Adds new `rootConfig` proxy object that is used to store global base config and prop values (significant refactor of configuration system).
+- Added [ledger](/advanced/core#ledger) dependency tracking to instances of `FormKitObservedNode`.
+
+#### 🐛 Bug Fixes
+
+- Fixed a bug that caused children of `list` inputs to sometimes throw an exception when display validation errors.
+- Improved several of the validation error messages.
+- Fixed an issue with select inputs prevented raw `node.input()` calls to not trigger reactivity in Vue.
+
 ## 1.0.0-alpha.2
 
 ### November 30, 2021
