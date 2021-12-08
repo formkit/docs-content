@@ -16,10 +16,6 @@
         label="Password"
         validation="required"
         validation-behavior="live"
-        :field-errors="{
-          // mock back-end error message
-          phone: ['Sorry, that phone number is already registered.']
-        }"
       />
       <FormKit
         type="password"
