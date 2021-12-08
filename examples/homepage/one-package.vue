@@ -18,11 +18,7 @@
       label="Favorite Food"
       name="favorite_food"
       placeholder="Choose a food"
-      :options="{
-        pizza: 'Pizza',
-        iceCream: 'Ice Cream',
-        burger: 'Burger'
-      }"
+      :options="['Pizza', 'Ice Cream', 'Burger']"
     />
     <FormKit
       type="textarea"
