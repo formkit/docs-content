@@ -1,6 +1,8 @@
+%partial%
 <template>
   <FormKit
     type="form"
+    @submit="handleSubmit"
     form-class="selection:bg-pink-200 my-8 mx-auto w-full max-w-2xl bg-white border-2 border-green-400 p-6 shadow-lg rounded-lg"
     :submit-attrs="{
       'input-class': 'bg-green-500 py-2 px-4 mt-4 rounded-md text-white'
@@ -46,3 +48,15 @@ html[data-active-tab="render"] {
   @apply py-1 inline-block mb-1 text-gray-500 text-sm;
 }
 </style>
+%partial%
+
+<script>
+export default {
+  methods: {
+    async handleSubmit() {
+      await new Promise((r) => setTimeout(r, 400))
+      alert('Thank you!')
+    }
+  }
+}
+</script>
