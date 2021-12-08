@@ -3,7 +3,8 @@
 <FormKit
   type="text"
   label="Twitter Handle"
-  validation="starts_with:#"
+  placeholder="@username"
+  validation="starts_with:@"
 />
 <!-- %partial%::html:: -->
 </template>
