@@ -16,7 +16,7 @@ export default {
       node.input(coffee[index])
       if (index < coffee.length - 1) index++
       else index = 0
-    }, 100)
+    }, 250)
   },
 }
 </script>

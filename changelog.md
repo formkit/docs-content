@@ -10,6 +10,7 @@
 - Adds 🇫🇷 French and 🇩🇪 German locales (thank you [@HoreKk](https://github.com/HoreKk) and [@digitalkaoz](https://github.com/digitalkaoz))
 - Adds new `rootConfig` proxy object that is used to store global base config and prop values (significant refactor of configuration system).
 - Added [ledger](/advanced/core#ledger) dependency tracking to instances of `FormKitObservedNode`.
+- The submit button on forms now use the locale for the default “Submit” label.
 
 #### 🐛 Bug Fixes
 

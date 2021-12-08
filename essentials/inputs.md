@@ -84,6 +84,35 @@ In nearly all cases, attributes set on the `<FormKit>` component will be passed 
   langs="vue">
 </example>
 
+## Validation
+
+We’ll discuss validation in more detail on it’s [own documentation page](/essentials/validation) — but suffice to say adding validation rules to inputs in FormKit is as easy as adding the `validation` prop.
+
+<example
+  name="Simple validation"
+  file="/_content/examples/simple-validation/simple-validation"
+  langs="vue"></example>
+
+<cta
+  href="/essentials/validation"
+  label="Learn more about validation rules"
+  button="Read the docs"
+  type="ghost">
+</cta>
+
+## Explicit errors
+
+Validation errors are the only way to set errors on an input. You can also explicitly set error messages on an input by using the `errors` prop.
+
+<example
+  name="Simple validation"
+  file="/_content/examples/simple-errors/simple-errors"
+  langs="vue"></example>
+
+<callout type="info" label="Non blocking">
+Explicitly set errors are non-blocking, meaning they do not prevent the form from submitting the way validation errors do. You can read more about error handling on the <a href="/essentials/forms#error-handling">form documentation</a>.
+</callout>
+
 ## Props & attributes
 
 FormKit inputs accept both _universal_ props (ones that apply to all FormKit inputs), and _input-specific_ props. The following table is a comprehensive list of props available to all FormKit inputs.
