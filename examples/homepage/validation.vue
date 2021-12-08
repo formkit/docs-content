@@ -2,22 +2,37 @@
   <FormKit type="group">
     <!-- %partial%::html:: -->
     <FormKit
-      type="password"
-      name="password"
-      label="Password"
-      validation="required"
+      type="text"
+      label="Username"
+      placeholder="FormKitFan9000"
+      validation="required|length:5,20|alphanumeric"
       validation-behavior="live"
+      autocomplete="off"
     />
-    <FormKit
-      type="password"
-      name="password_confirm"
-      label="Confirm password"
-      validation="required|confirm"
-      validation-behavior="live"
-      validation-label="Password confirmation"
-    />
+    <div class="double">
+      <FormKit
+        type="password"
+        name="password"
+        label="Password"
+        validation="required"
+        validation-behavior="live"
+        :field-errors="{
+          // mock back-end error message
+          phone: ['Sorry, that phone number is already registered.']
+        }"
+      />
+      <FormKit
+        type="password"
+        name="password_confirm"
+        label="Confirm password"
+        validation="required|confirm"
+        validation-behavior="live"
+        validation-label="Password confirmation"
+      />
+    </div>
     <FormKit
       type="text"
+      name="phone"
       label="Phone Number"
       placeholder="xxx-xxx-xxxx"
       :validation="[
@@ -27,6 +42,22 @@
       validation-behavior="live"
       :validation-messages="{ matches: 'Phone number must be formatted: xxx-xxx-xxxx' }"
     />
+    <FormKit
+      type="text"
+      label="Twitter Handle"
+      placeholder="@username"
+      validation-behavior="live"
+      validation="required|starts_with:@"
+    />
     <!-- %partial% -->
   </FormKit>
 </template>
+
+<style>
+.double {
+  display: flex;
+}
+.double .formkit-outer {
+  margin-right: 1em;
+}
+</style>

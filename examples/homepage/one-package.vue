@@ -7,8 +7,9 @@
   >
     <FormKit
       type="text"
-      label="You Name"
+      label="Your Name"
       name="name"
+      placeholder="Your name"
       validation="required"
       validation-behavior="live"
     />
@@ -16,6 +17,7 @@
       type="select"
       label="Favorite Food"
       name="favorite_food"
+      placeholder="Choose a food"
       :options="{
         pizza: 'Pizza',
         iceCream: 'Ice Cream',
@@ -26,6 +28,7 @@
       type="textarea"
       name="instructions"
       label="Special Instructions"
+      placeholder="Allergies? No-contact delivery? Let us know."
       :help="`${data.instructions.length} / 120`"
       validation="length:0,120"
       validation-behavior="live"
