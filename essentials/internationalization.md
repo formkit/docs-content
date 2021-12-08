@@ -1,6 +1,14 @@
 # Internationalization (i18n)
 
-FormKit ships with internationalization support for all of it’s interfaces and validation messages. It’s easy to contribute a new locale!
+FormKit ships with internationalization support for all of it’s interfaces and validation messages. Currently, FormKit supports the following languages (in the `@formkit/i18n` package):
+
+- 🇩🇪 German (de)
+- 🇺🇸 English (en)
+- 🇫🇷 French (fr)
+
+<callout type="info" label="Flags aren’t languages">
+Although flags are <a href="http://www.flagsarenotlanguages.com/blog/why-flags-do-not-represent-language/">poor representations of languages</a> (flags indicate a geographic nation, while languages can be spoken in many ares of the world), we use the flags in the list above to indicate the location of the contributor who created that particular locale.
+</callout>
 
 ## Using a locale
 
@@ -25,8 +33,14 @@ app.use(
 app.mount('#app')
 ```
 
-## Contribute a locale
+## Adding your language
 
 Writing a locale for your own native language is a great way to contribute to FormKit, and an easy way to get started with open source too! We are always eager to see pull requests for new locales. To support this effort we’ve created a small web app to help make the translation process as easy as possible.
 
-<cta label="Want to contribute?" button="Locale builder" link="https://i18n.formkit.com"></cta>
+<cta href="https://i18n.formkit.com" label="Help others who speak your language!" button="Contribute a locale"></cta>
+
+Of course, you are not required to use our locale builder to submit a language, and you are more than welcome to submit a standard pull request with your locale included.
+
+<callout type="info" label="Localization">
+If your language is already on the list (lets say English), but your locality speaks a variation of that language (like 🇬🇧 <code>en-GB</code>), please feel free to submit your localized language.
+</callout>

@@ -655,7 +655,7 @@ Lets say we want to count how many messages are currently being displayed. We co
 
 Notice the second argument of `node.ledger.count()` is a function. This function accepts a message as an argument and expects the return value to be a boolean, indicating whether that message should be counted or not. This allows you to craft arbitrary counters for any message type.
 
-When using a counter on a `group` or `list` node, the counter will propigate down the tree and sum the value of all messages passing the criteria function and begin tracking that count moving forward.
+When using a counter on a `group` or `list` node, the counter will propagate down the tree summing the value of all messages passing the criteria function and then tracking that count for store changes.
 
 <callout type="tip" label="Validation counter">
 The validation plugin already declares a counter called <code>blocking</code> which counts the blocking property of all messages. This is how the FormKit’s forms know if all their children are "valid".
