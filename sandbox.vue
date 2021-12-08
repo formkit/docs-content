@@ -15,13 +15,13 @@ export default {}
 </script>
 
 <script type="formkit-config">
-// this script tag is special magic for the FormKit example editor.
+// this optional script tag is special magic for the FormKit playground.
 // A FormKit config object placed here will be applied to your demo.
 {}
 </script>
 
 <script type="tailwind-config">
-// this script tag is special magic for the FormKit example editor.
+// this optional script tag is special magic for the FormKit playground.
 // A Tailwind config object placed here will be applied to your demo.
 // This only applies if your CSS Framework selection is Tailwind.
 {}
