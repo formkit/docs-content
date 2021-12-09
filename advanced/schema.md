@@ -13,7 +13,7 @@ assigned with the `children` property.
   name="Schema - elements"
   file="/_content/examples/schema-elements/schema-elements"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 <callout type="tip" name="The style attribute">
@@ -29,7 +29,7 @@ into `FormKitSchema` with the `library` prop.
   name="Schema - components"
   file="/_content/examples/schema-components/schema-components"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 <callout type="warning" label="Components as props">
@@ -46,7 +46,7 @@ To reference a value from the data object, you simply use a dollar sign `$` foll
   name="Schema - data"
   file="/_content/examples/schema-data/schema-data"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 <callout type="warning" label="Important note">
@@ -61,7 +61,7 @@ Schemas support calling functions that are in your original reference data — 
   name="Schema - functions"
   file="/_content/examples/schema-functions/schema-functions"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Deep references
@@ -72,7 +72,7 @@ Just like JavaScript — you can access properties of a deeply nested object usi
   name="Schema - functions"
   file="/_content/examples/schema-dot-syntax/schema-dot-syntax"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 <callout type="info" label="Reserved words">
@@ -87,7 +87,7 @@ Schemas also support logic in the form of boolean logic, comparison, and arithme
   name="Schema - expressions"
   file="/_content/examples/schema-expressions/schema-expressions"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 <callout type="tip" label="Labeling expressions">
@@ -131,7 +131,7 @@ Both `$el` and `$cmp` schema nodes can leverage an `if` property that roughly eq
   name="Schema - conditional"
   file="/_content/examples/schema-conditional/schema-conditional"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### The `if/then/else` object
@@ -146,7 +146,7 @@ You can use the `if/then/else` object anywhere you would normally use a schema n
   name="Schema - conditional object"
   file="/_content/examples/schema-conditional-object/schema-conditional-object"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 #### Using `if/then/else` on attrs and props
@@ -157,7 +157,7 @@ You can also use `if/then/else` statements to conditionally output the values of
   name="Schema - conditional attrs"
   file="/_content/examples/schema-conditional-attrs/schema-conditional-attrs"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ## Loops
@@ -168,7 +168,7 @@ Both `$el` and `$cmp` schema nodes support looping. The loop syntax is similar t
   name="Schema - loops"
   file="/_content/examples/schema-loops/schema-loops"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 <callout type="tip" label="Casting">
@@ -183,7 +183,7 @@ Schemas can render the slot content of the `<FormKitSchema>` component anywhere 
   name="Schema - slots"
   file="/_content/examples/schema-slots/schema-slots"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ## FormKit Inputs
@@ -196,7 +196,7 @@ Assuming you globally registered the `FormKit` component — you can render your
   name="Schema - formkit"
   file="/_content/examples/schema-formkit/schema-formkit"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
 
 ### Accessing other inputs
@@ -207,5 +207,5 @@ The schema format has one built-in function specific to FormKit inputs: the `$ge
   name="Schema - formkit"
   file="/_content/examples/schema-get/schema-get"
   langs="vue"
-  layout="row">
+  layout="auto">
 </example>
