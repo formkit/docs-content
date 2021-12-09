@@ -72,11 +72,31 @@ To disable all the inputs in a given form, including the submit button, you can 
   langs="vue">
 </example>
 
-## Backend error handling
+## Error handling
 
-<callout type="danger" label="Under development">
-Handling backend errors is still under development and not yet available in FormKit Alpha. We'll send out a notification when it has been implemented. We expect the API to be very similar to <a href="https://vueformulate.com/guide/forms/error-handling/#form-errors">Vue Formulate</a>.
-</callout>
+With FormKit adding front end validation to your form is easy — but what about errors produced by your backend framework, or ones you want to manually assign? There are two types of errors you can assign to a form:
+
+- Form errors. These are displayed at the bottom of the form above the submit button. An example would be a global message like "Sorry our server isn’t working right now”.
+- Input errors. Errors to be placed on specific inputs within your form, typically these are validation errors from your backend, like "Sorry this username is already taken".
+
+### Form errors
+
+Form errors (ones that apply to the entire form) can be set two ways.
+
+- Using the `errors` prop on a `<FormKit type="form">`.
+- Using the `$formkit.setErrors()` Vue plugin method.
+
+<example
+  name="Disabled example"
+  file="/_content/examples/form-errors/form-errors"
+  langs="vue">
+</example>
+
+#### Using the `errors` prop
+
+Like with any FormKit input, you can directly assign errors using the `errors` prop. These errors are always visible (not subject to `validation-behavior`).
+
+#### Using `setErrors()` method
 
 ## Props
 
