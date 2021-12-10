@@ -85,24 +85,31 @@ Form errors (ones that apply to the entire form) can be set two ways.
 
 - Using the `errors` prop on a `<FormKit type="form">`.
 - Using the `$formkit.setErrors()` Vue plugin method.
-
-<example
-  name="Disabled example"
-  file="/_content/examples/form-errors/form-errors"
-  langs="vue">
-</example>
-
 #### Using the `errors` prop
 
 Like with any FormKit input, you can directly assign errors using the `errors` prop. These errors are always visible (not subject to `validation-behavior`).
 
-#### Using `setErrors()` method
+<example
+  name="Form errors prop example"
+  file="/_content/examples/form-errors/form-errors"
+  langs="vue">
+</example>
+
+#### Using `$formkit.setErrors()`
+
+Alternatively, you can set errors directly on a form by giving the form an `id` and then calling `$formkit.setErrors('id', { errors: ['error here] })`. 
+
+<example
+  name="setErrors"
+  file="/_content/examples/set-errors/set-errors"
+  langs="vue">
+</example>
 
 ## Props
 
 Forms are technically considered `input` types — so they share many of the universal props that standard inputs use.
 
-<reference-table :without="['label', 'help']" :data="[{ prop: 'disabled', type: 'Boolean', default: 'false', description: 'Disables the form submit button and all the inputs in the form.'}, { prop: 'submit-attrs', type: 'Object', default: '{}', description: 'Attributes or props that should be passed to the submit button.'}, { prop: 'submit-label', type: 'String', default: 'Submit', description: 'The label to use on the submit button.'}, { prop: 'actions', type: 'Boolean', default: 'true', description: 'Whether or not to include the actions bar at the bottom of the form.'}]"></reference-table>
+<reference-table :without="['label', 'help']" :data="[{ prop: 'disabled', type: 'Boolean', default: 'false', description: 'Disables the form submit button and all the inputs in the form.'}, { prop: 'submit-attrs', type: 'Object', default: '{}', description: 'Attributes or props that should be passed to the submit button.'}, { prop: 'submit-label', type: 'String', default: 'Submit', description: 'The label to use on the submit button.'}, { prop: 'actions', type: 'Boolean', default: 'true', description: 'Whether or not to include the actions bar at the bottom of the form (ex. you want to remove the submit button and use your own, set this to <code>false</code>).'}]"></reference-table>
 
 ## Composition keys
 

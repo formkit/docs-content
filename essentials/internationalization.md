@@ -33,16 +33,32 @@ app.use(
 app.mount('#app')
 ```
 
-<!-- ## Changing the active locale
+## Changing the active locale
 
 There are two ways to change your active locale:
 
-- Using `this.$formkit.setLocale()` from the Vue plugin.
-- Directly modifying the root `config` object.
+- Using `this.$formkit.setLocale()` from the Vue plugin (best for options API).
+- Directly modifying the root `config` object (best for composition API).
 
 ### Using `setLocale`
 
-When using Vue’s options API you have access to `this.$formkit` which contains a purpose-built method `setLocale()` which globally changes the current locale. -->
+When using Vue’s options API you have access to `this.$formkit` which contains a purpose-built method `setLocale('de')` which globally changes the current locale.
+
+<example
+  name="Changing locale example"
+  file="/_content/examples/locale-change/locale-change"
+  langs="vue">
+</example>
+
+### Using root `config`
+
+When using the composition API, you won’t have access to the `this.$formkit` — alternatively, you can fetch and modify the root FormKit configuration object. This is made available globally via Vue’s `inject` mechanism and a unique Symbol.
+
+<example
+  name="Changing locale via config"
+  file="/_content/examples/locale-change-config/locale-change-config"
+  langs="vue">
+</example>
 
 ## Adding your language
 

@@ -1,12 +1,12 @@
 <template>
-  <!-- %partial%::html -->
+  <!-- %partial%::html:: -->
   <FormKit
     type="form"
     submit-label="Login"
-    :errors="['Sorry, our server is currently down. Please try again soon.']"
+    :errors="['Our server is not working.', 'But we don’t like you anyway!']"
   >
     <FormKit type="email" label="Email address" />
     <FormKit type="password" label="Password" />
   </FormKit>
-  <!-- %partial%::html -->
+  <!-- %partial%::html:: -->
 </template>
