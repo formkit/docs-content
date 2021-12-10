@@ -74,10 +74,10 @@ To disable all the inputs in a given form, including the submit button, you can 
 
 ## Error handling
 
-With FormKit adding front end validation to your form is easy — but what about errors produced by your backend framework, or ones you want to manually assign? There are two types of errors you can assign to a form:
+With FormKit, adding front end validation to your form is easy — but what about errors produced by your backend framework, or ones you want to manually assign? There are two types of errors you can assign to a form:
 
-- Form errors. These are displayed at the bottom of the form above the submit button. An example would be a global message like "Sorry our server isn’t working right now”.
-- Input errors. Errors to be placed on specific inputs within your form, typically these are validation errors from your backend, like "Sorry this username is already taken".
+- Form errors — These are displayed at the bottom of the form above the submit button. An example would be a global message like "Sorry, our server isn’t working right now”.
+- Input errors — Errors to be placed on specific inputs within your form, typically these are validation errors from your backend, like "Sorry, this username is already taken".
 
 ### Form errors
 
