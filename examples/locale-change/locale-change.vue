@@ -13,7 +13,7 @@
     />
   </FormKit>
   <small>
-    Note: this example does not contain a full german locale, only the messages
+    Note: this example does not contain a full German locale, only the messages
     required for this example (submit, required, email).
   </small>
 </template>

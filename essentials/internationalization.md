@@ -1,10 +1,10 @@
 # Internationalization (i18n)
 
-FormKit ships with internationalization support for all of it’s interfaces and validation messages. Currently, FormKit supports the following languages (in the `@formkit/i18n` package):
+FormKit ships with internationalization support for all of its interfaces and validation messages. Currently, FormKit supports the following languages (in the `@formkit/i18n` package):
 
-- 🇩🇪 German (de)
+- 🇩🇪 German (de) — 🙏 &nbsp;@digitalkaoz
 - 🇺🇸 English (en)
-- 🇫🇷 French (fr)
+- 🇫🇷 French (fr) — 🙏 &nbsp;@HoreKk
 
 <callout type="info" label="Flags aren’t languages">
 Although flags are <a href="http://www.flagsarenotlanguages.com/blog/why-flags-do-not-represent-language/">poor representations of languages</a> (flags indicate a geographic nation, while languages can be spoken in many ares of the world), we use the flags in the list above to indicate the location of the contributor who created that particular locale.
@@ -52,7 +52,7 @@ When using Vue’s options API you have access to `this.$formkit` which contains
 
 ### Using root `config`
 
-When using the composition API, you won’t have access to the `this.$formkit` — alternatively, you can fetch and modify the root FormKit configuration object. This is made available globally via Vue’s `inject` mechanism and a unique Symbol.
+When using the composition API, you won’t have access to `this.$formkit`. Instead, you can fetch and modify the root FormKit configuration object. This is made available globally via Vue’s `inject` mechanism and a unique Symbol.
 
 <example
   name="Changing locale via config"
@@ -62,11 +62,11 @@ When using the composition API, you won’t have access to the `this.$formkit` �
 
 ## Adding your language
 
-Writing a locale for your own native language is a great way to contribute to FormKit, and an easy way to get started with open source too! We are always eager to see pull requests for new locales. To support this effort we’ve created a small web app to help make the translation process as easy as possible.
+Writing a locale for your own native language is a great way to contribute to FormKit, and an easy way to get started with open source too! We are always eager to see pull requests for new locales. To support this effort, we’ve created a locale builder — a small web app to help make the translation process as easy as possible.
 
 <cta href="https://i18n.formkit.com" label="Help others who speak your language!" button="Contribute a locale"></cta>
 
-Of course, you are not required to use our locale builder to submit a language, and you are more than welcome to submit a standard pull request with your locale included.
+Of course, you are not required to use our locale builder to submit a language, and are more than welcome to submit a standard pull request with your locale included.
 
 <callout type="info" label="Localization">
 If your language is already on the list (lets say English), but your locality speaks a variation of that language (like 🇬🇧 <code>en-GB</code>), please feel free to submit your localized language.
