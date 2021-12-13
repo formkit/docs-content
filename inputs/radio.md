@@ -1,4 +1,9 @@
-# Radio input
+<InputPageHero
+title="Radio input"
+icon="IconInputRadio"
+:pro="false"
+project-price=""
+data-price=""></InputPageHero>
 
 The `radio` input uses HTML's [native radio inputs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio) to allow a user to select one value from a series of options. The `options` prop is required for radio inputs and can be provided in 3 ways:
 

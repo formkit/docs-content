@@ -1,4 +1,9 @@
-# Date input
+<InputPageHero
+title="Date input"
+icon="IconInputDate"
+:pro="false"
+project-price=""
+data-price=""></InputPageHero>
 
 The `date` input uses HTML's [native date picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date) to allow users to easily select a date.
 

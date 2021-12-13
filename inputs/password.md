@@ -1,4 +1,9 @@
-# Password input
+<InputPageHero
+title="Password input"
+icon="IconInputPassword"
+:pro="false"
+project-price=""
+data-price=""></InputPageHero>
 
 The `password` input uses HTML's [native password input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/password). It allows a user to privately enter their password. When creating new passwords, this input is often compiled with the `confirm` validation rule.
 

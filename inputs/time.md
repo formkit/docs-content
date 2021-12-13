@@ -1,4 +1,9 @@
-# Time input
+<InputPageHero
+title="Time input"
+icon="IconInputTime"
+:pro="false"
+project-price=""
+data-price=""></InputPageHero>
 
 The `time` input uses HTML's [native time input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/time). It allows a user to enter a single line of time.
 

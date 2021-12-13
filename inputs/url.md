@@ -1,4 +1,9 @@
-# URL input
+<InputPageHero
+title="URL input"
+icon="IconInputUrl"
+:pro="false"
+project-price=""
+data-price=""></InputPageHero>
 
 The `url` input uses HTML's [native url input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url). It allows a user to enter a single URL.
 
