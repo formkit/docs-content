@@ -1,4 +1,9 @@
-# Hidden input
+<InputPageHero
+title="Hidden input"
+icon="IconInputHidden"
+:pro="false"
+project-price=""
+data-price=""></InputPageHero>
 
 The `hidden` input uses HTML's [native hidden input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/hidden). It is not a visible element, and should only be used to provide data that is not entered by a user.
 

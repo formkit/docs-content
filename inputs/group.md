@@ -1,4 +1,9 @@
-# Group input
+<InputPageHero
+title="Group input"
+icon="IconInputGroup"
+:pro="false"
+project-price=""
+data-price=""></InputPageHero>
 
 The `group` input allows you to structure data from child inputs as an object. The group itself outputs no markup (by default) and can be used in conjunction with any other type of input — including nested groups and [lists](/inputs/list).
 

@@ -1,4 +1,9 @@
-# List input
+<InputPageHero
+title="List input"
+icon="IconInputList"
+:pro="false"
+project-price=""
+data-price=""></InputPageHero>
 
 The `list` input allows you to structure data from child inputs as an array. The list itself outputs no markup (by default) and can be used in conjunction with any other type of input — including nested [groups](/inputs/group) and lists.
 
