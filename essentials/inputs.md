@@ -127,9 +127,59 @@ FormKit inputs emit both _universal_ events (ones that are emitted from all inpu
 
 ## Composition keys
 
-Inputs are composed of chunks of HTML and each of these chunks is assigned to a name called a “composition key”. These composition keys can be used for many purposes like modifying [classes](#classes), [content](/advanced/schema), [attributes](#setting-attributes), and even the [elements](/advanced/schema) that inputs are made of.
+Inputs are composed of chunks of HTML and each of these chunks is assigned to a name called a “composition key”. These composition keys can be used for many purposes like modifying [classes](#classes), [slots](#slots), and [schema overrides](#schema-overrides).
 
-Many composition keys are universally available while others are specific to a given input type (you can define your own for custom inputs as well). The following table is a comprehensive list of all universally available composition keys:
+Many composition keys are universally available while others are specific to a given input type (you can define your own for custom inputs as well). The following table is a comprehensive list of those that are generally available in all inputs:
 
 <reference-table type="compositionKeys" primary="composition-key">
 </reference-table>
+
+## Slots
+
+Inputs can have their structure overridden with slots and the pieces and parts of an input that support these slots are the [composition keys](#composition-keys). Slots are then are passed the [context object](/advanced/context) for use in their template.
+
+For example, if we wanted to use a slot to define the label of an input, we could use a `label` slot to do so:
+
+<example
+  name="Label slot"
+  file="/_content/examples/label-slot/label-slot"
+  langs="vue"></example>
+
+<callout type="warning" label="Consider schema overrides">
+A disadvantage of using slots is you often need to re-create unrelated features to make the change you desire. For example, if you may need to re-implement a <code>v-for</code> loop to change the DOM element being used to display validation messages.<br><br>To help address this shortcoming FormKit is also able to <a href="#schema-overrides">selectively override the underlying schema</a> of each composition key allowing complex structural modification often with no loss of functionality.
+</callout>
+
+## Schema overrides
+
+FormKit provides an additional mechanism to change the structure of a FormKit input called “Schema overrides”. Under the hood, all FormKit inputs are powered by [FormKit’s generator schema](/advanced/schema) — a JSON compatible data format for creating and storing DOM structure and logic. This allows tremendous structural flexibility because all composition keys can have their schema extended without wholesale replacement of the template.
+
+### Changing tags
+
+For example, by default FormKit uses un unordered list (`<ul>` and `<li>`) to output validation messages — but perhaps you need to use plain ol’ `<div>` and `<span>` tags. You can change these tags using the `schema` prop without having to re-create any functionality:
+
+<example
+  name="Schema overrides"
+  file="/_content/examples/schema-overrides/schema-overrides"
+  langs="vue"
+  tabs="html,render" ></example>
+
+### Unwrapping
+
+For accessibility and flexibility reasons FormKit uses several wrapper elements like the `wrapper` and `inner` composition keys. However, perhaps on some inputs you need to remove a wrapper to ensure certain elements are adjacent. You can do this by providing a `null` value as the schema element:
+
+<example
+  name="No wrappers"
+  file="/_content/examples/schema-wrappers/schema-wrappers"
+  langs="vue"
+  tabs="html,render" ></example>
+
+## Schema logic
+
+Schema overrides can also change the content being output using advanced schema logic. You could, for example, output a special value when your input’s value matches a particular string:
+
+<example
+  name="No wrappers"
+  file="/_content/examples/schema-content/schema-content"
+  langs="vue" ></example>
+
+<cta label="Learn more about how schemas work" href="/advanced/schema" button="Gimme more schema">

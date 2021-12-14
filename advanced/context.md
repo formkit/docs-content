@@ -96,6 +96,20 @@ The underlying [core node](/advanced/core) of the current input. This object is 
 
 For inputs that accept an options prop, this is a normalized array of option objects.
 
+## `option`
+
+For inputs that accept an options prop this object is available to [composition keys](/essentials/inputs/#composition-keys) that are inside the iteration (for example the `label` composition key on a `checkbox` input with multiple checkboxes). The object contains a `label`, `value`, and sometimes `attrs`:
+
+```js
+{
+  value: 'foo',
+  label: 'Foo',
+  attrs: {
+    disabled: true
+  }
+}
+```
+
 ## `state`
 
 Current state of the input:
