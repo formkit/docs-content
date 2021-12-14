@@ -1,11 +1,15 @@
 <template>
-  <FormKit type="group">
+  <FormKit
+    :value="formData"
+    type="form"
+  >
     <!-- %partial%::html:: -->
     <FormKit
       type="text"
       label="Username"
+      name="username"
       placeholder="FormKitFan9000"
-      validation="required|length:5,20|alphanumeric"
+      validation="required|length:5,15|alphanumeric"
       validation-behavior="live"
       autocomplete="off"
     />
@@ -37,17 +41,36 @@
       ]"
       validation-behavior="live"
       :validation-messages="{ matches: 'Phone number must be formatted: xxx-xxx-xxxx' }"
+      autocomplete="off"
     />
     <FormKit
       type="text"
       label="Twitter Handle"
+      name="twitter_handle"
       placeholder="@username"
       validation-behavior="live"
-      validation="required|starts_with:@"
+      validation="required|starts_with:@|length:5"
+      autocomplete="off"
     />
     <!-- %partial% -->
   </FormKit>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      formData: {
+        username: 'b@dExampleUsername',
+        password: 'test_password',
+        password_confirm: 'tst_password',
+        phone: '(555) 867-5309',
+        twitter_handle: 'forgetTheAt'
+      }
+    }
+  }
+}
+</script>
 
 <style>
 .double {
