@@ -2,7 +2,7 @@
 
 ## 1.0.0-alpha.3
 
-### December 7, 2021
+### December 13, 2021
 
 #### 🎉 New features
 
@@ -15,6 +15,7 @@
 - New `child` [node event](/advanced/nodes) emitted when a parent has a child added to it.
 - The `length` rule can now take max/min arguments in either order `length:15,5` or `length:5,15` evaluate the same.
 - Adds a new `getNode` function to directly access a [FormKit node](/advanced/core#node) using the composition API.
+- Improves the `@formkit/theme` css [import location](/essentials/styling).
 
 #### 🐛 Bug Fixes
 

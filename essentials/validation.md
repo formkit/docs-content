@@ -44,12 +44,79 @@ Validation rules are always computed in realtime — meaning a given field will 
 | dirty    | Shown after a user modifies the value of an input.                     |
 
 <callout type="info" label="Form submission">
-If an input is inside a <a href="/essentials/forms">form</a>, then <em>all</em> remaining validation messages will be displayed to the end user when a user attempts to submit the form.
+If an input is inside a <a href="/essentials/forms">form</a>, then <em>any</em> remaining validation messages will be displayed to the end user when a user attempts to submit the form.
+</callout>
+
+
+## Rule hints
+
+Validation rules operate according to a few default features which can be changed on a case by case basis with "rule hints":
+
+- **Run in sequence** - rules are run in the order they are declared. When a rule fails, any remaining rules are not run. For example, if you declare the validation rules as `required|length:5` then the `length` rule will not run until the `required` rule is passing.
+- **Skipped when empty** - Validation rules are not run when the input is empty (within the [available rules](#available-rules) `required` rule is the only exception).
+- **Synchronous** — all [available rules](#available-rules) are synchronous and not debounced.
+- **Blocking** - all validation rules produce [blocking messages](/advanced/core/#message-store) which prevent form submission.
+
+All of the above features can be modified when declaring your rules by using "hinting". Rule hints are small modifier characters you append to the beginning of a rule declaration to change it’s default behavior.
+
+Hint    | Name     | Description
+--------|----------|------------
+`(200)` | [Debounce](#debounce) | Debounces the validation rule by the given number of milliseconds
+`+`     | [Empty](#empty) | Runs the validation rule even if the input is empty (but not [force](#force) the rule).
+`*`     | [Force](#force)    | Runs the validation rule even if a previous rule was failing.
+`?`     | [Optional](#optional) | Makes a validation rule optional (it is non-blocking meaning the form can still submit).
+
+### Debounce `(milli)`
+
+At times it makes sense to debounce your validation rules. To do this use the debounce hint – a parenthesis containing a duration in milliseconds before your rule.
+
+<example
+  name="Debounce hint"
+  file="/_content/examples/debounce-hint/debounce-hint"
+  langs="vue"
+  layout="auto">
+</example>
+
+### Empty `+`
+
+Sometimes you want a validation rule to run even when an input is empty. You can use the empty `+` hint to do so.
+
+<example
+  name="Empty hint"
+  file="/_content/examples/empty-hint/empty-hint"
+  langs="vue"
+  layout="auto">
+</example>
+
+### Force `*`
+
+The force hint ensures a validation rule will run even if a rule that is defined before it is failing (note: this does not mean it will run when it is empty). Notice how this example will display _both_ the `length` and `email` messages.
+
+<example
+  name="Force hint"
+  file="/_content/examples/force-hint/force-hint"
+  langs="vue"
+  layout="auto">
+</example>
+
+### Optional `?`
+
+The optional hint allows a failing validation rule to not prevent form submission. In this example, notice how the form will not submit if the `required` or `confirm` rules are failing, but it will submit if the optional hinted `length` rule is failing:
+
+<example
+  name="Optional hint"
+  file="/_content/examples/optional-hint/optional-hint"
+  langs="vue"
+  layout="auto">
+</example>
+
+<callout type="tip" label="Combining hints">
+You can use rule hints together. To do so, just place multiple hints before the rule declaration: <code>required|*+(200)min:10</code>.
 </callout>
 
 ## Available rules
 
-FormKit ships with over 20 production-ready validation rules — covering the vast majority of validation needs. If you don’t find one that meets your exact requirement, you can add a [custom rule](#custom-rules) to suit your needs.
+FormKit ships with over 20 production-ready validation rules — covering the vast majority of validation needs. If you don’t find one that meets your exact requirement, you can add a [custom rule](#custom-rules) to suit your needs.
 
 - [accepted](#accepted)
 - [alpha](#alpha)
@@ -486,3 +553,4 @@ createApp(App).use(plugin, defaultConfig({
   }
 })).mount('#app')
 ```
+
