@@ -4,9 +4,18 @@ FormKit ships robust and accessible markup — but with no assumptions about you
 desired styles. There is an _optional_ base theme (as seen in these docs)
 called `Genesis` that you can use in your projects.
 
-#### Optional Genesis theme
+#### Installing Genesis theme
+
+To install Genesis, first install the `@formkit/themes` package.
+
+```sh
+npm install @formkit/themes
+```
+
+Then in your `main.js` (wherever you boot Vue up) include the Genesis `theme.css` (this assumes you are using a build tool like Vite, Webpack, Snopack, or Nuxt):
+
 ```js
-import { genesis } from `@formkit/themes`
+import `@formkit/themes/genesis/theme.css`
 ```
 
 ## Custom classes
@@ -134,6 +143,7 @@ when used at the global config level, it becomes easy to intelligently apply def
 class lists to your inputs.
 
 ### Configuring Tailwind with `rootClasses` in the global config
+
 <example
   name="Global config with Tailwind"
   mode="editor"

@@ -11,6 +11,7 @@ FormKit inputs have two values — the committed value (`node._value`) and the u
 ## `attrs`
 
 An object containing any attributes that will be passed to the internal input element.
+
 ## `fns`
 
 A small object of utility functions that are useful when writing schemas.
@@ -57,7 +58,7 @@ The label of the input provided by the `label` prop.
 
 ## `messages`
 
-An object of _visible_ messages. The key of this object is the message name, and the value is a core message object. For example, for an input displaying a single failing validation message, this object would look like:
+An object of _visible_ messages (where the type is not `ui` — `ui`). The key of this object is the message name, and the value is a core message object. For example, for an input displaying a single failing validation message, this object would look like:
 
 ```js
 {
@@ -112,9 +113,14 @@ Current state of the input:
   valid: boolean,
 }
 ```
+
 ## `type`
 
 The type of the input provided by the `type` prop. This is the value that should be referenced when looking up definitions in a library of inputs. Examples of this value: `text`, `select`, or `autocomplete`.
+
+## `ui`
+
+An object of visible messages (keyed by the `key`) of type `ui` that can be used in the interface. This allows for localized text for use on interface elements.
 
 ## `classes`
 

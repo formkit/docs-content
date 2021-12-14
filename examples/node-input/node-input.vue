@@ -1,33 +1,22 @@
 <template>
   <FormKit
     label="Favorite type of coffee type?"
-    name="coffee"
+    id="coffee"
     help="What is your favorite type of coffee?"
-    @node="e => { node = e }"
   />
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      node: null,
-    }
-  },
-  mounted () {
+  mounted() {
+    const node = this.$formkit.get('coffee')
     let index = 0
-    const coffee = [
-      'Latte',
-      'Americano',
-      'Doppio',
-      'Allongé',
-      'Macchiato',
-    ]
+    const coffee = ['Latte', 'Americano', 'Doppio', 'Allongé', 'Macchiato']
     setInterval(() => {
-      this.node.input(coffee[index])
+      node.input(coffee[index])
       if (index < coffee.length - 1) index++
       else index = 0
-    }, 100)
-  }
+    }, 250)
+  },
 }
 </script>

@@ -50,10 +50,8 @@ Using `v-model` allows for two-way reactive data binding with any FormKit input.
 
 ### Using `node.input()`
 
-At the heart of every FormKit input is an instance of FormKit Core’s `node`
-object, and using the `node.input()` method is the most efficient mechanism to
-modify any value. The `node` object can be retrieved by binding to
-the `@node` event when the `FormKit` component is created.
+At the heart of every FormKit input is an instance of [FormKit’s `node`
+object](/advanced/core#node), and using the `node.input()` method is the most efficient mechanism to modify any input’s value (read more about [getting an instance of the node object](/advanced/core#getting-a-components-node)).
 
 <example
   name="Input v-model"
@@ -85,6 +83,35 @@ In nearly all cases, attributes set on the `<FormKit>` component will be passed 
   tabs="html"
   langs="vue">
 </example>
+
+## Validation
+
+We’ll discuss validation in more detail on it’s [own documentation page](/essentials/validation) — but suffice to say adding validation rules to inputs in FormKit is as easy as adding the `validation` prop.
+
+<example
+  name="Simple validation"
+  file="/_content/examples/simple-validation/simple-validation"
+  langs="vue"></example>
+
+<cta
+  href="/essentials/validation"
+  label="Learn more about validation rules"
+  button="Read the docs"
+  type="ghost">
+</cta>
+
+## Explicit errors
+
+Validation errors are the only way to set errors on an input. You can also explicitly set error messages on an input by using the `errors` prop.
+
+<example
+  name="Simple validation"
+  file="/_content/examples/simple-errors/simple-errors"
+  langs="vue"></example>
+
+<callout type="info" label="Non blocking">
+Explicitly set errors are non-blocking, meaning they do not prevent the form from submitting the way validation errors do. You can read more about error handling on the <a href="/essentials/forms#error-handling">form documentation</a>.
+</callout>
 
 ## Props & attributes
 
