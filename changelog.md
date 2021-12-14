@@ -6,11 +6,15 @@
 
 #### 🎉 New features
 
+- Form error handling is here. You can now set input errors on an entire form, group or list with the `input-errors` prop or the `$formkit.setErrors()` methods. Read more about it [on the form docs](/essentials/forms#error-handling).
 - New `$formkit.setLocale()` reactively changes the language of all displayed messages.
 - Adds 🇫🇷 French and 🇩🇪 German locales (thank you [@HoreKk](https://github.com/HoreKk) and [@digitalkaoz](https://github.com/digitalkaoz))
 - Adds new `rootConfig` proxy object that is used to store global base config and prop values (significant refactor of configuration system).
 - Added [ledger](/advanced/core#ledger) dependency tracking to instances of `FormKitObservedNode`.
 - The submit button on forms now use the locale for the default “Submit” label.
+- New `child` [node event](/advanced/nodes) emitted when a parent has a child added to it.
+- The `length` rule can now take max/min arguments in either order `length:15,5` or `length:5,15` evaluate the same.
+- Adds a new `getNode` function to directly access a [FormKit node](/advanced/core#node) using the composition API.
 
 #### 🐛 Bug Fixes
 

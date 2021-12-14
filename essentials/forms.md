@@ -76,8 +76,8 @@ To disable all the inputs in a given form, including the submit button, you can 
 
 With FormKit adding front end validation to your form is easy — but what about errors produced by your backend framework, or ones you want to manually assign? There are two types of errors you can assign to a form:
 
-- Form errors. These are displayed at the bottom of the form above the submit button. An example would be a global message like "Sorry our server isn’t working right now”.
-- Input errors. Errors to be placed on specific inputs within your form, typically these are validation errors from your backend, like "Sorry this username is already taken".
+- [Form errors](#form-errors). These are displayed at the bottom of the form above the submit button. An example would be a global message like "Sorry our server isn’t working right now”.
+- [Input errors](#input-errors). Errors to be placed on specific inputs within your form, typically these are validation errors from your backend, like "Sorry this username is already taken".
 
 ### Form errors
 
@@ -97,11 +97,48 @@ Like with any FormKit input, you can directly assign errors using the `errors` p
 
 #### Using `$formkit.setErrors()`
 
-Alternatively, you can set errors directly on a form by giving the form an `id` and then calling `$formkit.setErrors('id', { errors: ['error here] })`. 
+Alternatively, you can set errors directly on a form by giving the form an `id` and then calling `$formkit.setErrors('id', ['Form error here'])`. The `setErrors` method must be passed the `id` of the form, and then can handle 1 or 2 more arguments — the form errors, and the input errors. 
 
 <example
   name="setErrors"
   file="/_content/examples/set-errors/set-errors"
+  langs="vue">
+</example>
+
+<callout type="input" label="Composition API">
+When using Vue 3’s composition API, you can access <code>setErrors</code> by importing it directly from <code>@formkit/vue</code>.<br><br>
+<code>import { setErrors } from '@formkit/vue'</code>
+</callout>
+
+<callout type="tip" label="Groups and Lists">
+The <code>setErrors</code> method also works on the <code>group</code> and <code>list</code> input type. Just provide the input an <code>id</code> to the input, and use it the exact same way.
+</callout>
+
+### Input errors
+
+Input errors (ones to be displayed with specific inputs in a form) can be applied three ways:
+
+- Manually using the `errors` prop on each individual input.
+- Using the `input-errors` prop on the form (also works with groups and lists).
+- Using the `$formkit.setErrors()` Vue plugin method (see [example above](#using-formkitseterrors)).
+
+#### Manually using `errors` prop
+
+The most basic way to display errors on a form is using the `errors` prop that is available on each `FormKit` input.
+
+<example
+  name="errors prop"
+  file="/_content/examples/errors-prop/errors-prop"
+  langs="vue">
+</example>
+
+#### Using `input-errors` prop
+
+You can also conveniently set error messages for all inputs in your form (or [group](/inputs/group) or [list](/inputs/list)) using the `input-errors` prop. The prop accepts an object of errors, where the keys are input names ([relative node addresses](/advanced/core#traversal) are supported) and the value is an error or array of errors to apply to that input.
+
+<example
+  name="input errors prop"
+  file="/_content/examples/input-errors-prop/input-errors-prop"
   langs="vue">
 </example>
 

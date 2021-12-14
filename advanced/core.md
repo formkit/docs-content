@@ -480,8 +480,9 @@ The following is a comprehensive list of all events emitted by `@formkit/core`.Â
 
 | Name                | Payload                         | Bubbles | Description                                                                                                            |
 | ------------------- | ------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `commit`            | any                             | yes     | Emitted when a node's value is committed but before it has been transmitted to the rest of the form.                    |
+| `commit`            | any                             | yes     | Emitted when a node's value is committed but before it has been transmitted to the rest of the form.                   |
 | `config:{property}` | any (the value)                 | yes     | Emitted any time a specific configuration option is set or changed.                                                    |
+| `child`             | `FormKitNode`                   | yes     | Emitted when a new child node is added, created or assigned to a parent.                                               |
 | `created`           | `FormKitNode`                   | yes     | Emitted immediately _before_ the node is returned when calling `createNode()` (plugins and features have already run). |
 | `defined`           | `FormKitTypeDefinition`         | yes     | Emitted when the nodeâ€™s "type" is defined, this typically happens during `createNode()`.                               |
 | `destroying`        | `FormKitNode`                   | yes     | Emitted when the `node.destroy()` is called, after it has been detached from any parents.                              |
