@@ -100,6 +100,23 @@ We’ll discuss validation in more detail on it’s [own documentation page](/es
   type="ghost">
 </cta>
 
+## Debouncing
+
+FormKit inputs all support debouncing as a first-class feature. While the value of an input changes on every keystroke (technically the `input` event) this newly updated value is only set internally — validation rules, groups, lists, forms, and (most) plugins are not yet “aware” a change has been made.
+
+Internally, FormKit debounces the `input` event. When the debounce has "settled" the new value is “committed” and the rest of the application is notified via the [input node’s `commit` event](/advanced/core#events). The default debounce delay is 20 milliseconds and can be adjusted with the `delay` prop or config option.
+
+To illustrate this, lets `v-model` a `group` input and observe how its value is not updated until after our egregiously long `delay`:
+
+<example
+  name="Delay prop"
+  file="/_content/examples/delay-prop/delay-prop"
+  langs="vue"></example>
+
+<callout type="info" label="Group & List delay">
+The delay prop’s default is <code>20</code> milliseconds. However, <code>group</code> and <code>list</code> inputs use <code>0</code> milliseconds by default to prevent the debounce delay from “building up” at each level of depth.
+</callout>
+
 ## Explicit errors
 
 Validation errors are the only way to set errors on an input. You can also explicitly set error messages on an input by using the `errors` prop.
