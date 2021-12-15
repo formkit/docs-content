@@ -142,6 +142,16 @@ You can also conveniently set error messages for all inputs in your form (or [gr
   langs="vue">
 </example>
 
+## Unmounting inputs
+
+When inputs are unmounted from a form — for example when using `v-if` — the key and value is removed from the form’s data. However, in some circumstances it may be preferable to keep the key/value pair even after the input has been removed. This can be accomplished by using the `preserve` prop.
+
+<example
+  name="input errors prop"
+  file="/_content/examples/preserve-prop/preserve-prop"
+  langs="vue">
+</example>
+
 ## Props
 
 Forms are technically considered `input` types — so they share many of the universal props that standard inputs use.
