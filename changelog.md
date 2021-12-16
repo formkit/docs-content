@@ -11,13 +11,13 @@
   - Force a rule to run even when previous rules are failing.
   - Debounce a validation rule.
   - Make a validation rule optional.
-- When an input is inside a form and unmounted (such as a `v-if`), it now removes it’s value from the form data and de-registers its [code node](/advanced/core#node).
-- New `preserve` prop allows inputs to _not_ remove their data from groups, lists and forms when they are removed.
+- When an input is inside a form and unmounted (such as a `v-if`), it now removes it’s value from the form data and de-registers its [core node](/advanced/core#node).
+- New `preserve` prop allows inputs to _not_ remove their data from groups, lists, and forms when they are removed.
 
 #### 🐛 Bug fixes
 
 - Fixed an issue that caused numeric value radio and checkbox options to render incorrectly.
-- Fixed a bug that made caused the `placeholder` to not render when the prop came _after_ the `options` prop.
+- Fixed a bug that caused the `placeholder` to not render when the prop came _after_ the `options` prop.
 - Fixed a bug that caused the delay value to not be respected when set using ancestor config.
 
 ## 1.0.0-alpha.3
