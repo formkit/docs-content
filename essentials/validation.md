@@ -90,7 +90,7 @@ Sometimes you want a validation rule to run even when an input is empty. You can
 
 ### Force `*`
 
-The force hint ensures a validation rule will run even if a rule that is defined before it is failing (note: this does not mean it will run when it is empty). Notice how this example will display _both_ the `length` and `email` messages.
+The force hint ensures a validation rule will run even if a rule that is defined before it is failing (note: this does not mean it will run when an input is empty). Notice how this example will display _both_ the `length` and `email` messages.
 
 <example
   name="Force hint"
@@ -101,7 +101,7 @@ The force hint ensures a validation rule will run even if a rule that is defined
 
 ### Optional `?`
 
-The optional hint allows a failing validation rule to not prevent form submission. In this example, notice how the form will not submit if the `required` or `confirm` rules are failing, but it will submit if the optional hinted `length` rule is failing:
+The optional hint allows a failing validation rule to not prevent form submission. In this example, notice how the form will not submit if the `required` or `confirm` rules are failing, but it will submit if the optional-hinted `length` rule is failing:
 
 <example
   name="Optional hint"
