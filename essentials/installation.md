@@ -2,12 +2,12 @@
 
 FormKit can be downloaded using a package manager like `npm` or `yarn` or it can be used directly via CDN.
 
-## Alpha Group Setup
+## Alpha/Beta Group Setup
 
-Thanks for joining the FormKit Alpha Program 🎉 ! Here are special instructions for installing FormKit during the private Alpha.
+Thanks for joining the FormKit Alpha and Beta Programs 🎉 ! Here are special instructions for installing FormKit during the private Alpha and Beta.
 
 <callout type="warning" label="Important Installation Instructions">
-<strong>During the Alpha and private Beta phases of development, FormKit packages will be hosted on Github Packages</strong>. In order to <code>npm install</code> FormKit you will need to be:
+<strong>During the private Alpha and Beta phases of development, FormKit packages will be hosted on Github Packages</strong>. In order to <code>npm install</code> FormKit you will need to be:
 
 1. Added as a collaborator to the `@formkit/formkit` repo on Github (you should receive an invite to the organization. If you haven't contact us in discord!).
 2. Authenticated with Github via an `.npmrc` entry or via `npm` on the command line.
@@ -38,7 +38,7 @@ export FORMKIT_TOKEN="ghp_VrX4Jldfghjdfgoiernfx2N7Ji2UZaUc"
 ## Install
 
 <callout type="warning" label="Important Installation Instructions">
-During the Alpha and Beta program you must complete the <a href="#alpha-group-setup">authentication steps above</a>
+During the Alpha and Beta program you must complete the <a href="#alphabeta-group-setup">authentication steps above</a>
 in order to successfully install the <code>@formkit/vue</code> package.
 </callout>
 
@@ -72,8 +72,8 @@ FormKit only supports Vue 3. If you're required to use Vue 2 on a project, consi
 
 If you would like to get up and running on a new project quickly to kick the tires, then consider
 cloning the our available [FormKit Vue Starter Project on Github](https://github.com/formkit/formkit-vue-starter-project).
-You will still need to complete the [Alpha Group Setup](#alpha-group-setup) steps above
-— but those instructions are also available in the starter project readme file.
+You will still need to complete the [Alpha/Beta Group Setup](#alphabeta-group-setup) steps above
+— but those instructions are also available in the starter project `.readme` file.
 
 <!-- ## From a CDN
 
