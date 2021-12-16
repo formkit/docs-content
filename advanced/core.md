@@ -643,11 +643,11 @@ Messages will automatically be translated if the <code>@formkit/i18n</code> plug
 
 ## Ledger
 
-One of the keys to FormKit’s performance is it’s ability to efficiently count messages matching a given criteria (in the [store](#message-store)), and then keep a running tally of those messages as changes are made (including from child nodes). These counter are created using `node.ledger`.
+One of the keys to FormKit’s performance is its ability to efficiently count messages matching a given criteria (in the [store](#message-store)), and then keep a running tally of those messages as changes are made (including from child nodes). These counters are created using `node.ledger`.
 
 ### Creating a counter
 
-Lets say we want to count how many messages are currently being displayed. We could do this by counting messages with the `visible` property set to `true`.
+Let's say we want to count how many messages are currently being displayed. We could do this by counting messages with the `visible` property set to `true`.
 
 <example
   name="Count visible"
