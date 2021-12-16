@@ -21,7 +21,7 @@ function countVisible(node) {
   visibleCount.value = node.ledger.value('visible')
 
   // Or we can listen to changes for that counter
-  node.on('count:visible', (count) => {
+  node.on('count:visible', ({ payload: count }) => {
     visibleCount.value = count
   })
 }
