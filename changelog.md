@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.0.0-alpha.4
+
+### December 16, 2021
+
+#### 🎉 New features
+
+- Now supports validation “hints” — modifiers that change the behavior of a validation rule. Hints allow you to:
+  - Run a rule when the field is empty.
+  - Force a rule to run even when previous rules are failing.
+  - Debounce a validation rule
+  - Make a validation rule optional
+- When an input is inside a form and unmounted (like using `v-if`), it now removes it’s value from the form data and de-registers its global state.
+- New `preserve` prop allows inputs to _not_ remove their data from groups, lists and forms when they are removed.
+
+#### 🐛 Bug fixes
+
+- Fixed an issue that caused numeric value radio and checkbox options to render incorrectly.
+- Fixed a bug that made caused the `placeholder` to not render when the prop came _after_ the `options` prop.
+- Fixed a bug that caused the delay value to not be respected when set using ancestor config.
+
 ## 1.0.0-alpha.3
 
 ### December 13, 2021
