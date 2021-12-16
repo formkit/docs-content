@@ -50,25 +50,25 @@ If an input is inside a <a href="/essentials/forms">form</a>, then <em>any</em> 
 
 ## Rule hints
 
-Validation rules operate according to a few default features which can be changed on a case by case basis with "rule hints":
+Validation rules operate according to a few default features which can be changed on a case-by-case basis with "rule hints":
 
 - **Run in sequence** - rules are run in the order they are declared. When a rule fails, any remaining rules are not run. For example, if you declare the validation rules as `required|length:5` then the `length` rule will not run until the `required` rule is passing.
-- **Skipped when empty** - Validation rules are not run when the input is empty (within the [available rules](#available-rules) `required` rule is the only exception).
-- **Synchronous** — all [available rules](#available-rules) are synchronous and not debounced.
-- **Blocking** - all validation rules produce [blocking messages](/advanced/core/#message-store) which prevent form submission.
+- **Skipped when empty** - Validation rules are not run when the input is empty (within the [available rules](#available-rules), the `required` rule is the only exception).
+- **Synchronous** - all [available rules](#available-rules) are synchronous and not debounced.
+- **Blocking** - all validation rules produce [blocking messages](/advanced/core#message-store) which prevent form submission.
 
-All of the above features can be modified when declaring your rules by using "hinting". Rule hints are small modifier characters you append to the beginning of a rule declaration to change it’s default behavior.
+All of the above features can be modified when declaring your rules by using "hinting". Rule hints are small modifier characters you append to the beginning of a rule declaration to change its default behavior.
 
 Hint    | Name     | Description
 --------|----------|------------
-`(200)` | [Debounce](#debounce) | Debounces the validation rule by the given number of milliseconds
-`+`     | [Empty](#empty) | Runs the validation rule even if the input is empty (but not [force](#force) the rule).
-`*`     | [Force](#force)    | Runs the validation rule even if a previous rule was failing.
-`?`     | [Optional](#optional) | Makes a validation rule optional (it is non-blocking meaning the form can still submit).
+`(200)` | [Debounce](#debounce-milli) | Debounces the validation rule by the given number of milliseconds.
+`+`     | [Empty](#empty-) | Runs the validation rule even if the input is empty (but not [force](#force-) the rule).
+`*`     | [Force](#force-)    | Runs the validation rule even if a previous rule was failing.
+`?`     | [Optional](#optional-) | Makes a validation rule optional (it is non-blocking meaning the form can still submit).
 
 ### Debounce `(milli)`
 
-At times it makes sense to debounce your validation rules. To do this use the debounce hint – a parenthesis containing a duration in milliseconds before your rule.
+At times it makes sense to debounce your validation rules. To do this use the debounce hint — a parenthesis containing a duration in milliseconds — before your rule.
 
 <example
   name="Debounce hint"

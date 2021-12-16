@@ -5,7 +5,7 @@
     validation-behavior="live"
     :validation-rules="{ username_exists }"
     :validation-messages="{
-      username_exists: 'Sorry, that username is taken try “formkit-4-life”.',
+      username_exists: 'Sorry, that username is taken. Try “formkit-4-life”.',
     }"
   />
 </template>
