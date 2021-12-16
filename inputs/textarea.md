@@ -17,7 +17,7 @@ langs="vue"></example>
 The `textarea` input has no unique props but can make use of the following universal
 FormKit props.
 
-<reference-table input="text" :attrs="['maxlength', 'minlength', 'placeholder']">
+<reference-table input="textarea" :attrs="['cols', 'maxlength', 'minlength', 'placeholder', 'rows']">
 </reference-table>
 
 ## Composition keys
