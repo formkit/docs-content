@@ -6,12 +6,12 @@
 
 #### 🎉 New features
 
-- Now supports validation “hints” — modifiers that change the behavior of a validation rule. Hints allow you to:
+- New [validation rule “hints”](/essentials/validation#rule-hints) — modifiers that change a validation rule’s behavior. Supported hints allow you to:
   - Run a rule when the field is empty.
   - Force a rule to run even when previous rules are failing.
-  - Debounce a validation rule
-  - Make a validation rule optional
-- When an input is inside a form and unmounted (like using `v-if`), it now removes it’s value from the form data and de-registers its global state.
+  - Debounce a validation rule.
+  - Make a validation rule optional.
+- When an input is inside a form and unmounted (such as a `v-if`), it now removes it’s value from the form data and de-registers its [code node](/advanced/core#node).
 - New `preserve` prop allows inputs to _not_ remove their data from groups, lists and forms when they are removed.
 
 #### 🐛 Bug fixes
