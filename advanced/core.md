@@ -660,5 +660,5 @@ Notice the second argument of `node.ledger.count()` is a function. This function
 When using a counter on a `group` or `list` node, the counter will propagate down the tree summing the value of all messages passing the criteria function and then tracking that count for store changes.
 
 <callout type="tip" label="Validation counter">
-The validation plugin already declares a counter called <code>blocking</code> which counts the blocking property of all messages. This is how the FormKit’s forms know if all their children are "valid".
+The validation plugin already declares a counter called <code>blocking</code> which counts the blocking property of all messages. This is how FormKit forms know if all their children are "valid".
 </callout>
