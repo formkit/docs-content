@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.0.0-alpha.5
+
+### [TK]
+
+#### 🎉 New features
+
+- New `incomplete-message` prop allows inline customization (or disablement) of the message displayed by the a form when it attempts to submit and all its inputs are not valid.
+
+#### 🐛 Bug fixes
+
+- Fixes a bug that prevented the incomplete message from displaying on forms.
+
 ## 1.0.0-alpha.4
 
 ### December 16, 2021

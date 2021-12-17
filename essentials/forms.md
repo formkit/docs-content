@@ -62,6 +62,38 @@ To submit a form via page request, simply leave off the `@submit` handler. Just 
   langs="vue">
 </example>
 
+## Validation
+
+As mentioned above, forms will not submit until all the inputs in the form are passing their validation rules.
+
+### Validation incomplete message
+
+In addition to not firing the submit event, a message is displayed above the submit button indicating the form is still incomplete. You can customize or disable this message using the `incomplete-message`.
+
+<example
+  name="Text example"
+  file="/_content/examples/incomplete-message/incomplete-message"
+  langs="vue">
+</example>
+
+<callout type="tip" label="Global customization">
+If you want to change the incomplete message across all forms on your project, you can modify the i18n locale message for <code>ui.incomplete</code>.
+</callout>
+
+### Validity state
+
+The validity of all input’s within a form is tracked automatically in the [context object](/advanced/context). This can be useful to when creating various interfaces. For example, if you wanted a submit button to be disabled until all inputs are valid, you could use the `state.valid` property to do so.
+
+<example
+  name="Text example"
+  file="/_content/examples/form-validity/form-validity"
+  langs="vue">
+</example>
+
+<callout type="tip" label="Getting the context object">
+In the above example we extract the context object from the <code>#default</code> slot, but there are other ways as well. The context object is available on each input’s core node on the <code>node.context</code> property, and you can fetch an input’s node <a href="/advanced/core#getting-a-components-node">a number of ways</a>.
+</callout>
+
 ## Disabling
 
 To disable all the inputs in a given form, including the submit button, you can use the `disabled` prop.
@@ -85,6 +117,7 @@ Form errors (ones that apply to the entire form) can be set two ways.
 
 - Using the `errors` prop on a `<FormKit type="form">`.
 - Using the `$formkit.setErrors()` Vue plugin method.
+
 #### Using the `errors` prop
 
 Like with any FormKit input, you can directly assign errors using the `errors` prop. These errors are always visible (not subject to `validation-behavior`).
@@ -97,7 +130,7 @@ Like with any FormKit input, you can directly assign errors using the `errors` p
 
 #### Using `$formkit.setErrors()`
 
-Alternatively, you can set errors directly on a form by giving the form an `id` and then calling `$formkit.setErrors('id', ['Form error here'])`. The `setErrors` method must be passed the `id` of the form, and then can handle 1 or 2 more arguments — the form errors, and the input errors. 
+Alternatively, you can set errors directly on a form by giving the form an `id` and then calling `$formkit.setErrors('id', ['Form error here'])`. The `setErrors` method must be passed the `id` of the form, and then can handle 1 or 2 more arguments — the form errors, and the input errors.
 
 <example
   name="setErrors"
@@ -156,7 +189,7 @@ When inputs are unmounted from a form — for example when using `v-if` — the 
 
 Forms are technically considered `input` types — so they share many of the universal props that standard inputs use.
 
-<reference-table :without="['label', 'help']" :data="[{ prop: 'disabled', type: 'Boolean', default: 'false', description: 'Disables the form submit button and all the inputs in the form.'}, { prop: 'submit-attrs', type: 'Object', default: '{}', description: 'Attributes or props that should be passed to the submit button.'}, { prop: 'submit-label', type: 'String', default: 'Submit', description: 'The label to use on the submit button.'}, { prop: 'actions', type: 'Boolean', default: 'true', description: 'Whether or not to include the actions bar at the bottom of the form (ex. you want to remove the submit button and use your own, set this to <code>false</code>).'}]"></reference-table>
+<reference-table :without="['label', 'help']" :data="[{ prop: 'disabled', type: 'Boolean', default: 'false', description: 'Disables the form submit button and all the inputs in the form.'}, { prop: 'incomplete-message', type: 'String/Boolean', default: '{locale}.ui.incomplete', description: 'The message that is shown to near the submit button when a user attempts to submit a form, but not all inputs are valid.'}, { prop: 'submit-attrs', type: 'Object', default: '{}', description: 'Attributes or props that should be passed to the submit button.'}, { prop: 'submit-label', type: 'String', default: 'Submit', description: 'The label to use on the submit button.'}, { prop: 'actions', type: 'Boolean', default: 'true', description: 'Whether or not to include the actions bar at the bottom of the form (ex. you want to remove the submit button and use your own, set this to <code>false</code>).'}]"></reference-table>
 
 ## Composition keys
 
