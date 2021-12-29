@@ -4,7 +4,7 @@ While you’re free to use `FormKit` inputs by themselves, you’ll usually want
 
 The `form` type will actively collect all the values from child inputs, using the name of each input as the property name in the resulting data object (just like [groups](/inputs/group)). You can also read and write to form values using v-model just as you would on any input.
 
-A `<FormKit type="form">` tracks the validation state of the form and prevents users from submitting the form if any inputs are invalid. As a convenience, the `form` also outputs a submit button.
+A `<FormKit type="form">` tracks the validation state of the form and prevents users from submitting the form if any inputs are invalid. As a convenience, the `form` also outputs a submit button (which you can disable with the `actions="false"` prop).
 
 <example
   name="Register example"
@@ -64,11 +64,11 @@ To submit a form via page request, simply leave off the `@submit` handler. Just 
 
 ## Validation
 
-As mentioned above, forms will not submit until all the inputs in the form are passing their validation rules.
+Forms will not submit until all the inputs in the form are passing their validation rules.
 
 ### Validation incomplete message
 
-In addition to not firing the submit event, a message is displayed above the submit button indicating the form is still incomplete. You can customize or disable this message using the `incomplete-message`.
+In addition to not firing the submit event, a message is displayed above the submit button indicating the form is still incomplete. You can customize this message using the `incomplete-message` prop or disable it by setting the prop to `false`.
 
 <example
   name="Text example"
@@ -82,7 +82,7 @@ If you want to change the incomplete message across all forms on your project, y
 
 ### Validity state
 
-The validity of all input’s within a form is tracked automatically in the [context object](/advanced/context). This can be useful to when creating various interfaces. For example, if you wanted a submit button to be disabled until all inputs are valid, you could use the `state.valid` property to do so.
+The validity of all inputs within a form is tracked automatically in the [context object](/advanced/context). This can be useful when creating various interfaces. For example, if you wanted a submit button to be disabled until all inputs are valid, you could use the `state.valid` property to do so.
 
 <example
   name="Text example"

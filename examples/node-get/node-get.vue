@@ -1,17 +1,17 @@
 <template>
   <FormKit
     type="select"
-    id="manufacture"
-    label="Manufacture"
+    id="manufacturer"
+    label="Manufacturer"
     :options="['Sony', 'Apple', 'Samsung', 'Lenovo']"
-    help="Select your favorite tech manufacture."
+    help="Select your favorite tech manufacturer."
   />
 </template>
 
 <script>
 export default {
   mounted() {
-    const node = this.$formkit.get('manufacture')
+    const node = this.$formkit.get('manufacturer')
     node.input('Samsung', false)
   },
 }
