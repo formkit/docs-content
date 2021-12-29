@@ -7,6 +7,7 @@
 #### 🎉 New features
 
 - New `incomplete-message` prop allows inline customization (or disablement) of the message displayed by the a form when it attempts to submit and all its inputs are not valid.
+- Updates the `defaultConfig` to accept custom inputs more easily.
 
 #### 🐛 Bug fixes
 

@@ -6,8 +6,7 @@ A schema is an array of objects, where each object defines a single HTML element
 
 ## HTML Elements ($el)
 
-HTML elements are defined using the `$el` property. You can use `$el` to render any HTML element. Attributes can be added with the `attrs` property, and content is
-assigned with the `children` property.
+HTML elements are defined using the `$el` property. You can use `$el` to render any HTML element. Attributes can be added with the `attrs` property, and content is assigned with the `children` property.
 
 <example
   name="Schema - elements"

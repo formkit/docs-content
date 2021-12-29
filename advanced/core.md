@@ -575,6 +575,28 @@ In the example above, the plugin is only defined on the parent, but the child al
   <figcaption>The plugin is inherited by the child, but executed independently.</figcaption>
 </figure>
 
+## Library
+
+In addition to extending and modifying nodes, plugins serve one additional role — exposing input libraries. A “library” is a function assigned to the `library` property of a plugin that accepts a node and determines whether it knows how to “define” that node. If it does, it calls `node.define()` with an [input definition](/custom-inputs#input-definition).
+
+For example, if we wanted to create a plugin that exposed a couple new inputs: `italy` and `france` we could write a plugin to do this:
+
+<example
+  name="Plugin library"
+  file="/_content/examples/plugin-library/plugin-library"
+  langs="vue"
+  layout="auto">
+</example>
+
+Experienced developers will notice a few exciting properties of this plugin-library pattern:
+
+1. Multiple input libraries can be installed on the same project.
+2. Plugins (and libraries) can be exposed locally, per form, group, or globally.
+3. A plugins can bundle new inputs along with plugin logic making installation simple for end users.
+4. The library function has full control over what conditions result in a call to `node.define()`. Frequently this is simply checking `node.props.type` but you can define different inputs based on other conditions, like if a particular prop is set.
+
+<cta label="Learn to create your own custom inputs" button="Custom input docs" href="/advanced/custom-inputs"></cta>
+
 ## Message store
 
 Each node has its own data store. The objects in these stores are called "messages" and these messages are especially valuable for three primary use cases:
