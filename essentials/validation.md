@@ -11,7 +11,7 @@ Declaring which validation rules apply to a given input is as simple as providin
 
 ### String syntax
 
-Validation rules can be declared by specifying each desired rule name separated separated by pipes `|`. Some rules may accept arguments too — which can be supplied after a colon `:`. You can use multiple arguments by comma separating them.
+Validation rules can be declared by specifying each desired rule name separated separated by pipes `|`. Some rules may accept arguments too — which can be supplied after a colon `:`. You can use multiple arguments by comma separating them:
 
 <example
   name="Validation strings"
@@ -24,7 +24,7 @@ Validation rules can be declared by specifying each desired rule name separated 
 
 Validation rules can also be declared by providing an array. Each element of the array must be itself an array where the first element is the string name of the validation rule, and the remaining `n` elements are arguments for that rule.
 
-This is especially helpful if the arguments being provided need to be actual JavaScript types — for example a regular expression.
+This is especially helpful if the arguments being provided need to be actual JavaScript types — for example a regular expression:
 
 <example
   name="Validation arrays"
@@ -68,7 +68,7 @@ Hint    | Name     | Description
 
 ### Debounce `(milli)`
 
-At times it makes sense to debounce your validation rules. To do this use the debounce hint — a parenthesis containing a duration in milliseconds — before your rule.
+At times it makes sense to debounce your validation rules. To do this use the debounce hint — a parenthesis containing a duration in milliseconds — before your rule:
 
 <example
   name="Debounce hint"
@@ -79,7 +79,7 @@ At times it makes sense to debounce your validation rules. To do this use the de
 
 ### Empty `+`
 
-Sometimes you want a validation rule to run even when an input is empty. You can use the empty `+` hint to do so.
+Sometimes you want a validation rule to run even when an input is empty. You can use the empty `+` hint to do so:
 
 <example
   name="Empty hint"
@@ -90,7 +90,7 @@ Sometimes you want a validation rule to run even when an input is empty. You can
 
 ### Force `*`
 
-The force hint ensures a validation rule will run even if a rule that is defined before it is failing (note: this does not mean it will run when an input is empty). Notice how this example will display _both_ the `length` and `email` messages.
+The force hint ensures a validation rule will run even if a rule that is defined before it is failing (note: this does not mean it will run when an input is empty). Notice how this example will display _both_ the `length` and `email` messages:
 
 <example
   name="Force hint"

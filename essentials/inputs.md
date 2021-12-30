@@ -102,7 +102,7 @@ We’ll discuss validation in more detail on its [own documentation page](/essen
 
 ## Debouncing
 
-FormKit inputs all support debouncing as a first-class feature. While the value of an input changes on every keystroke (technically the `input` event) this newly updated value is only set internally — validation rules, groups, lists, forms, and (most) plugins are not yet “aware” a change has been made.
+For performance, all FormKit inputs support debouncing as a first-class feature. While the value of an input changes on every keystroke (technically the `input` event), this newly updated value is only set internally — validation rules, groups, lists, forms, and (most) plugins are not yet “aware” a change has been made.
 
 Internally, FormKit debounces the `input` event. When the debounce has "settled", the new value is “committed” and the rest of the application is notified via the [input node’s `commit` event](/advanced/core#events). The default debounce delay is 20 milliseconds and can be adjusted with the `delay` prop or config option.
 

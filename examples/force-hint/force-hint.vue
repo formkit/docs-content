@@ -3,8 +3,9 @@
   <FormKit
     type="email"
     label="Email address"
-    validation="required|length:5|*email"
+    validation="length:5|*email"
     validation-behavior="live"
+    help="Enter less than 5 characters to see both rules appear."
   />
   <!-- By default, the "email" validation rule would
         not run if the "length" rule was failing. -->
