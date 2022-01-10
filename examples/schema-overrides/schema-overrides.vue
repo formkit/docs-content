@@ -10,5 +10,7 @@
     validation="required|length:5"
     validation-behavior="live"
   />
+  <!-- Remove the :schema prop to see validation
+        messages revert to their default HTML. -->
   <!-- %partial%::html:: -->
 </template>

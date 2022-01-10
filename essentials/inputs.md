@@ -86,7 +86,7 @@ In nearly all cases, attributes set on the `<FormKit>` component will be passed 
 
 ## Validation
 
-We’ll discuss validation in more detail on it’s [own documentation page](/essentials/validation) — but suffice to say adding validation rules to inputs in FormKit is as easy as adding the `validation` prop.
+We’ll discuss validation in more detail on its [own documentation page](/essentials/validation) — but suffice to say adding validation rules to inputs in FormKit is as easy as adding the `validation` prop.
 
 <example
   name="Simple validation"
@@ -102,9 +102,9 @@ We’ll discuss validation in more detail on it’s [own documentation page](/es
 
 ## Debouncing
 
-FormKit inputs all support debouncing as a first-class feature. While the value of an input changes on every keystroke (technically the `input` event) this newly updated value is only set internally — validation rules, groups, lists, forms, and (most) plugins are not yet “aware” a change has been made.
+For performance, all FormKit inputs support debouncing as a first-class feature. While the value of an input changes on every keystroke (technically the `input` event), this newly updated value is only set internally — validation rules, groups, lists, forms, and (most) plugins are not yet “aware” a change has been made.
 
-Internally, FormKit debounces the `input` event. When the debounce has "settled" the new value is “committed” and the rest of the application is notified via the [input node’s `commit` event](/advanced/core#events). The default debounce delay is 20 milliseconds and can be adjusted with the `delay` prop or config option.
+Internally, FormKit debounces the `input` event. When the debounce has "settled", the new value is “committed” and the rest of the application is notified via the [input node’s `commit` event](/advanced/core#events). The default debounce delay is 20 milliseconds and can be adjusted with the `delay` prop or config option.
 
 To illustrate this, lets `v-model` a `group` input and observe how its value is not updated until after our egregiously long `delay`:
 
@@ -163,16 +163,16 @@ For example, if we wanted to use a slot to define the label of an input, we coul
   langs="vue"></example>
 
 <callout type="warning" label="Consider schema overrides">
-A disadvantage of using slots is you often need to re-create unrelated features to make the change you desire. For example, if you may need to re-implement a <code>v-for</code> loop to change the DOM element being used to display validation messages.<br><br>To help address this shortcoming FormKit is also able to <a href="#schema-overrides">selectively override the underlying schema</a> of each composition key allowing complex structural modification often with no loss of functionality.
+A disadvantage of using slots is you often need to re-create unrelated features to make the change you desire. For example, if you need to re-implement a <code>v-for</code> loop to change the DOM element being used to display validation messages.<br><br>To help address this shortcoming, FormKit is also able to <a href="#schema-overrides">selectively override the underlying schema</a> of each composition key allowing complex structural modification often with no loss of functionality.
 </callout>
 
 ## Schema overrides
 
-FormKit provides an additional mechanism to change the structure of a FormKit input called “Schema overrides”. Under the hood, all FormKit inputs are powered by [FormKit’s generator schema](/advanced/schema) — a JSON compatible data format for creating and storing DOM structure and logic. This allows tremendous structural flexibility because all composition keys can have their schema extended without wholesale replacement of the template.
+FormKit provides an additional mechanism to change the structure of a FormKit input called “Schema overrides”. Under the hood, all FormKit inputs are powered by [FormKit’s schema](/advanced/schema) — a JSON compatible data format for creating and storing DOM structure and logic. This allows tremendous structural flexibility because all inputs can have pieces of their schema extended via composition keys without wholesale replacement of the template.
 
-### Changing tags
+### Changing HTML tags
 
-For example, by default FormKit uses un unordered list (`<ul>` and `<li>`) to output validation messages — but perhaps you need to use plain ol’ `<div>` and `<span>` tags. You can change these tags using the `schema` prop without having to re-create any functionality:
+For example, by default FormKit uses an unordered list (`<ul>` and `<li>`) to output validation messages — but perhaps you need to use `<div>` tags. You can change these tags using the `schema` prop without having to re-create any functionality:
 
 <example
   name="Schema overrides"
@@ -180,9 +180,9 @@ For example, by default FormKit uses un unordered list (`<ul>` and `<li>`) to ou
   langs="vue"
   tabs="html,render" ></example>
 
-### Unwrapping
+### Unwrapping or removing HTML tags
 
-For accessibility and flexibility reasons FormKit uses several wrapper elements like the `wrapper` and `inner` composition keys. However, perhaps on some inputs you need to remove a wrapper to ensure certain elements are adjacent. You can do this by providing a `null` value as the schema element:
+For accessibility and flexibility, FormKit uses several wrapper elements like the `wrapper` and `inner` composition keys. However, perhaps on some inputs you need to remove a wrapper element to ensure other elements are adjacent. You can do this by providing a `null` value as the schema element:
 
 <example
   name="No wrappers"
