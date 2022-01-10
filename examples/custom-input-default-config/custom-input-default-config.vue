@@ -1,6 +1,8 @@
+<!-- %partial% -->
 <template>
   <FormKit type="hello" />
 </template>
+<!-- %partial% -->
 
 <script type="formkit-config">
 {

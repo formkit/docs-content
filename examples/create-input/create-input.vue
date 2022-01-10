@@ -9,11 +9,7 @@
 </template>
 
 <script setup>
-// import { createInput } from '@formkit/vue'
-
-// This live code editor cannot yet use bare imports so we extract
-// createInput from the iife instead:
-const { createInput } = FormKitVue
+import { createInput } from '@formkit/vue'
 
 const myInput = createInput('Hello world')
 </script>

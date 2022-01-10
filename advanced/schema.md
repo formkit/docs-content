@@ -185,6 +185,17 @@ Schemas can render the slot content of the `<FormKitSchema>` component anywhere 
   layout="auto">
 </example>
 
+## Binding attrs and props
+
+At times it may be necessary to pass an object of variable or unknown attributes or props to a `$cmp` or `$el`. In Vue we would do this using `v-bind` — in schema land we use the `bind` property:
+
+<example
+  name="Schema - bind"
+  file="/_content/examples/schema-bind/schema-bind"
+  langs="vue"
+  layout="auto">
+</example>
+
 ## FormKit Inputs
 
 Although schemas can be used for almost any purpose — the primary objective is to empower developers to build complex and dynamic forms using a serializable data format. Using the schema with FormKit inputs covers this use case well.

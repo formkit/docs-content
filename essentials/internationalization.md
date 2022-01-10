@@ -5,6 +5,7 @@ FormKit ships with internationalization support for all of its interfaces and va
 - 🇩🇪 German (de) — 🙏 &nbsp;@digitalkaoz
 - 🇺🇸 English (en)
 - 🇫🇷 French (fr) — 🙏 &nbsp;@HoreKk
+- 🇷🇺 Russian (ru) — 🙏 &nbsp;@andreimakushkin
 
 <callout type="info" label="Flags aren’t languages">
 Although flags are <a href="http://www.flagsarenotlanguages.com/blog/why-flags-do-not-represent-language/">poor representations of languages</a> (flags indicate a geographic nation, while languages can be spoken in many ares of the world), we use the flags in the list above to indicate the location of the contributor who created that particular locale.
