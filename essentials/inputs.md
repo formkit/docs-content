@@ -190,7 +190,7 @@ For accessibility and flexibility, FormKit uses several wrapper elements like th
   langs="vue"
   tabs="html,render" ></example>
 
-## Schema logic
+### Schema logic
 
 Schema overrides can also change the content being output using advanced schema logic. You could, for example, output a special value when your input’s value matches a particular string:
 

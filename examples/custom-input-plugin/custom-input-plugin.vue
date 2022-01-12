@@ -16,7 +16,6 @@ const myPlugin = () => {}
 
 // Then we attach a library
 myPlugin.library = (node) => {
-  console.log(node.props.type)
   if (node.props.type === 'hello') {
     node.define(helloDefinition)
   }
