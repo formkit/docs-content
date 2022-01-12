@@ -154,7 +154,17 @@ To create inputs using the base schema you can use the `createInput()` utility f
 
 The function returns a ready-to-use [input definition](#input-definition).
 
-When providing a component as the first argument, `createInput` will create a schema object (`$cmp`) to use your component within the base schema. Your component will be passed a single `context` prop.
+When providing a *component* as the first argument, `createInput` will generate a schema object that references your component within the base schema. Your component will be passed a single `context` prop:
+
+```js
+{
+  $cmp: 'YourComponent',
+  props: {
+    context: '$node.context'
+  }
+}
+```
+
 
 When providing a schema object, your schema is directly injected into the base schema object. Notice that our hello world example now supports outputting "standard" FormKit features like labels, help text, and validation:
 
