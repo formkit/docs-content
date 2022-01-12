@@ -1,7 +1,7 @@
 <template>
   <FormKit type="group" v-model="groupValues">
     <p>
-      To illustrate the final value of this input, lets stick it in a group.
+      To illustrate the final value of this input, let's stick it in a group.
     </p>
     <FormKit
       :type="sum"

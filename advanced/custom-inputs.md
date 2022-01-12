@@ -246,9 +246,9 @@ The only time the uncommitted input <code>_value</code> should be used is for di
 
 ## Adding props
 
-The [standard FormKit props](/essentials/inputs#props--attributes) passed to the `<FormKit>` component (like `label` or `type`) are available in the root of the [context object](/advanced/context) and in the [core node `props`](/advanced/core#config--props) and you can use them in your schema by directly referencing them in expressions (ex: `$label`). Any props passed to a `<FormKit>` component that are not props end up in the `context.attrs` object (just `$attrs` in the schema).
+The [standard FormKit props](/essentials/inputs#props--attributes) that you can pass to the `<FormKit>` component (like `label` or `type`) are available in the root of the [context object](/advanced/context) and in the [core node `props`](/advanced/core#config--props), and you can use these props in your schema by directly referencing them in expressions (ex: `$label`). Any props passed to a `<FormKit>` component that are not *node props* end up in the `context.attrs` object (just `$attrs` in the schema).
 
-If you need additional props, you can declare them in your input definition. Props can also be used for internal input state (much like a `ref` in a Vue 3 component) - FormKit uses the `props` namespace for both purposes (see the autocomplete example below for an example of this). Props should _always_ be defined in camelCase and used in your Vue templates with kebab-case.
+If you need additional props, you can declare them in your input definition. Props can also be used for internal input state (much like a `ref` in a Vue 3 component). FormKit uses the `props` namespace for both purposes (see the autocomplete example below for an example of this). Props should _always_ be defined in camelCase and used in your Vue templates with kebab-case.
 
 <example
   name="Custom props"
@@ -256,7 +256,7 @@ If you need additional props, you can declare them in your input definition. Pro
   langs="vue">
 </example>
 
-When extending the base schema by using the `createInput` helper pass a second argument with input definition values to merge:
+When extending the base schema by using the `createInput` helper, pass a second argument with input definition values to merge:
 
 <example
   name="Custom props - createInput"
@@ -266,11 +266,11 @@ When extending the base schema by using the `createInput` helper pass a second a
 
 ## Adding features
 
-Features are the preferred way to add functionality to a custom input type. A "feature" is simply a function that receives the [core node](/advanced/core#node) as an argument — effectively they are plugins without any inheritance (so they only apply to the current node). You can use features to add input handlers, manipulate values, interact with props, listen to events and much more.
+Features are the preferred way to add functionality to a custom input type. A "feature" is simply a function that receives the [core node](/advanced/core#node) as an argument. Effectively, they are plugins without inheritance (so they only apply to the current node). You can use features to add input handlers, manipulate values, interact with props, listen to events, and much more.
 
-Features are defined in an array to encourage code reuse when possible. For example we [use a feature called “options”](https://github.com/formkit/formkit/blob/master/packages/inputs/src/features/options.ts) on `select`, `checkbox`, and `radio` inputs.
+Features are defined in an array to encourage code reuse when possible. For example, we [use a feature called “options”](https://github.com/formkit/formkit/blob/master/packages/inputs/src/features/options.ts) on `select`, `checkbox`, and `radio` inputs.
 
-As an example, lets imagine you want to build an input that allows users to enter 2 numbers and the value of the input is the sum of those two numbers.
+As an example, let's imagine you want to build an input that allows users to enter two numbers, and the value of the input is the sum of those two numbers:
 
 <example
   name="Custom input - sum numbers"
@@ -280,7 +280,7 @@ As an example, lets imagine you want to build an input that allows users to ente
 
 ## Examples
 
-Below are some custom input examples. They are not intended to be comprehensive or production ready, but rather illustrate some custom input features.
+Below are some examples of custom inputs. They are not intended to be comprehensive or production ready, but rather illustrate some custom input features.
 
 ### Simple text input
 
@@ -306,9 +306,9 @@ Let’s take a look at a slightly more complex example that utilizes `createInpu
   langs="vue">
 </example>
 
-## Input Checklist
+## Input checklist
 
-FormKit expose dozens of value added features to even the most mundane inputs. When writing a custom input for a specific project, you only need to implement the features that will actually be used on that project, but if you plan to distribute your inputs for others you will want to ensure these features are available. For example, the standard `<FormKit type="text">` input uses the following schema for its `input` element:
+FormKit exposes dozens of value-added features to even the most mundane inputs. When writing a custom input for a specific project, you only need to implement the features that will actually be used on that project. However, if you plan to distribute your inputs to others, you will want to ensure these features are available. For example, the standard `<FormKit type="text">` input uses the following schema for its `input` element:
 
 ```js
 {
