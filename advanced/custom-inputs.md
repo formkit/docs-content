@@ -131,7 +131,7 @@ In the future, FormKit may expand to support additional frameworks (ex: React or
 
 ## Schema Inputs
 
-All of FormKit’s core inputs are written using schemas to allow for the greatest flexibility possible. You essentially have two options when writing your own schema inputs:
+All of FormKit’s core inputs are written using schemas to allow for the greatest flexibility possible. You have two primary options when writing your own schema inputs:
 
 - [Extend the base schema](#using-createinput-to-extend-the-base-schema) (recommended).
 - Write your input from scratch.
@@ -143,16 +143,16 @@ It is important to understand the basic structure of a “standard” FormKit in
   <figcaption>Composition of a standard FormKit text input.</figcaption>
 </figure>
 
-The `input` composition key in the above diagram is typically what you’ll swap out when creating your own inputs — keeping the label, wrappers, help text and messages. However, if you want to control the _entire_ input (wrappers, labels, inputs, help text, messages etc) you can also write your own input from scratch.
+The `input` composition key in the diagram above is typically what you’ll swap out when creating your own inputs — keeping the wrappers, labels, help text, and messages intact. However, if you want to control these aspects as well, you can also write your own input from scratch.
 
 #### Using `createInput` to extend the base schema
 
 To create inputs using the base schema you can use the `createInput()` utility from the `@formkit/vue` package. This function accepts 2 arguments:
 
-- (required) Either a schema node or a Vue component and inserts it into the base schema at the `input` composition key (see diagram above).
+- (required) A schema node _or_ a Vue component, which it inserts into the base schema at the `input` composition key (see diagram above).
 - (optional) An object of [input definition](#input-definition) properties to merge with an auto-generated one.
 
-The function returns a ready to use [input definition](#input-definition).
+The function returns a ready-to-use [input definition](#input-definition).
 
 When providing a component as the first argument, `createInput` will create a schema object (`$cmp`) to use your component within the base schema. Your component will be passed a single `context` prop.
 
@@ -166,7 +166,7 @@ When providing a schema object, your schema is directly injected into the base s
 
 #### Writing schema inputs from scratch
 
-It might make sense to write your inputs completely from scratch without using any of the base schema features. When doing so, just provide the [input definition] your full schema object.
+It might make sense to write your inputs completely from scratch without using any of the base schema features. When doing so, just provide the [input definition](#input-definition) your full schema object.
 
 <example
   name="Create input"
@@ -174,30 +174,30 @@ It might make sense to write your inputs completely from scratch without using a
   langs="vue">
 </example>
 
-In the above example, we were able to re-create the same features as the `createInput` example — namely — label, help text, and validation message output — however we are still missing a number of "standard" FormKit features like slot support. If you are attempting to publish your input or maintain API compatibility with the other FormKit inputs take a look at the [input checklist](#input-checklist).
+In the above example, we were able to re-create the same features as the `createInput` example — namely — label, help text, and validation message output. However, we are still missing a number of "standard" FormKit features like slot support. If you are attempting to publish your input or maintain API compatibility with the other FormKit inputs, take a look at the [input checklist](#input-checklist).
 
 ## Component inputs
 
-For most users, [passing a Vue component to `createInput`](#using-createinput-to-extend-the-base-schema) provides a good ballance between customization and value-added features. If you’de like to completely eject from schema-based inputs all together you can pass a component directly to an input definition.
+For most users, [passing a Vue component to `createInput`](#using-createinput-to-extend-the-base-schema) provides a good balance between customization and value-added features. If you’d like to completely eject from schema-based inputs all together, you can pass a component directly to an input definition.
 
-Component inputs receive a single prop — [the `context` object](/advanced/context). It’s then up to you to write a component to encompasses the desired features of FormKit (labels, help text, message display etc). Checkout the [input checklist](#input-checklist) for a list of what you’ll want to output.
+Component inputs receive a single prop — [the `context` object](/advanced/context). It’s then up to you to write a component to encompasses the desired features of FormKit (labels, help text, message display, etc.). Checkout the [input checklist](#input-checklist) for a list of what you’ll want to output.
 
 ## Input & output values
 
-Inputs have 2 critical roles:
+Inputs have two critical roles:
 
 - Receiving user input.
 - Displaying the current value.
 
 ### Receiving input
 
-You can receive that input from any user-generated actions and the input can set its value to any type of data. Inputs are _not_ limited to strings and numbers — they can happily store Arrays, Objects, or custom data structures.
+You can receive input from any user interaction and the input can set its value to any type of data. Inputs are _not_ limited to strings and numbers — they can happily store Arrays, Objects, or custom data structures.
 
-Fundamentally — all an input needs to do is call `node.input(value)` with a value. The `node.input` method is automatically debounced so feel free to call it frequently — like every keystroke. Typically this looks like binding to the `input` event.
+Fundamentally, all an input needs to do is call `node.input(value)` with a value. The `node.input()` method is automatically debounced, so feel free to call it frequently — like every keystroke. Typically, this looks like binding to the `input` event.
 
 The [`context` object](/advanced/context-object) includes an input handler for basic input types: `context.handlers.DOMInput`. This can be used for text-like inputs where the value of the input is available at `event.target.value`. If you need a more complex event handler, you can [expose it using "features"](#adding-features).
 
-Any user interaction can be considered an input. For many native HTML inputs, that interaction is captured with the [input event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event).
+Any user interaction can be considered an input event. For many native HTML inputs, that interaction is captured with the [input event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event).
 
 ```js
 // An HTML text input written in schema:
@@ -219,7 +219,7 @@ The equivalent in a Vue template:
 
 ### Displaying values
 
-Inputs are also responsible for displaying the current value. Typically you’ll want to use the `node._value` or `$_value` in schema. This is the "live" non debounced value. The currently committed value is `node.value` (`$value`).
+Inputs are also responsible for displaying the current value. Typically, you’ll want to use the `node._value` or `$_value` in schema to display a value. This is the "live" non-debounced value. The currently *committed* value is `node.value` (`$value`). Read more about "value settlement" <a href="/advanced/core#setting-values">here</a>.
 
 ```js
 // An HTML text input written in schema:
