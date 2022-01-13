@@ -138,7 +138,7 @@ All of FormKit’s core inputs are written using schemas to allow for the greate
 
 It is important to understand the basic structure of a “standard” FormKit input. Let’s examine this diagram:
 
-<figure>
+<figure class="full">
   <formkit-input-diagram></formkit-input-diagram>
   <figcaption>Composition of a standard FormKit text input.</figcaption>
 </figure>
