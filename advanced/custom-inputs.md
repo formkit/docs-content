@@ -1,6 +1,6 @@
 # Custom inputs
 
-<cta label="Building your first custom input?" type="ghost" href="/" button="Read the guide"></cta>
+<cta label="Building your first custom input?" type="ghost" href="/guides/create-a-custom-input" button="Read the guide"></cta>
 
 FormKit includes [many inputs](/inputs) out of the box, but you can also define your own inputs that automatically inherit FormKit’s value-added features like validation, error messages, data modeling, grouping, labels, help text and others.
 
@@ -10,7 +10,7 @@ Inputs are comprised of two essential parts:
 2. The input’s code: [a schema](#schema-inputs) or a [component](#component-inputs).
 
 <callout type="warning" label="Start with the guide">
-If you are just getting started with custom inputs, consider reading the “<a href="/guides/custom-inputs">Create a custom input</a>” guide. The content on this page is intended to explain the intricacies of custom inputs for advanced use cases like authoring a plugin or library and is not required for many common use cases.
+If you are just getting started with custom inputs, consider reading the “<a href="/guides/create-a-custom-input">Create a custom input</a>” guide. The content on this page is intended to explain the intricacies of custom inputs for advanced use cases like authoring a plugin or library and is not required for many common use cases.
 </callout>
 
 ## Registering inputs
