@@ -2,7 +2,7 @@
   <FormKit type="form" v-model="values">
     <FormKit
       :type="otp"
-      :digits="4"
+      digits="4"
       label="One time password"
       name="two_factor_code"
       help="We’ve sent a code to your phone."
@@ -33,11 +33,12 @@ const OneTimePassword = {
     },
   },
   render() {
-    return new Array(this.context.digits).fill('').map(() =>
+    return new Array(Number(this.context.digits)).fill('').map(() =>
       h('input', {
         onInput: this.handleInput,
         value: this.context._value,
         class: this.context.classes.digit,
+        maxlength: 1,
       })
     )
   },
@@ -67,6 +68,7 @@ export default {
   padding: 0.5em;
   box-sizing: border-box;
   width: 2em;
+  margin-right: 0.25em;
   text-align: center;
   border: var(--formkit-border);
   border-radius: var(--formkit-border-radius);
