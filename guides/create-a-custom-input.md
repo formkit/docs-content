@@ -104,7 +104,7 @@ Notice in the above example that when you type into one input all the other inpu
 
 - Each input should only modify the character at its respective index in the final string.
 - The input handler should call `focus()` on the next input.
-- When the string is the same length as `digits` we update the value of the input by calling `context.node.input()`.
+- When the string is the same length as `digits`, we update the value of the input by calling `context.node.input()`.
 
 <example
   name="One-time password - input handlers"
@@ -114,16 +114,16 @@ Notice in the above example that when you type into one input all the other inpu
 
 Great! This is starting to work like we expect. Let’s check our requirements again:
 
-- ~Users enter a series of digits and each digit has its own `<input>` tag.~
+- ~Users enter a series of digits, and each digit has its own `<input>` tag.~
 - ~The value of the input should always be all the digits concatenated.~
-- ~We only want the input to change values if all digits have been completed (no need to commit and validate the value if its not complete).~
+- ~We only want the input to change its value if all digits have been completed (no need to commit and validate on each keystroke if the user is not done).~
 - ~It should allow a user to click on a given digit to edit it.~
 - ~When a user types a number, it should automatically focus on the next input.~
 - It should support copy/paste.
 
-### Copy & Paste
+### Copy & paste
 
-Looks like we only have one thing left to do — copy & paste support. Fortunately, browsers [have a `paste` event](https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event). To ensure our user experience is top notch we’ll make an assumption: if a user is copy/pasting they are trying to copy and paste the entire code. Not a single digit of the code. Seems reasonable.
+Looks like we only have one thing left to do — copy & paste support. Fortunately, browsers [have a `paste` event](https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event). To ensure our user experience is top notch, we’ll make an assumption: if a user is copy/pasting they are trying to copy and paste the entire code. Not a single digit of the code. Seems reasonable.
 
 All we need to do is capture the copy/paste event on any of our input tags, get the text being pasted, and set the `tmp` value to that string of digits. Let’s whip up another event handler:
 
@@ -180,14 +180,14 @@ Done! Now you can use your input anywhere in your application:
 
 ## Next steps
 
-Our one-time password input is working great — here are some ideas of additional features we could flesh out even further:
+Our one-time password input is working great! Here are some ideas for additional features we could flesh out even further:
 
-- An accompanying validation rule to perform our 2 factor authentication call to the backend.
-- Some additional styles could really make it pop.
+- An accompanying validation rule to perform a two-factor authentication call to the backend.
+- Additional styles to really make it pop.
 - If the form only contains a one-time password input, you could auto-submit the form!
-- Complete the [custom input checklist](/advanced/custom-input#input-checklist).
-- Publish it! If this input (or any others you make) is useful to you, it is probably useful to lots of other people too. You might consider open-sourcing it!
+- Complete the [custom input checklist](/advanced/custom-inputs#input-checklist).
+- Publish it! If this input (or any others you make) is useful to you, it's probably useful to other people too. You might consider open-sourcing it!
 
-Hopefully this guide helped you understand how custom inputs are declared, written, and registered. If you want to dive in deeper — try reading about the [core internals of FormKit](/advanced/core) and [creating custom inputs](/advanced/custom-inputs)!
+Hopefully this guide helped you understand how custom inputs are declared, written, and registered. If you want to dive in deeper, try reading about the [core internals of FormKit](/advanced/core) and [creating custom inputs](/advanced/custom-inputs)!
 
 <cta label="Want more? Start by reading about FormKit core." button="Dig deeper" href="/advanced/core"></cta>
