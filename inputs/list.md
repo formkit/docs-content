@@ -11,7 +11,7 @@ The value of a list input is an array where each item is the value of the input 
 
 <example
 name="List input"
-file="/_content/examples/list/list"
+file="/_content/examples/list/list.vue"
 langs="vue"></example>
 
 <callout type="tip" label="Performance">
@@ -24,7 +24,7 @@ Lists are always aware of the validation state of their children (including nest
 
 <example
 name="List input"
-file="/_content/examples/list-validity/list-validity"
+file="/_content/examples/list-validity/list-validity.vue"
 langs="vue"></example>
 
 ## Props & Attributes

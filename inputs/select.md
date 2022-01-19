@@ -22,7 +22,7 @@ The simplest way to provide options is an array of strings. The provided strings
 
 <example
 name="Select input - strings"
-file="/_content/examples/select-strings/select-strings"
+file="/_content/examples/select-strings/select-strings.vue"
 langs="vue"></example>
 
 ### Value / Label object
@@ -31,7 +31,7 @@ You may also provide the `options` prop where the keys are values and the values
 
 <example
 name="Select input"
-file="/_content/examples/select/select"
+file="/_content/examples/select/select.vue"
 langs="vue"></example>
 
 ### Array of objects
@@ -40,7 +40,7 @@ The most flexible way to define options is by providing an array of objects. The
 
 <example
 name="Select input - objects"
-file="/_content/examples/select-objects/select-objects"
+file="/_content/examples/select-objects/select-objects.vue"
 langs="vue"></example>
 
 <callout type="tip" label="Option attributes">
@@ -62,7 +62,7 @@ Sometimes it may be desirable to manually output the contents of a select list i
 
 <example
 name="Select input - objects"
-file="/_content/examples/select-slot/select-slot"
+file="/_content/examples/select-slot/select-slot.vue"
 langs="vue"></example>
 
 <callout type="warning">
@@ -75,7 +75,7 @@ The `select` input also supports a `multiple` attribute that allows for multi-se
 
 <example
 name="Select input - objects"
-file="/_content/examples/select-multiple/select-multiple"
+file="/_content/examples/select-multiple/select-multiple.vue"
 langs="vue"></example>
 
 <callout type="tip" label="Alternatives">

@@ -9,8 +9,7 @@ The datetime-local input uses HTML's [native datetime-local picker](https://deve
 
 <example
   name="Datetime-local input"
-  file="/_content/examples/datetime-local-example/datetime-local-example"
-  langs="vue">
+  file="/_content/examples/datetime-local-example/datetime-local-example.vue">
 </example>
 
 <callout type="warning" label="Formatting">

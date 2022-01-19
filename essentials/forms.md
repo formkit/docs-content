@@ -8,10 +8,9 @@ A `<FormKit type="form">` tracks the validation state of the form and prevents u
 
 <example
   name="Register example"
-  file="/_content/examples/register/register"
+  file="/_content/examples/register/register.vue"
   layout="column"
-  data-render-fullsize
-  langs="vue">
+  data-render-fullsize>
 </example>
 
 ## Populating
@@ -20,8 +19,7 @@ You can populate an entire form by providing a `value` prop to the `<FormKit typ
 
 <example
   name="Text example"
-  file="/_content/examples/form-population/form-population"
-  langs="vue">
+  file="/_content/examples/form-population/form-population.vue">
 </example>
 
 <callout type="warning" label="Submitted data & v-model">
@@ -48,8 +46,7 @@ The most common method of form submission in a modern SPA is an XHR request (thi
 
 <example
   name="Text example"
-  file="/_content/examples/form-xhr/form-xhr"
-  langs="vue">
+  file="/_content/examples/form-xhr/form-xhr.vue">
 </example>
 
 ### Submitting via page request
@@ -58,8 +55,7 @@ To submit a form via page request, simply leave off the `@submit` handler. Just 
 
 <example
   name="Text example"
-  file="/_content/examples/form-page/form-page"
-  langs="vue">
+  file="/_content/examples/form-page/form-page.vue">
 </example>
 
 ## Validation
@@ -72,8 +68,7 @@ In addition to not firing the submit event, a message is displayed above the sub
 
 <example
   name="Text example"
-  file="/_content/examples/incomplete-message/incomplete-message"
-  langs="vue">
+  file="/_content/examples/incomplete-message/incomplete-message.vue">
 </example>
 
 <callout type="tip" label="Global customization">
@@ -86,8 +81,7 @@ The validity of all inputs within a form is tracked automatically in the [contex
 
 <example
   name="Text example"
-  file="/_content/examples/form-validity/form-validity"
-  langs="vue">
+  file="/_content/examples/form-validity/form-validity.vue">
 </example>
 
 <callout type="tip" label="Getting the context object">
@@ -100,8 +94,7 @@ To disable all the inputs in a given form, including the submit button, you can 
 
 <example
   name="Disabled example"
-  file="/_content/examples/form-disabled/form-disabled"
-  langs="vue">
+  file="/_content/examples/form-disabled/form-disabled.vue">
 </example>
 
 ## Error handling
@@ -124,8 +117,7 @@ Like with any FormKit input, you can directly assign errors using the `errors` p
 
 <example
   name="Form errors prop example"
-  file="/_content/examples/form-errors/form-errors"
-  langs="vue">
+  file="/_content/examples/form-errors/form-errors.vue">
 </example>
 
 #### Using `$formkit.setErrors()`
@@ -134,8 +126,7 @@ Alternatively, you can set errors directly on a form by giving the form an `id` 
 
 <example
   name="setErrors"
-  file="/_content/examples/set-errors/set-errors"
-  langs="vue">
+  file="/_content/examples/set-errors/set-errors.vue">
 </example>
 
 <callout type="input" label="Composition API">
@@ -161,8 +152,7 @@ The most basic way to display errors on a form is using the `errors` prop that i
 
 <example
   name="errors prop"
-  file="/_content/examples/errors-prop/errors-prop"
-  langs="vue">
+  file="/_content/examples/errors-prop/errors-prop.vue">
 </example>
 
 #### Using `input-errors` prop
@@ -171,8 +161,7 @@ You can also conveniently set error messages for all inputs in your form (or [gr
 
 <example
   name="input errors prop"
-  file="/_content/examples/input-errors-prop/input-errors-prop"
-  langs="vue">
+  file="/_content/examples/input-errors-prop/input-errors-prop.vue">
 </example>
 
 ## Unmounting inputs
@@ -181,8 +170,7 @@ When inputs are unmounted from a form — for example when using `v-if` — the 
 
 <example
   name="input errors prop"
-  file="/_content/examples/preserve-prop/preserve-prop"
-  langs="vue">
+  file="/_content/examples/preserve-prop/preserve-prop.vue">
 </example>
 
 ## Props

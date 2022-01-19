@@ -9,7 +9,7 @@ The `url` input uses HTML's [native url input](https://developer.mozilla.org/en-
 
 <example
 name="URL input"
-file="/_content/examples/url/url"
+file="/_content/examples/url/url.vue"
 langs="vue"></example>
 
 <callout type="tip" label="Consider using text input">

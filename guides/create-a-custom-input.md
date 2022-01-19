@@ -34,13 +34,12 @@ As we build out our input, we’ll want to visualize its progress, so let’s cr
 1. Import `OneTimePassword.vue`
 2. Pass that imported component to `createInput()`
 3. Use the return value (an [input definition](/advanced/custom-inputs#input-definition)) as the `type` prop of a `<FormKit>` component.
-   
+
 We’ll call this sample form `Register.vue`:
 
 <example
   name="One-time password - register"
-  file="/_content/examples/otp-register/otp-register"
-  langs="vue">
+  file="/_content/examples/otp-register/otp-register.vue">
 </example>
 
 Excellent! Now we can iterate on our `OneTimePassword.vue` file and see the results. One of the first things to notice is how our input already supports labels, help text, validation, and other universal FormKit props. Those features come courtesy of `createInput()`.
@@ -51,12 +50,11 @@ Also, notice that `<pre>` tag in the above example? It is outputting the current
 
 Let’s open up `OneTimePassword.vue` again and change our `<div>` to an `<input>` tag. We’ll start with a single text input, and work our way up from there. But how do we actually set and display the value of our custom input?
 
-All custom inputs are passed the almighty [context object](/advanced/context) as the `context` prop. In order for our input to *set* its value, it needs to call `context.node.input(value)`. To properly *display* the value of our input, we should set the input’s `:value` attribute to `context._value`.
+All custom inputs are passed the almighty [context object](/advanced/context) as the `context` prop. In order for our input to _set_ its value, it needs to call `context.node.input(value)`. To properly _display_ the value of our input, we should set the input’s `:value` attribute to `context._value`.
 
 <example
   name="One-time password - first value"
-  file="/_content/examples/otp-first-value/otp-first-value"
-  langs="vue">
+  file="/_content/examples/otp-first-value/otp-first-value.vue">
 </example>
 
 Our little baby input is all grown up! It might not look pretty, but it now reads and writes values. As proof, try setting the initial value of the form’s `values` object to `{ two_factor_code: '12345' }` and you'll see the input gets auto-populated with the value.
@@ -86,8 +84,7 @@ We now have access to `context.digits`. Back in `OneTimePassword.vue`, let's use
 
 <example
   name="One-time password - input tags"
-  file="/_content/examples/otp-tags/otp-tags"
-  langs="vue">
+  file="/_content/examples/otp-tags/otp-tags.vue">
 </example>
 
 OK — we have multiple inputs! Our first requirement is complete:
@@ -108,8 +105,7 @@ Notice in the above example that when you type into one input all the other inpu
 
 <example
   name="One-time password - input handlers"
-  file="/_content/examples/otp-handlers/otp-handlers"
-  langs="vue">
+  file="/_content/examples/otp-handlers/otp-handlers.vue">
 </example>
 
 Great! This is starting to work like we expect. Let’s check our requirements again:
@@ -142,8 +138,7 @@ handlePaste(e) {
 
 <example
   name="One-time password - input handlers"
-  file="/_content/examples/otp-copy-paste/otp-copy-paste"
-  langs="vue">
+  file="/_content/examples/otp-copy-paste/otp-copy-paste.vue">
 </example>
 
 Our requirements are all complete!

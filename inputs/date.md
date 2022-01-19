@@ -9,8 +9,7 @@ The `date` input uses HTML's [native date picker](https://developer.mozilla.org/
 
 <example
   name="Date input"
-  file="/_content/examples/date-example/date-example"
-  langs="vue">
+  file="/_content/examples/date-example/date-example.vue">
 </example>
 
 <callout type="warning" label="Formatting">

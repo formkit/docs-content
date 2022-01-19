@@ -6,8 +6,7 @@ Let’s take a quick look at an example and we'll pick it up on the other side.
 
 <example
   name="Generating forms"
-  file="/_content/examples/generating/generating"
-  langs="vue">
+  file="/_content/examples/generating/generating.vue">
 </example>
 
 ## Schema
@@ -26,8 +25,7 @@ FormKit’s schema is most frequently used to generate forms (although it is not
 
 <example
   name="Generating forms - verbose"
-  file="/_content/examples/generating-cmp/generating-cmp"
-  langs="vue">
+  file="/_content/examples/generating-cmp/generating-cmp.vue">
 </example>
 
 #### Shorthand
@@ -36,8 +34,7 @@ While this syntax is generalized (it works for any Vue component) it is somewhat
 
 <example
   name="Generating forms - sugar"
-  file="/_content/examples/generating-sugar/generating-sugar"
-  langs="vue">
+  file="/_content/examples/generating-sugar/generating-sugar.vue">
 </example>
 
 ## Forms
@@ -46,6 +43,5 @@ To render a form element, you can either use the `$formkit: 'form'` schema node,
 
 <example
   name="Generating forms - form"
-  file="/_content/examples/generating-form/generating-form"
-  langs="vue">
+  file="/_content/examples/generating-form/generating-form.vue">
 </example>

@@ -14,8 +14,7 @@ Week inputs are not currently supported in FireFox or Safari.
 
 <example
   name="Week input"
-  file="/_content/examples/week/week"
-  langs="vue">
+  file="/_content/examples/week/week.vue">
 </example>
 
 <callout type="warning" label="Formatting">

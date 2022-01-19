@@ -9,7 +9,7 @@ The `hidden` input uses HTML's [native hidden input](https://developer.mozilla.o
 
 <example
 name="Hidden input"
-file="/_content/examples/hidden/hidden"
+file="/_content/examples/hidden/hidden.vue"
 tabs="html,render"
 langs="vue"></example>
 

@@ -13,9 +13,7 @@ Month inputs are not currently supported in FireFox or Safari.
 
 <example
   name="Month input"
-  file="/_content/examples/month/month"
-  langs="vue">
-</example>
+  file="/_content/examples/month/month.vue">
 
 <callout type="warning" label="Formatting">
 The internal format of all native month pickers is <code>YYYY-MM</code>. This is true

@@ -47,8 +47,7 @@ Let’s make the simplest possible input — one that only outputs "Hello world"
 
 <example
   name="Custom input"
-  file="/_content/examples/custom-input/custom-input"
-  langs="vue">
+  file="/_content/examples/custom-input/custom-input.vue">
 </example>
 
 Even though this simplistic example doesn’t contain any input/output mechanism, it still qualifies as a full input. It can have a value, run validation rules (they wont be displayed, but they can block form submissions), and execute plugins. Fundamentally, all inputs are [core nodes](/advanced/core#node) and the input’s definition provides the mechanisms to interact with that node.
@@ -84,8 +83,7 @@ Now that we’ve defined our input we can use it anywhere in the application:
 
 <example
   name="Custom input"
-  file="/_content/examples/custom-input-default-config/custom-input-default-config"
-  langs="vue">
+  file="/_content/examples/custom-input-default-config/custom-input-default-config.vue">
 </example>
 
 ### Plugin libraries
@@ -102,8 +100,7 @@ Let’s refactor our hello world input to use its own plugin:
 
 <example
   name="Custom input - plugin"
-  file="/_content/examples/custom-input-plugin/custom-input-plugin"
-  langs="vue">
+  file="/_content/examples/custom-input-plugin/custom-input-plugin.vue">
 </example>
 
 <callout type="tip" label="Plugin inheritance">
@@ -169,8 +166,7 @@ When providing a schema object, your schema is directly injected into the base s
 
 <example
   name="Create input"
-  file="/_content/examples/create-input/create-input"
-  langs="vue">
+  file="/_content/examples/create-input/create-input.vue">
 </example>
 
 #### Writing schema inputs from scratch
@@ -179,8 +175,7 @@ It might make sense to write your inputs completely from scratch without using a
 
 <example
   name="Create input"
-  file="/_content/examples/scratch-schema-input/scratch-schema-input"
-  langs="vue">
+  file="/_content/examples/scratch-schema-input/scratch-schema-input.vue">
 </example>
 
 In the above example, we were able to re-create the same features as the `createInput` example — namely — label, help text, and validation message output. However, we are still missing a number of "standard" FormKit features like slot support. If you are attempting to publish your input or maintain API compatibility with the other FormKit inputs, take a look at the [input checklist](#input-checklist).
@@ -261,16 +256,14 @@ If you need additional props, you can declare them in your input definition. Pro
 
 <example
   name="Custom props"
-  file="/_content/examples/custom-props/custom-props"
-  langs="vue">
+  file="/_content/examples/custom-props/custom-props.vue">
 </example>
 
 When extending the base schema by using the `createInput` helper, pass a second argument with input definition values to merge:
 
 <example
   name="Custom props - createInput"
-  file="/_content/examples/custom-props-create-input/custom-props-create-input"
-  langs="vue">
+  file="/_content/examples/custom-props-create-input/custom-props-create-input.vue">
 </example>
 
 ## Adding features
@@ -283,8 +276,7 @@ As an example, let's imagine you want to build an input that allows users to ent
 
 <example
   name="Custom input - sum numbers"
-  file="/_content/examples/custom-sum/custom-sum"
-  langs="vue">
+  file="/_content/examples/custom-sum/custom-sum.vue">
 </example>
 
 ## Examples
@@ -297,8 +289,7 @@ This is the simplest possible input and does not leverage any of FormKit’s bui
 
 <example
   name="Create input"
-  file="/_content/examples/standard-text-input/standard-text-input"
-  langs="vue">
+  file="/_content/examples/standard-text-input/standard-text-input.vue">
 </example>
 
 <callout type="tip" label="DOM Input">
@@ -311,8 +302,7 @@ Let’s take a look at a slightly more complex example that utilizes `createInpu
 
 <example
   name="Create input"
-  file="/_content/examples/autocomplete/autocomplete"
-  langs="vue">
+  file="/_content/examples/autocomplete/autocomplete.vue">
 </example>
 
 ## Input checklist

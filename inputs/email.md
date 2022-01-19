@@ -9,8 +9,7 @@ The `email` input uses HTML's [native email input](https://developer.mozilla.org
 
 <example
   name="Email input"
-  file="/_content/examples/email-example/email-example"
-  langs="vue">
+  file="/_content/examples/email-example/email-example.vue">
 </example>
 
 ## Props & Attributes

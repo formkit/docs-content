@@ -6,18 +6,27 @@
 
 #### 🎉 New features
 
-- Adds native [`file` input type](/inputs/file).
+- Adds the native [`file` input type](/inputs/file) with support for some value-added features:
+  - Display only re-population.
+  - Drag and drop.
+  - Input clearing.
+- Adds the `createInput` helper function to make custom inputs easy to write.
 - New `incomplete-message` prop allows inline customization (or disablement) of the message displayed by the a form when it attempts to submit and all its inputs are not valid.
 - Updates the `defaultConfig` to accept custom inputs.
 - Adds a prefix composition key which allows content to be injected immediately before an input element.
 - Adds a suffix composition key which allows content to be injected immediately after a composition key.
 - 🇷🇺 Russian locale (thank you [@andreimakushkin](https://github.com/andreimakushkin)!)
-- Adds TypeScript typings for `@submit` and `@submit-raw` events.
 - Refactors genesis theme to use much more robust css variable structure.
+
+#### 📙 Documentation
+
+- New [create a custom input](/guides/create-a-custom-input) guide.
+- New advanced [custom input documentation](/advanced/custom-inputs) page.
 
 #### 🐛 Bug fixes
 
 - Fixes a bug that prevented the incomplete message from displaying on forms.
+- Fixes TypeScript typings for `@submit` and `@submit-raw` events.
 
 ## 1.0.0-alpha.4
 

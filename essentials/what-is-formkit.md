@@ -27,8 +27,7 @@ Developers love to learn — but no one enjoys pouring over third-party APIs and
 
 <example
   name="Text input"
-  file="/_content/examples/simple-text/simple-text"
-  langs="vue">
+  file="/_content/examples/simple-text/simple-text.vue">
 </example>
 
 ### Easy to validate ✅
@@ -37,8 +36,7 @@ Front end [validation](/essentials/validation) that gives instant feedback is an
 
 <example
   name="Text input"
-  file="/_content/examples/simple-validation/simple-validation"
-  langs="vue">
+  file="/_content/examples/simple-validation/simple-validation.vue">
 </example>
 
 ### Easy to use ♿️

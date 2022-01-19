@@ -11,7 +11,7 @@ The value of a group input is an object where the keys are the names of the inpu
 
 <example
 name="Group input"
-file="/_content/examples/group/group"
+file="/_content/examples/group/group.vue"
 langs="vue"></example>
 
 ## Validity of children
@@ -20,7 +20,7 @@ Groups are always aware of the validation state of their children (including nes
 
 <example
 name="Group input"
-file="/_content/examples/group-validity/group-validity"
+file="/_content/examples/group-validity/group-validity.vue"
 langs="vue"></example>
 
 ## Props & Attributes

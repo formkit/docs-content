@@ -9,7 +9,7 @@ The `button` input uses HTML's [native button element](https://developer.mozilla
 
 <example
 name="Button input"
-file="/_content/examples/button/button"
+file="/_content/examples/button/button.vue"
 langs="vue"></example>
 
 ## Props & Attributes

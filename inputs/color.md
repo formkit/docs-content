@@ -9,8 +9,7 @@ The `color` input uses HTML's [native color picker](https://developer.mozilla.or
 
 <example
   name="Color input"
-  file="/_content/examples/color-example/color-example"
-  langs="vue">
+  file="/_content/examples/color-example/color-example.vue">
 </example>
 
 ## Props & Attributes

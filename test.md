@@ -35,8 +35,7 @@ ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis v
 
 <example
   name="Example"
-  file="_content/examples/show-markup/show-markup"
-  langs="vue"
+  file="_content/examples/show-markup/show-markup.vue"
   layout="row">
 </example>
 
@@ -62,8 +61,7 @@ nec inceptos, tempus tempor felis pulvinar pharetra augue vestibulum odio.
 
 <example
   name="Example"
-  file="_content/examples/counter-example-partial/counter-example"
-  langs="vue">
+  file="_content/examples/counter-example-partial/counter-example.vue">
 </example>
 
 Ornare porttitor erat nullam facilisis venenatis augue auctor massa eget, tempor

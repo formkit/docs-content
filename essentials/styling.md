@@ -38,7 +38,7 @@ To append a class, simply return the string you want to append, or provide an ob
 
 <example
 name="Appending classes"
-file="/_content/examples/append-classes/append-classes"
+file="/_content/examples/append-classes/append-classes.vue"
 tabs="html"
 langs="vue"></example>
 
@@ -48,7 +48,7 @@ Classes produced by all earlier hierarchy steps can be completely removed by pro
 
 <example
 name="Resetting classes"
-file="/_content/examples/resetting-classes/resetting-classes"
+file="/_content/examples/resetting-classes/resetting-classes.vue"
 tabs="html"
 langs="vue"></example>
 
@@ -58,7 +58,7 @@ Classes produced by an earlier step in the class hierarchy can be selectively re
 
 <example
 name="Removing classes"
-file="/_content/examples/removing-classes/removing-classes"
+file="/_content/examples/removing-classes/removing-classes.vue"
 tabs="html"
 langs="vue"></example>
 
@@ -72,7 +72,7 @@ The simplest way to modify the classes of an element inside a FormKit input is v
 
 <example
 name="Composition-key class"
-file="/_content/examples/composition-key-class/composition-key-class"
+file="/_content/examples/composition-key-class/composition-key-class.vue"
 tabs="html"
 langs="vue"></example>
 
@@ -82,7 +82,7 @@ The classes prop is similar to the composition-key class prop except it allows s
 
 <example
 name="Classes prop"
-file="/_content/examples/classes-prop/classes-prop"
+file="/_content/examples/classes-prop/classes-prop.vue"
 tabs="html"
 langs="vue"></example>
 
@@ -94,17 +94,16 @@ The classes configuration option is similar to the classes prop, except it appli
 
 <example
   name="Global configuration"
-  file="/_content/examples/global-classes/global-classes"
+  file="/_content/examples/global-classes/global-classes.vue"
   mode="editor"
   :editable="false"
-  :line-numbers="false"
-  langs="vue"></example>
+  :line-numbers="false"></example>
 
 ### Class configuration on a group, list, or form
 
 <example
 name="Classes prop"
-file="/_content/examples/classes-config/classes-config"
+file="/_content/examples/classes-config/classes-config.vue"
 tabs="render,html"
 langs="vue"></example>
 
@@ -128,7 +127,7 @@ within your provided function.
 
 <example
 name="Root classes function"
-file="/_content/examples/root-classes/root-classes"
+file="/_content/examples/root-classes/root-classes.vue"
 tabs="html"
 langs="vue"></example>
 
@@ -149,8 +148,7 @@ class lists to your inputs.
   mode="editor"
   :editable="false"
   :line-numbers="false"
-  file="/_content/examples/tailwind-classes/global-config"
-  langs="vue"></example>
+  file="/_content/examples/tailwind-classes/global-config.vue"></example>
 
 That's a lot of markup! In reality you'll probably want to create your `rootClasses`
 function as a FormKit plugin in a separate file (or npm installable theme!) and
@@ -161,8 +159,7 @@ import it and provide it to the `defaultConfig`.
   mode="editor"
   :editable="false"
   :line-numbers="false"
-  file="/_content/examples/tailwind-classes/global-config-short"
-  langs="vue"></example>
+  file="/_content/examples/tailwind-classes/global-config-short.vue"></example>
 
 ### An example using Tailwind from the global config
 
@@ -172,6 +169,5 @@ from here - such as in the case of the second text input here.
 
 <example
   name="Global config with Tailwind"
-  file="/_content/examples/tailwind-classes/example"
-  langs="vue"
+  file="/_content/examples/tailwind-classes/example.vue"
   css-framework="tailwind"></example>

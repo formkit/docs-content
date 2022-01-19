@@ -9,7 +9,7 @@ The `time` input uses HTML's [native time input](https://developer.mozilla.org/e
 
 <example
 name="Time input"
-file="/_content/examples/time/time"
+file="/_content/examples/time/time.vue"
 langs="vue"></example>
 
 <callout type="warning" label="Formatting">
