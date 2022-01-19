@@ -23,11 +23,11 @@ This mirrors HTML — in fact DOM structure is actually a [general tree](https:/
 
 In this diagram, a `form` node is a parent to three child nodes — `email`, `password` and `submit`. Each input component in the graph "owns" a FormKit core node, and each node contains its own options, configuration, props, events, plugins, lifecycle hooks, etc. This architecture ensures that FormKit’s primary features are decoupled from the rendering framework (Vue) — a key to reducing side effects and maintaining blazing fast performance.
 
-Additionally, this decentralized architecture allows for tremendous flexibility. For example — one form could use different plugins than other forms in an application, a group input could modify the configuration of its sub-inputs, and validation rules can even be written to use props from another input.
+Additionally, this decentralized architecture allows for tremendous flexibility. For example — one form could use different plugins than other forms in the same app, a group input could modify the configuration of its sub-inputs, and validation rules can even be written to use props from another input.
 
 ## Node
 
-At the heart of `@formkit/core` is the node. Every `<FormKit>` component owns a single node, and each node must be one of three types:
+Every `<FormKit>` component owns a single core node, and each node must be one of three types:
 
 - [Input](#input)
 - [List](#list)
@@ -39,7 +39,7 @@ Core nodes are always one of three types (input, list, or group). These are not
 
 ### Input
 
-Most of FormKit’s native inputs have a node type of `input` — they operate on a single value. The value itself can be of any type, such as objects, arrays, strings, and numbers — any value is acceptable. However, nodes of type `input` are always leafs — they cannot have children.
+Most of FormKit’s native inputs have a node type of `input` — they operate on a single value. The value itself can be of any type, such as objects, arrays, strings, and numbers — any value is acceptable. However, nodes of type `input` are always leafs — meaning they cannot have children.
 
 ```js
 import { createNode } from '@formkit/core'

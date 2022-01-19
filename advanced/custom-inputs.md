@@ -1,6 +1,6 @@
 # Custom inputs
 
-<cta label="Building your first custom input?" type="ghost" href="/" button="Read the guide"></cta>
+<cta label="Building your first custom input?" type="ghost" href="/guides/create-a-custom-input" button="Read the guide"></cta>
 
 FormKit includes [many inputs](/inputs) out of the box, but you can also define your own inputs that automatically inherit FormKit’s value-added features like validation, error messages, data modeling, grouping, labels, help text and others.
 
@@ -114,10 +114,10 @@ Notice in the above example our plugin was defined on a parent of the element th
 
 Your input can be written using [FormKit’s schema](/advanced/schema) or a generic Vue component. There are pros and cons to each approach:
 
-| Code   | Pros                                                                                                                                                                                                                                                                                                                    | Cons                                                                                                                                                                                                                                                                 |
-| ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Vue    | <ul><li>Learning curve (you likely know how to write a Vue component).</li><li>More mature dev tooling.</li><li>Slightly faster initial render.</li></ul>                                                                                                                                                               | <ul><li>Cannot use the <a href="/essentials/inputs#schema-overrides"><code>:schema</code> prop</a> to modify structure.</li><li>Plugins cannot modify schema to change rendered output.</li><li>Framework specific (Vue only).</li><li>Easy to write inputs that don’t play well with the FormKit ecosystem.</li></ul> |
-| Schema | <ul><li>Structure can be modified via the <code>:schema</code> prop (if you allow it).</li><li>Plugins can modify/change the rendered output.</li><li>Framework agnostic (future portability to when FormKit supports new frameworks).</li><li>Ecosystem compatibility (great for publishing your own open source inputs).</li></ul> | <ul><li>Learning curve (need to <a href="/advanced/schema">understand schemas</a>).</li><li>Slightly slower initial render.</li><li>Less mature dev tooling.</li></ul>                                                                                               |
+| Code   | Pros                                                                                                                                                                                                                                                                                                                                 | Cons                                                                                                                                                                                                                                                                                                                   |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Vue    | <ul><li>Learning curve (you likely know how to write a Vue component).</li><li>More mature dev tooling.</li><li>Slightly faster initial render.</li></ul>                                                                                                                                                                            | <ul><li>Cannot use the <a href="/essentials/inputs#schema-overrides"><code>:schema</code> prop</a> to modify structure.</li><li>Plugins cannot modify schema to change rendered output.</li><li>Framework specific (Vue only).</li><li>Easy to write inputs that don’t play well with the FormKit ecosystem.</li></ul> |
+| Schema | <ul><li>Structure can be modified via the <code>:schema</code> prop (if you allow it).</li><li>Plugins can modify/change the rendered output.</li><li>Framework agnostic (future portability to when FormKit supports new frameworks).</li><li>Ecosystem compatibility (great for publishing your own open source inputs).</li></ul> | <ul><li>Learning curve (need to <a href="/advanced/schema">understand schemas</a>).</li><li>Slightly slower initial render.</li><li>Less mature dev tooling.</li></ul>                                                                                                                                                 |
 
 <callout type="warning" label="Components in schemas">
 Even if you prefer to write a custom input using a standard Vue Component, you can still use a schema in your input definition. Please read the <a href="#using-createinput-to-extend-the-base-schema">Using <code>createInput</code> to extend the base schema</a> section.
@@ -154,7 +154,7 @@ To create inputs using the base schema you can use the `createInput()` utility f
 
 The function returns a ready-to-use [input definition](#input-definition).
 
-When providing a *component* as the first argument, `createInput` will generate a schema object that references your component within the base schema. Your component will be passed a single `context` prop:
+When providing a _component_ as the first argument, `createInput` will generate a schema object that references your component within the base schema. Your component will be passed a single `context` prop:
 
 ```js
 {
@@ -164,7 +164,6 @@ When providing a *component* as the first argument, `createInput` will generate 
   }
 }
 ```
-
 
 When providing a schema object, your schema is directly injected into the base schema object. Notice that our hello world example now supports outputting "standard" FormKit features like labels, help text, and validation:
 
@@ -229,7 +228,7 @@ The equivalent in a Vue template:
 
 ### Displaying values
 
-Inputs are also responsible for displaying the current value. Typically, you’ll want to use the `node._value` or `$_value` in schema to display a value. This is the "live" non-debounced value. The currently *committed* value is `node.value` (`$value`). Read more about "value settlement" <a href="/advanced/core#setting-values">here</a>.
+Inputs are also responsible for displaying the current value. Typically, you’ll want to use the `node._value` or `$_value` in schema to display a value. This is the "live" non-debounced value. The currently _committed_ value is `node.value` (`$value`). Read more about "value settlement" <a href="/advanced/core#setting-values">here</a>.
 
 ```js
 // An HTML text input written in schema:
@@ -256,7 +255,7 @@ The only time the uncommitted input <code>_value</code> should be used is for di
 
 ## Adding props
 
-The [standard FormKit props](/essentials/inputs#props--attributes) that you can pass to the `<FormKit>` component (like `label` or `type`) are available in the root of the [context object](/advanced/context) and in the [core node `props`](/advanced/core#config--props), and you can use these props in your schema by directly referencing them in expressions (ex: `$label`). Any props passed to a `<FormKit>` component that are not *node props* end up in the `context.attrs` object (just `$attrs` in the schema).
+The [standard FormKit props](/essentials/inputs#props--attributes) that you can pass to the `<FormKit>` component (like `label` or `type`) are available in the root of the [context object](/advanced/context) and in the [core node `props`](/advanced/core#config--props), and you can use these props in your schema by directly referencing them in expressions (ex: `$label`). Any props passed to a `<FormKit>` component that are not _node props_ end up in the `context.attrs` object (just `$attrs` in the schema).
 
 If you need additional props, you can declare them in your input definition. Props can also be used for internal input state (much like a `ref` in a Vue 3 component). FormKit uses the `props` namespace for both purposes (see the autocomplete example below for an example of this). Props should _always_ be defined in camelCase and used in your Vue templates with kebab-case.
 

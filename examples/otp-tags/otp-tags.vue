@@ -60,7 +60,10 @@ export default {
 
 <style>
 .formkit-inner {
-  border: 0;
+  box-shadow: none;
+}
+.formkit-inner:focus-within {
+  box-shadow: none;
 }
 
 .formkit-digit {
@@ -70,7 +73,7 @@ export default {
   width: 2em;
   margin-right: 0.25em;
   text-align: center;
-  border: var(--formkit-border);
-  border-radius: var(--formkit-border-radius);
+  border: var(--fk-border);
+  border-radius: var(--fk-border-radius);
 }
 </style>

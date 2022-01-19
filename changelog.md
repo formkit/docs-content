@@ -6,11 +6,14 @@
 
 #### 🎉 New features
 
+- Adds native [`file` input type](/inputs/file).
 - New `incomplete-message` prop allows inline customization (or disablement) of the message displayed by the a form when it attempts to submit and all its inputs are not valid.
 - Updates the `defaultConfig` to accept custom inputs.
 - Adds a prefix composition key which allows content to be injected immediately before an input element.
 - Adds a suffix composition key which allows content to be injected immediately after a composition key.
 - 🇷🇺 Russian locale (thank you [@andreimakushkin](https://github.com/andreimakushkin)!)
+- Adds TypeScript typings for `@submit` and `@submit-raw` events.
+- Refactors genesis theme to use much more robust css variable structure.
 
 #### 🐛 Bug fixes
 

@@ -53,7 +53,7 @@ All custom inputs are passed the all-mighty [context object](/advanced/context) 
   langs="vue">
 </example>
 
-Our little baby input is all grown up! It now reads and writes values. As proof, try setting the initial value of the form’s `values` object to `{ two_factor_code: '12345' }` and you'll see the input gets auto-populated with the value.
+Our little baby input is all grown up! It might not look pretty, but it now reads and writes values. As proof, try setting the initial value of the form’s `values` object to `{ two_factor_code: '12345' }` and you'll see the input gets auto-populated with the value.
 
 ## OTP requirements
 
