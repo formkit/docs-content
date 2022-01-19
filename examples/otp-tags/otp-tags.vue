@@ -3,7 +3,7 @@
     <FormKit
       :type="otp"
       digits="4"
-      label="One time password"
+      label="One-time password"
       name="two_factor_code"
       help="We’ve sent a code to your phone."
       validation="required"

@@ -2,7 +2,7 @@
   <FormKit type="form" v-model="values">
     <FormKit
       :type="otp"
-      label="One time password"
+      label="One-time password"
       name="two_factor_code"
       help="We’ve sent a code to your phone."
       validation="required"
