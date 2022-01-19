@@ -9,8 +9,7 @@ The `time` input uses HTML's [native time input](https://developer.mozilla.org/e
 
 <example
 name="Time input"
-file="/_content/examples/time/time.vue"
-langs="vue"></example>
+file="/_content/examples/time/time.vue"></example>
 
 <callout type="warning" label="Formatting">
 The internal format of all native time pickers is <code>HH:MM</code>. This is true even though the format of the time displayed to the user may be 12 hour or 24 hour.

@@ -9,8 +9,7 @@ The `text` input uses HTML's [native text input](https://developer.mozilla.org/e
 
 <example
 name="Text input"
-file="/_content/examples/text/text.vue"
-langs="vue"></example>
+file="/_content/examples/text/text.vue"></example>
 
 ## Props & Attributes
 

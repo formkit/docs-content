@@ -11,8 +11,7 @@ The value of a list input is an array where each item is the value of the input 
 
 <example
 name="List input"
-file="/_content/examples/list/list.vue"
-langs="vue"></example>
+file="/_content/examples/list/list.vue"></example>
 
 <callout type="tip" label="Performance">
 Vue’s handy <code>v-model</code> is fully supported in FormKit with bi-directional data flow even on lists and groups. However, if your form needs extremely high performance consider using the <a href="/advanced/core">core node</a> to read/write instead of v-model.
@@ -24,8 +23,7 @@ Lists are always aware of the validation state of their children (including nest
 
 <example
 name="List input"
-file="/_content/examples/list-validity/list-validity.vue"
-langs="vue"></example>
+file="/_content/examples/list-validity/list-validity.vue"></example>
 
 ## Props & Attributes
 

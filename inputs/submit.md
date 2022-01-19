@@ -13,8 +13,7 @@ Type <code>submit</code> input uses a <code>button</code> element instead of an 
 
 <example
 name="Submit input"
-file="/_content/examples/submit/submit.vue"
-langs="vue"></example>
+file="/_content/examples/submit/submit.vue"></example>
 
 ## Props & Attributes
 

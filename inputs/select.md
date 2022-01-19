@@ -22,8 +22,7 @@ The simplest way to provide options is an array of strings. The provided strings
 
 <example
 name="Select input - strings"
-file="/_content/examples/select-strings/select-strings.vue"
-langs="vue"></example>
+file="/_content/examples/select-strings/select-strings.vue"></example>
 
 ### Value / Label object
 
@@ -31,8 +30,7 @@ You may also provide the `options` prop where the keys are values and the values
 
 <example
 name="Select input"
-file="/_content/examples/select/select.vue"
-langs="vue"></example>
+file="/_content/examples/select/select.vue"></example>
 
 ### Array of objects
 
@@ -40,8 +38,7 @@ The most flexible way to define options is by providing an array of objects. The
 
 <example
 name="Select input - objects"
-file="/_content/examples/select-objects/select-objects.vue"
-langs="vue"></example>
+file="/_content/examples/select-objects/select-objects.vue"></example>
 
 <callout type="tip" label="Option attributes">
 To pass additional attributes to each <code>&lt;option&gt;</code> element, your object can also contain an <code>attrs</code> property.<br><br>
@@ -62,8 +59,7 @@ Sometimes it may be desirable to manually output the contents of a select list i
 
 <example
 name="Select input - objects"
-file="/_content/examples/select-slot/select-slot.vue"
-langs="vue"></example>
+file="/_content/examples/select-slot/select-slot.vue"></example>
 
 <callout type="warning">
 When using the default slot to output options, you should not use the <code>placeholder</code> or <code>options</code> props.
@@ -75,8 +71,7 @@ The `select` input also supports a `multiple` attribute that allows for multi-se
 
 <example
 name="Select input - objects"
-file="/_content/examples/select-multiple/select-multiple.vue"
-langs="vue"></example>
+file="/_content/examples/select-multiple/select-multiple.vue"></example>
 
 <callout type="tip" label="Alternatives">
 Select inputs with the <code>multiple</code> attribute can be challenging for some users because they require holding-down the control or command keys to perform multiple selections. Depending on your audience, you may want to consider using a <a href="/inputs/checkbox">checkbox input with <code>options</code></a> instead.

@@ -9,8 +9,7 @@ The `textarea` input uses HTML's [native textarea input](https://developer.mozil
 
 <example
 name="Textarea input"
-file="/_content/examples/textarea/textarea.vue"
-langs="vue"></example>
+file="/_content/examples/textarea/textarea.vue"></example>
 
 ## Props & Attributes
 

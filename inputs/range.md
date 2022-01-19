@@ -9,8 +9,7 @@ The `range` input uses HTML's [native range input](https://developer.mozilla.org
 
 <example
 name="Range input"
-file="/_content/examples/range/range.vue"
-langs="vue"></example>
+file="/_content/examples/range/range.vue"></example>
 
 ## Props & Attributes
 

@@ -9,8 +9,7 @@ The `tel` input uses HTML's [native tel input](https://developer.mozilla.org/en-
 
 <example
 name="Tel input"
-file="/_content/examples/tel/tel.vue"
-langs="vue"></example>
+file="/_content/examples/tel/tel.vue"></example>
 
 <callout type="tip" label="Phone number validation">
 Phone number formats vary <em>greatly</em> around the world (some localities even include letters in their phone numbers!) — be cautious validating phone numbers unless you know your audience is exclusively from a given location.

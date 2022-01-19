@@ -9,8 +9,7 @@ The `search` input uses HTML's [native search input](https://developer.mozilla.o
 
 <example
 name="Search input"
-file="/_content/examples/search/search.vue"
-langs="vue"></example>
+file="/_content/examples/search/search.vue"></example>
 
 ## Props & Attributes
 

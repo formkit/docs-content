@@ -9,8 +9,7 @@ The `password` input uses HTML's [native password input](https://developer.mozil
 
 <example
 name="Password input"
-file="/_content/examples/password/password.vue"
-langs="vue"></example>
+file="/_content/examples/password/password.vue"></example>
 
 ## Props & Attributes
 

@@ -9,8 +9,7 @@ The `number` input uses HTML's [native number input](https://developer.mozilla.o
 
 <example
 name="Number input"
-file="/_content/examples/number/number.vue"
-langs="vue"></example>
+file="/_content/examples/number/number.vue"></example>
 
 ## Props & Attributes
 
