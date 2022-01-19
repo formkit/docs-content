@@ -1,5 +1,10 @@
 <template>
-  <FormKit id="licenseForm" type="form" @submit="submitHandler">
+  <FormKit
+    v-if="!complete"
+    id="licenseForm"
+    type="form"
+    @submit="submitHandler"
+  >
     <FormKit
       type="text"
       label="Full name"
@@ -16,10 +21,13 @@
       validation="required"
     />
   </FormKit>
+  <div v-else class="complete">License upload complete 👍</div>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { setErrors } from '@formkit/vue'
+const complete = ref(false)
 
 const submitHandler = async (data) => {
   // We need to submit this as a multipart/form-data
@@ -27,8 +35,10 @@ const submitHandler = async (data) => {
   const body = new FormData()
   // We can append other data to our form data:
   body.append('name', data.name)
-  // Finally, we append the actual File object
-  body.append('license', data.license.file)
+  // Finally, we append the actual File object(s)
+  data.license.forEach((fileItem) => {
+    body.append('license', fileItem.file)
+  })
 
   // We'll perform a real upload to httpbin.org
   const res = await fetch('https://httpbin.org/post', {
@@ -37,9 +47,9 @@ const submitHandler = async (data) => {
   })
 
   if (res.ok) {
-    console.log(await res.json())
+    complete.value = true
   } else {
-    setError('licenseForm', ['The server didn’t like our request.'])
+    setErrors('licenseForm', ['The server didn’t like our request.'])
   }
 }
 </script>
