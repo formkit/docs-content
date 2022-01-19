@@ -1,13 +1,13 @@
 # Inputs
 
-FormKit’s inputs are similar to HTML inputs but turbocharged with much needed features like labels, help text, validation, and error messages (and much more). Similar to how HTML’s `<input>` tag uses various `type` attributes (i.e., `<input type="text">` vs `<input type="checkbox">`) FormKit uses the `type` prop for _all_ inputs. In fact, **with FormKit, there is only 1 component you have to learn**:
+FormKit’s inputs are similar to HTML inputs but turbocharged with much needed features like labels, help text, validation, and error messages (and much more). Similar to how HTML’s `<input>` tag uses various `type` attributes (i.e., `<input type="text">` vs `<input type="checkbox">`), FormKit uses the `type` prop for _all_ inputs. In fact, with FormKit, **there is only 1 component you have to learn**:
 
 <example
   name="Text input"
   file="/_content/examples/single-component/single-component.vue">
 </example>
 
-FormKit inputs are not confined to what is available in "native" HTML. The upcoming FormKit Pro represents "synthetic" input types such as `autocomplete`, `taglist` and `wysiwyg`. Of course, you can write your own inputs too by creating [custom inputs](/guides/custom-input).
+FormKit inputs are not confined to what is available in "native" HTML. The upcoming FormKit Pro represents "synthetic" input types such as `autocomplete`, `taglist` and `wysiwyg`. Of course, you can write your own inputs too by creating [custom inputs](/guides/create-a-custom-input).
 
 ## Setting values
 
@@ -70,7 +70,7 @@ Parent inputs like `list`, `group`, and `form` are also able to directly set the
 
 ## Setting attributes
 
-In nearly all cases, attributes set on the `<FormKit>` component will be passed through to the actual input element at the heart of the component, rather than any wrapping DOM elements. For example:
+In nearly all cases, attributes set on the `<FormKit>` component will be passed through to the actual `<input>` element at the heart of the component, rather than any wrapping DOM elements. For example:
 
 <example
   name="Text input"
@@ -80,7 +80,7 @@ In nearly all cases, attributes set on the `<FormKit>` component will be passed 
 
 ## Validation
 
-We’ll discuss validation in more detail on its [own documentation page](/essentials/validation) — but suffice to say adding validation rules to inputs in FormKit is as easy as adding the `validation` prop.
+We discuss validation in more detail on its [own documentation page](/essentials/validation) — but suffice to say adding validation rules to inputs in FormKit is as easy as adding the `validation` prop:
 
 <example
   name="Simple validation"
@@ -97,7 +97,7 @@ We’ll discuss validation in more detail on its [own documentation page](/essen
 
 For performance, all FormKit inputs support debouncing as a first-class feature. While the value of an input changes on every keystroke (technically the `input` event), this newly updated value is only set internally — validation rules, groups, lists, forms, and (most) plugins are not yet “aware” a change has been made.
 
-Internally, FormKit debounces the `input` event. When the debounce has "settled", the new value is “committed” and the rest of the application is notified via the [input node’s `commit` event](/advanced/core#events). The default debounce delay is 20 milliseconds and can be adjusted with the `delay` prop or config option.
+Internally, FormKit debounces the `input` event. When the debounce has "settled", the new value is “committed” and the rest of the application is then notified via the [input node’s `commit` event](/advanced/core#events). The default debounce delay is 20 milliseconds and can be adjusted with the `delay` prop or config option.
 
 To illustrate this, lets `v-model` a `group` input and observe how its value is not updated until after our egregiously long `delay`:
 
@@ -111,7 +111,7 @@ The delay prop’s default is <code>20</code> milliseconds. However, <code>group
 
 ## Explicit errors
 
-Validation errors are the only way to set errors on an input. You can also explicitly set error messages on an input by using the `errors` prop.
+Validation errors are not the only way to set errors on an input. You can also explicitly set error messages on an input by using the `errors` prop.
 
 <example
   name="Simple validation"
