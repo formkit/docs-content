@@ -17,10 +17,6 @@
       <pre v-html="output" />
     </div>
   </div>
-
-  <!-- %head%
-  <script src="//unpkg.com/@highlightjs/cdn-assets@11.2.0/highlight.min.js"></script>
-  %head% -->
 </template>
 
 <script>

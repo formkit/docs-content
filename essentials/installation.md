@@ -25,7 +25,7 @@ community Discord in the `#formkit-general-chat` channel: https://discord.gg/NZ6
 The simplest configuration is to simply include this `.npmrc` in the root of your project.
 
 ```
-/npm.pkg.github.com/:_authToken=${FORMKIT_TOKEN}
+//npm.pkg.github.com/:_authToken=${FORMKIT_TOKEN}
 @formkit:registry=https://npm.pkg.github.com
 ```
 

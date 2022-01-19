@@ -56,7 +56,10 @@ When using the composition API, you won’t have access to `this.$formkit`. Inst
 
 <example
   name="Changing locale via config"
-  file="/_content/examples/locale-change-config/locale-change-config.vue">
+  :file="[
+    '/_content/examples/locale-change-config/locale-change-config.vue',
+    '/_content/examples/locale-change-config/formkit.config.js'
+  ]">
 </example>
 
 ## Adding your language
