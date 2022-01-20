@@ -30,6 +30,9 @@
 - New advanced [custom input documentation](/advanced/custom-inputs) page.
 - "Composition keys" will now be referred to as "[Section keys](/essentials/inputs#sections)".
 - Adds documentation on [`plugin.library`](/advanced/core#library) — the mechanism plugins use to define new input types.
+- Interactive code editor for examples now supports multiple files.
+- In the FormKit Playground you can add new files and import them into each other. The FormKit Playground supports `.vue`, `.js`, `formkit.config.js` and `tailwind.config.js` files.
+- The FormKit Playground is now located at [https://formkit.com/playground](htpps://formkit.com/playground) and old https://formkit.com/playground/vue playgrounds are deprecated.
 
 #### 🐛 Bug fixes
 
