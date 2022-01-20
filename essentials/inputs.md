@@ -135,7 +135,7 @@ FormKit inputs emit both _universal_ events (ones that are emitted from all inpu
 
 ## Sections
 
-Inputs are composed of chunks of HTML called "sections". Each section has a "key" that can be used to target that section. Section keys can be used for many purposes like modifying [classes](#classes), [slots](#slots), and [schema overrides](#sections-schema).
+Inputs are composed of chunks of HTML called "sections". Each section has a "key" that can be used to target that section. Section keys can be used for many purposes like modifying [classes](#classes), [slots](#slots), and extending each [sections’s schema](#sections-schema).
 
 Many section keys are universally available while others are specific to a given input type (you can define your own for custom inputs as well). The following table is a comprehensive list of those that are generally available in all inputs:
 
@@ -152,8 +152,8 @@ For example, if we wanted to use a slot to define the label of an input, we coul
   name="Label slot"
   file="/_content/examples/label-slot/label-slot.vue"></example>
 
-<callout type="warning" label="Consider schema overrides">
-A disadvantage of using slots is you often need to re-create unrelated features to make the change you desire. For example, if you need to re-implement a <code>v-for</code> loop to change the DOM element being used to display validation messages.<br><br>To help address this shortcoming, FormKit is also able to <a href="#sections-schema">selectively override the underlying schema</a> of each section allowing complex structural modification often with no loss of functionality.
+<callout type="warning" label="Consider section schema">
+A disadvantage of using slots is you often need to re-create unrelated features to make the change you desire. For example, if you need to re-implement a <code>v-for</code> loop to change the DOM element being used to display validation messages.<br><br>To help address this shortcoming, FormKit is also able to <a href="#sections-schema">selectively override/extend the underlying schema</a> of each section allowing complex structural modification often with no loss of functionality.
 </callout>
 
 ## Sections schema
@@ -165,7 +165,7 @@ FormKit provides an additional mechanism to change the structure of a FormKit in
 For example, by default FormKit uses an unordered list (`<ul>` and `<li>`) to output validation messages — but perhaps you need to use `<div>` tags. You can change these tags using the `schema` prop without having to re-create any functionality:
 
 <example
-  name="Schema overrides"
+  name="Sections schema"
   file="/_content/examples/schema-overrides/schema-overrides.vue"
   tabs="html,render" ></example>
 
@@ -180,7 +180,7 @@ For accessibility and flexibility, FormKit uses several wrapper elements like th
 
 ### Schema logic
 
-Schema overrides can also change the content being output using advanced schema logic. You could, for example, output a special value when your input’s value matches a particular string:
+Section schemas can also change the content being output using advanced schema logic. You could, for example, output a special value when your input’s value matches a particular string:
 
 <example
   name="No wrappers"
