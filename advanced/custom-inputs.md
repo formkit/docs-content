@@ -83,7 +83,10 @@ Now that we’ve defined our input we can use it anywhere in the application:
 
 <example
   name="Custom input"
-  file="/_content/examples/custom-input-default-config/custom-input-default-config.vue">
+  :file="[
+    '/_content/examples/custom-input-default-config/custom-input-default-config.vue',
+    '/_content/examples/custom-input-default-config/formkit.config.js'
+  ]">
 </example>
 
 ### Plugin libraries

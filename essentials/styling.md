@@ -162,5 +162,8 @@ from here - such as in the case of the second text input here.
 
 <example
   name="Global config with Tailwind"
-  file="/_content/examples/tailwind-classes/example.vue"
-  css-framework="tailwind"></example>
+  css-framework="tailwind"
+  :file="[
+    '/_content/examples/tailwind-classes/example.vue',
+    '/_content/examples/tailwind-classes/formkit.config.js'
+  ]"></example>

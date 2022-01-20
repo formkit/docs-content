@@ -47,7 +47,10 @@ When using Vue’s options API you have access to `this.$formkit` which contains
 
 <example
   name="Changing locale example"
-  file="/_content/examples/locale-change/locale-change.vue">
+  :file="[
+    '/_content/examples/locale-change/locale-change.vue',
+    '/_content/examples/locale-change/formkit.config.js'
+  ]">
 </example>
 
 ### Using root `config`
