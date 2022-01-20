@@ -129,7 +129,7 @@ FormKit inputs accept both _universal_ props (ones that apply to all FormKit inp
 
 ## Events
 
-FormKit inputs emit both _universal_ events (ones that are emitted from all inputs), and _input-specific_ events. The following table is a comprehensive live of events emitted by all FormKit inputs.
+FormKit inputs emit both _universal_ events (ones that are emitted from all inputs), and _input-specific_ events. The following table is a comprehensive list of events emitted by all FormKit inputs.
 
 <reference-table type="events" primary="event"></reference-table>
 
