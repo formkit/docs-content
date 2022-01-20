@@ -19,7 +19,7 @@ FormKit props and native attributes.
 <reference-table :attrs="['min', 'max', 'step']" input="number">
 </reference-table>
 
-## Composition keys
+## Section keys
 
-<reference-table type="compositionKeys" primary="composition-key">
+<reference-table type="sectionKeys" primary="section-key">
 </reference-table>

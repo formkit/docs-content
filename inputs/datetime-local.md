@@ -23,7 +23,7 @@ The `datetime-local` input has no unique props but can make use of the following
 <reference-table input="datetime-local" :attrs="['min', 'max', 'step']">
 </reference-table>
 
-## Composition keys
+## Section keys
 
-<reference-table type="compositionKeys" primary="composition-key">
+<reference-table type="sectionKeys" primary="section-key">
 </reference-table>

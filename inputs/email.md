@@ -19,7 +19,7 @@ The `email` input has no unique props but can make use of the following universa
 <reference-table input="email" :attrs="['placeholder']">
 </reference-table>
 
-## Composition keys
+## Section keys
 
-<reference-table type="compositionKeys" primary="composition-key">
+<reference-table type="sectionKeys" primary="section-key">
 </reference-table>

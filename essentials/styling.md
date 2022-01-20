@@ -23,14 +23,14 @@ import `@formkit/themes/genesis/theme.css`
 Most users will want to apply their own styles and classes to FormKit's provided markup.
 FormKit provides numerous methods to apply classes for your project.
 
-Classes can be modified for all [composition-keys](/essentials/inputs#composition-keys) using any of the following methods (from highest to lowest specificity):
+Classes can be modified for all [sections](/essentials/inputs#sections) using any of the following methods (from highest to lowest specificity):
 
-- [The `{composition-key}-class` props](#composition-key-class-props). (most specific)
+- [The `{section-key}-class` props](#section-key-class-props). (most specific)
 - [The `classes` prop](#classes-prop).
 - [The `classes` configuration option](#classes-configuration).
 - [The `rootClasses` configuration function](#root-classes-function). (least specific)
 
-The classes follow a strict hierarchy. Initially, classes are produced by the `rootClasses` function. They can then be modified by the `classes` configuration option, then by the `classes` prop, and finally by the `{composition-key}-class` prop. At each of these stages classes can be [appended](#appending-classes), [reset](#resetting-classes), or [selectively modified](#removing-classes).
+The classes follow a strict hierarchy. Initially, classes are produced by the `rootClasses` function. They can then be modified by the `classes` configuration option, then by the `classes` prop, and finally by the `{section-key}-class` prop. At each of these stages classes can be [appended](#appending-classes), [reset](#resetting-classes), or [selectively modified](#removing-classes).
 
 ## Appending classes
 
@@ -63,18 +63,18 @@ tabs="html"></example>
 In addition to the four methods listed above, more generalized overrides are also available, like overriding an input’s schema, using the <code>classes</code> node hook, or utilizing slots.
 </callout>
 
-## Composition-key class props
+## Sectio-key class props
 
-The simplest way to modify the classes of an element inside a FormKit input is via the `{composition-key}-class` props. To add a class to a specific composition key element, like `label`, you simply add the `label-class` prop.
+The simplest way to modify the classes of an element inside a FormKit input is via the `{section-key}-class` props. To add a class to a specific section element, like `label`, you simply add the `label-class` prop.
 
 <example
-name="Composition-key class"
-file="/_content/examples/composition-key-class/composition-key-class.vue"
+name="Section-key class"
+file="/_content/examples/section-key-class/section-key-class.vue"
 tabs="html"></example>
 
 ## Classes prop
 
-The classes prop is similar to the composition-key class prop except it allows setting all composition keys at the same time.
+The classes prop is similar to the section-key class prop except it allows setting classes on all sections at the same time.
 
 <example
 name="Classes prop"
@@ -108,13 +108,13 @@ for producing the default classes for each element. This function already has a 
 
 The `rootClasses` function is passed 2 arguments (respectively):
 
-- The [composition key](/essentials/inputs#composition-keys) (like `label` or `input`).
+- The [section key](/essentials/inputs#sections) (like `label` or `input`).
 - The [input’s node](/essentials/input-node).
 
-The function will be called once for each composition key and it _must_ return
+The function will be called once for each section and it _must_ return
 an object of classes with boolean values.
 
-While typical useage of `rootClasses` is at the global config level to apply
+While typical usage of `rootClasses` is at the global config level to apply
 classes to your entire project - you can also use it with the `config` prop to override
 a specific form or input within your project with a class list computed from the logic
 within your provided function.

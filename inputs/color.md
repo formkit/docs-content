@@ -20,7 +20,7 @@ FormKit props.
 <reference-table>
 </reference-table>
 
-## Composition keys
+## Section keys
 
-<reference-table type="compositionKeys" primary="composition-key">
+<reference-table type="sectionKeys" primary="section-key">
 </reference-table>

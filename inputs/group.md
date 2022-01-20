@@ -26,7 +26,7 @@ file="/_content/examples/group-validity/group-validity.vue"></example>
 <reference-table input="group" :data="[{ prop: 'disabled', type: 'Boolean', default: 'false', description: 'Disables all the inputs in the group.'}]" :without="['help', 'label', 'validation', 'validation-visibility', 'validation-label']">
 </reference-table>
 
-## Composition keys
+## Section keys
 
-<reference-table type="compositionKeys" primary="composition-key" :without="['outer','label','inner','input','help','messages','message']">
+<reference-table type="sectionKeys" primary="section-key" :without="['outer','label','inner','input','help','messages','message']">
 </reference-table>

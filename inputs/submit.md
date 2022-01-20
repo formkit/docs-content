@@ -22,7 +22,7 @@ The `submit` input (along with [`button`](/inputs/button)) is unique in that it 
 <reference-table input="button">
 </reference-table>
 
-## Composition keys
+## Section keys
 
-<reference-table type="compositionKeys" primary="composition-key" :without="['inner']">
+<reference-table type="sectionKeys" primary="section-key" :without="['inner']">
 </reference-table>

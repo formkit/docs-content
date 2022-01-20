@@ -9,7 +9,7 @@
   createApp(App)
     .use(plugin, defaultConfig({
       config: {
-        rootClasses (compositionKey, node) {
+        rootClasses (sectionKey, node) {
           // this is an incomplete theme for demonstration purposes
           const type = node.props.type
           // create a classConfig object that contains either strings or functions
@@ -46,9 +46,9 @@
             return classList
           }
 
-          const target = classConfig[compositionKey]
+          const target = classConfig[sectionKey]
           // return a class objects from strings and return them for each
-          // composition key defined by inputs in FormKit
+          // section key defined by inputs in FormKit
           if (typeof target === 'string') {
             return createClassObject(target)
           } else if (typeof target === 'function') {

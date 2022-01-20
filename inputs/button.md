@@ -18,7 +18,7 @@ The `button` input is unique in that it does not actively receive input other th
 <reference-table input="button">
 </reference-table>
 
-## Composition keys
+## Section keys
 
-<reference-table type="compositionKeys" primary="composition-key" :without="['inner']">
+<reference-table type="sectionKeys" primary="section-key" :without="['inner']">
 </reference-table>

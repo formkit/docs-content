@@ -5,9 +5,9 @@
 </template>
 
 <script setup>
-function rootClasses(compositionKey) {
+function rootClasses(sectionKey) {
   return {
-    [`foo-${compositionKey}`]: true
+    [`foo-${sectionKey}`]: true
   }
 }
 </script>

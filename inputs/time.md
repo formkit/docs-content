@@ -23,7 +23,7 @@ FormKit props.
 <reference-table input="time" :attrs="['max', 'min', 'step']">
 </reference-table>
 
-## Composition keys
+## Section keys
 
-<reference-table type="compositionKeys" primary="composition-key">
+<reference-table type="sectionKeys" primary="section-key">
 </reference-table>

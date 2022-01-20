@@ -45,7 +45,7 @@ The `file` input has no unique props but the native input does have a number of 
 <reference-table input="file" :attrs="['accept', 'capture', 'multiple', 'webkitdirectory' ]">
 </reference-table>
 
-## Composition keys
+## Section keys
 
-<reference-table type="compositionKeys" primary="composition-key">
+<reference-table type="sectionKeys" primary="section-key">
 </reference-table>

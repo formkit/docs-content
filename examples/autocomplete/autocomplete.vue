@@ -101,7 +101,7 @@ const searchFeature = (node) => {
 
 /**
  * This is our input schema responsible for rendering the inner “input”
- * composition key. In our example, we render an text input which will be used
+ * section. In our example, we render an text input which will be used
  * to filter search results, and an unordered list that shows all remaining
  * matches.
  */

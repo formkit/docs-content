@@ -98,7 +98,7 @@ For inputs that accept an options prop, this is a normalized array of option obj
 
 ## `option`
 
-For inputs that accept an options prop this object is available to [composition keys](/essentials/inputs/#composition-keys) that are inside the iteration (for example the `label` composition key on a `checkbox` input with multiple checkboxes). The object contains a `label`, `value`, and sometimes `attrs`:
+For inputs that accept an options prop, this object is available to [section keys](/essentials/inputs#sections) that are inside the iteration (i.e., the `label` section key on a `checkbox` input with multiple checkboxes). The object contains a `label`, `value`, and sometimes `attrs`:
 
 ```js
 {
@@ -138,6 +138,6 @@ An object of visible messages (keyed by the `key`) of type `ui` that can be used
 
 ## `classes`
 
-A Proxy object for requesting classes. This object allows schema authors to request any composition key and get a generative class name. For example `$classes.input` would (by default without additional configuration) return `formkit-input` while `$classes.foobar` would return `formkit-foobar`.
+A Proxy object for requesting classes. This object allows schema authors to request any [section](/essentials/inputs#sections) and get a generative class name. For example `$classes.input` would (by default without additional configuration) return `formkit-input` while `$classes.foobar` would return `formkit-foobar`.
 
 </div>

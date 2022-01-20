@@ -133,20 +133,20 @@ All of FormKit’s core inputs are written using schemas to allow for the greate
 - [Extend the base schema](#using-createinput-to-extend-the-base-schema) (recommended).
 - Write your input from scratch.
 
-It is important to understand the basic structure of a “standard” FormKit input. Let’s examine this diagram:
+It is important to understand the basic structure of a “standard” FormKit input, which is broken down into [sections](/essentials/inputs#sections):
 
 <figure class="full">
   <formkit-input-diagram></formkit-input-diagram>
   <figcaption>Composition of a standard FormKit text input.</figcaption>
 </figure>
 
-The `input` composition key in the diagram above is typically what you’ll swap out when creating your own inputs — keeping the wrappers, labels, help text, and messages intact. However, if you want to control these aspects as well, you can also write your own input from scratch.
+The `input` section in the diagram above is typically what you’ll swap out when creating your own inputs — keeping the wrappers, labels, help text, and messages intact. However, if you want to control these aspects as well, you can also write your own input from scratch.
 
 #### Using `createInput` to extend the base schema
 
 To create inputs using the base schema you can use the `createInput()` utility from the `@formkit/vue` package. This function accepts 2 arguments:
 
-- (required) A schema node _or_ a Vue component, which it inserts into the base schema at the `input` composition key (see diagram above).
+- (required) A schema node _or_ a Vue component, which it inserts into the base schema at the `input` section (see diagram above).
 - (optional) An object of [input definition](#input-definition) properties to merge with an auto-generated one.
 
 The function returns a ready-to-use [input definition](#input-definition).

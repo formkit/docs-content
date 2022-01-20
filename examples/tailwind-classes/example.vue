@@ -43,7 +43,7 @@
 // this is not how you actually set FormKit config in your project.
 {
   config: {
-    rootClasses (compositionKey, node) {
+    rootClasses (sectionKey, node) {
       const type = node.props.type
       const classConfig = {
         outer: 'mb-5',
@@ -73,11 +73,11 @@
         return classList
       }
 
-      const target = classConfig[compositionKey]
+      const target = classConfig[sectionKey]
       if (typeof target === 'string') {
         return createClassObject(target)
       } else if (typeof target === 'function') {
-        return createClassObject(classConfig[compositionKey]())
+        return createClassObject(classConfig[sectionKey]())
       }
     }
   }
