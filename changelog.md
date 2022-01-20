@@ -33,7 +33,7 @@
 
 #### 🐛 Bug fixes
 
-- Fixes a bug that prevented the incomplete message from displaying on forms.
+- Fixes a bug that prevented the incomplete message from displaying on forms ([#29](https://github.com/formkit/formkit/issues/29)).
 - Fixes TypeScript typings for `@submit` and `@submit-raw` events.
 - Fixes the order of numbers in the `length` and `between` validation messages to always place the lower number first ([#35](https://github.com/formkit/formkit/issues/35)).
 - Fixes an issue ([#32](https://github.com/formkit/formkit/issues/32))with select lists where the `:options` prop would not accept number values.
