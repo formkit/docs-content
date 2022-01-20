@@ -1,12 +1,12 @@
 # Schema
 
-FormKit's schema is a JSON-serializable data format for storing DOM structures and component implementations including FormKit forms. Although created specifically for implementing forms the format is capable of generating any HTML markup or using any third party components. Schemas are rendered using FormKit's `<FormKitSchema>` component.
+FormKit's schema is a JSON-serializable data format for storing DOM structures and component implementations including FormKit forms. Although created specifically for implementing forms, the format is capable of generating any HTML markup or using any third-party components. Schemas are rendered using FormKit's `<FormKitSchema>` component.
 
-A schema is an array of objects, where each object defines a single HTML element, component, or text node. Simple strings produce text nodes, while components and HTML elements are defined with two different objects (referred to as `$el` and `$cmp`).
+A schema is an array of objects (called "schema nodes"), where each object defines a single HTML element, component, or text node. Simple strings produce text nodes, while components and HTML elements are defined with two different objects (referred to as `$el` and `$cmp`).
 
-## HTML Elements ($el)
+## HTML elements ($el)
 
-HTML elements are defined using the `$el` property. You can use `$el` to render any HTML element. Attributes can be added with the `attrs` property, and content is assigned with the `children` property.
+HTML elements are defined using the `$el` property. You can use `$el` to render any HTML element. Attributes can be added with the `attrs` property, and content is assigned with the `children` property:
 
 <example
   name="Schema - elements"
@@ -206,6 +206,7 @@ name="Schema - **raw**"
 file="/\_content/examples/schema-raw/schema-raw.vue"></example>
 
 Notice if you remove the `__raw__` prefix from the above example, the prefix no longer has effect — this is because the `sectionsSchema` prop’s value was parsed when creating the component instead of passed as a JavaScript object.
+
 ## FormKit Inputs
 
 Although schemas can be used for almost any purpose — the primary objective is to empower developers to build complex and dynamic forms using a serializable data format. Using the schema with FormKit inputs covers this use case well.
