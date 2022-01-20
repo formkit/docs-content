@@ -14,6 +14,7 @@ The `file` input uses HTML's [native file input](https://developer.mozilla.org/e
 <example
   name="File input"
   file="/_content/examples/file/file.vue">
+</example>
 
 ## Array value
 
