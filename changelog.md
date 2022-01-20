@@ -28,6 +28,7 @@
 - New [create a custom input](/guides/create-a-custom-input) guide.
 - New advanced [custom input documentation](/advanced/custom-inputs) page.
 - "Composition keys" will now be referred to as "[Section keys](/essentials/inputs#sections)".
+- Adds documentation on [`plugin.library`](/advanced/core#library) — the mechanism plugins use to define new input types.
 
 #### 🐛 Bug fixes
 
