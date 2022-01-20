@@ -2,7 +2,7 @@
 
 ## 1.0.0-alpha.5
 
-### [TK]
+### January 20, 2022
 
 #### ⚠️ Breaking changes
 
