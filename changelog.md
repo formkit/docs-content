@@ -4,6 +4,11 @@
 
 ### [TK]
 
+#### ⚠️ Breaking changes
+
+- Changes the `validation-behavior` prop on the `<FormKit>` component to `validation-visibility`.
+- Changes the `schema` prop on the `<FormKit>` component to `sections-schema`.
+
 #### 🎉 New features
 
 - Adds the native [`file` input type](/inputs/file) with support for some value-added features:
@@ -22,6 +27,7 @@
 
 - New [create a custom input](/guides/create-a-custom-input) guide.
 - New advanced [custom input documentation](/advanced/custom-inputs) page.
+- "Composition keys" will now be referred to as ["Section keys"]().
 
 #### 🐛 Bug fixes
 

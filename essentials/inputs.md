@@ -156,9 +156,9 @@ For example, if we wanted to use a slot to define the label of an input, we coul
 A disadvantage of using slots is you often need to re-create unrelated features to make the change you desire. For example, if you need to re-implement a <code>v-for</code> loop to change the DOM element being used to display validation messages.<br><br>To help address this shortcoming, FormKit is also able to <a href="#schema-overrides">selectively override the underlying schema</a> of each composition key allowing complex structural modification often with no loss of functionality.
 </callout>
 
-## Schema overrides
+## Section schemas
 
-FormKit provides an additional mechanism to change the structure of a FormKit input called “Schema overrides”. Under the hood, all FormKit inputs are powered by [FormKit’s schema](/advanced/schema) — a JSON compatible data format for creating and storing DOM structure and logic. This allows tremendous structural flexibility because all inputs can have pieces of their schema extended via composition keys without wholesale replacement of the template.
+FormKit provides an additional mechanism to change the structure of a FormKit input called “Section schemas”. Under the hood, FormKit’s inputs are powered by [FormKit’s schema](/advanced/schema) — a JSON compatible data format for creating and storing DOM structure and logic. This allows tremendous structural flexibility because all inputs can have pieces of their schema extended via section keys without wholesale replacement of the template.
 
 ### Changing HTML tags
 

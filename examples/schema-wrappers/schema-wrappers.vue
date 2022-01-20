@@ -2,7 +2,7 @@
   <!-- %partial%::html:: -->
   <FormKit
     type="checkbox"
-    :schema="{
+    :sections-schema="{
       outer: { $el: null },
       inner: { $el: null },
       messages: { $el: null },

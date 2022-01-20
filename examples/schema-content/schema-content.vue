@@ -4,7 +4,7 @@
     type="text"
     label="Your name"
     help="Try entering the name “formkit”."
-    :schema="{
+    :sections-schema="{
       label: {
         children: [
           '$label',
