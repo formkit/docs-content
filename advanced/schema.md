@@ -184,6 +184,28 @@ At times it may be necessary to pass an object of variable or unknown attributes
   layout="auto">
 </example>
 
+## Raw values
+
+At times it may be necessary to prevent a given attribute or prop from being parsed. This can be done by prefixing an attribute or prop with `__raw__`.
+
+```js
+{
+  $cmp: 'PriceComponent',
+  props: {
+    __raw__price: '$2.99'
+  }
+}
+```
+
+In the above example, the `__raw__` prefix will be removed, and the unparsed value of `$2.99` will be passed as the `price` prop to the `PriceComponent`.
+
+Another scenario where this comes into play is rendering FormKit components. The `<FormKit>` component has a `sections-schema` prop that allows users to pass down schema partials to merge with various sections of their input. In this edge case, we want to pass the schema chunks to the `<FormKit>` component as a raw javascript object. To do so, we once again prefix the `sections-schema` prop with `__raw__`:
+
+<example
+name="Schema - **raw**"
+file="/\_content/examples/schema-raw/schema-raw.vue"></example>
+
+Notice if you remove the `__raw__` prefix from the above example, the prefix no longer has effect — this is because the `sectionsSchema` prop’s value was parsed when creating the component instead of passed as a JavaScript object.
 ## FormKit Inputs
 
 Although schemas can be used for almost any purpose — the primary objective is to empower developers to build complex and dynamic forms using a serializable data format. Using the schema with FormKit inputs covers this use case well.
