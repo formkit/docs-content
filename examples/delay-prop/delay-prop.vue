@@ -7,7 +7,7 @@
       help="Notice it takes a full second for the data to update."
       :delay="1000"
       validation="required|length:5|email"
-      validation-behavior="live"
+      validation-visibility="live"
     />
   </FormKit>
   <pre wrap>{{ data }}</pre>

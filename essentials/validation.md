@@ -33,7 +33,7 @@ This is especially helpful if the arguments being provided need to be actual Jav
 
 ## Showing errors
 
-Validation rules are always computed in realtime — meaning a given field will always be either valid or invalid (it is considered invalid while pending async validation rules run). However — the visibility of the validation errors is determined by the `validation-behavior` prop.
+Validation rules are always computed in realtime — meaning a given field will always be either valid or invalid (it is considered invalid while pending async validation rules run). However — the visibility of the validation errors is determined by the `validation-visibility` prop.
 
 | Behavior | Description                                                            |
 | -------- | ---------------------------------------------------------------------- |

@@ -6,7 +6,7 @@
     label="Birthday"
     help="Enter your birth day"
     validation="required|before:2010-01-01"
-    validation-behavior="live"
+    validation-visibility="live"
   />
   <!-- %partial%::html:: -->
 </template>

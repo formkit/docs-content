@@ -2,7 +2,7 @@
   <FormKit
     label="Count some errors"
     validation="required|is:foo,baz|*length:3,3"
-    validation-behavior="live"
+    validation-visibility="live"
     @node="countVisible"
   />
   Visible: {{ visibleCount }} messages

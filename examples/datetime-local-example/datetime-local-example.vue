@@ -6,7 +6,7 @@
     label="End of the world"
     help="When will the end of the world take place?"
     validation="required|after"
-    validation-behavior="live"
+    validation-visibility="live"
   />
   <!-- %partial%::html:: -->
 </template>

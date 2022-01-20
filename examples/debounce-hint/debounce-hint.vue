@@ -2,7 +2,7 @@
   <FormKit
     label="Username"
     validation="(500)username_exists"
-    validation-behavior="live"
+    validation-visibility="live"
     :validation-rules="{ username_exists }"
     :validation-messages="{
       username_exists: 'Sorry, that username is taken. Try “formkit-4-life”.',

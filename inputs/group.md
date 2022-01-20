@@ -23,7 +23,7 @@ file="/_content/examples/group-validity/group-validity.vue"></example>
 
 ## Props & Attributes
 
-<reference-table input="group" :data="[{ prop: 'disabled', type: 'Boolean', default: 'false', description: 'Disables all the inputs in the group.'}]" :without="['help', 'label', 'validation', 'validation-behavior', 'validation-label']">
+<reference-table input="group" :data="[{ prop: 'disabled', type: 'Boolean', default: 'false', description: 'Disables all the inputs in the group.'}]" :without="['help', 'label', 'validation', 'validation-visibility', 'validation-label']">
 </reference-table>
 
 ## Composition keys

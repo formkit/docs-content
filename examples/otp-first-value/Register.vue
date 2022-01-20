@@ -6,7 +6,7 @@
       name="two_factor_code"
       help="We’ve sent a code to your phone."
       validation="required"
-      validation-behavior="live"
+      validation-visibility="live"
     />
   </FormKit>
 

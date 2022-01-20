@@ -14,6 +14,6 @@
     ]"
     help="If you had to relocate for work — select your preferred locations."
     validation="+min:3"
-    validation-behavior="live"
+    validation-visibility="live"
   />
 </template>

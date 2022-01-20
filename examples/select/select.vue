@@ -16,9 +16,9 @@
       neptune: 'Neptune',
     }"
     validation="required|is:jupiter"
-    validation-behavior="dirty"
+    validation-visibility="dirty"
     :validation-messages="{
-      is: 'Nope! Jupiter is the largest planet'
+      is: 'Nope! Jupiter is the largest planet',
     }"
   />
   <!-- %partial%::html:: -->

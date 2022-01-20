@@ -1,17 +1,13 @@
 <template>
   <!-- %partial%::html:: -->
-  <FormKit
-    type="form"
-    v-model="data"
-    @submit="handleSubmit"
-  >
+  <FormKit type="form" v-model="data" @submit="handleSubmit">
     <FormKit
       type="text"
       label="Your Name"
       name="name"
       placeholder="Your name"
       validation="required"
-      validation-behavior="live"
+      validation-visibility="live"
     />
     <FormKit
       type="select"
@@ -27,9 +23,9 @@
       placeholder="Allergies? No-contact delivery? Let us know."
       :help="`${data.instructions.length} / 120`"
       validation="length:0,120"
-      validation-behavior="live"
+      validation-visibility="live"
       :validation-messages="{
-        length: 'Instructions cannot be more than 120 characters.'
+        length: 'Instructions cannot be more than 120 characters.',
       }"
     />
   </FormKit>
@@ -39,20 +35,20 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       data: {
         name: '',
         favorite_food: '',
-        instructions: ''
-      }
+        instructions: '',
+      },
     }
   },
   methods: {
     async handleSubmit() {
       await new Promise((r) => setTimeout(r, 2000))
       alert('Thank you!')
-    }
-  }
+    },
+  },
 }
 </script>

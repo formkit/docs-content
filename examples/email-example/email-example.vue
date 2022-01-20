@@ -5,7 +5,7 @@
     label="Student email address"
     help="Please enter your student email address."
     validation="required|email|ends_with:.edu"
-    validation-behavior="live"
+    validation-visibility="live"
     placeholder="vikas@school.edu"
   />
   <!-- %partial%::html:: -->

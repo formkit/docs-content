@@ -32,7 +32,7 @@ Forms are usually submitted through user actions like clicking a submit button o
 
 1. It ensures all inputs are settled (finished debouncing).
 1. Emits the `@submit-raw` event.
-1. Sets the `submitted` state to true on all inputs — displaying any remaining validation errors (regardless of the `validation-behavior`).
+1. Sets the `submitted` state to true on all inputs — displaying any remaining validation errors (regardless of the `validation-visibility`).
 1. If all inputs are valid it fires the `@submit` event.
 1. If the `@submit` event returns a `Promise` sets the form’s state to `loading` until it resolves.
 
@@ -113,7 +113,7 @@ Form errors (ones that apply to the entire form) can be set two ways.
 
 #### Using the `errors` prop
 
-Like with any FormKit input, you can directly assign errors using the `errors` prop. These errors are always visible (not subject to `validation-behavior`).
+Like with any FormKit input, you can directly assign errors using the `errors` prop. These errors are always visible (not subject to `validation-visibility`).
 
 <example
   name="Form errors prop example"

@@ -7,7 +7,7 @@
     help="Do you agree to our terms of service?"
     name="terms"
     validation="accepted"
-    validation-behavior="dirty"
+    validation-visibility="dirty"
   />
   <pre wrap>{{ value }}</pre>
   <!-- %partial%::html:: -->

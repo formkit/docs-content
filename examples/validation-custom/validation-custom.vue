@@ -1,24 +1,31 @@
 <template>
   <FormKit
-   type="text"
-   label="Weekend day"
-   validation="day:weekend"
-   :validation-rules="{ day }"
-   validation-behavior="live"
-   help="Enter a weekend day."
+    type="text"
+    label="Weekend day"
+    validation="day:weekend"
+    :validation-rules="{ day }"
+    validation-visibility="live"
+    help="Enter a weekend day."
   />
 </template>
 
 <script setup>
 function day(node, group = 'weekdays') {
   const dayNames = [
-    'monday', 'mon',
-    'tuesday', 'tue',
-    'wednesday', 'wed',
-    'thursday', 'thu',
-    'friday', 'fri',
-    'saturday', 'sat',
-    'sunday', 'sun',
+    'monday',
+    'mon',
+    'tuesday',
+    'tue',
+    'wednesday',
+    'wed',
+    'thursday',
+    'thu',
+    'friday',
+    'fri',
+    'saturday',
+    'sat',
+    'sunday',
+    'sun',
   ]
   const value = node.value.toLowerCase()
   switch (group) {

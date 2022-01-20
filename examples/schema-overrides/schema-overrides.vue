@@ -8,7 +8,7 @@
       message: { $el: 'span' },
     }"
     validation="required|length:5"
-    validation-behavior="live"
+    validation-visibility="live"
   />
   <!-- Remove the :schema prop to see validation
         messages revert to their default HTML. -->

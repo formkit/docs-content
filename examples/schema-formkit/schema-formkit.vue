@@ -19,7 +19,7 @@ const schema = [
         { value: 250000, label: '$131k - $250k' },
       ],
       validation: 'required|min:250000',
-      validationBehavior: 'dirty',
+      validationVisibility: 'dirty',
       validationMessages: {
         min: 'Sorry, only wealthy people can get loans from the bank.'
       }

@@ -9,7 +9,7 @@
       label="Password"
       help="Enter a new password"
       validation="required"
-      validation-behavior="live"
+      validation-visibility="live"
     />
     <FormKit
       type="password"
@@ -17,7 +17,7 @@
       label="Confirm password"
       help="Confirm your new password"
       validation="required|confirm"
-      validation-behavior="live"
+      validation-visibility="live"
       validation-label="Password confirmation"
     />
   </FormKit>

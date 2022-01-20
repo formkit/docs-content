@@ -4,7 +4,7 @@
     label="Hello world example"
     help="You still cant interact with me, but im here!"
     validation="required"
-    validation-behavior="live"
+    validation-visibility="live"
   />
 </template>
 

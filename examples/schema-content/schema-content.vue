@@ -21,7 +21,7 @@
         ],
       },
     }"
-    validation-behavior="live"
+    validation-visibility="live"
   />
   <!-- %partial%::html:: -->
 </template>
