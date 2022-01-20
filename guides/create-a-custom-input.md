@@ -16,9 +16,9 @@ To get started, let's create our input’s component file. We'll call it `OneTim
 </template>
 
 <script setup>
-const props = defineProps({
-  context: Object,
-})
+  const props = defineProps({
+    context: Object,
+  })
 </script>
 ```
 
@@ -52,6 +52,7 @@ All custom inputs are passed the almighty [context object](/advanced/context) as
 
 <example
   name="One-time password - first value"
+  init-file-tab="OneTimePassword.vue"
   :file="[
     '/_content/examples/otp-first-value/Register.vue',
     '/_content/examples/otp-first-value/OneTimePassword.vue',
@@ -85,6 +86,7 @@ We now have access to `context.digits`. Back in `OneTimePassword.vue`, let's use
 
 <example
   name="One-time password - input tags"
+  init-file-tab="OneTimePassword.vue"
   :file="[
     '/_content/examples/otp-tags/Register.vue',
     '/_content/examples/otp-tags/OneTimePassword.vue',
@@ -109,6 +111,7 @@ Notice in the above example that when you type into one input all the other inpu
 
 <example
   name="One-time password - input handlers"
+  init-file-tab="OneTimePassword.vue"
   :file="[
     '/_content/examples/otp-handlers/Register.vue',
     '/_content/examples/otp-handlers/OneTimePassword.vue',
@@ -144,6 +147,7 @@ handlePaste(e) {
 
 <example
   name="One-time password - copy paste"
+  init-file-tab="OneTimePassword.vue"
   :file="[
     '/_content/examples/otp-copy-paste/Register.vue',
     '/_content/examples/otp-copy-paste/OneTimePassword.vue',

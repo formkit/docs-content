@@ -1,3 +1,4 @@
+<!-- %partial% -->
 <template>
   <FormKit type="form" v-model="values">
     <FormKit
@@ -25,6 +26,7 @@ const otp = createInput(OneTimePassword, {
   props: ['digits'],
 })
 </script>
+<!-- %partial% -->
 
 <style>
 .formkit-inner {
