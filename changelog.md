@@ -22,6 +22,7 @@
 - Adds a suffix section key which allows content to be injected immediately after an input element.
 - 🇷🇺 Russian locale (thank you [@andreimakushkin](https://github.com/andreimakushkin)!)
 - Refactors Genesis theme to use much more robust CSS variable structure.
+- Adds [a new feature](/advanced/schema#raw-values) to schemas that allows users to prefix `props` and `attrs` properties with `__raw__` to pass the raw value instead of its parsed result ([#36](https://github.com/formkit/formkit/issues/36)).
 
 #### 📙 Documentation
 
@@ -34,6 +35,8 @@
 
 - Fixes a bug that prevented the incomplete message from displaying on forms.
 - Fixes TypeScript typings for `@submit` and `@submit-raw` events.
+- Fixes the order of numbers in the `length` and `between` validation messages to always place the lower number first ([#35](https://github.com/formkit/formkit/issues/35)).
+- Fixes an issue ([#32](https://github.com/formkit/formkit/issues/32))with select lists where the `:options` prop would not accept number values.
 
 ## 1.0.0-alpha.4
 
