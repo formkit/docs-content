@@ -1,6 +1,6 @@
 <InputPageHero
 title="Textarea input"
-icon="IconInputText"
+icon="IconInputTextArea"
 :pro="false"
 project-price=""
 data-price=""></InputPageHero>

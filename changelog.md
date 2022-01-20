@@ -7,7 +7,7 @@
 #### ⚠️ Breaking changes
 
 - Changes the `validation-behavior` prop on the `<FormKit>` component to `validation-visibility`.
-- Changes the `schema` prop on the `<FormKit>` component to `sections-schema`.
+- Changes the `schema` prop on the `<FormKit>` component to [`sections-schema`](/essentials/inputs#sections-schema).
 
 #### 🎉 New features
 
@@ -15,19 +15,20 @@
   - Display only re-population.
   - Drag and drop.
   - Input clearing.
-- Adds the `createInput` helper function to make custom inputs easy to write.
-- New `incomplete-message` prop allows inline customization (or disablement) of the message displayed by the a form when it attempts to submit and all its inputs are not valid.
+- Adds the [`createInput`](/advanced/custom-inputs#using-createinput-to-extend-the-base-schema) helper function to make custom inputs easy to write.
+- New `incomplete-message` prop allows inline customization (or disabling) of the message displayed by a form when it attempts to submit and all its inputs are not valid.
 - Updates the `defaultConfig` to accept custom inputs.
 - Adds a prefix section key which allows content to be injected immediately before an input element.
 - Adds a suffix section key which allows content to be injected immediately after an input element.
 - 🇷🇺 Russian locale (thank you [@andreimakushkin](https://github.com/andreimakushkin)!)
-- Refactors genesis theme to use much more robust css variable structure.
+- Refactors Genesis theme to use much more robust CSS variable structure.
 
 #### 📙 Documentation
 
 - New [create a custom input](/guides/create-a-custom-input) guide.
 - New advanced [custom input documentation](/advanced/custom-inputs) page.
-- "Composition keys" will now be referred to as ["Section keys"]().
+- "Composition keys" will now be referred to as "[Section keys](/essentials/inputs#sections)".
+- Adds documentation on [`plugin.library`](/advanced/core#library) — the mechanism plugins use to define new input types.
 
 #### 🐛 Bug fixes
 

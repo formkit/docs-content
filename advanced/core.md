@@ -590,7 +590,7 @@ Experienced developers will notice a few exciting properties of this plugin-libr
 1. Multiple input libraries can be installed on the same project.
 2. Plugins (and libraries) can be exposed locally, per form, group, or globally.
 3. A plugin can bundle new inputs along with plugin logic making installation simple for end users.
-4. The library function has full control over what conditions result in a call to `node.define()`. Frequently this is simply checking `node.props.type` but you can define different inputs based on other conditions, like if a particular prop is set.
+4. The library function has full control over what conditions result in a call to `node.define()`. Frequently, this is simply checking `node.props.type` but you can define different inputs based on other conditions, like if a particular prop is set.
 
 <cta label="Learn to create your own custom inputs" button="Custom input docs" href="/advanced/custom-inputs"></cta>
 

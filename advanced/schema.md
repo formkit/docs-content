@@ -199,7 +199,7 @@ At times it may be necessary to prevent a given attribute or prop from being par
 
 In the above example, the `__raw__` prefix will be removed, and the unparsed value of `$2.99` will be passed as the `price` prop to the `PriceComponent`.
 
-Another scenario where this comes into play is rendering FormKit components. The `<FormKit>` component has a `sections-schema` prop that allows users to pass down schema partials to merge with various sections of their input. In this edge case, we want to pass the schema chunks to the `<FormKit>` component as a raw javascript object. To do so, we once again prefix the `sections-schema` prop with `__raw__`:
+Another scenario where this comes into play is rendering FormKit components. The `<FormKit>` component has a `sections-schema` prop that allows users to pass down schema partials to merge with various sections of their input. In this edge case, we want to pass the schema chunks to the `<FormKit>` component as a raw JavaScript object. To do so, we once again prefix the `sectionsSchema` prop with `__raw__`:
 
 <example
 name="Schema - **raw**"
