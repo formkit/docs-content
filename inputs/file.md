@@ -39,7 +39,7 @@ The file upload process is left to your form’s submission handler. When submit
   file="/_content/examples/file-upload/file-upload.vue">
 </example>
 
-The `file` input has no unique props but the native input does have a number of unique attributes that alter the behavior of the file uploader.
+The `file` input has no unique props but the native HTML input does have a number of unique attributes that alter the behavior of the file uploader.
 
 <reference-table input="file" :attrs="['accept', 'capture', 'multiple', 'webkitdirectory' ]">
 </reference-table>
