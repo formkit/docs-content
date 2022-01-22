@@ -19,11 +19,11 @@ This leads a mess of copy/paste HTML and home-rolled form components to accompli
 
 ### Comprehensive 💯
 
-FormKit is designed to be _the_ destination for all your form needs, whether [form styling](/essentials/styling), [validation](/essentials/validation), [generation](/essentials/generation), [error handling](/essentials/forms#backend-error-handling), custom inputs, or a plethora of other requirements. We are continuously adding to the FormKit ecosystem and shipping high-quality tooling for developers' entire form stack. 
+FormKit is designed to be _the_ destination for all your form needs, whether [form styling](/essentials/styling), [validation](/essentials/validation), [generation](/essentials/generation), [error handling](/essentials/forms#backend-error-handling), custom inputs, or a plethora of other requirements. We are continuously adding to the FormKit ecosystem and shipping high-quality tooling for developers' entire form stack.
 
 ### Easy to learn 📚
 
-Developers love to learn — but no one enjoys pouring over third-party APIs and configuration options. That's why FormKit uses a single component for all of its [inputs]/essentials/inputs. `<FormKit>` is the only component you need to know to get started — and it works just like you would expect an `<input>` tag to work:
+Developers love to learn — but no one enjoys pouring over third-party APIs and configuration options. That's why FormKit uses a single component for all of its [inputs](/essentials/inputs). `<FormKit>` is the only component you need to know to get started — and it works just like you would expect an `<input>` tag to work:
 
 <example
   name="Text input"
@@ -54,7 +54,6 @@ FormKit comes with great production-ready defaults, and for many users, the defa
 ## What FormKit isn’t
 
 While FormKit does a lot of things, it is not a UI framework or a _layout_ tool. Want inputs next to each other? Cool! Wrap some inputs in a `<div>` and sprinkle on some `flexbox`. While FormKit ships with [default theme](/essentials/styling#optional-genesis-theme), this package assumes you'll still be responsible for most of your form's style and layout. FormKit plays nicely with any UI framework or your custom styles.
-  
 
 ## Why not...?
 
@@ -76,4 +75,4 @@ Yet another great option for form validation, but focused solely on validation. 
 
 ### vue-form-generator
 
-Generating forms from JSON is great — that's why schema is a sub-feature of FormKit. Simply pass your form schema to the `FormKitSchema` component and voilà! Checkout the documentation [here](/essentials/generation). Now you can use the same tool for form composition and generation! 
+Generating forms from JSON is great — that's why schema is a sub-feature of FormKit. Simply pass your form schema to the `FormKitSchema` component and voilà! Checkout the documentation [here](/essentials/generation). Now you can use the same tool for form composition and generation!
