@@ -63,7 +63,7 @@ tabs="html"></example>
 In addition to the four methods listed above, more generalized overrides are also available, like overriding an input’s schema, using the <code>classes</code> node hook, or utilizing slots.
 </callout>
 
-## Sectio-key class props
+## Section-key class props
 
 The simplest way to modify the classes of an element inside a FormKit input is via the `{section-key}-class` props. To add a class to a specific section element, like `label`, you simply add the `label-class` prop.
 
