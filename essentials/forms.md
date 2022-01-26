@@ -1,3 +1,8 @@
+---
+title: Forms
+description: Collect all of your FormKit data, submit to your server, and handle server-side error messages.
+---
+
 # Forms
 
 While you’re free to use `FormKit` inputs by themselves, you’ll usually want to group them into a form. To do this, you simply wrap your inputs in a `<FormKit type="form">`.

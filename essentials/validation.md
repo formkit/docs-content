@@ -1,3 +1,8 @@
+---
+title: FormKit Validation
+description: Provide instant feedback to users on the validity of their form data.
+---
+
 # Validation
 
 FormKit makes front end validation simple by letting you declare your validation rules directly on your inputs. It’s easy to write custom rules too, but with 20+ production-ready rules to choose from, it's rare you'll need to.

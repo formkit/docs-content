@@ -1,3 +1,8 @@
+---
+title: Week
+description: A native HTML week picker.
+---
+
 <InputPageHero
 title="Week input"
 icon="IconInputWeek"

@@ -1,3 +1,9 @@
+---
+title: List
+description: An invisible FormKit input that allows you to logically structure your form data as an array.
+---
+
+
 <InputPageHero
 title="List input"
 icon="IconInputList"

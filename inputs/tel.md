@@ -1,3 +1,8 @@
+---
+title: Tel (Telephone)
+description: A native HTML tel input.
+---
+
 <InputPageHero
 title="Tel input"
 icon="IconInputPhone"

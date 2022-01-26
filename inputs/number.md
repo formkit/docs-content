@@ -1,3 +1,8 @@
+---
+title: Number
+description: A native HTML number input
+---
+
 <InputPageHero
 title="Number input"
 icon="IconInputNumber"

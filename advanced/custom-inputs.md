@@ -1,3 +1,8 @@
+---
+title: Custom Inputs
+description: Create your own inputs that automatically inherit FormKit’s value-added features such as validation, error messages, data modeling, grouping, labels, help text and more.
+---
+
 # Custom inputs
 
 <cta label="Building your first custom input?" type="ghost" href="/guides/create-a-custom-input" button="Read the guide"></cta>

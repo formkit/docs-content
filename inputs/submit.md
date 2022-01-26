@@ -1,3 +1,8 @@
+---
+title: Submit
+description: A native HTML button element used in place of a native HTML submit input.
+---
+
 <InputPageHero
 title="Submit input"
 icon="IconInputSubmit"

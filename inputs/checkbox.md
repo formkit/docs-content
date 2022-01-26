@@ -1,3 +1,8 @@
+---
+title: Checkbox
+description: A native HTML checkbox input with support for one or many nested options elements.
+---
+
 <InputPageHero
 title="Checkbox input"
 icon="IconInputCheckbox"

@@ -1,3 +1,8 @@
+---
+title: Textarea
+description: A native HTML textarea input.
+---
+
 <InputPageHero
 title="Textarea input"
 icon="IconInputTextArea"

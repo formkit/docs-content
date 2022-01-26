@@ -1,3 +1,9 @@
+---
+title: Month
+description: A native HTML month picker.
+---
+
+
 <InputPageHero
 title="Month input"
 icon="IconInputMonth"

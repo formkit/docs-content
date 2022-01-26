@@ -1,3 +1,8 @@
+---
+title: Search
+description: A native HTML search input.
+---
+
 <InputPageHero
 title="Search input"
 icon="IconInputSearch"

@@ -1,3 +1,8 @@
+---
+title: Range
+description: A native HTML range input.
+---
+
 <InputPageHero
 title="Range input"
 icon="IconInputRange"
