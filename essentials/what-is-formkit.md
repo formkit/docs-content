@@ -28,7 +28,7 @@ FormKit is designed to be _the_ destination for all your form needs, whether [fo
 
 ### Easy to learn 📚
 
-Developers love to learn — but no one enjoys pouring over third-party APIs and configuration options. That's why FormKit uses a single component for all of its [inputs]/essentials/inputs. `<FormKit>` is the only component you need to know to get started — and it works just like you would expect an `<input>` tag to work:
+Developers love to learn — but no one enjoys pouring over third-party APIs and configuration options. That's why FormKit uses a single component for all of its [inputs](/essentials/inputs). `<FormKit>` is the only component you need to know to get started — and it works just like you would expect an `<input>` tag to work:
 
 <example
   name="Text input"
