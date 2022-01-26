@@ -1,3 +1,8 @@
+---
+title: Internationalization (i18n)
+description: Translate FormKit UI and validation messages into supported languages — or provide your own.
+---
+
 # Internationalization (i18n)
 
 FormKit ships with internationalization support for all of its interfaces and validation messages. Currently, FormKit supports the following languages (in the `@formkit/i18n` package):

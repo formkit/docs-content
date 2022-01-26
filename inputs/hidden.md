@@ -1,3 +1,9 @@
+---
+title: Hidden
+description: A native HTML hidden input.
+---
+
+
 <InputPageHero
 title="Hidden input"
 icon="IconInputHidden"

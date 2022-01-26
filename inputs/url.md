@@ -1,3 +1,8 @@
+---
+title: URL
+description: A native HTML url input.
+---
+
 <InputPageHero
 title="URL input"
 icon="IconInputUrl"

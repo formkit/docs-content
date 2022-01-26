@@ -1,3 +1,8 @@
+---
+title: FormKit Community
+description: Get involved in the FormKit community — troubleshooting support, feature requests, project roadmap discussion, and more.
+---
+
 # Community
 
 Community involvement and contributions are one of the most important aspects of the FormKit ecosystem. We invite you to actively participate — whether using FormKit's products, translating validation messages to your native tongue, being an active member of the Discord, or filing bug reports or making pull requests to the [FormKit codebase](https://github.com/formkit/formkit).

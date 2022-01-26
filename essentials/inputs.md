@@ -1,3 +1,8 @@
+---
+title: FormKit Inputs
+description: FormKit ships with turbocharged inputs for developing production-ready forms in your project.
+---
+
 # Inputs
 
 FormKit’s inputs are similar to HTML inputs but turbocharged with much needed features like labels, help text, validation, and error messages (and much more). Similar to how HTML’s `<input>` tag uses various `type` attributes (i.e., `<input type="text">` vs `<input type="checkbox">`), FormKit uses the `type` prop for _all_ inputs. In fact, with FormKit, **there is only 1 component you have to learn**:

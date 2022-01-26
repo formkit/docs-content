@@ -1,3 +1,8 @@
+---
+title: Select
+description: A native HTML select input. Supports both single-value and multi-value selections.
+---
+
 <InputPageHero
 title="Select input"
 icon="IconInputSelect"

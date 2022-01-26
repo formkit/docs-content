@@ -1,3 +1,8 @@
+---
+title: FormKit Styling
+description: Add custom styling to your FormKit components - both globally and per-instance.
+---
+
 # Styling
 
 FormKit ships robust and accessible markup — but with no assumptions about your

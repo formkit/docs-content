@@ -1,3 +1,8 @@
+---
+title: Color
+description: A native HTML color picker.
+---
+
 <InputPageHero
 title="Color input"
 icon="IconInputColor"

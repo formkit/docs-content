@@ -1,3 +1,9 @@
+---
+title: Color
+description: A native HTML datetime-local picker.
+---
+
+
 <InputPageHero
 title="Datetime-local input"
 icon="IconInputDatetime"

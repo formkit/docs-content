@@ -1,3 +1,8 @@
+---
+title: Text
+description: A native HTML text input.
+---
+
 <InputPageHero
 title="Text input"
 icon="IconInputText"

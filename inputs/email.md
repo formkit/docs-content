@@ -1,3 +1,9 @@
+---
+title: Email
+description: A native HTML email input.
+---
+
+
 <InputPageHero
 title="Email input"
 icon="IconInputEmail"

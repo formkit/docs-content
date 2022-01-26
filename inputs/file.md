@@ -1,3 +1,9 @@
+---
+title: File
+description: A native HTML file input with support for multiple files, drag and drop, clearing the input, and repopulating from an array.
+---
+
+
 <InputPageHero
 title="File input"
 icon="IconInputFile"

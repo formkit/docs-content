@@ -1,3 +1,8 @@
+---
+title: Time
+description: A native HTML time input.
+---
+
 <InputPageHero
 title="Time input"
 icon="IconInputTime"

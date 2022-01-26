@@ -1,3 +1,9 @@
+---
+title: Date
+description: A native HTML date picker.
+---
+
+
 <InputPageHero
 title="Date input"
 icon="IconInputDate"

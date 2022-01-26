@@ -1,3 +1,8 @@
+---
+title: Password
+description: A native HTML password input.
+---
+
 <InputPageHero
 title="Password input"
 icon="IconInputPassword"

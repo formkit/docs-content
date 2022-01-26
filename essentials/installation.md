@@ -1,3 +1,8 @@
+---
+title: Getting Started with FormKit
+description: Get up and running with FormKit in your project.
+---
+
 # Installation
 
 FormKit can be downloaded using a package manager like `npm` or `yarn` or it can be used directly via CDN.

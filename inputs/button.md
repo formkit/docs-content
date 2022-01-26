@@ -1,3 +1,8 @@
+---
+title: Button
+description: A native HTML button element.
+---
+
 <InputPageHero
 title="Button input"
 icon="IconInputButton"
