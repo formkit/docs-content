@@ -79,5 +79,5 @@ Writing a locale for your own native language is a great way to contribute to Fo
 Of course, you are not required to use our locale builder to submit a language, and are more than welcome to submit a standard pull request with your locale included.
 
 <callout type="info" label="Localization">
-If your language is already on the list (lets say English), but your locality speaks a variation of that language (like 🇬🇧 <code>en-GB</code>), please feel free to submit your localized language.
+If your language is already on the list (let's say English), but your locality speaks a variation of that language (like 🇬🇧 <code>en-GB</code>), please feel free to submit your localized language.
 </callout>

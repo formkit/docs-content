@@ -5,11 +5,19 @@ description: Collect all of your FormKit data, submit to your server, and handle
 
 # Forms
 
-While you’re free to use `FormKit` inputs by themselves, you’ll usually want to group them into a form. To do this, you simply wrap your inputs in a `<FormKit type="form">`.
+While you’re free to use `FormKit` inputs by themselves, you’ll usually want to group them into a form. To do this, simply wrap your inputs in a `<FormKit type="form">`.
 
-The `form` type will actively collect all the values from child inputs, using the name of each input as the property name in the resulting data object (just like [groups](/inputs/group)). You can also read and write to form values using v-model just as you would on any input.
+The `form` type will actively collect all the values from child inputs, using the `name` of each input as the property name in the resulting data object (just like [groups](/inputs/group)). You can also read and write to form values using v-model just as you would on any input.
 
-A `<FormKit type="form">` tracks the validation state of the form and prevents users from submitting the form if any inputs are invalid. As a convenience, the `form` also outputs a submit button (which you can disable with the `actions="false"` prop).
+A `<FormKit type="form">` tracks the form's validation state and prevents users from submitting the form if any inputs are invalid.
+
+### Provided submit button
+
+As a convenience, the `form` outputs a submit button automatically, and provided themes also include a loading spinner. You can alter this button with the `submit-label` and `submit-attrs` props, or disable with `:actions="false"`.
+
+### Full example form
+
+Excluding backend functionality, here is a fully featured form with inputs (`form`, `text`, `email`, `password`), help text, labels, validation with custom messages, and error and submission handling:
 
 <example
   name="Register example"
@@ -35,7 +43,7 @@ Using <code>v-model</code> data in your submit handler could lead to unintended 
 
 Forms are usually submitted through user actions like clicking a submit button or hitting the `enter` key on a text node within the form. Upon submission, the form (in sequence):
 
-1. It ensures all inputs are settled (finished debouncing).
+1. Ensures all inputs are settled (finished debouncing).
 1. Emits the `@submit-raw` event.
 1. Sets the `submitted` state to true on all inputs — displaying any remaining validation errors (regardless of the `validation-visibility`).
 1. If all inputs are valid it fires the `@submit` event.
@@ -46,8 +54,8 @@ Forms are usually submitted through user actions like clicking a submit button o
 The most common method of form submission in a modern SPA is an XHR request (think [axios](https://axios-http.com/) or [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)). FormKit is well suited to this task:
 
 - It hands your submit handler a request-ready object.
-- If you return a promise from your submit handler it will apply a loading state to your form (`loading` becomes true at `context.state.loading`).
-- It handles backend errors by placing error messages directly on the failing inputs **(NOTE: not yet implemented in FormKit Alpha)**.
+- If you return a promise from your submit handler, it will apply a loading state to your form (`loading` becomes true at `context.state.loading`). A loading spinner is added in provided themes.
+- It handles [backend errors](#error-handling) by placing error messages directly on the failing inputs.
 
 <example
   name="Text example"
@@ -182,7 +190,7 @@ When inputs are unmounted from a form — for example when using `v-if` — the 
 
 Forms are technically considered `input` types — so they share many of the universal props that standard inputs use.
 
-<reference-table :without="['label', 'help']" :data="[{ prop: 'disabled', type: 'Boolean', default: 'false', description: 'Disables the form submit button and all the inputs in the form.'}, { prop: 'incomplete-message', type: 'String/Boolean', default: '{locale}.ui.incomplete', description: 'The message that is shown to near the submit button when a user attempts to submit a form, but not all inputs are valid.'}, { prop: 'submit-attrs', type: 'Object', default: '{}', description: 'Attributes or props that should be passed to the submit button.'}, { prop: 'submit-label', type: 'String', default: 'Submit', description: 'The label to use on the submit button.'}, { prop: 'actions', type: 'Boolean', default: 'true', description: 'Whether or not to include the actions bar at the bottom of the form (ex. you want to remove the submit button and use your own, set this to <code>false</code>).'}]"></reference-table>
+<reference-table :without="['label', 'help']" :data="[{ prop: 'disabled', type: 'Boolean', default: 'false', description: 'Disables the form submit button and all the inputs in the form.'}, { prop: 'incomplete-message', type: 'String/Boolean', default: '{locale}.ui.incomplete', description: 'The message that is shown to near the submit button when a user attempts to submit a form, but not all inputs are valid.'}, { prop: 'submit-attrs', type: 'Object', default: '{}', description: 'Attributes or props that should be passed to the built-in submit button.'}, { prop: 'submit-label', type: 'String', default: 'Submit', description: 'The label to use on the built-in submit button.'}, { prop: 'actions', type: 'Boolean', default: 'true', description: 'Whether or not to include the actions bar at the bottom of the form (ex. you want to remove the submit button and use your own, set this to <code>false</code>).'}]"></reference-table>
 
 ## Section keys
 

@@ -1,18 +1,18 @@
 <!-- %partial% -->
 <template>
   <FormKit
-    v-model="formData"
     type="form"
+    v-model="formData"
     :form-class="submitted ? 'hide' : 'show'"
     submit-label="Register"
     @submit="submitHandler"
   >
     <h1>Register!</h1>
     <p>
-      You can put any type of element inside a form, not just FormKit inputs (although
-      only FormKit inputs are included with the submission).
+      You can put any type of element inside a form, not just FormKit inputs
+      (although only FormKit inputs are included with the submission).
     </p>
-    <hr>
+    <hr />
     <FormKit
       type="text"
       name="name"
@@ -36,7 +36,7 @@
         label="Password"
         validation="required|length:6|matches:/[^a-zA-Z]/"
         :validation-messages="{
-          matches: 'Please include at least one symbol'
+          matches: 'Please include at least one symbol',
         }"
         placeholder="Your password"
         help="Choose an account password"
@@ -51,9 +51,7 @@
       />
     </div>
   </FormKit>
-  <div
-    v-if="submitted"
-  >
+  <div v-if="submitted">
     <h2>Submission successful!</h2>
   </div>
   <pre wrap>{{ formData }}</pre>
@@ -71,7 +69,7 @@ const submitHandler = async () => {
 
 <style>
 p {
-  font-size: .9em;
+  font-size: 0.9em;
   color: #646464;
   line-height: 1.5;
 }
@@ -105,7 +103,7 @@ hr {
   }
 
   .double > .formkit-outer {
-    width: calc(50% - .5em);
+    width: calc(50% - 0.5em);
   }
 }
 </style>

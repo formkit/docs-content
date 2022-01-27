@@ -104,7 +104,7 @@ For performance, all FormKit inputs support debouncing as a first-class feature.
 
 Internally, FormKit debounces the `input` event. When the debounce has "settled", the new value is “committed” and the rest of the application is then notified via the [input node’s `commit` event](/advanced/core#events). The default debounce delay is 20 milliseconds and can be adjusted with the `delay` prop or config option.
 
-To illustrate this, lets `v-model` a `group` input and observe how its value is not updated until after our egregiously long `delay`:
+To illustrate this, let's `v-model` a `group` input and observe how its value is not updated until after our egregiously long `delay`:
 
 <example
   name="Delay prop"
