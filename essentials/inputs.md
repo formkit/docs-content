@@ -1,5 +1,5 @@
 ---
-title: FormKit Inputs
+title: Inputs
 description: FormKit ships with turbocharged inputs for developing production-ready forms in your project.
 ---
 

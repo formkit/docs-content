@@ -1,5 +1,5 @@
 ---
-title: Getting Started with FormKit
+title: Getting Started
 description: Get up and running with FormKit in your project.
 ---
 

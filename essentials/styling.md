@@ -1,5 +1,5 @@
 ---
-title: FormKit Styling
+title: Styling
 description: Add custom styling to your FormKit components - both globally and per-instance.
 ---
 
