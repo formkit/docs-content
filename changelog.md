@@ -2,6 +2,8 @@
 
 ## 1.0.0-beta.1
 
+### January 28, 2022
+
 #### 🎉New features
 
 - Forms are automatically disabled when an async submit handler is pending ([#44](https://github.com/formkit/formkit/issues/44)).
