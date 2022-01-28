@@ -20,7 +20,7 @@ file="/_content/examples/button/button.vue"></example>
 
 The `button` input is unique in that it does not actively receive input other than a transient click. However, nearly all of the base input props still technically exist on the input.
 
-Importantly the `ignore` prop is automatically set to `true` — meaning even if a button is given an value, it will not communicate it with the parent form. However this default behavior can be changed by setting the prop `:ignore="false"`.
+Importantly the `ignore` prop is automatically set to `true` — meaning even if a button is given a value, it will not communicate it with the parent form. However, this default behavior can be changed by setting the prop `:ignore="false"`.
 
 <reference-table input="button">
 </reference-table>
