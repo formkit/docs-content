@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.0.0-beta.1
+
+#### 🎉New features
+
+- Forms are automatically disabled when an async submit handler is pending ([#44](https://github.com/formkit/formkit/issues/44)).
+- Added a new prop `submit-behavior` to opt-out of the new automatically disabled forms.
+- Exports the Vue to FormKit bindings plugin as `bindings` in the `@formkit/vue` package.
+- The type `button` and `submit` are automatically ignored.
+- Introduces a new `messages` key to the `defaultConfig` to allow partial overrides to locales. This allows selective message overrides for already registered locales ([#42](https://github.com/formkit/formkit/issues/42)).
+- The schema compiler now supports "undefined" as a valid output (in other words `$: undefined` would output the value `undefined` instead of the string "undefined").
+- Adds 🇮🇱 Hebrew locale (thanks @Hepi420)
+- Adds 🇨🇳 Chinese locale (thanks @myleslee)
+
+#### 🐛 Bug fixes
+
+- Fixed an issue that caused checkboxes with `options` to not properly hydrate when re-populated from a `group`, `list`, or `form` ([#45](https://github.com/formkit/formkit/issues/45)).
+- Fixed an issue that caused checkboxes with `options` to not display incorrectly when missing a the label prop ([#41](https://github.com/formkit/formkit/issues/41)).
+- Significantly improved TypeScript support for “synthetic” props ([#43](https://github.com/formkit/formkit/issues/43)).
+
 ## 1.0.0-alpha.5
 
 ### January 20, 2022

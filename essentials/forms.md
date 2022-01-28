@@ -54,7 +54,7 @@ Forms are usually submitted through user actions like clicking a submit button o
 The most common method of form submission in a modern SPA is an XHR request (think [axios](https://axios-http.com/) or [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)). FormKit is well suited to this task:
 
 - It hands your submit handler a request-ready object.
-- If you return a promise from your submit handler, it will apply a loading state to your form (`loading` becomes true at `context.state.loading`). A loading spinner is added in provided themes.
+- If you use an async submit handler, it will disable your form’s inputs and apply a loading state to your form (`loading` becomes true at `context.state.loading` and a spinner is displayed on the `genesis` theme).
 - It handles [backend errors](#error-handling) by placing error messages directly on the failing inputs.
 
 <example
@@ -109,6 +109,10 @@ To disable all the inputs in a given form, including the submit button, you can 
   name="Disabled example"
   file="/_content/examples/form-disabled/form-disabled.vue">
 </example>
+
+<callout type="tip" label="Disabled automatically">
+When using an async <code>@submit</code> handler FormKit will automatically disable the form (and set the state to <code>loading</code>) while the submit handler is pending.
+</callout>
 
 ## Error handling
 
@@ -190,7 +194,7 @@ When inputs are unmounted from a form — for example when using `v-if` — the 
 
 Forms are technically considered `input` types — so they share many of the universal props that standard inputs use.
 
-<reference-table :without="['label', 'help']" :data="[{ prop: 'disabled', type: 'Boolean', default: 'false', description: 'Disables the form submit button and all the inputs in the form.'}, { prop: 'incomplete-message', type: 'String/Boolean', default: '{locale}.ui.incomplete', description: 'The message that is shown to near the submit button when a user attempts to submit a form, but not all inputs are valid.'}, { prop: 'submit-attrs', type: 'Object', default: '{}', description: 'Attributes or props that should be passed to the built-in submit button.'}, { prop: 'submit-label', type: 'String', default: 'Submit', description: 'The label to use on the built-in submit button.'}, { prop: 'actions', type: 'Boolean', default: 'true', description: 'Whether or not to include the actions bar at the bottom of the form (ex. you want to remove the submit button and use your own, set this to <code>false</code>).'}]"></reference-table>
+<reference-table :without="['label', 'help']" :data="[{ prop: 'disabled', type: 'Boolean', default: 'false', description: 'Disables the form submit button and all the inputs in the form.'}, { prop: 'incomplete-message', type: 'String/Boolean', default: '{locale}.ui.incomplete', description: 'The message that is shown to near the submit button when a user attempts to submit a form, but not all inputs are valid.'}, { prop: 'submit-attrs', type: 'Object', default: '{}', description: 'Attributes or props that should be passed to the built-in submit button.'}, { prop: 'submit-behavior', type: 'String', default: 'disabled', description: 'Async submit handlers automatically disable the form while pending, you can change this by setting this prop to \"live\".'}, { prop: 'submit-label', type: 'String', default: 'Submit', description: 'The label to use on the built-in submit button.'}, { prop: 'actions', type: 'Boolean', default: 'true', description: 'Whether or not to include the actions bar at the bottom of the form (ex. you want to remove the submit button and use your own, set this to <code>false</code>).'}]"></reference-table>
 
 ## Section keys
 
