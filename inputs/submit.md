@@ -24,6 +24,8 @@ file="/_content/examples/submit/submit.vue"></example>
 
 The `submit` input (along with [`button`](/inputs/button)) is unique in that it does not actively receive input other than a transient click. However, nearly all of the base input props still technically exist on the input.
 
+Importantly the `ignore` prop is automatically set to `true` — meaning even if a submit is given a value, it will not communicate it with the parent form. However, this default behavior can be changed by setting the prop `:ignore="false"`.
+
 <reference-table input="button">
 </reference-table>
 

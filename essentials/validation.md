@@ -511,7 +511,7 @@ import monday from './my-custom-rules/monday'
 
 // prettier-ignore
 createApp(App).use(plugin, defaultConfig({
-  locales: {
+  messages: {
     en: {
       validation: {
         required({ name }) {
