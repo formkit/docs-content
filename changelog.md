@@ -7,13 +7,17 @@
 #### 🎉 New features
 
 - Now shipping with a [Nuxt 3 module](/essentials/installation#nuxt)!
+- `defaultConfig` now includes a new package `@formkit/dev` which decodes FormKit’s error codes to helpful console messages (no action required) ([#56](https://github.com/formkit/formkit/issues/56)).
+- The `preserve` key now applies to all descendants ([#53](https://github.com/formkit/formkit/issues/53)).
+- Exports all the text formatter functions in the `@formkit/i18n` package ([#54](https://github.com/formkit/formkit/issues/54)).
 - Adds 🇳🇱 Dutch language support (thanks @arjendejong12).
 - Adds 🇭🇷 Croatian language support (thanks @antemarkic).
-- Exports all the text formatter functions in the `@formkit/i18n` package ([#54](https://github.com/formkit/formkit/issues/54)).
 
 #### 🐛 Bug fixes
 
 - Fixes a bug that caused multi-select checkboxes to not display the current value when set from parent node and when using `options` prop that is stored in an external variable ([#55](https://github.com/formkit/formkit/issues/55))
+- Fixed a bug that caused the `placeholder` on select inputs to be removed if something caused the input to re-render ([#52](https://github.com/formkit/formkit/issues/52)).
+- Fixed the select placeholder color ([#51](https://github.com/formkit/formkit/issues/51))
 
 ## 1.0.0-beta.1
 
