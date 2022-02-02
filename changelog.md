@@ -1,10 +1,25 @@
 # Changelog
 
+## 1.0.0-beta.2
+
+### [TK] DATE HERE
+
+#### 🎉 New features
+
+- Now shipping with a [Nuxt 3 module](/essentials/installation#nuxt)!
+- Adds 🇳🇱 Dutch language support (thanks @arjendejong12).
+- Adds 🇭🇷 Croatian language support (thanks @antemarkic).
+- Exports all the text formatter functions in the `@formkit/i18n` package ([#54](https://github.com/formkit/formkit/issues/54)).
+
+#### 🐛 Bug fixes
+
+- Fixes a bug that caused multi-select checkboxes to not display the current value when set from parent node and when using `options` prop that is stored in an external variable ([#55](https://github.com/formkit/formkit/issues/55))
+
 ## 1.0.0-beta.1
 
 ### January 28, 2022
 
-#### 🎉New features
+#### 🎉 New features
 
 - Forms are automatically disabled when an async submit handler is pending ([#44](https://github.com/formkit/formkit/issues/44)).
 - Added a new prop `submit-behavior` to opt-out of the new automatically disabled forms.
