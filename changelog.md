@@ -1,3 +1,8 @@
+---
+title: Changelog
+description: What's new in the latest version of FormKit?.
+---
+
 # Changelog
 
 ## 1.0.0-beta.2
