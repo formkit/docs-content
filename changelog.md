@@ -12,6 +12,7 @@
 - Exports all the text formatter functions in the `@formkit/i18n` package ([#54](https://github.com/formkit/formkit/issues/54)).
 - Adds 🇳🇱 Dutch language support (thanks @arjendejong12).
 - Adds 🇭🇷 Croatian language support (thanks @antemarkic).
+- Improves 🇩🇪 German language support (thanks @tosling).
 
 #### 📙 Documentation
 
