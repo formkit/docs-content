@@ -1,5 +1,5 @@
 ---
-title: FormKit Validation
+title: Validation
 description: Provide instant feedback to users on the validity of their form data.
 ---
 
