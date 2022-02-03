@@ -7,7 +7,7 @@ description: Get up and running with FormKit in your project.
 
 FormKit can be downloaded using a package manager like `npm` or `yarn` or it can be used directly via CDN.
 
-## Install
+## With Vue
 
 Most new projects use a build tool like Vite, Snowpack, or webpack. This makes installing npm dependencies a piece of cake 🍰.
 
@@ -37,13 +37,13 @@ FormKit only supports Vue 3. If you're required to use Vue 2 on a project, consi
 
 ## With Nuxt
 
-Using FormKit with Nuxt requires minimal setup. First include Nuxt module as a dependency within your project.
+Using FormKit with Nuxt requires minimal setup. First include the Nuxt module as a dependency within your project:
 
 ```sh
 npm install @formkit/nuxt
 ```
 
-Then in your `nuxt.config` file add the module to your modules list.
+Then in your `nuxt.config` file add the module to your modules list:
 
 ```js
 // nuxt.config
@@ -56,10 +56,10 @@ export default defineNuxtConfig({
 })
 ```
 
-That's it! You will now have FormKit registered in your project using the default config that it ships with out of the box.
-If you would like to supply your own configuration, create a `formkit.config` file adjacent to your `nuxt.config` file.
+That's it! FormKit is now registered in your project using the default config and you can start using the `<FormKit>` component.
 
-Like the `nuxt.config` file itself `.ts`, `.mjs`, and `.js` are all valid file extensions depending on your project's needs.
+### Configuring with Nuxt
+If you would like to supply your own configuration, create a `formkit.config` file adjacent to your `nuxt.config` file. Like the `nuxt.config` file itself, `.ts`, `.mjs`, and `.js` are all valid file extensions depending on your project's needs:
 
 ```sh
 myProject/
@@ -68,7 +68,7 @@ myProject/
 ```
 
 This configuration file will be automatically included if detected in your project directory. If you would like to supply a custom
-path to your `formkit.config`, you can override the default location using `configFile` options under the `formkit` key.
+path to your `formkit.config`, you can override the default location using the `configFile` option under the `formkit` key.
 **Any path you supply should be relative to the root of your Nuxt project**.
 
 ```js
@@ -85,9 +85,9 @@ export default defineNuxtConfig({
 })
 ```
 
-By default, your configuration will be an override of the `defaultConfig` that ships with FormKit. This is the desired behavior
+By default, your configuration will *extend* the `defaultConfig` that ships with FormKit. This is the desired behavior
 for the majority of projects. However, if you need to define the entire FormKit config yourself — from scratch — you may do so
-by setting the `defaultConfig` option for the module to `false`.
+by setting the `defaultConfig` option for the module to `false`:
 
 ```js
 // nuxt.config
