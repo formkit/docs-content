@@ -75,10 +75,10 @@ FormKit only supports Vue 3. If you're required to use Vue 2 on a project, consi
 
 ## With Nuxt
 
-Using FormKit with Nuxt requires minimal setup. First include the FormKit project and the Nuxt module as dependencies within your project.
+Using FormKit with Nuxt requires minimal setup. First include Nuxt module as dependencies within your project.
 
 ```sh
-npm install @formkit/vue @formkit/nuxt
+npm install @formkit/nuxt
 ```
 
 Then in your `nuxt.config` file add the module to your modules list.
