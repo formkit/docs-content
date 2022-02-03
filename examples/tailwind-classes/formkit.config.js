@@ -23,6 +23,7 @@
       }
 
       function createClassObject (classesArray) {
+        if (!classesArray) return ''
         const classList = {}
         classesArray.split(' ').forEach(className => {
           classList[className] = true

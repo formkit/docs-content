@@ -6,12 +6,18 @@
 
 #### 🎉 New features
 
-- Now shipping with a [Nuxt 3 module](/essentials/installation#nuxt)!
+- New `@formkit/nuxt` package is a full featured [Nuxt 3 module](/essentials/installation#nuxt) that makes using FormKit with [Nuxt 3](https://v3.nuxtjs.org/) as simple as possible!
 - `defaultConfig` now includes a new package `@formkit/dev` which decodes FormKit’s error codes to helpful console messages (no action required) ([#56](https://github.com/formkit/formkit/issues/56)).
 - The `preserve` key now applies to all descendants ([#53](https://github.com/formkit/formkit/issues/53)).
 - Exports all the text formatter functions in the `@formkit/i18n` package ([#54](https://github.com/formkit/formkit/issues/54)).
 - Adds 🇳🇱 Dutch language support (thanks @arjendejong12).
 - Adds 🇭🇷 Croatian language support (thanks @antemarkic).
+
+#### 📙 Documentation
+
+- New installation documentation now that the repository is public and the `@formkit` organization is publishing on npm’s registry.
+- Nuxt installation documentation
+- Improved internationalization documentation for [selective message overrides](/essentials/internationalization#overriding).
 
 #### 🐛 Bug fixes
 

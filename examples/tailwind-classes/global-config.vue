@@ -37,6 +37,7 @@
 
           // helper function to created class object from strings
           function createClassObject (classString) {
+            if (!classesArray) return ''
             const classList = {}
             if (classString) {
               classString.split(' ').forEach(className => {
