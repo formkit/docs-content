@@ -13,6 +13,7 @@ description: What's new in the latest version of FormKit?.
 
 - New `@formkit/nuxt` package is a full featured [Nuxt 3 module](/essentials/installation#nuxt) that makes using FormKit with [Nuxt 3](https://v3.nuxtjs.org/) as simple as possible!
 - `defaultConfig` now includes a new package `@formkit/dev` which decodes FormKit’s error codes to helpful console messages (no action required) ([#56](https://github.com/formkit/formkit/issues/56)).
+- FormKit is officially open-source under the MIT license!
 - The `preserve` key now applies to all descendants ([#53](https://github.com/formkit/formkit/issues/53)).
 - Exports all the text formatter functions in the `@formkit/i18n` package ([#54](https://github.com/formkit/formkit/issues/54)).
 - Adds 🇳🇱 Dutch language support (thanks @arjendejong12).
