@@ -7,7 +7,6 @@
       name="name"
       placeholder="Your name"
       validation="required"
-      validation-visibility="live"
     />
     <FormKit
       type="select"
