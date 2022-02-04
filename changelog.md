@@ -21,7 +21,7 @@ description: What's new in the latest version of FormKit?.
 
 #### 📙 Documentation
 
-- New installation documentation now that the repository is public and the `@formkit` organization is publishing on npm’s registry.
+- New installation documentation. You no longer need an auth token to install from the `@formkit` organization!
 - Nuxt installation documentation
 - Improved internationalization documentation for [selective message overrides](/essentials/internationalization#overriding).
 
