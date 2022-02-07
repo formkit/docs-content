@@ -114,7 +114,7 @@ for producing the default classes for each element. This function already has a 
 The `rootClasses` function is passed 2 arguments (respectively):
 
 - The [section key](/essentials/inputs#sections) (like `label` or `input`).
-- The [input’s node](/essentials/input-node).
+- The [input’s node](/advanced/core#node).
 
 The function will be called once for each section and it _must_ return
 an object of classes with boolean values.
@@ -175,7 +175,7 @@ from here - such as in the case of the second text input here.
 
 ## Modifying classes within schema
 
-In addition to modifying classes via config or props _on a  `<FormKit>` component_, you can use the same techniques within [schema](/essentials/generation#schema): 
+In addition to modifying classes via config or props _on a  `<FormKit>` component_, you can use the same techniques within [schema](/essentials/generation#schema):
 
 ### Section-key class props within schema
 Within schema, you can also modify the classes of an element inside an input via the `{section-key}Class` properties. For example, to add a class to the label section, you can add the `labelClass` property:

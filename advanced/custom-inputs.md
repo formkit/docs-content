@@ -207,7 +207,7 @@ You can receive input from any user interaction and the input can set its value 
 
 Fundamentally, all an input needs to do is call `node.input(value)` with a value. The `node.input()` method is automatically debounced, so feel free to call it frequently — like every keystroke. Typically, this looks like binding to the `input` event.
 
-The [`context` object](/advanced/context-object) includes an input handler for basic input types: `context.handlers.DOMInput`. This can be used for text-like inputs where the value of the input is available at `event.target.value`. If you need a more complex event handler, you can [expose it using "features"](#adding-features).
+The [`context` object](/advanced/context) includes an input handler for basic input types: `context.handlers.DOMInput`. This can be used for text-like inputs where the value of the input is available at `event.target.value`. If you need a more complex event handler, you can [expose it using "features"](#adding-features).
 
 Any user interaction can be considered an input event. For many native HTML inputs, that interaction is captured with the [input event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event).
 

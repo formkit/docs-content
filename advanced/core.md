@@ -580,7 +580,7 @@ In the example above, the plugin is only defined on the parent, but the child al
 
 ## Library
 
-In addition to extending and modifying nodes, plugins serve one additional role — exposing input libraries. A “library” is a function assigned to the `library` property of a plugin that accepts a node and determines whether it knows how to “define” that node. If it does, it calls `node.define()` with an [input definition](/custom-inputs#input-definition).
+In addition to extending and modifying nodes, plugins serve one additional role — exposing input libraries. A “library” is a function assigned to the `library` property of a plugin that accepts a node and determines whether it knows how to “define” that node. If it does, it calls `node.define()` with an [input definition](/advanced/custom-inputs#input-definition).
 
 For example, if we wanted to create a plugin that exposed a couple new inputs: `italy` and `france` we could write a plugin to do this:
 

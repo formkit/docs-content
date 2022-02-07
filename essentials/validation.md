@@ -278,7 +278,7 @@ Checks that the input’s value matches at least one of the provided arguments.
 
 ### Length
 
-Checks that the input’s value is over a given length, or between two length values. It works to validate arrays (like [lists](/inputs/list)), objects (like [groups](/inputs/groups)), or string lengths.
+Checks that the input’s value is over a given length, or between two length values. It works to validate arrays (like [lists](/inputs/list)), objects (like [groups](/inputs/group)), or string lengths.
 
 <example
   name="Is"
