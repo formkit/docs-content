@@ -39,7 +39,7 @@ The classes follow a strict hierarchy. Initially, classes are produced by the `r
 
 ## Appending classes
 
-To append a class, simply return the string you want to append, or provide an object of classes with boolean values — `true` properties will be appended.
+To append a class, simply return the string you want to append, or provide an object of classes with boolean values — `true` properties will be appended:
 
 <example
 name="Appending classes"
@@ -48,7 +48,7 @@ tabs="html"></example>
 
 ## Resetting classes
 
-Classes produced by all earlier hierarchy steps can be completely removed by providing a special (not rendered) class `$reset` in either string format or object format.
+Classes produced by all earlier hierarchy steps can be completely removed by providing a special (not rendered) class `$reset` in either string format or object format:
 
 <example
 name="Resetting classes"
@@ -57,7 +57,7 @@ tabs="html"></example>
 
 ## Removing classes
 
-Classes produced by an earlier step in the class hierarchy can be selectively removed by providing an object with the value `false` for the class you want to remove. This includes removing formkit's default `formkit-` prefixed classes.
+Classes produced by an earlier step in the class hierarchy can be selectively removed by providing an object with the value `false` for the class you want to remove. This includes removing formkit's default `formkit-` prefixed classes:
 
 <example
 name="Removing classes"
@@ -65,12 +65,12 @@ file="/_content/examples/removing-classes/removing-classes.vue"
 tabs="html"></example>
 
 <callout type="tip">
-In addition to the four methods listed above, more generalized overrides are also available, like overriding an input’s schema, using the <code>classes</code> node hook, or utilizing slots.
+In addition to the four methods listed above, more generalized overrides are also available, like overriding an input’s schema, using the <code>classes</code> node hook, or utilizing slots:
 </callout>
 
 ## Section-key class props
 
-The simplest way to modify the classes of an element inside a FormKit input is via the `{section-key}-class` props. To add a class to a specific section element, like `label`, you simply add the `label-class` prop.
+The simplest way to modify the classes of an element inside a FormKit input is via the `{section-key}-class` props. To add a class to a specific section element, like `label`, you simply add the `label-class` prop:
 
 <example
 name="Section-key class"
@@ -79,7 +79,7 @@ tabs="html"></example>
 
 ## Classes prop
 
-The classes prop is similar to the section-key class prop except it allows setting classes on all sections at the same time.
+The classes prop is similar to the section-key class prop except it allows setting classes on all sections at the same time:
 
 <example
 name="Classes prop"
@@ -88,7 +88,7 @@ tabs="html"></example>
 
 ## Classes configuration
 
-The classes configuration option is similar to the classes prop, except it applies to all inputs the configuration is applied to. FormKit's unique configuration system allows for you to apply classes globally on your project or just inputs within a certain group or form.
+The classes configuration option is similar to the classes prop, except it applies to all inputs the configuration is applied to. FormKit's unique configuration system allows for you to apply classes globally on your project or just inputs within a certain group or form:
 
 ### Global class configuration
 
@@ -122,7 +122,7 @@ an object of classes with boolean values.
 While typical usage of `rootClasses` is at the global config level to apply
 classes to your entire project - you can also use it with the `config` prop to override
 a specific form or input within your project with a class list computed from the logic
-within your provided function.
+within your provided function:
 
 <example
 name="Root classes function"
@@ -172,3 +172,46 @@ from here - such as in the case of the second text input here.
     '/_content/examples/tailwind-classes/example.vue',
     '/_content/examples/tailwind-classes/formkit.config.js'
   ]"></example>
+
+## Modifying classes within schema
+
+In addition to modifying classes via config or props _on a  `<FormKit>` component_, you can use the same techniques within [schema](/essentials/generation#schema): 
+
+### Section-key class props within schema
+Within schema, you can also modify the classes of an element inside an input via the `{section-key}Class` properties. For example, to add a class to the label section, you can add the `labelClass` property:
+
+```js
+{
+  $formkit: 'text',
+  name: 'email',
+  // adds 'appended-class' to the "label" section
+  labelClass: 'appended-class'
+},
+```
+
+### Classes prop within schema
+
+Much like the [classes prop](#classes-prop) on a `<FormKit>` component, you can modify the class list for any [section](/essentials/inputs#sections) of an input with the `classes` property on a schema node:
+
+```js
+{
+  $formkit: 'text',
+  name: 'email',
+  // modifies classes on both the "outer" and "inner" sections of this input
+  classes: {
+    outer: 'new-outer-class',
+    inner: {
+      $reset: true, // resets classes on the "inner" section
+      'new-inner-class': true
+    }
+  },
+},
+```
+
+### Config within schema
+Since config is passed down to descendant inputs, you can alter classes via config on a parent, such as a `form`, `list`, or a `group`, and this will affect all descendants to any depth:
+
+<example
+name="Classes prop"
+file="/_content/examples/classes-config-schema/classes-config-schema.vue"
+tabs="render,html"></example>
