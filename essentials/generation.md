@@ -5,9 +5,15 @@ description: Harness all the power of FormKit in a serializable, JSON-compatible
 
 # Form generation
 
-FormKit ships with first-class support for generating forms using a JSON compatible schema. This makes it possible to store generated forms in databases, files, or heck a QR code if you really want to. To generate a form, just pass your schema to the `<FormKitSchema>` component using the `:schema` prop.
+FormKit ships with first-class support for generating forms using a JSON-compatible schema. This makes it possible to store generated forms in databases, files, or heck a QR code if you really want to. To generate a form, pass your schema to the `<FormKitSchema>` component using the `:schema` prop. The `<FormKitSchema>` component is not registered globally by default — you will need to import it:
 
-Let’s take a quick look at an example and we'll pick it up on the other side.
+```js
+import { FormKitSchema } from '@formkit/vue'
+```
+
+
+
+Let’s take a quick look at an example and we'll pick it up on the other side:
 
 <example
   name="Generating forms"
@@ -16,7 +22,7 @@ Let’s take a quick look at an example and we'll pick it up on the other side.
 
 ## Schema
 
-[FormKit's schema](/advanced/schema) is a JSON-serializable data format for storing DOM structures and component implementations including FormKit forms. Schemas support advanced features like conditional logic, boolean operators, loops, slots, and data scoping — all guaranteed to serialize to a string.
+[FormKit's schema](/advanced/schema) is a JSON-serializable data format for storing DOM structures and component implementations, including FormKit forms. Schemas support advanced features like conditional logic, boolean operators, loops, slots, and data scoping — all guaranteed to serialize to a string.
 
 A schema is an array of objects (schema nodes) — where each "node" is either an HTML element or a component. The node type is determined by using the `$el` or `$cmp` properties — which represent HTML element and component respectively. This array is then passed as a prop to the `<FormKitSchema>` component.
 
