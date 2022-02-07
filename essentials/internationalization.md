@@ -12,7 +12,7 @@ FormKit ships with internationalization support for all of its interfaces and va
 - 🇳🇱 Dutch (nl) — 🙏 &nbsp;@arjendejong12
 - 🇺🇸 English (en)
 - 🇫🇷 French (fr) — 🙏 &nbsp;@HoreKk
-- 🇩🇪 German (de) — 🙏 &nbsp;@digitalkaoz
+- 🇩🇪 German (de) — 🙏 &nbsp;@digitalkaoz, @tosling
 - 🇮🇱 Hebrew (he) - 🙏 &nbsp;@Hepi420
 - 🇷🇺 Russian (ru) — 🙏 &nbsp;@andreimakushkin
 
