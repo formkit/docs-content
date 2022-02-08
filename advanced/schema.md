@@ -193,6 +193,8 @@ At times it may be necessary to pass an object of variable or unknown attributes
 
 At times it may be necessary to prevent a given attribute or prop from being parsed. This can be done by prefixing an attribute or prop with `__raw__`.
 
+<client-only>
+
 ```js
 {
   $cmp: 'PriceComponent',
@@ -201,6 +203,7 @@ At times it may be necessary to prevent a given attribute or prop from being par
   }
 }
 ```
+</client-only>
 
 In the above example, the `__raw__` prefix will be removed, and the unparsed value of `$2.99` will be passed as the `price` prop to the `PriceComponent`.
 

@@ -13,15 +13,21 @@ called `Genesis` that you can use in your projects.
 
 To install Genesis, first install the `@formkit/themes` package.
 
+<client-only>
+
 ```sh
 npm install @formkit/themes
 ```
+</client-only>
 
 Then in your `main.js` (wherever you boot Vue up) include the Genesis `theme.css` (this assumes you are using a build tool like Vite, Webpack, Snopack, or Nuxt):
+
+<client-only>
 
 ```js
 import `@formkit/themes/genesis/theme.css`
 ```
+</client-only>
 
 ## Custom classes
 
@@ -180,6 +186,8 @@ In addition to modifying classes via config or props _on a  `<FormKit>` componen
 ### Section-key class props within schema
 Within schema, you can also modify the classes of an element inside an input via the `{section-key}Class` properties. For example, to add a class to the label section, you can add the `labelClass` property:
 
+<client-only>
+
 ```js
 {
   $formkit: 'text',
@@ -188,10 +196,13 @@ Within schema, you can also modify the classes of an element inside an input via
   labelClass: 'appended-class'
 },
 ```
+</client-only>
 
 ### Classes prop within schema
 
 Much like the [classes prop](#classes-prop) on a `<FormKit>` component, you can modify the class list for any [section](/essentials/inputs#sections) of an input with the `classes` property on a schema node:
+
+<client-only>
 
 ```js
 {
@@ -207,6 +218,7 @@ Much like the [classes prop](#classes-prop) on a `<FormKit>` component, you can 
   },
 },
 ```
+</client-only>
 
 ### Config within schema
 Since config is passed down to descendant inputs, you can alter classes via config on a parent, such as a `form`, `list`, or a `group`, and this will affect all descendants to any depth:

@@ -7,9 +7,12 @@ description: Harness all the power of FormKit in a serializable, JSON-compatible
 
 FormKit ships with first-class support for generating forms using a JSON-compatible schema. This makes it possible to store generated forms in databases, files, or heck a QR code if you really want to. To generate a form, pass your schema to the `<FormKitSchema>` component using the `:schema` prop. The `<FormKitSchema>` component is not registered globally by default — you will need to import it:
 
+<client-only>
+
 ```js
 import { FormKitSchema } from '@formkit/vue'
 ```
+</client-only>
 
 
 

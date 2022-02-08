@@ -21,6 +21,8 @@ An object containing any attributes that will be passed to the internal input el
 
 A small object of utility functions that are useful when writing schemas.
 
+<client-only>
+
 ```js
 {
   // Returns the length of a given object
@@ -33,11 +35,13 @@ A small object of utility functions that are useful when writing schemas.
   json: (value: any) => String | false,
 }
 ```
+</client-only>
 
 ## `handlers`
 
 A small object of common input handlers for use in the schema. Keep in mind that input "features" can replace or add to handlers on an input by input basis.
 
+<client-only>
 ```js
 {
   // sets the state.blurred value to true
@@ -48,6 +52,7 @@ A small object of common input handlers for use in the schema. Keep in mind that
   DOMInput: (e: Event) => void
 }
 ```
+</client-only>
 
 ## `help`
 
@@ -64,6 +69,8 @@ The label of the input provided by the `label` prop.
 ## `messages`
 
 An object of _visible_ messages (where the type is not `ui` — `ui`). The key of this object is the message name, and the value is a core message object. For example, for an input displaying a single failing validation message, this object would look like:
+
+<client-only>
 
 ```js
 {
@@ -92,6 +99,7 @@ An object of _visible_ messages (where the type is not `ui` — `ui`). The key 
   }
 }
 ```
+</client-only>
 
 ## `node`
 
@@ -105,6 +113,8 @@ For inputs that accept an options prop, this is a normalized array of option obj
 
 For inputs that accept an options prop, this object is available to [section keys](/essentials/inputs#sections) that are inside the iteration (i.e., the `label` section key on a `checkbox` input with multiple checkboxes). The object contains a `label`, `value`, and sometimes `attrs`:
 
+<client-only>
+
 ```js
 {
   value: 'foo',
@@ -114,10 +124,13 @@ For inputs that accept an options prop, this object is available to [section key
   }
 }
 ```
+</client-only>
 
 ## `state`
 
 Current state of the input:
+
+<client-only>
 
 ```js
 {
@@ -132,6 +145,7 @@ Current state of the input:
   valid: boolean,
 }
 ```
+</client-only>
 
 ## `type`
 
