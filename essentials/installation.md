@@ -12,6 +12,7 @@ FormKit can be downloaded using a package manager like `npm` or `yarn` or it can
 Most new projects use a build tool like Vite, Snowpack, or webpack. This makes installing npm dependencies a piece of cake 🍰.
 
 <client-only>
+
 ```sh
 npm install @formkit/vue
 ```
@@ -45,6 +46,7 @@ FormKit only supports Vue 3. If you're required to use Vue 2 on a project, consi
 Using FormKit with Nuxt requires minimal setup. First include the Nuxt module as a dependency within your project:
 
 <client-only>
+
 ```sh
 npm install @formkit/nuxt
 ```
@@ -72,6 +74,7 @@ That's it! FormKit is now registered in your project using the default config an
 If you would like to supply your own configuration, create a `formkit.config` file adjacent to your `nuxt.config` file. Like the `nuxt.config` file itself, `.ts`, `.mjs`, and `.js` are all valid file extensions depending on your project's needs:
 
 <client-only>
+
 ```sh
 myProject/
 |- formkit.config.ts

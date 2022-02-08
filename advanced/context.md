@@ -42,6 +42,7 @@ A small object of utility functions that are useful when writing schemas.
 A small object of common input handlers for use in the schema. Keep in mind that input "features" can replace or add to handlers on an input by input basis.
 
 <client-only>
+
 ```js
 {
   // sets the state.blurred value to true
