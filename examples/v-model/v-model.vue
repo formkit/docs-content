@@ -15,7 +15,7 @@ export default {
     return {
       city: 'Florence',
       cities: [
-        'Prauge', 'Rome', 'Berlin',
+        'Prague', 'Rome', 'Berlin',
         'Amsterdam', 'Barcelona', 'London'
       ]
     }
