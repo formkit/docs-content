@@ -9,6 +9,10 @@ description: What's new in the latest version of FormKit?.
 
 ## February 22, 2022
 
+#### ⚠️ Breaking change
+
+- The genesis theme should now be imported from `import '@formkit/themes/genesis`.
+
 #### 🎉 New features
 
 - Adds [programmatic form submission](/essentials/forms#submitting-forms-programmatically):

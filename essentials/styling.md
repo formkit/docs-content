@@ -20,7 +20,7 @@ npm install @formkit/themes
 Then in your `main.js` (wherever you boot Vue up) include the Genesis `theme.css` (this assumes you are using a build tool like Vite, Webpack, Snopack, or Nuxt):
 
 ```js
-import `@formkit/themes/genesis/theme.css`
+import '@formkit/themes/genesis'
 ```
 
 ## Custom classes
