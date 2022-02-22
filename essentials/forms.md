@@ -62,13 +62,36 @@ The most common method of form submission in a modern SPA is an XHR request (thi
   file="/_content/examples/form-xhr/form-xhr.vue">
 </example>
 
-### Submitting via page request
+### Submitting as a page request
 
 To submit a form via page request, simply leave off the `@submit` handler. Just like native HTML, you can also provide an `action` and optionally a `method` attribute.
 
 <example
   name="Text example"
   file="/_content/examples/form-page/form-page.vue">
+</example>
+
+### Submitting forms programmatically
+
+While submitting a form using any standard HTML method is valid (like clicking a `submit` button, or hitting `enter` on a text input) — you may also submit a form programmatically. There are 2 ways to do this:
+
+- Using `this.$formkit.submit('form-id')` (`submitForm('form-id')` for the composition api).
+- Using a [core node](/advanced/core#node) object.
+
+#### Submitting with `$formkit.submit()`
+
+<example
+  name="Text example"
+  file="/_content/examples/form-submit/form-submit.vue">
+</example>
+
+#### Submitting with `node.submit()`
+
+You can also submit a form programmatically by calling `node.submit()` on the form’s (or any input inside the form) core node. To do this you need to [retrieve an instance of the core node](/advanced/core#getting-a-components-node).
+
+<example
+  name="Text example"
+  file="/_content/examples/node-submit/node-submit.vue">
 </example>
 
 ## Validation
@@ -126,6 +149,7 @@ With FormKit, adding front end validation to your form is easy — but what abo
 Form errors (ones that apply to the entire form) can be set two ways.
 
 - Using the `errors` prop on a `<FormKit type="form">`.
+- Using a core node `node.setErrors()`.
 - Using the `$formkit.setErrors()` Vue plugin method.
 
 #### Using the `errors` prop
@@ -135,6 +159,15 @@ Like with any FormKit input, you can directly assign errors using the `errors` p
 <example
   name="Form errors prop example"
   file="/_content/examples/form-errors/form-errors.vue">
+</example>
+
+#### Using `node.setErrors()`
+
+Setting your form’s errors using `node.setErrors` is convenient since your submit handler is passed the form’s `node` object as its second argument.
+
+<example
+  name="setErrors"
+  file="/_content/examples/node-set-errors/node-set-errors.vue">
 </example>
 
 #### Using `$formkit.setErrors()`

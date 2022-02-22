@@ -11,6 +11,14 @@ description: What's new in the latest version of FormKit?.
 
 #### 🎉 New features
 
+- Adds [programmatic form submission](/essentials/forms#submitting-forms-programmatically):
+  - Can be submitted by node `node.submit()` (including any child node of the form).
+  - Can be submitted via function `this.$formkit.submit('form-id')` (for composition api it's `submitForm('form-id')`).
+- Improved `setErrors` DX:
+  - Can now be called directly on a node `node.setErrors(nodeErrors, childErrors)`.
+  - `setErrors` now supports pure string `node.setErrors('My error')`
+- Submit handler is now passed the form’s node for easy error setting.
+- A `<FormKit>` component’s [core node](/advanced/core#node) is now available via template ref.
 - Adds `data-invalid` attribute to the `outer` section when an input has failing validation messages that are currently displayed ([playground example](https://formkit.link/cb85162e120c9de18e0298dbd8ca849e)).
 - Adds `data-errors` attribute to the `outer` section when the input has explicitly placed errors (via prop or `setErrors`).
 - Adds `data-complete` attribute to the `outer` section when an input ([playground example](https://formkit.link/cb85162e120c9de18e0298dbd8ca849e)):
@@ -35,6 +43,10 @@ description: What's new in the latest version of FormKit?.
 - Adds 🇦🇷 Spanish language support (thanks @inibg)
 
 #### 📙 Documentation
+
+- Added `node.setErrors` [documentation](/essentials/forms#using-nodeseterrors).
+- Added [programmatic form submission documentation](/essentials/forms#submitting-forms-programmatically).
+- Improved `context.state` documentation with [new properties and better descriptions](/advanced/context#state).
 
 #### 🐛 Bug fixes
 

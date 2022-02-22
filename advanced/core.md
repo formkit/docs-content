@@ -250,6 +250,7 @@ Sometimes it can be helpful to get the underlying instance of a node from the Vu
 
 - Using the Vue plugin’s `$formkit.get()` (or `getNode()` for composition API)
 - Using the `@node` event.
+- Using a template `ref`.
 
 #### Using `this.$formkit.get()`
 
@@ -276,6 +277,15 @@ Another way to get the underlying `node` is to listen to the `@node` event which
 <example
   name="Node event"
   file="/_content/examples/node-event/node-event.vue">
+</example>
+
+#### Using a template ref
+
+Assigning a `<FormKit>` component to a `ref` also also allows easy access to the node.
+
+<example
+  name="Node ref"
+  file="/_content/examples/node-ref/node-ref.vue">
 </example>
 
 ## Traversal

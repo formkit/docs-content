@@ -5,7 +5,7 @@ description: FormKit provides a reactive context object to expose data to slots,
 
 # Context object
 
-FormKit inputs use a reactive object to expose data to slots, rules, and the underlying [schema](/advanced/schema) that defines the input. This is called the `context` object and is found in the each input's [core `node` object](/advanced/core#node) at `node.context`. The context object has the following properties:
+FormKit inputs use a reactive object to expose data to template slots, rules, and the [schema](/advanced/schema) that defines each input. This is called the `context` object and is found in the each input's [core `node` object](/advanced/core#node) at `node.context`. The context object has the following properties:
 
 <div data-tight>
 
@@ -121,15 +121,56 @@ Current state of the input:
 
 ```js
 {
-  // true after the input has had focus and lost it
-  blurred: boolean,
-  // true after content has been entered by a user
-  dirty: boolean,
-  // true after the form has attempted submission
-  submitted: boolean,
-  // true when this input is valid, for groups/lists/forms this is true
-  // when all children are valid
-  valid: boolean,
+  /**
+   * If the input has been blurred.
+   */
+  blurred: boolean
+  /**
+   * True when these conditions are met:
+   *
+   * Either:
+   * - The input has validation rules
+   * - The validation rules are all passing
+   * - There are no errors on the input
+   * Or:
+   * - The input has no validation rules
+   * - The input has no errors
+   * - The input is dirty and has a value
+   *
+   * This is not intended to be used on forms/groups/lists but instead on
+   * individual inputs. Imagine placing a green checkbox next to each input
+   * when the user filled it out correctly — thats what these are for.
+   */
+  complete: boolean
+  /**
+   * If the input has had a value typed into it or a change made to it.
+   */
+  dirty: boolean
+  /**
+   * If the input has explicit errors placed on it, or in the case of a group,
+   * list, or form, this is true if any children have errors on them.
+   */
+  errors: boolean
+  /**
+   * True when the input has validation rules. Has nothing to do with the
+   * state of those validation rules.
+   */
+  rules: boolean
+  /**
+   * If the form has been submitted.
+   */
+  submitted: boolean
+  /**
+   * If the input (or group/form/list) is passing all validation rules. In
+   * the case of groups, forms, and lists this includes the validation state
+   * of all its children.
+   */
+  valid: boolean
+  /**
+   * If the validation-visibility has been satisfied and any validation
+   * messages should be displayed.
+   */
+  validationVisible: boolean
 }
 ```
 
