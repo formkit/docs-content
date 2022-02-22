@@ -23,6 +23,25 @@ Then in your `main.js` (wherever you boot Vue up) include the Genesis `theme.css
 import '@formkit/themes/genesis'
 ```
 
+## Outer attributes
+
+For styling purposes some attributes are automatically added and removed from the `outer` section of all FormKit inputs:
+
+- `data-type` — The type of input, `text`, `select`, `checkbox` etc.
+- `data-multiple` — For inputs that accept the `multiple` attribute, this will be appended when the input has the multiple attribute (like the `select` input`).
+- `data-disabled` — Present when an input is disabled.
+- `data-complete` — Present when the input is "complete". Intended to be used for styling the input when a user has completed filling out the input (like a green checkmark). [Read about `context.state.complete`](/advanced/context#state) for information what conditions cause this to be `true`.
+- `data-invalid` — Present when the input has failing validation rules and the messages for the failing rules are visible.
+- `data-errors` — Present when the input has explicitly set errors.
+
+You can use the above attributes to easily provide realtime visual feedback for users filling out your forms:
+
+<example
+name="Appending classes"
+file="/\_content/examples/outer-data-attrs/outer-data-attrs.vue"
+
+> </example>
+
 ## Custom classes
 
 Most users will want to apply their own styles and classes to FormKit's provided markup.
