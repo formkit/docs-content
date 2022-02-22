@@ -46,6 +46,8 @@ Core nodes are always one of three types (input, list, or group). These are not
 
 Most of FormKit’s native inputs have a node type of `input` — they operate on a single value. The value itself can be of any type, such as objects, arrays, strings, and numbers — any value is acceptable. However, nodes of type `input` are always leafs — meaning they cannot have children.
 
+<client-only>
+
 ```js
 import { createNode } from '@formkit/core'
 
@@ -57,10 +59,13 @@ const input = createNode({
 console.log(input.value)
 // 'hello node world'
 ```
+</client-only>
 
 ### List
 
 A list is a node that produces an array value. Children of a list node produce a value in the list’s array value. The names of immediate children are ignored — instead each is assigned an index in the list’s array.
+
+<client-only>
 
 ```js
 import { createNode } from '@formkit/core'
@@ -77,10 +82,13 @@ const list = createNode({
 console.log(list.value)
 // ['paprika@example.com', 'bill@example.com', 'jenny@example.com']
 ```
+</client-only>
 
 ### Group
 
 A group is a node that produces an object value. Children of a group node use their `name` to produce a property of the same name in the groups’s value object — `<FormKit type="form">` is an instance of a group.
+
+<client-only>
 
 ```js
 import { createNode } from '@formkit/core'
@@ -97,6 +105,7 @@ const group = createNode({
 console.log(group.value)
 // { meat: 'turkey', greens: 'salad', sweets: 'pie' }
 ```
+</client-only>
 
 ### Options
 
@@ -117,6 +126,8 @@ In addition to specifying the `type` of node when calling `createNode()`, you ca
 
 FormKit uses an inheritance-based configuration system. Any values declared in the `config` option are automatically passed to children (and all descendants) of that node, but not passed to siblings or parents. Each node can override its inherited values by providing its own config, and these values will in turn be inherited by any deeper children and descendants. For example:
 
+<client-only>
+
 ```js
 const parent = createNode({
   type: 'group',
@@ -133,6 +144,7 @@ const parent = createNode({
   ],
 })
 ```
+</client-only>
 
 The above code will result in each node having the following configuration:
 
@@ -150,6 +162,8 @@ It is best practice to read configuration values from <code>node.props</code> ra
 The `node.props` and `node.config` objects are closely related. `node.config` is best thought of as the initial values for `node.props`. `props` is an arbitrarily shaped object that contains details about the current _instance_ of the node.
 
 The best practice is to always read configuration and prop data from `node.props` even if the original value is defined using `node.config`. Explicitly defined props take precedence over configuration options.
+
+<client-only>
 
 ```js
 const child = createNode({
@@ -170,6 +184,7 @@ console.log(child.props.size)
 console.log(child.props.flavor)
 // outputs: 'cherry'
 ```
+</client-only>
 
 <callout type="tip" label="FormKit component props">
 When using the <code>&lt;FormKit&gt;</code> component, any props defined for the input <code>type</code> are automatically set as <code>node.props</code> properties. For example: <code>&lt;FormKit label="Email" /&gt;</code> would result in <code>node.props.label</code> being <code>Email</code>.
@@ -179,6 +194,8 @@ When using the <code>&lt;FormKit&gt;</code> component, any props defined for the
 
 You can set the initial value of a node by providing the `value` option on `createNode()` — but FormKit is all about interactivity, so how do we update the value of an already defined node? By using `node.input(value)`.
 
+<client-only>
+
 ```js
 import { createNode } from '@formkit/core'
 
@@ -187,8 +204,11 @@ username.input('jordan-goat98')
 console.log(username.value)
 // undefined  👀 wait — what!?
 ```
+</client-only>
 
 In the above example `username.value` is still undefined immediately after it’s set because `node.input()` is asynchronous. If you need to read the resulting value after calling `node.input()` you can await the returned promise.
+
+<client-only>
 
 ```js
 import { createNode } from '@formkit/core'
@@ -199,6 +219,7 @@ username.input('jordan-goat98').then(() => {
   // 'jordan-goat98'
 })
 ```
+</client-only>
 
 Because `node.input()` is asynchronous, the rest of our form does not need to recompute its dependencies on every keystroke. It also provides an opportunity to perform modifications to the unsettled value before it is "committed" to the rest of the form. However — for internal node use only — a `_value` property containing the unsettled value of the input is also available.
 
@@ -220,6 +241,8 @@ The following graph illustrates this "disturbance counting". Click on any input 
 </figure>
 To ensure a given tree (form), subtree (group), or node (input) is "settled" you can await the `node.settled` property:
 
+<client-only>
+
 ```js
 import { createNode } from '@formkit/node'
 
@@ -239,6 +262,7 @@ async function someEvent () {
   // and that form.value is accurate.
 }
 ```
+</client-only>
 
 <callout type="tip" label="The form type">
 The <code>&lt;FormKit type="form"&gt;</code> input already incorporates this await behavior. It will not call your <code>@submit</code> handler until your form is completely settled. However when building advanced inputs it can be useful to understand these underlying principles.
@@ -292,6 +316,8 @@ Assigning a `<FormKit>` component to a `ref` also allows easy access to the node
 
 To traverse nodes within a group or list use `node.at(address)` — where `address` is the `name` of the node being accessed (or the relative path to the name). For example:
 
+<client-only>
+
 ```js
 import { createNode } from '@formkit/core'
 
@@ -303,8 +329,11 @@ const group = createNode({
 // Returns the email node
 group.at('email')
 ```
+</client-only>
 
 If the starting node has siblings, it will attempt to locate a match in the siblings (internally, this is what FormKit uses for validation rules like `confirm:address`).
+
+<client-only>
 
 ```js
 import { createNode } from '@formkit/core'
@@ -319,10 +348,13 @@ const group = createNode({
 // Accesses sibling to return the password node
 email.at('password')
 ```
+</client-only>
 
 ### Deep traversal
 
 You can go deeper than one level by using a dot-syntax relative path. Here's a more complex example:
+
+<client-only>
 
 ```js
 import { createNode } from '@formkit/core'
@@ -357,6 +389,7 @@ const group = createNode({
 // outputs: 'foo'
 console.log(group.at('users.0.password').value)
 ```
+</client-only>
 
 Notice how traversing the `list` uses numeric keys, this is because the `list` type uses array indexes automatically.
 
@@ -381,6 +414,8 @@ Also available for use in `node.at()` are a few special "tokens":
 | `find()`  | A function that performs a breadth-first search for a matching value and property. For example: `node.at('$root.find(555, value)')` |
 
 These tokens are used in dot-syntax addresses just like you would use a node’s name:
+
+<client-only>
 
 ```js
 import { createNode } from '@formkit/core'
@@ -418,6 +453,7 @@ createNode({
 console.log(secondEmail.at('$parent.$parent.0.email').value)
 // outputs: charlie@factory.com
 ```
+</client-only>
 
 <figure>
   <traversal-tree2></traversal-tree2>
@@ -432,6 +468,8 @@ Nodes have their own events which are emitted during the node’s lifecycle (unr
 
 To observe a given event, use `node.on()`.
 
+<client-only>
+
 ```js
 // Listen for any prop being set or changed.
 node.on('prop', ({ payload }) => {
@@ -441,8 +479,11 @@ node.on('prop', ({ payload }) => {
 node.props.foo = 'bar'
 // outputs: prop foo was set to bar
 ```
+</client-only>
 
 Event handler callbacks all receive a single argument of type `FormKitEvent`, the object shape is:
+
+<client-only>
 
 ```js
 {
@@ -456,8 +497,11 @@ Event handler callbacks all receive a single argument of type `FormKitEvent`, th
   origin: node,
 }
 ```
+</client-only>
 
 Node events (by default) bubble up the node tree, but `node.on()` will only respond to events emitted by the same node. However, if you would like to also catch events bubbling up from descendants you may append the string `.deep` to the end of your event name:
+
+<client-only>
 
 ```js
 import { createNode } from '@formkit/core'
@@ -471,10 +515,13 @@ group.on('created.deep', ({ payload: child }) => {
 const child = createNode({ parent: group, name: 'party-town-usa' })
 // outputs: 'child node created: party-town-usa'
 ```
+</client-only>
 
 ### Remove listener
 
 Every call to register an observer with `node.on()` returns a “receipt” — a randomly generated key — that can be used later to stop observing that event (similar to [`setTimeout()` and `clearTimeout()`](https://developer.mozilla.org/en-US/docs/Web/API/clearTimeout)) using `node.off(receipt)`.
+
+<client-only>
 
 ```js
 const receipt = node.on('input', ({ payload }) => {
@@ -486,6 +533,7 @@ node.off(receipt)
 node.input('fizz buzz')
 // no output
 ```
+</client-only>
 
 ### Core events
 
@@ -515,9 +563,12 @@ When a configuration option changes, any inheriting nodes (including the origin 
 
 Node events are emitted with `node.emit()`. You can leverage this feature to emit your own synthetic events from your own plugins.
 
+<client-only>
+
 ```js
 node.emit('myEvent', payloadGoesHere)
 ```
+</client-only>
 
 An optional third argument `bubble` is also available. When set to `false`, it prevents your event from bubbling up through the form tree.
 
@@ -541,6 +592,8 @@ To make use of these hooks, you must register hook middleware. A middleware is s
 
 To register a middleware, pass it to the `node.hook` you want to use:
 
+<client-only>
+
 ```js
 import { createNode } from '@formkit/core'
 
@@ -554,6 +607,7 @@ node.hook.prop((payload, next) => {
   return next(payload)
 })
 ```
+</client-only>
 
 <callout type="tip" label="Use with plugins">
 Hooks can be registered anywhere in your application, but the most common place hooks are used is in a plugin.
@@ -562,6 +616,8 @@ Hooks can be registered anywhere in your application, but the most common place 
 ## Plugins
 
 Plugins are the primary mechanism for extending the functionality of FormKit. The concept is simple — a plugin is just a function that accepts a node. These functions are then automatically called when a node is created, or when the plugin is added to the node. Plugins work similar to configuration options — they are automatically inherited by children and descendants.
+
+<client-only>
 
 ```js
 import { createNode } from '@formkit/core'
@@ -580,6 +636,7 @@ const node = createNode([
   children: [createNode()]
 ])
 ```
+</client-only>
 
 In the example above, the plugin is only defined on the parent, but the child also inherits the plugin. The function `myPlugin` will be called twice — once for each node in the graph (which only has two in this example):
 
@@ -590,7 +647,7 @@ In the example above, the plugin is only defined on the parent, but the child al
 
 ## Library
 
-In addition to extending and modifying nodes, plugins serve one additional role — exposing input libraries. A “library” is a function assigned to the `library` property of a plugin that accepts a node and determines whether it knows how to “define” that node. If it does, it calls `node.define()` with an [input definition](/custom-inputs#input-definition).
+In addition to extending and modifying nodes, plugins serve one additional role — exposing input libraries. A “library” is a function assigned to the `library` property of a plugin that accepts a node and determines whether it knows how to “define” that node. If it does, it calls `node.define()` with an [input definition](/advanced/custom-inputs#input-definition).
 
 For example, if we wanted to create a plugin that exposed a couple new inputs: `italy` and `france` we could write a plugin to do this:
 
@@ -618,6 +675,8 @@ Each node has its own data store. The objects in these stores are called "messag
 - General data store for plugin authors.
 
 Each message (`FormKitMessage` in TypeScript) in the store is an object with the following shape:
+
+<client-only>
 
 ```js
 {
@@ -647,6 +706,7 @@ Each message (`FormKitMessage` in TypeScript) in the store is an object with the
   visible: true
 }
 ```
+</client-only>
 
 <callout type="tip" label="Create message helper">
 A helper function <code>createMessage({})</code> can be imported from <code>@formkit/core</code> to merge your message data with the above default values to create a new message object.
@@ -655,6 +715,8 @@ A helper function <code>createMessage({})</code> can be imported from <code>@for
 ### Read and write messages
 
 To add or update a message, use `node.store.set(FormKitMessage)`. Messages are then made available on `node.store.{messageKey}`
+
+<client-only>
 
 ```js
 import { createMessage, createNode } from '@formkit/core'
@@ -670,6 +732,7 @@ node.store.set(message)
 console.log(node.store.clickHole.value)
 // outputs: 'Please click 100 times.'
 ```
+</client-only>
 
 <callout type="info" label="Message locales">
 Messages will automatically be translated if the <code>@formkit/i18n</code> plugin is installed and a matching key is available in the active locale. <a href="/essentials/internationalization">Read the i18n docs</a>.

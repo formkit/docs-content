@@ -30,6 +30,8 @@ New inputs require an [input definition](#input-definition). Input definitions c
 
 Input definitions are objects that contain the necessary information to initialize an input — like which [props to accept](#adding-props), what [schema or component to render](#schema-vs-component), and if any additional [feature functions](#adding-features) should be included. The shape of the definition object is:
 
+<client-only>
+
 ```js
 {
   // Node type: input, group, or list.
@@ -45,6 +47,7 @@ Input definitions are objects that contain the necessary information to initiali
   features: []
 }
 ```
+</client-only>
 
 ### Using the `type` prop
 
@@ -60,6 +63,8 @@ Even though this simplistic example doesn’t contain any input/output mechanism
 ### Global custom inputs
 
 To use your custom input anywhere in your application via a "type" string (ex: `<FormKit type="foobar" />`) you can add an `inputs` property to the `defaultConfig` options. The property names of the `inputs` object become the "type" strings available to the `<FormKit>` component in your application.
+
+<client-only>
 
 ```js
 import { createApp } from 'vue'
@@ -83,6 +88,7 @@ createApp(App)
   )
   .mount('#app')
 ```
+</client-only>
 
 Now that we’ve defined our input we can use it anywhere in the application:
 
@@ -161,6 +167,8 @@ The function returns a ready-to-use [input definition](#input-definition).
 
 When providing a _component_ as the first argument, `createInput` will generate a schema object that references your component within the base schema. Your component will be passed a single `context` prop:
 
+<client-only>
+
 ```js
 {
   $cmp: 'YourComponent',
@@ -169,6 +177,7 @@ When providing a _component_ as the first argument, `createInput` will generate 
   }
 }
 ```
+</client-only>
 
 When providing a schema object, your schema is directly injected into the base schema object. Notice that our hello world example now supports outputting "standard" FormKit features like labels, help text, and validation:
 
@@ -207,9 +216,11 @@ You can receive input from any user interaction and the input can set its value 
 
 Fundamentally, all an input needs to do is call `node.input(value)` with a value. The `node.input()` method is automatically debounced, so feel free to call it frequently — like every keystroke. Typically, this looks like binding to the `input` event.
 
-The [`context` object](/advanced/context-object) includes an input handler for basic input types: `context.handlers.DOMInput`. This can be used for text-like inputs where the value of the input is available at `event.target.value`. If you need a more complex event handler, you can [expose it using "features"](#adding-features).
+The [`context` object](/advanced/context) includes an input handler for basic input types: `context.handlers.DOMInput`. This can be used for text-like inputs where the value of the input is available at `event.target.value`. If you need a more complex event handler, you can [expose it using "features"](#adding-features).
 
 Any user interaction can be considered an input event. For many native HTML inputs, that interaction is captured with the [input event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event).
+
+<client-only>
 
 ```js
 // An HTML text input written in schema:
@@ -220,18 +231,24 @@ Any user interaction can be considered an input event. For many native HTML inpu
   }
 }
 ```
+</client-only>
 
 The equivalent in a Vue template:
+
+<client-only>
 
 ```vue
 <template>
   <input @input="context.DOMInput" />
 </template>
 ```
+</client-only>
 
 ### Displaying values
 
 Inputs are also responsible for displaying the current value. Typically, you’ll want to use the `node._value` or `$_value` in schema to display a value. This is the "live" non-debounced value. The currently _committed_ value is `node.value` (`$value`). Read more about "value settlement" <a href="/advanced/core#setting-values">here</a>.
+
+<client-only>
 
 ```js
 // An HTML text input written in schema:
@@ -243,14 +260,18 @@ Inputs are also responsible for displaying the current value. Typically, you’l
   }
 }
 ```
+</client-only>
 
 The equivalent in a Vue template:
+
+<client-only>
 
 ```vue
 <template>
   <input :value="context._value" @input="context.handlers.DOMInput" />
 </template>
 ```
+</client-only>
 
 <callout type="warning" label="_value vs value">
 The only time the uncommitted input <code>_value</code> should be used is for displaying the value on the input itself — in all other locations, it is important to use the committed <code>value</code>.
@@ -317,6 +338,8 @@ Let’s take a look at a slightly more complex example that utilizes `createInpu
 
 FormKit exposes dozens of value-added features to even the most mundane inputs. When writing a custom input for a specific project, you only need to implement the features that will actually be used on that project. However, if you plan to distribute your inputs to others, you will want to ensure these features are available. For example, the standard `<FormKit type="text">` input uses the following schema for its `input` element:
 
+<client-only>
+
 ```js
 {
   $el: 'input',
@@ -333,6 +356,7 @@ FormKit exposes dozens of value-added features to even the most mundane inputs. 
   }
 ]
 ```
+</client-only>
 
 There are several features in the above schema that may not be immediately obvious like the `onBlur` handler. The following checklist is intended to help input authors cover all their bases:
 

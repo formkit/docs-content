@@ -278,7 +278,7 @@ Checks that the input’s value matches at least one of the provided arguments.
 
 ### Length
 
-Checks that the input’s value is over a given length, or between two length values. It works to validate arrays (like [lists](/inputs/list)), objects (like [groups](/inputs/groups)), or string lengths.
+Checks that the input’s value is over a given length, or between two length values. It works to validate arrays (like [lists](/inputs/list)), objects (like [groups](/inputs/group)), or string lengths.
 
 <example
   name="Is"
@@ -402,6 +402,8 @@ Checks if the input value appears to be a properly formatted URL including the p
 
 Validation rules are functions that accept a [core node](/advanced/core#node) and return a boolean value — `true` for passing and `false` for failing. Additionally, any arguments passed to the validation rule are available as arguments `1-n`. Writing your own is straight forward — for example:
 
+<client-only>
+
 ```js
 /**
  * File: my-custom-rules/monday.js
@@ -412,12 +414,15 @@ export default function monday(node) {
   return node.value === 'monday' || node.value === 'mon'
 }
 ```
+</client-only>
 
 Once you have a validation function written — you need to register the validation rule with FormKit — either globally or specifically on an input.
 
 ### Adding a rule globally
 
 To use a validation rule anywhere in your project, you can specify it wherever your FormKit plugin is registered with Vue.
+
+<client-only>
 
 ```js
 import { createApp } from 'vue'
@@ -430,12 +435,16 @@ createApp(App).use(plugin, defaultConfig({
   rules: { monday },
 })).mount('#app')
 ```
+</client-only>
 
 Once installed you can use your validation rule in anywhere in your project.
+
+<client-only>
 
 ```html
 <FormKit validation="required|monday" />
 ```
+</client-only>
 
 ### Adding a rule via prop
 
@@ -503,6 +512,8 @@ Let’s re-write the above example using a function instead of a string for even
 
 If there are validation rule messages you'd like to override (or add) across your entire project, you can define those message rules when registering FormKit under the language key you'd like to override.
 
+<client-only>
+
 ```js
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -522,3 +533,4 @@ createApp(App).use(plugin, defaultConfig({
   }
 })).mount('#app')
 ```
+</client-only>

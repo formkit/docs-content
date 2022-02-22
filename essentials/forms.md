@@ -227,7 +227,7 @@ When inputs are unmounted from a form — for example when using `v-if` — the 
 
 Forms are technically considered `input` types — so they share many of the universal props that standard inputs use.
 
-<reference-table :without="['label', 'help']" :data="[{ prop: 'disabled', type: 'Boolean', default: 'false', description: 'Disables the form submit button and all the inputs in the form.'}, { prop: 'incomplete-message', type: 'String/Boolean', default: '{locale}.ui.incomplete', description: 'The message that is shown to near the submit button when a user attempts to submit a form, but not all inputs are valid.'}, { prop: 'submit-attrs', type: 'Object', default: '{}', description: 'Attributes or props that should be passed to the built-in submit button.'}, { prop: 'submit-behavior', type: 'String', default: 'disabled', description: 'Async submit handlers automatically disable the form while pending, you can change this by setting this prop to \"live\".'}, { prop: 'submit-label', type: 'String', default: 'Submit', description: 'The label to use on the built-in submit button.'}, { prop: 'actions', type: 'Boolean', default: 'true', description: 'Whether or not to include the actions bar at the bottom of the form (ex. you want to remove the submit button and use your own, set this to <code>false</code>).'}]"></reference-table>
+<form-props-table></form-props-table>
 
 ## Section keys
 

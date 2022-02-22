@@ -26,7 +26,7 @@
         const classList = {}
         if (typeof classesArray !== 'string') return classList
         classesArray.split(' ').forEach(className => {
-          classList[className] = true
+            classList[className] = true
         })
         return classList
       }

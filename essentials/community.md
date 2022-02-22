@@ -11,7 +11,7 @@ Community involvement and contributions are one of the most important aspects of
 
 ### FormKit Discord server (generalized help & discussion)
 
-If you're in need of more generalized help or want to make connections within the community, consider joining the official FormKit Discord (used for both FormKit and Vue Formulate — FormKit's predecessor). Over 300 developers along with the core team spend time there. If you are not already a member (it's free and open), you'll need to use the following invite link to join the server.
+If you're in need of more generalized help or want to make connections within the community, consider joining the official FormKit Discord (used for both FormKit and Vue Formulate — FormKit's predecessor). Over 350 developers along with the core team spend time there. If you are not already a member (it's free and open), you'll need to use the following invite link to join the server.
 
 <LinkDiscord></LinkDiscord>
 
