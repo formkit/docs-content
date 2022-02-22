@@ -10,11 +10,16 @@ FormKit ships with internationalization support for all of its interfaces and va
 - 🇨🇳 Chinese (zh) — 🙏 &nbsp;@myleslee
 - 🇭🇷 Croatian (hr) - 🙏 &nbsp;@antemarkic
 - 🇳🇱 Dutch (nl) — 🙏 &nbsp;@arjendejong12
-- 🇺🇸 English (en)
+- 🇺🇸 English (en) - 🙏 &nbsp;
+- 🇫🇮 Finish - (fi) - 🙏 &nbsp;@mihqusta
 - 🇫🇷 French (fr) — 🙏 &nbsp;@HoreKk
 - 🇩🇪 German (de) — 🙏 &nbsp;@digitalkaoz, @tosling
 - 🇮🇱 Hebrew (he) - 🙏 &nbsp;@Hepi420
+- 🇮🇷 Persian (fa) - 🙏 &nbsp;@shahabbasian
+- 🇧🇷 Portuguese (pt) 🙏 &nbsp;@r-martins
 - 🇷🇺 Russian (ru) — 🙏 &nbsp;@andreimakushkin
+- 🇦🇷 Spanish (es) - 🙏 &nbsp;@inibg
+- 🇹🇷 Turkish (tr) - 🙏 &nbsp;@ragokan
 
 Although flags are <a href="http://www.flagsarenotlanguages.com/blog/why-flags-do-not-represent-language/">poor representations of languages</a> (flags indicate a geographic nation, while languages can be spoken in many ares of the world), we use the flags in the list above to indicate the location of the contributor who created that particular locale.
 
