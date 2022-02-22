@@ -5,6 +5,46 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 1.0.0-beta.3
+
+## February 22, 2022
+
+#### 🎉 New features
+
+- Adds `data-invalid` attribute to the `outer` section when an input has failing validation messages that are currently displayed ([playground example](https://formkit.link/cb85162e120c9de18e0298dbd8ca849e)).
+- Adds `data-errors` attribute to the `outer` section when the input has explicitly placed errors (via prop or `setErrors`).
+- Adds `data-complete` attribute to the `outer` section when an input ([playground example](https://formkit.link/cb85162e120c9de18e0298dbd8ca849e)):
+  - Either:
+    - The input has validation rules.
+    - The validation rules are all passing.
+    - There are no errors on the input.
+  - Or:
+    - The input has no validation rules.
+    - The input has no errors.
+    - The input is dirty and has a value.
+- New `context.state` properties:
+  - `state.rules` - true when the input has validation rules.
+  - `state.errors` - true when the input has explicit errors placed on it.
+  - `state.complete` - same as logic as `data-complete`.
+  - `state.validationVisible` - true when the `validation-visibility` condition is met (it is showing validation errors if there are any).
+- Refactors the Nuxt 3 module for faster build time and better file resolution.
+- Adds 🇮🇷 Persian language support (thanks @shahabbasian)
+- Adds 🇧🇷 Portuguese language support (thanks @r-martins)
+- Adds 🇹🇷 Turkish language support (thanks @ragokan)
+- Adds 🇫🇮 Finish language support (thanks @mihqusta)
+- Adds 🇦🇷 Spanish language support (thanks @inibg)
+
+#### 📙 Documentation
+
+#### 🐛 Bug fixes
+
+- Fixes an issue that cause server side rendering and server side generation on Nuxt and vite-ssg/vitesse to throw exceptions during build process ([#81](https://github.com/formkit/formkit/issues/81)).
+- Fixes a bug that prevented `file` inputs from triggering custom `onChange` events ([#90](https://github.com/formkit/formkit/issues/90)).
+- Fixes a bug that prevented forms from outputting their `id` to the DOM.
+- Fixes a styling issue in the genesis theme that cause select lists items to be grey before an option was selected when using a placeholder ([#59](https://github.com/formkit/formkit/issues/59))
+- Fixes a bug that caused the `:value` prop on forms to be mutated on input ([#72](https://github.com/formkit/formkit/issues/72)).
+- Fixes inconsistency between `prop:{propName}` events emitted by default props and custom input defined props ([#73](https://github.com/formkit/formkit/issues/73))
+
 ## 1.0.0-beta.2
 
 ### February 3, 2022
