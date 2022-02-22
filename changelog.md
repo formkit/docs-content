@@ -5,7 +5,7 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
-## 1.0.0-beta.3
+## 1.0.0-beta.4
 
 ## February 22, 2022
 
@@ -54,13 +54,20 @@ description: What's new in the latest version of FormKit?.
 
 #### 🐛 Bug fixes
 
-- Fixes an issue that cause server side rendering and server side generation on Nuxt and vite-ssg/vitesse to throw exceptions during build process ([#81](https://github.com/formkit/formkit/issues/81)).
+- Fixes an issue that caused server side rendering and server side generation on Nuxt and vite-ssg/vitesse to throw exceptions during build process ([#81](https://github.com/formkit/formkit/issues/81)).
 - Fixes a bug that prevented `file` inputs from triggering custom `onChange` events ([#90](https://github.com/formkit/formkit/issues/90)).
 - Fixes a bug that prevented forms from outputting their `id` to the DOM.
-- Fixes a styling issue in the genesis theme that cause select lists items to be grey before an option was selected when using a placeholder ([#59](https://github.com/formkit/formkit/issues/59))
+- Fixes a styling issue in the Genesis theme that caused select list items to be grey before an option was selected when using a placeholder ([#59](https://github.com/formkit/formkit/issues/59))
 - Fixes a bug that caused the `:value` prop on forms to be mutated on input ([#72](https://github.com/formkit/formkit/issues/72)).
 - Fixes inconsistency between `prop:{propName}` events emitted by default props and custom input defined props ([#73](https://github.com/formkit/formkit/issues/73))
 
+## 1.0.0-beta.3
+
+## February 22, 2022
+
+- Beta.3 was slated to be such a great release we decided to skip it and go straight to beta.4 👀!
+  - Only kidding. We had issues with npm and had to bump 🤦.
+  
 ## 1.0.0-beta.2
 
 ### February 3, 2022

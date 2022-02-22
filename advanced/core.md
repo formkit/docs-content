@@ -246,7 +246,7 @@ The <code>&lt;FormKit type="form"&gt;</code> input already incorporates this awa
 
 ### Getting a component’s node
 
-Sometimes it can be helpful to get the underlying instance of a node from the Vue `<FormKit>` component. There are two primary methods of fetching an input’s node.
+Sometimes it can be helpful to get the underlying instance of a node from the Vue `<FormKit>` component. There are three primary methods of fetching an input’s node.
 
 - Using the Vue plugin’s `$formkit.get()` (or `getNode()` for composition API)
 - Using the `@node` event.
@@ -281,7 +281,7 @@ Another way to get the underlying `node` is to listen to the `@node` event which
 
 #### Using a template ref
 
-Assigning a `<FormKit>` component to a `ref` also also allows easy access to the node.
+Assigning a `<FormKit>` component to a `ref` also allows easy access to the node.
 
 <example
   name="Node ref"

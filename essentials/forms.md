@@ -146,7 +146,7 @@ With FormKit, adding front end validation to your form is easy — but what abo
 
 ### Form errors
 
-Form errors (ones that apply to the entire form) can be set two ways.
+Form errors (ones that apply to the entire form) can be set three ways.
 
 - Using the `errors` prop on a `<FormKit type="form">`.
 - Using a core node `node.setErrors()`.

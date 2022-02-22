@@ -1,6 +1,6 @@
 <template>
   <FormKit ref="myInput" label="Email address" />
-  <FormKit type="button" @click="setEmail" label="Set email" />
+  <FormKit type="button" @click="setEmail" label="Click to set email" />
 </template>
 
 <script setup>

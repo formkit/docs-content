@@ -137,9 +137,9 @@ Current state of the input:
    * - The input has no errors
    * - The input is dirty and has a value
    *
-   * This is not intended to be used on forms/groups/lists but instead on
+   * This is not intended to be used on forms/groups/lists, but instead on
    * individual inputs. Imagine placing a green checkbox next to each input
-   * when the user filled it out correctly — thats what these are for.
+   * when the user filled it out correctly — that's what these are for.
    */
   complete: boolean
   /**
@@ -167,7 +167,7 @@ Current state of the input:
    */
   valid: boolean
   /**
-   * If the validation-visibility has been satisfied and any validation
+   * If validation-visibility has been satisfied and any validation
    * messages should be displayed.
    */
   validationVisible: boolean

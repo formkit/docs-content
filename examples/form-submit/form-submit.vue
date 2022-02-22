@@ -14,7 +14,7 @@
     />
   </FormKit>
   <p>This button is not part of the above form:</p>
-  <!-- 👀 Look ,this is not part of the form. -->
+  <!-- 👀 Look, this is not part of the form. -->
   <button @click="submitForm">Signup for newsletter</button>
 </template>
 

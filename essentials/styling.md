@@ -25,10 +25,10 @@ import '@formkit/themes/genesis'
 
 ## Outer attributes
 
-For styling purposes some attributes are automatically added and removed from the `outer` section of all FormKit inputs:
+For styling purposes some attributes are automatically added to and removed from the `outer` section of all FormKit inputs:
 
 - `data-type` — The type of input, `text`, `select`, `checkbox` etc.
-- `data-multiple` — For inputs that accept the `multiple` attribute, this will be appended when the input has the multiple attribute (like the `select` input`).
+- `data-multiple` — For inputs that accept the `multiple` attribute, this will be appended when the input has the multiple attribute (like the `select` input).
 - `data-disabled` — Present when an input is disabled.
 - `data-complete` — Present when the input is "complete". Intended to be used for styling the input when a user has completed filling out the input (like a green checkmark). [Read about `context.state.complete`](/advanced/context#state) for information what conditions cause this to be `true`.
 - `data-invalid` — Present when the input has failing validation rules and the messages for the failing rules are visible.
