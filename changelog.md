@@ -23,9 +23,9 @@ description: What's new in the latest version of FormKit?.
   - `setErrors` now supports pure string `node.setErrors('My error')`
 - Submit handler is now passed the form’s node for easy error setting.
 - A `<FormKit>` component’s [core node](/advanced/core#node) is now available via template ref.
-- Adds `data-invalid` attribute to the `outer` section when an input has failing validation messages that are currently displayed ([playground example](https://formkit.link/cb85162e120c9de18e0298dbd8ca849e)).
+- Adds `data-invalid` attribute to the `outer` section when an input has failing validation messages that are currently displayed ([playground example](https://formkit.link/59a772a70e06fdb7c19794f90b8c2b06)).
 - Adds `data-errors` attribute to the `outer` section when the input has explicitly placed errors (via prop or `setErrors`).
-- Adds `data-complete` attribute to the `outer` section when an input ([playground example](https://formkit.link/cb85162e120c9de18e0298dbd8ca849e)):
+- Adds `data-complete` attribute to the `outer` section when an input ([playground example](https://formkit.link/59a772a70e06fdb7c19794f90b8c2b06)):
   - Either:
     - The input has validation rules.
     - The validation rules are all passing.
