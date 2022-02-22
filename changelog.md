@@ -7,7 +7,7 @@ description: What's new in the latest version of FormKit?.
 
 ## 1.0.0-beta.4
 
-## February 22, 2022
+### February 22, 2022
 
 #### ⚠️ Breaking change
 
@@ -63,10 +63,9 @@ description: What's new in the latest version of FormKit?.
 
 ## 1.0.0-beta.3
 
-## February 22, 2022
+### February 22, 2022
 
-- Beta.3 was slated to be such a great release we decided to skip it and go straight to beta.4 👀!
-  - Only kidding. We had issues with npm and had to bump 🤦.
+- `beta.3` was going to be such a great release we decided to skip it and go straight to `beta.4` 👀 ! Only kidding. We had issues with npm and had to bump 🤦.
   
 ## 1.0.0-beta.2
 
