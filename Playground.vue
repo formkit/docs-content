@@ -1,6 +1,6 @@
 <script setup>
-// ESM Imports are supported from URLS
-// as well as secondary playground files.
+// ESM imports are supported from URLs (https://cdn...)
+// as well as secondary playground files (./OtherFile.vue).
 </script>
 
 <template>
@@ -11,9 +11,11 @@
   />
 </template>
 
-<style>
+<style scoped>
 /*
 vanilla CSS can go here. If you are using
 Tailwind you may also use @apply rules.
+Keep styles scoped to avoid multiple files
+overwriting each other in the render output.
 */
 </style>
