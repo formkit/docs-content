@@ -1,4 +1,16 @@
 %partial%
+<script setup>
+import { ref, inject } from 'vue'
+
+const current = ref('en')
+const config = inject(Symbol.for('FormKitConfig'))
+
+const changeLocale = () => {
+  current.value = current.value === 'en' ? 'de' : 'en'
+  config.locale = current.value
+}
+</script>
+
 <template>
   <a @click.prevent="changeLocale" href="#">
     <span v-if="current === 'en'">🇩🇪 config.locale = 'de'</span>
@@ -17,18 +29,6 @@
     required for this example (submit, required, email).
   </small>
 </template>
-
-<script setup>
-import { ref, inject } from 'vue'
-
-const current = ref('en')
-const config = inject(Symbol.for('FormKitConfig'))
-
-const changeLocale = () => {
-  current.value = current.value === 'en' ? 'de' : 'en'
-  config.locale = current.value
-}
-</script>
 %partial%
 
 <style>

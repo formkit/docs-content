@@ -1,3 +1,9 @@
+<script setup>
+import { createInput } from '@formkit/vue'
+
+const myInput = createInput('Hello world')
+</script>
+
 <template>
   <FormKit
     :type="myInput"
@@ -7,9 +13,3 @@
     validation-visibility="live"
   />
 </template>
-
-<script setup>
-import { createInput } from '@formkit/vue'
-
-const myInput = createInput('Hello world')
-</script>

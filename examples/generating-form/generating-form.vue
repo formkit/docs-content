@@ -1,9 +1,3 @@
-<template>
-<FormKit type="form">
-  <FormKitSchema :schema="schema" />
-</FormKit>
-</template>
-
 <script setup>
 const schema = [
   {
@@ -13,3 +7,9 @@ const schema = [
   }
 ]
 </script>
+
+<template>
+  <FormKit type="form">
+    <FormKitSchema :schema="schema" />
+  </FormKit>
+</template>

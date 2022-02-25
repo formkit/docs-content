@@ -1,3 +1,8 @@
+<script setup>
+import { ref } from 'vue'
+const value = ref('lama')
+</script>
+
 <template>
   <!-- %partial%::html:: -->
   <FormKit
@@ -15,8 +20,3 @@
   <pre wrap>{{ value }}</pre>
   <!-- %partial%::html:: -->
 </template>
-
-<script setup>
-import { ref } from 'vue'
-const value = ref('lama')
-</script>

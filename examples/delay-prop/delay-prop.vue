@@ -1,3 +1,8 @@
+<script setup>
+import { ref } from 'vue'
+const data = ref({})
+</script>
+
 <template>
   <FormKit type="group" v-model="data">
     <FormKit
@@ -12,8 +17,3 @@
   </FormKit>
   <pre wrap>{{ data }}</pre>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-const data = ref({})
-</script>

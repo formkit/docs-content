@@ -1,10 +1,3 @@
-<template>
-  <FormKit type="group" v-model="groupValues">
-    <FormKit :type="simpleText" name="simple" />
-  </FormKit>
-  <pre wrap>{{ groupValues }}</pre>
-</template>
-
 <script setup>
 import { ref } from 'vue'
 const groupValues = ref({})
@@ -22,3 +15,10 @@ const simpleText = {
   ],
 }
 </script>
+
+<template>
+  <FormKit type="group" v-model="groupValues">
+    <FormKit :type="simpleText" name="simple" />
+  </FormKit>
+  <pre wrap>{{ groupValues }}</pre>
+</template>

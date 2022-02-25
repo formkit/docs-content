@@ -1,3 +1,10 @@
+<script setup>
+const nextMonday = new Date()
+nextMonday.setDate(
+  nextMonday.getDate() + ((((7 - nextMonday.getDay()) % 7) + 1) % 7)
+)
+</script>
+
 <template>
   <FormKit
     type="form"
@@ -32,10 +39,3 @@
     />
   </FormKit>
 </template>
-
-<script setup>
-const nextMonday = new Date()
-nextMonday.setDate(
-  nextMonday.getDate() + ((((7 - nextMonday.getDay()) % 7) + 1) % 7)
-)
-</script>

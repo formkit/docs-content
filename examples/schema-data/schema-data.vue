@@ -1,13 +1,3 @@
-<template>
-  <FormKitSchema
-    :schema="schema"
-    :data="data"
-  />
-  <button @click="move">
-    Change location
-  </button>
-</template>
-
 <script setup>
 import { reactive } from 'vue'
 
@@ -29,3 +19,13 @@ const move = () => {
   data.location = data.location === 'World' ? 'Mars' : 'World'
 }
 </script>
+
+<template>
+  <FormKitSchema
+    :schema="schema"
+    :data="data"
+  />
+  <button @click="move">
+    Change location
+  </button>
+</template>

@@ -1,8 +1,3 @@
-<template>
-  <h2>Loan application</h2>
-  <FormKitSchema :schema="schema" />
-</template>
-
 <script setup>
 const schema = [
   {
@@ -40,3 +35,8 @@ const schema = [
   }
 ]
 </script>
+
+<template>
+  <h2>Loan application</h2>
+  <FormKitSchema :schema="schema" />
+</template>

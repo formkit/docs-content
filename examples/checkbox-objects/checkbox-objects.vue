@@ -1,3 +1,12 @@
+<script setup>
+import { ref, computed } from 'vue'
+const value = ref([])
+const sum = computed(() => {
+  return new Intl.NumberFormat('en-US')
+    .format(value.value.reduce((sum, price) => Number(price) + sum, 0))
+})
+</script>
+
 <template>
   <!-- %partial%::html:: -->
   <FormKit
@@ -31,12 +40,3 @@
   />
   <!-- %partial%::html:: -->
 </template>
-
-<script setup>
-import { ref, computed } from 'vue'
-const value = ref([])
-const sum = computed(() => {
-  return new Intl.NumberFormat('en-US')
-    .format(value.value.reduce((sum, price) => Number(price) + sum, 0))
-})
-</script>

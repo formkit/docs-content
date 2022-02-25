@@ -1,3 +1,10 @@
+<script setup>
+const submit = async () => {
+  await new Promise((r) => setTimeout(r, 1000))
+  alert('Password changed!')
+}
+</script>
+
 <template>
   <!-- %partial%::html:: -->
   <FormKit type="form" @submit="submit">
@@ -20,10 +27,3 @@
   </FormKit>
   <!-- %partial%::html:: -->
 </template>
-
-<script setup>
-const submit = async () => {
-  await new Promise((r) => setTimeout(r, 1000))
-  alert('Password changed!')
-}
-</script>

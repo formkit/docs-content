@@ -1,11 +1,3 @@
-<template>
-  <FormKitSchema
-    :schema="schema"
-    :data="data"
-  />
-  <button @click="data.count++">Add To Count</button>
-</template>
-
 <script setup>
 import { reactive } from 'vue'
 
@@ -25,3 +17,11 @@ const data = reactive({
   add: (a, b) => a + b
 })
 </script>
+
+<template>
+  <FormKitSchema
+    :schema="schema"
+    :data="data"
+  />
+  <button @click="data.count++">Add To Count</button>
+</template>

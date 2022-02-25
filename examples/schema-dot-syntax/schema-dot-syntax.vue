@@ -1,10 +1,3 @@
-<template>
-  <FormKitSchema
-    :schema="schema"
-    :data="data"
-  />
-</template>
-
 <script setup>
 import { reactive } from 'vue'
 
@@ -22,3 +15,10 @@ const data = reactive({
   }
 })
 </script>
+
+<template>
+  <FormKitSchema
+    :schema="schema"
+    :data="data"
+  />
+</template>

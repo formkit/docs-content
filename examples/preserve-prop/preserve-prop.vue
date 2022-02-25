@@ -1,3 +1,8 @@
+<script setup>
+import { ref } from 'vue'
+const data = ref({})
+</script>
+
 <template>
   <!-- %partial%::html:: -->
   <FormKit type="form" v-model="data">
@@ -21,8 +26,3 @@
   <!-- %partial%::html:: -->
   <pre wrap>{{ data }}</pre>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-const data = ref({})
-</script>

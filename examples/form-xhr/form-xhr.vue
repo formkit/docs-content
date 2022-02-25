@@ -1,4 +1,11 @@
 <!-- %partial% -->
+<script>
+// This is just a mock of an actual axios instance.
+const axios = {
+  post: () => new Promise(r => setTimeout(r, 2000))
+}
+</script>
+
 <template>
 <FormKit
   type="form"
@@ -18,22 +25,3 @@
   />
 </FormKit>
 </template>
-
-<script setup>
-const login = async (formData) => {
-  try {
-    await axios.post('/api/login', formData)
-    alert('Logged in!')
-  } catch (err) {
-    // Handle server errors here
-  }
-}
-</script>
-<!-- %partial% -->
-
-<script>
-// This is just a mock of an actual axios instance.
-const axios = {
-  post: () => new Promise(r => setTimeout(r, 2000))
-}
-</script>

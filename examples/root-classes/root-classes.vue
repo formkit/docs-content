@@ -1,9 +1,3 @@
-<template>
-  <FormKit
-    :config="{ rootClasses }"
-  />
-</template>
-
 <script setup>
 function rootClasses(sectionKey) {
   return {
@@ -11,3 +5,9 @@ function rootClasses(sectionKey) {
   }
 }
 </script>
+
+<template>
+  <FormKit
+    :config="{ rootClasses }"
+  />
+</template>

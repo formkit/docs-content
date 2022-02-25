@@ -1,11 +1,3 @@
-<template>
-  <FormKit
-    label="Favorite type of coffee type?"
-    id="coffee"
-    help="What is your favorite type of coffee?"
-  />
-</template>
-
 <script>
 export default {
   mounted() {
@@ -20,3 +12,11 @@ export default {
   },
 }
 </script>
+
+<template>
+  <FormKit
+    label="Favorite type of coffee type?"
+    id="coffee"
+    help="What is your favorite type of coffee?"
+  />
+</template>

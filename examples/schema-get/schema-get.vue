@@ -1,8 +1,3 @@
-<template>
-  <h2>Order a beverage</h2>
-  <FormKitSchema :schema="schema" />
-</template>
-
 <script setup>
 const schema = [
   {
@@ -51,3 +46,8 @@ const schema = [
   }
 ]
 </script>
+
+<template>
+  <h2>Order a beverage</h2>
+  <FormKitSchema :schema="schema" />
+</template>

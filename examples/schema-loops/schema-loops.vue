@@ -1,17 +1,3 @@
-<template>
-  <FormKit
-    type="text"
-    label="Add a city"
-    help="Add a city and hit enter"
-    v-model="city"
-    @keyup.enter="addCity"
-  />
-  <FormKitSchema
-    :schema="schema"
-    :data="data"
-  />
-</template>
-
 <script setup>
 import { reactive, ref } from 'vue'
 const schema = [
@@ -45,3 +31,17 @@ const addCity = () => {
   city.value = ''
 }
 </script>
+
+<template>
+  <FormKit
+    type="text"
+    label="Add a city"
+    help="Add a city and hit enter"
+    v-model="city"
+    @keyup.enter="addCity"
+  />
+  <FormKitSchema
+    :schema="schema"
+    :data="data"
+  />
+</template>

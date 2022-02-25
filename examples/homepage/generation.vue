@@ -1,17 +1,3 @@
-<template>
-  <FormKit
-    type="form"
-    v-model="formData"
-    @submit="register"
-  >
-    <FormKitSchema
-      :schema="schema"
-      :data="data"
-    />
-  </FormKit>
-  <pre wrap>{{ formData }}</pre>
-</template>
-
 <script>
 export default {
   data () {
@@ -87,3 +73,17 @@ export default {
   }
 }
 </script>
+
+<template>
+  <FormKit
+    type="form"
+    v-model="formData"
+    @submit="register"
+  >
+    <FormKitSchema
+      :schema="schema"
+      :data="data"
+    />
+  </FormKit>
+  <pre wrap>{{ formData }}</pre>
+</template>

@@ -1,14 +1,3 @@
-<template>
-  <FormKit
-    type="text"
-    label="European city"
-    help="What is your favorite European city?"
-    v-model="city"
-  />
-  <button @click="randomCity">Random City</button>
-  <pre>City: {{ city }}</pre>
-</template>
-
 <script>
 export default {
   data () {
@@ -32,3 +21,14 @@ export default {
   }
 }
 </script>
+
+<template>
+  <FormKit
+    type="text"
+    label="European city"
+    help="What is your favorite European city?"
+    v-model="city"
+  />
+  <button @click="randomCity">Random City</button>
+  <pre>City: {{ city }}</pre>
+</template>

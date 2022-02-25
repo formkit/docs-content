@@ -1,3 +1,19 @@
+<script setup>
+import { ref } from 'vue'
+const myForm = ref(null)
+
+function submitForm() {
+  // retrieve the core node (several ways to do this):
+  const node = myForm.value.node
+  // submit the form!
+  node.submit()
+}
+
+function submitHandler() {
+  alert('Submitted successfully!')
+}
+</script>
+
 <template>
   <FormKit ref="myForm" type="form" :actions="false" @submit="submitHandler">
     <FormKit
@@ -18,19 +34,3 @@
   <!-- 👀 Look, this is not part of the form. -->
   <button @click="submitForm">Submit request</button>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-const myForm = ref(null)
-
-function submitForm() {
-  // retrieve the core node (several ways to do this):
-  const node = myForm.value.node
-  // submit the form!
-  node.submit()
-}
-
-function submitHandler() {
-  alert('Submitted successfully!')
-}
-</script>

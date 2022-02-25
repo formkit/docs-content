@@ -1,11 +1,3 @@
-<template>
-  <FormKit :plugins="[euroInputs]" type="form" v-model="formData">
-    <FormKit type="italy" name="nome" />
-    <FormKit type="france" name="nom" />
-  </FormKit>
-  <pre wrap>{{ formData }}</pre>
-</template>
-
 <script setup>
 import { ref } from 'vue'
 const formData = ref({})
@@ -35,3 +27,11 @@ euroInputs.library = (node) => {
   }
 }
 </script>
+
+<template>
+  <FormKit :plugins="[euroInputs]" type="form" v-model="formData">
+    <FormKit type="italy" name="nome" />
+    <FormKit type="france" name="nom" />
+  </FormKit>
+  <pre wrap>{{ formData }}</pre>
+</template>

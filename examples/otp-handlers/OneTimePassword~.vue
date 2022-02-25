@@ -1,15 +1,3 @@
-<template>
-  <!-- <input
-    v-for="i in digits"
-    maxlength="1"
-    :class="context.classes.digit"
-    :value="tmp[index] || ''"
-    @input="handleInput(i)"
-    @focus="handleFocus"
-  /> -->
-  <input />
-</template>
-
 <script setup>
 // import { ref } from 'vue'
 
@@ -69,3 +57,15 @@
 //   e.target.select()
 // }
 </script>
+
+<template>
+  <!-- <input
+    v-for="i in digits"
+    maxlength="1"
+    :class="context.classes.digit"
+    :value="tmp[index] || ''"
+    @input="handleInput(i)"
+    @focus="handleFocus"
+  /> -->
+  <input />
+</template>

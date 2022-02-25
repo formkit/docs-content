@@ -1,3 +1,23 @@
+<script>
+export default {
+  data() {
+    return {
+      data: {
+        name: '',
+        favorite_food: '',
+        instructions: '',
+      },
+    }
+  },
+  methods: {
+    async handleSubmit() {
+      await new Promise((r) => setTimeout(r, 2000))
+      alert('Thank you!')
+    },
+  },
+}
+</script>
+
 <template>
   <!-- %partial%::html:: -->
   <FormKit type="form" v-model="data" @submit="handleSubmit">
@@ -31,23 +51,3 @@
   <!-- %partial% -->
   <pre wrap>{{ data }}</pre>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      data: {
-        name: '',
-        favorite_food: '',
-        instructions: '',
-      },
-    }
-  },
-  methods: {
-    async handleSubmit() {
-      await new Promise((r) => setTimeout(r, 2000))
-      alert('Thank you!')
-    },
-  },
-}
-</script>

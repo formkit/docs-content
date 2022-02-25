@@ -1,15 +1,3 @@
-<template>
-  <input
-    v-for="index in digits"
-    maxlength="1"
-    :class="context.classes.digit"
-    :value="tmp[index - 1] || ''"
-    @input="handleInput(index - 1, $event)"
-    @focus="handleFocus"
-    @paste="handlePaste"
-  />
-</template>
-
 <script setup>
 import { ref } from 'vue'
 
@@ -80,3 +68,15 @@ function handlePaste(e) {
   }
 }
 </script>
+
+<template>
+  <input
+    v-for="index in digits"
+    maxlength="1"
+    :class="context.classes.digit"
+    :value="tmp[index - 1] || ''"
+    @input="handleInput(index - 1, $event)"
+    @focus="handleFocus"
+    @paste="handlePaste"
+  />
+</template>

@@ -1,18 +1,3 @@
-<template>
-  <FormKit
-    type="select"
-    v-model="data.drink"
-    label="Select a spirit"
-    placeholder="Select a spirit"
-    :options="['Vodka', 'Whisky', 'Rum']"
-    help="Select your favorite base for cocktails."
-  />
-  <FormKitSchema
-    :schema="schema"
-    :data="data"
-  />
-</template>
-
 <script setup>
 import { reactive } from 'vue'
 const data = reactive({ drink: undefined })
@@ -37,3 +22,18 @@ const schema = [
   }
 ]
 </script>
+
+<template>
+  <FormKit
+    type="select"
+    v-model="data.drink"
+    label="Select a spirit"
+    placeholder="Select a spirit"
+    :options="['Vodka', 'Whisky', 'Rum']"
+    help="Select your favorite base for cocktails."
+  />
+  <FormKitSchema
+    :schema="schema"
+    :data="data"
+  />
+</template>

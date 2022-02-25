@@ -1,9 +1,3 @@
-<template>
-  <FormKit type="form" :plugins="[myPlugin]">
-    <FormKit type="hello" />
-  </FormKit>
-</template>
-
 <script setup>
 // We’ll use the same input definition.
 const helloDefinition = {
@@ -21,3 +15,9 @@ myPlugin.library = (node) => {
   }
 }
 </script>
+
+<template>
+  <FormKit type="form" :plugins="[myPlugin]">
+    <FormKit type="hello" />
+  </FormKit>
+</template>

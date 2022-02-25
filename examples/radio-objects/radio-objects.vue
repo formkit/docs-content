@@ -1,3 +1,8 @@
+<script setup>
+import { ref } from 'vue'
+const value = ref('saving-ryan')
+</script>
+
 <template>
   <!-- %partial%::html:: -->
   <FormKit
@@ -16,8 +21,3 @@
   <pre wrap>{{ value }}</pre>
   <!-- %partial%::html:: -->
 </template>
-
-<script setup>
-import { ref } from 'vue'
-const value = ref('saving-ryan')
-</script>

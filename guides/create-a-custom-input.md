@@ -18,15 +18,15 @@ To get started, let's create our input’s component file. We'll call it `OneTim
 <client-only>
 
 ```html
-<template>
-  <div>More to come here...</div>
-</template>
-
 <script setup>
   const props = defineProps({
     context: Object,
   })
 </script>
+
+<template>
+  <div>More to come here...</div>
+</template>
 ```
 </client-only>
 

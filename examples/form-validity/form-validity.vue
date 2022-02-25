@@ -1,3 +1,7 @@
+<script setup>
+const handleSubmit = () => alert('Password reset!')
+</script>
+
 <template>
   <FormKit
     type="form"
@@ -16,7 +20,3 @@
     <pre wrap>Form validity: {{ valid }}</pre>
   </FormKit>
 </template>
-
-<script setup>
-const handleSubmit = () => alert('Password reset!')
-</script>

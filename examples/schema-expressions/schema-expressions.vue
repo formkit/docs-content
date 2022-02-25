@@ -1,11 +1,3 @@
-<template>
-  <FormKitSchema
-    :schema="schema"
-    :data="data"
-  />
-  <button @click="data.count++">Add to cart</button>
-</template>
-
 <script setup>
 import { reactive } from 'vue'
 
@@ -38,3 +30,11 @@ const data = reactive({
   format: Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format
 })
 </script>
+
+<template>
+  <FormKitSchema
+    :schema="schema"
+    :data="data"
+  />
+  <button @click="data.count++">Add to cart</button>
+</template>

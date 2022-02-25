@@ -1,14 +1,3 @@
-<template>
-  <FormKitSchema
-    :schema="schema"
-    :data="data"
-  >
-    <template #default="{ label }">
-      <span style="width: 6em">{{ label }}</span>
-    </template>
-  </FormKitSchema>
-</template>
-
 <script setup>
 import { reactive, onMounted } from 'vue'
 
@@ -78,3 +67,14 @@ const tick = () => {
 }
 onMounted(tick)
 </script>
+
+<template>
+  <FormKitSchema
+    :schema="schema"
+    :data="data"
+  >
+    <template #default="{ label }">
+      <span style="width: 6em">{{ label }}</span>
+    </template>
+  </FormKitSchema>
+</template>

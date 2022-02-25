@@ -1,4 +1,15 @@
 <!-- %partial% -->
+<script setup>
+import { ref } from 'vue'
+const submitted = ref(false)
+const formData = ref({})
+const submitHandler = async () => {
+  // Lets pretend this is an ajax request:
+  await new Promise((r) => setTimeout(r, 1000))
+  submitted.value = true
+}
+</script>
+
 <template>
   <FormKit
     type="form"
@@ -56,17 +67,6 @@
   </div>
   <pre wrap>{{ formData }}</pre>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-const submitted = ref(false)
-const formData = ref({})
-const submitHandler = async () => {
-  // Lets pretend this is an ajax request:
-  await new Promise((r) => setTimeout(r, 1000))
-  submitted.value = true
-}
-</script>
 <!-- %partial% -->
 
 <style>

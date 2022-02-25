@@ -1,3 +1,11 @@
+<script setup>
+import { ref } from 'vue'
+const list = ref([
+  'john@formkit.com',
+  'sasha@formkit.com',
+])
+</script>
+
 <template>
 <FormKit
   v-model="list"
@@ -19,11 +27,3 @@
 </FormKit>
 <pre wrap>{{ list }}</pre>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-const list = ref([
-  'john@formkit.com',
-  'sasha@formkit.com',
-])
-</script>

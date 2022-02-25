@@ -1,4 +1,15 @@
 %partial%
+<script setup>
+const airlines = {
+  american: 'American Airlines',
+  delta: 'Delta',
+  easyjet: 'easyJet',
+  jetblue: 'JetBlue',
+  klm: 'KLM',
+  lufthansa: 'Lufthansa',
+}
+</script>
+
 <template>
   <FormKit
     label="Airlines"
@@ -15,17 +26,6 @@
     </template>
   </FormKit>
 </template>
-
-<script setup>
-const airlines = {
-  american: 'American Airlines',
-  delta: 'Delta',
-  easyjet: 'easyJet',
-  jetblue: 'JetBlue',
-  klm: 'KLM',
-  lufthansa: 'Lufthansa',
-}
-</script>
 %partial%
 
 <style scoped>

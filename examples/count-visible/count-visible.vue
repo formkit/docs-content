@@ -1,13 +1,3 @@
-<template>
-  <FormKit
-    label="Count some errors"
-    validation="required|is:foo,baz|*length:3,3"
-    validation-visibility="live"
-    @node="countVisible"
-  />
-  Visible: {{ visibleCount }} messages
-</template>
-
 <script setup>
 import { ref } from 'vue'
 
@@ -26,3 +16,13 @@ function countVisible(node) {
   })
 }
 </script>
+
+<template>
+  <FormKit
+    label="Count some errors"
+    validation="required|is:foo,baz|*length:3,3"
+    validation-visibility="live"
+    @node="countVisible"
+  />
+  Visible: {{ visibleCount }} messages
+</template>

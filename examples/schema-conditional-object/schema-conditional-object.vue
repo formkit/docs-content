@@ -1,15 +1,3 @@
-<template>
-  <FormKit
-    type="number"
-    v-model="data.value"
-    label="Enter a number between 5-10"
-  />
-  <FormKitSchema
-    :schema="schema"
-    :data="data"
-  />
-</template>
-
 <script setup>
 import { reactive } from 'vue'
 const data = reactive({ value: 0 })
@@ -28,3 +16,15 @@ const schema = [
   }
 ]
 </script>
+
+<template>
+  <FormKit
+    type="number"
+    v-model="data.value"
+    label="Enter a number between 5-10"
+  />
+  <FormKitSchema
+    :schema="schema"
+    :data="data"
+  />
+</template>
