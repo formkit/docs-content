@@ -1,4 +1,3 @@
-%partial%
 <script>
 export default {
   methods: {
@@ -10,6 +9,7 @@ export default {
 }
 </script>
 
+%partial%
 <template>
   <FormKit
     type="form"
@@ -50,3 +50,13 @@ export default {
     />
   </FormKit>
 </template>
+
+<style>
+html[data-active-tab="render"] {
+  @apply bg-gradient-to-b from-green-200 to-green-400;
+}
+.my-tailwind-label {
+  @apply py-1 inline-block mb-1 text-gray-500 text-sm;
+}
+</style>
+%partial%
