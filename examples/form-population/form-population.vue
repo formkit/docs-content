@@ -5,7 +5,7 @@ const save = () => {
 </script>
 
 <template>
-<!-- %partial%::html:: -->
+  <!-- %partial%::html:: -->
   <FormKit
     type="form"
     :value="{
@@ -44,5 +44,5 @@ const save = () => {
       }"
     />
   </FormKit>
-<!-- %partial%::html:: -->
+  <!-- %partial%::html:: -->
 </template>

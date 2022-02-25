@@ -21,7 +21,7 @@ export default {
 </script>
 
 <template>
-<FormKitSchema
-  :schema="schema"
-/>
+  <FormKitSchema
+    :schema="schema"
+  />
 </template>

@@ -22,11 +22,11 @@ const schema = [
 </script>
 
 <template>
-<div class="wrapper">
-  <FormKitSchema
-    :schema="schema"
-  />
-</div>
+  <div class="wrapper">
+    <FormKitSchema
+      :schema="schema"
+    />
+  </div>
 </template>
 
 <style>
