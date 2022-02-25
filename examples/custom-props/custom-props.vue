@@ -1,7 +1,3 @@
-<template>
-  <FormKit :type="hello" location="Mars" />
-</template>
-
 <script setup>
 // This is our input definition:
 const hello = {
@@ -17,3 +13,7 @@ const hello = {
   ],
 }
 </script>
+
+<template>
+  <FormKit :type="hello" location="Mars" />
+</template>

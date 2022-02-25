@@ -1,3 +1,9 @@
+<script setup>
+const customMessage = ({ name, args, node }) => {
+  return `${node.value} is not a ${name}. Select ${args[0]}, ${args[1]}, or ${args[2]}`
+}
+</script>
+
 <template>
   <!-- %partial%::html:: -->
   <FormKit
@@ -15,9 +21,3 @@
   />
   <!-- %partial%::html:: -->
 </template>
-
-<script setup>
-const customMessage = ({ name, args, node }) => {
-  return `${node.value} is not a ${name}. Select ${args[0]}, ${args[1]}, or ${args[2]}`
-}
-</script>

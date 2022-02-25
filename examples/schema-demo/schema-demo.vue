@@ -1,10 +1,3 @@
-<template>
-  <FormKitSchema
-    :data="data"
-    :schema="schema"
-  />
-</template>
-
 <script>
 export default {
   data () {
@@ -43,3 +36,10 @@ export default {
   }
 }
 </script>
+
+<template>
+  <FormKitSchema
+    :data="data"
+    :schema="schema"
+  />
+</template>

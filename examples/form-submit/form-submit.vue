@@ -1,3 +1,16 @@
+<script>
+export default {
+  methods: {
+    submitForm() {
+      this.$formkit.submit('newsletter')
+    },
+    submitToMailchimp(data) {
+      alert(`Submitted ${data.email} successfully!`)
+    },
+  },
+}
+</script>
+
 <template>
   <FormKit
     type="form"
@@ -17,16 +30,3 @@
   <!-- 👀 Look, this is not part of the form. -->
   <button @click="submitForm">Signup for newsletter</button>
 </template>
-
-<script>
-export default {
-  methods: {
-    submitForm() {
-      this.$formkit.submit('newsletter')
-    },
-    submitToMailchimp(data) {
-      alert(`Submitted ${data.email} successfully!`)
-    },
-  },
-}
-</script>

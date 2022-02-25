@@ -1,18 +1,3 @@
-<template>
-  <FormKit type="group" v-model="groupValues">
-    <p>
-      To illustrate the final value of this input, let's stick it in a group.
-    </p>
-    <FormKit
-      :type="sum"
-      name="mySum"
-      label="Sum 2 numbers"
-      help="Enter two numbers above and their values will be summed!"
-    />
-  </FormKit>
-  <pre wrap>{{ groupValues }}</pre>
-</template>
-
 <script setup>
 import { ref } from 'vue'
 import { createInput } from '@formkit/vue'
@@ -76,6 +61,21 @@ function addHandlers(node) {
 
 const groupValues = ref({})
 </script>
+
+<template>
+  <FormKit type="group" v-model="groupValues">
+    <p>
+      To illustrate the final value of this input, let's stick it in a group.
+    </p>
+    <FormKit
+      :type="sum"
+      name="mySum"
+      label="Sum 2 numbers"
+      help="Enter two numbers above and their values will be summed!"
+    />
+  </FormKit>
+  <pre wrap>{{ groupValues }}</pre>
+</template>
 
 <style>
 .formkit-addend {

@@ -1,3 +1,25 @@
+<script>
+export default {
+  data() {
+    return {
+      formData: {
+        username: 'b@dExampleUsername',
+        password: 'test_password',
+        password_confirm: 'tst_password',
+        phone: undefined,
+        twitter_handle: 'forgotTheAt',
+      },
+    }
+  },
+  methods: {
+    async submit() {
+      return new Promise((r) => setTimeout(r, 2000))
+      alert('submitted successfully!')
+    },
+  },
+}
+</script>
+
 <template>
   <FormKit :value="formData" type="form" @submit="submit">
     <!-- %partial%::html:: -->
@@ -52,28 +74,6 @@
     <!-- 👀  free submit button? nice. -->
   </FormKit>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      formData: {
-        username: 'b@dExampleUsername',
-        password: 'test_password',
-        password_confirm: 'tst_password',
-        phone: undefined,
-        twitter_handle: 'forgotTheAt',
-      },
-    }
-  },
-  methods: {
-    async submit() {
-      return new Promise((r) => setTimeout(r, 2000))
-      alert('submitted successfully!')
-    },
-  },
-}
-</script>
 
 <style>
 .double {

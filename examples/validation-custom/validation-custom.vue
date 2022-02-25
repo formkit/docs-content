@@ -1,14 +1,3 @@
-<template>
-  <FormKit
-    type="text"
-    label="Weekend day"
-    validation="day:weekend"
-    :validation-rules="{ day }"
-    validation-visibility="live"
-    help="Enter a weekend day."
-  />
-</template>
-
 <script setup>
 function day(node, group = 'weekdays') {
   const dayNames = [
@@ -38,3 +27,14 @@ function day(node, group = 'weekdays') {
   }
 }
 </script>
+
+<template>
+  <FormKit
+    type="text"
+    label="Weekend day"
+    validation="day:weekend"
+    :validation-rules="{ day }"
+    validation-visibility="live"
+    help="Enter a weekend day."
+  />
+</template>

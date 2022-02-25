@@ -1,15 +1,4 @@
 <!-- %partial% -->
-<template>
-  <FormKit
-    label="U.S. State"
-    :type="autocomplete"
-    placeholder="Search for a state"
-    help="What is your favorite U.S. state?"
-    value="Virginia"
-    :options="stateList"
-  />
-</template>
-
 <script setup>
 import { createInput } from '@formkit/vue'
 
@@ -224,6 +213,17 @@ const stateList = [
   'Wyoming',
 ]
 </script>
+
+<template>
+  <FormKit
+    label="U.S. State"
+    :type="autocomplete"
+    placeholder="Search for a state"
+    help="What is your favorite U.S. state?"
+    value="Virginia"
+    :options="stateList"
+  />
+</template>
 <!-- %partial% -->
 
 <style>

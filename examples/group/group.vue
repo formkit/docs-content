@@ -1,45 +1,3 @@
-<template>
-  <!-- %partial%::html:: -->
-  <FormKit
-    type="group"
-    v-model="address"
-  >
-    <FormKit
-      type="text"
-      label="Street address"
-      name="street"
-      placeholder="Your street"
-      validation="required"
-    />
-    <FormKit
-      type="text"
-      label="City"
-      placeholder="Your city"
-      name="city"
-      validation="required"
-    />
-    <div class="double">
-      <FormKit
-        type="select"
-        label="State"
-        name="state"
-        placeholder="Your state"
-        :options="states"
-        validation="required"
-      />
-      <FormKit
-        type="text"
-        name="zip"
-        label="Zip"
-        placeholder="Your zip"
-        validation="required|number"
-      />
-    </div>
-  </FormKit>
-  <pre wrap>{{ address }}</pre>
-  <!-- %partial% -->
-</template>
-
 <script setup>
 import { ref } from 'vue'
 const address = ref({})
@@ -106,6 +64,48 @@ const states = {
     'WY': 'Wyoming'
 }
 </script>
+
+<template>
+  <!-- %partial%::html:: -->
+  <FormKit
+    type="group"
+    v-model="address"
+  >
+    <FormKit
+      type="text"
+      label="Street address"
+      name="street"
+      placeholder="Your street"
+      validation="required"
+    />
+    <FormKit
+      type="text"
+      label="City"
+      placeholder="Your city"
+      name="city"
+      validation="required"
+    />
+    <div class="double">
+      <FormKit
+        type="select"
+        label="State"
+        name="state"
+        placeholder="Your state"
+        :options="states"
+        validation="required"
+      />
+      <FormKit
+        type="text"
+        name="zip"
+        label="Zip"
+        placeholder="Your zip"
+        validation="required|number"
+      />
+    </div>
+  </FormKit>
+  <pre wrap>{{ address }}</pre>
+  <!-- %partial% -->
+</template>
 
 <style>
 .double {

@@ -1,10 +1,3 @@
-<template>
-  <FormKitSchema
-    :schema="schema"
-    :library="library"
-  />
-</template>
-
 <script setup>
 import { markRaw } from 'vue'
 
@@ -30,3 +23,10 @@ const schema = [
   }
 ]
 </script>
+
+<template>
+  <FormKitSchema
+    :schema="schema"
+    :library="library"
+  />
+</template>

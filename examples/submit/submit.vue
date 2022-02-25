@@ -1,3 +1,15 @@
+<script setup>
+const randomColor = (e) => {
+  const hex = Math
+    .floor(Math.random()*16777215)
+    .toString(16)
+  e.target.setAttribute(
+    'style',
+    'background-color: #' + hex
+  )
+}
+</script>
+
 <template>
   <!-- You can use the label prop -->
   <FormKit
@@ -23,15 +35,3 @@
     Click me!
   </FormKit>
 </template>
-
-<script setup>
-const randomColor = (e) => {
-  const hex = Math
-    .floor(Math.random()*16777215)
-    .toString(16)
-  e.target.setAttribute(
-    'style',
-    'background-color: #' + hex
-  )
-}
-</script>

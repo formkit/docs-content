@@ -1,4 +1,20 @@
 %partial%
+<script>
+export default {
+  data() {
+    return {
+      current: 'en',
+    }
+  },
+  methods: {
+    changeLocale() {
+      this.current = this.current === 'en' ? 'de' : 'en'
+      this.$formkit.setLocale(this.current)
+    },
+  },
+}
+</script>
+
 <template>
   <a @click.prevent="changeLocale" href="#">
     <span v-if="current === 'en'">🇩🇪 setLocale('de')</span>
@@ -17,22 +33,6 @@
     required for this example (submit, required, email).
   </small>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      current: 'en',
-    }
-  },
-  methods: {
-    changeLocale() {
-      this.current = this.current === 'en' ? 'de' : 'en'
-      this.$formkit.setLocale(this.current)
-    },
-  },
-}
-</script>
 %partial%
 
 <style>

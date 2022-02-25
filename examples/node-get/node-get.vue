@@ -1,3 +1,12 @@
+<script>
+export default {
+  mounted() {
+    const node = this.$formkit.get('manufacturer')
+    node.input('Samsung', false)
+  },
+}
+</script>
+
 <template>
   <FormKit
     type="select"
@@ -7,12 +16,3 @@
     help="Select your favorite tech manufacturer."
   />
 </template>
-
-<script>
-export default {
-  mounted() {
-    const node = this.$formkit.get('manufacturer')
-    node.input('Samsung', false)
-  },
-}
-</script>

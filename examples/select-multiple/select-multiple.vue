@@ -1,3 +1,8 @@
+<script setup>
+import { ref } from 'vue'
+const values = ref(['allergies'])
+</script>
+
 <template>
   <FormKit
     v-model="values"
@@ -15,8 +20,3 @@
   />
   <pre wrap>{{ values }}</pre>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-const values = ref(['allergies'])
-</script>

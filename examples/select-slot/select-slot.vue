@@ -1,3 +1,9 @@
+<script setup>
+import {ref} from 'vue'
+
+const value = ref('earth')
+</script>
+
 <template>
   <!-- %partial%::html:: -->
   <FormKit
@@ -22,9 +28,3 @@
   <pre wrap>{{ value }}</pre>
   <!-- %partial%::html:: -->
 </template>
-
-<script setup>
-import {ref} from 'vue'
-
-const value = ref('earth')
-</script>

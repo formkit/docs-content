@@ -1,8 +1,4 @@
 <!-- %partial% -->
-<template>
-  <FormKitSchema :data="data" :schema="schema" />
-</template>
-
 <script setup>
 const data = {
   field: 'Username',
@@ -29,6 +25,10 @@ const schema = [
   },
 ]
 </script>
+
+<template>
+  <FormKitSchema :data="data" :schema="schema" />
+</template>
 <!-- %partial% -->
 
 <style>

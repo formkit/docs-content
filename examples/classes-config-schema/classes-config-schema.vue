@@ -1,11 +1,3 @@
-<template>
-<div class="wrapper">
-  <FormKitSchema
-    :schema="schema"
-  />
-</div>
-</template>
-
 <script setup>
 import { FormKitSchema } from '@formkit/vue'
 
@@ -28,6 +20,14 @@ const schema = [
   }
 ]
 </script>
+
+<template>
+<div class="wrapper">
+  <FormKitSchema
+    :schema="schema"
+  />
+</div>
+</template>
 
 <style>
 .wrapper { display: flex; }

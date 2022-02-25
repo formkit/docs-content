@@ -1,3 +1,9 @@
+<script setup>
+const save = () => {
+  alert('Saved')
+}
+</script>
+
 <template>
 <!-- %partial%::html:: -->
   <FormKit
@@ -40,9 +46,3 @@
   </FormKit>
 <!-- %partial%::html:: -->
 </template>
-
-<script setup>
-const save = () => {
-  alert('Saved')
-}
-</script>

@@ -1,29 +1,3 @@
-<template>
-  <FormKit
-    v-if="!complete"
-    id="licenseForm"
-    type="form"
-    @submit="submitHandler"
-  >
-    <FormKit
-      type="text"
-      label="Full name"
-      help="Your full name as it appears on your license"
-      name="name"
-      validation="required"
-    />
-    <FormKit
-      type="file"
-      label="Drivers license"
-      name="license"
-      help="Please add a scan of your driver’s license"
-      accept=".jpg,.png,.pdf"
-      validation="required"
-    />
-  </FormKit>
-  <div v-else class="complete">License upload complete 👍</div>
-</template>
-
 <script setup>
 import { ref } from 'vue'
 import { setErrors } from '@formkit/vue'
@@ -53,3 +27,29 @@ const submitHandler = async (data) => {
   }
 }
 </script>
+
+<template>
+  <FormKit
+    v-if="!complete"
+    id="licenseForm"
+    type="form"
+    @submit="submitHandler"
+  >
+    <FormKit
+      type="text"
+      label="Full name"
+      help="Your full name as it appears on your license"
+      name="name"
+      validation="required"
+    />
+    <FormKit
+      type="file"
+      label="Drivers license"
+      name="license"
+      help="Please add a scan of your driver’s license"
+      accept=".jpg,.png,.pdf"
+      validation="required"
+    />
+  </FormKit>
+  <div v-else class="complete">License upload complete 👍</div>
+</template>

@@ -1,14 +1,3 @@
-<template>
-  <FormKit type="form" @submit="submitHandler">
-    <FormKit
-      name="username"
-      label="Username"
-      help="What username would you like?"
-      validation="required|length:5"
-    />
-  </FormKit>
-</template>
-
 <script setup>
 function submitHandler(data, node) {
   if (data.username !== 'formkit4life') {
@@ -25,3 +14,14 @@ function submitHandler(data, node) {
   }
 }
 </script>
+
+<template>
+  <FormKit type="form" @submit="submitHandler">
+    <FormKit
+      name="username"
+      label="Username"
+      help="What username would you like?"
+      validation="required|length:5"
+    />
+  </FormKit>
+</template>

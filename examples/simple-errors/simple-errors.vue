@@ -1,3 +1,11 @@
+<script setup>
+import { ref, computed } from 'vue'
+const fruit = ref('')
+const errors = computed(() => {
+  return fruit.value ? [`Sorry, we are sold out of ${fruit.value}`] : []
+})
+</script>
+
 <template>
   <FormKit
     type="select"
@@ -8,11 +16,3 @@
     :errors="errors"
   />
 </template>
-
-<script setup>
-import { ref, computed } from 'vue'
-const fruit = ref('')
-const errors = computed(() => {
-  return fruit.value ? [`Sorry, we are sold out of ${fruit.value}`] : []
-})
-</script>

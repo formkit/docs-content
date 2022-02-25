@@ -1,3 +1,12 @@
+<script setup>
+// Lets pretend this is an expensive API call.
+const username_exists = function ({ value }) {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(value === 'formkit-4-life'), 200)
+  })
+}
+</script>
+
 <template>
   <FormKit
     label="Username"
@@ -9,12 +18,3 @@
     }"
   />
 </template>
-
-<script setup>
-// Lets pretend this is an expensive API call.
-const username_exists = function ({ value }) {
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(value === 'formkit-4-life'), 200)
-  })
-}
-</script>

@@ -1,4 +1,15 @@
 <!-- %partial% -->
+<script setup>
+import { ref } from 'vue'
+import { createInput } from '@formkit/vue'
+import OneTimePassword from 'OneTimePassword.vue'
+
+const values = ref({})
+const otp = createInput(OneTimePassword, {
+  props: ['digits'],
+})
+</script>
+
 <template>
   <FormKit type="form" v-model="values">
     <FormKit
@@ -15,17 +26,6 @@
   <!-- This is just to help us visualize the data in our form: -->
   <pre wrap>{{ values }}</pre>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-import { createInput } from '@formkit/vue'
-import OneTimePassword from 'OneTimePassword.vue'
-
-const values = ref({})
-const otp = createInput(OneTimePassword, {
-  props: ['digits'],
-})
-</script>
 <!-- %partial% -->
 
 <style>

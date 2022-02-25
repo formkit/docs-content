@@ -1,24 +1,3 @@
-<template>
-  <div>
-    <div
-      class="source-content"
-      ref="source"
-    >
-      <!-- %partial%::html:: -->
-        <FormKit
-          type="text"
-          label="Your username"
-          value="calypso"
-          help="Pick a username people will remember!"
-        />
-        <!-- %partial%::html:: -->
-    </div>
-    <div class="output">
-      <pre v-html="output" />
-    </div>
-  </div>
-</template>
-
 <script>
 export default {
   data () {
@@ -55,6 +34,27 @@ export default {
   }
 }
 </script>
+
+<template>
+  <div>
+    <div
+      class="source-content"
+      ref="source"
+    >
+      <!-- %partial%::html:: -->
+        <FormKit
+          type="text"
+          label="Your username"
+          value="calypso"
+          help="Pick a username people will remember!"
+        />
+        <!-- %partial%::html:: -->
+    </div>
+    <div class="output">
+      <pre v-html="output" />
+    </div>
+  </div>
+</template>
 
 <style>
 html {
