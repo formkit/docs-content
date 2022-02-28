@@ -9,8 +9,10 @@ description: What's new in the latest version of FormKit?.
 
 #### 🎉 New features
 
+- Adds new `context.state.settled` property that signals when the input’s internal debounce cycle has ended and a value is finished being committed to the form.
 - Adds 🇮🇩 Indonesian (thanks @rama-adi)
 - Adds 🇮🇹 Italian (thanks @punga78)
+- Adds 🇵🇱 Polish (thanks @xxSkyy)
 - Adds 🇰🇷 Korean (thanks @bwp618)
 
 #### 🐛 Bug fixes

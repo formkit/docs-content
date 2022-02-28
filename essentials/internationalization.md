@@ -19,6 +19,7 @@ FormKit ships with internationalization support for all of its interfaces and va
 - 🇮🇹 Italian (it) - 🙏 &nbsp;@punga78
 - 🇰🇷 Korean (ko) - 🙏 &nbsp;@bwp618
 - 🇮🇷 Persian (fa) - 🙏 &nbsp;@shahabbasian
+- 🇵🇱 Polish (pl) - 🙏 &nbsp;@xxSkyy
 - 🇧🇷 Portuguese (pt) 🙏 &nbsp;@r-martins
 - 🇷🇺 Russian (ru) — 🙏 &nbsp;@andreimakushkin
 - 🇦🇷 Spanish (es) - 🙏 &nbsp;@inibg

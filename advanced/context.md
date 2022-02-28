@@ -35,6 +35,7 @@ A small object of utility functions that are useful when writing schemas.
   json: (value: any) => String | false,
 }
 ```
+
 </client-only>
 
 ## `handlers`
@@ -53,6 +54,7 @@ A small object of common input handlers for use in the schema. Keep in mind that
   DOMInput: (e: Event) => void
 }
 ```
+
 </client-only>
 
 ## `help`
@@ -100,6 +102,7 @@ An object of _visible_ messages (where the type is not `ui` — `ui`). The key 
   }
 }
 ```
+
 </client-only>
 
 ## `node`
@@ -125,6 +128,7 @@ For inputs that accept an options prop, this object is available to [section key
   }
 }
 ```
+
 </client-only>
 
 ## `state`
@@ -171,6 +175,11 @@ Current state of the input:
    */
   rules: boolean
   /**
+   * True when the input has completed its internal debounce cycle and the
+   * value was committed to the form.
+   */
+  settled: boolean
+  /**
    * If the form has been submitted.
    */
   submitted: boolean
@@ -187,6 +196,7 @@ Current state of the input:
   validationVisible: boolean
 }
 ```
+
 </client-only>
 
 ## `type`
