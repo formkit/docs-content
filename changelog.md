@@ -5,6 +5,16 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 1.0.0-beta.5
+
+#### 🎉 New features
+
+- Adds 🇮🇩 Indonesian (thanks @rama-adi)
+- Adds 🇮🇹 Italian (thanks @punga78)
+- Adds 🇰🇷 Korean (thanks @bwp618)
+
+#### 🐛 Bug fixes
+
 ## 1.0.0-beta.4
 
 ### February 22, 2022
@@ -66,7 +76,7 @@ description: What's new in the latest version of FormKit?.
 ### February 22, 2022
 
 - `beta.3` was going to be such a great release we decided to skip it and go straight to `beta.4` 👀 ! Only kidding. We had issues with npm and had to bump 🤦.
-  
+
 ## 1.0.0-beta.2
 
 ### February 3, 2022

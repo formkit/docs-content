@@ -15,6 +15,9 @@ FormKit ships with internationalization support for all of its interfaces and va
 - 🇫🇷 French (fr) — 🙏 &nbsp;@HoreKk
 - 🇩🇪 German (de) — 🙏 &nbsp;@digitalkaoz, @tosling
 - 🇮🇱 Hebrew (he) - 🙏 &nbsp;@Hepi420
+- 🇮🇩 Indonesian (id) - 🙏 &nbsp;@rama-adi
+- 🇮🇹 Italian (it) - 🙏 &nbsp;@punga78
+- 🇰🇷 Korean (ko) - 🙏 &nbsp;@bwp618
 - 🇮🇷 Persian (fa) - 🙏 &nbsp;@shahabbasian
 - 🇧🇷 Portuguese (pt) 🙏 &nbsp;@r-martins
 - 🇷🇺 Russian (ru) — 🙏 &nbsp;@andreimakushkin
@@ -50,6 +53,7 @@ app.use(
 )
 app.mount('#app')
 ```
+
 </client-only>
 
 ## Changing the active locale
@@ -108,6 +112,7 @@ app.use(
   })
 )
 ```
+
 </client-only>
 
 <callout type="tip" label="Message keys">
