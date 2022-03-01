@@ -20,7 +20,7 @@ npm install @formkit/themes
 ```
 </client-only>
 
-Then in your `main.js` (wherever you boot Vue up) include the Genesis `theme.css` (this assumes you are using a build tool like Vite, Webpack, Snopack, or Nuxt):
+Then in your `main.js` (wherever you boot Vue up) include the Genesis `theme.css` (this assumes you are using a build tool like Vite, Webpack, Snowpack, or Nuxt):
 
 <client-only>
 
@@ -44,9 +44,8 @@ You can use the above attributes to easily provide realtime visual feedback for 
 
 <example
 name="Appending classes"
-file="/\_content/examples/outer-data-attrs/outer-data-attrs.vue"
-
-> </example>
+file="/\_content/examples/outer-data-attrs/outer-data-attrs.vue">
+</example>
 
 ## Custom classes
 
