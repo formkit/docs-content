@@ -5,5 +5,8 @@ import config from './formkit.config.js' // our config with a custom RootClasses
 import './index.css' // whatever css includes your Tailwind setup
 
 createApp(App)
-  .use(plugin, defaultConfig(config))
+  .use(
+    plugin,
+    defaultConfig(config) // add our custom config to the default config
+  )
   .mount('#app')

@@ -18,7 +18,7 @@ const classConfig = {
   },
 }
 
-// We need a helper function to convert our final string into an object
+// We need a helper function to convert our strings into objects
 // because rootClasses must return a keyed object of booleans
 function createClassObject (classString) {
   const classList = {}

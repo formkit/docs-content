@@ -1,3 +1,7 @@
+// this is the same rootClasses.js from the previous example
+// with comments stripped out and all of the class definitions
+// imported from a separate file.
+
 import classConfig from './classConfig.js'
 
 function createClassObject (classString) {
