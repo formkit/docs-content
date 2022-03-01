@@ -9,6 +9,8 @@ description: What's new in the latest version of FormKit?.
 
 #### 🎉 New features
 
+- Groups, lists and forms can now apply `undefined` values to their children. In other words if a form is v-modeled and it's value is set to an empty object `{}` it will clear the entire form out.
+- Adds a new programmatic `reset` option. This can be done on any input, group, form, or list and it will restore the value back to it's initial state. It also resets the `context.state` object (like `blurred` and `dirty`).
 - Adds new `context.state.settled` property that signals when the input’s internal debounce cycle has ended and a value is finished being committed to the form.
 - Adds new `parent` prop that accepts a [core node](/advanced/core#node) for advanced use cases where inputs are decoupled from their form or data structure is desired.
 - Adds 🇮🇩 Indonesian (thanks @rama-adi)
