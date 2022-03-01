@@ -11,9 +11,25 @@ In this guide, we’ll walk through the process of creating a custom Tailwind th
 This guide assumes you are using a standard Vue 3 build tool like Vite, Nuxt 3, or Vue CLI that will allow you to import <code>.vue</code> single file components.
 </callout>
 
-## The FormKit defaults
+## Inline Usage
 
-Before we start with anything Tailwind specific it's important to understand how the default FormKit classes are applied. The `RootClasses` function is responsible for the assignment of bases classes to all FormKit elements — including all nested and wrapping markup.
+In the context of a `.vue` file that represents a component it's possible to create a tailwind theme using the `section-key` class props or the `classes` prop provided by FormKit.
+
+If your component represents your entire form and your project only has a requirement for a single form this may be all that you need to do. Here is an example of applying the same Tailwind classes to a FormKit `text` input using both the `section-key` props and the `classes` prop.
+
+<example
+  file="/_content/examples/guides/tailwind-theme/inline-usage/example.vue"
+  css-framework="tailwind"
+  :editable="true">
+</example>
+
+This is a low-barrier way to apply Tailwind styles to your FormKit forms, but what if you have multiple forms? Copy-pasting class lists between components is not ideal and will lead to inadvertent variations in styling across your project over time.
+
+Let's explore how we can apply Tailwind classes globally to _all_ FormKit inputs within our project.
+
+## Global FormKit defaults
+
+Before we start applying Tailwind specific global class lists it's important to first understand how the default FormKit classes are applied. The `RootClasses` function is responsible for the assignment of bases classes to all FormKit elements — including all nested and wrapping markup.
 
 The default `RootClasses` function is minimal and generates a `formkit-${section-key}` class for every DOM element within a FormKit input. It looks like this:
 
@@ -35,7 +51,7 @@ Here is what the markup a FormKit input of type `text` looks like when passing t
 
 If we provide our own RootClasses function to supply Tailwind utility classes instead of the default FormKit classes then we will be able to generate defaults for all input types across our entire project by branching on the `sectionKey` and `node` values of the `RootClasses` function each time it is called.
 
-## Set up a custom RootClasses function
+## Add custom rootClasses
 
 There are a few things we need to do in order to ready our FormKit project for Tailwind styling.
 
@@ -76,7 +92,7 @@ Here is the `text` input from the example above with Tailwind classes applied. T
   layout="column"
   :editable="true"></example>
 
-## Ramping up to a full theme
+## Creating a full theme
 
 Phew! That was a lot of boilerplate to get everything into the right place. But now that we have a system to work off of the rest will go more quickly.
 
@@ -100,11 +116,29 @@ Some form elements such as the button for a <code>file</code> input and the inte
   layout="auto"
   :editable="true"></example>
 
-## Next Steps
+## Selective overrides
 
 And there we have it! All of our FormKit core inputs are styled with Tailwind utility classes across our entire project.
 
-If we need to override any specific one-offs we can do so using the [Section-key class props](/essentials/styling#section-key-class-props) on a given `FormKit` input within our project.
+If we need to override any specific one-offs within our project we can do so using the [section-key class props](/essentials/styling#section-key-class-props) or the [classes](/essentials/styling#classes-prop) prop on a given `FormKit` input within our project which was covered in the opening section of this guide.
+
+Of particular importance when doing an override is the special [`$reset` modifier](/essentials/styling#resetting-classes) for class lists. When the FormKit class system encounters a `$reset` class it will erase the current class list for the given section key and only collect class names that occur after the `$reset` token was encountered. This is valuable in a system like Tailwind where it would be painful to have to write override classes or individually disable classes for every globally configured class when deviating from our theme.
+
+<example
+  :file="[
+    '/_content/examples/guides/tailwind-theme/override/example.vue',
+    '/_content/examples/guides/tailwind-theme/override/formkit.config.js',
+    '/_content/examples/guides/tailwind-theme/override/rootClasses.js',
+    '/_content/examples/guides/tailwind-theme/override/classConfig.js',
+  ]"
+  init-file-tab="example.vue"
+  css-framework="tailwind"
+  layout="auto"
+  :editable="true"></example>
+
+## Next Steps
+
+This guide has walked through creating a Tailwind theme that covers all input types included in FormKit core, but there's still more that could be done in your own project.
 
 Here are some ways to take the above guide even further:
 
