@@ -38,17 +38,28 @@ This is especially helpful if the arguments being provided need to be actual Jav
 
 ## Showing errors
 
-Validation rules are always computed in realtime — meaning a given field will always be either valid or invalid (it is considered invalid while pending async validation rules run). However — the visibility of the validation errors is determined by the `validation-visibility` prop.
+Validation rules are always computed in realtime — meaning a given field will always be either valid or invalid (it is considered invalid while pending async validation rules run). However — the _visibility_ of the validation errors is determined by the `validation-visibility` prop.
 
-| Behavior | Description                                                            |
-| -------- | ---------------------------------------------------------------------- |
-| blur     | _(Default)_ Errors are shown after a user removes focus from an input. |
-| live     | Errors are always visible.                                             |
-| dirty    | Shown after a user modifies the value of an input.                     |
+| Visibility | Description                                                            |
+| ---------- | ---------------------------------------------------------------------- |
+| blur       | _(Default)_ Errors are shown after a user removes focus from an input. |
+| live       | Errors are always visible.                                             |
+| dirty      | Errors are shown after a user modifies the value of an input.          |
+| submit     | Errors are shown only after a user attempts to submit a form.          |
 
 <callout type="info" label="Form submission">
 If an input is inside a <a href="/essentials/forms">form</a>, then <em>any</em> remaining validation messages will be displayed to the end user when a user attempts to submit the form.
 </callout>
+
+### Setting validation visibility for an entire group
+
+Due to FormKit's config inheritance, you can set `validation-visibility` at a `form`, `group`, or `list` level by using the `config` prop, which you can still override on an input-by-input basis:
+
+<example
+  name="Validation Visibility"
+  file="/_content/examples/validation-visibility/validation-visibility.vue"
+  layout="auto">
+</example>
 
 ## Rule hints
 
