@@ -159,7 +159,7 @@ Because <code>rootClasses</code> is a configuration option, you can apply it per
 
 ## Tailwind CSS example
 
-Want to use Tailwind with FormKit? We've written a guide walking through the process using both inline class props as well as configuring a global theme using the `rootClasses` function.
+Want to use Tailwind with FormKit? We've written a guide walking through the process using both inline class props as well as configuring a global theme using the `rootClasses` function:
 
 <cta label="Guide: Create a Tailwind CSS theme" button="Read now" href="/guides/create-a-tailwind-theme"></cta>
 ## Modifying classes within schema
