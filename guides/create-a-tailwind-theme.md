@@ -77,9 +77,9 @@ This is the basic structure required to get our custom classes into a FormKit el
 
 To start, let's apply some sensible classes to a `text` style input. This will cover a large surface area because we'll easily be able to extend these styles to other text-like inputs such as `email`, `password`, `date`, etc.
 
-To specifically target `text` inputs, we'll make use of the data available to us in `rootClasses` function via the provided `node` argument. We'll define class lists in nested objects that represent all the Tailwind classes we want for each `sectionKey` in our input based on the `type` of said input. The end goal will be to have a single file with an easily-editable class lists for all sections within any given input type.
+To specifically target `text` inputs, we'll make use of the data available to us in the `rootClasses` function via the provided `node` argument. We'll define class lists in nested objects that represent all the Tailwind classes we want for each `sectionKey` in our input based on the `type` of said input. The end goal will be to have a single file with an easily-editable class list for all sections within any given input type.
 
-Here is the `text` input from the example above with Tailwind classes applied. The source code is heavily commented to explain what's happening at each step:
+Here is the `text` input from the above example with Tailwind classes applied. The source code is heavily commented to explain what's happening at each step:
 
 <example
   :file="[
