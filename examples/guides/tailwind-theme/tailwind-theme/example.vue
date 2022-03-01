@@ -15,7 +15,7 @@ const inputOptions = {
     :type="type"
     :placeholder="`${type} input placeholder`"
     :options="inputOptions[type] ? inputOptions[type] : null"
-    :help="`help text for the ${type} input`"
+    :help="`Help text for the ${type} input`"
     :multiple="type === 'file'"
     validation="required"
     :validation-label="type"
