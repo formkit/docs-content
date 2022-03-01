@@ -33,11 +33,11 @@ createApp(App).use(plugin, defaultConfig).mount('#app')
 
 </client-only>
 
-<callout type="tip" label="Default theme">
-If you’d like to install Genesis — the default FormKit theme — please follow the installation instructions on <a href="/essentials/styling">the styling documentation</a>.
-</callout>
-
 That's it! You're now ready to use the `<FormKit>` component in your Vue application. The `defaultConfig` includes all of FormKit's inputs, validation rules, and the English language. You can replace the `defaultConfig` with your own configuration, which allows for improved tree-shaking (only include the rules and languages you want to actually use) and more fine-grained control.
+
+<callout type="tip" label="next">
+You can install the upcoming version of FormKit (unstable) anytime by opting to installing the "next" version tag: <code>npm install @formkit/vue@next</code>
+</callout>
 
 <callout type="warning" label="Vue 2">
 FormKit only supports Vue 3. If you're required to use Vue 2 on a project, consider using the spiritual ancestor of FormKit — <a href="https://vueformulate.com" target="_blank">Vue Formulate</a>.
@@ -110,7 +110,7 @@ For TypeScript users, it can be helpful to type your `formkit.config.ts` export 
 
 <client-only>
 
-```ts
+```js
 // formkit.config.ts
 import { fr } from '@formkit/i18n'
 import { DefaultConfigOptions } from '@formkit/vue'
@@ -150,6 +150,44 @@ That's it! FormKit is ready to use and — if you read this far — specifically
 <callout type="warning" label="Nuxt 2">
 FormKit only supports Nuxt 3. If you're required to use Nuxt 2 on a project, consider using the spiritual ancestor of FormKit — <a href="https://vueformulate.com" target="_blank">Vue Formulate</a> — which also ships with its own Nuxt module.
 </callout>
+
+## Default theme
+
+The default FormKit theme (called "genesis") can be added by installing the `@formkit/themes` package:
+
+<client-only>
+
+```sh
+npm install @formkit/themes
+```
+
+</client-only>
+
+Assuming you are using a bundler like Vite, Webpack or Nuxt — you can then directly import the theme:
+
+<client-only>
+
+```js
+// main.js or formkit.config.ts
+import '@formkit/themes/genesis'
+```
+
+</client-only>
+
+If you prefer to reference the css file on a CDN you can do so:
+
+<client-only>
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@formkit/themes@next/dist/genesis/theme.css"
+/>
+```
+
+</client-only>
+
+<cta label="Using Tailwind or another utility framework?" href="/essentials/styling" button="Styling docs"></cta>
 
 ## Starter Project
 
