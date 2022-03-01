@@ -33,10 +33,10 @@ function createClassObject (classString) {
 function rootClasses (sectionKey, node) {
   // grab the node `type` for easy reference
   const type = node.props.type
-  // get a matching class string from our classConfig object below
+  // get a matching class string from our classConfig object
   // if it exists. Otherwise return an empty
   const definitionClasses = classConfig[type] ? classConfig[type][sectionKey] : ''
-  // similarly get any matching "all" class lists that should be concatinated
+  // similarly get any matching "all" class lists that should be concatenated
   const allClasses = classConfig.all[sectionKey] || ''
   // combine the two class strings into a single string
   const classList = allClasses ? `${allClasses} ${definitionClasses}` : definitionClasses

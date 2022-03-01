@@ -1,8 +1,8 @@
 <template>
-  <!-- using section-schema class props -->
+  <!-- using section-key class props -->
   <FormKit
     type="text"
-    label="Section Schema Props"
+    label="Section-key class props"
     help="Look, Ma! Tailwind styles"
     outer-class="mb-5"
     label-class="block mb-1 font-bold text-sm"
@@ -13,7 +13,7 @@
   <!-- using the classes prop -->
   <FormKit
     type="text"
-    label="Classes Prop"
+    label="Classes prop"
     help="Look, Ma! Tailwind styles"
     :classes="{
       outer: 'mb-5',

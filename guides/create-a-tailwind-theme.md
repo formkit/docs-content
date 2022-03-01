@@ -11,11 +11,11 @@ In this guide, we’ll walk through the process of creating a custom Tailwind th
 This guide assumes you are using a standard Vue 3 build tool like Vite, Nuxt 3, or Vue CLI that will allow you to import <code>.vue</code> single file components.
 </callout>
 
-## Inline Usage
+## Inline usage
 
-In the context of a `.vue` file that represents a component it's possible to create a tailwind theme using the `section-key` class props or the `classes` prop provided by FormKit.
+In the context of a `.vue` file that represents a component, it's possible to create a Tailwind theme using the `section-key` [class props](/essentials/styling#section-key-class-props) or the `classes` [prop](/essentials/styling#classes-prop) provided by FormKit.
 
-If your component represents your entire form and your project only has a requirement for a single form this may be all that you need to do. Here is an example of applying the same Tailwind classes to a FormKit `text` input using both the `section-key` props and the `classes` prop.
+If your component represents your entire form and your project only requires a single form, this may be all that you need. Here is an example of applying the same Tailwind classes to a FormKit `text` input using both the `section-key` props and the `classes` prop:
 
 <example
   file="/_content/examples/guides/tailwind-theme/inline-usage/example.vue"
@@ -39,7 +39,7 @@ The default `rootClasses` function is minimal and generates a `formkit-${section
   :editable="false">
 </example>
 
-The `rootClasses` function is called for every DOM node within a FormKit component and expects a return value of an object with `true` or `false` values, which enable / disable classes.
+The `rootClasses` function is called for every DOM node within a FormKit component and expects a return value of an object with `true` or `false` values, which enable and disable classes.
 
 Here is what the markup of a FormKit input of type `text` looks like when passing through the above default `rootClasses` function.
 
@@ -53,13 +53,13 @@ If we provide our own `rootClasses` function to supply Tailwind utility classes 
 
 ## Add custom rootClasses
 
-There are a few things we need to ready our FormKit project for Tailwind styling.
+There are a few things we need to prepare our FormKit project for Tailwind styling:
 
 - Ensure that we are not importing any base FormKit theme such as `genesis`.
 - Include Tailwind in our project so that our applied classes take effect.
 - Create a custom `rootClasses` function and supply it to FormKit so that we can target specific inputs and their sub-markup with Tailwind classes.
 
-To create a custom `rootClasses` function create a FormKit config object that has a `config.rootClasses` function and supply it to FormKit's `defaultConfig` function as an override when registering FormKit with Vue:
+To create a custom `rootClasses` function, create a FormKit config object that has a `config.rootClasses` function and supply it to FormKit's `defaultConfig` function as an override when registering FormKit with Vue:
 
 <example
   :file="[
@@ -79,7 +79,7 @@ To start, let's apply some sensible classes to a `text` style input. This will c
 
 To specifically target `text` inputs, we'll make use of the data available to us in `rootClasses` function via the provided `node` argument. We'll define class lists in nested objects that represent all the Tailwind classes we want for each `sectionKey` in our input based on the `type` of said input. The end goal will be to have a single file with an easily-editable class lists for all sections within any given input type.
 
-Here is the `text` input from the example above with Tailwind classes applied. The source code is heavily commented to explain what's happening at each step.
+Here is the `text` input from the example above with Tailwind classes applied. The source code is heavily commented to explain what's happening at each step:
 
 <example
   :file="[
@@ -136,7 +136,7 @@ Of particular importance when doing an override is the special [`$reset` modifie
   layout="auto"
   :editable="true"></example>
 
-## Next Steps
+## Next steps
 
 This guide has walked through creating a Tailwind theme that covers all input types included in FormKit core, but there's still more that could be done in your own project.
 
