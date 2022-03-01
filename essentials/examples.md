@@ -5,6 +5,8 @@ description: Examples you can use in your project today.
 
 # Examples
 
+A broad collection of examples with working code you can use in your project today.
+
 ## Forms
 
 <ExampleCard
@@ -41,6 +43,12 @@ description: Examples you can use in your project today.
   href="https://formkit.link/7bfec79f1a5dc009b079e4b4823e92df"
   title="Add transitions to validation messages">
     Add transitions to validation messages by injecting a Vue <code>TransitionGroup</code> component using FormKit's <code>:sections-schema</code>. 
+</ExampleCard>
+
+<ExampleCard
+  href="https://stackblitz.com/edit/github-vqvsuh"
+  title="Starter project with Nuxt, FormKit, and Tailwind">
+    A working starter project on StackBlitz with Nuxt, FormKit and Tailwind CSS.
 </ExampleCard>
 
 
