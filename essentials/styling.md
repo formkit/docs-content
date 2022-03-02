@@ -57,7 +57,7 @@ Classes can be modified for all [sections](/essentials/inputs#sections) using an
 - [The `{section-key}-class` props](#section-key-class-props). (most specific)
 - [The `classes` prop](#classes-prop).
 - [The `classes` configuration option](#classes-configuration).
-- [The `rootClasses` configuration function](#root-classes-function). (least specific)
+- [The `rootClasses` configuration function](#the-rootclasses-function). (least specific)
 
 The classes follow a strict hierarchy. Initially, classes are produced by the `rootClasses` function. They can then be modified by the `classes` configuration option, then by the `classes` prop, and finally by the `{section-key}-class` prop. At each of these stages classes can be [appended](#appending-classes), [reset](#resetting-classes), or [selectively modified](#removing-classes).
 
