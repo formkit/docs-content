@@ -100,10 +100,6 @@ We'll use the same pattern above for each of the other input types we need to st
 
 Let's create a "Kitchen Sink" of input types, each having their defined class lists applied. Additionally, we'll further break up our files into separate imports to assist with readability.
 
-<callout type="warning" label="Tailwind and Pseudo-elements">
-Some form elements such as the button for a <code>file</code> input and the internals of the <code>color</code> input are not directly accessible via DOM nodes that can have classes applied. In the example below please note the global styles in the <code>example.vue</code> file that compliment the Tailwind class lists.
-</callout>
-
 <example
   :file="[
     '/_content/examples/guides/tailwind-theme/tailwind-theme/example.vue',

@@ -26,7 +26,7 @@ export default {
   button: buttonClassification,
   color: {
     label: 'block mb-1 font-bold text-sm',
-    input: 'w-16 h-8 appearance-none border border-gray-300 rounded-md mb-2 p-1'
+    input: 'w-16 h-8 appearance-none cursor-pointer border border-gray-300 rounded-md mb-2 p-1'
   },
   date: textClassification,
   'datetime-local': textClassification,
@@ -34,8 +34,8 @@ export default {
   email: textClassification,
   file: {
     label: 'block mb-1 font-bold text-sm',
-    inner: 'max-w-md',
-    input: 'block w-full mb-1 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer focus:outline-none focus:border-blue-500',
+    inner: 'max-w-md cursor-pointer',
+    input: 'text-gray-600 text-sm mb-1 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:bg-blue-500 file:text-white hover:file:bg-blue-600',
     noFiles: 'block text-gray-800 text-sm mb-1',
     fileItem: 'block flex text-gray-800 text-sm mb-1',
     removeFiles: 'ml-auto text-blue-500 text-sm'

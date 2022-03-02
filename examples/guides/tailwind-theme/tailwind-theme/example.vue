@@ -21,21 +21,3 @@ const inputOptions = {
     :validation-label="type"
   />
 </template>
-
-<style>
-/* some styling for pseudo-elements requires
-us to use @apply rules to reach them */
-
-input[type="color"]::-webkit-color-swatch-wrapper {
-  @apply p-0;
-}
-input[type="color"]::-webkit-color-swatch {
-  @apply border-none rounded-sm;
-}
-input[type='file']::-webkit-file-upload-button,
-input[type='file']::file-selector-button {
-  @apply text-white bg-blue-500 hover:bg-blue-600 font-medium text-sm cursor-pointer border-0 py-3 pl-8 pr-5;
-  margin-inline-start: -1rem;
-  margin-inline-end: 1rem;
-}
-</style>
