@@ -51,5 +51,11 @@ A broad collection of examples with working code you can use in your project tod
     A working starter project on StackBlitz with Nuxt, FormKit and Tailwind CSS.
 </ExampleCard>
 
+<ExampleCard
+  href="https://formkit.link/882b4192c1e0c50c0ca0b1e029a6fcea"
+  title="Produce dynamic classes based on an input's state">
+    Use the <code>rootClasses</code> config function and FormKit props to produce a dynamic classes based on input state. Helpful for Tailwind and other CSS utility libraries.
+</ExampleCard>
+
 
 
