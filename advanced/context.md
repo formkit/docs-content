@@ -35,6 +35,7 @@ A small object of utility functions that are useful when writing schemas.
   json: (value: any) => String | false,
 }
 ```
+
 </client-only>
 
 ## `handlers`
@@ -53,6 +54,7 @@ A small object of common input handlers for use in the schema. Keep in mind that
   DOMInput: (e: Event) => void
 }
 ```
+
 </client-only>
 
 ## `help`
@@ -75,12 +77,13 @@ An object of _visible_ messages (where the type is not `ui` — `ui`). The key 
 
 ```js
 {
-  required_rule: {
+  rule_required: {
     // Determines if the message prevents form submission
     blocking: true,
     // The unique key of this message
-    key: 'required_rule',
-    // Additional details about the message
+    key: 'rule_required',
+    // Additional details about the message, you can put anything in here.
+    // Below are the meta details for validation messages:
     meta: {
       // The name of the validation message (used in message lookups)
       messageKey: 'required',
@@ -95,11 +98,15 @@ An object of _visible_ messages (where the type is not `ui` — `ui`). The key 
     type: 'validation',
     // The value of the message
     value: 'Email is required',
-    // If this is a visible message (displayed to end users)
+    // If this message is intended to be displayed to end users — this does not
+    // mean the message is actively visible — that is determined by the
+    // {type}-visibility rules, but if this is false, it is never displayed to
+    // users.
     visible: true
   }
 }
 ```
+
 </client-only>
 
 ## `node`
@@ -125,6 +132,7 @@ For inputs that accept an options prop, this object is available to [section key
   }
 }
 ```
+
 </client-only>
 
 ## `state`
@@ -187,6 +195,7 @@ Current state of the input:
   validationVisible: boolean
 }
 ```
+
 </client-only>
 
 ## `type`
