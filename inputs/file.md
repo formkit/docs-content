@@ -51,5 +51,11 @@ The `file` input has no unique props but the native HTML input does have a numbe
 
 ## Section keys
 
-<reference-table type="sectionKeys" primary="section-key">
+<reference-table type="sectionKeys" primary="section-key" :data="[
+  {'section-key': 'fileList', description: 'A wrapper for the whole list of files.'},
+  {'section-key': 'fileItem', description: 'An element containing the fileName and remove action for each file.'},
+  {'section-key': 'fileName', description: 'The element containing the name of a file.'},
+  {'section-key': 'removeFiles', description: 'The element that removes a file from the list.'},
+  {'section-key': 'noFiles', description: 'The element shown when there are no files selected.'}
+  ]">
 </reference-table>
