@@ -7,23 +7,26 @@ description: Translate FormKit UI and validation messages into supported languag
 
 FormKit ships with internationalization support for all of its interfaces and validation messages. Currently, FormKit supports the following languages (in the `@formkit/i18n` package):
 
-- 🇨🇳 Chinese (zh) — 🙏 &nbsp;@myleslee
-- 🇭🇷 Croatian (hr) - 🙏 &nbsp;@antemarkic
-- 🇳🇱 Dutch (nl) — 🙏 &nbsp;@arjendejong12
-- 🇺🇸 English (en) - 🙏 &nbsp;
-- 🇫🇮 Finish - (fi) - 🙏 &nbsp;@mihqusta
-- 🇫🇷 French (fr) — 🙏 &nbsp;@HoreKk
-- 🇩🇪 German (de) — 🙏 &nbsp;@digitalkaoz, @tosling
-- 🇮🇱 Hebrew (he) - 🙏 &nbsp;@Hepi420
-- 🇮🇩 Indonesian (id) - 🙏 &nbsp;@rama-adi
-- 🇮🇹 Italian (it) - 🙏 &nbsp;@punga78
-- 🇰🇷 Korean (ko) - 🙏 &nbsp;@bwp618
-- 🇮🇷 Persian (fa) - 🙏 &nbsp;@shahabbasian
-- 🇵🇱 Polish (pl) - 🙏 &nbsp;@xxSkyy
-- 🇧🇷 Portuguese (pt) 🙏 &nbsp;@r-martins
-- 🇷🇺 Russian (ru) — 🙏 &nbsp;@andreimakushkin
-- 🇦🇷 Spanish (es) - 🙏 &nbsp;@inibg
-- 🇹🇷 Turkish (tr) - 🙏 &nbsp;@ragokan
+- 🇱🇾 Arabic (ar) - 🙏&nbsp;@Ahmedelforjani
+- 🇨🇳 Chinese (zh) — 🙏&nbsp;@myleslee
+- 🇭🇷 Croatian (hr) - 🙏&nbsp;@antemarkic
+- 🇩🇰 Danish (da) - 🙏&nbsp;@bjerggaard
+- 🇳🇱 Dutch (nl) — 🙏&nbsp;@arjendejong12
+- 🇺🇸 English (en) - 🙏&nbsp;
+- 🇫🇮 Finish - (fi) - 🙏&nbsp;@mihqusta
+- 🇫🇷 French (fr) — 🙏&nbsp;@HoreKk, @pop123123123
+- 🇩🇪 German (de) — 🙏&nbsp;@digitalkaoz, @tosling
+- 🇮🇱 Hebrew (he) - 🙏&nbsp;@Hepi420
+- 🇮🇩 Indonesian (id) - 🙏&nbsp;@rama-adi
+- 🇮🇹 Italian (it) - 🙏&nbsp;@punga78, @Archetipo95
+- 🇰🇷 Korean (ko) - 🙏&nbsp;@bwp618, @titusdecali
+- 🇮🇷 Persian (fa) - 🙏&nbsp;@shahabbasian
+- 🇵🇱 Polish (pl) - 🙏&nbsp;@xxSkyy
+- 🇧🇷 Portuguese (pt) 🙏&nbsp;@r-martins
+- 🇷🇺 Russian (ru) — 🙏&nbsp;@andreimakushkin
+- 🇦🇷 Spanish (es) - 🙏&nbsp;@inibg
+- 🇹🇷 Turkish (tr) - 🙏&nbsp;@ragokan
+- 🇻🇳 Vietnamese (vi) - 🙏&nbsp;@oanhnn
 
 Although flags are <a href="http://www.flagsarenotlanguages.com/blog/why-flags-do-not-represent-language/">poor representations of languages</a> (flags indicate a geographic nation, while languages can be spoken in many ares of the world), we use the flags in the list above to indicate the location of the contributor who created that particular locale.
 

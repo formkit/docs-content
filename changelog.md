@@ -7,20 +7,32 @@ description: What's new in the latest version of FormKit?.
 
 ## 1.0.0-beta.5
 
+#### ⚠️ Breaking changes
+
+- The `data-loading` attribute has been moved from the submit button of a form to the `<form>` tag itself.
+
 #### 🎉 New features
 
-- Adds a new programmatic `reset` option. This can be done on any input, group, form, or list and it will restore the value back to it's initial state. It also resets the `context.state` object (like `blurred` and `dirty`).
+- Adds a [new programmatic `reset` function](/essentials/forms#resetting). This can be done on any input, group, form, or list and it will restore the value back to it's initial state. It also resets the `context.state` object (like `blurred` and `dirty`).
+- Improves accessibility by adding `aria-describedby` and `aria-live` for all provided input types. Aria described by now targets help text, validation messages, and error messages (labeling provided by `<label>` tags that use the `for` attribute).
 - Groups, lists and forms can now apply `undefined` values to their children. In other words if a form is v-modeled and it's value is set to an empty object `{}` it will clear the entire form out.
 - Adds new `context.state.settled` property that signals when the input’s internal debounce cycle has ended and a value is finished being committed to the form.
+- Adds `data-submitted` attribute to inputs that have been submitted.
+- Adds new section key `fileName` (thanks @santi)
 - Adds new `parent` prop that accepts a [core node](/advanced/core#node) for advanced use cases where inputs are decoupled from their form or data structure is desired.
+- Adds 🇱🇾 Arabic (thanks @Ahmedelforjani)
+- Adds 🇩🇰 Danish (thanks @bjerggaard)
 - Adds 🇮🇩 Indonesian (thanks @rama-adi)
-- Adds 🇮🇹 Italian (thanks @punga78)
+- Adds 🇮🇹 Italian (thanks @punga78, @Archetipo95)
 - Adds 🇵🇱 Polish (thanks @xxSkyy)
 - Adds 🇰🇷 Korean (thanks @bwp618)
+- Adds 🇻🇳 Vietnamese (thanks @oanhnn)
+- Improved 🇫🇷 French (thanks @pop123123123)
 
 #### 🐛 Bug fixes
 
 - Fixes a bug that could cause validation errors to flash for 20ms before resolving when using browser autocomplete ([#99](https://github.com/formkit/formkit/issues/99)).
+- Fixes a bug that caused class props (like `input-class`) inside schemas to not properly respect the `$reset` command because it was treated like a variable ([#61](https://github.com/formkit/formkit/issues/61)).
 
 ## 1.0.0-beta.4
 
