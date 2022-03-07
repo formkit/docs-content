@@ -27,87 +27,139 @@ This is a low-barrier way to apply Tailwind styles to your FormKit forms, but wh
 
 Let's explore how we can apply Tailwind classes globally to _all_ FormKit inputs within our project.
 
-## Global FormKit defaults
+## Using @formkit/tailwindcss
 
-Before we begin with anything Tailwind specific, it's important to understand how the default FormKit classes are applied. The `rootClasses` function assigns base classes to all FormKit elements — including all nested and wrapping markup.
+FormKit ships a first-party package `@formkit/tailwindcss` that makes it simple to create a Tailwind theme for FormKit in your project.
 
-The default `rootClasses` function is minimal and generates a `formkit-${section-key}` class for every DOM element within a FormKit input. It looks like this:
+The plugin enables you to author your theme as a javascript object grouped by input `type` and `sectionKey`. Additionally, it exposes a number of Tailwind variants based on input and form state such as `formkit-invalid:` and `formkit-disabled:` which allow you to dynamically change your input styling.
 
-<example
-  file="/_content/examples/guides/tailwind-theme/default-root-classes/formkit.config.js"
-  mode="editor"
-  :editable="false">
-</example>
+To get started we need to add the package to our project.
 
-The `rootClasses` function is called for every DOM node within a FormKit component and expects a return value of an object with `true` or `false` values, which enable and disable classes.
+<client-only>
 
-Here is what the markup of a FormKit input of type `text` looks like when passing through the above default `rootClasses` function.
+```bash
+npm install @formkit/tailwindcss
+```
+</client-only>
 
-<example
-  file="/_content/examples/guides/tailwind-theme/default-root-classes/default-text-input.vue"
-  tabs="html"
-  layout="column">
-</example>
+From there we need to do two things:
 
-If we provide our own `rootClasses` function to supply Tailwind utility classes — instead of the default FormKit classes — then we will be able to generate defaults for all input types across our entire project by branching on the `sectionKey` and `node` values of the `rootClasses` function each time it is called.
+- Add the `@formkit/tailwindcss` plugin to our project's `tailwind.config.js` file.
+- Import `generateClasses` from `@formkit/tailwindcss` and use it where we define our FormKit config options.
 
-## Add custom rootClasses
 
-There are a few things we need to prepare our FormKit project for Tailwind styling:
+<client-only>
 
-- Ensure that we are not importing any base FormKit theme such as `genesis`.
-- Include Tailwind in our project so that our applied classes take effect.
-- Create a custom `rootClasses` function and supply it to FormKit so that we can target specific inputs and their sub-markup with Tailwind classes.
+```js
+// tailwind.config.js
+module.exports {
+  ...
+  plugins: [
+    require('@formkit/tailwindcss')
+  ]
+  ...
+}
+```
 
-To create a custom `rootClasses` function, create a FormKit config object that has a `config.rootClasses` function and supply it to FormKit's `defaultConfig` function as an override when registering FormKit with Vue:
+```js
+// app.js
+import { createApp } from 'vue'
+import App from './App.vue'
+import { plugin, defaultConfig } from '@formkit/vue'
+import { generateClasses } from '@formkit/tailwindcss'
+import '../dist/index.css' // wherever your Tailwind styles exist
 
-<example
-  :file="[
-    '/_content/examples/guides/tailwind-theme/custom-root-classes/app.js',
-    '/_content/examples/guides/tailwind-theme/custom-root-classes/formkit.config.js',
-    '/_content/examples/guides/tailwind-theme/custom-root-classes/tailwind.config.js'
-  ]"
-  mode="editor"
-  init-file-tab="app.js"
-  :editable="false"></example>
+createApp(App)
+  .use(plugin, defaultConfig({
+    config: {
+      classes: generateClasses({
+        // our theme will go here.
+        // ...
+        // text: {
+        //   label: 'font-bold text-gray-300',
+        //   ...
+        // }
+        // ...
+      })
+    }
+  }))
+  .mount('#app')
+```
+</client-only>
 
-This is the basic structure required to get our custom classes into a FormKit element's markup and ensure that applied Tailwind classes take effect. Next, we'll start with getting our desired Tailwind styling onto a `text` element and ramp up from there.
+Once this setup is complete we are ready to begin writing our Tailwind theme!
 
 ## Our first Tailwind input
 
-To start, let's apply some sensible classes to a `text` style input. This will cover a large surface area because we'll easily be able to extend these styles to other text-like inputs such as `email`, `password`, `date`, etc.
+To start, let's apply some sensible classes to a `text` style input. This will cover a large surface area because we'll easily re-use these styles to other text-like inputs such as `email`, `password`, `date`, etc.
 
-To specifically target `text` inputs, we'll make use of the data available to us in the `rootClasses` function via the provided `node` argument. We'll define class lists in nested objects that represent all the Tailwind classes we want for each `sectionKey` in our input based on the `type` of said input. The end goal will be to have a single file with an easily-editable class list for all sections within any given input type.
+To specifically target `text` inputs we'll create a `text` key in our theme object and then apply classes to each `sectionKey` as needed.
 
-Here is the `text` input from the above example with Tailwind classes applied. The source code is heavily commented to explain what's happening at each step:
+Here is a `text` input with Tailwind classes applied:
 
 <example
   :file="[
     '/_content/examples/guides/tailwind-theme/tailwind-text-input/example.vue',
     '/_content/examples/guides/tailwind-theme/tailwind-text-input/formkit.config.js',
-    '/_content/examples/guides/tailwind-theme/tailwind-text-input/rootClasses.js',
+    '/_content/examples/guides/tailwind-theme/tailwind-text-input/tailwind.config.js'
   ]"
-  init-file-tab="rootClasses.js"
+  init-file-tab="formkit.config.js"
+  css-framework="tailwind"
+  layout="column"
+  :editable="true"></example>
+
+## Using variants
+
+The `@formkit/tailwindcss` provides a number of variants you can use in your class lists to dynamically respond to input and form state.
+
+The currently provided variants are:
+
+- `formkit-disabled:`
+- `formkit-invalid:`
+- `formkit-errors:`
+- `formkit-complete:`
+- `formkit-loading:`
+- `formkit-submitted:`
+- `formkit-multiple:`
+- `formkit-action:`
+- `formkit-message-validation:`
+- `formkit-message-error:`
+
+You use these variants in the same way you use the built-in Tailwind variants such as `dark:` and `hover:`.
+
+Let's add some variants for `formkit-invalid` and `formkit-disabled` to our text input.
+
+<example
+  :file="[
+    '/_content/examples/guides/tailwind-theme/tailwind-variants/example.vue',
+    '/_content/examples/guides/tailwind-theme/tailwind-variants/formkit.config.js',
+    '/_content/examples/guides/tailwind-theme/tailwind-variants/tailwind.config.js'
+  ]"
+  init-file-tab="formkit.config.js"
   css-framework="tailwind"
   layout="column"
   :editable="true"></example>
 
 ## Creating a full theme
 
-Phew! That was a lot of boilerplate to get everything into the right place. But now that we have a system to work off of, the rest will go more quickly.
+Now we're cooking! To create a comprehensive theme all we need to do is define class lists for the `sectionKeys` of all the other input types we'll use in our project.
 
-We'll use the same pattern above for each of the other input types we need to style.
+There are some improvements we can make though. The `generateClasses` function from `@formkit/tailwindcss` allows for a special `global` key that will apply to _all_ inputs. This is helpful for `sectionKeys` such as `help` and `messages` that are usually styled the same across all input types in a project.
 
-Let's create a "Kitchen Sink" of input types, each having their defined class lists applied. Additionally, we'll further break up our files into separate imports to assist with readability.
+Let's create a "Kitchen Sink" of input types, each having their defined class lists applied. Additionally, we'll move our theme to a separate file to assist with readability.
+
+<callout type="tip" label="Global Class Lists">
+By using the <code>global</code> key in your theme object you can apply a class list to <em>all</em> inputs that have a given <code>sectionKey</code>. This is useful for things like labels or help text when you want to style them identically regardless of input type.
+</callout>
 
 <example
   :file="[
     '/_content/examples/guides/tailwind-theme/tailwind-theme/example.vue',
+    '/_content/examples/guides/tailwind-theme/tailwind-theme/theme.js',
     '/_content/examples/guides/tailwind-theme/tailwind-theme/formkit.config.js',
-    '/_content/examples/guides/tailwind-theme/tailwind-theme/rootClasses.js',
-    '/_content/examples/guides/tailwind-theme/tailwind-theme/classConfig.js',
+    '/_content/examples/guides/tailwind-theme/tailwind-theme/tailwind.config.js',
   ]"
-  init-file-tab="classConfig.js"
+  init-file-tab="theme.js"
   css-framework="tailwind"
   layout="auto"
   :editable="true"></example>
@@ -123,9 +175,9 @@ Of particular importance when doing an override is the special [`$reset` modifie
 <example
   :file="[
     '/_content/examples/guides/tailwind-theme/override/example.vue',
+    '/_content/examples/guides/tailwind-theme/override/theme.js',
     '/_content/examples/guides/tailwind-theme/override/formkit.config.js',
-    '/_content/examples/guides/tailwind-theme/override/rootClasses.js',
-    '/_content/examples/guides/tailwind-theme/override/classConfig.js',
+    '/_content/examples/guides/tailwind-theme/override/tailwind.config.js',
   ]"
   init-file-tab="example.vue"
   css-framework="tailwind"
@@ -139,10 +191,10 @@ This guide has walked through creating a Tailwind theme that covers all input ty
 Here are some ways to take the above guide even further:
 
 - Add dark-mode support using Tailwind's built-in `dark:` modifier.
-- Refactor the `classConfig.js` object to be a function that returns the config object and has methods exposed for easy surgical overrides.
-- Encapsulate all of our `classConfig.js` and `rootClasses.js` logic into a plugin that can be easily installed from a GitHub repo or npm package without the need for writing boilerplate.
+- Combine multiple variants such as `formkit-invalid:formkit-submitted:` to add extra emphasis to invalid fields when a user tries to submit an incomplete form.
+- Publish your theme as an npm package for easy importing and sharing between projects.
 
-Hopefully, this guide helped you understand how classes are applied to FormKit inputs and how you can leverage the `rootClasses` function to make use of Tailwind in your FormKit projects. If you want to dive in deeper, try reading about the [core internals of FormKit](/advanced/core) and [the FormKit schema](/advanced/schema)!
+Hopefully, this guide helped you understand how classes are applied to FormKit inputs and how you can leverage the `@formkit/tailwindcss` package to make use of Tailwind in your FormKit projects. If you want to dive in deeper, try reading about the [core internals of FormKit](/advanced/core) and [the FormKit schema](/advanced/schema)!
 
 <cta label="Want more? Start by reading about FormKit core." button="Dig deeper" href="/advanced/core"></cta>
 

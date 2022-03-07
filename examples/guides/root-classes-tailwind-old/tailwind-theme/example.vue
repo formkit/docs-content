@@ -17,9 +17,7 @@ const inputOptions = {
     :options="inputOptions[type] ? inputOptions[type] : null"
     :help="`Help text for the ${type} input`"
     :multiple="type === 'file'"
-    :disabled="type === 'date' ? true : undefined"
-    :validation="type === 'email' ? 'required|email' : 'required'"
-    :validation-visibility="type === 'email' ? 'live' : 'blur'"
+    validation="required"
     :validation-label="type"
   />
 </template>
