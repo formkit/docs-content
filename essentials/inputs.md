@@ -138,6 +138,10 @@ FormKit inputs emit both _universal_ events (ones that are emitted from all inpu
 
 <reference-table type="events" primary="event"></reference-table>
 
+<callout type="info" label="Vue events">
+  The above are Vue events emitted by <code>@formkit/vue</code>. <code>@formkit/core</code> also emits <a href="/advanced/core#core-events">its own events</a> as part of the lifecycle of <a href="/advanced/core#node">core nodes</a>.
+</callout>
+
 ## Sections
 
 Inputs are composed of chunks of HTML called "sections". Each section has a "key" that can be used to target that section. Section keys can be used for many purposes like modifying [classes](#classes), [slots](#slots), and extending each [sections’s schema](#sections-schema).
