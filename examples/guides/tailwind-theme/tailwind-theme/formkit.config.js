@@ -1,7 +1,8 @@
-import rootClasses from './rootClasses.js'
+import { generateClasses } from '@formkit/tailwindcss'
+import theme from './theme.js'
 
 export default {
   config: {
-    rootClasses
+    classes: generateClasses(theme)
   }
 }
