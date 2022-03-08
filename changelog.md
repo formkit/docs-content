@@ -37,6 +37,7 @@ description: What's new in the latest version of FormKit?.
 
 - Fixes a bug that could cause validation errors to flash for 20ms before resolving when using browser autocomplete ([#99](https://github.com/formkit/formkit/issues/99)).
 - Fixes a bug that caused class props (like `input-class`) inside schemas to not properly respect the `$reset` command because it was treated like a variable ([#61](https://github.com/formkit/formkit/issues/61)).
+- Fixes a bug that didn't allow classes to be modified via section-key class props when the section-key was multiple words, such as `fileListClass` or `fileItemClass` ([#120](https://github.com/formkit/formkit/issues/120)).
 
 ## 1.0.0-beta.4
 
