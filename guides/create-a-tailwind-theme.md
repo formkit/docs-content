@@ -40,13 +40,13 @@ To get started we need to add the package to our project.
 ```bash
 npm install @formkit/tailwindcss
 ```
+
 </client-only>
 
 From there we need to do two things:
 
 - Add the `@formkit/tailwindcss` plugin to our project's `tailwind.config.js` file.
 - Import `generateClasses` from `@formkit/tailwindcss` and use it where we define our FormKit config options.
-
 
 <client-only>
 
@@ -70,21 +70,25 @@ import { generateClasses } from '@formkit/tailwindcss'
 import '../dist/index.css' // wherever your Tailwind styles exist
 
 createApp(App)
-  .use(plugin, defaultConfig({
-    config: {
-      classes: generateClasses({
-        // our theme will go here.
-        // ...
-        // text: {
-        //   label: 'font-bold text-gray-300',
-        //   ...
-        // }
-        // ...
-      })
-    }
-  }))
+  .use(
+    plugin,
+    defaultConfig({
+      config: {
+        classes: generateClasses({
+          // our theme will go here.
+          // ...
+          // text: {
+          //   label: 'font-bold text-gray-300',
+          //   ...
+          // }
+          // ...
+        }),
+      },
+    })
+  )
   .mount('#app')
 ```
+
 </client-only>
 
 Once this setup is complete we are ready to begin writing our Tailwind theme!
@@ -148,13 +152,10 @@ There are some improvements we can make though. The `generateClasses` function f
 
 Let's create a "Kitchen Sink" of input types, each having their defined class lists applied. Additionally, we'll move our theme to a separate file to assist with readability.
 
-<<<<<<< HEAD
-=======
 <callout type="tip" label="Global Class Lists">
 By using the <code>global</code> key in your theme object you can apply a class list to <em>all</em> inputs that have a given <code>sectionKey</code>. This is useful for things like labels or help text when you want to style them identically regardless of input type.
 </callout>
 
->>>>>>> 4ce1ba2546f29b229d43fc632742938bdd078efd
 <example
   :file="[
     '/_content/examples/guides/tailwind-theme/tailwind-theme/example.vue',
@@ -200,5 +201,3 @@ Here are some ways to take the above guide even further:
 Hopefully, this guide helped you understand how classes are applied to FormKit inputs and how you can leverage the `@formkit/tailwindcss` package to make use of Tailwind in your FormKit projects. If you want to dive in deeper, try reading about the [core internals of FormKit](/advanced/core) and [the FormKit schema](/advanced/schema)!
 
 <cta label="Want more? Start by reading about FormKit core." button="Dig deeper" href="/advanced/core"></cta>
-
-
