@@ -2,6 +2,6 @@
   <FormKit
     label="Default FormKit text input"
     type="text"
-    help="the config.classes definitions apply globally"
+    help="All DOM nodes are affected by the rootClasses() function"
   />
 </template>

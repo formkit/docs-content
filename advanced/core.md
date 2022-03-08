@@ -59,6 +59,7 @@ const input = createNode({
 console.log(input.value)
 // 'hello node world'
 ```
+
 </client-only>
 
 ### List
@@ -82,6 +83,7 @@ const list = createNode({
 console.log(list.value)
 // ['paprika@example.com', 'bill@example.com', 'jenny@example.com']
 ```
+
 </client-only>
 
 ### Group
@@ -105,6 +107,7 @@ const group = createNode({
 console.log(group.value)
 // { meat: 'turkey', greens: 'salad', sweets: 'pie' }
 ```
+
 </client-only>
 
 ### Options
@@ -144,6 +147,7 @@ const parent = createNode({
   ],
 })
 ```
+
 </client-only>
 
 The above code will result in each node having the following configuration:
@@ -184,6 +188,7 @@ console.log(child.props.size)
 console.log(child.props.flavor)
 // outputs: 'cherry'
 ```
+
 </client-only>
 
 <callout type="tip" label="FormKit component props">
@@ -204,6 +209,7 @@ username.input('jordan-goat98')
 console.log(username.value)
 // undefined  👀 wait — what!?
 ```
+
 </client-only>
 
 In the above example `username.value` is still undefined immediately after it’s set because `node.input()` is asynchronous. If you need to read the resulting value after calling `node.input()` you can await the returned promise.
@@ -219,6 +225,7 @@ username.input('jordan-goat98').then(() => {
   // 'jordan-goat98'
 })
 ```
+
 </client-only>
 
 Because `node.input()` is asynchronous, the rest of our form does not need to recompute its dependencies on every keystroke. It also provides an opportunity to perform modifications to the unsettled value before it is "committed" to the rest of the form. However — for internal node use only — a `_value` property containing the unsettled value of the input is also available.
@@ -262,6 +269,7 @@ async function someEvent () {
   // and that form.value is accurate.
 }
 ```
+
 </client-only>
 
 <callout type="tip" label="The form type">
@@ -329,6 +337,7 @@ const group = createNode({
 // Returns the email node
 group.at('email')
 ```
+
 </client-only>
 
 If the starting node has siblings, it will attempt to locate a match in the siblings (internally, this is what FormKit uses for validation rules like `confirm:address`).
@@ -348,6 +357,7 @@ const group = createNode({
 // Accesses sibling to return the password node
 email.at('password')
 ```
+
 </client-only>
 
 ### Deep traversal
@@ -389,6 +399,7 @@ const group = createNode({
 // outputs: 'foo'
 console.log(group.at('users.0.password').value)
 ```
+
 </client-only>
 
 Notice how traversing the `list` uses numeric keys, this is because the `list` type uses array indexes automatically.
@@ -453,6 +464,7 @@ createNode({
 console.log(secondEmail.at('$parent.$parent.0.email').value)
 // outputs: charlie@factory.com
 ```
+
 </client-only>
 
 <figure>
@@ -479,6 +491,7 @@ node.on('prop', ({ payload }) => {
 node.props.foo = 'bar'
 // outputs: prop foo was set to bar
 ```
+
 </client-only>
 
 Event handler callbacks all receive a single argument of type `FormKitEvent`, the object shape is:
@@ -497,6 +510,7 @@ Event handler callbacks all receive a single argument of type `FormKitEvent`, th
   origin: node,
 }
 ```
+
 </client-only>
 
 Node events (by default) bubble up the node tree, but `node.on()` will only respond to events emitted by the same node. However, if you would like to also catch events bubbling up from descendants you may append the string `.deep` to the end of your event name:
@@ -515,6 +529,7 @@ group.on('created.deep', ({ payload: child }) => {
 const child = createNode({ parent: group, name: 'party-town-usa' })
 // outputs: 'child node created: party-town-usa'
 ```
+
 </client-only>
 
 ### Remove listener
@@ -533,6 +548,7 @@ node.off(receipt)
 node.input('fizz buzz')
 // no output
 ```
+
 </client-only>
 
 ### Core events
@@ -553,6 +569,7 @@ The following is a comprehensive list of all events emitted by `@formkit/core`.�
 | `message-updated`   | `FormKitMessage`                | yes     | Emitted when a `node.store` message was changed.                                                                       |
 | `prop:{propName}`   | any (the value)                 | yes     | Emitted any time a specific prop is set or changed.                                                                    |
 | `prop`              | `{ prop: string, value: any }`  | yes     | Emitted any time a prop is set or changed.                                                                             |
+| `settled`           | boolean                         | no      | Emitted anytime a node’s [disturbance counting](#value-settlement) settles or unsettles                                |
 | `text`              | string or `FormKitTextFragment` | no      | Emitted after the `text` hook has run — typically when processing interface text that may have been translated.        |
 
 <callout type="info" label="Prop events on config changes">
@@ -568,6 +585,7 @@ Node events are emitted with `node.emit()`. You can leverage this feature to emi
 ```js
 node.emit('myEvent', payloadGoesHere)
 ```
+
 </client-only>
 
 An optional third argument `bubble` is also available. When set to `false`, it prevents your event from bubbling up through the form tree.
@@ -607,6 +625,7 @@ node.hook.prop((payload, next) => {
   return next(payload)
 })
 ```
+
 </client-only>
 
 <callout type="tip" label="Use with plugins">
@@ -636,6 +655,7 @@ const node = createNode([
   children: [createNode()]
 ])
 ```
+
 </client-only>
 
 In the example above, the plugin is only defined on the parent, but the child also inherits the plugin. The function `myPlugin` will be called twice — once for each node in the graph (which only has two in this example):
@@ -706,6 +726,7 @@ Each message (`FormKitMessage` in TypeScript) in the store is an object with the
   visible: true
 }
 ```
+
 </client-only>
 
 <callout type="tip" label="Create message helper">
@@ -732,6 +753,7 @@ node.store.set(message)
 console.log(node.store.clickHole.value)
 // outputs: 'Please click 100 times.'
 ```
+
 </client-only>
 
 <callout type="info" label="Message locales">

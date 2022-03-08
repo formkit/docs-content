@@ -137,6 +137,21 @@ To disable all the inputs in a given form, including the submit button, you can 
 When using an async <code>@submit</code> handler FormKit will automatically disable the form (and set the state to <code>loading</code>) while the submit handler is pending.
 </callout>
 
+## Resetting
+
+You can reset your form (or any input) back to it’s initial state by calling `$formkit.reset(formId)`.
+
+<example
+  name="Reset example"
+  file="/_content/examples/reset-form/reset-form.vue">
+</example>
+
+### Initial values
+
+It’s important to note that the "initial state" of a form is not necessarily an empty form. You can have a default `:value` or `v-model` on the form and on individual inputs in the form — FormKit automatically merges these together to produce your initial value, and will restore to this merged state on reset.
+
+Optionally you can provide a second argument to `reset(formId, initialState)` if you would prefer an alternative reset state.
+
 ## Error handling
 
 With FormKit, adding front end validation to your form is easy — but what about errors produced by your backend framework, or ones you want to manually assign? There are two types of errors you can assign to a form:

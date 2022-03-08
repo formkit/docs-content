@@ -1,6 +1,17 @@
+// Create some re-useable definitions because
+// many input types are identical in how
+// we want to style them.
 const textClassification = {
-  label: 'block mb-1 font-bold text-sm',
-  inner: 'max-w-md border border-gray-400 rounded-lg mb-1 overflow-hidden focus-within:border-blue-500',
+  label: 'block mb-1 font-bold text-sm formkit-invalid:text-red-500',
+  inner: `
+    max-w-md
+    border
+    border-gray-400
+    formkit-invalid:border-red-500
+    rounded-lg mb-1
+    overflow-hidden
+    focus-within:border-blue-500
+  `,
   input: 'w-full h-10 px-3 border-none text-base text-gray-700 placeholder-gray-400',
 }
 const boxClassification = {
@@ -16,9 +27,13 @@ const buttonClassification = {
   input: 'bg-blue-500 hover:bg-blue-700 text-white text-sm font-normal py-3 px-5 rounded'
 }
 
+// export our definitions using our above
+// templates and declare one-offs and
+// overrides as needed.
 export default {
-  all: {
-    outer: 'mb-5',
+  // the global key will apply to all inputs
+  global: {
+    outer: 'mb-5 formkit-disabled:opacity-50',
     help: 'text-xs text-gray-500',
     messages: 'list-none p-0 mt-1 mb-0',
     message: 'text-red-500 mb-1 text-xs'
@@ -43,9 +58,10 @@ export default {
   month: textClassification,
   number: textClassification,
   password: textClassification,
-  radio: Object.assign({}, boxClassification, {
+  radio: {
+    ...boxClassification,
     input: boxClassification.input.replace('rounded-sm', 'rounded-full'),
-  }),
+  },
   range: {
     inner: 'max-w-md',
     input: 'form-range appearance-none w-full h-2 p-0 bg-gray-200 rounded-full focus:outline-none focus:ring-0 focus:shadow-none'
@@ -55,9 +71,10 @@ export default {
   submit: buttonClassification,
   tel: textClassification,
   text: textClassification,
-  textarea: Object.assign({}, textClassification, {
+  textarea: {
+    ...textClassification,
     input: 'block w-full h-32 px-3 border-none text-base text-gray-700 placeholder-gray-400 focus:shadow-outline',
-  }),
+  },
   time: textClassification,
   url: textClassification,
   week: textClassification,
