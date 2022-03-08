@@ -7,6 +7,8 @@ description: What's new in the latest version of FormKit?.
 
 ## 1.0.0-beta.5
 
+### March 8, 2022
+
 #### ⚠️ Breaking changes
 
 - The `data-loading` attribute has been moved from the submit button of a form
@@ -16,7 +18,7 @@ description: What's new in the latest version of FormKit?.
 
 - Adds new `@formkit/tailwindcss` plugin to easily create Tailwind themes for your FormKit forms. Check out the [Creating a Tailwind CSS Theme](/guides/create-a-tailwind-theme) Guide for more details.
 - Adds a [new programmatic `reset` function](/essentials/forms#resetting). This can be done on any input, group, form, or list and it will restore the value back to it's initial state. It also resets the `context.state` object (like `blurred` and `dirty`).
-- Improves accessibility by adding `aria-describedby` and `aria-live` for all provided input types. Aria described by now targets help text, validation messages, and error messages (labeling provided by `<label>` tags that use the `for` attribute).
+- Improves accessibility by adding `aria-describedby` and `aria-live` for all provided input types. `aria-describedby` now targets help text, validation messages, and error messages (labeling provided by `<label>` tags that use the `for` attribute).
 - Groups, lists and forms can now apply `undefined` values to their children. In other words if a form is v-modeled and it's value is set to an empty object `{}` it will clear the entire form out.
 - Adds new `context.state.settled` property that signals when the input’s internal debounce cycle has ended and a value is finished being committed to the form.
 - Adds `data-submitted` attribute to inputs that have been submitted.
