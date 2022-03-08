@@ -20,7 +20,7 @@ npm install @formkit/themes
 ```
 </client-only>
 
-Then in your `main.js` (wherever you boot Vue up) include the Genesis `theme.css` (this assumes you are using a build tool like Vite, Webpack, Snopack, or Nuxt):
+Then in your `main.js` (wherever you boot Vue up) include the Genesis `theme.css` (this assumes you are using a build tool like Vite, Webpack, Snowpack, or Nuxt):
 
 <client-only>
 
@@ -44,9 +44,8 @@ You can use the above attributes to easily provide realtime visual feedback for 
 
 <example
 name="Appending classes"
-file="/\_content/examples/outer-data-attrs/outer-data-attrs.vue"
-
-> </example>
+file="/\_content/examples/outer-data-attrs/outer-data-attrs.vue">
+</example>
 
 ## Custom classes
 
@@ -58,7 +57,7 @@ Classes can be modified for all [sections](/essentials/inputs#sections) using an
 - [The `{section-key}-class` props](#section-key-class-props). (most specific)
 - [The `classes` prop](#classes-prop).
 - [The `classes` configuration option](#classes-configuration).
-- [The `rootClasses` configuration function](#root-classes-function). (least specific)
+- [The `rootClasses` configuration function](#the-rootclasses-function). (least specific)
 
 The classes follow a strict hierarchy. Initially, classes are produced by the `rootClasses` function. They can then be modified by the `classes` configuration option, then by the `classes` prop, and finally by the `{section-key}-class` prop. At each of these stages classes can be [appended](#appending-classes), [reset](#resetting-classes), or [selectively modified](#removing-classes).
 
@@ -131,7 +130,7 @@ name="Classes prop"
 file="/_content/examples/classes-config/classes-config.vue"
 tabs="render,html"></example>
 
-## Root classes function
+## The rootClasses function
 
 `rootClasses` is a configuration function that is responsible
 for producing the default classes for each element. This function already has a default value which produces all the default classes (like `formkit-outer` and `formkit-label`) that ship with FormKit — so replacing this single function allows you to easily replace all initial classes. This makes it an ideal candidate for writing custom themes when using utility frameworks like Tailwind.
@@ -158,46 +157,11 @@ tabs="html"></example>
 Because <code>rootClasses</code> is a configuration option, you can apply it per input, per group, or globally.
 </callout>
 
-## Tailwind CSS Example
+## Tailwind CSS example
 
-Due to the `rootClasses` function's ability to modify every form within your project
-when used at the global config level, it becomes easy to intelligently apply default
-class lists to your inputs.
+Want to use Tailwind with FormKit? We've written a guide walking through the process using both inline class props as well as configuring a global theme using the `rootClasses` function:
 
-### Configuring Tailwind with `rootClasses` in the global config
-
-<example
-  name="Global config with Tailwind"
-  mode="editor"
-  :editable="false"
-  :line-numbers="false"
-  file="/_content/examples/tailwind-classes/global-config.vue"></example>
-
-That's a lot of markup! In reality you'll probably want to create your `rootClasses`
-function as a FormKit plugin in a separate file (or npm installable theme!) and
-import it and provide it to the `defaultConfig`.
-
-<example
-  name="Global config with Tailwind - truncated"
-  mode="editor"
-  :editable="false"
-  :line-numbers="false"
-  file="/_content/examples/tailwind-classes/global-config-short.vue"></example>
-
-### An example using Tailwind from the global config
-
-Because we have set our Tailwind classes in our global config, our inputs now
-inherit the correct class lists automatically. You can override the classes further
-from here - such as in the case of the second text input here.
-
-<example
-  name="Global config with Tailwind"
-  css-framework="tailwind"
-  :file="[
-    '/_content/examples/tailwind-classes/example.vue',
-    '/_content/examples/tailwind-classes/formkit.config.js'
-  ]"></example>
-
+<cta label="Guide: Create a Tailwind CSS theme" button="Read now" href="/guides/create-a-tailwind-theme"></cta>
 ## Modifying classes within schema
 
 In addition to modifying classes via config or props _on a  `<FormKit>` component_, you can use the same techniques within [schema](/essentials/generation#schema):

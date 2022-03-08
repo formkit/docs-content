@@ -2,7 +2,7 @@
   <!-- %partial%::html:: -->
   <FormKit
     type="select"
-    label="What country is the smallest?"
+    label="Which country is the smallest?"
     name="small_country"
     :options="[
       'Monaco',
