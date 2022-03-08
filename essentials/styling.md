@@ -157,15 +157,6 @@ tabs="html"></example>
 Because <code>rootClasses</code> is a configuration option, you can apply it per input, per group, or globally.
 </callout>
 
-## Tailwind CSS example
-
-Want to use Tailwind with FormKit? We've written a guide walking through the process using both inline class props as well as configuring a global theme using the `rootClasses` function:
-
-<cta label="Guide: Create a Tailwind CSS theme" button="Read now" href="/guides/create-a-tailwind-theme"></cta>
-## Modifying classes within schema
-
-In addition to modifying classes via config or props _on a  `<FormKit>` component_, you can use the same techniques within [schema](/essentials/generation#schema):
-
 ### Section-key class props within schema
 Within schema, you can also modify the classes of an element inside an input via the `{section-key}Class` properties. For example, to add a class to the label section, you can add the `labelClass` property:
 
@@ -210,3 +201,13 @@ Since config is passed down to descendant inputs, you can alter classes via conf
 name="Classes prop"
 file="/_content/examples/classes-config-schema/classes-config-schema.vue"
 tabs="render,html"></example>
+
+## Modifying classes within schema
+
+In addition to modifying classes via config or props _on a  `<FormKit>` component_, you can use the same techniques within [schema](/essentials/generation#schema):
+
+## Tailwind CSS
+
+Want to use Tailwind with FormKit? We've written a guide walking through the process using both inline class props as well as using `@formkit/tailwindcss` to create a global Tailwind theme:
+
+<cta label="Guide: Create a Tailwind CSS theme" button="Read now" href="/guides/create-a-tailwind-theme"></cta>
