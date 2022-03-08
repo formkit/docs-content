@@ -49,9 +49,10 @@ export default {
   month: textClassification,
   number: textClassification,
   password: textClassification,
-  radio: Object.assign({}, boxClassification, {
-    input: boxClassification.input.replace('rounded-sm', 'rounded-full'),
-  }),
+  radio: {
+    ...boxClassification,
+    input: boxClassification.input.replace('rounded-sm', 'rounded-full')
+  },
   range: {
     inner: 'max-w-md',
     input: 'form-range appearance-none w-full h-2 p-0 bg-gray-200 rounded-full focus:outline-none focus:ring-0 focus:shadow-none'
@@ -61,9 +62,10 @@ export default {
   submit: buttonClassification,
   tel: textClassification,
   text: textClassification,
-  textarea: Object.assign({}, textClassification, {
-    input: 'block w-full h-32 px-3 border-none text-base text-gray-700 placeholder-gray-400 focus:shadow-outline',
-  }),
+  textarea: {
+    ...textClassification,
+    input: 'block w-full h-32 px-3 border-none text-base text-gray-700 placeholder-gray-400 focus:shadow-outline'
+  },
   time: textClassification,
   url: textClassification,
   week: textClassification,
