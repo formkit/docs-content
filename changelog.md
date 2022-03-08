@@ -16,13 +16,13 @@ description: What's new in the latest version of FormKit?.
 
 #### 🎉 New features
 
-- Adds new `@formkit/tailwindcss` plugin to easily create Tailwind themes for your FormKit forms. Check out the [Creating a Tailwind CSS Theme](/guides/create-a-tailwind-theme) Guide for more details.
-- Adds a [new programmatic `reset` function](/essentials/forms#resetting). This can be done on any input, group, form, or list and it will restore the value back to it's initial state. It also resets the `context.state` object (like `blurred` and `dirty`).
-- Improves accessibility by adding `aria-describedby` and `aria-live` for all provided input types. `aria-describedby` now targets help text, validation messages, and error messages (labeling provided by `<label>` tags that use the `for` attribute).
-- Groups, lists and forms can now apply `undefined` values to their children. In other words if a form is v-modeled and it's value is set to an empty object `{}` it will clear the entire form out.
+- Adds new `@formkit/tailwindcss` plugin to easily create Tailwind themes for your FormKit forms. Check out the [Create a Tailwind CSS theme](/guides/create-a-tailwind-theme) guide for more details.
+- Adds a [new programmatic `reset` function](/essentials/forms#resetting). This can be done on any input, group, form, or list and it will restore the value back to its initial state. It also resets the `context.state` object (like `blurred` and `dirty`).
+- Improves accessibility by adding `aria-describedby` and `aria-live` to all provided input types. `aria-describedby` now targets help text, validation messages, and error messages (labeling provided by `<label>` tags that use the `for` attribute).
+- Groups, lists and forms can now apply `undefined` values to their children. In other words, if a form is v-modeled and its value is set to an empty object `{}`, it will clear the entire form out.
 - Adds new `context.state.settled` property that signals when the input’s internal debounce cycle has ended and a value is finished being committed to the form.
 - Adds `data-submitted` attribute to inputs that have been submitted.
-- Adds new section key `fileName` (thanks @santi)
+- Adds new section key `fileName` (thanks @santi).
 - Adds new `parent` prop that accepts a [core node](/advanced/core#node) for advanced use cases where inputs are decoupled from their form or data structure is desired.
 - Adds 🇱🇾 Arabic (thanks @Ahmedelforjani)
 - Adds 🇩🇰 Danish (thanks @bjerggaard)
@@ -37,7 +37,7 @@ description: What's new in the latest version of FormKit?.
 
 - Fixes a bug that could cause validation errors to flash for 20ms before resolving when using browser autocomplete ([#99](https://github.com/formkit/formkit/issues/99)).
 - Fixes a bug that caused class props (like `input-class`) inside schemas to not properly respect the `$reset` command because it was treated like a variable ([#61](https://github.com/formkit/formkit/issues/61)).
-- Fixes a bug that didn't allow classes to be modified via section-key class props when the section-key was multiple words, such as `file-list-class` or `file-item-class` ([#120](https://github.com/formkit/formkit/issues/120)).
+- Fixes a bug that didn't allow classes to be modified via section-key class props when the section-key has multiple words, such as `file-list-class` or `file-item-class` ([#120](https://github.com/formkit/formkit/issues/120)).
 
 ## 1.0.0-beta.4
 
