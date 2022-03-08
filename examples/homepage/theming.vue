@@ -50,13 +50,10 @@ export default {
     />
   </FormKit>
 </template>
+%partial%
 
 <style>
 html[data-active-tab="render"] {
-  @apply bg-gradient-to-b from-green-200 to-green-400;
-}
-.my-tailwind-label {
-  @apply py-1 inline-block mb-1 text-gray-500 text-sm;
+  background: linear-gradient(140deg, rgb(66, 223, 123), rgb(35, 196, 94));
 }
 </style>
-%partial%
