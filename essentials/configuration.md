@@ -1,17 +1,17 @@
 # Configuration
 
-FormKit uses a unique hierarchical configuration system that is well suited for forms. To understand how this configuration works there are 4 questions we need to answer:
+FormKit uses a unique hierarchical configuration system that is well suited for forms. To understand how this configuration works, there are 4 questions we need to answer:
 
 1. [What are core nodes](#what-are-core-nodes)?
 2. [What are node options](#what-are-node-options)?
-3. [What are node props?](#what-are-node-props)
-4. [What is node config?](#what-is-node-config)?
+3. [What are node props](#what-are-node-props)?
+4. [What is node config](#what-is-node-config)?
 
 ## What are core nodes?
 
-Every `<FormKit>` component has its own instance of a core node object. This node is responsible for almost all of the component’s functionality. There are 3 types of nodes: inputs, lists, and groups (forms are just a type of group!).
+Every `<FormKit>` component has its own instance of a core node. This node is responsible for almost all of the component’s functionality. There are 3 types of core nodes: inputs, lists, and groups (forms are just a type of group!).
 
-There is no global FormKit instance that controls the application — instead you can think of each node as it's own little application. Complete with its own configuration.
+There is no global FormKit instance that controls the application. Instead, you can think of each node as its own little application — complete with its own configuration.
 
 One last thing about nodes — they can all have parent nodes. Groups and lists can also have children. For example, a login form might have two children — the email and password inputs. You can draw this relationship as a simple tree diagram:
 
@@ -22,9 +22,9 @@ One last thing about nodes — they can all have parent nodes. Groups and lists 
 
 ## What are node options?
 
-When creating one of these "mini applications" that we call core nodes some options can be passed in. Except in extremely advanced use cases, you wont be creating your own core nodes — this is normally done for you by the `<FormKit>` component. However, it can be useful to define some of the node options globally. This is done with the `@formkit/vue` plugin — 💡 **core node options are the same as the `@formkit/vue` plugin options**.
+When creating one of these "mini applications" that we call core nodes, some options can be passed in. Except in extremely advanced use cases, you won't be creating your own core nodes — this is normally done for you by the `<FormKit>` component. However, it can be useful to define some of the node options globally. This is done with the `@formkit/vue` plugin — 💡 **core node options are the same as the `@formkit/vue` plugin options**.
 
-For example in a typical FormKit Vue registration we use `defaultConfig` which is just a function that returns core node options:
+For example, in a typical FormKit Vue registration, we use `defaultConfig` which is just a function that returns core node options:
 
 <client-only>
 
@@ -96,7 +96,7 @@ createNode({
 
 Developers familiar with FormKit will notice that the above list of node options differs slightly from the values that can be passed into the `defaultConfig` function.
 
-Many of FormKit’s features, like validation, inputs and vue support are provided courtesy of first-party plugins. The `defaultConfig` function configures many of these plugins before they are given over to the vue plugin as node options. So, `defaultConfig` can accept any of the above node options, but also a few extras:
+Many of FormKit’s features, like validation, inputs, and Vue support are provided courtesy of first-party plugins. The `defaultConfig` function configures many of these plugins before they are given over to the Vue plugin as node options. So, `defaultConfig` can accept any of the above node options, but also a few extras:
 
 <client-only>
 
@@ -104,7 +104,7 @@ Many of FormKit’s features, like validation, inputs and vue support are provid
 defaultConfig({
   /**
    * Validation rules to add or override.
-   * See validation documentation.
+   * See validation docs.
    */
   rules: {},
   /**
@@ -113,13 +113,13 @@ defaultConfig({
    */
   locales: {},
   /**
-   * Inputs definitions to add or override.
+   * Input definitions to add or override.
    * See docs on custom inputs.
    */
   inputs: {},
   /**
    * Explicit locale messages to override.
-   * See internationalization documentation.
+   * See internationalization docs.
    */
   messages: {},
   /**
@@ -138,19 +138,19 @@ defaultConfig({
 
 ## What are node props?
 
-All core node’s have a `props` object (`node.props`). FormKit core, and any third party plugins or code can read and write values to this object. In fact, nearly every feature of FormKit references `node.props` to determine how it should operate.
+All core nodes have a `props` object (`node.props`). FormKit core, and any third-party plugins or code can read and write values to this object. In fact, nearly every feature of FormKit references `node.props` to determine how it should operate.
 
 For example, the validation plugin looks at `node.props.validation` to determine if there are any rules it needs to run. So the real question is — how are these props being set? There are 3 primary mechanisms for setting props:
 
-- direct assignment
-- component props
+- Direct assignment
+- Component props
 - Vue plugin options
 
 Let’s see how we can set the validation rules of an input (`node.props.validation`) these three ways:
 
 ### 1. Direct assignment
 
-If you have an node instance, you can directly assign it a prop value:
+If you have a node instance, you can directly assign it a prop value:
 
 <example
   name="Direct node assignment"
@@ -168,7 +168,7 @@ Any props passed to the `<FormKit>` input are assigned to the `node.props` objec
 
 ### 3. Vue plugin options
 
-When registering the the `@formkit/vue` plugin, you can provide prop values to be injected into to all `<FormKit>` components.
+When registering the `@formkit/vue` plugin, you can provide prop values to be injected into to all `<FormKit>` components.
 
 <example
   name="Component props"
@@ -181,7 +181,7 @@ When registering the the `@formkit/vue` plugin, you can provide prop values to b
 
 ## What is node config?
 
-Props are pretty powerful, but in addition to `node.props` core nodes all have a config object `node.config`. This is where configuration hierarchy comes in. The `node.config` object acts like initial values for `node.props` — if a given prop is requested, like `node.props.validation`, and that property is not explicitly set using any of the [methods discussed above](#what-are-node-props), then FormKit will check the `node.config` object to see if it has a value — if it does not have a value, then it recursively checks the node’s parent config object until a value is found or it reaches a node with no parent.
+Props are pretty powerful, but in addition to `node.props`, core nodes all have a config object `node.config`. This is where configuration hierarchy comes in. The `node.config` object acts like initial values for `node.props`. If a given prop is requested, like `node.props.validation`, and that property is not explicitly set using any of the [methods discussed above](#what-are-node-props), then FormKit will check the `node.config` object to see if it has a value. If it does not have a value, then it recursively checks the node parent's config object — then the grandparent's config object — and so on — until a value is found or it reaches a node with no parent.
 
 <figure>
   <img src="/img/props-config-flow.svg" class="props-diagram">
@@ -195,4 +195,4 @@ What does this mean in practice? When you combine the tree like structure of for
   file="/_content/examples/validation-visibility/validation-visibility.vue">
 </example>
 
-It’s worth noting that plugins have their own inheritance model which differs from `config` and `props` — it is described in more detail in the [core documentation](/advanced/core).
+It’s worth noting that plugins have their own inheritance model which differs from `config` and `props`, and is described in more detail in the [core documentation](/advanced/core).
