@@ -55,7 +55,7 @@ From there we need to do two things:
 module.exports {
   ...
   plugins: [
-    require('@formkit/tailwindcss')
+    require('@formkit/tailwindcss').default
   ]
   ...
 }
