@@ -15,14 +15,6 @@ A broad collection of examples with working code you can use in your project tod
     The <code>form</code>type automatically adds a submit button. Add classes so its UI can conform to your project's styles
 </ExampleCard>
 
-## Global modifications
-
-<ExampleCard
-  href="https://formkit.link/17071b70d7a6f8f1a1720a36f37652cf"
-  title="Remove the inner wrapper on all checkboxes">
-    Use a plugin to modify the HTML of all descendant checkbox inputs.
-</ExampleCard>
-
 ## Schema
 
 <ExampleCard
@@ -36,6 +28,12 @@ A broad collection of examples with working code you can use in your project tod
   href="https://formkit.link/65ccc2d278832743796f8e1337148954"
   title="Make number inputs return number values">
     Use a plugin to cast string values to numbers. Useful if you want inputs of type <code>number</code> to return a JS <code>Number</code> primitive.
+</ExampleCard>
+
+<ExampleCard
+  href="https://formkit.link/17071b70d7a6f8f1a1720a36f37652cf"
+  title="Remove the inner wrapper on all checkboxes">
+    Use a plugin to modify the HTML of all descendant checkbox inputs.
 </ExampleCard>
 
 ## User interface
