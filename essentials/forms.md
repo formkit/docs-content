@@ -146,6 +146,10 @@ You can reset your form (or any input) back to it’s initial state by calling `
   file="/_content/examples/reset-form/reset-form.vue">
 </example>
 
+<callout type="tip" label="Composition API">
+When using the composition api you can directly access the reset function by importing it from core: <code>import { reset } from '@formkit/core'</code>.
+</callout>
+
 ### Initial values
 
 It’s important to note that the "initial state" of a form is not necessarily an empty form. You can have a default `:value` or `v-model` on the form and on individual inputs in the form — FormKit automatically merges these together to produce your initial value, and will restore to this merged state on reset.

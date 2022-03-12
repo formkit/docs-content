@@ -130,6 +130,7 @@ FormKit ships with over 20 production-ready validation rules — covering the va
 - [accepted](#accepted)
 - [alpha](#alpha)
 - [alphanumeric](#alphanumeric)
+- [alpha_spaces](#alpha-spaces)
 - [between](#between)
 - [confirm](#confirm)
 - [date_after](#date-after)
@@ -176,6 +177,16 @@ Checks if a value is only made of alphabetical characters or numeric digits. For
 <example
   name="Alphanumeric"
   file="/_content/examples/rule-alphanumeric/rule-alphanumeric.vue"
+  layout="auto">
+</example>
+
+### Alpha-spaces
+
+Checks if a value is only made of alphabetical characters or spaces. For the alphabetical portion you can pass `default` or `latin` - see [alpha](#alpha)) above.
+
+<example
+  name="Alphanumeric"
+  file="/_content/examples/rule-alpha-spaces/rule-alpha-spaces.vue"
   layout="auto">
 </example>
 
