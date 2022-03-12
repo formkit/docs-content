@@ -5,6 +5,16 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 1.0.0-beta.7
+
+### [TK] Date
+
+#### 🎉 New features
+
+#### 🐛 Bug fixes
+
+- Fixes a bug that caused the `preserve` keyword to block some form submissions ([#145](https://github.com/formkit/formkit/issues/145))
+
 ## 1.0.0-beta.6
 
 ### March 10, 2022
