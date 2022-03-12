@@ -11,6 +11,8 @@ description: What's new in the latest version of FormKit?.
 
 #### 🎉 New features
 
+- Adds new `message` hook for modifying messages as they are being set.
+
 #### 🐛 Bug fixes
 
 - Fixes a bug that caused the `preserve` keyword to block some form submissions ([#145](https://github.com/formkit/formkit/issues/145))

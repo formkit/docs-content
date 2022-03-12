@@ -601,6 +601,7 @@ Hooks are middleware dispatchers that are triggered during pre-defined lifecycle
 | error   | `string`                                                                                                | Dispatched when processing a thrown error — errors are generally inputs, and the final output should be a string. |
 | init    | `FormKitNode`                                                                                           | Dispatched after the node is initially created but before it is returned in `createNode()`.                       |
 | input   | `any`                                                                                                   | Dispatched synchronously on every input event (every keystroke) before `commit`.                                  |
+| message | `FormKitMessage`                                                                                        | Dispatched when a message is being set on `node.store`                                                            |
 | prop    | <pre><code class="block">{<br> prop: string,<br> value: any<br>}</code></pre>                           | Dispatched when any prop is being assigned.                                                                       |
 | text    | [`FormKitTextFragment`](https://github.com/formkit/formkit/search?q=FormKitTextFragment)                | Dispatched when a FormKit-generated string needs to be displayed — allowing i18n or other plugins to intercept.   |
 
