@@ -5,6 +5,28 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 1.0.0-beta.6
+
+### March 10, 2022
+
+#### 🎉 New features
+
+- Adds new `alpha_spaces` validation rule ([#83](https://github.com/formkit/formkit/issues/83))
+- Adds 🇨🇿 Czech (thanks @dfridrich)
+- Adds <img src="/img/frisian_flag.svg" alt="Frisian flag" class="rare-flag"> Frisian (thanks @arjendejong12)
+
+#### 📙 Documentation
+
+- New [configuration documentation](/advanced/configuration) that explains the relationship of node options, config, and props.
+
+#### 🐛 Bug fixes
+
+- Fixes a bug that caused radio inputs to loose reactivity when set via `node.input()` ([#139](https://github.com/formkit/formkit/issues/139))
+- Improves TypeScript annotation for `@submit` event ([#130](https://github.com/formkit/formkit/issues/130))
+- Fixed an issue that caused selects not to render if set to an empty array ([#129](https://github.com/formkit/formkit/issues/129))
+- Fixed an error that caused server side rendering errors on Nuxt 3 when running a built project ([#113](https://github.com/formkit/formkit/issues/83))
+- Fixed a bug that caused schema variable scoping to be lost when referencing iteration data inside the slot of a component ([#91](https://github.com/formkit/formkit/issues/91))
+
 ## 1.0.0-beta.5
 
 ### March 8, 2022

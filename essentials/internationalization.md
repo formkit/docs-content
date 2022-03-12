@@ -10,11 +10,13 @@ FormKit ships with internationalization support for all of its interfaces and va
 - 🇱🇾 Arabic (ar) - 🙏&nbsp;@Ahmedelforjani
 - 🇨🇳 Chinese (zh) — 🙏&nbsp;@myleslee
 - 🇭🇷 Croatian (hr) - 🙏&nbsp;@antemarkic
+- 🇨🇿 Czech (cs) - 🙏&nbsp;@dfridrich
 - 🇩🇰 Danish (da) - 🙏&nbsp;@bjerggaard
 - 🇳🇱 Dutch (nl) — 🙏&nbsp;@arjendejong12
 - 🇺🇸 English (en) - 🙏&nbsp;
 - 🇫🇮 Finish - (fi) - 🙏&nbsp;@mihqusta
 - 🇫🇷 French (fr) — 🙏&nbsp;@HoreKk, @pop123123123
+- <img src="/img/frisian_flag.svg" alt="Frisian flag" class="rare-flag"> Frisian (fy) - 🙏&nbsp;@arjendejong12
 - 🇩🇪 German (de) — 🙏&nbsp;@digitalkaoz, @tosling
 - 🇮🇱 Hebrew (he) - 🙏&nbsp;@Hepi420
 - 🇮🇩 Indonesian (id) - 🙏&nbsp;@rama-adi
