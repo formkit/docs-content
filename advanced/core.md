@@ -88,7 +88,7 @@ console.log(list.value)
 
 ### Group
 
-A group is a node that produces an object value. Children of a group node use their `name` to produce a property of the same name in the groups’s value object — `<FormKit type="form">` is an instance of a group.
+A group is a node that produces an object value. Children of a group node use their `name` to produce a property of the same name in the group’s value object — `<FormKit type="form">` is an instance of a group.
 
 <client-only>
 
