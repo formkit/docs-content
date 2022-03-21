@@ -119,6 +119,8 @@ const config: DefaultConfigOptions = {
   locales: { fr },
   locale: 'fr',
 }
+  
+export default config
 ```
 
 </client-only>
