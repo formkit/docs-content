@@ -13,6 +13,7 @@ description: What's new in the latest version of FormKit?.
 
 - Adds new `message` hook for modifying messages as they are being set.
 - Adds a new `index` prop that allows inputs to be injected at a given index on a parent `list` type.
+- Adds a new core event `reset` — emitted after a form is reset.
 
 #### 🐛 Bug fixes
 

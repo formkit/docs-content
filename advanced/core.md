@@ -569,6 +569,7 @@ The following is a comprehensive list of all events emitted by `@formkit/core`.�
 | `message-updated`   | `FormKitMessage`                | yes     | Emitted when a `node.store` message was changed.                                                                       |
 | `prop:{propName}`   | any (the value)                 | yes     | Emitted any time a specific prop is set or changed.                                                                    |
 | `prop`              | `{ prop: string, value: any }`  | yes     | Emitted any time a prop is set or changed.                                                                             |
+| `reset`             | `FormKitNode`                   | yes     | Emitted any time a form or group is reset.                                                                             |
 | `settled`           | boolean                         | no      | Emitted anytime a node’s [disturbance counting](#value-settlement) settles or unsettles                                |
 | `text`              | string or `FormKitTextFragment` | no      | Emitted after the `text` hook has run — typically when processing interface text that may have been translated.        |
 
