@@ -5,19 +5,23 @@ description: Get involved in the FormKit community — troubleshooting support, 
 
 # Community
 
-Community involvement and contributions are one of the most important aspects of the FormKit ecosystem. We invite you to actively participate — whether using FormKit's products, translating validation messages, being an active member of the Discord, or filing bug reports and making pull requests to the [FormKit codebase](https://github.com/formkit/formkit).
+Community involvement and contributions are one of the most important aspects of the FormKit ecosystem. We invite you to actively participate — whether using FormKit, translating validation messages, being an active member of the Discord, or filing bug reports and making pull requests to the [FormKit codebase](https://github.com/formkit/formkit).
 
-## Sponsorhip
+## Sponsor
 
 FormKit will always be free and open source. If you want to help accelerate the development and maintenance of [FormKit](https://github.com/formkit/formkit), please consider [sponsoring the project](https://github.com/sponsors/formkit)! In addition to our gratitude and enabling us to spend more time improving FormKit, you'll also get various perks at different tiers of sponsorship!
 
 <LinkGithub href="https://github.com/sponsors/formkit" button-text="Sponsor FormKit"></LinkGithub>
 
+### Backers
+
+[uscreen](https://uscreen.de)
+
 ## Get involved
 
 ### FormKit Discord server (generalized help & discussion)
 
-If you're in need of more generalized help or want to make connections within the community, consider joining the official FormKit Discord (used for both FormKit and Vue Formulate — FormKit's predecessor). Over 375 developers along with the core team spend time there. If you are not already a member (it's free and open), you'll need to use the following invite link to join the server.
+If you're in need of more generalized help or want to make connections within the community, consider joining the official FormKit Discord (used for both FormKit and Vue Formulate — FormKit's predecessor). Over 425 developers along with the core team spend time there. If you are not already a member (it's free and open), you'll need to use the following invite link to join the server.
 
 <LinkDiscord></LinkDiscord>
 
