@@ -7,7 +7,7 @@
   <a href="https://formkit.com">Documentation website</a>
 </p>
 
-# FormKit Documentation Content
+# FormKit documentation content
 This repository is a content-only repo that stores the bulk of the documentation content (essentials, inputs, guides, advanced) for the [FormKit documentation site](https://formkit.com/essentials/installation).
 
 The content gets pulled into the docs website via a build process.
