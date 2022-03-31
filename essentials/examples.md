@@ -12,7 +12,13 @@ A broad collection of examples with working code you can use in your project tod
 <ExampleCard
   href="https://formkit.link/012a9d91d7ddfc29400fb38297e220d7"
   title="Add classes to the FormKit-provided submit button">
-The <code>form</code>type automatically adds a submit button. Add classes so its UI can conform to your project's styles
+The <code>form</code> type automatically adds a submit button. Add classes so its UI can conform to your project's styles
+</ExampleCard>
+
+<ExampleCard
+  href="https://formkit.link/54951f959813962364c5d87fbd8cce2f"
+  title="Using a list to repeat an input">
+Using the <code>list</code> type we can create inputs that can have multiple values. This example uses a loop to let users add/remove email addresses.
 </ExampleCard>
 
 ## Schema
