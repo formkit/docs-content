@@ -13,12 +13,12 @@ Community involvement and contributions are one of the most important aspects of
 
 <LinkGithub href="https://github.com/sponsors/formkit" button-text="Sponsor FormKit"></LinkGithub>
 
-### Bronze sponsors
+<h3><span class="emoji">🥉</span> Bronze sponsors</h3>
 
 <a href="https://www.perbyte.com">
     <img
         src="https://cdn.formk.it/web-assets/sponsors/bronze-sponsor_perbyte.png"
-        alt="Per Byte logo"
+        alt="PerByte logo"
         target="_blank"
         style="display:inline-block;width: 120px; margin-right: 10px;"
     />
