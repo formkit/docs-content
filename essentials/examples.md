@@ -7,7 +7,7 @@ description: Examples you can use in your project today.
 
 A broad collection of examples with working code you can use in your project today.
 
-## Forms
+## Forms & Structure
 
 <ExampleCard
   href="https://formkit.link/012a9d91d7ddfc29400fb38297e220d7"
