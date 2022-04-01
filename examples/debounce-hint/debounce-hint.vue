@@ -1,5 +1,5 @@
 <script setup>
-// Lets pretend this is an expensive API call.
+// Let's pretend this is an expensive API call.
 const username_exists = function ({ value }) {
   return new Promise((resolve) => {
     setTimeout(() => resolve(value === 'formkit-4-life'), 200)
