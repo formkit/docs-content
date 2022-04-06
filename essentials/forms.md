@@ -35,6 +35,10 @@ You can populate an entire form by providing a `value` prop to the `<FormKit typ
   file="/_content/examples/form-population/form-population.vue">
 </example>
 
+<callout type="danger" label="v-model and reactive objects">
+Be sure to either <code>v-model</code> a <code>ref</code> or a property of a <code>reactive</code> object. Do not <code>v-model</code> the reactive object itself as it <a href="https://github.com/formkit/formkit/issues/58#issuecomment-1029250016">leads to unexpected behavior</a>.
+</callout>
+
 <callout type="warning" label="Submitted data & v-model">
 Using <code>v-model</code> data in your submit handler could lead to unintended form mutations. Instead, use the unbound copy of your form’s data that is passed to your submission handler.
 </callout>
