@@ -563,6 +563,8 @@ The following is a comprehensive list of all events emitted by `@formkit/core`.�
 | `created`           | `FormKitNode`                   | yes     | Emitted immediately _before_ the node is returned when calling `createNode()` (plugins and features have already run). |
 | `defined`           | `FormKitTypeDefinition`         | yes     | Emitted when the node’s "type" is defined, this typically happens during `createNode()`.                               |
 | `destroying`        | `FormKitNode`                   | yes     | Emitted when the `node.destroy()` is called, after it has been detached from any parents.                              |
+| `domInputEvent`     | `Event`                         | yes     | Emitted when the `DOMInput` handler is called, useful for getting the original HTML input event in core.               |
+| `input`             | any (the value)                 | yes     | Emitted when `node.input()` is called — after the `input` hook has run.                                                |
 | `input`             | any (the value)                 | yes     | Emitted when `node.input()` is called — after the `input` hook has run.                                                |
 | `message-added`     | `FormKitMessage`                | yes     | Emitted when a new `node.store` message was added.                                                                     |
 | `message-removed`   | `FormKitMessage`                | yes     | Emitted when a `node.store` message was removed.                                                                       |

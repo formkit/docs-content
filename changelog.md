@@ -17,6 +17,7 @@ description: What's new in the latest version of FormKit?.
 - Adds a new `inputRaw` event to the `<FormKit>` component that is emitted for every core node `commit` (this can be quite frequent)
 - The `<FormKit>` component’s `input` event is now debounced, meaning it emits much less noise.
 - Exports all input feature functions `import { features } from '@formkit/inputs'`.
+- Adds new core node event `domInputEvent` which has the native HTML `Event` object as the payload.
 - Adds 🇸🇪 Swedish language.
 - Improves 🇵🇱 Polish language.
 
