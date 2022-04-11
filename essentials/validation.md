@@ -485,6 +485,7 @@ Your custom rules probably need a custom message — the next section of the doc
 ## Custom messages
 
 There are several ways to customize your validation message. The most basic of which is to use the <code>validation-label</code> prop — allowing you to change the name of the field as used in the pre-defined validation messages.
+
 <example
   name="Custom validation rules"
   file="/_content/examples/validation-label/validation-label.vue"
