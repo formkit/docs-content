@@ -1,5 +1,5 @@
 ---
-title: Color
+title: Datetime-local
 description: A native HTML datetime-local picker.
 ---
 

@@ -28,7 +28,7 @@ Validation rules can be declared by specifying each desired rule name separated 
 
 Validation rules can also be declared by providing an array. Each element of the array must be itself an array where the first element is the string name of the validation rule, and the remaining `n` elements are arguments for that rule.
 
-This is especially helpful if the arguments being provided need to be actual JavaScript types — for example a regular expression:
+This is especially helpful if the arguments being provided need to be actual JavaScript types — for example a regular expression (regex):
 
 <example
   name="Validation arrays"
