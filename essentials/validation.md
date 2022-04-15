@@ -63,6 +63,13 @@ Due to FormKit's config inheritance, you can set `validation-visibility` at a `f
 
 ## Rule hints
 
+<VideoCard
+  title="Validation rule hints overview"
+  poster="https://cdn.formk.it/web-assets/validation-hint-example.png"
+  watch-time="2 mins"
+  youtube-id="4mbLuF8fnAc">
+</VideoCard>
+
 Validation rules operate according to a few default features which can be changed on a case-by-case basis with "rule hints":
 
 - **Run in sequence** - rules are run in the order they are declared. When a rule fails, any remaining rules are not run. For example, if you declare the validation rules as `required|length:5` then the `length` rule will not run until the `required` rule is passing.
@@ -70,7 +77,7 @@ Validation rules operate according to a few default features which can be change
 - **Synchronous** - all [available rules](#available-rules) are synchronous and not debounced.
 - **Blocking** - all validation rules produce [blocking messages](/advanced/core#message-store) which prevent form submission.
 
-All of the above features can be modified when declaring your rules by using "hinting". Rule hints are small modifier characters you append to the beginning of a rule declaration to change its default behavior.
+All of the above features can be modified when declaring your rules by using "hinting". Rule hints are small modifier characters you append to the beginning of a rule declaration to change its default behavior:
 
 | Hint    | Name                        | Description                                                                              |
 | ------- | --------------------------- | ---------------------------------------------------------------------------------------- |
