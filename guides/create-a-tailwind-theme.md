@@ -50,6 +50,10 @@ From there we need to do two things:
 
 <client-only>
 
+<callout type="warning" label="Formkit configuration outside app.js">
+When using a single file for configuration like <code>formkit.config.js</code> instead of <code>app.js</code>, you should make sure to add to <code>tailwind.config.js</code> inside <code>content</code> the path to that file.
+</callout>
+
 ```js
 // tailwind.config.js
 module.exports {
