@@ -27,5 +27,15 @@ FormKit props.
 
 ## Section keys
 
+<div>
+  <formkit-input-diagram
+    label-content="Color Label"
+    input-content="Color selector here"
+    help-content="What's your favorite color"
+    message-content="Messages about your color selection"
+  >
+  </formkit-input-diagram>
+</div>
+
 <reference-table type="sectionKeys" primary="section-key">
 </reference-table>

@@ -27,5 +27,15 @@ The `email` input has no unique props but can make use of the following universa
 
 ## Section keys
 
+<div>
+  <formkit-input-diagram
+    label-content="Email address"
+    input-content="test@example.com"
+    help-content="Please use your school email address."
+    message-content="Please provide a valid email."
+  >
+  </formkit-input-diagram>
+</div>
+
 <reference-table type="sectionKeys" primary="section-key">
 </reference-table>

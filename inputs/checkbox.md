@@ -61,5 +61,49 @@ file="/_content/examples/checkbox-objects/checkbox-objects.vue"></example>
 
 ## Section keys
 
+
+<div>
+  <formkit-input-diagram
+    :schema="[
+      {
+        name: 'outer',
+        children: [
+          {
+            name: 'fieldset',
+            position: 'right',
+            children: [
+              {
+                name: 'legend',
+                content: 'Fieldset Legend'
+              },
+              {
+                name: 'help',
+                content: 'Checkbox help text.',
+              },
+              {
+                name: 'options',
+                position: 'right',
+                children: [
+                  {
+                    name: 'option[0]',
+                    position: 'right',
+                    content: 'Single Checkbox'
+                  },
+                  {
+                    name: 'option[1]',
+                    position: 'right',
+                    content: 'Another Checkbox'
+                  }
+                ]
+              }
+            ]
+          },
+        ]
+      }
+    ]"
+  >
+  </formkit-input-diagram>
+</div>
+
 <reference-table type="sectionKeys" primary="section-key" :data="[{'section-key': 'decorator', description: 'Responsible for the element immediately following the input element — usually used for styling.'}, { 'section-key': 'legend', description: 'Responsible for the fieldset’s legend element.'}, {'section-key': 'fieldset', description: 'Responsible for the fieldset when multiple options are available.'}, {'section-key': 'option', description: 'Responsible for the wrapper around each item in the options.'}, {'section-key': 'options', description: 'Responsible for the wrapper element around all of the option items.'}]">
 </reference-table>

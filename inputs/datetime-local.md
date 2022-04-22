@@ -31,5 +31,15 @@ The `datetime-local` input has no unique props but can make use of the following
 
 ## Section keys
 
+<div>
+  <formkit-input-diagram
+    label-content="Date Label"
+    input-content="Jan. 1 1970 12:00:00"
+    help-content="Please choose a date/time"
+    message-content="Date and time are required"
+  >
+  </formkit-input-diagram>
+</div>
+
 <reference-table type="sectionKeys" primary="section-key">
 </reference-table>

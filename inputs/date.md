@@ -32,5 +32,15 @@ FormKit props.
 
 ## Section keys
 
+<div>
+  <formkit-input-diagram
+    label-content="Date Label"
+    input-content="Jan. 1 1970"
+    help-content="Please choose a date"
+    message-content="Date is required"
+  >
+  </formkit-input-diagram>
+</div>
+
 <reference-table type="sectionKeys" primary="section-key">
 </reference-table>

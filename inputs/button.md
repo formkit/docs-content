@@ -27,5 +27,57 @@ Importantly the `ignore` prop is automatically set to `true` — meaning even if
 
 ## Section keys
 
+<div>
+  <formkit-input-diagram
+    :schema="[
+      {
+        name: 'outer',
+        children: [
+          {
+            name: 'messages',
+            position: 'right',
+            children: [
+              {
+                name: 'message',
+                content: 'Validation messages about the button',
+                position: 'right'
+              }
+            ]
+          },
+          {
+            name: 'wrapper',
+            position: 'right',
+            children: [
+              {
+                name: 'button',
+                position: 'left',
+                class: 'flex button button--pro',
+                children: [
+                  {
+                    name: 'prefix'
+                  },
+                  {
+                    name: 'input',
+                    content: 'Button Text Here',
+                  },
+                  {
+                    name: 'suffix',
+                    position: 'right'
+                  }
+                ]
+              },
+            ]
+          },
+          {
+            name: 'help',
+            content: 'This is a button.'
+          }
+        ]
+      }
+    ]"
+  >
+  </formkit-input-diagram>
+</div>
+
 <reference-table type="sectionKeys" primary="section-key" :without="['inner']">
 </reference-table>
