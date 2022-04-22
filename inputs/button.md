@@ -27,8 +27,11 @@ Importantly the `ignore` prop is automatically set to `true` — meaning even if
 
 ## Section keys
 
+You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+
 <div>
   <formkit-input-diagram
+    class="input-diagram--button"
     :schema="[
       {
         name: 'outer',
@@ -39,7 +42,7 @@ Importantly the `ignore` prop is automatically set to `true` — meaning even if
             children: [
               {
                 name: 'message',
-                content: 'Validation messages about the button',
+                content: 'Validation messages about the button.',
                 position: 'right'
               }
             ]
@@ -49,20 +52,22 @@ Importantly the `ignore` prop is automatically set to `true` — meaning even if
             position: 'right',
             children: [
               {
-                name: 'button',
+                name: 'input',
                 position: 'left',
                 class: 'flex button button--pro',
                 children: [
                   {
-                    name: 'prefix'
+                    name: 'prefix',
+                    content: '🤟'
                   },
                   {
-                    name: 'input',
-                    content: 'Button Text Here',
+                    name: 'label',
+                    content: 'Button label here',
                   },
                   {
                     name: 'suffix',
-                    position: 'right'
+                    position: 'right',
+                    content: '🚀'
                   }
                 ]
               },
@@ -70,7 +75,7 @@ Importantly the `ignore` prop is automatically set to `true` — meaning even if
           },
           {
             name: 'help',
-            content: 'This is a button. '
+            content: 'Click this button to submit. '
           }
         ]
       }
