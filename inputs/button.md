@@ -70,7 +70,7 @@ Importantly the `ignore` prop is automatically set to `true` — meaning even if
           },
           {
             name: 'help',
-            content: 'This is a button.'
+            content: 'This is a button. '
           }
         ]
       }
