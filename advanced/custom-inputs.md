@@ -152,6 +152,8 @@ It is important to understand the basic structure of a “standard” FormKit in
 <figure class="full">
   <formkit-input-diagram
     label-content="Email address"
+    prefix-content=""
+    suffix-content=""
     input-content="test@example.com"
     help-content="Please use your school email address."
     message-content="Please provide a valid email."

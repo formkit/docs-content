@@ -61,43 +61,152 @@ file="/_content/examples/checkbox-objects/checkbox-objects.vue"></example>
 
 ## Section keys
 
+The checkbox input has a different construction depending on if it's a single or multiple checkbox. You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+
+### Single checkbox diagram
 
 <div>
   <formkit-input-diagram
+    class="input-diagram--checkbox checkbox-single"
+    :schema="[
+        {
+          name: 'outer',
+          children: [
+            {
+              name: 'wrapper',
+              position: 'right',
+              children: [
+                {
+                  name: 'inner',
+                  children: [
+                    {
+                      name: 'prefix',
+                    },
+                    {
+                      name: 'input',
+                    },
+                    {
+                      name: 'decorator',
+                      content: '✅'
+                    },
+                    {
+                      name: 'suffix'
+                    },
+                  ]
+                },
+                {
+                  name: 'label',
+                  content: 'I would like a free t-shirt',
+                  position: 'right',
+                },
+              ]
+            },
+            {
+              name: 'help',
+              content: 'We will send a free-shirt if you have this box selected.',
+              position: 'right'
+            },
+            {
+              name: 'messages',
+              position: 'right',
+              children: [
+                {
+                  name: 'message',
+                  content: 'You must make a selection.',
+                  position: 'right'
+                }
+              ]
+            }
+          ]
+        }
+      ]"
+  >
+  </formkit-input-diagram>
+</div>
+
+
+### Multiple checkbox diagram
+
+
+<div>
+  <formkit-input-diagram
+    class="input-diagram--checkbox checkbox-multiple"
     :schema="[
       {
         name: 'outer',
         children: [
           {
             name: 'fieldset',
-            position: 'right',
             children: [
               {
                 name: 'legend',
-                content: 'Fieldset Legend'
+                content: 'Topics',
+                class: 'margin-collapse',
               },
               {
                 name: 'help',
-                content: 'Checkbox help text.',
+                content: 'Choose the topics you`d like to learn this year.',
               },
               {
                 name: 'options',
                 position: 'right',
                 children: [
                   {
-                    name: 'option[0]',
+                    name: 'option',
                     position: 'right',
-                    content: 'Single Checkbox'
-                  },
-                  {
-                    name: 'option[1]',
-                    position: 'right',
-                    content: 'Another Checkbox'
+                    children: [
+                      {
+                        name: 'wrapper',
+                        position: 'right',
+                        children: [
+                          {
+                            name: 'inner',
+                            children: [
+                              {
+                                name: 'prefix',
+                              },
+                              {
+                                name: 'input',
+                              },
+                              {
+                                name: 'decorator',
+                                content: '✅',
+                              },
+                              {
+                                name: 'suffix',
+                              },
+                            ]
+                          },
+                          {
+                            name: 'label',
+                            content: 'Gardening',
+                            position: 'right',
+                            class: 'margin-standard'
+                          }
+                        ]
+                      },
+                      {
+                        name: 'optionHelp',
+                        content: 'We`ll be studying soil, plants, and seasons.',
+                        position: 'right',
+                      },
+                    ]
                   }
                 ]
               }
             ]
           },
+          {
+              name: 'messages',
+              position: 'right',
+              children: [
+                {
+                  name: 'message',
+                  content: 'You must make a selection.',
+                  position: 'right',
+                }
+              ]
+            }
         ]
       }
     ]"
@@ -105,5 +214,5 @@ file="/_content/examples/checkbox-objects/checkbox-objects.vue"></example>
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key" :data="[{'section-key': 'decorator', description: 'Responsible for the element immediately following the input element — usually used for styling.'}, { 'section-key': 'legend', description: 'Responsible for the fieldset’s legend element.'}, {'section-key': 'fieldset', description: 'Responsible for the fieldset when multiple options are available.'}, {'section-key': 'option', description: 'Responsible for the wrapper around each item in the options.'}, {'section-key': 'options', description: 'Responsible for the wrapper element around all of the option items.'}]">
+<reference-table type="sectionKeys" primary="section-key" :data="[{'section-key': 'decorator', description: 'Responsible for the element immediately following the input element — usually used for styling custom checkboxes.'}, { 'section-key': 'legend', description: 'Responsible for the fieldset’s legend element.'}, {'section-key': 'fieldset', description: 'Responsible for the fieldset when multiple options are available.'}, {'section-key': 'option', description: 'Responsible for the wrapper around each item in the options.'}, {'section-key': 'options', description: 'Responsible for the wrapper element around all of the option items.'}]">
 </reference-table>
