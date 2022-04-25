@@ -31,13 +31,16 @@ FormKit props.
 </reference-table>
 
 ## Section keys
+You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
 
 <div>
   <formkit-input-diagram
-    label-content="Date Label"
+    label-content="Date of birth"
+    prefix-content="📅"
     input-content="Jan. 1 1970"
-    help-content="Please choose a date"
-    message-content="Date is required"
+    suffix-content="👌"
+    help-content="Please tell us your date of birth."
+    message-content="Date is required."
   >
   </formkit-input-diagram>
 </div>

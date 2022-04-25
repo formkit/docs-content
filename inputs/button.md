@@ -62,7 +62,7 @@ You can target a specific section of an input using that section's "key". Read m
                   },
                   {
                     name: 'label',
-                    content: 'Button label here',
+                    content: 'Submit application',
                   },
                   {
                     name: 'suffix',
@@ -75,7 +75,7 @@ You can target a specific section of an input using that section's "key". Read m
           },
           {
             name: 'help',
-            content: 'Click this button to submit. '
+            content: 'Click this button to submit your application. '
           }
         ]
       }

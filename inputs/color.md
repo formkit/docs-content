@@ -27,12 +27,16 @@ FormKit props.
 
 ## Section keys
 
+You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+
 <div>
   <formkit-input-diagram
-    label-content="Color Label"
+    label-content="Favorite color"
     input-content="Color selector here"
-    help-content="What's your favorite color"
-    message-content="Messages about your color selection"
+    help-content="Select your favorite color."
+    message-content="Only primary colors allowed."
+    prefix-content="🎨"
+    suffix-content="👍"
   >
   </formkit-input-diagram>
 </div>
