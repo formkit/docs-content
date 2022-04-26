@@ -29,6 +29,20 @@ FormKit props.
 </reference-table>
 
 ## Section keys
+You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+
+<div>
+  <formkit-input-diagram
+    prefix-content="📞"
+    suffix-content=""
+    label-content="Phone number"
+    input-content="444-555-6666"
+    help-content="Enter your phone number using the xxx-xxx-xxxx format."
+    message-content="Phone number must be of the xxx-xxx-xxxx format."
+  >
+  </formkit-input-diagram>
+</div>
+
 
 <reference-table type="sectionKeys" primary="section-key">
 </reference-table>

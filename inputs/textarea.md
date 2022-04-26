@@ -25,6 +25,20 @@ FormKit props.
 </reference-table>
 
 ## Section keys
+You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+
+<div>
+  <formkit-input-diagram
+    class="input-diagram--textarea"
+    prefix-content="📕"
+    suffix-content=""
+    label-content="Brief biography"
+    input-content="The year was 1982. The season was Autumn. My parents were living in Peru at the time..."
+    help-content="Tell us a little about yourself."
+    message-content="Brief biography must be between 300 and 500 characters."
+  >
+  </formkit-input-diagram>
+</div>
 
 <reference-table type="sectionKeys" primary="section-key">
 </reference-table>
