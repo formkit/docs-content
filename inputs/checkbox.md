@@ -98,6 +98,7 @@ The checkbox input has a different construction depending on if it's a single or
                   name: 'label',
                   content: 'I would like a free t-shirt',
                   position: 'right',
+                  class: 'center-vert'
                 },
               ]
             },
@@ -126,7 +127,6 @@ The checkbox input has a different construction depending on if it's a single or
 
 
 ### Multiple checkbox diagram
-
 
 <div>
   <formkit-input-diagram
@@ -181,7 +181,7 @@ The checkbox input has a different construction depending on if it's a single or
                             name: 'label',
                             content: 'Gardening',
                             position: 'right',
-                            class: 'margin-standard'
+                            class: 'margin-standard center-vert'
                           }
                         ]
                       },
