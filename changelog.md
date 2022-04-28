@@ -28,6 +28,7 @@ description: What's new in the latest version of FormKit?.
 - Fixed a bug that caused `validation-visibility` to not change when updated reactively ([#159](https://github.com/formkit/formkit/issues/159))
 - Fixes a bug that caused the `preserve` keyword to block some form submissions ([#145](https://github.com/formkit/formkit/issues/145))
 - Fixes TypeScript typing for the `@formkit/tailwind` configuration ([#143](https://github.com/formkit/formkit/issues/143))
+- Fixes a bug that caused single checkboxes with an object as the `on-value` to not be set their initial value when using the `:value` prop.
 
 ## 1.0.0-beta.6
 
