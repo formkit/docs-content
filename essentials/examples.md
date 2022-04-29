@@ -24,7 +24,7 @@ Using the <code>list</code> type we can create inputs that can have multiple val
 ## Schema
 
 <ExampleCard
-  href="https://formkit.link/ad361f2b533c2878b81b6a5bc4180e72"
+  href="https://formkit.link/0098db1ae3860a7f80a7be42eff3b058"
   title="Conditionally show input based on value of another input">
 Use the <code>FormKitSchema</code> component to conditionally show an input (with validation rules) based on the value of another input.
 </ExampleCard>
