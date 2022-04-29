@@ -83,4 +83,4 @@ If you have a specific question about how to use FormKit, please ask it on Stack
 - Subscribe to the [email list](https://t.co/hEBF5FZPrB).
 - Follow on [Twitter](https://twitter.com/useformkit).
 - Join the [Discord](https://discord.gg/NZ6nchBDGx).
-- Subscribe on [YouTube](https://www.youtube.com/channel/UCpOouKVFobRb1cNwAInuZ_A).
+- Subscribe on [YouTube](https://www.youtube.com/formkit).
