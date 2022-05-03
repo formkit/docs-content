@@ -11,6 +11,7 @@ description: What's new in the latest version of FormKit?.
 
 #### 🎉 New features
 
+- Adds a new `node.addProps` function for adding new props in custom plugins.
 - Adds new `message` hook for modifying messages as they are being set.
 - Adds a new `index` prop that allows inputs to be injected at a given index on a parent `list` type.
 - Adds a new core event `reset` — emitted after a form is reset.
@@ -23,7 +24,7 @@ description: What's new in the latest version of FormKit?.
 
 #### 🐛 Bug fixes
 
-- Dramatically improves `v-model` performance and reliability for deeply nested structures like forms with list and groups.
+- 🔥 Dramatically improves `v-model` performance and reliability for deeply nested structures like forms with list and groups.
 - Fixes an issue that caused `null` values to throw errors ([#151](https://github.com/formkit/formkit/issues/151))
 - Fixed a bug that caused `validation-visibility` to not change when updated reactively ([#159](https://github.com/formkit/formkit/issues/159))
 - Fixes a bug that caused the `preserve` keyword to block some form submissions ([#145](https://github.com/formkit/formkit/issues/145))
