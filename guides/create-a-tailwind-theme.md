@@ -1,5 +1,5 @@
 ---
-title: Create a Tailwind CSS Theme
+title: Create a Tailwind CSS theme
 description: Follow this guide to learn how to leverage Tailwind CSS with your FormKit forms and inputs
 ---
 

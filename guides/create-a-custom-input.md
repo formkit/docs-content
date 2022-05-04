@@ -1,5 +1,5 @@
 ---
-title: Create a Custom Input
+title: Create a custom input
 description: Follow this guide to learn how to create, register, and use a custom FormKit input in your project.
 ---
 
