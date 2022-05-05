@@ -392,7 +392,7 @@ Checks if the input is a valid number as evaluated by <code>isNaN()</code>.
 
 ### Required
 
-Checks if the input is empty.
+Checks if the input is empty. To remove whitespace from both ends of the input's value pass `trim` as an argument.
 
 <example
   name="Required"
