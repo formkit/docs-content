@@ -23,6 +23,7 @@ description: What's new in the latest version of FormKit?.
 - Adds 🇸🇪 Swedish language.
 - Adds 🇸🇮 Slovenian language.
 - Adds 🇷🇴 Romanian language.
+- Adds 🇯🇵 Japanese language.
 - Improves 🇵🇱 Polish language.
 
 #### 🐛 Bug fixes
