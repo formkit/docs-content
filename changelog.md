@@ -11,6 +11,7 @@ description: What's new in the latest version of FormKit?.
 
 #### 🎉 New features
 
+- Now `checkbox`, `radio`, and `select` inputs (ones that use `:options`) can now use any data type as their value like numbers, objects, or even `null` ([#85](https://github.com/formkit/formkit/issues/85)).
 - Adds a new `node.addProps` function for adding new props in custom plugins.
 - Adds new `message` hook for modifying messages as they are being set.
 - Adds a new `index` prop that allows inputs to be injected at a given index on a parent `list` type.
@@ -30,6 +31,7 @@ description: What's new in the latest version of FormKit?.
 - Fixes a bug that caused the `preserve` keyword to block some form submissions ([#145](https://github.com/formkit/formkit/issues/145))
 - Fixes TypeScript typing for the `@formkit/tailwind` configuration ([#143](https://github.com/formkit/formkit/issues/143))
 - Fixes a bug that caused single checkboxes with an object as the `on-value` to not be set their initial value when using the `:value` prop.
+- Fixes a bug that caused validation rules to not be updated when the label prop changed ([#170](https://github.com/formkit/formkit/issues/170))
 
 ## 1.0.0-beta.6
 
