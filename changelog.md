@@ -21,6 +21,7 @@ description: What's new in the latest version of FormKit?.
 - Exports all input feature functions `import { features } from '@formkit/inputs'`.
 - Adds new core node event `domInputEvent` which has the native HTML `Event` object as the payload.
 - Adds 🇸🇪 Swedish language.
+- Adds 🇸🇮 Slovenian language.
 - Improves 🇵🇱 Polish language.
 
 #### 🐛 Bug fixes
