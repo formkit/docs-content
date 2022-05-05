@@ -22,6 +22,7 @@ description: What's new in the latest version of FormKit?.
 - Adds new core node event `domInputEvent` which has the native HTML `Event` object as the payload.
 - Adds 🇸🇪 Swedish language.
 - Adds 🇸🇮 Slovenian language.
+- Adds 🇷🇴 Romanian language.
 - Improves 🇵🇱 Polish language.
 
 #### 🐛 Bug fixes
