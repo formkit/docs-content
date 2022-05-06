@@ -191,7 +191,7 @@ Now that our template has access to each group's validity and error state, let's
 
 Our form is now capable of informing a user when they have correctly filled out all of the fields in a given step! We've also made a few other improvements:
 - Extracted the "step logic" to a Vue composable so it can be reused elsewhere
-- Created a utils.js file for utility functions
+- Created a utils.js file for the utility functions
 
 <example
   class="cap-height"
@@ -205,35 +205,60 @@ Our form is now capable of informing a user when they have correctly filled out 
 </example>
 
 
-
 ## Form submission and receiving errors
 
+The last piece of the puzzle is actually submitting the form and handling any errors we receive from the backend. For this guide, we'll just fake a backend in the `utils.js` file. We submit the form by adding an `@submit` handler to the `<FormKit type="form">`. While we're at it, let's modify the FormKit-provided submit button using the `submit-label` prop:
 
+```html
+<FormKit
+  type="form"
+  submit-label="Submit application"
+  @submit="submitApp"
+/>
+```
 
+And here's our submit handler:
 
+```js
+const submitApp = async (formData, node) => {
+  try {
+    const res = await axios.post(formData)
+    clearErrors(node)
+    alert('Your application was submitted successfully!')
+  } catch (err) {
+    node.setErrors(err.formErrors, err.fieldErrors)
+  }
+}
+```
 
-## Steps
-- Add all form fields: https://formkit.link/fb658b07ee63fe49fd3e0405c3aa7f08
-- Break them down into steps (groups)
-- Figure out group validity, and add an indicator
-- Make step navigation dynamic
+Notice that FormKit passes our our submit handler 2 helpful arguments: the form's data in a single request-ready object (which we're calling `formData`), and the form's underlying core `node`, which we can use to set any returned errors using the `node.setErrors()` helper.
 
+[`setErrors()`](/essentials/forms#clearing-errors-using-nodeseterrors-or-formkitseterrors) takes 2 arguments: form-level errors (an array), and field-specific errors (an object). Our fake backend returns the `err` response which we use to set any errors.
 
+So, what happens if the user is on step 3 (Application) when they submit, and there are field-level errors on a hidden step? Thankfully, so long as the nodes exist the DOM, FormKit is able place these errors appropriately. This is why we used a `v-show` for the steps instead of `v-if`. 
 
-## Final Form
-- https://formkit.link/120e6e567476622e51ae3e6255ccd028
-- Reviews state.valid from each group: https://formkit.link/999da8bbba212ef4bb08e5b4b3f720fa
-- https://formkit.link/554c012588babbe98aa8d0ec85cb8941
-- After refactor: https://formkit.link/92da3b1025da1ad02b9c57d029d76a08
+## Putting it all together
 
+And Voilà! 🎉 We are finished! The final form has more content and next/prev buttons to make it feel more real. Here it is — a fully functioning multi-step form:
 
+<example
+  :file="[
+    '/_content/examples/guides/multi-step-form/final-form/example.vue',
+    '/_content/examples/guides/multi-step-form/styles.vue',
+    '/_content/examples/guides/multi-step-form/final-form/utils.js',
+    '/_content/examples/guides/multi-step-form/final-form/useSteps.js'
+  ]"
+  :editable="true">
+</example>
 
 ## Ways to improve
 
 Of course, there are always ways to improve anything, and this form is no exception. Here are a few ideas:
 
-- Save form state to `window.localStorage` so if a user leaves and comes back, their form state is maintained.
-- Pre-populate any known form values so the user doesn't have to fill them out.
-- Add a "not yet submitted" status indicator to warn the user that even if all frontend validations are passing (and accompanying checkmarks showing), that they still need to submit.
-- 
+- Save form state to `window.localStorage` so a user's form state is maintained even if they accidentally leave.
+- Pre-populate any known form values so the user doesn't have to fill out known data.
+- Add a "not yet submitted" status indicator to warn the user that they still need to submit.
 
+We've covered a lot of topics in this guide and hope you've learned more about FormKit and how to use it to make multi-step forms easier!
+
+<cta label="Want more? Start by reading about FormKit core." button="Dig deeper" href="/advanced/core"></cta>
