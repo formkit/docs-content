@@ -10,7 +10,7 @@ Few interactions on the web cause as much displeasure as being confronted with a
 In this guide, we'll walk through building a multi-step form with FormKit and see how we can provide a good user experience with minimal code. Let's get started!
 
 <callout type="info" label="Composition API">
-This guide assumes you are are familiar with the <a href="https://vuejs.org/guide/introduction.html#api-styles">Vue Composition API</a>. 
+This guide assumes you are are familiar with the <a href="https://vuejs.org/guide/introduction.html#api-styles">Vue Composition API</a>.
 </callout>
 
 
@@ -42,6 +42,8 @@ Let's walk through breaking the form down into sections. We'll go step-by-step a
 
 Let's wrap each section of inputs with a [group](/inputs/group) (`<FormKit type="group" />`) so we can validate each group independently. FormKit groups are powerful because they are aware of the validation state of all their descendants (among many other features). A group itself becomes valid when all its children (and their children) are valid:
 
+<client-only>
+
 ```html
 <!-- Only showing a single group here for brevity -->
 <FormKit
@@ -56,8 +58,11 @@ Let's wrap each section of inputs with a [group](/inputs/group) (`<FormKit type=
 </FormKit>
 ...
 ```
+</client-only>
 
 Then, let's wrap each group in a "step" section so we can conditionally show and hide each group:
+
+<client-only>
 
 ```html
 <!-- Only showing a single group here for brevity -->
@@ -75,13 +80,19 @@ Then, let's wrap each group in a "step" section so we can conditionally show and
 </section>
 ...
 ```
+</client-only>
 
 Next, let's introduce some navigation UI so we can toggle between each step:
+
+<client-only>
 
 ```js
 // for now, manually set step names
 const stepNames = ['contactInfo','organizationInfo','application']
 ```
+</client-only>
+
+<client-only>
 
 ```html
 <!-- Navigation UI -->
@@ -96,8 +107,9 @@ const stepNames = ['contactInfo','organizationInfo','application']
   </li>
 </ul>
 ```
+</client-only>
 
-Here's what it looks like put together: 
+Here's what it looks like put together:
 
 
 <example
@@ -120,6 +132,8 @@ Remember that groups already know lots of things about their children, so there 
 
 We'll leverage the FormKit [plugin](/advanced/core#plugins) functionality to do this job. While the term "plugin" may sound intimidating, plugins in FormKit are just functions that are called when a node is created. Plugins are inherited by all descendants. Here's our plugin, called `stepPlugin`:
 
+<client-only>
+
 ```js
 // our plugin and our template code will make use of 'steps'
 const steps = reactive({})
@@ -128,20 +142,20 @@ const stepPlugin = (node) => {
     // only runs for <FormKit type="group" />
     if (node.props.type == "group") {
         steps[node.name] = steps[node.name] || {}
-        
+
         // group's validity
         node.on('created', () => {
-            steps[node.name].valid = toRef(node.context.state, 'valid')              
+            steps[node.name].valid = toRef(node.context.state, 'valid')
         })
 
         // group's error count
         node.on('count:errors', ({ payload: count }) => {
             steps[node.name].errorCount = count
         })
-        
+
         // Stop plugin inheritance to descendant nodes.
         // We only care about the groups
-        return false 
+        return false
     }
 }
 
@@ -153,8 +167,11 @@ const stepPlugin = (node) => {
 }
 */
 ```
+</client-only>
 
 Now we define our plugin on the top-level `<FormKit type="form" />`:
+
+<client-only>
 
 ```html
 <FormKit
@@ -164,6 +181,7 @@ Now we define our plugin on the top-level `<FormKit type="form" />`:
 ... rest of the form
 </FormKit>
 ```
+</client-only>
 
 ## Showing validity and errors
 
@@ -171,6 +189,8 @@ Now that our template has access to each group's validity and error state, let's
 
 - We'll add a `data-step-valid="true"` attribute to each step if it's valid (to target with CSS).
 - We'll add the `has-errors` class to the step, and add an error bubble `<span>` inside with the number of errors.
+
+<client-only>
 
 ```html
   <ul class="steps">
@@ -190,6 +210,7 @@ Now that our template has access to each group's validity and error state, let's
     </li>
   </ul>
 ```
+</client-only>
 
 Our form is now capable of informing a user when they have correctly filled out all of the fields in a given step! We've also made a few other improvements:
 - Extracted the "step logic" to a [Vue composable](https://vuejs.org/guide/reusability/composables.html) so it can be reused elsewhere.
@@ -213,6 +234,8 @@ The last piece of the puzzle is actually submitting the form and handling any er
 
 We submit the form by adding an `@submit` handler to the `<FormKit type="form">`. While we're at it, let's modify the FormKit-provided submit button using the `submit-label` prop:
 
+<client-only>
+
 ```html
 <FormKit
   type="form"
@@ -221,8 +244,11 @@ We submit the form by adding an `@submit` handler to the `<FormKit type="form">`
 >
 ... rest of form
 ```
+</client-only>
 
 And here's our submit handler:
+
+<client-only>
 
 ```js
 const submitApp = async (formData, node) => {
@@ -235,12 +261,13 @@ const submitApp = async (formData, node) => {
   }
 }
 ```
+</client-only>
 
 Notice that FormKit passes our our submit handler 2 helpful arguments: the form's data in a single request-ready object (which we're calling `formData`), and the form's underlying core `node`, which we can use to set any returned errors using the `node.setErrors()` helper.
 
 [`setErrors()`](/essentials/forms#clearing-errors-using-nodeseterrors-or-formkitseterrors) takes 2 arguments: form-level errors (an array), and field-specific errors (an object). Our fake backend returns the `err` response which we use to set any errors.
 
-So, what happens if the user is on step 3 (Application) when they submit, and there are field-level errors on a hidden step? Thankfully, so long as the nodes exist the DOM, FormKit is able place these errors appropriately. This is why we used a `v-show` for the steps instead of `v-if`. 
+So, what happens if the user is on step 3 (Application) when they submit, and there are field-level errors on a hidden step? Thankfully, so long as the nodes exist the DOM, FormKit is able place these errors appropriately. This is why we used a `v-show` for the steps instead of `v-if`.
 
 ## Putting it all together
 
