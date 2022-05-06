@@ -1,7 +1,3 @@
-<script setup>
-import Styles from './styles.vue'
-</script>
-
 <!-- %partial%::html:: -->
 <template>
   <h1>Carbon Sequestration Grant</h1>
@@ -36,6 +32,9 @@ import Styles from './styles.vue'
       <pre>{{ value }}</pre>
     </details>
   </FormKit>
-  <Styles />
 </template>
 <!-- %partial%::html:: -->
+
+<style>
+@import "https://cdn.formk.it/web-assets/multistep-form.css";
+</style>

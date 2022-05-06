@@ -1,10 +1,8 @@
 <script setup>
 import { camel2title } from './utils.js'
-import Styles from './styles.vue'
 import useSteps from './useSteps.js'
 
 const { steps, activeStep, stepPlugin } = useSteps()
-
 </script>
 
 <template>
@@ -80,5 +78,9 @@ const { steps, activeStep, stepPlugin } = useSteps()
       <pre>{{ value }}</pre>
     </details>
   </FormKit>
-  <Styles />
 </template>
+
+<style>
+/* styles imported for brevity */
+@import "https://cdn.formk.it/web-assets/multistep-form.css";
+</style>

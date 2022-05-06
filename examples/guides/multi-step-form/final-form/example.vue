@@ -1,6 +1,5 @@
 <script setup>
 import { camel2title, axios, clearErrors } from './utils.js'
-import Styles from './styles.vue'
 import useSteps from './useSteps.js'
 
 const { steps, activeStep, setStep, stepPlugin } = useSteps()
@@ -14,7 +13,6 @@ const submitApp = async (formData, node) => {
     node.setErrors(err.formErrors, err.fieldErrors)
   }
 }
-
 </script>
 
 <template>
@@ -24,7 +22,7 @@ const submitApp = async (formData, node) => {
     who demonstrate ingenuity, creativity, and progress towards their carbon
     sequestration efforts. Fill out this form to apply.
   </p>
-      
+
   <FormKit
     type="form"
     #default="{ value }"
@@ -32,7 +30,7 @@ const submitApp = async (formData, node) => {
     :plugins="[stepPlugin]"
     @submit="submitApp"
   >
- 
+
     <ul class="steps">
       <li
         v-for="(step, stepName) in steps"
@@ -49,10 +47,10 @@ const submitApp = async (formData, node) => {
         {{ camel2title(stepName) }}
       </li>
     </ul>
-    
+
     <!-- .form-body solely for styling -->
     <div class="form-body">
-    
+
       <section v-show="activeStep === 'contactInfo'">
         <FormKit
           type="group"
@@ -65,14 +63,14 @@ const submitApp = async (formData, node) => {
             name="full_name"
             validation="required"
           />
-          
+
           <FormKit
             type="email"
             name="email"
             label="*Email address"
             validation="required|email"
           />
-          
+
           <FormKit
             type="tel"
             name="tel"
@@ -82,8 +80,8 @@ const submitApp = async (formData, node) => {
           />
         </FormKit>
       </section>
-      
-      
+
+
       <section v-show="activeStep === 'organizationInfo'">
         <FormKit
           id="organizationInfo"
@@ -97,7 +95,7 @@ const submitApp = async (formData, node) => {
             help="Enter your official organization name."
             validation="required|length:3"
           />
-          
+
           <FormKit
             type="date"
             label="Date of incorporation"
@@ -106,8 +104,8 @@ const submitApp = async (formData, node) => {
           />
         </FormKit>
       </section>
-      
-      
+
+
       <section v-show="activeStep === 'application'">
         <FormKit
           id="application"
@@ -134,21 +132,25 @@ const submitApp = async (formData, node) => {
           />
         </FormKit>
       </section>
-      
+
       <div class="step-nav">
         <button :disabled="activeStep == 'contactInfo'"  type="button" @click="setStep(-1)" v-text="'< Previous step'" />
         <button class="next" :disabled="activeStep == 'application' " type="button" @click="setStep(1)" v-text="'Next step >'"/>
       </div>
-          
+
       <details>
         <summary>Form data</summary>
         <pre>{{ value }}</pre>
       </details>
     </div>
-    
+
   </FormKit>
-  
+
   <p><small><em>*All the contents of this form are fictional (the company, grant, and form)
     for the purposes of demonstrating the capabilities of FormKit.</em></small></p>
-  <Styles />
 </template>
+
+<style>
+/* styles imported for brevity */
+@import "https://cdn.formk.it/web-assets/multistep-form.css";
+</style>

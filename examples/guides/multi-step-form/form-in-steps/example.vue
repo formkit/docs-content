@@ -1,5 +1,4 @@
 <script setup>
-import Styles from './styles.vue'
 import { ref } from 'vue'
 
 const step = ref('contactInfo')
@@ -77,5 +76,9 @@ const camel2title = (str) => str
       <pre>{{ value }}</pre>
     </details>
   </FormKit>
-  <Styles />
 </template>
+
+<style>
+/* styles imported for brevity */
+@import "https://cdn.formk.it/web-assets/multistep-form.css";
+</style>
