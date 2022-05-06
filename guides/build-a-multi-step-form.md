@@ -9,6 +9,10 @@ Few interactions on the web cause as much displeasure as being confronted with a
 
 In this guide, we'll walk through building a multi-step form with FormKit and see how we can provide a good user experience with minimal code. Let's get started!
 
+<callout type="info" label="Composition API">
+This guide assumes you are are familiar with the <a href="https://vuejs.org/guide/introduction.html#api-styles">Vue Composition API</a>. 
+</callout>
+
 
 ## Requirements
 
@@ -22,9 +26,7 @@ Let's begin by laying out some requirements that can be challenging with multi-p
 
 ## Creating a basic form
 
-First, let's create a basic form _without steps_ so we have content to work with. We'll organize the form into 3 sections — "Contact Info", "Organization Info", and "Application" — which will become the steps later. We'll limit each section to 1 question for now until we have the full structure in place.
-
-We'll include a mix of validation rules for each input. When all of the rules for a given section are passing, we can let the user know that section is complete. Lastly, for the purposes of this guide, we'll output the Form data at the bottom:
+First, let's create a basic form _without steps_ so we have content to work with. We'll organize the form into 3 sections — "Contact Info", "Organization Info", and "Application" — which will become the steps later. We'll include a mix of validation rules for each input, and limit each section to 1 question for now until we have the full structure in place. Lastly, for the purposes of this guide, we'll output the Form data at the bottom:
 
 <example
   :file="[
@@ -109,14 +111,14 @@ Here's what it looks like put together:
 
 ## Tracking validity and errors for each step
 
-Out-of-the-box, FormKit already 1) tracks group validity and 2) counts group errors. We just need to expose this data so we can use it in our form. There are a couple concepts to remember about FormKit before we proceed. First, every `<FormKit>` component has a matching [core node](/advanced/core#node), which has a reactive `node.context` object. Second, each core node has a [ledger](/advanced/core#ledger) which counts messages. Here will be our approach:
+Out-of-the-box, FormKit already 1) tracks group validity and 2) counts group errors. We just need to expose this data so we can use it in our form. There are a couple concepts to remember about FormKit before we proceed. First, every `<FormKit>` component has a matching [core node](/advanced/core#node), which itself has a reactive `node.context` object. Second, each core node has a [ledger](/advanced/core#ledger) which counts messages. Here will be our approach:
 
-- We'll track validity of each `group` by looking at the group's `node.context.state.valid`
-- We'll track the error counts on each `group` by listening for `count:errors` events — which are emitted every time the error count changes.
+- We'll track validity of each `group` node by looking at the group's `node.context.state.valid`.
+- We'll track the error counts on each `group` node by listening for `count:errors` events — which are emitted every time the error count changes.
 
 Remember that groups already know lots of things about their children, so there is nothing else we need to track ourselves.
 
-We'll leverage the FormKit [plugins](/advanced/core#plugins) to do this job. While the term "plugin" may sound intimidating, plugins in FormKit are just functions that are called when a node is created. Plugins are inherited by all descendants. Here's our plugin, called `stepPlugin`:
+We'll leverage the FormKit [plugin](/advanced/core#plugins) functionality to do this job. While the term "plugin" may sound intimidating, plugins in FormKit are just functions that are called when a node is created. Plugins are inherited by all descendants. Here's our plugin, called `stepPlugin`:
 
 ```js
 // our plugin and our template code will make use of 'steps'
@@ -167,7 +169,7 @@ Now we define our plugin on the top-level `<FormKit type="form" />`:
 
 Now that our template has access to each group's validity and error state, let's write the UI to expose this in the step navigation bar. In addition, we no longer have to manually define our steps since our plugin dynamically stores the `steps`. Here's our approach:
 
-- We'll add a `data-step-valid="true"` attribute to each step if it's valid.
+- We'll add a `data-step-valid="true"` attribute to each step if it's valid (to target with CSS).
 - We'll add the `has-errors` class to the step, and add an error bubble `<span>` inside with the number of errors.
 
 ```html
@@ -190,7 +192,7 @@ Now that our template has access to each group's validity and error state, let's
 ```
 
 Our form is now capable of informing a user when they have correctly filled out all of the fields in a given step! We've also made a few other improvements:
-- Extracted the "step logic" to a Vue composable so it can be reused elsewhere
+- Extracted the "step logic" to a [Vue composable](https://vuejs.org/guide/reusability/composables.html) so it can be reused elsewhere.
 - Created a utils.js file for the utility functions
 
 <example
@@ -207,14 +209,17 @@ Our form is now capable of informing a user when they have correctly filled out 
 
 ## Form submission and receiving errors
 
-The last piece of the puzzle is actually submitting the form and handling any errors we receive from the backend. For this guide, we'll just fake a backend in the `utils.js` file. We submit the form by adding an `@submit` handler to the `<FormKit type="form">`. While we're at it, let's modify the FormKit-provided submit button using the `submit-label` prop:
+The last piece of the puzzle is actually submitting the form and handling any errors we receive from the backend — which we've faked for this guide.
+
+We submit the form by adding an `@submit` handler to the `<FormKit type="form">`. While we're at it, let's modify the FormKit-provided submit button using the `submit-label` prop:
 
 ```html
 <FormKit
   type="form"
   submit-label="Submit application"
   @submit="submitApp"
-/>
+>
+... rest of form
 ```
 
 And here's our submit handler:
