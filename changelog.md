@@ -9,6 +9,11 @@ description: What's new in the latest version of FormKit?.
 
 ### [TK] Date
 
+#### ⚠️Breaking changes
+
+- The `update:model-value` event will now only be emitted when using the `v-model` directive.
+- The `input` event is now debounced to reduce the amount of noise being emitted. You can use the new `input-raw` to listen to every input event.
+
 #### 🎉 New features
 
 - Now `checkbox`, `radio`, and `select` inputs (ones that use `:options`) can now use any data type as their value like numbers, objects, or even `null` ([#85](https://github.com/formkit/formkit/issues/85)).
@@ -19,6 +24,7 @@ description: What's new in the latest version of FormKit?.
 - Adds a new `inputRaw` event to the `<FormKit>` component that is emitted for every core node `commit` (this can be quite frequent)
 - The `<FormKit>` component’s `input` event is now debounced, meaning it emits much less noise.
 - Exports all input feature functions `import { features } from '@formkit/inputs'`.
+- Adds a new `input-raw` event to the `<FormKit>` component which is emitted for every single input event in an input, list, group, or form (very noisy).
 - Adds new core node event `domInputEvent` which has the native HTML `Event` object as the payload.
 - Adds 🇸🇪 Swedish language.
 - Adds 🇸🇮 Slovenian language.
