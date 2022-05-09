@@ -14,6 +14,7 @@ description: What's new in the latest version of FormKit?.
 - The `update:model-value` event will now only be emitted when using the `v-model` directive.
 - The `input` event is now debounced to reduce the amount of noise being emitted. You can use the new `input-raw` to listen to every input event.
 - Errors set via `setErrors` are now automatically cleared on input by default. To revert to the previous behavior, set `preserveErrors: true` in your global config object.
+- The `@formkit/tailwindcss` is now deprecated — both the `formKitTailwind` plugin (formerly `FormKitPlugin` from `@formkit/tailwindcss`) and the `generateClasses` function have been moved to the `@formkit/themes` package.
 
 #### 🎉 New features
 
@@ -29,6 +30,8 @@ description: What's new in the latest version of FormKit?.
 - Adds a new `input-raw` event to the `<FormKit>` component which is emitted for every single input event in an input, list, group, or form (very noisy).
 - The core node is now the second argument of the `input`, `input-raw`, `submit` and `submit-raw` events.
 - Adds new core node event `dom-input-event` which has the native HTML `Event` object as the payload.
+- `@formkit/themes` now includes named exports for plugin functions for Tailwind CSS (`formKitTailwind`), Windi CSS (`formKitWindi`), and Uno CSS (`formKitUno`). By adding the correct plugin to your CSS framework's configuration file you will have access to a variety of formkit variants such as `formkit-invalid:` and `formkit-disabled:`.
+- `@formkit/themes` now includes the [`generateClasses`](/essentials/styling/#using-generateclasses-from-formkitthemes) helper function will allows you to easily supply different class lists to `${sectionKey}`s based on input type.
 - Adds 🇸🇪 Swedish language.
 - Adds 🇸🇮 Slovenian language.
 - Adds 🇷🇴 Romanian language.
