@@ -392,11 +392,19 @@ Checks if the input is a valid number as evaluated by <code>isNaN()</code>.
 
 ### Required
 
-Checks if the input is empty. To remove whitespace from both ends of the input's value pass `trim` as an argument.
+Checks if the input is empty.
 
 <example
   name="Required"
   file="/_content/examples/rule-required/rule-required.vue"
+  layout="auto">
+</example>
+
+If you don't want whitespace to cause the `required` rule to pass, you can pass `trim` as an argument to the rule:
+
+<example
+  name="Required"
+  file="/_content/examples/rule-required/rule-required-trim.vue"
   layout="auto">
 </example>
 
