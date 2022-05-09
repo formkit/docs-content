@@ -7,7 +7,7 @@ description: What's new in the latest version of FormKit?.
 
 ## 1.0.0-beta.7
 
-### [TK] Date
+### May 9, 2022
 
 #### ⚠️ Breaking changes
 
