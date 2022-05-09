@@ -555,25 +555,27 @@ node.input('fizz buzz')
 
 The following is a comprehensive list of all events emitted by `@formkit/core`. Third-party code may emit additional events not included here.
 
-| Name                | Payload                         | Bubbles | Description                                                                                                            |
-| ------------------- | ------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `commit`            | any                             | yes     | Emitted when a node's value is committed but before it has been transmitted to the rest of the form.                   |
-| `config:{property}` | any (the value)                 | yes     | Emitted any time a specific configuration option is set or changed.                                                    |
-| `child`             | `FormKitNode`                   | yes     | Emitted when a new child node is added, created or assigned to a parent.                                               |
-| `created`           | `FormKitNode`                   | yes     | Emitted immediately _before_ the node is returned when calling `createNode()` (plugins and features have already run). |
-| `defined`           | `FormKitTypeDefinition`         | yes     | Emitted when the node’s "type" is defined, this typically happens during `createNode()`.                               |
-| `destroying`        | `FormKitNode`                   | yes     | Emitted when the `node.destroy()` is called, after it has been detached from any parents.                              |
-| `domInputEvent`     | `Event`                         | yes     | Emitted when the `DOMInput` handler is called, useful for getting the original HTML input event in core.               |
-| `input`             | any (the value)                 | yes     | Emitted when `node.input()` is called — after the `input` hook has run.                                                |
-| `input`             | any (the value)                 | yes     | Emitted when `node.input()` is called — after the `input` hook has run.                                                |
-| `message-added`     | `FormKitMessage`                | yes     | Emitted when a new `node.store` message was added.                                                                     |
-| `message-removed`   | `FormKitMessage`                | yes     | Emitted when a `node.store` message was removed.                                                                       |
-| `message-updated`   | `FormKitMessage`                | yes     | Emitted when a `node.store` message was changed.                                                                       |
-| `prop:{propName}`   | any (the value)                 | yes     | Emitted any time a specific prop is set or changed.                                                                    |
-| `prop`              | `{ prop: string, value: any }`  | yes     | Emitted any time a prop is set or changed.                                                                             |
-| `reset`             | `FormKitNode`                   | yes     | Emitted any time a form or group is reset.                                                                             |
-| `settled`           | boolean                         | no      | Emitted anytime a node’s [disturbance counting](#value-settlement) settles or unsettles                                |
-| `text`              | string or `FormKitTextFragment` | no      | Emitted after the `text` hook has run — typically when processing interface text that may have been translated.        |
+| Name                      | Payload                         | Bubbles | Description                                                                                                            |
+| ------------------------- | ------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `commit`                  | any                             | yes     | Emitted when a node's value is committed but before it has been transmitted to the rest of the form.                   |
+| `config:{property}`       | any (the value)                 | yes     | Emitted any time a specific configuration option is set or changed.                                                    |
+| `count:{property}`        | any (the value)                 | no      | Emitted any time a a ledger’s counter value changes.                                                                   |
+| `child`                   | `FormKitNode`                   | yes     | Emitted when a new child node is added, created or assigned to a parent.                                               |
+| `created`                 | `FormKitNode`                   | yes     | Emitted immediately _before_ the node is returned when calling `createNode()` (plugins and features have already run). |
+| `defined`                 | `FormKitTypeDefinition`         | yes     | Emitted when the node’s "type" is defined, this typically happens during `createNode()`.                               |
+| `destroying`              | `FormKitNode`                   | yes     | Emitted when the `node.destroy()` is called, after it has been detached from any parents.                              |
+| `dom-input-event`         | `Event`                         | yes     | Emitted when the `DOMInput` handler is called, useful for getting the original HTML input event in core.               |
+| `input`                   | any (the value)                 | yes     | Emitted when `node.input()` is called — after the `input` hook has run.                                                |
+| `message-added`           | `FormKitMessage`                | yes     | Emitted when a new `node.store` message was added.                                                                     |
+| `message-removed`         | `FormKitMessage`                | yes     | Emitted when a `node.store` message was removed.                                                                       |
+| `message-updated`         | `FormKitMessage`                | yes     | Emitted when a `node.store` message was changed.                                                                       |
+| `prop:{propName}`         | any (the value)                 | yes     | Emitted any time a specific prop is set or changed.                                                                    |
+| `prop`                    | `{ prop: string, value: any }`  | yes     | Emitted any time a prop is set or changed.                                                                             |
+| `reset`                   | `FormKitNode`                   | yes     | Emitted any time a form or group is reset.                                                                             |
+| `settled`                 | boolean                         | no      | Emitted anytime a node’s [disturbance counting](#value-settlement) settles or unsettles.                               |
+| `settled:{counterName}`   | boolean                         | no      | Emitted anytime a specific ledger [counter](#value-settlement) settles (returns to zero).                              |
+| `unsettled:{counterName}` | boolean                         | no      | Emitted anytime a specific ledger [counter](#value-settlement) becomes unsettled (goes above zero).                    |
+| `text`                    | string or `FormKitTextFragment` | no      | Emitted after the `text` hook has run — typically when processing interface text that may have been translated.        |
 
 <callout type="info" label="Prop events on config changes">
 When a configuration option changes, any inheriting nodes (including the origin node) will also emit <code>prop</code> and <code>prop:{propName}</code> events, so long as they do not override that property in their own <code>props</code> or <code>config</code> objects.
