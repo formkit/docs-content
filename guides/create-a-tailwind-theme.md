@@ -27,35 +27,37 @@ This is a low-barrier way to apply Tailwind styles to your FormKit forms, but wh
 
 Let's explore how we can apply Tailwind classes globally to _all_ FormKit inputs within our project.
 
-## Using @formkit/tailwindcss
+## Using @formkit/themes
 
-FormKit ships a first-party package `@formkit/tailwindcss` that makes it simple to create a Tailwind theme for FormKit in your project.
+FormKit ships a first-party package `@formkit/themes` that includes Tailwind CSS support — making it easy to create a Tailwind CSS theme for FormKit in your project.
 
-The plugin enables you to author your theme as a JavaScript object grouped by input `type` and `sectionKey`. Additionally, it exposes a number of Tailwind variants based on input and form state such as `formkit-invalid:` and `formkit-disabled:` which allow you to dynamically change your input styling.
+The package enables you to author your theme as a JavaScript object grouped by input `type` and `sectionKey`. Additionally, you can access a number of Tailwind variants based on input and form state such as `formkit-invalid:` and `formkit-disabled:` which allow you to dynamically change your input styling.
 
 To get started we need to add the package to our project.
 
 <client-only>
 
 ```bash
-npm install @formkit/tailwindcss
+npm install @formkit/themes
 ```
 
 </client-only>
 
 From there we need to do two things:
 
-- Add the `@formkit/tailwindcss` plugin to our project's `tailwind.config.js` file.
-- Import `generateClasses` from `@formkit/tailwindcss` and use it where we define our FormKit config options.
+- Add the `FormKitTailwind` plugin from `@formkit/themes` to our project's `tailwind.config.js` file.
+- Import the `generateClasses` helper function from `@formkit/themes` and use it where we define our FormKit config options.
 
 <client-only>
 
 ```js
 // tailwind.config.js
+const { FormKitTailwind } = require('@formkit/themes');
+
 module.exports {
   ...
   plugins: [
-    require('@formkit/tailwindcss').default
+    FormKitTailwind
   ]
   ...
 }
@@ -66,7 +68,7 @@ module.exports {
 import { createApp } from 'vue'
 import App from './App.vue'
 import { plugin, defaultConfig } from '@formkit/vue'
-import { generateClasses } from '@formkit/tailwindcss'
+import { generateClasses } from '@formkit/themes'
 import '../dist/index.css' // wherever your Tailwind styles exist
 
 createApp(App)
@@ -98,10 +100,13 @@ If you are using a single file for configuration, like <code>formkit.config.js</
 <client-only>
 
 ```js
+// tailwind.config.js for Nuxt users
+const { FormKitTailwind } = require('@formkit/themes');
+
 export default {
   // add the formkit.config.js file
   content: ['./src/**/*.{html,js}', './path/to/formkit.config.js'],
-  plugins: [FormKitPlugin ]
+  plugins: [FormKitTailwind]
 }
 ```
 
@@ -131,7 +136,7 @@ Here is a `text` input with Tailwind classes applied:
 
 ## Using variants
 
-The `@formkit/tailwindcss` provides a number of variants you can use in your class lists to dynamically respond to input and form state.
+The `FormKitTailwind` plugin from `@formkit/themes` provides a number of variants you can use in your class lists to dynamically respond to input and form state.
 
 The currently provided variants are:
 
@@ -165,7 +170,7 @@ Let's add some variants for `formkit-invalid` and `formkit-disabled` to our text
 
 Now we're cooking! To create a comprehensive theme all we need to do is define class lists for the `sectionKeys` of all the other input types we'll use in our project.
 
-There are some improvements we can make though. The `generateClasses` function from `@formkit/tailwindcss` allows for a special `global` key that will apply to _all_ inputs. This is helpful for `sectionKeys` such as `help` and `messages` that are usually styled the same across all input types in a project.
+There are some improvements we can make though. The `generateClasses` helper function from `@formkit/themes` allows for a special `global` key that will apply to _all_ inputs. This is helpful for `sectionKeys` such as `help` and `messages` that are usually styled the same across all input types in a project.
 
 Let's create a "Kitchen Sink" of input types, each having their defined class lists applied. Additionally, we'll move our theme to a separate file to assist with readability:
 
@@ -215,6 +220,6 @@ Here are some ways to take the above guide even further:
 - Combine multiple variants such as `formkit-invalid:formkit-submitted:` to add extra emphasis to invalid fields when a user tries to submit an incomplete form.
 - Publish your theme as an npm package for easy importing and sharing between projects.
 
-Hopefully, this guide helped you understand how classes are applied to FormKit inputs and how you can leverage the `@formkit/tailwindcss` package to make use of Tailwind in your FormKit projects. If you want to dive in deeper, try reading about the [core internals of FormKit](/advanced/core) and [the FormKit schema](/advanced/schema)!
+Hopefully, this guide helped you understand how classes are applied to FormKit inputs and how you can leverage the `FormKitTailwind` plugin from the `@formkit/themes` package to make use of Tailwind in your FormKit projects. If you want to dive in deeper, try reading about the [core internals of FormKit](/advanced/core) and [the FormKit schema](/advanced/schema)!
 
 <cta label="Want more? Start by reading about FormKit core." button="Dig deeper" href="/advanced/core"></cta>

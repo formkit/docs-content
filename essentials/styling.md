@@ -208,6 +208,6 @@ In addition to modifying classes via config or props _on a  `<FormKit>` componen
 
 ## Tailwind CSS
 
-Want to use Tailwind with FormKit? We've written a guide walking through the process using both inline class props as well as using `@formkit/tailwindcss` to create a global Tailwind theme:
+Want to use Tailwind with FormKit? We've written a guide walking through the process using both inline class props as well as using the `FormKitVariants` plugin `generateClasses` helper function from @formkit/themes` to create a global Tailwind theme:
 
 <cta label="Guide: Create a Tailwind CSS theme" button="Read now" href="/guides/create-a-tailwind-theme"></cta>

@@ -1,4 +1,4 @@
-import { generateClasses } from '@formkit/tailwindcss'
+import { generateClasses } from '@formkit/themes'
 
 export default {
   config: {
