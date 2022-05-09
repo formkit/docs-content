@@ -1,5 +1,5 @@
 ---
-title: Color
+title: Datetime-local
 description: A native HTML datetime-local picker.
 ---
 
@@ -30,6 +30,19 @@ The `datetime-local` input has no unique props but can make use of the following
 </reference-table>
 
 ## Section keys
+You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+
+<div>
+  <formkit-input-diagram
+    prefix-content="⏰"
+    suffix-content="👍"
+    label-content="Appointment time"
+    input-content="Jan. 1 1970 12:00:00"
+    help-content="Please choose a date and time for your appointment."
+    message-content="Date and time are required."
+  >
+  </formkit-input-diagram>
+</div>
 
 <reference-table type="sectionKeys" primary="section-key">
 </reference-table>

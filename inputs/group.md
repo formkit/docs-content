@@ -33,5 +33,5 @@ file="/_content/examples/group-validity/group-validity.vue"></example>
 
 ## Section keys
 
-<reference-table type="sectionKeys" primary="section-key" :without="['outer','label','inner','input','help','messages','message']">
+<reference-table type="sectionKeys" primary="section-key" :without="['outer','prefix', 'suffix', 'label','inner','input','help','messages','message']">
 </reference-table>

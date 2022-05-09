@@ -92,6 +92,69 @@ When using the default slot in conjunction with the <code>multiple</code> attrib
 </reference-table>
 
 ## Section keys
+You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+
+<div>
+  <formkit-input-diagram
+    class="input-diagram--select"
+    :schema="[
+        {
+          name: 'outer',
+          children: [
+            {
+              name: 'wrapper',
+              position: 'right',
+              children: [
+                {
+                  name: 'label',
+                  content: 'Smoothie size',
+                  position: 'right',
+                }, 
+                {
+                  name: 'inner',
+                  children: [
+                    {
+                      name: 'prefix',
+                    },
+                    {
+                      name: 'input',
+                      children: [
+                        {
+                          name: 'option',
+                          content: 'Medium'
+                        }
+                      ]
+                    },
+                    {
+                      name: 'suffix',
+                      position: 'right',
+                    },
+                  ]
+                },
+              ]
+            },
+            {
+              name: 'help',
+              content: 'Choose a smoothie size.',
+              position: 'right'
+            },
+            {
+              name: 'messages',
+              position: 'right',
+              children: [
+                {
+                  name: 'message',
+                  content: 'You must make a selection.',
+                  position: 'right'
+                }
+              ]
+            }
+          ]
+        }
+      ]"
+  >
+  </formkit-input-diagram>
+</div>
 
 <reference-table type="sectionKeys" primary="section-key" :data="[{'section-key': 'option', description: 'Responsible for rendering each option. Context includes an <code>option</code> property with the option being rendered. This object includes <code>label</code> and <code>value</code> properties.'}]">
 </reference-table>

@@ -31,7 +31,7 @@ Let's explore how we can apply Tailwind classes globally to _all_ FormKit inputs
 
 FormKit ships a first-party package `@formkit/tailwindcss` that makes it simple to create a Tailwind theme for FormKit in your project.
 
-The plugin enables you to author your theme as a javascript object grouped by input `type` and `sectionKey`. Additionally, it exposes a number of Tailwind variants based on input and form state such as `formkit-invalid:` and `formkit-disabled:` which allow you to dynamically change your input styling.
+The plugin enables you to author your theme as a JavaScript object grouped by input `type` and `sectionKey`. Additionally, it exposes a number of Tailwind variants based on input and form state such as `formkit-invalid:` and `formkit-disabled:` which allow you to dynamically change your input styling.
 
 To get started we need to add the package to our project.
 
@@ -91,6 +91,23 @@ createApp(App)
 
 </client-only>
 
+<callout type="warning" label="Path needed if using formkit.config.js">
+If you are using a single file for configuration, like <code>formkit.config.js</code> within Nuxt, instead of <code>app.js</code>, you will need to add the path to that file to your <code>tailwind.config.js</code> inside the <code>content</code> property:
+</callout>
+
+<client-only>
+
+```js
+export default {
+  // add the formkit.config.js file
+  content: ['./src/**/*.{html,js}', './path/to/formkit.config.js'],
+  plugins: [FormKitPlugin ]
+}
+```
+
+</client-only>
+
+
 Once this setup is complete we are ready to begin writing our Tailwind theme!
 
 ## Our first Tailwind input
@@ -131,7 +148,7 @@ The currently provided variants are:
 
 You use these variants in the same way you use the built-in Tailwind variants such as `dark:` and `hover:`.
 
-Let's add some variants for `formkit-invalid` and `formkit-disabled` to our text input.
+Let's add some variants for `formkit-invalid` and `formkit-disabled` to our text input:
 
 <example
   :file="[
@@ -150,7 +167,7 @@ Now we're cooking! To create a comprehensive theme all we need to do is define c
 
 There are some improvements we can make though. The `generateClasses` function from `@formkit/tailwindcss` allows for a special `global` key that will apply to _all_ inputs. This is helpful for `sectionKeys` such as `help` and `messages` that are usually styled the same across all input types in a project.
 
-Let's create a "Kitchen Sink" of input types, each having their defined class lists applied. Additionally, we'll move our theme to a separate file to assist with readability.
+Let's create a "Kitchen Sink" of input types, each having their defined class lists applied. Additionally, we'll move our theme to a separate file to assist with readability:
 
 <callout type="tip" label="Global Class Lists">
 By using the <code>global</code> key in your theme object you can apply a class list to <em>all</em> inputs that have a given <code>sectionKey</code>. This is useful for things like labels or help text when you want to style them identically regardless of input type.
@@ -174,7 +191,7 @@ And there we have it! All FormKit core inputs styled with Tailwind utility class
 
 If we need to override any specific one-offs within our project, we can do so using the [section-key class props](/essentials/styling#section-key-class-props) or the [classes](/essentials/styling#classes-prop) prop on a given `FormKit` input within our project which was covered in the opening section of this guide.
 
-Of particular importance when doing an override is the special [`$reset` modifier](/essentials/styling#resetting-classes) for class lists. When the FormKit class system encounters a `$reset` class it will erase the current class list for the given section and only collect class names that occur after the `$reset` token was encountered. This is valuable in a system like Tailwind where it would be painful to have to write override classes or individually disable classes for every globally configured class when deviating from our theme.
+Of particular importance when doing an override is the special [`$reset` modifier](/essentials/styling#resetting-classes) for class lists. When the FormKit class system encounters a `$reset` class it will erase the current class list for the given section and only collect class names that occur after the `$reset` token was encountered. This is valuable in a system like Tailwind where it would be painful to have to write override classes or individually disable classes for every globally configured class when deviating from our theme:
 
 <example
   :file="[

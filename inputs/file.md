@@ -51,6 +51,169 @@ The `file` input has no unique props but the native HTML input does have a numbe
 
 ## Section keys
 
+You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+
+### Single file diagram
+
+<div>
+  <formkit-input-diagram
+    class="input-diagram--file file-single"
+    :schema="[
+        {
+          name: 'outer',
+          children: [
+            {
+              name: 'wrapper',
+              position: 'right',
+              children: [
+                {
+                  name: 'label',
+                  content: 'Your resumé',
+                  position: 'right',
+                }, 
+                {
+                  name: 'inner',
+                  children: [
+                    {
+                      name: 'prefix',
+                    },
+                    {
+                      name: 'input',
+                    },
+                    {
+                      name: 'fileList',
+                      children: [
+                        {
+                          name: 'fileItem',
+                          children: [
+                            {
+                              name: 'fileName',
+                              content: 'my-resume.pdf'
+                            },
+                            {
+                              name: 'removeFiles',
+                              content: 'X',
+                              position: 'right',
+                            },
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      name: 'noFiles',
+                      position: 'right',
+                    },
+                    {
+                      name: 'suffix',
+                      position: 'right',
+                    },
+                  ]
+                },
+              ]
+            },
+            {
+              name: 'help',
+              content: 'Upload your resumé.',
+              position: 'right'
+            },
+            {
+              name: 'messages',
+              position: 'right',
+              children: [
+                {
+                  name: 'message',
+                  content: 'Only supports .pdf and .docx extensions.',
+                  position: 'right'
+                }
+              ]
+            }
+          ]
+        }
+      ]"
+  >
+  </formkit-input-diagram>
+</div>
+
+### Multiple file diagram
+<div>
+  <formkit-input-diagram
+    class="input-diagram--file file-multiple"
+    :schema="[
+        {
+          name: 'outer',
+          children: [
+            {
+              name: 'wrapper',
+              position: 'right',
+              children: [
+                {
+                  name: 'label',
+                  content: 'Your resumé',
+                  position: 'right',
+                }, 
+                {
+                  name: 'inner',
+                  children: [
+                    {
+                      name: 'prefix',
+                    },
+                    {
+                      name: 'input',
+                    },
+                    {
+                      name: 'fileList',
+                      children: [
+                        {
+                          name: 'fileItem',
+                          children: [
+                            {
+                              name: 'fileName',
+                              content: 'my-resume.pdf'
+                            },
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      name: 'removeFiles',
+                      content: 'Remove all',
+                      position: 'right',
+                    },
+                    {
+                      name: 'noFiles',
+                      position: 'right',
+                    },
+                    {
+                      name: 'suffix',
+                      position: 'right',
+                    },
+                  ]
+                },
+              ]
+            },
+            {
+              name: 'help',
+              content: 'Upload your resumé.',
+              position: 'right'
+            },
+            {
+              name: 'messages',
+              position: 'right',
+              children: [
+                {
+                  name: 'message',
+                  content: 'Only supports .pdf and .docx extensions.',
+                  position: 'right'
+                }
+              ]
+            }
+          ]
+        }
+      ]"
+  >
+  </formkit-input-diagram>
+</div>
+
 <reference-table type="sectionKeys" primary="section-key" :data="[
   {'section-key': 'fileList', description: 'A wrapper for the whole list of files.'},
   {'section-key': 'fileItem', description: 'An element containing the fileName and remove action for each file.'},

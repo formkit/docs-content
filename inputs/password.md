@@ -24,6 +24,19 @@ The `password` input has no unique props but can make use of the following unive
 </reference-table>
 
 ## Section keys
+You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+
+<div>
+  <formkit-input-diagram
+    label-content="Password"
+    prefix-content="🤫"
+    input-content="···········"
+    suffix-content="🤐"
+    help-content="Keep this hidden in a safe place."
+    message-content="Password is required."
+  >
+  </formkit-input-diagram>
+</div>
 
 <reference-table type="sectionKeys" primary="section-key">
 </reference-table>

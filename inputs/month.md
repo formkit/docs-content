@@ -36,6 +36,19 @@ FormKit props.
 </reference-table>
 
 ## Section keys
+You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+
+<div>
+  <formkit-input-diagram
+    label-content="Month you met your significant other"
+    prefix-content="📅"
+    input-content="2010-05"
+    suffix-content="❤️"
+    help-content="We'll divide groups based on how long you've been together."
+    message-content="Month is required."
+  >
+  </formkit-input-diagram>
+</div>
 
 <reference-table type="sectionKeys" primary="section-key">
 </reference-table>

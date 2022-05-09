@@ -1,11 +1,12 @@
 <template>
   <!-- %partial%::html:: -->
   <FormKit
-    type="textarea"
-    label="Essay"
-    validation="min:1000"
+    type="number"
+    label="Kitchen renovation budget"
+    help="Enter the most you'd like to spend on your kitchen renovation."
+    validation="min:5000"
     :validation-messages="{
-      'min': 'Essay must be at least 1000 characters 😱'
+      'min': 'Sorry — we only build high end kitchens. Try Budget Builders.'
     }"
   />
   <!-- %partial%::html:: -->

@@ -27,5 +27,62 @@ Importantly the `ignore` prop is automatically set to `true` — meaning even if
 
 ## Section keys
 
+You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+
+<div>
+  <formkit-input-diagram
+    class="input-diagram--button"
+    :schema="[
+      {
+        name: 'outer',
+        children: [
+          {
+            name: 'messages',
+            position: 'right',
+            children: [
+              {
+                name: 'message',
+                content: 'Validation messages about the button.',
+                position: 'right'
+              }
+            ]
+          },
+          {
+            name: 'wrapper',
+            position: 'right',
+            children: [
+              {
+                name: 'input',
+                position: 'left',
+                class: 'flex button button--pro',
+                children: [
+                  {
+                    name: 'prefix',
+                    content: '🤟'
+                  },
+                  {
+                    name: 'label',
+                    content: 'Submit application',
+                  },
+                  {
+                    name: 'suffix',
+                    position: 'right',
+                    content: '🚀'
+                  }
+                ]
+              },
+            ]
+          },
+          {
+            name: 'help',
+            content: 'Click this button to submit your application. '
+          }
+        ]
+      }
+    ]"
+  >
+  </formkit-input-diagram>
+</div>
+
 <reference-table type="sectionKeys" primary="section-key" :without="['inner']">
 </reference-table>

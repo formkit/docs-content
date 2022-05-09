@@ -9,6 +9,11 @@ description: What's new in the latest version of FormKit?.
 
 ### [TK] Date
 
+#### ⚠️Breaking changes
+
+- The `update:model-value` event will now only be emitted when using the `v-model` directive.
+- The `input` event is now debounced to reduce the amount of noise being emitted. You can use the new `input-raw` to listen to every input event.
+
 #### 🎉 New features
 
 - Now `checkbox`, `radio`, and `select` inputs (ones that use `:options`) can now use any data type as their value like numbers, objects, or even `null` ([#85](https://github.com/formkit/formkit/issues/85)).
@@ -19,8 +24,12 @@ description: What's new in the latest version of FormKit?.
 - Adds a new `inputRaw` event to the `<FormKit>` component that is emitted for every core node `commit` (this can be quite frequent)
 - The `<FormKit>` component’s `input` event is now debounced, meaning it emits much less noise.
 - Exports all input feature functions `import { features } from '@formkit/inputs'`.
+- Adds a new `input-raw` event to the `<FormKit>` component which is emitted for every single input event in an input, list, group, or form (very noisy).
 - Adds new core node event `domInputEvent` which has the native HTML `Event` object as the payload.
 - Adds 🇸🇪 Swedish language.
+- Adds 🇸🇮 Slovenian language.
+- Adds 🇷🇴 Romanian language.
+- Adds 🇯🇵 Japanese language.
 - Improves 🇵🇱 Polish language.
 
 #### 🐛 Bug fixes
@@ -32,6 +41,9 @@ description: What's new in the latest version of FormKit?.
 - Fixes TypeScript typing for the `@formkit/tailwind` configuration ([#143](https://github.com/formkit/formkit/issues/143))
 - Fixes a bug that caused single checkboxes with an object as the `on-value` to not be set their initial value when using the `:value` prop.
 - Fixes a bug that caused validation rules to not be updated when the label prop changed ([#170](https://github.com/formkit/formkit/issues/170))
+- Fixes a bug that caused incorrect default selection on select lists with an explicit `multiple="false"` attribute and a placeholder ([#148](https://github.com/formkit/formkit/issues/148)).
+- Fixes a bug that caused the `classes` prop to not react to Vue’s reactivity when using nested refs ([#155](https://github.com/formkit/formkit/issues/155)).
+- Fixes a bug that prevented submit buttons from being disabled when applied using `disabled` attribute on the form without specifying `disabled="true"` ([#215](https://github.com/formkit/formkit/issues/215))
 
 ## 1.0.0-beta.6
 

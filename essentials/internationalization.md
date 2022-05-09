@@ -7,25 +7,28 @@ description: Translate FormKit UI and validation messages into supported languag
 
 FormKit ships with internationalization support for all of its interfaces and validation messages. Currently, FormKit supports the following languages (in the `@formkit/i18n` package):
 
-- 🇱🇾 Arabic (ar) - 🙏&nbsp;@Ahmedelforjani
+- 🇱🇾 Arabic (ar) — 🙏&nbsp;@Ahmedelforjani
 - 🇨🇳 Chinese (zh) — 🙏&nbsp;@myleslee
-- 🇭🇷 Croatian (hr) - 🙏&nbsp;@antemarkic
-- 🇨🇿 Czech (cs) - 🙏&nbsp;@dfridrich
-- 🇩🇰 Danish (da) - 🙏&nbsp;@bjerggaard
+- 🇭🇷 Croatian (hr) — 🙏&nbsp;@antemarkic
+- 🇨🇿 Czech (cs) — 🙏&nbsp;@dfridrich
+- 🇩🇰 Danish (da) — 🙏&nbsp;@bjerggaard
 - 🇳🇱 Dutch (nl) — 🙏&nbsp;@arjendejong12
-- 🇺🇸 English (en) - 🙏&nbsp;
-- 🇫🇮 Finish - (fi) - 🙏&nbsp;@mihqusta
+- 🇺🇸 English (en)
+- 🇫🇮 Finish - (fi) — 🙏&nbsp;@mihqusta
 - 🇫🇷 French (fr) — 🙏&nbsp;@HoreKk, @pop123123123
-- <img src="/img/frisian_flag.svg" alt="Frisian flag" class="rare-flag"> Frisian (fy) - 🙏&nbsp;@arjendejong12
+- <img src="/img/frisian_flag.svg" alt="Frisian flag" class="rare-flag"> Frisian (fy) — 🙏&nbsp;@arjendejong12
 - 🇩🇪 German (de) — 🙏&nbsp;@digitalkaoz, @tosling
 - 🇮🇱 Hebrew (he) - 🙏&nbsp;@Hepi420
 - 🇮🇩 Indonesian (id) - 🙏&nbsp;@rama-adi
 - 🇮🇹 Italian (it) - 🙏&nbsp;@punga78, @Archetipo95
+- 🇯🇵 Japanese (ja) - 🙏&nbsp;@wonyx
 - 🇰🇷 Korean (ko) - 🙏&nbsp;@bwp618, @titusdecali
 - 🇮🇷 Persian (fa) - 🙏&nbsp;@shahabbasian
 - 🇵🇱 Polish (pl) - 🙏&nbsp;@xxSkyy
 - 🇧🇷 Portuguese (pt) 🙏&nbsp;@r-martins
-- 🇷🇺 Russian (ru) — 🙏&nbsp;@andreimakushkin
+- 🇷🇴 Romanian (ro) - 🙏&nbsp;@danve
+- 🇷🇺 Russian (ru) - 🙏&nbsp;@andreimakushkin
+- 🇸🇮 Slovenian (sl) - 🙏&nbsp;@krisflajs
 - 🇦🇷 Spanish (es) - 🙏&nbsp;@inibg
 - 🇸🇪 Swedish (sv) - 🙏&nbsp;@purung
 - 🇹🇷 Turkish (tr) - 🙏&nbsp;@ragokan
@@ -72,7 +75,7 @@ There are two ways to change your active locale:
 
 ### Using `setLocale`
 
-When using Vue’s options API you have access to `this.$formkit` which contains a purpose-built method `setLocale('de')` which globally changes the current locale.
+When using Vue’s options API, you have access to `this.$formkit` which contains `setLocale('de')` — a purpose-built method that globally changes the current locale:
 
 <example
   name="Changing locale example"
@@ -84,7 +87,7 @@ When using Vue’s options API you have access to `this.$formkit` which contains
 
 ### Using root `config`
 
-When using the composition API, you won’t have access to `this.$formkit`. Instead, you can fetch and modify the root FormKit configuration object. This is made available globally via Vue’s `inject` mechanism and a unique Symbol.
+When using the composition API, you won’t have access to `this.$formkit`. Instead, you can fetch and modify the root FormKit configuration object. This is made available globally via Vue’s `inject` mechanism and a unique Symbol:
 
 <example
   name="Changing locale via config"
@@ -96,7 +99,7 @@ When using the composition API, you won’t have access to `this.$formkit`. Inst
 
 ## Overriding
 
-If you find a phrase in your locale isn’t worded the way you prefer, you can override those individual messages globally in your configuration. You can do this by providing a `messages` object to the `defaultConfig`.
+If you find a phrase in your locale isn’t worded the way you prefer, you can override those individual messages globally in your configuration. You can do this by providing a `messages` object to the `defaultConfig`:
 
 <client-only>
 
@@ -128,7 +131,7 @@ Messages are generally found under a locale’s <code>ui</code> or <code>validat
 
 ## Adding your language
 
-Writing a locale for your own native language is a great way to contribute to FormKit, and an easy way to get started with open source too! We are always eager to see pull requests for new locales. To support this effort, we’ve created a locale builder — a small web app to help make the translation process as easy as possible.
+Writing a locale for a language you know is a great way to contribute to FormKit and an easy way to get started with open source too! We are always eager to see pull requests for new locales. To support this effort, we’ve created a locale builder — a small web app to make the translation process as easy as possible.
 
 <cta href="https://i18n.formkit.com" label="Help others who speak your language!" button="Contribute a locale"></cta>
 
