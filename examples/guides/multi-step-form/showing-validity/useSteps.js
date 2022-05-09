@@ -14,11 +14,6 @@ export default function useSteps () {
         steps[node.name].valid = toRef(node.context.state, 'valid')
       })
 
-      // NEW: listen for changes in count of blocking validations messages
-      node.on('count:blocking', ({ payload: count }) => {
-        steps[node.name].blockingCount = count
-      })
-
       // set the active tab to the 1st tab
       if (activeStep.value === '') {
         activeStep.value = node.name

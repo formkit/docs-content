@@ -132,23 +132,13 @@ It's starting to look like a real multi-step form! There's more work to be done 
 - The validity of each individual step is not being shown.
 - When there are validations on a tab that's not the "current step", they cannot be seen.
 
-Let's carry on and fix those issues.
+Let's let's address the first issue.
 
-## Tracking validity and errors for each step
+## Tracking validity for each step
 
-Out-of-the-box, FormKit already:
+FormKit already tracks `group` validity out-of-the-box. We'll just need to capture this data so we can use it in our UI.
 
-1) Tracks group validity
-2) Keeps a count of group errors
-
-We'll need to expose this data so we can use it in our UI.
-
-There are a couple concepts to remember about FormKit before we proceed. First, every `<FormKit>` component has a matching [core node](/advanced/core#node), which itself has a reactive `node.context` object. Second, each core node has a [ledger](/advanced/core#ledger) which counts messages. With that in mind, here's an approach to track validity across steps:
-
-- We'll track validity of each `group` node by looking at the group's `node.context.state.valid`.
-- We'll track the error counts on each `group` node by listening for `count:errors` events — which are emitted every time the error count changes.
-
-Remember that groups already know about the complete state of their children, so there is nothing else we need to track for ourselves manually.
+One important concept to remember about FormKit is that every `<FormKit>` component has a matching [core node](/advanced/core#node), which itself has a reactive `node.context` object. This `context` object tracks the validity of the node in `context.state.valid`. As mentioned above, a `group` becomes valid when all its descendants are valid. With that in mind, let's build up an object that stores the reactive validity of each of the groups.
 
 We'll leverage FormKit's [plugin](/advanced/core#plugins) functionality to do this job. While the term "plugin" may sound intimidating, plugins in FormKit are just setup functions that are called when a node is created. Plugins are inherited by all descendants (such as children within a group).
 
@@ -171,11 +161,6 @@ const stepPlugin = (node) => {
             steps[node.name].valid = toRef(node.context.state, 'valid')
         })
 
-        // add the current group's error count
-        node.on('count:errors', ({ payload: count }) => {
-            steps[node.name].errorCount = count
-        })
-
         // Stop plugin inheritance to descendant nodes.
         // We only care about the the top-level groups
         // that represent the steps.
@@ -185,9 +170,9 @@ const stepPlugin = (node) => {
 
 /* the resulting "steps" reactive object looks this this: */
 {
-  contactInfo: { errorCount: 0, valid: false },
-  organizationInfo: { errorCount: 0, valid: false }
-  application: { errorCount: 0, valid: false }
+  contactInfo: { valid: false },
+  organizationInfo: { valid: false }
+  application: { valid: false }
 }
 ```
 </client-only>
@@ -206,14 +191,12 @@ To use our plugin, we'll add it to our form at the top-level `<FormKit type="for
 ```
 </client-only>
 
-## Showing validity and errors
+## Showing validity
 
-Now that our template has real-time access to each group's validity and error state via our plugin, let's write the UI to expose this data in the step navigation bar.
+Now that our template has real-time access to each group's validity state via our plugin, let's write the UI to expose this data in the step navigation bar.
 
-We also no longer need to manually define our steps since our plugin dynamically stores the `steps` as part of its tracking. Here's our approach:
+We also no longer need to manually define our steps since our plugin is dynamically storing the name of all groups in the `steps` object. Let's add a `data-step-valid="true"` attribute to each step if it's valid so we can target with CSS.
 
-- We'll add a `data-step-valid="true"` attribute to each step if it's valid (so that we can target it with CSS).
-- We'll add a `has-errors` class to the step, and add an error bubble `<span>` inside that will show the number of errors within a given step.
 
 <client-only>
 
@@ -221,38 +204,62 @@ We also no longer need to manually define our steps since our plugin dynamically
   <ul class="steps">
     <li
       v-for="(step, stepName) in steps"
-      :class="['step', { 'has-errors': step.errorCount > 0 }]"
+      class="step"
       @click="activeStep = stepName"
-      :data-step-valid="step.valid && step.errorCount === 0"
+      :data-step-valid="step.valid"
       :data-step-active="activeStep === stepName"
     >
-      <span
-        v-if="step.errorCount > 0"
-        class="step--errors"
-        v-text="step.errorCount"
-      />
       {{ camel2title(stepName) }}
     </li>
   </ul>
 ```
 </client-only>
 
-With these updates our form is now capable of informing a user when they have correctly filled out all of the fields in a given step!
+With these updates, our form is now capable of informing a user when they have correctly filled out all of the fields in a given step!
 
 We'll also make a few other improvements:
 
 - Extract the "step logic" to a [Vue composable](https://vuejs.org/guide/reusability/composables.html) so it can be reused elsewhere.
 - Create a utils.js file for our utility functions.
+- Set the 1st step we find as the `activeStep`.
 
 <example
   :file="[
-    '/_content/examples/guides/multi-step-form/showing-state/example.vue',
-    '/_content/examples/guides/multi-step-form/showing-state/useSteps.js',
-    '/_content/examples/guides/multi-step-form/showing-state/utils.js',
+    '/_content/examples/guides/multi-step-form/showing-validity/example.vue',
+    '/_content/examples/guides/multi-step-form/showing-validity/useSteps.js',
+    '/_content/examples/guides/multi-step-form/showing-validity/utils.js',
   ]"
   :bp="880"
   :editable="true">
 </example>
+
+## Showing errors
+
+Showing errors is more nuanced. Though the user may not be aware, there are actually 2 types of errors we need to handle and communicate to the user:
+
+- Errors from failing _frontend_ validation rules (`messages` of type `validation`)
+- Backend errors (`messages` of type `error`)
+
+The FormKit [Message store](/advanced/core#message-store) is the general-purpose feature that FormKit uses to track both of these types of errors/messages.
+
+With our general infrastructure in place, it's relatively simple to add tracking and displaying of failing validation messages. Let's add tracking for blocking validation messages to our plugin:
+
+```js
+const stepPlugin = (node) => {
+  ...
+  // listen for for the "count:blocking" event, which is emitted by FormKit
+  // when the count of blocking validations messages changes.
+  // Add it to our previously-defined "steps" object
+  node.on('count:blocking', ({ payload: count }) => {
+    steps[node.name].blockingCount = count
+  })
+  ...
+}
+```
+
+<callout type="info" label="Blocking validations vs backend errors">
+This guide assumes you are are familiar with the <a href="https://vuejs.org/guide/introduction.html#api-styles">Vue Composition API</a>.
+</callout>
 
 
 ## Form submission and receiving errors
@@ -328,3 +335,33 @@ Of course, there are always ways to improve anything, and this form is no except
 We've covered a lot of topics in this guide and hope you've learned more about FormKit and how to use it to make multi-step forms easier!
 
 <cta label="Want more? Start by reading about FormKit core." button="Dig deeper" href="/advanced/core"></cta>
+
+
+
+
+
+
+
+
+
+
+- There are a couple concepts to remember about FormKit before we proceed.
+- Second, each core node has a [ledger](/advanced/core#ledger) which counts messages. 
+- We'll track the error counts on each `group` node by listening for `count:errors` events — which are emitted every time the error count changes.
+
+```js
+  // add the current group's error count
+  node.on('count:errors', ({ payload: count }) => {
+      steps[node.name].errorCount = count
+  })
+```
+
+- We'll add a `has-errors` class to the step, and add an error bubble `<span>` inside that will show the number of errors within a given step.
+
+```html
+  <span
+    v-if="step.errorCount > 0"
+    class="step--errors"
+    v-text="step.errorCount"
+  />
+```

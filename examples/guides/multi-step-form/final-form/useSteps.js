@@ -49,7 +49,7 @@ export default function useSteps () {
         steps[node.name].errorCount = count
       })
 
-      // NEW: listen for changes in count of blocking validations messages
+      // listen for changes in count of blocking validations messages
       node.on('count:blocking', ({ payload: count }) => {
         steps[node.name].blockingCount = count
       })
