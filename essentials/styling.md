@@ -132,7 +132,7 @@ tabs="render,html"></example>
 
 ## Using generateClasses from @formkit/themes
 
-FormKit ships with helper function called `generateClasses` included in `@formkit/themes`.
+FormKit ships with a helper function called `generateClasses` included in `@formkit/themes`.
 
 The `generateClasses` function takes a javascript object keyed by input type with values of a sub-object keyed by `${sectionKey}` with values of strings. With this function you can quickly apply class lists to sections within inputs based on a given inputs' type.
 
