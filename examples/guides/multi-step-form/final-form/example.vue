@@ -19,20 +19,12 @@ const submitApp = async (formData, node) => {
 const checkStepValidity = (stepName) => {
   return (steps[stepName].errorCount > 0 || steps[stepName].blockingCount > 0) && visitedSteps.value.includes(stepName)
 }
+
 </script>
 
 <template>
   <h1>Carbon Sequestration Startup Grant</h1>
-  <p>
-    <em>Green World 2030</em> is giving away three $150,000 (USD) grants to startups
-    who demonstrate ingenuity, creativity, and progress towards their carbon
-    sequestration efforts. Fill out this form to apply.
-  </p>
 
-  <!--
-    NEW: Extracts `valid` from default slot to disable submit button
-    NEW: Attaches fake submit handler
-  -->
   <FormKit
     type="form"
     #default="{ value, state: { valid } }"
@@ -41,7 +33,6 @@ const checkStepValidity = (stepName) => {
     @submit="submitApp"
     :actions="false"
   >
-
     <ul class="steps">
       <!-- NEW: uses new checkStepValidity method to check validation on step blur -->
       <li
@@ -60,6 +51,7 @@ const checkStepValidity = (stepName) => {
       </li>
     </ul>
 
+    <!-- .form-body solely for styling -->
     <div class="form-body">
       <section v-show="activeStep === 'contactInfo'">
         <FormKit
@@ -71,6 +63,7 @@ const checkStepValidity = (stepName) => {
             type="text"
             label="*Full name"
             name="full_name"
+            placeholder="First Last"
             validation="required"
           />
 
@@ -78,6 +71,7 @@ const checkStepValidity = (stepName) => {
             type="email"
             name="email"
             label="*Email address"
+            placeholder="email@domain.com"
             validation="required|email"
           />
 
@@ -85,6 +79,7 @@ const checkStepValidity = (stepName) => {
             type="tel"
             name="tel"
             label="*Telephone"
+            placeholder="xxx-xxx-xxxx"
             help="Phone number must be in the xxx-xxx-xxxx format."
             validation="required|matches:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/"
           />
@@ -101,6 +96,7 @@ const checkStepValidity = (stepName) => {
             type="text"
             label="*Organization name"
             name="org_name"
+            placeholder="MyOrg, Inc."
             help="Enter your official organization name."
             validation="required|length:3"
           />
@@ -142,8 +138,8 @@ const checkStepValidity = (stepName) => {
       </section>
 
       <div class="step-nav">
-        <button :disabled="activeStep == 'contactInfo'" type="button" @click="setStep(-1)" v-text="'< Previous step'" />
-        <button class="next" :disabled="activeStep == 'application' " type="button" @click="setStep(1)" v-text="'Next step >'"/>
+        <FormKit type="button" :disabled="activeStep == 'contactInfo'"  type="button" @click="setStep(-1)" v-text="'Previous step'" />
+        <FormKit type="button" class="next" :disabled="activeStep == 'application' " type="button" @click="setStep(1)" v-text="'Next step'"/>
       </div>
 
       <details>

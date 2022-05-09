@@ -31,52 +31,54 @@ const { steps, activeStep, stepPlugin } = useSteps()
       </li>
     </ul>
 
-    <section v-show="activeStep === 'contactInfo'">
-      <FormKit
-        type="group"
-        id="contactInfo"
-        name="contactInfo"
-      >
+    <div class="form-body">
+      <section v-show="activeStep === 'contactInfo'">
         <FormKit
-          type="email"
-          label="*Email address"
-          validation="required|email"
-        />
-      </FormKit>
-    </section>
+          type="group"
+          id="contactInfo"
+          name="contactInfo"
+        >
+          <FormKit
+            type="email"
+            label="*Email address"
+            validation="required|email"
+          />
+        </FormKit>
+      </section>
 
-    <section v-show="activeStep === 'organizationInfo'">
-      <FormKit
-        id="organizationInfo"
-        type="group"
-        name="organizationInfo"
-      >
+      <section v-show="activeStep === 'organizationInfo'">
         <FormKit
-          type="text"
-          label="*Organization name"
-          validation="required|length:3"
-        />
-      </FormKit>
-    </section>
+          id="organizationInfo"
+          type="group"
+          name="organizationInfo"
+        >
+          <FormKit
+            type="text"
+            label="*Organization name"
+            validation="required|length:3"
+          />
+        </FormKit>
+      </section>
 
-    <section v-show="activeStep === 'application'">
-      <FormKit
-        id="application"
-        type="group"
-        name="application"
-      >
+      <section v-show="activeStep === 'application'">
         <FormKit
-          type="textarea"
-          label="*How will you use the money?"
-          validation="required|length:20,500"
-        />
-      </FormKit>
-    </section>
+          id="application"
+          type="group"
+          name="application"
+        >
+          <FormKit
+            type="textarea"
+            label="*How will you use the money?"
+            validation="required|length:20,500"
+          />
+        </FormKit>
+      </section>
 
-    <details>
-      <summary>Form data</summary>
-      <pre>{{ value }}</pre>
-    </details>
+      <details>
+        <summary>Form data</summary>
+        <pre>{{ value }}</pre>
+      </details>
+    </div>
   </FormKit>
 </template>
 
