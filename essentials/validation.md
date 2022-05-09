@@ -70,7 +70,7 @@ Due to FormKit's config inheritance, you can set `validation-visibility` at a `f
   youtube-id="4mbLuF8fnAc">
 </VideoCard>
 
-Validation rules operate according to a few default features, which can change on a case-by-case basis with "rule hints":
+Validation rules operate according to a few default features, which you can change on a case-by-case basis with "rule hints":
 
 - **Run in sequence** - rules are run in the order they are declared. When a rule fails, any remaining rules are not run. For example, if you declare the validation rules as `required|length:5` then the `length` rule will not run until the `required` rule is passing.
 - **Skipped when empty** - Validation rules are not run when the input is empty (within the [available rules](#available-rules), the `required` rule is the only exception).
@@ -132,7 +132,7 @@ You can use rule hints together. To do so, just place multiple hints before the 
 
 ## Available rules
 
-FormKit ships with over 20 production-ready validation rules, covering most validation needs. If you don’t find one that meets your requirements, you can add a [custom rule](#custom-rules) to suit your needs.
+FormKit ships with over 20 production-ready validation rules, covering most validation needs. If you don’t find one that meets your exact requirement, you can add a [custom rule](#custom-rules) to suit your needs.
 
 - [accepted](#accepted)
 - [alpha](#alpha)
@@ -169,7 +169,7 @@ The value must be `yes`, `on`, `1` or `true`. Useful for checkbox inputs — oft
 
 ### Alpha
 
-Checks if a value is only alphabetical characters. There are two character sets: latin and default. Latin characters are strictly `[a-zA-Z]` while the default set includes most accented characters, such as `ä`, `ù`, or `ś`.
+Checks if a value is only alphabetical characters. There are two character sets: latin and default. Latin characters are strictly `[a-zA-Z]`, while the default set includes most accented characters, such as `ä`, `ù`, or `ś`.
 
 <example
   name="Alpha"
@@ -224,7 +224,7 @@ Note: the two inputs must be in the same `group` or `form`.
 
 ### Date after
 
-The rule's argument determines if a date is after the current date or a date supplied. Dates used can either be JavaScript `Date` objects or strings that can be parsed by [`Date.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse).
+Determines if a date is after the current date or a date supplied as the rule's argument. Dates used can either be JavaScript `Date` objects or strings that can be parsed by [`Date.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse).
 
 <example
   name="Date after"
@@ -234,7 +234,7 @@ The rule's argument determines if a date is after the current date or a date sup
 
 ### Date before
 
-The rule's argument determines if a date is after the current date or a date supplied. Dates used can either be JavaScript `Date` objects or strings that can be parsed by [`Date.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse).
+Determines if a date is before the current date or a date supplied as the rule's argument. Dates used can either be JavaScript `Date` objects or strings that can be parsed by [`Date.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse).
 
 <example
   name="Date before"
@@ -540,7 +540,7 @@ Let’s re-write the above example using a function instead of a string for even
 
 ### Global validation message
 
-Suppose there are validation rule messages you'd like to override (or add) across your entire project. In that case, you can define those message rules when registering FormKit under the language key you'd like to override.
+If there are validation rule messages you'd like to override (or add) across your entire project, you can define those message rules when registering FormKit under the language key you'd like to override.
 
 <client-only>
 
