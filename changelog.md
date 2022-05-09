@@ -14,7 +14,7 @@ description: What's new in the latest version of FormKit?.
 - The `update:model-value` event will now only be emitted when using the `v-model` directive.
 - The `input` event is now debounced to reduce the amount of noise being emitted. You can use the new `input-raw` to listen to every input event.
 - Errors set via `setErrors` are now automatically cleared on input by default. To revert to the previous behavior, set `preserveErrors: true` in your global config object.
-- The `@formkit/tailwindcss` is now deprecated — both the `formKitTailwind` plugin (formerly `FormKitPlugin` from `@formkit/tailwindcss`) and the `generateClasses` function have been moved to the `@formkit/themes` package.
+- The `@formkit/tailwindcss` package is now deprecated — both the `formKitTailwind` plugin and the `generateClasses` function have been moved to the `@formkit/themes` package.
 
 #### 🎉 New features
 
