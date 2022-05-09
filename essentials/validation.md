@@ -5,7 +5,7 @@ description: Provide instant feedback to users on the validity of their form dat
 
 # Validation
 
-FormKit makes front end validation simple by letting you declare your validation rules directly on your inputs. It’s easy to write custom rules too, but with 20+ production-ready rules to choose from, it's rare you'll need to.
+FormKit makes front end validation simple by letting you declare your validation rules directly on your inputs. It's easy to write custom rules too, but you'll rarely need to with 20+ production-ready rules. 
 
 ## Declaring rules
 
@@ -16,7 +16,7 @@ Declaring which validation rules apply to a given input is as simple as providin
 
 ### String syntax
 
-Validation rules can be declared by specifying each desired rule name separated separated by pipes `|`. Some rules may accept arguments too — which can be supplied after a colon `:`. You can use multiple arguments by comma separating them:
+Validation rules can be declared by specifying each desired rule name separated by pipes `|`. Some rules may also accept arguments, which can be supplied after a colon  `:`. You can use multiple arguments by comma separating them:
 
 <example
   name="Validation strings"
@@ -28,7 +28,7 @@ Validation rules can be declared by specifying each desired rule name separated 
 
 Validation rules can also be declared by providing an array. Each element of the array must be itself an array where the first element is the string name of the validation rule, and the remaining `n` elements are arguments for that rule.
 
-This is especially helpful if the arguments being provided need to be actual JavaScript types — for example a regular expression (regex):
+This is especially helpful if the arguments being provided need to be actual JavaScript types — for example, a regular expression (regex):
 
 <example
   name="Validation arrays"
@@ -70,14 +70,14 @@ Due to FormKit's config inheritance, you can set `validation-visibility` at a `f
   youtube-id="4mbLuF8fnAc">
 </VideoCard>
 
-Validation rules operate according to a few default features which can be changed on a case-by-case basis with "rule hints":
+Validation rules operate according to a few default features, which you can change on a case-by-case basis with "rule hints":
 
 - **Run in sequence** - rules are run in the order they are declared. When a rule fails, any remaining rules are not run. For example, if you declare the validation rules as `required|length:5` then the `length` rule will not run until the `required` rule is passing.
 - **Skipped when empty** - Validation rules are not run when the input is empty (within the [available rules](#available-rules), the `required` rule is the only exception).
 - **Synchronous** - all [available rules](#available-rules) are synchronous and not debounced.
 - **Blocking** - all validation rules produce [blocking messages](/advanced/core#message-store) which prevent form submission.
 
-All of the above features can be modified when declaring your rules by using "hinting". Rule hints are small modifier characters you append to the beginning of a rule declaration to change its default behavior:
+The above features can be modified when declaring your rules by using "hinting". Rule hints are small modifier characters you append to the beginning of a rule declaration to change its default behavior:
 
 | Hint    | Name                        | Description                                                                              |
 | ------- | --------------------------- | ---------------------------------------------------------------------------------------- |
@@ -132,7 +132,7 @@ You can use rule hints together. To do so, just place multiple hints before the 
 
 ## Available rules
 
-FormKit ships with over 20 production-ready validation rules — covering the vast majority of validation needs. If you don’t find one that meets your exact requirement, you can add a [custom rule](#custom-rules) to suit your needs.
+FormKit ships with over 20 production-ready validation rules, covering most validation needs. If you don’t find one that meets your exact requirement, you can add a [custom rule](#custom-rules) to suit your needs.
 
 - [accepted](#accepted)
 - [alpha](#alpha)
@@ -169,7 +169,7 @@ The value must be `yes`, `on`, `1` or `true`. Useful for checkbox inputs — oft
 
 ### Alpha
 
-Checks if a value is only alphabetical characters. There are two character sets: latin and default. Latin characters are strictly `[a-zA-Z]` while the default set includes most accented characters as well, such as `ä`, `ù`, or `ś`.
+Checks if a value is only alphabetical characters. There are two character sets: latin and default. Latin characters are strictly `[a-zA-Z]`, while the default set includes most accented characters, such as `ä`, `ù`, or `ś`.
 
 <example
   name="Alpha"
@@ -199,7 +199,7 @@ Checks if a value is only made of alphabetical characters or spaces. For the alp
 
 ### Between
 
-Checks if a number is (inclusively) between two other numbers. The input value must be a number or the validation rule will fail.
+Checks if a number is (inclusively) between two other numbers. The input value must be a number, or the validation rule will fail.
 
 <example
   name="Between"
@@ -287,7 +287,7 @@ Checks if the input contains a valid email address.
 
 ### Ends with
 
-Checks if the input’s value ends with a given substring.
+Checks if the input's value ends with a given substring.
 
 <example
   name="Ends with"
@@ -297,7 +297,7 @@ Checks if the input’s value ends with a given substring.
 
 ### Is
 
-Checks that the input’s value matches at least one of the provided arguments.
+Checks that the input's value matches at least one of the provided arguments.
 
 <example
   name="Is"
