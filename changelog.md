@@ -13,6 +13,7 @@ description: What's new in the latest version of FormKit?.
 
 - The `update:model-value` event will now only be emitted when using the `v-model` directive.
 - The `input` event is now debounced to reduce the amount of noise being emitted. You can use the new `input-raw` to listen to every input event.
+- Errors set via `setErrors` are now automatically cleared on input by default. To revert to the previous behavior, set `preserveErrors: true` in your global config object.
 
 #### 🎉 New features
 
