@@ -407,6 +407,14 @@ Checks if the input is empty.
   layout="auto">
 </example>
 
+If you don't want whitespace to cause the `required` rule to pass, you can pass `trim` as an argument to the rule:
+
+<example
+  name="Required"
+  file="/_content/examples/rule-required/rule-required-trim.vue"
+  layout="auto">
+</example>
+
 ### Starts With
 
 Checks if the input starts with one of the provided options.
