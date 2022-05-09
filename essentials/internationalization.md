@@ -31,6 +31,7 @@ FormKit ships with internationalization support for all of its interfaces and va
 - 🇸🇮 Slovenian (sl) - 🙏&nbsp;@krisflajs
 - 🇦🇷 Spanish (es) - 🙏&nbsp;@inibg
 - 🇸🇪 Swedish (sv) - 🙏&nbsp;@purung
+- 🇹🇭 Thai (th) - 🙏&nbsp;@pknn
 - 🇹🇷 Turkish (tr) - 🙏&nbsp;@ragokan
 - 🇻🇳 Vietnamese (vi) - 🙏&nbsp;@oanhnn
 
