@@ -81,6 +81,9 @@ const camel2title = (str) => str
 </template>
 
 <style>
-/* styles imported for brevity */
+/* Styles imported for brevity */
+/* CSS for multi-step forms is not included in the default Genesis theme.
+   styles were custom-written for this example and you will need to provide
+   your own. */
 @import "https://cdn.formk.it/web-assets/multistep-form.css";
 </style>

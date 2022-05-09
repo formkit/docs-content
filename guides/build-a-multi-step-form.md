@@ -115,6 +115,10 @@ const stepNames = ['contactInfo','organizationInfo','application']
 
 Here's what it looks like put together:
 
+<callout type="info" label="Styles not included">
+  The CSS for multi-step forms — such as the tabs in this example — is not included in the default Genesis theme. Styles were custom-written for this example and you will need to provide your own.
+</callout>
+
 <example
   :file="[
     '/_content/examples/guides/multi-step-form/form-in-steps/example.vue'
