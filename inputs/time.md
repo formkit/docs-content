@@ -29,6 +29,19 @@ FormKit props.
 </reference-table>
 
 ## Section keys
+You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+
+<div>
+  <formkit-input-diagram
+    prefix-content="⏱"
+    suffix-content="👌"
+    label-content="Preferred delivery time"
+    input-content="10:00"
+    help-content="Actual delivery time will be your preferred time +- 30 minutes."
+    message-content="Preferred delivery time is required."
+  >
+  </formkit-input-diagram>
+</div>
 
 <reference-table type="sectionKeys" primary="section-key">
 </reference-table>

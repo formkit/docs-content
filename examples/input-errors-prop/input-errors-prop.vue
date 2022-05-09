@@ -11,7 +11,7 @@
     <h2>Donate to FormKit</h2>
     <FormKit
       name="to"
-      label="Etherium address"
+      label="Ethereum address"
       placeholder="0x8204Dd0ac307B777D8e19F3e5cbAD3C0B2488dbe"
       help="Where do you want to send your eth?"
     />

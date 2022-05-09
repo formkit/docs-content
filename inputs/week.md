@@ -35,6 +35,19 @@ FormKit props.
 </reference-table>
 
 ## Section keys
+You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+
+<div>
+  <formkit-input-diagram
+    prefix-content="🗓"
+    suffix-content=""
+    label-content="Installation week"
+    input-content="2022-W42"
+    help-content="Which week will work best for your patio installation?"
+    message-content="Installation week is required."
+  >
+  </formkit-input-diagram>
+</div>
 
 <reference-table type="sectionKeys" primary="section-key">
 </reference-table>

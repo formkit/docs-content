@@ -25,6 +25,20 @@ FormKit props.
 </reference-table>
 
 ## Section keys
+You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+
+<div>
+  <formkit-input-diagram
+    class="input-diagram--range"
+    prefix-content="$0"
+    suffix-content="💰"
+    label-content="Net worth"
+    input-content=""
+    help-content="What's your approximate net worth?"
+    message-content="Sorry. Our service is only for low-income families."
+  >
+  </formkit-input-diagram>
+</div>
 
 <reference-table type="sectionKeys" primary="section-key">
 </reference-table>
