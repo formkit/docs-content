@@ -45,19 +45,19 @@ npm install @formkit/themes
 
 From there we need to do two things:
 
-- Add the `FormKitTailwind` plugin from `@formkit/themes` to our project's `tailwind.config.js` file.
+- Add the `formKitTailwind` plugin from `@formkit/themes` to our project's `tailwind.config.js` file.
 - Import the `generateClasses` helper function from `@formkit/themes` and use it where we define our FormKit config options.
 
 <client-only>
 
 ```js
 // tailwind.config.js
-const { FormKitTailwind } = require('@formkit/themes');
+const { formKitTailwind } = require('@formkit/themes');
 
 module.exports {
   ...
   plugins: [
-    FormKitTailwind
+    formKitTailwind
   ]
   ...
 }
@@ -101,12 +101,12 @@ If you are using a single file for configuration, like <code>formkit.config.js</
 
 ```js
 // tailwind.config.js for Nuxt users
-const { FormKitTailwind } = require('@formkit/themes');
+const { formKitTailwind } = require('@formkit/themes');
 
 export default {
   // add the formkit.config.js file
   content: ['./src/**/*.{html,js}', './path/to/formkit.config.js'],
-  plugins: [FormKitTailwind]
+  plugins: [formKitTailwind]
 }
 ```
 
@@ -136,7 +136,7 @@ Here is a `text` input with Tailwind classes applied:
 
 ## Using variants
 
-The `FormKitTailwind` plugin from `@formkit/themes` provides a number of variants you can use in your class lists to dynamically respond to input and form state.
+The `formKitTailwind` plugin from `@formkit/themes` provides a number of variants you can use in your class lists to dynamically respond to input and form state.
 
 The currently provided variants are:
 
@@ -220,6 +220,6 @@ Here are some ways to take the above guide even further:
 - Combine multiple variants such as `formkit-invalid:formkit-submitted:` to add extra emphasis to invalid fields when a user tries to submit an incomplete form.
 - Publish your theme as an npm package for easy importing and sharing between projects.
 
-Hopefully, this guide helped you understand how classes are applied to FormKit inputs and how you can leverage the `FormKitTailwind` plugin from the `@formkit/themes` package to make use of Tailwind in your FormKit projects. If you want to dive in deeper, try reading about the [core internals of FormKit](/advanced/core) and [the FormKit schema](/advanced/schema)!
+Hopefully, this guide helped you understand how classes are applied to FormKit inputs and how you can leverage the `formKitTailwind` plugin from the `@formkit/themes` package to make use of Tailwind in your FormKit projects. If you want to dive in deeper, try reading about the [core internals of FormKit](/advanced/core) and [the FormKit schema](/advanced/schema)!
 
 <cta label="Want more? Start by reading about FormKit core." button="Dig deeper" href="/advanced/core"></cta>
