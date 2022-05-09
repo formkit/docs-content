@@ -202,33 +202,27 @@ Alternatively, you can set errors directly on a form by giving the form an `id` 
   file="/_content/examples/set-errors/set-errors.vue">
 </example>
 
-#### Clearing errors using `node.setErrors()` or `$formkit.setErrors()`
+### Clearing errors
 
-You can clear all form errors by passing an empty array `[]` as an argument to the respective form errors parameter:
+By default errors that were set on inputs using `setErrors()` are automatically cleared when a user changes the value of that input. You can change this default behavior by setting the `preserve-errors` prop.
 
-```js
-node.setErrors([]) // will clear all form errors
-```
+To clear all the errors on the form (regardless of the `preserve-errors` prop) call `node.clearErrors()`.
 
-You can clear individual input errors by passing an empty array `[]` to each dot-notated input. Note that you have to explicitly include each error to clear:
+<example
+  name="clearErrors"
+  file="/_content/examples/auto-clear-errors/auto-clear-errors.vue">
+</example>
 
-```js
-node.setErrors([],
-  // 2nd argument is input errors
-  {
-    'dot.path.to.input_name_1': [],
-    'dot.path.to.input_name_2': []
-  }
-)
-```
+If you prefer to preserve errors by default, you can change the default behavior by modifying the `preserveErrors` config option. This can be done globally or for a single form:
+
+<example
+  name="preserveErrors"
+  file="/_content/examples/preserve-errors-config/preserve-errors-config.vue">
+</example>
 
 <callout type="input" label="Composition API">
-When using Vue 3’s composition API, you can access <code>setErrors</code> by importing it directly from <code>@formkit/vue</code>.<br><br>
-<code>import { setErrors } from '@formkit/vue'</code>
-</callout>
-
-<callout type="tip" label="Groups and Lists">
-The <code>setErrors</code> method also works on the <code>group</code> and <code>list</code> input type. Just provide the input an <code>id</code> to the input, and use it the exact same way.
+When using Vue 3’s composition API, you can access <code>setErrors</code> and <code>clearErrors</code> by importing them directly from <code>@formkit/vue</code>.<br><br>
+<code>import { setErrors, clearErrors } from '@formkit/vue'</code>
 </callout>
 
 ### Input errors

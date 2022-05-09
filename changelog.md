@@ -13,10 +13,13 @@ description: What's new in the latest version of FormKit?.
 
 - The `update:model-value` event will now only be emitted when using the `v-model` directive.
 - The `input` event is now debounced to reduce the amount of noise being emitted. You can use the new `input-raw` to listen to every input event.
+- Errors set via `setErrors` are now automatically cleared on input by default. To revert to the previous behavior, set `preserveErrors: true` in your global config object.
 
 #### 🎉 New features
 
 - `checkbox`, `radio`, and `select` inputs (inputs that use `:options`) can now use any data type as their value like numbers, objects, or even `null` ([#85](https://github.com/formkit/formkit/issues/85)).
+- Adds new `node.clearErrors` and `clearErrors` utilities to assist in clearing backend errors from an input or form.
+- Now inputs automatically clear any errors set with `node.setErrors()` on user input. You can override this default behavior (to keep the error on the input) with `preserve-errors="true"`.
 - Adds a new `node.addProps` function for adding new props in custom plugins.
 - Adds new `message` hook for modifying messages as they are being set.
 - Adds a new core event `reset` — emitted after a form is reset.
@@ -24,6 +27,7 @@ description: What's new in the latest version of FormKit?.
 - The `<FormKit>` component’s `input` event is now debounced, meaning it emits much less noise.
 - Exports all input feature functions `import { features } from '@formkit/inputs'`.
 - Adds a new `input-raw` event to the `<FormKit>` component which is emitted for every single input event in an input, list, group, or form (very noisy).
+- The core node is now the second argument of the `input`, `input-raw`, `submit` and `submit-raw` events.
 - Adds new core node event `dom-input-event` which has the native HTML `Event` object as the payload.
 - Adds 🇸🇪 Swedish language.
 - Adds 🇸🇮 Slovenian language.
