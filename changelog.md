@@ -21,7 +21,6 @@ description: What's new in the latest version of FormKit?.
 - Adds new `message` hook for modifying messages as they are being set.
 - Adds a new core event `reset` — emitted after a form is reset.
 - Adds a new `index` prop that allows inputs to be injected at a given index on a parent `list` type.
-- Adds a new `inputRaw` event to the `<FormKit>` component that is emitted for every core node `commit` (this can be quite frequent)
 - The `<FormKit>` component’s `input` event is now debounced, meaning it emits much less noise.
 - Exports all input feature functions `import { features } from '@formkit/inputs'`.
 - Adds a new `input-raw` event to the `<FormKit>` component which is emitted for every single input event in an input, list, group, or form (very noisy).
