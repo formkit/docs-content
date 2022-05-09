@@ -9,7 +9,7 @@ description: What's new in the latest version of FormKit?.
 
 ### [TK] Date
 
-#### ⚠️Breaking changes
+#### ⚠️ Breaking changes
 
 - The `update:model-value` event will now only be emitted when using the `v-model` directive.
 - The `input` event is now debounced to reduce the amount of noise being emitted. You can use the new `input-raw` to listen to every input event.
@@ -19,8 +19,8 @@ description: What's new in the latest version of FormKit?.
 - Now `checkbox`, `radio`, and `select` inputs (ones that use `:options`) can now use any data type as their value like numbers, objects, or even `null` ([#85](https://github.com/formkit/formkit/issues/85)).
 - Adds a new `node.addProps` function for adding new props in custom plugins.
 - Adds new `message` hook for modifying messages as they are being set.
-- Adds a new `index` prop that allows inputs to be injected at a given index on a parent `list` type.
 - Adds a new core event `reset` — emitted after a form is reset.
+- Adds a new `index` prop that allows inputs to be injected at a given index on a parent `list` type.
 - Adds a new `inputRaw` event to the `<FormKit>` component that is emitted for every core node `commit` (this can be quite frequent)
 - The `<FormKit>` component’s `input` event is now debounced, meaning it emits much less noise.
 - Exports all input feature functions `import { features } from '@formkit/inputs'`.
@@ -44,6 +44,7 @@ description: What's new in the latest version of FormKit?.
 - Fixes a bug that caused incorrect default selection on select lists with an explicit `multiple="false"` attribute and a placeholder ([#148](https://github.com/formkit/formkit/issues/148)).
 - Fixes a bug that caused the `classes` prop to not react to Vue’s reactivity when using nested refs ([#155](https://github.com/formkit/formkit/issues/155)).
 - Fixes a bug that prevented submit buttons from being disabled when applied using `disabled` attribute on the form without specifying `disabled="true"` ([#215](https://github.com/formkit/formkit/issues/215))
+- Fixes a schema compiler bug that caused the white space of a quoted string in a parenthesis to be incorrectly removed ([#150](https://github.com/formkit/formkit/issues/150)).
 
 ## 1.0.0-beta.6
 
