@@ -17,6 +17,8 @@ description: What's new in the latest version of FormKit?.
 #### 🎉 New features
 
 - `checkbox`, `radio`, and `select` inputs (inputs that use `:options`) can now use any data type as their value like numbers, objects, or even `null` ([#85](https://github.com/formkit/formkit/issues/85)).
+- Adds new `node.clearErrors` and `clearErrors` utilities to assist in clearing backend errors from an input or form.
+- Now inputs automatically clear any errors set with `node.setErrors()` on user input. You can override this default behavior (to keep the error on the input) with `preserve-errors="true"`.
 - Adds a new `node.addProps` function for adding new props in custom plugins.
 - Adds new `message` hook for modifying messages as they are being set.
 - Adds a new core event `reset` — emitted after a form is reset.
