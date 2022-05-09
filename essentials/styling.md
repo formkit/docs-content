@@ -130,6 +130,21 @@ name="Classes prop"
 file="/_content/examples/classes-config/classes-config.vue"
 tabs="render,html"></example>
 
+## Using generateClasses from @formkit/themes
+
+FormKit ships with helper function called `generateClasses` included in `@formkit/themes`.
+
+The `generateClasses` function takes a javascript object keyed by input type with values of a sub-object keyed by `${sectionKey}` with values of strings. With this function you can quickly apply class lists to sections within inputs based on a given inputs' type.
+
+<example
+name="generateClasses example"
+:file="[
+  '/_content/examples/generate-classes/generate-classes.vue',
+  '/_content/examples/generate-classes/formkit.config.js'
+]"
+init-file-tab="formkit.config.js"
+tabs="html"></example>
+
 ## The rootClasses function
 
 `rootClasses` is a configuration function that is responsible
@@ -156,6 +171,10 @@ tabs="html"></example>
 <callout type="tip">
 Because <code>rootClasses</code> is a configuration option, you can apply it per input, per group, or globally.
 </callout>
+
+## Modifying classes within schema
+
+In addition to modifying classes via config or props _on a  `<FormKit>` component_, you can use the same techniques within [schema](/essentials/generation#schema):
 
 ### Section-key class props within schema
 Within schema, you can also modify the classes of an element inside an input via the `{section-key}Class` properties. For example, to add a class to the label section, you can add the `labelClass` property:
@@ -201,10 +220,6 @@ Since config is passed down to descendant inputs, you can alter classes via conf
 name="Classes prop"
 file="/_content/examples/classes-config-schema/classes-config-schema.vue"
 tabs="render,html"></example>
-
-## Modifying classes within schema
-
-In addition to modifying classes via config or props _on a  `<FormKit>` component_, you can use the same techniques within [schema](/essentials/generation#schema):
 
 ## Tailwind CSS
 
