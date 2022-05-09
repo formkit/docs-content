@@ -47,5 +47,95 @@ file="/_content/examples/radio-objects/radio-objects.vue"></example>
 
 ## Section keys
 
+You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+
+
+<div>
+  <formkit-input-diagram
+    class="input-diagram--radio radio-multiple"
+    :schema="[
+      {
+        name: 'outer',
+        children: [
+          {
+            name: 'fieldset',
+            children: [
+              {
+                name: 'legend',
+                content: 'Mowing time preference',
+                class: 'margin-collapse',
+              },
+              {
+                name: 'help',
+                content: 'Choose which time is least disruptive to you.',
+              },
+              {
+                name: 'options',
+                position: 'right',
+                children: [
+                  {
+                    name: 'option',
+                    position: 'right',
+                    children: [
+                      {
+                        name: 'wrapper',
+                        position: 'right',
+                        children: [
+                          {
+                            name: 'inner',
+                            children: [
+                              {
+                                name: 'prefix',
+                              },
+                              {
+                                name: 'input',
+                              },
+                              {
+                                name: 'decorator',
+                                content: '🔘',
+                              },
+                              {
+                                name: 'suffix',
+                              },
+                            ]
+                          },
+                          {
+                            name: 'label',
+                            content: 'Morning',
+                            position: 'right',
+                            class: 'margin-standard center-vert'
+                          }
+                        ]
+                      },
+                      {
+                        name: 'optionHelp',
+                        content: 'We`ll come between 7-11 am on Tuesdays.',
+                        position: 'right',
+                      },
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+              name: 'messages',
+              position: 'right',
+              children: [
+                {
+                  name: 'message',
+                  content: 'You must make a selection.',
+                  position: 'right',
+                }
+              ]
+            }
+        ]
+      }
+    ]"
+  >
+  </formkit-input-diagram>
+</div>
+
+
 <reference-table type="sectionKeys" primary="section-key" :data="[{'section-key': 'decorator', description: 'Responsible for the element immediately following the input element — usually used for styling.'}, { 'section-key': 'legend', description: 'Responsible for the fieldset’s legend element.'}, {'section-key': 'fieldset', description: 'Responsible for the fieldset when multiple options are available.'}, {'section-key': 'options', description: 'Responsible for the wrapper element around all of the option items.'},{'section-key': 'option', description: 'Responsible for the wrapper around each item in the options.'}]">
 </reference-table>

@@ -140,7 +140,7 @@ The primary takeaway is if you are planning to use a custom input on multiple pr
 
 In the future, FormKit may expand to support additional frameworks (ex: React or Svelte. If this is something you are interested in, <a href="mailto:feedback@formkit.com">let us know!</a>.) Writing your inputs using schema means your inputs will be compatible (perhaps minimal changes) with those frameworks too.
 
-## Schema Inputs
+## Schema inputs
 
 All of FormKit’s core inputs are written using schemas to allow for the greatest flexibility possible. You have two primary options when writing your own schema inputs:
 
@@ -150,7 +150,15 @@ All of FormKit’s core inputs are written using schemas to allow for the greate
 It is important to understand the basic structure of a “standard” FormKit input, which is broken down into [sections](/essentials/inputs#sections):
 
 <figure class="full">
-  <formkit-input-diagram></formkit-input-diagram>
+  <formkit-input-diagram
+    label-content="Email address"
+    prefix-content=""
+    suffix-content=""
+    input-content="test@example.com"
+    help-content="Please use your school email address."
+    message-content="Please provide a valid email."
+  >
+  </formkit-input-diagram>
   <figcaption>Composition of a standard FormKit text input.</figcaption>
 </figure>
 

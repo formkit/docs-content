@@ -11,7 +11,7 @@ FormKit inputs use a reactive object to expose data to template slots, rules, an
 
 ## `_value`
 
-FormKit inputs have two values — the committed value (`node._value`) and the uncommitted value (`node.value`). At rest, these two values are equivalent, but the uncommitted value is the undebounced raw value of the input.
+FormKit inputs have two values — the committed value (`node.value`) and the uncommitted value (`node._value`). At rest, these two values are equivalent, but the uncommitted value is the undebounced raw value of the input.
 
 ## `attrs`
 

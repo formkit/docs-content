@@ -119,6 +119,8 @@ const config: DefaultConfigOptions = {
   locales: { fr },
   locale: 'fr',
 }
+  
+export default config
 ```
 
 </client-only>
@@ -189,7 +191,7 @@ If you prefer to reference the css file on a CDN you can do so:
 
 <cta label="Using Tailwind or another utility framework?" href="/essentials/styling" button="Styling docs"></cta>
 
-## Starter Project
+## Starter project
 
 If you would like to get up and running on a new project quickly to kick the tires, then consider
 cloning the our available [FormKit Vue Starter Project on Github](https://github.com/formkit/formkit-vue-starter-project).

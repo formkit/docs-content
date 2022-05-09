@@ -36,7 +36,7 @@ export default {
           input: 'shadow border-gray-300 appearance-none rounded py-2 px-3 w-full text-gray-700 leading-tight focus:outline-none focus:border-transparent focus:ring-4 focus:ring-green-500 focus:ring-opacity-50',
           label: 'my-tailwind-label'
         }"
-        value="Formkit"
+        value="FormKit"
       />
     </div>
     <FormKit

@@ -29,6 +29,19 @@ FormKit props.
 </reference-table>
 
 ## Section keys
+You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+
+<div>
+  <formkit-input-diagram
+    prefix-content="🌎"
+    suffix-content=""
+    label-content="Personal website URL"
+    input-content="https://mywebsite.com"
+    help-content="Tell us where to find your personal website."
+    message-content="Please include a valid url."
+  >
+  </formkit-input-diagram>
+</div>
 
 <reference-table type="sectionKeys" primary="section-key">
 </reference-table>

@@ -35,6 +35,10 @@ You can populate an entire form by providing a `value` prop to the `<FormKit typ
   file="/_content/examples/form-population/form-population.vue">
 </example>
 
+<callout type="danger" label="v-model and reactive objects">
+Be sure to either <code>v-model</code> a <code>ref</code> or a property of a <code>reactive</code> object. Do not <code>v-model</code> the reactive object itself as it <a href="https://github.com/formkit/formkit/issues/58#issuecomment-1029250016">leads to unexpected behavior</a>.
+</callout>
+
 <callout type="warning" label="Submitted data & v-model">
 Using <code>v-model</code> data in your submit handler could lead to unintended form mutations. Instead, use the unbound copy of your form’s data that is passed to your submission handler.
 </callout>
@@ -182,7 +186,7 @@ Like with any FormKit input, you can directly assign errors using the `errors` p
 
 #### Using `node.setErrors()`
 
-Setting your form’s errors using `node.setErrors` is convenient since your submit handler is passed the form’s `node` object as its second argument.
+Setting your form’s errors using `node.setErrors` is convenient since your submit handler is passed the form’s `node` object as its second argument. `node.setErrors()` takes 2 arguments — an array for form errors, and a keyed object for input errors:
 
 <example
   name="setErrors"
@@ -191,12 +195,32 @@ Setting your form’s errors using `node.setErrors` is convenient since your sub
 
 #### Using `$formkit.setErrors()`
 
-Alternatively, you can set errors directly on a form by giving the form an `id` and then calling `$formkit.setErrors('id', ['Form error here'])`. The `setErrors` method must be passed the `id` of the form, and then can handle 1 or 2 more arguments — the form errors, and the input errors.
+Alternatively, you can set errors directly on a form by giving the form an `id` and then calling `$formkit.setErrors('id', ['Form error here'])`. The `setErrors` method must be passed the `id` of the form, and then can handle 1 or 2 additional arguments — the form errors, and the input errors:
 
 <example
   name="setErrors"
   file="/_content/examples/set-errors/set-errors.vue">
 </example>
+
+#### Clearing errors using `node.setErrors()` or `$formkit.setErrors()`
+
+You can clear all form errors by passing an empty array `[]` as an argument to the respective form errors parameter:
+
+```js
+node.setErrors([]) // will clear all form errors
+```
+
+You can clear individual input errors by passing an empty array `[]` to each dot-notated input. Note that you have to explicitly include each error to clear:
+
+```js
+node.setErrors([],
+  // 2nd argument is input errors
+  {
+    'dot.path.to.input_name_1': [],
+    'dot.path.to.input_name_2': []
+  }
+)
+```
 
 <callout type="input" label="Composition API">
 When using Vue 3’s composition API, you can access <code>setErrors</code> by importing it directly from <code>@formkit/vue</code>.<br><br>
