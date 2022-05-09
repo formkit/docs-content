@@ -291,13 +291,21 @@ So, what happens if the user is on step 3 (Application) when they submit, and th
 
 ## Putting it all together
 
-And Voilà! 🎉 We are finished! We've added some more UI to the final form such as next/prev buttons to make it feel more real. Here it is — a fully functioning multi-step form:
+And Voilà! 🎉 We are finished! We've added some more UI and UX flourish to this final form to make it feel more real:
+
+- Added Previous / Next buttons for step navigation
+- Added tracking for visited steps and we now show validation errors on blur
+- Added a psuedo-submitHandler function that simulates back-end errors
+- The form submit button is now disabled until the `valid` state of the entire form is `true`
+- Added some additional text to the form to better mock a real-world UI.
+
+ Here it is — a fully functioning multi-step form:
 
 <example
   :file="[
     '/_content/examples/guides/multi-step-form/final-form/example.vue',
-    '/_content/examples/guides/multi-step-form/final-form/utils.js',
-    '/_content/examples/guides/multi-step-form/final-form/useSteps.js'
+    '/_content/examples/guides/multi-step-form/final-form/useSteps.js',
+    '/_content/examples/guides/multi-step-form/final-form/utils.js'
   ]"
   :editable="true">
 </example>

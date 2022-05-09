@@ -2,8 +2,9 @@
 import { camel2title, axios, clearErrors } from './utils.js'
 import useSteps from './useSteps.js'
 
-const { steps, activeStep, setStep, stepPlugin } = useSteps()
+const { steps, visitedSteps, activeStep, setStep, stepPlugin } = useSteps()
 
+// NEW: fake submit handler to simulate back-end errors
 const submitApp = async (formData, node) => {
   try {
     const res = await axios.post(formData)
@@ -12,6 +13,11 @@ const submitApp = async (formData, node) => {
   } catch (err) {
     node.setErrors(err.formErrors, err.fieldErrors)
   }
+}
+
+// NEW: helper function to check step validity on step blur
+const checkStepValidity = (stepName) => {
+  return (steps[stepName].errorCount > 0 || steps[stepName].blockingCount > 0) && visitedSteps.value.includes(stepName)
 }
 </script>
 
@@ -23,34 +29,38 @@ const submitApp = async (formData, node) => {
     sequestration efforts. Fill out this form to apply.
   </p>
 
+  <!--
+    NEW: Extracts `valid` from default slot to disable submit button
+    NEW: Attaches fake submit handler
+  -->
   <FormKit
     type="form"
-    #default="{ value }"
+    #default="{ value, state: { valid } }"
     submit-label="Submit application"
     :plugins="[stepPlugin]"
     @submit="submitApp"
+    :actions="false"
   >
 
     <ul class="steps">
+      <!-- NEW: uses new checkStepValidity method to check validation on step blur -->
       <li
         v-for="(step, stepName) in steps"
-        :class="['step', { 'has-errors': step.errorCount > 0 }]"
+        :class="['step', { 'has-errors': checkStepValidity(stepName) }]"
         @click="activeStep = stepName"
         :data-step-valid="step.valid && step.errorCount === 0"
         :data-step-active="activeStep === stepName"
       >
         <span
-          v-if="step.errorCount > 0"
+          v-if="checkStepValidity(stepName)"
           class="step--errors"
-          v-text="step.errorCount"
+          v-text="step.errorCount + step.blockingCount"
         />
         {{ camel2title(stepName) }}
       </li>
     </ul>
 
-    <!-- .form-body solely for styling -->
     <div class="form-body">
-
       <section v-show="activeStep === 'contactInfo'">
         <FormKit
           type="group"
@@ -81,7 +91,6 @@ const submitApp = async (formData, node) => {
         </FormKit>
       </section>
 
-
       <section v-show="activeStep === 'organizationInfo'">
         <FormKit
           id="organizationInfo"
@@ -104,7 +113,6 @@ const submitApp = async (formData, node) => {
           />
         </FormKit>
       </section>
-
 
       <section v-show="activeStep === 'application'">
         <FormKit
@@ -134,7 +142,7 @@ const submitApp = async (formData, node) => {
       </section>
 
       <div class="step-nav">
-        <button :disabled="activeStep == 'contactInfo'"  type="button" @click="setStep(-1)" v-text="'< Previous step'" />
+        <button :disabled="activeStep == 'contactInfo'" type="button" @click="setStep(-1)" v-text="'< Previous step'" />
         <button class="next" :disabled="activeStep == 'application' " type="button" @click="setStep(1)" v-text="'Next step >'"/>
       </div>
 
@@ -144,6 +152,7 @@ const submitApp = async (formData, node) => {
       </details>
     </div>
 
+    <FormKit type="submit" label="Submit Application" :disabled="!valid" />
   </FormKit>
 
   <p><small><em>*All the contents of this form are fictional (the company, grant, and form)
