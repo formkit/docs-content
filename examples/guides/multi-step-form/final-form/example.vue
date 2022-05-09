@@ -1,14 +1,14 @@
 <script setup>
-import { camel2title, axios, clearErrors } from './utils.js'
+import { camel2title, axios } from './utils.js'
 import useSteps from './useSteps.js'
 
 const { steps, visitedSteps, activeStep, setStep, stepPlugin } = useSteps()
 
-// NEW: fake submit handler to simulate back-end errors
+// NEW: submit handler, which posts to our fake backend.
 const submitApp = async (formData, node) => {
   try {
     const res = await axios.post(formData)
-    clearErrors(node)
+    node.clearErrors()
     alert('Your application was submitted successfully!')
   } catch (err) {
     node.setErrors(err.formErrors, err.fieldErrors)
@@ -23,12 +23,11 @@ const checkStepValidity = (stepName) => {
 </script>
 
 <template>
-  <h1>Carbon Sequestration Startup Grant</h1>
+  <h1>Carbon Sequestration Grant</h1>
 
   <FormKit
     type="form"
     #default="{ value, state: { valid } }"
-    submit-label="Submit application"
     :plugins="[stepPlugin]"
     @submit="submitApp"
     :actions="false"
@@ -138,8 +137,8 @@ const checkStepValidity = (stepName) => {
       </section>
 
       <div class="step-nav">
-        <FormKit type="button" :disabled="activeStep == 'contactInfo'"  type="button" @click="setStep(-1)" v-text="'Previous step'" />
-        <FormKit type="button" class="next" :disabled="activeStep == 'application' " type="button" @click="setStep(1)" v-text="'Next step'"/>
+        <FormKit type="button" :disabled="activeStep == 'contactInfo'" @click="setStep(-1)" v-text="'Previous step'" />
+        <FormKit type="button" class="next" :disabled="activeStep == 'application' " @click="setStep(1)" v-text="'Next step'"/>
       </div>
 
       <details>

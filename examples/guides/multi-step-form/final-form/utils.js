@@ -1,4 +1,4 @@
-export { axios, camel2title, clearErrors }
+export { axios, camel2title }
 
 // This is just a mock of an actual axios instance.
 const axios = {
@@ -24,11 +24,6 @@ const axios = {
     })
     
   }
-}
-
-// specific to this example. Beta.7 doesn't yet have a clearErrors() helper.
-const clearErrors = (node) => {
-  node.setErrors([], {'organizationInfo.org_name': []})
 }
 
 const camel2title = (str) => str

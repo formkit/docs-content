@@ -7,7 +7,7 @@ description: Follow this guide to learn how to build a multi-step form with Form
 
 Few interactions on the web cause as much displeasure for a user as being confronted with a large, intimidating form. Multi-step forms can alleviate this pain by breaking a large form into smaller approachable steps — but they can also be complicated to build.
 
-In this guide we'll walk through building a multi-step form with FormKit and see how we can provide an elevated user experience with minimal code. Let's get started!
+In this guide, we'll walk through building a multi-step form with FormKit and see how we can provide an elevated user experience with minimal code. Let's get started!
 
 <callout type="info" label="Composition API">
 This guide assumes you are are familiar with the <a href="https://vuejs.org/guide/introduction.html#api-styles">Vue Composition API</a>.
@@ -18,7 +18,7 @@ This guide assumes you are are familiar with the <a href="https://vuejs.org/guid
 
 Let's begin by laying out the requirements for our multi-part form:
 
-- Show the user which step they are on currently on in relation to all required steps.
+- Show the user which step they are currently on in relation to all required steps.
 - Allow the user to navigate to any step of the form at will.
 - Show immediate feedback if each step has passed all frontend validations ✅.
 - Aggregate form data from all the steps into a single object for submission.
@@ -26,9 +26,9 @@ Let's begin by laying out the requirements for our multi-part form:
 
 ## Creating a basic form
 
-First, let's create a basic form _without steps_ so we have content to work with. Our example will be a pretend application to receive a grant, so we'll organize the form into 3 sections — "Contact Info", "Organization Info", and "Application".
+First, let's create a basic form _without steps_ so we have content to work with. Our example will be a pretend application to receive a grant, so we'll organize the form into 3 sections — "Contact Info", "Organization Info", and "Application". These will become the full form steps later.
 
-These will become the full form steps later. We'll include a mix of validation rules for each input, and limit each section to 1 question for now until we have the full structure in place. Lastly, for the purposes of this guide, we'll output the collected form data at the bottom of each example:
+We'll include a mix of validation rules for each input, and limit each section to 1 question for now until we have the full structure in place. Lastly, for the purposes of this guide, we'll output the collected form data at the bottom of each example:
 
 <example
   :file="[
@@ -40,7 +40,7 @@ These will become the full form steps later. We'll include a mix of validation r
 
 ## Breaking the form into sections
 
-Now that we have a defined structure let's break the form into distinct sections.
+Now that we have a defined structure, let's break the form into distinct sections.
 
 To start, let's wrap each section of inputs with a [group](/inputs/group) (`<FormKit type="group" />`) so we can validate each group independently. FormKit groups are powerful because they are aware of the validation state of all their descendants without affecting the markup of your form.
 
@@ -64,7 +64,7 @@ A group itself becomes valid when all its children (and their children) are vali
 ```
 </client-only>
 
-In our case we're also going to want wrapping markup, let's put each group into a "step" section which we can conditionally show and hide:
+In our case, we're also going to want wrapping HTML. Let's put each group into a "step" section which we can conditionally show and hide:
 
 <client-only>
 
@@ -99,7 +99,7 @@ const stepNames = ['contactInfo','organizationInfo','application']
 <client-only>
 
 ```html
-<!-- Navigation UI - on click, change step -->
+<!-- Set up tab-navigation UI. On click, change step -->
 <ul class="steps">
   <li
     v-for="stepName in stepNames"
@@ -123,30 +123,30 @@ Here's what it looks like put together:
   :editable="true">
 </example>
 
-it's starting to look like a real multi-step form! There's more work to be done though as we've got a few issues:
+It's starting to look like a real multi-step form! There's more work to be done though as we've got a few issues:
 
-- Each step is not being individually validated.
-- When there are validations on a tab that's not the "current step" they cannot be seen.
+- The validity of each individual step is not being shown.
+- When there are validations on a tab that's not the "current step", they cannot be seen.
 
 Let's carry on and fix those issues.
 
 ## Tracking validity and errors for each step
 
-Out-of-the-box, FormKit already
+Out-of-the-box, FormKit already:
 
 1) Tracks group validity
 2) Keeps a count of group errors
 
 We'll need to expose this data so we can use it in our UI.
 
-There are a couple concepts to remember about FormKit before we proceed. First, every `<FormKit>` component has a matching [core node](/advanced/core#node), which itself has a reactive `node.context` object. Second, each core node has a [ledger](/advanced/core#ledger) which counts messages. With that in mend here's an approach to track validity across steps:
+There are a couple concepts to remember about FormKit before we proceed. First, every `<FormKit>` component has a matching [core node](/advanced/core#node), which itself has a reactive `node.context` object. Second, each core node has a [ledger](/advanced/core#ledger) which counts messages. With that in mind, here's an approach to track validity across steps:
 
 - We'll track validity of each `group` node by looking at the group's `node.context.state.valid`.
 - We'll track the error counts on each `group` node by listening for `count:errors` events — which are emitted every time the error count changes.
 
 Remember that groups already know about the complete state of their children, so there is nothing else we need to track for ourselves manually.
 
-We'll leverage the FormKit [plugin](/advanced/core#plugins) functionality to do this job. While the term "plugin" may sound intimidating, plugins in FormKit are just setup functions that are called when a node is created. Plugins are inherited by all descendants (such as children within a group).
+We'll leverage FormKit's [plugin](/advanced/core#plugins) functionality to do this job. While the term "plugin" may sound intimidating, plugins in FormKit are just setup functions that are called when a node is created. Plugins are inherited by all descendants (such as children within a group).
 
 Here's our custom plugin, called `stepPlugin`:
 
@@ -159,11 +159,10 @@ const steps = reactive({})
 const stepPlugin = (node) => {
     // only runs for <FormKit type="group" />
     if (node.props.type == "group") {
-        // if we have a steps object for our node use it,
-        // otherwise create a new one
+        // build up our steps object
         steps[node.name] = steps[node.name] || {}
 
-        // add the current group's validity
+        // add the current group's reactive validity
         node.on('created', () => {
             steps[node.name].valid = toRef(node.context.state, 'valid')
         })
@@ -174,7 +173,8 @@ const stepPlugin = (node) => {
         })
 
         // Stop plugin inheritance to descendant nodes.
-        // We only care about the group itself
+        // We only care about the the top-level groups
+        // that represent the steps.
         return false
     }
 }
@@ -188,7 +188,7 @@ const stepPlugin = (node) => {
 ```
 </client-only>
 
-To use our plugin we'll add it to our form at the top-level `<FormKit type="form" />`. This means that every group in our form will inherit the plugin:
+To use our plugin, we'll add it to our form at the top-level `<FormKit type="form" />`. This means that every group in our form will inherit the plugin:
 
 <client-only>
 
@@ -204,7 +204,7 @@ To use our plugin we'll add it to our form at the top-level `<FormKit type="form
 
 ## Showing validity and errors
 
-Now that our template has access to each group's validity and error state via our plugin, let's write the UI to expose this in the step navigation bar.
+Now that our template has real-time access to each group's validity and error state via our plugin, let's write the UI to expose this data in the step navigation bar.
 
 We also no longer need to manually define our steps since our plugin dynamically stores the `steps` as part of its tracking. Here's our approach:
 
@@ -253,16 +253,15 @@ We'll also make a few other improvements:
 
 ## Form submission and receiving errors
 
-The last piece of the puzzle is submitting the form and handling any errors we receive from the backend sever — which we'll fake for the purposes of this guide.
+The last piece of the puzzle is submitting the form and handling any errors we receive from the backend server — which we'll fake for the purposes of this guide.
 
-We submit the form by adding an `@submit` handler to the `<FormKit type="form">`. While we're at it, let's modify the FormKit-provided submit button using the `submit-label` prop:
+We submit the form by adding an `@submit` handler to the `<FormKit type="form">`:
 
 <client-only>
 
 ```html
 <FormKit
   type="form"
-  submit-label="Submit application"
   @submit="submitApp"
 >
 ... rest of form
@@ -277,7 +276,7 @@ And here's our submit handler:
 const submitApp = async (formData, node) => {
   try {
     const res = await axios.post(formData)
-    clearErrors(node)
+    node.clearErrors()
     alert('Your application was submitted successfully!')
   } catch (err) {
     node.setErrors(err.formErrors, err.fieldErrors)
@@ -286,20 +285,20 @@ const submitApp = async (formData, node) => {
 ```
 </client-only>
 
-Notice that FormKit passes our our submit handler 2 helpful arguments: the form's data in a single request-ready object (which we're calling `formData`), and the form's underlying core `node`, which we can use to set any returned errors using the `node.setErrors()` helper.
+Notice that FormKit passes our submit handler 2 helpful arguments: the form's data in a single request-ready object (which we're calling `formData`), and the form's underlying core `node`, which we can use to clear errors or set any returned errors using the `node.clearErrors()` and `node.setErrors()` helpers.
 
 [`setErrors()`](/essentials/forms#clearing-errors-using-nodeseterrors-or-formkitseterrors) takes 2 arguments: form-level errors (an array), and field-specific errors (an object). Our fake backend returns the `err` response which we use to set any errors.
 
-So, what happens if the user is on step 3 (Application) when they submit, and there are field-level errors on a hidden step? Thankfully, so long as the nodes exist the DOM, FormKit is able place these errors appropriately. Importantly This is why we used a `v-show` for the steps instead of `v-if` — The DOM node needs to exist in order to have errors set on the corresponding FormKit node.
+So, what happens if the user is on step 3 (Application) when they submit, and there are field-level errors on a hidden step? Thankfully, so long as the nodes exist the DOM, FormKit is able place these errors appropriately. This is why we used a `v-show` for the steps instead of `v-if` — The DOM node needs to exist in order to have errors set on the corresponding FormKit node.
 
 ## Putting it all together
 
-And Voilà! 🎉 We are finished! We've added some more UI and UX flourish to this final form to make it feel more real:
+And Voilà! 🎉 We are finished! In addition to our submit handler, we've added some more UI and UX flourish to this final form to make it feel more real:
 
-- Added Previous / Next buttons for step navigation
-- Added tracking for visited steps and we now show validation errors on blur
-- Added a psuedo-submitHandler function that simulates back-end errors
-- The form submit button is now disabled until the `valid` state of the entire form is `true`
+- Added Previous / Next buttons for step navigation.
+- Added tracking for "visited steps" and we now show validation errors when a user blurs a step.
+- Added a fake backend to `utils.js` that returns errors.
+- The form submit button is now disabled until the entire form is in a `valid` state.
 - Added some additional text to the form to better mock a real-world UI.
 
  Here it is — a fully functioning multi-step form:
