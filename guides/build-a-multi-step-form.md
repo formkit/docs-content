@@ -34,6 +34,7 @@ These will become the full form steps later. We'll include a mix of validation r
   :file="[
     '/_content/examples/guides/multi-step-form/basic-form/example.vue'
   ]"
+  :bp="880"
   :editable="true">
 </example>
 
@@ -118,6 +119,7 @@ Here's what it looks like put together:
   :file="[
     '/_content/examples/guides/multi-step-form/form-in-steps/example.vue'
   ]"
+  :bp="880"
   :editable="true">
 </example>
 
@@ -244,6 +246,7 @@ We'll also make a few other improvements:
     '/_content/examples/guides/multi-step-form/showing-state/useSteps.js',
     '/_content/examples/guides/multi-step-form/showing-state/utils.js',
   ]"
+  :bp="880"
   :editable="true">
 </example>
 
@@ -307,6 +310,7 @@ And Voilà! 🎉 We are finished! We've added some more UI and UX flourish to th
     '/_content/examples/guides/multi-step-form/final-form/useSteps.js',
     '/_content/examples/guides/multi-step-form/final-form/utils.js'
   ]"
+  :bp="880"
   :editable="true">
 </example>
 
