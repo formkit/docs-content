@@ -3,7 +3,7 @@
 // than your actual tailwind.config.js would be in your
 // own project.
 
-import { formKitTailwind } from '@formkit/themes'
+import formKitTailwind from '@formkit/themes/tailwindcss'
 
 window.tailwind.config = {
   plugins: [

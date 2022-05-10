@@ -52,7 +52,7 @@ From there we need to do two things:
 
 ```js
 // tailwind.config.js
-const { formKitTailwind } = require('@formkit/themes');
+const formKitTailwind = require('@formkit/themes/tailwindcss');
 
 module.exports {
   ...
@@ -101,7 +101,7 @@ If you are using a single file for configuration, like <code>formkit.config.js</
 
 ```js
 // tailwind.config.js for Nuxt users
-const { formKitTailwind } = require('@formkit/themes');
+const formKitTailwind = require('@formkit/themes/tailwindcss');
 
 export default {
   // add the formkit.config.js file
