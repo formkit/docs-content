@@ -37,6 +37,7 @@ const { steps, activeStep, stepPlugin } = useSteps()
         <FormKit
           type="email"
           label="*Email address"
+          value="test@example.com"
           validation="required|email"
         />
       </FormKit>

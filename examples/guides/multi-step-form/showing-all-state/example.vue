@@ -8,6 +8,11 @@ const { steps, activeStep, stepPlugin, visitedSteps } = useSteps()
 const checkStepValidity = (stepName) => {
   return (steps[stepName].errorCount > 0 || steps[stepName].blockingCount > 0) && visitedSteps.value.includes(stepName)
 }
+
+// force an error only for this example
+setTimeout(() => {
+  visitedSteps.value.push('contactInfo')
+}, 100)
 </script>
 
 <template>
@@ -49,6 +54,7 @@ const checkStepValidity = (stepName) => {
           type="email"
           label="*Email address"
           validation="required|email"
+          validation-visibility="live"
         />
       </FormKit>
     </section>
