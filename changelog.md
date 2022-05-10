@@ -5,6 +5,22 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 1.0.0-beta.8
+
+### May 10, 2022
+
+#### ⚠️ Breaking changes
+
+- The `tailwindcss`, `unocss`, and `windicss` plugins must now be imported from their own subpath of the `@formkit/themes` package. For example:
+
+```js
+import formKitTailwindPlugin from '@formkit/themes/tailwindcss'
+```
+
+#### 🐛 Bug fixes
+
+- Removes improper imports from `windicss`, `tailwindcss` and `unocss`.
+
 ## 1.0.0-beta.7
 
 ### May 9, 2022
