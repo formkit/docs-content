@@ -19,7 +19,7 @@ export default function useSteps () {
         activeStep.value = node.name
       }
 
-      // Stop plugin inheritence to descendant nodes
+      // Stop plugin inheritance to descendant nodes
       return false
     }
   }

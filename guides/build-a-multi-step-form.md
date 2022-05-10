@@ -257,14 +257,14 @@ With our general infrastructure already in place, it's relatively simple to add 
 ```js
 const stepPlugin = (node) => {
   ...
-  // Store/update the count of blocking validation messages.
+  // Store or update the count of blocking validation messages.
   // FormKit emits the "count:blocking" event (with the count) each time
   // the count changes. 
   node.on('count:blocking', ({ payload: count }) => {
     steps[node.name].blockingCount = count
   })
 
-  // Store/update the count of backend error messages.
+  // Store or update the count of backend error messages.
   node.on('count:errors', ({ payload: count }) => {
     steps[node.name].errorCount = count
   })
@@ -278,10 +278,12 @@ FormKit makes a distinction between frontend validation messages (<code>messages
 
 Let's update our example to show both types of errors with the following requirements:
 
-- We'll always show the count of backend errors if they exist
-- We'll only show the count of frontend validation errors if the user visits and then blurs a group (so that the user doesn't accidentally skip questions in a given step)
+- We'll always show the count of backend errors if they exist.
+- We'll only show the count of frontend validation errors if the user visits and then exits (blurs) a group — as we don't want to confront them with error UI if they are still in progress.
 
-Since "blurring a group" doesn't exist in HTML, we'll introduce it in our plugin. Here's the relevant code: 
+### Adding a group blur event
+
+Since "blurring a group" doesn't exist in HTML, we'll introduce it in our plugin with an array called `visitedSteps`. Here's the relevant code: 
 
 ```js
 import { watch } from 'vue'
@@ -289,6 +291,7 @@ import { getNode, createMessage } from '@formkit/core'
 
 const stepPlugin = (node) => {
   ...
+  const activeStep = ref('')
   const visitedSteps = ref([]) // track visited steps
 
   // Watch our activeStep and store visited steps
@@ -301,7 +304,7 @@ const stepPlugin = (node) => {
       const node = getNode(step)
 
       // the node.walk() method walks through all the descendants of the current node
-      // and executes the given code.
+      // and executes the provided function.
       node.walk((n) => {
         n.store.set(
           createMessage({
@@ -317,11 +320,29 @@ const stepPlugin = (node) => {
 }
 ```
 
-You might be wondering why we are walking all of the descendants of a given step (group `node`) and creating a message with a key of `submitted` and value of `true`? By default, when a user attempts to submit a form, FormKit sets all internal inputs to the `submitted` state and forces all blocking validation messages to become visible. We are manually triggering the same thing in our pseudo group "blur" event.
+You might be wondering why we are walking all of the descendants of a given step (`node.walk()`) and creating a message with a key of `submitted` and value of `true`? When a user attempts to submit a form, this is how FormKit informs itself that all inputs are in a `submitted` state. In this state, FormKit forces any blocking validation messages to appear. We are manually triggering the same thing in our "group blur" event.
 
 
+### The error UI
 
-We'll use the same UI for both errors since end-users don't really care about the distinction. Here's our updated step HTML:
+We'll use the same UI for both types of errors since end-users don't really care about the distinction. Here's our updated step HTML, which outputs a red bubble with the sum total of the errors:
+
+<client-only>
+
+```html
+<li v-for="(step, stepName) in steps" class="step" ...>
+  <span
+    v-if="checkStepValidity(stepName)"
+    class="step--errors"
+    v-text="step.errorCount + step.blockingCount"
+  />
+  {{ camel2title(stepName) }}
+</li>
+```
+
+We are almost to the finish line! Here's our current form — which can now tell a user when they have properly _or improperly_ filled out each step:
+
+</client-only>
 
 <example
   :file="[
@@ -367,7 +388,7 @@ const submitApp = async (formData, node) => {
 ```
 </client-only>
 
-Notice that FormKit passes our submit handler 2 helpful arguments: the form's data in a single request-ready object (which we're calling `formData`), and the form's underlying core `node`, which we can use to clear errors or set any returned errors using the `node.clearErrors()` and `node.setErrors()` helpers.
+Notice that FormKit passes our submit handler 2 helpful arguments: the form's data in a single request-ready object (which we're calling `formData`), and the form's underlying core `node`, which we can use to clear errors or set any returned errors using the `node.clearErrors()` and `node.setErrors()` helpers, respectively.
 
 [`setErrors()`](/essentials/forms#clearing-errors-using-nodeseterrors-or-formkitseterrors) takes 2 arguments: form-level errors (an array), and field-specific errors (an object). Our fake backend returns the `err` response which we use to set any errors.
 
@@ -378,7 +399,6 @@ So, what happens if the user is on step 3 (Application) when they submit, and th
 And Voilà! 🎉 We are finished! In addition to our submit handler, we've added some more UI and UX flourish to this final form to make it feel more real:
 
 - Added Previous / Next buttons for step navigation.
-- Added tracking for "visited steps" and we now show validation errors when a user blurs a step.
 - Added a fake backend to `utils.js` that returns errors.
 - The form submit button is now disabled until the entire form is in a `valid` state.
 - Added some additional text to the form to better mock a real-world UI.
@@ -406,33 +426,3 @@ Of course, there are always ways to improve anything, and this form is no except
 We've covered a lot of topics in this guide and hope you've learned more about FormKit and how to use it to make multi-step forms easier!
 
 <cta label="Want more? Start by reading about FormKit core." button="Dig deeper" href="/advanced/core"></cta>
-
-
-
-
-
-
-
-
-
-
-- There are a couple concepts to remember about FormKit before we proceed.
-- Second, each core node has a [ledger](/advanced/core#ledger) which counts messages. 
-- We'll track the error counts on each `group` node by listening for `count:errors` events — which are emitted every time the error count changes.
-
-```js
-  // add the current group's error count
-  node.on('count:errors', ({ payload: count }) => {
-      steps[node.name].errorCount = count
-  })
-```
-
-- We'll add a `has-errors` class to the step, and add an error bubble `<span>` inside that will show the number of errors within a given step.
-
-```html
-  <span
-    v-if="step.errorCount > 0"
-    class="step--errors"
-    v-text="step.errorCount"
-  />
-```

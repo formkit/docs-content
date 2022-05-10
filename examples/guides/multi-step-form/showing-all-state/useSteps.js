@@ -1,4 +1,5 @@
-import { reactive, toRef, ref } from 'vue'
+import { reactive, toRef, ref, watch } from 'vue'
+import { getNode, createMessage } from '@formkit/core'
 
 export default function useSteps () {
   const activeStep = ref('')
@@ -37,9 +38,16 @@ export default function useSteps () {
         steps[node.name].valid = toRef(node.context.state, 'valid')
       })
 
-      // NEW: listen for changes in count of blocking validations messages
+      // NEW: Store or update the count of blocking validation messages.
+      // FormKit emits the "count:blocking" event (with the count) each
+      // time the count changes.
       node.on('count:blocking', ({ payload: count }) => {
         steps[node.name].blockingCount = count
+      })
+
+      // NEW: Store or update the count of backend error messages.
+      node.on('count:errors', ({ payload: count }) => {
+        steps[node.name].errorCount = count
       })
 
       // set the active tab to the 1st tab
@@ -47,10 +55,10 @@ export default function useSteps () {
         activeStep.value = node.name
       }
 
-      // Stop plugin inheritence to descendant nodes
+      // Stop plugin inheritance to descendant nodes
       return false
     }
   }
 
-  return { activeStep, steps, stepPlugin }
+  return { activeStep, steps, stepPlugin, visitedSteps }
 }

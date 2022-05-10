@@ -22,136 +22,136 @@ const checkStepValidity = (stepName) => {
 </script>
 
 <template>
-  <h1>Carbon Sequestration Grant</h1>
+<h1>Carbon Sequestration Grant</h1>
 
-  <FormKit
-    type="form"
-    #default="{ value, state: { valid } }"
-    :plugins="[stepPlugin]"
-    @submit="submitApp"
-    :actions="false"
-  >
-    <ul class="steps">
-      <li
-        v-for="(step, stepName) in steps"
-        :class="['step', { 'has-errors': checkStepValidity(stepName) }]"
-        @click="activeStep = stepName"
-        :data-step-valid="step.valid && step.errorCount === 0"
-        :data-step-active="activeStep === stepName"
+<FormKit
+  type="form"
+  #default="{ value, state: { valid } }"
+  :plugins="[stepPlugin]"
+  @submit="submitApp"
+  :actions="false"
+>
+  <ul class="steps">
+    <li
+      v-for="(step, stepName) in steps"
+      :class="['step', { 'has-errors': checkStepValidity(stepName) }]"
+      @click="activeStep = stepName"
+      :data-step-valid="step.valid && step.errorCount === 0"
+      :data-step-active="activeStep === stepName"
+    >
+      <span
+        v-if="checkStepValidity(stepName)"
+        class="step--errors"
+        v-text="step.errorCount + step.blockingCount"
+      />
+      {{ camel2title(stepName) }}
+    </li>
+  </ul>
+
+  <!-- .form-body solely for styling -->
+  <div class="form-body">
+    <section v-show="activeStep === 'contactInfo'">
+      <FormKit
+        type="group"
+        id="contactInfo"
+        name="contactInfo"
       >
-        <span
-          v-if="checkStepValidity(stepName)"
-          class="step--errors"
-          v-text="step.errorCount + step.blockingCount"
+        <FormKit
+          type="text"
+          label="*Full name"
+          name="full_name"
+          placeholder="First Last"
+          validation="required"
         />
-        {{ camel2title(stepName) }}
-      </li>
-    </ul>
 
-    <!-- .form-body solely for styling -->
-    <div class="form-body">
-      <section v-show="activeStep === 'contactInfo'">
         <FormKit
-          type="group"
-          id="contactInfo"
-          name="contactInfo"
-        >
-          <FormKit
-            type="text"
-            label="*Full name"
-            name="full_name"
-            placeholder="First Last"
-            validation="required"
-          />
+          type="email"
+          name="email"
+          label="*Email address"
+          placeholder="email@domain.com"
+          validation="required|email"
+        />
 
-          <FormKit
-            type="email"
-            name="email"
-            label="*Email address"
-            placeholder="email@domain.com"
-            validation="required|email"
-          />
-
-          <FormKit
-            type="tel"
-            name="tel"
-            label="*Telephone"
-            placeholder="xxx-xxx-xxxx"
-            help="Phone number must be in the xxx-xxx-xxxx format."
-            validation="required|matches:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/"
-          />
-        </FormKit>
-      </section>
-
-      <section v-show="activeStep === 'organizationInfo'">
         <FormKit
-          id="organizationInfo"
-          type="group"
-          name="organizationInfo"
-        >
-          <FormKit
-            type="text"
-            label="*Organization name"
-            name="org_name"
-            placeholder="MyOrg, Inc."
-            help="Enter your official organization name."
-            validation="required|length:3"
-          />
+          type="tel"
+          name="tel"
+          label="*Telephone"
+          placeholder="xxx-xxx-xxxx"
+          help="Phone number must be in the xxx-xxx-xxxx format."
+          validation="required|matches:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/"
+        />
+      </FormKit>
+    </section>
 
-          <FormKit
-            type="date"
-            label="Date of incorporation"
-            :validation="[['before_date', new Date(Date.now())]]"
-            name="date_inc"
-          />
-        </FormKit>
-      </section>
-
-      <section v-show="activeStep === 'application'">
+    <section v-show="activeStep === 'organizationInfo'">
+      <FormKit
+        id="organizationInfo"
+        type="group"
+        name="organizationInfo"
+      >
         <FormKit
-          id="application"
-          type="group"
-          name="application"
-        >
-          <FormKit
-            type="checkbox"
-            label="*I'm not a previous grant recipient"
-            help="Have you received a grant from us before?"
-            name="not_previous_recipient"
-            validation="required|accepted"
-            :validation-messages="{
-              accepted: 'We can only give one grant per organization.'
-            }"
-          />
-          <FormKit
-            type="textarea"
-            label="*How will you use the money?"
-            name="how_money"
-            help="Must be between 20 and 500 characters."
-            placeholder="Describe how the grant will accelerate your efforts."
-            validation="required|length:20,500"
-          />
-        </FormKit>
-      </section>
+          type="text"
+          label="*Organization name"
+          name="org_name"
+          placeholder="MyOrg, Inc."
+          help="Enter your official organization name."
+          validation="required|length:3"
+        />
 
-      <!-- NEW: Adds Next / Previous navigation buttons. -->
-      <div class="step-nav">
-        <FormKit type="button" :disabled="activeStep == 'contactInfo'" @click="setStep(-1)" v-text="'Previous step'" />
-        <FormKit type="button" class="next" :disabled="activeStep == 'application' " @click="setStep(1)" v-text="'Next step'"/>
-      </div>
+        <FormKit
+          type="date"
+          label="Date of incorporation"
+          :validation="[['before_date', new Date(Date.now())]]"
+          name="date_inc"
+        />
+      </FormKit>
+    </section>
 
-      <details>
-        <summary>Form data</summary>
-        <pre>{{ value }}</pre>
-      </details>
+    <section v-show="activeStep === 'application'">
+      <FormKit
+        id="application"
+        type="group"
+        name="application"
+      >
+        <FormKit
+          type="checkbox"
+          label="*I'm not a previous grant recipient"
+          help="Have you received a grant from us before?"
+          name="not_previous_recipient"
+          validation="required|accepted"
+          :validation-messages="{
+            accepted: 'We can only give one grant per organization.'
+          }"
+        />
+        <FormKit
+          type="textarea"
+          label="*How will you use the money?"
+          name="how_money"
+          help="Must be between 20 and 500 characters."
+          placeholder="Describe how the grant will accelerate your efforts."
+          validation="required|length:20,500"
+        />
+      </FormKit>
+    </section>
+
+    <!-- NEW: Adds Next / Previous navigation buttons. -->
+    <div class="step-nav">
+      <FormKit type="button" :disabled="activeStep == 'contactInfo'" @click="setStep(-1)" v-text="'Previous step'" />
+      <FormKit type="button" class="next" :disabled="activeStep == 'application' " @click="setStep(1)" v-text="'Next step'"/>
     </div>
 
-    <!-- NEW: Adds submit button. -->
-    <FormKit type="submit" label="Submit Application" :disabled="!valid" />
-  </FormKit>
+    <details>
+      <summary>Form data</summary>
+      <pre>{{ value }}</pre>
+    </details>
+  </div>
 
-  <p><small><em>*All the contents of this form are fictional (the company, grant, and form)
-    for the purposes of demonstrating the capabilities of FormKit.</em></small></p>
+  <!-- NEW: Adds submit button. -->
+  <FormKit type="submit" label="Submit Application" :disabled="!valid" />
+</FormKit>
+
+<p><small><em>*All the contents of this form are fictional (the company, grant, and form)
+  for the purposes of demonstrating the capabilities of FormKit.</em></small></p>
 </template>
 
 <style>
