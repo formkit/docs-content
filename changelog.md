@@ -5,6 +5,70 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 1.0.0-beta.8
+
+### May 10, 2022
+
+#### ⚠️ Breaking changes
+
+- The `tailwindcss`, `unocss`, and `windicss` plugins must now be imported from their own subpath of the `@formkit/themes` package. For example:
+
+```js
+import formKitTailwindPlugin from '@formkit/themes/tailwindcss'
+```
+
+#### 🐛 Bug fixes
+
+- Removes improper imports from `windicss`, `tailwindcss` and `unocss`.
+
+## 1.0.0-beta.7
+
+### May 9, 2022
+
+#### ⚠️ Breaking changes
+
+- The `update:model-value` event will now only be emitted when using the `v-model` directive.
+- The `input` event is now debounced to reduce the amount of noise being emitted. You can use the new `input-raw` to listen to every input event.
+- Errors set via `setErrors` are now automatically cleared on input by default. To revert to the previous behavior, set `preserveErrors: true` in your global config object.
+- The `@formkit/tailwindcss` package is now deprecated — both the `formKitTailwind` plugin and the `generateClasses` function have been moved to the `@formkit/themes` package.
+
+#### 🎉 New features
+
+- `checkbox`, `radio`, and `select` inputs (inputs that use `:options`) can now use any data type as their value like numbers, objects, or even `null` ([#85](https://github.com/formkit/formkit/issues/85)).
+- Adds new `node.clearErrors` and `clearErrors` utilities to assist in clearing backend errors from an input or form.
+- Now inputs automatically clear any errors set with `node.setErrors()` on user input. You can override this default behavior (to keep the error on the input) with `preserve-errors="true"`.
+- Adds a new `node.addProps` function for adding new props in custom plugins.
+- Adds new `message` hook for modifying messages as they are being set.
+- Adds a new core event `reset` — emitted after a form is reset.
+- Adds a new `index` prop that allows inputs to be injected at a given index on a parent `list` type.
+- The `<FormKit>` component’s `input` event is now debounced, meaning it emits much less noise.
+- Exports all input feature functions `import { features } from '@formkit/inputs'`.
+- Adds a new `input-raw` event to the `<FormKit>` component which is emitted for every single input event in an input, list, group, or form (very noisy).
+- The core node is now the second argument of the `input`, `input-raw`, `submit` and `submit-raw` events.
+- Adds new core node event `dom-input-event` which has the native HTML `Event` object as the payload.
+- `@formkit/themes` now includes named exports for plugin functions for Tailwind CSS (`formKitTailwind`), Windi CSS (`formKitWindi`), and Uno CSS (`formKitUno`). By adding the correct plugin to your CSS framework's configuration file you will have access to a variety of formkit variants such as `formkit-invalid:` and `formkit-disabled:`.
+- `@formkit/themes` now includes the [`generateClasses`](/essentials/styling/#using-generateclasses-from-formkitthemes) helper function will allows you to easily supply different class lists to `${sectionKey}`s based on input type.
+- Adds 🇸🇪 Swedish language.
+- Adds 🇸🇮 Slovenian language.
+- Adds 🇷🇴 Romanian language.
+- Adds 🇯🇵 Japanese language.
+- Adds 🇹🇭 Thai language.
+- Improves 🇵🇱 Polish language.
+
+#### 🐛 Bug fixes
+
+- 🔥 Dramatically improves `v-model` performance and reliability for deeply nested structures like forms with list and groups.
+- Fixes an issue that caused `null` values to throw errors ([#151](https://github.com/formkit/formkit/issues/151))
+- Fixed a bug that caused `validation-visibility` to not change when updated reactively ([#159](https://github.com/formkit/formkit/issues/159))
+- Fixes a bug that caused the `preserve` keyword to block some form submissions ([#145](https://github.com/formkit/formkit/issues/145))
+- Fixes TypeScript typing for the `@formkit/tailwind` configuration ([#143](https://github.com/formkit/formkit/issues/143))
+- Fixes a bug that caused single checkboxes with an object as the `on-value` to not be set their initial value when using the `:value` prop.
+- Fixes a bug that caused validation rules to not be updated when the label prop changed ([#170](https://github.com/formkit/formkit/issues/170))
+- Fixes a bug that caused incorrect default selection on select lists with an explicit `multiple="false"` attribute and a placeholder ([#148](https://github.com/formkit/formkit/issues/148)).
+- Fixes a bug that caused the `classes` prop to not react to Vue’s reactivity when using nested refs ([#155](https://github.com/formkit/formkit/issues/155)).
+- Fixes a bug that prevented submit buttons from being disabled when applied using using the `disabled` attribute on the form without specifying `disabled="true"` ([#215](https://github.com/formkit/formkit/issues/215))
+- Fixes a schema compiler bug that caused the white space of a quoted string in a parenthesis to be incorrectly removed ([#150](https://github.com/formkit/formkit/issues/150)).
+
 ## 1.0.0-beta.6
 
 ### March 10, 2022

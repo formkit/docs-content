@@ -65,7 +65,7 @@ One of the best ways to enrich the FormKit (and Vue 3) community at large is to 
 
 ### FormKit Discord server (generalized help & discussion)
 
-If you need generalized help or want to make connections within the community, consider joining the official FormKit Discord (used for both FormKit and Vue Formulate — FormKit's predecessor). Over 450 developers along with the core team spend time there. If you are not already a member (it's free and open), you'll need to use the following invite link to join the server:
+If you need generalized help or want to make connections within the community, consider joining the official FormKit Discord (used for both FormKit and Vue Formulate — FormKit's predecessor). Over 525 developers along with the core team spend time there. If you are not already a member (it's free and open), you'll need to use the following invite link to join the server:
 
 <LinkDiscord></LinkDiscord>
 

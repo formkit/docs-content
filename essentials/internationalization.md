@@ -18,17 +18,22 @@ FormKit ships with internationalization support for all of its interfaces and va
 - 🇫🇷 French (fr) — 🙏&nbsp;@HoreKk, @pop123123123
 - <img src="/img/frisian_flag.svg" alt="Frisian flag" class="rare-flag"> Frisian (fy) — 🙏&nbsp;@arjendejong12
 - 🇩🇪 German (de) — 🙏&nbsp;@digitalkaoz, @tosling
-- 🇮🇱 Hebrew (he) — 🙏&nbsp;@Hepi420
-- 🇮🇩 Indonesian (id) — 🙏&nbsp;@rama-adi
-- 🇮🇹 Italian (it) — 🙏&nbsp;@punga78, @Archetipo95
-- 🇰🇷 Korean (ko) — 🙏&nbsp;@bwp618, @titusdecali
-- 🇮🇷 Persian (fa) — 🙏&nbsp;@shahabbasian
-- 🇵🇱 Polish (pl) — 🙏&nbsp;@xxSkyy
+- 🇮🇱 Hebrew (he) - 🙏&nbsp;@Hepi420
+- 🇮🇩 Indonesian (id) - 🙏&nbsp;@rama-adi
+- 🇮🇹 Italian (it) - 🙏&nbsp;@punga78, @Archetipo95
+- 🇯🇵 Japanese (ja) - 🙏&nbsp;@wonyx
+- 🇰🇷 Korean (ko) - 🙏&nbsp;@bwp618, @titusdecali
+- 🇮🇷 Persian (fa) - 🙏&nbsp;@shahabbasian
+- 🇵🇱 Polish (pl) - 🙏&nbsp;@xxSkyy
 - 🇧🇷 Portuguese (pt) 🙏&nbsp;@r-martins
-- 🇷🇺 Russian (ru) — 🙏&nbsp;@andreimakushkin
-- 🇦🇷 Spanish (es) — 🙏&nbsp;@inibg
-- 🇹🇷 Turkish (tr) — 🙏&nbsp;@ragokan
-- 🇻🇳 Vietnamese (vi) — 🙏&nbsp;@oanhnn
+- 🇷🇴 Romanian (ro) - 🙏&nbsp;@danve
+- 🇷🇺 Russian (ru) - 🙏&nbsp;@andreimakushkin
+- 🇸🇮 Slovenian (sl) - 🙏&nbsp;@krisflajs
+- 🇦🇷 Spanish (es) - 🙏&nbsp;@inibg
+- 🇸🇪 Swedish (sv) - 🙏&nbsp;@purung
+- 🇹🇭 Thai (th) - 🙏&nbsp;@pknn
+- 🇹🇷 Turkish (tr) - 🙏&nbsp;@ragokan
+- 🇻🇳 Vietnamese (vi) - 🙏&nbsp;@oanhnn
 
 Although flags are <a href="http://www.flagsarenotlanguages.com/blog/why-flags-do-not-represent-language/">poor representations of languages</a> (flags indicate a geographic nation, while languages can be spoken in many ares of the world), we use the flags in the list above to indicate the location of the contributor who created that particular locale.
 
