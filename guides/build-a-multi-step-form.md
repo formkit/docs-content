@@ -62,7 +62,6 @@ A group itself becomes valid when all its children (and their children) are vali
 </FormKit>
 ...
 ```
-
 </client-only>
 
 In our case, we're also going to want wrapping HTML. Let's put each group into a "step" section which we can conditionally show and hide:
@@ -85,7 +84,6 @@ In our case, we're also going to want wrapping HTML. Let's put each group into a
 </section>
 ...
 ```
-
 </client-only>
 
 Next, let's introduce some navigation UI so we can toggle between each step:
@@ -96,7 +94,6 @@ Next, let's introduce some navigation UI so we can toggle between each step:
 // for now, manually set step names
 const stepNames = ['contactInfo','organizationInfo','application']
 ```
-
 </client-only>
 
 <client-only>
@@ -114,7 +111,6 @@ const stepNames = ['contactInfo','organizationInfo','application']
   </li>
 </ul>
 ```
-
 </client-only>
 
 Here's what it looks like put together:
@@ -172,7 +168,6 @@ const stepPlugin = (node) => {
     }
 }
 ```
-
 </client-only>
 
 The resulting `steps` reactive object from our plugin above looks like this:
@@ -186,7 +181,6 @@ The resulting `steps` reactive object from our plugin above looks like this:
   application: { valid: false }
 }
 ```
-
 </client-only>
 
 To use our plugin, we'll add it to our root form  `<FormKit type="form" />`. This means that every top-level group in our form will inherit the plugin:
@@ -201,7 +195,6 @@ To use our plugin, we'll add it to our root form  `<FormKit type="form" />`. Thi
 ... rest of the form
 </FormKit>
 ```
-
 </client-only>
 
 ## Showing validity
@@ -226,7 +219,6 @@ We also no longer need to manually define our steps since our plugin is dynamica
     </li>
   </ul>
 ```
-
 </client-only>
 
 With these updates, our form is now capable of informing a user when they have correctly filled out all of the fields in a given step!
@@ -258,12 +250,14 @@ FormKit uses its [message store](/advanced/core#message-store) to track both of 
 
 With our plugin already in place, it's relatively simple to add tracking for both:
 
+<client-only>
+
 ```js
 const stepPlugin = (node) => {
   ...
   // Store or update the count of blocking validation messages.
   // FormKit emits the "count:blocking" event (with the count) each time
-  // the count changes. 
+  // the count changes.
   node.on('count:blocking', ({ payload: count }) => {
     steps[node.name].blockingCount = count
   })
@@ -275,6 +269,7 @@ const stepPlugin = (node) => {
   ...
 }
 ```
+</client-only>
 
 <callout type="tip" label="Blocking validation messages vs errors">
 FormKit makes a distinction between frontend validation messages (<code>messages</code> of type <code>validation</code>), and errors (<code>messages</code> of type <code>error</code>).
@@ -287,7 +282,9 @@ Let's update our example to show both types of errors with the following require
 
 ### Adding a group blur event
 
-Since "blurring a group" doesn't exist in HTML, we'll introduce it in our plugin with an array called `visitedSteps`. Here's the relevant code: 
+Since "blurring a group" doesn't exist in HTML, we'll introduce it in our plugin with an array called `visitedSteps`. Here's the relevant code:
+
+<client-only>
 
 ```js
 import { watch } from 'vue'
@@ -323,6 +320,7 @@ const stepPlugin = (node) => {
   ...
 }
 ```
+</client-only>
 
 You might be wondering why we are walking all of the descendants of a given step (`node.walk()`) and creating messages with a key of `submitted` and value of `true`? When a user attempts to submit a form, this is how FormKit informs itself that all inputs are in a `submitted` state. In this state, FormKit forces any blocking validation messages to appear. We are manually triggering the same thing in our "group blur" event.
 
@@ -343,7 +341,6 @@ We'll use the same UI for both types of errors since end-users don't really care
   {{ camel2title(stepName) }}
 </li>
 ```
-
 </client-only>
 
 We are almost to the finish line! Here's our current form — which can now tell a user when they have properly _or improperly_ filled out each step:
@@ -373,7 +370,6 @@ We submit the form by adding an `@submit` handler to the `<FormKit type="form">`
 >
 ... rest of form
 ```
-
 </client-only>
 
 And here's our submit handler:
@@ -391,7 +387,6 @@ const submitApp = async (formData, node) => {
   }
 }
 ```
-
 </client-only>
 
 Notice that FormKit passes our submit handler 2 helpful arguments: the form's data in a single request-ready object (which we're calling `formData`), and the form's underlying core `node`, which we can use to clear errors or set any returned errors using the `node.clearErrors()` and `node.setErrors()` helpers, respectively.
