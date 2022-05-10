@@ -62,6 +62,7 @@ A group itself becomes valid when all its children (and their children) are vali
 </FormKit>
 ...
 ```
+
 </client-only>
 
 In our case, we're also going to want wrapping HTML. Let's put each group into a "step" section which we can conditionally show and hide:
@@ -84,6 +85,7 @@ In our case, we're also going to want wrapping HTML. Let's put each group into a
 </section>
 ...
 ```
+
 </client-only>
 
 Next, let's introduce some navigation UI so we can toggle between each step:
@@ -94,6 +96,7 @@ Next, let's introduce some navigation UI so we can toggle between each step:
 // for now, manually set step names
 const stepNames = ['contactInfo','organizationInfo','application']
 ```
+
 </client-only>
 
 <client-only>
@@ -111,6 +114,7 @@ const stepNames = ['contactInfo','organizationInfo','application']
   </li>
 </ul>
 ```
+
 </client-only>
 
 Here's what it looks like put together:
@@ -340,9 +344,9 @@ We'll use the same UI for both types of errors since end-users don't really care
 </li>
 ```
 
-We are almost to the finish line! Here's our current form — which can now tell a user when they have properly _or improperly_ filled out each step:
-
 </client-only>
+
+We are almost to the finish line! Here's our current form — which can now tell a user when they have properly _or improperly_ filled out each step:
 
 <example
   :file="[
@@ -369,6 +373,7 @@ We submit the form by adding an `@submit` handler to the `<FormKit type="form">`
 >
 ... rest of form
 ```
+
 </client-only>
 
 And here's our submit handler:
@@ -386,6 +391,7 @@ const submitApp = async (formData, node) => {
   }
 }
 ```
+
 </client-only>
 
 Notice that FormKit passes our submit handler 2 helpful arguments: the form's data in a single request-ready object (which we're calling `formData`), and the form's underlying core `node`, which we can use to clear errors or set any returned errors using the `node.clearErrors()` and `node.setErrors()` helpers, respectively.
