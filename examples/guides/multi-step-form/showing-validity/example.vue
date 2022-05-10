@@ -3,6 +3,7 @@ import { camel2title } from './utils.js'
 import useSteps from './useSteps.js'
 
 const { steps, activeStep, stepPlugin } = useSteps()
+
 </script>
 
 <template>

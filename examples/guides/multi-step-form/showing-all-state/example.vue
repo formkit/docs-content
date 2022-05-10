@@ -3,6 +3,11 @@ import { camel2title } from './utils.js'
 import useSteps from './useSteps.js'
 
 const { steps, activeStep, stepPlugin } = useSteps()
+
+// NEW: helper function to check step validity on step blur
+const checkStepValidity = (stepName) => {
+  return (steps[stepName].errorCount > 0 || steps[stepName].blockingCount > 0) && visitedSteps.value.includes(stepName)
+}
 </script>
 
 <template>
@@ -15,17 +20,19 @@ const { steps, activeStep, stepPlugin } = useSteps()
   >
 
     <ul class="steps">
+      <!-- NEW: uses new checkStepValidity method to check validation on step blur -->
       <li
         v-for="(step, stepName) in steps"
-        :class="['step', { 'has-errors': step.errorCount > 0 }]"
+        :class="['step', { 'has-errors': checkStepValidity(stepName) }]"
         @click="activeStep = stepName"
         :data-step-valid="step.valid && step.errorCount === 0"
         :data-step-active="activeStep === stepName"
       >
+        <!-- NEW: output total number of errors in a little red bubble -->
         <span
-          v-if="step.errorCount > 0"
+          v-if="checkStepValidity(stepName)"
           class="step--errors"
-          v-text="step.errorCount"
+          v-text="step.errorCount + step.blockingCount"
         />
         {{ camel2title(stepName) }}
       </li>

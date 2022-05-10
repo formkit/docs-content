@@ -3,6 +3,29 @@ import { reactive, toRef, ref } from 'vue'
 export default function useSteps () {
   const activeStep = ref('')
   const steps = reactive({})
+  const visitedSteps = ref([]) // track visited steps
+
+  // NEW: watch our activeStep and store visited steps
+  // to know when to show errors
+  watch(activeStep, (newStep, oldStep) => {
+    if (oldStep && !visitedSteps.value.includes(oldStep)) {
+      visitedSteps.value.push(oldStep)
+    }
+    // NEW: trigger showing validation on fields
+    // within all visited steps
+    visitedSteps.value.forEach((step) => {
+      const node = getNode(step)
+      node.walk((n) => {
+        n.store.set(
+          createMessage({
+            key: 'submitted',
+            value: true,
+            visible: false,
+          })
+        )
+      })
+    })
+  })
 
   const stepPlugin = (node) => {
     if (node.props.type == "group") {

@@ -15,7 +15,6 @@ const submitApp = async (formData, node) => {
   }
 }
 
-// NEW: helper function to check step validity on step blur
 const checkStepValidity = (stepName) => {
   return (steps[stepName].errorCount > 0 || steps[stepName].blockingCount > 0) && visitedSteps.value.includes(stepName)
 }
@@ -33,7 +32,6 @@ const checkStepValidity = (stepName) => {
     :actions="false"
   >
     <ul class="steps">
-      <!-- NEW: uses new checkStepValidity method to check validation on step blur -->
       <li
         v-for="(step, stepName) in steps"
         :class="['step', { 'has-errors': checkStepValidity(stepName) }]"
@@ -136,6 +134,7 @@ const checkStepValidity = (stepName) => {
         </FormKit>
       </section>
 
+      <!-- NEW: Adds Next / Previous navigation buttons. -->
       <div class="step-nav">
         <FormKit type="button" :disabled="activeStep == 'contactInfo'" @click="setStep(-1)" v-text="'Previous step'" />
         <FormKit type="button" class="next" :disabled="activeStep == 'application' " @click="setStep(1)" v-text="'Next step'"/>
@@ -147,6 +146,7 @@ const checkStepValidity = (stepName) => {
       </details>
     </div>
 
+    <!-- NEW: Adds submit button. -->
     <FormKit type="submit" label="Submit Application" :disabled="!valid" />
   </FormKit>
 

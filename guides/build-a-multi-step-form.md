@@ -167,14 +167,22 @@ const stepPlugin = (node) => {
         return false
     }
 }
+```
 
-/* the resulting "steps" reactive object looks this this: */
+</client-only>
+
+The resulting `steps` reactive object from our plugin above looks like this:
+
+<client-only>
+
+```js
 {
   contactInfo: { valid: false },
   organizationInfo: { valid: false }
   application: { valid: false }
 }
 ```
+
 </client-only>
 
 To use our plugin, we'll add it to our form at the top-level `<FormKit type="form" />`. This means that every group in our form will inherit the plugin:
@@ -189,11 +197,12 @@ To use our plugin, we'll add it to our form at the top-level `<FormKit type="for
 ... rest of the form
 </FormKit>
 ```
+
 </client-only>
 
 ## Showing validity
 
-Now that our template has real-time access to each group's validity state via our plugin, let's write the UI to expose this data in the step navigation bar.
+Now that our template has real-time access to each group's validity state via our plugin, let's write the UI to show this data in the step navigation bar.
 
 We also no longer need to manually define our steps since our plugin is dynamically storing the name of all groups in the `steps` object. Let's add a `data-step-valid="true"` attribute to each step if it's valid so we can target with CSS.
 
@@ -213,6 +222,7 @@ We also no longer need to manually define our steps since our plugin is dynamica
     </li>
   </ul>
 ```
+
 </client-only>
 
 With these updates, our form is now capable of informing a user when they have correctly filled out all of the fields in a given step!
@@ -240,27 +250,88 @@ Showing errors is more nuanced. Though the user may not be aware, there are actu
 - Errors from failing _frontend_ validation rules (`messages` of type `validation`)
 - Backend errors (`messages` of type `error`)
 
-The FormKit [Message store](/advanced/core#message-store) is the general-purpose feature that FormKit uses to track both of these types of errors/messages.
+FormKit uses its [message store](/advanced/core#message-store) to track both of these types of errors/messages.
 
-With our general infrastructure in place, it's relatively simple to add tracking and displaying of failing validation messages. Let's add tracking for blocking validation messages to our plugin:
+With our general infrastructure already in place, it's relatively simple to add tracking for both:
 
 ```js
 const stepPlugin = (node) => {
   ...
-  // listen for for the "count:blocking" event, which is emitted by FormKit
-  // when the count of blocking validations messages changes.
-  // Add it to our previously-defined "steps" object
+  // Store/update the count of blocking validation messages.
+  // FormKit emits the "count:blocking" event (with the count) each time
+  // the count changes. 
   node.on('count:blocking', ({ payload: count }) => {
     steps[node.name].blockingCount = count
+  })
+
+  // Store/update the count of backend error messages.
+  node.on('count:errors', ({ payload: count }) => {
+    steps[node.name].errorCount = count
   })
   ...
 }
 ```
 
-<callout type="info" label="Blocking validations vs backend errors">
-This guide assumes you are are familiar with the <a href="https://vuejs.org/guide/introduction.html#api-styles">Vue Composition API</a>.
+<callout type="tip" label="Blocking validation messages vs errors">
+FormKit makes a distinction between frontend validation messages (<code>messages</code> of type <code>validation</code>), and errors (<code>messages</code> of type <code>error</code>).
 </callout>
 
+Let's update our example to show both types of errors with the following requirements:
+
+- We'll always show the count of backend errors if they exist
+- We'll only show the count of frontend validation errors if the user visits and then blurs a group (so that the user doesn't accidentally skip questions in a given step)
+
+Since "blurring a group" doesn't exist in HTML, we'll introduce it in our plugin. Here's the relevant code: 
+
+```js
+import { watch } from 'vue'
+import { getNode, createMessage } from '@formkit/core'
+
+const stepPlugin = (node) => {
+  ...
+  const visitedSteps = ref([]) // track visited steps
+
+  // Watch our activeStep and store visited steps
+  watch(activeStep, (newStep, oldStep) => {
+    if (oldStep && !visitedSteps.value.includes(oldStep)) {
+      visitedSteps.value.push(oldStep)
+    }
+    // Trigger showing validation on fields if a group has been visited
+    visitedSteps.value.forEach((step) => {
+      const node = getNode(step)
+
+      // the node.walk() method walks through all the descendants of the current node
+      // and executes the given code.
+      node.walk((n) => {
+        n.store.set(
+          createMessage({
+            key: 'submitted',
+            value: true,
+            visible: false
+          })
+        )
+      })
+    })
+  })
+  ...
+}
+```
+
+You might be wondering why we are walking all of the descendants of a given step (group `node`) and creating a message with a key of `submitted` and value of `true`? By default, when a user attempts to submit a form, FormKit sets all internal inputs to the `submitted` state and forces all blocking validation messages to become visible. We are manually triggering the same thing in our pseudo group "blur" event.
+
+
+
+We'll use the same UI for both errors since end-users don't really care about the distinction. Here's our updated step HTML:
+
+<example
+  :file="[
+    '/_content/examples/guides/multi-step-form/showing-all-state/example.vue',
+    '/_content/examples/guides/multi-step-form/showing-all-state/useSteps.js',
+    '/_content/examples/guides/multi-step-form/showing-all-state/utils.js',
+  ]"
+  :bp="880"
+  :editable="true">
+</example>
 
 ## Form submission and receiving errors
 
