@@ -136,7 +136,7 @@ It's starting to look like a real multi-step form! There's more work to be done 
 - The validity of each individual step is not being shown.
 - When there are validations on a tab that's not the "current step", they cannot be seen.
 
-Let's let's address the first issue.
+Let's address the first issue.
 
 ## Tracking validity for each step
 
@@ -189,7 +189,7 @@ The resulting `steps` reactive object from our plugin above looks like this:
 
 </client-only>
 
-To use our plugin, we'll add it to our form at the top-level `<FormKit type="form" />`. This means that every group in our form will inherit the plugin:
+To use our plugin, we'll add it to our root form  `<FormKit type="form" />`. This means that every top-level group in our form will inherit the plugin:
 
 <client-only>
 
@@ -208,7 +208,7 @@ To use our plugin, we'll add it to our form at the top-level `<FormKit type="for
 
 Now that our template has real-time access to each group's validity state via our plugin, let's write the UI to show this data in the step navigation bar.
 
-We also no longer need to manually define our steps since our plugin is dynamically storing the name of all groups in the `steps` object. Let's add a `data-step-valid="true"` attribute to each step if it's valid so we can target with CSS.
+We also no longer need to manually define our steps since our plugin is dynamically storing the name of all groups in the `steps` object. Let's add a `data-step-valid="true"` attribute to each step if it's valid so we can target with CSS:
 
 
 <client-only>
@@ -256,7 +256,7 @@ Showing errors is more nuanced. Though the user may not be aware, there are actu
 
 FormKit uses its [message store](/advanced/core#message-store) to track both of these types of errors/messages.
 
-With our general infrastructure already in place, it's relatively simple to add tracking for both:
+With our plugin already in place, it's relatively simple to add tracking for both:
 
 ```js
 const stepPlugin = (node) => {
@@ -324,12 +324,12 @@ const stepPlugin = (node) => {
 }
 ```
 
-You might be wondering why we are walking all of the descendants of a given step (`node.walk()`) and creating a message with a key of `submitted` and value of `true`? When a user attempts to submit a form, this is how FormKit informs itself that all inputs are in a `submitted` state. In this state, FormKit forces any blocking validation messages to appear. We are manually triggering the same thing in our "group blur" event.
+You might be wondering why we are walking all of the descendants of a given step (`node.walk()`) and creating messages with a key of `submitted` and value of `true`? When a user attempts to submit a form, this is how FormKit informs itself that all inputs are in a `submitted` state. In this state, FormKit forces any blocking validation messages to appear. We are manually triggering the same thing in our "group blur" event.
 
 
 ### The error UI
 
-We'll use the same UI for both types of errors since end-users don't really care about the distinction. Here's our updated step HTML, which outputs a red bubble with the sum total of the errors:
+We'll use the same UI for both types of errors since end-users don't really care about the distinction. Here's our updated step HTML, which outputs a red bubble with the sum total of the errors `errorCount` + `blockingCount`:
 
 <client-only>
 
@@ -360,7 +360,7 @@ We are almost to the finish line! Here's our current form — which can now tell
 
 ## Form submission and receiving errors
 
-The last piece of the puzzle is submitting the form and handling any errors we receive from the backend server — which we'll fake for the purposes of this guide.
+The last piece of the puzzle is submitting the form and handling any errors we receive from the backend server. We'll fake the backend for the purposes of this guide.
 
 We submit the form by adding an `@submit` handler to the `<FormKit type="form">`:
 
@@ -396,13 +396,13 @@ const submitApp = async (formData, node) => {
 
 Notice that FormKit passes our submit handler 2 helpful arguments: the form's data in a single request-ready object (which we're calling `formData`), and the form's underlying core `node`, which we can use to clear errors or set any returned errors using the `node.clearErrors()` and `node.setErrors()` helpers, respectively.
 
-[`setErrors()`](/essentials/forms#clearing-errors-using-nodeseterrors-or-formkitseterrors) takes 2 arguments: form-level errors (an array), and field-specific errors (an object). Our fake backend returns the `err` response which we use to set any errors.
+[`setErrors()`](/essentials/forms#clearing-errors-using-nodeseterrors-or-formkitseterrors) takes 2 arguments: form-level errors and field-specific errors. Our fake backend returns the `err` response which we use to set any errors.
 
 So, what happens if the user is on step 3 (Application) when they submit, and there are field-level errors on a hidden step? Thankfully, so long as the nodes exist the DOM, FormKit is able place these errors appropriately. This is why we used a `v-show` for the steps instead of `v-if` — The DOM node needs to exist in order to have errors set on the corresponding FormKit node.
 
 ## Putting it all together
 
-And Voilà! 🎉 We are finished! In addition to our submit handler, we've added some more UI and UX flourish to this final form to make it feel more real:
+And Voilà! 🎉 We are finished! In addition to our submit handler, we've added some more UI and UX flourishes to this final form to make it feel more real:
 
 - Added Previous / Next buttons for step navigation.
 - Added a fake backend to `utils.js` that returns errors.
