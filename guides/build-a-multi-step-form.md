@@ -416,7 +416,7 @@ And Voilà! 🎉 We are finished! In addition to our submit handler, we've added
   :editable="true">
 </example>
 
-Pretty neat! Want to build it with FormKit Schema? You can! Check out this playground: [https://formkit.link/7b74e4469f5c6eb1820cea4423a3ccbe](https://formkit.link/7b74e4469f5c6eb1820cea4423a3ccbe)
+<cta label="Want to see it built using FormKit Schema?" button="Check out the Playground" href="https://formkit.link/7b74e4469f5c6eb1820cea4423a3ccbe" type="ghost"></cta>
 
 ## Ways to improve
 
