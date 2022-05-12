@@ -56,7 +56,7 @@ Use a plugin to modify the HTML of all descendant checkbox inputs.
 <ExampleCard
   href="https://formkit.link/4c282e69337fdfca35ec613e2f67fcc9"
   title="Number input with custom step buttons">
-A custom input with +1 and -1 step buttons in the <code>prefix</code> and <code>suffix</code> sections.
+A custom input with +1 and -1 step buttons. Made using <code>createInput()</code>.
 </ExampleCard>
 
 ## User interface
