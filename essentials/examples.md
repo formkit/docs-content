@@ -29,6 +29,12 @@ Using the <code>list</code> type we can create inputs that can have multiple val
 Use the <code>FormKitSchema</code> component to conditionally show an input (with validation rules) based on the value of another input.
 </ExampleCard>
 
+<ExampleCard
+  href="https://formkit.link/9fc88976fc72d4d09f5deb2b1891abce"
+  title="Multi-step form built from Schema">
+Use the <code>FormKitSchema</code> component to render the multi-step form from <nuxt-link to="/guides/build-a-multi-step-form">the multi-step form guide</nuxt-link>.
+</ExampleCard>
+
 ## Plugins
 
 <ExampleCard
@@ -47,6 +53,14 @@ By default HTML only supports string values, but you can use a plugin to cast ra
   href="https://formkit.link/e9712ba9d7f6c0ab5648b15a89147ba7"
   title="Remove the inner wrapper on all checkboxes">
 Use a plugin to modify the HTML of all descendant checkbox inputs.
+</ExampleCard>
+
+## Custom Inputs
+
+<ExampleCard
+  href="https://formkit.link/a53362c008f8f60c7279799b4e26bff3"
+  title="Number input with custom step buttons">
+A custom input with +1 and -1 step buttons in the <code>prefix</code> and <code>suffix</code> sections.
 </ExampleCard>
 
 ## User interface
