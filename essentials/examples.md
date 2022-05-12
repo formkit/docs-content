@@ -44,12 +44,6 @@ Use a plugin to cast string values to numbers. Useful if you want inputs of type
 </ExampleCard>
 
 <ExampleCard
-  href="https://formkit.link/9e7504bb53cac998c9e483199479f10f"
-  title="Make radio inputs return booleans">
-By default HTML only supports string values, but you can use a plugin to cast radio inputs to booleans.
-</ExampleCard>
-
-<ExampleCard
   href="https://formkit.link/e9712ba9d7f6c0ab5648b15a89147ba7"
   title="Remove the inner wrapper on all checkboxes">
 Use a plugin to modify the HTML of all descendant checkbox inputs.
