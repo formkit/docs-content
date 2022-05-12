@@ -32,9 +32,7 @@ Use the <code>FormKitSchema</code> component to conditionally show an input (wit
 <ExampleCard
   href="https://formkit.link/9fc88976fc72d4d09f5deb2b1891abce"
   title="Multi-step form built from Schema">
-  <client-only>
-    Use the <code>FormKitSchema</code> component to render the multi-step form from <nuxt-link to="/guides/build-a-multi-step-form">the multi-step form guide</nuxt-link>.
-  </client-only>
+    Use the <code>FormKitSchema</code> component to render the multi-step form from the multi-step form guide.
 </ExampleCard>
 
 ## Plugins
