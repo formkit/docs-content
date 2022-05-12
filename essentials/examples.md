@@ -51,10 +51,10 @@ Use a plugin to cast string values to numbers. Useful if you want inputs of type
 Use a plugin to modify the HTML of all descendant checkbox inputs.
 </ExampleCard>
 
-## Custom Inputs
+## Inputs
 
 <ExampleCard
-  href="https://formkit.link/a53362c008f8f60c7279799b4e26bff3"
+  href="https://formkit.link/4c282e69337fdfca35ec613e2f67fcc9"
   title="Number input with custom step buttons">
 A custom input with +1 and -1 step buttons in the <code>prefix</code> and <code>suffix</code> sections.
 </ExampleCard>
