@@ -56,4 +56,7 @@ export default {
 html[data-active-tab="render"] {
   background: linear-gradient(140deg, rgb(66, 223, 123), rgb(35, 196, 94));
 }
+html .source-content {
+  background: transparent;
+}
 </style>
