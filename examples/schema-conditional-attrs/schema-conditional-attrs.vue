@@ -1,6 +1,6 @@
 <script setup>
 import { reactive } from 'vue'
-const data = reactive({ drink: undefined })
+const data = reactive({ drink: null })
 const schema = [
   {
     $el: 'h1',
