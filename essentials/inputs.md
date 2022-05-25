@@ -162,7 +162,7 @@ For example, if we wanted to use a slot to define the label of an input, we coul
   file="/_content/examples/label-slot/label-slot.vue"></example>
 
 <callout type="warning" label="Consider section schema">
-A disadvantage of using slots is you often need to re-create unrelated features to make the change you desire. For example, using slots would require you to re-implement any classes applied to those sections (which can be done by using `context.classes.sectionName`).<br><br>To help address this shortcoming, FormKit is also able to <a href="#sections-schema">selectively override/extend the underlying schema</a> of each section allowing complex structural modification often with no loss of functionality.
+A disadvantage of using slots is you often need to re-create unrelated features to make the change you desire. For example, using slots would require you to re-implement any classes applied to those sections (which can be done by using <code>context.classes.sectionName</code>).<br><br>To help address this shortcoming, FormKit is also able to <a href="#sections-schema">selectively override/extend the underlying schema</a> of each section allowing complex structural modification often with no loss of functionality.
 </callout>
 
 ## Sections schema
