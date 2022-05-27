@@ -1,0 +1,5 @@
+{
+  "@fortawesome/fontawesome-svg-core": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-svg-core@6/index.min.js",
+  "@fortawesome/free-solid-svg-icons": "https://cdn.jsdelivr.net/npm/@fortawesome/free-solid-svg-icons@6/index.min.js",
+  "@fortawesome/vue-fontawesome": "https://cdn.jsdelivr.net/npm/@fortawesome/vue-fontawesome@3.0.0-5/index.min.js"
+}
