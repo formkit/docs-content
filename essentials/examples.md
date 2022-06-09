@@ -49,6 +49,12 @@ Use a plugin to cast string values to numbers. Useful if you want inputs of type
 Use a plugin to modify the HTML of all descendant checkbox inputs.
 </ExampleCard>
 
+<ExampleCard
+  href="https://formkit.link/8b90542319deb5ab29cb5811d7a28db7"
+  title="Add an icon before validation messages">
+Use a plugin to append an icon before validation messages by extending the schema definition.
+</ExampleCard>
+
 ## Inputs
 
 <ExampleCard
