@@ -38,6 +38,12 @@ Use the <code>FormKitSchema</code> component to conditionally show an input (wit
 ## Plugins
 
 <ExampleCard
+  href="https://formkit.link/a9e43d344dda2cb643eb809e6c29aeae"
+  title="Add an asterisk to the label area">
+Use a plugin to add an asterisk (*) to the label area of inputs that have the "required" rule.
+</ExampleCard>
+
+<ExampleCard
   href="https://formkit.link/b37c7d36263ab0ee1bd626aa0a405b93"
   title="Make number inputs return number values">
 Use a plugin to cast string values to numbers. Useful if you want inputs of type <code>number</code> to return a JS <code>Number</code> primitive.
