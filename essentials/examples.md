@@ -88,3 +88,11 @@ A working starter project on StackBlitz with Nuxt, FormKit and Tailwind CSS.
   title="Produce dynamic classes based on an input's state">
 Use the <code>rootClasses</code> config function and FormKit props to produce a dynamic classes based on input state. Helpful for Tailwind and other CSS utility libraries.
 </ExampleCard>
+
+<ExampleCard
+  href="https://formkit.link/33b779548f9285c854b49d296e080094"
+  title="Create reactive UI variations of FormKit inputs using “features”">
+Create UI variations of FormKit inputs (like buttons) that update based on reactive data in your components.
+</ExampleCard>
+
+
