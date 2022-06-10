@@ -15,6 +15,12 @@ formkit-version="next"
 view="render">
 </example>
 
+## Available icons
+
+The `@formkit/icons` package ships with over 40 common icons to make getting started easy! Use the search below to filter the available icons which are grouped by category.
+
+<icon-gallery></icon-gallery>
+
 ## Installation
 
 To add the `Icons` add-on to your FormKit project:
@@ -124,12 +130,6 @@ If you output both <code>prefix</code> and <code>suffix</code> icons it's import
 Use the provided <code>location</code> argument to scope your click handler to whichever icon click events you wish to respond to.
 </callout>
 
-## Available icons
-
-The `@formkit/icons` package ships with over 40 common icons to make getting started easy! Use the search below to filter the available icons which are grouped by category.
-
-<icon-gallery></icon-gallery>
-
 ## Using 3rd-party icons
 
 ### By defining SVGs
@@ -168,8 +168,8 @@ createApp(App).use(plugin, defaultConfig({
 
 But what about libraries like Font Awesome that provide their own component for rendering icons? How would we use something like that in our project?
 
-The `defineIconPlugin()` function has a trick up its sleave to help with this. If you supply a function that returns [FormKit schema](/advanced/schema)
-as the first argument to `defineIconPlugin()` — instead of an object of icons — then your function will run each time an icon is processed and allow you to define the markup that you'd like to
+The `createIconPlugin()` function has a trick up its sleave to help with this. If you supply a function that returns [FormKit schema](/advanced/schema)
+as the first argument to `createIconPlugin()` — instead of an object of icons — then your function will run each time an icon is processed and allow you to define the markup that you'd like to
 render for that icon. In doing so, you can supply a custom component and provide the icon's prop value to it.
 
 Here's an example using Font Awesome with the `@formkit/icons` plugin. To get it working we do the following:
@@ -177,7 +177,7 @@ Here's an example using Font Awesome with the `@formkit/icons` plugin. To get it
 - Include the necessary Font Awesome packages in our project (Font Awesome currently only supports Vue 3 on their `@prelease` tag).
 - Set up Font Awesome to use icons according to their documentation.
 - Create a function that returns schema that will render the `icon` we provide to our FormKit element inside of a `FontAwesomeIcon` component
-- Supply our custom schema function to `defineIconPlugin()`.
+- Supply our custom schema function to `createIconPlugin()`.
 
 Here it is all put together:
 
