@@ -91,7 +91,7 @@ You can target a specific section of an input using that section's "key". Read m
                               content: 'my-resume.pdf'
                             },
                             {
-                              name: 'removeFiles',
+                              name: 'fileRemove',
                               content: 'X',
                               position: 'right',
                             },
@@ -175,7 +175,7 @@ You can target a specific section of an input using that section's "key". Read m
                       ]
                     },
                     {
-                      name: 'removeFiles',
+                      name: 'fileRemove',
                       content: 'Remove all',
                       position: 'right',
                     },
@@ -218,7 +218,7 @@ You can target a specific section of an input using that section's "key". Read m
   {'section-key': 'fileList', description: 'A wrapper for the whole list of files.'},
   {'section-key': 'fileItem', description: 'An element containing the fileName and remove action for each file.'},
   {'section-key': 'fileName', description: 'The element containing the name of a file.'},
-  {'section-key': 'removeFiles', description: 'The element that removes a file from the list.'},
+  {'section-key': 'fileRemove', description: 'The element that removes a file from the list.'},
   {'section-key': 'noFiles', description: 'The element shown when there are no files selected.'}
   ]">
 </reference-table>

@@ -5,6 +5,16 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 1.0.0-beta.9
+
+## [TK] DATE HERE
+
+#### ⚠️ Breaking changes
+
+- The file input’s `fileRemove` section has been renamed to `fileRemove`.
+- The `fileRemove` section rendered an `<a>` tag, this has been changed to a `button`.
+
+
 ## 1.0.0-beta.8
 
 ### May 10, 2022
