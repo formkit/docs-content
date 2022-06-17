@@ -1,12 +1,13 @@
 ---
 title: Icons
-description: Easily add icons to your inputs’ prefix and suffix section keys. Use the supplied FormKit icons or supply you own'
+description: Easily add icons to your inputs using the provided FormKit icons or supply you own'
 ---
 
 # Icons
 
-FormKit ships with a 1st-party plugin that allows you to easily add icons to the prefix and suffix of most input types.
-The package ships with over 130 common icons that are all MIT Licensed and free to use within your project — or you can include your own.
+FormKit ships with a 1st-party themes plugin called `createThemePlugin()`. Included in this plugin is the ability to easily
+add icons to your inputs or replace existing icons FormKit ships by default. FormKit ships with over 130 common icons that are
+all MIT Licensed and free to use within your project — or you can include your own.
 
 <example
 name="Icons Introduction"
@@ -21,21 +22,69 @@ The `@formkit/icons` package ships with over 130 common icons to make getting st
 
 <icon-gallery></icon-gallery>
 
-## Installation
+## Installation & setup
 
-To add the `Icons` plugin to your FormKit project:
+<callout type="note" label="Enabled by default">
+The FormKit <code>createThemePlugin</code> is enabled by default in the FormKit’s <code>defaultConfig()</code>. If your
+project is using <code>defaultConfig()</code> then getting started is as simple as using the <code>${sectionKey}-icon</code>
+props on your <code>FormKit</code> components and no installation is required.
+</callout>
 
-- Install the `@formkit/icons` package.
-- Import `createIconPlugin` from the `@formkit/icons` package.
-- Import any icons you would like to use from the package. You can import sets (e.g., `applicationIcons`) or individual icons (e.g., `add`, `dollar`).
-- Add the icon plugin to your config and pass it the icons you want to use in your project.
+### If your project uses a custom config
+
+If your project is **not** using FormKit’s provided `defaultConfig` then to add icons to your project you need to install
+the `createThemePlugin()` in your FormKit project's config:
+
+- Import `createThemePlugin()` from the `@formkit/themes` package.
+- Add `createThemePlugin()` to your project's plugin array inside of your FormKit config.
+
+<client-only>
+
+```js
+import { createApp } from 'vue'
+import App from 'App.vue'
+import { createThemePlugin } from '@formkit/themes'
+import { plugin } from '@formkit/vue'
+
+createApp(App).use(plugin, {
+  ...
+  plugins: [
+    createThemePlugin()
+  ]
+  ...
+}.mount('#app')
+```
+
+</client-only>
+
+Once the theme plugin is installed in your project your FormKit inputs will have icon props available to them.
+
+## Registering icons
+
+### How are icons loaded?
+
+FormKit goes through 4 steps when attempting to load an icon. They are, in order:
+
+- If the prop value provided is a literal SVG definition (e.g. `prefix-icon="<svg ..."`) then the provided SVG will be used.
+- If the prop value is a string that does _not_ start with `<svg` then FormKit looks in the theme plugin’s `iconRegistry` — a set of key/value pairs of icon names and SVG definitions — for a matching key.
+- Your project's CSS variables. If there is a CSS variable that matches `--fk-icon-${yourIconName}` defined in your CSS then it will be parsed and loaded into the `iconRegistry`. The value of the CSS variable is expected to be a base64 encoded SVG — it should not be wrapped in quotes. This is how FormKit ships default icons for inputs in the `genesis` theme.
+- The JSDelivr CDN — If no matching icon can be found in your codebase then a request will be made to the `@formkit/icons` package using the current version of FormKit installed in your project. If a matching icon name is found it will be used.
+
+Because FormKit falls back to CDN requests for icons you can easily get started in a new project by providing supported icon names to your input’s icon props
+and they will be loaded for you automatically — no setup required!. 🪄
+
+Remotely loaded SVGs are added to the internal `iconRegistry` in memory and additional requests for the icon will be cached until a user reloads the page.
+
+### Adding icons to the iconRegistry
+
+Magic CDN are great — but your project will benefit from the performance gains of having icons registered locally in your project.
+You can do this by adding icons to your root FormKit config. FormKit icons can be imported from the `@formkit/icons` package.
 
 <client-only>
 
 ```bash
 yarn add @formkit/icons
 ```
-
 </client-only>
 
 <client-only>
@@ -43,154 +92,65 @@ yarn add @formkit/icons
 ```js
 import { createApp } from 'vue'
 import App from 'App.vue'
-import { createIconPlugin, applicationIcons, ethereum } from '@formkit/icons'
+import { applicationIcons, ethereum } from '@formkit/icons'
+import { thirdPartyIcon } from '@some-other-icon-package'
 import { plugin, defaultConfig } from '@formkit/vue'
 
 createApp(App).use(plugin, defaultConfig({
-  plugins: [
-    createIconPlugin({
-      ...applicationIcons, // spread a collection of icons
-      ethereum, // add an individual icon
-      myCustomIcon: `<svg xmlns="http://...` // or define custom SVGs to use as icons
-    })
-  ]
+  icons: {
+    ...applicationIcons, // spread an entire group of icons
+    ethereum, // or add single icons
+    thirdPartyIcon, // you can import any SVG icon
+    formkit: `<svg ...` // or define your own
+  }
+  // createThemePlugin() is included in defaultConfig()
+  // so we do not need to worry about setting it up.
 }).mount('#app')
 ```
-
 </client-only>
 
-## Usage
+<callout type="note" label="Performance">
+FormKit automatically loads missing icons from its icon package on the JSDelivr CDN. This is great for quickly getting up
+and running when building a form, but we recommend adding the icons you end up using to your project via import for best performance.
+</callout>
 
-### Outputting icons
+## Outputting icons
 
-Once you have the `Icons` plugin installed in your project, you can use any the SVGs that you have defined in `createIconPlugin`
-by adding them to your inputs via the new `icon` prop:
+### Adding icons to inputs
+
+Many FormKit inputs support `suffix` and `prefix` icons. You can use the `prefix-icon` and `suffix-icon` props on any
+`text`-like input such as `text`, `email`, `search`, `date`, etc. These props are also available on the `select`, `color`,
+and `range` inputs as well.
+
+The `select` input has a `select-icon` prop that allows you to change the icon used for the select input’s control.
+
+the `file` input has `file-remove-icon` and `file-item-icon` props.
 
 <example
 name="Icons Introduction"
 file="/\_content/examples/icons/usage-basic.vue">
 </example>
 
-By default, icons are shown in the `prefix` section of an input. If you'd like to show an icon in the `suffix` of an input,
-you can do so with the `icon-suffix` prop:
+### Using custom SVG icons
 
-<example
-name="Icons Introduction"
-file="/\_content/examples/icons/usage-suffix.vue">
-</example>
-
-You can change the default location of icons to always be the `suffix` by using the `iconPosition` configuration option in your project:
-
-<client-only>
-
-```js
-// main.js
-...
-createApp(App).use(plugin, defaultConfig({
-  config: {
-    iconPosition: 'suffix' // make the `icon` prop output in the suffix section
-  }
-  ...
-}).mount('#app')
-...
-
-```
-</client-only>
-
-If you want to ensure that an icon is rendered at the `prefix` or `suffix` slot regardless of the `iconPosition` configuration setting, you can explicitly use the `icon-prefix` and `icon-suffix` props:
-
-<example
-name="Icons Introduction"
-file="/\_content/examples/icons/explicit-props.vue">
-</example>
-
-### Custom SVG icons
-
-Sometimes you just need to render a one-off icon in your project. While you can add custom SVGs to the list of icons available when you call
-`createIconPlugin`, you can also directly supply an SVG definition to the `icon`, `icon-prefix` or `icon-suffix` prop and the SVG will be rendered for you:
+Sometimes you need to render a one-off icon in your project. While you can add custom SVGs to `iconRegistry` via the `icons` object in your
+project’s FormKit config, you can also directly supply an SVG definition to an icon prop and the SVG will be rendered for you:
 
 <example
 name="Icons Introduction"
 file="/\_content/examples/icons/inline-svg.vue">
 </example>
 
-### Handling icon clicks
+## Icon click handlers
 
-What if you want to respond to a user clicking on an icon? You can register a click handler with the `@icon-click` property, which will
-receive the input's core `node` and the icon `location` as arguments:
+Every icon prop also registers a click handler prop. The `prefix-icon` prop will
+have a corresponding `@prefix-icon-click` prop, etc.
+
+Each click handler prop receives the input's core `node` as an argument.
+
+<!-- TODO: update example to used passed node to make adjustments -->
 
 <example
 name="Icons Introduction"
 file="/\_content/examples/icons/handle-click.vue">
 </example>
-
-<callout type="warning" label="One click handler for both icons">
-If you output both <code>prefix</code> and <code>suffix</code> icons, it's important to note that the same <code>@icon-click</code> handler will fire for both icons.
-Use the provided <code>location</code> argument to scope your click handler to whichever icon click events you wish to respond to.
-</callout>
-
-## Using 3rd-party icons
-
-### By defining SVGs
-Sometimes you'll want to use 3rd-party icons with the `@formkit/icons` package. The easiest way to use 3rd-party icons is to define the SVGs inline
-and name them by passing them to `createIconPlugin` when setting up your project:
-
-<client-only>
-
-```js
-import { createApp } from 'vue'
-import App from 'App.vue'
-import { createIconPlugin } from '@formkit/icons'
-import { plugin, defaultConfig } from '@formkit/vue'
-
-createApp(App).use(plugin, defaultConfig({
-  plugins: [
-    createIconPlugin({
-      myCustomIcon: `<svg xmlns="http://...`, // define SVGs inline
-      anotherIcon: `<svg xmlns="http://...`
-    })
-  ]
-}).mount('#app')
-```
-
-```html
-<template>
-  <FormKit
-    type="text"
-    icon="myCustomIcon"
-    icon-suffix="anotherIcon"
-  />
-</template>
-```
-
-### By using a custom component
-
-But what about libraries like Font Awesome that provide their own component for rendering icons? How would we use something like that in our project?
-
-The `createIconPlugin()` function has a trick up its sleeve to help with this. If you supply a function that returns [FormKit schema](/advanced/schema)
-as the first argument to `createIconPlugin()` — instead of an object of icons — then your function will run each time an icon is processed and allow you to define the markup that you'd like to
-render for that icon. In doing so, you can supply a custom component and provide the icon's prop value to it.
-
-Here's an example using Font Awesome with the `@formkit/icons` plugin. To get it working we do the following:
-
-- Include the necessary Font Awesome packages in our project (Font Awesome currently only supports Vue 3 on their `@prerelease` tag).
-- Set up Font Awesome to use icons according to their documentation.
-- Create a function that returns schema that will render the `icon` we provide to our FormKit element inside of a `FontAwesomeIcon` component.
-- Supply our custom schema function to `createIconPlugin()`.
-
-Here it is all put together:
-
-<example
-name="Icons Introduction"
-file="/\_content/examples/icons/font-awesome.vue"
-:show-import-map="true"
-:set-show-file-tabs="true"
-import-map="/\_content/examples/icons/importMap.json">
-</example>
-
-<callout type="warning" label="A note on Font Awesome">
-Font Awesome does not currently support Vue 3 on their latest release. If you want to use Font Awesome with Vue 3, be sure to
-install <code>@fortawesome/vue-fontawesome@3.0.0-5</code> or higher.
-</callout>
-
-</client-only>

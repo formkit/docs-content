@@ -1,47 +1,41 @@
-<script setup>
-import { createIconPlugin, email, magnifyingGlass, sad, happy, color } from '@formkit/icons'
-</script>
-
 <template>
-  <div class="demo-container">
+  <FormKit
+    type="form"
+    :actions="false"
+  >
     <FormKit
-      type="form"
-      :plugins="[createIconPlugin({ email, magnifyingGlass, sad, happy, color })]"
-      :actions="false"
-    >
-      <!-- %partial% -->
-      <FormKit
-        type="email"
-        icon="email"
-        label="What is your email address?"
-        placeholder="myname@website.com"
-        help="Look at my fancy icon!"
-      />
-      <FormKit
-        type="text"
-        icon-suffix="magnifyingGlass"
-        label="What are you looking for?"
-        help="I have a suffix icon"
-      />
-      <FormKit
-        type="range"
-        icon="sad"
-        icon-suffix="happy"
-        label="How do icons make you feel?"
-        help="Many input types support icons"
-      />
-      <FormKit
-        type="color"
-        icon="color"
-        label="Choose a color"
-        value="#5896D0"
-        help="With 40+ icons built in, it's easy to get started"
-      />
-      <!-- %partial% -->
-    </FormKit>
-  </div>
+      type="email"
+      prefix-icon="email"
+      label="What is your email address?"
+      placeholder="myname@website.com"
+      help="Look at my fancy prefix icon!"
+    />
+    <FormKit
+      type="text"
+      suffix-icon="search"
+      label="What are you looking for?"
+      help="I have a suffix icon"
+    />
+    <FormKit
+      type="range"
+      prefix-icon="sad"
+      suffix-icon="happy"
+      label="How do icons make you feel?"
+      help="Many input types support icons"
+    />
+    <FormKit
+      type="select"
+      select-icon="caretDown"
+      label="How likely are you to use icons?"
+      help="You can replace default icons such as the select input control"
+      :options="['Very Likely', 'Likely', 'Unsure', 'Unlikely', 'Very Unlikely']"
+    />
+    <FormKit
+      type="color"
+      prefix-icon="color"
+      label="Choose a color"
+      value="#5896D0"
+      help="With 140+ icons built in, it's easy to get started"
+    />
+  </FormKit>
 </template>
-
-<style>
-@import 'https://assets.wearebraid.com/formkit/distro/genesis.css';
-</style>
