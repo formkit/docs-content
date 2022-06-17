@@ -146,9 +146,7 @@ file="/\_content/examples/icons/inline-svg.vue">
 Every icon prop also registers a click handler prop. The `prefix-icon` prop will
 have a corresponding `@prefix-icon-click` prop, etc.
 
-Each click handler prop receives the input's core `node` as an argument.
-
-<!-- TODO: update example to used passed node to make adjustments -->
+Each click handler prop receives the input's core `node` and the click `event` as arguments.
 
 <example
 name="Icons Introduction"

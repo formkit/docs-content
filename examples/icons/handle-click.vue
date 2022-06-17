@@ -1,20 +1,17 @@
 <script setup>
-import { ref } from 'vue'
-const visibilityIcon = ref('eyeClosed')
-const inputType = ref('password')
-const handleIconClick = () => {
-  visibilityIcon.value = visibilityIcon.value === 'eye' ? 'eyeClosed' : 'eye'
-  inputType.value = visibilityIcon.value === 'eye' ? 'text' : 'password'
+const handleIconClick = (node, e) => {
+  node.props.suffixIcon = node.props.suffixIcon === 'eye' ? 'eyeClosed' : 'eye'
+  node.props.type = node.props.type === 'password' ? 'text' : 'password'
 }
 </script>
 
 <template>
   <FormKit
-    :type="inputType"
+    type="password"
     label="A fancy password input"
     value="mySecretPassword!"
     prefix-icon="password"
-    :suffix-icon="visibilityIcon"
+    suffix-icon="eyeClosed"
     @suffix-icon-click="handleIconClick"
   />
 </template>
