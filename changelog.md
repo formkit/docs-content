@@ -11,8 +11,17 @@ description: What's new in the latest version of FormKit?.
 
 #### ⚠️ Breaking changes
 
-- The file input’s `fileRemove` section has been renamed to `fileRemove`.
-- The `fileRemove` section rendered an `<a>` tag, this has been changed to a `button`.
+- The file input’s `removeFiles` section has been renamed to `fileRemove`.
+- The `fileRemove` (previously `removeFiles`) section used to rendered an `<a>` tag, this has been changed to a `button`.
+- Composables from `@formkit/inputs` have been replaced with "sections". This should only affect users who were creating their own inputs from pre-existing composables.
+
+#### 🎉 New features
+
+- Icons! FormKit now ships with first class support for icons, including a first-party MIT licensed icon pack with automatic CDN delivery. Read more about it on the [new icons documentation page](/plugins/icons).
+- AutoAnimate! FormKit now [includes an AutoAnimate plugin](/plugins/auto-animate), bringing [AutoAnimate support](https://auto-animate.formkit.com) to FormKit with a single line of code.
+- Exports! You can now export any of the existing inputs and restructure them at will using the new `@formkit/cli` command line tool.
+
+#### 🐛 Bug fixes
 
 
 ## 1.0.0-beta.8
