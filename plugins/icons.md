@@ -5,9 +5,9 @@ description: Easily add icons to your inputs using the provided FormKit icons or
 
 # Icons
 
-FormKit ships with a 1st-party themes plugin called `createThemePlugin()`. Included in this plugin is the ability to easily
-add icons to your inputs or replace existing icons FormKit ships by default. FormKit ships with over 130 common icons that are
-all MIT Licensed and free to use within your project — or you can include your own.
+FormKit comes with over 130 icons out-of-the-box! With the exception of the brand icons (like YouTube, TikTok, or Visa), all icons are original and MIT-licensed for free use within your project. You can use our icons, replace them, or easily add your own custom SVG icons to the set.
+
+Here's a demo of icons in different sections (prefix, suffix, etc.) of various types of inputs:
 
 <example
 name="Icons Introduction"
@@ -18,15 +18,17 @@ view="render">
 
 ## Available icons
 
-The `@formkit/icons` package ships with over 130 common icons to make getting started easy! Use the search below to filter the available icons which are grouped by category.
+The `@formkit/icons` package ships with over 130 common icons to make getting started easy! Use the search below to filter the available icons:
 
 <icon-gallery></icon-gallery>
 
 ## Installation & setup
 
+For most people, no installation is required to use icons (although we recommend [adding your icons to the `iconRegistry`](#adding-icons-to-the-iconregistry) for best performarnce). The icons are included via a 1st-party themes plugin called `createThemePlugin()`, which is enabled by default if you are using FormKit's `defaultConfig()`.
+
 <callout type="note" label="Enabled by default">
-The FormKit <code>createThemePlugin</code> is enabled by default in the FormKit’s <code>defaultConfig()</code>. If your
-project is using <code>defaultConfig()</code> then getting started is as simple as using the <code>${sectionKey}-icon</code>
+The FormKit <code>createThemePlugin()</code> is enabled by default in the FormKit’s <code>defaultConfig()</code>. If your
+project is using <code>defaultConfig()</code>, then getting started is as simple as using the <code>${sectionKey}-icon</code>
 props on your <code>FormKit</code> components and no installation is required.
 </callout>
 
@@ -65,19 +67,19 @@ Once the theme plugin is installed in your project your FormKit inputs will have
 
 FormKit goes through 4 steps when attempting to load an icon. They are, in order:
 
-- If the prop value provided is a literal SVG definition (e.g. `prefix-icon="<svg ..."`) then the provided SVG will be used.
-- If the prop value is a string that does _not_ start with `<svg` then FormKit looks in the theme plugin’s `iconRegistry` — a set of key/value pairs of icon names and SVG definitions — for a matching key.
-- Your project's CSS variables. If there is a CSS variable that matches `--fk-icon-${yourIconName}` defined in your CSS then it will be parsed and loaded into the `iconRegistry`. The value of the CSS variable is expected to be a base64 encoded SVG — it should not be wrapped in quotes. This is how FormKit ships default icons for inputs in the `genesis` theme.
-- The JSDelivr CDN — If no matching icon can be found in your codebase then a request will be made to the `@formkit/icons` package using the current version of FormKit installed in your project. If a matching icon name is found it will be used.
+1. **SVG prop value** - If the prop value provided is a literal SVG definition (e.g. `prefix-icon="<svg ..."`), then the provided SVG will be used.
+2.  **String prop value** - If the prop value is a string that does _not_ start with `<svg`, then FormKit looks in the theme plugin’s `iconRegistry` — a set of key/value pairs of icon names and SVG definitions — for a matching key.
+3. **Your project's CSS variables** - If there is a CSS variable that matches `--fk-icon-${yourIconName}` defined in your CSS, then it will be parsed and loaded into the `iconRegistry`. The value of the CSS variable is expected to be a base64 encoded SVG — it should not be wrapped in quotes. This is how FormKit ships default icons for inputs in the `genesis` theme.
+4. **The JSDelivr CDN** - If no matching icon can be found in your codebase, then a request will be made to the `@formkit/icons` package using the current version of FormKit installed in your project. If a matching icon name is found it will be used.
 
-Because FormKit falls back to CDN requests for icons you can easily get started in a new project by providing supported icon names to your input’s icon props
+Because FormKit falls back to CDN requests for icons, you can easily get started in a new project by providing supported icon names to your input’s icon props
 and they will be loaded for you automatically — no setup required!. 🪄
 
 Remotely loaded SVGs are added to the internal `iconRegistry` in memory and additional requests for the icon will be cached until a user reloads the page.
 
 ### Adding icons to the iconRegistry
 
-Magic CDN are great — but your project will benefit from the performance gains of having icons registered locally in your project.
+Magic CDNs are great — but your project will benefit from the performance gains of having icons registered locally in your project.
 You can do this by adding icons to your root FormKit config. FormKit icons can be imported from the `@formkit/icons` package.
 
 <client-only>
@@ -124,7 +126,7 @@ and `range` inputs as well.
 
 The `select` input has a `select-icon` prop that allows you to change the icon used for the select input’s control.
 
-the `file` input has `file-remove-icon` and `file-item-icon` props.
+The `file` input has `file-remove-icon` and `file-item-icon` props:
 
 <example
 name="Icons Introduction"

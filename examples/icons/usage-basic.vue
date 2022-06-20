@@ -15,6 +15,7 @@
     file-item-icon="fileAudio"
     file-remove-icon="trash"
     label="File icons"
+    help="Add a file to see the trash icon."
   />
   <!-- %partial% -->
 </template>
