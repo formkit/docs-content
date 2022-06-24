@@ -143,6 +143,16 @@ name="Icons Introduction"
 file="/\_content/examples/icons/inline-svg.vue">
 </example>
 
+### Using the `<FormKitIcon />` component
+
+FormKit ships with a component called `<FormKitIcon />` that allows you out output any icon from the `iconRegistry` anywhere
+within your project. Need a an icon you're using in FormKit on some other part of your UI? No problem:
+
+<example
+name="Icon Component"
+file="/\_content/examples/icons/icon-component.vue">
+</example>
+
 ## Icon click handlers
 
 Every icon prop also registers a click handler prop. The `prefix-icon` prop will
@@ -153,4 +163,50 @@ Each click handler prop receives the input's core `node` and the click `event` a
 <example
 name="Icons Introduction"
 file="/\_content/examples/icons/handle-click.vue">
+</example>
+
+## Using 3rd-party libraries
+
+There's tons of great options out there when you’re shopping around for icons to use in your project. If you want to use
+3rd-party icons in your FormKit config then you can supply a custom `iconLoader`(either globally, at the node config level, or as a component prop)
+which is responsible for retrieving icons that do not already exist in the `iconRegistry`.
+
+Note that an `iconLoader` function is _only meant to handle missing icons_! For performance you can (and should) load asy SVG icons
+you _know_ you will be using into the `iconRegistry` by using the `icons` configuration prop in your FormKit config.
+
+Sometimes — such as in a form builder or CMS — you don't know in advance which icons you’ll need. That's where a custom `iconLoader` shines.
+
+A custom `iconLoader` function is expected to take a an `iconName` as a string and return an SVG in string format  or a
+Promise that resolves to an SVG in string format. The resulting return value will be stored in the `iconRegistry` and subsequent requests
+will be returned instantly from the `iconRegistry`.
+
+
+<callout type="warning" label="Promises">
+Because a custom <code>iconHandler</code> can return a Promise it's important that you <code>await</code> results in places
+where your custom icons may be fetched remotely. The <code>FormKitIcon</code> component and the built-in <code>icon</code>
+sectionKeys in FormKit already handle this for you, but for custom implementations it's something to look out for.
+</callout>
+
+### An example FontAwesome iconLoader
+
+Below is an implementation of FormKit with a custom `iconLoader` that fetches missing icons from FontAwesome instead of the FormKit icon set.
+
+<example
+name="FontAwesome Icons"
+:file="[
+  '/\_content/examples/icons/font-awesome/index.vue',
+  '/\_content/examples/icons/font-awesome/formkit.config.js'
+]">
+</example>
+
+### An example Heroicons iconLoader
+
+Below is an implementation of FormKit with a custom `iconLoader` that fetches missing icons from Heroicons instead of the FormKit icon set.
+
+<example
+name="Heroicons Icons"
+:file="[
+  '/\_content/examples/icons/heroicons/index.vue',
+  '/\_content/examples/icons/heroicons/formkit.config.js'
+]">
 </example>
