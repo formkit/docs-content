@@ -30,8 +30,8 @@ You can target a specific section of an input using that section's "key". Read m
 <div>
   <formkit-input-diagram
     class="input-diagram--textarea"
-    prefix-content="📕"
-    suffix-content=""
+    prefix-icon-content="📕"
+    suffix-icon-content=""
     label-content="Brief biography"
     input-content="The year was 1982. The season was Autumn. My parents were living in Peru at the time..."
     help-content="Tell us a little about yourself."

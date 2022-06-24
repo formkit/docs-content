@@ -30,9 +30,11 @@ You can target a specific section of an input using that section's "key". Read m
 <div>
   <formkit-input-diagram
     label-content="Age you learned Algebra"
-    prefix-content="＝"
+    prefix-icon-content="="
+    prefix-content=""
     input-content="13"
-    suffix-content="✔️"
+    suffix-content=""
+    suffix-icon-content="✔️"
     help-content="We'll incorporate this into our survey data."
     message-content="Age you learned Algebra is required."
   >

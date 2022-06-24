@@ -35,8 +35,8 @@ You can target a specific section of an input using that section's "key". Read m
     input-content="Color selector here"
     help-content="Select your favorite color."
     message-content="Only primary colors allowed."
-    prefix-content="🎨"
-    suffix-content="👍"
+    prefix-icon-content="🎨"
+    suffix-icon-content="👍"
   >
   </formkit-input-diagram>
 </div>

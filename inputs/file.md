@@ -75,6 +75,10 @@ You can target a specific section of an input using that section's "key". Read m
                   name: 'inner',
                   children: [
                     {
+                      name: 'prefixIcon',
+                      content: '🗄'
+                    },
+                    {
                       name: 'prefix',
                     },
                     {
@@ -87,13 +91,23 @@ You can target a specific section of an input using that section's "key". Read m
                           name: 'fileItem',
                           children: [
                             {
+                              name: 'fileItemIcon',
+                              content: '📁'
+                            },
+                            {
                               name: 'fileName',
                               content: 'my-resume.pdf'
                             },
                             {
                               name: 'fileRemove',
-                              content: 'X',
                               position: 'right',
+                              children: [
+                                {
+                                  name: 'fileRemoveIcon',
+                                  content: 'X',
+                                  position: 'right',
+                                }
+                              ]
                             },
                           ]
                         }
@@ -155,6 +169,10 @@ You can target a specific section of an input using that section's "key". Read m
                   name: 'inner',
                   children: [
                     {
+                      name: 'prefixIcon',
+                      content: '🗄'
+                    },
+                    {
                       name: 'prefix',
                     },
                     {
@@ -166,6 +184,10 @@ You can target a specific section of an input using that section's "key". Read m
                         {
                           name: 'fileItem',
                           children: [
+                            {
+                              name: 'fileItemIcon',
+                              content: '📁'
+                            },
                             {
                               name: 'fileName',
                               content: 'my-resume.pdf'

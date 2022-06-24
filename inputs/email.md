@@ -30,8 +30,8 @@ You can target a specific section of an input using that section's "key". Read m
 
 <div>
   <formkit-input-diagram
-    prefix-content="📧"
-    suffix-content="✈️"
+    prefix-icon-content="📧"
+    suffix-icon-content="✈️"
     label-content="Email address"
     input-content="test@example.com"
     help-content="Please use your school email address."

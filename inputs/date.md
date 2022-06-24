@@ -36,9 +36,9 @@ You can target a specific section of an input using that section's "key". Read m
 <div>
   <formkit-input-diagram
     label-content="Date of birth"
-    prefix-content="📅"
+    prefix-icon-content="📅"
     input-content="Jan. 1 1970"
-    suffix-content="👌"
+    suffix-icon-content="👌"
     help-content="Please tell us your date of birth."
     message-content="Date is required."
   >

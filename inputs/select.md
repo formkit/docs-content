@@ -114,6 +114,10 @@ You can target a specific section of an input using that section's "key". Read m
                   name: 'inner',
                   children: [
                     {
+                      name: 'prefixIcon',
+                      content: '👩🏼‍🦱'
+                    },
+                    {
                       name: 'prefix',
                     },
                     {
@@ -126,7 +130,16 @@ You can target a specific section of an input using that section's "key". Read m
                       ]
                     },
                     {
+                      name: 'selectIcon',
+                      position: 'right',
+                      content: '⌄'
+                    },
+                    {
                       name: 'suffix',
+                      position: 'right',
+                    },
+                    {
+                      name: 'suffixIcon',
                       position: 'right',
                     },
                   ]

@@ -30,8 +30,10 @@ You can target a specific section of an input using that section's "key". Read m
 <div>
   <formkit-input-diagram
     class="input-diagram--range"
+    prefix-icon-content="😭"
     prefix-content="$0"
-    suffix-content="💰"
+    suffix-content="$1B"
+    suffix-icon-content="💰"
     label-content="Net worth"
     input-content=""
     help-content="What's your approximate net worth?"

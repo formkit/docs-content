@@ -29,8 +29,8 @@ You can target a specific section of an input using that section's "key". Read m
 
 <div>
   <formkit-input-diagram
-    prefix-content="👩🏽‍💼"
-    suffix-content=""
+    prefix-icon-content="👩🏽‍💼"
+    suffix-icon-content=""
     label-content="First name"
     input-content="Sunita"
     help-content="Enter your first name only."

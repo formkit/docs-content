@@ -33,8 +33,8 @@ You can target a specific section of an input using that section's "key". Read m
 
 <div>
   <formkit-input-diagram
-    prefix-content="🌎"
-    suffix-content=""
+    prefix-icon-content="🌎"
+    suffix-icon-content=""
     label-content="Personal website URL"
     input-content="https://mywebsite.com"
     help-content="Tell us where to find your personal website."

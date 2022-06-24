@@ -29,9 +29,9 @@ You can target a specific section of an input using that section's "key". Read m
 <div>
   <formkit-input-diagram
     label-content="Password"
-    prefix-content="🤫"
+    prefix-icon-content="🤫"
     input-content="···········"
-    suffix-content="🤐"
+    suffix-icon-content="🤐"
     help-content="Keep this hidden in a safe place."
     message-content="Password is required."
   >

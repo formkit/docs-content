@@ -57,8 +57,11 @@ You can target a specific section of an input using that section's "key". Read m
                 class: 'flex button button--pro',
                 children: [
                   {
-                    name: 'prefix',
+                    name: 'prefixIcon',
                     content: '🤟'
+                  },
+                  {
+                    name: 'prefix',
                   },
                   {
                     name: 'label',
@@ -67,14 +70,19 @@ You can target a specific section of an input using that section's "key". Read m
                   {
                     name: 'suffix',
                     position: 'right',
+                  },
+                  {
+                    name: 'suffixIcon',
+                    position: 'right',
                     content: '🚀'
-                  }
+                  },
                 ]
               },
             ]
           },
           {
             name: 'help',
+            position: 'right',
             content: 'Click this button to submit your application. '
           }
         ]

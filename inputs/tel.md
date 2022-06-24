@@ -33,8 +33,8 @@ You can target a specific section of an input using that section's "key". Read m
 
 <div>
   <formkit-input-diagram
-    prefix-content="📞"
-    suffix-content=""
+    prefix-icon-content="📞"
+    suffix-icon-content=""
     label-content="Phone number"
     input-content="444-555-6666"
     help-content="Enter your phone number using the xxx-xxx-xxxx format."

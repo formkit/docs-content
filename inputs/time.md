@@ -33,8 +33,8 @@ You can target a specific section of an input using that section's "key". Read m
 
 <div>
   <formkit-input-diagram
-    prefix-content="⏱"
-    suffix-content="👌"
+    prefix-icon-content="⏱"
+    suffix-icon-content="👌"
     label-content="Preferred delivery time"
     input-content="10:00"
     help-content="Actual delivery time will be your preferred time +- 30 minutes."

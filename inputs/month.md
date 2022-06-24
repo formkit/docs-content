@@ -41,8 +41,8 @@ You can target a specific section of an input using that section's "key". Read m
 <div>
   <formkit-input-diagram
     label-content="Month you met your significant other"
-    prefix-content="📅"
-    input-content="2010-05"
+    prefix-icon-content="📅"
+    input-icon-content="2010-05"
     suffix-content="❤️"
     help-content="We'll divide groups based on how long you've been together."
     message-content="Month is required."
