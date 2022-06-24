@@ -116,9 +116,19 @@ You can target a specific section of an input using that section's "key". Read m
                     {
                       name: 'noFiles',
                       position: 'right',
+                      children: [
+                        {
+                          name: 'noFilesIcon',
+                          position: 'right',
+                        }
+                      ]
                     },
                     {
                       name: 'suffix',
+                      position: 'right',
+                    },
+                    {
+                      name: 'suffixIcon',
                       position: 'right',
                     },
                   ]
@@ -204,9 +214,19 @@ You can target a specific section of an input using that section's "key". Read m
                     {
                       name: 'noFiles',
                       position: 'right',
+                      children: [
+                        {
+                          name: 'noFilesIcon',
+                          position: 'right',
+                        }
+                      ]
                     },
                     {
                       name: 'suffix',
+                      position: 'right',
+                    },
+                    {
+                      name: 'suffixIcon',
                       position: 'right',
                     },
                   ]
@@ -238,9 +258,12 @@ You can target a specific section of an input using that section's "key". Read m
 
 <reference-table type="sectionKeys" primary="section-key" :data="[
   {'section-key': 'fileList', description: 'A wrapper for the whole list of files.'},
+  {'section-key': 'fileItemIcon', description: 'An element containing an optional fileItem icon.'},
   {'section-key': 'fileItem', description: 'An element containing the fileName and remove action for each file.'},
   {'section-key': 'fileName', description: 'The element containing the name of a file.'},
   {'section-key': 'fileRemove', description: 'The element that removes a file from the list.'},
-  {'section-key': 'noFiles', description: 'The element shown when there are no files selected.'}
+  {'section-key': 'fileRemoveIcon', description: 'An element containing the fileRemove icon.'},
+  {'section-key': 'noFiles', description: 'The element shown when there are no files selected.'},
+  {'section-key': 'noFilesIcon', description: 'An element containing an icon within the noFiles section.'},
   ]">
 </reference-table>

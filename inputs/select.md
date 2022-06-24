@@ -169,5 +169,5 @@ You can target a specific section of an input using that section's "key". Read m
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key" :data="[{'section-key': 'option', description: 'Responsible for rendering each option. Context includes an <code>option</code> property with the option being rendered. This object includes <code>label</code> and <code>value</code> properties.'}]">
+<reference-table type="sectionKeys" primary="section-key" :data="[{'section-key': 'option', description: 'Responsible for rendering each option. Context includes an <code>option</code> property with the option being rendered. This object includes <code>label</code> and <code>value</code> properties.'}, {'section-key': 'selectIcon', description: 'An element for outputting an icon for opening the select list. Usually a down arrow.'}]">
 </reference-table>
