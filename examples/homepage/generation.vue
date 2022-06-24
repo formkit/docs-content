@@ -18,6 +18,7 @@ export default {
         {
           $formkit: 'text',
           name: 'email',
+          prefixIcon: 'email',
           label: 'Email',
           value: 'hello@formkit.com',
           help: 'This email will be used for account notifications.',
@@ -26,6 +27,7 @@ export default {
         {
           $formkit: 'number',
           name: 'users',
+          prefixIcon: 'avatarMan',
           id: 'users',
           min: '1',
           max: '100',
@@ -54,6 +56,7 @@ export default {
           if: '$get(eu).value',
           name: 'cookie_notice',
           label: 'Cookie notice frequency',
+          prefixIcon: 'warning',
           options: {
             refresh: 'Every page load',
             hourly: 'Ever hour',

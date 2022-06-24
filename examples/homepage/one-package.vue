@@ -23,10 +23,12 @@ export default {
   <FormKit type="form" v-model="data" @submit="handleSubmit">
     <FormKit
       type="text"
-      label="Your Name"
-      name="name"
-      placeholder="Your name"
-      validation="required"
+      label="Your Email"
+      name="email"
+      prefix-icon="email"
+      placeholder="email@domain.com"
+      validation="required|email"
+      help="order confirmation will be sent to your address"
     />
     <FormKit
       type="select"
