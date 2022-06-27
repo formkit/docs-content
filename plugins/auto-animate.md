@@ -5,13 +5,13 @@ description: Add smoothing transitions to your FormKit inputs using AutoAnimate.
 
 # AutoAnimate Plugin
 
-[AutoAnimate](https://auto-animate.formkit.com/) is a zero-config, drop-in animation utility that adds smooth transitions to any web app, and while it does well — it also works great with FormKit.
+[AutoAnimate](https://auto-animate.formkit.com/) is a zero-config, drop-in animation utility that adds smooth transitions to any web app. It also works great with FormKit.
 
-FormKit doesn't need very much animation, but in some places its nice to use just small tasteful amount. For example, when animating validation messages on and off.
+FormKit doesn't need much animation, but a small tasteful amount can make it clear when elements pop on and off a page, or move around — such as validation messages.
 
 ## Installation
 
-To use AutoAnimate with FormKit, install `@formkit/addons`.
+To use AutoAnimate with FormKit, install `@formkit/addons`:
 
 <client-only>
 
@@ -20,7 +20,7 @@ yarn add @formkit/addons
 ```
 </client-only>
 
-Once you've installed the addons package, you'll need to register the AutoAnimate plugin with FormKit.
+Once you've installed the addons package, you'll need to register the AutoAnimate plugin with FormKit:
 
 <client-only>
 
@@ -40,7 +40,7 @@ createApp(App).use(plugin, defaultConfig({
 ```
 </client-only>
 
-If you've installed it correctly, you should have smooth transitions on when showing and hiding validation messages.
+If you've installed it correctly, you should have smooth transitions when showing and hiding validation messages:
 
 ## Example
 
