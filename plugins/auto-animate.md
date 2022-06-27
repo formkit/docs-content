@@ -13,11 +13,16 @@ FormKit doesn't need very much animation, but in some places its nice to use jus
 
 To use AutoAnimate with FormKit, install `@formkit/addons`.
 
+<client-only>
+
 ```bash
 yarn add @formkit/addons
 ```
+</client-only>
 
 Once you've installed the addons package, you'll need to register the AutoAnimate plugin with FormKit.
+
+<client-only>
 
 ```js
 import { createApp } from 'vue'
@@ -33,6 +38,7 @@ createApp(App).use(plugin, defaultConfig({
   ]
 }).mount('#app')
 ```
+</client-only>
 
 If you've installed it correctly, you should have smooth transitions on when showing and hiding validation messages.
 
