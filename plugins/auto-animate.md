@@ -36,6 +36,14 @@ createApp(App).use(plugin, defaultConfig({
 
 If you've installed it correctly, you should have smooth transitions on when showing and hiding validation messages.
 
-[TK EXAMPLE HERE]
+## Example
+
+<example
+name="AutoAnimate example"
+:file="[
+  '/\_content/examples/auto-animate/auto-animate.vue',
+  '/\_content/examples/auto-animate/formkit.config.js'
+]">
+</example>
 
 That's pretty much all you need to do! AutoAnimate is intended to be a zero-config drop in utility. However, if you really want to fine tune the plugin a little more, you can provide your own AutoAnimate options or plugins. Read more about this on the [AutoAnimate documentation site](https://auto-animate.formkit.com/#usage).

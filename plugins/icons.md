@@ -168,13 +168,13 @@ file="/\_content/examples/icons/handle-click.vue">
 ## Using 3rd-party libraries
 
 There's tons of great options out there when you’re shopping around for icons to use in your project. If you want to use
-3rd-party icons in your FormKit config then you can supply a custom `iconLoader`(either globally, at the node config level, or as a component prop)
+3rd-party icons in your FormKit project then you can supply a custom `iconLoader` (either globally, at the node config level, or as a component prop)
 which is responsible for retrieving icons that do not already exist in the `iconRegistry`.
 
-Note that an `iconLoader` function is _only meant to handle missing icons_! For performance you can (and should) load asy SVG icons
+Note that an `iconLoader` function is _only meant to handle missing icons_! For the best possible performance you can (and should) load asy SVG icons
 you _know_ you will be using into the `iconRegistry` by using the `icons` configuration prop in your FormKit config.
 
-Sometimes — such as in a form builder or CMS — you don't know in advance which icons you’ll need. That's where a custom `iconLoader` shines.
+Sometimes — in cases such as a form builder or CMS — you don't know in advance which icons you’ll need. That's where a custom `iconLoader` shines.
 
 A custom `iconLoader` function is expected to take a an `iconName` as a string and return an SVG in string format  or a
 Promise that resolves to an SVG in string format. The resulting return value will be stored in the `iconRegistry` and subsequent requests
