@@ -1,20 +1,16 @@
-<script setup>
-import { ref } from 'vue'
-const data = ref({})
-</script>
-
 <template>
   <!-- %partial%::html:: -->
-  <FormKit type="form" v-model="data">
+  <FormKit type="form" #default="{ value }" :actions="false">
     <FormKit
       type="checkbox"
+      :value="true"
       name="beverage"
       label="Include a beverage?"
-      help="Would you like a drink with that?"
+      help="Select a beverage, then uncheck me to see if data is preserved."
     />
     <!-- Try adding/removing preserve -->
     <FormKit
-      v-if="data.beverage"
+      v-if="value.beverage"
       preserve
       type="radio"
       name="beverage_type"
@@ -22,7 +18,8 @@ const data = ref({})
       label="Beverage"
       help="Select a beverage please."
     />
+
+    <pre wrap>{{ value }}</pre>
   </FormKit>
   <!-- %partial%::html:: -->
-  <pre wrap>{{ data }}</pre>
 </template>

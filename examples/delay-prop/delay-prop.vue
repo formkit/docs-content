@@ -1,10 +1,5 @@
-<script setup>
-import { ref } from 'vue'
-const data = ref({})
-</script>
-
 <template>
-  <FormKit type="group" v-model="data">
+  <FormKit type="group" #default="{ value }">
     <FormKit
       name="email"
       type="email"
@@ -14,6 +9,6 @@ const data = ref({})
       validation="required|length:5|email"
       validation-visibility="live"
     />
+    <pre wrap>{{ value }}</pre>
   </FormKit>
-  <pre wrap>{{ data }}</pre>
 </template>

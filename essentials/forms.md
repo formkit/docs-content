@@ -28,7 +28,7 @@ Excluding backend functionality, here is a fully featured form with inputs (`for
 
 ## Populating
 
-You can populate an entire form by providing a `value` prop to the `<FormKit type="form">`. The `value` prop should be an object of input name to input value pairs. You may also use `v-model` to populate a form if you require two-way data binding.
+You can populate an entire form by providing a `value` prop to the `<FormKit type="form">`. The `value` prop should be an object of input name to input value pairs. You may also use `v-model` to populate a form if you require two-way data binding:
 
 <example
   name="Text example"
@@ -253,7 +253,7 @@ You can also conveniently set error messages for all inputs in your form (or [gr
 
 ## Unmounting inputs
 
-When inputs are unmounted from a form — for example when using `v-if` — the key and value is removed from the form’s data. However, in some circumstances it may be preferable to keep the key/value pair even after the input has been removed. This can be accomplished by using the `preserve` prop.
+When inputs are unmounted from a form — for example when using `v-if` — the key and value is removed from the form’s data. However, in some circumstances it may be preferable to keep the key/value pair even after the input has been removed. This can be accomplished by using the `preserve` prop:
 
 <example
   name="input errors prop"

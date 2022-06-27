@@ -2,7 +2,6 @@
 <script setup>
 import { ref } from 'vue'
 const submitted = ref(false)
-const formData = ref({})
 const submitHandler = async () => {
   // Let's pretend this is an ajax request:
   await new Promise((r) => setTimeout(r, 1000))
@@ -13,10 +12,12 @@ const submitHandler = async () => {
 <template>
   <FormKit
     type="form"
-    v-model="formData"
+    id="registration-example"
     :form-class="submitted ? 'hide' : 'show'"
     submit-label="Register"
     @submit="submitHandler"
+    :actions="false"
+    #default="{ value }"
   >
     <h1>Register!</h1>
     <p>
@@ -50,7 +51,7 @@ const submitHandler = async () => {
           matches: 'Please include at least one symbol',
         }"
         placeholder="Your password"
-        help="Choose an account password"
+        help="Choose a password"
       />
       <FormKit
         type="password"
@@ -58,14 +59,19 @@ const submitHandler = async () => {
         label="Confirm password"
         placeholder="Confirm password"
         validation="required|confirm"
-        help="Choose an account password"
+        help="Confirm your password"
       />
     </div>
+
+    <FormKit
+      type="submit"
+      label="Register"
+    />
+    <pre wrap>{{ value }}</pre>
   </FormKit>
   <div v-if="submitted">
     <h2>Submission successful!</h2>
   </div>
-  <pre wrap>{{ formData }}</pre>
 </template>
 <!-- %partial% -->
 
@@ -97,6 +103,9 @@ hr {
 }
 .hide {
   display: none;
+}
+#registration-example pre {
+  margin-bottom: 10px;
 }
 @media (min-width: 400px) {
   .double {
