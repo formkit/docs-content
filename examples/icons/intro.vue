@@ -3,7 +3,8 @@
     type="form"
     submit-label="Let's gooo"
     :submit-attrs="{
-      'suffix-icon': 'submit'
+      'suffix-icon': 'submit',
+      help: 'With 130+ icons built in, it’s easy to get started!'
     }"
   >
     <FormKit
@@ -24,7 +25,7 @@
       prefix-icon="sad"
       suffix-icon="happy"
       label="How do icons make you feel?"
-      help="Many input types support icons."
+      help="Many input types support icons, like this range input."
     />
     <FormKit
       type="select"
@@ -38,7 +39,7 @@
       prefix-icon="color"
       label="Choose a color"
       value="#5896D0"
-      help="With 130+ icons built in, it's easy to get started!"
+      help="Add icons to color inputs!"
     />
   </FormKit>
 </template>
