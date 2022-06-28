@@ -1,6 +1,9 @@
 export default {
-  iconLoader: async (iconName) => {
-    // Returns a Promise that resolves to a string or undefined
+  iconLoader: (iconName) => {
+    // Return a Promise that resolves
+    // to a string or undefined.
+    // ... do other stuff here if you need to,
+    // you have full control.
     return fetch(`https://cdn.jsdelivr.net/npm/heroicons/outline/${iconName}.svg`)
       .then(async (r) => {
         const icon = await r.text()
@@ -8,7 +11,9 @@ export default {
           return icon
         }
         return undefined
+      }).catch((e) => {
+        console.error(e)
+        return undefined
       })
-      .catch(e => console.error(e))
   }
 }

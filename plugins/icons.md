@@ -5,7 +5,7 @@ description: Easily add icons to your inputs using the provided FormKit icons or
 
 # Icons
 
-FormKit comes with over 130 icons out-of-the-box! With the exception of the brand icons (like YouTube, TikTok, or Visa), all icons are original and MIT-licensed for free use within your project. You can use our icons, replace them, or easily add your own custom SVG icons to the set.
+FormKit comes with over 130 icons out-of-the-box! With the exception of the brand icons (like YouTube, TikTok, or Visa), all icons are original and MIT-licensed for free use within your project. You can use our icons, add your own, or easily connect to a 3rd-party icon set.
 
 Here's a demo of icons in different sections (prefix, suffix, etc.) of various types of inputs:
 
@@ -68,7 +68,7 @@ Once the theme plugin is installed in your project your FormKit inputs will have
 FormKit goes through 4 steps when attempting to load an icon. They are, in order:
 
 1. **SVG prop value** - If the prop value provided is a literal SVG definition (e.g. `prefix-icon="<svg ..."`), then the provided SVG will be used.
-2.  **String prop value** - If the prop value is a string that does _not_ start with `<svg`, then FormKit looks in the theme plugin’s `iconRegistry` — a set of key/value pairs of icon names and SVG definitions — for a matching key.
+2. **The iconRegistry** - If the prop value is a string that does _not_ start with `<svg`, then FormKit looks in the theme plugin’s `iconRegistry` — a set of key/value pairs of icon names and SVG definitions — for a matching key.
 3. **Your project's CSS variables** - If there is a CSS variable that matches `--fk-icon-${yourIconName}` defined in your CSS, then it will be parsed and loaded into the `iconRegistry`. The value of the CSS variable is expected to be a base64 encoded SVG — it should not be wrapped in quotes. This is how FormKit ships default icons for inputs in the `genesis` theme.
 4. **The JSDelivr CDN** - If no matching icon can be found in your codebase, then a request will be made to the `@formkit/icons` package using the current version of FormKit installed in your project. If a matching icon name is found it will be used.
 
@@ -146,7 +146,7 @@ file="/\_content/examples/icons/inline-svg.vue">
 ### Using the `<FormKitIcon />` component
 
 FormKit ships with a component called `<FormKitIcon />` that allows you out output any icon from the `iconRegistry` anywhere
-within your project. Need a an icon you're using in FormKit on some other part of your UI? No problem:
+within your project. Need an icon you're using in FormKit on some other part of your UI? No problem:
 
 <example
 name="Icon Component"
@@ -168,28 +168,22 @@ file="/\_content/examples/icons/handle-click.vue">
 ## Using 3rd-party libraries
 
 There's tons of great options out there when you’re shopping around for icons to use in your project. If you want to use
-3rd-party icons in your FormKit project then you can supply a custom `iconLoader` (either globally, at the node config level, or as a component prop)
+3rd-party icons in your FormKit project then you can supply a custom `iconLoaderUrl` or complete `iconLoader` (either globally, at the node config level, or as a component prop)
 which is responsible for retrieving icons that do not already exist in the `iconRegistry`.
 
-Note that an `iconLoader` function is _only meant to handle missing icons_! For the best possible performance you can (and should) load asy SVG icons
+Note that the `iconLoaderUrl` and `iconLoader` functions are _only meant to handle missing icons_! For the best possible performance you can (and should) load asy SVG icons
 you _know_ you will be using into the `iconRegistry` by using the `icons` configuration prop in your FormKit config.
 
-Sometimes — in cases such as a form builder or CMS — you don't know in advance which icons you’ll need. That's where a custom `iconLoader` shines.
+Sometimes — in cases such as a form builder or CMS — you don't know in advance which icons you’ll need. That's where remote loading of icons shines.
 
-A custom `iconLoader` function is expected to take a an `iconName` as a string and return an SVG in string format  or a
-Promise that resolves to an SVG in string format. The resulting return value will be stored in the `iconRegistry` and subsequent requests
-will be returned instantly from the `iconRegistry`.
+- The `iconLoaderUrl` and `iconLoader` functions each receive the current `iconName` being requested as an argument
+- The return value of `iconLoaderUrl` should be a string representation of a URL which is the full path to a remote CDN value for your icon — including the `iconName`. This is the easiest way to change the fallback loading behavior.
+- if you need more control then use `iconLoader` which allows you full control of all the logic for remote icon fetching. This function should return a `Promise` that resolves to a `string` or `undefined`.
+- You only need to use `iconLoaderUrl` _or_ `iconLoader` — if you supply both then only `iconLoader` will be used.
 
+### Using FontAwesome with a custom `iconLoaderUrl`
 
-<callout type="warning" label="Promises">
-Because a custom <code>iconHandler</code> can return a Promise it's important that you <code>await</code> results in places
-where your custom icons may be fetched remotely. The <code>FormKitIcon</code> component and the built-in <code>icon</code>
-sectionKeys in FormKit already handle this for you, but for custom implementations it's something to look out for.
-</callout>
-
-### An example FontAwesome iconLoader
-
-Below is an implementation of FormKit with a custom `iconLoader` that fetches missing icons from FontAwesome instead of the FormKit icon set.
+Below is an implementation of FormKit loading icons from FontAwesome by replacing the `iconLoaderUrl` with a different CDN path.
 
 <example
 name="FontAwesome Icons"
@@ -199,9 +193,9 @@ name="FontAwesome Icons"
 ]">
 </example>
 
-### An example Heroicons iconLoader
+### An example Heroicons `iconLoader``
 
-Below is an implementation of FormKit with a custom `iconLoader` that fetches missing icons from Heroicons instead of the FormKit icon set.
+Below is an implementation of FormKit with a fully custom `iconLoader` that fetches missing icons from Heroicons instead of the FormKit icon set.
 
 <example
 name="Heroicons Icons"
