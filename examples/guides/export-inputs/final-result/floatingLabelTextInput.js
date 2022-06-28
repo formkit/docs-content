@@ -10,7 +10,7 @@ import {
   prefix,
   suffix,
   textInput,
-  $extend
+  $attrs,
 } from '@formkit/inputs'
 /**
  * Input definition for a text.
@@ -20,23 +20,21 @@ export const floatingLabelTextInput = {
   schema: outer(
     wrapper(
       /*
-      * Here we are commenting out the label input and moving it below the
-      * text input.
-      * label('$label'),
-      */
+       * Here we are commenting out the label input and moving it below the
+       * text input.
+       * label('$label'),
+       */
       inner(
         icon('prefix', 'label'),
         prefix(),
         textInput(),
         /*
-        * New label placemenet
-        */
-        $extend(label('$label'), {
-          attrs: {
-            class: '$classes.labelFloating',
-            'data-has-value': '$_value !== "" && $_value !== undefined',
-            for: '$id'
-          }
+         * New label placemenet
+         */
+        $attrs(label('$label'), {
+          class: '$classes.labelFloating',
+          'data-has-value': '$_value !== "" && $_value !== undefined',
+          for: '$id',
         }),
         suffix(),
         icon('suffix')
