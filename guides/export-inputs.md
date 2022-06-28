@@ -276,7 +276,7 @@ export const floatingLabelTextInput = {
 
 </client-only>
 
-After adding appropriate styling, we can see that our new custom input uses floating labels:
+After adding appropriate styling, we can see that our new custom input has its `<label>` moved within the HTML structure and uses floating labels:
 
 <example
   :file="[
@@ -288,8 +288,11 @@ After adding appropriate styling, we can see that our new custom input uses floa
   init-file-tab="formkit.config.js"
   :editable="true"></example>
 
+## Next steps
 
+In this guide, we exported the built-in `text` input using FormKit's [CLI tool](#export-via-cli), and used the exported file as a starting point for a new floating label variation. However, the export feature enables developers to do much more than that!  Whether replacing FormKit's existing inputs, or adding new custom inputs with modified, added, removed, or moved sections — we look forward to seeing all the ways you use this feature!
 
+<cta label="Learn more about creating custom inputs." button="Read the guide" href="/guides/create-a-custom-input"></cta>
 
 
 

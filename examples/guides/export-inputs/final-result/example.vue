@@ -1,12 +1,12 @@
-<!-- %partial%::html:: -->
 <template>
   <FormKit
     type="text"
-    label="FormKit Text Input"
+    label="FormKit's Built-in Text Input"
   />
   <FormKit
     type="floatingLabelTextInput"
-    label="FormKit Floating Label Text Input"
+    label="Our new Floating Label Text Input"
+    help="Check out the HTML tab to compare the 2 inputs."
   />
 </template>
 
