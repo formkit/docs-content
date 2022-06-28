@@ -247,14 +247,17 @@ export const floatingLabelTextInput = {
         prefix(),
         textInput(),
         /*
-        * Using $extend function to pass attrs object to label section with new
+        * Using $attrs function to pass attrs object to label section with new
           class definition.
         */
-        $attrs(label('$label'), {
-          class: '$classes.labelFloating',
-          'data-has-value': '$_value !== "" && $_value !== undefined',
-          for: '$id',
-        }),
+        $attrs(
+          {
+            class: '$classes.labelFloating',
+            'data-has-value': '$_value !== "" && $_value !== undefined',
+            for: '$id',
+          },
+          label('$label')
+        ),
         suffix(),
         icon('suffix')
       )
