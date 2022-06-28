@@ -1,15 +1,17 @@
 ---
-title: Export and modify inputs
+title: Export and restructure inputs
 description: Follow this guide to learn how to create, register, and use a custom FormKit input in your project.
 ---
 
-# Export and modify inputs
-Using the FormKit CLI we can export FormKit's open source inputs, and modify
-their core structure and functionality.
+# Export and restructure inputs
+FormKit inputs ship with a lot of markup. This is useful for ensuring inputs are written in an accessible manner. However, there are times where it makes sense to modify the existing structure of a FormKit input. Using the FormKit CLI we can export FormKit's open source inputs, and modify their original structure or even their functionality.
 
-## Getting Started
-FormKit comes with its own CLI to make exporting inputs a breeze. At the base
-directory of your project, run:
+In this guide, we'll export the text input, and restructure it to better support a floating label design.
+
+## Export via CLI
+
+FormKit comes with its own CLI to make exporting inputs a breeze. At the base directory of your project, run:
+
 <client-only>
 
 ```sh
