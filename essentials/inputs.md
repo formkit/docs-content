@@ -151,6 +151,11 @@ Many section keys are universally available while others are specific to a given
 <reference-table type="sectionKeys" primary="section-key">
 </reference-table>
 
+## Restructure markup
+
+At times you may find it necessary to restructure the markup inside a FormKit input. This can be done by exporting the input (using the cli tool), making the desired changes, and then using the modified input in your project.
+
+<cta href="/guides/exporting" label="Read about restructuring your inputs" button="Export docs"></cta>
 ## Slots
 
 Inputs can have their structure overridden with slots. You can precisely target where your slot content goes with [section keys](#sections). Slots are then are passed the [context object](/advanced/context) for use in their template.

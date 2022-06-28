@@ -18,8 +18,8 @@ description: What's new in the latest version of FormKit?.
 #### 🎉 New features
 
 - Icons! FormKit now ships with first class support for icons, including a first-party MIT licensed icon pack with automatic CDN delivery. Read more about it on the [new icons documentation page](/plugins/icons).
-- AutoAnimate! FormKit now [includes an AutoAnimate plugin](/plugins/auto-animate), bringing [AutoAnimate support](https://auto-animate.formkit.com) to FormKit with a single line of code.
 - Exports! You can now export any of the existing inputs and restructure them at will using the new `@formkit/cli` command line tool.
+- AutoAnimate! FormKit now [includes an AutoAnimate plugin](/plugins/auto-animate), bringing [AutoAnimate support](https://auto-animate.formkit.com) to FormKit with a single line of code.
 
 #### 🐛 Bug fixes
 
