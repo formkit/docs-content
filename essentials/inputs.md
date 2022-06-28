@@ -153,7 +153,7 @@ Many section keys are universally available while others are specific to a given
 
 ## Restructure markup
 
-At times you may find it necessary to restructure the markup inside a FormKit input. This can be done by exporting the input (using the cli tool), making the desired changes, and then using the modified input in your project.
+At times you may find it necessary to restructure the HTML inside a FormKit input, such as adding, editing, moving, or removing sections. This can be done by exporting the input (using the CLI tool), making the desired changes, and then using the modified input in your project. Read the [guide on exporting inputs](/guides/export-inputs) to learn how.
 
 <cta href="/guides/export-inputs" label="Learn to restructure your inputs" button="Export inputs docs"></cta>
 ## Slots
