@@ -8,6 +8,7 @@ description: Translate FormKit UI and validation messages into supported languag
 FormKit ships with internationalization support for all of its interfaces and validation messages. Currently, FormKit supports the following languages (in the `@formkit/i18n` package):
 
 - 🇱🇾 Arabic (ar) — 🙏&nbsp;@Ahmedelforjani
+- 🇱🇧 Bulgarian (bg) — 🙏&nbsp;@ivanov1234159
 - 🇨🇳 Chinese (zh) — 🙏&nbsp;@myleslee
 - 🇭🇷 Croatian (hr) — 🙏&nbsp;@antemarkic
 - 🇨🇿 Czech (cs) — 🙏&nbsp;@dfridrich
@@ -19,18 +20,22 @@ FormKit ships with internationalization support for all of its interfaces and va
 - <img src="/img/frisian_flag.svg" alt="Frisian flag" class="rare-flag"> Frisian (fy) — 🙏&nbsp;@arjendejong12
 - 🇩🇪 German (de) — 🙏&nbsp;@digitalkaoz, @tosling
 - 🇮🇱 Hebrew (he) - 🙏&nbsp;@Hepi420
+- 🇭🇺 Hungarian (hu) — 🙏&nbsp;@KristofKekesi
 - 🇮🇩 Indonesian (id) - 🙏&nbsp;@rama-adi
 - 🇮🇹 Italian (it) - 🙏&nbsp;@punga78, @Archetipo95
 - 🇯🇵 Japanese (ja) - 🙏&nbsp;@wonyx
+- 🇰🇿 Kazakh (kk) - 🙏&nbsp;@ilya-raevskiy
 - 🇰🇷 Korean (ko) - 🙏&nbsp;@bwp618, @titusdecali
 - 🇮🇷 Persian (fa) - 🙏&nbsp;@shahabbasian
 - 🇵🇱 Polish (pl) - 🙏&nbsp;@xxSkyy
 - 🇧🇷 Portuguese (pt) 🙏&nbsp;@r-martins
 - 🇷🇴 Romanian (ro) - 🙏&nbsp;@danve
 - 🇷🇺 Russian (ru) - 🙏&nbsp;@andreimakushkin
+- 🇷🇸 Serbian (sr) - 🙏&nbsp;@milos5593
 - 🇸🇮 Slovenian (sl) - 🙏&nbsp;@krisflajs
 - 🇦🇷 Spanish (es) - 🙏&nbsp;@inibg
 - 🇸🇪 Swedish (sv) - 🙏&nbsp;@purung
+- 🇹🇯 Tajik (tg) - 🙏&nbsp;@devixrootix
 - 🇹🇭 Thai (th) - 🙏&nbsp;@pknn
 - 🇹🇷 Turkish (tr) - 🙏&nbsp;@ragokan
 - 🇻🇳 Vietnamese (vi) - 🙏&nbsp;@oanhnn
