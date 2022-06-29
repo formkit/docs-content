@@ -22,6 +22,7 @@ description: What's new in the latest version of FormKit?.
 - Exports! You can now [export any of the existing inputs](/advanced/exporting-inputs) and restructure them at will using the new `@formkit/cli` command line tool. Alter existing inputs by adding, removing, updating, or re-ordering sections — or add your own exported and altered input variations to your input library.
 - All inputs have been refactored to use a much improved schema composition API that allows easy composition and modification of schema based inputs.
 - Adds new `meta` property to schema specification ([#248](https://github.com/formkit/formkit/issues/248)).
+- FormKit CSS themes can be installed via CDN using the [new `theme` option](/essentials/installation#cdn-usage) in `defaultConfig()`
 - Adds 🇧🇬 Bulgarian language.
 - Adds 🇭🇺 Hungarian language.
 - Adds 🇰🇿 Kazakh language.
