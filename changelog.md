@@ -34,6 +34,7 @@ description: What's new in the latest version of FormKit?.
 - Fixed a bug that caused extra 1 too many `for` iterations on old Safari browsers ([#299](https://github.com/formkit/formkit/issues/299))
 - Added automatic keys to FormKit inputs which fixed a smattering reactivity bugs when explicit keys were not used with conditional inputs.
 - The `input-errors` prop will not reset any errors it previously set when reset to an empty object `{}` ([#277](https://github.com/formkit/formkit/issues/277)).
+- Adds support for Czech/Slovak diacritics in `alpha` and `alpha_spaces` rules ([#281](https://github.com/formkit/formkit/pull/281)).
 
 ## 1.0.0-beta.8
 
