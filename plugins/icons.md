@@ -24,13 +24,36 @@ The `@formkit/icons` package ships with over 130 common icons to make getting st
 
 ## Installation & setup
 
-For most people, no installation is required to use icons (although we recommend [adding your icons to the `iconRegistry`](#adding-icons-to-the-iconregistry) for best performarnce). The icons are included via a 1st-party themes plugin called `createThemePlugin()`, which is enabled by default if you are using FormKit's `defaultConfig()`.
+For most users **no installation is required** to use icons (although we recommend [adding your icons to the `iconRegistry`](#adding-icons-to-the-iconregistry) for best performarnce). The icons are included via a 1st-party themes plugin called `createThemePlugin()`, which is enabled by default if you are using FormKit's `defaultConfig()`.
 
 <callout type="note" label="Enabled by default">
 The FormKit <code>createThemePlugin()</code> is enabled by default in the FormKit’s <code>defaultConfig()</code>. If your
 project is using <code>defaultConfig()</code>, then getting started is as simple as using the <code>${sectionKey}-icon</code>
 props on your <code>FormKit</code> components and no installation is required.
 </callout>
+
+When using the `defaultConfig` that ships with FormKit there are several top-level options you can use to customize your experience.
+See the `createThemePlugin` docs in the next section for expanded explanations of each.
+
+<client-only>
+
+```js
+import { createApp } from 'vue'
+import App from 'App.vue'
+import { createThemePlugin } from '@formkit/themes'
+import { plugin, defaultConfig } from '@formkit/vue'
+
+createApp(App).use(plugin, defaultConfig{
+  ...
+  theme: 'genesis', // allows loading a FormKit theme via CDN
+  icons: { heart: '<svg...' }, // allows defining icons for use without remote fetching
+  iconLoaderUrl: (iconName) => `https://...`, // where to load remote icons
+  iconLoader: (iconName) => {}, // function for more direct control than iconLoaderUrl replacement
+  ...
+}.mount('#app')
+```
+
+</client-only>
 
 ### If your project uses a custom config
 
@@ -48,6 +71,7 @@ import App from 'App.vue'
 import { createThemePlugin } from '@formkit/themes'
 import { plugin } from '@formkit/vue'
 
+// IMPORTANT: This is only required for apps NOT using defaultConfig()
 createApp(App).use(plugin, {
   ...
   plugins: [
@@ -58,6 +82,13 @@ createApp(App).use(plugin, {
 ```
 
 </client-only>
+
+The `createThemePlugin` takes 4 optional arguments:
+
+- `theme`: A string representation of the theme you would like to use, eg. `'genesis'`. When provided, if a a matching theme is found will be loaded from a CDN and injected into the site head.
+- `icons`: An object of SVG icons to be added to the internal `iconRegistry` where keys are icon names and values are the SVG code, eg `{ heart: '<svg ...' '}`
+- `iconLoaderUrl`: A function that receives `iconName` returns a URL string where the icon can be loaded if it's not already in the registry. [See example](#using-fontawesome-with-a-custom-iconloaderurl)
+- `iconLoader`: A function that receives `iconName` and returns a Promise that resolves to a `string` that is an SVG definition or to `undefined`. Used when you need more control than just modifying the `iconLoaderUrl`. [See example](#an-example-heroicons-iconloader)
 
 Once the theme plugin is installed in your project your FormKit inputs will have icon props available to them.
 
@@ -187,6 +218,7 @@ Below is an implementation of FormKit loading icons from FontAwesome by replacin
 
 <example
 name="FontAwesome Icons"
+init-file-tab="formkit.config.js"
 :file="[
   '/\_content/examples/icons/font-awesome/index.vue',
   '/\_content/examples/icons/font-awesome/formkit.config.js'
@@ -199,6 +231,7 @@ Below is an implementation of FormKit with a fully custom `iconLoader` that fetc
 
 <example
 name="Heroicons Icons"
+init-file-tab="formkit.config.js"
 :file="[
   '/\_content/examples/icons/heroicons/index.vue',
   '/\_content/examples/icons/heroicons/formkit.config.js'
