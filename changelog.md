@@ -33,6 +33,7 @@ description: What's new in the latest version of FormKit?.
 - Fixed a bug that did not call event handlers on `@blur` ([#239](https://github.com/formkit/formkit/issues/239)).
 - Fixed a bug that caused extra 1 too many `for` iterations on old Safari browsers ([#299](https://github.com/formkit/formkit/issues/299))
 - Added automatic keys to FormKit inputs which fixed a smattering reactivity bugs when explicit keys were not used with conditional inputs.
+- The `input-errors` prop will not reset any errors it previously set when reset to an empty object `{}` ([#277](https://github.com/formkit/formkit/issues/277)).
 
 ## 1.0.0-beta.8
 
