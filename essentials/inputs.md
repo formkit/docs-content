@@ -153,9 +153,9 @@ Many section keys are universally available while others are specific to a given
 
 ## Restructure markup
 
-At times you may find it necessary to restructure the HTML inside a FormKit input, such as adding, editing, moving, or removing sections. This can be done by exporting the input (using the CLI tool), making the desired changes, and then using the modified input in your project. Read the [guide on exporting inputs](/guides/export-inputs) to learn how.
+At times you may find it necessary to restructure the HTML inside a FormKit input, such as adding, editing, moving, or removing sections. This can be done by exporting the input (using the CLI tool), making the desired changes, and then using the modified input in your project. Read the [guide on exporting inputs](/guides/export-and-restructure-inputs) to learn how.
 
-<cta href="/guides/export-inputs" label="Learn to restructure your inputs" button="Export inputs docs"></cta>
+<cta href="/guides/export-and-restructure-inputs" label="Learn to restructure your inputs" button="Export inputs docs"></cta>
 ## Slots
 
 Inputs can have their structure overridden with slots. You can precisely target where your slot content goes with [section keys](#sections). Slots are then are passed the [context object](/advanced/context) for use in their template.

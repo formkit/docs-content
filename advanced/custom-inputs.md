@@ -10,7 +10,7 @@ description: Create your own inputs that automatically inherit FormKit’s value
 FormKit includes [many inputs](/inputs) out of the box, but you can also define your own inputs that automatically inherit FormKit’s value-added features like validation, error messages, data modeling, grouping, labels, help text and others.
 
 <callout type="info" label="Modify or restructure an existing input">
-If your use case requires modifications of an existing input, such as moving sections, changing or restructuring HTML elements, etc., consider using FormKit's <a href="/guides/export-inputs">input export feature</a>.
+If your use case requires modifications of an existing input, such as moving sections, changing or restructuring HTML elements, etc., consider using FormKit's <a href="/guides/export-and-restructure-inputs">input export feature</a>.
 </callout>
 
 Inputs are comprised of two essential parts:
