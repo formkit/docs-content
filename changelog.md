@@ -19,7 +19,7 @@ description: What's new in the latest version of FormKit?.
 
 - Icons! FormKit now ships with first class support for icons, including a first-party MIT licensed icon pack with automatic CDN delivery. Read more about it on the [new icons documentation page](/plugins/icons).
 - AutoAnimate! FormKit now [includes an AutoAnimate plugin](/plugins/auto-animate), bringing [AutoAnimate support](https://auto-animate.formkit.com) to FormKit with a single line of code.
-- Exports! You can now [export any of the existing inputs](/advanced/exporting-inputs) and restructure them at will using the new `@formkit/cli` command line tool. Alter existing inputs by adding, removing, updating, or re-ordering sections — or add your own exported and altered input variations to your input library.
+- Exports! You can now [export any of the existing inputs](/guides/export-and-restructure-inputs) and restructure them at will using the new `@formkit/cli` command line tool. Alter existing inputs by adding, removing, updating, or re-ordering sections — or add your own exported and altered input variations to your input library.
 - All inputs have been refactored to use a much improved schema composition API that allows easy composition and modification of schema based inputs.
 - Adds new `meta` property to schema specification ([#248](https://github.com/formkit/formkit/issues/248)).
 - FormKit CSS themes can be installed via CDN using the [new `theme` option](/essentials/installation#cdn-usage) in `defaultConfig()`
