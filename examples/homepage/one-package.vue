@@ -28,7 +28,7 @@ export default {
       prefix-icon="email"
       placeholder="email@domain.com"
       validation="required|email"
-      help="order confirmation will be sent to your address"
+      help="Order confirmation will be sent to your address"
     />
     <FormKit
       type="select"
