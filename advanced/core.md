@@ -609,6 +609,8 @@ Hooks are middleware dispatchers that are triggered during pre-defined lifecycle
 | message | `FormKitMessage`                                                                                        | Dispatched when a message is being set on `node.store`                                                            |
 | prop    | <pre><code class="block">{<br> prop: string,<br> value: any<br>}</code></pre>                           | Dispatched when any prop is being assigned.                                                                       |
 | text    | [`FormKitTextFragment`](https://github.com/formkit/formkit/search?q=FormKitTextFragment)                | Dispatched when a FormKit-generated string needs to be displayed — allowing i18n or other plugins to intercept.   |
+| submit  | `Record<string, any>`                                                                                   | Dispatched when the FormKit form is submitted and passing validation. This hook allows you to modify the (cloned) form values before they are passed to the submit handler |
+| setErrors | `{ localErrors: ErrorMessages, childErrors?: ErrorMessages }`                                         | Dispatched when explicit errors are being set on a node (_not_ validation errors).
 
 ### Hook middleware
 
