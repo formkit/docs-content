@@ -39,10 +39,6 @@ You can populate an entire form by providing a `value` prop to the `<FormKit typ
 Be sure to either <code>v-model</code> a <code>ref</code> or a property of a <code>reactive</code> object. Do not <code>v-model</code> the reactive object itself as it <a href="https://github.com/formkit/formkit/issues/58#issuecomment-1029250016">leads to unexpected behavior</a>.
 </callout>
 
-<callout type="warning" label="Submitted data & v-model">
-Using <code>v-model</code> data in your submit handler could lead to unintended form mutations. Instead, use the unbound copy of your form’s data that is passed to your submission handler.
-</callout>
-
 ## Submitting
 
 Forms are usually submitted through user actions like clicking a submit button or hitting the `enter` key on a text node within the form. Upon submission, the form (in sequence):
@@ -51,13 +47,17 @@ Forms are usually submitted through user actions like clicking a submit button o
 1. Emits the `@submit-raw` event.
 1. Sets the `submitted` state to true on all inputs — displaying any remaining validation errors (regardless of the `validation-visibility`).
 1. If all inputs are valid it fires the `@submit` event.
-1. If the `@submit` event returns a `Promise` sets the form’s state to `loading` until it resolves.
+1. If the `@submit` handler returns a `Promise`, sets the form’s state to `loading` until it resolves.
+
+<callout type="warning" label="Avoid v-model for collecting and submitting form data">
+Using <code>v-model</code> data in your submit handler can lead to unintended form mutations. FormKit <em>automatically</em> collects form data for you, so use the unbound copy of your form’s data that is passed to your submission handler instead. 
+</callout>
 
 ### Submitting via XHR/Fetch request
 
 The most common method of form submission in a modern SPA is an XHR request (think [axios](https://axios-http.com/) or [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)). FormKit is well suited to this task:
 
-- It hands your submit handler a request-ready object.
+- It hands your `@submit` handler 1) the collected form data as a single request-ready object (no `v-model` needed), and 2) the `form` input's core node, as a convenience. 
 - If you use an async submit handler, it will disable your form’s inputs and apply a loading state to your form (`loading` becomes true at `context.state.loading` and a spinner is displayed on the `genesis` theme).
 - It handles [backend errors](#error-handling) by placing error messages directly on the failing inputs.
 
