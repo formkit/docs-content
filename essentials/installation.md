@@ -119,7 +119,7 @@ const config: DefaultConfigOptions = {
   locales: { fr },
   locale: 'fr',
 }
-  
+
 export default config
 ```
 
@@ -155,7 +155,24 @@ FormKit only supports Nuxt 3. If you're required to use Nuxt 2 on a project, con
 
 ## Default theme
 
-The default FormKit theme (called "genesis") can be added by installing the `@formkit/themes` package:
+The default FormKit theme (called "genesis") can be added via CDN or by installing the `@formkit/themes` package:
+
+### CDN Usage
+
+To load `genesis` via CDN, supply it to the `theme` property of your `defaultConfig`.
+
+<client-only>
+
+```js
+...
+defaultConfig({
+  theme: 'genesis' // will load from CDN and inject into document head
+})
+...
+```
+</client-only>
+
+### Direct import
 
 <client-only>
 
@@ -176,22 +193,6 @@ import '@formkit/themes/genesis'
 
 </client-only>
 
-If you prefer to reference the css file on a CDN you can do so:
-
-<client-only>
-
-```html
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@formkit/themes@next/dist/genesis/theme.css"
-/>
-```
-
 </client-only>
 
 <cta label="Using Tailwind or another utility framework?" href="/essentials/styling" button="Styling docs"></cta>
-
-## Starter project
-
-If you would like to get up and running on a new project quickly to kick the tires, then consider
-cloning the our available [FormKit Vue Starter Project on Github](https://github.com/formkit/formkit-vue-starter-project).

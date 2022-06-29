@@ -11,6 +11,10 @@ In this guide, we’ll walk through the process of creating a custom Tailwind th
 This guide assumes you are using a standard Vue 3 build tool like Vite, Nuxt 3, or Vue CLI that will allow you to import <code>.vue</code> single file components.
 </callout>
 
+<callout type="warning" label="Don't include the default theme">
+If you plan to use Tailwind CSS for your form styles then please ensure that your project is <strong>not</strong> importing the base <code>genesis</code> theme that ships with FormKit — otherwise you will get weird styling results.
+</callout>
+
 ## Inline usage
 
 In the context of a `.vue` file that represents a component, it's possible to create a Tailwind theme using the `section-key` [class props](/essentials/styling#section-key-class-props) or the `classes` [prop](/essentials/styling#classes-prop) provided by FormKit.

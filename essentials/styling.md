@@ -9,7 +9,24 @@ FormKit ships robust and accessible markup — but with no assumptions about you
 desired styles. There is an _optional_ base theme (as seen in these docs)
 called `Genesis` that you can use in your projects.
 
-#### Installing Genesis theme
+### Installing Genesis theme
+
+#### CDN Usage
+
+To load `genesis` via CDN, supply it to the `theme` property of your `defaultConfig`.
+
+<client-only>
+
+```js
+...
+defaultConfig({
+  theme: 'genesis' // will load from CDN and inject into document head
+})
+...
+```
+</client-only>
+
+#### Direct import
 
 To install Genesis, first install the `@formkit/themes` package.
 
@@ -223,6 +240,6 @@ tabs="render,html"></example>
 
 ## Tailwind CSS
 
-Want to use Tailwind with FormKit? We've written a guide walking through the process using both inline class props as well as using the `FormKitVariants` plugin `generateClasses` helper function from @formkit/themes` to create a global Tailwind theme:
+Want to use Tailwind with FormKit? We've written a guide walking through the process using both inline class props as well as using the `FormKitVariants` plugin and the `generateClasses` helper function from `@formkit/themes` to create a global Tailwind theme:
 
 <cta label="Guide: Create a Tailwind CSS theme" button="Read now" href="/guides/create-a-tailwind-theme"></cta>
