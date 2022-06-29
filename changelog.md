@@ -20,14 +20,19 @@ description: What's new in the latest version of FormKit?.
 - Icons! FormKit now ships with first class support for icons, including a first-party MIT licensed icon pack with automatic CDN delivery. Read more about it on the [new icons documentation page](/plugins/icons).
 - AutoAnimate! FormKit now [includes an AutoAnimate plugin](/plugins/auto-animate), bringing [AutoAnimate support](https://auto-animate.formkit.com) to FormKit with a single line of code.
 - Exports! You can now [export any of the existing inputs](/advanced/exporting-inputs) and restructure them at will using the new `@formkit/cli` command line tool. Alter existing inputs by adding, removing, updating, or re-ordering sections — or add your own exported and altered input variations to your input library.
+- All inputs have been refactored to use a much improved schema composition API that allows easy composition and modification of schema based inputs.
+- Adds new `meta` property to schema specification ([#248](https://github.com/formkit/formkit/issues/248)).
 - Adds 🇧🇬 Bulgarian language.
 - Adds 🇭🇺 Hungarian language.
 - Adds 🇰🇿 Kazakh language.
 - Adds 🇷🇸 Serbian language.
 - Adds 🇹🇯 Tajik language.
-
 #### 🐛 Bug fixes
 
+- Fixed a bug that caused the `key` property to not work when using the `$formkit` shorthand in schema ([#232](https://github.com/formkit/formkit/issues/232)).
+- Fixed a bug that did not call event handlers on `@blur` ([#239](https://github.com/formkit/formkit/issues/239)).
+- Fixed a bug that caused extra 1 too many `for` iterations on old Safari browsers ([#299](https://github.com/formkit/formkit/issues/299))
+- Added automatic keys to FormKit inputs which fixed a smattering reactivity bugs when explicit keys were not used with conditional inputs.
 
 ## 1.0.0-beta.8
 
