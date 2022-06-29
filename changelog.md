@@ -38,6 +38,12 @@ description: What's new in the latest version of FormKit?.
 - The `input-errors` prop will now reset any errors it previously set when set to an empty object `{}` ([#277](https://github.com/formkit/formkit/issues/277)).
 - Adds support for Czech/Slovak diacritics in `alpha` and `alpha_spaces` rules ([#281](https://github.com/formkit/formkit/pull/281)).
 
+#### 📙 Documentation
+- New docs page for [FormKit Icons](/plugins/icons) 🎉.
+- New guide for [exporting and restructuring icons](/guides/export-and-restructure-inputs)!
+- New docs using the [AutoAnimate plugin](/plugins/auto-animate).
+- Input diagrams include [new icon sections](/inputs/color#section-keys).
+
 ## 1.0.0-beta.8
 
 ### May 10, 2022
