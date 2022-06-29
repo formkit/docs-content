@@ -23,6 +23,7 @@ description: What's new in the latest version of FormKit?.
 - All inputs have been refactored to use a much improved schema composition API that allows easy composition and modification of schema based inputs.
 - Adds new `meta` property to schema specification ([#248](https://github.com/formkit/formkit/issues/248)).
 - FormKit CSS themes can be installed via CDN using the [new `theme` option](/essentials/installation#cdn-usage) in `defaultConfig()`
+- Adds new `submit` and `setErrors` hooks.
 - Adds 🇧🇬 Bulgarian language.
 - Adds 🇭🇺 Hungarian language.
 - Adds 🇰🇿 Kazakh language.
