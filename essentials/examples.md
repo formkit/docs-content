@@ -38,6 +38,12 @@ Use the <code>FormKitSchema</code> component to conditionally show an input (wit
 ## Plugins
 
 <ExampleCard
+  href="https://formkit.link/a9e43d344dda2cb643eb809e6c29aeae"
+  title="Add an asterisk to the label area">
+Use a plugin to add an asterisk (*) to the label area of inputs that have the "required" rule.
+</ExampleCard>
+
+<ExampleCard
   href="https://formkit.link/b37c7d36263ab0ee1bd626aa0a405b93"
   title="Make number inputs return number values">
 Use a plugin to cast string values to numbers. Useful if you want inputs of type <code>number</code> to return a JS <code>Number</code> primitive.
@@ -47,6 +53,12 @@ Use a plugin to cast string values to numbers. Useful if you want inputs of type
   href="https://formkit.link/e9712ba9d7f6c0ab5648b15a89147ba7"
   title="Remove the inner wrapper on all checkboxes">
 Use a plugin to modify the HTML of all descendant checkbox inputs.
+</ExampleCard>
+
+<ExampleCard
+  href="https://formkit.link/8b90542319deb5ab29cb5811d7a28db7"
+  title="Add an icon before validation messages">
+Use a plugin to append an icon before validation messages by extending the schema definition.
 </ExampleCard>
 
 ## Inputs
@@ -76,3 +88,11 @@ A working starter project on StackBlitz with Nuxt, FormKit and Tailwind CSS.
   title="Produce dynamic classes based on an input's state">
 Use the <code>rootClasses</code> config function and FormKit props to produce a dynamic classes based on input state. Helpful for Tailwind and other CSS utility libraries.
 </ExampleCard>
+
+<ExampleCard
+  href="https://formkit.link/33b779548f9285c854b49d296e080094"
+  title="Create reactive UI variations of FormKit inputs using “features”">
+Create UI variations of FormKit inputs (like buttons) that update based on reactive data in your components.
+</ExampleCard>
+
+

@@ -35,7 +35,7 @@ into `FormKitSchema` with the `library` prop.
 </example>
 
 <callout type="warning" label="Components as props">
-In order to pass concrete components via the <code>library</code> prop, it's best to wrap your library with <a href="https://v3.vuejs.org/api/basic-reactivity.html#markraw">Vue’s <code>markRaw</code> signature</a>.
+In order to pass concrete components via the <code>library</code> prop, it's best to wrap your library with <a href="https://vuejs.org/api/reactivity-advanced.html#markraw">Vue’s <code>markRaw</code> signature</a>.
 </callout>
 
 ## References
