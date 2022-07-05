@@ -5,6 +5,18 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 1.0.0-beta.10
+
+### TBD, 2022
+
+#### 🎉 New features
+
+- Adds 🇦🇿 Azerbaijani (az) language.
+
+#### 🐛 Bug fixes
+
+- Fixed a regression where a single checkbox was no longer displaying the help text ([#310](https://github.com/formkit/formkit/issues/310)).
+
 ## 1.0.0-beta.9
 
 ### June 29, 2022
