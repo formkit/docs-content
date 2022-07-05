@@ -44,9 +44,11 @@ The file upload process is left to your form’s submission handler. When submit
   file="/_content/examples/file-upload/file-upload.vue">
 </example>
 
+## Props & Attributes
+
 The `file` input has no unique props but the native HTML input does have a number of unique attributes that alter the behavior of the file uploader.
 
-<reference-table input="file" :attrs="['accept', 'capture', 'multiple', 'webkitdirectory' ]">
+<reference-table input="file" :attrs="['accept', 'capture', 'multiple', 'webkitdirectory']" :data="[{prop: 'file-item-icon', type: 'String', default: '’’', description: 'Specifies <a href=&quot;/plugins/icons&quot;>an icon</a> to put in the <code>fileItemIcon</code> section. Only shows when there is a file selected. Defaults to the <code>fileDoc</code> icon.'}, {prop: 'file-remove-icon', type: 'String', default: '’’', description: 'Specifies <a href=&quot;/plugins/icons&quot;>an icon</a> to put in the <code>fileRemoveIcon</code> section. Only shows when a file is selected. Defaults to the <code>close</code> icon.'}, {prop: 'no-files-icon', type: 'String', default: '’’', description: 'Specifies <a href=&quot;/plugins/icons&quot;>an icon</a> to put in the <code>noFilesIcon</code> section. Only shows when no file is selected. Defaults to the <code>fileDoc</code> icon.'}]">
 </reference-table>
 
 ## Section keys
@@ -85,6 +87,14 @@ You can target a specific section of an input using that section's "key". Read m
                       name: 'input',
                     },
                     {
+                      name: 'noFiles',
+                      children: [
+                        {
+                          name: 'noFilesIcon',
+                        }
+                      ]
+                    },
+                    {
                       name: 'fileList',
                       children: [
                         {
@@ -110,16 +120,6 @@ You can target a specific section of an input using that section's "key". Read m
                               ]
                             },
                           ]
-                        }
-                      ]
-                    },
-                    {
-                      name: 'noFiles',
-                      position: 'right',
-                      children: [
-                        {
-                          name: 'noFilesIcon',
-                          position: 'right',
                         }
                       ]
                     },

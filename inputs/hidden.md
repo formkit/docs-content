@@ -27,7 +27,7 @@ Since <code>hidden</code> inputs are not intended for display to end users, Form
 The `hidden` input has no unique props but can make use of the following universal
 FormKit props.
 
-<reference-table :without="['help', 'label', 'errors']">
+<reference-table :without="['help', 'label', 'errors', 'prefix-icon', 'suffix-icon', ]">
 </reference-table>
 
 ## Section keys

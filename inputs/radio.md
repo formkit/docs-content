@@ -42,7 +42,7 @@ file="/_content/examples/radio-objects/radio-objects.vue"></example>
 
 ## Props & Attributes
 
-<reference-table input="radio" :data="[{prop: 'options', type: 'Array/Object', default: '[]', description: 'An object of value/label pairs or an array of strings, or an array of objects that <em>must</em> contain a label and value property.'}]">
+<reference-table input="radio" :data="[{prop: 'options', type: 'Array/Object', default: '[]', description: 'An object of value/label pairs or an array of strings, or an array of objects that <em>must</em> contain a label and value property.'}]" :without="['prefix-icon', 'suffix-icon']">
 </reference-table>
 
 ## Section keys
