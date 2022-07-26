@@ -12,6 +12,9 @@ description: What's new in the latest version of FormKit?.
 #### 🎉 New features
 
 - Adds 🇦🇿 Azerbaijani (az) language.
+- Input definitions now have an optional `family` property, which adds a `data-family` attribute, and sets the value on `node.props.family`. This is useful for applying plugins and styles to similar inputs like text inputs.
+- Input definitions now include an optional `forceTypeProp` property which ensures the `node.props.type` is initialized as a given value even if the input is registered under a different name. For example `myModifiedCheckbox` could still have `node.props.type` report "checkbox".
+- Adds `data-multiple` attribute to checkboxes and radios when they have multiple options.
 
 #### 🐛 Bug fixes
 
