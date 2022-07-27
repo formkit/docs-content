@@ -19,6 +19,8 @@ description: What's new in the latest version of FormKit?.
 #### 🐛 Bug fixes
 
 - Fixed a regression where a single checkbox was no longer displaying the help text ([#310](https://github.com/formkit/formkit/issues/310)).
+- Fixes a bug that caused the AutoAnimate plugin to fail on Nuxt SSR ([#330](https://github.com/formkit/formkit/issues/330))
+- 
 
 ## 1.0.0-beta.9
 

@@ -50,6 +50,10 @@ Using `v-model` allows for two-way reactive data binding with any FormKit input.
   file="/_content/examples/v-model/v-model.vue">
 </example>
 
+<callout type="warning">
+The initial value of your v-model cannot be <code>undefined</code>. If it is, the v-model will not be used. All other values, including <code>null</code> and <code>false</code> are acceptable.
+</callout>
+
 ### Using `node.input()`
 
 At the heart of every FormKit input is an instance of [FormKit’s `node`

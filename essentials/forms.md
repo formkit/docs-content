@@ -39,6 +39,10 @@ You can populate an entire form by providing a `value` prop to the `<FormKit typ
 Be sure to either <code>v-model</code> a <code>ref</code> or a property of a <code>reactive</code> object. Do not <code>v-model</code> the reactive object itself as it <a href="https://github.com/formkit/formkit/issues/58#issuecomment-1029250016">leads to unexpected behavior</a>.
 </callout>
 
+<callout type="warning">
+The initial value of your v-model cannot be <code>undefined</code>. If it is, the v-model will not be used. All other values, including <code>null</code> and <code>false</code> are acceptable.
+</callout>
+
 ## Submitting
 
 Forms are usually submitted through user actions like clicking a submit button or hitting the `enter` key on a text node within the form. Upon submission, the form (in sequence):
