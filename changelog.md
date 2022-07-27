@@ -21,7 +21,8 @@ description: What's new in the latest version of FormKit?.
 
 - Fixed a regression where a single checkbox was no longer displaying the help text ([#310](https://github.com/formkit/formkit/issues/310)).
 - Fixes a bug that caused the AutoAnimate plugin to fail on Nuxt SSR ([#330](https://github.com/formkit/formkit/issues/330))
-- 
+- Fixes a bug that caused all input’s `context.state.dirty` to turn true when a v-modeled form was edited ([#311](https://github.com/formkit/formkit/issues/311)).
+- Fixes a bug that caused a race condition between the @change event of a select list and the v-model value propagation ([#335](https://github.com/formkit/formkit/issues/335)).
 
 ## 1.0.0-beta.9
 
