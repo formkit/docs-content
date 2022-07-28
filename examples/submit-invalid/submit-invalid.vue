@@ -1,3 +1,4 @@
+<!-- %partial% -->
 <script setup>
 import { getValidationMessages } from '@formkit/validation'
 import { ref } from 'vue'
@@ -35,6 +36,7 @@ function showErrors(node) {
     />
   </FormKit>
 </template>
+<!-- %partial% -->
 
 <style scoped>
 .validation-errors {
