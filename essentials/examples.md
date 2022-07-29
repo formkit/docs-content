@@ -18,7 +18,7 @@ The <code>form</code> type automatically adds a submit button. Add classes so it
 <ExampleCard
   href="https://formkit.link/b7cc2c4ae2b02807065d6617ead62783"
   title="Using a list to repeat an input">
-Using the <code>list</code> type we can create inputs that can have multiple values. This example uses a loop to let users add/remove email addresses.
+Using the <code>list</code> type, we can create repeater inputs that can have multiple values. This example uses a loop to let users add/remove email addresses.
 </ExampleCard>
 
 ## Schema
@@ -39,7 +39,7 @@ Use the <code>FormKitSchema</code> component to conditionally show an input (wit
 
 <ExampleCard
   href="https://formkit.link/a9e43d344dda2cb643eb809e6c29aeae"
-  title="Add an asterisk to the label area">
+  title="Add an asterisk to the labels of all required inputs">
 Use a plugin to add an asterisk (*) to the label area of inputs that have the "required" rule.
 </ExampleCard>
 
@@ -67,6 +67,12 @@ Use a plugin to append an icon before validation messages by extending the schem
   href="https://formkit.link/4c282e69337fdfca35ec613e2f67fcc9"
   title="Number input with custom step buttons">
 A custom input with +1 and -1 step buttons. Made using <code>createInput()</code>.
+</ExampleCard>
+
+<ExampleCard
+  href="https://formkit.link/035bcab1dcba2420902bdae7b64811b4"
+  title="Add a link (<a> tag) to a label">
+Use slots or the <code>:sections-schema</code> feature to modify a label's HTML.
 </ExampleCard>
 
 ## User interface
