@@ -39,15 +39,20 @@ You can populate an entire form by providing a `value` prop to the `<FormKit typ
 Be sure to either <code>v-model</code> a <code>ref</code> or a property of a <code>reactive</code> object. Do not <code>v-model</code> the reactive object itself as it <a href="https://github.com/formkit/formkit/issues/58#issuecomment-1029250016">leads to unexpected behavior</a>.
 </callout>
 
+<callout type="warning">
+The initial value of your v-model cannot be <code>undefined</code>. If it is, the v-model will not be used. All other values, including <code>null</code> and <code>false</code> are acceptable.
+</callout>
+
 ## Submitting
 
 Forms are usually submitted through user actions like clicking a submit button or hitting the `enter` key on a text node within the form. Upon submission, the form (in sequence):
 
 1. Ensures all inputs are settled (finished debouncing).
-1. Emits the `@submit-raw` event.
-1. Sets the `submitted` state to true on all inputs — displaying any remaining validation errors (regardless of the `validation-visibility`).
-1. If all inputs are valid it fires the `@submit` event.
-1. If the `@submit` handler returns a `Promise`, sets the form’s state to `loading` until it resolves.
+2. Emits the `@submit-raw` event.
+3. Sets the `submitted` state to true on all inputs — displaying any remaining validation errors (regardless of the `validation-visibility`).
+4. If the form has validation errors the `@submit-invalid` event is fired.
+4. If all inputs are valid it fires the `@submit` event.
+5. If the `@submit` handler returns a `Promise`, sets the form’s state to `loading` until it resolves.
 
 <callout type="warning" label="Avoid v-model for collecting and submitting form data">
 Using <code>v-model</code> data in your submit handler can lead to unintended form mutations. FormKit <em>automatically</em> collects form data for you, so use the unbound copy of your form’s data that is passed to your submission handler instead. 
@@ -114,6 +119,17 @@ In addition to not firing the submit event, a message is displayed above the sub
 <callout type="tip" label="Global customization">
 If you want to change the incomplete message across all forms on your project, you can modify the i18n locale message for <code>ui.incomplete</code>.
 </callout>
+
+### Submit invalid event
+
+When a user attempts to submit a form containing inputs that have failing validations, the `@submit-invalid` event is fired.
+
+For example, we could use this event to alert our users of the failing validation rules.
+
+<example
+  name="Submit invalid"
+  file="/_content/examples/submit-invalid/submit-invalid.vue">
+</example>
 
 ### Validity state
 
