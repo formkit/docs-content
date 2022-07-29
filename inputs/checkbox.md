@@ -56,7 +56,10 @@ file="/_content/examples/checkbox-objects/checkbox-objects.vue"></example>
 
 ## Props & Attributes
 
-<reference-table :without="['prefix-icon', 'suffix-icon']" input="checkbox" :data="[{prop: 'options', type: 'Array/Object', default: '[]', description: 'An object of value/label pairs or an array of strings, or an array of objects that <em>must</em> contain a label and value property.'}, { prop: 'on-value', type: 'any', default: 'true', description: 'The value when the checkbox is checked (single checkboxes only).'}, { prop: 'off-value', type: 'any', default: 'false', description: 'The value when the checkbox is unchecked (single checkboxes only).'}]">
+<reference-table :without="['prefix-icon', 'suffix-icon']" input="checkbox" :data="[
+  {prop: 'decorator-icon', type: 'String', default: '’’', description: 'Specifies <a href=&quot;/plugins/icons&quot;>an icon</a> to put in the <code>decoratorIcon</code> section. Shows when the checkbox is checked. Defaults to the <code>checkboxDecorator</code> icon.'},
+  {prop: 'options', type: 'Array/Object', default: '[]', description: 'An object of value/label pairs or an array of strings, or an array of objects that <em>must</em> contain a label and value property.'}, { prop: 'on-value', type: 'any', default: 'true', description: 'The value when the checkbox is checked (single checkboxes only).'},
+  { prop: 'off-value', type: 'any', default: 'false', description: 'The value when the checkbox is unchecked (single checkboxes only).'}]">
 </reference-table>
 
 ## Section keys

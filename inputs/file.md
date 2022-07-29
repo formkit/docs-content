@@ -48,7 +48,11 @@ The file upload process is left to your form’s submission handler. When submit
 
 The `file` input has a few unique props. There are also several commonly used native HTML attributes that assist in controlling file uploads.
 
-<reference-table input="file" :attrs="['accept', 'capture', 'multiple', 'webkitdirectory']" :data="[{prop: 'file-item-icon', type: 'String', default: '’’', description: 'Specifies <a href=&quot;/plugins/icons&quot;>an icon</a> to put in the <code>fileItemIcon</code> section. Only shows when there is a file selected. Defaults to the <code>fileDoc</code> icon.'}, {prop: 'file-remove-icon', type: 'String', default: '’’', description: 'Specifies <a href=&quot;/plugins/icons&quot;>an icon</a> to put in the <code>fileRemoveIcon</code> section. Only shows when a file is selected. Defaults to the <code>close</code> icon.'}, {prop: 'no-files-icon', type: 'String', default: '’’', description: 'Specifies <a href=&quot;/plugins/icons&quot;>an icon</a> to put in the <code>noFilesIcon</code> section. Only shows when no file is selected. Defaults to the <code>fileDoc</code> icon.'}]">
+<reference-table input="file" :attrs="['accept', 'capture', 'multiple', 'webkitdirectory']" :data="[
+  {prop: 'file-item-icon', type: 'String', default: '’’', description: 'Specifies <a href=&quot;/plugins/icons&quot;>an icon</a> to put in the <code>fileItemIcon</code> section. Only shows when there is a file selected. Defaults to the <code>fileDoc</code> icon.'},
+  {prop: 'file-remove-icon', type: 'String', default: '’’', description: 'Specifies <a href=&quot;/plugins/icons&quot;>an icon</a> to put in the <code>fileRemoveIcon</code> section. Only shows when a file is selected. Defaults to the <code>close</code> icon.'},
+  {prop: 'no-files-icon', type: 'String', default: '’’', description: 'Specifies <a href=&quot;/plugins/icons&quot;>an icon</a> to put in the <code>noFilesIcon</code> section. Only shows when no file is selected. Defaults to the <code>fileDoc</code> icon.'}
+  ]">
 </reference-table>
 
 ## Section keys
