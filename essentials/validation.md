@@ -575,7 +575,7 @@ createApp(App).use(plugin, defaultConfig({
 
 ## Extracting messages
 
-To get all the validation messages from an [input’s core node](/advances/core), you may use the `getValidationMessages` function exported from `@formkit/validation`. This function will recursively check the given node, and all children for validation messages and return a Map of core nodes to validation messages, making it ideal for use with forms.
+To get all the validation messages from an [input’s core node](/advanced/core), you may use the `getValidationMessages` function exported from `@formkit/validation`. This function will recursively check the given node, and all children for validation messages and return a Map of core nodes to validation messages, making it ideal for use with forms.
 
 <example
   name="Submit invalid"
