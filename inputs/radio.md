@@ -67,10 +67,12 @@ You can target a specific section of an input using that section's "key". Read m
                 name: 'legend',
                 content: 'Mowing time preference',
                 class: 'margin-collapse',
+                position: 'right',
               },
               {
                 name: 'help',
                 content: 'Choose which time is least disruptive to you.',
+                position: 'right',
               },
               {
                 name: 'options',
@@ -95,7 +97,12 @@ You can target a specific section of an input using that section's "key". Read m
                               },
                               {
                                 name: 'decorator',
-                                content: '🔘',
+                                children: [
+                                  {
+                                    name: 'decoratorIcon',
+                                    content: '🔘',
+                                  }
+                                ]
                               },
                               {
                                 name: 'suffix',
@@ -140,5 +147,9 @@ You can target a specific section of an input using that section's "key". Read m
 </div>
 
 
-<reference-table type="sectionKeys" primary="section-key" :without="['prefixIcon', 'suffixIcon']" :data="[{'section-key': 'decorator', description: 'Responsible for the element immediately following the input element — usually used for styling.'}, { 'section-key': 'legend', description: 'Responsible for the fieldset’s legend element.'}, {'section-key': 'fieldset', description: 'Responsible for the fieldset when multiple options are available.'}, {'section-key': 'options', description: 'Responsible for the wrapper element around all of the option items.'},{'section-key': 'option', description: 'Responsible for the wrapper around each item in the options.'}]">
+<reference-table type="sectionKeys" primary="section-key" :without="['prefixIcon', 'suffixIcon']" :data="[
+  {'section-key': 'decorator', description: 'Responsible for the element immediately following the input element — usually used for styling.'},
+  {'section-key': 'decoratorIcon', description: 'An element containing the decorator icon.'},
+  {'section-key': 'legend', description: 'Responsible for the fieldset’s legend element.'},
+  {'section-key': 'fieldset', description: 'Responsible for the fieldset when multiple options are available.'}, {'section-key': 'options', description: 'Responsible for the wrapper element around all of the option items.'},{'section-key': 'option', description: 'Responsible for the wrapper around each item in the options.'}]">
 </reference-table>

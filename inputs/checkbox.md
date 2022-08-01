@@ -74,6 +74,7 @@ The checkbox input has a different construction depending on if it's a single or
     :schema="[
         {
           name: 'outer',
+          position: 'right',
           children: [
             {
               name: 'wrapper',
@@ -90,7 +91,12 @@ The checkbox input has a different construction depending on if it's a single or
                     },
                     {
                       name: 'decorator',
-                      content: '✅'
+                      children: [
+                        {
+                          name: 'decoratorIcon',
+                          content: '✅',
+                        }
+                      ]
                     },
                     {
                       name: 'suffix'
@@ -145,10 +151,12 @@ The checkbox input has a different construction depending on if it's a single or
                 name: 'legend',
                 content: 'Topics',
                 class: 'margin-collapse',
+                position: 'right',
               },
               {
                 name: 'help',
                 content: 'Choose the topics you`d like to learn this year.',
+                position: 'right',
               },
               {
                 name: 'options',
@@ -173,7 +181,12 @@ The checkbox input has a different construction depending on if it's a single or
                               },
                               {
                                 name: 'decorator',
-                                content: '✅',
+                                children: [
+                                  {
+                                    name: 'decoratorIcon',
+                                    content: '✅',
+                                  }
+                                ]
                               },
                               {
                                 name: 'suffix',
@@ -217,5 +230,11 @@ The checkbox input has a different construction depending on if it's a single or
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key" :without="['prefixIcon', 'suffixIcon']" :data="[{'section-key': 'decorator', description: 'Responsible for the element immediately following the input element — usually used for styling custom checkboxes.'}, { 'section-key': 'legend', description: 'Responsible for the fieldset’s legend element.'}, {'section-key': 'fieldset', description: 'Responsible for the fieldset when multiple options are available.'}, {'section-key': 'option', description: 'Responsible for the wrapper around each item in the options.'}, {'section-key': 'options', description: 'Responsible for the wrapper element around all of the option items.'}]">
+<reference-table type="sectionKeys" primary="section-key" :without="['prefixIcon', 'suffixIcon']" :data="[
+  {'section-key': 'decorator', description: 'Responsible for the element immediately following the input element — usually used for styling custom checkboxes.'},
+  {'section-key': 'decoratorIcon', description: 'An element containing the decorator icon.'},
+  {'section-key': 'legend', description: 'Responsible for the fieldset’s legend element.'},
+  {'section-key': 'fieldset', description: 'Responsible for the fieldset when multiple options are available.'},
+  {'section-key': 'option', description: 'Responsible for the wrapper around each item in the options.'},
+  {'section-key': 'options', description: 'Responsible for the wrapper element around all of the option items.'}]">
 </reference-table>
