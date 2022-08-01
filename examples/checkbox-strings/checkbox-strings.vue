@@ -10,6 +10,7 @@ const value = ref([])
     type="checkbox"
     label="Toppings"
     :options="['Mushrooms', 'Olives', 'Salami', 'Anchovies']"
+    decorator-icon="happy"
     help="Select your pizza toppings"
     validation="required|min:3"
   />

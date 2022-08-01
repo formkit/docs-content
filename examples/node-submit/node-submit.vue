@@ -19,6 +19,7 @@ function submitHandler() {
     <FormKit
       type="checkbox"
       label="Computer accessories"
+      decorator-icon="heart"
       validation="required|min:2"
       :options="{
         mouse: '🐭 Mouse',
