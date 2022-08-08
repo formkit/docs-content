@@ -39,7 +39,7 @@ FormKit ships with internationalization support for all of its interfaces and va
 - 🇹🇯 Tajik (tg) - 🙏&nbsp;@devixrootix
 - 🇹🇭 Thai (th) - 🙏&nbsp;@pknn
 - 🇺🇦 Ukrainian (uk) - 🙏&nbsp;@aresofficial
-- 🇺🇿 Uzbek (uz)
+- 🇺🇿 Uzbek (uz) - 🙏&nbsp;@root5427
 - 🇹🇷 Turkish (tr) - 🙏&nbsp;@ragokan
 - 🇻🇳 Vietnamese (vi) - 🙏&nbsp;@oanhnn
 
