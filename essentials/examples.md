@@ -61,6 +61,18 @@ Use a plugin to modify the HTML of all descendant checkbox inputs.
 Use a plugin to append an icon before validation messages by extending the schema definition.
 </ExampleCard>
 
+<ExampleCard
+  href="https://formkit.link/e1ba341cb0e4f9ae08d3b9f90ec84f11"
+  title="Set initial values to empty strings instead of undefined">
+Use a plugin to set all initial input values to an empty string <code>""</code> instead of <code>undefined</code>.
+</ExampleCard>
+
+<ExampleCard
+  href="https://formkit.link/c253b391d5f16f226457073bb6dc30c4"
+  title="Automatically set an input's name, label, and help text based on the id">
+Use a plugin to automatically set an input's <code>name</code>, <code>label</code>, and <code>help</code> props based on the <code>id</code>. Reduces repetitive prop declarations in your HTML.
+</ExampleCard>
+
 ## Inputs
 
 <ExampleCard
@@ -73,6 +85,12 @@ A custom input with +1 and -1 step buttons. Made using <code>createInput()</code
   href="https://formkit.link/035bcab1dcba2420902bdae7b64811b4"
   title="Add a link (<a> tag) to a label">
 Use slots or the <code>:sections-schema</code> feature to modify a label's HTML.
+</ExampleCard>
+
+<ExampleCard
+  href="https://formkit.link/d8b7840c35adb657a454eec7c76264fd"
+  title="Conditionally update options of a select input">
+Conditionally update the <code>options</code> of a <code>select</code> input based on the value of another input.
 </ExampleCard>
 
 ## User interface
