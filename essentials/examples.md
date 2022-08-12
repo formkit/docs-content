@@ -38,7 +38,7 @@ Use the <code>FormKitSchema</code> component to conditionally show an input (wit
 ## Plugins
 
 <ExampleCard
-  href="https://formkit.link/a9e43d344dda2cb643eb809e6c29aeae"
+  href="https://formkit.link/b48228435ec7770fbc81de811fbe35d8"
   title="Add an asterisk to the labels of all required inputs">
 Use a plugin to add an asterisk (*) to the label area of inputs that have the "required" rule.
 </ExampleCard>
