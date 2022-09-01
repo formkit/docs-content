@@ -5,11 +5,11 @@ description: Get up and running with FormKit in your project.
 
 # Installation
 
-FormKit can be downloaded using a package manager like `npm` or `yarn` or it can be used directly via CDN.
+FormKit can be downloaded using a package manager like `npm` or `yarn`.
 
 ## With Vue
 
-Most new projects use a build tool like Vite, Snowpack, or webpack. This makes installing npm dependencies a piece of cake 🍰.
+Most new projects use a build tool like Vite, Snowpack, or webpack. This makes installing npm dependencies a piece of cake 🍰:
 
 <client-only>
 
@@ -19,7 +19,7 @@ npm install @formkit/vue
 
 </client-only>
 
-The `@formkit/vue` package ships with a Vue plugin and a default configuration for easy setup.
+The `@formkit/vue` package ships with a Vue plugin and a default configuration for easy setup:
 
 <client-only>
 
@@ -33,7 +33,7 @@ createApp(App).use(plugin, defaultConfig).mount('#app')
 
 </client-only>
 
-That's it! You're now ready to use the `<FormKit>` component in your Vue application. The `defaultConfig` includes all of FormKit's inputs, validation rules, and the English language. You can replace the `defaultConfig` with your own configuration, which allows for improved tree-shaking (only include the rules and languages you want to actually use) and more fine-grained control.
+That's it! You're now ready to use the `<FormKit>` component in your Vue 3 application. The `defaultConfig` includes all of FormKit's inputs, validation rules, and the English language. You can replace the `defaultConfig` with your own configuration, which allows for improved tree-shaking (only include the rules and languages you want to actually use) and more fine-grained control.
 
 <callout type="tip" label="next">
 You can install the upcoming version of FormKit (unstable) anytime by opting to installing the "next" version tag: <code>npm install @formkit/vue@next</code>
@@ -88,7 +88,7 @@ myProject/
 
 This configuration file will be automatically included if detected in your project directory. If you would like to supply a custom
 path to your `formkit.config`, you can override the default location using the `configFile` option under the `formkit` key.
-**Any path you supply should be relative to the root of your Nuxt project**.
+**Any path you supply should be relative to the root of your Nuxt project**:
 
 <client-only>
 
@@ -155,11 +155,11 @@ FormKit only supports Nuxt 3. If you're required to use Nuxt 2 on a project, con
 
 ## Default theme
 
-The default FormKit theme (called "genesis") can be added via CDN or by installing the `@formkit/themes` package:
+The default FormKit theme (called "genesis") can be added via CDN or by installing the `@formkit/themes` package.
 
 ### CDN Usage
 
-To load `genesis` via CDN, supply it to the `theme` property of your `defaultConfig`.
+To load `genesis` via CDN, supply it to the `theme` property of your `defaultConfig`:
 
 <client-only>
 
