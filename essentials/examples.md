@@ -24,7 +24,7 @@ Using the <code>list</code> type, we can create repeater inputs that can have mu
 ## Schema
 
 <ExampleCard
-  href="https://formkit.link/50a639f45b922eaf01a1986150849b11"
+  href="https://formkit.link/7373dc9cfd753e8ed3acd3c815438b62"
   title="Conditionally show input based on value of another input">
 Use the <code>FormKitSchema</code> component to conditionally show an input (with validation rules) based on the value of another input.
 </ExampleCard>
