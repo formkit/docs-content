@@ -9,7 +9,7 @@ FormKit ships with internationalization support for all of its interfaces and va
 
 - 🇱🇾 Arabic (ar) — 🙏&nbsp;@Ahmedelforjani
 - 🇦🇿 Azerbaijani (az) — 🙏&nbsp;@EmrullahKutlar
-- 🇱🇧 Bulgarian (bg) — 🙏&nbsp;@ivanov1234159
+- 🇧🇬 Bulgarian (bg) — 🙏&nbsp;@ivanov1234159
 - 🇨🇳 Chinese (zh) — 🙏&nbsp;@myleslee
 - 🇭🇷 Croatian (hr) — 🙏&nbsp;@antemarkic
 - 🇨🇿 Czech (cs) — 🙏&nbsp;@dfridrich
