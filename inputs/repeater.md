@@ -1,15 +1,15 @@
 ---
-title: Rating
-description: A Pro input that allows users to rate something or provide feedback along any desired scale.
+title: Repeater
+description: A Pro input that allows users to add, remove, and re-arrange repeatable input groups.
 ---
 
 <InputPageHero
-title="Rating"
-icon="IconInputProRating"
+title="Repeater"
+icon="IconInputProRepeater"
 :pro="true"
-project-price="2.00"></InputPageHero>
+project-price="0"></InputPageHero>
 
-The `rating` input...
+The `repeater` input...
 
 <!-- example -->
 

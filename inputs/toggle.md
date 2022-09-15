@@ -1,15 +1,15 @@
 ---
-title: Rating
-description: A Pro input that allows users to rate something or provide feedback along any desired scale.
+title: Toggle
+description: A Pro input that allows users toggle between two states.
 ---
 
 <InputPageHero
-title="Rating"
-icon="IconInputProRating"
+title="Toggle"
+icon="IconInputProToggle"
 :pro="true"
-project-price="2.00"></InputPageHero>
+project-price="0"></InputPageHero>
 
-The `rating` input...
+The `toggle` input...
 
 <!-- example -->
 
