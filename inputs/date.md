@@ -1,15 +1,10 @@
 ---
-title: Date
+title: Date Input
 description: A native HTML date picker.
 ---
 
 
-<InputPageHero
-title="Date input"
-icon="IconInputDate"
-:pro="false"
-project-price=""
-data-price=""></InputPageHero>
+<InputPageHero title="Date"></InputPageHero>
 
 The `date` input uses HTML's [native date picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date) to allow users to easily select a date.
 

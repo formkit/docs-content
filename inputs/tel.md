@@ -1,14 +1,9 @@
 ---
-title: Tel (Telephone)
+title: Tel (Telephone) Input
 description: A native HTML tel input.
 ---
 
-<InputPageHero
-title="Tel input"
-icon="IconInputPhone"
-:pro="false"
-project-price=""
-data-price=""></InputPageHero>
+<InputPageHero title="Tel"></InputPageHero>
 
 The `tel` input uses HTML's [native tel input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel) and allows a user to enter a telephone number. Telephone numbers can also be entered with standard text inputs but some browsers (especially mobile ones) may improve the experience of entering telephone numbers by showing a different keypad.
 

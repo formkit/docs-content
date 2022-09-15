@@ -1,13 +1,9 @@
 ---
-title: Autocomplete
+title: Autocomplete Input
 description: A Pro input that allows users to search and select from a customizable options list. Supports single and multi-value selections.
 ---
 
-<InputPageHero
-title="Autocomplete"
-icon="IconInputSelect"
-:pro="true"
-project-price="2.00"></InputPageHero>
+<InputPageHero title="Autocomplete"></InputPageHero>
 
 The `autocomplete`...
 

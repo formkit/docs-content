@@ -1,14 +1,9 @@
 ---
-title: Week
+title: Week Input
 description: A native HTML week picker.
 ---
 
-<InputPageHero
-title="Week input"
-icon="IconInputWeek"
-:pro="false"
-project-price=""
-data-price=""></InputPageHero>
+<InputPageHero title="Week"></InputPageHero>
 
 The `week` input uses the HTML's [native week picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/week) to allow users to easily
 select a week.

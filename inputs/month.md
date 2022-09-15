@@ -1,15 +1,10 @@
 ---
-title: Month
+title: Month Input
 description: A native HTML month picker.
 ---
 
 
-<InputPageHero
-title="Month input"
-icon="IconInputMonth"
-:pro="false"
-project-price=""
-data-price=""></InputPageHero>
+<InputPageHero title="Month"></InputPageHero>
 
 The `month` input uses HTML's [native month picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/month) to allow users to easily select a month.
 

@@ -1,13 +1,9 @@
 ---
-title: Dropdown
+title: Dropdown Input
 description: A Pro input that allows users to select from customizable options list.
 ---
 
-<InputPageHero
-title="Dropdown"
-icon="IconInputSelect"
-:pro="true"
-project-price="2.00"></InputPageHero>
+<InputPageHero title="Dropdown"></InputPageHero>
 
 The `dropdown`...
 

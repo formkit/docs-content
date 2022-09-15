@@ -1,15 +1,10 @@
 ---
-title: List
+title: List Input
 description: An invisible FormKit input that allows you to logically structure your form data as an array.
 ---
 
 
-<InputPageHero
-title="List input"
-icon="IconInputList"
-:pro="false"
-project-price=""
-data-price=""></InputPageHero>
+<InputPageHero title="List"></InputPageHero>
 
 The `list` input allows you to structure data from child inputs as an array. The list itself outputs no markup (by default) and can be used in conjunction with any other type of input — including nested [groups](/inputs/group) and lists.
 

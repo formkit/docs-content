@@ -1,14 +1,9 @@
 ---
-title: Select
+title: Select Input
 description: A native HTML select input. Supports both single-value and multi-value selections.
 ---
 
-<InputPageHero
-title="Select input"
-icon="IconInputSelect"
-:pro="false"
-project-price=""
-data-price=""></InputPageHero>
+<InputPageHero title="Select"></InputPageHero>
 
 The select input uses HTML's [native select input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select). Select inputs can be single value selections, or multi-value selections by using the `multiple` attribute. There are 4 ways to provide options to a select input:
 

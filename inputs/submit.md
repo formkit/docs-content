@@ -1,14 +1,9 @@
 ---
-title: Submit
+title: Submit Input
 description: A native HTML button element used in place of a native HTML submit input.
 ---
 
-<InputPageHero
-title="Submit input"
-icon="IconInputSubmit"
-:pro="false"
-project-price=""
-data-price=""></InputPageHero>
+<InputPageHero title="Submit"></InputPageHero>
 
 The `submit` input uses HTML's [native button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button). The `label` prop is used to populate the text of the button — or alternatively you can use the default slot.
 

@@ -1,15 +1,10 @@
 ---
-title: Email
+title: Email Input
 description: A native HTML email input.
 ---
 
 
-<InputPageHero
-title="Email input"
-icon="IconInputEmail"
-:pro="false"
-project-price=""
-data-price=""></InputPageHero>
+<InputPageHero title="Email"></InputPageHero>
 
 The `email` input uses HTML's [native email input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email).
 

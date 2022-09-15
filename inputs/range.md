@@ -1,14 +1,9 @@
 ---
-title: Range
+title: Range Input
 description: A native HTML range input.
 ---
 
-<InputPageHero
-title="Range input"
-icon="IconInputRange"
-:pro="false"
-project-price=""
-data-price=""></InputPageHero>
+<InputPageHero title="Range"></InputPageHero>
 
 The `range` input uses HTML's [native range input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) to let user select a number with a graphic slider.
 

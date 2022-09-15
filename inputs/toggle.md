@@ -1,13 +1,9 @@
 ---
-title: Toggle
+title: Toggle Input
 description: A Pro input that allows users toggle between two states.
 ---
 
-<InputPageHero
-title="Toggle"
-icon="IconInputProToggle"
-:pro="true"
-project-price="0"></InputPageHero>
+<InputPageHero title="Toggle"></InputPageHero>
 
 The `toggle` input...
 

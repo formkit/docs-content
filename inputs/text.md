@@ -1,14 +1,9 @@
 ---
-title: Text
+title: Text Input
 description: A native HTML text input.
 ---
 
-<InputPageHero
-title="Text input"
-icon="IconInputText"
-:pro="false"
-project-price=""
-data-price=""></InputPageHero>
+<InputPageHero title="Text"></InputPageHero>
 
 The `text` input uses HTML's [native text input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text). It allows a user to enter a single line of text.
 

@@ -1,13 +1,9 @@
 ---
-title: Rating
+title: Rating Input
 description: A Pro input that allows users to rate something or provide feedback along any desired scale.
 ---
 
-<InputPageHero
-title="Rating"
-icon="IconInputProRating"
-:pro="true"
-project-price="2.00"></InputPageHero>
+<InputPageHero title="Rating"></InputPageHero>
 
 The `rating` input...
 

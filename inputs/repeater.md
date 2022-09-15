@@ -1,13 +1,9 @@
 ---
-title: Repeater
+title: Repeater Input
 description: A Pro input that allows users to add, remove, and re-arrange repeatable input groups.
 ---
 
-<InputPageHero
-title="Repeater"
-icon="IconInputProRepeater"
-:pro="true"
-project-price="0"></InputPageHero>
+<InputPageHero title="Repeater"></InputPageHero>
 
 The `repeater` input...
 
