@@ -7,7 +7,19 @@ description: A Pro input that allows users to rate something or provide feedback
 
 The `rating` input...
 
-<!-- example -->
+<!-- Installation  -->
+
+<!-- Base Example -->
+
+## Steps
+
+## Icons
+
+## Colors
+
+## Accessibility
+- Native range
+- Focus
 
 ## Props & Attributes
 

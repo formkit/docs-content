@@ -7,7 +7,17 @@ description: A Pro input that allows users to search and select from a customiza
 
 The `autocomplete`...
 
-<!-- example -->
+<!-- Installation  -->
+
+<!-- Base Example (plain text, static list, single value) -->
+
+## Selection appearance
+
+## Multi-select
+
+## Loading options
+
+## Accessibility
 
 ## Props & Attributes
 

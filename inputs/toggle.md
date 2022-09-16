@@ -7,7 +7,21 @@ description: A Pro input that allows users toggle between two states.
 
 The `toggle` input...
 
-<!-- example -->
+<!-- Installation  -->
+
+<!-- Base Example -->
+
+## Values
+
+## Labels
+
+## Icons
+
+## Colors
+
+## Accessibility
+- Native checkbox
+- Focus
 
 ## Props & Attributes
 
