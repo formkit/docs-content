@@ -13,7 +13,7 @@ The `rating` input allows users to provide feedback based on a numeric scale tha
 
 ## Min/Max
 
-By default, the `min` and `max` values are set to `0` and `5` respectively. You can set the `min` prop to any number above `0` and the `max` prop to any number above the `min` value.
+By default, the `min` and `max` values are set to `0` and `5` respectively. The `min` prop denotes the minimum value you can select while `max` denotes the number of icons rendered. You can set the `min` prop to any number above `0` and the `max` prop to any number above the `min` value.
 
 ## Icons
 

@@ -11,13 +11,13 @@ The `toggle` input is used to choose one of two values. It is a good choice when
 
 <!-- Base Example -->
 
-**_Basic example_**
+**_Basic example showing for Airplane Mode. _**
 
 ## Values
 
-The `toggle's` checked and unchecked states will default to `true` and `false` respectively. You can change these values by passing `onValue` and `offValue` props. In this example, we will set the `onValue` to `[1, 2, 3]` and the `offValue` to `undefined`.
+The `toggle's` checked and unchecked states will default to `true` and `false` respectively. You can change these values by passing `onValue` and `offValue` props. In this example, we will set the `onValue` to `High Quality` and the `offValue` to `Low Quality`.
 
-**_Example with on and off values_**
+**_Example with on and off values High Quality and Low Quality_**
 
 ## Labels
 
@@ -31,7 +31,7 @@ The toggle input supports a default/primary label that is used like the `label` 
 
 Additionally, you may specify a secondary label by setting the `on-value-label` and the `off-value-label` props. These value labels will be displayed depending on whether the toggle is checked or not, and will be positioned to the right of the toggle input.
 
-**_Example with onValueLabel and offValueLabel set_**
+**_Example with onValueLabel and offValueLabel, use 'On and Off' to start. set_**
 
 Additionally, you can set the `value-label-display` prop to `inner` to render the value labels inside the toggle.
 
