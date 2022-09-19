@@ -7,7 +7,8 @@ description: A Pro input that allows users to search and select from a customiza
 
 The `autocomplete`...
 
-<!-- Installation  -->
+<ProInstallSnippet></ProInstallSnippet>
+
 
 <!-- Base Example (plain text, static list, single value) -->
 
