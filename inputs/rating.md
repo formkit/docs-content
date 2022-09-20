@@ -7,13 +7,13 @@ description: A Pro input that allows users to rate something or provide feedback
 
 <!-- Installation  -->
 
-The `rating` input allows users to provide feedback based on a numeric scale that is illustrated using icons.
+The `rating` input allows users to provide feedback based on a numeric scale.
 
 <!-- Base Example -->
 
 ## Min/Max
 
-By default, the `min` and `max` values are set to `0` and `5` respectively. The `min` prop denotes the minimum value you can select while `max` denotes the number of icons rendered. You can set the `min` prop to any number above `0` and the `max` prop to any number above the `min` value.
+By default, the `min` and `max` values are set to `0` and `5` respectively. The `min` prop denotes the minimum value you can select while the `max` prop denotes the number of icons rendered. You can set the `min` prop to any number above `0` and the `max` prop to any integer above the `min` value.
 
 ## Icons
 

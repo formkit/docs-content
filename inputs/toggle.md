@@ -15,7 +15,7 @@ The `toggle` input is used to choose one of two values. It is a good choice when
 
 ## Values
 
-The `toggle's` checked and unchecked states will default to `true` and `false` respectively. You can change these values by passing `onValue` and `offValue` props. In this example, we will set the `onValue` to `High Quality` and the `offValue` to `Low Quality`.
+The `toggle's` checked and unchecked states will default to `true` and `false` respectively. You can change these values by passing `onValue` and `offValue` props. In this example, we will set the `onValue` to the string `'High Quality'` and the `offValue` to the string `'Low Quality'`.
 
 **_Example with on and off values High Quality and Low Quality_**
 
@@ -37,7 +37,7 @@ Additionally, you can set the `value-label-display` prop to `inner` to render th
 
 ## Icons
 
-Using the `thumb-icon` prop, you can insert an icon into the `thumb` section of the `toggle` input. The `thumb-icon` prop accepts a string that will use FormKit's [icon plugin](/plugins/icons).
+Using the `thumb-icon` prop, you can insert an icon into the `thumb` section of the `toggle` input. The `thumb-icon` prop accepts a string that will be passed to FormKit's [icon plugin](/plugins/icons).
 
 **_Example with thumbIcon set_**
 
