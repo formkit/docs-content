@@ -7,10 +7,10 @@ async function loadPosts() {
   if (res.ok) {
     const data = await res.json()
     // Iterating over the options so we return an array of objects with label and value properties
-    return data.map((x) => {
+    return data.map((item) => {
       return {
-        label: x.title.rendered,
-        value: x.id,
+        label: item.title.rendered,
+        value: item.id,
       }
     })
   }

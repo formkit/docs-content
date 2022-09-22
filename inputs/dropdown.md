@@ -15,6 +15,8 @@ file="/_content/examples/dropdown/dropdown-base.vue"></example>
 
 ## Slots
 
+Unlike native select elements, the `dropdown` input allows you to customize the options list with your own markup.
+
 ### Option slot
 
 The `dropdown` input allows you to customize the look and feel of each option by using the `option` slot. In the example below, we are using the `option` slot to display each option's asset (the logo) and name.
@@ -45,12 +47,13 @@ Let's say we had an API endpoint that returned all the options we needed for a g
 name="Dropdown"
 file="/_content/examples/dropdown/dropdown-single-request.vue"></example>
 
-
 ### Multiple pages
 
-What if you need to load options from an API, but need to make
+What if you need to load options from an API, but need to be able to make multiple requests to perform pagination? Whenever a function is passed to the `options` prop, the function is passed the FormKit node's `config` object. We can use the `hasNextStep` and `page` properties to continue loading more options.
 
-<!-- Example of loading options via API with pagination. -->
+<example
+name="Dropdown"
+file="/_content/examples/dropdown/dropdown-pagination.vue"></example>
 
 ### Loading Style
 
