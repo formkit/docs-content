@@ -9,9 +9,9 @@ description: A Pro input that allows users to select from customizable options l
 
 The `dropdown` input is used to display a list of options to the end-user. The end-user must choose a single option from the list. In the below example, we are setting the `options` prop to a static array of strings.
 
-Base Example (static list)
-
-<!-- Base Example (CC selector) -->
+<example
+name="Dropdown"
+file="/_content/examples/dropdown/dropdown-base.vue"></example>
 
 ## Loading options
 

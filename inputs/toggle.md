@@ -11,7 +11,9 @@ The `toggle` input is used to choose one of two values. It is a good choice when
 
 <!-- Base Example -->
 
-**_Basic example showing for Airplane Mode. _**
+<example
+name="Toggle"
+file="/_content/examples/toggle/toggle-base.vue"></example>
 
 ## Values
 

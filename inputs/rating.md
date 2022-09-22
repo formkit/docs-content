@@ -1,43 +1,69 @@
 ---
 title: Rating Input
-description: A Pro input that allows users to rate something or provide feedback along any desired scale.
+description: The `rating` input allows users to provide feedback based on a numeric scale represented by icons/images.
+.
 ---
 
 <InputPageHero title="Rating"></InputPageHero>
 
 <!-- Installation  -->
 
-The `rating` input allows users to provide feedback based on a numeric scale.
+The `rating` input allows users to provide feedback based on a numeric scale represented by icons/images.
 
-<!-- Base Example -->
+<example
+name="Rating"
+file="/_content/examples/rating/rating-base.vue"></example>
 
-## Min/Max
+## Min/max
 
-By default, the `min` and `max` values are set to `0` and `5` respectively. The `min` prop denotes the minimum value you can select while the `max` prop denotes the number of icons rendered. You can set the `min` prop to any number above `0` and the `max` prop to any integer above the `min` value.
+The `min` prop denotes the minimum value you can select while the `max` prop denotes the maximum value the end-user can select (and subsequently the number of icons rendered).
+
+<example
+name="Rating"
+file="/_content/examples/rating/rating-min-max.vue"></example>
+
+## Step
+
+By default, the `rating` input will increment by one. The `step` prop allows you to set the step size between each value. For example, if you set `step="0.5"` then the end-user can select any values that are a multiple of `0.5`. Steps must be a value between `0.01` and `1`.
+
+<example
+name="Rating"
+file="/_content/examples/rating/rating-step.vue"></example>
+
 
 ## Icons
 
-By default, the `rating` input uses FormKit's own star icon. You can change these icons by setting the `rating-icon` prop. The `rating-icon` prop accepts a string that will use FormKit's [icon plugin](/plugins/icons).
+By default, the `rating` input uses FormKit's own star icon. You can change which icon is being used by setting the `rating-icon` prop. This prop accepts a string that will use FormKit's [icon plugin](/plugins/icons).
 
-<!-- Use different icon Example -->
+<example
+name="Rating"
+file="/_content/examples/rating/rating-icon.vue"></example>
 
 ## Colors
 
-You can specify the on and off colors of the rating input by setting the `on-color` and `off-color` props. These props accept any valid CSS color value.
+In addition to supplying your own icon, you can also specify the color via. props. Setting the `off-color` prop will change the color of the icons when they are not selected. The `on-color` prop will change the color of the icons when they are selected.
 
-<!-- Show base example using different on and off colors. -->
+<example
+name="Rating"
+file="/_content/examples/rating/rating-colors.vue"></example>
 
-## Slots
+## Slots for icons
 
-Instead of specifying a FormKit icon via. the `rating-icon` prop, you instead can pass an SVG using `default` slot. In addition, if you wanted to use something like an image tag instead, you can pass individual images by using the `off-item` and `on-item` slots (see the example below).
+### Default slot
 
-<!-- Example using slots. -->
+Instead of specifying an icon via. the FormKit icon plugin, you can just pass a raw SVG using the `default` slot.
 
-## Steps
+<example
+name="Rating"
+file="/_content/examples/rating/rating-default-slot.vue"></example>
 
-By default, the `rating` input will use a step of 1. You can change this by setting the `step` prop to any value between (0.1 and 1). This allows you to create a rating input that increments by half stars, or even by 1/3 stars.
+### Named slots
 
-<!-- Example using steps (stars by 0.5) -->
+Lastly, you can use the `offItem` and `onItem` slots to pass whatever assets you want. In this example, we are going to use different images for the `off` and `on` states.
+
+<example
+name="Rating"
+file="/_content/examples/rating/rating-named-slots.vue"></example>
 
 ## Accessibility
 
