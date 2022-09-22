@@ -1,14 +1,15 @@
 <script setup>
 import { ref } from 'vue'
-const value = ref(false)
+const value = ref('inactive')
 </script>
 
 <template>
   <!-- %partial%::html:: -->
   <FormKit
     v-model="value"
-    label="Airplane mode"
     type="toggle"
+    on-value="active"
+    off-value="inactive"
   />
   <pre wrap>
     {{ value }}

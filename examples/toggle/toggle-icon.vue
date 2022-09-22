@@ -7,8 +7,8 @@ const value = ref(false)
   <!-- %partial%::html:: -->
   <FormKit
     v-model="value"
-    label="Airplane mode"
     type="toggle"
+    thumb-icon="star"
   />
   <pre wrap>
     {{ value }}

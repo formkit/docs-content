@@ -1,14 +1,17 @@
 <script setup>
 import { ref } from 'vue'
-const value = ref(false)
+const value = ref(true)
 </script>
 
 <template>
   <!-- %partial%::html:: -->
   <FormKit
     v-model="value"
-    label="Airplane mode"
     type="toggle"
+    thumb-icon="whatsapp"
+    thumb-color-on="#4FCE5D"
+    track-color-on="#435A64"
+    icon-color-on="white"
   />
   <pre wrap>
     {{ value }}
