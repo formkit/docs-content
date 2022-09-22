@@ -1,7 +1,6 @@
 ---
 title: Rating Input
 description: The `rating` input allows users to provide feedback based on a numeric scale represented by icons/images.
-.
 ---
 
 <InputPageHero title="Rating"></InputPageHero>
@@ -67,16 +66,15 @@ file="/_content/examples/rating/rating-named-slots.vue"></example>
 
 ## Accessibility
 
-- Native range
-- Focus
+ The `rating` input is built utilizing HTML's [native range input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range).
 
 ## Props & Attributes
 
 <reference-table input="rating" :data="[
 {prop: 'min', type: 'Number', default: '0', description: 'The minimum number of icons that can be selected.'},
 {prop: 'max', type: 'Number', default: '5', description: 'The maximum number of icons that are rendered.'},
-{prop: 'step', type: 'Number', default: '1', description: 'The step or increment that should be applied to the `rating` icons. Accepted values are between `0.1` and `1`'},
-{prop: 'hover-highlight', type: 'Boolean', default: 'true', description: 'Determines whether to show the onColor applied when the `rating` input is hovered over.'},
+{prop: 'step', type: 'Number', default: '1', description: 'The step or increment that should be applied to the `rating` icons. Accepted values are between `0.01` and `1`'},
+{prop: 'hover-highlight', type: 'Boolean', default: 'true', description: 'Determines whether to show the selected state of the icon/image when hovered over.'},
 {prop: 'off-color', type: 'String', default: 'undefined', description: 'Sets the color to be applied on the given icons when they have not been selected.'},
 {prop: 'on-color', type: 'String', default: 'undefined', description: 'Sets the color to be applied on the given icons when they have been selected.'}]">
 </reference-table>
