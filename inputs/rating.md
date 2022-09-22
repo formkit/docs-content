@@ -23,7 +23,7 @@ file="/_content/examples/rating/rating-min-max.vue"></example>
 
 ## Step
 
-By default, the `rating` input will increment by one. The `step` prop allows you to set the step size between each value. For example, if you set `step="0.5"` then the end-user can select any values that are a multiple of `0.5`. Steps must be a value between `0.01` and `1`.
+By default the `rating` input will increment by one. The `step` prop allows you to set the step size between each value. For example, if you set `step="0.5"` then the end-user can select any values that are a multiple of `0.5`. Steps must be a value between `0.01` and `1`.
 
 <example
 name="Rating"
