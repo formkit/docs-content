@@ -7,11 +7,30 @@ description: A Pro input that allows users to select from customizable options l
 
 <!-- Installation  -->
 
-The `dropdown` input is used to display a list of options to the end-user. The end-user must choose a single option from the list. In the below example, we are setting the `options` prop to a static array of strings.
+The `dropdown` input is used to display a list of options to the end-user.
 
 <example
 name="Dropdown"
 file="/_content/examples/dropdown/dropdown-base.vue"></example>
+
+## Slots
+
+### Option slot
+
+The `dropdown` input allows you to customize the look and feel of each option by using the `option` slot. In the example below, we are using the `option` slot to display each option's asset (the logo) and name.
+
+<example
+name="Dropdown"
+file="/_content/examples/dropdown/dropdown-option-slot.vue"></example>
+
+### Selection slot
+
+If you only want to customize the display of the selected option, use the `selection` slot.
+
+<example
+name="Dropdown"
+file="/_content/examples/dropdown/dropdown-selection-slot.vue"></example>
+
 
 ## Loading options
 
@@ -19,15 +38,19 @@ Instead of passing a static list of options to the `options` prop, you can assig
 
 <!-- Example of loading options via API without pagination. -->
 
-### Single page
+### Single request
+Let's say we had an API endpoint that returned all the options we needed for a given `dropdown` input. Below is an example of how we could write the `dropdown` input to load options from a single request.
+
+<example
+name="Dropdown"
+file="/_content/examples/dropdown/dropdown-single-request.vue"></example>
+
 
 ### Multiple pages
 
-What if you need to load options from an API, but need to paginate the results? Here is an example of how to do that..
+What if you need to load options from an API, but need to make
 
 <!-- Example of loading options via API with pagination. -->
-<!-- Example of loading options via API with cursor. -->
-<!-- Example of loading options via API with offset. -->
 
 ### Loading Style
 

@@ -1,21 +1,17 @@
+<script setup>
+  import { ref } from 'vue'
+  const value = ref(null)
+  const frameworks = [{label: 'React', value: 'react'}, {label: 'Vue', value: 'vue'}, {label: 'Angular', value: 'angular'}, {label: 'Svelte', value: 'svelte'}]
+</script>
+
 <template>
   <FormKit
+    v-model="value"
     type="dropdown"
-    label="Select a FormKit team member"
-    placeholder=""
-    :options="[
-      {
-        label: 'Justin Schroeder',
-        value: 'JS',
-      },
-      {
-        label: 'B',
-        value: 'b',
-      },
-      {
-        label: 'C',
-        value: 'c',
-      },
-    ]"
+    label="Choose a front end framework"
+    :options="frameworks"
   />
+  <pre wrap>
+    {{ value }}
+  </pre>
 </template>
