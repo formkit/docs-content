@@ -3,14 +3,15 @@ import { ref } from 'vue'
 const value = ref(null)
 
 async function loadPosts() {
-  const res = await fetch(`https://techcrunch.com/wp-json/wp/v2/posts`)
+  const res = await fetch(`https://api.themoviedb.org/4/list/8218730?page=1&api_key=f48bcc9ed9cbce41f6c28ea181b67e14`)
   if (res.ok) {
     const data = await res.json()
-    // Iterating over the options so we return an array of objects with label and value properties
-    return data.map((item) => {
+    console.log('data', data)
+    return data.results.map((result) => {
       return {
-        label: item.title.rendered,
-        value: item.id,
+        label: result.title,
+        value: result.id,
+        poster: result.poster_path,
       }
     })
   }
@@ -22,10 +23,34 @@ async function loadPosts() {
   <FormKit
     v-model="value"
     type="dropdown"
-    label="Choose an article"
+    label="Select a movie"
     :options="loadPosts"
-  />
+  >
+    <template #option="{ option }">
+      <div class="formkit-option">
+        <img
+          :src="`https://image.tmdb.org/t/p/w500${option.poster}`"
+          alt="optionAvatar"
+        />
+        <span>
+          {{ option.label }}
+        </span>
+      </div>
+    </template>
+  </FormKit>
   <pre wrap>
     Value {{ value }}
   </pre>
 </template>
+
+<style>
+.formkit-option {
+  display: flex;
+  align-items: center;
+}
+.formkit-option img {
+  width: 30px;
+  height: 40px;
+  margin-right: 10px;
+}
+</style>
