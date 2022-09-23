@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-const value = ref(null)
+const value = ref(429)
 
 async function loadPosts() {
   const res = await fetch(`https://api.themoviedb.org/4/list/8218730?page=1&api_key=f48bcc9ed9cbce41f6c28ea181b67e14`)
