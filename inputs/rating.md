@@ -5,9 +5,11 @@ description: A Pro input that allows users to provide feedback based on a numeri
 
 <InputPageHero title="Rating"></InputPageHero>
 
-<!-- Installation  -->
+<ProInstallSnippet></ProInstallSnippet>
 
-The `rating` input allows users to provide feedback based on a numeric scale represented by icons/images.
+## Basic example
+
+The `rating` input allows users to provide feedback based on a numeric scale represented by icons/images:
 
 <example
 name="Rating"
@@ -15,7 +17,7 @@ file="/_content/examples/rating/rating-base.vue"></example>
 
 ## Min/max
 
-The `min` prop denotes the minimum value you can select while the `max` prop denotes the maximum value the end-user can select (and subsequently the number of icons rendered).
+The `min` and `max` props define the minimum and maximum values an end-user can select (and subsequently the number of icons rendered):
 
 <example
 name="Rating"

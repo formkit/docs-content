@@ -1,16 +1,16 @@
-<script setup>
-import { ref } from 'vue'
-const value = ref(0)
-</script>
-
 <template>
-  <!-- %partial%::html:: -->
-  <FormKit
-    v-model="value"
-    type="rating"
-  />
-  <pre wrap>
-    {{ value }}
-  </pre>
-  <!-- %partial%::html:: -->
+<FormKit
+  type="form"
+  #default="{ value }"
+  :actions="false"
+>
+<!-- %partial%::html:: -->
+<FormKit
+  type="rating"
+  name="rating"  
+  label="Did we provide good service?"
+/>
+<!-- %partial%::html:: -->
+<pre wrap>{{ value }}</pre>
+</FormKit>
 </template>
