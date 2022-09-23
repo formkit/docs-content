@@ -8,7 +8,8 @@
   <FormKit
     v-model="value"
     type="dropdown"
-    label="Choose a front end framework"
+    label="Choose a frontend framework"
+    placeholder="Example placeholder"
     :options="frameworks"
   />
   <pre wrap>

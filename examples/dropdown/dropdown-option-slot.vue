@@ -9,6 +9,7 @@
     v-model="value"
     type="dropdown"
     label="Choose a front end framework"
+    placeholder="Example placeholder"
     :options="frameworks"
   >
     <!--HERE WE ARE DEFINING OUR OPTION SLOT-->

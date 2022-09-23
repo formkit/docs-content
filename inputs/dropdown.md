@@ -53,6 +53,7 @@ What if you need to load options from an API, but need to be able to make multip
 
 <example
 name="Dropdown"
+:min-height="550"
 file="/_content/examples/dropdown/dropdown-pagination.vue"></example>
 
 ### Loading Style

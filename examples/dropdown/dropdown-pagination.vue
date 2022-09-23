@@ -2,20 +2,14 @@
 import { ref } from 'vue'
 const value = ref(null)
 
-// Destructuring FormKit's context object to get
-async function searchBreweries({ page, hasNextPage }) {
-  const res = await fetch(`https://api.openbrewerydb.org/breweries/?query=per_page=10&page=${page}`)
+async function loadArticles({ page, hasNextPage }) {
+  const res = await fetch(`https://techcrunch.com/wp-json/wp/v2/posts?per_page=20&context=embed&page=${page}`)
   if (res.ok) {
     const data = await res.json()
-    if (Array.isArray(data) && data.length) hasNextPage()
-    return data.map((item) => {
-      return {
-        label: item.name,
-        value: item.id
-      }
-    })
+    hasNextPage()
+    return data.map((item) => ({ label: item.title.rendered, value: item.id }))
   }
-  return
+  return []
 }
 </script>
 
@@ -24,7 +18,7 @@ async function searchBreweries({ page, hasNextPage }) {
     v-model="value"
     type="dropdown"
     label="Choose an article"
-    :options="searchBreweries"
+    :options="loadArticles"
   />
   <pre wrap>
     Value {{ value }}
