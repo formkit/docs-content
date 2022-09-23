@@ -1,6 +1,6 @@
 ---
 title: Rating Input
-description: The `rating` input allows users to provide feedback based on a numeric scale represented by icons/images.
+description: A Pro input that allows users to provide feedback based on a numeric scale represented by icons/images.
 ---
 
 <InputPageHero title="Rating"></InputPageHero>
