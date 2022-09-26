@@ -1,18 +1,23 @@
-<script setup>
-import { ref } from 'vue'
-const value = ref(0)
-</script>
-
 <template>
-  <!-- %partial%::html:: -->
-  <FormKit
-    v-model="value"
-    type="rating"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 16"><path d="M4,10h5c1.66,0,3,1.34,3,3v2H1v-2c0-1.66,1.34-3,3-3Z" fill="currentColor"/><path d="M4,4h5v2.5c0,1.38-1.12,2.5-2.5,2.5h0c-1.38,0-2.5-1.12-2.5-2.5v-2.5h0Z" fill="currentColor"/><path d="M9,4h0c.55,0,1,.45,1,1h0c0,.55-.45,1-1,1h0v-2h0Z" fill="currentColor"/><path d="M3,4h0c.55,0,1,.45,1,1h0c0,.55-.45,1-1,1h0v-2h0Z" transform="translate(7 10) rotate(180)" fill="currentColor"/><path d="M4.12,4.12h-.5c-.75-.62-.62-1.57-.62-2.37h0s.5-.26,1-.26,1,.5,1,.5c-.88,0-1-1-1-1h3c1.1,0,2,.9,2,2h.5s.25,.75-.12,1.25l-5.25-.12Z" fill="currentColor"/></svg>
-  </FormKit>
-  <pre wrap>
-    {{ value }}
-  </pre>
-  <!-- %partial%::html:: -->
+<!--
+  FormKit forms auto-collect values of children inputs.
+  Wrap the example in a form so we can display the form values.
+-->
+<FormKit
+  type="form"
+  #default="{ value }"
+  :actions="false"
+>
+<!-- %partial%::html:: -->
+<FormKit
+  type="rating"
+  name="love"
+  label="How much love do you have for FormKit?"
+  on-color="red"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 16"><path d="M7.5,14c-.2,0-.4-.08-.56-.23-1.06-1.04-4.58-4.59-5.49-6.34-.63-1.2-.59-2.7,.09-3.83,.61-1.01,1.67-1.59,2.9-1.59,1.56,0,2.53,.81,3.06,1.63,.53-.82,1.5-1.63,3.06-1.63,1.23,0,2.29,.58,2.9,1.59,.68,1.13,.72,2.63,.09,3.83-.92,1.76-4.43,5.3-5.49,6.34-.16,.16-.36,.23-.56,.23ZM4.44,3c-.88,0-1.61,.39-2.04,1.11-.51,.83-.53,1.95-.06,2.85,.66,1.26,3.07,3.88,5.17,5.96,2.09-2.08,4.51-4.69,5.17-5.96,.47-.9,.44-2.02-.06-2.85-.43-.72-1.16-1.11-2.04-1.11-2.12,0-2.55,1.9-2.57,1.98h-.98c-.02-.08-.47-1.98-2.57-1.98Z" fill="currentColor"/></svg>
+</FormKit>
+<!-- %partial%::html:: -->
+  <pre wrap>{{ value }}</pre>
+</FormKit>
 </template>
