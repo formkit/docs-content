@@ -1,23 +1,28 @@
-<script setup>
-import { ref } from 'vue'
-const value = ref(0)
-</script>
-
 <template>
-  <!-- %partial%::html:: -->
-  <FormKit
-    v-model="value"
-    type="rating"
-  >
-		<template #offItem>
-      <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/267_Python_logo-512.png" />
-    </template>
-    <template #onItem>
-      <img src="https://i.etsystatic.com/28740631/r/il/9cfae1/3203669083/il_794xN.3203669083_knn4.jpg" />
-    </template>
-  </FormKit>
-  <pre wrap>
-    {{ value }}
-  </pre>
-  <!-- %partial%::html:: -->
+<!--
+  FormKit forms auto-collect values of children inputs.
+  Wrap the example in a form so we can display the form values.
+-->
+<FormKit
+  type="form"
+  #default="{ value }"
+  :actions="false"
+>
+<!-- %partial%::html:: -->
+<FormKit
+  type="rating"
+  name="rating"
+  value="3"
+  label="Rate our t-rex exhibit!"
+>
+  <template #offItem>
+    <img src="https://cdn.formk.it/example-assets/t-rex-outline-s.png" />
+  </template>
+  <template #onItem>
+    <img src="https://cdn.formk.it/example-assets/dino-s.png" />
+  </template>
+</FormKit>
+<!-- %partial%::html:: -->
+<pre wrap>{{ value }}</pre>
+</FormKit>
 </template>
