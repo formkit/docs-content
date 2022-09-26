@@ -7,9 +7,20 @@ description: A Pro input that allows users to search and select from a customiza
 
 <ProInstallSnippet></ProInstallSnippet>
 
-The `autocomplete` is used to search through a list of potential options.
+The `autocomplete` is used to search through a list of potential options. In this first example, let's set the `options` prop to a list of countries.
 
-<!-- Base Example (plain text, static list, single value) -->
+<example
+name="Dropdown"
+:min-height="550"
+file="/_content/examples/autocomplete-pro/autocomplete-base.vue"></example>
+
+<callout type="tip" label="Options">
+The <code>options</code> prop can accept three different formats of values:
+
+- Array of objects with `value` and `label` keys <code>[{ value: 'a', label: 'A' }, { value: 'b', label: 'B' }, { value: 'c', label: 'C' }]</code>
+- Array of strings <code>['A', 'B', 'C']</code>
+- Object literal <code>{ a: 'A', b: 'B', c: 'C' }</code>
+</callout>
 
 ## Selection appearance
 

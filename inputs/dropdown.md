@@ -7,12 +7,20 @@ description: A Pro input that allows users to select from customizable options l
 
 <!-- Installation  -->
 
-The `dropdown` input is used to display a list of options to the end-user.
+The `dropdown` input is used to display a list of options to the end-user. Let's start off by setting the `options` prop to some popular frontend frameworks.
 
 <example
 name="Dropdown"
 :min-height="550"
 file="/_content/examples/dropdown/dropdown-base.vue"></example>
+
+<callout type="tip" label="Options">
+The <code>options</code> prop can accept three different formats of values:
+
+- Array of objects with `value` and `label` keys <code>[{ value: 'a', label: 'A' }, { value: 'b', label: 'B' }, { value: 'c', label: 'C' }]</code>
+- Array of strings <code>['A', 'B', 'C']</code>
+- Object literal <code>{ a: 'A', b: 'B', c: 'C' }</code>
+</callout>
 
 ## Slots
 
