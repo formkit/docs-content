@@ -1,48 +1,34 @@
 <script setup>
 import { ref } from 'vue'
-const value = ref(429)
+const value = ref(null)
 
-async function loadMovies() {
-  const res = await fetch(`https://api.themoviedb.org/4/list/8218730?page=1&api_key=f48bcc9ed9cbce41f6c28ea181b67e14`)
+async function loadHorrorMovies() {
+  const res = await fetch(`https://api.themoviedb.org/4/list/8219282?page=1&api_key=f48bcc9ed9cbce41f6c28ea181b67e14`)
   if (res.ok) {
     const data = await res.json()
+    // Iterating over results to set the required
+    // `label` and `value` keys.
     return data.results.map((result) => {
       return {
         label: result.title,
-        value: result.id,
-        poster: result.poster_path,
-        overview: result.overview,
+        value: result.id
       }
     })
   }
+  // If the request fails, we return an empty array.
   return []
 }
 </script>
 
 <template>
+  <!--Setting the `options` prop to async function `loadMovies`-->
   <FormKit
     v-model="value"
     type="dropdown"
-    label="Select a movie"
-    :options="loadMovies"
-  >
-    <template #option="{ option }">
-      <div class="formkit-option">
-        <img
-          :src="`https://image.tmdb.org/t/p/w500${option.poster}`"
-          alt="optionAvatar"
-        />
-        <div class="text-container">
-          <div>
-            {{ option.label }}
-          </div>
-          <p class="option-overview">
-            {{ option.overview }}
-          </p>
-        </div>
-      </div>
-    </template>
-  </FormKit>
+    label="Select a horror movie"
+    placeholder="Example placeholder"
+    :options="loadHorrorMovies"
+  />
   <pre wrap>
     Value {{ value }}
   </pre>
@@ -53,6 +39,7 @@ async function loadMovies() {
   display: flex;
   align-items: center;
 }
+
 .formkit-option img {
   width: 20%;
   margin-right: 20px;

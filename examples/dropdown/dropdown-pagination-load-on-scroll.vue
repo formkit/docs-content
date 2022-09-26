@@ -13,13 +13,17 @@ async function loadCurrentlyPopularMovies({ page, hasNextPage }) {
 </script>
 
 <template>
+  <!-- %partial% -->
+  <!--Setting 'load-on-scroll' prop to true-->
   <FormKit
     v-model="value"
     type="dropdown"
     label="Choose a currently popular movie"
     :options="loadCurrentlyPopularMovies"
+    :load-on-scroll="true"
   />
   <pre wrap>
     Value {{ value }}
   </pre>
+  <!-- %partial% -->
 </template>
