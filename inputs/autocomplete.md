@@ -22,13 +22,38 @@ The <code>options</code> prop can accept three different formats of values:
 - Object literal <code>{ a: 'A', b: 'B', c: 'C' }</code>
 </callout>
 
+### Filtering
+
+By default, the `autocomplete` input will filter with its own internal search function. You can replace this search function by assigning the `filter` prop to a function of your own. Your `filter` function will receive two arguments, the `option` being iterated over and the current `search` value.
+
+<example
+name="Dropdown"
+:min-height="550"
+file="/_content/examples/autocomplete-pro/autocomplete-filter.vue"></example>
+
 ## Selection appearance
 
-The `autocomplete` has a `selectionAppearance` prop that renders a selected option based on its value. By default, the appearance of the `selectionAppearance` is set to `text-input`, which simply sets the input text to the label of the selected option. This selection appearance can be seen in the example above.
+The `autocomplete` has a `selectionAppearance` prop that determines the way a selected option is displayed. By default, the appearance of the `selection-appearance` is set to `text-input`, which sets the input text to the label of the selected option. This selection appearance can be seen in the example above.
 
-The `selectionAppearance` can also be set to `option`, which wraps the selected option label in a div. This is useful when you want to implement custom styling, or say, show a selected option's image as part of the selected option.
+The `selectionAppearance` can also be set to `option`, which wraps the selected option in a div. This is useful when you want to implement custom styling.
 
-<!-- Base Example (using option appearance to show selected option avatar or something.) -->
+<example
+name="Dropdown"
+:min-height="550"
+file="/_content/examples/autocomplete-pro/autocomplete-selection-appearance-option.vue"></example>
+
+## Slots
+
+Just like the [Dropdown input](/inputs/dropdown), the `autocomplete` input allows you to use slots to customize the look and feel of the options list. In this example, we are going to override the option slot to display a flag next to each option.
+
+<example
+name="Dropdown"
+:min-height="550"
+file="/_content/examples/autocomplete-pro/autocomplete-option-slot.vue"></example>
+
+<callout type="warning" label="Text input selection appearance">
+  If you are using the <code>text-input</code> selection appearance, you cannot update the markup of the <code>
+</callout>
 
 ## Multi-select
 
