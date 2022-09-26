@@ -12,10 +12,10 @@
 <FormKit
   type="rating"
   off-color="black"
-  on-color="#A3C439"
-  rating-icon="dollar"
-  label="How expensive was the meal?"
-  name="priceCategory"
+  on-color="#DA012D"
+  rating-icon="heart"
+  label="How much love do you have for FormKit?"
+  name="love"
 />
 <!-- %partial%::html:: -->
   <pre wrap>{{ value }}</pre>

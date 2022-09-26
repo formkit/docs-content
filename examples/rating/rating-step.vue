@@ -10,7 +10,6 @@
 >
 <!-- %partial%::html:: -->
 <FormKit
-  v-model="value"
   type="rating"
   step="0.5"
   name="ratingLaCasa"
