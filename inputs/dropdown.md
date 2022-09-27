@@ -1,26 +1,25 @@
 ---
 title: Dropdown Input
-description: A Pro input that allows users to select from customizable options list.
+description: A Pro input that allows users to select from a customizable options list.
 ---
 
 <InputPageHero title="Dropdown"></InputPageHero>
 
 <!-- Installation  -->
 
-The `dropdown` input is used to display a list of options to the end-user. Let's start off by setting the `options` prop to some popular frontend frameworks.
+The `dropdown` input allows users to select a value from a customizable list of options.
 
 <example
 name="Dropdown"
 :min-height="550"
 file="/_content/examples/dropdown/dropdown-base.vue"></example>
 
-<callout type="tip" label="Options">
-The <code>options</code> prop can accept three different formats of values:
+## Defining options
+The `options` prop can accept three different formats of values:
 
 - Array of objects with `value` and `label` keys <code>[{ value: 'a', label: 'A' }, { value: 'b', label: 'B' }, { value: 'c', label: 'C' }]</code>
 - Array of strings <code>['A', 'B', 'C']</code>
 - Object literal <code>{ a: 'A', b: 'B', c: 'C' }</code>
-</callout>
 
 ## Slots
 
@@ -28,7 +27,7 @@ Unlike native select elements, the `dropdown` input allows you to customize the 
 
 ### Option slot
 
-The `dropdown` input allows you to customize the look and feel of each option by using the `option` slot. In the example below, we are using the `option` slot to display each option's asset (the logo) and name.
+The `dropdown` input allows you to customize the look and feel of each option by using the `option` slot. In the example below, we are using the `option` slot to display each option's asset (the logo) and name:
 
 <example
 name="Dropdown"
@@ -37,7 +36,7 @@ file="/_content/examples/dropdown/dropdown-option-slot.vue"></example>
 
 ### Selection slot
 
-If you only want to customize the display of the selected option, use the `selection` slot.
+If you only want to customize the display of the selected option, use the `selection` slot:
 
 <example
 name="Dropdown"
@@ -52,38 +51,38 @@ Instead of passing a static list of options to the `options` prop, you can assig
 
 ### Single request
 
-Let's say we had an API endpoint that returned all the options we needed for a given `dropdown` input. Below is an example of how we could write the `dropdown` input to load options from a single request.
+Let's say we had an API endpoint that returned all the options we needed for a given `dropdown` input. Below is an example of how we could write the `dropdown` input to load options from a single request:
 
 <example
 name="Dropdown"
 :min-height="550"
 file="/_content/examples/dropdown/dropdown-single-request.vue"></example>
 
-You can see that we assigning the `loadHorrorMovies` function to the `options` prop. After the request is made, we are iterating over the results and making sure to return array of objects with explicit `value` and `label` properties.
+You can see that we are assigning the `options` prop to the `loadHorrorMovies` function. After the request is made, we are iterating over the results and making sure to return array of objects with explicit `value` and `label` properties.
 ### Loading an option
 
-Continuing off the previous example, let's say we wanted to load additional information about an option when the user selects it (such as its release date). We can do this by setting the `option-loader` prop to a function that will make a request based on the given movie's ID.
+Continuing off the previous example, let's say we wanted to load additional information about an option when the user selects it (such as its release date). We can do this by setting the `option-loader` prop to a function that will make a request to load more information about the given movie:
 
 <example
 name="Dropdown"
 :min-height="550"
 file="/_content/examples/dropdown/dropdown-option-loader.vue"></example>
 
-In our `loadMovie` function that is assigned to the `options-loader` prop, we are making a request to load the movie by its ID. The `loadMovie` function is passed two arguments, the `value` of the selected option (in this case its ID) and the `cachedOption` (FormKit keeps a track of previously loaded options). If the `cachedOption` exists, we can return it immediately without having to make another request.
+Our function, `loadMovie`, is called by the option loader when an option is selected and will be passed the selected option's value as its first argument (in this case, the movie's ID). Our `loadMovie` function is also passed a second argument `cachedOption` which we will discuss in a later section.
 ### Multiple pages
 
-What if you need to load options from an API, but need to be able to make multiple requests to perform pagination? Whenever a function is set to the `options` prop it is passed FormKit node's `config` object as an argument. We can use the `hasNextStep` and `page` properties to continue loading more options.
+What if you need to load options from an API, but need to be able to make multiple requests to perform pagination? When a function is set to the `options` prop it is passed FormKit node's `config` object as an argument. In this `config` object is a `page` property which we can use to make our request, as well as a `hasNextPage` function which we can use to tell the `dropdown` input that there are more requests to be made:
 
 <example
 name="Dropdown"
 :min-height="550"
 file="/_content/examples/dropdown/dropdown-pagination.vue"></example>
 
-In the above example, we are calling `hasNextPage` when we determine there are more pages to load. When this is done, FormKit appends a `Load more` option at the end of the rendered options list, and automatically increments its `page` property. When the user selects the `Load more` option, the `options` function is called again, and the process repeats.
+In the above example, we are calling `hasNextPage` when we determine there are more pages to load. When this is done, FormKit appends a `Load more` option at the end of the rendered options list and automatically increments its `page` property. When the user selects the `Load more` option, the function assigned to the `options` prop (`loadCurrentlyPopularMovies`) is called again, and the process repeats.
 
 ### Load on scroll
 
-If you would rather allow the user to load more options without having to click the `Load more` option at the bottom of the options list, you can set the `load-on-scroll` prop to true, and our function, `loadCurrentlyPopularMovies` will be called again.
+If you would rather allow the user to load more options without having to click the `Load more` option at the bottom of the options list, you can set the `load-on-scroll` prop to true, and our function, `loadCurrentlyPopularMovies` will be called again:
 
 <example
 name="Dropdown"
@@ -92,7 +91,7 @@ file="/_content/examples/dropdown/dropdown-pagination-load-on-scroll.vue"></exam
 
 ## Slots and loading options
 
-Now let's combine what we've learned so far by leveraging the `option` slot for custom markup, and setting the `options` prop to a function that will return pages of movies from an API.
+Now let's combine what we've learned so far by leveraging the `option` slot for custom markup, and setting the `options` prop to a function that will return pages of movies from an API:
 
 <example
 name="Dropdown"

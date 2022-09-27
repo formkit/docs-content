@@ -1,6 +1,4 @@
 <script setup>
-import { ref } from 'vue'
-const value = ref(19995)
 async function loadCurrentlyPopularMovies({ page, hasNextPage }) {
   const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=f48bcc9ed9cbce41f6c28ea181b67e14&language=en-US&page=${page}`)
   if (res.ok) {
@@ -19,34 +17,39 @@ async function loadCurrentlyPopularMovies({ page, hasNextPage }) {
 
 <template>
   <FormKit
-    v-model="value"
-    type="dropdown"
-    label="Choose a currently popular movie"
-    :options="loadCurrentlyPopularMovies"
-    :load-on-scroll="true"
+    type="form"
+    #default="{ value }"
+    :actions="false"
   >
-    <!--HERE WE ARE DEFINING OUR OPTION SLOT-->
-    <template #option="{ option }">
-      <div class="formkit-option">
-        <img
-          :src="`https://image.tmdb.org/t/p/w500${option.poster_path}`"
-          alt="optionAvatar"
-        />
-        <div class="text-container">
-          <div>
-            {{ option.label }}
+    <FormKit
+      name="currentlyPopularMovie"
+      type="dropdown"
+      label="Choose a currently popular movie"
+      :options="loadCurrentlyPopularMovies"
+      :load-on-scroll="true"
+      :value="19995"
+    >
+      <!--HERE WE ARE DEFINING OUR OPTION SLOT-->
+      <template #option="{ option }">
+        <div class="formkit-option">
+          <img
+            :src="`https://image.tmdb.org/t/p/w500${option.poster_path}`"
+            alt="optionAvatar"
+          />
+          <div class="text-container">
+            <div>
+              {{ option.label }}
+            </div>
+            <p class="option-overview">
+              {{ option.overview }}
+            </p>
           </div>
-          <p class="option-overview">
-            {{ option.overview }}
-          </p>
         </div>
-      </div>
-    </template>
-    <!---->
+      </template>
+      <!---->
+    </FormKit>
+    <pre wrap>{{ value }}</pre>
   </FormKit>
-  <pre wrap>
-    Value {{ value }}
-  </pre>
 </template>
 
 <style>

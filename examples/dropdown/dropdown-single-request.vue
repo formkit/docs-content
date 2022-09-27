@@ -1,7 +1,4 @@
 <script setup>
-import { ref } from 'vue'
-const value = ref(null)
-
 async function loadHorrorMovies() {
   const res = await fetch(`https://api.themoviedb.org/4/list/8219282?page=1&api_key=f48bcc9ed9cbce41f6c28ea181b67e14`)
   if (res.ok) {
@@ -21,17 +18,21 @@ async function loadHorrorMovies() {
 </script>
 
 <template>
-  <!--Setting the `options` prop to async function `loadMovies`-->
   <FormKit
-    v-model="value"
-    type="dropdown"
-    label="Select a horror movie"
-    placeholder="Example placeholder"
-    :options="loadHorrorMovies"
-  />
-  <pre wrap>
-    Value {{ value }}
-  </pre>
+    type="form"
+    #default="{ value }"
+    :actions="false"
+  >
+    <!--Setting the `options` prop to async function `loadHorrorMovies`-->
+    <FormKit
+      name="horrorMovie"
+      type="dropdown"
+      label="Select a horror movie"
+      placeholder="Example placeholder"
+      :options="loadHorrorMovies"
+    />
+    <pre wrap>{{ value }}</pre>
+  </FormKit>
 </template>
 
 <style>

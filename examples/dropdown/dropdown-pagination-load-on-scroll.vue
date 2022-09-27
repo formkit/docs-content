@@ -1,6 +1,4 @@
 <script setup>
-import { ref } from 'vue'
-const value = ref(null)
 async function loadCurrentlyPopularMovies({ page, hasNextPage }) {
   const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=f48bcc9ed9cbce41f6c28ea181b67e14&language=en-US&page=${page}`)
   if (res.ok) {
@@ -13,17 +11,18 @@ async function loadCurrentlyPopularMovies({ page, hasNextPage }) {
 </script>
 
 <template>
-  <!-- %partial% -->
-  <!--Setting 'load-on-scroll' prop to true-->
   <FormKit
-    v-model="value"
-    type="dropdown"
-    label="Choose a currently popular movie"
-    :options="loadCurrentlyPopularMovies"
-    :load-on-scroll="true"
-  />
-  <pre wrap>
-    Value {{ value }}
-  </pre>
-  <!-- %partial% -->
+    type="form"
+    #default="{ value }"
+    :actions="false"
+  >
+    <!--Setting load-on-scroll prop-->
+    <FormKit
+      type="dropdown"
+      label="Choose a currently popular movie"
+      :options="loadCurrentlyPopularMovies"
+      load-on-scroll
+    />
+    <pre wrap>{{ value }}</pre>
+  </FormKit>
 </template>

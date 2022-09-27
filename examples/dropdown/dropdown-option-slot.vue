@@ -1,35 +1,34 @@
 <script setup>
-  import { ref } from 'vue'
-  const value = ref(null)
-  const frameworks = [{ label: 'React', value: 'react', asset: 'https://reactjs.org/logo-og.png' }, { label: 'Vue', value: 'vue', asset: 'https://brandlogos.net/wp-content/uploads/2022/01/vue.js-logo-brandlogo.net_.png' }, { label: 'Angular', value: 'angular', asset: 'https://angular.io/assets/images/logos/angular/angular.png' }, { label: 'Svelte', value: 'svelte', asset: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/1200px-Svelte_Logo.svg.png' }]
+const frameworks = [{ label: 'React', value: 'react', asset: 'https://s3.amazonaws.com/cdn.formk.it/example-assets/frontend-framework-logos/react-logo.png' }, { label: 'Vue', value: 'vue', asset: 'https://s3.amazonaws.com/cdn.formk.it/example-assets/frontend-framework-logos/vue-logo.png' }, { label: 'Angular', value: 'angular', asset: 'https://s3.amazonaws.com/cdn.formk.it/example-assets/frontend-framework-logos/angular-logo.png' }, { label: 'Svelte', value: 'svelte', asset: 'https://s3.amazonaws.com/cdn.formk.it/example-assets/frontend-framework-logos/svelte-logo.png' }]
 </script>
 
 <template>
   <FormKit
-    v-model="value"
-    type="dropdown"
-    label="Choose a front end framework"
-    placeholder="Example placeholder"
-    :options="frameworks"
+    type="form"
+    #default="{ value }"
+    :actions="false"
   >
-    <!--HERE WE ARE DEFINING OUR OPTION SLOT-->
-    <template #option="{ option }">
-      <div class="formkit-option">
-        <img
-          v-if="option.asset"
-          :src="option.asset"
-          alt="optionAvatar"
-        />
-        <span>
-          {{ option.label }}
-        </span>
-      </div>
-    </template>
-    <!---->
+    <FormKit
+      type="dropdown"
+      name="framework"
+      label="Choose a frontend framework"
+      placeholder="Example placeholder"
+      :options="frameworks"
+    >
+      <template #option="{ option }">
+        <div class="formkit-option">
+          <img
+            :src="option.asset"
+            alt="optionAvatar"
+          />
+          <span>
+            {{ option.label }}
+          </span>
+        </div>
+      </template>
+    </FormKit>
+    <pre wrap>{{ value }}</pre>
   </FormKit>
-  <pre wrap>
-    {{ value }}
-  </pre>
 </template>
 
 <style>
