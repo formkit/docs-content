@@ -15,7 +15,7 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://reactjs.or
       placeholder="Example placeholder"
       :options="frameworks"
     >
-      <!--HERE WE ARE DEFINING OUR SELECTION SLOT-->
+      <!--SELECTION SLOT-->
       <template #selection="{ option }">
         <div class="formkit-option">
           <img

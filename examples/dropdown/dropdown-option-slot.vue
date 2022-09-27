@@ -15,6 +15,7 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://s3.amazona
       placeholder="Example placeholder"
       :options="frameworks"
     >
+      <!--OPTION SLOT-->
       <template #option="{ option }">
         <div class="formkit-option">
           <img
@@ -26,6 +27,7 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://s3.amazona
           </span>
         </div>
       </template>
+      <!---->
     </FormKit>
     <pre wrap>{{ value }}</pre>
   </FormKit>
