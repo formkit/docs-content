@@ -21,9 +21,7 @@ function formatDate(string) {
   return new Date(string).toLocaleDateString(undefined, localeOptions)
 }
 
-async function loadMovie(id, cachedOption) {
-  // If we have already loaded this options, we can return it immediately without making another request.
-  if (cachedOption) return cachedOption
+async function loadMovie(id) {
   const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=f48bcc9ed9cbce41f6c28ea181b67e14&language=en-US`)
   if (res.ok) {
     const data = await res.json()
