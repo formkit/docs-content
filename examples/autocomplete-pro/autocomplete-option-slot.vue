@@ -23,8 +23,9 @@ function getFlagEmoji(countryCode) {
     value="US"
     selection-appearance="option"
   >
+    <!--OPTION SLOT-->
     <template #option="{ option }">
-      <div class="option-container">
+      <div class="formkit-option">
         <span class="decorator">
           {{ getFlagEmoji(option.value) }}
         </span>
@@ -33,20 +34,15 @@ function getFlagEmoji(countryCode) {
         </span>
       </div>
     </template>
+    <!--/OPTION SLOT-->
   </FormKit>
   <pre wrap>{{ value }}</pre>
 </FormKit>
 </template>
 
 <style>
-.formkit-selection {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .decorator {
-  margin: 0 10px;
+  margin-right: 10px;
 }
 </style>
 

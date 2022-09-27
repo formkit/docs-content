@@ -27,7 +27,7 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://reactjs.or
           </span>
         </div>
       </template>
-    <!---->
+      <!---->
     </FormKit>
     <pre wrap>{{ value }}</pre>
   </FormKit>

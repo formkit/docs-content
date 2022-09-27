@@ -1,5 +1,10 @@
 <script setup>
-const frameworks = [{ label: 'React', value: 'react' }, { label: 'Vue', value: 'vue' }, { label: 'Angular', value: 'angular' }, { label: 'Svelte', value: 'svelte' }]
+const frameworks = [
+  { label: 'React', value: 'react' },
+  { label: 'Vue', value: 'vue' },
+  { label: 'Angular', value: 'angular' },
+  { label: 'Svelte', value: 'svelte' }
+]
 </script>
 
 <template>

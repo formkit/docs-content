@@ -9,6 +9,8 @@ description: A Pro input that allows users to select from a customizable options
 
 The `dropdown` input allows users to select a value from a customizable list of options.
 
+## Basic example
+
 <example
 name="Dropdown"
 :min-height="550"
@@ -17,7 +19,7 @@ file="/_content/examples/dropdown/dropdown-base.vue"></example>
 ## Defining options
 The `options` prop can accept three different formats of values:
 
-- Array of objects with `value` and `label` keys <code>[{ value: 'a', label: 'A' }, { value: 'b', label: 'B' }, { value: 'c', label: 'C' }]</code>
+- Array of objects with `value` and `label` keys (see example above)
 - Array of strings <code>['A', 'B', 'C']</code>
 - Object literal <code>{ a: 'A', b: 'B', c: 'C' }</code>
 
