@@ -68,9 +68,9 @@ file="/_content/examples/autocomplete-pro/autocomplete-selection-slot.vue"></exa
 
 ## Multi-select
 
-The `autocomplete` supports multi-select and is available for either the `text-input` or `option` selection appearance. To enable multi-select, simply set the `multiple` prop on the `Autocomplete` input.
+The `autocomplete` supports multi-select and is available for either the `text-input` or `option` selection appearance. To enable multi-select, simply set the `multiple` prop on the `Autocomplete` input. Please note: when setting the `multiple` prop, the autocomplete's value must always be an array.
 
-## Text input selection appearance
+### Text-input multi-select
 
 For the `text-input` selection appearance, the selected options are displayed as a comma-separated list:
 
@@ -79,13 +79,26 @@ name="Autocomplete"
 :min-height="550"
 file="/_content/examples/autocomplete-pro/autocomplete-selection-appearance-text-multiple.vue"></example>
 
-## Option selection appearance
+### Option multi-select
 
 For the `option` selection appearance, the selected options are displayed as a list of divs that render underneath the text input.
 
-### Single page
+<example
+name="Autocomplete"
+:min-height="550"
+file="/_content/examples/autocomplete-pro/autocomplete-selection-appearance-option-multiple.vue"></example>
 
-Here we can see we are loading options using the search term.
+## Loading options
+
+Instead of passing a static list of options to the `options` prop, you can assign it to a function that returns a promise. This is useful when you need to load options from an API or another source.
+### Single request
+
+Let's say we had an API endpoint that returned all the options we needed for a given `autocomplete` input. Below is an example of how we could write the `autocomplete` input to load options from a single request:
+
+<example
+name="Autocomplete"
+:min-height="550"
+file="/_content/examples/dropdown/autocomplete-single-request.vue"></example>
 
 ### Multiple pages
 
