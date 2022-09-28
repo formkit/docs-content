@@ -5,6 +5,8 @@ description: A Pro input that allows users to add, remove, and re-arrange repeat
 
 <InputPageHero title="Repeater"></InputPageHero>
 
+<ProInstallSnippet></ProInstallSnippet>
+
 The `repeater` input...
 
 <!-- example -->

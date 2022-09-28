@@ -5,7 +5,7 @@ description: A Pro input that allows users to select from a customizable options
 
 <InputPageHero title="Dropdown"></InputPageHero>
 
-<!-- Installation  -->
+<ProInstallSnippet></ProInstallSnippet>
 
 The `dropdown` input allows users to select a value from a customizable list of options.
 
