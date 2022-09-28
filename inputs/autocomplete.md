@@ -91,18 +91,23 @@ file="/_content/examples/autocomplete-pro/autocomplete-selection-appearance-opti
 ## Loading options
 
 Instead of passing a static list of options to the `options` prop, you can assign it to a function that returns a promise. This is useful when you need to load options from an API or another source.
-### Single request
 
-Let's say we had an API endpoint that returned all the options we needed for a given `autocomplete` input. Below is an example of how we could write the `autocomplete` input to load options from a single request:
+### Search parameter
+
+In the example below, we are going to assign the `options` prop our `searchMovies` function. By doing so, `searchMovies` will the `context` object as an argument. Within this context object is the `search` property, which is the current search value. To perform our search, let's use the `search` value as the query parameter for our API request:
 
 <example
 name="Autocomplete"
 :min-height="550"
-file="/_content/examples/dropdown/autocomplete-single-request.vue"></example>
+file="/_content/examples/autocomplete-pro/autocomplete-single-request.vue"></example>
 
-### Multiple pages
+### Page and hasNextPage parameters
+What if you need to search through a paginated API? By referencing the same `context` object as before, we can utilize the `page` and `hasNextPage` properties. The `page` property is the current page number, and the `hasNextPage` property is a function to be called when there are more pages to load:
 
-What if you need to load options from an API, but need to be able to not only search, but also paginate the list of options? Here is an example of how to do that..
+<example
+name="Autocomplete"
+:min-height="550"
+file="/_content/examples/autocomplete-pro/autocomplete-pagination.vue"></example>
 
 ### Loading Style
 

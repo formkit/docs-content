@@ -1,14 +1,13 @@
 <script setup>
 // Search movie receives FormKit's context object
-// which we are destructuring to get the search value.
-async function searchMovies({ search }) {
+// which we are destructuring to get the search value,
+// the page, and the hasNextPage parameters.
+async function searchMovies({ search, page, hasNextPage }) {
   if (!search) return [];
-  const res = await fetch(`https://api.themoviedb.org/3/search/movie?query=${search || ''}&api_key=f48bcc9ed9cbce41f6c28ea181b67e14&language=en-US&page=1&include_adult=false`)
+  const res = await fetch(`https://api.themoviedb.org/3/search/movie?query=${search || ''}&api_key=f48bcc9ed9cbce41f6c28ea181b67e14&language=en-US&page=${page}&include_adult=false`)
   if (res.ok) {
     const data = await res.json()
-    console.log('data', data)
-    // Iterating over results to set the required
-    // `label` and `value` keys.
+		if (page !== data.total_pages) hasNextPage()
     return data.results.map((result) => {
       return {
         label: result.title,
@@ -16,7 +15,6 @@ async function searchMovies({ search }) {
       }
     })
   }
-  // If the request fails, we return an empty array.
   return []
 }
 </script>
@@ -27,7 +25,6 @@ async function searchMovies({ search }) {
     #default="{ value }"
     :actions="false"
   >
-    <!--Setting the `options` prop to async function `loadHorrorMovies`-->
     <FormKit
       name="movie"
       type="autocomplete"
