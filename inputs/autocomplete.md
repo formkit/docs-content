@@ -113,9 +113,14 @@ file="/_content/examples/autocomplete-pro/autocomplete-pagination.vue"></example
 
 If you would rather allow the user to load more options without having to click the `Load more` button, you can set the `loadOnScroll` prop to true, and the options will paginate as the end-user scrolls to the bottom of the list.
 
-### Loading a selected option
+### Loading selected option
 
-In addition to loading options from a remote source, you can also load a selected option. This is useful when the option values are that of IDs, and you would like to fetch more information about the given option on selection.
+In addition to loading options from a remote source, you can also load a selected option. This is useful when the option values are that of IDs, and you would like to fetch more information about the given option on selection. In this example, after selecting an option, we are going to load the movie's genres and concatenate them with the movie's title:
+
+<example
+name="Autocomplete"
+:min-height="550"
+file="/_content/examples/autocomplete-pro/autocomplete-pagination-option-loader.vue"></example>
 
 <!-- Example of loading option via API. -->
 
