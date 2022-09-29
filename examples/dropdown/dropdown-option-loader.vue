@@ -21,7 +21,9 @@ async function loadMovie(id, option) {
     const data = await res.json()
     // Here we are setting the value of our
     // `movieReview` ref to the first review
-    movieReview.value = data.results[0].content + ' ' + data.results[0].author
+    if (data.results && data.results.length) {
+      movieReview.value = data.results[0].content + ' ' + data.results[0].author
+    }
     return { label: option.label, value: id }
   }
   return { label: 'Error loading' }
