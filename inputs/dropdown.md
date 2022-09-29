@@ -7,7 +7,7 @@ description: A Pro input that allows users to select from a customizable options
 
 <ProInstallSnippet></ProInstallSnippet>
 
-The `dropdown` input allows users to select a value from a customizable list of options.
+The `dropdown` input allows users to select a value from a customizable list of options:
 
 ## Basic example
 
@@ -21,7 +21,7 @@ The `options` prop can accept three different formats of values:
 
 - Array of objects with `value` and `label` keys (see example above)
 - Array of strings <code>['A', 'B', 'C']</code>
-- Object literal <code>{ a: 'A', b: 'B', c: 'C' }</code>
+- Object literal with key-value pairs <code>{ a: 'A', b: 'B', c: 'C' }</code>
 
 ## Slots
 
@@ -61,19 +61,9 @@ name="Dropdown"
 file="/_content/examples/dropdown/dropdown-single-request.vue"></example>
 
 You can see that we are assigning the `options` prop to the `loadHorrorMovies` function. After the request is made, we are iterating over the results and making sure to return array of objects with explicit `value` and `label` properties.
-### Loading an option
-
-Continuing off the previous example, let's say we wanted to load additional information about an option when the user selects it (such as its release date). We can do this by setting the `option-loader` prop to a function that will make a request to load more information about the given movie:
-
-<example
-name="Dropdown"
-:min-height="550"
-file="/_content/examples/dropdown/dropdown-option-loader.vue"></example>
-
-Our function, `loadMovie`, is called by the option loader when an option is selected and will be passed the selected option's value as its first argument (in this case, the movie's ID). Our `loadMovie` function is also passed a second argument `cachedOption` which we will discuss in a later section.
 ### Multiple pages
 
-What if you need to load options from an API, but need to be able to make multiple requests to perform pagination? When a function is set to the `options` prop it is passed FormKit node's `config` object as an argument. In this `config` object is a `page` property which we can use to make our request, as well as a `hasNextPage` function which we can use to tell the `dropdown` input that there are more requests to be made:
+What if you need to load options from an API, but need to be able to make multiple requests to perform pagination? When a function is set to the `options` prop it is passed FormKit node's `config` object as an argument. Within this `config` object are `page` and `hasNextPage` properties. The `page` property is the current page number, and the `hasNextPage` property is a function to be called when there are more pages to load:
 
 <example
 name="Dropdown"
