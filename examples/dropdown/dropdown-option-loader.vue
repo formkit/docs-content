@@ -22,7 +22,7 @@ async function loadMovie(id, option) {
     // Here we are setting the value of our
     // `movieReview` ref to the first review
     if (data.results && data.results.length) {
-      movieReview.value = data.results[0].content + ' ' + data.results[0].author
+      movieReview.value = data.results[0].content + ' - ' + data.results[0].author
     }
     return { label: option.label, value: id }
   }
