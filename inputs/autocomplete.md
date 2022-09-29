@@ -57,11 +57,11 @@ file="/_content/examples/autocomplete-pro/autocomplete-option.vue"></example>
 
 ## Slots
 
-Just like the [Dropdown input](/inputs/dropdown), the `autocomplete` input allows you to use slots to customize the look and feel of the options list.
+Just like the [Dropdown input](/inputs/dropdown), the autocomplete input allows you to use slots to customize the look and feel of the options list and the selected option by leveraging the [renderless component pattern](https://adamwathan.me/renderless-components-in-vuejs/).
 
 ### Option slot
 
-In this example, we are going to override the option slot to include a span with the country's flag alongside the original option label:
+In this example, we are going to use the options slot to display car brands and their logos:
 
 <example
 name="Autocomplete"
@@ -70,12 +70,13 @@ file="/_content/examples/autocomplete-pro/autocomplete-option-slot.vue"></exampl
 
 ### Selection slot
 
-In this example, we are going to override the selection slot to include a span with the country's flag alongside the original option label:
+If you only want to customize the display of the selected option, use the `selection` slot:
 
 <example
 name="Autocomplete"
 :min-height="550"
 file="/_content/examples/autocomplete-pro/autocomplete-selection-slot.vue"></example>
+
 
 ## Multi-select
 
