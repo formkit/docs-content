@@ -12,8 +12,8 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
       type="autocomplete"
       name="country"
       label="Select a country"
+      placeholder="Example: United States"
       :options="countries"
-      value="US"
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

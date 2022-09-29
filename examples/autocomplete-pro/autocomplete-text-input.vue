@@ -5,18 +5,18 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
 <template>
   <FormKit
     type="form"
-    #default="{ value }"
     :actions="false"
   >
+  <!-- %partial%::html:: -->
     <FormKit
-      type="autocomplete"
-      name="autocomplete"
-      label="Select a country"
-      :options="countries"
       value="US"
-      selection-appearance="option"
+      type="autocomplete"
+      :options="countries"
+      label="Select a country"
+      placeholder="Example: United States"
+      selection-appearance="text-input"
     />
-    <pre wrap>{{ value }}</pre>
+    <!-- %partial%::html:: -->
   </FormKit>
 </template>
 

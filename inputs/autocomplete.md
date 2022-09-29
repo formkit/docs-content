@@ -7,7 +7,7 @@ description: A Pro input that allows users to search and select from a customiza
 
 <ProInstallSnippet></ProInstallSnippet>
 
-The `autocomplete` input is used to search through a list of potential options. In this first example, let's set the `options` prop to a list of countries.
+The autocomplete input is used to search through a list of options. In this first example, let's set the `options` prop to a list of countries.
 
 
 ## Basic example
@@ -22,11 +22,11 @@ The `options` prop can accept three different formats of values:
 
 - Array of objects with `value` and `label` keys (see example above)
 - Array of strings <code>['A', 'B', 'C']</code>
-- Object literal <code>{ a: 'A', b: 'B', c: 'C' }</code>
+- Object literal with key-value pairs <code>{ a: 'A', b: 'B', c: 'C' }</code>
 
 ## Filtering
 
-By default, the `autocomplete` input will filter with its own internal search function. You can replace this search function by assigning the `filter` prop to a function of your own. Your `filter` function will receive two arguments, the `option` being iterated over and the current `search` value:
+By default, the autocomplete input will filter options with its own internal search function. You can replace this search function by assigning the `filter` prop to a function of your own. Your `filter` function will receive two arguments, the `option` being iterated over and the current `search` value:
 
 <example
 name="Autocomplete"
@@ -35,14 +35,25 @@ file="/_content/examples/autocomplete-pro/autocomplete-filter.vue"></example>
 
 ## Selection appearance
 
-The `autocomplete` has a `selectionAppearance` prop that determines the way a selected option is displayed. By default, the appearance of the `selection-appearance` is set to `text-input`, which sets value of the text input to the label of the selected option. This selection appearance can be seen in the previous examples.
+The autocomplete input has a `selectionAppearance` prop that determines the way a selected option is displayed.
 
-The `selectionAppearance` can alternatively be set to `option`, which wraps the selected option in a div. This is useful when you want to implement custom styling. Below is a basic example:
+### Text input
+
+As previously seen above, the autocomplete input will default to the `text-input` selection appearance. When an option is selected, the text input will display the selected option's label.
 
 <example
 name="Autocomplete"
-:min-height="550"
-file="/_content/examples/autocomplete-pro/autocomplete-selection-appearance-option.vue"></example>
+:min-height="300"
+file="/_content/examples/autocomplete-pro/autocomplete-text-input.vue"></example>
+
+### Option
+
+Alternatively, you can set the selection appearance of the autocomplete to `option`. When a selection is made in this mode the text input is removed and replaced with a div containing the selected option's label. Additionally, the `option` selection appearance will render a `removeSelection` button that will clear the selection when clicked.
+
+<example
+name="Autocomplete"
+:min-height="300"
+file="/_content/examples/autocomplete-pro/autocomplete-option.vue"></example>
 
 ## Slots
 
