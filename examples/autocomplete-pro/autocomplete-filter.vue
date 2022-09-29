@@ -14,7 +14,8 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
       label="Select a country"
       :options="countries"
       placeholder="Example: United States"
-      :filter="(option, search) => option.label.startsWith(search)"
+      :filter="(option, search) =>
+        option.label.toLowerCase().startsWith(search.toLowerCase())"
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

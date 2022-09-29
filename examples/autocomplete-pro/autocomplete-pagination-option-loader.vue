@@ -7,7 +7,6 @@ async function searchMovies({ search, page, hasNextPage }) {
   const res = await fetch(`https://api.themoviedb.org/3/search/movie?query=${search || ''}&api_key=f48bcc9ed9cbce41f6c28ea181b67e14&language=en-US&page=${page}&include_adult=false`)
   if (res.ok) {
     const data = await res.json()
-    console.log('data', data)
     if (page !== data.total_pages) hasNextPage()
     return data.results.map((result) => {
       return {
