@@ -72,14 +72,21 @@ file="/_content/examples/dropdown/dropdown-pagination.vue"></example>
 
 In the above example, we are calling `hasNextPage` when we determine there are more pages to load. When this is done, FormKit appends a `Load more` option at the end of the rendered options list and automatically increments its `page` property. When the user selects the `Load more` option, the function assigned to the `options` prop (`loadCurrentlyPopularMovies`) is called again, and the process repeats.
 
-### Loading selected option
+### Option loader
 
-In addition to loading options from a remote source, you can also load a selected option. This is useful when the option values are that of IDs and you would like to fetch more information about the given option on selection. In this example, after selecting an option, we are going to perform a look up to load the selected option's reviews:
+FormKit's dropdown input also provides an `optionLoader` prop that allows you to rehydrate values that are not in the options list. In this example, we'll provide the autocomplete an initial value (a movie ID), and assign the `optionLoader` to a function that will make a request to the API to get the movie:
 
 <example
 name="Dropdown"
 :min-height="550"
 file="/_content/examples/dropdown/dropdown-option-loader.vue"></example>
+
+You can also use the `optionLoader` to perform lookups to fetch extra data. In this example, after selecting an option, we are going to perform a look up to load the selected option's movie review:
+
+<example
+name="Dropdown"
+:min-height="550"
+file="/_content/examples/dropdown/dropdown-option-loader-review.vue"></example>
 
 ### Load on scroll
 
