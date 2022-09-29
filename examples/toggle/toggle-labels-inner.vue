@@ -1,7 +1,7 @@
 
 <template>
-  <!-- %partial%::html:: -->
   <br>
+  <!-- %partial%::html:: -->
   <FormKit
     label="Primary Label"
     type="toggle"

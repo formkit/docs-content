@@ -9,7 +9,7 @@ description: The `toggle` input is used to choose one of two values; it is a goo
 
 The `toggle` input is used to choose one of two values; it is a good choice when you want the user to make a binary choice such as turning a feature on or off.
 
-<!-- Base Example -->
+## Basic example
 
 <example
 name="Toggle"
@@ -17,7 +17,7 @@ file="/_content/examples/toggle/toggle-base.vue"></example>
 
 ## Values
 
-The `toggle's` checked and unchecked states will default to `true` and `false` respectively. You can change these values by passing `onValue` and `offValue` props. In this example, we will set the `onValue` to the string `'active'` and the `offValue` to the string `'inactive'`.
+The `toggle's` checked and unchecked states will default to `true` and `false` respectively. You can change these values by passing `onValue` and `offValue` props. In this example, we will set the `onValue` to the string `'active'` and the `offValue` to the string `'inactive'`:
 
 <example
 name="Toggle"

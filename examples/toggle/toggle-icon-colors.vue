@@ -4,6 +4,7 @@ const value = ref(true)
 </script>
 
 <template>
+  <br>
   <!-- %partial%::html:: -->
   <FormKit
     v-model="value"
@@ -13,8 +14,6 @@ const value = ref(true)
     track-color-on="#435A64"
     icon-color-on="white"
   />
-  <pre wrap>
-    {{ value }}
-  </pre>
+
   <!-- %partial%::html:: -->
 </template>
