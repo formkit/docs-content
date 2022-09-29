@@ -5,6 +5,22 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 1.0.0-beta.11
+
+### September 29, 2022
+
+#### 🎉 New features
+- Lays foundation for FormKit Pro Inputs!
+
+#### 🐛 Bug fixes
+- Fixed a bug where the "help" slot appeared twice for checkbox and radio elements [#353](https://github.com/formkit/formkit/issues/353).
+- Fixed a bug that caused the FormKit AutoAnimate plugin to fail with Nuxt [#361](https://github.com/formkit/formkit/issues/361).
+- Fixed a schema bug where a dot-notation reference to a non-existing sub property causes `[Object object]` to output after the reference does exists [#368](https://github.com/formkit/formkit/issues/368).
+- FormKit now works with Nuxt `3.0.0-rc.8` and `3.0.0-rc.9` [#371](https://github.com/formkit/formkit/issues/371) and [#383](https://github.com/formkit/formkit/issues/383).
+- Fixed a bug where users were unable to use hooks via plugin to update v-modeled values [#391](https://github.com/formkit/formkit/issues/391).
+- Fixed a bug where users were unable to import `@formkit/themes/tailwindcss` with TypeScript [#376](https://github.com/formkit/formkit/issues/376).
+- Fixed a bug that caused default icons to never load when included directly in the configuration.
+
 ## 1.0.0-beta.10
 
 ### July 29, 2022
