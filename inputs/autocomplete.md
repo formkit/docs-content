@@ -26,7 +26,7 @@ The `options` prop can accept three different formats of values:
 
 ## Filtering
 
-By default, the autocomplete input will filter options with its own internal search function. You can replace this search function by assigning the `filter` prop to a function of your own. Your `filter` function will receive two arguments, the `option` being iterated over and the current `search` value:
+The autocomplete input will filter options with its own internal search function. You can replace this search function by assigning the `filter` prop to a function of your own. Your function will receive two arguments, the `option` being iterated over and the current `search` value:
 
 <example
 name="Autocomplete"

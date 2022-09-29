@@ -26,7 +26,6 @@ async function loadMovieGenres(id) {
   const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=f48bcc9ed9cbce41f6c28ea181b67e14&language=en-US`)
   if (res.ok) {
     const data = await res.json()
-    console.log('data', data)
     // Setting the option label to the movie's title
     // concatenated with each of its respective genres.
     return { label: data.title + ' (' + data.genres.map((x, index) => index !== data.genres.length - 1  ?  x.name + ', ' : x.name).join('') + ')', value: data.id }
