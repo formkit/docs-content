@@ -106,7 +106,7 @@ file="/_content/examples/autocomplete-pro/autocomplete-selection-appearance-opti
 
 ## Loading options
 
-Instead of passing a static list of options to the `options` prop, you can assign it to a function that returns a promise. Doing so is useful when you need to load options from an API or another source.
+Instead of passing a static list of options to the `options` prop, you can assign it to a function. Doing so is useful when you need to load options from an API or another source.
 
 ### Search parameter
 

@@ -47,7 +47,7 @@ file="/_content/examples/dropdown/dropdown-selection-slot.vue"></example>
 
 ## Loading options
 
-Instead of passing a static list of options to the `options` prop, you can assign it to a function that returns a promise. This is useful when you need to load options from an API or another source.
+Instead of passing a static list of options to the `options` prop, you can assign it to a function. This is useful when you need to load options from an API or another source.
 
 <!-- Example of loading options via API without pagination. -->
 
