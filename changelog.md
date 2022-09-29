@@ -20,6 +20,7 @@ description: What's new in the latest version of FormKit?.
 - Fixed a bug where users were unable to use hooks via plugin to update v-modeled values [#391](https://github.com/formkit/formkit/issues/391).
 - Fixed a bug where users were unable to import `@formkit/themes/tailwindcss` with TypeScript [#376](https://github.com/formkit/formkit/issues/376).
 - Fixed a bug that caused default icons to never load when included directly in the configuration.
+- Fixed a bug where a checkbox validation with "required" worked only the first time [#169](https://github.com/formkit/formkit/issues/169).
 
 ## 1.0.0-beta.10
 
