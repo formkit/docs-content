@@ -1,34 +1,28 @@
 <script setup>
-const localeOptions = { year: 'numeric', month: 'long', day: 'numeric' }
-
-async function loadHorrorMovies() {
-  const res = await fetch(`https://api.themoviedb.org/4/list/8219282?page=1&api_key=f48bcc9ed9cbce41f6c28ea181b67e14`)
+import { ref } from 'vue'
+const movieReview = ref(null)
+async function loadCurrentlyPopularMovies({ page, hasNextPage }) {
+  const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=f48bcc9ed9cbce41f6c28ea181b67e14&language=en-US&page=${page}`)
   if (res.ok) {
     const data = await res.json()
-    return data.results.map((result) => {
-      return {
-        label: result.title,
-        value: result.id
-      }
-    })
+    if (page !== data.total_pages) hasNextPage()
+    return data.results.map((item) => ({ label: item.title, value: item.id }))
   }
   return []
 }
 
-function formatDate(string) {
-  return new Date(string).toLocaleDateString(undefined, localeOptions)
-}
-
 // The function assigned to the `option-loader` prop
 // will be called with the value of the option as
-// an argument. In this case, it is the ID of the movie.
-async function loadMovie(id) {
-  const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=f48bcc9ed9cbce41f6c28ea181b67e14&language=en-US`)
+// its first argument, and the option object as its
+// second.
+async function loadMovie(id, option) {
+  const res = await fetch(`https://api.themoviedb.org/3/movie/${id}/reviews?api_key=f48bcc9ed9cbce41f6c28ea181b67e14&language=en-US`)
   if (res.ok) {
     const data = await res.json()
-    // Setting the option label to the movie's title
-    // concatenated with its release date.
-    return { label: data.title + ' (' + formatDate(data.release_date) + ')', value: data.id }
+    // Here we are setting the value of our
+    // `movieReview` ref to the first review
+    movieReview.value = data.results[0].content + ' ' + data.results[0].author
+    return { label: option.label, value: id }
   }
   return { label: 'Error loading' }
 }
@@ -37,17 +31,24 @@ async function loadMovie(id) {
 <template>
   <FormKit
     type="form"
-    #default="{ value }"
     :actions="false"
   >
     <FormKit
-      name="horrorMovie"
       type="dropdown"
-      label="Choose an iconic horror movie"
+      name="currentlyPopularMovie"
+      label="Choose a currently popular movie"
       placeholder="Example placeholder"
-      :options="loadHorrorMovies"
+      :options="loadCurrentlyPopularMovies"
       :option-loader="loadMovie"
     />
-    <pre wrap>{{ value }}</pre>
+    <pre class="movie-review">{{ movieReview }}</pre>
   </FormKit>
 </template>
+
+<style>
+.movie-review {
+  white-space: pre-wrap;
+}
+</style>
+
+

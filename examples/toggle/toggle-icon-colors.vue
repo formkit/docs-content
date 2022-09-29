@@ -14,6 +14,5 @@ const value = ref(true)
     track-color-on="#435A64"
     icon-color-on="white"
   />
-
   <!-- %partial%::html:: -->
 </template>
