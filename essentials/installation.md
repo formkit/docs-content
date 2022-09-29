@@ -193,6 +193,109 @@ import '@formkit/themes/genesis'
 
 </client-only>
 
+## Pro Inputs
+
+Installing FormKit Pro is easy! Here are the steps:
+#### 1. Get a Project Key
+Login to your FormKit Pro account at [pro.formkit.com](https://pro.formkit.com) and create a project. A `Project Key` will be provided to you.
+
+#### 2. Install the package
+Next, install the `@formkit/pro` package using `npm`, `yarn`, or other package manager:
+
+<client-only>
+
+```bash
+yarn add @formkit/pro
+```
+
 </client-only>
+
+#### 3. Configure your project
+
+Import the `createProPlugin` helper and any desired Pro Inputs from `@formkit/pro`:
+
+<client-only>
+
+```js
+// Import createProPlugin helper and any desired inputs
+import { createProPlugin, rating, toggle } from '@formkit/pro' 
+```
+
+</client-only>
+
+Create the Pro plugin with your `Project Key` and desired Pro Inputs:
+
+<client-only>
+
+```js
+// Create the Pro plugin with your Project Key and desired inputs
+const proPlugin = createProPlugin('fk-00000000000', {
+  rating,
+  toggle,
+  // ... and any other Pro Inputs
+})
+```
+
+</client-only>
+
+Lastly, add the plugin to your FormKit config:
+
+<client-only>
+
+```js
+// You probably already have this as part of initial installation
+import { defaultConfig } from '@formkit/vue'
+
+// Add proPlugin to your config (in this case — the defaultConfig)
+const config = defaultConfig({
+  plugins: [proPlugin],
+})
+```
+
+</client-only>
+
+#### Optional Pro theme
+
+Formkit extends the default Genesis theme for Pro Inputs. You can directly import it:
+
+<client-only>
+
+```js
+import from '@formkit/pro/genesis' 
+```
+
+</client-only>
+
+### Full example with Pro Inputs
+
+Here's a full example of FormKit and FormKit Pro installed:
+
+<client-only>
+
+```js
+import { createApp } from 'vue'
+import App from 'App.vue'
+import { plugin, defaultConfig } from '@formkit/vue'
+import { createProPlugin, rating, toggle } from '@formkit/pro'
+import from '@formkit/pro/genesis' 
+
+// create proPlugin
+const proPlugin = createProPlugin('fk-00000000000', {
+  rating,
+  toggle,
+})
+
+// extend defaultConfig
+const config = defaultConfig({
+  plugins: [proPlugin],
+})
+
+// Register FormKit with the new config
+createApp(App).use(plugin, config).mount('#app')
+```
+
+</client-only>
+
+That's it! You will be able to use any registered Pro Inputs in your project now, like `<FormKit type="rating" />`.
 
 <cta label="Using Tailwind or another utility framework?" href="/essentials/styling" button="Styling docs"></cta>
