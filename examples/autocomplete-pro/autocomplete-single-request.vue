@@ -6,7 +6,6 @@ async function searchMovies({ search }) {
   const res = await fetch(`https://api.themoviedb.org/3/search/movie?query=${search || ''}&api_key=f48bcc9ed9cbce41f6c28ea181b67e14&language=en-US&page=1&include_adult=false`)
   if (res.ok) {
     const data = await res.json()
-    console.log('data', data)
     // Iterating over results to set the required
     // `label` and `value` keys.
     return data.results.map((result) => {

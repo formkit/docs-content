@@ -80,7 +80,7 @@ file="/_content/examples/autocomplete-pro/autocomplete-selection-slot.vue"></exa
 
 ## Multi-select
 
-The `autocomplete` supports multi-select and is available for either the `text-input` or `option` selection appearance. To enable multi-select, simply set the `multiple` prop on the `Autocomplete` input. Please note: when setting the `multiple` prop, the autocomplete's value must always be an array.
+The autocomplete supports multi-select and is available for either the `text-input` or `option` selection appearance. To enable multi-select, simply set the `multiple` prop. Please note: when setting the `multiple` prop, the autocomplete's value must always be an array.
 
 ### Text-input multi-select
 
@@ -93,7 +93,7 @@ file="/_content/examples/autocomplete-pro/autocomplete-selection-appearance-text
 
 ### Option multi-select
 
-For the `option` selection appearance, the selected options are displayed as a list of divs that render underneath the text input.
+For the `option` selection appearance, the selected options are displayed as a list of `divs` that render below the text input.
 
 <example
 name="Autocomplete"
@@ -106,7 +106,7 @@ Instead of passing a static list of options to the `options` prop, you can assig
 
 ### Search parameter
 
-In the example below, we are going to assign the `options` prop our `searchMovies` function. By doing so, `searchMovies` will the `context` object as an argument. Within this context object is the `search` property, which is the current search value. To perform our search, let's use the `search` value as the query parameter for our API request:
+In the example below, we are going to assign the `options` prop our `searchMovies` function. By doing so, `searchMovies` will receive the `context` object as an argument. Within this context object is the `search` property, which is the current search value. To perform our search, let's use the `search` value as the query parameter for our API request:
 
 <example
 name="Autocomplete"
@@ -123,11 +123,11 @@ file="/_content/examples/autocomplete-pro/autocomplete-pagination.vue"></example
 
 ### Loading Style
 
-If you would rather allow the user to load more options without having to click the `Load more` button, you can set the `loadOnScroll` prop to true, and the options will paginate as the end-user scrolls to the bottom of the list.
+If you would rather allow the user to load more options without having to click the `Load more` button, you can set the `loadOnScroll` prop to true, and the options will paginate as you scroll to the bottom of the options list.
 
 ### Loading selected option
 
-In addition to loading options from a remote source, you can also load a selected option. This is useful when the option values are that of IDs, and you would like to fetch more information about the given option on selection. In this example, after selecting an option, we are going to load the movie's genres and concatenate them with the movie's title:
+In addition to loading options from a remote source, you can also load a selected option. This is useful when the option values are that of IDs and you would like to fetch more information about the given option on selection. In this example, after selecting an option, we are going to load the movie's genres and concatenate them with the movie's title:
 
 <example
 name="Autocomplete"
