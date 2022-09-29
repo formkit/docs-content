@@ -134,6 +134,15 @@ name="Autocomplete"
 :min-height="550"
 file="/_content/examples/autocomplete-pro/autocomplete-pagination-option-loader.vue"></example>
 
+## Full example
+
+Now let's combine what we've learned so far by leveraging the `option` slot for custom markup, and setting the `options` prop to a function that will return pages of movies from an API:
+
+<example
+name="Dropdown"
+:min-height="550"
+file="/_content/examples/autocomplete-pro/autocomplete-full.vue"></example>
+
 <!-- Example of loading option via API. -->
 
 ## Accessibility

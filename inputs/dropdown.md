@@ -90,15 +90,14 @@ name="Dropdown"
 :min-height="550"
 file="/_content/examples/dropdown/dropdown-pagination-load-on-scroll.vue"></example>
 
-## Slots and loading options
+## Full example
 
 Now let's combine what we've learned so far by leveraging the `option` slot for custom markup, and setting the `options` prop to a function that will return pages of movies from an API:
 
 <example
 name="Dropdown"
 :min-height="550"
-file="/_content/examples/dropdown/dropdown-pagination-slots.vue"></example>
-
+file="/_content/examples/dropdown/dropdown-full.vue"></example>
 
 ## Overscroll
 
