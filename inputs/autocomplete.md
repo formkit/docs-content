@@ -39,7 +39,7 @@ The autocomplete input has a `selectionAppearance` prop that determines the way 
 
 ### Text input
 
-As previously seen above, the autocomplete input will default to the `text-input` selection appearance. When an option is selected, the text input will display the selected option's label.
+As previously seen above, the autocomplete input will default to the `text-input` selection appearance. When an option is selected, the text input will display the selected option's label:
 
 <example
 name="Autocomplete"
@@ -48,7 +48,7 @@ file="/_content/examples/autocomplete-pro/autocomplete-text-input.vue"></example
 
 ### Option
 
-Alternatively, you can set the selection appearance of the autocomplete to `option`. When a selection is made in this mode the text input is removed and replaced with a div containing the selected option's label. Additionally, the `option` selection appearance will render a `removeSelection` button that will clear the selection when clicked.
+Alternatively, you can set the selection appearance of the autocomplete to `option`. When a selection is made in this mode the text input is removed and replaced with a div containing the selected option's label. Additionally, the `option` selection appearance will render a `removeSelection` button that will clear the selection when clicked:
 
 <example
 name="Autocomplete"
@@ -93,7 +93,7 @@ file="/_content/examples/autocomplete-pro/autocomplete-selection-appearance-text
 
 ### Option multi-select
 
-For the `option` selection appearance, the selected options are displayed as a list of `divs` that render below the text input.
+For the `option` selection appearance, the selected options are displayed as a list of `divs` that render below the text input:
 
 <example
 name="Autocomplete"
