@@ -124,7 +124,7 @@ The `dropdown` input utilizes
 
 <reference-table input="dropdown" :data="[
 {prop: 'options', type: 'any', default: '[]', description: 'The list of options the user can select from.'},
-{prop: 'load-on-scroll', type: 'boolean', default: 'false', description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'}]">
+{prop: 'load-on-scroll', type: 'boolean', default: 'false', description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'}, {prop: 'option-loader', type: 'function', default: 'null', description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'}]">
 </reference-table>
 
 ## Section keys
