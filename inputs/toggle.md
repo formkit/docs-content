@@ -29,15 +29,18 @@ The toggle supports two label types: Primary and Value.
 
 ### Primary label
 
-By default, the toggle input supports a primary label like the `label` prop on any other FormKit input. The primary label is displayed to the right of the toggle unless you use a `Value label`, which will then move it above the toggle.
+By default, the toggle input supports a primary label like the `label` prop on any other FormKit input. The primary label is displayed to the right of the toggle unless you use a `Value label`, which will then move it above the toggle:
+<example
+name="Toggle"
+file="/_content/examples/toggle/toggle-primary-label.vue"></example>
 
 ### Value label
 
-Additionally, you may specify secondary labels by setting the `on-value-label` and the `off-value-label` props. These values are conditionally shown based on the on/off state of the toggle. The value labels render to the right of the toggle input.
+Additionally, you may specify secondary labels by setting the `on-value-label` and the `off-value-label` props. These values are conditionally shown based on the on/off state of the toggle. The value labels render to the right of the toggle input:
 
 <example
 name="Toggle"
-file="/_content/examples/toggle/toggle-labels.vue"></example>
+file="/_content/examples/toggle/toggle-value-labels.vue"></example>
 
 ### Inner value labels
 
