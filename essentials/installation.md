@@ -218,7 +218,7 @@ Import the `createProPlugin` helper and any desired Pro Inputs from `@formkit/pr
 
 ```js
 // Import createProPlugin helper and any desired inputs
-import { createProPlugin, rating, toggle } from '@formkit/pro' 
+import { createProPlugin, rating, toggle } from '@formkit/pro'
 ```
 
 </client-only>
@@ -261,7 +261,7 @@ Formkit extends the default Genesis theme for Pro Inputs. You can directly impor
 <client-only>
 
 ```js
-import from '@formkit/pro/genesis' 
+import from '@formkit/pro/genesis'
 ```
 
 </client-only>
@@ -277,7 +277,7 @@ import { createApp } from 'vue'
 import App from 'App.vue'
 import { plugin, defaultConfig } from '@formkit/vue'
 import { createProPlugin, rating, toggle } from '@formkit/pro'
-import from '@formkit/pro/genesis' 
+import '@formkit/pro/genesis'
 
 // create proPlugin
 const proPlugin = createProPlugin('fk-00000000000', {
