@@ -20,7 +20,7 @@ Unlike most other FormKit input types, the repeater input is of type [list](/inp
 
 ## Add button attrs
 
-In the example above, the 'Add Users' button is provided to us by default and its label is derived from the value of the label on the repeater. We can remove the button altogether by setting the `addButton` prop to `false`. We can also provide a custom label by setting the `addLabel` prop to a string, or, similarly to the `submitAttrs` prop on the [FormKit's forms](/essentials/forms), we can provide an object of attributes to be applied to the button with `addAttrs`. In this example, we are simply going to change the label of the repeater from `Add Users` to `My custom label` using the `addLabel` prop:
+In the example above, the 'Add Users' button is provided by default, and its label is derived repeater's `label`. We can remove the button by setting the `add-button` prop to `false`, or customize the label by setting it to a `string`. Alternatively, similar to the `submit-attrs` prop on the [FormKit's forms](/essentials/forms), we can provide an object of attributes to be applied to the button with `add-attrs`. In this example, we change the label of the repeater from `Add Users` to `My custom label` using the `add-label` prop:
 
 <example
 name="Repeater"
