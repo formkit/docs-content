@@ -261,7 +261,9 @@ Formkit extends the default Genesis theme for Pro Inputs. You can directly impor
 <client-only>
 
 ```js
-import from '@formkit/pro/genesis'
+// Genesis for Pro is dependent on Genesis
+import "@formkit/themes/genesis"
+import '@formkit/pro/genesis'
 ```
 
 </client-only>
@@ -277,6 +279,7 @@ import { createApp } from 'vue'
 import App from 'App.vue'
 import { plugin, defaultConfig } from '@formkit/vue'
 import { createProPlugin, rating, toggle } from '@formkit/pro'
+import "@formkit/themes/genesis"
 import '@formkit/pro/genesis'
 
 // create proPlugin
