@@ -7,7 +7,7 @@ description: A Pro input that allows users to add, remove, and re-arrange repeat
 
 <ProInstallSnippet></ProInstallSnippet>
 
-The repeater input is used for repeating content. Any number of FormKit inputs can be used within a repeater, and repeaters themselves can be infinitely nested.
+The `repeater` input is used for repeating groups of inputs. Any number of FormKit inputs can be used within a repeater, and repeaters themselves can be infinitely nested.
 
 The repeater input by default has the ability to shift, add, and remove items:
 
@@ -50,6 +50,21 @@ With FormKit's repeater, you are not restricted to our default controls. You can
 <example
 name="Repeater"
 file="/_content/examples/repeater/repeater-controls.vue"></example>
+
+## Setting errors
+
+### On a specific repeated value
+
+You can set an error on a specific repeated value using dot notation and the
+[`setErrors`](/essentials/forms#using-nodeseterrors) helper. Remember, your submit handler is passed the form's core `node` and can be used to conveniently set errors at depth.
+
+<example
+  name="Repeater"
+  :file="[
+    '/_content/examples/repeater/errors/repeater-errors.vue'
+  ]">
+</example>
+
 
 ## Props & Attributes
 

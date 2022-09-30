@@ -4,19 +4,22 @@
     type="form"
     :actions="false"
   >
-    <FormKit
-      id="repeater"
-      name="users"
-      type="repeater"
-      label="Users"
-    >
-      <FormKit
-        type="email"
-        label="Email"
-        name="email"
-        validation="required|email"
-      />
-    </FormKit>
+<!-- %partial%::html:: -->
+<FormKit
+  id="repeater"
+  name="users"
+  type="repeater"
+  label="Users"
+>
+  <FormKit
+    type="email"
+    label="Email"
+    name="email"
+    validation="required|email"
+    placeholder="Add email address..."
+  />
+</FormKit>
+<!-- %partial%::html:: -->
     <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>
