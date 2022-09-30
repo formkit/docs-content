@@ -115,24 +115,9 @@ name="Dropdown"
 :min-height="550"
 file="/_content/examples/dropdown/dropdown-overscroll.vue"></example>
 
-## Accessibility
-
-The `dropdown` input utilizes
-
 ## Props & Attributes
 
 <reference-table input="dropdown" :data="[
 {prop: 'options', type: 'any', default: '[]', description: 'The list of options the user can select from.'},
 {prop: 'load-on-scroll', type: 'boolean', default: 'false', description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'}, {prop: 'option-loader', type: 'function', default: 'null', description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'}]">
-</reference-table>
-
-## Section keys
-
-You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
-
-<div>
-  <formkit-input-diagram />
-</div>
-
-<reference-table type="sectionKeys" primary="section-key" :without="[]">
 </reference-table>

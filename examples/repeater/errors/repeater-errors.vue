@@ -12,7 +12,7 @@ async function submitTeamMembers (teamMembers, formNode) {
     null, // no form errors
     {
       // THE MAGIC IS HERE
-      'teamMembers': ['There was a problem with at least 1 of your team members.'],
+      'teamMembers': ['There was a problem with 1 of your team members.'],
       'teamMembers.1.email': ['emily@formkit.com is already on a team. Please remove her from that team before adding her to this team.'],
     }
   )

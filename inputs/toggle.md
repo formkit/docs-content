@@ -86,14 +86,3 @@ The `toggle` input is built atop HTML's [native checkbox input](https://develope
 {prop: 'track-color-off', type: 'String', default: 'undefined', description: 'Sets the background color of the `track` section when the toggle is unchecked.'},
 {prop: 'track-color-on', type: 'String', default: 'undefined', description: 'Sets the background color of the `track` section when toggle is checked.'}]">
 </reference-table>
-
-## Section keys
-
-You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
-
-<div>
-  <formkit-input-diagram />
-</div>
-
-<reference-table type="sectionKeys" primary="section-key" :without="[]">
-</reference-table>

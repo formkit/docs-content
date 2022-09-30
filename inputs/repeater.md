@@ -63,10 +63,10 @@ You can set errors on a repeater or any repeated item inside using dot notation.
 formNode.setErrors( null, // no form errors,
   {
     // error on the repeater field:
-    'teamMembers': ['There was a problem with at least 1 of your team members.']
+    'teamMembers': ['There was a problem with 1 of your team members.']
 
     // error on a specific repeater item:
-    'teamMembers.1.email': ['emily@formkit.com may not be on more than 1 team'],
+    'teamMembers.1.email': ['emily@formkit.com is already on a team.'],
   }
 )
 ```
@@ -87,15 +87,4 @@ returning errors for both the repeater and one child:
 
 <reference-table input="rating" :data="[
 {prop: 'add-label', type: 'string', default: 'null', description: 'Used to change the label of the add button.'}, {prop: 'add-attrs', type: 'object', default: {}, description: 'Used to apply attributes to the add button element.'}, {prop: 'add-button', type: 'boolean', default: 'true', description: 'Conditional for whether to show the add button.'}, {prop: 'up-control', type: 'boolean', default: 'true', description: 'Conditional for whether to show the up control.'}, {prop: 'down-control', type: 'boolean', default: 'true', description: 'Conditional for whether to show the down control.'}, {prop: 'insert-control', type: 'boolean', default: 'false', description: 'Conditional for whether to show the insert control.'}, {prop: 'remove-control', type: 'boolean', default: 'true', description: 'Conditional for whether to show the remove control.'}, {prop: 'min', type: 'Number', default: '0', description: 'The minimum number of children.'}, {prop: 'max', type: 'Number', default: 'null', description: 'The maximum number of children.'}]">
-</reference-table>
-
-## Section keys
-
-You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
-
-<div>
-  <formkit-input-diagram />
-</div>
-
-<reference-table type="sectionKeys" primary="section-key" :without="[]">
 </reference-table>

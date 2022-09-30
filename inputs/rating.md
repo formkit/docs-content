@@ -66,10 +66,6 @@ In addition to supplying an icon, you can also specify the color via props. Sett
 name="Rating"
 file="/_content/examples/rating/rating-colors.vue"></example>
 
-## Accessibility
-
- The `rating` input is built utilizing HTML's [native range input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range).
-
 ## Props & Attributes
 
 <reference-table input="rating" :data="[
@@ -79,15 +75,4 @@ file="/_content/examples/rating/rating-colors.vue"></example>
 {prop: 'hover-highlight', type: 'Boolean', default: 'true', description: 'Determines whether to show the selected state of the icon/image when hovered over.'},
 {prop: 'off-color', type: 'String', default: 'undefined', description: 'Sets the color to be applied on the given icons when they have not been selected.'},
 {prop: 'on-color', type: 'String', default: 'undefined', description: 'Sets the color to be applied on the given icons when they have been selected.'}]">
-</reference-table>
-
-## Section keys
-
-You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
-
-<div>
-  <formkit-input-diagram />
-</div>
-
-<reference-table type="sectionKeys" primary="section-key" :without="[]">
 </reference-table>
