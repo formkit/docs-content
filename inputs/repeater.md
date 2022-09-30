@@ -86,5 +86,14 @@ returning errors for both the repeater and one child:
 ## Props & Attributes
 
 <reference-table input="rating" :data="[
-{prop: 'add-label', type: 'string', default: 'null', description: 'Used to change the label of the add button.'}, {prop: 'add-attrs', type: 'object', default: {}, description: 'Used to apply attributes to the add button element.'}, {prop: 'add-button', type: 'boolean', default: 'true', description: 'Conditional for whether to show the add button.'}, {prop: 'up-control', type: 'boolean', default: 'true', description: 'Conditional for whether to show the up control.'}, {prop: 'down-control', type: 'boolean', default: 'true', description: 'Conditional for whether to show the down control.'}, {prop: 'insert-control', type: 'boolean', default: 'false', description: 'Conditional for whether to show the insert control.'}, {prop: 'remove-control', type: 'boolean', default: 'true', description: 'Conditional for whether to show the remove control.'}, {prop: 'min', type: 'Number', default: '0', description: 'The minimum number of children.'}, {prop: 'max', type: 'Number', default: 'null', description: 'The maximum number of children.'}]">
+  {prop: 'add-label', type: 'string', default: 'null', description: 'Used to change the label of the add button.'},
+  {prop: 'add-attrs', type: 'object', default: {}, description: 'Used to apply attributes to the add button element.'},
+  {prop: 'add-button', type: 'boolean', default: 'true', description: 'Conditional for whether to show the add button.'},
+  {prop: 'up-control', type: 'boolean', default: 'true', description: 'Conditional for whether to show the up control.'},
+  {prop: 'down-control', type: 'boolean', default: 'true', description: 'Conditional for whether to show the down control.'},
+  {prop: 'insert-control', type: 'boolean', default: 'false', description: 'Conditional for whether to show the insert control.'},
+  {prop: 'remove-control', type: 'boolean', default: 'true', description: 'Conditional for whether to show the remove control.'},
+  {prop: 'min', type: 'Number', default: '0', description: 'The minimum number of children.'},
+  {prop: 'max', type: 'Number', default: 'null', description: 'The maximum number of children.'}
+  ]">
 </reference-table>
