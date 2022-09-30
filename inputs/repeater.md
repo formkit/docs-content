@@ -53,17 +53,35 @@ file="/_content/examples/repeater/repeater-controls.vue"></example>
 
 ## Setting errors
 
-### On a specific repeated value
+You can set errors on a repeater or any repeated item inside using dot notation. Here we are using the
+[`setErrors`](/essentials/forms#using-nodeseterrors) helper, but there are other methods as well:
 
-You can set an error on a specific repeated value using dot notation and the
-[`setErrors`](/essentials/forms#using-nodeseterrors) helper. Remember, your submit handler is passed the form's core `node` and can be used to conveniently set errors at depth.
+<client-only>
+
+
+```js
+// the 2nd argument of setErrors is input-level errors
+formNode.setErrors( null, // no form errors,
+  {
+    // error on the repeater field:
+    'teamMembers': ['There was a problem with at least 1 of your team members.']
+
+    // error on a specific repeater item:
+    'teamMembers.1.email': ['emily@formkit.com may not be on more than 1 team'],
+  }
+)
+```
+
+</client-only>
+
+Remember, your submit handler is passed the form's core `node` and can be used
+to conveniently set errors at depth. Read more about error handling
+[here](/essentials/forms#error-handling). Here's an example of a fake backend
+returning errors for both the repeater and one child:
 
 <example
   name="Repeater"
-  :file="[
-    '/_content/examples/repeater/errors/repeater-errors.vue'
-  ]">
-</example>
+  file="/_content/examples/repeater/errors/repeater-errors.vue"></example>
 
 
 ## Props & Attributes
