@@ -7,10 +7,8 @@ description: A Pro input that allows users to search and select from a customiza
 
 <ProInstallSnippet></ProInstallSnippet>
 
-The autocomplete input allows you to search through a list of options. In this first example, let's provide the `options` prop a list of countries.
-
-
 ## Basic example
+The autocomplete input allows you to search through a list of options. In this first example, let's provide the `options` prop a list of countries:
 
 <example
 name="Autocomplete"

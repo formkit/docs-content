@@ -6,10 +6,8 @@ description: The `toggle` input is used to choose one of two values; it is a goo
 <InputPageHero title="Toggle"></InputPageHero>
 
 <ProInstallSnippet></ProInstallSnippet>
-
-The `toggle` input offers a choice between one of two values; it's a great option when you want the user to toggle a feature on or off.
-
 ## Basic example
+The `toggle` input offers a choice between one of two values; it's a great option when you want the user to toggle a feature on or off:
 
 <example
 name="Toggle"

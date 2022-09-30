@@ -7,11 +7,10 @@ description: A Pro input that allows users to add, remove, and re-arrange repeat
 
 <ProInstallSnippet></ProInstallSnippet>
 
+## Base example
 The `repeater` input is used for repeating groups of inputs. Any number of FormKit inputs can be used within a repeater, and repeaters themselves can be infinitely nested.
 
 The repeater input by default has the ability to shift, add, and remove items:
-
-## Base example
 
 <example
 name="Repeater"

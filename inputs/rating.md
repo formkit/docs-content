@@ -25,7 +25,7 @@ file="/_content/examples/rating/rating-min-max.vue"></example>
 
 ## Step
 
-By default the `rating` input will increment by 1. The `step` prop allows you to set the step size between each value. For example, if you set `step="0.5"`, then the end-user can select any values that are a multiple of `0.5`. Steps must be a value between `0.01` and `1`:
+By default, the `rating` input will increment by 1. The `step` prop will allow you to set the step size between each value. For example, if you set `step="0.5"`, the end-user can select any value that is a multiple of `0.5`. Steps must be a value between `0.01` and `1`:
 
 <example
 name="Rating"
@@ -44,7 +44,7 @@ file="/_content/examples/rating/rating-icon.vue"></example>
 
 #### Default slot
 
-Instead of specifying an icon via the FormKit icon plugin, you can just pass a raw SVG using the `default` slot:
+Instead of specifying an icon via the FormKit icon plugin, you can pass a raw SVG using the `default` slot:
 
 <example
 name="Rating"
@@ -52,7 +52,7 @@ file="/_content/examples/rating/rating-default-slot.vue"></example>
 
 #### Named slots
 
-Lastly, you can use the `offItem` and `onItem` slots to pass whatever assets you want. In this example, we are going to use different images for the `off` and `on` states:
+Lastly, you can use the `offItem` and `onItem` slots to pass whatever assets you want.In this example, we'll use different images for the `off` and `on` states:
 
 <example
 name="Rating"
@@ -60,7 +60,7 @@ file="/_content/examples/rating/rating-named-slots.vue"></example>
 
 ## Colors
 
-In addition to supplying your own icon, you can also specify the color via props. Setting the `off-color` prop will change the color of the icons when they are not selected. The `on-color` prop will change the color of the icons when they are selected:
+In addition to supplying an icon, you can also specify the color via props. Setting the `off-color` prop will change the color of the icons when they are not selected. The `on-color` prop will change the color of the icons when they are selected:
 
 <example
 name="Rating"

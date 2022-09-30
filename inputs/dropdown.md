@@ -7,9 +7,8 @@ description: A Pro input that allows users to select from a customizable options
 
 <ProInstallSnippet></ProInstallSnippet>
 
-The `dropdown` input allows users to select a value from a customizable list of options:
-
 ## Basic example
+The `dropdown` input allows users to select a value from a customizable list of options:
 
 <example
 name="Dropdown"
