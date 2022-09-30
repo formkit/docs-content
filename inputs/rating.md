@@ -76,3 +76,32 @@ file="/_content/examples/rating/rating-colors.vue"></example>
 {prop: 'off-color', type: 'String', default: 'undefined', description: 'Sets the color to be applied on the given icons when they have not been selected.'},
 {prop: 'on-color', type: 'String', default: 'undefined', description: 'Sets the color to be applied on the given icons when they have been selected.'}]">
 </reference-table>
+
+## Section keys
+
+You can target a specific section of an input using that section's "key", allowing you to modify that section's classes, HTML, or content (via slots). Read more about sections [here](/essentials/inputs#sections).
+
+<reference-table type="sectionKeys" primary="section-key" :data="[
+  {
+    'section-key': 'itemsWrapper',
+    description: 'A wrapper for all of the rating items (both on and off).'
+  },
+  {
+    'section-key': 'offItems',
+    description: 'A container around all of the off items.'
+  },
+  {
+    'section-key': 'offItemWrapper',
+    description: 'Immediate parent around each off item.'
+  },
+  {
+    'section-key': 'onItems',
+    description: 'A container around all of the on items.'
+  },
+  {
+    'section-key': 'onItemWrapper',
+    description: 'Immediate parent around each on item.'
+  },
+  ]">
+</reference-table>
+
