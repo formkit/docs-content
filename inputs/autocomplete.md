@@ -7,10 +7,8 @@ description: A Pro input that allows users to search and select from a customiza
 
 <ProInstallSnippet></ProInstallSnippet>
 
-The autocomplete input allows you to search through a list of options. In this first example, let's provide the `options` prop a list of countries.
-
-
 ## Basic example
+The autocomplete input allows you to search through a list of options. In this first example, let's provide the `options` prop a list of countries:
 
 <example
 name="Autocomplete"
@@ -150,22 +148,11 @@ file="/_content/examples/autocomplete-pro/autocomplete-full.vue"></example>
 
 <!-- Example of loading option via API. -->
 
-## Accessibility
+<!-- ## Accessibility -->
 
 ## Props & Attributes
 
 <reference-table input="autocomplete" :data="[
 {prop: 'options', type: 'any', default: '[]', description: 'The list of options the user can select from.'},
 {prop: 'load-on-scroll', type: 'boolean', default: 'false', description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'}, {prop: 'selection-appearance', type: 'string', default: 'text-input', description: 'Changes the way the option label is display.'}, {prop: 'multiple', type: 'boolean', default: 'false', description: 'Allows for multiple selections.'}, {prop: 'open-on-click', type: 'boolean', default: 'false', description: 'The autocomplete is expanded upon focus of the input, as opposed to waiting to expand until a search value is entered.'}, {prop: 'filter', type: 'function', default: 'null', description: 'Used to apply your own custom filter function for static options.'}, {prop: 'option-loader', type: 'function', default: 'null', description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'}]">
-</reference-table>
-
-## Section keys
-
-You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
-
-<div>
-  <formkit-input-diagram />
-</div>
-
-<reference-table type="sectionKeys" primary="section-key" :without="[]">
 </reference-table>

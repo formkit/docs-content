@@ -4,11 +4,6 @@
   <FormKit
     label="Primary Label"
     type="toggle"
-  />
-  <br>
-  <FormKit
-    label="Primary Label"
-    type="toggle"
     label-position="secondary"
     off-value-label="Off value label"
     on-value-label="On value label"

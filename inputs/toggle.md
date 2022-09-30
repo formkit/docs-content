@@ -6,10 +6,8 @@ description: The `toggle` input is used to choose one of two values; it is a goo
 <InputPageHero title="Toggle"></InputPageHero>
 
 <ProInstallSnippet></ProInstallSnippet>
-
-The `toggle` input is used to choose one of two values; it is a good choice when you want the user to make a binary choice such as turning a feature on or off.
-
 ## Basic example
+The `toggle` input offers a choice between one of two values; it's a great option when you want the user to toggle a feature on or off:
 
 <example
 name="Toggle"
@@ -17,7 +15,7 @@ file="/_content/examples/toggle/toggle-base.vue"></example>
 
 ## Values
 
-The `toggle's` checked and unchecked states will default to `true` and `false` respectively. You can change these values by passing `onValue` and `offValue` props. In this example, we will set the `onValue` to the string `'active'` and the `offValue` to the string `'inactive'`:
+The `toggle` checked and unchecked states will default to `true` and `false` respectively. Changing these values can be done by passing the `onValue` and `offValue` props. In this example, we will set the `onValue` to the string `'active'` and the `offValue` to the string `'inactive'`:
 
 <example
 name="Toggle"
@@ -25,23 +23,26 @@ file="/_content/examples/toggle/toggle-values.vue"></example>
 
 ## Labels
 
-The toggle supports two label types, the Primary label and the Value label.
+The toggle supports two label types: Primary and Value.
 
 ### Primary label
 
-The toggle input supports a default/primary label that is used like the `label` prop on any other FormKit input. The primary label is displayed to the right of the toggle unless `Value labels` are used, in which case it is displayed above the toggle.
+By default, the toggle input supports a primary label like the `label` prop on any other FormKit input. The primary label is displayed to the right of the toggle unless you use a `Value label`, which will then move it above the toggle:
+<example
+name="Toggle"
+file="/_content/examples/toggle/toggle-primary-label.vue"></example>
 
-### Value labels
+### Value label
 
-Additionally, you may specify a secondary label by setting the `on-value-label` and the `off-value-label` props. These value labels will be displayed depending on whether the toggle is checked or not and will be positioned to the right of the toggle input.
+Additionally, you may specify secondary labels by setting the `on-value-label` and the `off-value-label` props. These values are conditionally shown based on the on/off state of the toggle. The value labels render to the right of the toggle input:
 
 <example
 name="Toggle"
-file="/_content/examples/toggle/toggle-labels.vue"></example>
+file="/_content/examples/toggle/toggle-value-labels.vue"></example>
 
 ### Inner value labels
 
-Additionally, you can set the `value-label-display` prop to `inner` to render the value labels inside the toggle. The `Primary label` will return to being displayed to the right of the toggle.
+Additionally, you can set the `value-label-display` prop to `inner` to render the value labels inside the toggle. The `Primary label` will return to being displayed to the right of the toggle:
 
 <example
 name="Toggle"
@@ -49,7 +50,7 @@ file="/_content/examples/toggle/toggle-labels-inner.vue"></example>
 
 ## Icons
 
-Using the `thumb-icon` prop, you can insert an icon into the `thumb` section of the `toggle` input. The `thumb-icon` prop accepts a string that will be passed to FormKit's [icon plugin](/plugins/icons).
+The `thumb-icon` prop allows you to insert an icon into the `thumb` section of the `toggle` input. This prop accepts a string that's passed to FormKit's [icon plugin](/plugins/icons):
 
 <example
 name="Toggle"
@@ -57,7 +58,7 @@ file="/_content/examples/toggle/toggle-icon.vue"></example>
 
 ## Colors
 
-The `toggle` input supports color props for its various sections for easy styling. Each prop contains and `on` and `off` state that will be applied depending on whether the toggle is checked or not. Below is an example using some of the color props. See the [Props & Attributes] section below for a full list of these props.
+The toggle input supports color props for its various sections for easy styling. Each prop contains on and off states that are applied depending on whether the toggle is on or off. The following example uses some of these color props. See the [Props & Attributes](#props--attributes) section below for a full list of these props:
 
 <example
 name="Toggle"
@@ -84,15 +85,4 @@ The `toggle` input is built atop HTML's [native checkbox input](https://develope
 {prop: 'icon-color-on', type: 'String', default: 'undefined', description: 'The color the icon should be set to when `toggle-icon` prop is set and the toggle is checked.'},
 {prop: 'track-color-off', type: 'String', default: 'undefined', description: 'Sets the background color of the `track` section when the toggle is unchecked.'},
 {prop: 'track-color-on', type: 'String', default: 'undefined', description: 'Sets the background color of the `track` section when toggle is checked.'}]">
-</reference-table>
-
-## Section keys
-
-You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
-
-<div>
-  <formkit-input-diagram />
-</div>
-
-<reference-table type="sectionKeys" primary="section-key" :without="[]">
 </reference-table>
