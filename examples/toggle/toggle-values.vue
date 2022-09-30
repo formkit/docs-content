@@ -4,15 +4,23 @@ const value = ref('inactive')
 </script>
 
 <template>
-  <!-- %partial%::html:: -->
+  <!--
+    FormKit forms auto-collect values of children inputs.
+    Wrap the example in a form so we can display the form values.
+  -->
   <FormKit
-    v-model="value"
-    type="toggle"
-    on-value="active"
-    off-value="inactive"
-  />
-  <pre wrap>
-    {{ value }}
-  </pre>
+    type="form"
+    #default="{ value }"
+    :actions="false"
+  >
   <!-- %partial%::html:: -->
+    <FormKit
+      type="toggle"
+      name="toggle"
+      on-value="active"
+      off-value="inactive"
+    />
+    <!-- %partial%::html:: -->
+    <pre wrap>{{ value }}</pre>
+  </FormKit>
 </template>
