@@ -44,7 +44,7 @@ file="/_content/examples/toggle/toggle-value-labels.vue"></example>
 
 ### Inner value labels
 
-Additionally, you can set the `value-label-display` prop to `inner` to render the value labels inside the toggle. The `Primary label` will return to being displayed to the right of the toggle.
+Additionally, you can set the `value-label-display` prop to `inner` to render the value labels inside the toggle. The `Primary label` will return to being displayed to the right of the toggle:
 
 <example
 name="Toggle"
@@ -52,7 +52,7 @@ file="/_content/examples/toggle/toggle-labels-inner.vue"></example>
 
 ## Icons
 
-The `thumb-icon` prop allows you to insert an icon into the `thumb` section of the `toggle` input. This prop accepts a string that's passed to FormKit's [icon plugin](/plugins/icons).
+The `thumb-icon` prop allows you to insert an icon into the `thumb` section of the `toggle` input. This prop accepts a string that's passed to FormKit's [icon plugin](/plugins/icons):
 
 <example
 name="Toggle"
@@ -60,7 +60,7 @@ file="/_content/examples/toggle/toggle-icon.vue"></example>
 
 ## Colors
 
-The toggle input supports color props for its various sections for easy styling. Each prop contains on and off states that are applied depending on whether the toggle is on or off. The following example uses some of these color props. See the [Props & Attributes](#props--attributes) section below for a full list of these props.
+The toggle input supports color props for its various sections for easy styling. Each prop contains on and off states that are applied depending on whether the toggle is on or off. The following example uses some of these color props. See the [Props & Attributes](#props--attributes) section below for a full list of these props:
 
 <example
 name="Toggle"
