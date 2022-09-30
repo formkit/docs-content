@@ -43,116 +43,6 @@ You can install the upcoming version of FormKit (unstable) anytime by opting to 
 FormKit only supports Vue 3. If you're required to use Vue 2 on a project, consider using the spiritual ancestor of FormKit — <a href="https://vueformulate.com" target="_blank">Vue Formulate</a>.
 </callout>
 
-## With Nuxt
-
-Using FormKit with Nuxt requires minimal setup. First include the Nuxt module as a dependency within your project:
-
-<client-only>
-
-```sh
-npm install @formkit/nuxt
-```
-
-</client-only>
-
-Then in your `nuxt.config` file add the module to your modules list:
-
-<client-only>
-
-```js
-// nuxt.config
-import { defineNuxtConfig } from 'nuxt3'
-
-export default defineNuxtConfig({
-  modules: ['@formkit/nuxt'],
-})
-```
-
-</client-only>
-
-That's it! FormKit is now registered in your project using the default config and you can start using the `<FormKit>` component.
-
-### Configuring with Nuxt
-
-If you would like to supply your own configuration, create a `formkit.config` file adjacent to your `nuxt.config` file. Like the `nuxt.config` file itself, `.ts`, `.mjs`, and `.js` are all valid file extensions depending on your project's needs:
-
-<client-only>
-
-```sh
-myProject/
-|- formkit.config.ts
-|- nuxt.config.ts
-```
-
-</client-only>
-
-This configuration file will be automatically included if detected in your project directory. If you would like to supply a custom
-path to your `formkit.config`, you can override the default location using the `configFile` option under the `formkit` key.
-**Any path you supply should be relative to the root of your Nuxt project**:
-
-<client-only>
-
-```js
-// nuxt.config
-import { defineNuxtConfig } from 'nuxt3'
-
-export default defineNuxtConfig({
-  modules: ['@formkit/nuxt'],
-  formkit: {
-    configFile: './my-configs/formkit.config.mjs',
-  },
-})
-```
-
-</client-only>
-
-For TypeScript users, it can be helpful to type your `formkit.config.ts` export as `DefaultConfigOptions` explicitly:
-
-<client-only>
-
-```js
-// formkit.config.ts
-import { fr } from '@formkit/i18n'
-import { DefaultConfigOptions } from '@formkit/vue'
-
-const config: DefaultConfigOptions = {
-  locales: { fr },
-  locale: 'fr',
-}
-
-export default config
-```
-
-</client-only>
-
-By default, your configuration will _extend_ the `defaultConfig` that ships with FormKit. This is the desired behavior
-for the majority of projects. However, if you need to define the entire FormKit config yourself — from scratch — you may do so
-by setting the `defaultConfig` option for the module to `false`:
-
-<client-only>
-
-```js
-// nuxt.config
-import { defineNuxtConfig } from 'nuxt3'
-
-export default defineNuxtConfig({
-  modules: ['@formkit/nuxt'],
-  formkit: {
-    defaultConfig: false,
-    configFile: './my/custom/location/formkit.config.ts',
-    // ^ this is now a full config replacement, not override.
-  },
-})
-```
-
-</client-only>
-
-That's it! FormKit is ready to use and — if you read this far — specifically tailored to your Nuxt project's needs.
-
-<callout type="warning" label="Nuxt 2">
-FormKit only supports Nuxt 3. If you're required to use Nuxt 2 on a project, consider using the spiritual ancestor of FormKit — <a href="https://vueformulate.com" target="_blank">Vue Formulate</a> — which also ships with its own Nuxt module.
-</callout>
-
 ## Default theme
 
 The default FormKit theme (called "genesis") can be added via CDN or by installing the `@formkit/themes` package.
@@ -301,4 +191,169 @@ createApp(App).use(plugin, config).mount('#app')
 
 That's it! You will be able to use any registered Pro Inputs in your project now, like `<FormKit type="rating" />`.
 
+## With Nuxt
+
+Using FormKit with Nuxt requires minimal setup. First include the Nuxt module as a dependency within your project:
+
+<client-only>
+
+```sh
+npm install @formkit/nuxt
+```
+
+</client-only>
+
+Then in your `nuxt.config` file add the module to your modules list:
+
+<client-only>
+
+```js
+// nuxt.config
+export default defineNuxtConfig({
+  modules: ['@formkit/nuxt'],
+})
+```
+
+</client-only>
+
+That's it! FormKit is now registered in your project using the default config and you can start using the `<FormKit>` component.
+
+### Configuring with Nuxt
+
+If you would like to supply your own configuration, create a `formkit.config` file adjacent to your `nuxt.config` file. Like the `nuxt.config` file itself, `.ts`, `.mjs`, and `.js` are all valid file extensions depending on your project's needs:
+
+<client-only>
+
+```sh
+myProject/
+|- formkit.config.ts
+|- nuxt.config.ts
+```
+
+</client-only>
+
+This configuration file will be automatically included if detected in your project directory. If you would like to supply a custom
+path to your `formkit.config`, you can override the default location using the `configFile` option under the `formkit` key.
+**Any path you supply should be relative to the root of your Nuxt project**:
+
+<client-only>
+
+```js
+// nuxt.config
+import { defineNuxtConfig } from 'nuxt3'
+
+export default defineNuxtConfig({
+  modules: ['@formkit/nuxt'],
+  formkit: {
+    configFile: './my-configs/formkit.config.mjs',
+  },
+})
+```
+
+</client-only>
+
+For TypeScript users, it can be helpful to type your `formkit.config.ts` export as `DefaultConfigOptions` explicitly:
+
+<client-only>
+
+```js
+// formkit.config.ts
+import { fr } from '@formkit/i18n'
+import { DefaultConfigOptions } from '@formkit/vue'
+
+const config: DefaultConfigOptions = {
+  locales: { fr },
+  locale: 'fr',
+}
+
+export default config
+```
+
+</client-only>
+
+By default, your configuration will _extend_ the `defaultConfig` that ships with FormKit. This is the desired behavior
+for the majority of projects. However, if you need to define the entire FormKit config yourself — from scratch — you may do so
+by setting the `defaultConfig` option for the module to `false`:
+
+<client-only>
+
+```js
+// nuxt.config
+import { defineNuxtConfig } from 'nuxt3'
+
+export default defineNuxtConfig({
+  modules: ['@formkit/nuxt'],
+  formkit: {
+    defaultConfig: false,
+    configFile: './my/custom/location/formkit.config.ts',
+    // ^ this is now a full config replacement, not override.
+  },
+})
+```
+
+</client-only>
+
+### Pro inputs
+
+Installing FormKit Pro into your Nuxt project is just as easy as it is for Vue.
+
+#### 1. Get a Project Key
+Login to your FormKit Pro account at [pro.formkit.com](https://pro.formkit.com) and create a project. A `Project Key` will be provided to you.
+
+#### 2. Install the package
+Next, install the `@formkit/pro` package using `npm`, `yarn`, or another package manager:
+
+<client-only>
+
+```bash
+yarn add @formkit/pro
+```
+
+</client-only>
+
+#### 3. Configure your project
+
+Import the `createProPlugin` helper and your desired Pro Inputs from `@formkit/pro`:
+
+<client-only>
+
+```js
+// Import createProPlugin helper and any desired inputs
+import { createProPlugin, autocomplete, rating } from '@formkit/pro'
+```
+
+</client-only>
+
+Create the Pro plugin with your `Project Key` and desired Pro Inputs:
+
+<!--After you have received your Project Key and installed the `@formkit/pro` package, go to your `formkit.config` file and add the Pro plugin:-->
+
+<client-only>
+
+```js
+// formkit.config (adjacent to nuxt.config)
+import { createProPlugin, autocomplete } from '@formkit/pro'
+import '@formkit/themes/genesis'
+import '@formkit/pro/genesis'
+
+const pro = createProPlugin('fk-66f40b8a84', {
+  autocomplete,
+  rating
+})
+
+export default {
+  plugins: [pro]
+}
+```
+
+</client-only>
+
+
+That's it! FormKit is ready to use and — if you read this far — specifically tailored to your Nuxt project's needs.
+
+<callout type="warning" label="Nuxt 2">
+FormKit only supports Nuxt 3. If you're required to use Nuxt 2 on a project, consider using the spiritual ancestor of FormKit — <a href="https://vueformulate.com" target="_blank">Vue Formulate</a> — which also ships with its own Nuxt module.
+</callout>
+
 <cta label="Using Tailwind or another utility framework?" href="/essentials/styling" button="Styling docs"></cta>
+
