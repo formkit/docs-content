@@ -240,8 +240,6 @@ path to your `formkit.config`, you can override the default location using the `
 
 ```js
 // nuxt.config
-import { defineNuxtConfig } from 'nuxt3'
-
 export default defineNuxtConfig({
   modules: ['@formkit/nuxt'],
   formkit: {
@@ -279,8 +277,6 @@ by setting the `defaultConfig` option for the module to `false`:
 
 ```js
 // nuxt.config
-import { defineNuxtConfig } from 'nuxt3'
-
 export default defineNuxtConfig({
   modules: ['@formkit/nuxt'],
   formkit: {
