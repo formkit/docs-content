@@ -328,7 +328,7 @@ Create the Pro plugin with your `Project Key` and desired Pro Inputs:
 
 ```js
 // formkit.config (adjacent to nuxt.config)
-import { createProPlugin, autocomplete } from '@formkit/pro'
+import { createProPlugin, autocomplete, rating } from '@formkit/pro'
 import '@formkit/themes/genesis'
 import '@formkit/pro/genesis'
 
