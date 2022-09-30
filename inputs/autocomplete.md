@@ -23,6 +23,7 @@ The `options` prop can accept three different formats of values:
 - An array of objects with `value` and `label` keys (see example above)
 - An array of strings <code>['A', 'B', 'C']</code>
 - An object literal with key-value pairs <code>{ a: 'A', b: 'B', c: 'C' }</code>
+- A function that returns any of the above
 
 ## Filtering
 
@@ -153,8 +154,10 @@ file="/_content/examples/autocomplete-pro/autocomplete-full.vue"></example>
 
 ## Props & Attributes
 
-<!-- <reference-table input="autocomplete">
-</reference-table> -->
+<reference-table input="autocomplete" :data="[
+{prop: 'options', type: 'any', default: '[]', description: 'The list of options the user can select from.'},
+{prop: 'load-on-scroll', type: 'boolean', default: 'false', description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'}, {prop: 'selection-appearance', type: 'string', default: 'text-input', description: 'Changes the way the option label is display.'}, {prop: 'multiple', type: 'boolean', default: 'false', description: 'Allows for multiple selections.'}, {prop: 'open-on-click', type: 'boolean', default: 'false', description: 'The autocomplete is expanded upon focus of the input, as opposed to waiting to expand until a search value is entered.'}, {prop: 'filter', type: 'function', default: 'null', description: 'Used to apply your own custom filter function for static options.'}]">
+</reference-table>
 
 ## Section keys
 

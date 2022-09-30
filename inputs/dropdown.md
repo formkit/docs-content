@@ -22,6 +22,7 @@ The `options` prop can accept three different formats of values:
 - Array of objects with `value` and `label` keys (see example above)
 - Array of strings <code>['A', 'B', 'C']</code>
 - Object literal with key-value pairs <code>{ a: 'A', b: 'B', c: 'C' }</code>
+- A function that returns any of the above
 
 ## Slots
 
