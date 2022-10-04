@@ -12,7 +12,7 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
       value="US"
       type="autocomplete"
       :options="countries"
-      label="Select a country"
+      label="Search for a country"
       placeholder="Example: United States"
       selection-appearance="option"
     />

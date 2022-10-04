@@ -31,7 +31,7 @@ async function searchMovies({ search }) {
       name="movie"
       type="autocomplete"
       label="Search for your favorite movie"
-      placeholder="Example placeholder"
+      placeholder="Example: Shawshank Redemption"
       :options="searchMovies"
     />
     <pre wrap>{{ value }}</pre>

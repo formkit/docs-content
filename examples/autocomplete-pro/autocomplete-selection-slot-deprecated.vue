@@ -19,7 +19,7 @@ function getFlagEmoji(countryCode) {
   <FormKit
     type="autocomplete"
     name="autocomplete"
-    label="Select a country"
+    label="Search and select a country"
     :options="countries"
     value="US"
     selection-appearance="option"

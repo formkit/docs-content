@@ -11,7 +11,7 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
     <FormKit
       type="autocomplete"
       name="autocomplete"
-      label="Select multiple countries"
+      label="Search and select multiple countries"
       :options="countries"
       selection-appearance="text-input"
       multiple

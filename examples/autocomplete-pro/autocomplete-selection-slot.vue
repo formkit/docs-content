@@ -11,7 +11,7 @@ const carBrands = [{ label: 'Audi', value: 'audi', logo: 'https://s3.amazonaws.c
   <FormKit
     type="autocomplete"
     name="autocomplete"
-    label="Select a car brand"
+    label="Search and select a car brand"
     placeholder="Example: Toyota"
     :options="carBrands"
     selection-appearance="option"

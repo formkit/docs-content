@@ -29,7 +29,7 @@ async function searchMovies({ search, page, hasNextPage }) {
       name="movie"
       type="autocomplete"
       label="Search for your favorite movie"
-      placeholder="Example placeholder"
+      placeholder="Example: Lord of the Rings"
       :options="searchMovies"
     />
     <pre wrap>{{ value }}</pre>
