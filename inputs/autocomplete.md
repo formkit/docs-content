@@ -8,6 +8,7 @@ description: A Pro input that allows users to search and select from a customiza
 <ProInstallSnippet></ProInstallSnippet>
 
 ## Basic example
+
 The autocomplete input allows you to search through a list of options. In this first example, let's provide the `options` prop a list of countries:
 
 <example
@@ -16,6 +17,7 @@ name="Autocomplete"
 file="/_content/examples/autocomplete-pro/autocomplete-base.vue"></example>
 
 ## Defining options
+
 The `options` prop can accept three different formats of values:
 
 - An array of objects with `value` and `label` keys (see example above)
@@ -76,7 +78,6 @@ name="Autocomplete"
 :min-height="550"
 file="/_content/examples/autocomplete-pro/autocomplete-selection-slot.vue"></example>
 
-
 ## Multi-select
 
 The autocomplete supports multi-select and is available for either the `text-input` or `option` selection appearance. To enable multi-select, simply set the `multiple` prop.
@@ -117,6 +118,7 @@ name="Autocomplete"
 file="/_content/examples/autocomplete-pro/autocomplete-single-request.vue"></example>
 
 ### Page and hasNextPage parameters
+
 A likely scenario you'll encounter is needing to search through a paginated API. This can be done by referencing the same `config` object as before. Within this object, we can utilize the `page` and `hasNextPage` properties. The `page` property is the current page number, and the `hasNextPage` property is a function to be called when there are more pages to load:
 
 <example
@@ -155,4 +157,72 @@ file="/_content/examples/autocomplete-pro/autocomplete-full.vue"></example>
 <reference-table input="autocomplete" :data="[
 {prop: 'options', type: 'any', default: '[]', description: 'The list of options the user can select from.'},
 {prop: 'load-on-scroll', type: 'boolean', default: 'false', description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'}, {prop: 'selection-appearance', type: 'string', default: 'text-input', description: 'Changes the way the option label is display.'}, {prop: 'multiple', type: 'boolean', default: 'false', description: 'Allows for multiple selections.'}, {prop: 'open-on-click', type: 'boolean', default: 'false', description: 'The autocomplete is expanded upon focus of the input, as opposed to waiting to expand until a search value is entered.'}, {prop: 'filter', type: 'function', default: 'null', description: 'Used to apply your own custom filter function for static options.'}, {prop: 'option-loader', type: 'function', default: 'null', description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'}]">
+</reference-table>
+
+## Sections
+
+<section-keys-intro></section-keys-intro>
+
+<reference-table type="sectionKeys" primary="section-key" :data="[
+  {
+    'section-key': 'selector',
+    description: 'The selector section is a button element that opens the dropdown options list.'
+  },
+  {
+    'section-key': 'selections',
+    description: 'Contains individual selection sections.'
+  },
+  {
+    'section-key': 'selection',
+    description: 'Contains the selected option.'
+  },
+  {
+    'section-key': 'listitem',
+    description: 'A list item element that contains the option section.'
+  },
+  {
+    'section-key': 'option',
+    description: 'A div that contains the option content.'
+  },
+  {
+    'section-key': 'listbox',
+    description: 'The listbox section is a ul element that contains the options list.'
+  },
+  {
+    'section-key': 'dropdownWrapper',
+    description: 'Wraps the listbox section. A div that handles scrolling the listbox.'
+  },
+  {
+    'section-key': 'optionLoading',
+    description: 'A span element that is conditionally rendered within the selected option when loading is occurring.'
+  },
+  {
+    'section-key': 'loaderIcon',
+    description: 'An element for outputting an icon in the selector element when loading is occurring.'
+  },
+  {
+    'section-key': 'selectIcon',
+    description: 'An element for outputting an icon in the selector element when the dropdown is closed.'
+  },
+  {
+    'section-key': 'loadMore',
+    description: 'A list item element that is conditionally rendered at the bottom of the options list when there are more pages to load.'
+  },
+  {
+    'section-key': 'loadMoreInner',
+    description: 'A span element that acts as a wrapper for the loaderIcon within the loadMore section.'
+  },
+  {
+    'section-key': 'removeSelection',
+    description: 'A button element used for removing a specific selection.'
+  },
+  {
+    'section-key': 'closeIcon',
+    description: 'An element for outputting an icon within the removeSelection button.'
+  },
+  {
+    'section-key': 'listboxButton',
+    description: 'A button element that is used to open the dropdown.'
+  }
+]">
 </reference-table>

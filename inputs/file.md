@@ -50,9 +50,9 @@ The `file` input has a few unique props. There are also several commonly used na
   ]">
 </reference-table>
 
-## Section keys
+## Sections
 
-You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+<section-keys-intro></section-keys-intro>
 
 ### Single file diagram
 
