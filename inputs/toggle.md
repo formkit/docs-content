@@ -91,7 +91,7 @@ The `toggle` input is built atop HTML's [native checkbox input](https://develope
 
 ## Sections
 
-You can target a specific section of an input using that section's "key", allowing you to modify that section's classes, HTML, or content (via slots). Read more about sections [here](/essentials/inputs#sections).
+<section-keys-intro></section-keys-intro>
 
 <reference-table type="sectionKeys" primary="section-key" :data="[
   {
@@ -109,7 +109,7 @@ You can target a specific section of an input using that section's "key", allowi
   {
     'section-key': 'thumbIcon',
     description: 'The thumbIcon section is the icon that is rendered inside the thumb section (when thumb-icon prop is set).'
-  }
+  },
   {
     'section-key': 'valueLabel',
     description: 'An additional label element, rendered when value-label props are used. Displayed to the right of the toggle.'

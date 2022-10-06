@@ -47,7 +47,6 @@ file="/_content/examples/radio-objects/radio-objects.vue"></example>
 
 <section-keys-intro></section-keys-intro>
 
-
 <div>
   <formkit-input-diagram
     class="input-diagram--radio radio-multiple"

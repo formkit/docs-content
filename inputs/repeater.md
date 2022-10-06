@@ -99,7 +99,7 @@ returning errors for both the repeater and one child:
 
 ## Sections
 
-You can target a specific section of an input using that section's "key", allowing you to modify that section's classes, HTML, or content (via slots). Read more about sections [here](/essentials/inputs#sections).
+<section-keys-intro></section-keys-intro>
 
 <reference-table type="sectionKeys" primary="section-key" :data="[
   {
