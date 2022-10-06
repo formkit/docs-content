@@ -159,9 +159,9 @@ file="/_content/examples/autocomplete-pro/autocomplete-full.vue"></example>
 {prop: 'load-on-scroll', type: 'boolean', default: 'false', description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'}, {prop: 'selection-appearance', type: 'string', default: 'text-input', description: 'Changes the way the option label is display.'}, {prop: 'multiple', type: 'boolean', default: 'false', description: 'Allows for multiple selections.'}, {prop: 'open-on-click', type: 'boolean', default: 'false', description: 'The autocomplete is expanded upon focus of the input, as opposed to waiting to expand until a search value is entered.'}, {prop: 'filter', type: 'function', default: 'null', description: 'Used to apply your own custom filter function for static options.'}, {prop: 'option-loader', type: 'function', default: 'null', description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'}]">
 </reference-table>
 
-## Section keys
+## Sections
 
-You can target a specific section of an input using that section's "key", allowing you to modify that section's classes, HTML, or content (via slots). Read more about sections [here](/essentials/inputs#sections).
+<section-keys-intro></section-keys-intro>
 
 <reference-table type="sectionKeys" primary="section-key" :data="[
   {

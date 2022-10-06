@@ -97,7 +97,7 @@ returning errors for both the repeater and one child:
   ]">
 </reference-table>
 
-## Section keys
+## Sections
 
 You can target a specific section of an input using that section's "key", allowing you to modify that section's classes, HTML, or content (via slots). Read more about sections [here](/essentials/inputs#sections).
 

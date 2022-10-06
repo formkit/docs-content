@@ -125,9 +125,9 @@ file="/_content/examples/dropdown/dropdown-overscroll.vue"></example>
 {prop: 'load-on-scroll', type: 'boolean', default: 'false', description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'}, {prop: 'option-loader', type: 'function', default: 'null', description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'}]">
 </reference-table>
 
-## Section keys
+## Sections
 
-You can target a specific section of an input using that section's "key", allowing you to modify that section's classes, HTML, or content (via slots). Read more about sections [here](/essentials/inputs#sections).
+<section-keys-intro></section-keys-intro>
 
 <reference-table type="sectionKeys" primary="section-key" :data="[
   {
