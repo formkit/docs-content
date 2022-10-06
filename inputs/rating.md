@@ -81,6 +81,95 @@ file="/_content/examples/rating/rating-colors.vue"></example>
 
 <section-keys-intro></section-keys-intro>
 
+<div>
+  <formkit-input-diagram
+    class="input-diagram--rating"
+    :schema="[
+        {
+          name: 'outer',
+          position: 'right',
+          children: [
+            {
+              name: 'wrapper',
+              position: 'right',
+              children: [
+                {
+                  name: 'label',
+                  content: 'Rate your experience at our theater',
+                  position: 'right',
+                  class: 'center-vert'
+                },
+                {
+                  name: 'inner',
+                  children: [
+                    {
+                      name: 'prefixIcon',
+                      content: ''
+                    },
+                    {
+                      name: 'prefix',
+                    },
+                    {
+                      name: 'itemsWrapper',
+                      children: [
+                        {
+                          name: 'onItems',
+                          children: [
+                            {
+                              name: 'onItemWrapper',
+                              content: '⭐️'
+                            }
+                          ]
+                        },
+                        {
+                          name: 'offItems',
+                          children: [
+                            {
+                              name: 'offItemWrapper',
+                              content: '✩'
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      name: 'input'
+                    },
+                    {
+                      name: 'suffix',
+                      position: 'right',
+                    },
+                    {
+                      name: 'suffixIcon',
+                      position: 'right',
+                    },
+                  ]
+                },
+              ]
+            },
+            {
+              name: 'help',
+              content: 'We will send you a gift card if you give us 5 stars.',
+              position: 'right'
+            },
+            {
+              name: 'messages',
+              position: 'right',
+              children: [
+                {
+                  name: 'message',
+                  content: 'You must provide a rating.',
+                  position: 'right'
+                }
+              ]
+            }
+          ]
+        }
+      ]"
+  >
+  </formkit-input-diagram>
+</div>
+
 <reference-table type="sectionKeys" primary="section-key" :data="[
   {
     'section-key': 'itemsWrapper',
