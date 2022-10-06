@@ -148,7 +148,11 @@ FormKit inputs emit both _universal_ events (ones that are emitted from all inpu
 
 ## Sections
 
-Inputs are composed of chunks of HTML called "sections". Each section has a "key" that can be used to target that section. Section keys can be used for many purposes like modifying [classes](/essentials/styling#custom-classes), [slots](#slots), and extending each [sections’s schema](#sections-schema).
+Inputs are composed of chunks of HTML called "sections". Each section has a "key" that can be used to target the section for a variety of purposes, like:
+
+- Modifying the section's [classes](/essentials/styling#custom-classes) via `{section-key}-class="your-class"` props
+- Overriding the section's structure with [slots](#slots): `<template #{section-key}>`
+- Extending each [sections’s schema](#sections-schema)
 
 Many section keys are universally available while others are specific to a given input type (you can define your own for custom inputs as well). The following table is a comprehensive list of those that are generally available in all inputs:
 
