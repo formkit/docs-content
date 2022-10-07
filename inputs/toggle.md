@@ -128,7 +128,7 @@ The `toggle` input is built atop HTML's [native checkbox input](https://develope
                         },
                         {
                           name: 'thumb',
-                          class: 'flex-grow text-center',
+                          class: 'flex-grow text-center border-solid',
                           children: [
                             {
                               name: 'thumbIcon',

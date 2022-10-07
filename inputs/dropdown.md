@@ -154,7 +154,6 @@ file="/_content/examples/dropdown/dropdown-overscroll.vue"></example>
                   children: [
                     {
                       name: 'prefixIcon',
-                      content: ''
                     },
                     {
                       name: 'prefix'
@@ -170,7 +169,7 @@ file="/_content/examples/dropdown/dropdown-overscroll.vue"></example>
                             {
                               name: 'option',
                               content: 'Gray',
-                              class: 'flex',
+                              class: 'flex border-solid',
                               children: [
                                 {
                                   name: 'optionLoading',
@@ -233,7 +232,7 @@ file="/_content/examples/dropdown/dropdown-overscroll.vue"></example>
 
 ### Inner listbox structure
 
-Below is the inner options list `listbox` structure from the diagram above:
+Below is the inner options list (`listbox`) structure from the diagram above:
 
 <div>
   <formkit-input-diagram

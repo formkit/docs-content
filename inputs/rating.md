@@ -117,7 +117,8 @@ file="/_content/examples/rating/rating-colors.vue"></example>
                           children: [
                             {
                               name: 'onItemWrapper',
-                              content: '⭐️'
+                              content: '⭐️',
+                              class: 'border-solid'
                             }
                           ]
                         },
@@ -126,7 +127,8 @@ file="/_content/examples/rating/rating-colors.vue"></example>
                           children: [
                             {
                               name: 'offItemWrapper',
-                              content: '✩'
+                              content: '✩',
+                              class: 'border-solid'
                             }
                           ]
                         }

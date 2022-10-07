@@ -163,6 +163,187 @@ file="/_content/examples/autocomplete-pro/autocomplete-full.vue"></example>
 
 <section-keys-intro></section-keys-intro>
 
+The autocomplete's structure changes depending on a few different scenarios:
+
+- Whether `selection-appearance` has been set to `text-input` (the default) or `option`.
+- Whether multiple selections are enabled via the `multiple` attribute.
+
+### Selection appearance: option
+
+<div>
+  <formkit-input-diagram
+    class="input-diagram--autocomplete-outer"
+    :schema="[
+        {
+          name: 'outer',
+          position: 'right',
+          children: [
+            {
+              name: 'wrapper',
+              children: [
+                {
+                  name: 'label',
+                  content: 'Your favorite athletes',
+                  class: 'center-vert'
+                },
+                {
+                  name: 'inner',
+                  children: [
+                    {
+                      name: 'prefixIcon',
+                    },
+                    {
+                      name: 'prefix'
+                    },
+                    {
+                      name: 'input',
+                      content: 'Serena, Nadal'
+                    },
+                    {
+                      name: 'loaderIcon',
+                    },
+                    {
+                      name: 'listboxButton',
+                      position: 'right',
+                      children: [
+                        {
+                          name: 'selectIcon',
+                          content: '⌄'
+                        }
+                      ]
+                    },
+                    {
+                      name: 'listbox',
+                      content: 'Tiger Nadal',
+                      class: 'wrap-text',
+                      position: 'right'
+                    },
+                    {
+                      name: 'suffix',
+                      position: 'right'
+                    },
+                    {
+                      name: 'suffixIcon',
+                      position: 'right'
+                    },
+                  ]
+                },
+              ]
+            },
+            {
+              name: 'help',
+              content: 'Search for your favorite athletes.',
+              position: 'right'
+            },
+            {
+              name: 'messages',
+              position: 'right',
+              children: [
+                {
+                  name: 'message',
+                  content: 'Sorry, that athlete could not be found.',
+                  position: 'right'
+                }
+              ]
+            }
+          ]
+        }
+      ]"
+  >
+  </formkit-input-diagram>
+</div>
+
+
+<!--  selections piece for (appearance === option)
+                    {
+                      name: 'selections',
+                      class: 'flex flex-grow',
+                      children: [
+                        {
+                          name: 'selection',
+                          class: 'flex-grow',
+                          children: [
+                            {
+                              name: 'option',
+                              content: 'Gray',
+                              class: 'flex',
+                              children: [
+                                {
+                                  name: 'optionLoading',
+                                  class: 'flex-grow-0'
+                                }
+                              ]
+                            },
+                            {
+                              name: 'removeSelection',
+                              children: [
+                                {
+                                  name: 'closeIcon',
+                                  content: 'X'
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }, -->
+### Inner listbox structure
+
+Below is the inner options list (`listbox`) structure from the diagrams above:
+
+<div>
+  <formkit-input-diagram
+    class="input-diagram--autocomplete"
+    :schema="[
+        {
+          name: 'dropdownWrapper',
+          position: 'right',
+          children: [
+            {
+              name: 'listbox',
+              position: 'right',
+              children: [
+                {
+                  name: 'listitem',
+                  class: 'flex flex-grow',
+                  position: 'right',
+                  children: [
+                    {
+                      name: 'selectedIcon',
+                      content: '✔️'
+                    },
+                    {
+                      name: 'option',
+                      content: 'Serena',
+                      position: 'right',
+                      class: 'flex flex-grow'
+                    },
+                  ]
+                },
+                {
+                  name: 'loadMore',
+                  children: [
+                    {
+                      name: 'loadMoreInner',
+                      children: [
+                        {
+                          name: 'loaderIcon',
+                          content: '⏳',
+                          class: 'text-center'
+                        }
+                      ]
+                    },
+                  ]
+                },
+              ]
+            },
+          ]
+        }
+      ]"
+  >
+  </formkit-input-diagram>
+</div>
+
 <reference-table type="sectionKeys" primary="section-key" :data="[
   {
     'section-key': 'selector',
