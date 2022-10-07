@@ -127,7 +127,8 @@ When using the default slot in conjunction with the <code>multiple</code> attrib
                     {
                       name: 'selectIcon',
                       position: 'right',
-                      content: '⌄'
+                      content: '⌄',
+                      class: 'center-vert'
                     },
                     {
                       name: 'suffix',

@@ -129,6 +129,166 @@ file="/_content/examples/dropdown/dropdown-overscroll.vue"></example>
 
 <section-keys-intro></section-keys-intro>
 
+### Outer structure
+
+<div>
+  <formkit-input-diagram
+    class="input-diagram--dropdown-outer"
+    :schema="[
+        {
+          name: 'outer',
+          position: 'right',
+          children: [
+            {
+              name: 'wrapper',
+              position: 'right',
+              children: [
+                {
+                  name: 'label',
+                  position: 'right',
+                  content: 'Select t-shirt color',
+                  class: 'center-vert'
+                },
+                {
+                  name: 'inner',
+                  children: [
+                    {
+                      name: 'prefixIcon',
+                      content: ''
+                    },
+                    {
+                      name: 'prefix'
+                    },
+                    {
+                      name: 'selector',
+                      class: 'flex flex-grow',
+                      children: [
+                        {
+                          name: 'selection',
+                          class: 'flex-grow',
+                          children: [
+                            {
+                              name: 'option',
+                              content: 'Gray',
+                              class: 'flex',
+                              children: [
+                                {
+                                  name: 'optionLoading',
+                                  class: 'flex-grow-0'
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                            name: 'loaderIcon'
+                        },
+                        {
+                          name: 'selectIcon',
+                          content: '⌄',
+                          class: 'center-vert'
+                        }
+                      ]
+                    },
+                    {
+                      name: 'listbox',
+                      content: 'Blue Gray Tan',
+                      class: 'wrap-text',
+                      position: 'right'
+                    },
+                    {
+                      name: 'suffix',
+                      position: 'right'
+                    },
+                    {
+                      name: 'suffixIcon',
+                      position: 'right'
+                    },
+                  ]
+                },
+              ]
+            },
+            {
+              name: 'help',
+              content: 'Turn sound effects on and off.',
+              position: 'right'
+            },
+            {
+              name: 'messages',
+              position: 'right',
+              children: [
+                {
+                  name: 'message',
+                  content: 'Something wrong happened.',
+                  position: 'right'
+                }
+              ]
+            }
+          ]
+        }
+      ]"
+  >
+  </formkit-input-diagram>
+</div>
+
+### Inner listbox structure
+
+Below is the inner options list `listbox` structure from the diagram above:
+
+<div>
+  <formkit-input-diagram
+    class="input-diagram--dropdown"
+    :schema="[
+        {
+          name: 'dropdownWrapper',
+          position: 'right',
+          children: [
+            {
+              name: 'listbox',
+              position: 'right',
+              children: [
+                {
+                  name: 'listitem',
+                  class: 'flex flex-grow',
+                  position: 'right',
+                  children: [
+                    {
+                      name: 'selectedIcon',
+                      content: '✔️'
+                    },
+                    {
+                      name: 'option',
+                      content: 'Gray',
+                      position: 'right',
+                      class: 'flex flex-grow'
+                    },
+                  ]
+                },
+                {
+                  name: 'loadMore',
+                  children: [
+                    {
+                      name: 'loadMoreInner',
+                      children: [
+                        {
+                          name: 'loaderIcon',
+                          content: '⏳',
+                          class: 'text-center'
+                        }
+                      ]
+                    },
+                  ]
+                },
+              ]
+            },
+          ]
+        }
+      ]"
+  >
+  </formkit-input-diagram>
+</div>
+
+
 <reference-table type="sectionKeys" primary="section-key" :data="[
   {
     'section-key': 'selector',
@@ -165,6 +325,10 @@ file="/_content/examples/dropdown/dropdown-overscroll.vue"></example>
   {
     'section-key': 'selectIcon',
     description: 'An element for outputting an icon in the selector element when the dropdown is closed.'
+  },
+  {
+    'section-key': 'selectedIcon',
+    description: 'An element for outputting an icon next to the selected option when inside the listbox.'
   },
   {
     'section-key': 'loadMore',
