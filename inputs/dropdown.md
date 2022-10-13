@@ -154,9 +154,11 @@ file="/_content/examples/dropdown/dropdown-overscroll.vue"></example>
                   children: [
                     {
                       name: 'prefixIcon',
+                      class: 'tiny-section'
                     },
                     {
-                      name: 'prefix'
+                      name: 'prefix',
+                      class: 'tiny-section'
                     },
                     {
                       name: 'selector',
@@ -197,11 +199,13 @@ file="/_content/examples/dropdown/dropdown-overscroll.vue"></example>
                     },
                     {
                       name: 'suffix',
-                      position: 'right'
+                      position: 'right',
+                      class: 'tiny-section'
                     },
                     {
                       name: 'suffixIcon',
-                      position: 'right'
+                      position: 'right',
+                      class: 'tiny-section'
                     },
                   ]
                 },

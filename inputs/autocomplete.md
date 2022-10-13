@@ -168,11 +168,11 @@ The autocomplete's structure changes depending on a few different scenarios:
 - Whether `selection-appearance` has been set to `text-input` (the default) or `option`.
 - Whether multiple selections are enabled via the `multiple` attribute.
 
-### Selection appearance: option
+### Selection appearance `text-input`
 
 <div>
   <formkit-input-diagram
-    class="input-diagram--autocomplete-outer"
+    class="input-diagram--autocomplete-outer autocomplete-text-input"
     :schema="[
         {
           name: 'outer',
@@ -191,40 +191,47 @@ The autocomplete's structure changes depending on a few different scenarios:
                   children: [
                     {
                       name: 'prefixIcon',
+                      class: 'tiny-section'
                     },
                     {
-                      name: 'prefix'
+                      name: 'prefix',
+                      class: 'tiny-section'
                     },
                     {
                       name: 'input',
-                      content: 'Serena, Nadal'
+                      content: 'Serena, Pelé'
                     },
                     {
                       name: 'loaderIcon',
+                      position: 'right'
                     },
                     {
                       name: 'listboxButton',
                       position: 'right',
+                      class: 'small-pad center-vert',
                       children: [
                         {
                           name: 'selectIcon',
-                          content: '⌄'
+                          content: '⌄',
+                          position: 'right',
                         }
                       ]
                     },
                     {
                       name: 'listbox',
-                      content: 'Tiger Nadal',
+                      content: 'Tiger Pelé',
                       class: 'wrap-text',
                       position: 'right'
                     },
                     {
                       name: 'suffix',
-                      position: 'right'
+                      position: 'right',
+                      class: 'tiny-section'
                     },
                     {
                       name: 'suffixIcon',
-                      position: 'right'
+                      position: 'right',
+                      class: 'tiny-section'
                     },
                   ]
                 },
@@ -233,6 +240,131 @@ The autocomplete's structure changes depending on a few different scenarios:
             {
               name: 'help',
               content: 'Search for your favorite athletes.',
+              position: 'right'
+            },
+            {
+              name: 'messages',
+              children: [
+                {
+                  name: 'message',
+                  content: 'Sorry, that athlete could not be found.',
+                }
+              ]
+            }
+          ]
+        }
+      ]"
+  >
+  </formkit-input-diagram>
+</div>
+
+### Selection appearance `option`, single selection
+
+<div>
+  <formkit-input-diagram
+    class="input-diagram--autocomplete-outer autocomplete-option-single"
+    :schema="[
+        {
+          name: 'outer',
+          position: 'right',
+          children: [
+            {
+              name: 'wrapper',
+              children: [
+                {
+                  name: 'label',
+                  content: 'Your favorite athlete',
+                  class: 'center-vert',
+                  position: 'right'
+                },
+                {
+                  name: 'inner',
+                  children: [
+                    {
+                      name: 'prefixIcon',
+                      class: 'tiny-section'
+                    },
+                    {
+                      name: 'prefix',
+                      class: 'tiny-section'
+                    },
+                    {
+                      name: 'input',
+                      class: 'flex-grow-0'
+                    },
+                    {
+                      name: 'selections',
+                      class: 'flex flex-grow small-pad',
+                      children: [
+                        {
+                          name: 'selection',
+                          class: 'flex flex-grow small-pad',
+                          children: [
+                            {
+                              name: 'option',
+                              content: 'Pelé',
+                              class: 'flex flex-grow small-pad',
+                              children: [
+                                {
+                                  name: 'optionLoading',
+                                  class: 'flex-grow-0'
+                                }
+                              ]
+                            },
+                            {
+                              name: 'removeSelection',
+                              class: 'small-pad',
+                              children: [
+                                {
+                                  name: 'closeIcon',
+                                  content: 'X',
+                                  class: 'small-pad'
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }, 
+                    {
+                      name: 'loaderIcon',
+                      position: 'right'
+                    },
+                    {
+                      name: 'listboxButton',
+                      position: 'right',
+                      class: 'small-pad center-vert',
+                      children: [
+                        {
+                          name: 'selectIcon',
+                          content: '⌄',
+                          position: 'right'
+                        }
+                      ]
+                    },
+                    {
+                      name: 'listbox',
+                      content: 'Tiger Pelé',
+                      class: 'wrap-text',
+                      position: 'right'
+                    },
+                    {
+                      name: 'suffix',
+                      position: 'right',
+                      class: 'tiny-section'
+                    },
+                    {
+                      name: 'suffixIcon',
+                      position: 'right',
+                      class: 'tiny-section'
+                    },
+                  ]
+                },
+              ]
+            },
+            {
+              name: 'help',
+              content: 'Search for your favorite athlete.',
               position: 'right'
             },
             {
@@ -253,40 +385,133 @@ The autocomplete's structure changes depending on a few different scenarios:
   </formkit-input-diagram>
 </div>
 
+### Selection appearance `option`, multiple selection
 
-<!--  selections piece for (appearance === option)
+<div>
+  <formkit-input-diagram
+    class="input-diagram--autocomplete-outer autocomplete-option-single"
+    :schema="[
+        {
+          name: 'outer',
+          position: 'right',
+          children: [
+            {
+              name: 'wrapper',
+              children: [
+                {
+                  name: 'label',
+                  content: 'Your favorite athlete',
+                  class: 'center-vert',
+                  position: 'right'
+                },
+                {
+                  name: 'inner',
+                  children: [
                     {
-                      name: 'selections',
+                      name: 'prefixIcon',
+                      class: 'tiny-section'
+                    },
+                    {
+                      name: 'prefix',
+                      class: 'tiny-section'
+                    },
+                    {
+                      name: 'input',
+                    },
+                    {
+                      name: 'loaderIcon',
+                      position: 'right'
+                    },
+                    {
+                      name: 'listboxButton',
+                      position: 'right',
+                      class: 'center-vert small-pad',
+                      children: [
+                        {
+                          name: 'selectIcon',
+                          content: '⌄',
+                          position: 'right'
+                        }
+                      ]
+                    },
+                    {
+                      name: 'listbox',
+                      content: 'Tiger Pelé',
+                      class: 'wrap-text',
+                      position: 'right'
+                    },
+                    {
+                      name: 'suffix',
+                      position: 'right',
+                      class: 'tiny-section'
+                    },
+                    {
+                      name: 'suffixIcon',
+                      position: 'right',
+                      class: 'tiny-section'
+                    },
+                  ]
+                },
+                {
+                  name: 'selections',
+                  class: 'flex flex-grow',
+                  children: [
+                    {
+                      name: 'selection',
                       class: 'flex flex-grow',
                       children: [
                         {
-                          name: 'selection',
-                          class: 'flex-grow',
+                          name: 'option',
+                          content: 'Pelé',
+                          class: 'flex flex-grow',
                           children: [
                             {
-                              name: 'option',
-                              content: 'Gray',
-                              class: 'flex',
-                              children: [
-                                {
-                                  name: 'optionLoading',
-                                  class: 'flex-grow-0'
-                                }
-                              ]
-                            },
+                              name: 'optionLoading',
+                              class: 'flex-grow-0',
+                              position: 'right'
+                            }
+                          ]
+                        },
+                        {
+                          name: 'removeSelection',
+                          class: 'small-pad',
+                          position: 'right',
+                          children: [
                             {
-                              name: 'removeSelection',
-                              children: [
-                                {
-                                  name: 'closeIcon',
-                                  content: 'X'
-                                }
-                              ]
+                              name: 'closeIcon',
+                              content: 'X',
+                              class: 'small-pad',
+                              position: 'right'
                             }
                           ]
                         }
                       ]
-                    }, -->
+                    }
+                  ]
+                }, 
+              ]
+            },
+            {
+              name: 'help',
+              content: 'Search for your favorite athlete.',
+            },
+            {
+              name: 'messages',
+              children: [
+                {
+                  name: 'message',
+                  content: 'Sorry, that athlete could not be found.',
+                }
+              ]
+            }
+          ]
+        }
+      ]"
+  >
+  </formkit-input-diagram>
+</div>
+
+
 ### Inner listbox structure
 
 Below is the inner options list (`listbox`) structure from the diagrams above:

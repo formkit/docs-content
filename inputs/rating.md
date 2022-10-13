@@ -104,10 +104,11 @@ file="/_content/examples/rating/rating-colors.vue"></example>
                   children: [
                     {
                       name: 'prefixIcon',
-                      content: ''
+                      class: 'tiny-section'
                     },
                     {
                       name: 'prefix',
+                      class: 'tiny-section'
                     },
                     {
                       name: 'itemsWrapper',
@@ -140,10 +141,12 @@ file="/_content/examples/rating/rating-colors.vue"></example>
                     {
                       name: 'suffix',
                       position: 'right',
+                      class: 'tiny-section'
                     },
                     {
                       name: 'suffixIcon',
                       position: 'right',
+                      class: 'tiny-section'
                     },
                   ]
                 },
