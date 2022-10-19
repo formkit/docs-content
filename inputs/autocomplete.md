@@ -13,7 +13,7 @@ The autocomplete input allows you to search through a list of options. In this f
 <example
 name="Autocomplete"
 :min-height="550"
-file="/_content/examples/autocomplete-pro/autocomplete-base.vue"></example>
+file="/_content/examples/autocomplete-pro/autocomplete-base.vue"`></example>
 
 ## Defining options
 The `options` prop can accept three different formats of values:

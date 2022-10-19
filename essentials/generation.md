@@ -12,9 +12,8 @@ FormKit ships with first-class support for generating forms using a JSON-compati
 ```js
 import { FormKitSchema } from '@formkit/vue'
 ```
+
 </client-only>
-
-
 
 Let’s take a quick look at an example and we'll pick it up on the other side:
 
@@ -44,7 +43,9 @@ FormKit’s schema is most frequently used to generate forms (although it is not
 
 #### Shorthand
 
-While this syntax is generalized (it works for any Vue component) it is somewhat verbose when creating lots of FormKit inputs. To make this easier, FormKit supports a third node type `$formkit`, which is syntactic sugar for the full `$cmp` format shown above. For example:
+While this syntax is generalized (it works for any Vue component) it is somewhat verbose when creating lots of FormKit inputs. To make this easier, FormKit supports a third node type `$formkit`, which is syntactic sugar for the full `$cmp` format shown above.
+
+When using the `$formkit` shorthand the `props` object is flattened with the top-level properties (siblings of `$formkit`) For example:
 
 <example
   name="Generating forms - sugar"
