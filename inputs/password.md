@@ -18,8 +18,8 @@ The `password` input has no unique props but can make use of the following unive
 <reference-table input="password" :attrs="['maxlength', 'minlength', 'placeholder']">
 </reference-table>
 
-## Section keys
-You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+## Sections
+<section-keys-intro></section-keys-intro>
 
 <div>
   <formkit-input-diagram

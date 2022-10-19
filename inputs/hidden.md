@@ -25,7 +25,7 @@ FormKit props.
 <reference-table :without="['help', 'label', 'errors', 'prefix-icon', 'suffix-icon', ]">
 </reference-table>
 
-## Section keys
+## Sections
 
 Hidden inputs do not render all of the surrounding markup typical of other inputs. As such, most section keys do not apply.
 

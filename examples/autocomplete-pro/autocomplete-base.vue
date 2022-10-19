@@ -11,7 +11,7 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
     <FormKit
       type="autocomplete"
       name="country"
-      label="Select a country"
+      label="Search for a country"
       placeholder="Example: United States"
       :options="countries"
     />

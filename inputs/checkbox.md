@@ -57,9 +57,11 @@ file="/_content/examples/checkbox-objects/checkbox-objects.vue"></example>
   { prop: 'off-value', type: 'any', default: 'false', description: 'The value when the checkbox is unchecked (single checkboxes only).'}]">
 </reference-table>
 
-## Section keys
+## Sections
 
-The checkbox input has a different construction depending on if it's a single or multiple checkbox. You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+The checkbox input has a different construction depending on if it's a single or multiple checkbox.
+
+<section-keys-intro></section-keys-intro>
 
 ### Single checkbox diagram
 

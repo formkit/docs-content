@@ -8,6 +8,7 @@ description: A Pro input that allows users to select from a customizable options
 <ProInstallSnippet></ProInstallSnippet>
 
 ## Basic example
+
 The `dropdown` input allows users to select a value from a customizable list of options:
 
 <example
@@ -16,6 +17,7 @@ name="Dropdown"
 file="/_content/examples/dropdown/dropdown-base.vue"></example>
 
 ## Defining options
+
 The `options` prop can accept three different formats of values:
 
 - An array of objects with `value` and `label` keys (see example above)
@@ -61,6 +63,7 @@ name="Dropdown"
 file="/_content/examples/dropdown/dropdown-single-request.vue"></example>
 
 In the example above, we are assigning the `options` prop to the `loadHorrorMovies` function. After the request, we're iterating over the results to ensure that we return an array of objects with explicit `value` and `label` properties.
+
 ### Multiple pages
 
 What about loading options from an API where you need to be able to make multiple requests to perform pagination? When a function is set to the `options` prop it is passed FormKit node's `config` object as an argument. Within this `config` object are `page` and `hasNextPage` properties. The `page` property is the current page number, and the `hasNextPage` property is a function to be called when there are more pages to load:
@@ -120,4 +123,223 @@ file="/_content/examples/dropdown/dropdown-overscroll.vue"></example>
 <reference-table input="dropdown" :data="[
 {prop: 'options', type: 'any', default: '[]', description: 'The list of options the user can select from.'},
 {prop: 'load-on-scroll', type: 'boolean', default: 'false', description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'}, {prop: 'option-loader', type: 'function', default: 'null', description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'}]">
+</reference-table>
+
+## Sections
+
+<section-keys-intro></section-keys-intro>
+
+### Outer structure
+
+<div>
+  <formkit-input-diagram
+    class="input-diagram--dropdown-outer"
+    :schema="[
+        {
+          name: 'outer',
+          position: 'right',
+          children: [
+            {
+              name: 'wrapper',
+              position: 'right',
+              children: [
+                {
+                  name: 'label',
+                  position: 'right',
+                  content: 'Select t-shirt color',
+                  class: 'center-vert'
+                },
+                {
+                  name: 'inner',
+                  children: [
+                    {
+                      name: 'prefixIcon',
+                      class: 'tiny-section'
+                    },
+                    {
+                      name: 'prefix',
+                      class: 'tiny-section'
+                    },
+                    {
+                      name: 'selector',
+                      class: 'flex flex-grow',
+                      children: [
+                        {
+                          name: 'selection',
+                          class: 'flex-grow',
+                          children: [
+                            {
+                              name: 'option',
+                              content: 'Gray',
+                              class: 'flex border-solid',
+                              children: [
+                                {
+                                  name: 'optionLoading',
+                                  class: 'flex-grow-0'
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                            name: 'loaderIcon'
+                        },
+                        {
+                          name: 'selectIcon',
+                          content: '⌄',
+                          class: 'center-vert'
+                        }
+                      ]
+                    },
+                    {
+                      name: 'listbox',
+                      content: 'Blue Gray Tan',
+                      class: 'wrap-text',
+                      position: 'right'
+                    },
+                    {
+                      name: 'suffix',
+                      position: 'right',
+                      class: 'tiny-section'
+                    },
+                    {
+                      name: 'suffixIcon',
+                      position: 'right',
+                      class: 'tiny-section'
+                    },
+                  ]
+                },
+              ]
+            },
+            {
+              name: 'help',
+              content: 'Turn sound effects on and off.',
+              position: 'right'
+            },
+            {
+              name: 'messages',
+              position: 'right',
+              children: [
+                {
+                  name: 'message',
+                  content: 'Something wrong happened.',
+                  position: 'right'
+                }
+              ]
+            }
+          ]
+        }
+      ]"
+  >
+  </formkit-input-diagram>
+</div>
+
+### Inner listbox structure
+
+Below is the inner options list (`listbox`) structure from the diagram above:
+
+<div>
+  <formkit-input-diagram
+    class="input-diagram--dropdown"
+    :schema="[
+        {
+          name: 'dropdownWrapper',
+          position: 'right',
+          children: [
+            {
+              name: 'listbox',
+              position: 'right',
+              children: [
+                {
+                  name: 'listitem',
+                  class: 'flex flex-grow',
+                  position: 'right',
+                  children: [
+                    {
+                      name: 'selectedIcon',
+                      content: '✔️'
+                    },
+                    {
+                      name: 'option',
+                      content: 'Gray',
+                      position: 'right',
+                      class: 'flex flex-grow'
+                    },
+                  ]
+                },
+                {
+                  name: 'loadMore',
+                  children: [
+                    {
+                      name: 'loadMoreInner',
+                      children: [
+                        {
+                          name: 'loaderIcon',
+                          content: '⏳',
+                          class: 'text-center'
+                        }
+                      ]
+                    },
+                  ]
+                },
+              ]
+            },
+          ]
+        }
+      ]"
+  >
+  </formkit-input-diagram>
+</div>
+
+
+<reference-table type="sectionKeys" primary="section-key" :data="[
+  {
+    'section-key': 'selector',
+    description: 'The selector section is a button element that opens the dropdown options list.'
+  },
+  {
+    'section-key': 'selection',
+    description: 'Contains the selected option.'
+  },
+  {
+    'section-key': 'listitem',
+    description: 'A list item element that contains the option section.'
+  },
+  {
+    'section-key': 'option',
+    description: 'A div that contains the option content.'
+  },
+  {
+    'section-key': 'listbox',
+    description: 'The listbox section is a ul element that contains the options list.'
+  },
+  {
+    'section-key': 'dropdownWrapper',
+    description: 'Wraps the listbox section. A div that handles scrolling the listbox.'
+  },
+  {
+    'section-key': 'optionLoading',
+    description: 'A span element that is conditionally rendered within the selected option when loading is occurring.'
+  },
+  {
+    'section-key': 'loaderIcon',
+    description: 'An element for outputting an icon in the selector element when loading is occurring.'
+  },
+  {
+    'section-key': 'selectIcon',
+    description: 'An element for outputting an icon in the selector element when the dropdown is closed.'
+  },
+  {
+    'section-key': 'selectedIcon',
+    description: 'An element for outputting an icon next to the selected option when inside the listbox.'
+  },
+  {
+    'section-key': 'loadMore',
+    description: 'A list item element that is conditionally rendered at the bottom of the options list when there are more pages to load.'
+  },
+  {
+    'section-key': 'loadMoreInner',
+    description: 'A span element that acts as a wrapper for the loaderIcon within the loadMore section.'
+  }
+]">
 </reference-table>

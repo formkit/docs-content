@@ -45,7 +45,7 @@ async function loadMovie(id) {
       name="movie"
       type="autocomplete"
       label="Search for your favorite movie"
-      placeholder="Example placeholder"
+      placeholder="Example: Harry Potter"
       :options="searchMovies"
       :value="597"
       :option-loader="loadMovie"

@@ -85,7 +85,7 @@ description: What's new in the latest version of FormKit?.
 - New docs page for [FormKit Icons](/plugins/icons) 🎉.
 - New guide for [exporting and restructuring icons](/guides/export-and-restructure-inputs)!
 - New docs using the [AutoAnimate plugin](/plugins/auto-animate).
-- Input diagrams include [new icon sections](/inputs/color#section-keys).
+- Input diagrams include [new icon sections](/inputs/color#sections).
 
 ## 1.0.0-beta.8
 

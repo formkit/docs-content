@@ -8,6 +8,7 @@ description: A Pro input that allows users to add, remove, and re-arrange repeat
 <ProInstallSnippet></ProInstallSnippet>
 
 ## Base example
+
 The `repeater` input is for repeating groups of inputs. You can use any number of FormKit inputs within a repeater, and repeaters themselves can be infinitely nested.
 
 By default, the repeater input has the ability to shift, add, and remove items:
@@ -57,7 +58,6 @@ You can set errors on a repeater or any repeatable item using dot notation. Here
 
 <client-only>
 
-
 ```js
 // the 2nd argument of setErrors is input-level errors
 formNode.setErrors( null, // no form errors,
@@ -82,7 +82,6 @@ returning errors for both the repeater and one child:
   name="Repeater"
   file="/_content/examples/repeater/errors/repeater-errors.vue"></example>
 
-
 ## Props & Attributes
 
 <reference-table input="rating" :data="[
@@ -96,4 +95,272 @@ returning errors for both the repeater and one child:
   {prop: 'min', type: 'Number', default: '0', description: 'The minimum number of children.'},
   {prop: 'max', type: 'Number', default: 'null', description: 'The maximum number of children.'}
   ]">
+</reference-table>
+
+## Sections
+
+<section-keys-intro></section-keys-intro>
+
+<div>
+  <formkit-input-diagram
+    class="input-diagram--autocomplete-outer autocomplete-option-single"
+    :schema="[
+      {
+        name: 'outer',
+        children: [
+          {
+            name: 'fieldset',
+            children: [
+              {
+                name: 'legend',
+                content: 'Guests',
+                class: 'center-vert',
+              },
+              {
+                name: 'help',
+                content: 'Note guests you will bring to the race track.',
+              },
+              {
+                name: 'inner',
+                children: [
+                  {
+                    name: 'prefix',
+                    class: 'tiny-section'
+                  },
+                  {
+                    name: 'items',
+                    class: 'flex-grow',
+                    children: [
+                      {
+                        name: 'item',
+                        class: 'flex',
+                        children: [
+                          {
+                            name: 'content',
+                            class: 'flex-grow',
+                            content: 'Repeated fields here.'
+                          },
+                          {
+                            name: 'controls',
+                            class: '',
+                            position: 'right',
+                            children: [
+                              {
+                                name: 'up',
+                                position: 'right',
+                                class: 'small-pad spacing-bottom',
+                                children: [
+                                  {
+                                    name: 'upControl',
+                                    position: 'right',
+                                    class: 'small-pad flex',
+                                    children: [
+                                      {
+                                        name: 'controlLabel',
+                                        position: 'right',
+                                        class: 'small-pad tiny-section'
+                                      },
+                                      {
+                                        name: 'moveUpIcon',
+                                        position: 'right',
+                                        content: '↑',
+                                        class: 'small-pad flex-grow'
+                                      }
+                                    ]
+                                  },
+                                ]
+                              },
+                              {
+                                name: 'remove',
+                                position: 'right',
+                                class: 'small-pad spacing-bottom',
+                                children: [
+                                  {
+                                    name: 'removeControl',
+                                    class: 'small-pad flex',
+                                    position: 'right',
+                                    children: [
+                                      {
+                                        name: 'controlLabel',
+                                        position: 'right',
+                                        class: 'small-pad tiny-section'
+                                      },
+                                      {
+                                        name: 'removeIcon',
+                                        position: 'right',
+                                        content: '🗑',
+                                        class: 'small-pad'
+                                      }
+                                    ]
+                                  },
+                                ]
+                              },
+                              {
+                                name: 'insert',
+                                position: 'right',
+                                class: 'small-pad spacing-bottom',
+                                children: [
+                                  {
+                                    name: 'insertControl',
+                                    class: 'small-pad flex',
+                                    position: 'right',
+                                    children: [
+                                      {
+                                        name: 'controlLabel',
+                                        position: 'right',
+                                        class: 'small-pad tiny-section'
+                                      },
+                                      {
+                                        name: 'addIcon',
+                                        position: 'right',
+                                        content: '➕',
+                                        class: 'small-pad'
+                                      }
+                                    ]
+                                  },
+                                ]
+                              },
+                              {
+                                name: 'down',
+                                class: 'small-pad spacing-bottom',
+                                position: 'right',
+                                children: [
+                                  {
+                                    name: 'downControl',
+                                    class: 'small-pad flex',
+                                    position: 'right',
+                                    children: [
+                                      {
+                                        name: 'controlLabel',
+                                        position: 'right',
+                                        class: 'small-pad tiny-section'
+                                      },
+                                      {
+                                        name: 'moveDownIcon',
+                                        position: 'right',
+                                        content: '↓',
+                                        class: 'small-pad'
+                                      }
+                                    ]
+                                  },
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    name: 'suffix',
+                    position: 'right',
+                    class: 'tiny-section'
+                  },
+                ]
+              },
+              {
+                name: 'addButton',
+                class: 'button button--pro margin-collapse',
+                content: 'Add guest'
+              }
+            ]
+          },
+          {
+            name: 'messages',
+            children: [
+              {
+                name: 'message',
+                content: 'Sorry, you may not add more than 3 guests.',
+              }
+            ]
+          }
+        ]
+      }
+    ]"
+  >
+  </formkit-input-diagram>
+</div>
+
+<reference-table type="sectionKeys" primary="section-key" :data="[
+  {
+    'section-key': 'fieldset',
+    description: 'A fieldset element that acts as the repeater\'s wrapper.'
+  },
+  {
+    'section-key': 'legend',
+    description: 'A legend element that renders the label.'
+  },
+  {
+    'section-key': 'items',
+    description: 'A ul element that wraps the repeater\'s items.'
+  },
+  {
+    'section-key': 'item',
+    description: 'A li element that is rendered for each repeater item.'
+  },
+  {
+    'section-key': 'content',
+    description: 'A container for the group section.'
+  },
+  {
+    'section-key': 'group',
+    description: 'Does not render an element. It structures the default slot into an object data structure. '
+  },
+  {
+    'section-key': 'controls',
+    description: 'A ul element that wraps the repeater\'s controls.'
+  },
+  {
+    'section-key': 'controlLabel',
+    description: 'A span element that renders the label of the given control.'
+  },
+  {
+    'section-key': 'up',
+    description: 'A li element that renders the up control.'
+  },
+  {
+    'section-key': 'upControl',
+    description: 'A button element that renders the up control.'
+  },
+  {
+    'section-key': 'moveUpIcon',
+    description: 'A span element that renders the upControl\'s icon.'
+  },
+  {
+    'section-key': 'down',
+    description: 'A li element that renders the down control.'
+  },
+  {
+    'section-key': 'downControl',
+    description: 'A button element that renders the down control.'
+  },
+  {
+    'section-key': 'moveDownIcon',
+    description: 'A span element that renders the downControl\'s icon.'
+  },
+  {
+    'section-key': 'insert',
+    description: 'A li element that renders the insert control.'
+  },
+  {
+    'section-key': 'insertControl',
+    description: 'A button element that renders the insert control.'
+  },
+  {
+    'section-key': 'insertIcon',
+    description: 'A span element that renders the insertControl\'s icon.'
+  },
+  {
+    'section-key': 'remove',
+    description: 'A li element that renders the remove control.'
+  },
+  {
+    'section-key': 'removeControl',
+    description: 'A button element that renders the remove control.'
+  },
+  {
+    'section-key': 'removeIcon',
+    description: 'A span element that renders the removeControl\'s icon.'
+  },
+]">
 </reference-table>

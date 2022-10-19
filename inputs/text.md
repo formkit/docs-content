@@ -19,8 +19,8 @@ FormKit props.
 <reference-table input="text" :attrs="['maxlength', 'minlength', 'placeholder']">
 </reference-table>
 
-## Section keys
-You can target a specific section of an input using that section's "key". Read more about sections [here](/essentials/inputs#sections).
+## Sections
+<section-keys-intro></section-keys-intro>
 
 <div>
   <formkit-input-diagram

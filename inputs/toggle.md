@@ -6,7 +6,9 @@ description: The `toggle` input is used to choose one of two values; it is a goo
 <InputPageHero title="Toggle"></InputPageHero>
 
 <ProInstallSnippet></ProInstallSnippet>
+
 ## Basic example
+
 The `toggle` input offers a choice between one of two values; it's a great option when you want the user to toggle a feature on or off:
 
 <example
@@ -85,4 +87,120 @@ The `toggle` input is built atop HTML's [native checkbox input](https://develope
 {prop: 'icon-color-on', type: 'String', default: 'undefined', description: 'The color the icon should be set to when `toggle-icon` prop is set and the toggle is checked.'},
 {prop: 'track-color-off', type: 'String', default: 'undefined', description: 'Sets the background color of the `track` section when the toggle is unchecked.'},
 {prop: 'track-color-on', type: 'String', default: 'undefined', description: 'Sets the background color of the `track` section when toggle is checked.'}]">
+</reference-table>
+
+## Sections
+
+<section-keys-intro></section-keys-intro>
+
+<div>
+  <formkit-input-diagram
+    class="input-diagram--toggle"
+    :schema="[
+        {
+          name: 'outer',
+          position: 'right',
+          children: [
+            {
+              name: 'wrapper',
+              position: 'right',
+              children: [
+                {
+                  name: 'altLabel',
+                  position: 'right',
+                  class: 'center-vert'
+                },
+                {
+                  name: 'inner',
+                  children: [
+                    {
+                      name: 'prefix',
+                    },
+                    {
+                      name: 'input',
+                    },
+                    {
+                      name: 'track',
+                      class: 'flex-grow flex',
+                      children: [
+                        {
+                          name: 'innerLabel',
+                        },
+                        {
+                          name: 'thumb',
+                          class: 'flex-grow text-center border-solid',
+                          children: [
+                            {
+                              name: 'thumbIcon',
+                              content: '⚫️'
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      name: 'suffix',
+                      position: 'right',
+                    },
+                  ]
+                },
+                {
+                  name: 'valueLabel',
+                  position: 'right',
+                },
+                {
+                  name: 'label',
+                  content: 'Sound effects'
+                }
+              ]
+            },
+            {
+              name: 'help',
+              content: 'Turn sound effects on and off.',
+              position: 'right'
+            },
+            {
+              name: 'messages',
+              position: 'right',
+              children: [
+                {
+                  name: 'message',
+                  content: 'Something wrong happened.',
+                  position: 'right'
+                }
+              ]
+            }
+          ]
+        }
+      ]"
+  >
+  </formkit-input-diagram>
+</div>
+
+<reference-table type="sectionKeys" primary="section-key" :data="[
+  {
+    'section-key': 'track',
+    description: 'The track section is the background of the toggle (the area that the thumb slides on).'
+  },
+  {
+    'section-key': 'thumb',
+    description: 'The thumb section is the element that slides on the track.'
+  },
+  {
+    'section-key': 'thumbIcon',
+    description: 'The thumbIcon section is the icon that is rendered inside the thumb section (when thumb-icon prop is set).'
+  },
+  {
+    'section-key': 'valueLabel',
+    description: 'An additional label element, rendered when value-label props are used. Displayed to the right of the toggle.'
+  },
+  {
+    'section-key': 'altLabel',
+    description: 'A label element for the label. This label is rendered when value-label props are being used.'
+  },
+  {
+    'section-key': 'innerLabel',
+    description: 'A label element used when value-label props are provided and value-label-display is set to inner.'
+  }
+]">
 </reference-table>
