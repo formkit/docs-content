@@ -92,7 +92,7 @@ returning errors for both the repeater and one child:
   {prop: 'down-control', type: 'boolean', default: 'true', description: 'Conditional for whether to show the down control.'},
   {prop: 'insert-control', type: 'boolean', default: 'false', description: 'Conditional for whether to show the insert control.'},
   {prop: 'remove-control', type: 'boolean', default: 'true', description: 'Conditional for whether to show the remove control.'},
-  {prop: 'min', type: 'Number', default: '0', description: 'The minimum number of children.'},
+  {prop: 'min', type: 'Number', default: '1', description: 'The minimum number of children.'},
   {prop: 'max', type: 'Number', default: 'null', description: 'The maximum number of children.'}
   ]">
 </reference-table>
