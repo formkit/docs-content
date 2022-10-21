@@ -148,8 +148,6 @@ name="Dropdown"
 :min-height="550"
 file="/_content/examples/autocomplete-pro/autocomplete-full.vue"></example>
 
-<!-- Example of loading option via API. -->
-
 <!-- ## Accessibility -->
 
 ## Props & Attributes
