@@ -15,12 +15,19 @@ Community involvement and contributions are one of the most important aspects of
 
 <h3><span class="emoji">🥉</span> Bronze sponsors</h3>
 
-<a href="https://www.perbyte.com">
+<a class="no-underline" href="https://www.perbyte.com">
     <img
         src="https://cdn.formk.it/web-assets/sponsors/bronze-sponsor_perbyte.png"
         alt="PerByte logo"
         target="_blank"
-        style="display:inline-block;width: 120px; margin-right: 10px;"
+        style="display:inline-block;vertical-align: middle;width: 120px;margin-right: 25px;"
+    />
+</a><a class="no-underline" href="https://sharpless.co">
+    <img
+        src="https://cdn.formk.it/web-assets/sponsors/sharpless-logo-small.png"
+        alt="PerByte logo"
+        target="_blank"
+        style="display:inline-block;vertical-align:middle;width:80px; margin-right: 10px;"
     />
 </a>
 
