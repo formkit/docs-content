@@ -7,9 +7,29 @@ description: A native HTML button element.
 
 The `button` input uses HTML's [native button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button). The `label` prop is used to populate the text of the button — or alternatively you can use the default slot.
 
+## Basic example
+
+The easiest way to set the `label` of a button is with the `label` prop:
+
 <example
 name="Button input"
-file="/_content/examples/button/button.vue"></example>
+file="/_content/examples/button/button-base.vue"></example>
+
+## Default slot
+
+The default slot can also be used to add text and UI to the button:
+
+<example
+name="Button input"
+file="/_content/examples/button/button-default-slot.vue"></example>
+
+## Event listeners
+
+You can also bind event listeners:
+
+<example
+name="Button input"
+file="/_content/examples/button/button-events.vue"></example>
 
 ## Props & Attributes
 

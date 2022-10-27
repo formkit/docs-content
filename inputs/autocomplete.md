@@ -14,7 +14,7 @@ The autocomplete input allows you to search through a list of options. In this f
 <example
 name="Autocomplete"
 :min-height="550"
-file="/\_content/examples/autocomplete-pro/autocomplete-base.vue"`></example>
+file="/\_content/examples/autocomplete-pro/autocomplete-base.vue"></example>
 
 ## Defining options
 
@@ -147,8 +147,6 @@ Now let's combine what we've learned so far by leveraging the `option` slot for 
 name="Dropdown"
 :min-height="550"
 file="/_content/examples/autocomplete-pro/autocomplete-full.vue"></example>
-
-<!-- Example of loading option via API. -->
 
 <!-- ## Accessibility -->
 
@@ -325,7 +323,7 @@ The autocomplete's structure changes depending on a few different scenarios:
                           ]
                         }
                       ]
-                    }, 
+                    },
                     {
                       name: 'loaderIcon',
                       position: 'right'
@@ -488,7 +486,7 @@ The autocomplete's structure changes depending on a few different scenarios:
                       ]
                     }
                   ]
-                }, 
+                },
               ]
             },
             {
