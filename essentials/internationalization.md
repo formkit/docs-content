@@ -27,6 +27,7 @@ FormKit ships with internationalization support for all of its interfaces and va
 - 🇯🇵 Japanese (ja) - 🙏&nbsp;@wonyx
 - 🇰🇿 Kazakh (kk) - 🙏&nbsp;@ilya-raevskiy
 - 🇰🇷 Korean (ko) - 🙏&nbsp;@bwp618, @titusdecali
+- 🇳🇴 Norwegian Bokmål (nb) - 🙏&nbsp;@hognevevle
 - 🇮🇷 Persian (fa) - 🙏&nbsp;@shahabbasian
 - 🇵🇱 Polish (pl) - 🙏&nbsp;@xxSkyy
 - 🇧🇷 Portuguese (pt) 🙏&nbsp;@r-martins
@@ -41,7 +42,7 @@ FormKit ships with internationalization support for all of its interfaces and va
 - 🇹🇭 Thai (th) - 🙏&nbsp;@pknn
 - 🇺🇦 Ukrainian (uk) - 🙏&nbsp;@aresofficial
 - 🇺🇿 Uzbek (uz) - 🙏&nbsp;@root5427
-- 🇹🇷 Turkish (tr) - 🙏&nbsp;@ragokan
+- 🇹🇷 Turkish (tr) - 🙏&nbsp;@ragokan, @cemkaan
 - 🇻🇳 Vietnamese (vi) - 🙏&nbsp;@oanhnn
 
 Although flags are <a href="http://www.flagsarenotlanguages.com/blog/why-flags-do-not-represent-language/">poor representations of languages</a> (flags indicate a geographic nation, while languages can be spoken in many ares of the world), we use the flags in the list above to indicate the location of the contributor who created that particular locale.
