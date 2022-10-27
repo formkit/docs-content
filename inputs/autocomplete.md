@@ -14,7 +14,7 @@ The autocomplete input allows you to search through a list of options. In this f
 <example
 name="Autocomplete"
 :min-height="550"
-file="/_content/examples/autocomplete-pro/autocomplete-base.vue"`></example>
+file="/\_content/examples/autocomplete-pro/autocomplete-base.vue"`></example>
 
 ## Defining options
 
@@ -155,7 +155,7 @@ file="/_content/examples/autocomplete-pro/autocomplete-full.vue"></example>
 ## Props & Attributes
 
 <reference-table input="autocomplete" :data="[
-{prop: 'options', type: 'any', default: '[]', description: 'The list of options the user can select from.'},
+{prop: 'debounce', type: 'number', default: '200', description: 'Number of milliseconds to debounce calls to an options function.'}, {prop: 'options', type: 'any', default: '[]', description: 'The list of options the user can select from.'},
 {prop: 'load-on-scroll', type: 'boolean', default: 'false', description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'}, {prop: 'selection-appearance', type: 'string', default: 'text-input', description: 'Changes the way the option label is display.'}, {prop: 'multiple', type: 'boolean', default: 'false', description: 'Allows for multiple selections.'}, {prop: 'open-on-click', type: 'boolean', default: 'false', description: 'The autocomplete is expanded upon focus of the input, as opposed to waiting to expand until a search value is entered.'}, {prop: 'filter', type: 'function', default: 'null', description: 'Used to apply your own custom filter function for static options.'}, {prop: 'option-loader', type: 'function', default: 'null', description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'}]">
 </reference-table>
 
@@ -510,7 +510,6 @@ The autocomplete's structure changes depending on a few different scenarios:
   >
   </formkit-input-diagram>
 </div>
-
 
 ### Inner listbox structure
 
