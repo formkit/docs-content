@@ -13,7 +13,7 @@ A `<FormKit type="form">` tracks the form's validation state and prevents users 
 
 ### Provided submit button
 
-As a convenience, the `form` outputs a submit [button](/inputs/button) automatically, and provided themes also include a loading spinner. You can alter this button with the `submit-label` and `submit-attrs` props, or disable with `:actions="false"`.
+As a convenience, the `form` outputs a submit [button](/inputs/button) automatically, and provided themes also include a loading spinner. You can alter this button with the `submit-label` and `submit-attrs` props, or disable with `:actions="false"`:
 
 ```html
 <FormKit
@@ -23,8 +23,8 @@ As a convenience, the `form` outputs a submit [button](/inputs/button) automatic
     inputClass: 'my-input-class', // targets button's inner section
     outerClass: 'my-outer-class', // targets button's outer section
     wrapperClass: 'my-wrapper-class', // targets button's wrapper section
-    'data-theme': `dark`,
-    help: 'My button help text'
+    'data-theme': `dark`, // or any arbitrary attribute
+    help: 'My button help text' // or any possible formkit prop fpr
   }"
 ></FormKit>
 ```
