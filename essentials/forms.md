@@ -24,7 +24,7 @@ As a convenience, the `form` outputs a submit [button](/inputs/button) automatic
     outerClass: 'my-outer-class', // targets button's outer section
     wrapperClass: 'my-wrapper-class', // targets button's wrapper section
     'data-theme': `dark`, // or any arbitrary attribute
-    help: 'My button help text' // or any possible formkit prop fpr
+    help: 'My button help text' // or any possible formkit prop
   }"
 ></FormKit>
 ```
