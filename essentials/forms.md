@@ -13,7 +13,21 @@ A `<FormKit type="form">` tracks the form's validation state and prevents users 
 
 ### Provided submit button
 
-As a convenience, the `form` outputs a submit button automatically, and provided themes also include a loading spinner. You can alter this button with the `submit-label` and `submit-attrs` props, or disable with `:actions="false"`.
+As a convenience, the `form` outputs a submit [button](/inputs/button) automatically, and provided themes also include a loading spinner. You can alter this button with the `submit-label` and `submit-attrs` props, or disable with `:actions="false"`.
+
+```html
+<FormKit
+  type="form"
+  submit-label="Update"
+  :submit-attrs="{
+    inputClass: 'my-input-class', // targets button's inner section
+    outerClass: 'my-outer-class', // targets button's outer section
+    wrapperClass: 'my-wrapper-class', // targets button's wrapper section
+    'data-theme': `dark`,
+    help: 'My button help text'
+  }"
+></FormKit>
+```
 
 ### Full example form
 
@@ -51,8 +65,8 @@ Forms are usually submitted through user actions like clicking a submit button o
 2. Emits the `@submit-raw` event.
 3. Sets the `submitted` state to true on all inputs — displaying any remaining validation errors (regardless of the `validation-visibility`).
 4. If the form has validation errors the `@submit-invalid` event is fired.
-4. If all inputs are valid it fires the `@submit` event.
-5. If the `@submit` handler returns a `Promise`, sets the form’s state to `loading` until it resolves.
+5. If all inputs are valid it fires the `@submit` event.
+6. If the `@submit` handler returns a `Promise`, sets the form’s state to `loading` until it resolves.
 
 <callout type="warning" label="Avoid v-model for collecting and submitting form data">
 Using <code>v-model</code> data in your submit handler can lead to unintended form mutations. FormKit <em>automatically</em> collects form data for you, so use the unbound copy of your form’s data that is passed to your submission handler instead. 
@@ -62,7 +76,7 @@ Using <code>v-model</code> data in your submit handler can lead to unintended fo
 
 The most common method of form submission in a modern SPA is an XHR request (think [axios](https://axios-http.com/) or [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)). FormKit is well suited to this task:
 
-- It hands your `@submit` handler 1) the collected form data as a single request-ready object (no `v-model` needed), and 2) the `form` input's core node, as a convenience. 
+- It hands your `@submit` handler 1) the collected form data as a single request-ready object (no `v-model` needed), and 2) the `form` input's core node, as a convenience.
 - If you use an async submit handler, it will disable your form’s inputs and apply a loading state to your form (`loading` becomes true at `context.state.loading` and a spinner is displayed on the `genesis` theme).
 - It handles [backend errors](#error-handling) by placing error messages directly on the failing inputs.
 
