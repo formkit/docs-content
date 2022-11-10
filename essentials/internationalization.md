@@ -20,6 +20,7 @@ FormKit ships with internationalization support for all of its interfaces and va
 - 🇫🇷 French (fr) — 🙏&nbsp;@HoreKk, @pop123123123
 - <img src="/img/frisian_flag.svg" alt="Frisian flag" class="rare-flag"> Frisian (fy) — 🙏&nbsp;@arjendejong12
 - 🇩🇪 German (de) — 🙏&nbsp;@digitalkaoz, @tosling
+- 🇬🇷 Greek (el) — 🙏&nbsp;@mendrinos
 - 🇮🇱 Hebrew (he) - 🙏&nbsp;@Hepi420
 - 🇭🇺 Hungarian (hu) — 🙏&nbsp;@KristofKekesi
 - 🇮🇩 Indonesian (id) - 🙏&nbsp;@rama-adi
