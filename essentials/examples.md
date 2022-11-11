@@ -32,7 +32,7 @@ Use the <code>FormKitSchema</code> component to conditionally show an input (wit
 <ExampleCard
   href="https://formkit.link/9fc88976fc72d4d09f5deb2b1891abce"
   title="Multi-step form built from Schema">
-    Use the <code>FormKitSchema</code> component to render the multi-step form from the multi-step form guide.
+Use the <code>FormKitSchema</code> component to render the multi-step form from the multi-step form guide.
 </ExampleCard>
 
 ## Plugins
@@ -40,7 +40,7 @@ Use the <code>FormKitSchema</code> component to conditionally show an input (wit
 <ExampleCard
   href="https://formkit.link/b48228435ec7770fbc81de811fbe35d8"
   title="Add an asterisk to the labels of all required inputs">
-Use a plugin to add an asterisk (*) to the label area of inputs that have the "required" rule.
+Use a plugin to add an asterisk (\*) to the label area of inputs that have the "required" rule.
 </ExampleCard>
 
 <ExampleCard
@@ -71,6 +71,12 @@ Use a plugin to set all initial input values to an empty string <code>""</code> 
   href="https://formkit.link/c253b391d5f16f226457073bb6dc30c4"
   title="Automatically set an input's name, label, and help text based on the id">
 Use a plugin to automatically set an input's <code>name</code>, <code>label</code>, and <code>help</code> props based on the <code>id</code>. Reduces repetitive prop declarations in your HTML.
+</ExampleCard>
+
+<ExampleCard
+  href="https://formkit.link/59d4b7f785b60678d23705a13c38ef28"
+  title="Scroll to the first validation or error on the form.">
+A plugin that automatically scrolls to the first error on the page on submit or when backend errors are added.
 </ExampleCard>
 
 ## Inputs
@@ -118,5 +124,3 @@ Use the <code>rootClasses</code> config function and FormKit props to produce a 
   title="Create reactive UI variations of FormKit inputs using “features”">
 Create UI variations of FormKit inputs (like buttons) that update based on reactive data in your components.
 </ExampleCard>
-
-
