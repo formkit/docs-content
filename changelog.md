@@ -10,12 +10,12 @@ description: What's new in the latest version of FormKit?.
 ### November 15, 2022
 
 #### 💪 New features
-- Adds `formkit create-app`(/essentials/installation) command to bootstrap apps with nuxt support
+- Pro: New [Taglist Pro Input](/inputs/taglist) now available!
+- Adds [`npx formkit create-app`](/essentials/installation#with-create-app) command to easily bootstrap new FormKit projects.
 - Improves `length` rule validation messages across all languages.
 - Adds 🇬🇷 Greek (uk) language [#460](https://github.com/formkit/formkit/issues/460).
 - Adds 🇳🇴 Norwegian Bokmål (nb) language [#418](https://github.com/formkit/formkit/issues/418).
 - Adds 🇸🇰 Slovak (sk) language [#401](https://github.com/formkit/formkit/issues/401).
-- Pro: New [Taglist Pro Input](/inputs/taglist) now available!
 - Pro: All Pro Inputs can now be disabled.
 - Pro: Improvements to Genesis Pro theme.
 - Pro: Autocompletes with multiple options selected can now be re-ordered via drag & drop.
