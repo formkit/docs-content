@@ -5,7 +5,52 @@ description: Get up and running with FormKit in your project.
 
 # Installation
 
-FormKit can be downloaded using a package manager like `npm` or `yarn`.
+The simplest way to get a new project started with FormKit is by using the `create-app` CLI. Alternatively, if you already have a project you can do a manual installation [with vue](#with-vue) or [with nuxt](#with-nuxt).
+
+## With Create App
+
+`create-app` is the fastest way to start a new project with FormKit pre configured for you. It will walk you through all steps necessaries for a smooth setup. It allows you to choose from a few options, from adding typescript support, using nuxt or vite as your starting template, to setting up FormKit Pro inputs.
+
+### Run the CLI wizard
+
+At your terminal run the command to start FormKit CLI tool `create-app`, to start your new project:
+
+<client-only>
+
+```sh
+npx formkit@next create-app
+```
+
+</client-only>
+
+Our CLI `create-app` will ask you some questions about your project, so it can determine what it needs to install and setup for you:
+
+<client-only>
+
+```sh
+✔ Please enter a name for the project › <your-project-name>
+✔ What framework would you like to use? › Vite / Nuxt
+✔ What language should be used? › TypeScript / Javascript
+✔ Would you like to install FormKit Pro? › no / yes
+✔ Enter a project key from https://pro.formkit.com: › <fk-00000000000>
+```
+
+</client-only>
+
+Once everything is created, you can follow the instructions to install all dependencies and start a development server:
+
+<client-only>
+
+```sh
+Created formkit-app!
+
+To run your new app:
+📁 cd <your-project-name>
+✅ npm install
+🚀 npm run dev
+```
+
+</client-only>
 
 ## With Vue
 
@@ -60,6 +105,7 @@ defaultConfig({
 })
 ...
 ```
+
 </client-only>
 
 ### Direct import
@@ -86,10 +132,13 @@ import '@formkit/themes/genesis'
 ## Pro Inputs
 
 Installing FormKit Pro is easy! Here are the steps:
+
 #### 1. Get a Project Key
+
 Login to your FormKit Pro account at [pro.formkit.com](https://pro.formkit.com) and create a project. A `Project Key` will be provided to you.
 
 #### 2. Install the package
+
 Next, install the `@formkit/pro` package using `npm`, `yarn`, or other package manager:
 
 <client-only>
@@ -152,7 +201,7 @@ Formkit extends the default Genesis theme for Pro Inputs. You can directly impor
 
 ```js
 // Genesis for Pro is dependent on Genesis
-import "@formkit/themes/genesis"
+import '@formkit/themes/genesis'
 import '@formkit/pro/genesis'
 ```
 
@@ -169,7 +218,7 @@ import { createApp } from 'vue'
 import App from 'App.vue'
 import { plugin, defaultConfig } from '@formkit/vue'
 import { createProPlugin, rating, toggle } from '@formkit/pro'
-import "@formkit/themes/genesis"
+import '@formkit/themes/genesis'
 import '@formkit/pro/genesis'
 
 // create proPlugin
@@ -294,9 +343,11 @@ export default defineNuxtConfig({
 Installing FormKit Pro into your Nuxt project is just as easy as it is for Vue.
 
 #### 1. Get a Project Key
+
 Login to your FormKit Pro account at [pro.formkit.com](https://pro.formkit.com) and create a project. A `Project Key` will be provided to you.
 
 #### 2. Install the package
+
 Next, install the `@formkit/pro` package using `npm`, `yarn`, or another package manager:
 
 <client-only>
@@ -334,16 +385,15 @@ import '@formkit/pro/genesis'
 
 const pro = createProPlugin('fk-66f40b8a84', {
   autocomplete,
-  rating
+  rating,
 })
 
 export default {
-  plugins: [pro]
+  plugins: [pro],
 }
 ```
 
 </client-only>
-
 
 That's it! FormKit is ready to use and — if you read this far — specifically tailored to your Nuxt project's needs.
 
@@ -352,4 +402,3 @@ FormKit only supports Nuxt 3. If you're required to use Nuxt 2 on a project, con
 </callout>
 
 <cta label="Using Tailwind or another utility framework?" href="/essentials/styling" button="Styling docs"></cta>
-
