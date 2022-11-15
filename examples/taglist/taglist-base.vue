@@ -3,47 +3,19 @@ const carBrands = [{ label: 'Audi', value: 'audi', logo: 'https://s3.amazonaws.c
 </script>
 
 <template>
-<FormKit
-  type="form"
-  #default="{ value }"
-  :actions="false"
->
   <FormKit
-    type="autocomplete"
-    name="autocomplete"
-    label="Search for and select a car brand"
-    placeholder="Example: Toyota"
-    :options="carBrands"
-    selection-appearance="option"
+    type="form"
+    #default="{ value }"
+    :actions="false"
   >
-    <!--OPTION SLOT-->
-      <template #option="{ option }">
-        <div class="formkit-option">
-          <img
-            :src="option.logo"
-            :alt="option.label + ' logo'"
-          />
-          <span>
-            {{ option.label }}
-          </span>
-        </div>
-      </template>
-    <!--/OPTION SLOT-->
+    <FormKit
+      type="taglist"
+      name="car_brands"
+      label="Search for your favorite car brands"
+      :options="carBrands"
+      :value="['honda', 'toyota']"
+    />
+    <pre wrap>{{ value }}</pre>
   </FormKit>
-  <pre wrap>{{ value }}</pre>
-</FormKit>
 </template>
-
-<style>
-.formkit-option {
-  display: flex;
-  align-items: center;
-}
-
-.formkit-option img {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-}
-</style>
 
