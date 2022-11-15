@@ -5,6 +5,18 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 1.0.0-beta.12
+
+### November 15, 2022
+
+#### 💪 New features
+- Adds 🇬🇷 Greek (uk) language [#460](https://github.com/formkit/formkit/issues/460).
+- Adds 🇳🇴 Norwegian Bokmål (nb) language [#418](https://github.com/formkit/formkit/issues/418).
+- Adds 🇸🇰 Slovak (sk) language [#401](https://github.com/formkit/formkit/issues/401).
+
+#### 🐛 Bug fixes
+- Fixed a bug where the label slot didn't work without the label prop [#456](https://github.com/formkit/formkit/issues/456).
+
 ## 1.0.0-beta.11
 
 ### September 29, 2022
