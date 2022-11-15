@@ -10,7 +10,7 @@ description: What's new in the latest version of FormKit?.
 ### November 15, 2022
 
 #### 💪 New features
-- Adds `formkit create-app` command to bootstrap apps with nuxt support
+- Adds `formkit create-app`(/essentials/installation) command to bootstrap apps with nuxt support
 - Improves `length` rule validation messages across all languages.
 - Adds 🇬🇷 Greek (uk) language [#460](https://github.com/formkit/formkit/issues/460).
 - Adds 🇳🇴 Norwegian Bokmål (nb) language [#418](https://github.com/formkit/formkit/issues/418).
@@ -28,6 +28,7 @@ description: What's new in the latest version of FormKit?.
 - Fixed a bug where Date object methods were inaccessible from Schema [#406](https://github.com/formkit/formkit/issues/406).
 - Fixed a pathing issue that made it difficult for third-parties from accessing files [#404](https://github.com/formkit/formkit/issues/404).
 - Fixed a bug that prevented the `stopIfFalse` argument on the `walkTree` function.
+- Fixed a bug where where a select input initialized with a `null` value doesn't have a good value [#415](https://github.com/formkit/formkit/issues/415).
 - Pro: Fixed a bug `count:blocking` event was not emitting properly in Repeaters.
 - Pro: Updated Repeater indexes to be numbers instead of strings. [#422](https://github.com/formkit/formkit/issues/422).
 - Pro: Fixed an autocomplete bug where the next page of options was overriding the current page. [#447](https://github.com/formkit/formkit/issues/447).

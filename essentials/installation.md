@@ -5,25 +5,25 @@ description: Get up and running with FormKit in your project.
 
 # Installation
 
-The simplest way to get a new project started with FormKit is by using the `create-app` CLI. Alternatively, if you already have a project you can do a manual installation [with vue](#with-vue) or [with nuxt](#with-nuxt).
+The simplest way to get a new project started with FormKit is by using FormKit CLI's `create-app`. Alternatively, if you already have a project, you can manually install [with Vue](#with-vue) or [with Nuxt](#with-nuxt).
 
-## With Create App
+## With create-app
 
-`create-app` is the fastest way to start a new project with FormKit pre configured for you. It will walk you through all steps necessaries for a smooth setup. It allows you to choose from a few options, from adding typescript support, using nuxt or vite as your starting template, to setting up FormKit Pro inputs.
+`create-app` is the fastest way to start a new project with FormKit pre-configured for you. It walks you through all the necessary steps, and allows you to optionally add TypeScript support, use Nuxt or Vite as your starting template, or set up Pro Inputs.
 
 ### Run the CLI wizard
 
-At your terminal run the command to start FormKit CLI tool `create-app`, to start your new project:
+At your terminal, run `npx formkit create-app` to start your new project:
 
 <client-only>
 
 ```sh
-npx formkit@next create-app
+npx formkit create-app
 ```
 
 </client-only>
 
-Our CLI `create-app` will ask you some questions about your project, so it can determine what it needs to install and setup for you:
+`create-app` will ask you some questions about your project so it can determine what it needs to install and setup for you:
 
 <client-only>
 
@@ -37,7 +37,7 @@ Our CLI `create-app` will ask you some questions about your project, so it can d
 
 </client-only>
 
-Once everything is created, you can follow the instructions to install all dependencies and start a development server:
+Once this is completed, you can follow the instructions to install all dependencies and start a development server:
 
 <client-only>
 
