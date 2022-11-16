@@ -11,7 +11,7 @@ The simplest way to get a new project started with FormKit is by using FormKit C
 
 `create-app` is the fastest way to start a new project with FormKit pre-configured for you. It walks you through all the necessary steps, and allows you to optionally add TypeScript support, use Nuxt or Vite as your starting template, or set up Pro Inputs.
 
-### Run the CLI wizard
+### Run the FormKit CLI
 
 At your terminal, run `npx formkit create-app` to start your new project:
 
