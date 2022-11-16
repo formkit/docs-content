@@ -5,6 +5,36 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 1.0.0-beta.12
+
+### November 15, 2022
+
+#### 💪 New features
+- Pro: New [Taglist Pro Input](/inputs/taglist) now available!
+- Adds [`npx formkit create-app`](/essentials/installation#with-create-app) command to easily bootstrap new FormKit projects.
+- Improves `length` rule validation messages across all languages.
+- Adds 🇬🇷 Greek (uk) language [#460](https://github.com/formkit/formkit/issues/460).
+- Adds 🇳🇴 Norwegian Bokmål (nb) language [#418](https://github.com/formkit/formkit/issues/418).
+- Adds 🇸🇰 Slovak (sk) language [#401](https://github.com/formkit/formkit/issues/401).
+- Pro: All Pro Inputs can now be disabled.
+- Pro: Improvements to Genesis Pro theme.
+- Pro: Autocompletes with multiple options selected can now be re-ordered via drag & drop.
+- Pro: Added missing attrs to the message schema.
+
+#### 🐛 Bug fixes
+- Fixed a bug where the label slot didn't work without the label prop [#456](https://github.com/formkit/formkit/issues/456).
+- Fixed a bug where you couldn't dynamically change available validation rules [#449](https://github.com/formkit/formkit/issues/449).
+- Fixed a bug where swapping keys would not clear an input's value when inside a group. [#446](https://github.com/formkit/formkit/issues/446).
+- Fixed a bug where Date object methods were inaccessible from Schema [#406](https://github.com/formkit/formkit/issues/406).
+- Fixed a pathing issue that made it difficult for third-parties from accessing files [#404](https://github.com/formkit/formkit/issues/404).
+- Fixed a bug that prevented the `stopIfFalse` argument on the `walkTree` function.
+- Fixed a bug where where a select input initialized with a `null` value doesn't have a good value [#415](https://github.com/formkit/formkit/issues/415).
+- Pro: Fixed a bug `count:blocking` event was not emitting properly in Repeaters.
+- Pro: Updated Repeater indexes to be numbers instead of strings. [#422](https://github.com/formkit/formkit/issues/422).
+- Pro: Fixed an autocomplete bug where the next page of options was overriding the current page. [#447](https://github.com/formkit/formkit/issues/447).
+- Pro: Fixed a bug where Pro inputs were not showing validation messages on blur [#403](https://github.com/formkit/formkit/issues/403).
+
+
 ## 1.0.0-beta.11
 
 ### September 29, 2022
