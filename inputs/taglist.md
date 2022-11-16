@@ -9,7 +9,7 @@ description: A Pro input that allows users to search and select from a customiza
 
 ## Basic example
 
-The taglist input allows you to search through a list of options and select any number of tags
+The `taglist` input allows users to search through a list of options and apply any number of tags. Users can also drag and drop tags to re-order:
 
 <example
 name="Taglist"
