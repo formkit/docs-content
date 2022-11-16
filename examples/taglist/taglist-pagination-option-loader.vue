@@ -47,7 +47,7 @@ async function loadMovie(id) {
       label="Search for your favorite movie"
       placeholder="Example: Harry Potter"
       :options="searchMovies"
-      :value="597"
+      :value="[597]"
       :option-loader="loadMovie"
     />
     <pre wrap>{{ value }}</pre>
