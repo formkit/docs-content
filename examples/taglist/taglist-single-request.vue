@@ -52,4 +52,8 @@ async function searchMovies({ search }) {
 .option-overview {
   font-size: 12px;
 }
+
+.source-content {
+  background-color: transparent;
+}
 </style>

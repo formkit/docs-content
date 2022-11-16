@@ -50,4 +50,8 @@ async function searchMovies({ search, page, hasNextPage }) {
 .option-overview {
   font-size: 12px;
 }
+
+.source-content {
+  background-color: transparent;
+}
 </style>

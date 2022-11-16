@@ -1,3 +1,4 @@
+<!-- %partial%::html:: -->
 <script setup>
 const flavors = ['Chocolate', 'Vanilla', 'Strawberry'];
 </script>
@@ -19,4 +20,12 @@ const flavors = ['Chocolate', 'Vanilla', 'Strawberry'];
     <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>
+<!-- %partial%::html:: -->
+
+<style>
+.source-content {
+  background-color: transparent;
+}
+</style>
+
 
