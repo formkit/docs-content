@@ -31,6 +31,7 @@ const carBrands = [{ label: 'Audi', value: 'audi', logo: 'https://s3.amazonaws.c
       <!--/TAG SLOT-->
     </FormKit>
     <pre wrap>{{ value }}</pre>
+  </FormKit>
 </template>
 
 <style>

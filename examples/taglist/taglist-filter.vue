@@ -13,7 +13,7 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
       name="taglist"
       label="Search for a country"
       :options="countries"
-			:value="['AX', 'AL']"
+      :value="['AX', 'AL']"
       :filter="(option, search) =>
         option.label.toLowerCase().startsWith(search.toLowerCase())"
     />

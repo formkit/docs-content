@@ -110,7 +110,7 @@ Instead of passing a static list of options to the `options` prop, you can assig
 
 ### Search parameter
 
-In this example, we'll assign the `options` prop the `searchMovies` function. By doing so, `searchMovies` will receive the `config` object as an argument. Within this `config` object is the `search` property, which is the current search value. To perform our search, we'll use the `search` value as the query parameter for our API request:
+In this example, we'll assign the `options` prop the `searchMovies` function. By doing so, `searchMovies` will receive the `context` object as an argument. Within this `context` object is the `search` property, which is the current search value. To perform our search, we'll use the `search` value as the query parameter for our API request:
 
 <example
 name="Autocomplete"
@@ -119,7 +119,7 @@ file="/_content/examples/autocomplete-pro/autocomplete-single-request.vue"></exa
 
 ### Page and hasNextPage parameters
 
-A likely scenario you'll encounter is needing to search through a paginated API. This can be done by referencing the same `config` object as before. Within this object, we can utilize the `page` and `hasNextPage` properties. The `page` property is the current page number, and the `hasNextPage` property is a function to be called when there are more pages to load:
+A likely scenario you'll encounter is needing to search through a paginated API. This can be done by referencing the same `context` object as before. Within this object, we can utilize the `page` and `hasNextPage` properties. The `page` property is the current page number, and the `hasNextPage` property is a function to be called when there are more pages to load:
 
 <example
 name="Autocomplete"
