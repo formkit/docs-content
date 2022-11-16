@@ -39,8 +39,4 @@ const carBrands = [{ label: 'Audi', value: 'audi', logo: 'https://s3.amazonaws.c
   height: 20px;
   margin-right: 5px;
 }
-
-.source-content {
-  background-color: transparent;
-}
 </style>

@@ -62,8 +62,4 @@ async function searchMovies({ search, page, hasNextPage }) {
   height: 20px;
   margin-right: 5px;
 }
-
-.source-content {
-  background-color: transparent;
-}
 </style>

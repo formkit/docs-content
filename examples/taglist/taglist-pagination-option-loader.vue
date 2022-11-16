@@ -53,23 +53,3 @@ async function loadMovie(id) {
     <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>
-
-<style>
-.formkit-option {
-  display: flex;
-  align-items: center;
-}
-
-.formkit-option img {
-  width: 20%;
-  margin-right: 20px;
-}
-
-.option-overview {
-  font-size: 12px;
-}
-
-.source-content {
-  background-color: transparent;
-}
-</style>
