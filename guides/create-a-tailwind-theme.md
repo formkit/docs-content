@@ -105,17 +105,16 @@ If you are using a single file for configuration, like <code>formkit.config.js</
 
 ```js
 // tailwind.config.js for Nuxt users
-const formKitTailwind = require('@formkit/themes/tailwindcss');
+const formKitTailwind = require('@formkit/themes/tailwindcss')
 
 export default {
   // add the formkit.config.js file
   content: ['./src/**/*.{html,js}', './path/to/formkit.config.js'],
-  plugins: [formKitTailwind]
+  plugins: [formKitTailwind],
 }
 ```
 
 </client-only>
-
 
 Once this setup is complete we are ready to begin writing our Tailwind theme!
 
@@ -142,6 +141,11 @@ Here is a `text` input with Tailwind classes applied:
 
 The `formKitTailwind` plugin from `@formkit/themes` provides a number of variants you can use in your class lists to dynamically respond to input and form state.
 
+<callout type="tip" label="Group variants">
+If you're using variants in a nested case it may happen that those are linked to its parent instead of self.
+To fix that, add to the outer section <code>group/{modifier}</code>, and use the variant with the same modifier <code>formkit-invalid/{modifier}:</code>
+</callout>
+
 The currently provided variants are:
 
 - `formkit-disabled:`
@@ -151,9 +155,8 @@ The currently provided variants are:
 - `formkit-loading:`
 - `formkit-submitted:`
 - `formkit-multiple:`
-- `formkit-action:`
-- `formkit-message-validation:`
-- `formkit-message-error:`
+- `formkit-has-prefix-icon`
+- `formkit-has-suffix-icon`
 
 You use these variants in the same way you use the built-in Tailwind variants such as `dark:` and `hover:`.
 
