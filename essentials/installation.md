@@ -403,7 +403,9 @@ FormKit only supports Nuxt 3. If you're required to use Nuxt 2 on a project, con
 
 ## With Astro
 
-Astro installation process is similar to how we install Vue after adding a entrypoint to `astro.config.mjs` file:
+First, we need to install Astro's Vue integration. You can refer to [Astro's Vue integration docs](https://docs.astro.build/en/guides/integrations-guide/vue/) for more detail.
+
+Inside of Astro's config file (`astro.config.*`), let's add an entrypoint `_app`. The `_app` entrypoint file is just a configuration file for Vue:
 
 <client-only>
 
@@ -419,7 +421,7 @@ export default defineConfig({
 
 </client-only>
 
-The `_app` entrypoint file is just a configuration file for Vue, we can add FormKit there, by firstly adding the FormKit Vue package:
+Next, install the `@formKit/vue` package:
 
 <client-only>
 
@@ -449,7 +451,7 @@ export default (app: App) => {
 Astro does not let you use <code>FormKit</code> directly inside Astro files, so you should create a wrapper around your forms.
 </callout>
 
-Now you can add FormKit to your Astro Vue components, to that you can create a component inside the components folder:
+Now you can add FormKit to your Astro Vue components, so that you can create a component inside the components folder:
 
 <client-only>
 
@@ -474,10 +476,10 @@ Now you can add FormKit to your Astro Vue components, to that you can create a c
 
 </client-only>
 
-After that you just need to import and use it inside your Astro files:
+After that, you just need to import and use it inside your Astro files:
 
-<callout type="warning" label="Client Hydratation">
-FormKit works best with client hydratation enabled, so make sure to use `client:visible` or `client:load`.
+<callout type="warning" label="Client Hydration">
+FormKit works best with client hydration enabled, so make sure to use `client:visible` or `client:load`.
 </callout>
 
 <client-only>
