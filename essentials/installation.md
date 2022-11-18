@@ -443,25 +443,25 @@ export default (app: App) => {
 }
 ```
 
+</client-only>
+
 <callout type="warning" label="Vue Components">
 Astro does not let you use <code>FormKit</code> directly inside Astro files, so you should create a wrapper around your forms.
 </callout>
-
-</client-only>
 
 Now you can add FormKit to your Astro Vue components, to that you can create a component inside the components folder:
 
 <client-only>
 
-```vue
+```html
 <script setup>
-// src/components/Form.vue
+  // src/components/Form.vue
 
-const submitHandler = async (fields) => {
-  // Let's pretend this is an ajax request:
-  await new Promise((r) => setTimeout(r, 1000))
-  console.log(fields)
-}
+  const submitHandler = async (fields) => {
+    // Let's pretend this is an ajax request:
+    await new Promise((r) => setTimeout(r, 1000))
+    console.log(fields)
+  }
 </script>
 
 <template>
