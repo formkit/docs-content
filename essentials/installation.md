@@ -5,7 +5,7 @@ description: Get up and running with FormKit in your project.
 
 # Installation
 
-The simplest way to get a new project started with FormKit is by using FormKit CLI's `create-app`. Alternatively, if you already have a project, you can manually install [with Vue](#with-vue) or [with Nuxt](#with-nuxt).
+The simplest way to get a new project started with FormKit is by using FormKit CLI's `create-app`. Alternatively, if you already have a project, you can manually install [with Vue](#with-vue), [with Nuxt](#with-nuxt) or [with Astro](#with-astro).
 
 ## With create-app
 
@@ -400,5 +400,101 @@ That's it! FormKit is ready to use and — if you read this far — specifically
 <callout type="warning" label="Nuxt 2">
 FormKit only supports Nuxt 3. If you're required to use Nuxt 2 on a project, consider using the spiritual ancestor of FormKit — <a href="https://vueformulate.com" target="_blank">Vue Formulate</a> — which also ships with its own Nuxt module.
 </callout>
+
+## With Astro
+
+First, we need to install Astro's Vue integration. You can refer to [Astro's Vue integration docs](https://docs.astro.build/en/guides/integrations-guide/vue/) for more detail.
+
+Inside of Astro's config file (`astro.config.*`), let's add an entrypoint `_app`. The `_app` entrypoint file is just a configuration file for Vue:
+
+<client-only>
+
+```js
+// astro.config.mjs
+import { defineConfig } from 'astro/config'
+import vue from '@astrojs/vue'
+
+export default defineConfig({
+  integrations: [vue({ appEntrypoint: '/src/pages/_app' })],
+})
+```
+
+</client-only>
+
+Next, install the `@formKit/vue` package:
+
+<client-only>
+
+```sh
+npm install @formkit/vue
+```
+
+</client-only>
+
+The `@formkit/vue` package ships with a Vue plugin and a default configuration for easy setup:
+
+<client-only>
+
+```js
+// src/pages/_app.ts
+import type { App } from 'vue'
+import { plugin, defaultConfig } from '@formkit/vue'
+
+export default (app: App) => {
+  app.use(plugin, defaultConfig)
+}
+```
+
+</client-only>
+
+<callout type="warning" label="Vue Components">
+Astro does not let you use <code>FormKit</code> directly inside Astro files, so you should create a wrapper around your forms.
+</callout>
+
+Now you can add FormKit to your Astro Vue components, so that you can create a component inside the components folder:
+
+<client-only>
+
+```html
+<script setup>
+  // src/components/Form.vue
+
+  const submitHandler = async (fields) => {
+    // Let's pretend this is an ajax request:
+    await new Promise((r) => setTimeout(r, 1000))
+    console.log(fields)
+  }
+</script>
+
+<template>
+  <FormKit type="form" @submit="submitHandler">
+    <FormKit type="text" label="Name" name="name" />
+    <FormKit type="email" label="Email" name="email" />
+  </FormKit>
+</template>
+```
+
+</client-only>
+
+After that, you just need to import and use it inside your Astro files:
+
+<callout type="warning" label="Client Hydration">
+FormKit works best with client hydration enabled, so make sure to use `client:visible` or `client:load`.
+</callout>
+
+<client-only>
+
+```js
+// src/pages/index.astro
+---
+import Form from '../components/Form.vue';
+---
+
+<Form client:visible />
+```
+
+</client-only>
+
+That's it! You're now ready to use the `<FormKit>` component in your Astro application. The `defaultConfig` includes all of FormKit's inputs, validation rules, and the English language. You can replace the `defaultConfig` with your own configuration, which allows for improved tree-shaking (only include the rules and languages you want to actually use) and more fine-grained control.
 
 <cta label="Using Tailwind or another utility framework?" href="/essentials/styling" button="Styling docs"></cta>
