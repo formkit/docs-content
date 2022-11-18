@@ -5,7 +5,7 @@ description: Get up and running with FormKit in your project.
 
 # Installation
 
-The simplest way to get a new project started with FormKit is by using FormKit CLI's `create-app`. Alternatively, if you already have a project, you can manually install [with Vue](#with-vue) or [with Nuxt](#with-nuxt).
+The simplest way to get a new project started with FormKit is by using FormKit CLI's `create-app`. Alternatively, if you already have a project, you can manually install [with Vue](#with-vue), [with Nuxt](#with-nuxt) or [with Astro](#with-astro).
 
 ## With create-app
 
@@ -400,5 +400,49 @@ That's it! FormKit is ready to use and — if you read this far — specifically
 <callout type="warning" label="Nuxt 2">
 FormKit only supports Nuxt 3. If you're required to use Nuxt 2 on a project, consider using the spiritual ancestor of FormKit — <a href="https://vueformulate.com" target="_blank">Vue Formulate</a> — which also ships with its own Nuxt module.
 </callout>
+
+## With Astro
+
+Astro installation process is similar to how we install Vue after adding a entrypoint the the `astro.config.mjs` file:
+
+<client-only>
+
+```js
+import { defineConfig } from 'astro/config'
+import vue from '@astrojs/vue'
+
+export default defineConfig({
+  integrations: [vue({ appEntrypoint: '/src/pages/_app' })],
+})
+```
+
+</client-only>
+
+The `_app` entrypoint file is just a configuration file for Vue, we can add FormKit there, by firstly adding the FormKit Vue package:
+
+<client-only>
+
+```sh
+npm install @formkit/vue
+```
+
+</client-only>
+
+The `@formkit/vue` package ships with a Vue plugin and a default configuration for easy setup:
+
+<client-only>
+
+```js
+import type { App } from 'vue'
+import { plugin, defaultConfig } from '@formkit/vue'
+
+export default (app: App) => {
+  app.use(plugin, defaultConfig)
+}
+```
+
+That's it! You're now ready to use the `<FormKit>` component in your Astro application. The `defaultConfig` includes all of FormKit's inputs, validation rules, and the English language. You can replace the `defaultConfig` with your own configuration, which allows for improved tree-shaking (only include the rules and languages you want to actually use) and more fine-grained control.
+
+</client-only>
 
 <cta label="Using Tailwind or another utility framework?" href="/essentials/styling" button="Styling docs"></cta>
