@@ -142,7 +142,7 @@ Here is a `text` input with Tailwind classes applied:
 The `formKitTailwind` plugin from `@formkit/themes` provides a number of variants you can use in your class lists to dynamically respond to input and form state.
 
 <callout type="tip" label="Group variants">
-If you're using variants in a nested case it may happen that those are linked to its parent instead of self.
+If you're using variants in a nested case, the variants may be linked to its parent instead of itself.
 To fix that, add to the outer section <code>group/{modifier}</code>, and use the variant with the same modifier <code>formkit-invalid/{modifier}:</code>
 </callout>
 
