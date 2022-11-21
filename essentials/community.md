@@ -13,6 +13,18 @@ Community involvement and contributions are one of the most important aspects of
 
 <LinkGithub href="https://github.com/sponsors/formkit" button-text="Sponsor FormKit"></LinkGithub>
 
+
+<h3><span class="emoji">💍</span> Platinum sponsors</h3>
+
+<a class="no-underline" href="https://vueschool.io/">
+    <img
+        src="https://cdn.formk.it/web-assets/sponsors/vueschool.png"
+        alt="Vue School logo"
+        target="_blank"
+        style="display:inline-block;vertical-align: middle;width: 200px;margin-right: 25px;margin-top: 10px;"
+    />
+</a>
+
 <h3><span class="emoji">🥉</span> Bronze sponsors</h3>
 
 <a class="no-underline" href="https://www.perbyte.com">
