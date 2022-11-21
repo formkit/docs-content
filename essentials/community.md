@@ -18,6 +18,7 @@ Community involvement and contributions are one of the most important aspects of
 
 <a class="no-underline" href="https://vueschool.io/">
     <img
+        class="docs-partner"
         src="https://cdn.formk.it/web-assets/sponsors/vueschool.png"
         alt="Vue School logo"
         target="_blank"
@@ -29,6 +30,7 @@ Community involvement and contributions are one of the most important aspects of
 
 <a class="no-underline" href="https://www.perbyte.com">
     <img
+        class="docs-partner"
         src="https://cdn.formk.it/web-assets/sponsors/bronze-sponsor_perbyte.png"
         alt="PerByte logo"
         target="_blank"
@@ -36,6 +38,7 @@ Community involvement and contributions are one of the most important aspects of
     />
 </a><a class="no-underline" href="https://sharpless.co">
     <img
+        class="docs-partner"
         src="https://cdn.formk.it/web-assets/sponsors/sharpless-logo-small.png"
         alt="PerByte logo"
         target="_blank"
