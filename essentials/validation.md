@@ -5,7 +5,9 @@ description: Provide instant feedback to users on the validity of their form dat
 
 # Validation
 
-FormKit makes front end validation simple by letting you declare your validation rules directly on your inputs. It's easy to write custom rules too, but you'll rarely need to with 20+ production-ready rules. 
+<page-toc></page-toc>
+
+FormKit makes front end validation simple by letting you declare your validation rules directly on your inputs. It's easy to write custom rules too, but you'll rarely need to with 20+ production-ready rules.
 
 ## Declaring rules
 
@@ -16,7 +18,7 @@ Declaring which validation rules apply to a given input is as simple as providin
 
 ### String syntax
 
-Validation rules can be declared by specifying each desired rule name separated by pipes `|`. Some rules may also accept arguments, which can be supplied after a colon  `:`. You can use multiple arguments by comma separating them:
+Validation rules can be declared by specifying each desired rule name separated by pipes `|`. Some rules may also accept arguments, which can be supplied after a colon `:`. You can use multiple arguments by comma separating them:
 
 <example
   name="Validation strings"
@@ -451,6 +453,7 @@ export default function monday(node) {
   return node.value === 'monday' || node.value === 'mon'
 }
 ```
+
 </client-only>
 
 Once you have a validation function written — you need to register the validation rule with FormKit — either globally or specifically on an input.
@@ -472,6 +475,7 @@ createApp(App).use(plugin, defaultConfig({
   rules: { monday },
 })).mount('#app')
 ```
+
 </client-only>
 
 Once installed you can use your validation rule in anywhere in your project.
@@ -481,6 +485,7 @@ Once installed you can use your validation rule in anywhere in your project.
 ```html
 <FormKit validation="required|monday" />
 ```
+
 </client-only>
 
 ### Adding a rule via prop
@@ -571,6 +576,7 @@ createApp(App).use(plugin, defaultConfig({
   }
 })).mount('#app')
 ```
+
 </client-only>
 
 ## Extracting messages

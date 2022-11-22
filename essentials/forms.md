@@ -5,6 +5,8 @@ description: Collect all of your FormKit data, submit to your server, and handle
 
 # Forms
 
+<page-toc></page-toc>
+
 While you’re free to use `FormKit` inputs by themselves, you’ll usually want to group them into a form. To do this, simply wrap your inputs in a `<FormKit type="form">`.
 
 The `form` type will actively collect all the values from child inputs, using the `name` of each input as the property name in the resulting data object (just like [groups](/inputs/group)). You can also read and write to form values using v-model just as you would on any input.

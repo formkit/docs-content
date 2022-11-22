@@ -5,6 +5,8 @@ description: FormKit is a form authoring framework for Vue developers that makes
 
 # What is FormKit?
 
+<page-toc></page-toc>
+
 FormKit is a form building framework for Vue developers that makes authoring high quality production-ready forms 10x faster. It is easy-to-learn and ships with production-ready scaffolding like inputs, validation rules, and error handling.
 
 <VideoCard
@@ -73,7 +75,6 @@ FormKit comes with great production-ready defaults, and for many users, the defa
 ## What FormKit isn’t
 
 While FormKit does a lot of things, it is not a UI framework or a _layout_ tool. Want inputs next to each other? Cool! Wrap some inputs in a `<div>` and sprinkle on some `flexbox`. While FormKit ships with a [default theme](/essentials/styling#optional-genesis-theme), this package assumes you'll still be responsible for most of your form's style and layout. FormKit plays nicely with any UI framework or your own custom styles.
-
 
 ## Why not...?
 

@@ -5,6 +5,8 @@ description: Get up and running with FormKit in your project.
 
 # Installation
 
+<page-toc></page-toc>
+
 The simplest way to get a new project started with FormKit is by using FormKit CLI's `create-app`. Alternatively, if you already have a project, you can manually install [with Vue](#with-vue), [with Nuxt](#with-nuxt) or [with Astro](#with-astro).
 
 ## With create-app

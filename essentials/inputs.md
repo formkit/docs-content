@@ -5,6 +5,8 @@ description: FormKit ships with turbocharged inputs for developing production-re
 
 # Inputs
 
+<page-toc></page-toc>
+
 FormKit’s inputs are similar to HTML inputs but turbocharged with much needed features like labels, help text, validation, and error messages (and much more). Similar to how HTML’s `<input>` tag uses various `type` attributes (i.e., `<input type="text">` vs `<input type="checkbox">`), FormKit uses the `type` prop for _all_ inputs. In fact, with FormKit, **there is only 1 component you have to learn**:
 
 <example
@@ -164,6 +166,7 @@ Many section keys are universally available while others are specific to a given
 At times you may find it necessary to restructure the HTML inside a FormKit input, such as adding, editing, moving, or removing sections. This can be done by exporting the input (using the CLI tool), making the desired changes, and then using the modified input in your project. Read the [guide on exporting inputs](/guides/export-and-restructure-inputs) to learn how.
 
 <cta href="/guides/export-and-restructure-inputs" label="Learn to restructure your inputs" button="Export inputs docs"></cta>
+
 ## Slots
 
 Inputs can have their structure overridden with slots. You can precisely target where your slot content goes with [section keys](#sections). Slots are then are passed the [context object](/advanced/context) for use in their template.

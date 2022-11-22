@@ -5,6 +5,8 @@ description: Translate FormKit UI and validation messages into supported languag
 
 # Internationalization (i18n)
 
+<page-toc></page-toc>
+
 FormKit ships with internationalization support for all of its interfaces and validation messages. Currently, FormKit supports the following languages (in the `@formkit/i18n` package):
 
 - 🇱🇾 Arabic (ar) — 🙏&nbsp;@Ahmedelforjani
