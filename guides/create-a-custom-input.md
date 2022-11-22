@@ -5,6 +5,8 @@ description: Follow this guide to learn how to create, register, and use a custo
 
 # Create a custom input
 
+<page-toc></page-toc>
+
 In this guide, we’ll walk through the process of creating, registering, and using a custom input. Specifically, we’re going create a "one-time password" input ("OTP" for short). OTPs are commonly used for two-factor authentication when a user is required to type in a code sent via SMS or authenticator app. Let’s get started!
 
 <callout type="tip" label="SFC Build tool">
@@ -28,6 +30,7 @@ To get started, let's create our input’s component file. We'll call it `OneTim
   <div>More to come here...</div>
 </template>
 ```
+
 </client-only>
 
 FormKit provides a lot of input features out-of-the-box that we're going to want to preserve — like labels, help text, and showing error messages. All we really want to modify is the input section of our input. We can preserve these standard FormKit features by using the `createInput` utility function from the `@formkit/vue` package.
@@ -91,6 +94,7 @@ createInput(OneTimePassword, {
   props: ['digits'],
 })
 ```
+
 </client-only>
 
 We now have access to `context.digits`. Back in `OneTimePassword.vue`, let's use that to output the correct number of `<input>` tags.
@@ -157,6 +161,7 @@ handlePaste(e) {
   }
 }
 ```
+
 </client-only>
 
 <example
@@ -195,6 +200,7 @@ app.use(
 )
 app.mount('#app')
 ```
+
 </client-only>
 
 Done! Now you can use your input anywhere in your application:
@@ -204,6 +210,7 @@ Done! Now you can use your input anywhere in your application:
 ```html
 <FormKit type="otp" digits="4" />
 ```
+
 </client-only>
 
 ## Next steps
