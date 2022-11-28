@@ -15,7 +15,7 @@ Community involvement and contributions are one of the most important aspects of
 
 <LinkGithub href="https://github.com/sponsors/formkit" button-text="Sponsor FormKit"></LinkGithub>
 
-<h3><span class="emoji">💍</span> Platinum sponsors</h3>
+### Platinum sponsors
 
 <a class="no-underline" href="https://vueschool.io/">
     <img
@@ -27,7 +27,7 @@ Community involvement and contributions are one of the most important aspects of
     />
 </a>
 
-<h3><span class="emoji">🥉</span> Bronze sponsors</h3>
+### Bronze sponsors
 
 <a class="no-underline" href="https://www.perbyte.com">
     <img
