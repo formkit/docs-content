@@ -5,6 +5,8 @@ description: Get involved in the FormKit community — troubleshooting support, 
 
 # Community
 
+<page-toc></page-toc>
+
 Community involvement and contributions are one of the most important aspects of the FormKit ecosystem. We invite you to actively participate — whether using FormKit, translating validation messages, being an active member of the Discord, or filing bug reports and making pull requests to the [FormKit codebase](https://github.com/formkit/formkit).
 
 ## Sponsor
@@ -13,8 +15,7 @@ Community involvement and contributions are one of the most important aspects of
 
 <LinkGithub href="https://github.com/sponsors/formkit" button-text="Sponsor FormKit"></LinkGithub>
 
-
-<h3><span class="emoji">💍</span> Platinum sponsors</h3>
+### Platinum sponsors
 
 <a class="no-underline" href="https://vueschool.io/">
     <img
@@ -26,7 +27,7 @@ Community involvement and contributions are one of the most important aspects of
     />
 </a>
 
-<h3><span class="emoji">🥉</span> Bronze sponsors</h3>
+### Bronze sponsors
 
 <a class="no-underline" href="https://www.perbyte.com">
     <img
@@ -51,11 +52,13 @@ Community involvement and contributions are one of the most important aspects of
 [uscreen](https://uscreen.de)
 
 ## Contribute
+
 We invite you to contribute to FormKit! There are many ways to help — from creating pull requests to our open source code bases, to filing issues so we can improve FormKit for everyone.
 
 ### Contribute to open source code bases
 
 We encourage contributions to the FormKit open source code bases! When contributing, consider first discussing your desired change with the core team via [GitHub issues](https://github.com/formkit/formkit/issues) or [Discord](https://discord.gg/Vhu97pAC76).
+
 #### Contributors to [`formkit/formkit`](https://github.com/formkit/formkit)
 
 <a href="https://github.com/formkit/formkit/graphs/contributors"><img src="https://contributors-img.web.app/image?repo=formkit/formkit" /></a>
@@ -65,7 +68,6 @@ We encourage contributions to the FormKit open source code bases! When contribut
 <a href="https://github.com/formkit/docs-content/graphs/contributors"><img src="https://contributors-img.web.app/image?repo=formkit/docs-content" /></a>
 
 Thank you to all contributors and community members who help us improve FormKit every day.
-
 
 ### Open issues on GitHub (bugs and features)
 
@@ -99,8 +101,8 @@ If you have a specific question about how to use FormKit, please ask it on Stack
 
 <!-- If you have a PRO subscription, you'll be able to see and upvote feature requests from others -->
 
-
 ### Join the FormKit channels
+
 - Star on [GitHub](https://github.com/formkit/formkit) ⭐️. This helps visibility.
 - Subscribe to the [email list](https://t.co/hEBF5FZPrB).
 - Follow on [Twitter](https://twitter.com/useformkit).

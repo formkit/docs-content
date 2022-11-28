@@ -4,6 +4,9 @@ description: Follow this guide to learn how to create, register, and use a custo
 ---
 
 # Export and restructure inputs
+
+<page-toc></page-toc>
+
 FormKit inputs ship with a lot of markup. This is useful for ensuring inputs are written in an accessible manner. However, sometimes it makes sense to modify the existing structure of a FormKit input. Using the FormKit CLI, we can export FormKit's open source inputs and modify their original structure — or even their functionality.
 
 In this guide, we'll export the text input, and restructure it to better support a floating label design.
@@ -17,6 +20,7 @@ FormKit comes with its own CLI to make exporting inputs a breeze. At the base di
 ```sh
 npx formkit export
 ```
+
 </client-only>
 
 Running this command prompts you to select any of FormKit's open source
@@ -41,7 +45,7 @@ inputs to export:
 </client-only>
 
 We're going to select the text input and allow the CLI to create a new `/inputs`
- directory within `/src`:
+directory within `/src`:
 
 <client-only>
 
@@ -108,8 +112,8 @@ export const text = {
    */
   features: [],
 }
-
 ```
+
 </client-only>
 
 In this example, we are not going to overwrite the default FormKit text input,
@@ -142,6 +146,7 @@ export const t̶e̶x̶t̶ floatingLabelTextInput = {
 </client-only>
 
 ## Register input
+
 To globally register our "new" input, we need add our `floatingLabelTextInput` to the global config. We can do this wherever we are registering the FormKit plugin:
 
 <client-only>
@@ -156,8 +161,8 @@ import { floatingLabelTextInput } from '../src/inputs/floatingLabelTextInput'
 
 const config = defaultConfig({
   inputs: {
-    floatingLabelTextInput
-  }
+    floatingLabelTextInput,
+  },
 })
 
 createApp(App).use(plugin, config).mount('#app')
@@ -205,13 +210,7 @@ The `@formkit/inputs` package exports a number of helper functions that can be e
 <client-only>
 
 ```js
-import {
-  $attrs,
-  $if,
-  $for,
-  $extend,
-  $root,
-} from '@formkit/inputs'
+import { $attrs, $if, $for, $extend, $root } from '@formkit/inputs'
 ```
 
 </client-only>
@@ -234,9 +233,9 @@ import {
   suffix,
   textInput,
   /*
-  * Importing $attrs
-  */
-  $attrs
+   * Importing $attrs
+   */
+  $attrs,
 } from '@formkit/inputs'
 
 export const floatingLabelTextInput = {
@@ -290,9 +289,6 @@ After adding appropriate styling, we can see that our new custom input has its `
 
 ## Next steps
 
-In this guide, we exported the built-in `text` input using FormKit's [CLI tool](#export-via-cli), and used the exported file as a starting point for a new floating label variation. However, the export feature enables developers to do much more than that!  Whether replacing FormKit's existing inputs, or adding new custom inputs with modified, added, removed, or moved sections — we look forward to seeing all the ways you use this feature!
+In this guide, we exported the built-in `text` input using FormKit's [CLI tool](#export-via-cli), and used the exported file as a starting point for a new floating label variation. However, the export feature enables developers to do much more than that! Whether replacing FormKit's existing inputs, or adding new custom inputs with modified, added, removed, or moved sections — we look forward to seeing all the ways you use this feature!
 
 <cta label="Learn more about creating custom inputs." button="Read the guide" href="/guides/create-a-custom-input"></cta>
-
-
-

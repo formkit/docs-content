@@ -5,6 +5,8 @@ description: FormKit Core is a zero-dependency package that is responsible for n
 
 # Core
 
+<page-toc></page-toc>
+
 At the heart of the FormKit framework is `@formkit/core`. This zero-dependency package is responsible for nearly all of FormKit's low-level critical functions, such as:
 
 - Configuration
@@ -599,18 +601,18 @@ An optional third argument `bubble` is also available. When set to `false`, it p
 
 Hooks are middleware dispatchers that are triggered during pre-defined lifecycle operations. These hooks allow external code to extend the internal functionality of `@formkit/core`. The following table details all available hooks:
 
-| Hook    | Value                                                                                                   | Description                                                                                                       |
-| ------- | ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| classes | <pre><code class="block">{<br> property: string,<br> classes: Record<string, boolean><br>}</code></pre> | Dispatched after all class operations have been run, before final conversion to a string.                         |
-| commit  | `any`                                                                                                   | Dispatched when setting the value of a node _after_ the `input` and debounce of `node.input()` is called.         |
-| error   | `string`                                                                                                | Dispatched when processing a thrown error — errors are generally inputs, and the final output should be a string. |
-| init    | `FormKitNode`                                                                                           | Dispatched after the node is initially created but before it is returned in `createNode()`.                       |
-| input   | `any`                                                                                                   | Dispatched synchronously on every input event (every keystroke) before `commit`.                                  |
-| message | `FormKitMessage`                                                                                        | Dispatched when a message is being set on `node.store`                                                            |
-| prop    | <pre><code class="block">{<br> prop: string,<br> value: any<br>}</code></pre>                           | Dispatched when any prop is being assigned.                                                                       |
-| setErrors | `{ localErrors: ErrorMessages, childErrors?: ErrorMessages }`                                         | Dispatched when explicit errors are being set on a node (_not_ validation errors).
-| submit  | `Record<string, any>`                                                                                   | Dispatched when the FormKit form is submitted and passing validation. This hook allows you to modify the (cloned) form values before they are passed to the submit handler |
-| text    | [`FormKitTextFragment`](https://github.com/formkit/formkit/search?q=FormKitTextFragment)                | Dispatched when a FormKit-generated string needs to be displayed — allowing i18n or other plugins to intercept.   |
+| Hook      | Value                                                                                                   | Description                                                                                                                                                                |
+| --------- | ------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| classes   | <pre><code class="block">{<br> property: string,<br> classes: Record<string, boolean><br>}</code></pre> | Dispatched after all class operations have been run, before final conversion to a string.                                                                                  |
+| commit    | `any`                                                                                                   | Dispatched when setting the value of a node _after_ the `input` and debounce of `node.input()` is called.                                                                  |
+| error     | `string`                                                                                                | Dispatched when processing a thrown error — errors are generally inputs, and the final output should be a string.                                                          |
+| init      | `FormKitNode`                                                                                           | Dispatched after the node is initially created but before it is returned in `createNode()`.                                                                                |
+| input     | `any`                                                                                                   | Dispatched synchronously on every input event (every keystroke) before `commit`.                                                                                           |
+| message   | `FormKitMessage`                                                                                        | Dispatched when a message is being set on `node.store`                                                                                                                     |
+| prop      | <pre><code class="block">{<br> prop: string,<br> value: any<br>}</code></pre>                           | Dispatched when any prop is being assigned.                                                                                                                                |
+| setErrors | `{ localErrors: ErrorMessages, childErrors?: ErrorMessages }`                                           | Dispatched when explicit errors are being set on a node (_not_ validation errors).                                                                                         |
+| submit    | `Record<string, any>`                                                                                   | Dispatched when the FormKit form is submitted and passing validation. This hook allows you to modify the (cloned) form values before they are passed to the submit handler |
+| text      | [`FormKitTextFragment`](https://github.com/formkit/formkit/search?q=FormKitTextFragment)                | Dispatched when a FormKit-generated string needs to be displayed — allowing i18n or other plugins to intercept.                                                            |
 
 ### Hook middleware
 

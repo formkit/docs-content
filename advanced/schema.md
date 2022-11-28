@@ -5,6 +5,8 @@ description: FormKit's schema is a JSON-serializable data format for storing DOM
 
 # Schema
 
+<page-toc></page-toc>
+
 FormKit's schema is a JSON-serializable data format for storing DOM structures and component implementations including FormKit forms. Although created specifically for implementing forms, the format is capable of generating any HTML markup or using any third-party components. Schemas are rendered using FormKit's `<FormKitSchema>` component.
 
 A schema is an array of objects (called "schema nodes"), where each object defines a single HTML element, component, or text node. Simple strings produce text nodes, while components and HTML elements are defined with two different objects (referred to as `$el` and `$cmp`).
@@ -203,6 +205,7 @@ At times it may be necessary to prevent a given attribute or prop from being par
   }
 }
 ```
+
 </client-only>
 
 In the above example, the `__raw__` prefix will be removed, and the unparsed value of `$2.99` will be passed as the `price` prop to the `PriceComponent`.

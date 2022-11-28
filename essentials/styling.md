@@ -5,6 +5,8 @@ description: Add custom styling to your FormKit components - both globally and p
 
 # Styling
 
+<page-toc></page-toc>
+
 FormKit ships robust and accessible markup — but with no assumptions about your
 desired styles. There is an _optional_ base theme (as seen in these docs)
 called `Genesis` that you can use in your projects.
@@ -24,6 +26,7 @@ defaultConfig({
 })
 ...
 ```
+
 </client-only>
 
 #### Direct import
@@ -35,6 +38,7 @@ To install Genesis, first install the `@formkit/themes` package.
 ```sh
 npm install @formkit/themes
 ```
+
 </client-only>
 
 Then in your `main.js` (wherever you boot Vue up) include the Genesis `theme.css` (this assumes you are using a build tool like Vite, Webpack, Snowpack, or Nuxt):
@@ -44,6 +48,7 @@ Then in your `main.js` (wherever you boot Vue up) include the Genesis `theme.css
 ```js
 import '@formkit/themes/genesis'
 ```
+
 </client-only>
 
 ## Outer attributes
@@ -191,9 +196,10 @@ Because <code>rootClasses</code> is a configuration option, you can apply it per
 
 ## Modifying classes within schema
 
-In addition to modifying classes via config or props _on a  `<FormKit>` component_, you can use the same techniques within [schema](/essentials/generation#schema):
+In addition to modifying classes via config or props _on a `<FormKit>` component_, you can use the same techniques within [schema](/essentials/generation#schema):
 
 ### Section-key class props within schema
+
 Within schema, you can also modify the classes of an element inside an input via the `{section-key}Class` properties. For example, to add a class to the label section, you can add the `labelClass` property:
 
 <client-only>
@@ -206,6 +212,7 @@ Within schema, you can also modify the classes of an element inside an input via
   labelClass: 'appended-class'
 },
 ```
+
 </client-only>
 
 ### Classes prop within schema
@@ -228,9 +235,11 @@ Much like the [classes prop](#classes-prop) on a `<FormKit>` component, you can 
   },
 },
 ```
+
 </client-only>
 
 ### Config within schema
+
 Since config is passed down to descendant inputs, you can alter classes via config on a parent, such as a `form`, `list`, or a `group`, and this will affect all descendants to any depth:
 
 <example

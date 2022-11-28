@@ -5,6 +5,8 @@ description: Create your own inputs that automatically inherit FormKit’s value
 
 # Custom inputs
 
+<page-toc></page-toc>
+
 <cta label="Building your first custom input?" type="ghost" href="/guides/create-a-custom-input" button="Read the guide"></cta>
 
 FormKit includes [many inputs](/inputs) out of the box, but you can also define your own inputs that automatically inherit FormKit’s value-added features like validation, error messages, data modeling, grouping, labels, help text and others.
@@ -51,6 +53,7 @@ Input definitions are objects that contain the necessary information to initiali
   features: []
 }
 ```
+
 </client-only>
 
 ### Using the `type` prop
@@ -92,6 +95,7 @@ createApp(App)
   )
   .mount('#app')
 ```
+
 </client-only>
 
 Now that we’ve defined our input we can use it anywhere in the application:
@@ -189,6 +193,7 @@ When providing a _component_ as the first argument, `createInput` will generate 
   }
 }
 ```
+
 </client-only>
 
 When providing a schema object, your schema is directly injected into the base schema object. Notice that our hello world example now supports outputting "standard" FormKit features like labels, help text, and validation:
@@ -243,6 +248,7 @@ Any user interaction can be considered an input event. For many native HTML inpu
   }
 }
 ```
+
 </client-only>
 
 The equivalent in a Vue template:
@@ -254,6 +260,7 @@ The equivalent in a Vue template:
   <input @input="context.DOMInput" />
 </template>
 ```
+
 </client-only>
 
 ### Displaying values
@@ -272,6 +279,7 @@ Inputs are also responsible for displaying the current value. Typically, you’l
   }
 }
 ```
+
 </client-only>
 
 The equivalent in a Vue template:
@@ -283,6 +291,7 @@ The equivalent in a Vue template:
   <input :value="context._value" @input="context.handlers.DOMInput" />
 </template>
 ```
+
 </client-only>
 
 <callout type="warning" label="_value vs value">
@@ -368,6 +377,7 @@ FormKit exposes dozens of value-added features to even the most mundane inputs. 
   }
 ]
 ```
+
 </client-only>
 
 There are several features in the above schema that may not be immediately obvious like the `onBlur` handler. The following checklist is intended to help input authors cover all their bases:

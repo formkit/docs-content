@@ -5,6 +5,8 @@ description: Follow this guide to learn how to build a multi-step form with Form
 
 # Build a multi-step form
 
+<page-toc></page-toc>
+
 Few interactions on the web cause as much displeasure for a user as being confronted with a large, intimidating form. Multi-step forms can alleviate this pain by breaking a large form into smaller approachable steps — but they can also be complicated to build.
 
 In this guide, we'll walk through building a multi-step form with FormKit and see how we can provide an elevated user experience with minimal code. Let's get started!
@@ -12,7 +14,6 @@ In this guide, we'll walk through building a multi-step form with FormKit and se
 <callout type="info" label="Composition API">
 This guide assumes you are are familiar with the <a href="https://vuejs.org/guide/introduction.html#api-styles">Vue Composition API</a>.
 </callout>
-
 
 ## Requirements
 
@@ -50,18 +51,12 @@ A group itself becomes valid when all its children (and their children) are vali
 
 ```html
 <!-- Only showing a single group here for brevity -->
-<FormKit
-  type="group"
-  name="contactInfo"
->
-  <FormKit
-    type="email"
-    label="*Email address"
-    validation="required|email"
-  />
+<FormKit type="group" name="contactInfo">
+  <FormKit type="email" label="*Email address" validation="required|email" />
 </FormKit>
 ...
 ```
+
 </client-only>
 
 In our case, we're also going to want wrapping HTML. Let's put each group into a "step" section which we can conditionally show and hide:
@@ -71,19 +66,13 @@ In our case, we're also going to want wrapping HTML. Let's put each group into a
 ```html
 <!-- Only showing a single group here for brevity -->
 <section v-show="step === 'contactInfo'">
-  <FormKit
-    type="group"
-    name="contactInfo"
-  >
-    <FormKit
-      type="email"
-      label="*Email address"
-      validation="required|email"
-    />
+  <FormKit type="group" name="contactInfo">
+    <FormKit type="email" label="*Email address" validation="required|email" />
   </FormKit>
 </section>
 ...
 ```
+
 </client-only>
 
 Next, let's introduce some navigation UI so we can toggle between each step:
@@ -92,8 +81,9 @@ Next, let's introduce some navigation UI so we can toggle between each step:
 
 ```js
 // for now, manually set step names
-const stepNames = ['contactInfo','organizationInfo','application']
+const stepNames = ['contactInfo', 'organizationInfo', 'application']
 ```
+
 </client-only>
 
 <client-only>
@@ -111,6 +101,7 @@ const stepNames = ['contactInfo','organizationInfo','application']
   </li>
 </ul>
 ```
+
 </client-only>
 
 Here's what it looks like put together:
@@ -151,23 +142,24 @@ Here's our custom plugin, called `stepPlugin`:
 const steps = reactive({})
 
 const stepPlugin = (node) => {
-    // only runs for <FormKit type="group" />
-    if (node.props.type == "group") {
-        // build up our steps object
-        steps[node.name] = steps[node.name] || {}
+  // only runs for <FormKit type="group" />
+  if (node.props.type == 'group') {
+    // build up our steps object
+    steps[node.name] = steps[node.name] || {}
 
-        // add the current group's reactive validity
-        node.on('created', () => {
-            steps[node.name].valid = toRef(node.context.state, 'valid')
-        })
+    // add the current group's reactive validity
+    node.on('created', () => {
+      steps[node.name].valid = toRef(node.context.state, 'valid')
+    })
 
-        // Stop plugin inheritance to descendant nodes.
-        // We only care about the the top-level groups
-        // that represent the steps.
-        return false
-    }
+    // Stop plugin inheritance to descendant nodes.
+    // We only care about the the top-level groups
+    // that represent the steps.
+    return false
+  }
 }
 ```
+
 </client-only>
 
 The resulting `steps` reactive object from our plugin above looks like this:
@@ -181,20 +173,17 @@ The resulting `steps` reactive object from our plugin above looks like this:
   application: { valid: false }
 }
 ```
+
 </client-only>
 
-To use our plugin, we'll add it to our root form  `<FormKit type="form" />`. This means that every top-level group in our form will inherit the plugin:
+To use our plugin, we'll add it to our root form `<FormKit type="form" />`. This means that every top-level group in our form will inherit the plugin:
 
 <client-only>
 
 ```html
-<FormKit
-  type="form"
-  :plugins="[stepPlugin]"
->
-... rest of the form
-</FormKit>
+<FormKit type="form" :plugins="[stepPlugin]"> ... rest of the form </FormKit>
 ```
+
 </client-only>
 
 ## Showing validity
@@ -203,22 +192,22 @@ Now that our template has real-time access to each group's validity state via ou
 
 We also no longer need to manually define our steps since our plugin is dynamically storing the name of all groups in the `steps` object. Let's add a `data-step-valid="true"` attribute to each step if it's valid so we can target with CSS:
 
-
 <client-only>
 
 ```html
-  <ul class="steps">
-    <li
-      v-for="(step, stepName) in steps"
-      class="step"
-      @click="activeStep = stepName"
-      :data-step-valid="step.valid"
-      :data-step-active="activeStep === stepName"
-    >
-      {{ camel2title(stepName) }}
-    </li>
-  </ul>
+<ul class="steps">
+  <li
+    v-for="(step, stepName) in steps"
+    class="step"
+    @click="activeStep = stepName"
+    :data-step-valid="step.valid"
+    :data-step-active="activeStep === stepName"
+  >
+    {{ camel2title(stepName) }}
+  </li>
+</ul>
 ```
+
 </client-only>
 
 With these updates, our form is now capable of informing a user when they have correctly filled out all of the fields in a given step!
@@ -269,6 +258,7 @@ const stepPlugin = (node) => {
   ...
 }
 ```
+
 </client-only>
 
 <callout type="tip" label="Blocking validation messages vs errors">
@@ -320,10 +310,10 @@ const stepPlugin = (node) => {
   ...
 }
 ```
+
 </client-only>
 
 You might be wondering why we are walking all of the descendants of a given step (`node.walk()`) and creating messages with a key of `submitted` and value of `true`? When a user attempts to submit a form, this is how FormKit informs itself that all inputs are in a `submitted` state. In this state, FormKit forces any blocking validation messages to appear. We are manually triggering the same thing in our "group blur" event.
-
 
 ### The error UI
 
@@ -341,6 +331,7 @@ We'll use the same UI for both types of errors since end-users don't really care
   {{ camel2title(stepName) }}
 </li>
 ```
+
 </client-only>
 
 We are almost to the finish line! Here's our current form — which can now tell a user when they have properly _or improperly_ filled out each step:
@@ -364,12 +355,9 @@ We submit the form by adding an `@submit` handler to the `<FormKit type="form">`
 <client-only>
 
 ```html
-<FormKit
-  type="form"
-  @submit="submitApp"
->
-... rest of form
+<FormKit type="form" @submit="submitApp"> ... rest of form</FormKit>
 ```
+
 </client-only>
 
 And here's our submit handler:
@@ -387,6 +375,7 @@ const submitApp = async (formData, node) => {
   }
 }
 ```
+
 </client-only>
 
 Notice that FormKit passes our submit handler 2 helpful arguments: the form's data in a single request-ready object (which we're calling `formData`), and the form's underlying core `node`, which we can use to clear errors or set any returned errors using the `node.clearErrors()` and `node.setErrors()` helpers, respectively.
@@ -404,7 +393,7 @@ And Voilà! 🎉 We are finished! In addition to our submit handler, we've added
 - The form submit button is now disabled until the entire form is in a `valid` state.
 - Added some additional text to the form to better mock a real-world UI.
 
- Here it is — a fully functioning multi-step form:
+Here it is — a fully functioning multi-step form:
 
 <example
   :file="[

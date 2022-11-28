@@ -5,6 +5,8 @@ description: Easily add icons to your inputs using the provided FormKit icons or
 
 # Icons
 
+<page-toc></page-toc>
+
 FormKit comes with over 130 icons out-of-the-box! With the exception of the brand icons (like YouTube, TikTok, or Visa) all icons are original and MIT-licensed for free use within your project. You can use [our icons](#available-icons), [add your own](#adding-icons-to-the-iconregistry), or easily [connect to a 3rd-party icon set](#using-3rd-party-libraries).
 
 Using icons in your project is as easy as providing your desired icon name to one of an input's icon props.
@@ -16,6 +18,7 @@ Using icons in your project is as easy as providing your desired icon name to on
 <FormKit suffix-icon="settings" />
 <FormKit type="select" select-icon="caretDown" />
 ```
+
 </client-only>
 
 It's that easy! 🎉
@@ -132,6 +135,7 @@ You can do this by adding icons to your root FormKit config. FormKit's 1st-party
 ```bash
 yarn add @formkit/icons
 ```
+
 </client-only>
 
 <client-only>
@@ -154,6 +158,7 @@ createApp(App).use(plugin, defaultConfig({
   ...
 }).mount('#app')
 ```
+
 </client-only>
 
 <callout type="note" label="Performance">
