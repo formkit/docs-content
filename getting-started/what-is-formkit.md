@@ -31,7 +31,7 @@ Forms seem simple. After all, a `<form>` and an `<input>` tag are all that's req
 
 #### Key Features
 
-- [Single API](#single-api): FormKit was designed with a single component for all inputs.
+- [Single Component](#single-component): FormKit was designed with a single component for all inputs.
 - [Accessible](#accessible): We output an opinionated accessible markup by default.
 - [Validation](#validation): Powerful built-in validation rules with instant feedback.
 - [Internationalization](#internationalization): Great i18n language support.
@@ -39,7 +39,7 @@ Forms seem simple. After all, a `<form>` and an `<input>` tag are all that's req
 - [Extensibility](#extensibility): Easy to extend any feature.
 - [Community](#community): Friendly community that will help you solve your questions.
 
-### Single API
+### Single Component
 
 Developers love to learn — but no one enjoys pouring over third-party APIs and configuration options. That's why FormKit uses a single component for all of its [inputs](/essentials/inputs). `<FormKit>` is the only component you need to know to get started — and it works just like you would expect an `<input>` tag to work.
 
