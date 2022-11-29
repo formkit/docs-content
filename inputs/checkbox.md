@@ -5,6 +5,8 @@ description: A native HTML checkbox input with support for one or many nested op
 
 <InputPageHero title="Checkbox"></InputPageHero>
 
+<page-toc></page-toc>
+
 The `checkbox` input uses HTML's [native checkbox input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox). It can display one or many options to a user and is a great way to allow users to select multiple items from a list. FormKit supports both single and multiple checkbox inputs.
 
 ## Single checkbox

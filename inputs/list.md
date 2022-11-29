@@ -3,12 +3,15 @@ title: List Input
 description: An invisible FormKit input that allows you to logically structure your form data as an array.
 ---
 
-
 <InputPageHero title="List"></InputPageHero>
+
+<page-toc></page-toc>
 
 The `list` input allows you to structure data from child inputs as an array. The list itself outputs no markup (by default) and can be used in conjunction with any other type of input — including nested [groups](/inputs/group) and lists.
 
 The value of a list input is an array where each item is the value of the input at that index. Sub-inputs do not need to be of the same type. In addition to structuring data, lists can determine the validation state, provide initial values, and supply plugins and configuration to all of its children.
+
+## Basic example
 
 <example
 name="List input"

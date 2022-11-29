@@ -5,6 +5,8 @@ description: A Pro input that allows users to provide feedback based on a numeri
 
 <InputPageHero title="Rating"></InputPageHero>
 
+<page-toc></page-toc>
+
 <ProInstallSnippet></ProInstallSnippet>
 
 ## Basic example

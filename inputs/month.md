@@ -3,14 +3,17 @@ title: Month Input
 description: A native HTML month picker.
 ---
 
-
 <InputPageHero title="Month"></InputPageHero>
+
+<page-toc></page-toc>
 
 The `month` input uses HTML's [native month picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/month) to allow users to easily select a month.
 
 <callout type="danger" label="Compatibility warning">
 Month inputs are not currently supported in FireFox or Safari.
 </callout>
+
+## Basic example
 
 <example
   name="Month input"

@@ -5,17 +5,21 @@ description: A native HTML week picker.
 
 <InputPageHero title="Week"></InputPageHero>
 
+<page-toc></page-toc>
+
 The `week` input uses the HTML's [native week picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/week) to allow users to easily
 select a week.
 
-<callout type="danger" label="Compatibility warning">
-Week inputs are not currently supported in FireFox or Safari.
-</callout>
+## Basic example
 
 <example
   name="Week input"
   file="/_content/examples/week/week.vue">
 </example>
+
+<callout type="danger" label="Compatibility warning">
+Week inputs are not currently supported in FireFox or Safari.
+</callout>
 
 <callout type="warning" label="Formatting">
 The internal format of all native week pickers is <code>YYYY-Www</code> (for example: <code>2017-W06</code>). This is true even though the format of the week displayed to the user may be different.</code>.

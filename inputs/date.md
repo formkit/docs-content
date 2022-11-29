@@ -3,10 +3,13 @@ title: Date Input
 description: A native HTML date picker.
 ---
 
-
 <InputPageHero title="Date"></InputPageHero>
 
+<page-toc></page-toc>
+
 The `date` input uses HTML's [native date picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date) to allow users to easily select a date.
+
+## Basic example
 
 <example
   name="Date input"

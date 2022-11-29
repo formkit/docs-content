@@ -29,7 +29,7 @@ There are 4 ways to set the value of an input:
 
 ### Using `value` prop
 
-You can set the value of a single input or a group of inputs using the `value`
+You can set the initial value of a single input or a group of inputs using the `value`
 prop.
 
 <example

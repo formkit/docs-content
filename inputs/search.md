@@ -5,7 +5,11 @@ description: A native HTML search input.
 
 <InputPageHero title="Search"></InputPageHero>
 
+<page-toc></page-toc>
+
 The `search` input uses HTML's [native search input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/search). Generally, search inputs are the same as text inputs, but may have different styling or features based on the browser. For example, browsers often add a small "X" to clear the input when it has a value.
+
+## Basic example
 
 <example
 name="Search input"

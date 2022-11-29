@@ -5,11 +5,15 @@ description: A native HTML file input with support for multiple files, drag and 
 
 <InputPageHero title="File"></InputPageHero>
 
+<page-toc></page-toc>
+
 The `file` input uses HTML's [native file input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file). It allows users to select files from their device for upload. In addition to native input features, it adds support for:
 
 - Drag and drop
 - Clearing the input
 - Repopulating from an array
+
+## Basic example
 
 <example
   name="File input"

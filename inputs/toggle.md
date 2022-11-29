@@ -5,6 +5,8 @@ description: The `toggle` input is used to choose one of two values; it is a goo
 
 <InputPageHero title="Toggle"></InputPageHero>
 
+<page-toc></page-toc>
+
 <ProInstallSnippet></ProInstallSnippet>
 
 ## Basic example

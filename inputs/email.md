@@ -3,10 +3,13 @@ title: Email Input
 description: A native HTML email input.
 ---
 
-
 <InputPageHero title="Email"></InputPageHero>
 
+<page-toc></page-toc>
+
 The `email` input uses HTML's [native email input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email).
+
+## An example
 
 <example
   name="Email input"

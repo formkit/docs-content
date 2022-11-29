@@ -5,7 +5,11 @@ description: A native HTML range input.
 
 <InputPageHero title="Range"></InputPageHero>
 
+<page-toc></page-toc>
+
 The `range` input uses HTML's [native range input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) to let user select a number with a graphic slider.
+
+## Basic example
 
 <example
 name="Range input"

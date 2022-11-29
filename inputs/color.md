@@ -5,7 +5,11 @@ description: A native HTML color picker.
 
 <InputPageHero title="Color"></InputPageHero>
 
+<page-toc></page-toc>
+
 The `color` input uses HTML's [native color picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color) to allow users to easily select a hexadecimal color.
+
+## Basic example
 
 <example
   name="Color input"
