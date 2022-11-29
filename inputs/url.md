@@ -5,7 +5,11 @@ description: A native HTML url input.
 
 <InputPageHero title="URL"></InputPageHero>
 
+<page-toc></page-toc>
+
 The `url` input uses HTML's [native url input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url). It allows a user to enter a single URL.
+
+## Basic example
 
 <example
 name="URL input"

@@ -5,6 +5,8 @@ description: Examples you can use in your project today.
 
 # Examples
 
+<page-toc></page-toc>
+
 A broad collection of examples with working code you can use in your project today.
 
 ## Forms & structure

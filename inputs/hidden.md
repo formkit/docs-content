@@ -3,10 +3,13 @@ title: Hidden Input
 description: A native HTML hidden input.
 ---
 
-
 <InputPageHero title="Hidden"></InputPageHero>
 
+<page-toc></page-toc>
+
 The `hidden` input uses HTML's [native hidden input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/hidden). It is not a visible element, and should only be used to provide data that is not entered by a user.
+
+## Basic example
 
 <example
 name="Hidden input"

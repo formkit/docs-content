@@ -5,6 +5,8 @@ description: A Pro input that allows users to search and select from a customiza
 
 <InputPageHero title="Autocomplete"></InputPageHero>
 
+<page-toc></page-toc>
+
 <ProInstallSnippet></ProInstallSnippet>
 
 ## Basic example

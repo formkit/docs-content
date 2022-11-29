@@ -5,7 +5,11 @@ description: A native HTML text input.
 
 <InputPageHero title="Text"></InputPageHero>
 
+<page-toc></page-toc>
+
 The `text` input uses HTML's [native text input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text). It allows a user to enter a single line of text.
+
+## Basic example
 
 <example
 name="Text input"

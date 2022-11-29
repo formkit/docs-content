@@ -5,6 +5,8 @@ description: A native HTML button element.
 
 <InputPageHero title="Button"></InputPageHero>
 
+<page-toc></page-toc>
+
 The `button` input uses HTML's [native button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button). The `label` prop is used to populate the text of the button — or alternatively you can use the default slot.
 
 ## Basic example
