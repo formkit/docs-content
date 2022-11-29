@@ -7,13 +7,25 @@ description: Get up and running with FormKit in your project.
 
 <page-toc></page-toc>
 
+## Introduction
+
 The simplest way to get a new project started with FormKit is by using FormKit CLI's `create-app`. Alternatively, if you already have a project, you can manually install [with Vue](#with-vue), [with Nuxt](#with-nuxt) or [with Astro](#with-astro).
+
+<callout type="info" label="Try it out">
+You can also try out all FormKit features using our <a href="/playground">playground</a>.
+</callout>
+
+### Prerequisites
+
+- Vue 3 or Nuxt 3: if you're using Vue 2 or Nuxt 2 you can use FormKit ancestor [VueFormulate](https://vueformulate.com).
+- Node.js: 14.18.0, 16.12.0, or higher.
+- Terminal: To run NPM commands.
 
 ## With create-app
 
 `create-app` is the fastest way to start a new project with FormKit pre-configured for you. It walks you through all the necessary steps, and allows you to optionally add TypeScript support, use Nuxt or Vite as your starting template, or set up Pro Inputs.
 
-### Run the FormKit CLI
+#### Run the FormKit CLI
 
 At your terminal, run `npx formkit create-app` to start your new project:
 
@@ -66,6 +78,14 @@ npm install @formkit/vue
 
 </client-only>
 
+<callout type="tip" label="next">
+You can install the upcoming version of FormKit (unstable) anytime by opting to installing the "next" version tag: <code>npm install @formkit/vue@next</code>
+</callout>
+
+<callout type="warning" label="Vue 2">
+FormKit only supports Vue 3. If you're required to use Vue 2 on a project, consider using the spiritual ancestor of FormKit — <a href="https://vueformulate.com" target="_blank">Vue Formulate</a>.
+</callout>
+
 The `@formkit/vue` package ships with a Vue plugin and a default configuration for easy setup:
 
 <client-only>
@@ -80,138 +100,11 @@ createApp(App).use(plugin, defaultConfig).mount('#app')
 
 </client-only>
 
-That's it! You're now ready to use the `<FormKit>` component in your Vue 3 application. The `defaultConfig` includes all of FormKit's inputs, validation rules, and the English language. You can replace the `defaultConfig` with your own configuration, which allows for improved tree-shaking (only include the rules and languages you want to actually use) and more fine-grained control.
+That's it! You're now ready to use the `<FormKit>` component in your Vue 3 application.
 
-<callout type="tip" label="next">
-You can install the upcoming version of FormKit (unstable) anytime by opting to installing the "next" version tag: <code>npm install @formkit/vue@next</code>
-</callout>
+#### Configuring
 
-<callout type="warning" label="Vue 2">
-FormKit only supports Vue 3. If you're required to use Vue 2 on a project, consider using the spiritual ancestor of FormKit — <a href="https://vueformulate.com" target="_blank">Vue Formulate</a>.
-</callout>
-
-## Default theme
-
-The default FormKit theme (called "genesis") can be added via CDN or by installing the `@formkit/themes` package.
-
-### CDN Usage
-
-To load `genesis` via CDN, supply it to the `theme` property of your `defaultConfig`:
-
-<client-only>
-
-```js
-...
-defaultConfig({
-  theme: 'genesis' // will load from CDN and inject into document head
-})
-...
-```
-
-</client-only>
-
-### Direct import
-
-<client-only>
-
-```sh
-npm install @formkit/themes
-```
-
-</client-only>
-
-Assuming you are using a bundler like Vite, Webpack or Nuxt — you can then directly import the theme:
-
-<client-only>
-
-```js
-// main.js or formkit.config.ts
-import '@formkit/themes/genesis'
-```
-
-</client-only>
-
-## Pro Inputs
-
-Installing FormKit Pro is easy! Here are the steps:
-
-#### 1. Get a Project Key
-
-Login to your FormKit Pro account at [pro.formkit.com](https://pro.formkit.com) and create a project. A `Project Key` will be provided to you.
-
-#### 2. Install the package
-
-Next, install the `@formkit/pro` package using `npm`, `yarn`, or other package manager:
-
-<client-only>
-
-```bash
-yarn add @formkit/pro
-```
-
-</client-only>
-
-#### 3. Configure your project
-
-Import the `createProPlugin` helper and any desired Pro Inputs from `@formkit/pro`:
-
-<client-only>
-
-```js
-// Import createProPlugin helper and any desired inputs
-import { createProPlugin, rating, toggle } from '@formkit/pro'
-```
-
-</client-only>
-
-Create the Pro plugin with your `Project Key` and desired Pro Inputs:
-
-<client-only>
-
-```js
-// Create the Pro plugin with your Project Key and desired inputs
-const proPlugin = createProPlugin('fk-00000000000', {
-  rating,
-  toggle,
-  // ... and any other Pro Inputs
-})
-```
-
-</client-only>
-
-Lastly, add the plugin to your FormKit config:
-
-<client-only>
-
-```js
-// You probably already have this as part of initial installation
-import { defaultConfig } from '@formkit/vue'
-
-// Add proPlugin to your config (in this case — the defaultConfig)
-const config = defaultConfig({
-  plugins: [proPlugin],
-})
-```
-
-</client-only>
-
-#### Optional Pro theme
-
-Formkit extends the default Genesis theme for Pro Inputs. You can directly import it:
-
-<client-only>
-
-```js
-// Genesis for Pro is dependent on Genesis
-import '@formkit/themes/genesis'
-import '@formkit/pro/genesis'
-```
-
-</client-only>
-
-### Full example with Pro Inputs
-
-Here's a full example of FormKit and FormKit Pro installed:
+If you would like to supply your own configuration, you can either extend `defaultConfig` by passing a configuration object to it, or replace with your own configuration object, which allows for improved tree-shaking (only include the rules and languages you want to actually use) and more fine-grained control:
 
 <client-only>
 
@@ -219,28 +112,20 @@ Here's a full example of FormKit and FormKit Pro installed:
 import { createApp } from 'vue'
 import App from 'App.vue'
 import { plugin, defaultConfig } from '@formkit/vue'
-import { createProPlugin, rating, toggle } from '@formkit/pro'
-import '@formkit/themes/genesis'
-import '@formkit/pro/genesis'
+import { fr } from '@formkit/i18n'
 
-// create proPlugin
-const proPlugin = createProPlugin('fk-00000000000', {
-  rating,
-  toggle,
-})
-
-// extend defaultConfig
-const config = defaultConfig({
-  plugins: [proPlugin],
-})
-
-// Register FormKit with the new config
-createApp(App).use(plugin, config).mount('#app')
+createApp(App)
+  .use(
+    plugin,
+    defaultConfig({
+      locales: { fr },
+      locale: 'fr',
+    })
+  )
+  .mount('#app')
 ```
 
 </client-only>
-
-That's it! You will be able to use any registered Pro Inputs in your project now, like `<FormKit type="rating" />`.
 
 ## With Nuxt
 
@@ -253,6 +138,10 @@ npm install @formkit/nuxt
 ```
 
 </client-only>
+
+<callout type="warning" label="Nuxt 2">
+FormKit only supports Nuxt 3. If you're required to use Nuxt 2 on a project, consider using the spiritual ancestor of FormKit — <a href="https://vueformulate.com" target="_blank">Vue Formulate</a> — which also ships with its own Nuxt module.
+</callout>
 
 Then in your `nuxt.config` file add the module to your modules list:
 
@@ -269,7 +158,7 @@ export default defineNuxtConfig({
 
 That's it! FormKit is now registered in your project using the default config and you can start using the `<FormKit>` component.
 
-### Configuring with Nuxt
+#### Configuring
 
 If you would like to supply your own configuration, create a `formkit.config` file adjacent to your `nuxt.config` file. Like the `nuxt.config` file itself, `.ts`, `.mjs`, and `.js` are all valid file extensions depending on your project's needs:
 
@@ -301,25 +190,6 @@ export default defineNuxtConfig({
 
 </client-only>
 
-For TypeScript users, it can be helpful to type your `formkit.config.ts` export as `DefaultConfigOptions` explicitly:
-
-<client-only>
-
-```js
-// formkit.config.ts
-import { fr } from '@formkit/i18n'
-import { DefaultConfigOptions } from '@formkit/vue'
-
-const config: DefaultConfigOptions = {
-  locales: { fr },
-  locale: 'fr',
-}
-
-export default config
-```
-
-</client-only>
-
 By default, your configuration will _extend_ the `defaultConfig` that ships with FormKit. This is the desired behavior
 for the majority of projects. However, if you need to define the entire FormKit config yourself — from scratch — you may do so
 by setting the `defaultConfig` option for the module to `false`:
@@ -340,68 +210,24 @@ export default defineNuxtConfig({
 
 </client-only>
 
-### Pro inputs
-
-Installing FormKit Pro into your Nuxt project is just as easy as it is for Vue.
-
-#### 1. Get a Project Key
-
-Login to your FormKit Pro account at [pro.formkit.com](https://pro.formkit.com) and create a project. A `Project Key` will be provided to you.
-
-#### 2. Install the package
-
-Next, install the `@formkit/pro` package using `npm`, `yarn`, or another package manager:
-
-<client-only>
-
-```bash
-yarn add @formkit/pro
-```
-
-</client-only>
-
-#### 3. Configure your project
-
-Import the `createProPlugin` helper and your desired Pro Inputs from `@formkit/pro`:
+For TypeScript users, it can be helpful to type your `formkit.config.ts` export as `DefaultConfigOptions` explicitly:
 
 <client-only>
 
 ```js
-// Import createProPlugin helper and any desired inputs
-import { createProPlugin, autocomplete, rating } from '@formkit/pro'
-```
+// formkit.config.ts
+import { fr } from '@formkit/i18n'
+import { DefaultConfigOptions } from '@formkit/vue'
 
-</client-only>
-
-Create the Pro plugin with your `Project Key` and desired Pro Inputs:
-
-<!--After you have received your Project Key and installed the `@formkit/pro` package, go to your `formkit.config` file and add the Pro plugin:-->
-
-<client-only>
-
-```js
-// formkit.config (adjacent to nuxt.config)
-import { createProPlugin, autocomplete, rating } from '@formkit/pro'
-import '@formkit/themes/genesis'
-import '@formkit/pro/genesis'
-
-const pro = createProPlugin('fk-66f40b8a84', {
-  autocomplete,
-  rating,
-})
-
-export default {
-  plugins: [pro],
+const config: DefaultConfigOptions = {
+  locales: { fr },
+  locale: 'fr',
 }
+
+export default config
 ```
 
 </client-only>
-
-That's it! FormKit is ready to use and — if you read this far — specifically tailored to your Nuxt project's needs.
-
-<callout type="warning" label="Nuxt 2">
-FormKit only supports Nuxt 3. If you're required to use Nuxt 2 on a project, consider using the spiritual ancestor of FormKit — <a href="https://vueformulate.com" target="_blank">Vue Formulate</a> — which also ships with its own Nuxt module.
-</callout>
 
 ## With Astro
 
@@ -497,6 +323,158 @@ import Form from '../components/Form.vue';
 
 </client-only>
 
-That's it! You're now ready to use the `<FormKit>` component in your Astro application. The `defaultConfig` includes all of FormKit's inputs, validation rules, and the English language. You can replace the `defaultConfig` with your own configuration, which allows for improved tree-shaking (only include the rules and languages you want to actually use) and more fine-grained control.
+That's it! You're now ready to use the `<FormKit>` component in your Astro application.
+
+#### Configuring
+
+If you would like to supply your own configuration, you can either extend `defaultConfig` by passing a configuration object to it, or replace with your own configuration object, which allows for improved tree-shaking (only include the rules and languages you want to actually use) and more fine-grained control:
+
+<client-only>
+
+```js
+// src/pages/_app.ts
+import type { App } from 'vue'
+import { plugin, defaultConfig } from '@formkit/vue'
+import { fr } from '@formkit/i18n'
+
+export default (app: App) => {
+  app.use(
+    plugin,
+    defaultConfig({
+      locales: { fr },
+      locale: 'fr',
+    })
+  )
+}
+```
+
+</client-only>
+
+## Adding Genesis Theme
+
+The default FormKit theme (called "genesis") can be added via CDN or by installing the `@formkit/themes` package.
+
+### CDN Usage
+
+To load `genesis` via CDN, supply it to the `theme` property of your `defaultConfig`:
+
+<callout type="warning" label="Nuxt Config">
+If you're using nuxt your configuration would be inside of <code>formkit.config.ts</code>
+</callout>
+
+<client-only>
+
+```js
+...
+defaultConfig({
+  theme: 'genesis' // will load from CDN and inject into document head
+})
+...
+```
+
+</client-only>
+
+### Direct import
+
+<client-only>
+
+```sh
+npm install @formkit/themes
+```
+
+</client-only>
+
+Assuming you are using a bundler like Vite, Webpack or Nuxt — you can then directly import the theme:
+
+<client-only>
+
+```js
+// main.js or formkit.config.ts
+import '@formkit/themes/genesis'
+```
+
+</client-only>
+
+## Adding Pro Inputs
+
+Installing FormKit Pro is easy! Here are the steps:
+
+#### 1. Get a Project Key
+
+Login to your FormKit Pro account at [pro.formkit.com](https://pro.formkit.com) and create a project. A `Project Key` will be provided to you.
+
+#### 2. Install the package
+
+Next, install the `@formkit/pro`:
+
+<client-only>
+
+```bash
+npm install @formkit/pro
+```
+
+</client-only>
+
+#### 3. Configure your project
+
+Import the `createProPlugin` helper and any desired Pro Inputs from `@formkit/pro`:
+
+<client-only>
+
+```js
+// main.js or formkit.config.ts
+import { createProPlugin, rating, toggle } from '@formkit/pro'
+```
+
+</client-only>
+
+Create the Pro plugin with your `Project Key` and desired Pro Inputs:
+
+<client-only>
+
+```js
+// main.js or formkit.config.ts
+const proPlugin = createProPlugin('fk-00000000000', {
+  rating,
+  toggle,
+  // ... and any other Pro Inputs
+})
+```
+
+</client-only>
+
+Lastly, add the plugin to your FormKit config:
+
+<callout type="warning" label="Nuxt Config">
+If you're using nuxt your configuration would be inside of <code>formkit.config.ts</code>
+</callout>
+
+<client-only>
+
+```js
+// main.js or formkit.config.ts
+const config = defaultConfig({
+  plugins: [proPlugin],
+})
+```
+
+</client-only>
+
+### Adding Pro Genesis Theme
+
+Formkit extends the default Genesis theme for Pro Inputs. You can directly import it:
+
+<client-only>
+
+```js
+// main.js or formkit.config.ts
+// Genesis for Pro is dependent on Genesis
+import '@formkit/themes/genesis'
+import '@formkit/pro/genesis'
+```
+
+</client-only>
+
+That's it! now your pro inputs should be beautifully styled.
 
 <cta label="Using Tailwind or another utility framework?" href="/essentials/styling" button="Styling docs"></cta>
