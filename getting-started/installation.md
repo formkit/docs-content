@@ -477,4 +477,4 @@ import '@formkit/pro/genesis'
 
 That's it! now your pro inputs should be beautifully styled.
 
-<cta label="Using Tailwind or another utility framework?" href="/essentials/styling" button="Styling docs"></cta>
+<cta label="Creating your first form with FormKit" href="/getting-started/your-first-form" button="Next step"></cta>
