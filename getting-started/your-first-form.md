@@ -107,8 +107,7 @@ First, let's create a basic form so we have content to work with. Our example wi
 We will be using one of the inputs called `form`, this input will make grouping and validation of fields way easier, you just need to wrap all yours fields inside a `<FormKit type="form">`:
 
 <callout type="info" label="Form values">
-The <code>form</code> type will actively collect all the values from child inputs using the <code>name</code> of each input as a data object for you (just like <code>group</code>).<br>
-The <code>form</code> will also pass down values from it to their each child input using the <code>name</code> property.
+The <code>form</code> type will actively collect all the values from child inputs using the <code>name</code> of each input as a data object for you (just like <code>group</code>).
 </callout>
 
 <example
