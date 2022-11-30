@@ -61,6 +61,45 @@ Some use cases may need a default value to work, if we look at an example case a
   file="_content/examples/guides/your-first-form/input-vitality-bar/example.vue">
 </example>
 
+### Adding validation
+
+Validation is one of the main features of FormKit, it helps the user to know if the value they submited is correct, FormKit makes adding `validation` a breaze, with many powerful built-in `validation` rules already implemented for you, we will be using `validation` to make sure that the user is `required` to add a name, and is `not:Admin`:
+
+<example
+  name="Adding validation to name"
+  file="_content/examples/guides/your-first-form/input-validation/example.vue">
+</example>
+
+We should also add a `required` and `max:10` rule to our vitality input:
+
+<client-only>
+
+```html
+<FormKit
+  type="range"
+  name="vitality"
+  id="vitality"
+  validation="required|max:10"
+  label="Vitality"
+  value="5"
+  min="1"
+  max="10"
+  step="1"
+  help="How much vitality points to start with"
+/>
+```
+
+</client-only>
+
+### Number casting
+
+Our "backend" will require that our attributes like `vitality` to be [casted to number](https://formkit.link/b37c7d36263ab0ee1bd626aa0a405b93), but by default FormKit follows HTML "native" inputs behaviour making all values as "strings", so to fix that we can use one of the coolest features that FormKit has, [Plugins](/advanced/core#plugins), with plugins we can change how the value of an inputs is returned to us:
+
+<example
+  name="Adding plugin to cast to number"
+  file="_content/examples/guides/your-first-form/input-cast-number/example.vue">
+</example>
+
 <!-- ## First Step — Creating the form
 
 The first step should be to create a basic form so we can work on adding features in the later steps, just so we have a common ground to start with. Our form is going to be a form about creating a new user at our fictional website.
