@@ -63,7 +63,7 @@ Some use cases may need a default value to work, if we look at an example case a
 
 ### Adding validation
 
-Validation is one of the main features of FormKit, it helps the user to know if the value they submited is correct, FormKit makes adding `validation` a breaze, with many powerful built-in `validation` rules already implemented for you, we will be using `validation` to make sure that the user is `required` to add a name, and is `not:Admin`:
+Validation is one of the main features of FormKit, it helps the user to know if the value they submited is correct, FormKit makes adding [validation](/essentials/validation) a breaze, with many powerful built-in `validation` rules already implemented for you, we will be using `validation` to make sure that the user is `required` to add a name, and is `not:Admin`:
 
 <example
   name="Adding validation to name"
@@ -100,19 +100,45 @@ Our "backend" will require that our attributes like `vitality` to be [casted to 
   file="_content/examples/guides/your-first-form/input-cast-number/example.vue">
 </example>
 
-<!-- ## First Step — Creating the form
+## First Step — Creating the form
 
-The first step should be to create a basic form so we can work on adding features in the later steps, just so we have a common ground to start with. Our form is going to be a form about creating a new user at our fictional website.
+First, let's create a basic form so we have content to work with. Our example will be a pretend character creation form, we will add more features to it at each section, like validation, grouping, changing values based on other fields, and so on.
+
+We will be using one of the inputs called `form`, this input will make grouping and validation of fields way easier, you just need to wrap all yours fields inside a `<FormKit type="form">`:
+
+<callout type="info" label="Form values">
+The <code>form</code> type will actively collect all the values from child inputs using the <code>name</code> of each input as a data object for you (just like <code>group</code>).<br>
+The <code>form</code> will also pass down values from it to their each child input using the <code>name</code> property.
+</callout>
+
+<example
+  name="Character creation form"
+  file="_content/examples/guides/your-first-form/character-basic-form/example.vue">
+</example>
 
 ### Adding the submit handler
 
-The first feature of a form in FormKit that we will see is that we have a `@submit` event ready to make our life easier when it comes to submiting our form, the `@submit` event gives us as the first argument all fields that the form gathered from the inputs:
+The first feature of a form in FormKit that we will see is that we have a `@submit` event ready to make our life easier when it comes to submiting our form, the `@submit` event gives us as the first argument all fields that the form gathered from the inputs, no need to use `v-model` for it:
 
 <example
   name="Basic form"
-  file="_content/examples/guides/your-first-form/basic-form/example.vue">
+  file="_content/examples/guides/your-first-form/character-form-submit/example.vue">
 </example>
 
 ### Changing the submit button
 
-As you can see, the submit button is automatically generated when using `type="form"`, but for our case,  -->
+As convinience when using `type="form"` the `form` outputs a submit button automatically, but for our case a "Submit" text does not show the intent of the form correctly, so to fix that we can use a nice feature that the `form` has to offer, and that is the `submit-label` prop, we can by simply adding `submit-label="Create Character"` show the intent of the form as a whole:
+
+<client-only>
+
+```html
+<FormKit
+  type="submit"
+  @submit="createCharacter"
+  submit-label="Create Character"
+>
+  <!-- Rest of our creation form -->
+</FormKit>
+```
+
+</client-only>
