@@ -13,11 +13,10 @@
       placeholder="Please add your name"
     />
 
-    <FormKit type="select" label="Age" :options="['Young', 'Adult', 'Elder']" />
-
     <FormKit
       type="select"
       label="Class"
+      id="class"
       :options="['Warrior', 'Mage', 'Assassin']"
     />
 
@@ -25,6 +24,7 @@
       type="range"
       name="vitality"
       id="vitality"
+      validation="required|max:10"
       label="Vitality"
       value="5"
       min="1"
@@ -37,6 +37,7 @@
       type="range"
       name="skill"
       id="skill"
+      validation="required|max:10"
       label="Skill"
       value="5"
       min="1"
@@ -49,6 +50,7 @@
       type="range"
       name="strength"
       id="strength"
+      validation="required|max:10"
       label="Strength"
       value="5"
       min="1"
@@ -61,6 +63,7 @@
       type="range"
       name="dexterity"
       id="dexterity"
+      validation="required|max:10"
       label="Dexterity"
       value="5"
       min="1"

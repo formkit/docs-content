@@ -100,7 +100,7 @@ Our "backend" will require that our attributes like `vitality` to be [casted to 
   file="_content/examples/guides/your-first-form/input-cast-number/example.vue">
 </example>
 
-## First Step — Creating the form
+## Creating the form
 
 First, let's create a basic form so we have content to work with. Our example will be a pretend character creation form, we will add more features to it at each section, like validation, grouping, changing values based on other fields, and so on.
 
@@ -120,7 +120,7 @@ The <code>form</code> type will actively collect all the values from child input
 The first feature of a form in FormKit that we will see is that we have a `@submit` event ready to make our life easier when it comes to submiting our form, the `@submit` event gives us as the first argument all fields that the form gathered from the inputs, no need to use `v-model` for it:
 
 <example
-  name="Basic form"
+  name="Adding form submit"
   file="_content/examples/guides/your-first-form/character-form-submit/example.vue">
 </example>
 
@@ -141,3 +141,48 @@ As convinience when using `type="form"` the `form` outputs a submit button autom
 ```
 
 </client-only>
+
+### Grouping related inputs
+
+While right now the current form works, we can see that some releated inputs are separated, but our backend needs all attributes to be inside an `attributes` property, that is where `group` comes into play, this type is meant to group related inputs together by a common `name`.
+
+Just like the `form` type, you just need to wrap all yours fields inside a `<FormKit type="group" name="attributes">`, don't forget to add the name property:
+
+<example
+  name="Grouping inputs"
+  file="_content/examples/guides/your-first-form/character-group-attributes/example.vue">
+</example>
+
+And that is it! we could stop here for an introduction on how forms and inputs work for FormKit, but we should add more to it, just to make sure we fully understand some core features and some tips that may help your forms go to the next level.
+
+## Updating values based on another input
+
+One thing we should add to make this form even better, is changing the character default `attributes` based on the selected character `class`, for that we will be using some new features:
+
+- [getNode](/advanced/core#getting-a-components-node): `getNode` gets an input using their `id` as an identifier
+- [events](/advanced/core#events): `events` listen to changes to a certain input
+- [node.input()](/essentials/inputs#using-nodeinput): the `input` function on a node let's us update the value of it
+
+With those features combined we can get an input `node`, add an `events` so we can listen to changes from it, and update a value of another field using the `input` function:
+
+<example
+  name="Updating attributes based on the character class"
+  file="_content/examples/guides/your-first-form/character-attributes-update/example.vue">
+</example>
+
+### Make it into a plugin
+
+The code now got a bit less readable, so let's make it into another file and use a plugin instead, we will also learn another useful feature called [traversal](/advanced/core#traversal) by using the `at` function of a node:
+
+<callout type="warning" label="At uses name">
+The <code>at</code> function uses the <code>name</code> attributes instead of the <code>id</code> that <code>getNode</code> uses.
+</callout>
+
+<example
+  name="Refactor as a plugin"
+  :file="[
+    '_content/examples/guides/your-first-form/character-plugin/example.vue',
+    '_content/examples/guides/your-first-form/character-plugin/plugins.js',
+  ]"
+  init-file-tab="example.vue">
+</example>

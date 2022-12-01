@@ -1,4 +1,11 @@
 <script setup>
+const castRangeToNumber = (node) => {
+  // We add a check to add the cast only to range inputs
+  if (node.props.type !== 'range') return
+
+  node.hook.input((value, next) => next(Number(value)))
+}
+
 const createCharacter = async (fields) => {
   await new Promise((r) => setTimeout(r, 1000))
   alert(JSON.stringify(fields))
@@ -9,7 +16,8 @@ const createCharacter = async (fields) => {
 <template>
   <h1>New Character</h1>
 
-  <FormKit type="form" @submit="createCharacter">
+  <!-- form is also an input, so it also accepts plugins -->
+  <FormKit type="form" @submit="createCharacter" :plugins="[castRangeToNumber]">
     <FormKit
       type="text"
       name="name"
@@ -20,11 +28,10 @@ const createCharacter = async (fields) => {
       placeholder="Please add your name"
     />
 
-    <FormKit type="select" label="Age" :options="['Young', 'Adult', 'Elder']" />
-
     <FormKit
       type="select"
       label="Class"
+      id="class"
       :options="['Warrior', 'Mage', 'Assassin']"
     />
 
@@ -32,6 +39,7 @@ const createCharacter = async (fields) => {
       type="range"
       name="vitality"
       id="vitality"
+      validation="required|max:10"
       label="Vitality"
       value="5"
       min="1"
@@ -44,6 +52,7 @@ const createCharacter = async (fields) => {
       type="range"
       name="skill"
       id="skill"
+      validation="required|max:10"
       label="Skill"
       value="5"
       min="1"
@@ -56,6 +65,7 @@ const createCharacter = async (fields) => {
       type="range"
       name="strength"
       id="strength"
+      validation="required|max:10"
       label="Strength"
       value="5"
       min="1"
@@ -68,6 +78,7 @@ const createCharacter = async (fields) => {
       type="range"
       name="dexterity"
       id="dexterity"
+      validation="required|max:10"
       label="Dexterity"
       value="5"
       min="1"
