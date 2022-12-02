@@ -28,7 +28,7 @@ const createCharacter = async (fields) => {
       label="Name"
       help="Your full name"
       placeholder="Please add your name"
-    />
+    /> 
 
     <FormKit
       type="select"
