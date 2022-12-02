@@ -1,4 +1,3 @@
-<!-- %partial%::html:: -->
 <template>
   <h1>New Character</h1>
 
@@ -9,8 +8,8 @@
       id="name"
       validation="required|not:Admin"
       label="Name"
-      help="Your full name"
-      placeholder="Please add your name"
+      help="Enter your character's full name"
+      placeholder="“Scarlet Sword”"
     />
 
     <FormKit
@@ -22,15 +21,16 @@
 
     <FormKit
       type="range"
-      name="vitality"
-      id="vitality"
-      validation="required|max:10"
-      label="Vitality"
+      name="strength"
+      id="strength"
+      label="Strength"
       value="5"
+      validation="min:2|max:9"
+      validation-visibility="live"
       min="1"
       max="10"
       step="1"
-      help="How much vitality points to start with"
+      help="How many strength points should this character have?"
     />
 
     <FormKit
@@ -48,19 +48,6 @@
 
     <FormKit
       type="range"
-      name="strength"
-      id="strength"
-      validation="required|max:10"
-      label="Strength"
-      value="5"
-      min="1"
-      max="10"
-      step="1"
-      help="How much strength points to start with"
-    />
-
-    <FormKit
-      type="range"
       name="dexterity"
       id="dexterity"
       validation="required|max:10"
@@ -73,4 +60,3 @@
     />
   </FormKit>
 </template>
-<!-- %partial%::html:: -->

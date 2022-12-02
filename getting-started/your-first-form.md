@@ -25,7 +25,7 @@ Even without any props, the bare `<FormKit />` component has already given our i
 
 #### The type
 
-By default, the `<FormKit />` component will use `type="text"` if no `type` is specified. The `type` is how we specify what input we want. Just like [native inputs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input), we have inputs like `text`, `select`, `checkbox` and so on. However, we are not confined to only "native" inputs, FormKit Pro adds non-native inputs like the `repeater`, `taglist`, and `autocomplete` types, which can handle more complex interactions.
+By default, the `<FormKit />` component will use `type="text"` if no `type` is specified. The `type` is how we specify what input we want. Just like [native inputs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input), we have inputs like `text`, `select`, `checkbox` and so on. However, we are not confined to only "native" inputs, FormKit Pro adds non-native controls like the `repeater`, `taglist`, and `autocomplete` types, which can handle more complex interactions.
 
 <example
   name="First input"
@@ -52,7 +52,9 @@ Our input is still missing some key accessibility functionality like a `label`, 
 
 ### Setting an initial value
 
-Sometimes you want to add an initial value to an input, such as providing a sensible starting place, or populating pre-saved data from a database. If we look at an example case about a vitality bar in a character creation form for a game, we could use the `range` input with a predefined value when the users first opens the form, to make that work we can use the `value` prop to add the first initial value to the input:
+Sometimes you want to add an initial value to an input, such as providing a sensible starting place, or populating pre-saved data from a database. We do this with the `value` prop.
+
+Let's start building an example that we can add to for this guide. Imagining we are building a "character creation form" for a game. Let's assign our character a strength rating. We could use the `range` input with a predefined value of `5` when the users first opens the form:
 
 <example
   name="Adding label and help texts"
@@ -61,37 +63,20 @@ Sometimes you want to add an initial value to an input, such as providing a sens
 
 ### Adding validation
 
-Validation is one of the main features of FormKit, it helps the user to know if the value they submited is correct, FormKit makes adding [validation](/essentials/validation) a breaze, with many powerful built-in `validation` rules already implemented for you, we will be using `validation` to make sure that the user is `required` to add a name, and is `not:Admin`:
+Validation is one of the main features of FormKit. It helps the user know if the value they are submitting is correct. Adding [validation](/essentials/validation) is a breeze, with many powerful built-in validation rules already implemented for you. We will be using the `validation` prop to make sure the character is not too strong or too weak. The `validation-visibility` prop allows us to control when to show validation messages to the user — whether immediately, when the user blurs the input, or on form submit. The actual validity state is calculated real-time and always up to date — we simply choose when to expose the messages:
 
 <example
   name="Adding validation to name"
   file="_content/examples/guides/your-first-form/input-validation/example.vue">
 </example>
 
-We should also add a `required` and `max:10` rule to our vitality input:
-
-<client-only>
-
-```html
-<FormKit
-  type="range"
-  name="vitality"
-  id="vitality"
-  validation="required|max:10"
-  label="Vitality"
-  value="5"
-  min="1"
-  max="10"
-  step="1"
-  help="How much vitality points to start with"
-/>
-```
-
 </client-only>
 
-### Number casting
+Note that the `min` and `max` props above are built-in browser props for a range input, and represent the top and bottom of the range slider .
 
-Our "backend" will require that our attributes like `vitality` to be [casted to number](https://formkit.link/b37c7d36263ab0ee1bd626aa0a405b93), but by default FormKit follows HTML "native" inputs behaviour making all values as "strings", so to fix that we can use one of the coolest features that FormKit has, [Plugins](/advanced/core#plugins), with plugins we can change how the value of an inputs is returned to us:
+### Adding a plugin
+
+Suppose our "backend" requires that data like `strength` be [casted to a number](https://formkit.link/b37c7d36263ab0ee1bd626aa0a405b93). By default, FormKit follows HTML "native" inputs behavior, making all values as "strings". To fix that, we can use one of the coolest features of FormKit — [plugins](/advanced/core#plugins) — which can be thought of as middleware for inputs. With a plugin, which are just functions, we can change how the value of our input is returned:
 
 <example
   name="Adding plugin to cast to number"
@@ -100,9 +85,9 @@ Our "backend" will require that our attributes like `vitality` to be [casted to 
 
 ## Creating the form
 
-First, let's create a basic form so we have content to work with. Our example will be a pretend character creation form, we will add more features to it at each section, like validation, grouping, changing values based on other fields, and so on.
+First, let's create a basic form and add more inputs so we have content to work with. We will add more features to it in each section, like validation, grouping, and changing values based on other inputs.
 
-We will be using one of the inputs called `form`, this input will make grouping and validation of fields way easier, you just need to wrap all yours fields inside a `<FormKit type="form">`:
+We will be using one of the inputs called `form`, this input will make grouping and validation of fields way easier. You just need to wrap all yours inputs inside a `<FormKit type="form">`:
 
 <callout type="info" label="Form values">
 The <code>form</code> type will actively collect all the values from child inputs using the <code>name</code> of each input as a data object for you (just like <code>group</code>).
@@ -115,7 +100,7 @@ The <code>form</code> type will actively collect all the values from child input
 
 ### Adding the submit handler
 
-The first feature of a form in FormKit that we will see is that we have a `@submit` event ready to make our life easier when it comes to submiting our form, the `@submit` event gives us as the first argument all fields that the form gathered from the inputs, no need to use `v-model` for it:
+The first feature of a form that we'll explore is that we have a `@submit` event ready to make our life easier when the time comes to submit our form. The `@submit` event gives us as the first argument all the descendant fields the form gathered from the inputs. There is no need to use numerous `v-model`s to collect the form data. Let's add our `createCharacter()` submit handler:
 
 <example
   name="Adding form submit"
@@ -124,7 +109,7 @@ The first feature of a form in FormKit that we will see is that we have a `@subm
 
 ### Changing the submit button
 
-As convinience when using `type="form"` the `form` outputs a submit button automatically, but for our case a "Submit" text does not show the intent of the form correctly, so to fix that we can use a nice feature that the `form` has to offer, and that is the `submit-label` prop, we can by simply adding `submit-label="Create Character"` show the intent of the form as a whole:
+As convenience when using `type="form"`, the `form` outputs a submit button automatically. For our case, a "Submit" text does not show the intent of the form correctly. To fix that, we can use the `submit-label` prop, which is a `form`-specific feature. We can by simply add `submit-label="Create Character"` to show the intent of the form:
 
 <client-only>
 
