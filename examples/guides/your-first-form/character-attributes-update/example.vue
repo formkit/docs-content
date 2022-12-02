@@ -48,7 +48,7 @@ const createCharacter = async (fields) => {
 </script>
 
 <template>
-  <div><h4 class="form-label">Updating values based on another input</h4></div>
+  <div><h4 class="form-label">Updating values based on the class input</h4></div>
   <h1>New Character</h1>
 
   <FormKit

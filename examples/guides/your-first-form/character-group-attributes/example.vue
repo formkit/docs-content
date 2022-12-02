@@ -14,7 +14,7 @@ const createCharacter = async (fields) => {
 
 <!-- %partial%::html:: -->
 <template>
-  <div><h4 class="form-label">Grouping related inputs</h4></div>
+  <div><h4 class="form-label">Grouping the attributes</h4></div>
   <h1>New Character</h1>
 
   <!-- form is also an input, so it also accepts plugins -->
