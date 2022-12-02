@@ -155,7 +155,7 @@ With those features combined, we can get an input's core `node`, listen for and 
 
 ### Make it into a plugin
 
-The code now got a bit less readable, so let's extract the logic to another file and use a plugin instead. We will also learn another useful feature called [traversal](/advanced/core#traversal) by using the `at` function of a node:
+The code now got a bit less readable, so let's extract the logic to another file and use a plugin instead. Note that we are placing the new `updateAttributesPlugin` only on the `class` input, so it will not affect any other input. We will also learn another useful feature called [traversal](/advanced/core#traversal) by using the `at` function of a node:
 
 <callout type="warning" label="at() uses name">
 The <code>at</code> function uses the <code>name</code> attributes instead of the <code>id</code> that <code>getNode</code> uses.
@@ -172,7 +172,7 @@ The <code>at</code> function uses the <code>name</code> attributes instead of th
 
 ## Adding group validation
 
-Now that our form has most features that we need, there is something that we should add to improve the validation, a group validation to check if the attributes do not exceed 15, otherwise the user should always max out all attributes, and classes wouldn't matter, to make that work we will be learning a new feature, adding [custom rules](/essentials/validation#custom-rules):
+Let's assume that while different characters are better at different attributes, that they need to be roughly equal to one another. We don't want users to just create characters with 10-10-10 on the attributes. We can do this by creating a budget of points, and adding a group validation to ensure the attributes do not exceed 20 points in totality. We can make this work by learning a new feature — [custom rules](/essentials/validation#custom-rules):
 
 <example
   name="Adding custom rule to group"
