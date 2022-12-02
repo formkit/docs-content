@@ -17,7 +17,12 @@ const createCharacter = async (fields) => {
   <h1>New Character</h1>
 
   <!-- form is also an input, so it also accepts plugins -->
-  <FormKit type="form" @submit="createCharacter" :plugins="[castRangeToNumber]">
+  <FormKit
+    type="form"
+    @submit="createCharacter"
+    :plugins="[castRangeToNumber]"
+    submit-label="Create Character"
+  >
     <FormKit
       type="text"
       name="name"
@@ -38,22 +43,8 @@ const createCharacter = async (fields) => {
     <FormKit type="group" name="attributes" id="attributes">
       <FormKit
         type="range"
-        name="vitality"
-        id="vitality"
-        validation="required|max:10"
-        label="Vitality"
-        value="5"
-        min="1"
-        max="10"
-        step="1"
-        help="How much vitality points to start with"
-      />
-
-      <FormKit
-        type="range"
         name="skill"
         id="skill"
-        validation="required|max:10"
         label="Skill"
         value="5"
         min="1"
@@ -66,7 +57,6 @@ const createCharacter = async (fields) => {
         type="range"
         name="strength"
         id="strength"
-        validation="required|max:10"
         label="Strength"
         value="5"
         min="1"
@@ -79,7 +69,6 @@ const createCharacter = async (fields) => {
         type="range"
         name="dexterity"
         id="dexterity"
-        validation="required|max:10"
         label="Dexterity"
         value="5"
         min="1"
