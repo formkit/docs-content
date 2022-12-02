@@ -17,7 +17,7 @@ const createCharacter = async (fields) => {
   <h1>New Character</h1>
 
   <!-- form is also an input, so it also accepts plugins -->
-  <FormKit type="form" @submit="createCharacter" :plugins="[castRangeToNumber]">
+  <FormKit type="form" @submit="createCharacter" :plugins="[castRangeToNumber]" #default="{ value }">
     <FormKit
       type="text"
       name="name"
@@ -30,6 +30,7 @@ const createCharacter = async (fields) => {
 
     <FormKit
       type="select"
+      name="class"
       label="Class"
       id="class"
       :options="['Warrior', 'Mage', 'Assassin']"
@@ -38,15 +39,16 @@ const createCharacter = async (fields) => {
     <FormKit type="group" name="attributes" id="attributes">
       <FormKit
         type="range"
-        name="vitality"
-        id="vitality"
-        validation="required|max:10"
-        label="Vitality"
+        name="strength"
+        id="strength"
+        label="Strength"
         value="5"
+        validation="min:2|max:9"
+        validation-visibility="live"
         min="1"
         max="10"
         step="1"
-        help="How much vitality points to start with"
+        help="How many strength points should this character have?"
       />
 
       <FormKit
@@ -59,20 +61,7 @@ const createCharacter = async (fields) => {
         min="1"
         max="10"
         step="1"
-        help="How much skill points to start with"
-      />
-
-      <FormKit
-        type="range"
-        name="strength"
-        id="strength"
-        validation="required|max:10"
-        label="Strength"
-        value="5"
-        min="1"
-        max="10"
-        step="1"
-        help="How much strength points to start with"
+        help="How many skill points should this character have?"
       />
 
       <FormKit
@@ -85,9 +74,16 @@ const createCharacter = async (fields) => {
         min="1"
         max="10"
         step="1"
-        help="How much dexterity points to start with"
+        help="How many dexterity points should this character have?"
       />
     </FormKit>
+    <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>
 <!-- %partial%::html:: -->
+
+<style>
+pre[wrap] {
+  margin-bottom: 20px !important;
+}
+</style>

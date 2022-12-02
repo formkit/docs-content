@@ -1,3 +1,4 @@
+<!-- %partial%::html:: -->
 <script setup>
 const castRangeToNumber = (node) => {
   // We add a check to add the cast only to range inputs
@@ -16,7 +17,7 @@ const createCharacter = async (fields) => {
   <h1>New Character</h1>
 
   <!-- form is also an input, so it also accepts plugins -->
-  <FormKit type="form" @submit="createCharacter" :plugins="[castRangeToNumber]">
+  <FormKit type="form" @submit="createCharacter" :plugins="[castRangeToNumber]" #default="{ value }">
     <FormKit
       type="text"
       name="name"
@@ -74,7 +75,16 @@ const createCharacter = async (fields) => {
       step="1"
       help="How many dexterity points should this character have?"
     />
+
+    <pre wrap>{{ value }}</pre>
   </FormKit>
 
   <p><em><small>Press submit to see the collected form data.</small></em></p>
 </template>
+<!-- %partial%::html:: -->
+
+<style>
+pre[wrap] {
+  margin-bottom: 20px !important;
+}
+</style>

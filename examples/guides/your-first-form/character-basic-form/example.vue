@@ -15,6 +15,7 @@
     <FormKit
       type="select"
       label="Class"
+      name="class"
       id="class"
       :options="['Warrior', 'Mage', 'Assassin']"
     />
