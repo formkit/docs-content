@@ -1,6 +1,6 @@
 <!-- %partial%::html:: -->
 <script setup>
-import { castRangeToNumber, characterPlugin } from 'plugins.js'
+import { castRangeToNumber, updateAttributesPlugin } from 'plugins.js'
 import { max_sum } from 'rules.js'
 
 const createCharacter = async (fields) => {
@@ -12,11 +12,12 @@ const createCharacter = async (fields) => {
 <template>
   <h1>New Character</h1>
 
-  <!-- form is also an input, so it also accepts plugins -->
   <FormKit
     type="form"
     @submit="createCharacter"
-    :plugins="[castRangeToNumber, characterPlugin]"
+    :plugins="[castRangeToNumber]"
+    submit-label="Create Character"
+    #default="{ value }"
   >
     <FormKit
       type="text"
@@ -33,6 +34,7 @@ const createCharacter = async (fields) => {
       label="Class"
       id="class"
       :options="['Warrior', 'Mage', 'Assassin']"
+      :plugins="[updateAttributesPlugin]"
     />
 
     <FormKit
@@ -44,43 +46,52 @@ const createCharacter = async (fields) => {
     >
       <FormKit
         type="range"
-        name="skill"
-        id="skill"
-        validation="required|max:10"
-        label="Skill"
-        value="5"
-        min="1"
-        max="10"
-        step="1"
-        help="How much skill points to start with"
-      />
-
-      <FormKit
-        type="range"
         name="strength"
         id="strength"
-        validation="required|max:10"
         label="Strength"
         value="5"
         min="1"
         max="10"
         step="1"
-        help="How much strength points to start with"
+        help="How many strength points should this character have?"
+      />
+
+      <FormKit
+        type="range"
+        name="skill"
+        id="skill"
+        label="Skill"
+        value="5"
+        min="1"
+        max="10"
+        step="1"
+        help="How many skill points should this character have?"
       />
 
       <FormKit
         type="range"
         name="dexterity"
         id="dexterity"
-        validation="required|max:10"
         label="Dexterity"
         value="5"
         min="1"
         max="10"
         step="1"
-        help="How much dexterity points to start with"
+        help="How many dexterity points should this character have?"
       />
     </FormKit>
+
+    <pre wrap>{{ value }}</pre>
   </FormKit>
+
+  <p><em><small>Change the character's class to see the changes in attribute values.</small></em></p>
 </template>
 <!-- %partial%::html:: -->
+
+<style>
+pre[wrap] {
+  margin-bottom: 20px !important;
+}
+</style>
+</template>
+

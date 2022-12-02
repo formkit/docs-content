@@ -5,29 +5,28 @@ export const castRangeToNumber = (node) => {
   node.hook.input((value, next) => next(Number(value)))
 }
 
-export const characterPlugin = (node) => {
+export const updateAttributesPlugin = (node) => {
   const CHARACTER_BASE_STATS = {
     Warrior: {
-      skill: 1,
       strength: 9,
+      skill: 1,
       dexterity: 5,
     },
     Mage: {
-      skill: 9,
-      strength: 1,
-      dexterity: 5,
+      strength: 5,
+      skill: 10,
+      dexterity: 8,
     },
     Assassin: {
-      skill: 3,
-      strength: 3,
-      dexterity: 9,
+      strength: 5,
+      skill: 4,
+      dexterity: 10,
     },
   }
 
-  const classNode = node.at('class')
-  const attributesNode = node.at('attributes')
-
-  classNode.on('commit', ({ payload }) => {
-    attributesNode.input(CHARACTER_BASE_STATS[payload])
+  node.on('commit', ({ payload }) => {
+    // Get the sibling attributes using at()
+    const attributeNode = node.at('attributes')
+    if (attributeNode) attributeNode.input(CHARACTER_BASE_STATS[payload])
   })
 }
