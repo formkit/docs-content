@@ -12,7 +12,6 @@ const createCharacter = async (fields) => {
 }
 </script>
 
-<!-- %partial%::html:: -->
 <template>
   <h1>New Character</h1>
 
@@ -24,28 +23,30 @@ const createCharacter = async (fields) => {
       id="name"
       validation="required|not:Admin"
       label="Name"
-      help="Your full name"
-      placeholder="Please add your name"
+      help="Enter your character's full name"
+      placeholder="“Scarlet Sword”"
     />
 
     <FormKit
       type="select"
       label="Class"
+      name="class"
       id="class"
       :options="['Warrior', 'Mage', 'Assassin']"
     />
 
     <FormKit
       type="range"
-      name="vitality"
-      id="vitality"
-      validation="required|max:10"
-      label="Vitality"
+      name="strength"
+      id="strength"
+      label="Strength"
       value="5"
+      validation="min:2|max:9"
+      validation-visibility="live"
       min="1"
       max="10"
       step="1"
-      help="How much vitality points to start with"
+      help="How many strength points should this character have?"
     />
 
     <FormKit
@@ -58,20 +59,7 @@ const createCharacter = async (fields) => {
       min="1"
       max="10"
       step="1"
-      help="How much skill points to start with"
-    />
-
-    <FormKit
-      type="range"
-      name="strength"
-      id="strength"
-      validation="required|max:10"
-      label="Strength"
-      value="5"
-      min="1"
-      max="10"
-      step="1"
-      help="How much strength points to start with"
+      help="How many skill points should this character have?"
     />
 
     <FormKit
@@ -84,8 +72,9 @@ const createCharacter = async (fields) => {
       min="1"
       max="10"
       step="1"
-      help="How much dexterity points to start with"
+      help="How many dexterity points should this character have?"
     />
   </FormKit>
+
+  <p><em><small>Press submit to see the collected form data.</small></em></p>
 </template>
-<!-- %partial%::html:: -->
