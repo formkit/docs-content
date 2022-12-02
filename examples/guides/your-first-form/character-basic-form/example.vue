@@ -1,5 +1,6 @@
 <!-- %partial%::html:: -->
 <template>
+  <div><h4 class="form-label">Creating the form</h4></div>
   <h1>New Character</h1>
 
   <FormKit type="form">
@@ -63,3 +64,16 @@
   </FormKit>
 </template>
 <!-- %partial%::html:: -->
+
+<style>
+  .form-label {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 -.5rem;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block !important;
+    background-color: #444;
+    color: white;
+  }
+</style>
