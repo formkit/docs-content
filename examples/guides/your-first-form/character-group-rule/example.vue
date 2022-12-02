@@ -32,6 +32,7 @@ const createCharacter = async (fields) => {
     <FormKit
       type="select"
       label="Class"
+      name="class"
       id="class"
       :options="['Warrior', 'Mage', 'Assassin']"
       :plugins="[updateAttributesPlugin]"
@@ -42,7 +43,12 @@ const createCharacter = async (fields) => {
       name="attributes"
       id="attributes"
       :validation-rules="{ max_sum }"
+      validation-visibility="live"
       validation="max_sum"
+      :validation-messages="{
+        max_sum: ({ name, args }) => `${name} needs to be bigger or equal than ${args}.`,
+      }"
+      #default="{ id, messages, fns, classes }"
     >
       <FormKit
         type="range"
@@ -79,6 +85,19 @@ const createCharacter = async (fields) => {
         step="1"
         help="How many dexterity points should this character have?"
       />
+
+      <!-- By default groups do not show validation messages, so we need to add it manually -->
+      <ul :class="classes.messages" v-if="fns.length(messages)">
+        <li 
+          v-for="message in messages"
+          :key="message.key"
+          :class="classes.message"
+          :id="`${id}-${message.key}`"
+          :data-message-type="message.type"
+        >
+          {{ message.value }}
+        </li>
+      </ul>
     </FormKit>
 
     <pre wrap>{{ value }}</pre>

@@ -174,6 +174,10 @@ The <code>at</code> function uses the <code>name</code> attributes instead of th
 
 Let's assume that while different characters are better at different attributes, that they need to be roughly equal to one another. We don't want users to just create characters with 10-10-10 on the attributes. We can do this by creating a budget of points, and adding a group validation to ensure the attributes do not exceed 20 points in totality. We can make this work by learning a new feature — [custom rules](/essentials/validation#custom-rules):
 
+<callout type="warning" label="Groups do not display messages by default">
+By default the type <code>group</code> does not output any markup, so to show validation errors we need to manually add it.
+</callout>
+
 <example
   name="Adding custom rule to group"
   :file="[
