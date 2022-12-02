@@ -123,6 +123,7 @@ const createCharacter = async (fields) => {
     </em>
   </p>
 </template>
+<!-- %partial%::html:: -->
 
 <style>
 pre[wrap] {

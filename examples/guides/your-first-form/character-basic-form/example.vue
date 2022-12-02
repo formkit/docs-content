@@ -1,3 +1,4 @@
+<!-- %partial%::html:: -->
 <template>
   <h1>New Character</h1>
 
@@ -61,3 +62,4 @@
     />
   </FormKit>
 </template>
+<!-- %partial%::html:: -->

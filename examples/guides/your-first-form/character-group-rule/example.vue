@@ -1,3 +1,4 @@
+<!-- %partial%::html:: -->
 <script setup>
 import { castRangeToNumber, characterPlugin } from 'plugins.js'
 import { max_sum } from 'rules.js'
@@ -82,3 +83,4 @@ const createCharacter = async (fields) => {
     </FormKit>
   </FormKit>
 </template>
+<!-- %partial%::html:: -->
