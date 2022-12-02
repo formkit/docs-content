@@ -5,7 +5,7 @@ export const castRangeToNumber = (node) => {
   node.hook.input((value, next) => next(Number(value)))
 }
 
-export const characterPlugin = (node) => {
+export const updateAttributesPlugin = (node) => {
   const CHARACTER_BASE_STATS = {
     Warrior: {
       strength: 9,
@@ -24,11 +24,9 @@ export const characterPlugin = (node) => {
     },
   }
 
-  // As we are using a plugin we can use the `at` to get the inputs instead of getNode
-  const classNode = node.at('class')
-  const attributesNode = node.at('attributes')
-
-  classNode.on('commit', ({ payload }) => {
-    attributesNode.input(CHARACTER_BASE_STATS[payload])
+  node.on('commit', ({ payload }) => {
+    // Get the sibling attributes using at()
+    const attributeNode = node.at('attributes')
+    if (attributeNode) attributeNode.input(CHARACTER_BASE_STATS[payload])
   })
 }

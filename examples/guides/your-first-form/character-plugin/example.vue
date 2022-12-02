@@ -1,6 +1,6 @@
 <!-- %partial%::html:: -->
 <script setup>
-import { castRangeToNumber, characterPlugin } from 'plugins.js'
+import { castRangeToNumber, updateAttributesPlugin } from 'plugins.js'
 
 const createCharacter = async (fields) => {
   await new Promise((r) => setTimeout(r, 1000))
@@ -11,11 +11,11 @@ const createCharacter = async (fields) => {
 <template>
   <h1>New Character</h1>
 
-  <!-- form is also an input, so it also accepts plugins -->
   <FormKit
     type="form"
     @submit="createCharacter"
-    :plugins="[castRangeToNumber, characterPlugin]"
+    :plugins="[castRangeToNumber]"
+    submit-label="Create Character"
     #default="{ value }"
   >
     <FormKit
@@ -33,6 +33,7 @@ const createCharacter = async (fields) => {
       label="Class"
       id="class"
       :options="['Warrior', 'Mage', 'Assassin']"
+      :plugins="[updateAttributesPlugin]"
     />
 
     <FormKit type="group" name="attributes" id="attributes">
