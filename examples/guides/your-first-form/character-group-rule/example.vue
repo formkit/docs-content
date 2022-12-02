@@ -10,6 +10,7 @@ const createCharacter = async (fields) => {
 </script>
 
 <template>
+  <div><h4 class="form-label">Adding a custom group validation rule</h4></div>
   <h1>New Character</h1>
 
   <FormKit
@@ -38,67 +39,75 @@ const createCharacter = async (fields) => {
       :plugins="[updateAttributesPlugin]"
     />
 
-    <FormKit
-      type="group"
-      name="attributes"
-      id="attributes"
-      :validation-rules="{ max_sum }"
-      validation-visibility="live"
-      validation="max_sum"
-      :validation-messages="{
-        max_sum: ({ name, args }) => `${name} needs to be bigger or equal than ${args}.`,
-      }"
-      #default="{ id, messages, fns, classes }"
-    >
-      <FormKit
-        type="range"
-        name="strength"
-        id="strength"
-        label="Strength"
-        value="5"
-        min="1"
-        max="10"
-        step="1"
-        help="How many strength points should this character have?"
-      />
+    <div class="character-attributes">
+      <h4>Character Attributes</h4>
+      <p>You have a max budget of 20 points for character attributes.</p>
+
 
       <FormKit
-        type="range"
-        name="skill"
-        id="skill"
-        label="Skill"
-        value="5"
-        min="1"
-        max="10"
-        step="1"
-        help="How many skill points should this character have?"
-      />
+        type="group"
+        name="attributes"
+        id="attributes"
+        :validation-rules="{ max_sum }"
+        validation-visibility="live"
+        validation="max_sum"
+        :validation-messages="{
+          max_sum: ({ name, args }) => `${name} has exceeded the max budget of 20.`,
+        }"
+        #default="{ id, messages, fns, classes }"
+      >
+        <FormKit
+          type="range"
+          name="strength"
+          id="strength"
+          label="Strength"
+          value="5"
+          min="1"
+          max="10"
+          step="1"
+          help="How many strength points should this character have?"
+        />
 
-      <FormKit
-        type="range"
-        name="dexterity"
-        id="dexterity"
-        label="Dexterity"
-        value="5"
-        min="1"
-        max="10"
-        step="1"
-        help="How many dexterity points should this character have?"
-      />
+        <FormKit
+          type="range"
+          name="skill"
+          id="skill"
+          label="Skill"
+          value="5"
+          min="1"
+          max="10"
+          step="1"
+          help="How many skill points should this character have?"
+        />
 
-      <!-- By default groups do not show validation messages, so we need to add it manually -->
-      <ul :class="classes.messages" v-if="fns.length(messages)">
-        <li 
-          v-for="message in messages"
-          :key="message.key"
-          :class="classes.message"
-          :id="`${id}-${message.key}`"
-          :data-message-type="message.type"
-        >
-          {{ message.value }}
-        </li>
-      </ul>
-    </FormKit>
+        <FormKit
+          type="range"
+          name="dexterity"
+          id="dexterity"
+          label="Dexterity"
+          value="5"
+          min="1"
+          max="10"
+          step="1"
+          help="How many dexterity points should this character have?"
+        />
+
+        <!-- By default groups do not show validation messages, so we need to add it manually -->
+        <ul :class="classes.messages" v-if="fns.length(messages)">
+          <li 
+            v-for="message in messages"
+            :key="message.key"
+            :class="classes.message"
+            :id="`${id}-${message.key}`"
+            :data-message-type="message.type"
+          >
+            {{ message.value }}
+          </li>
+        </ul>
+      </FormKit>
+    </div>
+
+    <p><em><small>Try using greater than the alloted 20 point budget for the attributes.</small></em></p>
 
     <pre wrap>{{ value }}</pre>
   </FormKit>
@@ -111,6 +120,26 @@ const createCharacter = async (fields) => {
 pre[wrap] {
   margin-bottom: 20px !important;
 }
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 -.5rem;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block !important;
+  background-color: #444;
+  color: white;
+}
+
+.character-attributes {
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.character-attributes h4 {
+  margin: 0 0 1rem;
+}
 </style>
-</template>
 
