@@ -45,32 +45,36 @@ const createCharacter = async (fields) => {
     <FormKit type="group" name="attributes" id="attributes">
       <FormKit
         type="range"
+        name="strength"
+        id="strength"
+        label="Strength"
+        value="5"
+        validation="min:2|max:9"
+        validation-visibility="live"
+        min="1"
+        max="10"
+        step="1"
+        help="How many strength points should this character have?"
+      />
+
+      <FormKit
+        type="range"
         name="skill"
         id="skill"
+        validation="required|max:10"
         label="Skill"
         value="5"
         min="1"
         max="10"
         step="1"
-        help="How much skill points to start with"
-      />
-
-      <FormKit
-        type="range"
-        name="strength"
-        id="strength"
-        label="Strength"
-        value="5"
-        min="1"
-        max="10"
-        step="1"
-        help="How much strength points to start with"
+        help="How many skill points should this character have?"
       />
 
       <FormKit
         type="range"
         name="dexterity"
         id="dexterity"
+        validation="required|max:10"
         label="Dexterity"
         value="5"
         min="1"
