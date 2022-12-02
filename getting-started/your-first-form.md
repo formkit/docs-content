@@ -17,7 +17,7 @@ This guide assumes you are are familiar with the <a href="https://vuejs.org/guid
 
 ## Our first input
 
-One of the main features of FormKit is its single component API — the `<FormKit />` component. This one component gives you access to *all* input types. And while some types may extend and add features, they share the same base functionality. You can learn more about inputs [here](/essentials/inputs).
+One of the main features of FormKit is its single component API — the `<FormKit />` component. This one component gives you access to _all_ input types. And while some types may extend and add features, they share the same base functionality. You can learn more about inputs [here](/essentials/inputs).
 
 Even without any props, the bare `<FormKit />` component has already given our input a great starting point, with accessible markup, a base `text` input type, and additional features that will be explained in later sections.
 
@@ -181,6 +181,20 @@ The <code>at</code> function uses the <code>name</code> attributes instead of th
   :file="[
     '_content/examples/guides/your-first-form/character-plugin/example.vue',
     '_content/examples/guides/your-first-form/character-plugin/plugins.js',
+  ]"
+  init-file-tab="example.vue">
+</example>
+
+## Adding group validation
+
+Now that our form has most features that we need, there is something that we should add to improve the validation, a group validation to check if the attributes do not exceed 15, otherwise the user should always max out all attributes, and classes wouldn't matter, to make that work we will be learning a new feature, adding [custom rules](/essentials/validation#custom-rules):
+
+<example
+  name="Adding custom rule to group"
+  :file="[
+    '_content/examples/guides/your-first-form/character-group-rule/example.vue',
+    '_content/examples/guides/your-first-form/character-group-rule/plugins.js',
+    '_content/examples/guides/your-first-form/character-group-rule/rules.js',
   ]"
   init-file-tab="example.vue">
 </example>
