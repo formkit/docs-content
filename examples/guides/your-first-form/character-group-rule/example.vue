@@ -10,7 +10,7 @@ const createCharacter = async (fields) => {
 </script>
 
 <template>
-  <div><h4 class="form-label">Adding a custom group validation rule</h4></div>
+  <div><h4 class="form-label">Add a custom group validation rule to the attributes.</h4></div>
   <h1>New Character</h1>
 
   <FormKit
