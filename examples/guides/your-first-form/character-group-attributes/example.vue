@@ -22,6 +22,7 @@ const createCharacter = async (fields) => {
     @submit="createCharacter"
     :plugins="[castRangeToNumber]"
     submit-label="Create Character"
+    #default="{ value }"
   >
     <FormKit
       type="text"
@@ -35,6 +36,7 @@ const createCharacter = async (fields) => {
 
     <FormKit
       type="select"
+      name="class"
       label="Class"
       id="class"
       :options="['Warrior', 'Mage', 'Assassin']"
@@ -74,9 +76,16 @@ const createCharacter = async (fields) => {
         min="1"
         max="10"
         step="1"
-        help="How much dexterity points to start with"
+        help="How many dexterity points should this character have?"
       />
     </FormKit>
+    <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>
 <!-- %partial%::html:: -->
+
+<style>
+pre[wrap] {
+  margin-bottom: 20px !important;
+}
+</style>

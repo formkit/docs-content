@@ -87,7 +87,7 @@ Suppose our "backend" requires that data like `strength` be [casted to a number]
 
 First, let's create a basic form and add more inputs so we have content to work with. We will add more features to it in each section, like validation, grouping, and changing values based on other inputs.
 
-We will be using one of the inputs called `form`, this input will make grouping and validation of fields way easier. You just need to wrap all yours inputs inside a `<FormKit type="form">`:
+We will use one of the inputs called `form`, which will make grouping and validation of fields much easier. You just need to wrap all yours inputs inside a `<FormKit type="form">`:
 
 <callout type="info" label="Form values">
 The <code>form</code> type will actively collect all the values from child inputs using the <code>name</code> of each input as a data object for you (just like <code>group</code>).
@@ -127,26 +127,26 @@ As convenience when using `type="form"`, the `form` outputs a submit button auto
 
 ### Grouping related inputs
 
-While right now the current form works, we can see that some releated inputs are separated, but our backend needs all attributes to be inside an `attributes` property, that is where `group` comes into play, this type is meant to group related inputs together by a common `name`.
+While the form works right now, we can see that some related inputs are separated (i.e., the form data is a flat structure where all form data are siblings). Suppose our backend needs all attributes inside an `attributes` property. We can use the `group` type to group related inputs together by a common `name`.
 
-Just like the `form` type, you just need to wrap all yours fields inside a `<FormKit type="group" name="attributes">`, don't forget to add the name property:
+Just like the `form` type, you can wrap all yours fields inside a `<FormKit type="group" name="attributes">`. Don't forget to add the name property:
 
 <example
   name="Grouping inputs"
   file="_content/examples/guides/your-first-form/character-group-attributes/example.vue">
 </example>
 
-And that is it! we could stop here for an introduction on how forms and inputs work for FormKit, but we should add more to it, just to make sure we fully understand some core features and some tips that may help your forms go to the next level.
+And that is it! We could stop here for an introduction on how forms and inputs work with FormKit. However, let's keep going to make sure we fully understand some core features and tips that may take your forms to the next level.
 
 ## Updating values based on another input
 
-One thing we should add to make this form even better, is changing the character default `attributes` based on the selected character `class`, for that we will be using some new features:
+One thing we can do to improve this form is to change the character's default `attributes` based on the selected character `class`. For that, we will be using some new features:
 
-- [getNode](/advanced/core#getting-a-components-node): `getNode` gets an input using their `id` as an identifier
-- [events](/advanced/core#events): `events` listen to changes to a certain input
-- [node.input()](/essentials/inputs#using-nodeinput): the `input` function on a node let's us update the value of it
+- [getNode](/advanced/core#getting-a-components-node): `getNode` gets an input's core node using their `id` as an identifier. Each input has an associated core node.
+- [events](/advanced/core#events): `events` listen to changes to a certain input.
+- [node.input()](/essentials/inputs#using-nodeinput): the `input` function on a node lets us update the value of it.
 
-With those features combined we can get an input `node`, add an `events` so we can listen to changes from it, and update a value of another field using the `input` function:
+With those features combined, we can get an input's core `node`, listen for and respond to `events`, and update a value of another field using the `input` function:
 
 <example
   name="Updating attributes based on the character class"
@@ -155,9 +155,9 @@ With those features combined we can get an input `node`, add an `events` so we c
 
 ### Make it into a plugin
 
-The code now got a bit less readable, so let's make it into another file and use a plugin instead, we will also learn another useful feature called [traversal](/advanced/core#traversal) by using the `at` function of a node:
+The code now got a bit less readable, so let's extract the logic to another file and use a plugin instead. We will also learn another useful feature called [traversal](/advanced/core#traversal) by using the `at` function of a node:
 
-<callout type="warning" label="At uses name">
+<callout type="warning" label="at() uses name">
 The <code>at</code> function uses the <code>name</code> attributes instead of the <code>id</code> that <code>getNode</code> uses.
 </callout>
 

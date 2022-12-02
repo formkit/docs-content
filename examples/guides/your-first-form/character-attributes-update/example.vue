@@ -1,3 +1,4 @@
+<!-- %partial%::html:: -->
 <script setup>
 import { onMounted } from 'vue'
 import { getNode } from '@formkit/core'
@@ -11,21 +12,18 @@ const castRangeToNumber = (node) => {
 
 const CHARACTER_BASE_STATS = {
   Warrior: {
-    vitality: 10,
-    skill: 1,
     strength: 9,
+    skill: 1,
     dexterity: 5,
   },
   Mage: {
-    vitality: 2,
-    skill: 10,
     strength: 5,
+    skill: 10,
     dexterity: 8,
   },
   Assassin: {
-    vitality: 6,
-    skill: 4,
     strength: 5,
+    skill: 4,
     dexterity: 10,
   },
 }
@@ -36,9 +34,9 @@ onMounted(() => {
   const classNode = getNode('class')
   const attributesNode = getNode('attributes')
 
-  // Here we can use the events to listen to commit changes
+  // Here we are listening for the 'commit' event
   classNode.on('commit', ({ payload }) => {
-    // We update the value of the attributes group using its children name to pass down automatically by formkit
+    // We update the value of the attributes group using its children name to pass down automatically by FormKit
     attributesNode.input(CHARACTER_BASE_STATS[payload])
   })
 })
@@ -57,6 +55,7 @@ const createCharacter = async (fields) => {
     @submit="createCharacter"
     :plugins="[castRangeToNumber]"
     submit-label="Create Character"
+    #default="{ value }"
   >
     <FormKit
       type="text"
@@ -71,6 +70,7 @@ const createCharacter = async (fields) => {
     <FormKit
       type="select"
       label="Class"
+      name="class"
       id="class"
       :options="['Warrior', 'Mage', 'Assassin']"
     />
@@ -109,8 +109,23 @@ const createCharacter = async (fields) => {
         min="1"
         max="10"
         step="1"
-        help="How much dexterity points to start with"
+        help="How many dexterity points should this character have?"
       />
     </FormKit>
+    <pre wrap>{{ value }}</pre>
   </FormKit>
+
+  <p>
+    <em>
+      <small>
+        Change the character's class to see the changes in attribute values.
+      </small>
+    </em>
+  </p>
 </template>
+
+<style>
+pre[wrap] {
+  margin-bottom: 20px !important;
+}
+</style>
