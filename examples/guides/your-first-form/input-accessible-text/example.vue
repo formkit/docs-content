@@ -6,7 +6,7 @@
     id="name"
     label="Name"
     help="Your full name"
-    placeholder="Please add your name"
+    placeholder="“Jon Doe”"
   />
 </template>
 <!-- %partial%::html:: -->
