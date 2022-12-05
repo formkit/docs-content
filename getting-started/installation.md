@@ -17,9 +17,9 @@ You can also try out all FormKit features using our <a href="/playground">playgr
 
 ### Prerequisites
 
-- Vue 3 or Nuxt 3: if you're using Vue 2 or Nuxt 2 you can use FormKit ancestor [VueFormulate](https://vueformulate.com).
+- Vue 3 or Nuxt 3: If you're using Vue 2 or Nuxt 2 you can use FormKit's predecessor [VueFormulate](https://vueformulate.com).
 - Node.js: 14.18.0, 16.12.0, or higher.
-- Terminal: To run NPM commands.
+- Terminal: To run npm/yarn commands.
 
 ## With create-app
 

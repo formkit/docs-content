@@ -27,14 +27,14 @@ FormKit is far more than a UI library. It is a _form building framework_ for Vue
 
 ## Why FormKit?
 
-Forms seem simple. After all, a `<form>` and an `<input>` tag are all that's required. Yet, experienced engineers know that implementing production-ready forms is tedious and complicated. FormKit built-in key features where designed to solve these problems, while making form authoring efficient and enjoyable for developers:
+Forms seem simple. After all, a `<form>` and an `<input>` tag are all that's required. Yet, experienced engineers know that implementing production-ready forms is tedious and complicated. FormKit's key features where designed to solve these problems, while making form authoring efficient and enjoyable for developers:
 
 #### Key Features
 
-- [Single Component](#single-component): FormKit was designed with a single component for all inputs.
+- [Single component](#single-component): FormKit was designed with a single component for all inputs.
 - [Accessible](#accessible): We output an opinionated accessible markup by default.
-- [Validation](#validation): Powerful built-in validation rules with instant feedback.
-- [Internationalization](#internationalization): Great i18n language support.
+- [Validation](#validation): Numerous built-in validation rules with instant feedback.
+- [Schema](#schema): Powerful schema format to store and generate forms.
 - [Styles](#styles): Beautifully crafted theme.
 - [Extensibility](#extensibility): Easy to extend any feature.
 - [Community](#community): Friendly community that will help you solve your questions.
@@ -51,21 +51,21 @@ Creating accessible forms is a serious challenge. Especially when accessibility 
 
 Front-end [validation](/essentials/validation) that gives instant feedback is an important part of providing a good experience to your users. Unfortunately, it can be incredibly tedious to implement even if you're using a great validation library. FormKit takes the pain out of front end validation by baking the [rules](/essentials/validation#available-rules) directly into the inputs.
 
-### Internationalization
+### Schema
 
-<!-- Needs a internationalization cool description -->
+FormKit's [schema](/advanced/schema) is a JSON-serializable data format for storing DOM structures and component implementations, including FormKit forms. Schemas support advanced features like [form generation](/essentials/generation), conditional logic, boolean operators, loops, slots, and data scoping — all guaranteed to serialize to a string.
 
 ### Styles
 
-<!-- Needs styles information about genesis too -->
+With the ability to modify FormKit's classes and even HTML, FormKit provides many ways to style your forms. You can roll your own CSS, use a utility class framework like Tailwind CSS, or use Genesis — our ready-built theme that works great in a variety of design contexts!
 
 ### Extensibility
 
-FormKit comes with great production-ready defaults, and for many users, the defaults are all they'll ever need. But FormKit is more than just inputs. It is a form building _framework_, complete with a [hooks](/advanced/core#hooks), [events](/advanced/core#events), [plugins](/advanced/core#plugins), libraries and [schemas](/advanced/schema). Advanced developers can craft their own form systems using FormKit's low-level tooling.
+FormKit comes with great production-ready defaults, and for many users, the defaults are all they'll need. But FormKit is more than just inputs. It is a form building _framework_, complete with a [hooks](/advanced/core#hooks), [events](/advanced/core#events), [plugins](/advanced/core#plugins), libraries, and [schemas](/advanced/schema). Advanced developers can craft their own form systems using FormKit's low-level tooling.
 
 ### Community
 
-<!-- Needs community description -->
+FormKit has an [active Discord community](https://discord.gg/Vhu97pAC76) where help is just a few keystrokes away. Community members and core team members alike spend time there helping users solve their issues.
 
 ## Why not...?
 
