@@ -8,11 +8,13 @@
 </p>
 
 # FormKit documentation content
-This repository is a content-only repo that stores the bulk of the documentation content (essentials, inputs, guides, advanced) for the [FormKit documentation site](https://formkit.com/essentials/installation).
+
+This repository is a content-only repo that stores the bulk of the documentation content (essentials, inputs, guides, advanced) for the [FormKit documentation site](https://formkit.com/getting-started/installation).
 
 The content gets pulled into the docs website via a build process.
 
 # Contributing
+
 We invite anyone to contribute and improve the docs by forking and issuing pull requests with any corrections or improvements.
 
 Thank you!

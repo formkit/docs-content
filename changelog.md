@@ -10,8 +10,9 @@ description: What's new in the latest version of FormKit?.
 ### November 15, 2022
 
 #### 💪 New features
+
 - Pro: New [Taglist Pro Input](/inputs/taglist) now available!
-- Adds [`npx formkit create-app`](/essentials/installation#with-create-app) command to easily bootstrap new FormKit projects.
+- Adds [`npx formkit create-app`](/getting-started/installation#with-create-app) command to easily bootstrap new FormKit projects.
 - Improves `length` rule validation messages across all languages.
 - Adds 🇬🇷 Greek (uk) language [#460](https://github.com/formkit/formkit/issues/460).
 - Adds 🇳🇴 Norwegian Bokmål (nb) language [#418](https://github.com/formkit/formkit/issues/418).
@@ -22,6 +23,7 @@ description: What's new in the latest version of FormKit?.
 - Pro: Added missing attrs to the message schema.
 
 #### 🐛 Bug fixes
+
 - Fixed a bug where the label slot didn't work without the label prop [#456](https://github.com/formkit/formkit/issues/456).
 - Fixed a bug where you couldn't dynamically change available validation rules [#449](https://github.com/formkit/formkit/issues/449).
 - Fixed a bug where swapping keys would not clear an input's value when inside a group. [#446](https://github.com/formkit/formkit/issues/446).
@@ -34,15 +36,16 @@ description: What's new in the latest version of FormKit?.
 - Pro: Fixed an autocomplete bug where the next page of options was overriding the current page. [#447](https://github.com/formkit/formkit/issues/447).
 - Pro: Fixed a bug where Pro inputs were not showing validation messages on blur [#403](https://github.com/formkit/formkit/issues/403).
 
-
 ## 1.0.0-beta.11
 
 ### September 29, 2022
 
 #### 🎉 New features
+
 - Lays foundation for FormKit Pro Inputs!
 
 #### 🐛 Bug fixes
+
 - Fixed a bug where the "help" slot appeared twice for checkbox and radio elements [#353](https://github.com/formkit/formkit/issues/353).
 - Fixed a bug that caused the FormKit AutoAnimate plugin to fail with Nuxt [#361](https://github.com/formkit/formkit/issues/361).
 - Fixed a schema bug where a dot-notation reference to a non-existing sub property causes `[Object object]` to output after the reference does exists [#368](https://github.com/formkit/formkit/issues/368).
@@ -95,13 +98,14 @@ description: What's new in the latest version of FormKit?.
 - Exports! You can now [export any of the existing inputs](/guides/export-and-restructure-inputs) and restructure them at will using the new `@formkit/cli` command line tool. Alter existing inputs by adding, removing, updating, or re-ordering sections — or add your own exported and altered input variations to your input library.
 - All inputs have been refactored to use a much improved schema composition API that allows easy composition and modification of schema based inputs.
 - Adds new `meta` property to schema specification ([#248](https://github.com/formkit/formkit/issues/248)).
-- FormKit CSS themes can be installed via CDN using the [new `theme` option](/essentials/installation#cdn-usage) in `defaultConfig()`
+- FormKit CSS themes can be installed via CDN using the [new `theme` option](/getting-started/installation#cdn-usage) in `defaultConfig()`
 - Adds new `submit` and `setErrors` hooks.
 - Adds 🇧🇬 Bulgarian language.
 - Adds 🇭🇺 Hungarian language.
 - Adds 🇰🇿 Kazakh language.
 - Adds 🇷🇸 Serbian language.
 - Adds 🇹🇯 Tajik language.
+
 #### 🐛 Bug fixes
 
 - Fixed a bug that caused the `key` property to not work when using the `$formkit` shorthand in schema ([#232](https://github.com/formkit/formkit/issues/232)).
@@ -112,6 +116,7 @@ description: What's new in the latest version of FormKit?.
 - Adds support for Czech/Slovak diacritics in `alpha` and `alpha_spaces` rules ([#281](https://github.com/formkit/formkit/pull/281)).
 
 #### 📙 Documentation
+
 - New docs page for [FormKit Icons](/plugins/icons) 🎉.
 - New guide for [exporting and restructuring icons](/guides/export-and-restructure-inputs)!
 - New docs using the [AutoAnimate plugin](/plugins/auto-animate).
@@ -305,7 +310,7 @@ import formKitTailwindPlugin from '@formkit/themes/tailwindcss'
 
 #### 🎉 New features
 
-- New `@formkit/nuxt` package is a full featured [Nuxt 3 module](/essentials/installation#nuxt) that makes using FormKit with [Nuxt 3](https://v3.nuxtjs.org/) as simple as possible!
+- New `@formkit/nuxt` package is a full featured [Nuxt 3 module](/getting-started/installation#nuxt) that makes using FormKit with [Nuxt 3](https://v3.nuxtjs.org/) as simple as possible!
 - `defaultConfig` now includes a new package `@formkit/dev` which decodes FormKit’s error codes to helpful console messages (no action required) ([#56](https://github.com/formkit/formkit/issues/56)).
 - FormKit is officially open-source under the MIT license!
 - The `preserve` key now applies to all descendants ([#53](https://github.com/formkit/formkit/issues/53)).
