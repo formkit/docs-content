@@ -109,6 +109,7 @@ const createCharacter = async (fields) => {
         <p v-if="value.strength === 1 
           && value.skill === 1
           && value.dexterity === 1"
+          key="easter-egg-uuid"
         >
           <em><small class="easter-egg">Are you trying to make the game harder for yourself?</small></em>
         </p>

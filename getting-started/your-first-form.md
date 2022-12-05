@@ -194,6 +194,10 @@ Sometimes forms need to show or hide fields depending on the value of another in
 - [Context object](/advanced/context) — We can access an input's value (along with other data) inside our form because all `FormKit` components receive their [context object](https://formkit.com/advanced/context) in the `#default` [slot prop](https://vuejs.org/guide/components/slots.html#scoped-slots).
 - The value of a `group` - The value of [group](/inputs/group) (and `form`) input is an object with the values of its children, keyed by the childrens' `name`s.
 
+<callout type="info" label="Vue's key property">
+When using conditional rendering, it is important to note that Vue needs hints to know that a DOM element needs a rerender, instead of trying to reuse it, so we can add a unique <code>key</code> property to the element to help Vue.
+</callout>
+
 So, let's grab the context object of the `group` input and extract the `value`: `#default="{ value }"`. We want to add a small easter egg for our user if they decide to change all attributes to 1:
 
 <example
