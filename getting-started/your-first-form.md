@@ -187,3 +187,17 @@ By default the type <code>group</code> does not output any markup, so to show va
   ]"
   init-file-tab="example.vue">
 </example>
+
+## Conditional rendering
+
+Sometimes forms need to show or hide fields depending on a value of another input, with FormKit we can do it easily by using the slots `value` parameter `#default="{ value }"`, for our case we want to add a small easter egg for our users, if the user decides to change all attributes to 1, we can show a paragraph telling that they found an easter egg:
+
+<example
+  name="Conditional rendering"
+  :file="[
+    '_content/examples/guides/your-first-form/character-easter-egg/example.vue',
+    '_content/examples/guides/your-first-form/character-easter-egg/plugins.js',
+    '_content/examples/guides/your-first-form/character-easter-egg/rules.js',
+  ]"
+  init-file-tab="example.vue">
+</example>
