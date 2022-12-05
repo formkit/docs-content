@@ -40,6 +40,7 @@ const createCharacter = async (fields) => {
       name="class"
       label="Class"
       id="class"
+      placeholder="Select a class"
       :options="['Warrior', 'Mage', 'Assassin']"
     />
 

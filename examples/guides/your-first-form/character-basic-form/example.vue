@@ -19,6 +19,7 @@
       label="Class"
       name="class"
       id="class"
+      placeholder="Select a class"
       :options="['Warrior', 'Mage', 'Assassin']"
     />
 
@@ -66,14 +67,14 @@
 <!-- %partial%::html:: -->
 
 <style>
-  .form-label {
-    font-size: 14px;
-    font-weight: 500;
-    margin: 0 0 -.5rem;
-    padding: 5px;
-    border-radius: 5px;
-    display: inline-block !important;
-    background-color: #444;
-    color: white;
-  }
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 -0.5rem;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block !important;
+  background-color: #444;
+  color: white;
+}
 </style>
