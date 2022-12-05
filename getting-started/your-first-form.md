@@ -172,10 +172,10 @@ The <code>at</code> function uses the <code>name</code> attributes instead of th
 
 ## Adding group validation
 
-Let's assume that while different characters are better at different attributes, that none should be too powerful. We don't want users to just create characters with 10-10-10 on the attributes. We can do this by creating a budget of points, and adding a group validation to ensure the attributes do not exceed 20 points in totality. We can make this work by learning a new feature — [custom rules](/essentials/validation#custom-rules):
+Let's assume that while different characters are better at different attributes, that none should be too powerful. We can do this by creating a budget of points, and adding group validation to the attributes `group` to ensure they do not exceed 20 points in totality. We'll learn a new feature — [custom rules](/essentials/validation#custom-rules) — to accomplish this:
 
 <callout type="warning" label="Groups do not display messages by default">
-By default the type <code>group</code> does not output any markup, so to show validation errors we need to manually add it.
+By default, the <code>group</code> type does not output any markup, so to show validation errors we need to manually add it.
 </callout>
 
 <example
@@ -190,7 +190,11 @@ By default the type <code>group</code> does not output any markup, so to show va
 
 ## Conditional rendering
 
-Sometimes forms need to show or hide fields depending on a value of another input, with FormKit we can do it easily by using the slots `value` parameter `#default="{ value }"`, for our case we want to add a small easter egg for our users, if the user decides to change all attributes to 1, we can show a paragraph telling that they found an easter egg:
+Sometimes forms need to show or hide fields depending on the value of another input. We can do this by learning 2 new concepts: 
+- [Context object](/advanced/context) — We can access an input's value (along with other data) inside our form because all `FormKit` components receive their [context object](https://formkit.com/advanced/context) in the `#default` [slot prop](https://vuejs.org/guide/components/slots.html#scoped-slots).
+- The value of a `group` - The value of [group](/inputs/group) (and `form`) input is an object with the values of its children, keyed by the childrens' `name`s.
+
+So, let's grab the context object of the `group` input and extract the `value`: `#default="{ value }"`. We want to add a small easter egg for our user if they decide to change all attributes to 1:
 
 <example
   name="Conditional rendering"

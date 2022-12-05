@@ -10,7 +10,7 @@ const createCharacter = async (fields) => {
 </script>
 
 <template>
-  <div><h4 class="form-label">Add a custom group validation rule to the attributes.</h4></div>
+  <div><h4 class="form-label">Add a custom validation rule to the attributes group.</h4></div>
   <h1>New Character</h1>
 
   <FormKit
@@ -52,7 +52,7 @@ const createCharacter = async (fields) => {
         validation-visibility="live"
         validation="max_sum"
         :validation-messages="{
-          max_sum: ({ name, args }) => `${name} has exceeded the max budget of 20.`,
+          max_sum: ({ name, args }) => `${name} has exceeded the max budget of 20. Your character can't be that strong!`,
         }"
         #default="{ id, messages, fns, classes }"
       >

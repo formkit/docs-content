@@ -1,4 +1,3 @@
-<!-- %partial%::html:: -->
 <script setup>
 import { castRangeToNumber, updateAttributesPlugin } from 'plugins.js'
 import { max_sum } from 'rules.js'
@@ -10,7 +9,7 @@ const createCharacter = async (fields) => {
 </script>
 
 <template>
-  <div><h4 class="form-label">Add a custom group validation rule to the attributes.</h4></div>
+  <div><h4 class="form-label">Conditional rendering based on the value of form fields.</h4></div>
   <h1>New Character</h1>
 
   <FormKit
@@ -43,7 +42,7 @@ const createCharacter = async (fields) => {
       <h4>Character Attributes</h4>
       <p>You have a max budget of 20 points for character attributes.</p>
 
-
+      <!-- %partial%::html:: -->
       <FormKit
         type="group"
         name="attributes"
@@ -52,7 +51,7 @@ const createCharacter = async (fields) => {
         validation-visibility="live"
         validation="max_sum"
         :validation-messages="{
-          max_sum: ({ name, args }) => `${name} has exceeded the max budget of 20.`,
+          max_sum: ({ name, args }) => `${name} has exceeded the max budget of 20. Your character can't be that strong!`,
         }"
         #default="{ value, id, messages, fns, classes }"
       >
@@ -114,6 +113,7 @@ const createCharacter = async (fields) => {
         </p>
         
       </FormKit>
+      <!-- %partial%::html:: -->
     </div>
 
     <p><em><small>Try using greater than the alloted 20 point budget for the attributes.</small></em></p>
@@ -123,7 +123,6 @@ const createCharacter = async (fields) => {
 
   <p><em><small>Change the character's class to see the changes in attribute values.</small></em></p>
 </template>
-<!-- %partial%::html:: -->
 
 <style>
 pre[wrap] {
