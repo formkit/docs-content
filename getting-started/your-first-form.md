@@ -201,3 +201,15 @@ Sometimes forms need to show or hide fields depending on a value of another inpu
   ]"
   init-file-tab="example.vue">
 </example>
+
+## Next steps
+
+That is it! You are now ready to start using FormKit!
+
+There are some topics we recommend you exploring next, you can read those in any order or even read it later after trying out FormKit for yourself, you can come back to this guide for whenever you run into questions about FormKit.
+
+**Style your forms:** Learn how to add classes to FormKit using [sections](/essentials/styling), or even use tailwindcss with our [guide](/guides/create-a-tailwind-theme).
+
+**Multi-language forms:** Learn how FormKit makes [i18n](/essentials/internationalization) easy with already available languages or adding your own.
+
+**Make it into a schema:** Learn how FormKit uses of [JSON schemas](/essentials/generation) to make forms easy and powerful to write and use.
