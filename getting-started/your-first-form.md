@@ -208,12 +208,10 @@ So, let's grab the context object of the `group` input and extract the `value`: 
 
 ## Next steps
 
-That is it! You are now ready to start using FormKit!
+And that concludes our introduction to FormKit! You are now ready to start using it!
 
-There are some topics we recommend you exploring next, you can read those in any order or even read it later after trying out FormKit for yourself, you can come back to this guide for whenever you run into questions about FormKit.
+There are some topics we recommend you exploring next, which you can read in any order or even later after trying out FormKit for yourself:
 
-**Style your forms:** Learn how to add classes to FormKit using [sections](/essentials/styling), or even use tailwindcss with our [guide](/guides/create-a-tailwind-theme).
-
-**Multi-language forms:** Learn how FormKit makes [i18n](/essentials/internationalization) easy with already available languages or adding your own.
-
-**Make it into a schema:** Learn how FormKit uses of [JSON schemas](/essentials/generation) to make forms easy and powerful to write and use.
+- **Style your forms:** Learn how to add classes to FormKit using [sections](/essentials/styling), or even use Tailwind CSS with the help of our [guide](/guides/create-a-tailwind-theme).
+- **Multi-language forms:** Learn how FormKit makes [i18n](/essentials/internationalization) easy with dozens of available languages. Or you can add your own!
+- **Explore FormKit's schema:** Learn about FormKit's [JSON-compatible schema](/essentials/generation) and how you can use it for form generation, saving forms to a DB in a JSON format, or building your own form builder.
