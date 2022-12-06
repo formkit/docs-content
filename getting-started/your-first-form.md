@@ -136,7 +136,9 @@ Just like the `form` type, you can wrap all yours fields inside a `<FormKit type
   file="_content/examples/guides/your-first-form/character-group-attributes/example.vue">
 </example>
 
-And that is it! We could stop here for an introduction on how forms and inputs work with FormKit. However, let's keep going to make sure we fully understand some core features and tips that may take your forms to the next level.
+## Going deeper
+
+And that is it! We could stop here for an introduction on how forms and inputs work with FormKit. However, let's add some UX enhancements and use that to expose ourselves to additional concepts and features that you can use to take your forms to the next level.
 
 ## Updating values based on another input
 
@@ -218,4 +220,4 @@ There are some topics we recommend you exploring next, which you can read in any
 
 - **Style your forms:** Learn how to add classes to FormKit using [sections](/essentials/styling), or even use Tailwind CSS with the help of our [guide](/guides/create-a-tailwind-theme).
 - **Multi-language forms:** Learn how FormKit makes [i18n](/essentials/internationalization) easy with dozens of available languages. Or you can add your own!
-- **Explore FormKit's schema:** Learn about FormKit's [JSON-compatible schema](/essentials/generation) and how you can use it for form generation, saving forms to a DB in a JSON format, or building your own form builder.
+- **Explore FormKit's schema:** Learn about FormKit's [JSON-compatible schema](/essentials/generation) and how you can use it for form generation, saving forms to a database in a JSON format, or building your own form builder.
