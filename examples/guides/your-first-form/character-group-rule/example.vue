@@ -35,6 +35,7 @@ const createCharacter = async (fields) => {
       label="Class"
       name="class"
       id="class"
+      placeholder="Select a class"
       :options="['Warrior', 'Mage', 'Assassin']"
       :plugins="[updateAttributesPlugin]"
     />

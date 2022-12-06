@@ -27,6 +27,7 @@ export const updateAttributesPlugin = (node) => {
   node.on('commit', ({ payload }) => {
     // Get the sibling attributes using at()
     const attributeNode = node.at('attributes')
-    if (attributeNode) attributeNode.input(CHARACTER_BASE_STATS[payload])
+    if (attributeNode && CHARACTER_BASE_STATS[payload])
+      attributeNode.input(CHARACTER_BASE_STATS[payload])
   })
 }
