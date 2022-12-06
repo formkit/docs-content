@@ -195,7 +195,7 @@ Sometimes forms need to show or hide fields depending on the value of another in
 - The value of a `group` - The value of [group](/inputs/group) (and `form`) input is an object with the values of its children, keyed by the childrens' `name`s.
 
 <callout type="info" label="Vue's key property">
-When using conditional rendering, it is important to note that Vue needs hints to know that a DOM element needs a rerender, instead of trying to reuse it, so we can add a unique <code>key</code> property to the element to help Vue.
+When using conditional rendering, note that Vue needs hints to know that a DOM element needs a re-render, instead of trying to reuse it. We can add a unique <code>key</code> property to the element to help Vue.
 </callout>
 
 So, let's grab the context object of the `group` input and extract the `value`: `#default="{ value }"`. We want to add a small easter egg for our user if they decide to change all attributes to 1:
