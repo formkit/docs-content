@@ -102,31 +102,6 @@ createApp(App).use(plugin, defaultConfig).mount('#app')
 
 That's it! You're now ready to use the `<FormKit>` component in your Vue 3 application.
 
-#### Configuring
-
-If you would like to supply your own configuration, you can either extend `defaultConfig` by passing a configuration object to it, or replace with your own configuration object, which allows for improved tree-shaking (only include the rules and languages you want to actually use) and more fine-grained control:
-
-<client-only>
-
-```js
-import { createApp } from 'vue'
-import App from 'App.vue'
-import { plugin, defaultConfig } from '@formkit/vue'
-import { fr } from '@formkit/i18n'
-
-createApp(App)
-  .use(
-    plugin,
-    defaultConfig({
-      locales: { fr },
-      locale: 'fr',
-    })
-  )
-  .mount('#app')
-```
-
-</client-only>
-
 ## With Nuxt
 
 Using FormKit with Nuxt requires minimal setup. First include the Nuxt module as a dependency within your project:
@@ -157,77 +132,6 @@ export default defineNuxtConfig({
 </client-only>
 
 That's it! FormKit is now registered in your project using the default config and you can start using the `<FormKit>` component.
-
-#### Configuring
-
-If you would like to supply your own configuration, create a `formkit.config` file adjacent to your `nuxt.config` file. Like the `nuxt.config` file itself, `.ts`, `.mjs`, and `.js` are all valid file extensions depending on your project's needs:
-
-<client-only>
-
-```sh
-myProject/
-|- formkit.config.ts
-|- nuxt.config.ts
-```
-
-</client-only>
-
-This configuration file will be automatically included if detected in your project directory. If you would like to supply a custom
-path to your `formkit.config`, you can override the default location using the `configFile` option under the `formkit` key.
-**Any path you supply should be relative to the root of your Nuxt project**:
-
-<client-only>
-
-```js
-// nuxt.config
-export default defineNuxtConfig({
-  modules: ['@formkit/nuxt'],
-  formkit: {
-    configFile: './my-configs/formkit.config.mjs',
-  },
-})
-```
-
-</client-only>
-
-By default, your configuration will _extend_ the `defaultConfig` that ships with FormKit. This is the desired behavior
-for the majority of projects. However, if you need to define the entire FormKit config yourself — from scratch — you may do so
-by setting the `defaultConfig` option for the module to `false`:
-
-<client-only>
-
-```js
-// nuxt.config
-export default defineNuxtConfig({
-  modules: ['@formkit/nuxt'],
-  formkit: {
-    defaultConfig: false,
-    configFile: './my/custom/location/formkit.config.ts',
-    // ^ this is now a full config replacement, not override.
-  },
-})
-```
-
-</client-only>
-
-For TypeScript users, it can be helpful to type your `formkit.config.ts` export as `DefaultConfigOptions` explicitly:
-
-<client-only>
-
-```js
-// formkit.config.ts
-import { fr } from '@formkit/i18n'
-import { DefaultConfigOptions } from '@formkit/vue'
-
-const config: DefaultConfigOptions = {
-  locales: { fr },
-  locale: 'fr',
-}
-
-export default config
-```
-
-</client-only>
 
 ## With Astro
 
@@ -325,27 +229,95 @@ import Form from '../components/Form.vue';
 
 That's it! You're now ready to use the `<FormKit>` component in your Astro application.
 
-#### Configuring
+## Configuring
 
-If you would like to supply your own configuration, you can either extend `defaultConfig` by passing a configuration object to it, or replace with your own configuration object, which allows for improved tree-shaking (only include the rules and languages you want to actually use) and more fine-grained control:
+If you would like to supply your own configuration, you can either extend `defaultConfig` by passing a [configuration object]() to it, or replace with your own configuration object, which allows for improved tree-shaking (only include the rules and languages you want to actually use) and more fine-grained control:
+
+<callout type="info" label="Hierarchical configuration">
+FormKit uses a unique hierarchical configuration system that is well suited for forms, meaning that all configurations defined globally are available to all inputs.
+</callout>
 
 <client-only>
 
 ```js
-// src/pages/_app.ts
-import type { App } from 'vue'
-import { plugin, defaultConfig } from '@formkit/vue'
+// formkit.config.js
 import { fr } from '@formkit/i18n'
 
-export default (app: App) => {
-  app.use(
-    plugin,
-    defaultConfig({
-      locales: { fr },
-      locale: 'fr',
-    })
-  )
+const config = {
+  locales: { fr },
+  locale: 'fr',
 }
+
+export default config
+
+// app.js or _app.ts for Astro  
+import config from 'formkit.config.js'
+
+app.use(
+  plugin,
+  defaultConfig(config)
+)
+```
+
+</client-only>
+
+### Configuring Nuxt
+
+Nuxt already automatically uses `formkit.config.js` that is at the root of your project to extend FormKit's functionality.
+
+This configuration file will be automatically included if detected in your project directory. If you would like to supply a custom
+path to your `formkit.config`, you can override the default location using the `configFile` option under the `formkit` key.
+**Any path you supply should be relative to the root of your Nuxt project**:
+
+<client-only>
+
+```js
+// nuxt.config
+export default defineNuxtConfig({
+  modules: ['@formkit/nuxt'],
+  formkit: {
+    configFile: './my-configs/formkit.config.mjs',
+  },
+})
+```
+
+</client-only>
+
+By default, your configuration will _extend_ the `defaultConfig` that ships with FormKit. This is the desired behavior
+for the majority of projects. However, if you need to define the entire FormKit config yourself — from scratch — you may do so
+by setting the `defaultConfig` option for the module to `false`:
+
+<client-only>
+
+```js
+// nuxt.config
+export default defineNuxtConfig({
+  modules: ['@formkit/nuxt'],
+  formkit: {
+    defaultConfig: false,
+    configFile: './my/custom/location/formkit.config.ts',
+    // ^ this is now a full config replacement, not override.
+  },
+})
+```
+
+### Using with Typescript
+
+For TypeScript users, it can be helpful to type your `formkit.config.ts` export as `DefaultConfigOptions` explicitly:
+
+<client-only>
+
+```js
+// formkit.config.ts
+import { fr } from '@formkit/i18n'
+import { DefaultConfigOptions } from '@formkit/vue'
+
+const config: DefaultConfigOptions = {
+  locales: { fr },
+  locale: 'fr',
+}
+
+export default config
 ```
 
 </client-only>
@@ -384,7 +356,7 @@ npm install @formkit/themes
 
 </client-only>
 
-Assuming you are using a bundler like Vite, Webpack or Nuxt — you can then directly import the theme:
+Assuming you are using a bundler like Vite, Webpack or Nuxt — you can then directly import the theme:
 
 <client-only>
 
