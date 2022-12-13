@@ -679,7 +679,7 @@ In the example above, the plugin is only defined on the parent, but the child al
 
 ## Library
 
-In addition to extending and modifying nodes, plugins serve one additional role — exposing input libraries. A “library” is a function assigned to the `library` property of a plugin that accepts a node and determines whether it knows how to “define” that node. If it does, it calls `node.define()` with an [input definition](/advanced/custom-inputs#input-definition).
+In addition to extending and modifying nodes, plugins serve one additional role — exposing input libraries. A “library” is a function assigned to the `library` property of a plugin that accepts a node and determines whether it knows how to “define” that node. If it does, it calls `node.define()` with an [input definition](/essentials/custom-inputs#input-definition).
 
 For example, if we wanted to create a plugin that exposed a couple new inputs: `italy` and `france` we could write a plugin to do this:
 
@@ -696,7 +696,7 @@ Experienced developers will notice a few exciting properties of this plugin-libr
 3. A plugin can bundle new inputs along with plugin logic making installation simple for end users.
 4. The library function has full control over what conditions result in a call to `node.define()`. Frequently, this is simply checking `node.props.type` but you can define different inputs based on other conditions, like if a particular prop is set.
 
-<cta label="Learn to create your own custom inputs" button="Custom input docs" href="/advanced/custom-inputs"></cta>
+<cta label="Learn to create your own custom inputs" button="Custom input docs" href="/essentials/custom-inputs"></cta>
 
 ## Message store
 

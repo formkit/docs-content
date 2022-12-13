@@ -50,7 +50,7 @@ Validation rules are always computed in realtime — meaning a given field will 
 | submit     | Errors are shown only after a user attempts to submit a form.          |
 
 <callout type="info" label="Form submission">
-If an input is inside a <a href="/essentials/forms">form</a>, then <em>any</em> remaining validation messages will be displayed to the end user when a user attempts to submit the form.
+If an input is inside a <a href="/inputs/forms">form</a>, then <em>any</em> remaining validation messages will be displayed to the end user when a user attempts to submit the form.
 </callout>
 
 ### Setting validation visibility for an entire group

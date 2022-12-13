@@ -220,7 +220,7 @@ import formKitTailwindPlugin from '@formkit/themes/tailwindcss'
 #### 🎉 New features
 
 - Adds new `@formkit/tailwindcss` plugin to easily create Tailwind themes for your FormKit forms. Check out the [Create a Tailwind CSS theme](/guides/create-a-tailwind-theme) guide for more details.
-- Adds a [new programmatic `reset` function](/essentials/forms#resetting). This can be done on any input, group, form, or list and it will restore the value back to its initial state. It also resets the `context.state` object (like `blurred` and `dirty`).
+- Adds a [new programmatic `reset` function](/inputs/forms#resetting). This can be done on any input, group, form, or list and it will restore the value back to its initial state. It also resets the `context.state` object (like `blurred` and `dirty`).
 - Improves accessibility by adding `aria-describedby` and `aria-live` to all provided input types. `aria-describedby` now targets help text, validation messages, and error messages (labeling provided by `<label>` tags that use the `for` attribute).
 - Groups, lists and forms can now apply `undefined` values to their children. In other words, if a form is v-modeled and its value is set to an empty object `{}`, it will clear the entire form out.
 - Adds new `context.state.settled` property that signals when the input’s internal debounce cycle has ended and a value is finished being committed to the form.
@@ -252,7 +252,7 @@ import formKitTailwindPlugin from '@formkit/themes/tailwindcss'
 
 #### 🎉 New features
 
-- Adds [programmatic form submission](/essentials/forms#submitting-forms-programmatically):
+- Adds [programmatic form submission](/inputs/forms#submitting-forms-programmatically):
   - Can be submitted by node `node.submit()` (including any child node of the form).
   - Can be submitted via function `this.$formkit.submit('form-id')` (for composition api it's `submitForm('form-id')`).
 - Improved `setErrors` DX:
@@ -285,8 +285,8 @@ import formKitTailwindPlugin from '@formkit/themes/tailwindcss'
 
 #### 📙 Documentation
 
-- Added `node.setErrors` [documentation](/essentials/forms#using-nodeseterrors).
-- Added [programmatic form submission documentation](/essentials/forms#submitting-forms-programmatically).
+- Added `node.setErrors` [documentation](/inputs/forms#using-nodeseterrors).
+- Added [programmatic form submission documentation](/inputs/forms#submitting-forms-programmatically).
 - Improved `context.state` documentation with [new properties and better descriptions](/essentials/configuration#state).
 
 #### 🐛 Bug fixes
@@ -367,19 +367,19 @@ import formKitTailwindPlugin from '@formkit/themes/tailwindcss'
   - Display only re-population.
   - Drag and drop.
   - Input clearing.
-- Adds the [`createInput`](/advanced/custom-inputs#using-createinput-to-extend-the-base-schema) helper function to make custom inputs easy to write.
+- Adds the [`createInput`](/essentials/custom-inputs#using-createinput-to-extend-the-base-schema) helper function to make custom inputs easy to write.
 - New `incomplete-message` prop allows inline customization (or disabling) of the message displayed by a form when it attempts to submit and all its inputs are not valid.
 - Updates the `defaultConfig` to accept custom inputs.
 - Adds a prefix section key which allows content to be injected immediately before an input element.
 - Adds a suffix section key which allows content to be injected immediately after an input element.
 - 🇷🇺 Russian locale (thank you [@andreimakushkin](https://github.com/andreimakushkin)!)
 - Refactors Genesis theme to use much more robust CSS variable structure.
-- Adds [a new feature](/advanced/schema#raw-values) to schemas that allows users to prefix `props` and `attrs` properties with `__raw__` to pass the raw value instead of its parsed result ([#36](https://github.com/formkit/formkit/issues/36)).
+- Adds [a new feature](/essentials/schema#raw-values) to schemas that allows users to prefix `props` and `attrs` properties with `__raw__` to pass the raw value instead of its parsed result ([#36](https://github.com/formkit/formkit/issues/36)).
 
 #### 📙 Documentation
 
 - New [create a custom input](/guides/create-a-custom-input) guide.
-- New advanced [custom input documentation](/advanced/custom-inputs) page.
+- New advanced [custom input documentation](/essentials/custom-inputs) page.
 - "Composition keys" will now be referred to as "[Section keys](/essentials/inputs#sections)".
 - Adds documentation on [`plugin.library`](/essentials/architecture#library) — the mechanism plugins use to define new input types.
 - Interactive code editor for examples now supports multiple files.
@@ -419,7 +419,7 @@ import formKitTailwindPlugin from '@formkit/themes/tailwindcss'
 
 #### 🎉 New features
 
-- Form error handling is here. You can now set input errors on an entire form, group or list with the `input-errors` prop or the `$formkit.setErrors()` methods. Read more about it [on the form docs](/essentials/forms#error-handling).
+- Form error handling is here. You can now set input errors on an entire form, group or list with the `input-errors` prop or the `$formkit.setErrors()` methods. Read more about it [on the form docs](/inputs/forms#error-handling).
 - New `$formkit.setLocale()` reactively changes the language of all displayed messages.
 - Adds 🇫🇷 French and 🇩🇪 German locales (thank you [@HoreKk](https://github.com/HoreKk) and [@digitalkaoz](https://github.com/digitalkaoz))
 - Adds new `rootConfig` proxy object that is used to store global base config and prop values (significant refactor of configuration system).

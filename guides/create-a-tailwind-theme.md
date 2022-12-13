@@ -229,6 +229,6 @@ Here are some ways to take the above guide even further:
 - Combine multiple variants such as `formkit-invalid:formkit-submitted:` to add extra emphasis to invalid fields when a user tries to submit an incomplete form.
 - Publish your theme as an npm package for easy importing and sharing between projects.
 
-Hopefully, this guide helped you understand how classes are applied to FormKit inputs and how you can leverage the `formKitTailwind` plugin from the `@formkit/themes` package to make use of Tailwind in your FormKit projects. If you want to dive in deeper, try reading about the [core internals of FormKit](/essentials/architecture) and [the FormKit schema](/advanced/schema)!
+Hopefully, this guide helped you understand how classes are applied to FormKit inputs and how you can leverage the `formKitTailwind` plugin from the `@formkit/themes` package to make use of Tailwind in your FormKit projects. If you want to dive in deeper, try reading about the [core internals of FormKit](/essentials/architecture) and [the FormKit schema](/essentials/schema)!
 
 <cta label="Want more? Start by reading about FormKit core." button="Dig deeper" href="/essentials/architecture"></cta>

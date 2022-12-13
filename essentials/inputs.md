@@ -129,7 +129,7 @@ Validation errors are not the only way to set errors on an input. You can also e
   file="/_content/examples/simple-errors/simple-errors.vue"></example>
 
 <callout type="info" label="Non blocking">
-Explicitly set errors are non-blocking, meaning they do not prevent the form from submitting the way validation errors do. You can read more about error handling on the <a href="/essentials/forms#error-handling">form documentation</a>.
+Explicitly set errors are non-blocking, meaning they do not prevent the form from submitting the way validation errors do. You can read more about error handling on the <a href="/inputs/forms#error-handling">form documentation</a>.
 </callout>
 
 ## Props & attributes
@@ -183,7 +183,7 @@ A disadvantage of using slots is you often need to re-create unrelated features 
 
 ## Sections schema
 
-FormKit provides an additional mechanism to change the structure of a FormKit input called “sections schema”. Under the hood, all FormKit inputs are powered by [FormKit’s schema](/advanced/schema) — a JSON compatible data format for creating and storing DOM structure and logic. This allows tremendous structural flexibility because all inputs can have pieces of their schema extended via section keys without wholesale replacement of the template.
+FormKit provides an additional mechanism to change the structure of a FormKit input called “sections schema”. Under the hood, all FormKit inputs are powered by [FormKit’s schema](/essentials/schema) — a JSON compatible data format for creating and storing DOM structure and logic. This allows tremendous structural flexibility because all inputs can have pieces of their schema extended via section keys without wholesale replacement of the template.
 
 ### Changing HTML tags
 
@@ -211,4 +211,4 @@ Section schemas can also change the content being output using advanced schema l
   name="No wrappers"
   file="/_content/examples/schema-content/schema-content.vue" ></example>
 
-<cta label="Learn more about how schemas work" href="/advanced/schema" button="Gimme more schema">
+<cta label="Learn more about how schemas work" href="/essentials/schema" button="Gimme more schema">

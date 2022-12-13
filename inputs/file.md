@@ -36,7 +36,7 @@ Pre-populating an input with file names is for display purposes only. It’s an 
 
 ### Uploading files
 
-The file upload process is left to your form’s submission handler. When submitting the form [via full page request](/essentials/forms#submitting-as-a-page-request) no further processing is necessary, however when submitting [via XHR/Fetch request](/essentials/forms#submitting-via-xhrfetch-request) you will need to create an [instance of `FormData`](https://developer.mozilla.org/en-US/docs/Web/API/FormData) with the files attached. Here is a working example:
+The file upload process is left to your form’s submission handler. When submitting the form [via full page request](/inputs/forms#submitting-as-a-page-request) no further processing is necessary, however when submitting [via XHR/Fetch request](/inputs/forms#submitting-via-xhrfetch-request) you will need to create an [instance of `FormData`](https://developer.mozilla.org/en-US/docs/Web/API/FormData) with the files attached. Here is a working example:
 
 <example
   name="File input"

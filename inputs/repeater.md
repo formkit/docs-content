@@ -23,7 +23,7 @@ Unlike most other FormKit input types, the repeater input is of type [list](/inp
 
 ## Add button attrs
 
-In the previous example, the 'Add Users' button is provided by default, and the button label is derived from the repeater's `label`. We're able to customize the label by using the `add-button` prop and setting it to a `string`, or remove it completely by setting it to `false`. Alternatively, similar to the `submit-attrs` prop on the [FormKit's forms](/essentials/forms), we can provide an object of attributes to be applied to the button with `add-attrs`. In this example, we change the label of the repeater from `Add Users` to `My custom label` using the `add-label` prop:
+In the previous example, the 'Add Users' button is provided by default, and the button label is derived from the repeater's `label`. We're able to customize the label by using the `add-button` prop and setting it to a `string`, or remove it completely by setting it to `false`. Alternatively, similar to the `submit-attrs` prop on the [FormKit's forms](/inputs/forms), we can provide an object of attributes to be applied to the button with `add-attrs`. In this example, we change the label of the repeater from `Add Users` to `My custom label` using the `add-label` prop:
 
 <example
 name="Repeater"
@@ -56,7 +56,7 @@ file="/_content/examples/repeater/repeater-controls.vue"></example>
 ## Setting errors
 
 You can set errors on a repeater or any repeatable item using dot notation. Here we are using the
-[`setErrors`](/essentials/forms#using-nodeseterrors) helper, but there are other methods as well:
+[`setErrors`](/inputs/forms#using-nodeseterrors) helper, but there are other methods as well:
 
 <client-only>
 
@@ -77,7 +77,7 @@ formNode.setErrors( null, // no form errors,
 
 Remember, your submit handler is passed the form's core `node` and can be used
 to conveniently set errors at depth. Read more about error handling
-[here](/essentials/forms#error-handling). Here's an example of a fake backend
+[here](/inputs/forms#error-handling). Here's an example of a fake backend
 returning errors for both the repeater and one child:
 
 <example

@@ -26,12 +26,12 @@ Let’s take a quick look at an example and we'll pick it up on the other side:
 
 ## Schema
 
-[FormKit's schema](/advanced/schema) is a JSON-serializable data format for storing DOM structures and component implementations, including FormKit forms. Schemas support advanced features like conditional logic, boolean operators, loops, slots, and data scoping — all guaranteed to serialize to a string.
+[FormKit's schema](/essentials/schema) is a JSON-serializable data format for storing DOM structures and component implementations, including FormKit forms. Schemas support advanced features like conditional logic, boolean operators, loops, slots, and data scoping — all guaranteed to serialize to a string.
 
 A schema is an array of objects (schema nodes) — where each "node" is either an HTML element or a component. The node type is determined by using the `$el` or `$cmp` properties — which represent HTML element and component respectively. This array is then passed as a prop to the `<FormKitSchema>` component.
 
 <callout type="tip" label="Full Schema docs">
-This page serves as an introduction to the schema. To learn more about the advanced features of the FormKit schema, read the <a href="/advanced/schema">full schema documentation</a>.
+This page serves as an introduction to the schema. To learn more about the advanced features of the FormKit schema, read the <a href="/essentials/schema">full schema documentation</a>.
 </callout>
 
 ### FormKit inputs

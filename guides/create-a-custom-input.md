@@ -39,7 +39,7 @@ As we build out our input, we’ll want to visualize its progress, so let’s cr
 
 1. Import `OneTimePassword.vue`
 2. Pass that imported component to `createInput()`
-3. Use the return value (an [input definition](/advanced/custom-inputs#input-definition)) as the `type` prop of a `<FormKit>` component.
+3. Use the return value (an [input definition](/essentials/custom-inputs#input-definition)) as the `type` prop of a `<FormKit>` component.
 
 We’ll call this sample form `Register.vue`:
 
@@ -220,9 +220,9 @@ Our one-time password input is working great! Here are some ideas for additional
 - An accompanying validation rule to perform a two-factor authentication call to the backend.
 - Additional styles to really make it pop.
 - If the form only contains a one-time password input, you could auto-submit the form!
-- Complete the [custom input checklist](/advanced/custom-inputs#input-checklist).
+- Complete the [custom input checklist](/essentials/custom-inputs#input-checklist).
 - Publish it! If this input (or any others you make) is useful to you, it's probably useful to other people too. You might consider open-sourcing it!
 
-Hopefully this guide helped you understand how custom inputs are declared, written, and registered. If you want to dive in deeper, try reading about the [core internals of FormKit](/essentials/architecture) and [creating custom inputs](/advanced/custom-inputs)!
+Hopefully this guide helped you understand how custom inputs are declared, written, and registered. If you want to dive in deeper, try reading about the [core internals of FormKit](/essentials/architecture) and [creating custom inputs](/essentials/custom-inputs)!
 
 <cta label="Want more? Start by reading about FormKit core." button="Dig deeper" href="/essentials/architecture"></cta>

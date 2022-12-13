@@ -53,7 +53,7 @@ Front-end [validation](/essentials/validation) that gives instant feedback is an
 
 ### Schema
 
-FormKit's [schema](/advanced/schema) is a JSON-serializable data format for storing DOM structures and component implementations, including FormKit forms. Schemas support advanced features like [form generation](/essentials/generation), conditional logic, boolean operators, loops, slots, and data scoping — all guaranteed to serialize to a string.
+FormKit's [schema](/essentials/schema) is a JSON-serializable data format for storing DOM structures and component implementations, including FormKit forms. Schemas support advanced features like [form generation](/essentials/generation), conditional logic, boolean operators, loops, slots, and data scoping — all guaranteed to serialize to a string.
 
 ### Styles
 
@@ -61,7 +61,7 @@ With the ability to modify FormKit's classes and even HTML, FormKit provides man
 
 ### Extensibility
 
-FormKit comes with great production-ready defaults, and for many users, the defaults are all they'll need. But FormKit is more than just inputs. It is a form building _framework_, complete with a [hooks](/essentials/architecture#hooks), [events](/essentials/architecture#events), [plugins](/essentials/architecture#plugins), libraries, and [schemas](/advanced/schema). Advanced developers can craft their own form systems using FormKit's low-level tooling.
+FormKit comes with great production-ready defaults, and for many users, the defaults are all they'll need. But FormKit is more than just inputs. It is a form building _framework_, complete with a [hooks](/essentials/architecture#hooks), [events](/essentials/architecture#events), [plugins](/essentials/architecture#plugins), libraries, and [schemas](/essentials/schema). Advanced developers can craft their own form systems using FormKit's low-level tooling.
 
 ### Community
 
