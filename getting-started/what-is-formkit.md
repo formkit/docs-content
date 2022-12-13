@@ -61,7 +61,7 @@ With the ability to modify FormKit's classes and even HTML, FormKit provides man
 
 ### Extensibility
 
-FormKit comes with great production-ready defaults, and for many users, the defaults are all they'll need. But FormKit is more than just inputs. It is a form building _framework_, complete with a [hooks](/advanced/core#hooks), [events](/advanced/core#events), [plugins](/advanced/core#plugins), libraries, and [schemas](/advanced/schema). Advanced developers can craft their own form systems using FormKit's low-level tooling.
+FormKit comes with great production-ready defaults, and for many users, the defaults are all they'll need. But FormKit is more than just inputs. It is a form building _framework_, complete with a [hooks](/essentials/architecture#hooks), [events](/essentials/architecture#events), [plugins](/essentials/architecture#plugins), libraries, and [schemas](/advanced/schema). Advanced developers can craft their own form systems using FormKit's low-level tooling.
 
 ### Community
 

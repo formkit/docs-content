@@ -76,7 +76,7 @@ Note that the `min` and `max` props above are built-in browser props for a range
 
 ### Adding a plugin
 
-Suppose our "backend" requires that data like `strength` be [cast to a number](https://formkit.link/b37c7d36263ab0ee1bd626aa0a405b93). By default, FormKit follows HTML "native" inputs behavior, making all values as "strings". To fix that, we can use one of the coolest features of FormKit — [plugins](/advanced/core#plugins) — which can be thought of as middleware for inputs. With a plugin, which are just functions, we can change how the value of our input is returned:
+Suppose our "backend" requires that data like `strength` be [cast to a number](https://formkit.link/b37c7d36263ab0ee1bd626aa0a405b93). By default, FormKit follows HTML "native" inputs behavior, making all values as "strings". To fix that, we can use one of the coolest features of FormKit — [plugins](/essentials/architecture#plugins) — which can be thought of as middleware for inputs. With a plugin, which are just functions, we can change how the value of our input is returned:
 
 <example
   name="Adding plugin to cast to number"
@@ -142,8 +142,8 @@ And that is it! We could stop here for an introduction on how forms and inputs w
 
 One thing we can do to improve this form is to change the character's default `attributes` based on the selected character `class`. For that, we will be using some new features:
 
-- [getNode](/advanced/core#getting-a-components-node): `getNode` gets an input's core node using their `id` as an identifier. Each input has an associated core node.
-- [events](/advanced/core#events): `events` listen to changes to a certain input.
+- [getNode](/essentials/architecture#getting-a-components-node): `getNode` gets an input's core node using their `id` as an identifier. Each input has an associated core node.
+- [events](/essentials/architecture#events): `events` listen to changes to a certain input.
 - [node.input()](/essentials/inputs#using-nodeinput): the `input` function on a node lets us update the value of it.
 
 With those features combined, we can get an input's core `node`, listen for and respond to `events`, and update a value of another field using the `input` function:
@@ -155,7 +155,7 @@ With those features combined, we can get an input's core `node`, listen for and 
 
 ### Make it into a plugin
 
-The code now got a bit less readable, so let's extract the logic to another file and use a plugin instead. Note that we are placing the new `updateAttributesPlugin` only on the `class` input, so it will not affect any other input. We will also learn another useful feature called [traversal](/advanced/core#traversal) by using the `at` function of a node:
+The code now got a bit less readable, so let's extract the logic to another file and use a plugin instead. Note that we are placing the new `updateAttributesPlugin` only on the `class` input, so it will not affect any other input. We will also learn another useful feature called [traversal](/essentials/architecture#traversal) by using the `at` function of a node:
 
 <callout type="warning" label="at() uses name">
 The <code>at</code> function uses the <code>name</code> attributes instead of the <code>id</code> that <code>getNode</code> uses.
@@ -191,7 +191,7 @@ By default, the <code>group</code> type does not output any markup, so to show v
 ## Conditional rendering
 
 Sometimes forms need to show or hide fields depending on the value of another input. We can do this by learning 2 new concepts: 
-- [Context object](/advanced/context) — We can access an input's value (along with other data) inside our form because all `FormKit` components receive their [context object](https://formkit.com/advanced/context) in the `#default` [slot prop](https://vuejs.org/guide/components/slots.html#scoped-slots).
+- [Context object](/essentials/configuration) — We can access an input's value (along with other data) inside our form because all `FormKit` components receive their [context object](https://formkit.com/essentials/configuration) in the `#default` [slot prop](https://vuejs.org/guide/components/slots.html#scoped-slots).
 - The value of a `group` - The value of [group](/inputs/group) (and `form`) input is an object with the values of its children, keyed by the childrens' `name`s.
 
 <callout type="info" label="Vue's key property">

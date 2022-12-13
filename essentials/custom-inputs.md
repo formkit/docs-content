@@ -65,7 +65,7 @@ Let’s make the simplest possible input — one that only outputs "Hello world"
   file="/_content/examples/custom-input/custom-input.vue">
 </example>
 
-Even though this simplistic example doesn’t contain any input/output mechanism, it still qualifies as a full input. It can have a value, run validation rules (they wont be displayed, but they can block form submissions), and execute plugins. Fundamentally, all inputs are [core nodes](/advanced/core#node) and the input’s definition provides the mechanisms to interact with that node.
+Even though this simplistic example doesn’t contain any input/output mechanism, it still qualifies as a full input. It can have a value, run validation rules (they wont be displayed, but they can block form submissions), and execute plugins. Fundamentally, all inputs are [core nodes](/essentials/architecture#node) and the input’s definition provides the mechanisms to interact with that node.
 
 ### Global custom inputs
 
@@ -110,7 +110,7 @@ Now that we’ve defined our input we can use it anywhere in the application:
 
 ### Plugin libraries
 
-The above example extends the `@formkit/inputs` library (via `defaultConfig`). However, a powerful feature of FormKit is its ability to [load input libraries from multiple plugins](/advanced/core#library). These inputs can then be registered anywhere plugins can be defined:
+The above example extends the `@formkit/inputs` library (via `defaultConfig`). However, a powerful feature of FormKit is its ability to [load input libraries from multiple plugins](/essentials/architecture#library). These inputs can then be registered anywhere plugins can be defined:
 
 - Globally
 - Per group
@@ -126,7 +126,7 @@ Let’s refactor our hello world input to use its own plugin:
 </example>
 
 <callout type="tip" label="Plugin inheritance">
-Notice in the above example our plugin was defined on a parent of the element that actually used it! This is thanks to <a href="/advanced/core#plugins">plugin inheritance</a> — a core feature of FormKit plugins.
+Notice in the above example our plugin was defined on a parent of the element that actually used it! This is thanks to <a href="/essentials/architecture#plugins">plugin inheritance</a> — a core feature of FormKit plugins.
 </callout>
 
 ## Schema vs component
@@ -218,7 +218,7 @@ In the above example, we were able to re-create the same features as the `create
 
 For most users, [passing a Vue component to `createInput`](#using-createinput-to-extend-the-base-schema) provides a good balance between customization and value-added features. If you’d like to completely eject from schema-based inputs all together, you can pass a component directly to an input definition.
 
-Component inputs receive a single prop — [the `context` object](/advanced/context). It’s then up to you to write a component to encompasses the desired features of FormKit (labels, help text, message display, etc.). Checkout the [input checklist](#input-checklist) for a list of what you’ll want to output.
+Component inputs receive a single prop — [the `context` object](/essentials/configuration). It’s then up to you to write a component to encompasses the desired features of FormKit (labels, help text, message display, etc.). Checkout the [input checklist](#input-checklist) for a list of what you’ll want to output.
 
 ## Input & output values
 
@@ -233,7 +233,7 @@ You can receive input from any user interaction and the input can set its value 
 
 Fundamentally, all an input needs to do is call `node.input(value)` with a value. The `node.input()` method is automatically debounced, so feel free to call it frequently — like every keystroke. Typically, this looks like binding to the `input` event.
 
-The [`context` object](/advanced/context) includes an input handler for basic input types: `context.handlers.DOMInput`. This can be used for text-like inputs where the value of the input is available at `event.target.value`. If you need a more complex event handler, you can [expose it using "features"](#adding-features).
+The [`context` object](/essentials/configuration) includes an input handler for basic input types: `context.handlers.DOMInput`. This can be used for text-like inputs where the value of the input is available at `event.target.value`. If you need a more complex event handler, you can [expose it using "features"](#adding-features).
 
 Any user interaction can be considered an input event. For many native HTML inputs, that interaction is captured with the [input event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event).
 
@@ -265,7 +265,7 @@ The equivalent in a Vue template:
 
 ### Displaying values
 
-Inputs are also responsible for displaying the current value. Typically, you’ll want to use the `node._value` or `$_value` in schema to display a value. This is the "live" non-debounced value. The currently _committed_ value is `node.value` (`$value`). Read more about "value settlement" <a href="/advanced/core#setting-values">here</a>.
+Inputs are also responsible for displaying the current value. Typically, you’ll want to use the `node._value` or `$_value` in schema to display a value. This is the "live" non-debounced value. The currently _committed_ value is `node.value` (`$value`). Read more about "value settlement" <a href="/essentials/architecture#setting-values">here</a>.
 
 <client-only>
 
@@ -300,7 +300,7 @@ The only time the uncommitted input <code>_value</code> should be used is for di
 
 ## Adding props
 
-The [standard FormKit props](/essentials/inputs#props--attributes) that you can pass to the `<FormKit>` component (like `label` or `type`) are available in the root of the [context object](/advanced/context) and in the [core node `props`](/advanced/core#config--props), and you can use these props in your schema by directly referencing them in expressions (ex: `$label`). Any props passed to a `<FormKit>` component that are not _node props_ end up in the `context.attrs` object (just `$attrs` in the schema).
+The [standard FormKit props](/essentials/inputs#props--attributes) that you can pass to the `<FormKit>` component (like `label` or `type`) are available in the root of the [context object](/essentials/configuration) and in the [core node `props`](/essentials/architecture#config--props), and you can use these props in your schema by directly referencing them in expressions (ex: `$label`). Any props passed to a `<FormKit>` component that are not _node props_ end up in the `context.attrs` object (just `$attrs` in the schema).
 
 If you need additional props, you can declare them in your input definition. Props can also be used for internal input state (much like a `ref` in a Vue 3 component). FormKit uses the `props` namespace for both purposes (see the autocomplete example below for an example of this). Props should _always_ be defined in camelCase and used in your Vue templates with kebab-case.
 
@@ -318,7 +318,7 @@ When extending the base schema by using the `createInput` helper, pass a second 
 
 ## Adding features
 
-Features are the preferred way to add functionality to a custom input type. A "feature" is simply a function that receives the [core node](/advanced/core#node) as an argument. Effectively, they are plugins without inheritance (so they only apply to the current node). You can use features to add input handlers, manipulate values, interact with props, listen to events, and much more.
+Features are the preferred way to add functionality to a custom input type. A "feature" is simply a function that receives the [core node](/essentials/architecture#node) as an argument. Effectively, they are plugins without inheritance (so they only apply to the current node). You can use features to add input handlers, manipulate values, interact with props, listen to events, and much more.
 
 Features are defined in an array to encourage code reuse when possible. For example, we [use a feature called “options”](https://github.com/formkit/formkit/blob/master/packages/inputs/src/features/options.ts) on `select`, `checkbox`, and `radio` inputs.
 

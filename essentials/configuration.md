@@ -7,6 +7,8 @@ description: Learn to customize your forms to your precise needs.
 
 <page-toc></page-toc>
 
+## Introduction
+
 FormKit uses a unique hierarchical configuration system that is well suited for forms. To understand how this configuration works, there are 4 questions we need to answer:
 
 1. [What are core nodes](#what-are-core-nodes)?
@@ -222,4 +224,4 @@ What does this mean in practice? When you combine the tree like structure of for
   file="/_content/examples/validation-visibility/validation-visibility.vue">
 </example>
 
-It’s worth noting that plugins have their own inheritance model which differs from `config` and `props`, and is described in more detail in the [core documentation](/advanced/core).
+It’s worth noting that plugins have their own inheritance model which differs from `config` and `props`, and is described in more detail in the [core documentation](/essentials/architecture).

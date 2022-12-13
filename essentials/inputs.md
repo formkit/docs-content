@@ -59,7 +59,7 @@ The initial value of your v-model cannot be <code>undefined</code>. If it is, th
 ### Using `node.input()`
 
 At the heart of every FormKit input is an instance of [FormKit’s `node`
-object](/advanced/core#node), and using the `node.input()` method is the most efficient mechanism to modify any input’s value (read more about [getting an instance of the node object](/advanced/core#getting-a-components-node)).
+object](/essentials/architecture#node), and using the `node.input()` method is the most efficient mechanism to modify any input’s value (read more about [getting an instance of the node object](/essentials/architecture#getting-a-components-node)).
 
 <example
   name="Input v-model"
@@ -108,7 +108,7 @@ We discuss validation in more detail on its [own documentation page](/essentials
 
 For performance, all FormKit inputs support debouncing as a first-class feature. While the value of an input changes on every keystroke (technically the `input` event), this newly updated value is only set internally — validation rules, groups, lists, forms, and (most) plugins are not yet “aware” a change has been made.
 
-Internally, FormKit debounces the `input` event. When the debounce has "settled", the new value is “committed” and the rest of the application is then notified via the [input node’s `commit` event](/advanced/core#events). The default debounce delay is 20 milliseconds and can be adjusted with the `delay` prop or config option.
+Internally, FormKit debounces the `input` event. When the debounce has "settled", the new value is “committed” and the rest of the application is then notified via the [input node’s `commit` event](/essentials/architecture#events). The default debounce delay is 20 milliseconds and can be adjusted with the `delay` prop or config option.
 
 To illustrate this, let's get the `group`'s `value` from the `#default` slot prop and observe how it is not updated until after our 1000ms `delay`:
 
@@ -145,7 +145,7 @@ FormKit inputs emit both _universal_ events (ones that are emitted from all inpu
 <reference-table type="events" primary="event"></reference-table>
 
 <callout type="info" label="Vue events">
-  The above are Vue events emitted by <code>@formkit/vue</code>. <code>@formkit/core</code> also emits <a href="/advanced/core#core-events">its own events</a> as part of the lifecycle of <a href="/advanced/core#node">core nodes</a>.
+  The above are Vue events emitted by <code>@formkit/vue</code>. <code>@formkit/core</code> also emits <a href="/essentials/architecture#core-events">its own events</a> as part of the lifecycle of <a href="/essentials/architecture#node">core nodes</a>.
 </callout>
 
 ## Sections
@@ -169,7 +169,7 @@ At times you may find it necessary to restructure the HTML inside a FormKit inpu
 
 ## Slots
 
-Inputs can have their structure overridden with slots. You can precisely target where your slot content goes with [section keys](#sections). Slots are then are passed the [context object](/advanced/context) for use in their template.
+Inputs can have their structure overridden with slots. You can precisely target where your slot content goes with [section keys](#sections). Slots are then are passed the [context object](/essentials/configuration) for use in their template.
 
 For example, if we wanted to use a slot to define the label of an input, we could use a `label` slot to do so:
 

@@ -7,7 +7,9 @@ description: FormKit provides a reactive context object to expose data to slots,
 
 <page-toc></page-toc>
 
-FormKit inputs use a reactive object to expose data to template slots, rules, and the [schema](/advanced/schema) that defines each input. This is called the `context` object and is found in the each input's [core `node` object](/advanced/core#node) at `node.context`. The context object has the following properties:
+## Introduction
+
+FormKit inputs use a reactive object to expose data to template slots, rules, and the [schema](/advanced/schema) that defines each input. This is called the `context` object and is found in the each input's [core `node` object](/essentials/architecture#node) at `node.context`. The context object has the following properties:
 
 <div data-tight>
 
@@ -113,7 +115,7 @@ An object of _visible_ messages (where the type is not `ui` — `ui`). The key 
 
 ## `node`
 
-The underlying [core node](/advanced/core) of the current input. This object is not reactive (within the context of Vue).
+The underlying [core node](/essentials/architecture) of the current input. This object is not reactive (within the context of Vue).
 
 ## `options`
 

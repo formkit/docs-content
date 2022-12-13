@@ -58,7 +58,7 @@ For styling purposes some attributes are automatically added to and removed from
 - `data-type` — The type of input, `text`, `select`, `checkbox` etc.
 - `data-multiple` — For inputs that accept the `multiple` attribute, this will be appended when the input has the multiple attribute (like the `select` input).
 - `data-disabled` — Present when an input is disabled.
-- `data-complete` — Present when the input is "complete". Intended to be used for styling the input when a user has completed filling out the input (like a green checkmark). [Read about `context.state.complete`](/advanced/context#state) for information what conditions cause this to be `true`.
+- `data-complete` — Present when the input is "complete". Intended to be used for styling the input when a user has completed filling out the input (like a green checkmark). [Read about `context.state.complete`](/essentials/configuration#state) for information what conditions cause this to be `true`.
 - `data-invalid` — Present when the input has failing validation rules and the messages for the failing rules are visible.
 - `data-errors` — Present when the input has explicitly set errors.
 
@@ -175,7 +175,7 @@ for producing the default classes for each element. This function already has a 
 The `rootClasses` function is passed 2 arguments (respectively):
 
 - The [section key](/essentials/inputs#sections) (like `label` or `input`).
-- The [input’s node](/advanced/core#node).
+- The [input’s node](/essentials/architecture#node).
 
 The function will be called once for each section and it _must_ return
 an object of classes with boolean values.

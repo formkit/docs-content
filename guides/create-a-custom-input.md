@@ -59,7 +59,7 @@ Also, notice that `<pre>` tag in the above example? It is outputting the current
 
 Let’s open up `OneTimePassword.vue` again and change our `<div>` to an `<input>` tag. We’ll start with a single text input, and work our way up from there. But how do we actually set and display the value of our custom input?
 
-All custom inputs are passed the almighty [context object](/advanced/context) as the `context` prop. In order for our input to _set_ its value, it needs to call `context.node.input(value)`. To properly _display_ the value of our input, we should set the input’s `:value` attribute to `context._value`.
+All custom inputs are passed the almighty [context object](/essentials/configuration) as the `context` prop. In order for our input to _set_ its value, it needs to call `context.node.input(value)`. To properly _display_ the value of our input, we should set the input’s `:value` attribute to `context._value`.
 
 <example
   name="One-time password - first value"
@@ -223,6 +223,6 @@ Our one-time password input is working great! Here are some ideas for additional
 - Complete the [custom input checklist](/advanced/custom-inputs#input-checklist).
 - Publish it! If this input (or any others you make) is useful to you, it's probably useful to other people too. You might consider open-sourcing it!
 
-Hopefully this guide helped you understand how custom inputs are declared, written, and registered. If you want to dive in deeper, try reading about the [core internals of FormKit](/advanced/core) and [creating custom inputs](/advanced/custom-inputs)!
+Hopefully this guide helped you understand how custom inputs are declared, written, and registered. If you want to dive in deeper, try reading about the [core internals of FormKit](/essentials/architecture) and [creating custom inputs](/advanced/custom-inputs)!
 
-<cta label="Want more? Start by reading about FormKit core." button="Dig deeper" href="/advanced/core"></cta>
+<cta label="Want more? Start by reading about FormKit core." button="Dig deeper" href="/essentials/architecture"></cta>

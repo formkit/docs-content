@@ -77,7 +77,7 @@ Validation rules operate according to a few default features, which you can chan
 - **Run in sequence** - rules are run in the order they are declared. When a rule fails, any remaining rules are not run. For example, if you declare the validation rules as `required|length:5` then the `length` rule will not run until the `required` rule is passing.
 - **Skipped when empty** - Validation rules are not run when the input is empty (within the [available rules](#available-rules), the `required` rule is the only exception).
 - **Synchronous** - all [available rules](#available-rules) are synchronous and not debounced.
-- **Blocking** - all validation rules produce [blocking messages](/advanced/core#message-store) which prevent form submission.
+- **Blocking** - all validation rules produce [blocking messages](/essentials/architecture#message-store) which prevent form submission.
 
 The above features can be modified when declaring your rules by using "hinting". Rule hints are small modifier characters you append to the beginning of a rule declaration to change its default behavior:
 
@@ -439,7 +439,7 @@ Checks if the input value appears to be a properly formatted URL including the p
 
 ## Custom rules
 
-Validation rules are functions that accept a [core node](/advanced/core#node) and return a boolean value — `true` for passing and `false` for failing. Additionally, any arguments passed to the validation rule are available as arguments `1-n`. Writing your own is straight forward — for example:
+Validation rules are functions that accept a [core node](/essentials/architecture#node) and return a boolean value — `true` for passing and `false` for failing. Additionally, any arguments passed to the validation rule are available as arguments `1-n`. Writing your own is straight forward — for example:
 
 <client-only>
 
@@ -541,7 +541,7 @@ If you need more power for your validation rules, you can use a function instead
 | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | args     | An array of arguments passed to the rule. For example <code>['Vue', 'React', 'Angular']</code> from the rule <code>is:Vue,React,Angular</code> |
 | name     | The name of the field (first available from: <code>validation-label</code>, <code>label</code>, then <code>name</code>)                        |
-| node     | The [FormKit core <code>node</code> ](/advanced/core)                                                                                          |
+| node     | The [FormKit core <code>node</code> ](/essentials/architecture)                                                                                          |
 
 Let’s re-write the above example using a function instead of a string for even more control of the <code>validation-messages</code> prop.
 
@@ -581,7 +581,7 @@ createApp(App).use(plugin, defaultConfig({
 
 ## Extracting messages
 
-To get all the validation messages from an [input’s core node](/advanced/core), you may use the `getValidationMessages` function exported from `@formkit/validation`. This function will recursively check the given node, and all children for validation messages and return a Map of core nodes to validation messages, making it ideal for use with forms.
+To get all the validation messages from an [input’s core node](/essentials/architecture), you may use the `getValidationMessages` function exported from `@formkit/validation`. This function will recursively check the given node, and all children for validation messages and return a Map of core nodes to validation messages, making it ideal for use with forms.
 
 <example
   name="Submit invalid"

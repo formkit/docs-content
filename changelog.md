@@ -198,7 +198,7 @@ import formKitTailwindPlugin from '@formkit/themes/tailwindcss'
 
 #### 📙 Documentation
 
-- New [configuration documentation](/advanced/configuration) that explains the relationship of node options, config, and props.
+- New [configuration documentation](/essentials/configuration) that explains the relationship of node options, config, and props.
 
 #### 🐛 Bug fixes
 
@@ -226,7 +226,7 @@ import formKitTailwindPlugin from '@formkit/themes/tailwindcss'
 - Adds new `context.state.settled` property that signals when the input’s internal debounce cycle has ended and a value is finished being committed to the form.
 - Adds `data-submitted` attribute to inputs that have been submitted.
 - Adds new section key `fileName` (thanks @santi).
-- Adds new `parent` prop that accepts a [core node](/advanced/core#node) for advanced use cases where inputs are decoupled from their form or data structure is desired.
+- Adds new `parent` prop that accepts a [core node](/essentials/architecture#node) for advanced use cases where inputs are decoupled from their form or data structure is desired.
 - Adds 🇱🇾 Arabic (thanks @Ahmedelforjani)
 - Adds 🇩🇰 Danish (thanks @bjerggaard)
 - Adds 🇮🇩 Indonesian (thanks @rama-adi)
@@ -259,7 +259,7 @@ import formKitTailwindPlugin from '@formkit/themes/tailwindcss'
   - Can now be called directly on a node `node.setErrors(nodeErrors, childErrors)`.
   - `setErrors` now supports pure string `node.setErrors('My error')`
 - Submit handler is now passed the form’s node for easy error setting.
-- A `<FormKit>` component’s [core node](/advanced/core#node) is now available via template ref.
+- A `<FormKit>` component’s [core node](/essentials/architecture#node) is now available via template ref.
 - Adds `data-invalid` attribute to the `outer` section when an input has failing validation messages that are currently displayed ([playground example](https://formkit.link/59a772a70e06fdb7c19794f90b8c2b06)).
 - Adds `data-errors` attribute to the `outer` section when the input has explicitly placed errors (via prop or `setErrors`).
 - Adds `data-complete` attribute to the `outer` section when an input ([playground example](https://formkit.link/59a772a70e06fdb7c19794f90b8c2b06)):
@@ -287,7 +287,7 @@ import formKitTailwindPlugin from '@formkit/themes/tailwindcss'
 
 - Added `node.setErrors` [documentation](/essentials/forms#using-nodeseterrors).
 - Added [programmatic form submission documentation](/essentials/forms#submitting-forms-programmatically).
-- Improved `context.state` documentation with [new properties and better descriptions](/advanced/context#state).
+- Improved `context.state` documentation with [new properties and better descriptions](/essentials/configuration#state).
 
 #### 🐛 Bug fixes
 
@@ -381,7 +381,7 @@ import formKitTailwindPlugin from '@formkit/themes/tailwindcss'
 - New [create a custom input](/guides/create-a-custom-input) guide.
 - New advanced [custom input documentation](/advanced/custom-inputs) page.
 - "Composition keys" will now be referred to as "[Section keys](/essentials/inputs#sections)".
-- Adds documentation on [`plugin.library`](/advanced/core#library) — the mechanism plugins use to define new input types.
+- Adds documentation on [`plugin.library`](/essentials/architecture#library) — the mechanism plugins use to define new input types.
 - Interactive code editor for examples now supports multiple files.
 - In the FormKit Playground you can add new files and import them into each other. The FormKit Playground supports `.vue`, `.js`, `formkit.config.js` and `tailwind.config.js` files.
 - The FormKit Playground is now located at [https://formkit.com/playground](htpps://formkit.com/playground) and old https://formkit.com/playground/vue playgrounds are deprecated.
@@ -404,7 +404,7 @@ import formKitTailwindPlugin from '@formkit/themes/tailwindcss'
   - Force a rule to run even when previous rules are failing.
   - Debounce a validation rule.
   - Make a validation rule optional.
-- When an input is inside a form and unmounted (such as a `v-if`), it now removes it’s value from the form data and de-registers its [core node](/advanced/core#node).
+- When an input is inside a form and unmounted (such as a `v-if`), it now removes it’s value from the form data and de-registers its [core node](/essentials/architecture#node).
 - New `preserve` prop allows inputs to _not_ remove their data from groups, lists, and forms when they are removed.
 
 #### 🐛 Bug fixes
@@ -423,11 +423,11 @@ import formKitTailwindPlugin from '@formkit/themes/tailwindcss'
 - New `$formkit.setLocale()` reactively changes the language of all displayed messages.
 - Adds 🇫🇷 French and 🇩🇪 German locales (thank you [@HoreKk](https://github.com/HoreKk) and [@digitalkaoz](https://github.com/digitalkaoz))
 - Adds new `rootConfig` proxy object that is used to store global base config and prop values (significant refactor of configuration system).
-- Added [ledger](/advanced/core#ledger) dependency tracking to instances of `FormKitObservedNode`.
+- Added [ledger](/essentials/architecture#ledger) dependency tracking to instances of `FormKitObservedNode`.
 - The submit button on forms now use the locale for the default “Submit” label.
-- New `child` [node event](/advanced/core#core-events) emitted when a parent has a child added to it.
+- New `child` [node event](/essentials/architecture#core-events) emitted when a parent has a child added to it.
 - The `length` rule can now take max/min arguments in either order `length:15,5` or `length:5,15` evaluate the same.
-- Adds a new `getNode` function to directly access a [FormKit node](/advanced/core#node) using the composition API.
+- Adds a new `getNode` function to directly access a [FormKit node](/essentials/architecture#node) using the composition API.
 - Improves the `@formkit/theme` css [import location](/essentials/styling).
 
 #### 🐛 Bug Fixes

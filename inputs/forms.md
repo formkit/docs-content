@@ -100,7 +100,7 @@ To submit a form via page request, simply leave off the `@submit` handler. Just 
 While submitting a form using any standard HTML method is valid (like clicking a `submit` button, or hitting `enter` on a text input) — you may also submit a form programmatically. There are 2 ways to do this:
 
 - Using `this.$formkit.submit('form-id')` (`submitForm('form-id')` for the composition api).
-- Using a [core node](/advanced/core#node) object.
+- Using a [core node](/essentials/architecture#node) object.
 
 #### Submitting with `$formkit.submit()`
 
@@ -111,7 +111,7 @@ While submitting a form using any standard HTML method is valid (like clicking a
 
 #### Submitting with `node.submit()`
 
-You can also submit a form programmatically by calling `node.submit()` on the form’s (or any input inside the form) core node. To do this you need to [retrieve an instance of the core node](/advanced/core#getting-a-components-node).
+You can also submit a form programmatically by calling `node.submit()` on the form’s (or any input inside the form) core node. To do this you need to [retrieve an instance of the core node](/essentials/architecture#getting-a-components-node).
 
 <example
   name="Text example"
@@ -148,7 +148,7 @@ For example, we could use this event to alert our users of the failing validatio
 
 ### Validity state
 
-The validity of all inputs within a form is tracked automatically in the [context object](/advanced/context). This can be useful when creating various interfaces. For example, if you wanted a submit button to be disabled until all inputs are valid, you could use the `state.valid` property to do so.
+The validity of all inputs within a form is tracked automatically in the [context object](/essentials/configuration). This can be useful when creating various interfaces. For example, if you wanted a submit button to be disabled until all inputs are valid, you could use the `state.valid` property to do so.
 
 <example
   name="Text example"
@@ -156,7 +156,7 @@ The validity of all inputs within a form is tracked automatically in the [contex
 </example>
 
 <callout type="tip" label="Getting the context object">
-In the above example we extract the context object from the <code>#default</code> slot, but there are other ways as well. The context object is available on each input’s core node on the <code>node.context</code> property, and you can fetch an input’s node <a href="/advanced/core#getting-a-components-node">a number of ways</a>.
+In the above example we extract the context object from the <code>#default</code> slot, but there are other ways as well. The context object is available on each input’s core node on the <code>node.context</code> property, and you can fetch an input’s node <a href="/essentials/architecture#getting-a-components-node">a number of ways</a>.
 </callout>
 
 ## Disabling
@@ -275,7 +275,7 @@ The most basic way to display errors on a form is using the `errors` prop that i
 
 #### Using `input-errors` prop
 
-You can also conveniently set error messages for all inputs in your form (or [group](/inputs/group) or [list](/inputs/list)) using the `input-errors` prop. The prop accepts an object of errors, where the keys are input names ([relative node addresses](/advanced/core#traversal) are supported) and the value is an error or array of errors to apply to that input.
+You can also conveniently set error messages for all inputs in your form (or [group](/inputs/group) or [list](/inputs/list)) using the `input-errors` prop. The prop accepts an object of errors, where the keys are input names ([relative node addresses](/essentials/architecture#traversal) are supported) and the value is an error or array of errors to apply to that input.
 
 <example
   name="input errors prop"

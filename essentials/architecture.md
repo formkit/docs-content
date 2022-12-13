@@ -1,11 +1,13 @@
 ---
-title: Core
-description: FormKit Core is a zero-dependency package that is responsible for nearly all of FormKit's low-level critical functions.
+title: Architecture
+description: A zero-dependency package that is responsible for nearly all of FormKit's low-level critical functions.
 ---
 
-# Core
+# Architecture
 
 <page-toc></page-toc>
+
+## Introduction
 
 At the heart of the FormKit framework is `@formkit/core`. This zero-dependency package is responsible for nearly all of FormKit's low-level critical functions, such as:
 

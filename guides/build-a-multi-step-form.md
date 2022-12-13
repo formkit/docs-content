@@ -129,9 +129,9 @@ Let's address the first issue.
 
 FormKit already tracks `group` validity out-of-the-box. We'll just need to capture this data so we can use it in our UI.
 
-One important concept to remember about FormKit is that every `<FormKit>` component has a matching [core node](/advanced/core#node), which itself has a reactive `node.context` object. This `context` object tracks the validity of the node in `context.state.valid`. As mentioned above, a `group` becomes valid when all its descendants are valid. With that in mind, let's build up an object that stores the reactive validity of each of the groups.
+One important concept to remember about FormKit is that every `<FormKit>` component has a matching [core node](/essentials/architecture#node), which itself has a reactive `node.context` object. This `context` object tracks the validity of the node in `context.state.valid`. As mentioned above, a `group` becomes valid when all its descendants are valid. With that in mind, let's build up an object that stores the reactive validity of each of the groups.
 
-We'll leverage FormKit's [plugin](/advanced/core#plugins) functionality to do this job. While the term "plugin" may sound intimidating, plugins in FormKit are just setup functions that are called when a node is created. Plugins are inherited by all descendants (such as children within a group).
+We'll leverage FormKit's [plugin](/essentials/architecture#plugins) functionality to do this job. While the term "plugin" may sound intimidating, plugins in FormKit are just setup functions that are called when a node is created. Plugins are inherited by all descendants (such as children within a group).
 
 Here's our custom plugin, called `stepPlugin`:
 
@@ -235,7 +235,7 @@ Showing errors is more nuanced. Though the user may not be aware, there are actu
 - Errors from failing _frontend_ validation rules (`messages` of type `validation`)
 - Backend errors (`messages` of type `error`)
 
-FormKit uses its [message store](/advanced/core#message-store) to track both of these types of errors/messages.
+FormKit uses its [message store](/essentials/architecture#message-store) to track both of these types of errors/messages.
 
 With our plugin already in place, it's relatively simple to add tracking for both:
 
@@ -417,4 +417,4 @@ Of course, there are always ways to improve anything, and this form is no except
 
 We've covered a lot of topics in this guide and hope you've learned more about FormKit and how to use it to make multi-step forms easier!
 
-<cta label="Want more? Start by reading about FormKit core." button="Dig deeper" href="/advanced/core"></cta>
+<cta label="Want more? Start by reading about FormKit core." button="Dig deeper" href="/essentials/architecture"></cta>

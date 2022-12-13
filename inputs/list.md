@@ -18,12 +18,12 @@ name="List input"
 file="/_content/examples/list/list.vue"></example>
 
 <callout type="tip" label="Performance">
-Vue’s handy <code>v-model</code> is fully supported in FormKit with bi-directional data flow even on lists and groups. However, if your form needs extremely high performance consider using the <a href="/advanced/core">core node</a> to read/write instead of v-model.
+Vue’s handy <code>v-model</code> is fully supported in FormKit with bi-directional data flow even on lists and groups. However, if your form needs extremely high performance consider using the <a href="/essentials/architecture">core node</a> to read/write instead of v-model.
 </callout>
 
 ## Validity of children
 
-Lists are always aware of the validation state of their children (including nested children). You can access this data in the [context](/advanced/context) object of the input (`context.state.valid`).
+Lists are always aware of the validation state of their children (including nested children). You can access this data in the [context](/essentials/configuration) object of the input (`context.state.valid`).
 
 <example
 name="List input"
