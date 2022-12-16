@@ -16,7 +16,7 @@ nextMonday.setDate(
       name="date"
       label="Appointment day"
       help="When can you bring your car in?"
-      :validation="[['required'], ['after', nextMonday]]"
+      :validation="[['required'], ['date_after', nextMonday]]"
     />
     <FormKit
       type="select"

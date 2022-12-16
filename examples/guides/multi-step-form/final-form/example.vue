@@ -101,7 +101,7 @@ const checkStepValidity = (stepName) => {
         <FormKit
           type="date"
           label="Date of incorporation"
-          :validation="[['before_date', new Date(Date.now())]]"
+          :validation="[['date_before', new Date(Date.now())]]"
           name="date_inc"
         />
       </FormKit>
