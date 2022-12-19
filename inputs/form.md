@@ -1,9 +1,9 @@
 ---
-title: Forms
+title: Form
 description: Collect all of your FormKit data, submit to your server, and handle server-side error messages.
 ---
 
-# Forms
+# Form
 
 <page-toc></page-toc>
 

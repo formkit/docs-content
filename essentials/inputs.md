@@ -129,7 +129,7 @@ Validation errors are not the only way to set errors on an input. You can also e
   file="/_content/examples/simple-errors/simple-errors.vue"></example>
 
 <callout type="info" label="Non blocking">
-Explicitly set errors are non-blocking, meaning they do not prevent the form from submitting the way validation errors do. You can read more about error handling on the <a href="/inputs/forms#error-handling">form documentation</a>.
+Explicitly set errors are non-blocking, meaning they do not prevent the form from submitting the way validation errors do. You can read more about error handling on the <a href="/inputs/form#error-handling">form documentation</a>.
 </callout>
 
 ## Props & attributes
