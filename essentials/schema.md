@@ -1,15 +1,46 @@
 ---
 title: FormKit Schema
-description: FormKit's schema is a JSON-serializable data format for storing DOM structures and component implementations including FormKit forms.
+description: Harness all the power of FormKit in a serializable, JSON-compatible schema language.
 ---
 
 # Schema
 
 <page-toc></page-toc>
 
-FormKit's schema is a JSON-serializable data format for storing DOM structures and component implementations including FormKit forms. Although created specifically for implementing forms, the format is capable of generating any HTML markup or using any third-party components. Schemas are rendered using FormKit's `<FormKitSchema>` component.
+## Introduction
 
-A schema is an array of objects (called "schema nodes"), where each object defines a single HTML element, component, or text node. Simple strings produce text nodes, while components and HTML elements are defined with two different objects (referred to as `$el` and `$cmp`).
+FormKit's schema is a JSON-serializable data format for storing DOM structures and component implementations, including FormKit forms. Although created specifically for implementing and generating forms, the format is capable of generating any HTML markup or using any third-party components.
+
+Schemas are rendered using FormKit's `<FormKitSchema>` component, which is not registered globally by default. You will need to import it:
+
+<client-only>
+
+```js
+import { FormKitSchema } from '@formkit/vue'
+```
+
+</client-only>
+
+And pass it your schema:
+
+<client-only>
+
+```html
+<FormKitSchema :schema="yourSchemaArray" />
+```
+
+</client-only>
+
+## Schema array
+
+A schema is an array of objects or strings (called "schema nodes"), where each array item defines a single schema node. There are 3 types of of schema nodes:
+
+1. **Text nodes** — produced by strings.
+2. [HTML elements](#html-elements-el) — defined by the `$el` property.
+3. [Components](#components-cmp) — defined by the `$cmp` property.
+4. [FormKit components](#shorthand) — defined by the `$formkit` property. Syntactic sugar for the full `$cmp` format.
+
+Schemas support advanced features like [conditional logic](#conditionals), [boolean operators](#expressions), [loops](#loops), [slots](#slots), and [data scoping](#references) — all guaranteed to serialize to a string.
 
 ## HTML elements ($el)
 
@@ -28,7 +59,7 @@ Notice in the above example that the <code>style</code> attribute is unique in t
 ## Components ($cmp)
 
 Components can be defined with the `$cmp` property. The `$cmp` property should be a string that references a globally defined component or a component passed
-into `FormKitSchema` with the `library` prop.
+into `FormKitSchema` with the `library` prop:
 
 <example
   name="Schema - components"
@@ -44,7 +75,7 @@ In order to pass concrete components via the <code>library</code> prop, it's bes
 
 In addition to the schema array (and optional library), the `FormKitSchema` object can also include a `data` prop. Values from the data object can then be referenced directly in your schema — and your schema will maintain the reactivity of the original data object.
 
-To reference a value from the data object, you simply use a dollar sign `$` followed by the property name from the data object. References can be used in `attrs`, `props`, conditionals and as `children`.
+To reference a value from the data object, you simply use a dollar sign `$` followed by the property name from the data object. References can be used in `attrs`, `props`, conditionals and as `children`:
 
 <example
   name="Schema - data"
@@ -68,7 +99,7 @@ Schemas support calling functions that are in your original reference data — 
 
 ### Deep references
 
-Just like JavaScript — you can access properties of a deeply nested object using dot-syntax `object.property`.
+Just like JavaScript — you can access properties of a deeply nested object using dot-syntax `object.property`:
 
 <example
   name="Schema - functions"
@@ -82,7 +113,7 @@ Schema references can have any structure or properties, but at the root of the d
 
 ## Expressions
 
-Schemas also support logic in the form of boolean logic, comparison, and arithmetic expressions. These expressions can be used anywhere a data reference can be used (`attrs`, `props`, conditionals, and `children`).
+Schemas also support logic in the form of boolean logic, comparison, and arithmetic expressions. These expressions can be used anywhere a data reference can be used (`attrs`, `props`, conditionals, and `children`):
 
 <example
   name="Schema - expressions"
@@ -125,7 +156,7 @@ FormKit schema can leverage references and expressions to make schema nodes and 
 
 ### The `if` property
 
-Both `$el` and `$cmp` schema nodes can leverage an `if` property that roughly equates to a `v-if` in Vue. If the expression assigned to the `if` property is truthy, the node is rendered, otherwise it is not.
+Both `$el` and `$cmp` schema nodes can leverage an `if` property that roughly equates to a `v-if` in Vue. If the expression assigned to the `if` property is truthy, the node is rendered, otherwise it is not:
 
 <example
   name="Schema - conditional"
@@ -139,7 +170,7 @@ The `if/then/else` object allows for more complex conditional logic. It can be u
 
 #### Using `if/then/else` on schema nodes
 
-You can use the `if/then/else` object anywhere you would normally use a schema node. This includes the root schema array, or the `children` property of another schema node.
+You can use the `if/then/else` object anywhere you would normally use a schema node. This includes the root schema array, or the `children` property of another schema node:
 
 <example
   name="Schema - conditional object"
@@ -149,7 +180,7 @@ You can use the `if/then/else` object anywhere you would normally use a schema n
 
 #### Using `if/then/else` on attrs and props
 
-You can also use `if/then/else` statements to conditionally output the values of `attrs` or `props`.
+You can also use `if/then/else` statements to conditionally output the values of `attrs` or `props`:
 
 <example
   name="Schema - conditional attrs"
@@ -159,7 +190,7 @@ You can also use `if/then/else` statements to conditionally output the values of
 
 ## Loops
 
-Both `$el` and `$cmp` schema nodes support looping. The loop syntax is similar to `v-for` in Vue and expects an object or array to iterate over and a property to assign the current iteration value to. Optionally, you can also capture the index or property of the current iteration.
+Both `$el` and `$cmp` schema nodes support looping. The loop syntax is similar to `v-for` in Vue and expects an object or array to iterate over and a property to assign the current iteration value to. Optionally, you can also capture the index or property of the current iteration:
 
 <example
   name="Schema - loops"
@@ -173,7 +204,7 @@ Sometimes schema expressions need to cast a string to a number. For example, key
 
 ## Slots
 
-Schemas can render the slot content of the `<FormKitSchema>` component anywhere within the schema that a normal schema node can be rendered. All scoped slots are automatically provided to the schema under the `$slots` reference object.
+Schemas can render the slot content of the `<FormKitSchema>` component anywhere within the schema that a normal schema node can be rendered. All scoped slots are automatically provided to the schema under the `$slots` reference object:
 
 <example
   name="Schema - slots"
@@ -193,7 +224,7 @@ At times it may be necessary to pass an object of variable or unknown attributes
 
 ## Raw values
 
-At times it may be necessary to prevent a given attribute or prop from being parsed. This can be done by prefixing an attribute or prop with `__raw__`.
+At times it may be necessary to prevent a given attribute or prop from being parsed. This can be done by prefixing an attribute or prop with `__raw__`:
 
 <client-only>
 
@@ -220,9 +251,9 @@ Notice if you remove the `__raw__` prefix from the above example, the prefix no 
 
 ## FormKit Inputs
 
-Although schemas can be used for almost any purpose — the primary objective is to empower developers to build complex and dynamic forms using a serializable data format. Using the schema with FormKit inputs covers this use case well.
+Although schemas can be used for almost any purpose — the primary objective is to empower developers to build complex and dynamic forms using a serializable data format. Using the schema with FormKit Inputs covers this use case well.
 
-Assuming you globally registered the `FormKit` component — you can render your `FormKit` inputs from schema by using the `$cmp` schema node.
+Assuming you globally registered the `FormKit` component — you can render your `FormKit` inputs from schema by using the `$cmp` schema node:
 
 <example
   name="Schema - formkit"
@@ -232,10 +263,51 @@ Assuming you globally registered the `FormKit` component — you can render your
 
 ### Accessing other inputs
 
-The schema format has one built-in function specific to FormKit inputs: the `$get` function. This builtin allows the schema to access the context object of any other FormKit input (even outside the immediate form) — provided the input in question has an explicitly declared `id` prop. This allows the schema to respond conditionally to the state of your own inputs.
+The schema format has one built-in function specific to FormKit Inputs: the `$get` function. This builtin allows the schema to access the context object of any other FormKit input (even outside the immediate form) — provided the input in question has an explicitly declared `id` prop. This allows the schema to respond conditionally to the state of your own inputs:
 
 <example
   name="Schema - formkit"
   file="/_content/examples/schema-get/schema-get.vue"
   layout="auto">
 </example>
+
+### Shorthand
+
+While the `cmp` syntax is generalized and works for any Vue component, it is somewhat verbose when creating lots of FormKit Inputs. To make this easier, FormKit supports a fourth node type `$formkit`, which is syntactic sugar for the full `$cmp` format shown above.
+
+When using the `$formkit` shorthand, the `props` object is flattened with the top-level properties (siblings of `$formkit`) For example:
+
+<example
+  name="Generating forms - sugar"
+  file="/_content/examples/generating-sugar/generating-sugar.vue">
+</example>
+
+## Form generation
+
+FormKit ships with first-class support for generating forms using the schema. This makes it possible to store generated forms in databases, files, or even a QR code! To generate a form, pass your schema to the `<FormKitSchema>` component using the `:schema` prop.
+
+Let’s take a quick look at an example and we'll pick it up on the other side:
+
+<example
+  name="Generating forms"
+  file="/_content/examples/generating/generating.vue">
+</example>
+
+### FormKit inputs
+
+FormKit’s schema is most frequently used to generate forms (although it is not limited to that use case). For example, if you wanted to render a FormKit [email input](/inputs/email), you would use the `$cmp` node.
+
+<example
+  name="Generating forms - verbose"
+  file="/_content/examples/generating-cmp/generating-cmp.vue">
+</example>
+
+### Forms
+
+To render a form element, you can either use the `$formkit: 'form'` schema node, or wrap your `<FormKitSchema>` component in a `<FormKit type="form">` component.
+
+<example
+  name="Generating forms - form"
+  file="/_content/examples/generating-form/generating-form.vue">
+</example>
+
