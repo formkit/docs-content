@@ -92,8 +92,8 @@ The `@formkit/vue` package ships with a Vue plugin and a default configuration f
 
 ```js
 import { createApp } from 'vue'
-import App from 'App.vue'
 import { plugin, defaultConfig } from '@formkit/vue'
+import App from 'App.vue'
 
 createApp(App).use(plugin, defaultConfig).mount('#app')
 ```
