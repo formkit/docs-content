@@ -21,7 +21,9 @@ import { FormKitSchema } from '@formkit/vue'
 
 </client-only>
 
-And pass it your schema:
+## Form generation example
+
+FormKit ships with first-class support for generating forms using schema. This makes it possible to store generated forms in databases, files, or even QR codes! To generate a form, pass your schema array to the `<FormKitSchema>` component using the `:schema` prop.
 
 <client-only>
 
@@ -31,6 +33,14 @@ And pass it your schema:
 
 </client-only>
 
+Let’s look at a quick example:
+
+<example
+  name="Generating forms"
+  file="/_content/examples/generating/generating.vue">
+</example>
+
+We see many features above including the `$el` and `$cmp` props, the `$formkit` prop shorthand, validation, conditional rendering, labels, help text, and multiple types of inputs. We'll unpack all these features in the remainder of this page.
 ## Schema array
 
 A schema is an array of objects or strings (called "schema nodes"), where each array item defines a single schema node. There are 3 types of of schema nodes:
@@ -253,7 +263,7 @@ Notice if you remove the `__raw__` prefix from the above example, the prefix no 
 
 Although schemas can be used for almost any purpose — the primary objective is to empower developers to build complex and dynamic forms using a serializable data format. Using the schema with FormKit Inputs covers this use case well.
 
-Assuming you globally registered the `FormKit` component — you can render your `FormKit` inputs from schema by using the `$cmp` schema node:
+Assuming you globally registered the `FormKit` component — you can render your `FormKit` inputs from schema by using the `$cmp` type schema node:
 
 <example
   name="Schema - formkit"
@@ -261,19 +271,9 @@ Assuming you globally registered the `FormKit` component — you can render your
   layout="auto">
 </example>
 
-### Accessing other inputs
-
-The schema format has one built-in function specific to FormKit Inputs: the `$get` function. This builtin allows the schema to access the context object of any other FormKit input (even outside the immediate form) — provided the input in question has an explicitly declared `id` prop. This allows the schema to respond conditionally to the state of your own inputs:
-
-<example
-  name="Schema - formkit"
-  file="/_content/examples/schema-get/schema-get.vue"
-  layout="auto">
-</example>
-
 ### Shorthand
 
-While the `cmp` syntax is generalized and works for any Vue component, it is somewhat verbose when creating lots of FormKit Inputs. To make this easier, FormKit supports a fourth node type `$formkit`, which is syntactic sugar for the full `$cmp` format shown above.
+While the `cmp` syntax is generalized and works for any Vue component, it is somewhat verbose for FormKit Inputs. To make this easier, FormKit supports a fourth node type `$formkit`, which is syntactic sugar for the full `$cmp` format.
 
 When using the `$formkit` shorthand, the `props` object is flattened with the top-level properties (siblings of `$formkit`) For example:
 
@@ -282,32 +282,21 @@ When using the `$formkit` shorthand, the `props` object is flattened with the to
   file="/_content/examples/generating-sugar/generating-sugar.vue">
 </example>
 
-## Form generation
+### Accessing other inputs
 
-FormKit ships with first-class support for generating forms using the schema. This makes it possible to store generated forms in databases, files, or even a QR code! To generate a form, pass your schema to the `<FormKitSchema>` component using the `:schema` prop.
-
-Let’s take a quick look at an example and we'll pick it up on the other side:
+The schema format has one built-in function specific to FormKit Inputs: the `$get` function. This builtin allows the schema to access the context object of any other FormKit Input (even outside the immediate form) — provided the input in question has an explicitly declared `id` prop. This allows the schema to respond conditionally to the state of your own inputs:
 
 <example
-  name="Generating forms"
-  file="/_content/examples/generating/generating.vue">
-</example>
-
-### FormKit inputs
-
-FormKit’s schema is most frequently used to generate forms (although it is not limited to that use case). For example, if you wanted to render a FormKit [email input](/inputs/email), you would use the `$cmp` node.
-
-<example
-  name="Generating forms - verbose"
-  file="/_content/examples/generating-cmp/generating-cmp.vue">
+  name="Schema - formkit"
+  file="/_content/examples/schema-get/schema-get.vue"
+  layout="auto">
 </example>
 
 ### Forms
 
-To render a form element, you can either use the `$formkit: 'form'` schema node, or wrap your `<FormKitSchema>` component in a `<FormKit type="form">` component.
+To render a form element, you can either use the `$formkit: 'form'` schema node, or wrap your `<FormKitSchema>` component in a `<FormKit type="form">` component:
 
 <example
   name="Generating forms - form"
   file="/_content/examples/generating-form/generating-form.vue">
 </example>
-

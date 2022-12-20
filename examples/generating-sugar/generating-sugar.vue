@@ -5,6 +5,7 @@
       {
         $formkit: 'email',
         label: 'Email address',
+        help: 'Please enter your email address.'
       }
     ]"
   />

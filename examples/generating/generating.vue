@@ -33,10 +33,13 @@ export default {
           validationLabel: 'password confirmation',
         },
         {
-          $formkit: 'checkbox',
-          name: 'eu_citizen',
-          id: 'eu',
-          label: 'Are you a european citizen?',
+          $cmp: 'FormKit',
+          props: {
+            name: 'eu_citizen',
+            type: 'checkbox',
+            id: 'eu',
+            label: 'Are you a european citizen?',
+          }
         },
         {
           $formkit: 'select',
