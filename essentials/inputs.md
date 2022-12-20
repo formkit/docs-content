@@ -7,14 +7,32 @@ description: FormKit ships with turbocharged inputs for developing production-re
 
 <page-toc></page-toc>
 
-FormKit’s inputs are similar to HTML inputs but turbocharged with much needed features like labels, help text, validation, and error messages (and much more). Similar to how HTML’s `<input>` tag uses various `type` attributes (i.e., `<input type="text">` vs `<input type="checkbox">`), FormKit uses the `type` prop for _all_ inputs. In fact, with FormKit, **there is only 1 component you have to learn**:
+## Introduction
+
+FormKit Inputs are similar to HTML inputs but turbocharged with much needed features like labels, help text, validation, and error messages (and much more). Similar to how HTML’s `<input>` tag uses various `type` attributes (i.e., `<input type="text">` vs `<input type="checkbox">`), FormKit uses the `type` prop for _all_ inputs. In fact, with FormKit, **there is only 1 component you have to learn**:
 
 <example
   name="Text input"
   file="/_content/examples/single-component/single-component.vue">
 </example>
 
-FormKit inputs are not confined to what is available in "native" HTML. The upcoming FormKit Pro represents "synthetic" input types such as `autocomplete`, `taglist` and `wysiwyg`. Of course, you can write your own inputs too by creating [custom inputs](/guides/create-a-custom-input).
+FormKit Inputs are not confined to what is available in "native" HTML. The upcoming FormKit Pro represents "synthetic" input types such as `autocomplete`, `taglist`, and `repeater`. Of course, you can write your own inputs too by creating [custom inputs](/guides/create-a-custom-input).
+
+## The Form Input
+
+While you’re free to use FormKit inputs by themselves, you’ll usually want to [group them into a form](/inputs/form):
+
+<client-only>
+
+```html
+<FormKit type="form">
+  <!-- ... your form inputs -->
+<FormKit />
+```
+
+</client-only>
+
+The [form type](/inputs/form) provides a host of features including value collection, initial value setting, form submission, error handling, loading states, and more.
 
 ## Setting values
 
