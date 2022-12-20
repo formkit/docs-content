@@ -91,4 +91,4 @@ Yet another great option for form validation, but focused solely on validation. 
 
 #### vue-form-generator
 
-Generating forms from JSON is great — that's why schema is a sub-feature of FormKit. Simply pass your form schema to the `FormKitSchema` component and voilà! Checkout the documentation [here](/essentials/generation). Now you can use the same tool for form composition and generation!
+Generating forms from JSON is great — that's why schema is a sub-feature of FormKit. Simply pass your form schema to the `FormKitSchema` component and voilà! Checkout the documentation [here](/essentials/schema#form-generation-example). Now you can use the same tool for form composition and generation!

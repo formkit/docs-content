@@ -322,7 +322,7 @@ export default config
 
 </client-only>
 
-## Adding Genesis Theme
+## Adding Genesis theme
 
 The default FormKit theme (called "genesis") can be added via CDN or by installing the `@formkit/themes` package.
 

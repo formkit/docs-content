@@ -220,4 +220,4 @@ There are some topics we recommend you exploring next, which you can read in any
 
 - **Style your forms:** Learn how to add classes to FormKit using [sections](/essentials/styling), or even use Tailwind CSS with the help of our [guide](/guides/create-a-tailwind-theme).
 - **Multi-language forms:** Learn how FormKit makes [i18n](/essentials/internationalization) easy with dozens of available languages. Or you can add your own!
-- **Explore FormKit's schema:** Learn about FormKit's [JSON-compatible schema](/essentials/generation) and how you can use it for form generation, saving forms to a database in a JSON format, or building your own form builder.
+- **Explore FormKit's schema:** Learn about FormKit's [JSON-compatible schema](/essentials/schema) and how you can use it for form generation, saving forms to a database in a JSON format, or building your own form builder.

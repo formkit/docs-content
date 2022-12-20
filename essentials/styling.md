@@ -196,7 +196,7 @@ Because <code>rootClasses</code> is a configuration option, you can apply it per
 
 ## Modifying classes within schema
 
-In addition to modifying classes via config or props _on a `<FormKit>` component_, you can use the same techniques within [schema](/essentials/generation#schema):
+In addition to modifying classes via config or props _on a `<FormKit>` component_, you can use the same techniques within [schema](/essentials/schema):
 
 ### Section-key class props within schema
 
