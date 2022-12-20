@@ -32,7 +32,7 @@ Forms seem simple. After all, a `<form>` and an `<input>` tag are all that's req
 #### Key Features
 
 - [Single component](#single-component): FormKit was designed with a single component for all inputs.
-- [Accessible](#accessible): We output an opinionated accessible markup by default.
+- [Accessibility](#accessibility): We output an opinionated accessible markup by default.
 - [Validation](#validation): Numerous built-in validation rules with instant feedback.
 - [Schema](#schema): Powerful schema format to store and generate forms.
 - [Styles](#styles): Beautifully crafted theme.
@@ -43,7 +43,7 @@ Forms seem simple. After all, a `<form>` and an `<input>` tag are all that's req
 
 Developers love to learn — but no one enjoys pouring over third-party APIs and configuration options. That's why FormKit uses a single component for all of its [inputs](/essentials/inputs). `<FormKit>` is the only component you need to know to get started — and it works just like you would expect an `<input>` tag to work.
 
-### Accessible
+### Accessibility
 
 Creating accessible forms is a serious challenge. Especially when accessibility standards are not always clear and most developers are under time pressure. Ideally, all developers would be well versed in accessibility best practices, but unfortunately that is not the case. To address this, FormKit outputs an opinionated accessible DOM structure. This is different than many popular “renderless” form libraries that provide no markup at all, and rely on developers to supply the inputs themselves.
 
@@ -53,7 +53,7 @@ Front-end [validation](/essentials/validation) that gives instant feedback is an
 
 ### Schema
 
-FormKit's [schema](/essentials/schema) is a JSON-serializable data format for storing DOM structures and component implementations, including FormKit forms. Schemas support advanced features like [form generation](/essentials/generation), conditional logic, boolean operators, loops, slots, and data scoping — all guaranteed to serialize to a string.
+FormKit's [schema](/essentials/schema) is a JSON-serializable data format for storing DOM structures and component implementations, including FormKit forms. Schemas support advanced features like [form generation](/essentials/schema#form-generation-example), conditional logic, boolean operators, loops, slots, and data scoping — all guaranteed to serialize to a string.
 
 ### Styles
 
