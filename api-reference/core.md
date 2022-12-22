@@ -20,11 +20,11 @@ export declare function bfs(tree: FormKitNode, searchValue: string | number, sea
 
 #### Parameters
 
-`tree` - `[FormKitNode](@formkit/core!FormKitNode:type)`
+* `tree` - [FormKitNode](@formkit/core!FormKitNode:type)
 
-`searchValue` - `string | number`
+* `searchValue` - string | number
 
-`searchGoal` *optional* - `keyof [FormKitNode](@formkit/core!FormKitNode:type) | [FormKitSearchFunction](@formkit/core!FormKitSearchFunction:type)`
+* `searchGoal` *optional* - keyof [FormKitNode](@formkit/core!FormKitNode:type) | [FormKitSearchFunction](@formkit/core!FormKitSearchFunction:type)
 
 #### Returns
 
@@ -42,15 +42,13 @@ export declare function createNode(options?: FormKitOptions): FormKitNode;
 
 #### Parameters
 
-`options` *optional* - `[FormKitOptions](@formkit/core!FormKitOptions:type)`
+* `options` *optional* - [FormKitOptions](@formkit/core!FormKitOptions:type)
 
 #### Returns
 
 Returns a [FormKitNode]().
 
 #### Examples
-
-##### 
 
 ```javascript
 import { createNode } from '@formkit/core'
@@ -76,7 +74,7 @@ export declare function isList(arg: FormKitContextShape): arg is FormKitListCont
 
 #### Parameters
 
-`arg` - `[FormKitContextShape](@formkit/core!FormKitContextShape:interface)`
+* `arg` - [FormKitContextShape](@formkit/core!FormKitContextShape:interface)
 
 #### Returns
 
@@ -94,15 +92,13 @@ export declare function isNode(node: any): node is FormKitNode;
 
 #### Parameters
 
-`node` - `any`
+* `node` - any
 
 #### Returns
 
 Returns a `boolean`.
 
 #### Examples
-
-##### 
 
 ```javascript
 import { isNode, createNode } from '@formkit/core'
