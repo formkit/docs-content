@@ -20,9 +20,9 @@ export declare function assignDeep<A extends Record<PropertyKey, any>, B extends
 
 #### Parameters
 
-* `a` - A
+* `a`
 
-* `b` - B
+* `b`
 
 #### Returns
 
@@ -40,7 +40,7 @@ export declare function camel(str: string): string;
 
 #### Parameters
 
-* `str` - string
+* `str`
 
 #### Returns
 
@@ -58,9 +58,9 @@ export declare function clone<T extends Record<string, unknown> | unknown[] | nu
 
 #### Parameters
 
-* `obj` - T
+* `obj`
 
-* `explicit` *optional* - string[]
+* `explicit` *optional*
 
 #### Returns
 
@@ -78,7 +78,7 @@ export declare function cloneAny<T>(obj: T): T;
 
 #### Parameters
 
-* `obj` - T
+* `obj`
 
 #### Returns
 
@@ -96,9 +96,9 @@ export declare function dedupe<T extends any[] | Set<any>, X extends any[] | Set
 
 #### Parameters
 
-* `arr1` - T
+* `arr1`
 
-* `arr2` *optional* - X
+* `arr2` *optional*
 
 #### Returns
 
@@ -116,7 +116,7 @@ export declare function empty(value: any): boolean;
 
 #### Parameters
 
-* `value` - any
+* `value`
 
 #### Returns
 
@@ -129,20 +129,18 @@ Compare two values for equality optionally at depth.
 #### Signature
 
 ```typescript
-export declare function eq(valA: any, // eslint-disable-line
-valB: any, // eslint-disable-line
-deep?: boolean, explicit?: string[]): boolean;
+export declare function eq(valA: any, valB: any, deep?: boolean, explicit?: string[]): boolean;
 ```
 
 #### Parameters
 
-* `valA` - any
+* `valA`
 
-* `valB` - any
+* `valB`
 
-* `deep` *optional* - boolean
+* `deep` *optional*
 
-* `explicit` *optional* - string[]
+* `explicit` *optional*
 
 #### Returns
 
@@ -160,7 +158,7 @@ export declare function escapeExp(string: string): string;
 
 #### Parameters
 
-* `string` - string
+* `string`
 
 #### Returns
 
@@ -178,9 +176,9 @@ export declare function except(obj: Record<string, any>, toRemove: Array<string 
 
 #### Parameters
 
-* `obj` - [Record](!Record:type)<string, any>
+* `obj`
 
-* `toRemove` - [Array](!Array:interface)<string | [RegExp](!RegExp:interface)>
+* `toRemove`
 
 #### Returns
 
@@ -198,13 +196,13 @@ export declare function extend(original: Record<string, any>, additional: Record
 
 #### Parameters
 
-* `original` - [Record](!Record:type)<string, any>
+* `original`
 
-* `additional` - [Record](!Record:type)<string, any> | string | null
+* `additional`
 
-* `extendArrays` *optional* - boolean
+* `extendArrays` *optional*
 
-* `ignoreUndefined` *optional* - boolean
+* `ignoreUndefined` *optional*
 
 #### Returns
 
@@ -222,11 +220,11 @@ export declare function getAt(obj: any, addr: string): unknown;
 
 #### Parameters
 
-* `obj` - any
+* `obj`
 
 An object to fetch data from
 
-* `addr` - string
+* `addr`
 
 An "address" in dot notation
 
@@ -245,9 +243,9 @@ export declare function has(obj: {
 
 #### Parameters
 
-* `obj` - {     [index: string]: any;     [index: number]: any; }
+* `obj`
 
-* `property` - string | symbol | number
+* `property`
 
 #### Returns
 
@@ -267,7 +265,7 @@ export declare function init<T extends object>(obj: T): T & {
 
 #### Parameters
 
-* `obj` - T
+* `obj`
 
 #### Returns
 
@@ -285,7 +283,7 @@ export declare function isObject(o: unknown): o is Record<PropertyKey, unknown> 
 
 #### Parameters
 
-* `o` - unknown
+* `o`
 
 #### Returns
 
@@ -303,7 +301,7 @@ export declare function isPojo(o: any): o is Record<string, any>;
 
 #### Parameters
 
-* `o` - any
+* `o`
 
 #### Returns
 
@@ -321,7 +319,7 @@ export declare function isQuotedString(str: string): boolean;
 
 #### Parameters
 
-* `str` - string
+* `str`
 
 #### Returns
 
@@ -352,7 +350,7 @@ export declare function isRecord(o: unknown): o is Record<PropertyKey, unknown>;
 
 #### Parameters
 
-* `o` - unknown
+* `o`
 
 #### Returns
 
@@ -370,7 +368,7 @@ export declare function kebab(str: string): string;
 
 #### Parameters
 
-* `str` - string
+* `str`
 
 #### Returns
 
@@ -388,7 +386,7 @@ export declare function nodeProps(...sets: Array<Record<string, any>>): Record<s
 
 #### Parameters
 
-* `sets` - [Array](!Array:interface)<[Record](!Record:type)<string, any>>
+* `sets`
 
 #### Returns
 
@@ -406,7 +404,7 @@ export declare function nodeType(type: string): 'list' | 'group' | 'input';
 
 #### Parameters
 
-* `type` - string
+* `type`
 
 #### Returns
 
@@ -424,9 +422,9 @@ export declare function only(obj: Record<string, any>, include: Array<string | R
 
 #### Parameters
 
-* `obj` - [Record](!Record:type)<string, any>
+* `obj`
 
-* `include` - [Array](!Array:interface)<string | [RegExp](!RegExp:interface)>
+* `include`
 
 #### Returns
 
@@ -444,7 +442,7 @@ export declare function parseArgs(str: string): string[];
 
 #### Parameters
 
-* `str` - string
+* `str`
 
 #### Returns
 
@@ -462,7 +460,7 @@ export declare function regexForFormat(format: string): RegExp;
 
 #### Parameters
 
-* `format` - string
+* `format`
 
 #### Returns
 
@@ -478,7 +476,7 @@ export declare function rmEscapes(str: string): string;
 
 #### Parameters
 
-* `str` - string
+* `str`
 
 #### Returns
 
@@ -496,7 +494,7 @@ export declare function setify<T>(items: Set<T> | T[] | null | undefined): Set<T
 
 #### Parameters
 
-* `items` - [Set](!Set:interface)<T> | T[] | null | undefined
+* `items`
 
 #### Returns
 
@@ -514,9 +512,9 @@ export declare function shallowClone<T>(obj: T, explicit?: string[]): T;
 
 #### Parameters
 
-* `obj` - T
+* `obj`
 
-* `explicit` *optional* - string[]
+* `explicit` *optional*
 
 #### Returns
 
@@ -534,7 +532,7 @@ export declare function slugify(str: string): string;
 
 #### Parameters
 
-* `str` - string
+* `str`
 
 #### Returns
 
@@ -552,9 +550,9 @@ export declare function spread<T>(obj: T, explicit?: string[]): T;
 
 #### Parameters
 
-* `obj` - T
+* `obj`
 
-* `explicit` *optional* - string[]
+* `explicit` *optional*
 
 #### Returns
 
@@ -595,7 +593,7 @@ export declare function undefine(value: unknown): true | undefined;
 
 #### Parameters
 
-* `value` - unknown
+* `value`
 
 #### Returns
 
