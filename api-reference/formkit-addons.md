@@ -26,7 +26,7 @@ export declare function createAutoAnimatePlugin(options?: AutoAnimateOptions): F
 
 #### Returns
 
-[FormKitPlugin](/api-reference/formkit-core#form-kit-plugin)
+[FormKitPlugin](/api-reference/formkit-core#FormKitPlugin)
 
 #### Examples
 
