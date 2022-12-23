@@ -6,7 +6,7 @@ title: formkit/addons
 
 Common, optional, first-party add on features for FormKit.
 
-You can add this package by using `npm install @formkit/addons` or `yarn add @formkit/addons`
+You can add this package by using `npm install @formkit/addons` or `yarn add @formkit/addons`.
 
 ## createAutoAnimatePlugin()
 
@@ -20,7 +20,7 @@ export declare function createAutoAnimatePlugin(options?: AutoAnimateOptions): F
 
 #### Parameters
 
-`options` (optional)
+* `options` *optional*
 
 [AutoAnimateOptions](https://github.com/formkit/auto-animate/blob/master/src/index.ts#L596)
 
@@ -29,8 +29,6 @@ export declare function createAutoAnimatePlugin(options?: AutoAnimateOptions): F
 [FormKitPlugin]()
 
 #### Examples
-
-Adding to FormKit
 
 ```javascript
 import { createApp } from 'vue'
