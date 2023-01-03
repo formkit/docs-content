@@ -37,7 +37,7 @@ Currently, FormKit supports the following languages (in the `@formkit/i18n` pack
 - 🇳🇴 Norwegian Bokmål (nb) - 🙏&nbsp;@hognevevle
 - 🇮🇷 Persian (fa) - 🙏&nbsp;@shahabbasian
 - 🇵🇱 Polish (pl) - 🙏&nbsp;@xxSkyy
-- 🇧🇷 Portuguese (pt) 🙏&nbsp;@r-martins
+- 🇧🇷 Portuguese (pt) 🙏&nbsp;@r-martins, @dbomfim
 - 🇷🇴 Romanian (ro) - 🙏&nbsp;@danve
 - 🇷🇺 Russian (ru) - 🙏&nbsp;@andreimakushkin
 - 🇸🇰 Slovak (sk) - 🙏&nbsp;@neridev
