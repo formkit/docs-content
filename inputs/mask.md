@@ -22,8 +22,8 @@ The `mask` input automatically transforms user input to match a provided format.
 
 The mask is the desired format of the input. It is passed to the `mask` prop where it is parsed for tokens. The mask is comprised of:
 
-- **Tokens** - A string representation of a user-editable region (shown in white below).
-- **String literals** -  Any character that is not a token (shown in orange). Not user-editable.
+- **Tokens** - A string representation of a user-editable region. Shown in white below.
+- **String literals** -  Any character that is not a token. Not user-editable. Shown in orange below.
 
 <img class="max-w-full rounded-card" src="https://cdn.formk.it/web-assets/mask-format-2.png" alt="Image of mask string with tokens and string literals in different colors.">
 
