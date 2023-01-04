@@ -13,3 +13,8 @@
   </FormKit>
   <!-- %partial%::html:: -->
 </template>
+
+
+<style>
+pre[wrap] { margin-bottom: 20px !important; }
+</style>

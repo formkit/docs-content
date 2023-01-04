@@ -7,6 +7,8 @@ description: An input that formats text to a given pattern as a user types.
 
 <page-toc></page-toc>
 
+## Introduction
+
 The `mask` input automatically transforms user input to match a provided format. Used appropriately, mask inputs can provide an improved user experience by removing any ambiguity for the desired value (for example a phone number or social security number).
 
 ## Basic example
@@ -18,7 +20,7 @@ The `mask` input automatically transforms user input to match a provided format.
 
 ## Masks
 
-The mask is the desired format of the input and comprised of "tokens" and plain strings. This string is passed to the `mask` prop where it is parsed for tokens — tokens are the only part of the mask that is user-editable. The mask input 2 built-in tokens.
+The mask is the desired format of the input and is comprised of "tokens" and plain strings. This string is passed to the `mask` prop where it is parsed for tokens. Tokens are the only part of the mask that is user-editable. The mask input comes with 2 built-in tokens:
 
 - `#` Accepts a digit character.
 - `a` Accepts an alphabetical character.
@@ -38,18 +40,18 @@ The mask input supports 3 entry modes:
 
 ### Shift & replace mode
 
-By default, the characters of a mask are automatically shifted forward when typing. This is notable when a mask is already populated and you place the cursor at or near the beginning of the input and begin typing. The characters following your cursor are "shifted" forward as you type. In replace mode however, subsequent characters are overwritten with a new value.
+By default, the characters of a mask are automatically shifted forward when typing. This is notable when a mask is already populated and you place the cursor at or near the beginning of the input and begin typing. The characters following your cursor are "shifted" forward as you type. In replace mode, however, subsequent characters are overwritten with a new value:
 
 <example
   name="Mask input - shift vs replace"
   file="/_content/examples/mask/shift-replace.vue">
 </example>
 
-## Select mode
+### Select mode
 
-In select mode equivalent `char` type tokens are grouped into selectable text ranges. FormKit automatically selects these text ranges when clicking or focusing the input. These selection ranges are maintained as the user is typing. When used tastefully this produces a clear UX as the user is aware of what value they are expected to enter.
+In select mode, equivalent `char` type tokens are grouped into selectable text ranges. FormKit automatically selects these text ranges when clicking or focusing the input. These selection ranges are maintained as the user is typing. When used tastefully, this produces a clear UX as the user is aware of what value they are expected to enter.
 
-Additionally, when an input is select mode, the user can use the arrow keys or tab key to shift their focus from one selection range to another.
+Additionally, when an input is in select mode, the user can use the arrow or tab keys to shift their focus from one selection range to another:
 
 <example
   name="Mask input - select"
@@ -88,7 +90,8 @@ The following properties must be defined to create a new token:
    */
   placeholder: '_',
   /**
-   * When using `select` mode which direction do new characters flow in.
+   * When using `select` mode, determines which direction do new characters flow
+   * in.
    */
   selectDirection: 'left',
   /**
@@ -99,7 +102,7 @@ The following properties must be defined to create a new token:
   pattern: /[A-Za-z0-9]/,
   /**
    * (Only for `char` type, optional). An optional character to "fill" the
-   * selection range with when in select mode. For example a selectFill set to
+   * selection range with when in select mode. For example, a selectFill set to
    * "0" can be helpful with numbers to produce leading zeros like "001".
    */
   selectFill: "0",
@@ -114,7 +117,7 @@ The following properties must be defined to create a new token:
 }
 ```
 
-As an example, a new token that accepts letters and numbers and is represented by the letter `z` in the mask string would look like this:
+For example, a new token that accepts letters and numbers, and is represented by the letter `z` in the mask string would look like this:
 
 ```js
 {
@@ -138,7 +141,7 @@ expects an object with keys that match the `token` property. For example, our ne
 
 #### Add tokens globally
 
-To register your mask tokens globally simply extend the `config` property of your global FormKit configuration.
+To register your mask tokens globally, extend the `config` property of your global FormKit configuration:
 
 <example
   name="Mask input global"
@@ -148,7 +151,7 @@ To register your mask tokens globally simply extend the `config` property of you
 
 ### Modify tokens
 
-In addition to creating new tokens, the `tokens` prop can also modify existing tokens. Any value provided to the `tokens` prop will be merged into the existing tokens for that input. For example, the digit token’s (`#`) has no `selectFill` by default, to add one, simply extend it:
+In addition to creating new tokens, the `tokens` prop can also modify existing tokens. Any value provided to the `tokens` prop will be merged into the existing tokens for that input. For example, the digit token’s (`#`) has no `selectFill` by default. To add one, simply extend it:
 
 <example
   name="Mask input - select fill"
@@ -157,7 +160,7 @@ In addition to creating new tokens, the `tokens` prop can also modify existing t
 
 ### Char tokens
 
-`char` tokens accept a single character. In order for a character to be accepted it must match the `token.pattern` regular expression. The two built in tokens (`#` and `a`) are both `char` type tokens.
+`char` tokens accept a single character. In order for a character to be accepted, it must match the `token.pattern` regular expression. The two built in tokens (`#` and `a`) are both `char` type tokens.
 
 In `select` mode, `char` tokens are grouped together into a selection range.
 
@@ -167,7 +170,7 @@ A <code>char</code> token should only ever represent 1 character, and its placeh
 
 ### Enum Tokens
 
-Enum tokens allow for variable length masks within a predefined set of options. As a user begins to type the enum token’s value will change to the first matching value and the selection range will reflect the currently unmatched matched characters. In practice, this operates much like an autocomplete for that specific token. Additionally, users can cycle through available options for a given token by hitting the up/down arrow keys.
+Enum tokens allow for variable length masks within a predefined set of options. As a user begins to type, the enum token’s value will change to the first matching value, and the selection range will reflect the currently unmatched characters. In practice, this operates much like an autocomplete for that specific token. Additionally, users can cycle through available options for a given token by hitting the up/down arrow keys.
 
 A date with auto-completing month names could be well represented with enums:
 
@@ -184,7 +187,7 @@ Enums are only supported in <code>select</code> mode. When any <code>enum</code>
 
 ### Incomplete values
 
-A mask’s value is not considered "complete" until the user has filled the entire pattern. Until that point, FormKit will consider the value of the input "empty". This makes it convenient to use with validation rules like `required`. However, if you’d like to accept incomplete values you can via the `allow-incomplete` prop.
+A mask’s value is not considered "complete" until the user has filled the entire pattern. Until that point, FormKit will consider the value of the input "empty". This makes it convenient to use with validation rules like `required`. However, if you’d like to accept incomplete values, you can via the `allow-incomplete` prop:
 
 <example
   name="Mask input - allow incomplete"
@@ -193,7 +196,7 @@ A mask’s value is not considered "complete" until the user has filled the enti
 
 ### Unmasked values
 
-By default the value of a mask input includes the formatting provided via the `mask` prop. However, if you only need to raw values entered by the user you can use the `unmask-value` prop.
+By default, the value of a mask input includes the formatting provided via the `mask` prop. However, if you'd like the raw unmasked value with the string literals removed, you can use the `unmask-value` prop:
 
 <example
   name="Mask input - unmask value"
@@ -202,7 +205,7 @@ By default the value of a mask input includes the formatting provided via the `m
 
 ## Hiding the mask
 
-By default the `mask` input displays each token’s placeholder character. You can disable this behavior (except in select mode) while still applying formatting automatically via the `show-mask` prop.
+By default, the `mask` input displays each token’s placeholder character. You can disable this behavior (except in select mode) while still applying formatting automatically via the `show-mask` prop:
 
 <example
   name="Mask input - show mask"
@@ -211,7 +214,13 @@ By default the `mask` input displays each token’s placeholder character. You c
 
 ## Props & Attributes
 
-<reference-table input="mask" :data="[{prop: 'allow-incomplete', type: 'boolean', default: 'false', description: 'By default value of a mask input is empty until the pattern is complete. This prop allows the input to use incomplete values.'},{prop: 'mask', type: 'string', default: 'none', description: 'The mask to apply. This is a string composed of tokens (like #) and literal string values.'},{prop: 'mode', type: 'string', default: 'shift', description: 'Determines how the mask input operates, options are <code>shift</code>, <code>replace</code> and <code>select</code>.'},{prop: 'show-mask', type: 'boolean', default: 'true', description: 'Displays a live representation of the pattern’s placeholder as the internal value of the input.'}, {prop: 'tokens', type: 'Object', default: '{}', description: 'Add new tokens or modify existing ones.'},{prop: 'unmask-value', type: 'boolean', default: 'false', description: 'By default the value of the input is the same as what is displayed (with formatting). By adding this prop the value will be only the characters the user typed in.'}]">
+<reference-table input="mask" :data="[
+  {prop: 'allow-incomplete', type: 'boolean', default: 'false', description: 'By default, the value of a mask input is empty until the pattern is complete. This prop allows the input to use incomplete values.'},
+  {prop: 'mask', type: 'string', default: 'none', description: 'The mask to apply. This is a string composed of tokens (like “#”) and literal string values.'},
+  {prop: 'mode', type: 'string', default: 'shift', description: 'Determines how the mask input operates. Options are <code>shift</code>, <code>replace</code> and <code>select</code>.'},
+  {prop: 'show-mask', type: 'boolean', default: 'true', description: 'Displays a live representation of the pattern’s placeholder as the internal value of the input.'},
+  {prop: 'tokens', type: 'Object', default: '{}', description: 'Add new tokens or modify existing ones.'},
+  {prop: 'unmask-value', type: 'boolean', default: 'false', description: 'By default, the value of the input is the same as what is displayed (with formatting). The string literals will removed from the value if this prop is set to true.'}]">
 </reference-table>
 
 ## Sections
