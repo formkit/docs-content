@@ -115,7 +115,7 @@ As convenience when using `type="form"`, the `form` outputs a submit button auto
 
 ```html
 <FormKit
-  type="submit"
+  type="form"
   @submit="createCharacter"
   submit-label="Create Character"
 >
