@@ -500,6 +500,15 @@ export declare function setify<T>(items: Set<T> | T[] | null | undefined): Set<T
 
 Set
 
+#### Examples
+
+```javascript
+import { setify } from '@formkit/utils'
+
+const tk = setify(['a', 'b'])
+// Set(2) {'a', 'b'}
+```
+
 ## shallowClone()
 
 Very shallowly clones the given object.
@@ -598,3 +607,11 @@ export declare function undefine(value: unknown): true | undefined;
 #### Returns
 
 true | undefined
+
+## FormKitDateTokens
+
+The date token strings that can be used for date formatting.
+
+```typescript
+export declare type FormKitDateTokens = 'MM' | 'M' | 'DD' | 'D' | 'YYYY' | 'YY';
+```

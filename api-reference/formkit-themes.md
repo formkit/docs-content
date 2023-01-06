@@ -1,0 +1,89 @@
+---
+title: formkit/themes
+---
+
+# @formkit/themes
+
+## createIconHandler()
+
+Returns a function responsible for loading an icon by name
+
+#### Signature
+
+```typescript
+export declare function createIconHandler(iconLoader?: FormKitIconLoader, iconLoaderUrl?: FormKitIconLoaderUrl): FormKitIconLoader;
+```
+
+#### Parameters
+
+* `iconLoader` *optional*
+
+a function for loading an icon when it's not found in the iconRegistry
+
+* `iconLoaderUrl` *optional*
+
+## createThemePlugin()
+
+Creates the theme plugin based on a given theme name
+
+#### Signature
+
+```typescript
+export declare function createThemePlugin(theme?: string, icons?: Record<string, string | undefined>, iconLoaderUrl?: FormKitIconLoaderUrl, iconLoader?: FormKitIconLoader): (node: FormKitNode) => any;
+```
+
+#### Parameters
+
+* `theme` *optional*
+
+The name or id of the theme to apply
+
+* `icons` *optional*
+
+Icons you want to add to the global icon registry
+
+* `iconLoaderUrl` *optional*
+
+* `iconLoader` *optional*
+
+A function that handles loading an icon when it is not found in the registry
+
+## generateClasses()
+
+A function to generate FormKit class functions from a javascript object
+
+#### Signature
+
+```typescript
+export declare function generateClasses(classes: Record<string, Record<string, string>>): Record<string, string | FormKitClasses | Record<string, boolean>>;
+```
+
+#### Parameters
+
+* `classes`
+
+An object of input types with nested objects of sectionKeys and class lists
+
+#### Returns
+
+FormKitClassFunctions
+
+## FormKitIconLoader
+
+A function that returns an icon SVG string
+
+```typescript
+export interface FormKitIconLoader {
+    (iconName: string): string | undefined | Promise<string | undefined>;
+}
+```
+
+## FormKitIconLoaderUrl
+
+A function that returns a remote url for retrieving an SVG icon by name
+
+```typescript
+export interface FormKitIconLoaderUrl {
+    (iconName: string): string | undefined;
+}
+```
