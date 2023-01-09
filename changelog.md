@@ -30,7 +30,7 @@ description: What's new in the latest version of FormKit?.
 - Fixed a bug where Date object methods were inaccessible from Schema [#406](https://github.com/formkit/formkit/issues/406).
 - Fixed a pathing issue that made it difficult for third-parties from accessing files [#404](https://github.com/formkit/formkit/issues/404).
 - Fixed a bug that prevented the `stopIfFalse` argument on the `walkTree` function.
-- Fixed a bug where where a select input initialized with a `null` value doesn't have a good value [#415](https://github.com/formkit/formkit/issues/415).
+- Fixed a bug where a select input initialized with a `null` value doesn't have a good value [#415](https://github.com/formkit/formkit/issues/415).
 - Pro: Fixed a bug `count:blocking` event was not emitting properly in Repeaters.
 - Pro: Updated Repeater indexes to be numbers instead of strings. [#422](https://github.com/formkit/formkit/issues/422).
 - Pro: Fixed an autocomplete bug where the next page of options was overriding the current page. [#447](https://github.com/formkit/formkit/issues/447).
