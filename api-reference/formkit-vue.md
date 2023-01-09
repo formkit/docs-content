@@ -26,7 +26,7 @@ export declare function createInput(schemaOrComponent: FormKitSchemaNode | FormK
 
 #### Returns
 
-[FormKitTypeDefinition](/api-reference/formkit-core#FormKitTypeDefinition)
+[FormKitTypeDefinition](/api-reference/formkit-core#formkittypedefinition)
 
 ### useInput()
 
@@ -48,7 +48,7 @@ export declare function useInput(props: FormKitComponentProps, context: SetupCon
 
 #### Returns
 
-[FormKitNode](/api-reference/formkit-core#FormKitNode)
+[FormKitNode](/api-reference/formkit-core#formkitnode)
 
 ### watchVerbose()
 

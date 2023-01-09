@@ -24,7 +24,7 @@ export declare function createI18nPlugin(registry: FormKitLocaleRegistry): FormK
 
 #### Returns
 
-[FormKitPlugin](/api-reference/formkit-core#FormKitPlugin)
+[FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
 ### date()
 

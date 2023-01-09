@@ -26,7 +26,7 @@ export declare function $attrs(attrs: FormKitSchemaAttributes | (() => FormKitSc
 
 #### Returns
 
-[FormKitSchemaExtendableSection](#FormKitSchemaExtendableSection)
+[FormKitSchemaExtendableSection](#formkitschemaextendablesection)
 
 ### $extend()
 
@@ -46,7 +46,7 @@ export declare function $extend(section: FormKitSchemaExtendableSection, extendW
 
 #### Returns
 
-[FormKitSchemaExtendableSection](#FormKitSchemaExtendableSection)
+[FormKitSchemaExtendableSection](#formkitschemaextendablesection)
 
 ### $for()
 
@@ -68,7 +68,7 @@ export declare function $for(varName: string, inName: string, section: FormKitSc
 
 #### Returns
 
-[FormKitSchemaExtendableSection](#FormKitSchemaExtendableSection)
+[FormKitSchemaExtendableSection](#formkitschemaextendablesection)
 
 ### $if()
 
@@ -90,7 +90,7 @@ export declare function $if(condition: string, then: FormKitSchemaExtendableSect
 
 #### Returns
 
-[FormKitSchemaExtendableSection](#FormKitSchemaExtendableSection)
+[FormKitSchemaExtendableSection](#formkitschemaextendablesection)
 
 ### $root()
 
@@ -108,7 +108,7 @@ export declare function $root(section: FormKitSchemaExtendableSection): FormKitE
 
 #### Returns
 
-[FormKitSchemaExtendableSection](#FormKitSchemaExtendableSection)
+[FormKitSchemaExtendableSection](#formkitschemaextendablesection)
 
 ### checkboxes()
 
@@ -142,7 +142,7 @@ export declare function composable(key: string, schema: FormKitInputSchema): For
 
 #### Returns
 
-[FormKitSchemaComposable](/api-reference/formkit-core#FormKitSchemaComposable)
+[FormKitSchemaComposable](/api-reference/formkit-core#formkitschemacomposable)
 
 ### createLibraryPlugin()
 
@@ -158,7 +158,7 @@ export declare function createLibraryPlugin(...libraries: FormKitLibrary[]): For
 
 #### Returns
 
-[FormKitPlugin](/api-reference/formkit-core#FormKitPlugin)
+[FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
 ### createSection()
 
@@ -252,7 +252,7 @@ export declare function extendSchema(schema: FormKitSchemaNode, extension?: Part
 
 #### Returns
 
-[FormKitSchemaNode](/api-reference/formkit-core#FormKitSchemaNode)
+[FormKitSchemaNode](/api-reference/formkit-core#formkitschemanode)
 
 ### files()
 
@@ -413,7 +413,7 @@ export declare function normalizeOptions(options: FormKitOptionsProp): FormKitOp
 
 #### Returns
 
-[FormKitOptionsList](#FormKitOptionsList)
+[FormKitOptionsList](#formkitoptionslist)
 
 ### options()
 
@@ -473,7 +473,7 @@ export declare function useSchema(inputSection: FormKitSection): FormKitExtendab
 
 #### Returns
 
-[FormKitExtendableSchemaRoot](/api-reference/formkit-core#FormKitExtendableSchemaRoot)
+[FormKitExtendableSchemaRoot](/api-reference/formkit-core#formkitextendableschemaroot)
 
 ## TypeScript
 

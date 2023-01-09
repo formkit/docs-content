@@ -32,7 +32,7 @@ export declare function bfs(tree: FormKitNode, searchValue: string | number, sea
 
 #### Returns
 
-Returns a [FormKitNode](#FormKitNode) or `undefined` if not found.
+Returns a [FormKitNode](#formkitnode) or `undefined` if not found.
 
 ### compile()
 
@@ -50,7 +50,7 @@ export declare function compile(expr: string): FormKitCompilerOutput;
 
 #### Returns
 
-[FormKitCompilerOutput](/api-reference/formkit-core#FormKitCompilerOutput)
+[FormKitCompilerOutput](/api-reference/formkit-core#formkitcompileroutput)
 
 #### Examples
 
@@ -133,7 +133,7 @@ export declare function createNode(options?: FormKitOptions): FormKitNode;
 
 #### Returns
 
-Returns a [FormKitNode](/api-reference/formkit-core#FormKitNode).
+Returns a [FormKitNode](/api-reference/formkit-core#formkitnode).
 
 #### Examples
 
@@ -352,7 +352,7 @@ export declare function reset(id: string | FormKitNode, resetTo?: unknown): Form
 
 #### Returns
 
-[FormKitNode](/api-reference/formkit-core#FormKitNode) | undefined
+[FormKitNode](/api-reference/formkit-core#formkitnode) | undefined
 
 ### resetRegistry()
 
