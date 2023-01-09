@@ -4,7 +4,11 @@ title: formkit/inputs
 
 # @formkit/inputs
 
-## $attrs()
+<page-toc></page-toc>
+
+## Functions
+
+### $attrs()
 
 Applies attributes to a given schema section by applying a higher order function that merges a given set of attributes into the node.
 
@@ -28,7 +32,7 @@ A section to apply attributes to
 
 [FormKitSchemaExtendableSection](#FormKitSchemaExtendableSection)
 
-## $extend()
+### $extend()
 
 Extends a schema node with a given set of extensions.
 
@@ -52,7 +56,7 @@ A partial schema snippet to apply to the section.
 
 [FormKitSchemaExtendableSection](#FormKitSchemaExtendableSection)
 
-## $for()
+### $for()
 
 Applies a condition to a given schema section.
 
@@ -80,7 +84,7 @@ A section to repeat
 
 [FormKitSchemaExtendableSection](#FormKitSchemaExtendableSection)
 
-## $if()
+### $if()
 
 Applies a condition to a given schema section.
 
@@ -108,7 +112,7 @@ The section that applies if the condition is true.
 
 [FormKitSchemaExtendableSection](#FormKitSchemaExtendableSection)
 
-## $root()
+### $root()
 
 Creates a root schema section.
 
@@ -128,7 +132,7 @@ A section to make a root from.
 
 [FormKitSchemaExtendableSection](#FormKitSchemaExtendableSection)
 
-## checkboxes()
+### checkboxes()
 
 Adds checkbox selection support
 
@@ -144,7 +148,7 @@ export default function checkboxes(node: FormKitNode): void;
 
 Node the feature is added to
 
-## composable()
+### composable()
 
 ================================================================
 
@@ -168,7 +172,7 @@ The default schema in this composable slot.
 
 [FormKitSchemaComposable](/api-reference/formkit-core#FormKitSchemaComposable)
 
-## createLibraryPlugin()
+### createLibraryPlugin()
 
 #### Signature
 
@@ -186,7 +190,7 @@ One or many formkit urls.
 
 [FormKitPlugin](/api-reference/formkit-core#FormKitPlugin)
 
-## createSection()
+### createSection()
 
 #### Signature
 
@@ -202,7 +206,7 @@ export declare function createSection(section: string, el: string | null | (() =
 
 * `root`
 
-## createSection()
+### createSection()
 
 #### Signature
 
@@ -216,7 +220,7 @@ export declare function createSection(section: string, el: string | null | (() =
 
 * `el`
 
-## createSection()
+### createSection()
 
 #### Signature
 
@@ -232,7 +236,7 @@ export declare function createSection(section: string, el: string | (() => FormK
 
 * `root`
 
-## defaultIcon()
+### defaultIcon()
 
 #### Signature
 
@@ -250,7 +254,7 @@ the location the icon should be loaded
 
 the icon that should be loaded if a match is found in the user's CSS
 
-## disablesChildren()
+### disablesChildren()
 
 Allows disabling children of this.
 
@@ -266,7 +270,7 @@ export default function disables(node: FormKitNode): void;
 
 The FormKitNode of the form/group/list
 
-## extendSchema()
+### extendSchema()
 
 Extends a single schema node with an extension. The extension can be any partial node including strings.
 
@@ -290,7 +294,7 @@ The values to extend on the base schema node.
 
 [FormKitSchemaNode](/api-reference/formkit-core#FormKitSchemaNode)
 
-## files()
+### files()
 
 Feature to add file handling support to an input.
 
@@ -306,7 +310,7 @@ export default function files(node: FormKitNode): void;
 
 The node being checked
 
-## forms()
+### forms()
 
 Converts the options prop to usable values.
 
@@ -322,7 +326,7 @@ export default function form(node: FormKitNode): void;
 
 A formkit node.
 
-## ignores()
+### ignores()
 
 Applies ignore="true" by default.
 
@@ -338,7 +342,7 @@ export default function ignore(node: FormKitNode): void;
 
 The node
 
-## initialValue()
+### initialValue()
 
 Ensures the input has an `initialValue` prop.
 
@@ -354,7 +358,7 @@ export default function initialValue(node: FormKitNode): void;
 
 The node being given an initial value
 
-## isSchemaObject()
+### isSchemaObject()
 
 Type guard for schema objects.
 
@@ -374,7 +378,7 @@ returns true if the node is a schema node but not a string or conditional.
 
 `boolean`
 
-## isSlotCondition()
+### isSlotCondition()
 
 Checks if the current schema node is a slot condition like:
 
@@ -408,7 +412,7 @@ a schema node
 }
 ```
 
-## localize()
+### localize()
 
 Creates a new feature that generates a localization message of type ui for use on a given component.
 
@@ -430,7 +434,7 @@ The value of the message
 
 #### Returns
 
-## normalizeBoxes()
+### normalizeBoxes()
 
 Normalize the boxes.
 
@@ -451,7 +455,7 @@ The node
 
 #### Returns
 
-## normalizeOptions()
+### normalizeOptions()
 
 Accepts an array of objects, array of strings, or object of key-value pairs. and returns an array of objects with value and label properties.
 
@@ -471,7 +475,7 @@ Options to
 
 [FormKitOptionsList](#FormKitOptionsList)
 
-## options()
+### options()
 
 Converts the options prop to usable values.
 
@@ -487,7 +491,7 @@ export default function options(node: FormKitNode): void;
 
 A formkit node.
 
-## radios()
+### radios()
 
 Determines if a given radio input is being evaluated.
 
@@ -503,7 +507,7 @@ export default function radios(node: FormKitNode): void;
 
 The radio input group.
 
-## selects()
+### selects()
 
 Converts the options prop to usable values.
 
@@ -519,7 +523,7 @@ export default function select(node: FormKitNode): void;
 
 A formkit node.
 
-## useSchema()
+### useSchema()
 
 Creates an input schema with all of the wrapping base schema.
 
@@ -537,7 +541,9 @@ export declare function useSchema(inputSection: FormKitSection): FormKitExtendab
 
 [FormKitExtendableSchemaRoot](/api-reference/formkit-core#FormKitExtendableSchemaRoot)
 
-## FormKitFile
+## Typescript
+
+### FormKitFile
 
 A single file object in FormKit’s synthetic "FileList".
 
@@ -548,7 +554,7 @@ export interface FormKitFile {
 }
 ```
 
-## FormKitOptionsItem
+### FormKitOptionsItem
 
 Options should always be formatted as an array of objects with label and value properties.
 
@@ -564,7 +570,7 @@ export interface FormKitOptionsItem {
 }
 ```
 
-## FormKitOptionsPropExtensions
+### FormKitOptionsPropExtensions
 
 Allows for prop extensions to be defined by using an interface whose keys are ignored, but values are applied to a union type. This allows for any third party code to extend the options prop by using module augmentation to add new values to the union type.
 
@@ -577,7 +583,7 @@ export interface FormKitOptionsPropExtensions {
 }
 ```
 
-## FormKitSchemaExtendableSection
+### FormKitSchemaExtendableSection
 
 A function that is called with an extensions argument and returns a valid schema node.
 
@@ -588,7 +594,7 @@ export interface FormKitSchemaExtendableSection {
 }
 ```
 
-## FormKitSection
+### FormKitSection
 
 A function that when called, returns a function that can in turn be called with an extension parameter.
 
@@ -598,7 +604,7 @@ export interface FormKitSection<T = FormKitSchemaExtendableSection> {
 }
 ```
 
-## FormKitSyntheticPropsExtensions
+### FormKitSyntheticPropsExtensions
 
 Synthetic props are props that are not explicitly declared as props, but should be treated as props to the outside world.
 
@@ -623,7 +629,7 @@ export interface FormKitSyntheticPropsExtensions {
 }
 ```
 
-## FormKitFileValue
+### FormKitFileValue
 
 A synthetic array-based "FileList".
 
@@ -631,7 +637,7 @@ A synthetic array-based "FileList".
 export declare type FormKitFileValue = FormKitFile[];
 ```
 
-## FormKitInputSchema
+### FormKitInputSchema
 
 Either a schema node, or a function that returns a schema node.
 
@@ -639,7 +645,7 @@ Either a schema node, or a function that returns a schema node.
 export declare type FormKitInputSchema = ((children?: string | FormKitSchemaNode[] | FormKitSchemaCondition) => FormKitSchemaNode) | FormKitSchemaNode;
 ```
 
-## FormKitOptionsList
+### FormKitOptionsList
 
 An array of option items.
 
@@ -647,7 +653,7 @@ An array of option items.
 export declare type FormKitOptionsList = FormKitOptionsItem[];
 ```
 
-## FormKitOptionsProp
+### FormKitOptionsProp
 
 The types of options that can be passed to the options prop.
 
@@ -655,7 +661,7 @@ The types of options that can be passed to the options prop.
 export declare type FormKitOptionsProp = FormKitOptionsPropExtensions[keyof FormKitOptionsPropExtensions];
 ```
 
-## FormKitSyntheticProps
+### FormKitSyntheticProps
 
 The synthetic prop types.
 

@@ -4,7 +4,11 @@ title: formkit/i18n
 
 # @formkit/i18n
 
-## createI18nPlugin()
+<page-toc></page-toc>
+
+## Functions
+
+### createI18nPlugin()
 
 Create a new internationalization plugin for FormKit.
 
@@ -22,7 +26,7 @@ export declare function createI18nPlugin(registry: FormKitLocaleRegistry): FormK
 
 [FormKitPlugin](/api-reference/formkit-core#FormKitPlugin)
 
-## date()
+### date()
 
 Given a string or a date return a nice human-readable version.
 
@@ -42,7 +46,7 @@ A string or a date.
 
 `string`
 
-## list()
+### list()
 
 Creates an oxford-comma separated list of items.
 
@@ -64,7 +68,7 @@ in: x, y, and z "and" is the conjunction to use
 
 `string`
 
-## order()
+### order()
 
 Orders two variables smallest to largest.
 
@@ -88,7 +92,7 @@ Second argument
 
 `[smaller: number | string, larger: number | string]`
 
-## sentence()
+### sentence()
 
 Given a string, convert it to sentence case.
 
@@ -106,7 +110,9 @@ export declare function sentence(str: string): string;
 
 `string`
 
-## FormKitLocale
+## Typescript
+
+### FormKitLocale
 
 A locale is just a collection of locale message registries, they are keyed by the type (like a namespace) ex: "validation" or "ui". Plugin authors can declare their own types too.
 
@@ -117,7 +123,7 @@ export interface FormKitLocale {
 }
 ```
 
-## FormKitLocaleMessages
+### FormKitLocaleMessages
 
 A registry of locale messages — this is simply a keyed/value object with string keys (message name) and either string values (for simple returns) or functions that receive a context object.
 
@@ -127,7 +133,7 @@ export interface FormKitLocaleMessages {
 }
 ```
 
-## FormKitLocaleRegistry
+### FormKitLocaleRegistry
 
 The locale registry is just a key-value pair of locales to their respective registries.
 

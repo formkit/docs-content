@@ -4,7 +4,11 @@ title: formkit/observer
 
 # @formkit/observer
 
-## applyListeners()
+<page-toc></page-toc>
+
+## Functions
+
+### applyListeners()
 
 Given two maps (toAdd and toRemove) apply the dependencies as event listeners on the underlying nodes.
 
@@ -24,7 +28,7 @@ The node to apply dependencies to
 
 * `callback`
 
-## createObserver()
+### createObserver()
 
 The FormKitNode to observe.
 
@@ -44,7 +48,7 @@ Any formkit node to observe.
 
 #### Returns
 
-## diffDeps()
+### diffDeps()
 
 Determines which nodes should be added as dependencies and which should be removed.
 
@@ -66,7 +70,7 @@ The new/current watcher dependencies
 
 #### Returns
 
-## isKilled()
+### isKilled()
 
 Checks if the given noe is revoked.
 
@@ -84,7 +88,7 @@ Any observed node to check.
 
 #### Returns
 
-## removeListeners()
+### removeListeners()
 
 Remove all the receipts from the observed node and subtree.
 
@@ -100,7 +104,9 @@ export declare function removeListeners(receipts: FormKitObserverReceipts): void
 
 The formkit observer receipts to remove
 
-## FormKitObservedNode
+## Typescript
+
+### FormKitObservedNode
 
 An API compatible FormKitNode that is able to determine the full dependency tree of nodes and their values.
 
@@ -115,7 +121,7 @@ export interface FormKitObservedNode extends FormKitNode {
 }
 ```
 
-## FormKitWatchable
+### FormKitWatchable
 
 A callback to watch for nodes.
 

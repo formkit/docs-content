@@ -8,7 +8,11 @@ Common, optional, first-party add on features for FormKit.
 
 You can add this package by using `npm install @formkit/addons` or `yarn add @formkit/addons`.
 
-## createAutoAnimatePlugin()
+<page-toc></page-toc>
+
+## Functions
+
+### createAutoAnimatePlugin()
 
 Adds auto-animate to each input automatically:
 

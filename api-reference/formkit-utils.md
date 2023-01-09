@@ -8,7 +8,11 @@ Commonly shared utility functions between official FormKit packages.
 
 You can add this package by using `npm install @formkit/utils` or `yarn add @formkit/utils`.
 
-## assignDeep()
+<page-toc></page-toc>
+
+## Functions
+
+### assignDeep()
 
 Performs a recursive Object.assign like operation.
 
@@ -28,7 +32,7 @@ export declare function assignDeep<A extends Record<PropertyKey, any>, B extends
 
 A & B
 
-## camel()
+### camel()
 
 This converts kebab-case to camelCase. It ONLY converts from kebab for efficiency stake.
 
@@ -46,7 +50,7 @@ export declare function camel(str: string): string;
 
 string
 
-## clone()
+### clone()
 
 Perform a recursive clone on a given object. This only intended to be used for simple objects like arrays and pojos.
 
@@ -66,7 +70,7 @@ export declare function clone<T extends Record<string, unknown> | unknown[] | nu
 
 T
 
-## cloneAny()
+### cloneAny()
 
 Clones anything. If the item is scalar, no worries, it passes it back. if it is an object, it performs a (fast/loose) clone operation.
 
@@ -84,7 +88,7 @@ export declare function cloneAny<T>(obj: T): T;
 
 T
 
-## dedupe()
+### dedupe()
 
 Given 2 arrays, return them as a combined array with no duplicates.
 
@@ -104,7 +108,7 @@ export declare function dedupe<T extends any[] | Set<any>, X extends any[] | Set
 
 any[]
 
-## empty()
+### empty()
 
 Determines if a value is empty or not.
 
@@ -122,7 +126,7 @@ export declare function empty(value: any): boolean;
 
 boolean
 
-## eq()
+### eq()
 
 Compare two values for equality optionally at depth.
 
@@ -146,7 +150,7 @@ export declare function eq(valA: any, valB: any, deep?: boolean, explicit?: stri
 
 boolean
 
-## escapeExp()
+### escapeExp()
 
 Escape a string for use in regular expressions.
 
@@ -164,7 +168,7 @@ export declare function escapeExp(string: string): string;
 
 string
 
-## except()
+### except()
 
 Return a new (shallow) object with all properties from a given object that are present in the array.
 
@@ -184,7 +188,7 @@ export declare function except(obj: Record<string, any>, toRemove: Array<string 
 
 Record<string, any>
 
-## extend()
+### extend()
 
 Recursively merge data from additional into original returning a new object.
 
@@ -208,7 +212,7 @@ export declare function extend(original: Record<string, any>, additional: Record
 
 Record<string, any> | string | null
 
-## getAt()
+### getAt()
 
 Get a specific value via dot notation.
 
@@ -228,7 +232,7 @@ An object to fetch data from
 
 An "address" in dot notation
 
-## has()
+### has()
 
 Checks if the given property exists on the given object.
 
@@ -251,7 +255,7 @@ export declare function has(obj: {
 
 boolean
 
-## init()
+### init()
 
 Defines an object as an initial value.
 
@@ -271,7 +275,7 @@ export declare function init<T extends object>(obj: T): T & {
 
 T & { __init?: true }
 
-## isObject()
+### isObject()
 
 Checks if an object is a simple array or record.
 
@@ -289,7 +293,7 @@ export declare function isObject(o: unknown): o is Record<PropertyKey, unknown> 
 
 boolean
 
-## isPojo()
+### isPojo()
 
 Attempts to determine if an object is a plain object. Mostly lifted from is-plain-object: https://github.com/jonschlinkert/is-plain-object Copyright (c) 2014-2017, Jon Schlinkert.
 
@@ -307,7 +311,7 @@ export declare function isPojo(o: any): o is Record<string, any>;
 
 boolean
 
-## isQuotedString()
+### isQuotedString()
 
 Determine if the given string is fully quoted.
 
@@ -338,7 +342,7 @@ hello - false
 'hello === world' - true
 ```
 
-## isRecord()
+### isRecord()
 
 Determines if an object is an object or not.
 
@@ -356,7 +360,7 @@ export declare function isRecord(o: unknown): o is Record<PropertyKey, unknown>;
 
 boolean
 
-## kebab()
+### kebab()
 
 This converts camel-case to kebab case. It ONLY converts from camel to kebab.
 
@@ -374,7 +378,7 @@ export declare function kebab(str: string): string;
 
 string
 
-## nodeProps()
+### nodeProps()
 
 Filters out values from an object that should not be considered "props" of a core node, like "value" and "name".
 
@@ -392,7 +396,7 @@ export declare function nodeProps(...sets: Array<Record<string, any>>): Record<s
 
 Record<string, any>
 
-## nodeType()
+### nodeType()
 
 Given a FormKit input type returns the correct type
 
@@ -410,7 +414,7 @@ export declare function nodeType(type: string): 'list' | 'group' | 'input';
 
 'list' | 'group' | 'input'
 
-## only()
+### only()
 
 Extracts a set of keys from a given object. Importantly, this will extract values even if they are not set on the original object they will just have an undefined value.
 
@@ -430,7 +434,7 @@ export declare function only(obj: Record<string, any>, include: Array<string | R
 
 Record<string, any>
 
-## parseArgs()
+### parseArgs()
 
 Parse a string for comma-separated arguments
 
@@ -448,7 +452,7 @@ export declare function parseArgs(str: string): string[];
 
 string[]
 
-## regexForFormat()
+### regexForFormat()
 
 Given a string format (date) return a regex to match against.
 
@@ -464,7 +468,7 @@ export declare function regexForFormat(format: string): RegExp;
 
 #### Returns
 
-## rmEscapes()
+### rmEscapes()
 
 Remove extra escape characters.
 
@@ -482,7 +486,7 @@ export declare function rmEscapes(str: string): string;
 
 string
 
-## setify()
+### setify()
 
 Creates a new set of the specified type and uses the values from an Array or an existing Set.
 
@@ -509,7 +513,7 @@ const tk = setify(['a', 'b'])
 // Set(2) {'a', 'b'}
 ```
 
-## shallowClone()
+### shallowClone()
 
 Very shallowly clones the given object.
 
@@ -529,7 +533,7 @@ export declare function shallowClone<T>(obj: T, explicit?: string[]): T;
 
 T
 
-## slugify()
+### slugify()
 
 Turn any string into a URL/DOM safe string.
 
@@ -547,7 +551,7 @@ export declare function slugify(str: string): string;
 
 string
 
-## spread()
+### spread()
 
 Spreads an object or an array, otherwise returns the same value.
 
@@ -567,7 +571,7 @@ export declare function spread<T>(obj: T, explicit?: string[]): T;
 
 T
 
-## token()
+### token()
 
 Generates a random string.
 
@@ -590,7 +594,7 @@ const tk = token()
 // 'jkbyqnphqm'
 ```
 
-## undefine()
+### undefine()
 
 Determines if the value of a prop that is either present (true) or not present (undefined). For example the prop disabled should disable by just existing, but what if it is set to the string "false" — then it should not be disabled.
 
@@ -608,7 +612,9 @@ export declare function undefine(value: unknown): true | undefined;
 
 true | undefined
 
-## FormKitDateTokens
+## Typescript
+
+### FormKitDateTokens
 
 The date token strings that can be used for date formatting.
 

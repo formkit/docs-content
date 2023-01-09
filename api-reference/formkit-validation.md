@@ -4,7 +4,11 @@ title: formkit/validation
 
 # @formkit/validation
 
-## createValidationPlugin()
+<page-toc></page-toc>
+
+## Functions
+
+### createValidationPlugin()
 
 The actual validation plugin function, everything must be bootstrapped here.
 
@@ -18,7 +22,7 @@ export declare function createValidationPlugin(baseRules?: FormKitValidationRule
 
 * `baseRules` *optional*
 
-## getValidationMessages()
+### getValidationMessages()
 
 Extracts all validation messages from the given node and all its descendants. This is not reactive and must be re called each time the messages change.
 
@@ -34,7 +38,9 @@ export declare function getValidationMessages(node: FormKitNode): Map<FormKitNod
 
 The FormKit node to extract validation rules from — as well as its descendants.
 
-## FormKitValidationMessages
+## Typescript
+
+### FormKitValidationMessages
 
 The interface for the localized validation message registry.
 
@@ -44,7 +50,7 @@ export interface FormKitValidationMessages {
 }
 ```
 
-## FormKitValidationRules
+### FormKitValidationRules
 
 FormKit validation rules are structured as on object of key/function pairs where the key of the object is the validation rule name.
 
@@ -54,7 +60,7 @@ export interface FormKitValidationRules {
 }
 ```
 
-## FormKitValidation
+### FormKitValidation
 
 Defines what fully parsed validation rules look like.
 
@@ -69,7 +75,7 @@ export declare type FormKitValidation = {
 } & FormKitValidationHints;
 ```
 
-## FormKitValidationIntent
+### FormKitValidationIntent
 
 Defines what validation rules look like when they are parsed, but have not necessarily had validation rules substituted in yet.
 
@@ -77,7 +83,7 @@ Defines what validation rules look like when they are parsed, but have not neces
 export declare type FormKitValidationIntent = [string | FormKitValidationRule, ...any[]];
 ```
 
-## FormKitValidationRule
+### FormKitValidationRule
 
 Signature for a generic validation rule. It accepts an input, often a string but validation rules should be able to accept any input type, and returns a boolean indicating whether or not it passed validation.
 

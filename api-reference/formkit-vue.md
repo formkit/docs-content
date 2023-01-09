@@ -4,7 +4,11 @@ title: formkit/vue
 
 # @formkit/vue
 
-## createInput()
+<page-toc></page-toc>
+
+## Functions
+
+### createInput()
 
 Creates a new input from schema or a Vue component with the "standard" FormKit features in place such as labels, help text, validation messages, and class support.
 
@@ -26,7 +30,7 @@ The actual schema of the input.
 
 [FormKitTypeDefinition](/api-reference/formkit-core#FormKitTypeDefinition)
 
-## useInput()
+### useInput()
 
 A composable for creating a new FormKit node.
 
@@ -48,7 +52,7 @@ export declare function useInput(props: FormKitComponentProps, context: SetupCon
 
 [FormKitNode](/api-reference/formkit-core#FormKitNode)
 
-## watchVerbose()
+### watchVerbose()
 
 A special watcher for Vue that reports the location of a deep mutation.
 
@@ -68,7 +72,9 @@ An object to observe at depth
 
 A callback that
 
-## FormKitVuePlugin
+## Typescript
+
+### FormKitVuePlugin
 
 The global instance of the FormKit plugin.
 
@@ -83,7 +89,7 @@ export interface FormKitVuePlugin {
 }
 ```
 
-## DefaultConfigOptions
+### DefaultConfigOptions
 
 The allowed options for defaultConfig.
 

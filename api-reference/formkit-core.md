@@ -8,7 +8,11 @@ The official FormKit core library. This package is responsible for most of FormK
 
 You can add this package by using `npm install @formkit/core` or `yarn add @formkit/core`.
 
-## bfs()
+<page-toc></page-toc>
+
+## Functions
+
+### bfs()
 
 Perform a breadth-first-search on a node subtree and locate the first instance of a match.
 
@@ -30,7 +34,7 @@ export declare function bfs(tree: FormKitNode, searchValue: string | number, sea
 
 Returns a [FormKitNode](#FormKitNode) or `undefined` if not found.
 
-## compile()
+### compile()
 
 Compiles a logical string like "a != z || b == c" into a single function. The return value is an object with a "provide" method that iterates over all requirement tokens to use as replacements.
 
@@ -63,7 +67,7 @@ const condition = compile("$name == 'bob'").provide((token) => {
 condition() // false
 ```
 
-## createClasses()
+### createClasses()
 
 Function that produces a standardized object representation of CSS classes
 
@@ -87,7 +91,7 @@ FormKit node
 
 Things to turn into classes
 
-## createConfig()
+### createConfig()
 
 Creates a new instance of a global configuration option. This object is essentially just a FormKitOption object, but it can be used as the root for FormKitConfig's proxy and retain event "emitting".
 
@@ -103,7 +107,7 @@ export declare function createConfig(options?: Partial<FormKitConfig>): FormKitR
 
 FormKit node options to be used globally.
 
-## createMessage()
+### createMessage()
 
 Creates a new FormKitMessage object.
 
@@ -125,7 +129,7 @@ The message configuration
 
 FormKitMessage
 
-## createNode()
+### createNode()
 
 Creates a new instance of a FormKit Node. Nodes are the atomic unit of a FormKit graph:
 
@@ -157,7 +161,7 @@ console.log(input.value)
 // 'hello node world'
 ```
 
-## deregister()
+### deregister()
 
 Deregister a node from the registry.
 
@@ -173,7 +177,7 @@ export declare function deregister(node: FormKitNode): void;
 
 A node to remove
 
-## error()
+### error()
 
 Emits an error, generally should result in an exception.
 
@@ -193,7 +197,7 @@ The integer error code.
 
 Usually an object of information to include.
 
-## generateClassList()
+### generateClassList()
 
 Combines multiple class lists into a single list
 
@@ -217,7 +221,7 @@ The property key to which the class list will be applied
 
 CSS class list(s)
 
-## getNode()
+### getNode()
 
 Get a node by a particular id.
 
@@ -231,7 +235,7 @@ export declare function getNode(id: string): FormKitNode | undefined;
 
 * `id`
 
-## isComponent()
+### isComponent()
 
 Type narrow that a node is a DOM node.
 
@@ -251,7 +255,7 @@ A schema node to check
 
 `boolean`
 
-## isDOM()
+### isDOM()
 
 Type narrow that a node is a DOM node.
 
@@ -271,7 +275,7 @@ A schema node to check
 
 `boolean`
 
-## isList()
+### isList()
 
 A simple type guard to determine if the context being evaluated is a list type.
 
@@ -289,7 +293,7 @@ export declare function isList(arg: FormKitContextShape): arg is FormKitListCont
 
 Returns a `boolean`.
 
-## isNode()
+### isNode()
 
 Determine if a given object is a node:
 
@@ -326,7 +330,7 @@ isNode(input)
 // true
 ```
 
-## isSugar()
+### isSugar()
 
 Determines if the node is syntactic sugar or not.
 
@@ -346,7 +350,7 @@ Node
 
 `booleana`
 
-## register()
+### register()
 
 Registers a node to the registry _if_ the node is a root node, _or_ if the node has an explicit node.props.alias. If these two things are not true then no node is registered (idempotent).
 
@@ -362,7 +366,7 @@ export declare function register(node: FormKitNode): void;
 
 A node to register
 
-## reset()
+### reset()
 
 Resets an input to it’s "initial" value — if the input is a group or list it resets all the children as well.
 
@@ -384,7 +388,7 @@ The id of an input to reset
 
 [FormKitNode](/api-reference/formkit-core#FormKitNode) | undefined
 
-## resetRegistry()
+### resetRegistry()
 
 Reset the entire registry.
 
@@ -394,7 +398,7 @@ Reset the entire registry.
 export declare function resetRegistry(): void;
 ```
 
-## setErrors()
+### setErrors()
 
 Sets errors on a form, group, or input.
 
@@ -416,7 +420,7 @@ The errors to set on the form or the form’s inputs
 
 (optional) The errors to set on the form or the form’s inputs
 
-## submitForm()
+### submitForm()
 
 Submits a FormKit form programmatically.
 
@@ -432,7 +436,7 @@ export declare function submitForm(id: string): void;
 
 The id of the form
 
-## sugar()
+### sugar()
 
 Converts syntactic sugar nodes to standard nodes.
 
@@ -448,7 +452,7 @@ export declare function sugar<T extends FormKitSchemaNode>(node: T): Exclude<For
 
 A node to covert
 
-## warn()
+### warn()
 
 Globally emits a warning.
 
@@ -468,7 +472,7 @@ The integer error code.
 
 Usually an object of information to include.
 
-## watchRegistry()
+### watchRegistry()
 
 #### Signature
 
@@ -486,7 +490,9 @@ An id to watch
 
 A callback to notify when the node is set or removed.
 
-## FormKitChildCallback
+## Typescript
+
+### FormKitChildCallback
 
 The callback type for node.each()
 
@@ -496,7 +502,7 @@ export interface FormKitChildCallback {
 }
 ```
 
-## FormKitChildValue
+### FormKitChildValue
 
 A descriptor of a child value, generally passed up a node tree.
 
@@ -508,7 +514,7 @@ export interface FormKitChildValue {
 }
 ```
 
-## FormKitClasses
+### FormKitClasses
 
 Definition for a function that produces CSS classes
 
@@ -518,7 +524,7 @@ export interface FormKitClasses {
 }
 ```
 
-## FormKitCompilerOutput
+### FormKitCompilerOutput
 
 The compiler output, a function that adds the required tokens.
 
@@ -529,7 +535,7 @@ export interface FormKitCompilerOutput {
 }
 ```
 
-## FormKitConfig
+### FormKitConfig
 
 General "app" like configuration options, these are automatically inherited by all children — they are not reactive.
 
@@ -543,7 +549,7 @@ export interface FormKitConfig {
 }
 ```
 
-## FormKitContext
+### FormKitContext
 
 The interface of the a FormKit node's context object. A FormKit node is a proxy of this object.
 
@@ -573,7 +579,7 @@ export interface FormKitContext {
 }
 ```
 
-## FormKitContextShape
+### FormKitContextShape
 
 Define the most basic shape of a context object for type guards trying to reason about a context's value.
 
@@ -585,7 +591,7 @@ export interface FormKitContextShape {
 }
 ```
 
-## FormKitCounter
+### FormKitCounter
 
 The counter object used to perform instance counting within a tree.
 
@@ -600,7 +606,7 @@ export interface FormKitCounter {
 }
 ```
 
-## FormKitCounterCondition
+### FormKitCounterCondition
 
 Ledger counters require a condition function that determines if a given message applies to it or not.
 
@@ -610,7 +616,7 @@ export interface FormKitCounterCondition {
 }
 ```
 
-## FormKitDispatcher
+### FormKitDispatcher
 
 The FormKitDispatcher interface is responsible creating/running "hooks".
 
@@ -623,7 +629,7 @@ export interface FormKitDispatcher<T> {
 }
 ```
 
-## FormKitEvent
+### FormKitEvent
 
 The internal structure of a FormKitEvent
 
@@ -636,7 +642,7 @@ export interface FormKitEvent {
 }
 ```
 
-## FormKitEventEmitter
+### FormKitEventEmitter
 
 The FormKitEventEmitter definition.
 
@@ -650,7 +656,7 @@ export interface FormKitEventEmitter {
 }
 ```
 
-## FormKitEventListener
+### FormKitEventListener
 
 Event listener functions definition.
 
@@ -661,7 +667,7 @@ export interface FormKitEventListener {
 }
 ```
 
-## FormKitExtendableSchemaRoot
+### FormKitExtendableSchemaRoot
 
 Defines a function that allows selectively overriding a given schema.
 
@@ -671,7 +677,7 @@ export interface FormKitExtendableSchemaRoot {
 }
 ```
 
-## FormKitFrameworkContext
+### FormKitFrameworkContext
 
 Context object to be created by and used by each respective UI framework. No values are created or output by FormKitCore, but this interface should be followed by each respective plugin.
 
@@ -702,7 +708,7 @@ export interface FormKitFrameworkContext {
 }
 ```
 
-## FormKitFrameworkContextState
+### FormKitFrameworkContextState
 
 The state inside a node’s framework context. Usually used to track things like blurred, and validity states.
 
@@ -721,7 +727,7 @@ export interface FormKitFrameworkContextState {
 }
 ```
 
-## FormKitGroupValue
+### FormKitGroupValue
 
 FormKit inputs of type 'group' must have keyed values by default.
 
@@ -732,7 +738,7 @@ export interface FormKitGroupValue {
 }
 ```
 
-## FormKitHandlerPayload
+### FormKitHandlerPayload
 
 Describes the data passing through the error and warning handlers.
 
@@ -744,7 +750,7 @@ export interface FormKitHandlerPayload {
 }
 ```
 
-## FormKitHooks
+### FormKitHooks
 
 The available hooks for middleware.
 
@@ -773,7 +779,7 @@ export interface FormKitHooks {
 }
 ```
 
-## FormKitLedger
+### FormKitLedger
 
 The FormKit ledger, a general-purpose message counting service provided by FormKit core for counting messages throughout a tree.
 
@@ -788,7 +794,7 @@ export interface FormKitLedger {
 }
 ```
 
-## FormKitLibrary
+### FormKitLibrary
 
 A library of inputs, keyed by the name of the type.
 
@@ -798,7 +804,7 @@ export interface FormKitLibrary {
 }
 ```
 
-## FormKitListContext
+### FormKitListContext
 
 The simplest definition for a context of type "list".
 
@@ -810,7 +816,7 @@ export interface FormKitListContext {
 }
 ```
 
-## FormKitMessageMeta
+### FormKitMessageMeta
 
 Messages have can have any arbitrary meta data attached to them.
 
@@ -822,7 +828,7 @@ export interface FormKitMessageMeta {
 }
 ```
 
-## FormKitMessageProps
+### FormKitMessageProps
 
 The structure of an core FormKitMessage. These messages are used to store information about the state of a node.
 
@@ -837,7 +843,7 @@ export interface FormKitMessageProps {
 }
 ```
 
-## FormKitMessageStore
+### FormKitMessageStore
 
 Defines the actual store of messages (private).
 
@@ -847,7 +853,7 @@ export interface FormKitMessageStore {
 }
 ```
 
-## FormKitPlugin
+### FormKitPlugin
 
 The base interface definition for a FormKitPlugin — it's just a function that accepts a node argument.
 
@@ -858,7 +864,7 @@ export interface FormKitPlugin {
 }
 ```
 
-## FormKitSchemaAttributesCondition
+### FormKitSchemaAttributesCondition
 
 Conditions nested inside attribute declarations
 
@@ -870,7 +876,7 @@ export interface FormKitSchemaAttributesCondition {
 }
 ```
 
-## FormKitSchemaComposable
+### FormKitSchemaComposable
 
 Definition for a function that can extend a given schema node.
 
@@ -880,7 +886,7 @@ export interface FormKitSchemaComposable {
 }
 ```
 
-## FormKitSchemaContext
+### FormKitSchemaContext
 
 The context that is passed from one schema render to the next.
 
@@ -891,7 +897,7 @@ export interface FormKitSchemaContext {
 }
 ```
 
-## FormKitSchemaProps
+### FormKitSchemaProps
 
 Properties available in all schema nodes.
 
@@ -906,7 +912,7 @@ export interface FormKitSchemaProps {
 }
 ```
 
-## FormKitTrap
+### FormKitTrap
 
 The definition of a FormKitTrap — these are somewhat like methods on each FormKitNode — they are always symmetrical (get/set), although it's acceptable for either to throw an Exception.
 
@@ -917,7 +923,7 @@ export interface FormKitTrap {
 }
 ```
 
-## KeyedValue
+### KeyedValue
 
 Arbitrary data that has properties, could be a pojo, could be an array.
 
@@ -928,7 +934,7 @@ export interface KeyedValue {
 }
 ```
 
-## FormKitAddress
+### FormKitAddress
 
 Describes the path to a particular node from the top of the tree.
 
@@ -936,7 +942,7 @@ Describes the path to a particular node from the top of the tree.
 export declare type FormKitAddress = Array<string | number>;
 ```
 
-## FormKitAttributeValue
+### FormKitAttributeValue
 
 The possible value types of attributes (in the schema)
 
@@ -944,7 +950,7 @@ The possible value types of attributes (in the schema)
 export declare type FormKitAttributeValue = string | number | boolean | undefined | FormKitSchemaAttributes | FormKitSchemaAttributesCondition;
 ```
 
-## FormKitCompilerProvider
+### FormKitCompilerProvider
 
 A function that accepts a callback with a token as the only argument, and must return a function that provides the true value of the token.
 
@@ -952,7 +958,7 @@ A function that accepts a callback with a token as the only argument, and must r
 export declare type FormKitCompilerProvider = (callback: (requirements: string[]) => Record<string, () => any>) => FormKitCompilerOutput;
 ```
 
-## FormKitListStatement
+### FormKitListStatement
 
 A full loop statement in tuple syntax. Can be read like "foreach value, key? in list"
 
@@ -960,7 +966,7 @@ A full loop statement in tuple syntax. Can be read like "foreach value, key? in 
 export declare type FormKitListStatement = [value: any, key: number | string, list: FormKitListValue] | [value: any, list: FormKitListValue];
 ```
 
-## FormKitListValue
+### FormKitListValue
 
 The value being listed out. Can be an array, an object, or a number.
 
@@ -968,7 +974,7 @@ The value being listed out. Can be an array, an object, or a number.
 export declare type FormKitListValue = string | Record<string, any> | Array<string | number | Record<string, any>> | number;
 ```
 
-## FormKitMessage
+### FormKitMessage
 
 A FormKit message is immutable, so all properties should be readonly.
 
@@ -976,7 +982,7 @@ A FormKit message is immutable, so all properties should be readonly.
 export declare type FormKitMessage = Readonly<FormKitMessageProps>;
 ```
 
-## FormKitMiddleware
+### FormKitMiddleware
 
 All FormKitMiddleware conform to the pattern of accepting a payload and a `next()` function. They can either pass the payload to the next middleware explicitly (as an argument of next), or implicitly (no argument for next).
 
@@ -984,7 +990,7 @@ All FormKitMiddleware conform to the pattern of accepting a payload and a `next(
 export declare type FormKitMiddleware<T = unknown> = (payload: T, next: (payload?: T) => T) => T;
 ```
 
-## FormKitNode
+### FormKitNode
 
 FormKit's Node object produced by createNode(). All inputs, forms, and groups are instances of nodes.
 
@@ -1027,7 +1033,7 @@ export declare type FormKitNode = {
 } & Omit<FormKitContext, 'value' | 'name' | 'config'>;
 ```
 
-## FormKitNodeType
+### FormKitNodeType
 
 These are the type of nodes that can be created — these are different from the type of inputs available and rather describe their purpose in the tree.
 
@@ -1035,7 +1041,7 @@ These are the type of nodes that can be created — these are different from the
 export declare type FormKitNodeType = 'input' | 'list' | 'group';
 ```
 
-## FormKitOptions
+### FormKitOptions
 
 Options that can be used to instantiate a new node via createNode()
 
@@ -1051,7 +1057,7 @@ export declare type FormKitOptions = Partial<Omit<FormKitContext, 'children' | '
 }>;
 ```
 
-## FormKitProps
+### FormKitProps
 
 The user-land per-instance "props", which are generally akin to the props passed into components on the front end.
 
@@ -1071,7 +1077,7 @@ export declare type FormKitProps = {
 } & FormKitConfig;
 ```
 
-## FormKitSchemaAttributes
+### FormKitSchemaAttributes
 
 DOM attributes are simple string dictionaries.
 
@@ -1081,7 +1087,7 @@ export declare type FormKitSchemaAttributes = {
 } | null | FormKitSchemaAttributesCondition;
 ```
 
-## FormKitSchemaComponent
+### FormKitSchemaComponent
 
 Properties available when defining a generic non-formkit component.
 
@@ -1092,7 +1098,7 @@ export declare type FormKitSchemaComponent = {
 } & FormKitSchemaProps;
 ```
 
-## FormKitSchemaCondition
+### FormKitSchemaCondition
 
 A schema node that determines _which_ content to render.
 
@@ -1104,7 +1110,7 @@ export declare type FormKitSchemaCondition = {
 };
 ```
 
-## FormKitSchemaDOMNode
+### FormKitSchemaDOMNode
 
 Properties available when using a DOM node.
 
@@ -1115,7 +1121,7 @@ export declare type FormKitSchemaDOMNode = {
 } & FormKitSchemaProps;
 ```
 
-## FormKitSchemaFormKit
+### FormKitSchemaFormKit
 
 Syntactic sugar for a FormKitSchemaComponent node that uses formkit.
 
@@ -1125,7 +1131,7 @@ export declare type FormKitSchemaFormKit = {
 } & Record<string, any> & FormKitSchemaProps;
 ```
 
-## FormKitSchemaNode
+### FormKitSchemaNode
 
 Properties available then defining a schema node.
 
@@ -1133,7 +1139,7 @@ Properties available then defining a schema node.
 export declare type FormKitSchemaNode = FormKitSchemaDOMNode | FormKitSchemaComponent | FormKitSchemaTextNode | FormKitSchemaCondition | FormKitSchemaFormKit;
 ```
 
-## FormKitSchemaTextNode
+### FormKitSchemaTextNode
 
 A simple text node.
 
@@ -1141,7 +1147,7 @@ A simple text node.
 export declare type FormKitSchemaTextNode = string;
 ```
 
-## FormKitSearchFunction
+### FormKitSearchFunction
 
 Breadth and Depth first searches can use a callback of this notation.
 
@@ -1149,7 +1155,7 @@ Breadth and Depth first searches can use a callback of this notation.
 export declare type FormKitSearchFunction = (node: FormKitNode, searchTerm?: string | number) => boolean;
 ```
 
-## FormKitStore
+### FormKitStore
 
 The message store contains all of the messages that pertain to a given node.
 
@@ -1163,7 +1169,7 @@ export declare type FormKitStore = FormKitMessageStore & {
 } & FormKitStoreTraps;
 ```
 
-## FormKitTextFragment
+### FormKitTextFragment
 
 Text fragments are small pieces of text used for things like interface validation messages, or errors that may be exposed for modification or even translation.
 
@@ -1175,7 +1181,7 @@ export declare type FormKitTextFragment = Partial<FormKitMessageProps> & {
 };
 ```
 
-## FormKitTraps
+### FormKitTraps
 
 The map signature for a node's traps Map.
 
@@ -1183,7 +1189,7 @@ The map signature for a node's traps Map.
 export declare type FormKitTraps = Map<string | symbol, FormKitTrap>;
 ```
 
-## FormKitTypeDefinition
+### FormKitTypeDefinition
 
 Definition of a library item — when registering a new library item, these are the required and available properties.
 
@@ -1200,7 +1206,7 @@ export declare type FormKitTypeDefinition = {
 };
 ```
 
-## TrapGetter
+### TrapGetter
 
 Signature for any of the node's getter traps. Keep in mind that because these are traps and not class methods, their response types are declared explicitly in the FormKitNode interface.
 
@@ -1208,7 +1214,7 @@ Signature for any of the node's getter traps. Keep in mind that because these ar
 export declare type TrapGetter = ((node: FormKitNode, context: FormKitContext, ...args: any[]) => unknown) | false;
 ```
 
-## TrapSetter
+### TrapSetter
 
 The signature for a node's trap setter — these are more rare than getter traps, but can be really useful for blocking access to certain context properties or modifying the behavior of an assignment (ex. see setParent)
 

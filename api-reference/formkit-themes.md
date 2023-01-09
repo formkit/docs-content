@@ -4,7 +4,11 @@ title: formkit/themes
 
 # @formkit/themes
 
-## createIconHandler()
+<page-toc></page-toc>
+
+## Functions
+
+### createIconHandler()
 
 Returns a function responsible for loading an icon by name
 
@@ -22,7 +26,7 @@ a function for loading an icon when it's not found in the iconRegistry
 
 * `iconLoaderUrl` *optional*
 
-## createThemePlugin()
+### createThemePlugin()
 
 Creates the theme plugin based on a given theme name
 
@@ -48,7 +52,7 @@ Icons you want to add to the global icon registry
 
 A function that handles loading an icon when it is not found in the registry
 
-## generateClasses()
+### generateClasses()
 
 A function to generate FormKit class functions from a javascript object
 
@@ -68,7 +72,9 @@ An object of input types with nested objects of sectionKeys and class lists
 
 FormKitClassFunctions
 
-## FormKitIconLoader
+## Typescript
+
+### FormKitIconLoader
 
 A function that returns an icon SVG string
 
@@ -78,7 +84,7 @@ export interface FormKitIconLoader {
 }
 ```
 
-## FormKitIconLoaderUrl
+### FormKitIconLoaderUrl
 
 A function that returns a remote url for retrieving an SVG icon by name
 
