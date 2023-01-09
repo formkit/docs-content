@@ -38,9 +38,7 @@ export declare function date(date: string | Date): string;
 
 #### Parameters
 
-* `date`
-
-A string or a date.
+* `date` — A string or a date.
 
 #### Returns
 
@@ -60,9 +58,7 @@ export declare function list(items: string[], conjunction?: string): string;
 
 * `items`
 
-* `conjunction` *optional*
-
-in: x, y, and z "and" is the conjunction to use
+* `conjunction` *optional* — in: x, y, and z "and" is the conjunction to use
 
 #### Returns
 
@@ -80,13 +76,9 @@ export declare function order(first: string | number, second: string | number): 
 
 #### Parameters
 
-* `first`
+* `first` — first argument
 
-first argument
-
-* `second`
-
-Second argument
+* `second` — Second argument
 
 #### Returns
 

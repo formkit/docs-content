@@ -14,7 +14,7 @@ You can add this package by using `npm install @formkit/core` or `yarn add @form
 
 ### bfs()
 
-Perform a breadth-first-search on a node subtree and locate the first instance of a match.
+Perform a breadth-first search on a node subtree and locate the first instance of a match.
 
 #### Signature
 
@@ -46,9 +46,7 @@ export declare function compile(expr: string): FormKitCompilerOutput;
 
 #### Parameters
 
-* `expr`
-
-A string to compile
+* `expr` — A string to compile
 
 #### Returns
 
@@ -79,17 +77,11 @@ export declare function createClasses(propertyKey: string, node: FormKitNode, se
 
 #### Parameters
 
-* `propertyKey`
+* `propertyKey` — section key
 
-section key
+* `node` — FormKit node
 
-* `node`
-
-FormKit node
-
-* `sectionClassList` *optional*
-
-Things to turn into classes
+* `sectionClassList` *optional* — Things to turn into classes
 
 ### createConfig()
 
@@ -103,9 +95,7 @@ export declare function createConfig(options?: Partial<FormKitConfig>): FormKitR
 
 #### Parameters
 
-* `options` *optional*
-
-FormKit node options to be used globally.
+* `options` *optional* — FormKit node options to be used globally.
 
 ### createMessage()
 
@@ -119,9 +109,7 @@ export declare function createMessage(conf: Partial<FormKitMessage>, node?: Form
 
 #### Parameters
 
-* `conf`
-
-The message configuration
+* `conf` — The message configuration
 
 * `node` *optional*
 
@@ -173,9 +161,7 @@ export declare function deregister(node: FormKitNode): void;
 
 #### Parameters
 
-* `node`
-
-A node to remove
+* `node` — A node to remove
 
 ### error()
 
@@ -189,13 +175,9 @@ export declare function error(code: number, data?: any): never;
 
 #### Parameters
 
-* `code`
+* `code` — The integer error code.
 
-The integer error code.
-
-* `data` *optional*
-
-Usually an object of information to include.
+* `data` *optional* — Usually an object of information to include.
 
 ### generateClassList()
 
@@ -209,17 +191,11 @@ export declare function generateClassList(node: FormKitNode, property: string, .
 
 #### Parameters
 
-* `node`
+* `node` — the FormKit node being operated on
 
-the FormKit node being operated on
+* `property` — The property key to which the class list will be applied
 
-* `property`
-
-The property key to which the class list will be applied
-
-* `args`
-
-CSS class list(s)
+* `args` — CSS class list(s)
 
 ### getNode()
 
@@ -247,9 +223,7 @@ export declare function isComponent(node: string | Record<PropertyKey, any>): no
 
 #### Parameters
 
-* `node`
-
-A schema node to check
+* `node` — A schema node to check
 
 #### Returns
 
@@ -267,9 +241,7 @@ export declare function isDOM(node: string | Record<PropertyKey, any>): node is 
 
 #### Parameters
 
-* `node`
-
-A schema node to check
+* `node` — A schema node to check
 
 #### Returns
 
@@ -342,9 +314,7 @@ export declare function isSugar(node: FormKitSchemaNode): node is FormKitSchemaF
 
 #### Parameters
 
-* `node`
-
-Node
+* `node` — Node
 
 #### Returns
 
@@ -362,9 +332,7 @@ export declare function register(node: FormKitNode): void;
 
 #### Parameters
 
-* `node`
-
-A node to register
+* `node` — A node to register
 
 ### reset()
 
@@ -378,9 +346,7 @@ export declare function reset(id: string | FormKitNode, resetTo?: unknown): Form
 
 #### Parameters
 
-* `id`
-
-The id of an input to reset
+* `id` — The id of an input to reset
 
 * `resetTo` *optional*
 
@@ -412,13 +378,9 @@ export declare function setErrors(id: string, localErrors: ErrorMessages, childE
 
 * `id`
 
-* `localErrors`
+* `localErrors` — The errors to set on the form or the form’s inputs
 
-The errors to set on the form or the form’s inputs
-
-* `childErrors` *optional*
-
-(optional) The errors to set on the form or the form’s inputs
+* `childErrors` *optional* — (optional) The errors to set on the form or the form’s inputs
 
 ### submitForm()
 
@@ -432,9 +394,7 @@ export declare function submitForm(id: string): void;
 
 #### Parameters
 
-* `id`
-
-The id of the form
+* `id` — The id of the form
 
 ### sugar()
 
@@ -448,9 +408,7 @@ export declare function sugar<T extends FormKitSchemaNode>(node: T): Exclude<For
 
 #### Parameters
 
-* `node`
-
-A node to covert
+* `node` — A node to covert
 
 ### warn()
 
@@ -464,13 +422,9 @@ export declare function warn(code: number, data?: any): void;
 
 #### Parameters
 
-* `code`
+* `code` — The integer error code.
 
-The integer error code.
-
-* `data` *optional*
-
-Usually an object of information to include.
+* `data` *optional* — Usually an object of information to include.
 
 ### watchRegistry()
 
@@ -482,19 +436,15 @@ export declare function watchRegistry(id: string, callback: FormKitEventListener
 
 #### Parameters
 
-* `id`
+* `id` — An id to watch
 
-An id to watch
-
-* `callback`
-
-A callback to notify when the node is set or removed.
+* `callback` — A callback to notify when the node is set or removed.
 
 ## TypeScript
 
 ### FormKitChildCallback
 
-The callback type for node.each()
+The callback type for node.each().
 
 ```typescript
 export interface FormKitChildCallback {
@@ -551,7 +501,7 @@ export interface FormKitConfig {
 
 ### FormKitContext
 
-The interface of the a FormKit node's context object. A FormKit node is a proxy of this object.
+The interface of a FormKit node's context object. A FormKit node is a proxy of this object.
 
 ```typescript
 export interface FormKitContext {
@@ -925,7 +875,7 @@ export interface FormKitTrap {
 
 ### KeyedValue
 
-Arbitrary data that has properties, could be a pojo, could be an array.
+Arbitrary data that has properties, could be a POJO, could be an array.
 
 ```typescript
 export interface KeyedValue {
@@ -1035,7 +985,7 @@ export declare type FormKitNode = {
 
 ### FormKitNodeType
 
-These are the type of nodes that can be created — these are different from the type of inputs available and rather describe their purpose in the tree.
+These are the types of nodes that can be created. These are different from the type of inputs available and rather describe their purpose in the tree.
 
 ```typescript
 export declare type FormKitNodeType = 'input' | 'list' | 'group';
@@ -1043,7 +993,7 @@ export declare type FormKitNodeType = 'input' | 'list' | 'group';
 
 ### FormKitOptions
 
-Options that can be used to instantiate a new node via createNode()
+Options that can be used to instantiate a new node via createNode().
 
 ```typescript
 export declare type FormKitOptions = Partial<Omit<FormKitContext, 'children' | 'plugins' | 'config' | 'hook'> & {
@@ -1149,7 +1099,7 @@ export declare type FormKitSchemaTextNode = string;
 
 ### FormKitSearchFunction
 
-Breadth and Depth first searches can use a callback of this notation.
+Breadth and depth-first searches can use a callback of this notation.
 
 ```typescript
 export declare type FormKitSearchFunction = (node: FormKitNode, searchTerm?: string | number) => boolean;
@@ -1216,7 +1166,7 @@ export declare type TrapGetter = ((node: FormKitNode, context: FormKitContext, .
 
 ### TrapSetter
 
-The signature for a node's trap setter — these are more rare than getter traps, but can be really useful for blocking access to certain context properties or modifying the behavior of an assignment (ex. see setParent)
+The signature for a node's trap setter — these are more rare than getter traps, but can be useful for blocking access to certain context properties or modifying the behavior of an assignment (ex. see setParent).
 
 ```typescript
 export declare type TrapSetter = ((node: FormKitNode, context: FormKitContext, property: string | number | symbol, value: any) => boolean | never) | false;

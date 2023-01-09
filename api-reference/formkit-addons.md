@@ -24,9 +24,7 @@ export declare function createAutoAnimatePlugin(options?: AutoAnimateOptions): F
 
 #### Parameters
 
-* `options` *optional*
-
-[AutoAnimateOptions](https://github.com/formkit/auto-animate/blob/master/src/index.ts#L596)
+* `options` *optional* — [AutoAnimateOptions](https://github.com/formkit/auto-animate/blob/master/src/index.ts#L596)
 
 #### Returns
 

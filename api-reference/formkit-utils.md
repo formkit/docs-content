@@ -224,13 +224,9 @@ export declare function getAt(obj: any, addr: string): unknown;
 
 #### Parameters
 
-* `obj`
+* `obj` — An object to fetch data from
 
-An object to fetch data from
-
-* `addr`
-
-An "address" in dot notation
+* `addr` — An "address" in dot notation
 
 ### has()
 

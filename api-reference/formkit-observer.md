@@ -20,9 +20,7 @@ export declare function applyListeners(node: FormKitObservedNode, [toAdd, toRemo
 
 #### Parameters
 
-* `node`
-
-The node to apply dependencies to
+* `node` — The node to apply dependencies to
 
 * `[toAdd, toRemove]`
 
@@ -40,9 +38,7 @@ export declare function createObserver(node: FormKitNode, dependencies?: FormKit
 
 #### Parameters
 
-* `node`
-
-Any formkit node to observe.
+* `node` — Any formkit node to observe.
 
 * `dependencies` *optional*
 
@@ -60,13 +56,9 @@ export declare function diffDeps(previous: FormKitDependencies, current: FormKit
 
 #### Parameters
 
-* `previous`
+* `previous` — The previous watcher dependencies
 
-The previous watcher dependencies
-
-* `current`
-
-The new/current watcher dependencies
+* `current` — The new/current watcher dependencies
 
 #### Returns
 
@@ -82,9 +74,7 @@ export declare function isKilled(node: FormKitObservedNode): boolean;
 
 #### Parameters
 
-* `node`
-
-Any observed node to check.
+* `node` — Any observed node to check.
 
 #### Returns
 
@@ -100,9 +90,7 @@ export declare function removeListeners(receipts: FormKitObserverReceipts): void
 
 #### Parameters
 
-* `receipts`
-
-The formkit observer receipts to remove
+* `receipts` — The formkit observer receipts to remove
 
 ## TypeScript
 

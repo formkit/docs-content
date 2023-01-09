@@ -20,13 +20,9 @@ export declare function $attrs(attrs: FormKitSchemaAttributes | (() => FormKitSc
 
 #### Parameters
 
-* `attrs`
+* `attrs` — Apply attributes to a FormKitSchemaExtendableSection
 
-Apply attributes to a FormKitSchemaExtendableSection
-
-* `section`
-
-A section to apply attributes to
+* `section` — A section to apply attributes to
 
 #### Returns
 
@@ -44,13 +40,9 @@ export declare function $extend(section: FormKitSchemaExtendableSection, extendW
 
 #### Parameters
 
-* `section`
+* `section` — A section to apply an extension to.
 
-A section to apply an extension to.
-
-* `extendWith`
-
-A partial schema snippet to apply to the section.
+* `extendWith` — A partial schema snippet to apply to the section.
 
 #### Returns
 
@@ -68,17 +60,11 @@ export declare function $for(varName: string, inName: string, section: FormKitSc
 
 #### Parameters
 
-* `varName`
+* `varName` — The name of the variable that holds the current instance.
 
-The name of the variable that holds the current instance.
+* `inName` — The variable we are iterating over.
 
-* `inName`
-
-The variable we are iterating over.
-
-* `section`
-
-A section to repeat
+* `section` — A section to repeat
 
 #### Returns
 
@@ -96,17 +82,11 @@ export declare function $if(condition: string, then: FormKitSchemaExtendableSect
 
 #### Parameters
 
-* `condition`
+* `condition` — A schema condition to apply to a section.
 
-A schema condition to apply to a section.
+* `then` — The section that applies if the condition is true.
 
-* `then`
-
-The section that applies if the condition is true.
-
-* `otherwise` *optional*
-
-(else) The section that applies if the condition is false.
+* `otherwise` *optional* — (else) The section that applies if the condition is false.
 
 #### Returns
 
@@ -124,9 +104,7 @@ export declare function $root(section: FormKitSchemaExtendableSection): FormKitE
 
 #### Parameters
 
-* `section`
-
-A section to make a root from.
+* `section` — A section to make a root from.
 
 #### Returns
 
@@ -144,9 +122,7 @@ export default function checkboxes(node: FormKitNode): void;
 
 #### Parameters
 
-* `node`
-
-Node the feature is added to
+* `node` — Node the feature is added to
 
 ### composable()
 
@@ -160,13 +136,9 @@ export declare function composable(key: string, schema: FormKitInputSchema): For
 
 #### Parameters
 
-* `key`
+* `key` — A new section key name.
 
-A new section key name.
-
-* `schema`
-
-The default schema in this composable slot.
+* `schema` — The default schema in this composable slot.
 
 #### Returns
 
@@ -182,9 +154,7 @@ export declare function createLibraryPlugin(...libraries: FormKitLibrary[]): For
 
 #### Parameters
 
-* `libraries`
-
-One or many formkit urls.
+* `libraries` — One or many formkit urls.
 
 #### Returns
 
@@ -246,13 +216,9 @@ export default function defaultIcon(sectionKey: string, defaultIcon: string): (n
 
 #### Parameters
 
-* `sectionKey`
+* `sectionKey` — the location the icon should be loaded
 
-the location the icon should be loaded
-
-* `defaultIcon`
-
-the icon that should be loaded if a match is found in the user's CSS
+* `defaultIcon` — the icon that should be loaded if a match is found in the user's CSS
 
 ### disablesChildren()
 
@@ -266,9 +232,7 @@ export default function disables(node: FormKitNode): void;
 
 #### Parameters
 
-* `node`
-
-The FormKitNode of the form/group/list
+* `node` — The FormKitNode of the form/group/list
 
 ### extendSchema()
 
@@ -282,13 +246,9 @@ export declare function extendSchema(schema: FormKitSchemaNode, extension?: Part
 
 #### Parameters
 
-* `schema`
+* `schema` — Extend a base schema node.
 
-Extend a base schema node.
-
-* `extension` *optional*
-
-The values to extend on the base schema node.
+* `extension` *optional* — The values to extend on the base schema node.
 
 #### Returns
 
@@ -306,9 +266,7 @@ export default function files(node: FormKitNode): void;
 
 #### Parameters
 
-* `node`
-
-The node being checked
+* `node` — The node being checked
 
 ### forms()
 
@@ -322,9 +280,7 @@ export default function form(node: FormKitNode): void;
 
 #### Parameters
 
-* `node`
-
-A formkit node.
+* `node` — A formkit node.
 
 ### ignores()
 
@@ -338,9 +294,7 @@ export default function ignore(node: FormKitNode): void;
 
 #### Parameters
 
-* `node`
-
-The node
+* `node` — The node
 
 ### initialValue()
 
@@ -354,9 +308,7 @@ export default function initialValue(node: FormKitNode): void;
 
 #### Parameters
 
-* `node`
-
-The node being given an initial value
+* `node` — The node being given an initial value
 
 ### isSchemaObject()
 
@@ -370,9 +322,7 @@ export declare function isSchemaObject(schema: Partial<FormKitSchemaNode>): sche
 
 #### Parameters
 
-* `schema`
-
-returns true if the node is a schema node but not a string or conditional.
+* `schema` — returns true if the node is a schema node but not a string or conditional.
 
 #### Returns
 
@@ -394,9 +344,7 @@ export declare function isSlotCondition(node: FormKitSchemaNode): node is {
 
 #### Parameters
 
-* `node`
-
-a schema node
+* `node` — a schema node
 
 #### Returns
 
@@ -424,13 +372,9 @@ export default function localize(key: string, value?: string): (node: FormKitNod
 
 #### Parameters
 
-* `key`
+* `key` — The key of the message
 
-The key of the message
-
-* `value` *optional*
-
-The value of the message
+* `value` *optional* — The value of the message
 
 #### Returns
 
@@ -449,9 +393,7 @@ export default function normalizeBoxes(node: FormKitNode): FormKitMiddleware<{
 
 #### Parameters
 
-* `node`
-
-The node
+* `node` — The node
 
 #### Returns
 
@@ -467,9 +409,7 @@ export declare function normalizeOptions(options: FormKitOptionsProp): FormKitOp
 
 #### Parameters
 
-* `options`
-
-Options to
+* `options` — Options to
 
 #### Returns
 
@@ -487,9 +427,7 @@ export default function options(node: FormKitNode): void;
 
 #### Parameters
 
-* `node`
-
-A formkit node.
+* `node` — A formkit node.
 
 ### radios()
 
@@ -503,9 +441,7 @@ export default function radios(node: FormKitNode): void;
 
 #### Parameters
 
-* `node`
-
-The radio input group.
+* `node` — The radio input group.
 
 ### selects()
 
@@ -519,9 +455,7 @@ export default function select(node: FormKitNode): void;
 
 #### Parameters
 
-* `node`
-
-A formkit node.
+* `node` — A formkit node.
 
 ### useSchema()
 
