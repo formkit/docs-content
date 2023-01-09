@@ -39,14 +39,6 @@ Community involvement and contributions are one of the most important aspects of
         target="_blank"
         style="display:inline-block;vertical-align: middle;width: 120px;margin-right: 25px;"
     />
-</a><a class="no-underline" href="https://sharpless.co">
-    <img
-        class="docs-partner"
-        src="https://cdn.formk.it/web-assets/sponsors/sharpless-logo-small.png"
-        alt="PerByte logo"
-        target="_blank"
-        style="display:inline-block;vertical-align:middle;width:80px; margin-right: 10px;"
-    />
 </a>
 
 ### Backers
