@@ -4,11 +4,11 @@ title: formkit/utils
 
 # @formkit/utils
 
+<page-toc></page-toc>
+
 Commonly shared utility functions between official FormKit packages.
 
 You can add this package by using `npm install @formkit/utils` or `yarn add @formkit/utils`.
-
-<page-toc></page-toc>
 
 ## Functions
 
@@ -612,7 +612,7 @@ export declare function undefine(value: unknown): true | undefined;
 
 true | undefined
 
-## Typescript
+## TypeScript
 
 ### FormKitDateTokens
 

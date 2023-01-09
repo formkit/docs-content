@@ -110,7 +110,7 @@ export declare function sentence(str: string): string;
 
 `string`
 
-## Typescript
+## TypeScript
 
 ### FormKitLocale
 

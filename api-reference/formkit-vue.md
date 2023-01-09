@@ -72,7 +72,7 @@ An object to observe at depth
 
 A callback that
 
-## Typescript
+## TypeScript
 
 ### FormKitVuePlugin
 

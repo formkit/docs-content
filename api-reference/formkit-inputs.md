@@ -541,7 +541,7 @@ export declare function useSchema(inputSection: FormKitSection): FormKitExtendab
 
 [FormKitExtendableSchemaRoot](/api-reference/formkit-core#FormKitExtendableSchemaRoot)
 
-## Typescript
+## TypeScript
 
 ### FormKitFile
 

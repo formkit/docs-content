@@ -38,7 +38,7 @@ export declare function getValidationMessages(node: FormKitNode): Map<FormKitNod
 
 The FormKit node to extract validation rules from — as well as its descendants.
 
-## Typescript
+## TypeScript
 
 ### FormKitValidationMessages
 

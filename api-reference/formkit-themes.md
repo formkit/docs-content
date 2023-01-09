@@ -72,7 +72,7 @@ An object of input types with nested objects of sectionKeys and class lists
 
 FormKitClassFunctions
 
-## Typescript
+## TypeScript
 
 ### FormKitIconLoader
 

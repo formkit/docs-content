@@ -104,7 +104,7 @@ export declare function removeListeners(receipts: FormKitObserverReceipts): void
 
 The formkit observer receipts to remove
 
-## Typescript
+## TypeScript
 
 ### FormKitObservedNode
 
