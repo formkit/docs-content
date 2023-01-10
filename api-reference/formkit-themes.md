@@ -21,7 +21,6 @@ export declare function createIconHandler(iconLoader?: FormKitIconLoader, iconLo
 #### Parameters
 
 * `iconLoader` *optional* — a function for loading an icon when it's not found in the iconRegistry
-
 * `iconLoaderUrl` *optional*
 
 ### createThemePlugin()
@@ -37,11 +36,8 @@ export declare function createThemePlugin(theme?: string, icons?: Record<string,
 #### Parameters
 
 * `theme` *optional* — The name or id of the theme to apply
-
 * `icons` *optional* — Icons you want to add to the global icon registry
-
 * `iconLoaderUrl` *optional*
-
 * `iconLoader` *optional* — A function that handles loading an icon when it is not found in the registry
 
 ### generateClasses()

@@ -21,7 +21,6 @@ export declare function $attrs(attrs: FormKitSchemaAttributes | (() => FormKitSc
 #### Parameters
 
 * `attrs` — Apply attributes to a FormKitSchemaExtendableSection
-
 * `section` — A section to apply attributes to
 
 #### Returns
@@ -41,7 +40,6 @@ export declare function $extend(section: FormKitSchemaExtendableSection, extendW
 #### Parameters
 
 * `section` — A section to apply an extension to.
-
 * `extendWith` — A partial schema snippet to apply to the section.
 
 #### Returns
@@ -61,9 +59,7 @@ export declare function $for(varName: string, inName: string, section: FormKitSc
 #### Parameters
 
 * `varName` — The name of the variable that holds the current instance.
-
 * `inName` — The variable we are iterating over.
-
 * `section` — A section to repeat
 
 #### Returns
@@ -83,9 +79,7 @@ export declare function $if(condition: string, then: FormKitSchemaExtendableSect
 #### Parameters
 
 * `condition` — A schema condition to apply to a section.
-
 * `then` — The section that applies if the condition is true.
-
 * `otherwise` *optional* — (else) The section that applies if the condition is false.
 
 #### Returns
@@ -137,7 +131,6 @@ export declare function composable(key: string, schema: FormKitInputSchema): For
 #### Parameters
 
 * `key` — A new section key name.
-
 * `schema` — The default schema in this composable slot.
 
 #### Returns
@@ -162,6 +155,8 @@ export declare function createLibraryPlugin(...libraries: FormKitLibrary[]): For
 
 ### createSection()
 
+Creates a new reusable section.
+
 #### Signature
 
 ```typescript
@@ -170,13 +165,13 @@ export declare function createSection(section: string, el: string | null | (() =
 
 #### Parameters
 
-* `section`
-
-* `el`
-
-* `root`
+* `section` — A single section of schema
+* `el` — The element or a function that returns a schema node.
+* `root` — When true returns an extendable root schema node.
 
 ### createSection()
+
+Creates a new reusable section.
 
 #### Signature
 
@@ -186,11 +181,12 @@ export declare function createSection(section: string, el: string | null | (() =
 
 #### Parameters
 
-* `section`
-
-* `el`
+* `section` — A single section of schema
+* `el` — The element or a function that returns a schema node.
 
 ### createSection()
+
+Creates a new reusable section.
 
 #### Signature
 
@@ -200,11 +196,9 @@ export declare function createSection(section: string, el: string | (() => FormK
 
 #### Parameters
 
-* `section`
-
-* `el`
-
-* `root`
+* `section` — A single section of schema
+* `el` — The element or a function that returns a schema node.
+* `root` — When true returns an extendable root schema node.
 
 ### defaultIcon()
 
@@ -217,7 +211,6 @@ export default function defaultIcon(sectionKey: string, defaultIcon: string): (n
 #### Parameters
 
 * `sectionKey` — the location the icon should be loaded
-
 * `defaultIcon` — the icon that should be loaded if a match is found in the user's CSS
 
 ### disablesChildren()
@@ -247,7 +240,6 @@ export declare function extendSchema(schema: FormKitSchemaNode, extension?: Part
 #### Parameters
 
 * `schema` — Extend a base schema node.
-
 * `extension` *optional* — The values to extend on the base schema node.
 
 #### Returns
@@ -373,7 +365,6 @@ export default function localize(key: string, value?: string): (node: FormKitNod
 #### Parameters
 
 * `key` — The key of the message
-
 * `value` *optional* — The value of the message
 
 #### Returns

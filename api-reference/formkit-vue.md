@@ -21,7 +21,6 @@ export declare function createInput(schemaOrComponent: FormKitSchemaNode | FormK
 #### Parameters
 
 * `schemaOrComponent` — The actual schema of the input.
-
 * `definitionOptions` *optional*
 
 #### Returns
@@ -41,9 +40,7 @@ export declare function useInput(props: FormKitComponentProps, context: SetupCon
 #### Parameters
 
 * `props`
-
 * `context`
-
 * `options` *optional*
 
 #### Returns
@@ -63,7 +60,6 @@ export default function watchVerbose<T extends Ref<unknown> | Record<string, any
 #### Parameters
 
 * `obj` *optional* — An object to observe at depth
-
 * `callback` — A callback that
 
 ## TypeScript

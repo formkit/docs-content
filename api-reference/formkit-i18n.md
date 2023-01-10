@@ -57,7 +57,6 @@ export declare function list(items: string[], conjunction?: string): string;
 #### Parameters
 
 * `items`
-
 * `conjunction` *optional* — in: x, y, and z "and" is the conjunction to use
 
 #### Returns
@@ -77,7 +76,6 @@ export declare function order(first: string | number, second: string | number): 
 #### Parameters
 
 * `first` — first argument
-
 * `second` — Second argument
 
 #### Returns

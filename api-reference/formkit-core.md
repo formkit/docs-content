@@ -25,9 +25,7 @@ export declare function bfs(tree: FormKitNode, searchValue: string | number, sea
 #### Parameters
 
 * `tree`
-
 * `searchValue`
-
 * `searchGoal` *optional*
 
 #### Returns
@@ -78,9 +76,7 @@ export declare function createClasses(propertyKey: string, node: FormKitNode, se
 #### Parameters
 
 * `propertyKey` — section key
-
 * `node` — FormKit node
-
 * `sectionClassList` *optional* — Things to turn into classes
 
 ### createConfig()
@@ -110,7 +106,6 @@ export declare function createMessage(conf: Partial<FormKitMessage>, node?: Form
 #### Parameters
 
 * `conf` — The message configuration
-
 * `node` *optional*
 
 #### Returns
@@ -176,7 +171,6 @@ export declare function error(code: number, data?: any): never;
 #### Parameters
 
 * `code` — The integer error code.
-
 * `data` *optional* — Usually an object of information to include.
 
 ### generateClassList()
@@ -192,9 +186,7 @@ export declare function generateClassList(node: FormKitNode, property: string, .
 #### Parameters
 
 * `node` — the FormKit node being operated on
-
 * `property` — The property key to which the class list will be applied
-
 * `args` — CSS class list(s)
 
 ### getNode()
@@ -347,7 +339,6 @@ export declare function reset(id: string | FormKitNode, resetTo?: unknown): Form
 #### Parameters
 
 * `id` — The id of an input to reset
-
 * `resetTo` *optional*
 
 #### Returns
@@ -377,9 +368,7 @@ export declare function setErrors(id: string, localErrors: ErrorMessages, childE
 #### Parameters
 
 * `id`
-
 * `localErrors` — The errors to set on the form or the form’s inputs
-
 * `childErrors` *optional* — (optional) The errors to set on the form or the form’s inputs
 
 ### submitForm()
@@ -423,7 +412,6 @@ export declare function warn(code: number, data?: any): void;
 #### Parameters
 
 * `code` — The integer error code.
-
 * `data` *optional* — Usually an object of information to include.
 
 ### watchRegistry()
@@ -437,7 +425,6 @@ export declare function watchRegistry(id: string, callback: FormKitEventListener
 #### Parameters
 
 * `id` — An id to watch
-
 * `callback` — A callback to notify when the node is set or removed.
 
 ## TypeScript

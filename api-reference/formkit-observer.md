@@ -21,9 +21,7 @@ export declare function applyListeners(node: FormKitObservedNode, [toAdd, toRemo
 #### Parameters
 
 * `node` — The node to apply dependencies to
-
 * `[toAdd, toRemove]`
-
 * `callback`
 
 ### createObserver()
@@ -39,7 +37,6 @@ export declare function createObserver(node: FormKitNode, dependencies?: FormKit
 #### Parameters
 
 * `node` — Any formkit node to observe.
-
 * `dependencies` *optional*
 
 #### Returns
@@ -57,7 +54,6 @@ export declare function diffDeps(previous: FormKitDependencies, current: FormKit
 #### Parameters
 
 * `previous` — The previous watcher dependencies
-
 * `current` — The new/current watcher dependencies
 
 #### Returns

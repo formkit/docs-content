@@ -25,7 +25,6 @@ export declare function assignDeep<A extends Record<PropertyKey, any>, B extends
 #### Parameters
 
 * `a`
-
 * `b`
 
 #### Returns
@@ -63,7 +62,6 @@ export declare function clone<T extends Record<string, unknown> | unknown[] | nu
 #### Parameters
 
 * `obj`
-
 * `explicit` *optional*
 
 #### Returns
@@ -101,7 +99,6 @@ export declare function dedupe<T extends any[] | Set<any>, X extends any[] | Set
 #### Parameters
 
 * `arr1`
-
 * `arr2` *optional*
 
 #### Returns
@@ -139,11 +136,8 @@ export declare function eq(valA: any, valB: any, deep?: boolean, explicit?: stri
 #### Parameters
 
 * `valA`
-
 * `valB`
-
 * `deep` *optional*
-
 * `explicit` *optional*
 
 #### Returns
@@ -181,7 +175,6 @@ export declare function except(obj: Record<string, any>, toRemove: Array<string 
 #### Parameters
 
 * `obj`
-
 * `toRemove`
 
 #### Returns
@@ -201,11 +194,8 @@ export declare function extend(original: Record<string, any>, additional: Record
 #### Parameters
 
 * `original`
-
 * `additional`
-
 * `extendArrays` *optional*
-
 * `ignoreUndefined` *optional*
 
 #### Returns
@@ -225,7 +215,6 @@ export declare function getAt(obj: any, addr: string): unknown;
 #### Parameters
 
 * `obj` — An object to fetch data from
-
 * `addr` — An "address" in dot notation
 
 ### has()
@@ -244,7 +233,6 @@ export declare function has(obj: {
 #### Parameters
 
 * `obj`
-
 * `property`
 
 #### Returns
@@ -423,7 +411,6 @@ export declare function only(obj: Record<string, any>, include: Array<string | R
 #### Parameters
 
 * `obj`
-
 * `include`
 
 #### Returns
@@ -522,7 +509,6 @@ export declare function shallowClone<T>(obj: T, explicit?: string[]): T;
 #### Parameters
 
 * `obj`
-
 * `explicit` *optional*
 
 #### Returns
@@ -560,7 +546,6 @@ export declare function spread<T>(obj: T, explicit?: string[]): T;
 #### Parameters
 
 * `obj`
-
 * `explicit` *optional*
 
 #### Returns
