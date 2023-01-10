@@ -3,7 +3,7 @@
   <FormKit
     type="mask"
     name="school_id"
-    mask="id{-a#a|repeat|placeholder:_}"
+    mask="id{-a#a|repeat|placeholder:+}"
     label="Id number"
     help="Id number in the format: id-b4b-b4b-b4b-b4b"
   />

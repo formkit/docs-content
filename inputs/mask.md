@@ -209,18 +209,18 @@ On their own, groups don't do anything unless you define group options.
 
 ### Group options
 
-Group options allow you to apply functionality to an entire group using a pipe `|`, followed by the option name and any arguments. The available options are:
+Group options allow you to apply functionality to an entire group using a pipe `|` followed by the option name and any arguments. The available options are:
 
 - **repeat** — allows a group to be repeated an infinite number of times.
 - **placeholder** — A character to hold space prior to user input.
 
 <callout type="info" label="Group placeholders">
-A placeholder defined within a group has a higher specificity than a placeholder defined at the token definition and will override it.
+A placeholder defined within a group has a higher specificity than a placeholder defined in the token definition and will override it.
 </callout>
 
 #### Option parameters
 
-Arguments can be passed to a group option by using a colon, such as `placeholder:_`, where the underscore `_` is passed to the `placeholder` option.
+Arguments can be passed to a group option by using a colon, such as `placeholder:+`, where the plus symbol `+` is passed to the `placeholder` option.
 
 You can string group options together:
 

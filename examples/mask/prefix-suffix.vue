@@ -2,12 +2,19 @@
   <!-- %partial%::html:: -->
   <FormKit
     type="mask"
-    name="list_price"
-    prefix="€"
-    suffix=".00"
-    mask="{#,##|repeat}#"
-    label="List Price"
-    help="Only whole Euros are allowed."
+    name="years_old"
+    prefix="I am "
+    suffix=" years old."
+    mask="##"
+    mode="select"
+    validation="required"
+    :tokens="{
+      '#': {
+        selectFill: '0'
+      }
+    }"
+    label="Age"
+    help="How old are you?"
   />
   <!-- %partial%::html:: -->
 </template>

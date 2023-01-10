@@ -1,13 +1,18 @@
 <template>
-  <!-- %partial%::html:: -->
+<!-- %partial%::html:: -->
+<FormKit type="form" :actions="false" #default="{ value }">
   <FormKit
     type="mask"
     reverse
-    prefix="$"
+    prefix="€"
     name="bid"
     mask="{#,##|repeat}#.##"
     label="Bid"
+    show-mask="false"
+    allow-incomplete="true"
     help="Enter your bid for the art piece."
   />
-  <!-- %partial%::html:: -->
+  <pre wrap>{{ value }}</pre>  
+</FormKit>
+<!-- %partial%::html:: -->
 </template>
