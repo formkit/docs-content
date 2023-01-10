@@ -18,6 +18,7 @@ async function mockAsyncSearch({ search, page, hasNextPage, timeout = 1000 }) {
       type="autocomplete"
       label="Text single"
       :options="flavors"
+      value="Apple"
     />
     
     <FormKit

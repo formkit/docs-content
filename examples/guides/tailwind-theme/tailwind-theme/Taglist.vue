@@ -1,6 +1,5 @@
 <script setup>
-import countries from './countries.js'
-let countryOptions = countries.map((country, i) => ({ value: country.code, label: country.name, attrs: { disabled: i === 0 } }))
+let flavors = ['Apple', 'Cherry', 'Vanilla', 'Chocolate', 'Raspberry', 'Toffee', 'Mocha']
 </script>
 
 <template>
@@ -9,8 +8,9 @@ let countryOptions = countries.map((country, i) => ({ value: country.code, label
 
     <FormKit
       type="taglist"
-      label="Taglist with no initial values"
-      :options="countryOptions"
+      label="Taglist"
+      :value="['Chocolate', 'Toffee']"
+      :options="flavors"
       allow-new-values
     />
   </div>

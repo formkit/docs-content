@@ -12,6 +12,7 @@ function loadOptionsSync () {
       type="dropdown"
       label="Dropdown short"
       placeholder="Hello"
+      value="Apple"
       :options="flavors"
     />
     <FormKit
