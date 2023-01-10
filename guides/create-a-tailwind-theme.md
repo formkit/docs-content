@@ -26,6 +26,7 @@ If your component represents your entire form and your project only requires a s
 <example
   file="/_content/examples/guides/tailwind-theme/inline-usage/example.vue"
   css-framework="tailwind"
+  :add-tailwind-files="false"
   :editable="true">
 </example>
 
@@ -136,6 +137,7 @@ Here is a `text` input with Tailwind classes applied:
   ]"
   init-file-tab="formkit.config.js"
   css-framework="tailwind"
+  :add-tailwind-files="false"
   layout="column"
   :editable="true"></example>
 
@@ -157,8 +159,8 @@ The currently provided variants are:
 - `formkit-loading:`
 - `formkit-submitted:`
 - `formkit-multiple:`
-- `formkit-has-prefix-icon`
-- `formkit-has-suffix-icon`
+- `formkit-prefix-icon`
+- `formkit-suffix-icon`
 
 You use these variants in the same way you use the built-in Tailwind variants such as `dark:` and `hover:`.
 
@@ -172,6 +174,7 @@ Let's add some variants for `formkit-invalid` and `formkit-disabled` to our text
   ]"
   init-file-tab="formkit.config.js"
   css-framework="tailwind"
+  :add-tailwind-files="false"
   layout="column"
   :editable="true"></example>
 
@@ -183,8 +186,8 @@ There are some improvements we can make though. The `generateClasses` helper fun
 
 Let's create a "Kitchen Sink" of input types, each having their defined class lists applied. Additionally, we'll move our theme to a separate file to assist with readability:
 
-<callout type="tip" label="Global Class Lists">
-By using the <code>global</code> key in your theme object you can apply a class list to <em>all</em> inputs that have a given <code>sectionKey</code>. This is useful for things like labels or help text when you want to style them identically regardless of input type.
+<callout type="tip" label="Global and Family Class Lists">
+By using the <code>global</code> and <code>family:</code> keys in your theme object you can apply a class lists to <em>all</em> inputs that have a given <code>sectionKey</code> either globally or within a family of inputs. This is useful for things like labels or help text when you want to share styling across a wide variety of inputs.
 </callout>
 
 <example
@@ -193,9 +196,18 @@ By using the <code>global</code> key in your theme object you can apply a class 
     '/_content/examples/guides/tailwind-theme/tailwind-theme/theme.js',
     '/_content/examples/guides/tailwind-theme/tailwind-theme/formkit.config.js',
     '/_content/examples/guides/tailwind-theme/tailwind-theme/tailwind.config.js',
+    '/_content/examples/guides/tailwind-theme/tailwind-theme/KitchenSinkForm.vue',
+    '/_content/examples/guides/tailwind-theme/tailwind-theme/Autocomplete.vue',
+    '/_content/examples/guides/tailwind-theme/tailwind-theme/Dropdown.vue',
+    '/_content/examples/guides/tailwind-theme/tailwind-theme/Rating.vue',
+    '/_content/examples/guides/tailwind-theme/tailwind-theme/Repeater.vue',
+    '/_content/examples/guides/tailwind-theme/tailwind-theme/Taglist.vue',
+    '/_content/examples/guides/tailwind-theme/tailwind-theme/Toggle.vue',
+    '/_content/examples/guides/tailwind-theme/tailwind-theme/countries.js',
   ]"
   init-file-tab="theme.js"
   css-framework="tailwind"
+  :add-tailwind-files="false"
   layout="auto"
   :editable="true"></example>
 
@@ -216,6 +228,7 @@ Of particular importance when doing an override is the special [`$reset` modifie
   ]"
   init-file-tab="example.vue"
   css-framework="tailwind"
+  :add-tailwind-files="false"
   layout="auto"
   :editable="true"></example>
 

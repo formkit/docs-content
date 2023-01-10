@@ -58,7 +58,6 @@ customize your experience. See the `createThemePlugin` docs in the next section 
 ```js
 import { createApp } from 'vue'
 import App from 'App.vue'
-import { createThemePlugin } from '@formkit/themes'
 import { plugin, defaultConfig } from '@formkit/vue'
 
 createApp(App).use(plugin, defaultConfig({
