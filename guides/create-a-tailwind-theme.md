@@ -138,7 +138,6 @@ Here is a `text` input with Tailwind classes applied:
   init-file-tab="formkit.config.js"
   css-framework="tailwind"
   :add-tailwind-files="false"
-  layout="column"
   :editable="true"></example>
 
 ## Using variants
@@ -175,10 +174,9 @@ Let's add some variants for `formkit-invalid` and `formkit-disabled` to our text
   init-file-tab="formkit.config.js"
   css-framework="tailwind"
   :add-tailwind-files="false"
-  layout="column"
   :editable="true"></example>
 
-## Creating a full theme
+## A complete Tailwind theme — recreating Genesis CSS
 
 Now we're cooking! To create a comprehensive theme all we need to do is define class lists for the `sectionKeys` of all the other input types we'll use in our project.
 
@@ -342,6 +340,13 @@ export default {
 
 And here is our Tailwind theme when it is applied to all available FormKit inputs:
 
+<callout type="tip" label="FormKit icons">
+FormKit inputs ship with their own <code>decorator</code> icons that can be used in place of browser-default styles that typcially ship with checkboxes, radios, select inputs, and more. 
+
+If you want to use these types of icons in your Tailwind theme be sure to import them from <code>@formkit/icons</code> and include them in your FormKit config.
+
+</callout>
+
 <example
   :file="[
     '/_content/examples/guides/tailwind-theme/tailwind-theme/example.vue',
@@ -356,7 +361,7 @@ And here is our Tailwind theme when it is applied to all available FormKit input
     '/_content/examples/guides/tailwind-theme/tailwind-theme/Taglist.vue',
     '/_content/examples/guides/tailwind-theme/tailwind-theme/Toggle.vue'
   ]"
-  init-file-tab="theme.js"
+  init-file-tab="formkit.config.js"
   css-framework="tailwind"
   :add-tailwind-files="false"
   layout="auto"
@@ -364,7 +369,7 @@ And here is our Tailwind theme when it is applied to all available FormKit input
 
 ## Selective overrides
 
-And there we have it! All FormKit core inputs styled with Tailwind utility classes across our entire project.
+And there we have it! All FormKit inputs styled with Tailwind utility classes across our entire project.
 
 If we need to override any specific one-offs within our project, we can do so using the [section-key class props](/essentials/styling#section-key-class-props) or the [classes](/essentials/styling#classes-prop) prop on a given `FormKit` input within our project which was covered in the opening section of this guide.
 
@@ -385,7 +390,7 @@ Of particular importance when doing an override is the special [`$reset` modifie
 
 ## Next steps
 
-This guide has walked through creating a Tailwind theme that covers all input types included in FormKit core, but there's still more that could be done in your own project.
+This guide has walked through creating a Tailwind theme that covers all input types included in FormKit, but there's still more that could be done in your own project.
 
 Here are some ways to take the above guide even further:
 
