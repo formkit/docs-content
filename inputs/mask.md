@@ -29,10 +29,11 @@ The mask is the desired format of the input. It is passed to the `mask` prop whe
 
 ### Built-in tokens
 
-The mask input comes with 2 built-in tokens:
+The mask input comes with 3 built-in tokens:
 
 - `#` Accepts a digit character.
 - `a` Accepts an alphabetical character.
+- `*` Accepts any character.
 
 <example
   name="Mask input"
@@ -67,7 +68,7 @@ Additionally, when an input is in select mode, the user can use the arrow or tab
   file="/_content/examples/mask/select.vue">
 </example>
 
-<callout type="tip" label="Select options">
+<callout type="tip" label="Select mode options">
 The <code>selectDirection</code> token property controls which direction new
 characters flow into the selected range. You can fill "empty" selection characters with a predetermined value (like leading zeros "0") by using the <code>selectFill</code> property. See <a href="#creating-new-tokens">token properties</a>.
 </callout>
@@ -138,6 +139,10 @@ For example, a new token that accepts letters and numbers, and is represented by
 }
 ```
 
+<callout type="warning" label="Placeholders should not match pattern">
+Any <code>placeholder</code> you define should not match the Regex <code>pattern</code> provided in the token definition.
+</callout>
+
 #### Add tokens via prop
 
 To pass a new token to the mask input, you can use the `tokens` prop which
@@ -169,7 +174,7 @@ In addition to creating new tokens, the `tokens` prop can also modify existing t
 
 ### Char tokens
 
-`char` tokens accept a single character. In order for a character to be accepted, it must match the `token.pattern` regular expression. The two built in tokens (`#` and `a`) are both `char` type tokens.
+`char` tokens accept a single character. In order for a character to be accepted, it must match the `token.pattern` regular expression. The three built in tokens (`#`, `a`, and `*`) are all `char` type tokens.
 
 In `select` mode, `char` tokens are grouped together into a selection range.
 
@@ -190,6 +195,65 @@ A date with auto-completing month names could be well represented with enums:
 
 <callout type="warning" label="Select mode requirement">
 Enums are only supported in <code>select</code> mode. When any <code>enum</code> token is found in a mask string, the <code>mode</code> of the input is forcibly set to <code>select</code>.
+</callout>
+
+## Groups
+
+Groups are a way to to treat multiple mask characters as a single unit. You create a group by surrounding the desired mask characters in `{}`:
+
+```html
+<FormKit mask="id{-a#a}" type="mask" /> <!-- "-a#a" is the group -->
+```
+
+On their own, groups don't do anything unless you define group options.
+
+### Group options
+
+Group options allow you to apply functionality to an entire group using a pipe `|`, followed by the option name and any arguments. The available options are:
+
+- **repeat** — allows a group to be repeated an infinite number of times.
+- **placeholder** — A character to hold space prior to user input.
+
+<callout type="info" label="Group placeholders">
+A placeholder defined within a group has a higher specificity than a placeholder defined at the token definition and will override it.
+</callout>
+
+#### Option parameters
+
+Arguments can be passed to a group option by using a colon, such as `placeholder:_`, where the underscore `_` is passed to the `placeholder` option.
+
+You can string group options together:
+
+<example
+  name="Mask input"
+  file="/_content/examples/mask/groups.vue">
+</example>
+
+<callout type="warning" label="Can't be used in select mode">
+  Groups cannot be used in select mode. An exception will be thrown.
+</callout>
+
+
+## Prefix & suffix
+
+You can ensure certain characters always appear at the beginning or end of an input by using the `prefix` and `suffix` props, respectively:
+
+<example
+  name="Mask input"
+  file="/_content/examples/mask/prefix-suffix.vue">
+</example>
+
+## Running the mask in reverse
+
+In specific circumstances, you may want to run your mask in reverse. The mask will test if user input fulfills the mask from right to left. This is common in currency-type inputs and can be applied by adding the `reverse` prop:
+
+<example
+  name="Mask input"
+  file="/_content/examples/mask/reverse.vue">
+</example>
+
+<callout type="warning" label="Shift mode requirement">
+Running a mask in reverse only works in shift mode.
 </callout>
 
 ## Mask values
@@ -227,7 +291,10 @@ By default, the `mask` input displays each token’s placeholder character. You 
   {prop: 'allow-incomplete', type: 'boolean', default: 'false', description: 'By default, the value of a mask input is empty until the pattern is complete. This prop allows the input to use incomplete values.'},
   {prop: 'mask', type: 'string', default: 'none', description: 'The mask to apply. This is a string composed of tokens (like “#”) and literal string values.'},
   {prop: 'mode', type: 'string', default: 'shift', description: 'Determines how the mask input operates. Options are <code>shift</code>, <code>replace</code> and <code>select</code>.'},
+  {prop: 'prefix', type: 'string', default: 'none', description: 'Characters that will always appear at the beginning of the input.'},
+  {prop: 'reverse', type: 'boolean', default: 'false', description: 'Runs the mask in reverse — from right to left.'},
   {prop: 'show-mask', type: 'boolean', default: 'true', description: 'Displays a live representation of the pattern’s placeholder as the internal value of the input.'},
+  {prop: 'suffix', type: 'string', default: 'none', description: 'Characters that will always appear at the end of the input.'},
   {prop: 'tokens', type: 'Object', default: '{}', description: 'Add new tokens or modify existing ones.'},
   {prop: 'unmask-value', type: 'boolean', default: 'false', description: 'By default, the value of the input is the same as what is displayed (with formatting). The string literals will removed from the value if this prop is set to true.'}]">
 </reference-table>

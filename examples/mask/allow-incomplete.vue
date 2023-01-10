@@ -6,7 +6,7 @@
       name="phone"
       mask="(###) ###-####"
       label="Phone number"
-      help="Enter a phone number"
+      help="Enter a phone number. See the value change as you type."
       allow-incomplete="true"
     />
     <pre wrap>{{ value }}</pre>
