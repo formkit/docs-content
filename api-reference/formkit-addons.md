@@ -19,7 +19,7 @@ Adds auto-animate to each input automatically:
 #### Signature
 
 ```typescript
-export declare function createAutoAnimatePlugin(options?: AutoAnimateOptions): FormKitPlugin;
+createAutoAnimatePlugin(options?: AutoAnimateOptions): FormKitPlugin;
 ```
 
 #### Parameters

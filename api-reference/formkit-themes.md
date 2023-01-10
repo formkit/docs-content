@@ -15,7 +15,7 @@ Returns a function responsible for loading an icon by name
 #### Signature
 
 ```typescript
-export declare function createIconHandler(iconLoader?: FormKitIconLoader, iconLoaderUrl?: FormKitIconLoaderUrl): FormKitIconLoader;
+createIconHandler(iconLoader?: FormKitIconLoader, iconLoaderUrl?: FormKitIconLoaderUrl): FormKitIconLoader;
 ```
 
 #### Parameters
@@ -30,7 +30,7 @@ Creates the theme plugin based on a given theme name
 #### Signature
 
 ```typescript
-export declare function createThemePlugin(theme?: string, icons?: Record<string, string | undefined>, iconLoaderUrl?: FormKitIconLoaderUrl, iconLoader?: FormKitIconLoader): (node: FormKitNode) => any;
+createThemePlugin(theme?: string, icons?: Record<string, string | undefined>, iconLoaderUrl?: FormKitIconLoaderUrl, iconLoader?: FormKitIconLoader): (node: FormKitNode) => any;
 ```
 
 #### Parameters
@@ -47,7 +47,7 @@ A function to generate FormKit class functions from a javascript object
 #### Signature
 
 ```typescript
-export declare function generateClasses(classes: Record<string, Record<string, string>>): Record<string, string | FormKitClasses | Record<string, boolean>>;
+generateClasses(classes: Record<string, Record<string, string>>): Record<string, string | FormKitClasses | Record<string, boolean>>;
 ```
 
 #### Parameters
@@ -65,7 +65,7 @@ FormKitClassFunctions
 A function that returns an icon SVG string
 
 ```typescript
-export interface FormKitIconLoader {
+interface FormKitIconLoader {
     (iconName: string): string | undefined | Promise<string | undefined>;
 }
 ```
@@ -75,7 +75,7 @@ export interface FormKitIconLoader {
 A function that returns a remote url for retrieving an SVG icon by name
 
 ```typescript
-export interface FormKitIconLoaderUrl {
+interface FormKitIconLoaderUrl {
     (iconName: string): string | undefined;
 }
 ```

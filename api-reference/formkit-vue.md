@@ -15,7 +15,7 @@ Creates a new input from schema or a Vue component with the "standard" FormKit f
 #### Signature
 
 ```typescript
-export declare function createInput(schemaOrComponent: FormKitSchemaNode | FormKitSection | Component, definitionOptions?: Partial<FormKitTypeDefinition>): FormKitTypeDefinition;
+createInput(schemaOrComponent: FormKitSchemaNode | FormKitSection | Component, definitionOptions?: Partial<FormKitTypeDefinition>): FormKitTypeDefinition;
 ```
 
 #### Parameters
@@ -34,7 +34,7 @@ A composable for creating a new FormKit node.
 #### Signature
 
 ```typescript
-export declare function useInput(props: FormKitComponentProps, context: SetupContext<any>, options?: FormKitOptions): FormKitNode;
+useInput(props: FormKitComponentProps, context: SetupContext<any>, options?: FormKitOptions): FormKitNode;
 ```
 
 #### Parameters
@@ -69,7 +69,7 @@ export default function watchVerbose<T extends Ref<unknown> | Record<string, any
 The global instance of the FormKit plugin.
 
 ```typescript
-export interface FormKitVuePlugin {
+interface FormKitVuePlugin {
     clearErrors: (formId: string) => void;
     get: (id: string) => FormKitNode | undefined;
     reset: (formId: string, resetTo?: unknown) => void;
@@ -84,5 +84,5 @@ export interface FormKitVuePlugin {
 The allowed options for defaultConfig.
 
 ```typescript
-export declare type DefaultConfigOptions = FormKitOptions & Partial<PluginConfigs> & Record<string, unknown>;
+type DefaultConfigOptions = FormKitOptions & Partial<PluginConfigs> & Record<string, unknown>;
 ```

@@ -15,7 +15,7 @@ Given two maps (toAdd and toRemove) apply the dependencies as event listeners on
 #### Signature
 
 ```typescript
-export declare function applyListeners(node: FormKitObservedNode, [toAdd, toRemove]: [FormKitDependencies, FormKitDependencies], callback: FormKitEventListener): void;
+applyListeners(node: FormKitObservedNode, [toAdd, toRemove]: [FormKitDependencies, FormKitDependencies], callback: FormKitEventListener): void;
 ```
 
 #### Parameters
@@ -31,7 +31,7 @@ The FormKitNode to observe.
 #### Signature
 
 ```typescript
-export declare function createObserver(node: FormKitNode, dependencies?: FormKitDependencies): FormKitObservedNode;
+createObserver(node: FormKitNode, dependencies?: FormKitDependencies): FormKitObservedNode;
 ```
 
 #### Parameters
@@ -48,7 +48,7 @@ Determines which nodes should be added as dependencies and which should be remov
 #### Signature
 
 ```typescript
-export declare function diffDeps(previous: FormKitDependencies, current: FormKitDependencies): [FormKitDependencies, FormKitDependencies];
+diffDeps(previous: FormKitDependencies, current: FormKitDependencies): [FormKitDependencies, FormKitDependencies];
 ```
 
 #### Parameters
@@ -65,7 +65,7 @@ Checks if the given noe is revoked.
 #### Signature
 
 ```typescript
-export declare function isKilled(node: FormKitObservedNode): boolean;
+isKilled(node: FormKitObservedNode): boolean;
 ```
 
 #### Parameters
@@ -81,7 +81,7 @@ Remove all the receipts from the observed node and subtree.
 #### Signature
 
 ```typescript
-export declare function removeListeners(receipts: FormKitObserverReceipts): void;
+removeListeners(receipts: FormKitObserverReceipts): void;
 ```
 
 #### Parameters
@@ -95,7 +95,7 @@ export declare function removeListeners(receipts: FormKitObserverReceipts): void
 An API compatible FormKitNode that is able to determine the full dependency tree of nodes and their values.
 
 ```typescript
-export interface FormKitObservedNode extends FormKitNode {
+interface FormKitObservedNode extends FormKitNode {
     deps: FormKitDependencies;
     kill: () => void;
     observe: () => void;
@@ -110,7 +110,7 @@ export interface FormKitObservedNode extends FormKitNode {
 A callback to watch for nodes.
 
 ```typescript
-export interface FormKitWatchable {
+interface FormKitWatchable {
     (node: FormKitObservedNode): any;
 }
 ```

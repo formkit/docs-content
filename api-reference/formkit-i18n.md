@@ -15,7 +15,7 @@ Create a new internationalization plugin for FormKit.
 #### Signature
 
 ```typescript
-export declare function createI18nPlugin(registry: FormKitLocaleRegistry): FormKitPlugin;
+createI18nPlugin(registry: FormKitLocaleRegistry): FormKitPlugin;
 ```
 
 #### Parameters
@@ -33,7 +33,7 @@ Given a string or a date return a nice human-readable version.
 #### Signature
 
 ```typescript
-export declare function date(date: string | Date): string;
+date(date: string | Date): string;
 ```
 
 #### Parameters
@@ -51,7 +51,7 @@ Creates an oxford-comma separated list of items.
 #### Signature
 
 ```typescript
-export declare function list(items: string[], conjunction?: string): string;
+list(items: string[], conjunction?: string): string;
 ```
 
 #### Parameters
@@ -70,7 +70,7 @@ Orders two variables smallest to largest.
 #### Signature
 
 ```typescript
-export declare function order(first: string | number, second: string | number): [smaller: number | string, larger: number | string];
+order(first: string | number, second: string | number): [smaller: number | string, larger: number | string];
 ```
 
 #### Parameters
@@ -89,7 +89,7 @@ Given a string, convert it to sentence case.
 #### Signature
 
 ```typescript
-export declare function sentence(str: string): string;
+sentence(str: string): string;
 ```
 
 #### Parameters
@@ -107,7 +107,7 @@ export declare function sentence(str: string): string;
 A locale is just a collection of locale message registries, they are keyed by the type (like a namespace) ex: "validation" or "ui". Plugin authors can declare their own types too.
 
 ```typescript
-export interface FormKitLocale {
+interface FormKitLocale {
     [index: string]: FormKitLocaleMessages;
     ui: FormKitLocaleMessages;
 }
@@ -118,7 +118,7 @@ export interface FormKitLocale {
 A registry of locale messages — this is simply a keyed/value object with string keys (message name) and either string values (for simple returns) or functions that receive a context object.
 
 ```typescript
-export interface FormKitLocaleMessages {
+interface FormKitLocaleMessages {
     [index: string]: string | ((...args: any[]) => string);
 }
 ```
@@ -128,7 +128,7 @@ export interface FormKitLocaleMessages {
 The locale registry is just a key-value pair of locales to their respective registries.
 
 ```typescript
-export interface FormKitLocaleRegistry {
+interface FormKitLocaleRegistry {
     [index: string]: FormKitLocale;
 }
 ```

@@ -19,7 +19,7 @@ Performs a recursive Object.assign like operation.
 #### Signature
 
 ```typescript
-export declare function assignDeep<A extends Record<PropertyKey, any>, B extends Record<PropertyKey, any>>(a: A, b: B): A & B;
+assignDeep<A extends Record<PropertyKey, any>, B extends Record<PropertyKey, any>>(a: A, b: B): A & B;
 ```
 
 #### Parameters
@@ -38,7 +38,7 @@ This converts kebab-case to camelCase. It ONLY converts from kebab for efficienc
 #### Signature
 
 ```typescript
-export declare function camel(str: string): string;
+camel(str: string): string;
 ```
 
 #### Parameters
@@ -56,7 +56,7 @@ Perform a recursive clone on a given object. This only intended to be used for s
 #### Signature
 
 ```typescript
-export declare function clone<T extends Record<string, unknown> | unknown[] | null>(obj: T, explicit?: string[]): T;
+clone<T extends Record<string, unknown> | unknown[] | null>(obj: T, explicit?: string[]): T;
 ```
 
 #### Parameters
@@ -75,7 +75,7 @@ Clones anything. If the item is scalar, no worries, it passes it back. if it is 
 #### Signature
 
 ```typescript
-export declare function cloneAny<T>(obj: T): T;
+cloneAny<T>(obj: T): T;
 ```
 
 #### Parameters
@@ -93,7 +93,7 @@ Given 2 arrays, return them as a combined array with no duplicates.
 #### Signature
 
 ```typescript
-export declare function dedupe<T extends any[] | Set<any>, X extends any[] | Set<any>>(arr1: T, arr2?: X): any[];
+dedupe<T extends any[] | Set<any>, X extends any[] | Set<any>>(arr1: T, arr2?: X): any[];
 ```
 
 #### Parameters
@@ -112,7 +112,7 @@ Determines if a value is empty or not.
 #### Signature
 
 ```typescript
-export declare function empty(value: any): boolean;
+empty(value: any): boolean;
 ```
 
 #### Parameters
@@ -130,7 +130,7 @@ Compare two values for equality optionally at depth.
 #### Signature
 
 ```typescript
-export declare function eq(valA: any, valB: any, deep?: boolean, explicit?: string[]): boolean;
+eq(valA: any, valB: any, deep?: boolean, explicit?: string[]): boolean;
 ```
 
 #### Parameters
@@ -151,7 +151,7 @@ Escape a string for use in regular expressions.
 #### Signature
 
 ```typescript
-export declare function escapeExp(string: string): string;
+escapeExp(string: string): string;
 ```
 
 #### Parameters
@@ -169,7 +169,7 @@ Return a new (shallow) object with all properties from a given object that are p
 #### Signature
 
 ```typescript
-export declare function except(obj: Record<string, any>, toRemove: Array<string | RegExp>): Record<string, any>;
+except(obj: Record<string, any>, toRemove: Array<string | RegExp>): Record<string, any>;
 ```
 
 #### Parameters
@@ -188,7 +188,7 @@ Recursively merge data from additional into original returning a new object.
 #### Signature
 
 ```typescript
-export declare function extend(original: Record<string, any>, additional: Record<string, any> | string | null, extendArrays?: boolean, ignoreUndefined?: boolean): Record<string, any> | string | null;
+extend(original: Record<string, any>, additional: Record<string, any> | string | null, extendArrays?: boolean, ignoreUndefined?: boolean): Record<string, any> | string | null;
 ```
 
 #### Parameters
@@ -209,7 +209,7 @@ Get a specific value via dot notation.
 #### Signature
 
 ```typescript
-export declare function getAt(obj: any, addr: string): unknown;
+getAt(obj: any, addr: string): unknown;
 ```
 
 #### Parameters
@@ -224,7 +224,7 @@ Checks if the given property exists on the given object.
 #### Signature
 
 ```typescript
-export declare function has(obj: {
+has(obj: {
     [index: string]: any;
     [index: number]: any;
 }, property: string | symbol | number): boolean;
@@ -246,7 +246,7 @@ Defines an object as an initial value.
 #### Signature
 
 ```typescript
-export declare function init<T extends object>(obj: T): T & {
+init<T extends object>(obj: T): T & {
     __init?: true;
 };
 ```
@@ -266,7 +266,7 @@ Checks if an object is a simple array or record.
 #### Signature
 
 ```typescript
-export declare function isObject(o: unknown): o is Record<PropertyKey, unknown> | unknown[];
+isObject(o: unknown): o is Record<PropertyKey, unknown> | unknown[];
 ```
 
 #### Parameters
@@ -284,7 +284,7 @@ Attempts to determine if an object is a plain object. Mostly lifted from is-plai
 #### Signature
 
 ```typescript
-export declare function isPojo(o: any): o is Record<string, any>;
+isPojo(o: any): o is Record<string, any>;
 ```
 
 #### Parameters
@@ -302,7 +302,7 @@ Determine if the given string is fully quoted.
 #### Signature
 
 ```typescript
-export declare function isQuotedString(str: string): boolean;
+isQuotedString(str: string): boolean;
 ```
 
 #### Parameters
@@ -333,7 +333,7 @@ Determines if an object is an object or not.
 #### Signature
 
 ```typescript
-export declare function isRecord(o: unknown): o is Record<PropertyKey, unknown>;
+isRecord(o: unknown): o is Record<PropertyKey, unknown>;
 ```
 
 #### Parameters
@@ -351,7 +351,7 @@ This converts camel-case to kebab case. It ONLY converts from camel to kebab.
 #### Signature
 
 ```typescript
-export declare function kebab(str: string): string;
+kebab(str: string): string;
 ```
 
 #### Parameters
@@ -369,7 +369,7 @@ Filters out values from an object that should not be considered "props" of a cor
 #### Signature
 
 ```typescript
-export declare function nodeProps(...sets: Array<Record<string, any>>): Record<string, any>;
+nodeProps(...sets: Array<Record<string, any>>): Record<string, any>;
 ```
 
 #### Parameters
@@ -387,7 +387,7 @@ Given a FormKit input type returns the correct type
 #### Signature
 
 ```typescript
-export declare function nodeType(type: string): 'list' | 'group' | 'input';
+nodeType(type: string): 'list' | 'group' | 'input';
 ```
 
 #### Parameters
@@ -405,7 +405,7 @@ Extracts a set of keys from a given object. Importantly, this will extract value
 #### Signature
 
 ```typescript
-export declare function only(obj: Record<string, any>, include: Array<string | RegExp>): Record<string, any>;
+only(obj: Record<string, any>, include: Array<string | RegExp>): Record<string, any>;
 ```
 
 #### Parameters
@@ -424,7 +424,7 @@ Parse a string for comma-separated arguments
 #### Signature
 
 ```typescript
-export declare function parseArgs(str: string): string[];
+parseArgs(str: string): string[];
 ```
 
 #### Parameters
@@ -442,7 +442,7 @@ Given a string format (date) return a regex to match against.
 #### Signature
 
 ```typescript
-export declare function regexForFormat(format: string): RegExp;
+regexForFormat(format: string): RegExp;
 ```
 
 #### Parameters
@@ -458,7 +458,7 @@ Remove extra escape characters.
 #### Signature
 
 ```typescript
-export declare function rmEscapes(str: string): string;
+rmEscapes(str: string): string;
 ```
 
 #### Parameters
@@ -476,7 +476,7 @@ Creates a new set of the specified type and uses the values from an Array or an 
 #### Signature
 
 ```typescript
-export declare function setify<T>(items: Set<T> | T[] | null | undefined): Set<T>;
+setify<T>(items: Set<T> | T[] | null | undefined): Set<T>;
 ```
 
 #### Parameters
@@ -503,7 +503,7 @@ Very shallowly clones the given object.
 #### Signature
 
 ```typescript
-export declare function shallowClone<T>(obj: T, explicit?: string[]): T;
+shallowClone<T>(obj: T, explicit?: string[]): T;
 ```
 
 #### Parameters
@@ -522,7 +522,7 @@ Turn any string into a URL/DOM safe string.
 #### Signature
 
 ```typescript
-export declare function slugify(str: string): string;
+slugify(str: string): string;
 ```
 
 #### Parameters
@@ -540,7 +540,7 @@ Spreads an object or an array, otherwise returns the same value.
 #### Signature
 
 ```typescript
-export declare function spread<T>(obj: T, explicit?: string[]): T;
+spread<T>(obj: T, explicit?: string[]): T;
 ```
 
 #### Parameters
@@ -559,7 +559,7 @@ Generates a random string.
 #### Signature
 
 ```typescript
-export declare function token(): string;
+token(): string;
 ```
 
 #### Returns
@@ -582,7 +582,7 @@ Determines if the value of a prop that is either present (true) or not present (
 #### Signature
 
 ```typescript
-export declare function undefine(value: unknown): true | undefined;
+undefine(value: unknown): true | undefined;
 ```
 
 #### Parameters
@@ -600,5 +600,5 @@ true | undefined
 The date token strings that can be used for date formatting.
 
 ```typescript
-export declare type FormKitDateTokens = 'MM' | 'M' | 'DD' | 'D' | 'YYYY' | 'YY';
+type FormKitDateTokens = 'MM' | 'M' | 'DD' | 'D' | 'YYYY' | 'YY';
 ```

@@ -15,7 +15,7 @@ The actual validation plugin function, everything must be bootstrapped here.
 #### Signature
 
 ```typescript
-export declare function createValidationPlugin(baseRules?: FormKitValidationRules): (node: FormKitNode) => void;
+createValidationPlugin(baseRules?: FormKitValidationRules): (node: FormKitNode) => void;
 ```
 
 #### Parameters
@@ -29,7 +29,7 @@ Extracts all validation messages from the given node and all its descendants. Th
 #### Signature
 
 ```typescript
-export declare function getValidationMessages(node: FormKitNode): Map<FormKitNode, FormKitMessage[]>;
+getValidationMessages(node: FormKitNode): Map<FormKitNode, FormKitMessage[]>;
 ```
 
 #### Parameters
@@ -43,7 +43,7 @@ export declare function getValidationMessages(node: FormKitNode): Map<FormKitNod
 The interface for the localized validation message registry.
 
 ```typescript
-export interface FormKitValidationMessages {
+interface FormKitValidationMessages {
     [index: string]: string | ((...args: FormKitValidationI18NArgs) => string);
 }
 ```
@@ -53,7 +53,7 @@ export interface FormKitValidationMessages {
 FormKit validation rules are structured as on object of key/function pairs where the key of the object is the validation rule name.
 
 ```typescript
-export interface FormKitValidationRules {
+interface FormKitValidationRules {
     [index: string]: FormKitValidationRule;
 }
 ```
@@ -63,7 +63,7 @@ export interface FormKitValidationRules {
 Defines what fully parsed validation rules look like.
 
 ```typescript
-export declare type FormKitValidation = {
+type FormKitValidation = {
     rule: FormKitValidationRule;
     args: any[];
     timer: number;
@@ -78,7 +78,7 @@ export declare type FormKitValidation = {
 Defines what validation rules look like when they are parsed, but have not necessarily had validation rules substituted in yet.
 
 ```typescript
-export declare type FormKitValidationIntent = [string | FormKitValidationRule, ...any[]];
+type FormKitValidationIntent = [string | FormKitValidationRule, ...any[]];
 ```
 
 ### FormKitValidationRule
@@ -86,7 +86,7 @@ export declare type FormKitValidationIntent = [string | FormKitValidationRule, .
 Signature for a generic validation rule. It accepts an input, often a string but validation rules should be able to accept any input type, and returns a boolean indicating whether or not it passed validation.
 
 ```typescript
-export declare type FormKitValidationRule = {
+type FormKitValidationRule = {
     (node: FormKitNode, ...args: any[]): boolean | Promise<boolean>;
     ruleName?: string;
 } & Partial<FormKitValidationHints>;

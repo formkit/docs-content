@@ -15,7 +15,7 @@ Applies attributes to a given schema section by applying a higher order function
 #### Signature
 
 ```typescript
-export declare function $attrs(attrs: FormKitSchemaAttributes | (() => FormKitSchemaAttributes), section: FormKitSchemaExtendableSection): FormKitSchemaExtendableSection;
+$attrs(attrs: FormKitSchemaAttributes | (() => FormKitSchemaAttributes), section: FormKitSchemaExtendableSection): FormKitSchemaExtendableSection;
 ```
 
 #### Parameters
@@ -34,7 +34,7 @@ Extends a schema node with a given set of extensions.
 #### Signature
 
 ```typescript
-export declare function $extend(section: FormKitSchemaExtendableSection, extendWith: Partial<FormKitSchemaNode>): FormKitSchemaExtendableSection;
+$extend(section: FormKitSchemaExtendableSection, extendWith: Partial<FormKitSchemaNode>): FormKitSchemaExtendableSection;
 ```
 
 #### Parameters
@@ -53,7 +53,7 @@ Applies a condition to a given schema section.
 #### Signature
 
 ```typescript
-export declare function $for(varName: string, inName: string, section: FormKitSchemaExtendableSection): (extensions: Record<string, Partial<FormKitSchemaNode>>) => FormKitSchemaNode;
+$for(varName: string, inName: string, section: FormKitSchemaExtendableSection): (extensions: Record<string, Partial<FormKitSchemaNode>>) => FormKitSchemaNode;
 ```
 
 #### Parameters
@@ -73,7 +73,7 @@ Applies a condition to a given schema section.
 #### Signature
 
 ```typescript
-export declare function $if(condition: string, then: FormKitSchemaExtendableSection, otherwise?: FormKitSchemaExtendableSection): FormKitSchemaExtendableSection;
+$if(condition: string, then: FormKitSchemaExtendableSection, otherwise?: FormKitSchemaExtendableSection): FormKitSchemaExtendableSection;
 ```
 
 #### Parameters
@@ -93,7 +93,7 @@ Creates a root schema section.
 #### Signature
 
 ```typescript
-export declare function $root(section: FormKitSchemaExtendableSection): FormKitExtendableSchemaRoot;
+$root(section: FormKitSchemaExtendableSection): FormKitExtendableSchemaRoot;
 ```
 
 #### Parameters
@@ -125,7 +125,7 @@ export default function checkboxes(node: FormKitNode): void;
 #### Signature
 
 ```typescript
-export declare function composable(key: string, schema: FormKitInputSchema): FormKitSchemaComposable;
+composable(key: string, schema: FormKitInputSchema): FormKitSchemaComposable;
 ```
 
 #### Parameters
@@ -142,7 +142,7 @@ export declare function composable(key: string, schema: FormKitInputSchema): For
 #### Signature
 
 ```typescript
-export declare function createLibraryPlugin(...libraries: FormKitLibrary[]): FormKitPlugin;
+createLibraryPlugin(...libraries: FormKitLibrary[]): FormKitPlugin;
 ```
 
 #### Parameters
@@ -160,7 +160,7 @@ Creates a new reusable section.
 #### Signature
 
 ```typescript
-export declare function createSection(section: string, el: string | null | (() => FormKitSchemaNode), root: true): FormKitSection<FormKitExtendableSchemaRoot>;
+createSection(section: string, el: string | null | (() => FormKitSchemaNode), root: true): FormKitSection<FormKitExtendableSchemaRoot>;
 ```
 
 #### Parameters
@@ -176,7 +176,7 @@ Creates a new reusable section.
 #### Signature
 
 ```typescript
-export declare function createSection(section: string, el: string | null | (() => FormKitSchemaNode)): FormKitSection<FormKitSchemaExtendableSection>;
+createSection(section: string, el: string | null | (() => FormKitSchemaNode)): FormKitSection<FormKitSchemaExtendableSection>;
 ```
 
 #### Parameters
@@ -191,7 +191,7 @@ Creates a new reusable section.
 #### Signature
 
 ```typescript
-export declare function createSection(section: string, el: string | (() => FormKitSchemaNode), root: false): FormKitSection<FormKitSchemaExtendableSection>;
+createSection(section: string, el: string | (() => FormKitSchemaNode), root: false): FormKitSection<FormKitSchemaExtendableSection>;
 ```
 
 #### Parameters
@@ -234,7 +234,7 @@ Extends a single schema node with an extension. The extension can be any partial
 #### Signature
 
 ```typescript
-export declare function extendSchema(schema: FormKitSchemaNode, extension?: Partial<FormKitSchemaNode>): FormKitSchemaNode;
+extendSchema(schema: FormKitSchemaNode, extension?: Partial<FormKitSchemaNode>): FormKitSchemaNode;
 ```
 
 #### Parameters
@@ -309,7 +309,7 @@ Type guard for schema objects.
 #### Signature
 
 ```typescript
-export declare function isSchemaObject(schema: Partial<FormKitSchemaNode>): schema is FormKitSchemaDOMNode | FormKitSchemaComponent | FormKitSchemaFormKit;
+isSchemaObject(schema: Partial<FormKitSchemaNode>): schema is FormKitSchemaDOMNode | FormKitSchemaComponent | FormKitSchemaFormKit;
 ```
 
 #### Parameters
@@ -327,7 +327,7 @@ Checks if the current schema node is a slot condition like:
 #### Signature
 
 ```typescript
-export declare function isSlotCondition(node: FormKitSchemaNode): node is {
+isSlotCondition(node: FormKitSchemaNode): node is {
     if: string;
     then: string;
     else: FormKitSchemaNode | FormKitSchemaNode[];
@@ -395,7 +395,7 @@ Accepts an array of objects, array of strings, or object of key-value pairs. and
 #### Signature
 
 ```typescript
-export declare function normalizeOptions(options: FormKitOptionsProp): FormKitOptionsList;
+normalizeOptions(options: FormKitOptionsProp): FormKitOptionsList;
 ```
 
 #### Parameters
@@ -455,7 +455,7 @@ Creates an input schema with all of the wrapping base schema.
 #### Signature
 
 ```typescript
-export declare function useSchema(inputSection: FormKitSection): FormKitExtendableSchemaRoot;
+useSchema(inputSection: FormKitSection): FormKitExtendableSchemaRoot;
 ```
 
 #### Parameters
@@ -473,7 +473,7 @@ export declare function useSchema(inputSection: FormKitSection): FormKitExtendab
 A single file object in FormKit’s synthetic "FileList".
 
 ```typescript
-export interface FormKitFile {
+interface FormKitFile {
     file?: File;
     name: string;
 }
@@ -484,7 +484,7 @@ export interface FormKitFile {
 Options should always be formatted as an array of objects with label and value properties.
 
 ```typescript
-export interface FormKitOptionsItem {
+interface FormKitOptionsItem {
     __original?: any;
     [index: string]: any;
     attrs?:{
@@ -500,7 +500,7 @@ export interface FormKitOptionsItem {
 Allows for prop extensions to be defined by using an interface whose keys are ignored, but values are applied to a union type. This allows for any third party code to extend the options prop by using module augmentation to add new values to the union type.
 
 ```typescript
-export interface FormKitOptionsPropExtensions {
+interface FormKitOptionsPropExtensions {
     arrayOfNumbers: number[];
     arrayOfStrings: string[];
     optionsList: FormKitOptionsList;
@@ -513,7 +513,7 @@ export interface FormKitOptionsPropExtensions {
 A function that is called with an extensions argument and returns a valid schema node.
 
 ```typescript
-export interface FormKitSchemaExtendableSection {
+interface FormKitSchemaExtendableSection {
     _s?: string;
     (extensions: Record<string, Partial<FormKitSchemaNode>>): FormKitSchemaNode;
 }
@@ -524,7 +524,7 @@ export interface FormKitSchemaExtendableSection {
 A function that when called, returns a function that can in turn be called with an extension parameter.
 
 ```typescript
-export interface FormKitSection<T = FormKitSchemaExtendableSection> {
+interface FormKitSection<T = FormKitSchemaExtendableSection> {
     (...children: Array<FormKitSchemaExtendableSection | string>): T;
 }
 ```
@@ -534,7 +534,7 @@ export interface FormKitSection<T = FormKitSchemaExtendableSection> {
 Synthetic props are props that are not explicitly declared as props, but should be treated as props to the outside world.
 
 ```typescript
-export interface FormKitSyntheticPropsExtensions {
+interface FormKitSyntheticPropsExtensions {
     accept: string;
     action: string;
     actions: boolean;
@@ -559,7 +559,7 @@ export interface FormKitSyntheticPropsExtensions {
 A synthetic array-based "FileList".
 
 ```typescript
-export declare type FormKitFileValue = FormKitFile[];
+type FormKitFileValue = FormKitFile[];
 ```
 
 ### FormKitInputSchema
@@ -567,7 +567,7 @@ export declare type FormKitFileValue = FormKitFile[];
 Either a schema node, or a function that returns a schema node.
 
 ```typescript
-export declare type FormKitInputSchema = ((children?: string | FormKitSchemaNode[] | FormKitSchemaCondition) => FormKitSchemaNode) | FormKitSchemaNode;
+type FormKitInputSchema = ((children?: string | FormKitSchemaNode[] | FormKitSchemaCondition) => FormKitSchemaNode) | FormKitSchemaNode;
 ```
 
 ### FormKitOptionsList
@@ -575,7 +575,7 @@ export declare type FormKitInputSchema = ((children?: string | FormKitSchemaNode
 An array of option items.
 
 ```typescript
-export declare type FormKitOptionsList = FormKitOptionsItem[];
+type FormKitOptionsList = FormKitOptionsItem[];
 ```
 
 ### FormKitOptionsProp
@@ -583,7 +583,7 @@ export declare type FormKitOptionsList = FormKitOptionsItem[];
 The types of options that can be passed to the options prop.
 
 ```typescript
-export declare type FormKitOptionsProp = FormKitOptionsPropExtensions[keyof FormKitOptionsPropExtensions];
+type FormKitOptionsProp = FormKitOptionsPropExtensions[keyof FormKitOptionsPropExtensions];
 ```
 
 ### FormKitSyntheticProps
@@ -591,7 +591,7 @@ export declare type FormKitOptionsProp = FormKitOptionsPropExtensions[keyof Form
 The synthetic prop types.
 
 ```typescript
-export declare type FormKitSyntheticProps = {
+type FormKitSyntheticProps = {
     [Property in keyof FormKitSyntheticPropsExtensions]: FormKitSyntheticPropsExtensions[Property];
 };
 ```
