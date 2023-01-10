@@ -1,11 +1,26 @@
+<script setup>
+import { ref } from 'vue'
+
+const color = ref(null)
+</script>
+
 <template>
-  <!-- %partial%::html:: -->
   <FormKit
     type="mask"
-    name="serial"
-    mask="aa-####-aaa-####"
-    label="Serial number"
-    help="Serial number in the format: aa-1234-aaa-4567"
+    name="favorite_color"
+    v-model="color"
+    mask="\#hhhhhh"
+    label="Favorite Color in Hex"
+    help="Enter your favorite color in hexadecimal format. Or try FFA500."
   />
-  <!-- %partial%::html:: -->
+  <div class="box" :style="{backgroundColor: color}"></div>
 </template>
+
+<style>
+.box {
+  width: 30px;
+  height: 30px;
+}
+</style>
+
+

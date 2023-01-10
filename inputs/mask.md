@@ -29,16 +29,25 @@ The mask is the desired format of the input. It is passed to the `mask` prop whe
 
 ### Built-in tokens
 
-The mask input comes with 3 built-in tokens:
+The mask input comes with 4 built-in tokens:
 
-- `#` Accepts a digit character.
-- `a` Accepts an alphabetical character.
-- `*` Accepts any character.
+- `h` - Accepts a hexadecimal character (`0-9a-fA-F`).
+- `#` - Accepts a digit character.
+- `a` - Accepts an alphabetical character.
+- `*` - Accepts any character.
 
 <example
   name="Mask input"
   file="/_content/examples/mask/simple.vue">
 </example>
+
+### Escaping built-ins
+
+If you need to use one of the built-in tokens as a string literal in your mask, you can escape them with `\`. Here we are escaping the pound sign `#` to use in our hex color:
+
+```html
+<FormKit mask="\#hhhhhh" type="mask" />
+```
 
 ## Modes
 
@@ -174,7 +183,7 @@ In addition to creating new tokens, the `tokens` prop can also modify existing t
 
 ### Char tokens
 
-`char` tokens accept a single character. In order for a character to be accepted, it must match the `token.pattern` regular expression. The three built in tokens (`#`, `a`, and `*`) are all `char` type tokens.
+`char` tokens accept a single character. In order for a character to be accepted, it must match the `token.pattern` regular expression. The four built in tokens (`h`, `#`, `a`, and `*`) are all `char` type tokens.
 
 In `select` mode, `char` tokens are grouped together into a selection range.
 
