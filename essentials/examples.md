@@ -104,6 +104,12 @@ Conditionally update the <code>options</code> of a <code>select</code> input bas
 ## User interface
 
 <ExampleCard
+  href="https://formkit.link/35c793e3b7b58097098437d0c1707c62"
+  title="Add a loading indicator for async validation rules">
+Add a loading spinner to your input when an async validation rule is pending validation.
+</ExampleCard>
+
+<ExampleCard
   href="https://formkit.link/c210b252deb3433e5444a3d7ec1b9582"
   title="Add transitions to validation messages">
 Add transitions to validation messages by injecting a Vue <code>TransitionGroup</code> component using FormKit's <code>:sections-schema</code>.
