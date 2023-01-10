@@ -10,7 +10,7 @@ title: formkit/observer
 
 ### applyListeners()
 
-Given two maps (toAdd and toRemove) apply the dependencies as event listeners on the underlying nodes.
+Given two maps (toAdd and toRemove), apply the dependencies as event listeners on the underlying nodes.
 
 #### Signature
 

@@ -169,8 +169,6 @@ createSection(section: string, el: string | null | (() => FormKitSchemaNode), ro
 * `el` — The element or a function that returns a schema node.
 * `root` — When true returns an extendable root schema node.
 
-### createSection()
-
 Creates a new reusable section.
 
 #### Signature
@@ -183,8 +181,6 @@ createSection(section: string, el: string | null | (() => FormKitSchemaNode)): F
 
 * `section` — A single section of schema
 * `el` — The element or a function that returns a schema node.
-
-### createSection()
 
 Creates a new reusable section.
 

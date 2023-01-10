@@ -20,7 +20,7 @@ createI18nPlugin(registry: FormKitLocaleRegistry): FormKitPlugin;
 
 #### Parameters
 
-* `registry`
+* `registry` — The registry of [FormKitLocales](/api-reference/formkit-i18n#formkitlocaleregistry).
 
 #### Returns
 
@@ -28,7 +28,7 @@ createI18nPlugin(registry: FormKitLocaleRegistry): FormKitPlugin;
 
 ### date()
 
-Given a string or a date return a nice human-readable version.
+Given a string or a date, return a nice human-readable version.
 
 #### Signature
 
@@ -56,8 +56,8 @@ list(items: string[], conjunction?: string): string;
 
 #### Parameters
 
-* `items`
-* `conjunction` *optional* — in: x, y, and z "and" is the conjunction to use
+* `items` — the items to list out.
+* `conjunction` *optional* — in the list "x, y, and z", "and" is the conjunction. Defaults to "or".
 
 #### Returns
 
@@ -65,7 +65,7 @@ list(items: string[], conjunction?: string): string;
 
 ### order()
 
-Orders two variables smallest to largest.
+Orders two variables from smallest to largest.
 
 #### Signature
 
@@ -75,8 +75,8 @@ order(first: string | number, second: string | number): [smaller: number | strin
 
 #### Parameters
 
-* `first` — first argument
-* `second` — Second argument
+* `first` — The first number or string.
+* `second` — The second number or string.
 
 #### Returns
 
@@ -94,7 +94,7 @@ sentence(str: string): string;
 
 #### Parameters
 
-* `str`
+* `str` — The string to sentence case.
 
 #### Returns
 
@@ -125,7 +125,7 @@ interface FormKitLocaleMessages {
 
 ### FormKitLocaleRegistry
 
-The locale registry is just a key-value pair of locales to their respective registries.
+The locale registry is just a key-value pair of locale indexes ('ar', 'en', 'it', etc.) to their respective locales.
 
 ```typescript
 interface FormKitLocaleRegistry {
