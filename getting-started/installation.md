@@ -96,6 +96,8 @@ import { plugin, defaultConfig } from '@formkit/vue'
 import App from 'App.vue'
 
 createApp(App).use(plugin, defaultConfig).mount('#app')
+// remember, each Vue plugin needs its own .use()
+// .use(router).use(plugin2)
 ```
 
 </client-only>
