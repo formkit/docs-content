@@ -1,6 +1,7 @@
 <script setup>
 import Autocomplete from './Autocomplete.vue'
 import Dropdown from './Dropdown.vue'
+import Mask from './Mask.vue'
 import Rating from './Rating.vue'
 import Repeater from './Repeater.vue'
 import Taglist from './Taglist.vue'
@@ -102,6 +103,7 @@ const inputOptions = {
 
     <Autocomplete /> 
     <Dropdown />
+    <Mask />
     <Rating />
     <Repeater />
     <Taglist />

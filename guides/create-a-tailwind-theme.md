@@ -276,13 +276,13 @@ export default {
     suffixIcon: '$reset w-4 ml-1 flex self-stretch grow-0 shrink-0 [&>svg]:max-w-[1em] [&>svg]:max-h-[1em] [&>svg]:m-auto'
   },
   select: {
-    inner: 'flex relative max-w-md items-center rounded mb-1 ring-1 ring-gray-400 focus-within:ring-blue-500 focus-within:ring-2 [&>span:first-child]:focus-within:text-blue-500',
+    inner: 'flex relative items-center rounded mb-1 ring-1 ring-gray-400 focus-within:ring-blue-500 focus-within:ring-2 [&>span:first-child]:focus-within:text-blue-500',
     input: 'w-full pl-3 pr-8 py-2 border-none text-base text-gray-700 placeholder-gray-400 formkit-multiple:p-0 data-[placeholder="true"]:text-gray-400 formkit-multiple:data-[placeholder="true"]:text-inherit',
     selectIcon: 'flex p-[3px] shrink-0 w-5 mr-2 -ml-[1.5em] h-full pointer-events-none',
     option: 'formkit-multiple:p-3 formkit-multiple:text-sm text-gray-700'
   },
   textarea: {
-    inner: 'flex max-w-md rounded mb-1 ring-1 ring-gray-400 focus-within:ring-blue-500 [&>label:first-child]:focus-within:text-blue-500',
+    inner: 'flex rounded mb-1 ring-1 ring-gray-400 focus-within:ring-blue-500 [&>label:first-child]:focus-within:text-blue-500',
     input: 'block w-full h-32 px-3 py-3 border-none text-base text-gray-700 placeholder-gray-400 focus:shadow-outline',
   },
 
@@ -292,6 +292,10 @@ export default {
     inner: '[&>div>[data-value]]:absolute [&>div>[data-value]]:mb-0',
     option: 'grow text-ellipsis',
     selection: 'static flex left-0 top-0 right-0 bottom-0 mt-0 mb-2 rounded bg-gray-100',
+  },
+  mask: { 
+    inner: 'flex items-center max-w-md ring-1 ring-gray-400 focus-within:ring-blue-500 focus-within:ring-2 [&>label:first-child]:focus-within:text-blue-500 rounded mb-1',
+    input: 'w-full px-3 py-2 border-none text-base text-gray-700 placeholder-gray-400',
   },
   rating: {
     inner: 'relative flex items-center w-[8em] formkit-disabled:bg-transparent',
@@ -303,7 +307,7 @@ export default {
   },
   repeater: {
     content: 'grow p-3 flex flex-col align-center',
-    controlLabel: 'absolute opacity-0 pointer-events-none',
+    controlLabel: 'absolute opacity-0 pointer-events-none', 
     controls: 'flex flex-col items-center justify-center bg-gray-100 p-3',
     downControl: 'hover:text-blue-500 disabled:hover:text-inherit disabled:opacity-25',
     fieldset: 'py-4 px-5',
@@ -356,6 +360,7 @@ If you want to use these types of icons in your Tailwind theme be sure to import
     '/_content/examples/guides/tailwind-theme/tailwind-theme/KitchenSinkForm.vue',
     '/_content/examples/guides/tailwind-theme/tailwind-theme/Autocomplete.vue',
     '/_content/examples/guides/tailwind-theme/tailwind-theme/Dropdown.vue',
+    '/_content/examples/guides/tailwind-theme/tailwind-theme/Mask.vue',
     '/_content/examples/guides/tailwind-theme/tailwind-theme/Rating.vue',
     '/_content/examples/guides/tailwind-theme/tailwind-theme/Repeater.vue',
     '/_content/examples/guides/tailwind-theme/tailwind-theme/Taglist.vue',
