@@ -20,8 +20,8 @@ createIconHandler(iconLoader?: FormKitIconLoader, iconLoaderUrl?: FormKitIconLoa
 
 #### Parameters
 
-* `iconLoader` *optional* — a function for loading an icon when it's not found in the iconRegistry
-* `iconLoaderUrl` *optional*
+* `iconLoader` — a function for loading an icon when it's not found in the iconRegistry
+* `iconLoaderUrl`
 
 ### createThemePlugin()
 
@@ -35,10 +35,10 @@ createThemePlugin(theme?: string, icons?: Record<string, string | undefined>, ic
 
 #### Parameters
 
-* `theme` *optional* — The name or id of the theme to apply
-* `icons` *optional* — Icons you want to add to the global icon registry
-* `iconLoaderUrl` *optional*
-* `iconLoader` *optional* — A function that handles loading an icon when it is not found in the registry
+* `theme` — The name or id of the theme to apply
+* `icons` — Icons you want to add to the global icon registry
+* `iconLoaderUrl`
+* `iconLoader` — A function that handles loading an icon when it is not found in the registry
 
 ### generateClasses()
 
@@ -56,7 +56,7 @@ generateClasses(classes: Record<string, Record<string, string>>): Record<string,
 
 #### Returns
 
-FormKitClassFunctions
+ FormKitClassFunctions
 
 ## TypeScript
 

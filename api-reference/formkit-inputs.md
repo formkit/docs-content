@@ -6,7 +6,7 @@ title: formkit/inputs
 
 <page-toc></page-toc>
 
-## Functions
+## Helpers
 
 ### $attrs()
 
@@ -80,7 +80,7 @@ $if(condition: string, then: FormKitSchemaExtendableSection, otherwise?: FormKit
 
 * `condition` — A schema condition to apply to a section.
 * `then` — The section that applies if the condition is true.
-* `otherwise` *optional* — (else) The section that applies if the condition is false.
+* `otherwise` — (else) The section that applies if the condition is false.
 
 #### Returns
 
@@ -103,6 +103,8 @@ $root(section: FormKitSchemaExtendableSection): FormKitExtendableSchemaRoot;
 #### Returns
 
 [FormKitSchemaExtendableSection](#formkitschemaextendablesection)
+
+## Functions
 
 ### checkboxes()
 
@@ -161,32 +163,7 @@ Creates a new reusable section.
 
 ```typescript
 createSection(section: string, el: string | null | (() => FormKitSchemaNode), root: true): FormKitSection<FormKitExtendableSchemaRoot>;
-```
-
-#### Parameters
-
-* `section` — A single section of schema
-* `el` — The element or a function that returns a schema node.
-* `root` — When true returns an extendable root schema node.
-
-Creates a new reusable section.
-
-#### Signature
-
-```typescript
 createSection(section: string, el: string | null | (() => FormKitSchemaNode)): FormKitSection<FormKitSchemaExtendableSection>;
-```
-
-#### Parameters
-
-* `section` — A single section of schema
-* `el` — The element or a function that returns a schema node.
-
-Creates a new reusable section.
-
-#### Signature
-
-```typescript
 createSection(section: string, el: string | (() => FormKitSchemaNode), root: false): FormKitSection<FormKitSchemaExtendableSection>;
 ```
 
@@ -236,7 +213,7 @@ extendSchema(schema: FormKitSchemaNode, extension?: Partial<FormKitSchemaNode>):
 #### Parameters
 
 * `schema` — Extend a base schema node.
-* `extension` *optional* — The values to extend on the base schema node.
+* `extension` — The values to extend on the base schema node.
 
 #### Returns
 
@@ -361,7 +338,7 @@ export default function localize(key: string, value?: string): (node: FormKitNod
 #### Parameters
 
 * `key` — The key of the message
-* `value` *optional* — The value of the message
+* `value` — The value of the message
 
 #### Returns
 

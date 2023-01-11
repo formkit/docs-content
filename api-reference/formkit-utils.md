@@ -29,7 +29,7 @@ assignDeep<A extends Record<PropertyKey, any>, B extends Record<PropertyKey, any
 
 #### Returns
 
-A & B
+ A & B
 
 ### camel()
 
@@ -47,7 +47,7 @@ camel(str: string): string;
 
 #### Returns
 
-string
+ string
 
 ### clone()
 
@@ -62,11 +62,11 @@ clone<T extends Record<string, unknown> | unknown[] | null>(obj: T, explicit?: s
 #### Parameters
 
 * `obj`
-* `explicit` *optional*
+* `explicit`
 
 #### Returns
 
-T
+ T
 
 ### cloneAny()
 
@@ -84,7 +84,7 @@ cloneAny<T>(obj: T): T;
 
 #### Returns
 
-T
+ T
 
 ### dedupe()
 
@@ -99,11 +99,11 @@ dedupe<T extends any[] | Set<any>, X extends any[] | Set<any>>(arr1: T, arr2?: X
 #### Parameters
 
 * `arr1`
-* `arr2` *optional*
+* `arr2`
 
 #### Returns
 
-any[]
+ any[]
 
 ### empty()
 
@@ -121,7 +121,7 @@ empty(value: any): boolean;
 
 #### Returns
 
-boolean
+ boolean
 
 ### eq()
 
@@ -137,12 +137,12 @@ eq(valA: any, valB: any, deep?: boolean, explicit?: string[]): boolean;
 
 * `valA`
 * `valB`
-* `deep` *optional*
-* `explicit` *optional*
+* `deep`
+* `explicit`
 
 #### Returns
 
-boolean
+ boolean
 
 ### escapeExp()
 
@@ -160,7 +160,7 @@ escapeExp(string: string): string;
 
 #### Returns
 
-string
+ string
 
 ### except()
 
@@ -179,7 +179,7 @@ except(obj: Record<string, any>, toRemove: Array<string | RegExp>): Record<strin
 
 #### Returns
 
-Record<string, any>
+ Record<string, any>
 
 ### extend()
 
@@ -195,12 +195,12 @@ extend(original: Record<string, any>, additional: Record<string, any> | string |
 
 * `original`
 * `additional`
-* `extendArrays` *optional*
-* `ignoreUndefined` *optional*
+* `extendArrays`
+* `ignoreUndefined`
 
 #### Returns
 
-Record<string, any> | string | null
+ Record<string, any> | string | null
 
 ### getAt()
 
@@ -237,7 +237,7 @@ has(obj: {
 
 #### Returns
 
-boolean
+ boolean
 
 ### init()
 
@@ -257,7 +257,7 @@ init<T extends object>(obj: T): T & {
 
 #### Returns
 
-T & { __init?: true }
+ T & { __init?: true }
 
 ### isObject()
 
@@ -275,7 +275,7 @@ isObject(o: unknown): o is Record<PropertyKey, unknown> | unknown[];
 
 #### Returns
 
-boolean
+ boolean
 
 ### isPojo()
 
@@ -293,7 +293,7 @@ isPojo(o: any): o is Record<string, any>;
 
 #### Returns
 
-boolean
+ boolean
 
 ### isQuotedString()
 
@@ -311,7 +311,7 @@ isQuotedString(str: string): boolean;
 
 #### Returns
 
-boolean
+ boolean
 
 #### Examples
 
@@ -342,7 +342,7 @@ isRecord(o: unknown): o is Record<PropertyKey, unknown>;
 
 #### Returns
 
-boolean
+ boolean
 
 ### kebab()
 
@@ -360,7 +360,7 @@ kebab(str: string): string;
 
 #### Returns
 
-string
+ string
 
 ### nodeProps()
 
@@ -378,7 +378,7 @@ nodeProps(...sets: Array<Record<string, any>>): Record<string, any>;
 
 #### Returns
 
-Record<string, any>
+ Record<string, any>
 
 ### nodeType()
 
@@ -396,7 +396,7 @@ nodeType(type: string): 'list' | 'group' | 'input';
 
 #### Returns
 
-'list' | 'group' | 'input'
+ 'list' | 'group' | 'input'
 
 ### only()
 
@@ -415,7 +415,7 @@ only(obj: Record<string, any>, include: Array<string | RegExp>): Record<string, 
 
 #### Returns
 
-Record<string, any>
+ Record<string, any>
 
 ### parseArgs()
 
@@ -433,7 +433,7 @@ parseArgs(str: string): string[];
 
 #### Returns
 
-string[]
+ string[]
 
 ### regexForFormat()
 
@@ -467,7 +467,7 @@ rmEscapes(str: string): string;
 
 #### Returns
 
-string
+ string
 
 ### setify()
 
@@ -485,7 +485,7 @@ setify<T>(items: Set<T> | T[] | null | undefined): Set<T>;
 
 #### Returns
 
-Set
+ Set<T>
 
 #### Examples
 
@@ -509,11 +509,11 @@ shallowClone<T>(obj: T, explicit?: string[]): T;
 #### Parameters
 
 * `obj`
-* `explicit` *optional*
+* `explicit`
 
 #### Returns
 
-T
+ T
 
 ### slugify()
 
@@ -531,7 +531,7 @@ slugify(str: string): string;
 
 #### Returns
 
-string
+ string
 
 ### spread()
 
@@ -546,11 +546,11 @@ spread<T>(obj: T, explicit?: string[]): T;
 #### Parameters
 
 * `obj`
-* `explicit` *optional*
+* `explicit`
 
 #### Returns
 
-T
+ T
 
 ### token()
 
@@ -564,7 +564,7 @@ token(): string;
 
 #### Returns
 
-string
+ string
 
 #### Examples
 
@@ -591,7 +591,7 @@ undefine(value: unknown): true | undefined;
 
 #### Returns
 
-true | undefined
+ true | undefined
 
 ## TypeScript
 

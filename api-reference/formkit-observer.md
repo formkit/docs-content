@@ -37,7 +37,7 @@ createObserver(node: FormKitNode, dependencies?: FormKitDependencies): FormKitOb
 #### Parameters
 
 * `node` — Any formkit node to observe.
-* `dependencies` *optional*
+* `dependencies`
 
 #### Returns
 

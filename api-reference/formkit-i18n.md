@@ -57,7 +57,7 @@ list(items: string[], conjunction?: string): string;
 #### Parameters
 
 * `items` — the items to list out.
-* `conjunction` *optional* — in the list "x, y, and z", "and" is the conjunction. Defaults to "or".
+* `conjunction` — in the list "x, y, and z", "and" is the conjunction. Defaults to "or".
 
 #### Returns
 

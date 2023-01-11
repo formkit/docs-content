@@ -26,11 +26,11 @@ bfs(tree: FormKitNode, searchValue: string | number, searchGoal?: keyof FormKitN
 
 * `tree`
 * `searchValue`
-* `searchGoal` *optional*
+* `searchGoal`
 
 #### Returns
 
-Returns a [FormKitNode](#formkitnode) or `undefined` if not found.
+ Returns a [FormKitNode](#formkitnode) or `undefined` if not found.
 
 ### compile()
 
@@ -77,7 +77,7 @@ createClasses(propertyKey: string, node: FormKitNode, sectionClassList?: FormKit
 
 * `propertyKey` — section key
 * `node` — FormKit node
-* `sectionClassList` *optional* — Things to turn into classes
+* `sectionClassList` — Things to turn into classes
 
 ### createConfig()
 
@@ -91,7 +91,7 @@ createConfig(options?: Partial<FormKitConfig>): FormKitRootConfig;
 
 #### Parameters
 
-* `options` *optional* — FormKit node options to be used globally.
+* `options` — FormKit node options to be used globally.
 
 ### createMessage()
 
@@ -106,11 +106,11 @@ createMessage(conf: Partial<FormKitMessage>, node?: FormKitNode): FormKitMessage
 #### Parameters
 
 * `conf` — The message configuration
-* `node` *optional*
+* `node`
 
 #### Returns
 
-FormKitMessage
+ FormKitMessage
 
 ### createNode()
 
@@ -124,11 +124,11 @@ createNode(options?: FormKitOptions): FormKitNode;
 
 #### Parameters
 
-* `options` *optional*
+* `options`
 
 #### Returns
 
-Returns a [FormKitNode](/api-reference/formkit-core#formkitnode).
+ Returns a [FormKitNode](/api-reference/formkit-core#formkitnode).
 
 #### Examples
 
@@ -171,7 +171,7 @@ error(code: number, data?: any): never;
 #### Parameters
 
 * `code` — The integer error code.
-* `data` *optional* — Usually an object of information to include.
+* `data` — Usually an object of information to include.
 
 ### generateClassList()
 
@@ -255,7 +255,7 @@ isList(arg: FormKitContextShape): arg is FormKitListContext;
 
 #### Returns
 
-Returns a `boolean`.
+ Returns a `boolean`.
 
 ### isNode()
 
@@ -273,7 +273,7 @@ isNode(node: any): node is FormKitNode;
 
 #### Returns
 
-Returns a `boolean`.
+ Returns a `boolean`.
 
 #### Examples
 
@@ -339,7 +339,7 @@ reset(id: string | FormKitNode, resetTo?: unknown): FormKitNode | undefined;
 #### Parameters
 
 * `id` — The id of an input to reset
-* `resetTo` *optional*
+* `resetTo`
 
 #### Returns
 
@@ -369,7 +369,7 @@ setErrors(id: string, localErrors: ErrorMessages, childErrors?: ErrorMessages): 
 
 * `id`
 * `localErrors` — The errors to set on the form or the form’s inputs
-* `childErrors` *optional* — (optional) The errors to set on the form or the form’s inputs
+* `childErrors` — (optional) The errors to set on the form or the form’s inputs
 
 ### submitForm()
 
@@ -412,7 +412,7 @@ warn(code: number, data?: any): void;
 #### Parameters
 
 * `code` — The integer error code.
-* `data` *optional* — Usually an object of information to include.
+* `data` — Usually an object of information to include.
 
 ### watchRegistry()
 

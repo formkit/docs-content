@@ -20,7 +20,7 @@ createValidationPlugin(baseRules?: FormKitValidationRules): (node: FormKitNode) 
 
 #### Parameters
 
-* `baseRules` *optional*
+* `baseRules`
 
 ### getValidationMessages()
 
