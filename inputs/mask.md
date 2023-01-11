@@ -45,9 +45,13 @@ The mask input comes with 4 built-in tokens:
 
 If you need to use one of the built-in tokens as a string literal in your mask, you can escape them with `\`. Here we are escaping the pound sign `#` to use in our hex color:
 
+<client-only>
+
 ```html
 <FormKit mask="\#hhhhhh" type="mask" />
 ```
+
+</client-only>
 
 ## Modes
 
@@ -93,6 +97,8 @@ What if a pattern can accept letters _or_ numbers in the same position? It’s r
 
 The following properties must be defined to create a new token:
 
+<client-only>
+
 ```js
 {
   /**
@@ -136,7 +142,11 @@ The following properties must be defined to create a new token:
 }
 ```
 
+</client-only>
+
 For example, a new token that accepts letters and numbers, and is represented by the letter `z` in the mask string would look like this:
+
+<client-only>
 
 ```js
 {
@@ -147,6 +157,8 @@ For example, a new token that accepts letters and numbers, and is represented by
   selectDirection: 'left',
 }
 ```
+
+</client-only>
 
 <callout type="warning" label="Placeholders should not match pattern">
 Any <code>placeholder</code> you define should not match the Regex <code>pattern</code> provided in the token definition.
@@ -210,9 +222,13 @@ Enums are only supported in <code>select</code> mode. When any <code>enum</code>
 
 Groups are a way to to treat multiple mask characters as a single unit. You create a group by surrounding the desired mask characters in `{}`:
 
+<client-only>
+
 ```html
 <FormKit mask="id{-a#a}" type="mask" /> <!-- "-a#a" is the group -->
 ```
+
+</client-only>
 
 On their own, groups don't do anything unless you define group options.
 
