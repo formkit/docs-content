@@ -43,7 +43,7 @@ const tokens = {
     mode="select"
     mask="month day, year"
     :tokens="tokens"
-    label="(Select mode) Social security number"
+    label="(Enums) Birthday"
     help="Select a token and then type to autocomplete, or use the up/down arrows to select a value."
   />
 </template>
