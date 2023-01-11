@@ -216,7 +216,7 @@ export default {
     decorator: 'block relative h-5 w-5 mr-2 rounded bg-white bg-gradient-to-b from-transparent to-gray-200 ring-1 ring-gray-400 peer-checked:ring-blue-500 text-transparent peer-checked:text-blue-500',
     decoratorIcon: 'flex p-[3px] w-full h-full absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2',
     help: 'mb-2 mt-1.5',
-    input: 'absolute w-0 h-0 overflow-hidden opacity-0 pointer-events-none peer',
+    input: 'fixed left-[999em] w-0 h-0 overflow-hidden opacity-0 pointer-events-none peer',
     label: '$reset text-sm text-gray-700 mt-1 select-none',
     wrapper: 'flex items-center mb-1',
   },
@@ -293,7 +293,7 @@ export default {
     option: 'grow text-ellipsis',
     selection: 'static flex left-0 top-0 right-0 bottom-0 mt-0 mb-2 rounded bg-gray-100',
   },
-  mask: { 
+  mask: {
     inner: 'flex items-center max-w-md ring-1 ring-gray-400 focus-within:ring-blue-500 focus-within:ring-2 [&>label:first-child]:focus-within:text-blue-500 rounded mb-1',
     input: 'w-full px-3 py-2 border-none text-base text-gray-700 placeholder-gray-400',
   },
@@ -307,7 +307,7 @@ export default {
   },
   repeater: {
     content: 'grow p-3 flex flex-col align-center',
-    controlLabel: 'absolute opacity-0 pointer-events-none', 
+    controlLabel: 'absolute opacity-0 pointer-events-none',
     controls: 'flex flex-col items-center justify-center bg-gray-100 p-3',
     downControl: 'hover:text-blue-500 disabled:hover:text-inherit disabled:opacity-25',
     fieldset: 'py-4 px-5',
@@ -330,7 +330,7 @@ export default {
   toggle: {
     altLabel: 'block w-full mb-1 font-bold text-sm',
     inner: '$reset inline-block mr-2',
-    input: 'peer absolute opacity-0 pointer-events-none',
+    input: 'peer fixed left-[999em] opacity-0 pointer-events-none',
     innerLabel: 'text-[10px] font-bold absolute left-full top-1/2 -translate-x-full -translate-y-1/2 px-1',
     thumb: 'relative left-0 aspect-square rounded-full transition-all w-5 bg-gray-100',
     track: 'p-0.5 min-w-[3em] relative rounded-full transition-all bg-gray-400 peer-checked:bg-blue-500 peer-checked:[&>div:last-child]:left-full peer-checked:[&>div:last-child]:-translate-x-full peer-checked:[&>div:first-child:not(:last-child)]:left-0 peer-checked:[&>div:first-child:not(:last-child)]:translate-x-0',
