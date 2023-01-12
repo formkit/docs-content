@@ -15,7 +15,7 @@ A `<FormKit type="form">` tracks the form's validation state and prevents users 
 
 ### Provided submit button
 
-As a convenience, the `form` outputs a submit [button](/inputs/button) automatically, and provided themes also include a loading spinner. You can alter this button with the `submit-label` and `submit-attrs` props, or disable with `:actions="false"`. You can pass any FormKit props to `submit-attrs`. In the example below, we pass classes, `data` attributes, and help text:
+As a convenience, the `form` outputs a submit [button](/inputs/button) automatically, and provided themes also include a loading spinner. You can alter this button with the `submit-label` and `submit-attrs` props, or disable with `:actions="false"`. You can pass any FormKit props to `submit-attrs`. In the example below, we pass classes, `data` attributes, help text, and even [tell the included submit button to be un-ignored](/inputs/submit#ignored-input):
 
 ```html
 <FormKit
@@ -25,7 +25,8 @@ As a convenience, the `form` outputs a submit [button](/inputs/button) automatic
     inputClass: 'my-input-class',
     wrapperClass: 'my-wrapper-class',
     'data-theme': `dark`,
-    help: 'My button help text'
+    help: 'My button help text',
+    ignore: false
   }"
 ></FormKit>
 ```
