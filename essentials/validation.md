@@ -474,7 +474,7 @@ const monday = function(node) {
 
 // override default rule behaviors for your custom rule
 monday.blocking = false
-monday.skipEmpty = true
+monday.skipEmpty = false
 monday.debounce = 20 // milliseconds
 monday.force = true
 
