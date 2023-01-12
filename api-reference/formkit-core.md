@@ -10,6 +10,16 @@ The official FormKit core library. This package is responsible for most of FormK
 
 You can add this package by using `npm install @formkit/core` or `yarn add @formkit/core`.
 
+## FormKitNode
+
+### add
+
+Add a child to a node, the node must be a group or list.
+
+### addProps
+
+Adds props to the given node by removing them from node.props.attrs and moving them to the top-level node.props object.
+
 ## Functions
 
 ### bfs()
@@ -925,49 +935,6 @@ All FormKitMiddleware conform to the pattern of accepting a payload and a `next(
 
 ```typescript
 type FormKitMiddleware<T = unknown> = (payload: T, next: (payload?: T) => T) => T;
-```
-
-### FormKitNode
-
-FormKit's Node object produced by createNode(). All inputs, forms, and groups are instances of nodes.
-
-```typescript
-type FormKitNode = {
-    readonly __FKNode__: true;
-    readonly value: unknown;
-    _c: FormKitContext;
-    add: (node: FormKitNode, index?: number) => FormKitNode;
-    addProps: (props: string[]) => FormKitNode;
-    at: (address: FormKitAddress | string) => FormKitNode | undefined;
-    address: FormKitAddress;
-    bubble: (event: FormKitEvent) => FormKitNode;
-    calm: (childValue?: FormKitChildValue) => FormKitNode;
-    clearErrors: (clearChildren?: boolean, sourceKey?: string) => FormKitNode;
-    config: FormKitConfig;
-    define: (definition: FormKitTypeDefinition) => void;
-    disturb: () => FormKitNode;
-    destroy: () => void;
-    each: (callback: FormKitChildCallback) => void;
-    emit: (event: string, payload?: any, bubble?: boolean) => FormKitNode;
-    find: (selector: string, searcher?: keyof FormKitNode | FormKitSearchFunction) => FormKitNode | undefined;
-    hydrate: () => FormKitNode;
-    index: number;
-    input: (value: unknown, async?: boolean) => Promise<unknown>;
-    name: string;
-    on: (eventName: string, listener: FormKitEventListener) => string;
-    off: (receipt: string) => FormKitNode;
-    remove: (node: FormKitNode) => FormKitNode;
-    root: FormKitNode;
-    resetConfig: () => void;
-    reset: () => FormKitNode;
-    setErrors: (localErrors: ErrorMessages, childErrors?: ErrorMessages) => void;
-    settled: Promise<unknown>;
-    submit: () => void;
-    t: (key: string | FormKitTextFragment) => string;
-    isSettled: boolean;
-    use: (plugin: FormKitPlugin | FormKitPlugin[] | Set<FormKitPlugin>, run?: boolean, library?: boolean) => FormKitNode;
-    walk: (callback: FormKitChildCallback, stopOnFalse?: boolean) => void;
-} & Omit<FormKitContext, 'value' | 'name' | 'config'>;
 ```
 
 ### FormKitNodeType
