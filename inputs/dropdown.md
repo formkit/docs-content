@@ -124,7 +124,9 @@ file="/_content/examples/dropdown/dropdown-overscroll.vue"></example>
 
 <reference-table input="dropdown" :data="[
 {prop: 'options', type: 'any', default: '[]', description: 'The list of options the user can select from.'},
-{prop: 'load-on-scroll', type: 'boolean', default: 'false', description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'}, {prop: 'option-loader', type: 'function', default: 'null', description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'}]">
+{prop: 'load-on-scroll', type: 'boolean', default: 'false', description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'}, {prop: 'option-loader', type: 'function', default: 'null', description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'},
+{prop: 'empty-message', type: 'string', default: 'undefined', description: 'Renders a message when there are no options to display.'},
+]">
 </reference-table>
 
 ## Sections
@@ -252,6 +254,15 @@ Below is the inner options list (`listbox`) structure from the diagram above:
               name: 'listbox',
               position: 'right',
               children: [
+              {
+                  name: 'emptyMessage',
+                  children: [
+                    {
+                      name: 'emptyMessageInner',
+                      content: 'No options to display.',
+                    }
+                  ]
+                },
                 {
                   name: 'listitem',
                   class: 'flex flex-grow',
@@ -342,6 +353,14 @@ Below is the inner options list (`listbox`) structure from the diagram above:
   {
     'section-key': 'loadMoreInner',
     description: 'A span element that acts as a wrapper for the loaderIcon within the loadMore section.'
+  },
+  {
+    'section-key': 'emptyMessage',
+    description: 'A list item element that is conditionally rendered when there are no options to display.'
+  },
+  {
+    'section-key': 'emptyMessageInner',
+    description: 'A span element that acts as a wrapper for the emptyMessage section.'
   }
 ]">
 </reference-table>

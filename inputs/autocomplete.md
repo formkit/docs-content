@@ -529,6 +529,15 @@ Below is the inner options list (`listbox`) structure from the diagrams above:
               name: 'listbox',
               position: 'right',
               children: [
+              {
+                  name: 'emptyMessage',
+                  children: [
+                    {
+                      name: 'emptyMessageInner',
+                      content: 'No options to display.',
+                    }
+                  ]
+                },
                 {
                   name: 'listitem',
                   class: 'flex flex-grow',
@@ -630,6 +639,14 @@ Below is the inner options list (`listbox`) structure from the diagrams above:
   {
     'section-key': 'listboxButton',
     description: 'A button element that is used to open the dropdown.'
+  },
+    {
+    'section-key': 'emptyMessage',
+    description: 'A list item element that is conditionally rendered when there are no options to display.'
+  },
+  {
+    'section-key': 'emptyMessageInner',
+    description: 'A span element that acts as a wrapper for the emptyMessage section.'
   }
 ]">
 </reference-table>
