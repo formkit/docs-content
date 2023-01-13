@@ -156,7 +156,9 @@ file="/_content/examples/autocomplete-pro/autocomplete-full.vue"></example>
 
 <reference-table input="autocomplete" :data="[
 {prop: 'debounce', type: 'number', default: '200', description: 'Number of milliseconds to debounce calls to an options function.'}, {prop: 'options', type: 'any', default: '[]', description: 'The list of options the user can select from.'},
-{prop: 'load-on-scroll', type: 'boolean', default: 'false', description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'}, {prop: 'selection-appearance', type: 'string', default: 'text-input', description: 'Changes the way the option label is display.'}, {prop: 'multiple', type: 'boolean', default: 'false', description: 'Allows for multiple selections.'}, {prop: 'open-on-click', type: 'boolean', default: 'false', description: 'The autocomplete is expanded upon focus of the input, as opposed to waiting to expand until a search value is entered.'}, {prop: 'filter', type: 'function', default: 'null', description: 'Used to apply your own custom filter function for static options.'}, {prop: 'option-loader', type: 'function', default: 'null', description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'}]">
+{prop: 'load-on-scroll', type: 'boolean', default: 'false', description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'}, {prop: 'selection-appearance', type: 'string', default: 'text-input', description: 'Changes the way the option label is display.'}, {prop: 'multiple', type: 'boolean', default: 'false', description: 'Allows for multiple selections.'}, {prop: 'open-on-click', type: 'boolean', default: 'false', description: 'The autocomplete is expanded upon focus of the input, as opposed to waiting to expand until a search value is entered.'}, {prop: 'filter', type: 'function', default: 'null', description: 'Used to apply your own custom filter function for static options.'}, {prop: 'option-loader', type: 'function', default: 'null', description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'},
+{prop: 'empty-message', type: 'string', default: 'undefined', description: 'Renders a message when there are no options to display.'},
+]">
 </reference-table>
 
 ## Sections
@@ -527,6 +529,15 @@ Below is the inner options list (`listbox`) structure from the diagrams above:
               name: 'listbox',
               position: 'right',
               children: [
+              {
+                  name: 'emptyMessage',
+                  children: [
+                    {
+                      name: 'emptyMessageInner',
+                      content: 'No options to display.',
+                    }
+                  ]
+                },
                 {
                   name: 'listitem',
                   class: 'flex flex-grow',
@@ -628,6 +639,14 @@ Below is the inner options list (`listbox`) structure from the diagrams above:
   {
     'section-key': 'listboxButton',
     description: 'A button element that is used to open the dropdown.'
+  },
+    {
+    'section-key': 'emptyMessage',
+    description: 'A list item element that is conditionally rendered when there are no options to display.'
+  },
+  {
+    'section-key': 'emptyMessageInner',
+    description: 'A span element that acts as a wrapper for the emptyMessage section.'
   }
 ]">
 </reference-table>
