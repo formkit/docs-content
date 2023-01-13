@@ -12,6 +12,47 @@ You can add this package by using `npm install @formkit/core` or `yarn add @form
 
 ## FormKitNode
 
+FormKit's Node object produced by createNode(). All inputs, forms, and groups are instances of nodes.
+
+```typescript
+type FormKitNode = {
+    readonly __FKNode__: true;
+    readonly value: unknown;
+    _c: FormKitContext;
+    add: (node: FormKitNode, index?: number) => FormKitNode;
+    addProps: (props: string[]) => FormKitNode;
+    at: (address: FormKitAddress | string) => FormKitNode | undefined;
+    address: FormKitAddress;
+    bubble: (event: FormKitEvent) => FormKitNode;
+    calm: (childValue?: FormKitChildValue) => FormKitNode;
+    clearErrors: (clearChildren?: boolean, sourceKey?: string) => FormKitNode;
+    config: FormKitConfig;
+    define: (definition: FormKitTypeDefinition) => void;
+    disturb: () => FormKitNode;
+    destroy: () => void;
+    each: (callback: FormKitChildCallback) => void;
+    emit: (event: string, payload?: any, bubble?: boolean) => FormKitNode;
+    find: (selector: string, searcher?: keyof FormKitNode | FormKitSearchFunction) => FormKitNode | undefined;
+    hydrate: () => FormKitNode;
+    index: number;
+    input: (value: unknown, async?: boolean) => Promise<unknown>;
+    name: string;
+    on: (eventName: string, listener: FormKitEventListener) => string;
+    off: (receipt: string) => FormKitNode;
+    remove: (node: FormKitNode) => FormKitNode;
+    root: FormKitNode;
+    resetConfig: () => void;
+    reset: () => FormKitNode;
+    setErrors: (localErrors: ErrorMessages, childErrors?: ErrorMessages) => void;
+    settled: Promise<unknown>;
+    submit: () => void;
+    t: (key: string | FormKitTextFragment) => string;
+    isSettled: boolean;
+    use: (plugin: FormKitPlugin | FormKitPlugin[] | Set<FormKitPlugin>, run?: boolean, library?: boolean) => FormKitNode;
+    walk: (callback: FormKitChildCallback, stopOnFalse?: boolean) => void;
+} & Omit<FormKitContext, 'value' | 'name' | 'config'>;
+```
+
 ### add
 
 Add a child to a node, the node must be a group or list.
@@ -19,6 +60,106 @@ Add a child to a node, the node must be a group or list.
 ### addProps
 
 Adds props to the given node by removing them from node.props.attrs and moving them to the top-level node.props object.
+
+### at
+
+Gets a node at another address. Addresses are dot-syntax paths (or arrays) of node names. For example: `form.users.0.first_name`. There are a few "special" traversal tokens as well:
+
+* $root - Selects the root node * $parent - Selects the parent node * $self — Selects the current node
+
+### address
+
+The address of the current node, from the root of the tree.
+
+### clearErrors
+
+Clears the errors of the node, and optionally all the children.
+
+### config
+
+An object of [FormKitConfig](#formkitconfig) that is shared tree-wide with various configuration options that should be applied to the entire tree.
+
+### define
+
+Defines the current input's library type definition including node type, schema, and props.
+
+### destroy
+
+Removes the node from the global registry, removes it from its parent, and emits the 'destroying' event.
+
+### each
+
+Perform given callback on each of the given node's children.
+
+### emit
+
+Emit an event from the node so it can be listened by [on](#on).
+
+### find
+
+Within a given tree, find a node matching a given selector. Selectors can be simple strings or a function.
+
+### index
+
+The index of a node compared to its siblings. This is only applicable in cases where a node is a child of a list.
+
+### input
+
+The function used to set the value of a node. All changes to a node's value should use this function as it ensures the tree's state is always fully tracked.
+
+### name
+
+The name of the input in the node tree. When a node is a child of a list this automatically becomes its index.
+
+### on
+
+Adds an event listener for a given event, and returns a "receipt" which is a random string token. This token should be used to remove the listener in the future. Alternatively you can assign a "receipt" property to the listener function and that receipt will be used instead. This allows multiple listeners to all be de-registered with a single off() call if they share the same receipt.
+
+### off
+
+Removes an event listener by its token. Receipts can be shared among many event listeners by explicitly declaring the "receipt" property of the listener function.
+
+### remove
+
+Removes a child from the node
+
+### resetConfig
+
+Resets the configuration of a node.
+
+### reset
+
+Resets the node’s value back to its original value.
+
+### setErrors
+
+Sets errors on the input, and optionally to child inputs.
+
+### settled
+
+A promise that resolves when a node and its entire subtree is settled. In other words — all the inputs are done committing their values.
+
+### submit
+
+Triggers a submit event on the nearest form.
+
+### t
+
+A text or translation function that exposes a given string to the "text" hook — all text shown to users should be passed through this function before being displayed — especially for core and plugin authors.
+
+### isSettled
+
+Boolean reflecting the settlement state of the node and its subtree.
+
+### use
+
+Registers a new plugin on the node and its subtree.
+
+* run = should the plugin be executed or not * library = should the plugin's library function be executed (if there)
+
+### walk
+
+Performs a function on the node and every node in the subtree. This is an expensive operation so it should be done very rarely and only lifecycle events that are relatively rare like boot up and shut down.
 
 ## Functions
 
@@ -34,13 +175,28 @@ bfs(tree: FormKitNode, searchValue: string | number, searchGoal?: keyof FormKitN
 
 #### Parameters
 
-* `tree`
-* `searchValue`
-* `searchGoal`
+* `tree` — A [FormKitNode](#formkitnode)
+* `searchValue` — A value to be searched
+* `searchGoal` — A goal value
 
 #### Returns
 
- Returns a [FormKitNode](#formkitnode) or `undefined` if not found.
+ A [FormKitNode](#formkitnode) or `undefined`.
+
+### clearErrors()
+
+Clears child errors.
+
+#### Signature
+
+```typescript
+clearErrors(id: string, clearChildren?: boolean): void;
+```
+
+#### Parameters
+
+* `id` — The id of the node you want to clear errors for
+* `clearChildren` — Determines if the the children of this node should have their errors cleared.
 
 ### compile()
 
@@ -58,7 +214,7 @@ compile(expr: string): FormKitCompilerOutput;
 
 #### Returns
 
-[FormKitCompilerOutput](/api-reference/formkit-core#formkitcompileroutput)
+ A [FormKitCompilerOutput](#formkitcompileroutput)
 
 #### Examples
 
@@ -86,8 +242,12 @@ createClasses(propertyKey: string, node: FormKitNode, sectionClassList?: FormKit
 #### Parameters
 
 * `propertyKey` — section key
-* `node` — FormKit node
-* `sectionClassList` — Things to turn into classes
+* `node` — A [FormKitNode](#formkitnode)
+* `sectionClassList` — A `string | Record<string, boolean>` or a [FormKitClasses](#formkitclasses)
+
+#### Returns
+
+`Record<string, boolean>`
 
 ### createConfig()
 
@@ -101,7 +261,11 @@ createConfig(options?: Partial<FormKitConfig>): FormKitRootConfig;
 
 #### Parameters
 
-* `options` — FormKit node options to be used globally.
+* `options` — An object of optional properties of [FormKitConfig](#formkitconfig).
+
+#### Returns
+
+ A [FormKitRootConfig](#formkitrootconfig)
 
 ### createMessage()
 
@@ -115,12 +279,12 @@ createMessage(conf: Partial<FormKitMessage>, node?: FormKitNode): FormKitMessage
 
 #### Parameters
 
-* `conf` — The message configuration
-* `node`
+* `conf` — An object of optional properties of [FormKitMessage](#formkitmessage)
+* `node` — A [FormKitNode](/api-reference/formkit-node#formkitnode)
 
 #### Returns
 
- FormKitMessage
+ A [FormKitMessageProps](#formkitmessageprops)
 
 ### createNode()
 
@@ -134,11 +298,11 @@ createNode(options?: FormKitOptions): FormKitNode;
 
 #### Parameters
 
-* `options`
+* `options` — An options object of [FormKitOptions](#formkitoptions) to override the defaults.
 
 #### Returns
 
- Returns a [FormKitNode](/api-reference/formkit-core#formkitnode).
+ A [FormKitNode](/api-reference/formkit-core#formkitnode).
 
 #### Examples
 
@@ -154,6 +318,24 @@ console.log(input.value)
 // 'hello node world'
 ```
 
+### createValue()
+
+Creates the initial value for a node based on the options passed in and the type of the input.
+
+#### Signature
+
+```typescript
+createValue(options: FormKitOptions): unknown;
+```
+
+#### Parameters
+
+* `options` — A [FormKitOptions](#formkitoptions)
+
+#### Returns
+
+ 'unknown'
+
 ### deregister()
 
 Deregister a node from the registry.
@@ -166,7 +348,7 @@ deregister(node: FormKitNode): void;
 
 #### Parameters
 
-* `node` — A node to remove
+* `node` — A [FormKitNode](#formkitnode)
 
 ### error()
 
@@ -195,9 +377,13 @@ generateClassList(node: FormKitNode, property: string, ...args: Record<string, b
 
 #### Parameters
 
-* `node` — the FormKit node being operated on
+* `node` — A [FormKitNode](#formkitnode)
 * `property` — The property key to which the class list will be applied
-* `args` — CSS class list(s)
+* `args` — And array of `Record<string, boolean>` of CSS class list(s)
+
+#### Returns
+
+`string | null`
 
 ### getNode()
 
@@ -211,7 +397,7 @@ getNode(id: string): FormKitNode | undefined;
 
 #### Parameters
 
-* `id`
+* `id` — Get a node by a given id
 
 ### isComponent()
 
@@ -221,6 +407,25 @@ Type narrow that a node is a DOM node.
 
 ```typescript
 isComponent(node: string | Record<PropertyKey, any>): node is FormKitSchemaComponent;
+```
+
+#### Parameters
+
+* `node` — A schema node to check
+
+#### Returns
+
+`boolean`
+
+### isConditional()
+
+Determines if a node is conditionally rendered or not.
+
+#### Signature
+
+```typescript
+isConditional(node: FormKitSchemaNode): node is FormKitSchemaCondition;
+isConditional(node: FormKitSchemaAttributesCondition | FormKitSchemaAttributes): node is FormKitSchemaAttributesCondition;
 ```
 
 #### Parameters
@@ -261,7 +466,7 @@ isList(arg: FormKitContextShape): arg is FormKitListContext;
 
 #### Parameters
 
-* `arg`
+* `arg` — A [FormKitContextShape](#formkitcontextshape)
 
 #### Returns
 
@@ -279,7 +484,7 @@ isNode(node: any): node is FormKitNode;
 
 #### Parameters
 
-* `node`
+* `node` — Any value
 
 #### Returns
 
@@ -322,6 +527,26 @@ isSugar(node: FormKitSchemaNode): node is FormKitSchemaFormKit;
 
 `booleana`
 
+### names()
+
+Create a name based dictionary of all children in an array.
+
+#### Signature
+
+```typescript
+names(children: FormKitNode[]): {
+    [index: string]: FormKitNode;
+};
+```
+
+#### Parameters
+
+* `children` — An array of [FormKitNode](#formkitnode)
+
+#### Returns
+
+ A dictionary of named [FormKitNode](#formkitnode)
+
 ### register()
 
 Registers a node to the registry _if_ the node is a root node, _or_ if the node has an explicit node.props.alias. If these two things are not true then no node is registered (idempotent).
@@ -334,7 +559,7 @@ register(node: FormKitNode): void;
 
 #### Parameters
 
-* `node` — A node to register
+* `node` — A [FormKitNode](#formkitnode)
 
 ### reset()
 
@@ -349,11 +574,21 @@ reset(id: string | FormKitNode, resetTo?: unknown): FormKitNode | undefined;
 #### Parameters
 
 * `id` — The id of an input to reset
-* `resetTo`
+* `resetTo` — A value to reset the node to
 
 #### Returns
 
-[FormKitNode](/api-reference/formkit-core#formkitnode) | undefined
+ A [FormKitNode](#formkitnode) or `undefined`
+
+### resetCount()
+
+Reports the global number of node registrations, useful for deterministic node naming.
+
+#### Signature
+
+```typescript
+resetCount(): void;
+```
 
 ### resetRegistry()
 
@@ -377,9 +612,9 @@ setErrors(id: string, localErrors: ErrorMessages, childErrors?: ErrorMessages): 
 
 #### Parameters
 
-* `id`
-* `localErrors` — The errors to set on the form or the form’s inputs
-* `childErrors` — (optional) The errors to set on the form or the form’s inputs
+* `id` — The id of a form
+* `localErrors` — The errors to set on the form or the form’s inputs in the format of [ErrorMessages](#errormessages)
+* `childErrors` — (optional) The errors to set on the form or the form’s inputs in the format of [ErrorMessages](#errormessages)
 
 ### submitForm()
 
@@ -409,6 +644,10 @@ sugar<T extends FormKitSchemaNode>(node: T): Exclude<FormKitSchemaNode, string |
 
 * `node` — A node to covert
 
+#### Returns
+
+ A [FormKitSchemaNode](#formkitschemanode) without the properties of [FormKitSchemaFormKit](#formkitschemaformkit)
+
 ### warn()
 
 Globally emits a warning.
@@ -421,10 +660,12 @@ warn(code: number, data?: any): void;
 
 #### Parameters
 
-* `code` — The integer error code.
+* `code` — The integer warning code.
 * `data` — Usually an object of information to include.
 
 ### watchRegistry()
+
+A way of watching changes in the global registry
 
 #### Signature
 
@@ -435,7 +676,7 @@ watchRegistry(id: string, callback: FormKitEventListener): void;
 #### Parameters
 
 * `id` — An id to watch
-* `callback` — A callback to notify when the node is set or removed.
+* `callback` — A callback in the format of [FormKitEventListener](#formkiteventlistener) to notify when the node is set or removed.
 
 ## TypeScript
 

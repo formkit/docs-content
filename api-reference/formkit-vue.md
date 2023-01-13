@@ -20,8 +20,8 @@ createInput(schemaOrComponent: FormKitSchemaNode | FormKitSection | Component, d
 
 #### Parameters
 
-* `schemaOrComponent` — The actual schema of the input.
-* `definitionOptions`
+* `schemaOrComponent` — The actual schema of the input or the component.
+* `definitionOptions` — Any options in the FormKitTypeDefinition you want to define.
 
 #### Returns
 
@@ -59,8 +59,8 @@ export default function watchVerbose<T extends Ref<unknown> | Record<string, any
 
 #### Parameters
 
-* `obj` — An object to observe at depth
-* `callback` — A callback that
+* `obj` — An object to observe at depth.
+* `callback` — A callback to call when a change is detected.
 
 ## TypeScript
 

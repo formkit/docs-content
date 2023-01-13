@@ -6,11 +6,13 @@ title: formkit/validation
 
 <page-toc></page-toc>
 
+The first-party validation package/plugin for FormKit.
+
 ## Functions
 
 ### createValidationPlugin()
 
-The actual validation plugin function, everything must be bootstrapped here.
+The actual validation plugin function. Everything must be bootstrapped here.
 
 #### Signature
 
@@ -20,11 +22,11 @@ createValidationPlugin(baseRules?: FormKitValidationRules): (node: FormKitNode) 
 
 #### Parameters
 
-* `baseRules`
+* `baseRules` — Base validation rules to include in the plugin. By default, FormKit makes all rules in the formkit/rules package available via the defaultConfig.
 
 ### getValidationMessages()
 
-Extracts all validation messages from the given node and all its descendants. This is not reactive and must be re called each time the messages change.
+Extracts all validation messages from the given node and all its descendants. This is not reactive and must be re-called each time the messages change.
 
 #### Signature
 
@@ -83,7 +85,7 @@ type FormKitValidationIntent = [string | FormKitValidationRule, ...any[]];
 
 ### FormKitValidationRule
 
-Signature for a generic validation rule. It accepts an input, often a string but validation rules should be able to accept any input type, and returns a boolean indicating whether or not it passed validation.
+Signature for a generic validation rule. It accepts an input — often a string — but should be able to accept any input type, and returns a boolean indicating whether or not it passed validation.
 
 ```typescript
 type FormKitValidationRule = {

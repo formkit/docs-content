@@ -24,12 +24,12 @@ assignDeep<A extends Record<PropertyKey, any>, B extends Record<PropertyKey, any
 
 #### Parameters
 
-* `a`
-* `b`
+* `a` — An object to be assigned
+* `b` — An object to get values from
 
 #### Returns
 
- A & B
+`A & B`
 
 ### camel()
 
@@ -43,11 +43,11 @@ camel(str: string): string;
 
 #### Parameters
 
-* `str`
+* `str` — String to be camel cased.
 
 #### Returns
 
- string
+`string`
 
 ### clone()
 
@@ -61,12 +61,12 @@ clone<T extends Record<string, unknown> | unknown[] | null>(obj: T, explicit?: s
 
 #### Parameters
 
-* `obj`
-* `explicit`
+* `obj` — Object to be cloned
+* `explicit` — Array of items to be explicity cloned.
 
 #### Returns
 
- T
+`T`
 
 ### cloneAny()
 
@@ -80,11 +80,11 @@ cloneAny<T>(obj: T): T;
 
 #### Parameters
 
-* `obj`
+* `obj` — Value to be cloned
 
 #### Returns
 
- T
+`T`
 
 ### dedupe()
 
@@ -98,12 +98,12 @@ dedupe<T extends any[] | Set<any>, X extends any[] | Set<any>>(arr1: T, arr2?: X
 
 #### Parameters
 
-* `arr1`
-* `arr2`
+* `arr1` — First array
+* `arr2` — Second array
 
 #### Returns
 
- any[]
+`any[]`
 
 ### empty()
 
@@ -117,11 +117,11 @@ empty(value: any): boolean;
 
 #### Parameters
 
-* `value`
+* `value` — Value to check if its empty
 
 #### Returns
 
- boolean
+`boolean`
 
 ### eq()
 
@@ -135,14 +135,14 @@ eq(valA: any, valB: any, deep?: boolean, explicit?: string[]): boolean;
 
 #### Parameters
 
-* `valA`
-* `valB`
-* `deep`
-* `explicit`
+* `valA` — First value
+* `valB` — Second value
+* `deep` — If it will check deepely for the value if its object
+* `explicit` — An array of string to explicity check
 
 #### Returns
 
- boolean
+`boolean`
 
 ### escapeExp()
 
@@ -156,11 +156,11 @@ escapeExp(string: string): string;
 
 #### Parameters
 
-* `string`
+* `string` — String to be escaped
 
 #### Returns
 
- string
+`string`
 
 ### except()
 
@@ -174,12 +174,12 @@ except(obj: Record<string, any>, toRemove: Array<string | RegExp>): Record<strin
 
 #### Parameters
 
-* `obj`
-* `toRemove`
+* `obj` — An object to get values from
+* `toRemove` — Array of items to got
 
 #### Returns
 
- Record<string, any>
+`Record<string, any>`
 
 ### extend()
 
@@ -193,14 +193,14 @@ extend(original: Record<string, any>, additional: Record<string, any> | string |
 
 #### Parameters
 
-* `original`
-* `additional`
-* `extendArrays`
-* `ignoreUndefined`
+* `original` — Original array
+* `additional` — Array to be used for merge
+* `extendArrays` — If it will extend the array
+* `ignoreUndefined` — If it will ignore undefined values
 
 #### Returns
 
- Record<string, any> | string | null
+`Record<string, any> | string | null`
 
 ### getAt()
 
@@ -217,6 +217,10 @@ getAt(obj: any, addr: string): unknown;
 * `obj` — An object to fetch data from
 * `addr` — An "address" in dot notation
 
+#### Returns
+
+`unknown`
+
 ### has()
 
 Checks if the given property exists on the given object.
@@ -232,12 +236,12 @@ has(obj: {
 
 #### Parameters
 
-* `obj`
-* `property`
+* `obj` — An object of to be checked
+* `property` — The property to check
 
 #### Returns
 
- boolean
+`boolean`
 
 ### init()
 
@@ -253,11 +257,11 @@ init<T extends object>(obj: T): T & {
 
 #### Parameters
 
-* `obj`
+* `obj` — Object to be added an initial value.
 
 #### Returns
 
- T & { __init?: true }
+`T & { __init?: true }`
 
 ### isObject()
 
@@ -271,11 +275,11 @@ isObject(o: unknown): o is Record<PropertyKey, unknown> | unknown[];
 
 #### Parameters
 
-* `o`
+* `o` — Value to be checked
 
 #### Returns
 
- boolean
+`boolean`
 
 ### isPojo()
 
@@ -289,11 +293,11 @@ isPojo(o: any): o is Record<string, any>;
 
 #### Parameters
 
-* `o`
+* `o` — Value to be checked
 
 #### Returns
 
- boolean
+`boolean`
 
 ### isQuotedString()
 
@@ -307,11 +311,11 @@ isQuotedString(str: string): boolean;
 
 #### Parameters
 
-* `str`
+* `str` — String to check
 
 #### Returns
 
- boolean
+`boolean`
 
 #### Examples
 
@@ -338,11 +342,11 @@ isRecord(o: unknown): o is Record<PropertyKey, unknown>;
 
 #### Parameters
 
-* `o`
+* `o` — Value to be checked
 
 #### Returns
 
- boolean
+`boolean`
 
 ### kebab()
 
@@ -356,11 +360,11 @@ kebab(str: string): string;
 
 #### Parameters
 
-* `str`
+* `str` — String to be kebabed
 
 #### Returns
 
- string
+`string`
 
 ### nodeProps()
 
@@ -374,11 +378,11 @@ nodeProps(...sets: Array<Record<string, any>>): Record<string, any>;
 
 #### Parameters
 
-* `sets`
+* `sets` — Arrays to be used to get values filtered out of
 
 #### Returns
 
- Record<string, any>
+`Record<string, any>`
 
 ### nodeType()
 
@@ -392,11 +396,11 @@ nodeType(type: string): 'list' | 'group' | 'input';
 
 #### Parameters
 
-* `type`
+* `type` — String to return to check for correct type
 
 #### Returns
 
- 'list' | 'group' | 'input'
+`'list' | 'group' | 'input'`
 
 ### only()
 
@@ -410,12 +414,12 @@ only(obj: Record<string, any>, include: Array<string | RegExp>): Record<string, 
 
 #### Parameters
 
-* `obj`
-* `include`
+* `obj` — An object to get values from
+* `include` — Array of items to got
 
 #### Returns
 
- Record<string, any>
+`Record<string, any>`
 
 ### parseArgs()
 
@@ -429,11 +433,11 @@ parseArgs(str: string): string[];
 
 #### Parameters
 
-* `str`
+* `str` — String to parse arguments from
 
 #### Returns
 
- string[]
+`string[]`
 
 ### regexForFormat()
 
@@ -447,9 +451,11 @@ regexForFormat(format: string): RegExp;
 
 #### Parameters
 
-* `format`
+* `format` — String to be transformed to RegExp
 
 #### Returns
+
+`RegExp`
 
 ### rmEscapes()
 
@@ -463,11 +469,11 @@ rmEscapes(str: string): string;
 
 #### Parameters
 
-* `str`
+* `str` — String to be removed
 
 #### Returns
 
- string
+`string`
 
 ### setify()
 
@@ -481,11 +487,11 @@ setify<T>(items: Set<T> | T[] | null | undefined): Set<T>;
 
 #### Parameters
 
-* `items`
+* `items` — An array or a Set.
 
 #### Returns
 
- Set<T>
+`Set<T>`
 
 #### Examples
 
@@ -508,12 +514,12 @@ shallowClone<T>(obj: T, explicit?: string[]): T;
 
 #### Parameters
 
-* `obj`
-* `explicit`
+* `obj` — Object to be shallow cloned
+* `explicit` — Array of items to be explicity cloned.
 
 #### Returns
 
- T
+`T`
 
 ### slugify()
 
@@ -527,11 +533,11 @@ slugify(str: string): string;
 
 #### Parameters
 
-* `str`
+* `str` — String to be slugfied to a url safe string.
 
 #### Returns
 
- string
+`string`
 
 ### spread()
 
@@ -545,12 +551,12 @@ spread<T>(obj: T, explicit?: string[]): T;
 
 #### Parameters
 
-* `obj`
-* `explicit`
+* `obj` — Object to be spreaded
+* `explicit` — Array of items to be explicity spread.
 
 #### Returns
 
- T
+`T`
 
 ### token()
 
@@ -587,11 +593,11 @@ undefine(value: unknown): true | undefined;
 
 #### Parameters
 
-* `value`
+* `value` — Value to check for undefined.
 
 #### Returns
 
- true | undefined
+`true | undefined`
 
 ## TypeScript
 

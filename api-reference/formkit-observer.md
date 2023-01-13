@@ -6,27 +6,13 @@ title: formkit/observer
 
 <page-toc></page-toc>
 
+FormKit Observer is a utility to wrap a FormKitNode in a dependency tracking observer proxy.
+
 ## Functions
-
-### applyListeners()
-
-Given two maps (toAdd and toRemove), apply the dependencies as event listeners on the underlying nodes.
-
-#### Signature
-
-```typescript
-applyListeners(node: FormKitObservedNode, [toAdd, toRemove]: [FormKitDependencies, FormKitDependencies], callback: FormKitEventListener): void;
-```
-
-#### Parameters
-
-* `node` — The node to apply dependencies to
-* `[toAdd, toRemove]`
-* `callback`
 
 ### createObserver()
 
-The FormKitNode to observe.
+Creates the observer.
 
 #### Signature
 
@@ -36,10 +22,12 @@ createObserver(node: FormKitNode, dependencies?: FormKitDependencies): FormKitOb
 
 #### Parameters
 
-* `node` — Any formkit node to observe.
-* `dependencies`
+* `node` — The [FormKitNode](/api-reference/formkit-core#formkitnode) to observe.
+* `dependencies` — The dependent nodes and the events that are required to watch for changes.
 
 #### Returns
+
+ Returns a [FormKitObservedNode](/api-reference/formkit-observer#formkitobservednode).
 
 ### diffDeps()
 
@@ -53,14 +41,16 @@ diffDeps(previous: FormKitDependencies, current: FormKitDependencies): [FormKitD
 
 #### Parameters
 
-* `previous` — The previous watcher dependencies
-* `current` — The new/current watcher dependencies
+* `previous` — The previous watcher dependencies.
+* `current` — The new/current watcher dependencies.
 
 #### Returns
 
+ A tuple of maps: `toAdd` and `toRemove`.
+
 ### isKilled()
 
-Checks if the given noe is revoked.
+Checks if the given node is revoked.
 
 #### Signature
 
@@ -74,6 +64,8 @@ isKilled(node: FormKitObservedNode): boolean;
 
 #### Returns
 
+ A `boolean` indicating if the node is revoked.
+
 ### removeListeners()
 
 Remove all the receipts from the observed node and subtree.
@@ -86,13 +78,13 @@ removeListeners(receipts: FormKitObserverReceipts): void;
 
 #### Parameters
 
-* `receipts` — The formkit observer receipts to remove
+* `receipts` — The FormKit observer receipts to remove.
 
 ## TypeScript
 
 ### FormKitObservedNode
 
-An API compatible FormKitNode that is able to determine the full dependency tree of nodes and their values.
+An API-compatible FormKitNode that is able to determine the full dependency tree of nodes and their values.
 
 ```typescript
 interface FormKitObservedNode extends FormKitNode {

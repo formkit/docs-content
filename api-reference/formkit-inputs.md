@@ -104,11 +104,11 @@ $root(section: FormKitSchemaExtendableSection): FormKitExtendableSchemaRoot;
 
 [FormKitSchemaExtendableSection](#formkitschemaextendablesection)
 
-## Functions
+## Features
 
 ### checkboxes()
 
-Adds checkbox selection support
+A feature that adds checkbox selection support.
 
 #### Signature
 
@@ -118,11 +118,182 @@ export default function checkboxes(node: FormKitNode): void;
 
 #### Parameters
 
-* `node` — Node the feature is added to
+* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+
+### defaultIcon()
+
+Adds icon props definition.
+
+#### Signature
+
+```typescript
+export default function defaultIcon(sectionKey: string, defaultIcon: string): (node: FormKitNode) => void;
+```
+
+#### Parameters
+
+* `sectionKey` — the location the icon should be loaded
+* `defaultIcon` — the icon that should be loaded if a match is found in the user's CSS
+
+#### Returns
+
+ A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+
+### disablesChildren()
+
+A feature that allows disabling children of this node.
+
+#### Signature
+
+```typescript
+export default function disables(node: FormKitNode): void;
+```
+
+#### Parameters
+
+* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+
+### files()
+
+A feature to add file handling support to an input.
+
+#### Signature
+
+```typescript
+export default function files(node: FormKitNode): void;
+```
+
+#### Parameters
+
+* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+
+### forms()
+
+A feature to add submiting handler and actions section
+
+#### Signature
+
+```typescript
+export default function form(node: FormKitNode): void;
+```
+
+#### Parameters
+
+* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+
+### ignores()
+
+A feature that applies ignore="true" by default.
+
+#### Signature
+
+```typescript
+export default function ignore(node: FormKitNode): void;
+```
+
+#### Parameters
+
+* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+
+### initialValue()
+
+A feature that ensures the input has an `initialValue` prop.
+
+#### Signature
+
+```typescript
+export default function initialValue(node: FormKitNode): void;
+```
+
+#### Parameters
+
+* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+
+### localize()
+
+Creates a new feature that generates a localization message of type ui for use on a given component.
+
+#### Signature
+
+```typescript
+export default function localize(key: string, value?: string): (node: FormKitNode) => void;
+```
+
+#### Parameters
+
+* `key` — The key of the message
+* `value` — The value of the message
+
+#### Returns
+
+ A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+
+### normalizeBoxes()
+
+A feature that ormalize the boxes.
+
+#### Signature
+
+```typescript
+export default function normalizeBoxes(node: FormKitNode): FormKitMiddleware<{
+    prop: string | symbol;
+    value: any;
+}>;
+```
+
+#### Parameters
+
+* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+
+#### Returns
+
+ A [FormKitMiddleware](/api-reference/formkit-node#formkitmiddleware)
+
+### options()
+
+A feature that converts the options prop to usable values, to used as a feature or a plugin.
+
+#### Signature
+
+```typescript
+export default function options(node: FormKitNode): void;
+```
+
+#### Parameters
+
+* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+
+### radios()
+
+A feature to check if the value being checked is the current value.
+
+#### Signature
+
+```typescript
+export default function radios(node: FormKitNode): void;
+```
+
+#### Parameters
+
+* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+
+### selects()
+
+Converts the options prop to usable values.
+
+#### Signature
+
+```typescript
+export default function select(node: FormKitNode): void;
+```
+
+#### Parameters
+
+* `node` — A formkit node.
+
+## Functions
 
 ### composable()
-
-================================================================
 
 #### Signature
 
@@ -141,6 +312,8 @@ composable(key: string, schema: FormKitInputSchema): FormKitSchemaComposable;
 
 ### createLibraryPlugin()
 
+Creates a plugin based on a list of [FormKitLibrary](/api-reference/formkit-core#formkitlibrary)
+
 #### Signature
 
 ```typescript
@@ -149,7 +322,7 @@ createLibraryPlugin(...libraries: FormKitLibrary[]): FormKitPlugin;
 
 #### Parameters
 
-* `libraries` — One or many formkit urls.
+* `libraries` — One or many [FormKitLibrary](/api-reference/formkit-core#formkitlibrary).
 
 #### Returns
 
@@ -171,34 +344,11 @@ createSection(section: string, el: string | (() => FormKitSchemaNode), root: fal
 
 * `section` — A single section of schema
 * `el` — The element or a function that returns a schema node.
-* `root` — When true returns an extendable root schema node.
+* `root` — When true, returns an extendable root schema node.
 
-### defaultIcon()
+#### Returns
 
-#### Signature
-
-```typescript
-export default function defaultIcon(sectionKey: string, defaultIcon: string): (node: FormKitNode) => void;
-```
-
-#### Parameters
-
-* `sectionKey` — the location the icon should be loaded
-* `defaultIcon` — the icon that should be loaded if a match is found in the user's CSS
-
-### disablesChildren()
-
-Allows disabling children of this.
-
-#### Signature
-
-```typescript
-export default function disables(node: FormKitNode): void;
-```
-
-#### Parameters
-
-* `node` — The FormKitNode of the form/group/list
+[FormKitExtendableSchemaRoot](/api-reference/formkit-core#formkitextendableschemaroot)
 
 ### extendSchema()
 
@@ -218,62 +368,6 @@ extendSchema(schema: FormKitSchemaNode, extension?: Partial<FormKitSchemaNode>):
 #### Returns
 
 [FormKitSchemaNode](/api-reference/formkit-core#formkitschemanode)
-
-### files()
-
-Feature to add file handling support to an input.
-
-#### Signature
-
-```typescript
-export default function files(node: FormKitNode): void;
-```
-
-#### Parameters
-
-* `node` — The node being checked
-
-### forms()
-
-Converts the options prop to usable values.
-
-#### Signature
-
-```typescript
-export default function form(node: FormKitNode): void;
-```
-
-#### Parameters
-
-* `node` — A formkit node.
-
-### ignores()
-
-Applies ignore="true" by default.
-
-#### Signature
-
-```typescript
-export default function ignore(node: FormKitNode): void;
-```
-
-#### Parameters
-
-* `node` — The node
-
-### initialValue()
-
-Ensures the input has an `initialValue` prop.
-
-#### Signature
-
-```typescript
-export default function initialValue(node: FormKitNode): void;
-```
-
-#### Parameters
-
-* `node` — The node being given an initial value
 
 ### isSchemaObject()
 
@@ -309,7 +403,7 @@ isSlotCondition(node: FormKitSchemaNode): node is {
 
 #### Parameters
 
-* `node` — a schema node
+* `node` — A [FormKitSchemaNode](/api-reference/formkit-core#formkitschemanode)
 
 #### Returns
 
@@ -325,45 +419,9 @@ isSlotCondition(node: FormKitSchemaNode): node is {
 }
 ```
 
-### localize()
-
-Creates a new feature that generates a localization message of type ui for use on a given component.
-
-#### Signature
-
-```typescript
-export default function localize(key: string, value?: string): (node: FormKitNode) => void;
-```
-
-#### Parameters
-
-* `key` — The key of the message
-* `value` — The value of the message
-
-#### Returns
-
-### normalizeBoxes()
-
-Normalize the boxes.
-
-#### Signature
-
-```typescript
-export default function normalizeBoxes(node: FormKitNode): FormKitMiddleware<{
-    prop: string | symbol;
-    value: any;
-}>;
-```
-
-#### Parameters
-
-* `node` — The node
-
-#### Returns
-
 ### normalizeOptions()
 
-Accepts an array of objects, array of strings, or object of key-value pairs. and returns an array of objects with value and label properties.
+A function to normalize an array of objects, array of strings, or object of key-value to use an array of objects with value and label properties.
 
 #### Signature
 
@@ -373,53 +431,11 @@ normalizeOptions(options: FormKitOptionsProp): FormKitOptionsList;
 
 #### Parameters
 
-* `options` — Options to
+* `options` — An unnormalized [FormKitOptionsProp](#formkitoptionsprop)
 
 #### Returns
 
-[FormKitOptionsList](#formkitoptionslist)
-
-### options()
-
-Converts the options prop to usable values.
-
-#### Signature
-
-```typescript
-export default function options(node: FormKitNode): void;
-```
-
-#### Parameters
-
-* `node` — A formkit node.
-
-### radios()
-
-Determines if a given radio input is being evaluated.
-
-#### Signature
-
-```typescript
-export default function radios(node: FormKitNode): void;
-```
-
-#### Parameters
-
-* `node` — The radio input group.
-
-### selects()
-
-Converts the options prop to usable values.
-
-#### Signature
-
-```typescript
-export default function select(node: FormKitNode): void;
-```
-
-#### Parameters
-
-* `node` — A formkit node.
+ A list of [FormKitOptionsList](#formkitoptionslist)
 
 ### useSchema()
 

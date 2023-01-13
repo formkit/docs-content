@@ -10,7 +10,7 @@ title: formkit/themes
 
 ### createIconHandler()
 
-Returns a function responsible for loading an icon by name
+Returns a function responsible for loading an icon by name.
 
 #### Signature
 
@@ -20,12 +20,12 @@ createIconHandler(iconLoader?: FormKitIconLoader, iconLoaderUrl?: FormKitIconLoa
 
 #### Parameters
 
-* `iconLoader` — a function for loading an icon when it's not found in the iconRegistry
-* `iconLoaderUrl`
+* `iconLoader` — a function for loading an icon when it's not found in the iconRegistry.
+* `iconLoaderUrl` — a function that returns a remote URL for retrieving an SVG icon by name.
 
 ### createThemePlugin()
 
-Creates the theme plugin based on a given theme name
+Creates the theme plugin based on a given theme name.
 
 #### Signature
 
@@ -35,14 +35,14 @@ createThemePlugin(theme?: string, icons?: Record<string, string | undefined>, ic
 
 #### Parameters
 
-* `theme` — The name or id of the theme to apply
-* `icons` — Icons you want to add to the global icon registry
-* `iconLoaderUrl`
-* `iconLoader` — A function that handles loading an icon when it is not found in the registry
+* `theme` — The name or id of the theme to apply.
+* `icons` — Icons you want to add to the global icon registry.
+* `iconLoaderUrl` — A function that returns a remote url for retrieving an SVG icon by name.
+* `iconLoader` — A function that handles loading an icon when it is not found in the registry.
 
 ### generateClasses()
 
-A function to generate FormKit class functions from a javascript object
+A function to generate FormKit class functions from a JavaScript object.
 
 #### Signature
 
@@ -52,17 +52,17 @@ generateClasses(classes: Record<string, Record<string, string>>): Record<string,
 
 #### Parameters
 
-* `classes` — An object of input types with nested objects of sectionKeys and class lists
+* `classes` — An object of input types with nested objects of sectionKeys and class lists.
 
 #### Returns
 
- FormKitClassFunctions
+ An object of sectionKeys with class functions.
 
 ## TypeScript
 
 ### FormKitIconLoader
 
-A function that returns an icon SVG string
+A function that returns an icon SVG string.
 
 ```typescript
 interface FormKitIconLoader {
@@ -72,7 +72,7 @@ interface FormKitIconLoader {
 
 ### FormKitIconLoaderUrl
 
-A function that returns a remote url for retrieving an SVG icon by name
+A function that returns a remote URL for retrieving an SVG icon by name.
 
 ```typescript
 interface FormKitIconLoaderUrl {
