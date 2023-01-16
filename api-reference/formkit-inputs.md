@@ -115,7 +115,7 @@ A feature that adds checkbox selection support.
 #### Signature
 
 ```typescript
-export default function checkboxes(node: FormKitNode): void;
+checkboxes(node: FormKitNode): void;
 ```
 
 #### Parameters
@@ -129,7 +129,7 @@ Adds icon props definition.
 #### Signature
 
 ```typescript
-export default function defaultIcon(sectionKey: string, defaultIcon: string): (node: FormKitNode) => void;
+defaultIcon(sectionKey: string, defaultIcon: string): (node: FormKitNode) => void;
 ```
 
 #### Parameters
@@ -141,20 +141,6 @@ export default function defaultIcon(sectionKey: string, defaultIcon: string): (n
 
  A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
-### disablesChildren()
-
-A feature that allows disabling children of this node.
-
-#### Signature
-
-```typescript
-export default function disables(node: FormKitNode): void;
-```
-
-#### Parameters
-
-* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
-
 ### files()
 
 A feature to add file handling support to an input.
@@ -162,35 +148,7 @@ A feature to add file handling support to an input.
 #### Signature
 
 ```typescript
-export default function files(node: FormKitNode): void;
-```
-
-#### Parameters
-
-* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
-
-### forms()
-
-A feature to add submiting handler and actions section
-
-#### Signature
-
-```typescript
-export default function form(node: FormKitNode): void;
-```
-
-#### Parameters
-
-* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
-
-### ignores()
-
-A feature that applies ignore="true" by default.
-
-#### Signature
-
-```typescript
-export default function ignore(node: FormKitNode): void;
+files(node: FormKitNode): void;
 ```
 
 #### Parameters
@@ -204,7 +162,7 @@ A feature that ensures the input has an `initialValue` prop.
 #### Signature
 
 ```typescript
-export default function initialValue(node: FormKitNode): void;
+initialValue(node: FormKitNode): void;
 ```
 
 #### Parameters
@@ -218,7 +176,7 @@ Creates a new feature that generates a localization message of type ui for use o
 #### Signature
 
 ```typescript
-export default function localize(key: string, value?: string): (node: FormKitNode) => void;
+localize(key: string, value?: string): (node: FormKitNode) => void;
 ```
 
 #### Parameters
@@ -237,7 +195,7 @@ A feature that ormalize the boxes.
 #### Signature
 
 ```typescript
-export default function normalizeBoxes(node: FormKitNode): FormKitMiddleware<{
+normalizeBoxes(node: FormKitNode): FormKitMiddleware<{
     prop: string | symbol;
     value: any;
 }>;
@@ -258,7 +216,7 @@ A feature that converts the options prop to usable values, to used as a feature 
 #### Signature
 
 ```typescript
-export default function options(node: FormKitNode): void;
+options(node: FormKitNode): void;
 ```
 
 #### Parameters
@@ -272,26 +230,12 @@ A feature to check if the value being checked is the current value.
 #### Signature
 
 ```typescript
-export default function radios(node: FormKitNode): void;
+radios(node: FormKitNode): void;
 ```
 
 #### Parameters
 
 * `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
-
-### selects()
-
-Converts the options prop to usable values.
-
-#### Signature
-
-```typescript
-export default function select(node: FormKitNode): void;
-```
-
-#### Parameters
-
-* `node` — A formkit node.
 
 ## Functions
 
@@ -352,6 +296,20 @@ createSection(section: string, el: string | (() => FormKitSchemaNode), root: fal
 
 [FormKitExtendableSchemaRoot](/api-reference/formkit-core#formkitextendableschemaroot)
 
+### disables()
+
+A feature that allows disabling children of this node.
+
+#### Signature
+
+```typescript
+disables(node: FormKitNode): void;
+```
+
+#### Parameters
+
+* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+
 ### extendSchema()
 
 Extends a single schema node with an extension. The extension can be any partial node including strings.
@@ -370,6 +328,34 @@ extendSchema(schema: FormKitSchemaNode, extension?: Partial<FormKitSchemaNode>):
 #### Returns
 
 [FormKitSchemaNode](/api-reference/formkit-core#formkitschemanode)
+
+### form()
+
+A feature to add submiting handler and actions section
+
+#### Signature
+
+```typescript
+form(node: FormKitNode): void;
+```
+
+#### Parameters
+
+* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+
+### ignore()
+
+A feature that applies ignore="true" by default.
+
+#### Signature
+
+```typescript
+ignore(node: FormKitNode): void;
+```
+
+#### Parameters
+
+* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
 
 ### isSchemaObject()
 
@@ -438,6 +424,20 @@ normalizeOptions(options: FormKitOptionsProp): FormKitOptionsList;
 #### Returns
 
  A list of [FormKitOptionsList](#formkitoptionslist)
+
+### select()
+
+Converts the options prop to usable values.
+
+#### Signature
+
+```typescript
+select(node: FormKitNode): void;
+```
+
+#### Parameters
+
+* `node` — A formkit node.
 
 ### useSchema()
 

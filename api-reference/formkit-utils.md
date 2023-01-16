@@ -14,7 +14,7 @@ You can add this package by using `npm install @formkit/utils` or `yarn add @for
 
 ## Functions
 
-### assignDeep()
+### ()
 
 Performs a recursive Object.assign like operation.
 
@@ -51,7 +51,7 @@ camel(str: string): string;
 
 `string`
 
-### clone()
+### ()
 
 Perform a recursive clone on a given object. This only intended to be used for simple objects like arrays and pojos.
 
@@ -70,7 +70,7 @@ clone<T extends Record<string, unknown> | unknown[] | null>(obj: T, explicit?: s
 
 `T`
 
-### cloneAny()
+### ()
 
 Clones anything. If the item is scalar, no worries, it passes it back. if it is an object, it performs a (fast/loose) clone operation.
 
@@ -88,7 +88,7 @@ cloneAny<T>(obj: T): T;
 
 `T`
 
-### dedupe()
+### ()
 
 Given 2 arrays, return them as a combined array with no duplicates.
 
@@ -245,7 +245,7 @@ has(obj: {
 
 `boolean`
 
-### init()
+### ()
 
 Defines an object as an initial value.
 
@@ -477,7 +477,7 @@ rmEscapes(str: string): string;
 
 `string`
 
-### setify()
+### ()
 
 Creates a new set of the specified type and uses the values from an Array or an existing Set.
 
@@ -504,7 +504,7 @@ const tk = setify(['a', 'b'])
 // Set(2) {'a', 'b'}
 ```
 
-### shallowClone()
+### ()
 
 Very shallowly clones the given object.
 
@@ -541,7 +541,7 @@ slugify(str: string): string;
 
 `string`
 
-### spread()
+### ()
 
 Spreads an object or an array, otherwise returns the same value.
 

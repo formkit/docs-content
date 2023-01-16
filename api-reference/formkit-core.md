@@ -632,7 +632,7 @@ submitForm(id: string): void;
 
 * `id` — The id of the form
 
-### sugar()
+### ()
 
 Converts syntactic sugar nodes to standard nodes.
 

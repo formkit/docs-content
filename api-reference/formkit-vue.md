@@ -49,14 +49,14 @@ useInput(props: FormKitComponentProps, context: SetupContext<any>, options?: For
 
 [FormKitNode](/api-reference/formkit-core#formkitnode)
 
-### watchVerbose()
+### ()
 
 A special watcher for Vue that reports the location of a deep mutation.
 
 #### Signature
 
 ```typescript
-export default function watchVerbose<T extends Ref<unknown> | Record<string, any>>(obj: T, callback: (keypath: string[], value?: unknown, obj?: T) => void): void;
+watchVerbose<T extends Ref<unknown> | Record<string, any>>(obj: T, callback: (keypath: string[], value?: unknown, obj?: T) => void): void;
 ```
 
 #### Parameters
