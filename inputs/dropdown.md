@@ -27,6 +27,15 @@ The `options` prop can accept three different formats of values:
 - An object literal with key-value pairs <code>{ a: 'A', b: 'B', c: 'C' }</code>
 - A function that returns any of the above
 
+## Empty message
+
+The dropdown input, by default, will be rendered in a disabled state if no options are passed. Optionally, you may pass the `empty-message` prop a message to display when no options are available:
+
+<example
+name="Dropdown"
+:min-height="550"
+file="/_content/examples/dropdown/dropdown-empty-message.vue"></example>
+
 ## Slots
 
 Unlike native select elements, the `dropdown` input allows you to customize the options list with markup.
