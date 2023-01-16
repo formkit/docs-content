@@ -36,6 +36,15 @@ name="Taglist"
 :min-height="550"
 file="/_content/examples/taglist/taglist-filter.vue"></example>
 
+## Empty message
+
+The taglist input, by default, will close the listbox when no search results are found while filtering. You can change this behavior by assigning the `empty-message` prop a message to display when no results are found:
+
+<example
+name="Taglist"
+:min-height="550"
+file="/_content/examples/taglist/taglist-empty-message.vue"></example>
+
 ## Allow new values
 
 The taglist input, unlike the dropdown or autocomplete inputs, allows you to enter an arbitrary value (a value not in the list of options). This is useful for creating new tags on the fly. To enable this feature, set the `allow-new-values` prop to `true`.
@@ -44,6 +53,15 @@ The taglist input, unlike the dropdown or autocomplete inputs, allows you to ent
 name="Taglist"
 :min-height="550"
 file="/_content/examples/taglist/taglist-allow-new-values.vue"></example>
+
+## Max
+
+The `max` prop allows you to limit the number of options that can be selected. When the `max` limit is reached, the taglist input will disable the listbox:
+
+<example
+name="Taglist"
+:min-height="550"
+file="/_content/examples/taglist/taglist-max.vue"></example>
 
 ## Slots
 
@@ -155,6 +173,12 @@ file="/_content/examples/taglist/taglist-full.vue"></example>
     type: 'string',
     default: 'undefined',
     description: 'Renders a message when there are no options to display.'
+  },
+  {
+    prop: 'max',
+    type: 'number',
+    default: 'undefined',
+    description: 'Limits the number of options that can be selected.'
   }
 ]">
 </reference-table>
