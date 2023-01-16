@@ -18,9 +18,13 @@ The actual validation plugin function. Everything must be bootstrapped here.
 
 #### Signature
 
+<client-only>
+
 ```typescript
 createValidationPlugin(baseRules?: FormKitValidationRules): (node: FormKitNode) => void;
 ```
+
+</client-only>
 
 #### Parameters
 
@@ -32,9 +36,13 @@ Extracts all validation messages from the given node and all its descendants. Th
 
 #### Signature
 
+<client-only>
+
 ```typescript
 getValidationMessages(node: FormKitNode): Map<FormKitNode, FormKitMessage[]>;
 ```
+
+</client-only>
 
 #### Parameters
 
@@ -46,15 +54,21 @@ getValidationMessages(node: FormKitNode): Map<FormKitNode, FormKitMessage[]>;
 
 The interface for the localized validation message registry.
 
+<client-only>
+
 ```typescript
 interface FormKitValidationMessages {
     [index: string]: string | ((...args: FormKitValidationI18NArgs) => string);
 }
 ```
 
+</client-only>
+
 ### FormKitValidationRules
 
 FormKit validation rules are structured as on object of key/function pairs where the key of the object is the validation rule name.
+
+<client-only>
 
 ```typescript
 interface FormKitValidationRules {
@@ -62,9 +76,13 @@ interface FormKitValidationRules {
 }
 ```
 
+</client-only>
+
 ### FormKitValidation
 
 Defines what fully parsed validation rules look like.
+
+<client-only>
 
 ```typescript
 type FormKitValidation = {
@@ -77,17 +95,25 @@ type FormKitValidation = {
 } & FormKitValidationHints;
 ```
 
+</client-only>
+
 ### FormKitValidationIntent
 
 Defines what validation rules look like when they are parsed, but have not necessarily had validation rules substituted in yet.
+
+<client-only>
 
 ```typescript
 type FormKitValidationIntent = [string | FormKitValidationRule, ...any[]];
 ```
 
+</client-only>
+
 ### FormKitValidationRule
 
 Signature for a generic validation rule. It accepts an input — often a string — but should be able to accept any input type, and returns a boolean indicating whether or not it passed validation.
+
+<client-only>
 
 ```typescript
 type FormKitValidationRule = {
@@ -95,3 +121,5 @@ type FormKitValidationRule = {
     ruleName?: string;
 } & Partial<FormKitValidationHints>;
 ```
+
+</client-only>

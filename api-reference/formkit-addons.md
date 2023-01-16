@@ -20,9 +20,13 @@ Adds auto-animate to each input automatically:
 
 #### Signature
 
+<client-only>
+
 ```typescript
 createAutoAnimatePlugin(options?: AutoAnimateOptions): FormKitPlugin;
 ```
+
+</client-only>
 
 #### Parameters
 
@@ -30,9 +34,11 @@ createAutoAnimatePlugin(options?: AutoAnimateOptions): FormKitPlugin;
 
 #### Returns
 
-[FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+ [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
 #### Examples
+
+<client-only>
 
 ```javascript
 import { createApp } from 'vue'
@@ -48,3 +54,5 @@ createApp(app).use(plugin, defaultPlugin({
   ]
 }))
 ```
+
+</client-only>

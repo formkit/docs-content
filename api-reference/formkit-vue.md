@@ -16,9 +16,13 @@ Creates a new input from schema or a Vue component with the "standard" FormKit f
 
 #### Signature
 
+<client-only>
+
 ```typescript
 createInput(schemaOrComponent: FormKitSchemaNode | FormKitSection | Component, definitionOptions?: Partial<FormKitTypeDefinition>): FormKitTypeDefinition;
 ```
+
+</client-only>
 
 #### Parameters
 
@@ -27,7 +31,7 @@ createInput(schemaOrComponent: FormKitSchemaNode | FormKitSection | Component, d
 
 #### Returns
 
-[FormKitTypeDefinition](/api-reference/formkit-core#formkittypedefinition)
+ [FormKitTypeDefinition](/api-reference/formkit-core#formkittypedefinition)
 
 ### useInput()
 
@@ -35,9 +39,13 @@ A composable for creating a new FormKit node.
 
 #### Signature
 
+<client-only>
+
 ```typescript
 useInput(props: FormKitComponentProps, context: SetupContext<any>, options?: FormKitOptions): FormKitNode;
 ```
+
+</client-only>
 
 #### Parameters
 
@@ -47,7 +55,7 @@ useInput(props: FormKitComponentProps, context: SetupContext<any>, options?: For
 
 #### Returns
 
-[FormKitNode](/api-reference/formkit-core#formkitnode)
+ [FormKitNode](/api-reference/formkit-core#formkitnode)
 
 ### watchVerbose()
 
@@ -55,9 +63,13 @@ A special watcher for Vue that reports the location of a deep mutation.
 
 #### Signature
 
+<client-only>
+
 ```typescript
 watchVerbose<T extends Ref<unknown> | Record<string, any>>(obj: T, callback: (keypath: string[], value?: unknown, obj?: T) => void): void;
 ```
+
+</client-only>
 
 #### Parameters
 
@@ -70,6 +82,8 @@ watchVerbose<T extends Ref<unknown> | Record<string, any>>(obj: T, callback: (ke
 
 The global instance of the FormKit plugin.
 
+<client-only>
+
 ```typescript
 interface FormKitVuePlugin {
     clearErrors: (formId: string) => void;
@@ -81,10 +95,16 @@ interface FormKitVuePlugin {
 }
 ```
 
+</client-only>
+
 ### DefaultConfigOptions
 
 The allowed options for defaultConfig.
 
+<client-only>
+
 ```typescript
 type DefaultConfigOptions = FormKitOptions & Partial<PluginConfigs> & Record<string, unknown>;
 ```
+
+</client-only>

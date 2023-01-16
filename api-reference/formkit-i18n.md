@@ -16,9 +16,13 @@ Create a new internationalization plugin for FormKit.
 
 #### Signature
 
+<client-only>
+
 ```typescript
 createI18nPlugin(registry: FormKitLocaleRegistry): FormKitPlugin;
 ```
+
+</client-only>
 
 #### Parameters
 
@@ -26,7 +30,7 @@ createI18nPlugin(registry: FormKitLocaleRegistry): FormKitPlugin;
 
 #### Returns
 
-[FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+ [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
 ### date()
 
@@ -34,9 +38,13 @@ Given a string or a date, return a nice human-readable version.
 
 #### Signature
 
+<client-only>
+
 ```typescript
 date(date: string | Date): string;
 ```
+
+</client-only>
 
 #### Parameters
 
@@ -44,7 +52,7 @@ date(date: string | Date): string;
 
 #### Returns
 
-`string`
+ `string`
 
 ### list()
 
@@ -52,9 +60,13 @@ Creates an oxford-comma separated list of items.
 
 #### Signature
 
+<client-only>
+
 ```typescript
 list(items: string[], conjunction?: string): string;
 ```
+
+</client-only>
 
 #### Parameters
 
@@ -63,7 +75,7 @@ list(items: string[], conjunction?: string): string;
 
 #### Returns
 
-`string`
+ `string`
 
 ### order()
 
@@ -71,9 +83,13 @@ Orders two variables from smallest to largest.
 
 #### Signature
 
+<client-only>
+
 ```typescript
 order(first: string | number, second: string | number): [smaller: number | string, larger: number | string];
 ```
+
+</client-only>
 
 #### Parameters
 
@@ -82,7 +98,7 @@ order(first: string | number, second: string | number): [smaller: number | strin
 
 #### Returns
 
-`[smaller: number | string, larger: number | string]`
+ `[smaller: number | string, larger: number | string]`
 
 ### sentence()
 
@@ -90,9 +106,13 @@ Given a string, convert it to sentence case.
 
 #### Signature
 
+<client-only>
+
 ```typescript
 sentence(str: string): string;
 ```
+
+</client-only>
 
 #### Parameters
 
@@ -100,13 +120,15 @@ sentence(str: string): string;
 
 #### Returns
 
-`string`
+ `string`
 
 ## TypeScript
 
 ### FormKitLocale
 
 A locale is just a collection of locale message registries, they are keyed by the type (like a namespace) ex: "validation" or "ui". Plugin authors can declare their own types too.
+
+<client-only>
 
 ```typescript
 interface FormKitLocale {
@@ -115,9 +137,13 @@ interface FormKitLocale {
 }
 ```
 
+</client-only>
+
 ### FormKitLocaleMessages
 
 A registry of locale messages — this is simply a keyed/value object with string keys (message name) and either string values (for simple returns) or functions that receive a context object.
+
+<client-only>
 
 ```typescript
 interface FormKitLocaleMessages {
@@ -125,12 +151,18 @@ interface FormKitLocaleMessages {
 }
 ```
 
+</client-only>
+
 ### FormKitLocaleRegistry
 
 The locale registry is just a key-value pair of locale indexes ('ar', 'en', 'it', etc.) to their respective locales.
+
+<client-only>
 
 ```typescript
 interface FormKitLocaleRegistry {
     [index: string]: FormKitLocale;
 }
 ```
+
+</client-only>
