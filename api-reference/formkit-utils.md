@@ -6,6 +6,8 @@ title: formkit/utils
 
 <page-toc></page-toc>
 
+## Introduction
+
 Commonly shared utility functions between official FormKit packages.
 
 You can add this package by using `npm install @formkit/utils` or `yarn add @formkit/utils`.

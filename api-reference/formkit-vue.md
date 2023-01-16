@@ -6,6 +6,8 @@ title: formkit/vue
 
 <page-toc></page-toc>
 
+## Introduction
+
 ## Functions
 
 ### createInput()

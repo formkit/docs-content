@@ -6,6 +6,8 @@ title: formkit/core
 
 <page-toc></page-toc>
 
+## Introduction
+
 The official FormKit core library. This package is responsible for most of FormKit’s internal functionality. You can read documentation specifically on how it works at formkit.com.
 
 You can add this package by using `npm install @formkit/core` or `yarn add @formkit/core`.

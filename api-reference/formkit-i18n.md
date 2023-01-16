@@ -6,6 +6,8 @@ title: formkit/i18n
 
 <page-toc></page-toc>
 
+## Introduction
+
 ## Functions
 
 ### createI18nPlugin()

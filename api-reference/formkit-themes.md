@@ -6,6 +6,8 @@ title: formkit/themes
 
 <page-toc></page-toc>
 
+## Introduction
+
 ## Functions
 
 ### createIconHandler()

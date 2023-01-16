@@ -6,6 +6,8 @@ title: formkit/observer
 
 <page-toc></page-toc>
 
+## Introduction
+
 FormKit Observer is a utility to wrap a FormKitNode in a dependency tracking observer proxy.
 
 ## Functions

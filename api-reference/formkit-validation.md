@@ -6,6 +6,8 @@ title: formkit/validation
 
 <page-toc></page-toc>
 
+## Introduction
+
 The first-party validation package/plugin for FormKit.
 
 ## Functions

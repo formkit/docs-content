@@ -6,6 +6,8 @@ title: formkit/inputs
 
 <page-toc></page-toc>
 
+## Introduction
+
 ## Helpers
 
 ### $attrs()
