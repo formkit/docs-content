@@ -1,9 +1,12 @@
 <template>
   <!-- %partial%::html:: -->
-  <FormKit
+  <FormKit 
     :outer-class="{
       'formkit-outer': false
     }"
+  />
+  <FormKit 
+    outer-class="!formkit-outer"
   />
   <!-- %partial%::html:: -->
 </template>
