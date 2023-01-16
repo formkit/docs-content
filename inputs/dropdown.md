@@ -146,6 +146,7 @@ file="/_content/examples/dropdown/dropdown-overscroll.vue"></example>
 
 <div>
   <formkit-input-diagram
+    :hide-on-small="true"
     class="input-diagram--dropdown-outer"
     :schema="[
         {
@@ -253,6 +254,7 @@ Below is the inner options list (`listbox`) structure from the diagram above:
 
 <div>
   <formkit-input-diagram
+    :hide-on-small="true"
     class="input-diagram--dropdown"
     :schema="[
         {

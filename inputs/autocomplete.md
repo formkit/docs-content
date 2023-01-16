@@ -198,6 +198,7 @@ The autocomplete's structure changes depending on a few different scenarios:
 
 <div>
   <formkit-input-diagram
+    :hide-on-small="true"
     class="input-diagram--autocomplete-outer autocomplete-text-input"
     :schema="[
         {
@@ -288,6 +289,7 @@ The autocomplete's structure changes depending on a few different scenarios:
 
 <div>
   <formkit-input-diagram
+    :hide-on-small="true"
     class="input-diagram--autocomplete-outer autocomplete-option-single"
     :schema="[
         {
@@ -415,6 +417,7 @@ The autocomplete's structure changes depending on a few different scenarios:
 
 <div>
   <formkit-input-diagram
+    :hide-on-small="true"
     class="input-diagram--autocomplete-outer autocomplete-option-single"
     :schema="[
         {
@@ -543,6 +546,7 @@ Below is the inner options list (`listbox`) structure from the diagrams above:
 
 <div>
   <formkit-input-diagram
+    :hide-on-small="true"
     class="input-diagram--autocomplete"
     :schema="[
         {
