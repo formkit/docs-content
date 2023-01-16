@@ -5,6 +5,18 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 1.0.0-beta.13
+
+### January 16, 2023
+
+#### 💪 New features
+
+- Adds new `<FormKitMessages>` component which allows relocation of a form’s validation and error messages and the ability for `group` and `list` inputs to display their own error and validation messages.
+
+#### 🐛 Bug fixes
+
+- [TK]
+
 ## 1.0.0-beta.12
 
 ### November 15, 2022
