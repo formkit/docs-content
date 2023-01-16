@@ -16,7 +16,8 @@ description: What's new in the latest version of FormKit?.
 
 #### 🐛 Bug fixes
 
-- [TK]
+- Fixes a bug where `date_after` rule showed a incorrect validation message because of timezones. [#488](https://github.com/formkit/formkit/issues/488)
+- Fixes a bug where self-generated ids did not have an attribute-safe value because of special characters. [#517](https://github.com/formkit/formkit/issues/517)
 
 ## 1.0.0-beta.12
 
