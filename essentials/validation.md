@@ -568,11 +568,11 @@ If you need more power for your validation rules, you can use a function instead
 
 | Behavior | Description                                                                                                                                    |
 | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| args     | An array of arguments passed to the rule. For example <code>['Vue', 'React', 'Angular']</code> from the rule <code>is:Vue,React,Angular</code> |
-| name     | The name of the field (first available from: <code>validation-label</code>, <code>label</code>, then <code>name</code>)                        |
-| node     | The [FormKit core <code>node</code> ](/essentials/architecture)                                                                                          |
+| args     | An array of arguments passed to the rule. For example <code>['Vue', 'React', 'Angular']</code> from the rule <code>is:Vue,React,Angular</code>.|
+| name     | The name of the field (first available from: <code>validation-label</code>, <code>label</code>, then <code>name</code>).                       |
+| node     | The [FormKit core <code>node</code>](/essentials/architecture).                                                                                |
 
-Let’s re-write the above example using a function instead of a string for even more control of the <code>validation-messages</code> prop.
+Let’s re-write the above example using a function instead of a string for even more control of the <code>validation-messages</code> prop:
 
 <example
   name="Custom validation rules"
@@ -582,7 +582,7 @@ Let’s re-write the above example using a function instead of a string for even
 
 ### Global validation message
 
-If there are validation rule messages you'd like to override (or add) across your entire project, you can define those message rules when registering FormKit under the language key you'd like to override.
+If there are validation rule messages you'd like to override (or add) across your entire project, you can define those message rules when registering FormKit under the language key you'd like to override:
 
 <client-only>
 
@@ -610,7 +610,7 @@ createApp(App).use(plugin, defaultConfig({
 
 ## Extracting messages
 
-To get all the validation messages from an [input’s core node](/essentials/architecture), you may use the `getValidationMessages` function exported from `@formkit/validation`. This function will recursively check the given node, and all children for validation messages and return a Map of core nodes to validation messages, making it ideal for use with forms.
+To get all the validation messages from an [input’s core node](/essentials/architecture), you can use the `getValidationMessages` function exported from `@formkit/validation`. This function will recursively check the given node and all children for validation messages and return a Map of core nodes to validation messages, making it ideal for use with forms:
 
 <example
   name="Submit invalid"
