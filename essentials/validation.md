@@ -449,12 +449,41 @@ Validation rules are functions that accept a [core node](/essentials/architectur
  *
  * A contrived validation rule that ensures the input’s value is monday or mon.
  */
-export default function monday(node) {
+const monday = function(node) {
   return node.value === 'monday' || node.value === 'mon'
 }
+
+export default monday
 ```
 
 </client-only>
+
+### Defining custom rule behaviors
+
+As mentioned in the [validation rule hints](#rule-hints) section, validation rules — including your custom rules — operate according to default behaviors: they run in sequence, are skipped when the input's value is empty, are synchronous, and are blocking. If you want your rule's defaults to operate differently, you can override these on your custom validation rule:
+
+<client-only>
+
+```js
+/**
+ * A contrived validation rule that ensures the input’s value is monday or mon.
+ */
+const monday = function(node) {
+  return node.value === 'monday' || node.value === 'mon'
+}
+
+// override default rule behaviors for your custom rule
+monday.blocking = false
+monday.skipEmpty = false
+monday.debounce = 20 // milliseconds
+monday.force = true
+
+export default monday
+```
+
+</client-only>
+
+You can also override these behaviors on a case-by-case basis with [rule hints](#rule-hints).
 
 Once you have a validation function written — you need to register the validation rule with FormKit — either globally or specifically on an input.
 
@@ -541,7 +570,7 @@ If you need more power for your validation rules, you can use a function instead
 | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | args     | An array of arguments passed to the rule. For example <code>['Vue', 'React', 'Angular']</code> from the rule <code>is:Vue,React,Angular</code> |
 | name     | The name of the field (first available from: <code>validation-label</code>, <code>label</code>, then <code>name</code>)                        |
-| node     | The [FormKit core <code>node</code> ](/essentials/architecture)                                                                                          |
+| node     | The [FormKit core <code>node</code> ](/essentials/architecture)                                                                                |
 
 Let’s re-write the above example using a function instead of a string for even more control of the <code>validation-messages</code> prop.
 
@@ -578,6 +607,15 @@ createApp(App).use(plugin, defaultConfig({
 ```
 
 </client-only>
+
+## Moving validation messages
+
+If you would like to render an input’s validation messages outside of the `<FormKit />` component — you can leverage the `<FormKitMessages />` component by passing the input’s node as a prop. Using this component disables the default display of messages (under the input) and moves them to wherever the `<FormKitMessages />` component is located.
+
+<example
+  name="Submit invalid"
+  file="/_content/examples/formkit-messages/normal-input.vue">
+</example>
 
 ## Extracting messages
 

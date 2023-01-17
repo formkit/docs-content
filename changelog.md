@@ -5,6 +5,20 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 1.0.0-beta.13
+
+### January 16, 2023
+
+#### 💪 New features
+
+- Adds new `<FormKitMessages>` component which allows relocation of a form’s validation and error messages and the ability for `group` and `list` inputs to display their own error and validation messages.
+- When removing classes on a section of a FormKit input you can [use the `!` prefix operator](/essentials/styling#removing-classes) to selectively remove an existing class without needing to use the long-form object syntax. eg `outer-class="my-class !formkit-outer"` adds `my-class` and removes the default `formkit-outer` class.
+
+#### 🐛 Bug fixes
+
+- Fixes a bug where `date_after` rule showed a incorrect validation message because of timezones. [#488](https://github.com/formkit/formkit/issues/488)
+- Fixes a bug where self-generated ids did not have an attribute-safe value because of special characters. [#517](https://github.com/formkit/formkit/issues/517)
+
 ## 1.0.0-beta.12
 
 ### November 15, 2022

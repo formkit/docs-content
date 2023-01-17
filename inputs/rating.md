@@ -85,6 +85,7 @@ file="/_content/examples/rating/rating-colors.vue"></example>
 
 <div>
   <formkit-input-diagram
+    :hide-on-small="true"
     class="input-diagram--rating"
     :schema="[
         {

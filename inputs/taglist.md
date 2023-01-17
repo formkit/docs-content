@@ -36,6 +36,15 @@ name="Taglist"
 :min-height="550"
 file="/_content/examples/taglist/taglist-filter.vue"></example>
 
+## Empty message
+
+The taglist input, by default, will close the listbox when no search results are found while filtering. You can change this behavior by assigning the `empty-message` prop a message to display when no results are found:
+
+<example
+name="Taglist"
+:min-height="550"
+file="/_content/examples/taglist/taglist-empty-message.vue"></example>
+
 ## Allow new values
 
 The taglist input, unlike the dropdown or autocomplete inputs, allows you to enter an arbitrary value (a value not in the list of options). This is useful for creating new tags on the fly. To enable this feature, set the `allow-new-values` prop to `true`.
@@ -44,6 +53,15 @@ The taglist input, unlike the dropdown or autocomplete inputs, allows you to ent
 name="Taglist"
 :min-height="550"
 file="/_content/examples/taglist/taglist-allow-new-values.vue"></example>
+
+## Max
+
+The `max` prop allows you to limit the number of options that can be selected. When the `max` limit is reached, the taglist input will disable the listbox:
+
+<example
+name="Taglist"
+:min-height="550"
+file="/_content/examples/taglist/taglist-max.vue"></example>
 
 ## Slots
 
@@ -106,49 +124,61 @@ file="/_content/examples/taglist/taglist-full.vue"></example>
 <reference-table input="taglist" :data="[
   {
     prop: 'debounce',
-    type: 'number', 
-    default: '200', 
+    type: 'number',
+    default: '200',
     description: 'Number of milliseconds to debounce calls to an options function.'
   },
   {
-    prop: 'options', 
-    type: 'any', 
-    default: '[]', 
+    prop: 'options',
+    type: 'any',
+    default: '[]',
     description: 'The list of options the user can select from.'
   },
   {
-    prop: 'load-on-scroll', 
-    type: 'boolean', 
-    default: 'false', 
+    prop: 'load-on-scroll',
+    type: 'boolean',
+    default: 'false',
     description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'
   },
   {
-    prop: 'open-on-click', 
-    type: 'boolean', 
-    default: 'false', 
+    prop: 'open-on-click',
+    type: 'boolean',
+    default: 'false',
     description: 'The autocomplete is expanded upon focus of the input, as opposed to waiting to expand until a search value is entered.'
   },
   {
-    prop: 'filter', 
-    type: 'function', 
-    default: 'null', 
+    prop: 'filter',
+    type: 'function',
+    default: 'null',
     description: 'Used to apply your own custom filter function for static options.'
   },
   {
-    prop: 'option-loader', 
-    type: 'function', 
-    default: 'null', 
+    prop: 'option-loader',
+    type: 'function',
+    default: 'null',
     description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'
   },
   {
-    prop: 'allow-new-values', 
-    type: 'boolean', 
+    prop: 'allow-new-values',
+    type: 'boolean',
     default: 'false', description: 'Allows end-user to enter a new value that does not exist within the options list.'
   },
   {
-    prop: 'disable-drag-and-drop', 
-    type: 'boolean', 
+    prop: 'disable-drag-and-drop',
+    type: 'boolean',
     default: 'true', description: 'Disabled end-user from sorting tags by dragging and dropping.'
+  },
+  {
+    prop: 'empty-message',
+    type: 'string',
+    default: 'undefined',
+    description: 'Renders a message when there are no options to display.'
+  },
+  {
+    prop: 'max',
+    type: 'number',
+    default: 'undefined',
+    description: 'Limits the number of options that can be selected.'
   }
 ]">
 </reference-table>
@@ -213,6 +243,14 @@ file="/_content/examples/taglist/taglist-full.vue"></example>
   {
     'section-key': 'listboxButton',
     description: 'A button element that is used to open the dropdown.'
+  },
+  {
+    'section-key': 'emptyMessage',
+    description: 'A list item element that is conditionally rendered when there are no options to display.'
+  },
+  {
+    'section-key': 'emptyMessageInner',
+    description: 'A span element that acts as a wrapper for the emptyMessage section.'
   }
 ]">
 </reference-table>

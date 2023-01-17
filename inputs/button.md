@@ -33,11 +33,23 @@ You can also bind event listeners:
 name="Button input"
 file="/_content/examples/button/button-events.vue"></example>
 
+## Ignored input
+
+<ignored-input-docs></ignored-input-docs>
+
+<client-only>
+
+```html
+<FormKit type="button" :ignore="false">
+  Add a section
+</FormKit>
+```
+
+</client-only>
+
 ## Props & Attributes
 
 The `button` input is unique in that it does not actively receive input other than a transient click. However, nearly all of the base input props still technically exist on the input.
-
-Importantly the `ignore` prop is automatically set to `true` — meaning even if a button is given a value, it will not communicate it with the parent form. However, this default behavior can be changed by setting the prop `:ignore="false"`.
 
 <reference-table input="button">
 </reference-table>

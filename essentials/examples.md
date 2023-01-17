@@ -37,6 +37,12 @@ Use the <code>FormKitSchema</code> component to conditionally show an input (wit
 Use the <code>FormKitSchema</code> component to render the multi-step form from the multi-step form guide.
 </ExampleCard>
 
+<ExampleCard
+  href="https://formkit.link/6e6d3e9b251a3662af15bd0c1c55e4be"
+  title="Custom schema submit button with disabled state and loading spinner">
+Create a custom schema-powered submit button that dynamically disables while the form is submitting and provides a loading spinner.
+</ExampleCard>
+
 ## Plugins
 
 <ExampleCard

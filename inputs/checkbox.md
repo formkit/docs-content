@@ -11,11 +11,15 @@ The `checkbox` input uses HTML's [native checkbox input](https://developer.mozil
 
 ## Single checkbox
 
-By default the checkbox type will render a single checkbox and uses `boolean` values.
+By default the checkbox type will render a single checkbox and uses `boolean` values. In order for a single checkbox to be checked — the current value of the input must match the `on-value` of that input (by default, a single checkbox uses `true` as the `on-value`).
 
 <example
 name="Checkbox input"
 file="/_content/examples/checkbox-single/checkbox-single.vue"></example>
+
+<callout type="warning" label="Checked Attribute Unnecessary">
+In order to improve API consistency across all FormKit inputs — FormKit uses the <code>value</code> as the initial state of the input. The <code>checked</code> prop/attribute should not be used directly.
+</callout>
 
 ## Multiple checkboxes
 
@@ -132,7 +136,6 @@ The checkbox input has a different construction depending on if it's a single or
   >
   </formkit-input-diagram>
 </div>
-
 
 ### Multiple checkbox diagram
 

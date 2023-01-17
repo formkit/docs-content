@@ -15,7 +15,7 @@ A `<FormKit type="form">` tracks the form's validation state and prevents users 
 
 ### Provided submit button
 
-As a convenience, the `form` outputs a submit [button](/inputs/button) automatically, and provided themes also include a loading spinner. You can alter this button with the `submit-label` and `submit-attrs` props, or disable with `:actions="false"`. You can pass any FormKit props to `submit-attrs`. In the example below, we pass classes, `data` attributes, and help text:
+As a convenience, the `form` outputs a submit [button](/inputs/button) automatically, and provided themes also include a loading spinner. You can alter this button with the `submit-label` and `submit-attrs` props, or disable with `:actions="false"`. You can pass any FormKit props to `submit-attrs`. In the example below, we pass classes, `data` attributes, help text, and even [tell the included submit button to be un-ignored](/inputs/submit#ignored-input):
 
 ```html
 <FormKit
@@ -25,7 +25,8 @@ As a convenience, the `form` outputs a submit [button](/inputs/button) automatic
     inputClass: 'my-input-class',
     wrapperClass: 'my-wrapper-class',
     'data-theme': `dark`,
-    help: 'My button help text'
+    help: 'My button help text',
+    ignore: false
   }"
 ></FormKit>
 ```
@@ -281,6 +282,43 @@ You can also conveniently set error messages for all inputs in your form (or [gr
   name="input errors prop"
   file="/_content/examples/input-errors-prop/input-errors-prop.vue">
 </example>
+
+## Moving validation and error messages
+
+By default a form’s validation and error messages are placed directly above the form’s actions section. However, you can choose to render these anywhere on your page by using the `<FormKitMessages />` component (this is not a globally registered component — you must import it from `@formkit/vue`).
+
+There are two ways to use `<FormKitMessages />`:
+
+- [Automatically](#move-messages-automatically)
+- [Manually by `node`](#move-messages-by-node)
+
+### Move messages automatically
+
+Place a `<FormKitMessages />` component anywhere inside your form, and the form’s messages will automatically be moved to that location.
+
+<example
+  name="input errors prop"
+  file="/_content/examples/formkit-messages/automatic.vue">
+</example>
+
+### Move messages by `node`
+
+To move messages anywhere in the DOM, even outside the form itself, you can pass the form’s core node as a prop to `<FormKitMessages />`. In this example, we use the messages to create a toast-style popup.
+
+<example
+  name="input errors prop"
+  file="/_content/examples/formkit-messages/toast.vue">
+</example>
+
+### FormKitMessages props
+
+The `<FormKitMessages />` component has a few additional configuration options.
+
+| Prop              | Default   | Description                                                                                                                                                          |
+| ----------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `node`            | inherited | The node to render messages for, by default this is inherited from the node’s parent (if it exists).                                                                 |
+| `sectionsSchema`  | `{}`      | Override the internal `messages` and `message` sections (same default structure as other input’s messages section).                                                  |
+| `defaultPosition` | `false`   | By default `FormKitMessages` moves the rendered messages to a new location, but if you would like to render the messages in both locations, set this prop to `true`. |
 
 ## Unmounting inputs
 

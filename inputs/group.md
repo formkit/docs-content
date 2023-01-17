@@ -25,6 +25,14 @@ Groups are always aware of the validation state of their children (including nes
 name="Group input"
 file="/_content/examples/group-validity/group-validity.vue"></example>
 
+## Showing error & validation messages
+
+By default a `list` does not include any schema to show errors and validation messages even though a `list` can have validation rules and input errors. If you’d like to display those errors — you can add the `<FormKitMessages />` as a child of the `list`.
+
+<callout type="tip" label="Configuration">
+Further documentation on the <code>FormKitMessages</code> component can be found on the <a href="/inputs/forms#moving-validation-and-error-messages">form documentation page</a>.
+</callout>
+
 ## Props & Attributes
 
 <reference-table input="group" :data="[{ prop: 'disabled', type: 'Boolean', default: 'false', description: 'Disables all the inputs in the group.'}]" :without="['help', 'label', 'prefix-icon', 'suffix-icon', 'validation', 'validation-visibility', 'validation-label']">
