@@ -18,6 +18,9 @@ description: What's new in the latest version of FormKit?.
 
 - Fixes a bug where `date_after` rule showed a incorrect validation message because of timezones. [#488](https://github.com/formkit/formkit/issues/488)
 - Fixes a bug where self-generated ids did not have an attribute-safe value because of special characters. [#517](https://github.com/formkit/formkit/issues/517)
+- `v-model` values can now be initialized as `undefined`. [#235](https://github.com/formkit/formkit/issues/235)
+- Fixed a bug that caused inline `validation-rules` props to recurse unexpectedly. [#514](https://github.com/formkit/formkit/issues/514)
+- Fixed a bug that caused the label of checkboxes with multiple options to not be overridden with `sections-schema`. [#541](https://github.com/formkit/formkit/issues/541)
 
 ## 1.0.0-beta.12
 
