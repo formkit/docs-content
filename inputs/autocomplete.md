@@ -124,7 +124,7 @@ name="Autocomplete"
 :min-height="550"
 file="/_content/examples/autocomplete-pro/autocomplete-max.vue"></example>
 
-## Close on select
+### Close on select
 
 If you would like the autocomplete's listbox to remain open in between selections, set the `close-on-select` prop to `false`:
 
