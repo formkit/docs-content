@@ -27,6 +27,15 @@ The `options` prop can accept three different formats of values:
 - An object literal with key-value pairs <code>{ a: 'A', b: 'B', c: 'C' }</code>
 - A function that returns any of the above
 
+## Empty message
+
+The dropdown input, by default, will be rendered in a disabled state if no options are passed. Optionally, you may pass the `empty-message` prop a message to display when no options are available:
+
+<example
+name="Dropdown"
+:min-height="550"
+file="/_content/examples/dropdown/dropdown-empty-message.vue"></example>
+
 ## Slots
 
 Unlike native select elements, the `dropdown` input allows you to customize the options list with markup.
@@ -124,7 +133,9 @@ file="/_content/examples/dropdown/dropdown-overscroll.vue"></example>
 
 <reference-table input="dropdown" :data="[
 {prop: 'options', type: 'any', default: '[]', description: 'The list of options the user can select from.'},
-{prop: 'load-on-scroll', type: 'boolean', default: 'false', description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'}, {prop: 'option-loader', type: 'function', default: 'null', description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'}]">
+{prop: 'load-on-scroll', type: 'boolean', default: 'false', description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'}, {prop: 'option-loader', type: 'function', default: 'null', description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'},
+{prop: 'empty-message', type: 'string', default: 'undefined', description: 'Renders a message when there are no options to display.'},
+]">
 </reference-table>
 
 ## Sections
@@ -135,6 +146,7 @@ file="/_content/examples/dropdown/dropdown-overscroll.vue"></example>
 
 <div>
   <formkit-input-diagram
+    :hide-on-small="true"
     class="input-diagram--dropdown-outer"
     :schema="[
         {
@@ -242,6 +254,7 @@ Below is the inner options list (`listbox`) structure from the diagram above:
 
 <div>
   <formkit-input-diagram
+    :hide-on-small="true"
     class="input-diagram--dropdown"
     :schema="[
         {
@@ -252,6 +265,15 @@ Below is the inner options list (`listbox`) structure from the diagram above:
               name: 'listbox',
               position: 'right',
               children: [
+              {
+                  name: 'emptyMessage',
+                  children: [
+                    {
+                      name: 'emptyMessageInner',
+                      content: 'No options to display.',
+                    }
+                  ]
+                },
                 {
                   name: 'listitem',
                   class: 'flex flex-grow',
@@ -342,6 +364,14 @@ Below is the inner options list (`listbox`) structure from the diagram above:
   {
     'section-key': 'loadMoreInner',
     description: 'A span element that acts as a wrapper for the loaderIcon within the loadMore section.'
+  },
+  {
+    'section-key': 'emptyMessage',
+    description: 'A list item element that is conditionally rendered when there are no options to display.'
+  },
+  {
+    'section-key': 'emptyMessageInner',
+    description: 'A span element that acts as a wrapper for the emptyMessage section.'
   }
 ]">
 </reference-table>

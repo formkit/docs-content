@@ -105,6 +105,7 @@ returning errors for both the repeater and one child:
 
 <div>
   <formkit-input-diagram
+    :hide-on-small="true"
     class="input-diagram--autocomplete-outer autocomplete-option-single"
     :schema="[
       {

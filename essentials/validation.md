@@ -449,12 +449,41 @@ Validation rules are functions that accept a [core node](/essentials/architectur
  *
  * A contrived validation rule that ensures the input’s value is monday or mon.
  */
-export default function monday(node) {
+const monday = function(node) {
   return node.value === 'monday' || node.value === 'mon'
 }
+
+export default monday
 ```
 
 </client-only>
+
+### Defining custom rule behaviors
+
+As mentioned in the [validation rule hints](#rule-hints) section, validation rules — including your custom rules — operate according to default behaviors: they run in sequence, are skipped when the input's value is empty, are synchronous, and are blocking. If you want your rule's defaults to operate differently, you can override these on your custom validation rule:
+
+<client-only>
+
+```js
+/**
+ * A contrived validation rule that ensures the input’s value is monday or mon.
+ */
+const monday = function(node) {
+  return node.value === 'monday' || node.value === 'mon'
+}
+
+// override default rule behaviors for your custom rule
+monday.blocking = false
+monday.skipEmpty = false
+monday.debounce = 20 // milliseconds
+monday.force = true
+
+export default monday
+```
+
+</client-only>
+
+You can also override these behaviors on a case-by-case basis with [rule hints](#rule-hints).
 
 Once you have a validation function written — you need to register the validation rule with FormKit — either globally or specifically on an input.
 

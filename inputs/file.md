@@ -62,6 +62,7 @@ The `file` input has a few unique props. There are also several commonly used na
 
 <div>
   <formkit-input-diagram
+    :hide-on-small="true"
     class="input-diagram--file file-single"
     :schema="[
         {
@@ -164,6 +165,7 @@ The `file` input has a few unique props. There are also several commonly used na
 ### Multiple file diagram
 <div>
   <formkit-input-diagram
+    :hide-on-small="true"
     class="input-diagram--file file-multiple"
     :schema="[
         {
