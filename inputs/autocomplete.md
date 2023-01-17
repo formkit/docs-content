@@ -124,6 +124,15 @@ name="Autocomplete"
 :min-height="550"
 file="/_content/examples/autocomplete-pro/autocomplete-max.vue"></example>
 
+### Close on select
+
+If you would like the autocomplete's listbox to remain open in between selections, set the `close-on-select` prop to `false`:
+
+<example
+name="Autocomplete"
+:min-height="550"
+file="/_content/examples/autocomplete-pro/autocomplete-close-on-select.vue"></example>
+
 ## Loading options
 
 Instead of passing a static list of options to the `options` prop, you can assign it to a function. Doing so is useful when you need to load options from an API or another source.
@@ -181,6 +190,12 @@ file="/_content/examples/autocomplete-pro/autocomplete-full.vue"></example>
     type: 'number',
     default: 'undefined',
     description: 'Limits the number of options that can be selected.'
+  },
+  {
+    prop: 'close-on-select',
+    type: 'boolean',
+    default: 'true',
+    description: 'Closes the listbox when an option is selected.'
   }
 ]">
 </reference-table>
