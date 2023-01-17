@@ -1,3 +1,4 @@
+<!-- %partial%:html -->
 <script setup>
 import { ref } from 'vue'
 import { FormKitMessages } from '@formkit/vue'
@@ -18,6 +19,7 @@ const input = ref()
     <FormKitMessages :node="input?.node" />
   </div>
 </template>
+<!-- %partial%:html -->
 
 <style scoped>
 .flex {

@@ -568,15 +568,9 @@ If you need more power for your validation rules, you can use a function instead
 
 | Behavior | Description                                                                                                                                    |
 | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-<<<<<<< HEAD
-| args     | An array of arguments passed to the rule. For example <code>['Vue', 'React', 'Angular']</code> from the rule <code>is:Vue,React,Angular</code> |
-| name     | The name of the field (first available from: <code>validation-label</code>, <code>label</code>, then <code>name</code>)                        |
-| node     | The [FormKit core <code>node</code> ](/essentials/architecture)                                                                                |
-=======
 | args     | An array of arguments passed to the rule. For example <code>['Vue', 'React', 'Angular']</code> from the rule <code>is:Vue,React,Angular</code>.|
 | name     | The name of the field (first available from: <code>validation-label</code>, <code>label</code>, then <code>name</code>).                       |
 | node     | The [FormKit core <code>node</code>](/essentials/architecture).                                                                                |
->>>>>>> master
 
 Let’s re-write the above example using a function instead of a string for even more control of the <code>validation-messages</code> prop:
 
@@ -616,7 +610,7 @@ createApp(App).use(plugin, defaultConfig({
 
 ## Moving validation messages
 
-If you would like to render an input’s validation messages outside of the `<FormKit />` component — you can leverage the `<FormKitMessages />` component by passing the input’s node as a prop. Using this component disables the default display of messages (under the input) and moves them to wherever the `<FormKitMessages />` component is located.
+If you would like to render an input’s validation messages outside of the `<FormKit />` component, you can leverage the `<FormKitMessages />` component by passing the input’s node as a prop. Using this component disables the default display of messages (located beneath the input) and moves them to wherever the `<FormKitMessages />` component is located:
 
 <example
   name="Submit invalid"

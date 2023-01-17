@@ -285,7 +285,15 @@ You can also conveniently set error messages for all inputs in your form (or [gr
 
 ## Moving validation and error messages
 
-By default a form’s validation and error messages are placed directly above the form’s actions section. However, you can choose to render these anywhere on your page by using the `<FormKitMessages />` component (this is not a globally registered component — you must import it from `@formkit/vue`).
+By default, a form’s validation and error messages are placed directly above the form’s actions section. However, you can choose to render these anywhere on your page by using the `<FormKitMessages />` component. `<FormKitMessages />` is not a globally registered component — you must import it:
+
+<client-only>
+
+```js
+import { FormKitMessages } from '@formkit/vue'
+```
+
+</client-only>
 
 There are two ways to use `<FormKitMessages />`:
 
@@ -294,7 +302,7 @@ There are two ways to use `<FormKitMessages />`:
 
 ### Move messages automatically
 
-Place a `<FormKitMessages />` component anywhere inside your form, and the form’s messages will automatically be moved to that location.
+Place a `<FormKitMessages />` component anywhere *inside* your form, and the form’s messages will automatically be moved to that location:
 
 <example
   name="input errors prop"
@@ -303,7 +311,7 @@ Place a `<FormKitMessages />` component anywhere inside your form, and the form�
 
 ### Move messages by `node`
 
-To move messages anywhere in the DOM, even outside the form itself, you can pass the form’s core node as a prop to `<FormKitMessages />`. In this example, we use the messages to create a toast-style popup.
+To move messages anywhere in the DOM — even *outside* the form — you can pass the form’s core node as a prop to `<FormKitMessages />`. In this example, we use the messages to create a toast-style popup:
 
 <example
   name="input errors prop"
@@ -312,13 +320,13 @@ To move messages anywhere in the DOM, even outside the form itself, you can pass
 
 ### FormKitMessages props
 
-The `<FormKitMessages />` component has a few additional configuration options.
+The `<FormKitMessages />` component has a few additional configuration options:
 
 | Prop              | Default   | Description                                                                                                                                                          |
 | ----------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `node`            | inherited | The node to render messages for, by default this is inherited from the node’s parent (if it exists).                                                                 |
+| `node`            | inherited | The core node to render messages for. By default this is inherited from the node’s parent (if it exists).                                                            |
 | `sectionsSchema`  | `{}`      | Override the internal `messages` and `message` sections (same default structure as other input’s messages section).                                                  |
-| `defaultPosition` | `false`   | By default `FormKitMessages` moves the rendered messages to a new location, but if you would like to render the messages in both locations, set this prop to `true`. |
+| `defaultPosition` | `false`   | By default, `FormKitMessages` moves the rendered messages to a new location. If you would like to render the messages in both locations, set this prop to `true`.    |
 
 ## Unmounting inputs
 
