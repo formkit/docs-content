@@ -3,6 +3,7 @@ import { camel2title, axios } from './utils.js'
 import useSteps from './useSteps.js'
 
 const { steps, visitedSteps, activeStep, setStep, stepPlugin } = useSteps()
+const date_rule = [['date_before', new Date(Date.now())]]
 
 // NEW: submit handler, which posts to our fake backend.
 const submitApp = async (formData, node) => {
@@ -101,7 +102,7 @@ const checkStepValidity = (stepName) => {
         <FormKit
           type="date"
           label="Date of incorporation"
-          :validation="[['date_before', new Date(Date.now())]]"
+          :validation="date_rule"
           name="date_inc"
         />
       </FormKit>
