@@ -28,8 +28,8 @@ createObserver(node: FormKitNode, dependencies?: FormKitDependencies): FormKitOb
 
 #### Parameters
 
-* `node` — The [FormKitNode](/api-reference/formkit-core#formkitnode) to observe.
-* `dependencies` — The dependent nodes and the events that are required to watch for changes.
+- `node` — The [FormKitNode](/api-reference/formkit-core#formkitnode) to observe.
+- `dependencies` — The dependent nodes and the events that are required to watch for changes.
 
 #### Returns
 
@@ -51,8 +51,8 @@ diffDeps(previous: FormKitDependencies, current: FormKitDependencies): [FormKitD
 
 #### Parameters
 
-* `previous` — The previous watcher dependencies.
-* `current` — The new/current watcher dependencies.
+- `previous` — The previous watcher dependencies.
+- `current` — The new/current watcher dependencies.
 
 #### Returns
 
@@ -74,7 +74,7 @@ isKilled(node: FormKitObservedNode): boolean;
 
 #### Parameters
 
-* `node` — Any observed node to check.
+- `node` — Any observed node to check.
 
 #### Returns
 
@@ -96,7 +96,7 @@ removeListeners(receipts: FormKitObserverReceipts): void;
 
 #### Parameters
 
-* `receipts` — The FormKit observer receipts to remove.
+- `receipts` — The FormKit observer receipts to remove.
 
 ## TypeScript
 

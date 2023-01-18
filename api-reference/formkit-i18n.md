@@ -8,6 +8,8 @@ title: formkit/i18n
 
 ## Introduction
 
+The official FormKit internationalization (i18n) plugin. This package contains the locales and the plugin that integrates FormKit with these locales. Read the [internationalization documentation](https://formkit.com/essentials/internationalization) for usage instructions.
+
 ## Functions
 
 ### createI18nPlugin()
@@ -26,7 +28,7 @@ createI18nPlugin(registry: FormKitLocaleRegistry): FormKitPlugin;
 
 #### Parameters
 
-* `registry` — The registry of [FormKitLocales](/api-reference/formkit-i18n#formkitlocaleregistry).
+- `registry` — The registry of [FormKitLocales](/api-reference/formkit-i18n#formkitlocaleregistry).
 
 #### Returns
 
@@ -48,7 +50,7 @@ date(date: string | Date): string;
 
 #### Parameters
 
-* `date` — A string or a date.
+- `date` — A string or a date.
 
 #### Returns
 
@@ -70,8 +72,8 @@ list(items: string[], conjunction?: string): string;
 
 #### Parameters
 
-* `items` — the items to list out.
-* `conjunction` — in the list "x, y, and z", "and" is the conjunction. Defaults to "or".
+- `items` — the items to list out.
+- `conjunction` — in the list "x, y, and z", "and" is the conjunction. Defaults to "or".
 
 #### Returns
 
@@ -93,8 +95,8 @@ order(first: string | number, second: string | number): [smaller: number | strin
 
 #### Parameters
 
-* `first` — The first number or string.
-* `second` — The second number or string.
+- `first` — The first number or string.
+- `second` — The second number or string.
 
 #### Returns
 
@@ -116,7 +118,7 @@ sentence(str: string): string;
 
 #### Parameters
 
-* `str` — The string to sentence case.
+- `str` — The string to sentence case.
 
 #### Returns
 

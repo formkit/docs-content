@@ -16,7 +16,8 @@ You can add this package by using `npm install @formkit/utils` or `yarn add @for
 
 ### assignDeep()
 
-Performs a recursive `Object.assign`-like operation.
+Performs a recursive `Object.assign`
+-like operation.
 
 #### Signature
 
@@ -30,8 +31,8 @@ assignDeep<A extends Record<PropertyKey, any>, B extends Record<PropertyKey, any
 
 #### Parameters
 
-* `a` — An object to be assigned.
-* `b` — An object to get values from.
+- `a` — An object to be assigned.
+- `b` — An object to get values from.
 
 #### Returns
 
@@ -53,7 +54,7 @@ camel(str: string): string;
 
 #### Parameters
 
-* `str` — String to be camel cased.
+- `str` — String to be camel cased.
 
 #### Returns
 
@@ -75,8 +76,8 @@ clone<T extends Record<string, unknown> | unknown[] | null>(obj: T, explicit?: s
 
 #### Parameters
 
-* `obj` — Object to be cloned.
-* `explicit` — Array of items to be explicity cloned.
+- `obj` — Object to be cloned.
+- `explicit` — Array of items to be explicity cloned.
 
 #### Returns
 
@@ -98,7 +99,7 @@ cloneAny<T>(obj: T): T;
 
 #### Parameters
 
-* `obj` — The value to be cloned.
+- `obj` — The value to be cloned.
 
 #### Returns
 
@@ -120,8 +121,8 @@ dedupe<T extends any[] | Set<any>, X extends any[] | Set<any>>(arr1: T, arr2?: X
 
 #### Parameters
 
-* `arr1` — First array.
-* `arr2` — Second array.
+- `arr1` — First array.
+- `arr2` — Second array.
 
 #### Returns
 
@@ -143,7 +144,7 @@ empty(value: any): boolean;
 
 #### Parameters
 
-* `value` — The value to check if it's empty.
+- `value` — The value to check if it's empty.
 
 #### Returns
 
@@ -165,10 +166,10 @@ eq(valA: any, valB: any, deep?: boolean, explicit?: string[]): boolean;
 
 #### Parameters
 
-* `valA` — First value.
-* `valB` — Second value.
-* `deep` — If it will compare deeply if it's an object.
-* `explicit` — An array of keys to explicity check.
+- `valA` — First value.
+- `valB` — Second value.
+- `deep` — If it will compare deeply if it's an object.
+- `explicit` — An array of keys to explicity check.
 
 #### Returns
 
@@ -190,7 +191,7 @@ escapeExp(string: string): string;
 
 #### Parameters
 
-* `string` — String to be escaped.
+- `string` — String to be escaped.
 
 #### Returns
 
@@ -212,8 +213,8 @@ except(obj: Record<string, any>, toRemove: Array<string | RegExp>): Record<strin
 
 #### Parameters
 
-* `obj` — The starting object.
-* `toRemove` — The array of properties to remove. Accepts strings or regular expressions.
+- `obj` — The starting object.
+- `toRemove` — The array of properties to remove. Accepts strings or regular expressions.
 
 #### Returns
 
@@ -235,10 +236,10 @@ extend(original: Record<string, any>, additional: Record<string, any> | string |
 
 #### Parameters
 
-* `original` — The original array.
-* `additional` — The array to merge.
-* `extendArrays` — If it will extend/concatenate array values instead of replacing them.
-* `ignoreUndefined` — If it will preserve values from the original object even if the additional object has those values set to undefined.
+- `original` — The original array.
+- `additional` — The array to merge.
+- `extendArrays` — If it will extend/concatenate array values instead of replacing them.
+- `ignoreUndefined` — If it will preserve values from the original object even if the additional object has those values set to undefined.
 
 #### Returns
 
@@ -260,8 +261,8 @@ getAt(obj: any, addr: string): unknown;
 
 #### Parameters
 
-* `obj` — An object to fetch data from.
-* `addr` — An "address" in dot notation.
+- `obj` — An object to fetch data from.
+- `addr` — An "address" in dot notation.
 
 #### Returns
 
@@ -286,8 +287,8 @@ has(obj: {
 
 #### Parameters
 
-* `obj` — An object to check.
-* `property` — The property to check.
+- `obj` — An object to check.
+- `property` — The property to check.
 
 #### Returns
 
@@ -311,7 +312,7 @@ init<T extends object>(obj: T): T & {
 
 #### Parameters
 
-* `obj` — Object to be added an initial value.
+- `obj` — Object to be added an initial value.
 
 #### Returns
 
@@ -333,7 +334,7 @@ isObject(o: unknown): o is Record<PropertyKey, unknown> | unknown[];
 
 #### Parameters
 
-* `o` — Value to be checked.
+- `o` — Value to be checked.
 
 #### Returns
 
@@ -355,7 +356,7 @@ isPojo(o: any): o is Record<string, any>;
 
 #### Parameters
 
-* `o` — The value to be checked.
+- `o` — The value to be checked.
 
 #### Returns
 
@@ -377,7 +378,7 @@ isQuotedString(str: string): boolean;
 
 #### Parameters
 
-* `str` — The string to check.
+- `str` — The string to check.
 
 #### Returns
 
@@ -416,7 +417,7 @@ isRecord(o: unknown): o is Record<PropertyKey, unknown>;
 
 #### Parameters
 
-* `o` — The value to be checked.
+- `o` — The value to be checked.
 
 #### Returns
 
@@ -438,7 +439,7 @@ kebab(str: string): string;
 
 #### Parameters
 
-* `str` — String to be kebabed.
+- `str` — String to be kebabed.
 
 #### Returns
 
@@ -460,7 +461,7 @@ nodeProps(...sets: Array<Record<string, any>>): Record<string, any>;
 
 #### Parameters
 
-* `sets` — The arrays to get values filtered out of.
+- `sets` — The arrays to get values filtered out of.
 
 #### Returns
 
@@ -482,7 +483,7 @@ nodeType(type: string): 'list' | 'group' | 'input';
 
 #### Parameters
 
-* `type` — String to return to check for correct type
+- `type` — String to return to check for correct type
 
 #### Returns
 
@@ -504,8 +505,8 @@ only(obj: Record<string, any>, include: Array<string | RegExp>): Record<string, 
 
 #### Parameters
 
-* `obj` — The object to get values from.
-* `include` — The array of items to get.
+- `obj` — The object to get values from.
+- `include` — The array of items to get.
 
 #### Returns
 
@@ -527,7 +528,7 @@ parseArgs(str: string): string[];
 
 #### Parameters
 
-* `str` — String to parse arguments from.
+- `str` — String to parse arguments from.
 
 #### Returns
 
@@ -549,7 +550,7 @@ regexForFormat(format: string): RegExp;
 
 #### Parameters
 
-* `format` — String to be transformed to RegExp.
+- `format` — String to be transformed to RegExp.
 
 #### Returns
 
@@ -581,7 +582,7 @@ rmEscapes(str: string): string;
 
 #### Parameters
 
-* `str` — String to remove extra escape characters from.
+- `str` — String to remove extra escape characters from.
 
 #### Returns
 
@@ -603,7 +604,7 @@ setify<T>(items: Set<T> | T[] | null | undefined): Set<T>;
 
 #### Parameters
 
-* `items` — An array or a Set.
+- `items` — An array or a Set.
 
 #### Returns
 
@@ -638,8 +639,8 @@ shallowClone<T>(obj: T, explicit?: string[]): T;
 
 #### Parameters
 
-* `obj` — Object to be shallowly cloned.
-* `explicit` — The array of keys to be explicity cloned.
+- `obj` — Object to be shallowly cloned.
+- `explicit` — The array of keys to be explicity cloned.
 
 #### Returns
 
@@ -661,7 +662,7 @@ slugify(str: string): string;
 
 #### Parameters
 
-* `str` — String to be slugified to a URL-safe string.
+- `str` — String to be slugified to a URL-safe string.
 
 #### Returns
 
@@ -683,8 +684,8 @@ spread<T>(obj: T, explicit?: string[]): T;
 
 #### Parameters
 
-* `obj` — The object to be spread.
-* `explicit` — The array of items to be explicity spread.
+- `obj` — The object to be spread.
+- `explicit` — The array of items to be explicity spread.
 
 #### Returns
 
@@ -737,7 +738,7 @@ undefine(value: unknown): true | undefined;
 
 #### Parameters
 
-* `value` — Value to check for undefined.
+- `value` — Value to check for undefined.
 
 #### Returns
 

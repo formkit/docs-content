@@ -30,7 +30,7 @@ createAutoAnimatePlugin(options?: AutoAnimateOptions): FormKitPlugin;
 
 #### Parameters
 
-* `options` — [AutoAnimateOptions](https://github.com/formkit/auto-animate/blob/master/src/index.ts#L596)
+- `options` — [AutoAnimateOptions](https://github.com/formkit/auto-animate/blob/master/src/index.ts#L596)
 
 #### Returns
 

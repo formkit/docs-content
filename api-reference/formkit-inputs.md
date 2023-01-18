@@ -8,6 +8,8 @@ title: formkit/inputs
 
 ## Introduction
 
+The official FormKit Inputs plugin. This package contains the source code for all native HTML input types. Read the [inputs documentation](https://formkit.com/essentials/inputs) for usage instructions.
+
 ## Helpers
 
 ### $attrs()
@@ -26,8 +28,8 @@ $attrs(attrs: FormKitSchemaAttributes | (() => FormKitSchemaAttributes), section
 
 #### Parameters
 
-* `attrs` — Attributes to apply to a [FormKitSchemaExtendableSection](#formkitschemaextendablesection).
-* `section` — A section to apply attributes to.
+- `attrs` — Attributes to apply to a [FormKitSchemaExtendableSection](#formkitschemaextendablesection).
+- `section` — A section to apply attributes to.
 
 #### Returns
 
@@ -49,8 +51,8 @@ $extend(section: FormKitSchemaExtendableSection, extendWith: Partial<FormKitSche
 
 #### Parameters
 
-* `section` — A section to apply an extension to.
-* `extendWith` — A partial schema snippet to apply to the section.
+- `section` — A section to apply an extension to.
+- `extendWith` — A partial schema snippet to apply to the section.
 
 #### Returns
 
@@ -72,9 +74,9 @@ $for(varName: string, inName: string, section: FormKitSchemaExtendableSection): 
 
 #### Parameters
 
-* `varName` — The name of the variable that holds the current instance.
-* `inName` — The variable we are iterating over.
-* `section` — A section to repeat.
+- `varName` — The name of the variable that holds the current instance.
+- `inName` — The variable we are iterating over.
+- `section` — A section to repeat.
 
 #### Returns
 
@@ -96,9 +98,9 @@ $if(condition: string, then: FormKitSchemaExtendableSection, otherwise?: FormKit
 
 #### Parameters
 
-* `condition` — A schema condition to apply to a section.
-* `then` — The section that applies if the condition is true.
-* `otherwise` — (else) The section that applies if the condition is false.
+- `condition` — A schema condition to apply to a section.
+- `then` — The section that applies if the condition is true.
+- `otherwise` — (else) The section that applies if the condition is false.
 
 #### Returns
 
@@ -120,7 +122,7 @@ $root(section: FormKitSchemaExtendableSection): FormKitExtendableSchemaRoot;
 
 #### Parameters
 
-* `section` — A section to make a root from.
+- `section` — A section to make a root from.
 
 #### Returns
 

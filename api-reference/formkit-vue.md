@@ -8,6 +8,8 @@ title: formkit/vue
 
 ## Introduction
 
+The official FormKit/Vue integration. This package is responsible for integrating Vue with FormKit core and other first-party packages.
+
 ## Functions
 
 ### createInput()
@@ -26,8 +28,8 @@ createInput(schemaOrComponent: FormKitSchemaNode | FormKitSection | Component, d
 
 #### Parameters
 
-* `schemaOrComponent` — The actual schema of the input or the component.
-* `definitionOptions` — Any options in the FormKitTypeDefinition you want to define.
+- `schemaOrComponent` — The actual schema of the input or the component.
+- `definitionOptions` — Any options in the FormKitTypeDefinition you want to define.
 
 #### Returns
 
@@ -49,9 +51,9 @@ useInput(props: FormKitComponentProps, context: SetupContext<any>, options?: For
 
 #### Parameters
 
-* `props`
-* `context`
-* `options`
+- `props`
+- `context`
+- `options`
 
 #### Returns
 
@@ -73,8 +75,8 @@ watchVerbose<T extends Ref<unknown> | Record<string, any>>(obj: T, callback: (ke
 
 #### Parameters
 
-* `obj` — An object to observe at depth.
-* `callback` — A callback to call when a change is detected.
+- `obj` — An object to observe at depth.
+- `callback` — A callback to call when a change is detected.
 
 ## TypeScript
 

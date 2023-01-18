@@ -8,7 +8,7 @@ title: formkit/validation
 
 ## Introduction
 
-The first-party validation package/plugin for FormKit.
+The first-party validation package/plugin for FormKit. Read the [validation documentation](https://formkit.com/essentials/validation) for usage instructions.
 
 ## Functions
 
@@ -28,7 +28,7 @@ createValidationPlugin(baseRules?: FormKitValidationRules): (node: FormKitNode) 
 
 #### Parameters
 
-* `baseRules` — Base validation rules to include in the plugin. By default, FormKit makes all rules in the formkit/rules package available via the defaultConfig.
+- `baseRules` — Base validation rules to include in the plugin. By default, FormKit makes all rules in the formkit/rules package available via the defaultConfig.
 
 ### getValidationMessages()
 
@@ -46,7 +46,7 @@ getValidationMessages(node: FormKitNode): Map<FormKitNode, FormKitMessage[]>;
 
 #### Parameters
 
-* `node` — The FormKit node to extract validation rules from — as well as its descendants.
+- `node` — The FormKit node to extract validation rules from — as well as its descendants.
 
 ## TypeScript
 
