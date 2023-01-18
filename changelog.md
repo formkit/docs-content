@@ -13,6 +13,7 @@ description: What's new in the latest version of FormKit?.
 
 - Adds new `<FormKitMessages>` component which allows relocation of a form’s validation and error messages and the ability for `group` and `list` inputs to display their own error and validation messages.
 - When removing classes on a section of a FormKit input you can [use the `!` prefix operator](/essentials/styling#removing-classes) to selectively remove an existing class without needing to use the long-form object syntax. eg `outer-class="my-class !formkit-outer"` adds `my-class` and removes the default `formkit-outer` class.
+- Adds <img src="/img/catalan.png" alt="Catalan flag" class="rare-flag"> Catalan (thanks @petergithubmgw)
 
 #### 🐛 Bug fixes
 

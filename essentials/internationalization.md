@@ -16,6 +16,7 @@ Currently, FormKit supports the following languages (in the `@formkit/i18n` pack
 - 🇱🇾 Arabic (ar) — 🙏&nbsp;@Ahmedelforjani
 - 🇦🇿 Azerbaijani (az) — 🙏&nbsp;@EmrullahKutlar
 - 🇧🇬 Bulgarian (bg) — 🙏&nbsp;@ivanov1234159
+- <img src="/img/catalan.png" alt="Catalan flag (Senyera)" class="rare-flag"> Catalan (ca) — 🙏&nbsp;@petergithubmgw
 - 🇨🇳 Chinese (zh) — 🙏&nbsp;@myleslee
 - 🇭🇷 Croatian (hr) — 🙏&nbsp;@antemarkic
 - 🇨🇿 Czech (cs) — 🙏&nbsp;@dfridrich
