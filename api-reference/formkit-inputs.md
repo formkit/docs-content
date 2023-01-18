@@ -517,7 +517,8 @@ normalizeOptions(options: FormKitOptionsProp): FormKitOptionsList;
 
 #### Parameters
 
-* `options` — An un-normalized [FormKitOptionsProp](#formkitoptionsprop).
+* `options` — An un
+-normalized [FormKitOptionsProp](#formkitoptionsprop).
 
 #### Returns
 

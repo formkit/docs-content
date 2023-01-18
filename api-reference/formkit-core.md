@@ -33,7 +33,8 @@ add: (node: FormKitNode, index?: number) => FormKitNode
 
 #### Parameters
 
-- node — A [FormKitNode](#formkitnode). - index *optional* — A index to where it will added to.
+- node — A [FormKitNode](#formkitnode). 
+- index *optional* — A index to where it will added to.
 
 #### Returns
 
@@ -83,9 +84,9 @@ The [FormKitNode](#formkitnode).
 
 Gets a node at another address. Addresses are dot-syntax paths (or arrays) of node names. For example: `form.users.0.first_name`. There are a few "special" traversal tokens as well:
 
-- $root — Selects the root node.
-- $parent — Selects the parent node.
-- $self — Selects the current node.
+- `$root` — Selects the root node. 
+- `$parent` — Selects the parent node. 
+- `$self` — Selects the current node.
 
 #### Signature
 
@@ -139,7 +140,8 @@ clearErrors: (clearChildren?: boolean, sourceKey?: string) => FormKitNode
 
 #### Parameters
 
-- `clearChildren` *optional* — If it should clear the children. - `sourceKey` *optional* — A source key to use for reset.
+- `clearChildren` *optional* — If it should clear the children. 
+- `sourceKey` *optional* — A source key to use for reset.
 
 #### Returns
 
@@ -147,7 +149,8 @@ The [FormKitNode](#formkitnode).
 
 ### config
 
-An object of [FormKitConfig](#formkitconfig) that is shared tree-wide with various configuration options that should be applied to the entire tree.
+An object of [FormKitConfig](#formkitconfig) that is shared tree
+-wide with various configuration options that should be applied to the entire tree.
 
 #### Signature
 
@@ -229,7 +232,9 @@ emit: (event: string, payload?: any, bubble?: boolean) => FormKitNode
 
 #### Parameters
 
-- `event` — The event name to be emitted. - `payload` *optional* — A value to be passed together with the event. - `bubble` *optional* — If the event should bubble to the parent.
+- `event` — The event name to be emitted. 
+- `payload` *optional* — A value to be passed together with the event. 
+- `bubble` *optional* — If the event should bubble to the parent.
 
 #### Returns
 
@@ -254,7 +259,8 @@ find: (
 
 #### Parameters
 
-- `selector` — A selector string. - `searcher` *optional* — A keyof [FormKitNode](#formkitnode) or [FormKitSearchFunction](#formkitsearchfunction).
+- `selector` — A selector string. 
+- `searcher` *optional* — A keyof [FormKitNode](#formkitnode) or [FormKitSearchFunction](#formkitsearchfunction).
 
 #### Returns
 
@@ -262,7 +268,7 @@ The found [FormKitNode](#formkitnode) or `undefined`.
 
 ### hook
 
-Set of hooks
+Set of hooks.
 
 #### Signature
 
@@ -294,7 +300,7 @@ index: number
 
 #### Returns
 
-A `number`
+A `number`.
 
 ### input()
 
@@ -312,7 +318,8 @@ input: (value: unknown, async?: boolean) => Promise<unknown>
 
 #### Parameters
 
-- `value` — Any value to used for the node. - `async` *optional* — If the input should happen asynchronously.
+- `value` — Any value to used for the node. 
+- `async` *optional* — If the input should happen asynchronously.
 
 #### Returns
 
@@ -428,7 +435,8 @@ on: (eventName: string, listener: FormKitEventListener) => string
 
 #### Parameters
 
-- `eventName` — The event name to listen to. - `listener` — A [FormKitEventListener](#formkiteventlistener) to run when the event happens.
+- `eventName` — The event name to listen to. 
+- `listener` — A [FormKitEventListener](#formkiteventlistener) to run when the event happens.
 
 #### Returns
 
@@ -544,7 +552,8 @@ setErrors: (localErrors: ErrorMessages, childErrors?: ErrorMessages) => void
 
 #### Parameters
 
-- `localErrors` — A [ErrorMessages](#errormessages) to be used. - `childErrors` *optional* — A [ErrorMessages](#errormessages) to be used for children.
+- `localErrors` — A [ErrorMessages](#errormessages) to be used. 
+- `childErrors` *optional* — A [ErrorMessages](#errormessages) to be used for children.
 
 ### settled
 
@@ -656,7 +665,9 @@ use: (
 
 #### Parameters
 
-- `plugin` — A [FormKitPlugin](#formkitplugin) or an Array or Set of [FormKitPlugin](#formkitplugin). - `run` *optional* — Should the plugin be executed on creation. - `library` *optional* — Should the plugin's library function be executed on creation.
+- `plugin` — A [FormKitPlugin](#formkitplugin) or an Array or Set of [FormKitPlugin](#formkitplugin). 
+- `run` *optional* — Should the plugin be executed on creation. 
+- `library` *optional* — Should the plugin's library function be executed on creation.
 
 #### Returns
 
@@ -692,7 +703,8 @@ walk: (callback: FormKitChildCallback, stopOnFalse?: boolean) => void
 
 #### Parameters
 
-- `callback` — A [FormKitChildCallback](#formkitchildcallback) to be executed for each child. - `stopOnFalse` *optional* — If it should stop when the return is false.
+- `callback` — A [FormKitChildCallback](#formkitchildcallback) to be executed for each child. 
+- `stopOnFalse` *optional* — If it should stop when the return is false.
 
 ## Functions
 
@@ -1336,7 +1348,8 @@ watchRegistry(id: string, callback: FormKitEventListener): void;
 
 #### Parameters
 
-- `id` — A dot-syntax id where the node is located.
+- `id` — A dot
+-syntax id where the node is located.
 - `callback` — A callback in the format of [FormKitEventListener](#formkiteventlistener) to notify when the node is set or removed.
 
 ## TypeScript

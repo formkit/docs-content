@@ -662,7 +662,8 @@ slugify(str: string): string;
 
 #### Parameters
 
-- `str` — String to be slugified to a URL-safe string.
+- `str` — String to be slugified to a URL
+-safe string.
 
 #### Returns
 
