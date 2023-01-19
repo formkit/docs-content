@@ -12,18 +12,19 @@ description: What's new in the latest version of FormKit?.
 #### 💪 New features
 
 - Adds new `<FormKitMessages>` component which allows relocation of a form’s validation and error messages and the ability for `group` and `list` inputs to display their own error and validation messages.
+- The [Create a Tailwind CSS theme](/guides/create-a-tailwind-theme) has been updated to include a full reproduction of the optional Genesis theme that ships with FormKit.
+- When choosing [Tailwind CSS in the FormKit Playground](/playground?css-framework=tailwind) the new FormKit Tailwind Genesis theme is loaded automatically for you if your Playground does not already have a `formkit.config.js` file.
 - When removing classes on a section of a FormKit input you can [use the `!` prefix operator](/essentials/styling#removing-classes) to selectively remove an existing class without needing to use the long-form object syntax. eg `outer-class="my-class !formkit-outer"` adds `my-class` and removes the default `formkit-outer` class.
 - Adds <img src="/img/catalan.png" alt="Catalan flag" class="rare-flag"> Catalan (thanks @petergithubmgw).
 - The `checkbox` and `radio` inputs now have a `data-is-checked` attribute around their respective wrapper making it easy to [add custom styling](https://formkit.link/dab5b4e144a12fac26f6073f3dd1f358) for checked vs non-checked states.
 - Improves validation messages in a handful of languages (`en`, `pt`, `zh`)
-- **Pro:** New [Mask Pro input](/inputs/mask). 
+- **Pro:** New [Mask Pro input](/inputs/mask).
 - **Pro:** Adds `empty-message` prop allows for message to be rendered in listbox when no options are passed (`dropdown`, `autocomplete`, and `taglist`). [#502](https://github.com/formkit/formkit/issues/502)
 - **Pro:** Adds checked attribute to formkit-option (`dropdown`, `autocomplete`, `taglist`). [#350](https://github.com/formkit/formkit/issues/350)
 - **Pro:** Adds `max` prop for `taglist` and `autocomplete` with `multiple` inputs. [#501](https://github.com/formkit/formkit/issues/501)
 - **Pro:** Adds `closeOnSelect` prop will keep the `listbox` expanded as selections are made (`autocomplete` multiple and `taglist`).
 - **Pro:** Adds `forceExpanded` prop forces the `listbox` to remain open for dev purposes (`dropdown`, `autocomplete`, and `taglist`).
 - **Pro:** All Pro inputs can now be disabled via `disabled` attribute.
-
 
 #### 🐛 Bug fixes
 
