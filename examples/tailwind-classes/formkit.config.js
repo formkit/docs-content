@@ -1,32 +1,32 @@
-{
+export default {
   config: {
-    rootClasses (sectionKey, node) {
+    rootClasses(sectionKey, node) {
       const type = node.props.type
       const classConfig = {
         outer: 'mb-5',
         legend: 'block mb-1 font-bold',
-        label () {
+        label() {
           if (type === 'text') { return 'block mb-1 font-bold' }
           if (type === 'radio') { return 'text-sm text-gray-600 mt-0.5' }
         },
-        options () {
+        options() {
           if (type === 'radio') { return 'flex flex-col flex-grow mt-2' }
         },
-        input () {
+        input() {
           if (type === 'text') { return 'w-full h-10 px-3 mb-2 text-base text-gray-700 placeholder-gray-400 border rounded-lg focus:shadow-outline' }
           if (type === 'radio') { return 'mr-2' }
         },
-        wrapper () {
+        wrapper() {
           if (type === 'radio') { return 'flex flex-row flex-grow' }
         },
         help: 'text-xs text-gray-500',
       }
 
-      function createClassObject (classesArray) {
+      function createClassObject(classesArray) {
         const classList = {}
         if (typeof classesArray !== 'string') return classList
         classesArray.split(' ').forEach(className => {
-            classList[className] = true
+          classList[className] = true
         })
         return classList
       }

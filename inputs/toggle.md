@@ -27,18 +27,25 @@ file="/_content/examples/toggle/toggle-values.vue"></example>
 
 ## Labels
 
-The toggle supports two label types: Primary and Value.
-
 ### Primary label
 
 By default, the toggle input supports a primary label like the `label` prop on any other FormKit input. The primary label is displayed to the right of the toggle unless you use a `Value label`, which will then move it above the toggle:
+
 <example
 name="Toggle"
 file="/_content/examples/toggle/toggle-primary-label.vue"></example>
 
+### Alt label position
+
+If you would like the label to be displayed above the toggle, you can use the `alt-label-position` prop:
+
+<example
+name="Toggle"
+file="/_content/examples/toggle/toggle-alt-label-position.vue"></example>
+
 ### Value label
 
-Additionally, you may specify secondary labels by setting the `on-value-label` and the `off-value-label` props. These values are conditionally shown based on the on/off state of the toggle. The value labels render to the right of the toggle input:
+Additionally, you may specify secondary labels by setting the `on-value-label` and the `off-value-label` props. These values are conditionally shown based on the on/off state of the toggle. The value labels render to the right of the toggle input. The "primary label" will be moved to the alternative label position above the toggle when value labels are used:
 
 <example
 name="Toggle"
@@ -75,6 +82,7 @@ The `toggle` input is built atop HTML's [native checkbox input](https://develope
 ## Props & Attributes
 
 <reference-table :without="['prefix-icon', 'suffix-icon']" input="rating" :data="[
+{prop: 'alt-label-position', type: 'Boolean', default: 'undefined', description: 'Moves the label above the toggle.'},
 {prop: 'off-value', type: 'any', default: 'false', description: 'The value when the toggle is unchecked.'},
 {prop: 'on-value', type: 'any', default: 'true', description: 'The value when the toggle is checked.'},
 {prop: 'off-value-label', type: 'String', default: 'undefined', description: 'The text of the Value label when the toggle is unchecked.'},
