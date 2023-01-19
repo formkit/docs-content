@@ -1,10 +1,9 @@
 <template>
   <!-- %partial%::html:: -->
   <FormKit
-    label="Primary Label"
+    label="Alt label position"
     type="toggle"
-    off-value-label="Off value label"
-    on-value-label="On value label"
+    alt-label-position
   />
   <!-- %partial%::html:: -->
 </template>
