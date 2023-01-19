@@ -26,7 +26,7 @@ async function searchMovies({ search }) {
 <template>
   <FormKit type="form" :actions="false" :plugins="[autoAnimatePlugin]">
     <!-- %partial%::html:: -->
-    <FormKit type="repeater" label="My Movies">
+    <FormKit type="repeater" label="My Movies" add-label="Add Movie">
       <FormKit
         name="movie"
         type="autocomplete"
