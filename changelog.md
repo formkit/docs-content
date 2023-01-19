@@ -12,8 +12,6 @@ description: What's new in the latest version of FormKit?.
 #### 💪 New features
 
 - Adds new `<FormKitMessages>` component which allows relocation of a form’s validation and error messages and the ability for `group` and `list` inputs to display their own error and validation messages.
-- The [Create a Tailwind CSS theme](/guides/create-a-tailwind-theme) has been updated to include a full reproduction of the optional Genesis theme that ships with FormKit.
-- When choosing [Tailwind CSS in the FormKit Playground](/playground?css-framework=tailwind) the new FormKit Tailwind Genesis theme is loaded automatically for you if your Playground does not already have a `formkit.config.js` file.
 - When removing classes on a section of a FormKit input you can [use the `!` prefix operator](/essentials/styling#removing-classes) to selectively remove an existing class without needing to use the long-form object syntax. eg `outer-class="my-class !formkit-outer"` adds `my-class` and removes the default `formkit-outer` class.
 - Adds <img src="/img/catalan.png" alt="Catalan flag" class="rare-flag"> Catalan (thanks @petergithubmgw).
 - The `checkbox` and `radio` inputs now have a `data-is-checked` attribute around their respective wrapper making it easy to [add custom styling](https://formkit.link/dab5b4e144a12fac26f6073f3dd1f358) for checked vs non-checked states.
@@ -45,10 +43,11 @@ description: What's new in the latest version of FormKit?.
 - **Pro:** Fixed issue where default value for `autocomplete` and `taglist` could not be removed when the provided value was an object literal. [#505](https://github.com/formkit/formkit/issues/505)
 - **Pro:** Fixed an issue where the `listbox` was still visible when no `options` were passed. [#504](https://github.com/formkit/formkit/issues/504)
 
-#### 📙 Documentation
+#### 📙 Documentation & Playground
 
 - New [API Reference](/api-reference/formkit-core) — TypeScript users rejoice! The API Reference exposes previously undocumented functionality.
 - New [Tailwind implementation](/guides/create-a-tailwind-theme#a-complete-tailwind-theme--recreating-genesis-css) of our Genesis theme.
+- When choosing [Tailwind CSS in the FormKit Playground](/playground?css-framework=tailwind) the new [FormKit Tailwind Genesis theme](/guides/create-a-tailwind-theme#a-complete-tailwind-theme--recreating-genesis-css) is loaded automatically for you if your Playground does not already have a `formkit.config.js` file.
 
 ## 1.0.0-beta.12
 
