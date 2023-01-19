@@ -16,7 +16,7 @@ description: What's new in the latest version of FormKit?.
 - When choosing [Tailwind CSS in the FormKit Playground](/playground?css-framework=tailwind) the new FormKit Tailwind Genesis theme is loaded automatically for you if your Playground does not already have a `formkit.config.js` file.
 - When removing classes on a section of a FormKit input you can [use the `!` prefix operator](/essentials/styling#removing-classes) to selectively remove an existing class without needing to use the long-form object syntax. eg `outer-class="my-class !formkit-outer"` adds `my-class` and removes the default `formkit-outer` class.
 - Adds <img src="/img/catalan.png" alt="Catalan flag" class="rare-flag"> Catalan (thanks @petergithubmgw).
-- The `checkbox` and `radio` inputs now have a `data-is-checked` attribute around their respective wrapper making it easy to [add custom styling](https://formkit.link/dab5b4e144a12fac26f6073f3dd1f358) for checked vs non-checked states.
+- The `checkbox` and `radio` inputs now have a `data-checked` attribute around their respective wrapper making it easy to [add custom styling](https://formkit.link/e1c7da488ab24196799a647caa18afc1) for checked vs non-checked states.
 - Improves validation messages in a handful of languages (`en`, `pt`, `zh`)
 - **Pro:** New [Mask Pro input](/inputs/mask).
 - **Pro:** Adds `empty-message` prop allows for message to be rendered in listbox when no options are passed (`dropdown`, `autocomplete`, and `taglist`). [#502](https://github.com/formkit/formkit/issues/502)
