@@ -19,16 +19,7 @@ async function submitHandler(_data, node) {
       type="checkbox"
       label="Soccer nations"
       validation-label="countries"
-      :options="[
-        '🇧🇷 Brazil',
-        '🇩🇪 Germany',
-        '🇮🇹 Italy',
-        '🇦🇷 Argentina',
-        '🇺🇾 Uruguay',
-        '🇫🇷 France',
-        '🏴󠁧󠁢󠁥󠁮󠁧󠁿 England',
-        '🇪🇸 Spain',
-      ]"
+      :options="['🇧🇷 Brazil','🇩🇪 Germany','🇮🇹 Italy','🇦🇷 Argentina','🇺🇾 Uruguay','🇫🇷 France','🏴󠁧󠁢󠁥󠁮󠁧󠁿 England','🇪🇸 Spain']"
       help="Which 4 countries will be in the semi finals of the next world cup?"
       validation="required|*min:2"
     />
@@ -41,10 +32,9 @@ async function submitHandler(_data, node) {
       reverse
       unmask-value
       allow-incomplete
-      validation="required|length:4|min:999"
+      validation="required|length:4"
       :validation-messages="{
         length: 'Minimum bet is $10.00',
-        min: ({ node }) => `Minimum bet is $10.00 (${node.value})`,
       }"
       help="How much do you want to bet?"
     />

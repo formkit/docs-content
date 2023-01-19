@@ -5,7 +5,6 @@ const customMessage = ({ name, args, node }) => {
 </script>
 
 <template>
-  <!-- %partial%::html:: -->
   <FormKit
     type="select"
     label="Favorite JS framework?"
@@ -19,5 +18,4 @@ const customMessage = ({ name, args, node }) => {
       is: customMessage,
     }"
   />
-  <!-- %partial%::html:: -->
 </template>

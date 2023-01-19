@@ -63,6 +63,15 @@ name="Taglist"
 :min-height="550"
 file="/_content/examples/taglist/taglist-max.vue"></example>
 
+## Close on select
+
+If you would like the taglist's listbox to remain open in between selections, set the `close-on-select` prop to `false`:
+
+<example
+name="Taglist"
+:min-height="550"
+file="/_content/examples/taglist/taglist-close-on-select.vue"></example>
+
 ## Slots
 
 Just like the [Dropdown input](/inputs/dropdown) or [Autocomplete input](/inputs/autocomplete), the taglist input allows you to utilize slots to customize the look and feel of the options list and the selected option by leveraging the [renderless component pattern](https://adamwathan.me/renderless-components-in-vuejs/).
@@ -179,6 +188,12 @@ file="/_content/examples/taglist/taglist-full.vue"></example>
     type: 'number',
     default: 'undefined',
     description: 'Limits the number of options that can be selected.'
+  },
+  {
+    prop: 'close-on-select',
+    type: 'boolean',
+    default: 'true',
+    description: 'Closes the listbox when an option is selected.'
   }
 ]">
 </reference-table>

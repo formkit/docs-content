@@ -55,10 +55,6 @@ You can populate an entire form by providing a `value` prop to the `<FormKit typ
 Be sure to either <code>v-model</code> a <code>ref</code> or a property of a <code>reactive</code> object. Do not <code>v-model</code> the reactive object itself as it <a href="https://github.com/formkit/formkit/issues/58#issuecomment-1029250016">leads to unexpected behavior</a>.
 </callout>
 
-<callout type="warning">
-The initial value of your v-model cannot be <code>undefined</code>. If it is, the v-model will not be used. All other values, including <code>null</code> and <code>false</code> are acceptable.
-</callout>
-
 ## Submitting
 
 Forms are usually submitted through user actions like clicking a submit button or hitting the `enter` key on a text node within the form. Upon submission, the form (in sequence):
@@ -285,7 +281,15 @@ You can also conveniently set error messages for all inputs in your form (or [gr
 
 ## Moving validation and error messages
 
-By default a form’s validation and error messages are placed directly above the form’s actions section. However, you can choose to render these anywhere on your page by using the `<FormKitMessages />` component (this is not a globally registered component — you must import it from `@formkit/vue`).
+By default, a form’s validation and error messages are placed directly above the form’s actions section. However, you can choose to render these anywhere on your page by using the `<FormKitMessages />` component. `<FormKitMessages />` is not a globally registered component — you must import it:
+
+<client-only>
+
+```js
+import { FormKitMessages } from '@formkit/vue'
+```
+
+</client-only>
 
 There are two ways to use `<FormKitMessages />`:
 
@@ -294,7 +298,7 @@ There are two ways to use `<FormKitMessages />`:
 
 ### Move messages automatically
 
-Place a `<FormKitMessages />` component anywhere inside your form, and the form’s messages will automatically be moved to that location.
+Place a `<FormKitMessages />` component anywhere _inside_ your form, and the form’s messages will automatically be moved to that location:
 
 <example
   name="input errors prop"
@@ -303,7 +307,7 @@ Place a `<FormKitMessages />` component anywhere inside your form, and the form�
 
 ### Move messages by `node`
 
-To move messages anywhere in the DOM, even outside the form itself, you can pass the form’s core node as a prop to `<FormKitMessages />`. In this example, we use the messages to create a toast-style popup.
+To move messages anywhere in the DOM — even _outside_ the form — you can pass the form’s core node as a prop to `<FormKitMessages />`. In this example, we use the messages to create a toast-style popup:
 
 <example
   name="input errors prop"
@@ -312,13 +316,13 @@ To move messages anywhere in the DOM, even outside the form itself, you can pass
 
 ### FormKitMessages props
 
-The `<FormKitMessages />` component has a few additional configuration options.
+The `<FormKitMessages />` component has a few additional configuration options:
 
-| Prop              | Default   | Description                                                                                                                                                          |
-| ----------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `node`            | inherited | The node to render messages for, by default this is inherited from the node’s parent (if it exists).                                                                 |
-| `sectionsSchema`  | `{}`      | Override the internal `messages` and `message` sections (same default structure as other input’s messages section).                                                  |
-| `defaultPosition` | `false`   | By default `FormKitMessages` moves the rendered messages to a new location, but if you would like to render the messages in both locations, set this prop to `true`. |
+| Prop              | Default   | Description                                                                                                                                                       |
+| ----------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `node`            | inherited | The core node to render messages for. By default this is inherited from the node’s parent (if it exists).                                                         |
+| `sectionsSchema`  | `{}`      | Override the internal `messages` and `message` sections (same default structure as other input’s messages section).                                               |
+| `defaultPosition` | `false`   | By default, `FormKitMessages` moves the rendered messages to a new location. If you would like to render the messages in both locations, set this prop to `true`. |
 
 ## Unmounting inputs
 

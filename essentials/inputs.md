@@ -16,7 +16,14 @@ FormKit Inputs are similar to HTML inputs but turbocharged with much needed feat
   file="/_content/examples/single-component/single-component.vue">
 </example>
 
-FormKit Inputs are not confined to what is available in "native" HTML. The upcoming FormKit Pro represents "synthetic" input types such as `autocomplete`, `taglist`, and `repeater`. Of course, you can write your own inputs too by creating [custom inputs](/guides/create-a-custom-input).
+FormKit Inputs are not confined to what is available in "native" HTML. Our seperate [FormKit Pro](/pro) package provides access to "synthetic" input types such as `repeater`, `autocomplete`, `mask`, `rating` and more. Of course, you can write your own inputs too by creating [custom inputs](/guides/create-a-custom-input).
+
+<example
+  name="Text input"
+  :file="[
+    '/_content/examples/single-component/single-component-pro.vue',
+  ]">
+</example>
 
 ## The Form Input
 
@@ -27,7 +34,7 @@ While you’re free to use FormKit inputs by themselves, you’ll usually want t
 ```html
 <FormKit type="form">
   <!-- ... your form inputs -->
-<FormKit />
+</FormKit>
 ```
 
 </client-only>
@@ -69,10 +76,6 @@ Using `v-model` allows for two-way reactive data binding with any FormKit input.
   name="Input v-model"
   file="/_content/examples/v-model/v-model.vue">
 </example>
-
-<callout type="warning">
-The initial value of your v-model cannot be <code>undefined</code>. If it is, the v-model will not be used. All other values, including <code>null</code> and <code>false</code> are acceptable.
-</callout>
 
 ### Using `node.input()`
 

@@ -3,6 +3,7 @@ import { camel2title, axios } from './utils.js'
 import useSteps from './useSteps.js'
 
 const { steps, visitedSteps, activeStep, setStep, stepPlugin } = useSteps()
+const date_rule = [['date_before', new Date(Date.now())]]
 
 // NEW: submit handler, which posts to our fake backend.
 const submitApp = async (formData, node) => {
@@ -73,12 +74,10 @@ const checkStepValidity = (stepName) => {
         />
 
         <FormKit
-          type="tel"
+          type="mask"
           name="tel"
           label="*Telephone"
-          placeholder="xxx-xxx-xxxx"
-          help="Phone number must be in the xxx-xxx-xxxx format."
-          validation="required|matches:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/"
+          mask="+1 (###) ###-####"
         />
       </FormKit>
     </section>
@@ -101,7 +100,7 @@ const checkStepValidity = (stepName) => {
         <FormKit
           type="date"
           label="Date of incorporation"
-          :validation="[['date_before', new Date(Date.now())]]"
+          :validation="date_rule"
           name="date_inc"
         />
       </FormKit>

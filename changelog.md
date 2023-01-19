@@ -13,11 +13,19 @@ description: What's new in the latest version of FormKit?.
 
 - Adds new `<FormKitMessages>` component which allows relocation of a form’s validation and error messages and the ability for `group` and `list` inputs to display their own error and validation messages.
 - When removing classes on a section of a FormKit input you can [use the `!` prefix operator](/essentials/styling#removing-classes) to selectively remove an existing class without needing to use the long-form object syntax. eg `outer-class="my-class !formkit-outer"` adds `my-class` and removes the default `formkit-outer` class.
+- Adds <img src="/img/catalan.png" alt="Catalan flag" class="rare-flag"> Catalan (thanks @petergithubmgw)
+- The `checkbox` and `radio` inputs now have a `data-is-checked` attribute around their respective wrapper making it easy to [add custom styling](https://formkit.link/dab5b4e144a12fac26f6073f3dd1f358) for checked vs non-checked states.
 
 #### 🐛 Bug fixes
 
 - Fixes a bug where `date_after` rule showed a incorrect validation message because of timezones. [#488](https://github.com/formkit/formkit/issues/488)
 - Fixes a bug where self-generated ids did not have an attribute-safe value because of special characters. [#517](https://github.com/formkit/formkit/issues/517)
+- `v-model` values can now be initialized as `undefined`. [#235](https://github.com/formkit/formkit/issues/235)
+- Fixed a bug that caused inline `validation-rules` props to recurse unexpectedly. [#514](https://github.com/formkit/formkit/issues/514)
+- Fixed a bug that caused the label of checkboxes with multiple options to not be overridden with `sections-schema`. [#541](https://github.com/formkit/formkit/issues/541)
+- Fixed a bug that caused labels to not change dynamically in already-rendered validation messages. [#297](https://github.com/formkit/formkit/issues/297)
+- Fixed a bug that caused the `disabled` prop to need `null` instead of `false` to render the `data-disabled` attribute on the outer wrapper. [#511](https://github.com/formkit/formkit/issues/511)
+- Fixed a bug that prevented slots from being conditional (ie using `v-if` on the `<template v-slot>` block). [#489](https://github.com/formkit/formkit/issues/511)
 
 ## 1.0.0-beta.12
 
