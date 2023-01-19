@@ -24,6 +24,7 @@ description: What's new in the latest version of FormKit?.
 - Fixed a bug that caused the label of checkboxes with multiple options to not be overridden with `sections-schema`. [#541](https://github.com/formkit/formkit/issues/541)
 - Fixed a bug that caused labels to not change dynamically in already-rendered validation messages. [#297](https://github.com/formkit/formkit/issues/297)
 - Fixed a bug that caused the `disabled` prop to need `null` instead of `false` to render the `data-disabled` attribute on the outer wrapper. [#511](https://github.com/formkit/formkit/issues/511)
+- Fixed a bug that prevented slots from being conditional (ie using `v-if` on the `<template v-slot>` block). [#489](https://github.com/formkit/formkit/issues/511)
 
 ## 1.0.0-beta.12
 
