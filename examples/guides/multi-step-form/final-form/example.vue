@@ -74,12 +74,10 @@ const checkStepValidity = (stepName) => {
         />
 
         <FormKit
-          type="tel"
+          type="mask"
           name="tel"
           label="*Telephone"
-          placeholder="xxx-xxx-xxxx"
-          help="Phone number must be in the xxx-xxx-xxxx format."
-          validation="required|matches:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/"
+          mask="+1 (###) ###-####"
         />
       </FormKit>
     </section>
