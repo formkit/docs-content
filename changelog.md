@@ -7,7 +7,7 @@ description: What's new in the latest version of FormKit?.
 
 ## 1.0.0-beta.13
 
-### January 16, 2023
+### January 19, 2023
 
 #### 💪 New features
 
@@ -15,17 +15,33 @@ description: What's new in the latest version of FormKit?.
 - When removing classes on a section of a FormKit input you can [use the `!` prefix operator](/essentials/styling#removing-classes) to selectively remove an existing class without needing to use the long-form object syntax. eg `outer-class="my-class !formkit-outer"` adds `my-class` and removes the default `formkit-outer` class.
 - Adds <img src="/img/catalan.png" alt="Catalan flag" class="rare-flag"> Catalan (thanks @petergithubmgw)
 - The `checkbox` and `radio` inputs now have a `data-is-checked` attribute around their respective wrapper making it easy to [add custom styling](https://formkit.link/dab5b4e144a12fac26f6073f3dd1f358) for checked vs non-checked states.
+- Pro: New `empty-message` prop allows for message to be rendered in listbox when no options are passed (Dropdown, Autocomplete, and Taglist). [#502](https://github.com/formkit/formkit/issues/502)
+- Pro: Adds checked attribute to formkit-option (dropdown, autocomplete, taglist). [#350](https://github.com/formkit/formkit/issues/350)
+- Pro: Adds `max` prop for Taglist and Autocomplete with `multiple` inputs. [#501](https://github.com/formkit/formkit/issues/501)
+- Pro: New `closeOnSelect` prop will keep the `listbox` expanded as selections are made (Autocomplete multiple and Taglist)
+- Pro: New `forceExpanded` prop forces the `listbox` to remain open for dev purposes (Dropdown, Autocomplete, and Taglist)
+- Pro: All Pro inputs can now be disabled via `disabled` attribute.
+
 
 #### 🐛 Bug fixes
 
-- Fixes a bug where `date_after` rule showed a incorrect validation message because of timezones. [#488](https://github.com/formkit/formkit/issues/488)
-- Fixes a bug where self-generated ids did not have an attribute-safe value because of special characters. [#517](https://github.com/formkit/formkit/issues/517)
+- Fixed a bug where `date_after` rule showed a incorrect validation message because of timezones. [#488](https://github.com/formkit/formkit/issues/488)
+- Fixed a bug where self-generated ids did not have an attribute-safe value because of special characters. [#517](https://github.com/formkit/formkit/issues/517)
 - `v-model` values can now be initialized as `undefined`. [#235](https://github.com/formkit/formkit/issues/235)
 - Fixed a bug that caused inline `validation-rules` props to recurse unexpectedly. [#514](https://github.com/formkit/formkit/issues/514)
 - Fixed a bug that caused the label of checkboxes with multiple options to not be overridden with `sections-schema`. [#541](https://github.com/formkit/formkit/issues/541)
 - Fixed a bug that caused labels to not change dynamically in already-rendered validation messages. [#297](https://github.com/formkit/formkit/issues/297)
 - Fixed a bug that caused the `disabled` prop to need `null` instead of `false` to render the `data-disabled` attribute on the outer wrapper. [#511](https://github.com/formkit/formkit/issues/511)
 - Fixed a bug that prevented slots from being conditional (ie using `v-if` on the `<template v-slot>` block). [#489](https://github.com/formkit/formkit/issues/511)
+- Pro: Fixed a Taglist bug where duplicate options were loaded from API. [#497](https://github.com/formkit/formkit/issues/497)
+- Pro: Fixed a bug where the Taglist would render duplicate props when `multiple` prop set to `false. [#494](https://github.com/formkit/formkit/issues/494)
+- Pro: Fixed a bug where Autocomplete `options` were duplicating when being used fast, repeatedly, or with pasted content. [#431](https://github.com/formkit/formkit/issues/431)
+- Pro: Fixed issue where default value for Autocomplete and Taglist could not be removed when the provided value was an object literal. [#505](https://github.com/formkit/formkit/issues/505)
+- Pro: Fixed an issue where the `listbox` was still visible when no `options` were passed. [#504](https://github.com/formkit/formkit/issues/504)
+
+#### 📙 Documentation
+
+- New [API Reference](/api-reference/formkit-core) — TypeScript users rejoice! The API Reference exposes previously undocumented functionality.
 
 ## 1.0.0-beta.12
 
