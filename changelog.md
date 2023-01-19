@@ -13,8 +13,9 @@ description: What's new in the latest version of FormKit?.
 
 - Adds new `<FormKitMessages>` component which allows relocation of a form’s validation and error messages and the ability for `group` and `list` inputs to display their own error and validation messages.
 - When removing classes on a section of a FormKit input you can [use the `!` prefix operator](/essentials/styling#removing-classes) to selectively remove an existing class without needing to use the long-form object syntax. eg `outer-class="my-class !formkit-outer"` adds `my-class` and removes the default `formkit-outer` class.
-- Adds <img src="/img/catalan.png" alt="Catalan flag" class="rare-flag"> Catalan (thanks @petergithubmgw)
+- Adds <img src="/img/catalan.png" alt="Catalan flag" class="rare-flag"> Catalan (thanks @petergithubmgw).
 - The `checkbox` and `radio` inputs now have a `data-is-checked` attribute around their respective wrapper making it easy to [add custom styling](https://formkit.link/dab5b4e144a12fac26f6073f3dd1f358) for checked vs non-checked states.
+- Improves validation messages in a handful of languages (`en`, `pt`, `zh`)
 - **Pro:** New [Mask Pro input](/inputs/mask). 
 - **Pro:** Adds `empty-message` prop allows for message to be rendered in listbox when no options are passed (`dropdown`, `autocomplete`, and `taglist`). [#502](https://github.com/formkit/formkit/issues/502)
 - **Pro:** Adds checked attribute to formkit-option (`dropdown`, `autocomplete`, `taglist`). [#350](https://github.com/formkit/formkit/issues/350)
@@ -33,9 +34,12 @@ description: What's new in the latest version of FormKit?.
 - Fixed a bug that caused the label of checkboxes with multiple options to not be overridden with `sections-schema`. [#541](https://github.com/formkit/formkit/issues/541)
 - Fixed a bug that caused labels to not change dynamically in already-rendered validation messages. [#297](https://github.com/formkit/formkit/issues/297)
 - Fixed a bug that caused the `disabled` prop to need `null` instead of `false` to render the `data-disabled` attribute on the outer wrapper. [#511](https://github.com/formkit/formkit/issues/511)
-- Fixed a bug that prevented slots from being conditional (ie using `v-if` on the `<template v-slot>` block). [#489](https://github.com/formkit/formkit/issues/511)
+- Fixed a bug that prevented slots from being conditional (ie using `v-if` on the `<template v-slot>` block). [#489](https://github.com/formkit/formkit/issues/489)
+- Fixed [Nuxt](https://github.com/formkit/formkit/commit/fa670eb4b8fd60609617e9a0846bf0c1f824a257) and [Nuxt playground](https://github.com/formkit/formkit/commit/f8f6eeb3683086632b51640d8a0a9a51643f501a) compatibility issues.
+- Fixed a bug that caused sections using to not properly respect `sections-schema` prop.
+- Fixed an issue with Tailwind prefix and suffix icon variants. [#530](https://github.com/formkit/formkit/issues/530)
 - **Pro:** Fixed a `taglist` bug where duplicate options were loaded from API. [#497](https://github.com/formkit/formkit/issues/497)
-- **Pro:** Fixed a bug where the `taglist` would render duplicate props when `multiple` prop set to `false. [#494](https://github.com/formkit/formkit/issues/494)
+- **Pro:** Fixed a bug where the `taglist` would render duplicate props when `multiple` prop set to `false`. [#494](https://github.com/formkit/formkit/issues/494)
 - **Pro:** Fixed a bug where `autocomplete` `options` were duplicating when being used fast, repeatedly, or with pasted content. [#431](https://github.com/formkit/formkit/issues/431)
 - **Pro:** Fixed issue where default value for `autocomplete` and `taglist` could not be removed when the provided value was an object literal. [#505](https://github.com/formkit/formkit/issues/505)
 - **Pro:** Fixed an issue where the `listbox` was still visible when no `options` were passed. [#504](https://github.com/formkit/formkit/issues/504)
