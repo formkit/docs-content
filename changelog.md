@@ -15,7 +15,7 @@ description: What's new in the latest version of FormKit?.
 - When removing classes on a section of a FormKit input you can [use the `!` prefix operator](/essentials/styling#removing-classes) to selectively remove an existing class without needing to use the long-form object syntax. eg `outer-class="my-class !formkit-outer"` adds `my-class` and removes the default `formkit-outer` class.
 - Adds <img src="/img/catalan.png" alt="Catalan flag" class="rare-flag"> Catalan (thanks @petergithubmgw).
 - The `checkbox` and `radio` inputs now have a `data-checked` attribute around their respective wrapper making it easy to [add custom styling](https://formkit.link/e1c7da488ab24196799a647caa18afc1) for checked vs non-checked states.
-- Improves validation messages in a handful of languages (`en`, `pt`, `zh`)
+- Improves validation messages in a handful of languages (`en`, `pt`, `zh`).
 - **Pro:** New [Mask Pro input](/inputs/mask).
 - **Pro:** Adds `empty-message` prop allows for message to be rendered in listbox when no options are passed (`dropdown`, `autocomplete`, and `taglist`). [#502](https://github.com/formkit/formkit/issues/502)
 - **Pro:** Adds checked attribute to formkit-option (`dropdown`, `autocomplete`, `taglist`). [#350](https://github.com/formkit/formkit/issues/350)
