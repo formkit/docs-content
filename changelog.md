@@ -15,7 +15,7 @@ This release addresses some issues for Tailwind users that were introduced in `b
 
 - Reverts `@formkit/themes/tailwindcss` to only include a `default` export of the `FormKitVariants` plugin.
 - Moves the provided Tailwind Genesis theme to a new export path of `@formkit/themes/tailwindcss/genesis`.
-- Changes remove class operator from `!` to `$remove:` in order to not coflict with Tailwind's built-in `!` operator that adds `!important` to a style rule.
+- Changes remove class operator from `!` to `$remove:` in order to not conflict with Tailwind's built-in `!` operator that adds `!important` to a style rule.
 - Fixes issue where default icons would not load when using the provided FormKit Tailwind Genesis theme.
 
 ## 1.0.0-beta.13
