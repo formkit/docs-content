@@ -249,6 +249,8 @@ tabs="render,html"></example>
 
 ## Tailwind CSS
 
+### Using the provided Genesis theme
+
 FormKit ships with an optional default Tailwind theme called Genesis. To use this pre-made Tailwind theme in your project import it from `@formkit/themes/tailwindcss/genesis` and add it to your `formkit.config.js`. You'll also want to include the neccessary `genesisIcons` import from `@formkit/icons`.
 
 <client-only>
