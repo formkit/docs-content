@@ -381,11 +381,11 @@ FormKit ships with a Tailwind version of the Genesis theme. To use this pre-made
 
 ```js
 // formkit.config.js
-import { generateClasses } from "@formkit/themes"
-import { genesisIcons } from "@formkit/icons"
-import genesis from "@formkit/themes/tailwindcss/genesis"
+import { generateClasses } from '@formkit/themes'
+import { genesisIcons } from '@formkit/icons'
+import genesis from '@formkit/themes/tailwindcss/genesis'
 
-export default = {
+export default {
   icons: {
     ...genesisIcons,
   },
