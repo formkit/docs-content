@@ -249,7 +249,50 @@ tabs="render,html"></example>
 
 ## Tailwind CSS
 
-Want to use Tailwind with FormKit? We've written a guide walking through the process using both inline class props as well as using the `FormKitVariants` plugin and the `generateClasses` helper function from `@formkit/themes` to create a global Tailwind theme.
+FormKit ships with an optional default Tailwind theme called Genesis. To use this pre-made Tailwind theme in your project import it from `@formkit/themes/tailwindcss/genesis` and add it to your `formkit.config.js`. You'll also want to include the neccessary `genesisIcons` import from `@formkit/icons`.
+
+<client-only>
+
+```js
+// formkit.config.js
+import { generateClasses } from "@formkit/themes"
+import { genesisIcons } from "@formkit/icons"
+import genesis from "@formkit/themes/tailwindcss/genesis"
+
+export default = {
+  icons: {
+    ...genesisIcons,
+  },
+  config: {
+    classes: generateClasses(genesis),
+  },
+}
+```
+
+</client-only>
+
+The `genesis` theme import is nice for brevity, but the Tailwind parser will need to be provided the path to the full theme file in your `node_modules` in order to know which classes are being used. Additionally you should add the `FormKitVariants` plugin to your `tailwind.config.js` in order to make use of helpful FormKit variants such as `formkit-invalid:` in your project.
+
+<client-only>
+
+```js
+// tailwind.config.js
+const FormKitVariants = require('@formkit/themes/tailwindcss')
+
+module.exports = {
+  content: [
+    './src/**/*.{html,js,vue}',
+    './node_modules/@formkit/themes/dist/tailwindcss/genesis/index.cjs',
+  ],
+  plugins: [FormKitVariants],
+}
+```
+
+</client-only>
+
+### Building your own Tailwind CSS theme
+
+Want to create your own Tailwind theme? We've written a guide walking through the process using both inline class props as well as using the `FormKitVariants` plugin and the `generateClasses` helper function from `@formkit/themes` to create a global Tailwind theme.
 
 The guide concludes with a complete reproduction of the FormKit Genesis CSS theme written in Tailwind.
 
