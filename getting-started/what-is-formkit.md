@@ -27,7 +27,7 @@ FormKit is far more than a UI library. It is a _form building framework_ for Vue
 
 ## Why FormKit?
 
-Forms seem simple. After all, a `<form>` and an `<input>` tag are all that's required. Yet, experienced engineers know that implementing production-ready forms is tedious and complicated. FormKit's key features where designed to solve these problems, while making form authoring efficient and enjoyable for developers:
+Forms seem simple. After all, a `<form>` and an `<input>` tag are all that's required. Yet, experienced engineers know that implementing production-ready forms is tedious and complicated. FormKit's key features were designed to solve these problems, while making form authoring efficient and enjoyable for developers:
 
 #### Key Features
 
