@@ -36,6 +36,9 @@ export default config
 name="Multi-Step Introduction"
 :file="[
   '/\_content/examples/multi-step/intro/intro.vue',
+  '/\_content/examples/multi-step/stepOne.vue',
+  '/\_content/examples/multi-step/stepTwo.vue',
+  '/\_content/examples/multi-step/stepThree.vue',
   '/\_content/examples/multi-step/formkit.config.js'
 ]">
 </example>
@@ -103,6 +106,9 @@ By default the `multi-step` input will prevent advancing to a step if the curren
 name="Allow Incomplete"
 :file="[
   '/\_content/examples/multi-step/allow-incomplete/allow-incomplete.vue',
+  '/\_content/examples/multi-step/stepOne.vue',
+  '/\_content/examples/multi-step/stepTwo.vue',
+  '/\_content/examples/multi-step/stepThree.vue',
   '/\_content/examples/multi-step/formkit.config.js'
 ]">
 </example>
