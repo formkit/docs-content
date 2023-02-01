@@ -343,7 +343,7 @@ The process of integrating FormKit with Laravel is straightforward and it will h
 
 While it's great to understand how we can integrate FormKit with Inertia — it would still be difficult to do manually for every form in a larger project. It would be great if we could encapsulate this setup in a plugin and apply it across our entire project.
 
-Fortunately a [3rd-party plugin](https://github.com/GustavoFenilli/formkit-addon-inertia) (maintained by a FormKit team member) that integrates FormKit tightly with Inertia is availble.
+Fortunately there is a [3rd-party plugin](https://github.com/GustavoFenilli/formkit-addon-inertia) (maintained by a FormKit team member) that integrates FormKit tightly with Inertia.
 
 First, we need to install it:
 
