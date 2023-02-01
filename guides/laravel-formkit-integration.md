@@ -403,3 +403,5 @@ const submit = (fields, node) => {
 </client-only>
 
 With all of our previous logic encapsulated into a plugin it is now trivial to add FormKit to our project. Adding FormKit to a Laravel 9 application using Breeze with Vue.js and Inertia is will provide both developers and application end-users with a better overall form experience.
+
+<cta label="Ready to dive deeper into FormKit?" button="Learn more about FormKit's unique architecture" href="/essentials/architecture"></cta>
