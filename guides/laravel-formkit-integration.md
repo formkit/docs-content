@@ -15,13 +15,19 @@ Laravel Sail is a light-weight command-line interface for interacting with Larav
 
 First, we will create a new Laravel Sail application by running the following command, where `laravel-formkit` is the name of our app:
 
+<client-only>
+
 ```bash
 curl -s https://laravel.build/laravel-formkit | bash
 ```
 
+</client-only>
+
 Of course, you can change `laravel-formkit` in this URL to anything you like - just make sure the application name only contains alpha-numeric characters, dashes, and underscores.
 
 Next, navigate to the newly created directory and start the local development environment by running the following command:
+
+<client-only>
 
 ```bash
 cd laravel-formkit
@@ -30,6 +36,8 @@ cd laravel-formkit
 
 ./vendor/bin/sail artisan migrate
 ```
+
+</client-only>
 
 This command will start up the necessary Docker containers and configure the necessary services.
 
@@ -41,19 +49,29 @@ Laravel Breeze is a simple, minimal implementation of all of Laravel's authentic
 
 To add Laravel Breeze to your Laravel 9 application, you'll first need to install it using Composer:
 
+<client-only>
+
 ```bash
 ./vendor/bin/sail composer require laravel/breeze --dev
 ```
 
+</client-only>
+
 Next, you'll need to run the `breeze:install vue` command:
+
+<client-only>
 
 ```bash
 ./vendor/bin/sail artisan breeze:install vue
 ```
 
+</client-only>
+
 This command will install the necessary views, routes, and controllers for authentication, as well as the Vue.js components that make up the front-end of the authentication system.
 
 To serve the Vue.js components, you'll need to run the following command to compile the assets:
+
+<client-only>
 
 ```bash
 npm install && npm run dev
@@ -61,6 +79,8 @@ npm install && npm run dev
 # The reason to run npm without sail is because,
 # some files cannot be found if run inside of it.
 ```
+
+</client-only>
 
 Now, you can access the login page by visiting `http://localhost/login` and the registration page by visiting `http://localhost/register` in your browser.
 
@@ -83,11 +103,17 @@ FormKit provides a convenient way to handle form submission, errors and loading 
 
 First, we need to install FormKit using `npm` or `yarn`:
 
+<client-only>
+
 ```bash
 npm install @formkit/vue
 ```
 
+</client-only>
+
 Next, we will go to our `resources/js/app.js` file so we cann add FormKit as a plugin to Vue.js:
+
+<client-only>
 
 ```js
 import '../css/app.css'
@@ -121,18 +147,28 @@ createInertiaApp({
 })
 ```
 
+</client-only>
+
 Lastly, we should also add some styling to our forms so that they look nice. FormKit ships with a beautiful theme called `genesis` — it even has a Tailwind CSS variant for it! To use FormKit's default theme we need to install it from `@formkit/themes`:
+
+<client-only>
 
 ```bash
 npm install @formkit/themes
 ```
 
+</client-only>
+
 And then we can import the theme:
+
+<client-only>
 
 ```js
 import { plugin as FormKitPlugin, defaultConfig } from '@formkit/vue' // Import FormKit plugin and defaultConfig here
 import '@formkit/themes/genesis'
 ```
+
+</client-only>
 
 In conclusion, integrating FormKit with Vue.js is straightforward and is a powerful way to enhance the functionality of your forms in your Laravel application.
 
@@ -141,6 +177,8 @@ In conclusion, integrating FormKit with Vue.js is straightforward and is a power
 Laravel Breeze provides built-in solution for creating forms in Laravel, with a set of pre-designed input components that can be easily dropped into your views. However, these components come with more boilerplate, as the developer is responsible for taking care of input handling, ensuring accessibile dom structure, validation, and much more.
 
 Here is a basic form built using Lavarel's provided input components:
+
+<client-only>
 
 ```html
 <form @submit.prevent="submit">
@@ -160,7 +198,11 @@ Here is a basic form built using Lavarel's provided input components:
 </form>
 ```
 
+</client-only>
+
 FormKit, on the other hand, provides a more customizable and flexible solution for form building. It allows you to create custom form components and gives you control over the form markup and logic. FormKit also provides advanced features, such as form validation, error handling, and dynamic form fields, that are not available in Laravel Breeze:
+
+<client-only>
 
 ```html
 // less boilerplate, better validation, built-in translations and automatic
@@ -170,6 +212,8 @@ accessibility in our markup.
 </FormKit>
 ```
 
+</client-only>
+
 ## Integrating Backend Responses with FormKit
 
 One of the key benefits of using FormKit is its ability to easily integrate with your backend and handle form submissions, errors, and loading state.
@@ -177,6 +221,8 @@ One of the key benefits of using FormKit is its ability to easily integrate with
 When a form is submitted, FormKit can send a request to your backend, handle the response, and update the form's state accordingly.
 
 First, let's update the Login page to use FormKit. Comments are included throughout to explain the example architecture.
+
+<client-only>
 
 ```vue
 <script setup>
@@ -239,7 +285,11 @@ const submit = (fields, node) => {
 </template>
 ```
 
+</client-only>
+
 We're getting there! But if you try to run this example now you will notice that there are some missing features because of how Inertia works with FormKit. Our loading state, disabled state and backend errors aren't there. Adding those features requires using the FormKit `node` to integrate with the `router` inside our submit handler:
+
+<client-only>
 
 ```js
 // first import the createMessage helper, so that we can create a loading message.
@@ -281,6 +331,8 @@ const submit = (fields, node) => {
 };
 ```
 
+</client-only>
+
 And there we have it! FormKit is now integrated neatly with Inertia in our Laravel project.
 
 In conclusion, FormKit is a powerful and flexible form library for Vue.js applications — including those powered by Laravel. By using FormKit you can take advantage of its many advanced features to create user-friendly forms that provide a better experience for your users.
@@ -295,11 +347,17 @@ Fortunately a [3rd-party plugin](https://github.com/GustavoFenilli/formkit-addon
 
 First, we need to install it:
 
+<client-only>
+
 ```bash
 npm install formkit-addon-inertia
 ```
 
+</client-only>
+
 Next, we need to add the plugin to our FormKit configuration by extending the `defaultConfig`:
+
+<client-only>
 
 ```js
 // app.js
@@ -322,7 +380,11 @@ return (
 )
 ```
 
+</client-only>
+
 Lastly, we go back to our submit function and update it:
+
+<client-only>
 
 ```js
 const submit = (fields, node) => {
@@ -337,5 +399,7 @@ const submit = (fields, node) => {
   })
 }
 ```
+
+</client-only>
 
 With all of our previous logic encapsulated into a plugin it is now trivial to add FormKit to our project. Adding FormKit to a Laravel 9 application using Breeze with Vue.js and Inertia is will provide both developers and application end-users with a better overall form experience.
