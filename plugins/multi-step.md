@@ -144,9 +144,43 @@ name="Customizing step actions"
 ]">
 </example>
 
-## Props & Attributes
+## Props & Attributes (multi-step)
 
-#### Props and Attributes table here
+<reference-table
+  input="multi-step"
+  :data="[
+    {prop: 'allowIncomplete', type: 'boolean', default: 'false', description: 'When <code>true</code>, allows users to navigate between steps even if current step is invalid.'},
+    {prop: 'tabStyle', type: 'string', default: 'tab', description: 'Used to set a data-attribute for creating tab styles. Default theme ships with support for <code>tab</code> and <code>progress</code> tab styles.'},
+    {prop: 'hideProgressLabels', type: 'boolean', default: 'false', description: 'When true, hides labels for the <code>progress</code> tab style.'},
+    {prop: 'validStepIcon', type: 'string', default: 'check', description: 'Specifies an icon to put in the <code>badge</code> section when a step is valid. When applied to the <code>multi-step</code> the icon will be applied to all child <code>step</code> inputs.'},
+    {prop: 'beforeStepChange', type: 'function', default: 'undefined', description: 'A function to run before the active step is changed. The function is supplied with <code>currentStep</code> and <code>targetStep</code> which are both FormKit <code>node</code> context objects. A third argument of <code>delta</code> is supplied as an integer which reflects the distance between <code>currentStep</code> and <code>targetStep</code>. When supplied to the <code>multi-step</code> this function will fire on every <code>step</code> change.'}
+  ]"
+  :without="[
+    'help',
+    'prefix-icon',
+    'suffix-icon',
+  ]">
+</reference-table>
+
+## Props & Attributes (step)
+
+<reference-table 
+  input="step" 
+  :data="[
+    {prop: 'label', type: 'string', default: '', description: 'Used to change the tab label of the step. If not custom label is supplied the step\'s <code>name</code> will be used.'},
+    {prop: 'prevLabel', type: 'string', default: 'Previous', description: 'Used to change the label of the default <code>prevAction</code> button.'},
+    {prop: 'nextLabel', type: 'string', default: 'Next', description: 'Used to change the label of the default <code>nextAction</code> button.'},
+    {prop: 'prevAttrs', type: 'object', default: {}, description: 'Used to apply attributes to the default <code>prevAction</code> button input.'},
+    {prop: 'nextAttrs', type: 'object', default: {}, description: 'Used to apply attributes to the default <code>nextAction</code> button input.'},
+    {prop: 'validStepIcon', type: 'string', default: 'check', description: 'Specifies an icon to put in the <code>badge</code> section when the step is valid. When applied to a <code>step</code> the icon will be applied only to the target <code>step</code>.'},
+    {prop: 'beforeStepChange', type: 'function', default: 'undefined', description: 'A function to run before the step is changed. The function is supplied with <code>currentStep</code> and <code>targetStep</code> which are both FormKit <code>node</code> context objects. A third argument of <code>delta</code> is supplied as an integer which reflects the distance between <code>currentStep</code> and <code>targetStep</code>. When supplied to a <code>step</code> this function will fire only when navigating away from the specified <code>step</code>.'}
+  ]"
+  :without="[
+    'help',
+    'prefix-icon',
+    'suffix-icon',
+  ]">
+</reference-table>
 
 ## Sections
 
