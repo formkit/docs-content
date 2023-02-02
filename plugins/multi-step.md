@@ -100,7 +100,7 @@ name="Step Labels"
 
 ## Allow incomplete steps
 
-By default the `multi-step` input will prevent advancing to a step if the current step or a step between the current step and the target step has blocking validation messages (even if they are not being displayed). To allow a user to jump ahead use the `allow-incomplete` prop.
+By default the `multi-step` input will allow advancing to later steps even if the current step or a step between the current step and the target step has blocking validation messages. To prevent a user from jumping ahead set the `allow-incomplete` prop to `false`.
 
 <example
 name="Allow Incomplete"
@@ -169,7 +169,7 @@ name="beforeStepChange"
 <reference-table
   input="multi-step"
   :data="[
-    {prop: 'allowIncomplete', type: 'boolean', default: 'false', description: 'When <code>true</code>, allows users to navigate between steps even if current step is invalid.'},
+    {prop: 'allowIncomplete', type: 'boolean', default: 'true', description: 'When <code>true</code>, allows users to navigate between steps even if current step is invalid.'},
     {prop: 'tabStyle', type: 'string', default: 'tab', description: 'Used to set a data-attribute for creating tab styles. Default theme ships with support for <code>tab</code> and <code>progress</code> tab styles.'},
     {prop: 'hideProgressLabels', type: 'boolean', default: 'false', description: 'When true, hides labels for the <code>progress</code> tab style.'},
     {prop: 'validStepIcon', type: 'string', default: 'check', description: 'Specifies an icon to put in the <code>badge</code> section when a step is valid. When applied to the <code>multi-step</code> the icon will be applied to all child <code>step</code> inputs.'},

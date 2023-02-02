@@ -9,7 +9,7 @@ import StepThree from './stepThree.vue'
     You can advance through this multi-step input without completing each step.
   </h2>
   <!-- %partial% -->
-  <FormKit type="multi-step" :allow-incomplete="true">
+  <FormKit type="multi-step" :allow-incomplete="false">
     <FormKit type="step" name="personalInfo">
       <!-- component for example brevity. -->
       <StepOne />
