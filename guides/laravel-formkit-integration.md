@@ -7,7 +7,21 @@ description: FormKit and Laravel are both powerful tools for building web applic
 
 <page-toc></page-toc>
 
+## Introduction
+
 FormKit and Laravel are both powerful tools for building web applications, but they can be even more effective when used together. FormKit is a form building library that makes it easy to create and validate forms, while Laravel is a popular PHP framework for building web applications. By integrating FormKit with Laravel, developers can streamline the form creation and validation process and take advantage of the benefits of both tools. In this article, we will explore how to integrate FormKit with Laravel 9, including a step-by-step guide for getting started.
+
+## Why using FormKit can make your forms faster to develop
+
+While writing your own components may work for smaller forms, it may not be able to fully meet the needs of a complex web application. Here are a few reasons why using FormKit as a form library can help you make better forms:
+
+1. **Time-saving:** FormKit provides a simple and easy-to-use API that allows you to quickly create and manage forms, saving you time and effort.
+2. **Accessibility:** FormKit has accessibility as a first concern, and outputs an accessible dom structure out of the box.
+3. **Value handling:** FormKit collects the values from children to its parent automatically, making it easier to get the collection when submiting to your backend.
+4. **Error handling:** FormKit automatically handles frontend form validation and error messages, making it easy to ensure that your forms are accurate and user-friendly.
+5. **Customization:** FormKit allows you to easily customize the look and feel of your forms, including adding custom CSS classes and attributes.
+
+So now that you know why and how  FormKit helps you while writing forms, we will walk you through on how to setup Laravel 9 and FormKit to together.
 
 ## Installing Laravel 9 with Laravel Sail
 
@@ -85,17 +99,6 @@ npm install && npm run dev
 Now, you can access the login page by visiting `http://localhost/login` and the registration page by visiting `http://localhost/register` in your browser.
 
 By adding Laravel Breeze to your Laravel 9 application, you can quickly add authentication functionality to your application, as well as take advantage of Vue.js for the front-end.
-
-## Why using the built-in login page from Laravel Breeze is less optimal than using FormKit
-
-While Laravel Breeze does provide a built-in login page, it may not be the best option for all use cases. Here are a few reasons why using FormKit as a form library can be a better choice:
-
-1. **Time-saving:** FormKit provides a simple and easy-to-use API that allows you to quickly create and manage forms, saving you time and effort.
-2. **Value handling:** FormKit collects the values from children to its parent automatically, making it easier to get the collection when submiting to your backend.
-3. **Error handling:** FormKit automatically handles form validation and error messages, making it easy to ensure that your forms are accurate and user-friendly.
-4. **Customization:** FormKit allows you to easily customize the look and feel of your forms, including adding custom CSS classes and attributes.
-
-While the built-in login page from Laravel Breeze does provide basic authentication functionality, it may not be able to fully meet the needs of a complex web application. Using FormKit as your form library provides greater flexibility, customizability, and security for your login forms.
 
 ## Adding FormKit to Vue.js: Enhancing Form Functionality
 
