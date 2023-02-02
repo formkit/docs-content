@@ -30,9 +30,3 @@ import StepThree from './stepThree.vue'
   </FormKit>
 </template>
 <!-- %partial% -->
-
-<style>
-/* only used for playground support. In your project you should 
-import directly from the @formkit/addons package */
-@import 'https://cdn.jsdelivr.net/npm/@formkit/addons@dev/dist/css/multistep.css';
-</style>

@@ -9,10 +9,7 @@ import StepThree from './stepThree.vue'
     You can advance through this multi-step input without completing each step.
   </h2>
   <!-- %partial% -->
-  <FormKit 
-    type="multi-step" 
-    :allow-incomplete="true"
-  >
+  <FormKit type="multi-step" :allow-incomplete="true">
     <FormKit type="step" name="personalInfo">
       <!-- component for example brevity. -->
       <StepOne />
@@ -30,9 +27,3 @@ import StepThree from './stepThree.vue'
   </FormKit>
   <!-- %partial% -->
 </template>
-
-<style>
-/* only used for playground support. In your project you should 
-import directly from the @formkit/addons package */
-@import 'https://cdn.jsdelivr.net/npm/@formkit/addons@dev/dist/css/multistep.css';
-</style>
