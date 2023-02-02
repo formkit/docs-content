@@ -144,6 +144,26 @@ name="Customizing step actions"
 ]">
 </example>
 
+## The beforeStepChange event
+
+Sometimes you need to _do_ something with your form data between steps. Maybe you want to submit each step independently to your back-end or you need to log analytics events to determine how far users are making it through your form. In cases such as these you can use the `beforeStepChange` event. `beforeStepChange` accepts a function and is provided a context object with the following keys:
+
+- `currentStep`: The currently active step node context object that the user is navigating away from.
+- `targetStep`: The step node context object that the user is navigating to.
+- `delta`: The distance between steps. Positive integers represent stepping forward, negative integers represent stepping backward.
+
+Your `beforeStepChange` function should return a `Boolean`. Returning `false` will _prevent_ the step change from ocurring.
+
+`beforeStepChange` can be used on your `multi-step` input in which case it will apply to _all_ steps. Additionally you can use `beforeStepChange` on a specific `step` input to run your function only when navigating away from the step which has the function assigned. `beforeStepChange` applied to a `step` will override any `beforeStepChange` set on a parent `multi-step` if one exists.
+
+<example
+name="beforeStepChange"
+:file="[
+  '/\_content/examples/multi-step/before-step-change/before-step-change.vue',
+  '/\_content/examples/multi-step/formkit.config.js'
+]">
+</example>
+
 ## Props & Attributes (multi-step)
 
 <reference-table
@@ -153,7 +173,7 @@ name="Customizing step actions"
     {prop: 'tabStyle', type: 'string', default: 'tab', description: 'Used to set a data-attribute for creating tab styles. Default theme ships with support for <code>tab</code> and <code>progress</code> tab styles.'},
     {prop: 'hideProgressLabels', type: 'boolean', default: 'false', description: 'When true, hides labels for the <code>progress</code> tab style.'},
     {prop: 'validStepIcon', type: 'string', default: 'check', description: 'Specifies an icon to put in the <code>badge</code> section when a step is valid. When applied to the <code>multi-step</code> the icon will be applied to all child <code>step</code> inputs.'},
-    {prop: 'beforeStepChange', type: 'function', default: 'undefined', description: 'A function to run before the active step is changed. The function is supplied with <code>currentStep</code> and <code>targetStep</code> which are both FormKit <code>node</code> context objects. A third argument of <code>delta</code> is supplied as an integer which reflects the distance between <code>currentStep</code> and <code>targetStep</code>. When supplied to the <code>multi-step</code> this function will fire on every <code>step</code> change.'}
+    {prop: 'beforeStepChange', type: 'function', default: 'undefined', description: 'A function to run before the active step is changed. The function is supplied with a context object containing <code>currentStep</code> and <code>targetStep</code> which are both FormKit <code>node</code> context objects. Additionally, <code>delta</code> is supplied as an integer which reflects the distance between <code>currentStep</code> and <code>targetStep</code>. When supplied to the <code>multi-step</code> this function will fire on every <code>step</code> change.'}
   ]"
   :without="[
     'help',
@@ -173,7 +193,7 @@ name="Customizing step actions"
     {prop: 'prevAttrs', type: 'object', default: {}, description: 'Used to apply attributes to the default <code>prevAction</code> button input.'},
     {prop: 'nextAttrs', type: 'object', default: {}, description: 'Used to apply attributes to the default <code>nextAction</code> button input.'},
     {prop: 'validStepIcon', type: 'string', default: 'check', description: 'Specifies an icon to put in the <code>badge</code> section when the step is valid. When applied to a <code>step</code> the icon will be applied only to the target <code>step</code>.'},
-    {prop: 'beforeStepChange', type: 'function', default: 'undefined', description: 'A function to run before the step is changed. The function is supplied with <code>currentStep</code> and <code>targetStep</code> which are both FormKit <code>node</code> context objects. A third argument of <code>delta</code> is supplied as an integer which reflects the distance between <code>currentStep</code> and <code>targetStep</code>. When supplied to a <code>step</code> this function will fire only when navigating away from the specified <code>step</code>.'}
+    {prop: 'beforeStepChange', type: 'function', default: 'undefined', description: 'A function to run before the active step is changed. The function is supplied with a context object containing <code>currentStep</code> and <code>targetStep</code> which are both FormKit <code>node</code> context objects. Additionally, <code>delta</code> is supplied as an integer which reflects the distance between <code>currentStep</code> and <code>targetStep</code>. When supplied to a <code>step</code> this function will fire only when navigating away from the specified <code>step</code>.'}
   ]"
   :without="[
     'help',
