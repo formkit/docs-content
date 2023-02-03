@@ -203,7 +203,7 @@ Current state of the input:
    * async validation rules. In the case of groups, forms, and lists this includes
    * the validation state of all its children.
    */
-  validating: boolean
+  validating?: boolean
   /**
    * If validation-visibility has been satisfied and any validation
    * messages should be displayed.
