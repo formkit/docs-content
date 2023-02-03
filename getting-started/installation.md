@@ -106,6 +106,13 @@ That's it! You're now ready to use the `<FormKit>` component in your Vue 3 appli
 
 ## With Nuxt
 
+<VideoCard
+  title="Nuxt 3 Setup - Vue School Course"
+  poster="https://cdn.formk.it/web-assets/robust-vue-js-forms-with-formkit-2.jpg"
+  watch-time="4 mins"
+  external-vid="https://vueschool.io/lessons/project-setup-and-formkit-config?friend=formkit">
+</VideoCard>
+
 Using FormKit with Nuxt requires minimal setup. First include the Nuxt module as a dependency within your project:
 
 <client-only>
@@ -252,13 +259,10 @@ const config = {
 
 export default config
 
-// app.js or _app.ts for Astro  
+// app.js or _app.ts for Astro
 import config from 'formkit.config.js'
 
-app.use(
-  plugin,
-  defaultConfig(config)
-)
+app.use(plugin, defaultConfig(config))
 ```
 
 </client-only>
@@ -365,6 +369,53 @@ Assuming you are using a bundler like Vite, Webpack or Nuxt — you can then dir
 ```js
 // main.js or formkit.config.ts
 import '@formkit/themes/genesis'
+```
+
+</client-only>
+
+### For Tailwind
+
+<callout type="danger" label="Issue in Beta.14">
+There is an issue affecting the <code>1.0.0-beta.14</code> version of <code>@formkit/themes</code> which will make it impossible to import <code>genesis</code>. Please install <code>@formkit/themes@next</code> in your project to bypass this issue until <code>1.0.0-beta.15</code> is released. You can follow the issue discussion <a href="https://github.com/formkit/formkit/issues/560" target="_blank">on Github.</a>
+</callout>
+
+FormKit ships with a Tailwind version of the Genesis theme. To use this pre-made Tailwind theme in your project import it from `@formkit/themes/dist/tailwindcss/genesis` and add it to your `formkit.config.js`. You'll also want to include the neccessary `genesisIcons` import from `@formkit/icons`.
+
+<client-only>
+
+```js
+// formkit.config.js
+import { generateClasses } from '@formkit/themes'
+import { genesisIcons } from '@formkit/icons'
+import genesis from '@formkit/themes/tailwindcss/genesis'
+
+export default {
+  icons: {
+    ...genesisIcons,
+  },
+  config: {
+    classes: generateClasses(genesis),
+  },
+}
+```
+
+</client-only>
+
+The `genesis` theme import is nice for brevity, but the Tailwind parser will need to be provided the path to the full theme file in your `node_modules` in order to know which classes are being used. Additionally you should add the `FormKitVariants` plugin to your `tailwind.config.js` in order to make use of helpful FormKit variants such as `formkit-invalid:` in your project.
+
+<client-only>
+
+```js
+// tailwind.config.js
+const FormKitVariants = require('@formkit/themes/tailwindcss')
+
+module.exports = {
+  content: [
+    './src/**/*.{html,js,vue}',
+    './node_modules/@formkit/themes/dist/tailwindcss/genesis/index.cjs',
+  ],
+  plugins: [FormKitVariants],
+}
 ```
 
 </client-only>

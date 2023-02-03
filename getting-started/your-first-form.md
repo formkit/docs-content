@@ -15,6 +15,13 @@ Let's start by creating our first FormKit form! We'll learn some of FormKit's ke
 This guide assumes you are are familiar with the <a href="https://vuejs.org/guide/introduction.html#api-styles">Vue Composition API</a>.
 </callout>
 
+<VideoCard
+  title="Robust Vue.js Forms - Vue School Course"
+  poster="https://cdn.formk.it/web-assets/robust-vue-js-forms-with-formkit-2.jpg"
+  watch-time="1 hr, 49 mins"
+  external-vid="https://vueschool.io/courses/robust-vue-js-forms-with-formkit?friend=formkit">
+</VideoCard>
+
 ## Our first input
 
 One of the main features of FormKit is its single component API — the `<FormKit />` component. This one component gives you access to _all_ input types. And while some types may extend and add features, they share the same base functionality. You can learn more about inputs [here](/essentials/inputs).

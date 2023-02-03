@@ -11,6 +11,13 @@ FormKit makes front end validation simple by letting you declare your validation
 
 ## Declaring rules
 
+<VideoCard
+  title="How to Validate an Input - Vue School Course"
+  poster="https://cdn.formk.it/web-assets/robust-vue-js-forms-with-formkit-2.jpg"
+  watch-time="8 mins"
+  external-vid="https://vueschool.io/lessons/how-to-validate-a-form-input?friend=formkit">
+</VideoCard>
+
 Declaring which validation rules apply to a given input is as simple as providing a `validation` prop. Rules can be declared using two syntaxes:
 
 - [String syntax](#string-syntax)
