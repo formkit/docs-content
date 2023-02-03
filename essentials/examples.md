@@ -82,7 +82,7 @@ Use a plugin to automatically set an input's <code>name</code>, <code>label</cod
 </ExampleCard>
 
 <ExampleCard
-  href="https://formkit.link/59d4b7f785b60678d23705a13c38ef28"
+  href="https://formkit.link/c4270ef4308aff6a43c46a1e93c14e0f"
   title="Scroll to the first validation or error on the form.">
 A plugin that automatically scrolls to the first error on the page on submit or when backend errors are added.
 </ExampleCard>
