@@ -198,6 +198,13 @@ Current state of the input:
    */
   valid: boolean
   /**
+   * == Added by @formkit/validation plugin — included in defaultConfig ==
+   * If the input (or group/form/list) is currently validating rules — including
+   * async validation rules. In the case of groups, forms, and lists this includes
+   * the validation state of all its children.
+   */
+  validating: boolean
+  /**
    * If validation-visibility has been satisfied and any validation
    * messages should be displayed.
    */
