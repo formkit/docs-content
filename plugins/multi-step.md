@@ -19,7 +19,7 @@ To get started, import `createMultiStepPlugin` from `@formkit/addons` along with
 // formkit.config.js
 import { defaultConfig } from '@formkit/vue'
 import { createMultiStepPlugin } from '@formkit/addons'
-import '@formkit/addons/css/multistep.css'
+import '@formkit/addons/css/multistep'
 
 const config = defaultConfig({
   plugins: [createMultiStepPlugin()],
