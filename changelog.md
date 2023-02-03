@@ -5,6 +5,23 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 1.0.0-beta.15
+
+### February 6th, 2023
+
+This release adds a new 1st-party multis-step input plugin to the `@formkit/addons` package as well as including some bug fixes and styling updates for both CSS and Tailwind CSS users.
+
+#### 💪 New features
+
+- Introducing a new multi-step input plugin! Easily create multi-step forms or include multi-step sections inside your forms with the new `multi-step` and `step` input types. Ships with standalone CSS styling you can import that works well with our `genesis` theme as well as a Tailwind CSS class object you can add to your existing Tailwind theme via `generateClasses`. Check out the [full documentation here](/plugins/multi-step).
+- Adds new `Next` and `Previous` strings to UI localization object for use in plugins and custom inputs.
+
+#### 🐛 Bug fixes
+
+- Fixes missing Tailwind CSS genesis theme export path in `@formkit/themes`.
+- Adds `:focus-visible` styling to buttons to show focus state when using keyboard navigation.
+- Adds missing `loading` styles for `submit` buttons in our Tailwind CSS Genesis theme.
+
 ## 1.0.0-beta.14
 
 ### January 21, 2023
