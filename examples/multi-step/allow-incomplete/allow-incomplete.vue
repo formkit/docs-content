@@ -6,7 +6,8 @@ import StepThree from './stepThree.vue'
 
 <template>
   <h2>
-    You can advance through this multi-step input without completing each step.
+    You can NOT advance through this multi-step input without completing each
+    step.
   </h2>
   <!-- %partial% -->
   <FormKit type="multi-step" :allow-incomplete="false">
