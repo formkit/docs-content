@@ -9,18 +9,24 @@ description: What's new in the latest version of FormKit?.
 
 ### February 6th, 2023
 
-This release adds a new 1st-party multis-step input plugin to the `@formkit/addons` package as well as including some bug fixes and styling updates for both CSS and Tailwind CSS users.
+This release adds new 1st-party plugins to the `@formkit/addons` package, ships bug fixes and styling updates for both CSS and Tailwind CSS users, and includes a new guide in the docs for itegrating FormKit with Laravel 9.
 
 #### 💪 New features
 
-- Introducing a new multi-step input plugin! Easily create multi-step forms or include multi-step sections inside your forms with the new `multi-step` and `step` input types. Ships with standalone CSS styling you can import that works well with our `genesis` theme as well as a Tailwind CSS class object you can add to your existing Tailwind theme via `generateClasses`. Check out the [full documentation here](/plugins/multi-step).
+- Easily create multi-step forms or include multi-step sections inside your forms with the new multi-step plugin in `@formkit/addons`. Ships with standalone CSS styling you can import that works well with our `genesis` theme as well as a Tailwind CSS class object you can add to your existing Tailwind theme via `generateClasses`. Check out the [full documentation here](/plugins/multi-step).
+- Enable floating labels for all `text` family (`text`, `email`, `url`, etc) and `textarea` inputs with the new floating labels plugin in `@formkit/addons`. Check out the [full documentation here](#).
 - Adds new `Next` and `Previous` strings to UI localization object for use in plugins and custom inputs.
 
 #### 🐛 Bug fixes
 
 - Fixes missing Tailwind CSS genesis theme export path in `@formkit/themes`.
 - Adds `:focus-visible` styling to buttons to show focus state when using keyboard navigation.
-- Adds missing `loading` styles for `submit` buttons in our Tailwind CSS Genesis theme.
+- Adds missing `loading` styles for `submit` buttons in the Tailwind CSS Genesis theme.
+
+#### 📙 Documentation
+
+- New Guide: [Integrating FormKit with Laravel 9](/guides/laravel-formkit-integration)
+- New Article: [Create a Multi-Step form in Vue in 5 Minutes](#)
 
 ## 1.0.0-beta.14
 
