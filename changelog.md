@@ -173,7 +173,7 @@ This release addresses some issues for Tailwind users that were introduced in `b
 
 #### 🎉 New features
 
-- Icons! FormKit now ships with first class support for icons, including a first-party MIT licensed icon pack with automatic CDN delivery. Read more about it on the [new icons documentation page](/plugins/icons).
+- Icons! FormKit now ships with first class support for icons, including a first-party MIT licensed icon pack with automatic CDN delivery. Read more about it on the [new icons documentation page](/essentials/icons).
 - AutoAnimate! FormKit now [includes an AutoAnimate plugin](/plugins/auto-animate), bringing [AutoAnimate support](https://auto-animate.formkit.com) to FormKit with a single line of code.
 - Exports! You can now [export any of the existing inputs](/guides/export-and-restructure-inputs) and restructure them at will using the new `@formkit/cli` command line tool. Alter existing inputs by adding, removing, updating, or re-ordering sections — or add your own exported and altered input variations to your input library.
 - All inputs have been refactored to use a much improved schema composition API that allows easy composition and modification of schema based inputs.
@@ -197,7 +197,7 @@ This release addresses some issues for Tailwind users that were introduced in `b
 
 #### 📙 Documentation
 
-- New docs page for [FormKit Icons](/plugins/icons) 🎉.
+- New docs page for [FormKit Icons](/essentials/icons) 🎉.
 - New guide for [exporting and restructuring icons](/guides/export-and-restructure-inputs)!
 - New docs using the [AutoAnimate plugin](/plugins/auto-animate).
 - Input diagrams include [new icon sections](/inputs/color#sections).

@@ -115,7 +115,7 @@ name="Allow Incomplete"
 
 ## Valid step icon
 
-When a step has been completed with no validation errors the `multi-step` input will — by default — render a check icon showing that the step is valid and no more action is required. The `valid-step-icon` is a [FormKit Icon](/plugins/icons) and can be changed via a prop like any other FormKit icon.
+When a step has been completed with no validation errors the `multi-step` input will — by default — render a check icon showing that the step is valid and no more action is required. The `valid-step-icon` is a [FormKit Icon](/essentials/icons) and can be changed via a prop like any other FormKit icon.
 
 You can either:
 
