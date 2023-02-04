@@ -103,7 +103,7 @@ tabs="html"></example>
 
 ## Removing classes
 
-Classes produced by an earlier step in the class hierarchy can be selectively removed by providing an object with the value `false` for the class you want to remove or by providing a class name to a `{section-key}-class` prop that starts with `!` and matches an exesting class in the class list. This includes removing formkit's default `formkit-` prefixed classes:
+Classes produced by an earlier step in the class hierarchy can be selectively removed by providing an object with the value `false` for the class you want to remove or by providing a class name to a `{section-key}-class` prop that starts with `$remove:` and matches an existing class in the class list. This includes removing formkit's default `formkit-` prefixed classes:
 
 <example
 name="Removing classes"
