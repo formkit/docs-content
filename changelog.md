@@ -5,6 +5,28 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 1.0.0-beta.15
+
+### February 6th, 2023
+
+This release adds new 1st-party plugins to the `@formkit/addons` package, ships bug fixes and styling updates for both CSS and Tailwind CSS users, and includes a new guide in the docs for itegrating FormKit with Laravel 9.
+
+#### 💪 New features
+
+- Easily create multi-step forms or include multi-step sections inside your forms with the new multi-step plugin in `@formkit/addons`. Ships with standalone CSS styling you can import that works well with our `genesis` theme as well as a Tailwind CSS class object you can add to your existing Tailwind theme via `generateClasses`. Check out the [full documentation here](/plugins/multi-step).
+- Enable floating labels for all `text` family (`text`, `email`, `url`, etc) and `textarea` inputs with the new floating labels plugin in `@formkit/addons`. Check out the [full documentation here](/plugins/floating-labels).
+- Adds new `Next` and `Previous` strings to UI localization object for use in plugins and custom inputs.
+
+#### 🐛 Bug fixes
+
+- Fixes missing Tailwind CSS genesis theme export path in `@formkit/themes`.
+- Adds `:focus-visible` styling to buttons to show focus state when using keyboard navigation.
+- Adds missing `loading` styles for `submit` buttons in the Tailwind CSS Genesis theme.
+
+#### 📘 Articles
+
+- New Article: [Create a Multi-Step form in Vue in 5 Minutes](https://dev.to/andrewboyd/build-a-multi-step-form-in-vue-in-5-minutes-41cj)
+
 ## 1.0.0-beta.14
 
 ### January 21, 2023
@@ -150,7 +172,7 @@ This release addresses some issues for Tailwind users that were introduced in `b
 
 #### 🎉 New features
 
-- Icons! FormKit now ships with first class support for icons, including a first-party MIT licensed icon pack with automatic CDN delivery. Read more about it on the [new icons documentation page](/plugins/icons).
+- Icons! FormKit now ships with first class support for icons, including a first-party MIT licensed icon pack with automatic CDN delivery. Read more about it on the [new icons documentation page](/essentials/icons).
 - AutoAnimate! FormKit now [includes an AutoAnimate plugin](/plugins/auto-animate), bringing [AutoAnimate support](https://auto-animate.formkit.com) to FormKit with a single line of code.
 - Exports! You can now [export any of the existing inputs](/guides/export-and-restructure-inputs) and restructure them at will using the new `@formkit/cli` command line tool. Alter existing inputs by adding, removing, updating, or re-ordering sections — or add your own exported and altered input variations to your input library.
 - All inputs have been refactored to use a much improved schema composition API that allows easy composition and modification of schema based inputs.
@@ -174,7 +196,7 @@ This release addresses some issues for Tailwind users that were introduced in `b
 
 #### 📙 Documentation
 
-- New docs page for [FormKit Icons](/plugins/icons) 🎉.
+- New docs page for [FormKit Icons](/essentials/icons) 🎉.
 - New guide for [exporting and restructuring icons](/guides/export-and-restructure-inputs)!
 - New docs using the [AutoAnimate plugin](/plugins/auto-animate).
 - Input diagrams include [new icon sections](/inputs/color#sections).

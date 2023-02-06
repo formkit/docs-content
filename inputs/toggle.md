@@ -61,7 +61,7 @@ file="/_content/examples/toggle/toggle-labels-inner.vue"></example>
 
 ## Icons
 
-The `thumb-icon` prop allows you to insert an icon into the `thumb` section of the `toggle` input. This prop accepts a string that's passed to FormKit's [icon plugin](/plugins/icons):
+The `thumb-icon` prop allows you to insert an icon into the `thumb` section of the `toggle` input. This prop accepts a string that's passed to FormKit's [icon plugin](/essentials/icons):
 
 <example
 name="Toggle"
