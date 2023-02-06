@@ -82,6 +82,7 @@ In this example, we are going to use the `tag` slot to customize the look of the
 name="Taglist"
 :min-height="550"
 file="/\_content/examples/taglist/taglist-slots.vue"></example>
+
 >
 
 ## Loading options
@@ -112,12 +113,25 @@ Instead of requiring your users to click the <i>Load more</i> button to load add
 
 ### Option loader
 
-FormKit's taglist input also provides an `optionLoader` prop that allows you to rehydrate values that are not in the options list. In this example, we'll provide the taglist an initial value (a movie ID), and assign the `optionLoader` to a function that will make a request to the API to get the movie:
+#### Rehydrating values
+
+FormKit's taglist input also provides an `optionLoader` prop that allows you to rehydrate values that are not in the options list. In this example, we'll provide the taglist an initial value (a movie ID), and assign the optionLoader to a function that will make a request to the API to get the movie:
 
 <example
 name="Taglist"
 :min-height="550"
 file="/_content/examples/taglist/taglist-pagination-option-loader.vue"></example>
+
+Notice in the example above that the optionLoader function is passed two arguments: the `value` of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption is used for preventing unnecessary lookups. If the cachedOption is not `null` it means that the selected option has already been loaded, and you can return the cachedOption directly.
+
+<!--#### Fetching additional data
+
+Instead of using the `optionLoader` prop to rehydrate values that are not in the options list, you can use the optionLoader to perform a look-up to fetch additional data, or even just modify the option's current label. In this example, we'll use the optionLoader to fetch the movie's poster image:-->
+
+<!--<example
+name="Taglist"
+:min-height="550"
+file="/_content/examples/taglist/taglist-option-loader-additional-data.vue"></example>-->
 
 ## Full example
 

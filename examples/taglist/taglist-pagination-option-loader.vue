@@ -3,32 +3,38 @@
 // which we are destructuring to get the search value,
 // the page, and the hasNextPage parameters.
 async function searchMovies({ search, page, hasNextPage }) {
-  if (!search) return [];
-  const res = await fetch(`https://api.themoviedb.org/3/search/movie?query=${search || ''}&api_key=f48bcc9ed9cbce41f6c28ea181b67e14&language=en-US&page=${page}&include_adult=false`)
+  if (!search) return []
+  const res = await fetch(
+    `https://api.themoviedb.org/3/search/movie?query=${
+      search || ''
+    }&api_key=f48bcc9ed9cbce41f6c28ea181b67e14&language=en-US&page=${page}&include_adult=false`
+  )
   if (res.ok) {
     const data = await res.json()
     if (page !== data.total_pages) hasNextPage()
     return data.results.map((result) => {
       return {
         label: result.title,
-        value: result.id
+        value: result.id,
       }
     })
   }
   return []
 }
 
-
-// The function assigned to the `option-loader` prop
-// will be called with the value of the option as
-// an argument.
-async function loadMovie(id) {
-  const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=f48bcc9ed9cbce41f6c28ea181b67e14&language=en-US`)
+// The function assigned to the `option-loader` prop will be called with the
+// value of the option as the first argument (in this case, the movie ID), and
+// the cached option as the second argument (if it exists).
+async function loadMovie(id, cachedOption) {
+  if (cachedOption) return cachedOption
+  const res = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}?api_key=f48bcc9ed9cbce41f6c28ea181b67e14&language=en-US`
+  )
   if (res.ok) {
     const data = await res.json()
     return {
       label: data.title,
-      value: data.id
+      value: data.id,
     }
   }
   return { label: 'Error loading' }
@@ -36,11 +42,7 @@ async function loadMovie(id) {
 </script>
 
 <template>
-  <FormKit
-    type="form"
-    #default="{ value }"
-    :actions="false"
-  >
+  <FormKit type="form" #default="{ value }" :actions="false">
     <FormKit
       name="movie"
       type="taglist"

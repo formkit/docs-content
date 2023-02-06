@@ -88,14 +88,20 @@ In the above example, we are calling `hasNextPage` when we determine there are m
 
 ### Option loader
 
-FormKit's dropdown input also provides an `optionLoader` prop that allows you to rehydrate values that are not in the options list. In this example, we'll provide the autocomplete an initial value (a movie ID), and assign the `optionLoader` to a function that will make a request to the API to get the movie:
+#### Rehydrating values
+
+FormKit's dropdown input also provides an `optionLoader` prop that allows you to rehydrate values that are not in the options list. In this example, we'll provide the autocomplete an initial value (a movie ID), and assign the optionLoader to a function that will make a request to the API to get the movie:
 
 <example
 name="Dropdown"
 :min-height="550"
 file="/_content/examples/dropdown/dropdown-option-loader.vue"></example>
 
-You can also use the `optionLoader` to perform a look-up to fetch additional data. In this example, after selecting an option, we are going to perform a look-up to load the selected option's movie review:
+Notice in the example above that the optionLoader function is passed two arguments: the `value` of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption prop is used for preventing unnecessary lookups. If the cachedOption is not `null` it means that the selected option has already been loaded, and you can return the cachedOption directly.
+
+#### Fetching additional data
+
+Instead of using the `optionLoader` prop to rehydrate values that are not in the options list, you can use the optionLoader to perform a look-up to fetch additional data. In this example, after selecting an option, we are going to perform a look-up to load the selected option's movie review:
 
 <example
 name="Dropdown"
@@ -314,7 +320,6 @@ Below is the inner options list (`listbox`) structure from the diagram above:
   >
   </formkit-input-diagram>
 </div>
-
 
 <reference-table type="sectionKeys" primary="section-key" :data="[
   {
