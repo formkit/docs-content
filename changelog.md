@@ -23,10 +23,9 @@ This release adds new 1st-party plugins to the `@formkit/addons` package, ships 
 - Adds `:focus-visible` styling to buttons to show focus state when using keyboard navigation.
 - Adds missing `loading` styles for `submit` buttons in the Tailwind CSS Genesis theme.
 
-#### 📙 Documentation
+#### 📘 Articles
 
-- New Guide: [Integrating FormKit with Laravel 9](/guides/laravel-formkit-integration)
-- New Article: [Create a Multi-Step form in Vue in 5 Minutes](#)
+- New Article: [Create a Multi-Step form in Vue in 5 Minutes](https://dev.to/andrewboyd/build-a-multi-step-form-in-vue-in-5-minutes-41cj)
 
 ## 1.0.0-beta.14
 
