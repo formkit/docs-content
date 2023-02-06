@@ -7,7 +7,7 @@ description: What's new in the latest version of FormKit?.
 
 ## 1.0.0-beta.15
 
-### February 6th, 2023
+### February 6, 2023
 
 This release adds new 1st-party plugins to the `@formkit/addons` package, ships bug fixes and styling updates for both CSS and Tailwind CSS users.
 
