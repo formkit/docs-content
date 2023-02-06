@@ -9,7 +9,7 @@ description: What's new in the latest version of FormKit?.
 
 ### February 6th, 2023
 
-This release adds new 1st-party plugins to the `@formkit/addons` package, ships bug fixes and styling updates for both CSS and Tailwind CSS users, and includes a new guide in the docs for itegrating FormKit with Laravel 9.
+This release adds new 1st-party plugins to the `@formkit/addons` package, ships bug fixes and styling updates for both CSS and Tailwind CSS users.
 
 #### 💪 New features
 
