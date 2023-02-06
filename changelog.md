@@ -13,7 +13,7 @@ This release adds new 1st-party plugins to the `@formkit/addons` package, ships 
 
 #### 💪 New features
 
-- Easily create multi-step forms or include multi-step sections inside your forms with the new multi-step plugin in `@formkit/addons`. Ships with standalone CSS styling you can import that works well with our `genesis` theme as well as a Tailwind CSS class object you can add to your existing Tailwind theme via `generateClasses`. Check out the [full documentation here](/plugins/multi-step).
+- Easily create multi-step forms or include multi-step sections inside your forms with the new multi-step plugin in `@formkit/addons`. Ships with standalone CSS styling you can import that works well with our `genesis` theme. Check out the [full documentation here](/plugins/multi-step).
 - Enable floating labels for all `text` family (`text`, `email`, `url`, etc) and `textarea` inputs with the new floating labels plugin in `@formkit/addons`. Check out the [full documentation here](/plugins/floating-labels).
 - Adds new `Next` and `Previous` strings to UI localization object for use in plugins and custom inputs.
 
