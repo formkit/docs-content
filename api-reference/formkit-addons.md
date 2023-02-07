@@ -56,3 +56,79 @@ createApp(app).use(plugin, defaultPlugin({
 ```
 
 </client-only>
+
+### createFloatingLabelsPlugin()
+
+Creates a new floating label plugin.
+
+#### Signature
+
+<client-only>
+
+```typescript
+createFloatingLabelsPlugin(FloatingLabelsOptions?: FloatingLabelsOptions): FormKitPlugin;
+```
+
+</client-only>
+
+#### Parameters
+
+- `FloatingLabelsOptions` — The options of [FloatingLabelsOptions](#floatinglabelsoptions) to pass to the plugin
+
+#### Returns
+
+ A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+
+### createMultiStepPlugin()
+
+Creates a new multi-step plugin.
+
+#### Signature
+
+<client-only>
+
+```typescript
+createMultiStepPlugin(options?: MultiStepOptions): FormKitPlugin;
+```
+
+</client-only>
+
+#### Parameters
+
+- `options` — The options of [MultiStepOptions](#multistepoptions) to pass to the plugin
+
+#### Returns
+
+ A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+
+## TypeScript
+
+### FloatingLabelsOptions
+
+The options to be passed to [createFloatingLabelsPlugin](#createfloatinglabelsplugin)
+
+<client-only>
+
+```typescript
+interface FloatingLabelsOptions {
+    useAsDefault?: boolean;
+}
+```
+
+</client-only>
+
+### MultiStepOptions
+
+The options to be passed to [createMultiStepPlugin](#createmultistepplugin)
+
+<client-only>
+
+```typescript
+interface MultiStepOptions {
+    allowIncomplete?: boolean;
+    hideProgressLabels?: boolean;
+    tabStyle?:'tab' | 'progress';
+}
+```
+
+</client-only>

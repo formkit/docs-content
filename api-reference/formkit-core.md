@@ -1607,6 +1607,7 @@ interface FormKitFrameworkContext {
     [index: string]: unknown;
     attrs: Record<string, any>;
     classes: Record<string, string>;
+    defaultMessagePlacement: boolean;
     fns: Record<string, (...args: any[]) => any>;
     handlers:{
         blur: () => void;
@@ -2058,6 +2059,7 @@ type FormKitProps = {
         node: FormKitNode;
     }) => string) | string>;
     definition?: FormKitTypeDefinition;
+    context?: FormKitFrameworkContext;
     [index: string]: any;
 } & FormKitConfig;
 ```
