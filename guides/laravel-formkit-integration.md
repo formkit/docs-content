@@ -344,7 +344,7 @@ In conclusion, FormKit is a powerful and flexible form library for Vue.js applic
 
 The process of integrating FormKit with Laravel is straightforward and it will help you keep our codebase more consistent and maintainable. Regardless of our application's form complexity, FormKit provides a robust solution that can meet our project's needs.
 
-## Bonus: A FormKit Inertia plugin
+## Remove Code Repetition: Using Plugins
 
 While it's great to understand how we can integrate FormKit with Inertia — it would still be difficult to do manually for every form in a larger project. It would be great if we could encapsulate this setup in a plugin and apply it across our entire project.
 
@@ -408,5 +408,240 @@ const submit = (fields, node) => {
 </client-only>
 
 With all of our previous logic encapsulated into a plugin it is now trivial to add FormKit to our project. Adding FormKit to a Laravel 9 application using Breeze with Vue.js and Inertia provides both developers and application end-users with a better overall form experience.
+
+## FormKit At Day-to-Day
+
+Even tho the Login page example is good, it might not be enough to show how well FormKit works and integrates with Laravel, so we will be creating a day-to-day use case about ordering a free t-shirt promotion in our website.
+
+### Creating The Order Migration
+
+To generate a migration we use the `make:migration` Artisan command. The new migration will be placed in your `database/migrations` directory:
+
+<client-only>
+
+```bash
+./vendor/bin/sail artisan make:migration create_orders_table
+```
+
+</client-only>
+
+Now we will take a look at the generated file `create_orders_table.php` and update to add the fields that we need to make our project work:
+
+<client-only>
+
+```php
+<?php
+ 
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+ 
+return new class extends Migration
+{
+  /**
+   * Run the migrations.
+   *
+   * @return void
+   */
+  public function up()
+  {
+    Schema::create('orders', function (Blueprint $table) {
+      $table->id();
+      $table->string('name');
+      $table->string('email');
+      $table->string('address');
+      $table->enum('size', ['xs', 'sm', 'md', 'lg', 'xl'])->default('md');
+      $table->text('notes');
+    });
+  }
+
+  /**
+   * Reverse the migrations.
+   *
+   * @return void
+   */
+  public function down()
+  {
+    Schema::drop('orders');
+  }
+};
+```
+
+</client-only>
+
+Now we can run the migration to see if everything is working:
+
+<client-only>
+
+```bash
+./vendor/bin/sail artisan migrate
+```
+
+</client-only>
+
+### Creating The Order Model
+
+We now need to create a model to work with the new table we created via migration, to generate a model we use the `make:model` Artisan command. The new model will be placed in your `app/Models` directory:
+
+<client-only>
+
+```bash
+./vendor/bin/sail artisan make:model Order
+```
+
+</client-only>
+
+Now we will take a look at the generated file `Order.php` and add the functionality that is needed:
+
+<client-only>
+
+```php
+<?php
+ 
+namespace App\Models;
+ 
+use Illuminate\Database\Eloquent\Model;
+ 
+class Order extends Model
+{
+  /**
+   * The attributes that are mass assignable.
+   *
+   * @var array
+   */
+  protected $fillable = ['name', 'email', 'address', 'size', 'notes'];
+}
+```
+
+</client-only>
+
+### Creating The Order Controller
+
+We now need to create a controller to work with the new model we created, to generate a controller we use the `make:controller` Artisan command. The new controller will be placed in your `app/Http/Controllers` directory:
+
+<client-only>
+
+```bash
+./vendor/bin/sail artisan make:controller OrderController
+```
+
+</client-only>
+
+We also need to add the new controller to the `routes/web.php`, as a post to the `store` and `create` methods so we can see it running:
+
+<client-only>
+
+```php
+use App\Http\Controllers\OrderController;
+
+Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
+Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
+```
+
+</client-only>
+
+Now we will take a look at the generated file `OrderController.php` and add the `store` and `create` methods that will be called when visiting those routes:
+
+<client-only>
+
+```php
+<?php
+ 
+namespace App\Http\Controllers;
+ 
+use App\Models\Order;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\Enum;
+use Inertia\Inertia;
+
+enum OrderSize {
+  case XS = 'xs';
+  case SM = 'sm';
+  case MD = 'md';
+  case LG = 'lg';
+  case XL = 'xl';
+}
+ 
+class OrderController extends Controller
+{
+  /**
+   * Show the order form page.
+   *
+   * @return \Inertia\Inertia
+   */
+  public function create($id)
+  {
+    return Inertia::render('Order/Create');
+  }
+
+  /**
+   * Store a new order.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Inertia\Inertia
+   */
+  public function store(Request $request)
+  {
+    Order::create($request->validate([
+      'name' => 'required|max:255',
+      'email' => 'required|max:50|email',
+      'address' => 'required',
+      'size' => ['required', new Enum(OrderSize::class)],
+    ]));
+
+    return to_route('orders.create');
+  }
+}
+```
+
+</client-only>
+
+### Creating The Order Page
+
+Lastly, we need to create our order page, with both FormKit frontend validation and Laravel backend validation we will improve UX and DX tremendously:
+
+<client-only>
+
+```vue
+<script setup>
+import { Head, Link, router } from '@inertiajs/vue3';
+
+const initialState = {
+  name: '',
+  email: '',
+  address: '',
+  size: 'md',
+  notes: ''
+};
+
+const submit = (fields, node) => {
+  router.post(route('orders.store'), fields, {
+    onFinish: () => node.reset(),
+  });
+};
+</script>
+
+<template>
+  <Head title="Create Order" />
+
+  <FormKit type="form" :value="initialState" @submit="submit" submit-label="Create Order">
+    <FormKit type="text" label="Name" name="name" validation="required|length:1,255" />
+    <FormKit type="email" label="Email" name="email" validation="required|length:1,50|email" />
+    <FormKit type="text" label="Address" name="address" validation="required" />
+    <FormKit type="radio" label="Size" name="size" :options="[{
+      xs: 'Extra Small',
+      sm: 'Small',
+      md: 'Medium',
+      lg: 'Large',
+      xl: 'Extra Large'
+    }]" validation="required" />
+    <FormKit type="textarea" name="notes" label="Notes" />
+  </FormKit>
+</template>
+```
+
+</client-only>
+
+Now we can see that even more complex forms in Laravel can be easily integrated with FormKit.
 
 <cta label="Ready to dive deeper into FormKit?" button="Learn more about FormKit's unique architecture" href="/essentials/architecture"></cta>
