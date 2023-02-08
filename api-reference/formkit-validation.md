@@ -12,6 +12,26 @@ The first-party validation package/plugin for FormKit. Read the [validation docu
 
 ## Functions
 
+### createMessageName()
+
+Given a node, this returns the name that should be used in validation messages. This is either the `validationLabel` prop, the `label` prop, or the name of the input (in that order).
+
+#### Signature
+
+<client-only>
+
+```typescript
+createMessageName(node: FormKitNode): string;
+```
+
+</client-only>
+
+#### Parameters
+
+- `node` — The node to display
+
+#### Returns
+
 ### createValidationPlugin()
 
 The actual validation plugin function. Everything must be bootstrapped here.
@@ -92,6 +112,7 @@ type FormKitValidation = {
     state: boolean | null;
     queued: boolean;
     deps: FormKitDependencies;
+    messageObserver?: FormKitObservedNode;
 } & FormKitValidationHints;
 ```
 
