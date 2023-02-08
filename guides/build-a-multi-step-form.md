@@ -8,7 +8,7 @@ description: Follow this guide to learn how to build a multi-step form with Form
 <page-toc></page-toc>
 
 <callout type="warning" label="Official Multi-Step Plugin">
-Starting with <code>1.0.0-beta.15</code> FormKit ships an official 1st-party plugin that creates a <code>multi-step</code> input type. <br><br> While there is still value in understanding how to build a multi-step input on your own — if you're looking for the easiest way to use a multis-step input in your project check out the <a href="/plugins/multi-step">official FormKit multi-step plugin</a> — it's free and open-source!
+Starting with <code>1.0.0-beta.15</code> FormKit ships an official 1st-party plugin that creates a <code>multi-step</code> input type. <br><br> While there is still value in understanding how to build a multi-step input on your own — if you're looking for the easiest way to use a multi-step input in your project check out the <a href="/plugins/multi-step">official FormKit multi-step plugin</a> — it's free and open-source!
 </callout>
 
 Few interactions on the web cause as much displeasure for a user as being confronted with a large, intimidating form. Multi-step forms can alleviate this pain by breaking a large form into smaller approachable steps — but they can also be complicated to build.
