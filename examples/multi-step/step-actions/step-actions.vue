@@ -12,6 +12,7 @@
             type="button"
             @click="handlers.incrementStep(1, node.context)()"
             label="Custom Next"
+            data-next="true"
           />
         </template>
       </FormKit>
