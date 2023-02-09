@@ -5,6 +5,15 @@
     <FormKit type="multi-step" tab-style="tab">
       <FormKit type="step" name="personalInfo">
         <FormKit type="text" label="Name" prefix-icon="avatarMan" />
+
+        <template #stepNext="{ handlers, node }">
+          <!-- incrementStep returns a callable function -->
+          <FormKit
+            type="button"
+            @click="handlers.incrementStep(1, node.context)()"
+            label="Custom Next"
+          />
+        </template>
       </FormKit>
 
       <FormKit type="step" name="references">
@@ -13,6 +22,15 @@
           label="Please supply contact information for 2 references"
           validation="required"
         />
+
+        <template #stepPrevious="{ handlers, node }">
+          <!-- incrementStep returns a callable function -->
+          <FormKit
+            type="button"
+            @click="handlers.incrementStep(-1, node.context)()"
+            label="Custom Previous"
+          />
+        </template>
         <!-- 
         normally there is no stepNext section rendered
         on the last step of a multi-step. But we can

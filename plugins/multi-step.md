@@ -136,6 +136,8 @@ Each `step` in a `multi-step` input has default buttons rendered for moving betw
 
 If you want to add a custom action such as a form submit to a `multi-step` — useful if you're using the `multi-step` as your whole form — you can do so by overriding the `stepNext` slot on the desired step. In this case we'll add a `submit` input to the last step in our `multi-step` input to submit the form.
 
+The `stepNext` and `stepPrevious` sections have access to the `incrementStep` handler — which returns a callable function — to enable programatic navigation.
+
 <example
 name="Customizing step actions"
 :file="[
