@@ -87,7 +87,7 @@ name="Multi-Step Introduction"
 By default the `multi-step` input will use the `name` attribute of its child `step` inputs to generate labels for steps. If you'd like more control over the display of your step names you can use the `label` prop. You can also customize the labels that appear in the `stepActions` section of your `step` using the `prev-label` and `next-label` props.
 
 - `label`: An override for the step name that should appear in the multi-step tabs.
-- `prev-label`: an override for the `stepPrev` button label which defaults to `Back`.
+- `prev-label`: an override for the `stepPrevious` button label which defaults to `Back`.
 - `next-label`: an override for the `stepNext` button label which defaults to `Next`.
 
 <example
@@ -132,7 +132,7 @@ name="Valid Step Icon"
 
 ## Customizing step actions
 
-Each `step` in a `multi-step` input has default buttons rendered for moving between steps. By default the first `step` in a `multi-step` will only have a `stepNext` action button rendered, and the last `step` will only have a `stepPrev` action button. This allows a multi-step to act as a self-contained group within the context of a larger form.
+Each `step` in a `multi-step` input has default buttons rendered for moving between steps. By default the first `step` in a `multi-step` will only have a `stepNext` action button rendered, and the last `step` will only have a `stepPrevious` action button. This allows a multi-step to act as a self-contained group within the context of a larger form.
 
 If you want to add a custom action such as a form submit to a `multi-step` — useful if you're using the `multi-step` as your whole form — you can do so by overriding the `stepNext` slot on the desired step. In this case we'll add a `submit` input to the last step in our `multi-step` input to submit the form.
 
@@ -254,7 +254,7 @@ name="beforeStepChange"
                           class: 'flex',
                           children: [
                             {
-                              name: 'stepPrev',
+                              name: 'stepPrevious',
                               content: 'Back'
                             },
                             {
@@ -311,7 +311,7 @@ name="beforeStepChange"
     description: 'A wrapper around the action buttons for moving between steps.'
   },
   {
-    'section-key': 'stepPrev',
+    'section-key': 'stepPrevious',
     description: 'A wrapper around the action button for navigating to the previous step.'
   },
   {
