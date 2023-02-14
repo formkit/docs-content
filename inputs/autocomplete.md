@@ -190,6 +190,15 @@ name="Dropdown"
 :min-height="550"
 file="/_content/examples/autocomplete-pro/autocomplete-full.vue"></example>
 
+## Schema
+
+Simple autocomplete schema example:
+
+<example
+name="Schema"
+:min-height="550"
+file="_content/examples/autocomplete-pro/autocomplete-schema.vue"></example>
+
 <!-- ## Accessibility -->
 
 ## Props & Attributes
