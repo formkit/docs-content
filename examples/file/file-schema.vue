@@ -6,13 +6,12 @@ const schema = [
     children: [
       /* %partial% */
       {
-        $formkit: 'email',
-        name: 'email',
-        label: 'Student email address',
-        help: 'Please enter your student email address.',
-        placeholder: 'vikas@school.edu',
-        validation: 'required|email|ends_with:.edu',
-        validationVisibility: 'live'
+        $formkit: 'file',
+        name: 'documents',
+        label: 'Documents',
+        accept: '.pdf,.doc,.docx,.xml,.md,.csv',
+        help: 'Select as many documents as you would like.',
+        multiple: true
       },
       /* %partial% */
       {

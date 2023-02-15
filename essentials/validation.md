@@ -630,5 +630,5 @@ To get all the validation messages from an [input’s core node](/essentials/arc
 
 <example
   name="Submit invalid"
-  file="/_content/examples/submit-invalid/submit-invalid.vue">
+  file="/_content/examples/form/form-submit-invalid.vue">
 </example>
