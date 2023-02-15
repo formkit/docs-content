@@ -15,7 +15,7 @@ By default the checkbox type will render a single checkbox and uses `boolean` va
 
 <example
 name="Checkbox input"
-file="/_content/examples/checkbox-single/checkbox-single.vue"></example>
+file="/_content/examples/checkbox/checkbox-single.vue"></example>
 
 <callout type="warning" label="Checked Attribute Unnecessary">
 In order to improve API consistency across all FormKit inputs — FormKit uses the <code>value</code> as the initial state of the input. The <code>checked</code> prop/attribute should not be used directly.
@@ -37,7 +37,7 @@ The simplest way to provide options is an array of strings. The provided strings
 
 <example
 name="Checkbox input"
-file="/_content/examples/checkbox-strings/checkbox-strings.vue"></example>
+file="/_content/examples/checkbox/checkbox-strings.vue"></example>
 
 ### Value / Label object
 
@@ -45,7 +45,7 @@ You may also provide the `options` prop where the keys are values and the values
 
 <example
 name="Checkbox input"
-file="/_content/examples/checkbox-object/checkbox-object.vue"></example>
+file="/_content/examples/checkbox/checkbox-object.vue"></example>
 
 ### Array of objects
 
@@ -53,7 +53,7 @@ The most flexible way to define options is by providing an array of objects. The
 
 <example
 name="Checkbox input"
-file="/_content/examples/checkbox-objects/checkbox-objects.vue"></example>
+file="/_content/examples/checkbox/checkbox-objects.vue"></example>
 
 ## Schema
 
@@ -62,7 +62,7 @@ Simple checkbox schema example:
 <example
 name="Schema"
 :min-height="550"
-file="_content/examples/checkbox-objects/checkbox-schema.vue"></example>
+file="_content/examples/checkbox/checkbox-schema.vue"></example>
 
 ## Props & Attributes
 

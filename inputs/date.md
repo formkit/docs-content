@@ -13,7 +13,7 @@ The `date` input uses HTML's [native date picker](https://developer.mozilla.org/
 
 <example
   name="Date input"
-  file="/_content/examples/date-example/date-example.vue">
+  file="/_content/examples/date/date-base.vue">
 </example>
 
 <callout type="warning" label="Formatting">
@@ -27,7 +27,7 @@ Simple date schema example:
 <example
 name="Schema"
 :min-height="550"
-file="_content/examples/date-example/date-schema.vue"></example>
+file="_content/examples/date/date-schema.vue"></example>
 
 ## Props & Attributes
 

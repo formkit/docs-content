@@ -13,7 +13,7 @@ The `email` input uses HTML's [native email input](https://developer.mozilla.org
 
 <example
   name="Email input"
-  file="/_content/examples/email-example/email-example.vue">
+  file="/_content/examples/email/email-base.vue">
 </example>
 
 ## Schema
@@ -23,7 +23,7 @@ Simple email schema example:
 <example
 name="Schema"
 :min-height="550"
-file="_content/examples/email-example/email-schema.vue"></example>
+file="_content/examples/email/email-schema.vue"></example>
 
 ## Props & Attributes
 
