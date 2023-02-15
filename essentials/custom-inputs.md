@@ -352,7 +352,7 @@ Let’s take a look at a slightly more complex example that utilizes `createInpu
 
 <example
   name="Create input"
-  file="/_content/examples/autocomplete/autocomplete.vue">
+  file="/_content/examples/autocomplete/autocomplete-example.vue">
 </example>
 
 ## Input checklist

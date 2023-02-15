@@ -47,6 +47,15 @@ file="/_content/examples/button/button-events.vue"></example>
 
 </client-only>
 
+## Schema
+
+Simple button schema example:
+
+<example
+name="Schema"
+:min-height="550"
+file="_content/examples/button/button-schema.vue"></example>
+
 ## Props & Attributes
 
 The `button` input is unique in that it does not actively receive input other than a transient click. However, nearly all of the base input props still technically exist on the input.

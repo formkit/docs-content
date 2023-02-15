@@ -16,6 +16,15 @@ The `color` input uses HTML's [native color picker](https://developer.mozilla.or
   file="/_content/examples/color-example/color-example.vue">
 </example>
 
+## Schema
+
+Simple color schema example:
+
+<example
+name="Schema"
+:min-height="550"
+file="_content/examples/color-example/color-schema.vue"></example>
+
 ## Props & Attributes
 
 The `color` input has no unique props but can make use of the following universal

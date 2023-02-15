@@ -16,7 +16,7 @@ The autocomplete input allows you to search through a list of options. In this f
 <example
 name="Autocomplete"
 :min-height="550"
-file="/\_content/examples/autocomplete-pro/autocomplete-base.vue"></example>
+file="/\_content/examples/autocomplete/autocomplete-base.vue"></example>
 
 ## Defining options
 
@@ -34,7 +34,7 @@ The autocomplete input will filter options with its own internal search function
 <example
 name="Autocomplete"
 :min-height="550"
-file="/_content/examples/autocomplete-pro/autocomplete-filter.vue"></example>
+file="/_content/examples/autocomplete/autocomplete-filter.vue"></example>
 
 ## Empty message
 
@@ -43,7 +43,7 @@ The autocomplete input, by default, will close the listbox when no search result
 <example
 name="Autocomplete"
 :min-height="550"
-file="/_content/examples/autocomplete-pro/autocomplete-empty-message.vue"></example>
+file="/_content/examples/autocomplete/autocomplete-empty-message.vue"></example>
 
 ## Selection appearance
 
@@ -56,7 +56,7 @@ The autocomplete input will default to the `text-input` selection appearance. Wh
 <example
 name="Autocomplete"
 :min-height="300"
-file="/_content/examples/autocomplete-pro/autocomplete-text-input.vue"></example>
+file="/_content/examples/autocomplete/autocomplete-text-input.vue"></example>
 
 ### Option
 
@@ -65,7 +65,7 @@ Alternatively, you can set the selection appearance of the autocomplete to `opti
 <example
 name="Autocomplete"
 :min-height="300"
-file="/_content/examples/autocomplete-pro/autocomplete-option.vue"></example>
+file="/_content/examples/autocomplete/autocomplete-option.vue"></example>
 
 ## Slots
 
@@ -78,7 +78,7 @@ In this example, we'll use the options slot to display car brands and their logo
 <example
 name="Autocomplete"
 :min-height="550"
-file="/_content/examples/autocomplete-pro/autocomplete-option-slot.vue"></example>
+file="/_content/examples/autocomplete/autocomplete-option-slot.vue"></example>
 
 ### Selection slot
 
@@ -87,7 +87,7 @@ If you only want to customize the display of the selected option, use the `selec
 <example
 name="Autocomplete"
 :min-height="550"
-file="/_content/examples/autocomplete-pro/autocomplete-selection-slot.vue"></example>
+file="/_content/examples/autocomplete/autocomplete-selection-slot.vue"></example>
 
 ## Multi-select
 
@@ -104,7 +104,7 @@ For the `text-input` selection appearance, the selected options display as a com
 <example
 name="Autocomplete"
 :min-height="550"
-file="/_content/examples/autocomplete-pro/autocomplete-selection-appearance-text-multiple.vue"></example>
+file="/_content/examples/autocomplete/autocomplete-selection-appearance-text-multiple.vue"></example>
 
 ### Option multi-select
 
@@ -113,7 +113,7 @@ For the `option` selection appearance, the selected options display as a list of
 <example
 name="Autocomplete"
 :min-height="550"
-file="/_content/examples/autocomplete-pro/autocomplete-selection-appearance-option-multiple.vue"></example>
+file="/_content/examples/autocomplete/autocomplete-selection-appearance-option-multiple.vue"></example>
 
 ### Max
 
@@ -122,7 +122,7 @@ The `max` prop allows you to limit the number of options that can be selected. W
 <example
 name="Autocomplete"
 :min-height="550"
-file="/_content/examples/autocomplete-pro/autocomplete-max.vue"></example>
+file="/_content/examples/autocomplete/autocomplete-max.vue"></example>
 
 ### Close on select
 
@@ -131,7 +131,7 @@ If you would like the autocomplete's listbox to remain open in between selection
 <example
 name="Autocomplete"
 :min-height="550"
-file="/_content/examples/autocomplete-pro/autocomplete-close-on-select.vue"></example>
+file="/_content/examples/autocomplete/autocomplete-close-on-select.vue"></example>
 
 ## Loading options
 
@@ -144,7 +144,7 @@ In this example, we'll assign the `options` prop the `searchMovies` function. By
 <example
 name="Autocomplete"
 :min-height="550"
-file="/_content/examples/autocomplete-pro/autocomplete-single-request.vue"></example>
+file="/_content/examples/autocomplete/autocomplete-single-request.vue"></example>
 
 ### Page and hasNextPage parameters
 
@@ -153,7 +153,7 @@ A likely scenario you'll encounter is needing to search through a paginated API.
 <example
 name="Autocomplete"
 :min-height="550"
-file="/_content/examples/autocomplete-pro/autocomplete-pagination.vue"></example>
+file="/_content/examples/autocomplete/autocomplete-pagination.vue"></example>
 
 ### Loading Style
 
@@ -168,7 +168,7 @@ FormKit's autocomplete input also provides an `optionLoader` prop that allows yo
 <example
 name="Autocomplete"
 :min-height="550"
-file="/_content/examples/autocomplete-pro/autocomplete-pagination-option-loader.vue"></example>
+file="/_content/examples/autocomplete/autocomplete-pagination-option-loader.vue"></example>
 
 Notice in the example above that the optionLoader function is passed two arguments: the `value` of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption prop is used for preventing unnecessary lookups. If the cachedOption is not `null` it means that the selected option has already been loaded, and you can return the cachedOption directly.
 
@@ -179,7 +179,7 @@ Instead of using the `optionLoader` prop to rehydrate values that are not in the
 <example
 name="Autocomplete"
 :min-height="550"
-file="/_content/examples/autocomplete-pro/autocomplete-option-loader-additional-data.vue"></example>
+file="/_content/examples/autocomplete/autocomplete-option-loader-additional-data.vue"></example>
 
 ## Full example
 
@@ -188,7 +188,7 @@ Now let's combine what we've learned so far by leveraging the `option` slot for 
 <example
 name="Dropdown"
 :min-height="550"
-file="/_content/examples/autocomplete-pro/autocomplete-full.vue"></example>
+file="/_content/examples/autocomplete/autocomplete-full.vue"></example>
 
 ## Schema
 
@@ -197,7 +197,7 @@ Simple autocomplete schema example:
 <example
 name="Schema"
 :min-height="550"
-file="_content/examples/autocomplete-pro/autocomplete-schema.vue"></example>
+file="_content/examples/autocomplete/autocomplete-schema.vue"></example>
 
 <!-- ## Accessibility -->
 

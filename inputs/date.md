@@ -20,6 +20,15 @@ The `date` input uses HTML's [native date picker](https://developer.mozilla.org/
 The internal format of all native date pickers is <code>YYYY-MM-DD</code>. This is true even though the format of the date displayed to the user may be different. For example U.S. based browsers display date format as <code>MM/DD/YYYY</code>.
 </callout>
 
+## Schema
+
+Simple date schema example:
+
+<example
+name="Schema"
+:min-height="550"
+file="_content/examples/date-example/date-schema.vue"></example>
+
 ## Props & Attributes
 
 The `date` input has no unique props but can make use of the following universal

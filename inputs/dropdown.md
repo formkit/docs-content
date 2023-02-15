@@ -135,6 +135,15 @@ name="Dropdown"
 :min-height="550"
 file="/_content/examples/dropdown/dropdown-overscroll.vue"></example>
 
+## Schema
+
+Simple dropdown schema example:
+
+<example
+name="Schema"
+:min-height="550"
+file="_content/examples/dropdown/dropdown-schema.vue"></example>
+
 ## Props & Attributes
 
 <reference-table input="dropdown" :data="[

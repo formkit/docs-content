@@ -16,6 +16,15 @@ The `email` input uses HTML's [native email input](https://developer.mozilla.org
   file="/_content/examples/email-example/email-example.vue">
 </example>
 
+## Schema
+
+Simple email schema example:
+
+<example
+name="Schema"
+:min-height="550"
+file="_content/examples/email-example/email-schema.vue"></example>
+
 ## Props & Attributes
 
 The `email` input has no unique props but can make use of the following universal FormKit props.

@@ -20,6 +20,15 @@ The `datetime-local` input uses HTML's [native datetime-local picker](https://de
 The internal format of all native datetime-local pickers is <code>YYYY-MM-DDTHH:MM</code>. This is true even though the format of the datetime-local displayed to the user may be different. For example U.S. based browsers display datetime-local format as <code>MM/DD/YYYY, HH:MM AM/PM</code>.
 </callout>
 
+## Schema
+
+Simple datetime-local schema example:
+
+<example
+name="Schema"
+:min-height="550"
+file="_content/examples/datetime-local-example/datetime-local-schema.vue"></example>
+
 ## Props & Attributes
 
 The `datetime-local` input has no unique props but can make use of the following universal FormKit props.

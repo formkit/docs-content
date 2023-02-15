@@ -55,6 +55,15 @@ The most flexible way to define options is by providing an array of objects. The
 name="Checkbox input"
 file="/_content/examples/checkbox-objects/checkbox-objects.vue"></example>
 
+## Schema
+
+Simple checkbox schema example:
+
+<example
+name="Schema"
+:min-height="550"
+file="_content/examples/checkbox-objects/checkbox-schema.vue"></example>
+
 ## Props & Attributes
 
 <reference-table :without="['prefix-icon', 'suffix-icon']" input="checkbox" :data="[
