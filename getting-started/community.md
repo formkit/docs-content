@@ -41,6 +41,16 @@ Community involvement and contributions are one of the most important aspects of
     />
 </a>
 
+<a class="no-underline" href="https://zammad.com">
+    <img
+        class="docs-partner"
+        src="https://cdn.formk.it/web-assets/sponsors/zammad_logo-transparent.png"
+        alt="PerByte logo"
+        target="_blank"
+        style="display:inline-block;vertical-align: middle;width: 120px;margin-right: 25px;"
+    />
+</a>
+
 ### Backers
 
 [uscreen](https://uscreen.de), [gfenn08](https://github.com/gfenn08), [Ryan E](https://github.com/VikingDadMedic)
