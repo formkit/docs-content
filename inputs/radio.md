@@ -19,7 +19,7 @@ The simplest way to provide options is an array of strings. The provided strings
 
 <example
 name="Radio input"
-file="/_content/examples/radio-strings/radio-strings.vue"></example>
+file="_content/examples/radio/strings.vue"></example>
 
 ### Value / Label object
 
@@ -27,7 +27,7 @@ You may also provide the `options` prop where the keys are values and the values
 
 <example
 name="Radio input"
-file="/_content/examples/radio-object/radio-object.vue"></example>
+file="_content/examples/radio/object.vue"></example>
 
 ### Array of objects
 
@@ -35,7 +35,15 @@ The most flexible way to define options is by providing an array of objects. The
 
 <example
 name="Radio input"
-file="/_content/examples/radio-objects/radio-objects.vue"></example>
+file="_content/examples/radio/objects.vue"></example>
+
+## Schema
+
+Simple radio schema example:
+
+<example
+name="Schema"
+file="_content/examples/radio/schema.vue"></example>
 
 ## Props & Attributes
 

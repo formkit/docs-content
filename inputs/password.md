@@ -13,7 +13,15 @@ The `password` input uses HTML's [native password input](https://developer.mozil
 
 <example
 name="Password input"
-file="/_content/examples/password/password.vue"></example>
+file="_content/examples/password/password.vue"></example>
+
+## Schema
+
+Simple password schema example:
+
+<example
+name="Schema"
+file="_content/examples/password/schema.vue"></example>
 
 ## Props & Attributes
 

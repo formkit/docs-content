@@ -14,7 +14,7 @@ select a week.
 
 <example
   name="Week input"
-  file="/_content/examples/week/week.vue">
+  file="_content/examples/week/week.vue">
 </example>
 
 <callout type="danger" label="Compatibility warning">
@@ -24,6 +24,14 @@ Week inputs are not currently supported in FireFox or Safari.
 <callout type="warning" label="Formatting">
 The internal format of all native week pickers is <code>YYYY-Www</code> (for example: <code>2017-W06</code>). This is true even though the format of the week displayed to the user may be different.</code>.
 </callout>
+
+## Schema
+
+Simple week schema example:
+
+<example
+name="Schema"
+file="_content/examples/week/schema.vue"></example>
 
 ## Props & Attributes
 

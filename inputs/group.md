@@ -15,7 +15,7 @@ The value of a group input is an object where the keys are the names of the inpu
 
 <example
 name="Group input"
-file="/_content/examples/group/group.vue"></example>
+file="_content/examples/group/group-base.vue"></example>
 
 ## Validity of children
 
@@ -23,7 +23,7 @@ Groups are always aware of the validation state of their children (including nes
 
 <example
 name="Group input"
-file="/_content/examples/group-validity/group-validity.vue"></example>
+file="_content/examples/group/group-validity.vue"></example>
 
 ## Showing error & validation messages
 
@@ -32,6 +32,14 @@ Even though a `group` can have validation rules and input errors, it does not in
 <callout type="tip" label="Configuration">
 Further documentation on the <code>FormKitMessages</code> component can be found on the <a href="/inputs/forms#moving-validation-and-error-messages">form documentation page</a>.
 </callout>
+
+## Schema
+
+Simple group schema example:
+
+<example
+name="Schema"
+file="_content/examples/group/group-schema.vue"></example>
 
 ## Props & Attributes
 

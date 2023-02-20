@@ -89,7 +89,7 @@ To append a class, simply return the string you want to append, or provide an ob
 
 <example
 name="Appending classes"
-file="/_content/examples/append-classes/append-classes.vue"
+file="_content/examples/append-classes/append-classes.vue"
 tabs="html"></example>
 
 ## Resetting classes
@@ -98,7 +98,7 @@ Classes produced by all earlier hierarchy steps can be completely removed by pro
 
 <example
 name="Resetting classes"
-file="/_content/examples/resetting-classes/resetting-classes.vue"
+file="_content/examples/resetting-classes/resetting-classes.vue"
 tabs="html"></example>
 
 ## Removing classes
@@ -107,7 +107,7 @@ Classes produced by an earlier step in the class hierarchy can be selectively re
 
 <example
 name="Removing classes"
-file="/_content/examples/removing-classes/removing-classes.vue"
+file="_content/examples/removing-classes/removing-classes.vue"
 tabs="html"></example>
 
 <callout type="tip">
@@ -120,7 +120,7 @@ The simplest way to modify the classes of an element inside a FormKit input is v
 
 <example
 name="Section-key class"
-file="/_content/examples/section-key-class/section-key-class.vue"
+file="_content/examples/section-key-class/section-key-class.vue"
 tabs="html"></example>
 
 ## Classes prop
@@ -129,7 +129,7 @@ The classes prop is similar to the section-key class prop except it allows setti
 
 <example
 name="Classes prop"
-file="/_content/examples/classes-prop/classes-prop.vue"
+file="_content/examples/classes-prop/classes-prop.vue"
 tabs="html"></example>
 
 ## Classes configuration
@@ -140,7 +140,7 @@ The classes configuration option is similar to the classes prop, except it appli
 
 <example
   name="Global configuration"
-  file="/_content/examples/global-classes/global-classes.vue"
+  file="_content/examples/global-classes/global-classes.vue"
   mode="editor"
   :editable="false"
   :line-numbers="false"></example>
@@ -149,7 +149,7 @@ The classes configuration option is similar to the classes prop, except it appli
 
 <example
 name="Classes prop"
-file="/_content/examples/classes-config/classes-config.vue"
+file="_content/examples/classes-config/classes-config.vue"
 tabs="render,html"></example>
 
 ## Using generateClasses from @formkit/themes
@@ -161,8 +161,8 @@ The `generateClasses` function takes a javascript object keyed by input type wit
 <example
 name="generateClasses example"
 :file="[
-  '/_content/examples/generate-classes/generate-classes.vue',
-  '/_content/examples/generate-classes/formkit.config.js'
+  '_content/examples/generate-classes/generate-classes.vue',
+  '_content/examples/generate-classes/formkit.config.js'
 ]"
 init-file-tab="formkit.config.js"
 tabs="html"></example>
@@ -187,7 +187,7 @@ within your provided function:
 
 <example
 name="Root classes function"
-file="/_content/examples/root-classes/root-classes.vue"
+file="_content/examples/root-classes/root-classes.vue"
 tabs="html"></example>
 
 <callout type="tip">
@@ -244,7 +244,7 @@ Since config is passed down to descendant inputs, you can alter classes via conf
 
 <example
 name="Classes prop"
-file="/_content/examples/classes-config-schema/classes-config-schema.vue"
+file="_content/examples/classes-config-schema/classes-config-schema.vue"
 tabs="render,html"></example>
 
 ## Tailwind CSS

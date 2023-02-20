@@ -15,7 +15,7 @@ The `rating` input allows users to provide feedback based on a numeric scale rep
 
 <example
 name="Rating"
-file="/_content/examples/rating/rating-base.vue"></example>
+file="_content/examples/rating/base.vue"></example>
 
 ## Min/max
 
@@ -23,7 +23,7 @@ The `min` and `max` props define the minimum and maximum values an end-user can 
 
 <example
 name="Rating"
-file="/_content/examples/rating/rating-min-max.vue"></example>
+file="_content/examples/rating/min-max.vue"></example>
 
 ## Step
 
@@ -31,7 +31,7 @@ By default, the `rating` input will increment by 1. The `step` prop will allow y
 
 <example
 name="Rating"
-file="/_content/examples/rating/rating-step.vue"></example>
+file="_content/examples/rating/step.vue"></example>
 
 ## Icons
 
@@ -39,7 +39,7 @@ By default, the `rating` input uses FormKit's own star icon. You can change whic
 
 <example
 name="Rating"
-file="/_content/examples/rating/rating-icon.vue"></example>
+file="_content/examples/rating/icon.vue"></example>
 
 ### Slots for icons
 
@@ -49,7 +49,7 @@ Instead of specifying an icon via the FormKit icon plugin, you can pass a raw SV
 
 <example
 name="Rating"
-file="/_content/examples/rating/rating-default-slot.vue"></example>
+file="_content/examples/rating/default-slot.vue"></example>
 
 #### Named slots
 
@@ -57,7 +57,7 @@ Lastly, you can use the `offItem` and `onItem` slots to pass whatever assets you
 
 <example
 name="Rating"
-file="/_content/examples/rating/rating-named-slots.vue"></example>
+file="_content/examples/rating/named-slots.vue"></example>
 
 ## Colors
 
@@ -65,7 +65,15 @@ In addition to supplying an icon, you can also specify the color via props. Sett
 
 <example
 name="Rating"
-file="/_content/examples/rating/rating-colors.vue"></example>
+file="_content/examples/rating/colors.vue"></example>
+
+## Schema
+
+Simple password schema example:
+
+<example
+name="Schema"
+file="_content/examples/rating/schema.vue"></example>
 
 ## Props & Attributes
 

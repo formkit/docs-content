@@ -13,7 +13,15 @@ The `search` input uses HTML's [native search input](https://developer.mozilla.o
 
 <example
 name="Search input"
-file="/_content/examples/search/search.vue"></example>
+file="_content/examples/search/search.vue"></example>
+
+## Schema
+
+Simple search schema example:
+
+<example
+name="Schema"
+file="_content/examples/search/schema.vue"></example>
 
 ## Props & Attributes
 

@@ -13,7 +13,15 @@ The `range` input uses HTML's [native range input](https://developer.mozilla.org
 
 <example
 name="Range input"
-file="/_content/examples/range/range.vue"></example>
+file="_content/examples/range/range.vue"></example>
+
+## Schema
+
+Simple range schema example:
+
+<example
+name="Schema"
+file="_content/examples/range/schema.vue"></example>
 
 ## Props & Attributes
 

@@ -13,7 +13,7 @@ The `color` input uses HTML's [native color picker](https://developer.mozilla.or
 
 <example
   name="Color input"
-  file="/_content/examples/color/color-base.vue">
+  file="_content/examples/color/color-base.vue">
 </example>
 
 ## Schema

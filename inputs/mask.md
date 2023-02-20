@@ -22,7 +22,7 @@ The `mask` input automatically transforms user input to match a provided format.
 
 <example
   name="Mask input"
-  file="/_content/examples/mask/basic.vue">
+  file="_content/examples/mask/basic.vue">
 </example>
 
 ## Masks
@@ -45,7 +45,7 @@ The mask input comes with 4 built-in tokens:
 
 <example
   name="Mask input"
-  file="/_content/examples/mask/simple.vue">
+  file="_content/examples/mask/simple.vue">
 </example>
 
 ### Escaping built-ins
@@ -74,7 +74,7 @@ By default, the characters of a mask are automatically shifted forward when typi
 
 <example
   name="Mask input - shift vs replace"
-  file="/_content/examples/mask/shift-replace.vue">
+  file="_content/examples/mask/shift-replace.vue">
 </example>
 
 ### Select mode
@@ -85,7 +85,7 @@ Additionally, when an input is in select mode, the user can use the arrow or tab
 
 <example
   name="Mask input - select"
-  file="/_content/examples/mask/select.vue">
+  file="_content/examples/mask/select.vue">
 </example>
 
 <callout type="tip" label="Select mode options">
@@ -178,7 +178,7 @@ expects an object with keys that match the `token` property. For example, our ne
 
 <example
   name="Mask input"
-  file="/_content/examples/mask/tokens-prop.vue">
+  file="_content/examples/mask/tokens-prop.vue">
 </example>
 
 #### Add tokens globally
@@ -187,7 +187,7 @@ To register your mask tokens globally, extend the `config` property of your glob
 
 <example
   name="Mask input global"
-  :file="['/_content/examples/mask/tokens-global.vue', '/_content/examples/mask/formkit.config.js']"
+  :file="['_content/examples/mask/tokens-global.vue', '_content/examples/mask/formkit.config.js']"
   init-file-tab="formkit.config.js">
 </example>
 
@@ -197,7 +197,7 @@ In addition to creating new tokens, the `tokens` prop can also modify existing t
 
 <example
   name="Mask input - select fill"
-  file="/_content/examples/mask/select-fill.vue">
+  file="_content/examples/mask/select-fill.vue">
 </example>
 
 ### Char tokens
@@ -218,7 +218,7 @@ A date with auto-completing month names could be well represented with enums:
 
 <example
   name="Mask input – enum"
-  file="/_content/examples/mask/enum.vue">
+  file="_content/examples/mask/enum.vue">
 </example>
 
 <callout type="warning" label="Select mode requirement">
@@ -258,7 +258,7 @@ You can string group options together:
 
 <example
   name="Mask input"
-  file="/_content/examples/mask/groups.vue">
+  file="_content/examples/mask/groups.vue">
 </example>
 
 <callout type="warning" label="Can't be used in select mode">
@@ -272,7 +272,7 @@ You can ensure certain characters always appear at the beginning or end of an in
 
 <example
   name="Mask input"
-  file="/_content/examples/mask/prefix-suffix.vue">
+  file="_content/examples/mask/prefix-suffix.vue">
 </example>
 
 <callout type="warning" label="Values can't match the mask">
@@ -285,7 +285,7 @@ In specific circumstances, you may want to run your mask in reverse. The mask wi
 
 <example
   name="Mask input"
-  file="/_content/examples/mask/reverse.vue">
+  file="_content/examples/mask/reverse.vue">
 </example>
 
 <callout type="warning" label="Shift mode requirement">
@@ -300,7 +300,7 @@ A mask’s value is not considered "complete" until the user has filled the enti
 
 <example
   name="Mask input - allow incomplete"
-  file="/_content/examples/mask/allow-incomplete.vue">
+  file="_content/examples/mask/allow-incomplete.vue">
 </example>
 
 ### Unmasked values
@@ -309,7 +309,7 @@ By default, the value of a mask input includes the formatting provided via the `
 
 <example
   name="Mask input - unmask value"
-  file="/_content/examples/mask/unmask-value.vue">
+  file="_content/examples/mask/unmask-value.vue">
 </example>
 
 ## Hiding the mask
@@ -318,8 +318,16 @@ By default, the `mask` input displays each token’s placeholder character. You 
 
 <example
   name="Mask input - show mask"
-  file="/_content/examples/mask/show-mask.vue">
+  file="_content/examples/mask/show-mask.vue">
 </example>
+
+## Schema
+
+Simple mask schema example:
+
+<example
+name="Schema"
+file="_content/examples/mask/schema.vue"></example>
 
 ## Props & Attributes
 

@@ -13,7 +13,15 @@ The `textarea` input uses HTML's [native textarea input](https://developer.mozil
 
 <example
 name="Textarea input"
-file="/_content/examples/textarea/textarea.vue"></example>
+file="_content/examples/textarea/textarea.vue"></example>
+
+## Schema
+
+Simple textarea schema example:
+
+<example
+name="Schema"
+file="_content/examples/textarea/schema.vue"></example>
 
 ## Props & Attributes
 

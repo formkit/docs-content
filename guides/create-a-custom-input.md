@@ -46,8 +46,8 @@ We’ll call this sample form `Register.vue`:
 <example
   name="One-time password - register"
   :file="[
-    '/_content/examples/otp-register/Register.vue',
-    '/_content/examples/otp-register/OneTimePassword.vue',
+    '_content/examples/otp-register/Register.vue',
+    '_content/examples/otp-register/OneTimePassword.vue',
   ]">
 </example>
 
@@ -65,8 +65,8 @@ All custom inputs are passed the almighty [context object](/essentials/configura
   name="One-time password - first value"
   init-file-tab="OneTimePassword.vue"
   :file="[
-    '/_content/examples/otp-first-value/Register.vue',
-    '/_content/examples/otp-first-value/OneTimePassword.vue',
+    '_content/examples/otp-first-value/Register.vue',
+    '_content/examples/otp-first-value/OneTimePassword.vue',
   ]">
 </example>
 
@@ -103,8 +103,8 @@ We now have access to `context.digits`. Back in `OneTimePassword.vue`, let's use
   name="One-time password - input tags"
   init-file-tab="OneTimePassword.vue"
   :file="[
-    '/_content/examples/otp-tags/Register.vue',
-    '/_content/examples/otp-tags/OneTimePassword.vue',
+    '_content/examples/otp-tags/Register.vue',
+    '_content/examples/otp-tags/OneTimePassword.vue',
   ]">
 </example>
 
@@ -128,8 +128,8 @@ Notice in the above example that when you type into one input all the other inpu
   name="One-time password - input handlers"
   init-file-tab="OneTimePassword.vue"
   :file="[
-    '/_content/examples/otp-handlers/Register.vue',
-    '/_content/examples/otp-handlers/OneTimePassword.vue',
+    '_content/examples/otp-handlers/Register.vue',
+    '_content/examples/otp-handlers/OneTimePassword.vue',
   ]"></example>
 
 Great! This is starting to work like we expect. Let’s check our requirements again:
@@ -168,8 +168,8 @@ handlePaste(e) {
   name="One-time password - copy paste"
   init-file-tab="OneTimePassword.vue"
   :file="[
-    '/_content/examples/otp-copy-paste/Register.vue',
-    '/_content/examples/otp-copy-paste/OneTimePassword.vue',
+    '_content/examples/otp-copy-paste/Register.vue',
+    '_content/examples/otp-copy-paste/OneTimePassword.vue',
   ]">
 </example>
 

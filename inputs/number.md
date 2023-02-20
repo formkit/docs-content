@@ -13,7 +13,15 @@ The `number` input uses HTML's [native number input](https://developer.mozilla.o
 
 <example
 name="Number input"
-file="/_content/examples/number/number.vue"></example>
+file="_content/examples/number/number.vue"></example>
+
+## Schema
+
+Simple number schema example:
+
+<example
+name="Schema"
+file="_content/examples/number/schema.vue"></example>
 
 ## Props & Attributes
 

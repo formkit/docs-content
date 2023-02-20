@@ -298,7 +298,7 @@ You must assign the input an <code>id</code> to use this method.
 
 <example
   name="Get core node"
-  file="/_content/examples/node-get/node-get.vue">
+  file="_content/examples/node-get/node-get.vue">
 </example>
 
 <callout type="info" label="Composition API">
@@ -312,7 +312,7 @@ Another way to get the underlying `node` is to listen to the `@node` event which
 
 <example
   name="Node event"
-  file="/_content/examples/node-event/node-event.vue">
+  file="_content/examples/node-event/node-event.vue">
 </example>
 
 #### Using a template ref
@@ -321,7 +321,7 @@ Assigning a `<FormKit>` component to a `ref` also allows easy access to the node
 
 <example
   name="Node ref"
-  file="/_content/examples/node-ref/node-ref.vue">
+  file="_content/examples/node-ref/node-ref.vue">
 </example>
 
 ## Traversal
@@ -685,7 +685,7 @@ For example, if we wanted to create a plugin that exposed a couple new inputs: `
 
 <example
   name="Plugin library"
-  file="/_content/examples/plugin-library/plugin-library.vue"
+  file="_content/examples/plugin-library/plugin-library.vue"
   layout="auto">
 </example>
 
@@ -782,7 +782,7 @@ Let's say we want to count how many messages are currently being displayed. We c
 
 <example
   name="Count visible"
-  file="/_content/examples/count-visible/count-visible.vue">
+  file="_content/examples/count-visible/count-visible.vue">
 </example>
 
 Notice the second argument of `node.ledger.count()` is a function. This function accepts a message as an argument and expects the return value to be a boolean, indicating whether that message should be counted or not. This allows you to craft arbitrary counters for any message type.

@@ -99,8 +99,8 @@ When using Vue’s options API, you have access to `this.$formkit` which contain
 <example
   name="Changing locale example"
   :file="[
-    '/_content/examples/locale-change/locale-change.vue',
-    '/_content/examples/locale-change/formkit.config.js'
+    '_content/examples/locale-change/locale-change.vue',
+    '_content/examples/locale-change/formkit.config.js'
   ]">
 </example>
 
@@ -111,8 +111,8 @@ When using the composition API, you won’t have access to `this.$formkit`. Inst
 <example
   name="Changing locale via config"
   :file="[
-    '/_content/examples/locale-change-config/locale-change-config.vue',
-    '/_content/examples/locale-change-config/formkit.config.js'
+    '_content/examples/locale-change-config/locale-change-config.vue',
+    '_content/examples/locale-change-config/formkit.config.js'
   ]">
 </example>
 

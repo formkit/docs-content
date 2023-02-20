@@ -19,7 +19,7 @@ The easiest way to set the `label` of a `submit` button is with the `label` prop
 
 <example
   name="Submit input"
-  file="/_content/examples/submit/submit-base.vue"></example>
+  file="_content/examples/submit/base.vue"></example>
 
 ## Default slot
 
@@ -27,7 +27,7 @@ The default slot can also be used to add text and UI to the button:
 
 <example
   name="Submit input"
-  file="/_content/examples/submit/submit-default-slot.vue"></example>
+  file="_content/examples/submit/default-slot.vue"></example>
 
 ## Event listeners
 
@@ -35,7 +35,7 @@ You can also bind event listeners:
 
 <example
   name="Submit input"
-  file="/_content/examples/submit/submit-events.vue"></example>
+  file="_content/examples/submit/events.vue"></example>
 
 ## Provided submit button
 
@@ -73,6 +73,14 @@ You can also disable your own submit button [via schema](https://formkit.link/6e
   Add a section
 </FormKit>
 ```
+
+## Schema
+
+Simple submit schema example:
+
+<example
+name="Schema"
+file="_content/examples/submit/schema.vue"></example>
 
 ## Props & Attributes
 

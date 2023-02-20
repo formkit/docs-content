@@ -13,7 +13,7 @@ The `email` input uses HTML's [native email input](https://developer.mozilla.org
 
 <example
   name="Email input"
-  file="/_content/examples/email/email-base.vue">
+  file="_content/examples/email/email-base.vue">
 </example>
 
 ## Schema

@@ -13,7 +13,7 @@ FormKit Inputs are similar to HTML inputs but turbocharged with much needed feat
 
 <example
   name="Text input"
-  file="/_content/examples/single-component/single-component.vue">
+  file="_content/examples/single-component/single-component.vue">
 </example>
 
 FormKit Inputs are not confined to what is available in "native" HTML. Our seperate [FormKit Pro](/pro) package provides access to "synthetic" input types such as `repeater`, `autocomplete`, `mask`, `rating` and more. Of course, you can write your own inputs too by creating [custom inputs](/guides/create-a-custom-input).
@@ -21,7 +21,7 @@ FormKit Inputs are not confined to what is available in "native" HTML. Our seper
 <example
   name="Text input"
   :file="[
-    '/_content/examples/single-component/single-component-pro.vue',
+    '_content/examples/single-component/single-component-pro.vue',
   ]">
 </example>
 
@@ -59,7 +59,7 @@ prop.
 
 <example
   name="Value prop"
-  file="/_content/examples/value-prop/value-prop.vue">
+  file="_content/examples/value-prop/value-prop.vue">
 </example>
 
 <callout type="warning">
@@ -74,7 +74,7 @@ Using `v-model` allows for two-way reactive data binding with any FormKit input.
 
 <example
   name="Input v-model"
-  file="/_content/examples/v-model/v-model.vue">
+  file="_content/examples/v-model/v-model.vue">
 </example>
 
 ### Using `node.input()`
@@ -84,7 +84,7 @@ object](/essentials/architecture#node), and using the `node.input()` method is t
 
 <example
   name="Input v-model"
-  file="/_content/examples/node-input/node-input.vue">
+  file="_content/examples/node-input/node-input.vue">
 </example>
 
 <callout type="tip">
@@ -97,7 +97,7 @@ Parent inputs like `list`, `group`, and `form` are also able to directly set the
 
 <example
   name="Parent input"
-  file="/_content/examples/parent-input/parent-input.vue">
+  file="_content/examples/parent-input/parent-input.vue">
 </example>
 
 ## Setting attributes
@@ -106,7 +106,7 @@ In nearly all cases, attributes set on the `<FormKit>` component will be passed 
 
 <example
   name="Text input"
-  file="/_content/examples/attributes/attributes.vue"
+  file="_content/examples/attributes/attributes.vue"
   tabs="html">
 </example>
 
@@ -116,7 +116,7 @@ We discuss validation in more detail on its [own documentation page](/essentials
 
 <example
   name="Simple validation"
-  file="/_content/examples/simple-validation/simple-validation.vue"></example>
+  file="_content/examples/simple-validation/simple-validation.vue"></example>
 
 <cta
   href="/essentials/validation"
@@ -135,7 +135,7 @@ To illustrate this, let's get the `group`'s `value` from the `#default` slot pro
 
 <example
   name="Delay prop"
-  file="/_content/examples/delay-prop/delay-prop.vue"></example>
+  file="_content/examples/delay-prop/delay-prop.vue"></example>
 
 <callout type="info" label="Group & List delay">
 The delay prop’s default is <code>20</code> milliseconds. However, <code>group</code> and <code>list</code> inputs use <code>0</code> milliseconds by default to prevent the debounce delay from “building up” at each level of depth.
@@ -147,7 +147,7 @@ Validation errors are not the only way to set errors on an input. You can also e
 
 <example
   name="Simple validation"
-  file="/_content/examples/simple-errors/simple-errors.vue"></example>
+  file="_content/examples/simple-errors/simple-errors.vue"></example>
 
 <callout type="info" label="Non blocking">
 Explicitly set errors are non-blocking, meaning they do not prevent the form from submitting the way validation errors do. You can read more about error handling on the <a href="/inputs/form#error-handling">form documentation</a>.
@@ -196,7 +196,7 @@ For example, if we wanted to use a slot to define the label of an input, we coul
 
 <example
   name="Label slot"
-  file="/_content/examples/label-slot/label-slot.vue"></example>
+  file="_content/examples/label-slot/label-slot.vue"></example>
 
 <callout type="warning" label="Consider section schema">
 A disadvantage of using slots is you often need to re-create unrelated features to make the change you desire. For example, using slots would require you to re-implement any classes applied to those sections (which can be done by using <code>context.classes.sectionName</code>).<br><br>To help address this shortcoming, FormKit is also able to <a href="#sections-schema">selectively override/extend the underlying schema</a> of each section allowing complex structural modification often with no loss of functionality.
@@ -212,7 +212,7 @@ For example, by default FormKit uses an unordered list (`<ul>` and `<li>`) to ou
 
 <example
   name="Sections schema"
-  file="/_content/examples/schema-overrides/schema-overrides.vue"
+  file="_content/examples/schema-overrides/schema-overrides.vue"
   tabs="html,render" ></example>
 
 ### Unwrapping or removing HTML tags
@@ -221,7 +221,7 @@ For accessibility and flexibility, FormKit uses several wrapper elements like th
 
 <example
   name="No wrappers"
-  file="/_content/examples/schema-wrappers/schema-wrappers.vue"
+  file="_content/examples/schema-wrappers/schema-wrappers.vue"
   tabs="html,render" ></example>
 
 ### Schema logic
@@ -230,6 +230,6 @@ Section schemas can also change the content being output using advanced schema l
 
 <example
   name="No wrappers"
-  file="/_content/examples/schema-content/schema-content.vue" ></example>
+  file="_content/examples/schema-content/schema-content.vue" ></example>
 
 <cta label="Learn more about how schemas work" href="/essentials/schema" button="Gimme more schema">

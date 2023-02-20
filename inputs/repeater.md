@@ -17,7 +17,7 @@ By default, the repeater input has the ability to shift, add, and remove items:
 
 <example
 name="Repeater"
-file="/_content/examples/repeater/repeater-base.vue"></example>
+file="_content/examples/repeater/base.vue"></example>
 
 Unlike most other FormKit input types, the repeater input is of type [list](/inputs/list). You can see above that the `users` property (our repeater's value) is an array.
 
@@ -27,7 +27,7 @@ In the previous example, the 'Add Users' button is provided by default, and the 
 
 <example
 name="Repeater"
-file="/_content/examples/repeater/repeater-add-button-attrs.vue"></example>
+file="_content/examples/repeater/add-button-attrs.vue"></example>
 
 ## Min/max
 
@@ -35,7 +35,7 @@ Like many other FormKit inputs, the repeater comes with a `min` and `max` prop. 
 
 <example
 name="Repeater"
-file="/_content/examples/repeater/repeater-min-max.vue"></example>
+file="_content/examples/repeater/min-max.vue"></example>
 
 ## Controls
 
@@ -43,7 +43,7 @@ The repeater input by default comes with a set of controls that allow you to shi
 
 <example
 name="Repeater"
-file="/_content/examples/repeater/repeater-insert-control.vue"></example>
+file="_content/examples/repeater/insert-control.vue"></example>
 
 ## Custom controls
 
@@ -51,7 +51,7 @@ With FormKit's repeater, you are not restricted to our default controls. You can
 
 <example
 name="Repeater"
-file="/_content/examples/repeater/repeater-controls.vue"></example>
+file="_content/examples/repeater/controls.vue"></example>
 
 ## Setting errors
 
@@ -82,7 +82,21 @@ returning errors for both the repeater and one child:
 
 <example
   name="Repeater"
-  file="/_content/examples/repeater/errors/repeater-errors.vue"></example>
+  file="_content/examples/repeater/errors.vue"></example>
+
+## Schema
+
+Simple repeater schema example:
+
+<example
+name="Schema"
+file="_content/examples/repeater/schema-base.vue"></example>
+
+Conditional input inside repeater schema example:
+
+<example
+name="Schema"
+file="_content/examples/repeater/schema-conditional.vue"></example>
 
 ## Props & Attributes
 

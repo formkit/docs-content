@@ -15,7 +15,7 @@ The `toggle` input offers a choice between one of two values; it's a great optio
 
 <example
 name="Toggle"
-file="/_content/examples/toggle/toggle-base.vue"></example>
+file="_content/examples/toggle/toggle-base.vue"></example>
 
 ## Values
 
@@ -23,7 +23,7 @@ The `toggle` checked and unchecked states will default to `true` and `false` res
 
 <example
 name="Toggle"
-file="/_content/examples/toggle/toggle-values.vue"></example>
+file="_content/examples/toggle/toggle-values.vue"></example>
 
 ## Labels
 
@@ -33,7 +33,7 @@ By default, the toggle input supports a primary label like the `label` prop on a
 
 <example
 name="Toggle"
-file="/_content/examples/toggle/toggle-primary-label.vue"></example>
+file="_content/examples/toggle/toggle-primary-label.vue"></example>
 
 ### Alt label position
 
@@ -41,7 +41,7 @@ If you would like the label to be displayed above the toggle, you can use the `a
 
 <example
 name="Toggle"
-file="/_content/examples/toggle/toggle-alt-label-position.vue"></example>
+file="_content/examples/toggle/toggle-alt-label-position.vue"></example>
 
 ### Value label
 
@@ -49,7 +49,7 @@ Additionally, you may specify secondary labels by setting the `on-value-label` a
 
 <example
 name="Toggle"
-file="/_content/examples/toggle/toggle-value-labels.vue"></example>
+file="_content/examples/toggle/toggle-value-labels.vue"></example>
 
 ### Inner value labels
 
@@ -57,7 +57,7 @@ Additionally, you can set the `value-label-display` prop to `inner` to render th
 
 <example
 name="Toggle"
-file="/_content/examples/toggle/toggle-labels-inner.vue"></example>
+file="_content/examples/toggle/toggle-labels-inner.vue"></example>
 
 ## Icons
 
@@ -65,7 +65,7 @@ The `thumb-icon` prop allows you to insert an icon into the `thumb` section of t
 
 <example
 name="Toggle"
-file="/_content/examples/toggle/toggle-icon.vue"></example>
+file="_content/examples/toggle/toggle-icon.vue"></example>
 
 ## Colors
 
@@ -73,11 +73,19 @@ The toggle input supports color props for its various sections for easy styling.
 
 <example
 name="Toggle"
-file="/_content/examples/toggle/toggle-icon-colors.vue"></example>
+file="_content/examples/toggle/toggle-icon-colors.vue"></example>
 
 ## Accessibility
 
 The `toggle` input is built atop HTML's [native checkbox input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox).
+
+## Schema
+
+Simple toggle schema example:
+
+<example
+name="Schema"
+file="_content/examples/toggle/toggle-schema.vue"></example>
 
 ## Props & Attributes
 

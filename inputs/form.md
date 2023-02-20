@@ -37,7 +37,7 @@ Excluding backend functionality, here is a fully featured form with inputs (`for
 
 <example
   name="Register example"
-  file="/_content/examples/form/form-register.vue"
+  file="_content/examples/form/form-register.vue"
   layout="column"
   data-render-fullsize>
 </example>
@@ -55,7 +55,7 @@ You can populate an entire form by providing a `value` prop to the `<FormKit typ
 
 <example
   name="Text example"
-  file="/_content/examples/form/form-population.vue">
+  file="_content/examples/form/form-population.vue">
 </example>
 
 <callout type="danger" label="v-model and reactive objects">
@@ -87,7 +87,7 @@ The most common method of form submission in a modern SPA is an XHR request (thi
 
 <example
   name="Text example"
-  file="/_content/examples/form/form-xhr.vue">
+  file="_content/examples/form/form-xhr.vue">
 </example>
 
 ### Submitting as a page request
@@ -96,7 +96,7 @@ To submit a form via page request, simply leave off the `@submit` handler. Just 
 
 <example
   name="Text example"
-  file="/_content/examples/form/form-page.vue">
+  file="_content/examples/form/form-page.vue">
 </example>
 
 ### Submitting forms programmatically
@@ -110,7 +110,7 @@ While submitting a form using any standard HTML method is valid (like clicking a
 
 <example
   name="Text example"
-  file="/_content/examples/form/form-submit.vue">
+  file="_content/examples/form/form-submit.vue">
 </example>
 
 #### Submitting with `node.submit()`
@@ -119,7 +119,7 @@ You can also submit a form programmatically by calling `node.submit()` on the fo
 
 <example
   name="Text example"
-  file="/_content/examples/form/form-node-submit.vue">
+  file="_content/examples/form/form-node-submit.vue">
 </example>
 
 ## Validation
@@ -132,7 +132,7 @@ In addition to not firing the submit event, a message is displayed above the sub
 
 <example
   name="Text example"
-  file="/_content/examples/form/form-incomplete-message.vue">
+  file="_content/examples/form/form-incomplete-message.vue">
 </example>
 
 <callout type="tip" label="Global customization">
@@ -147,7 +147,7 @@ For example, we could use this event to alert our users of the failing validatio
 
 <example
   name="Submit invalid"
-  file="/_content/examples/form/form-submit-invalid.vue">
+  file="_content/examples/form/form-submit-invalid.vue">
 </example>
 
 ### Validity state
@@ -156,7 +156,7 @@ The validity of all inputs within a form is tracked automatically in the [contex
 
 <example
   name="Text example"
-  file="/_content/examples/form/form-validity.vue">
+  file="_content/examples/form/form-validity.vue">
 </example>
 
 <callout type="tip" label="Getting the context object">
@@ -169,7 +169,7 @@ To disable all the inputs in a given form, including the submit button, you can 
 
 <example
   name="Disabled example"
-  file="/_content/examples/form/form-disabled.vue">
+  file="_content/examples/form/form-disabled.vue">
 </example>
 
 <callout type="tip" label="Disabled automatically">
@@ -182,7 +182,7 @@ You can reset your form (or any input) back to it’s initial state by calling `
 
 <example
   name="Reset example"
-  file="/_content/examples/form/form-reset.vue">
+  file="_content/examples/form/form-reset.vue">
 </example>
 
 <callout type="tip" label="Composition API">
@@ -216,7 +216,7 @@ Like with any FormKit input, you can directly assign errors using the `errors` p
 
 <example
   name="Form errors prop example"
-  file="/_content/examples/form/form-errors.vue">
+  file="_content/examples/form/form-errors.vue">
 </example>
 
 #### Using `node.setErrors()`
@@ -225,7 +225,7 @@ Setting your form’s errors using `node.setErrors` is convenient since your sub
 
 <example
   name="setErrors"
-  file="/_content/examples/form/form-node-set-errors.vue">
+  file="_content/examples/form/form-node-set-errors.vue">
 </example>
 
 #### Using `$formkit.setErrors()`
@@ -234,7 +234,7 @@ Alternatively, you can set errors directly on a form by giving the form an `id` 
 
 <example
   name="setErrors"
-  file="/_content/examples/form/form-set-errors.vue">
+  file="_content/examples/form/form-set-errors.vue">
 </example>
 
 ### Clearing errors
@@ -245,14 +245,14 @@ To clear all the errors on the form (regardless of the `preserve-errors` prop) c
 
 <example
   name="clearErrors"
-  file="/_content/examples/form/form-auto-clear-errors.vue">
+  file="_content/examples/form/form-auto-clear-errors.vue">
 </example>
 
 If you prefer to preserve errors by default, you can change the default behavior by modifying the `preserveErrors` config option. This can be done globally or for a single form:
 
 <example
   name="preserveErrors"
-  file="/_content/examples/form/form-preserve-errors-config.vue">
+  file="_content/examples/form/form-preserve-errors-config.vue">
 </example>
 
 <callout type="input" label="Composition API">
@@ -274,7 +274,7 @@ The most basic way to display errors on a form is using the `errors` prop that i
 
 <example
   name="errors prop"
-  file="/_content/examples/form/form-errors-prop.vue">
+  file="_content/examples/form/form-errors-prop.vue">
 </example>
 
 #### Using `input-errors` prop
@@ -283,7 +283,7 @@ You can also conveniently set error messages for all inputs in your form (or [gr
 
 <example
   name="input errors prop"
-  file="/_content/examples/form/form-input-errors-prop.vue">
+  file="_content/examples/form/form-input-errors-prop.vue">
 </example>
 
 ## Moving validation and error messages
@@ -309,7 +309,7 @@ Place a `<FormKitMessages />` component anywhere _inside_ your form, and the for
 
 <example
   name="input errors prop"
-  file="/_content/examples/formkit-messages/automatic.vue">
+  file="_content/examples/formkit-messages/automatic.vue">
 </example>
 
 ### Move messages by `node`
@@ -318,7 +318,7 @@ To move messages anywhere in the DOM — even _outside_ the form — you can pas
 
 <example
   name="input errors prop"
-  file="/_content/examples/formkit-messages/toast.vue">
+  file="_content/examples/formkit-messages/toast.vue">
 </example>
 
 ### FormKitMessages props
@@ -337,7 +337,7 @@ When inputs are unmounted from a form — for example when using `v-if` — the 
 
 <example
   name="input errors prop"
-  file="/_content/examples/form/form-preserve-prop.vue">
+  file="_content/examples/form/form-preserve-prop.vue">
 </example>
 
 ## Schema

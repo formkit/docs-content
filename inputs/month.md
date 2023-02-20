@@ -17,13 +17,21 @@ Month inputs are not currently supported in FireFox or Safari.
 
 <example
   name="Month input"
-  file="/_content/examples/month/month.vue">
+  file="_content/examples/month/month.vue">
 </example>
 
 <callout type="warning" label="Formatting">
 The internal format of all native month pickers is <code>YYYY-MM</code>. This is true
 even though the format of the month displayed to the user may be different. For example, U.S. based browsers display the month format as <code>Month Name YYYY</code>.
 </callout>
+
+## Schema
+
+Simple month schema example:
+
+<example
+name="Schema"
+file="_content/examples/month/schema.vue"></example>
 
 ## Props & Attributes
 

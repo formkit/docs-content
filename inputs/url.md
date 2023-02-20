@@ -13,11 +13,19 @@ The `url` input uses HTML's [native url input](https://developer.mozilla.org/en-
 
 <example
 name="URL input"
-file="/_content/examples/url/url.vue"></example>
+file="_content/examples/url/url.vue"></example>
 
 <callout type="tip" label="Consider using text input">
 Although FormKit supports the <code>url</code> input type, the primary reason this input is provided in the HTML spec is validation. Since FormKit has its own validation system the utility provided by this input is not significant and can complicate your form submissions. In most cases you are better off using a <code>text</code> input with the <code>url</code> validation rule.
 </callout>
+
+## Schema
+
+Simple url schema example:
+
+<example
+name="Schema"
+file="_content/examples/url/schema.vue"></example>
 
 ## Props & Attributes
 

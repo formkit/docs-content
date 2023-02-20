@@ -13,7 +13,7 @@ The `datetime-local` input uses HTML's [native datetime-local picker](https://de
 
 <example
   name="Datetime-local input"
-  file="/_content/examples/datetime-local/datetime-local-base.vue">
+  file="_content/examples/datetime-local/datetime-local-base.vue">
 </example>
 
 <callout type="warning" label="Formatting">
