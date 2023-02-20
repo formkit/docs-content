@@ -61,7 +61,6 @@ Simple checkbox schema example:
 
 <example
 name="Schema"
-:min-height="550"
 file="_content/examples/checkbox/checkbox-schema.vue"></example>
 
 ## Props & Attributes

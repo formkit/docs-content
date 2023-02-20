@@ -139,7 +139,6 @@ Now let's combine what we've learned so far by leveraging the `tag` slot for cus
 
 <example
 name="Taglist"
-:min-height="550"
 file="_content/examples/taglist/taglist-full.vue"></example>
 
 ## Schema

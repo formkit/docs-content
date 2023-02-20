@@ -22,7 +22,6 @@ Simple color schema example:
 
 <example
 name="Schema"
-:min-height="550"
 file="_content/examples/color/color-schema.vue"></example>
 
 ## Props & Attributes

@@ -49,7 +49,6 @@ Simple file schema example:
 
 <example
 name="Schema"
-:min-height="550"
 file="_content/examples/file/file-schema.vue"></example>
 
 ## Props & Attributes

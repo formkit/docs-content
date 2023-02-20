@@ -53,7 +53,6 @@ Simple button schema example:
 
 <example
 name="Schema"
-:min-height="550"
 file="_content/examples/button/button-schema.vue"></example>
 
 ## Props & Attributes

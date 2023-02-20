@@ -26,7 +26,6 @@ Simple datetime-local schema example:
 
 <example
 name="Schema"
-:min-height="550"
 file="_content/examples/datetime-local/datetime-local-schema.vue"></example>
 
 ## Props & Attributes

@@ -22,7 +22,6 @@ Simple email schema example:
 
 <example
 name="Schema"
-:min-height="550"
 file="_content/examples/email/email-schema.vue"></example>
 
 ## Props & Attributes

@@ -26,7 +26,6 @@ Simple date schema example:
 
 <example
 name="Schema"
-:min-height="550"
 file="_content/examples/date/date-schema.vue"></example>
 
 ## Props & Attributes

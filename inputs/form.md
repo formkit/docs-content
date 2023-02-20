@@ -346,7 +346,6 @@ Simple form schema example:
 
 <example
 name="Schema"
-:min-height="550"
 file="_content/examples/form/form-schema.vue"></example>
 
 ## Props

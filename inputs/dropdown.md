@@ -141,7 +141,6 @@ Simple dropdown schema example:
 
 <example
 name="Schema"
-:min-height="550"
 file="_content/examples/dropdown/dropdown-schema.vue"></example>
 
 ## Props & Attributes
