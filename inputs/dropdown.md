@@ -181,16 +181,42 @@ file: "/_content/examples/dropdown/dropdown-overscroll.vue"
 
 ## Props & Attributes
 
-<reference-table input="dropdown" :data="[
-{prop: 'options', type: 'any', default: '[]', description: 'The list of options the user can select from.'},
-{prop: 'load-on-scroll', type: 'boolean', default: 'false', description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'}, {prop: 'option-loader', type: 'function', default: 'null', description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'},
-{prop: 'empty-message', type: 'string', default: 'undefined', description: 'Renders a message when there are no options to display.'},
-]">
-</reference-table>
+::ReferenceTable
+---
+input: "dropdown" 
+data: [
+  {
+    "prop": "options",
+    "type": "any",
+    "default": "[]",
+    "description": "The list of options the user can select from."
+  },
+  {
+    "prop": "load-on-scroll",
+    "type": "boolean",
+    "default": "false",
+    "description": "When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position"
+  },
+  {
+    "prop": "option-loader",
+    "type": "function",
+    "default": "null",
+    "description": "Used for hydrating initial value, or performing an additional request to load more information of a selected option."
+  },
+  {
+    "prop": "empty-message",
+    "type": "string",
+    "default": "undefined",
+    "description": "Renders a message when there are no options to display."
+  }
+]
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 ### Outer structure
 
@@ -365,62 +391,68 @@ Below is the inner options list (`listbox`) structure from the diagram above:
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key" :data="[
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key" 
+data: [
   {
-    'section-key': 'selector',
-    description: 'The selector section is a button element that opens the dropdown options list.'
+    "section-key": "selector",
+    "description": "The selector section is a button element that opens the dropdown options list."
   },
   {
-    'section-key': 'selection',
-    description: 'Contains the selected option.'
+    "section-key": "selection",
+    "description": "Contains the selected option."
   },
   {
-    'section-key': 'listitem',
-    description: 'A list item element that contains the option section.'
+    "section-key": "listitem",
+    "description": "A list item element that contains the option section."
   },
   {
-    'section-key': 'option',
-    description: 'A div that contains the option content.'
+    "section-key": "option",
+    "description": "A div that contains the option content."
   },
   {
-    'section-key': 'listbox',
-    description: 'The listbox section is a ul element that contains the options list.'
+    "section-key": "listbox",
+    "description": "The listbox section is a ul element that contains the options list."
   },
   {
-    'section-key': 'dropdownWrapper',
-    description: 'Wraps the listbox section. A div that handles scrolling the listbox.'
+    "section-key": "dropdownWrapper",
+    "description": "Wraps the listbox section. A div that handles scrolling the listbox."
   },
   {
-    'section-key': 'optionLoading',
-    description: 'A span element that is conditionally rendered within the selected option when loading is occurring.'
+    "section-key": "optionLoading",
+    "description": "A span element that is conditionally rendered within the selected option when loading is occurring."
   },
   {
-    'section-key': 'loaderIcon',
-    description: 'An element for outputting an icon in the selector element when loading is occurring.'
+    "section-key": "loaderIcon",
+    "description": "An element for outputting an icon in the selector element when loading is occurring."
   },
   {
-    'section-key': 'selectIcon',
-    description: 'An element for outputting an icon in the selector element when the dropdown is closed.'
+    "section-key": "selectIcon",
+    "description": "An element for outputting an icon in the selector element when the dropdown is closed."
   },
   {
-    'section-key': 'selectedIcon',
-    description: 'An element for outputting an icon next to the selected option when inside the listbox.'
+    "section-key": "selectedIcon",
+    "description": "An element for outputting an icon next to the selected option when inside the listbox."
   },
   {
-    'section-key': 'loadMore',
-    description: 'A list item element that is conditionally rendered at the bottom of the options list when there are more pages to load.'
+    "section-key": "loadMore",
+    "description": "A list item element that is conditionally rendered at the bottom of the options list when there are more pages to load."
   },
   {
-    'section-key': 'loadMoreInner',
-    description: 'A span element that acts as a wrapper for the loaderIcon within the loadMore section.'
+    "section-key": "loadMoreInner",
+    "description": "A span element that acts as a wrapper for the loaderIcon within the loadMore section."
   },
   {
-    'section-key': 'emptyMessage',
-    description: 'A list item element that is conditionally rendered when there are no options to display.'
+    "section-key": "emptyMessage",
+    "description": "A list item element that is conditionally rendered when there are no options to display."
   },
   {
-    'section-key': 'emptyMessageInner',
-    description: 'A span element that acts as a wrapper for the emptyMessage section.'
+    "section-key": "emptyMessageInner",
+    "description": "A span element that acts as a wrapper for the emptyMessage section."
   }
-]">
-</reference-table>
+]
+---
+::
+

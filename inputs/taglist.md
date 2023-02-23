@@ -192,7 +192,10 @@ file: "/_content/examples/taglist/taglist-full.vue"
 
 ## Props & Attributes
 
-<reference-table input="taglist" :data="[
+::ReferenceTable
+---
+input: "taglist" 
+data: [
   {
     prop: 'debounce',
     type: 'number',
@@ -257,10 +260,16 @@ file: "/_content/examples/taglist/taglist-full.vue"
     default: 'true',
     description: 'Closes the listbox when an option is selected.'
   }
-]">
-</reference-table>
+]
+---
+::
 
-<reference-table type="sectionKeys" primary="section-key" :data="[
+
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key" 
+data: [
   {
     'section-key': 'selector',
     description: 'The selector section is a button element that opens the dropdown options list.'
@@ -329,5 +338,7 @@ file: "/_content/examples/taglist/taglist-full.vue"
     'section-key': 'emptyMessageInner',
     description: 'A span element that acts as a wrapper for the emptyMessage section.'
   }
-]">
-</reference-table>
+]
+---
+::
+

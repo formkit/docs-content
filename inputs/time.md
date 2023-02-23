@@ -28,12 +28,17 @@ The internal format of all native time pickers is <code>HH:MM</code>. This is tr
 The `time` input has no unique props but can make use of the following universal
 FormKit props.
 
-<reference-table input="time" :attrs="['max', 'min', 'step']">
-</reference-table>
+::ReferenceTable
+---
+input: "time" 
+attrs: ['max', 'min', 'step']
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 <div>
   <formkit-input-diagram
@@ -47,5 +52,10 @@ FormKit props.
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key">
-</reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+---
+::
+

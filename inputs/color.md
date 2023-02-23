@@ -23,12 +23,11 @@ The `color` input uses HTML's [native color picker](https://developer.mozilla.or
 The `color` input has no unique props but can make use of the following universal
 FormKit props.
 
-<reference-table>
-</reference-table>
+:ReferenceTable
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 <div>
   <formkit-input-diagram
@@ -42,5 +41,10 @@ FormKit props.
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key">
-</reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+---
+::
+

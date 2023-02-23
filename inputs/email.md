@@ -22,12 +22,17 @@ The `email` input uses HTML's [native email input](https://developer.mozilla.org
 
 The `email` input has no unique props but can make use of the following universal FormKit props.
 
-<reference-table input="email" :attrs="['placeholder']">
-</reference-table>
+::ReferenceTable
+---
+input: "email" 
+attrs: ['placeholder']
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 <div>
   <formkit-input-diagram
@@ -41,5 +46,10 @@ The `email` input has no unique props but can make use of the following universa
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key">
-</reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+---
+::
+

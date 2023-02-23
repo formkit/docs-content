@@ -51,15 +51,33 @@ file: "/_content/examples/radio-objects/radio-objects.vue"
 
 ## Props & Attributes
 
-<reference-table input="radio" :without="['prefix-icon', 'suffix-icon']" :data="[
-  {prop: 'decorator-icon', type: 'String', default: '’’', description: 'Specifies <a href=&quot;/essentials/icons&quot;>an icon</a> to put in the <code>decoratorIcon</code> section. Shows when the radio is checked. Defaults to the <code>radioDecorator</code> icon.'},
-  {prop: 'options', type: 'Array/Object', default: '[]', description: 'An object of value/label pairs or an array of strings, or an array of objects that <em>must</em> contain a label and value property.'}
-  ]">
-</reference-table>
+::ReferenceTable
+---
+input: "radio" 
+without: ['prefix-icon', 'suffix-icon'] 
+data: [
+  {
+    prop: "decorator-icon",
+    type: "String",
+    default: "’’",
+    description:
+      "Specifies <a href=&quot;/essentials/icons&quot;>an icon</a> to put in the <code>decoratorIcon</code> section. Shows when the radio is checked. Defaults to the <code>radioDecorator</code> icon.",
+  },
+  {
+    prop: "options",
+    type: "Array/Object",
+    default: "[]",
+    description:
+      "An object of value/label pairs or an array of strings, or an array of objects that <em>must</em> contain a label and value property.",
+  },
+]
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 <div>
   <formkit-input-diagram
@@ -154,9 +172,40 @@ file: "/_content/examples/radio-objects/radio-objects.vue"
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key" :without="['prefixIcon', 'suffixIcon']" :data="[
-  {'section-key': 'decorator', description: 'Responsible for the element immediately following the input element — usually used for styling.'},
-  {'section-key': 'decoratorIcon', description: 'An element containing the decorator icon.'},
-  {'section-key': 'legend', description: 'Responsible for the fieldset’s legend element.'},
-  {'section-key': 'fieldset', description: 'Responsible for the fieldset when multiple options are available.'}, {'section-key': 'options', description: 'Responsible for the wrapper element around all of the option items.'},{'section-key': 'option', description: 'Responsible for the wrapper around each item in the options.'}]">
-</reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key" 
+without: ['prefixIcon', 'suffixIcon'] 
+data: [
+  {
+    "section-key": "decorator",
+    description:
+      "Responsible for the element immediately following the input element — usually used for styling.",
+  },
+  {
+    "section-key": "decoratorIcon",
+    description: "An element containing the decorator icon.",
+  },
+  {
+    "section-key": "legend",
+    description: "Responsible for the fieldset’s legend element.",
+  },
+  {
+    "section-key": "fieldset",
+    description:
+      "Responsible for the fieldset when multiple options are available.",
+  },
+  {
+    "section-key": "options",
+    description:
+      "Responsible for the wrapper element around all of the option items.",
+  },
+  {
+    "section-key": "option",
+    description: "Responsible for the wrapper around each item in the options.",
+  },
+]
+---
+::
+

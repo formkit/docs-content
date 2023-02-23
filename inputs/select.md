@@ -105,12 +105,39 @@ When using the default slot in conjunction with the <code>multiple</code> attrib
 
 ## Props & Attributes
 
-<reference-table input="select" :data="[{prop: 'options', type: 'Array/Object', default: '[]', description: 'An object of value/label pairs or an array of strings, or an array of objects that <em>must</em> contain a label and value property.'},{prop: 'placeholder', type: 'String', default: 'none', description: 'When defined, FormKit injects a non-selectable hidden <code>option</code> tag as the first value of the list to serve as a placeholder.'}, {prop: 'select-icon', type: 'String', default: '’’', description: 'Specifies <a href=&quot;/essentials/icons&quot;>an icon</a> to put in the <code>selectIcon</code> section. Defaults to the <code>down</code> icon.'}]">
-</reference-table>
+::ReferenceTable
+---
+input: "select" 
+data: [
+  {
+    prop: "options",
+    type: "Array/Object",
+    default: "[]",
+    description:
+      "An object of value/label pairs or an array of strings, or an array of objects that <em>must</em> contain a label and value property.",
+  },
+  {
+    prop: "placeholder",
+    type: "String",
+    default: "none",
+    description:
+      "When defined, FormKit injects a non-selectable hidden <code>option</code> tag as the first value of the list to serve as a placeholder.",
+  },
+  {
+    prop: "select-icon",
+    type: "String",
+    default: "’’",
+    description:
+      "Specifies <a href=&quot;/essentials/icons&quot;>an icon</a> to put in the <code>selectIcon</code> section. Defaults to the <code>down</code> icon.",
+  },
+]
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 <div>
   <formkit-input-diagram
@@ -188,8 +215,22 @@ When using the default slot in conjunction with the <code>multiple</code> attrib
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key" :data="[
-  {'section-key': 'option', description: 'Responsible for rendering each option. Context includes an <code>option</code> property with the option being rendered. This object includes <code>label</code> and <code>value</code> properties.'},
-  {'section-key': 'selectIcon', description: 'An element for outputting an icon for opening the select list. Usually a down arrow.'}
-  ]">
-</reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+data: [
+  {
+    "section-key": "option",
+    description:
+      "Responsible for rendering each option. Context includes an <code>option</code> property with the option being rendered. This object includes <code>label</code> and <code>value</code> properties.",
+  },
+  {
+    "section-key": "selectIcon",
+    description:
+      "An element for outputting an icon for opening the select list. Usually a down arrow.",
+  },
+]
+---
+::
+

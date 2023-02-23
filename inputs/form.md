@@ -386,5 +386,28 @@ Forms are technically considered `input` types — so they share many of the uni
 
 ## Sections
 
-<reference-table type="sectionKeys" primary="section-key" :data="[{ 'section-key': 'form', description: 'Responsible for rendering the <code>form</code> tag and listening to submit events.'}, { 'section-key': 'actions', description: 'Responsible for a container at the bottom of the form with form actions like the submit button.'}, { 'section-key': 'submit', description: 'Responsible for a submit button — by default a FormKit input type <code>submit</code>.'}]" :without="['outer', 'wrapper','inner', 'label', 'input','help']">
-</reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key" 
+data: [
+  {
+    "section-key": "form",
+    description:
+      "Responsible for rendering the <code>form</code> tag and listening to submit events.",
+  },
+  {
+    "section-key": "actions",
+    description:
+      "Responsible for a container at the bottom of the form with form actions like the submit button.",
+  },
+  {
+    "section-key": "submit",
+    description:
+      "Responsible for a submit button — by default a FormKit input type <code>submit</code>.",
+  },
+]
+without: ['outer', 'wrapper','inner', 'label', 'input','help']
+---
+::
+

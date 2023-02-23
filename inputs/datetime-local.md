@@ -26,12 +26,17 @@ The internal format of all native datetime-local pickers is <code>YYYY-MM-DDTHH:
 
 The `datetime-local` input has no unique props but can make use of the following universal FormKit props.
 
-<reference-table input="datetime-local" :attrs="['min', 'max', 'step']">
-</reference-table>
+::ReferenceTable
+---
+input: "datetime-local" 
+attrs: ['min', 'max', 'step']
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 <div>
   <formkit-input-diagram
@@ -45,5 +50,10 @@ The `datetime-local` input has no unique props but can make use of the following
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key">
-</reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+---
+::
+

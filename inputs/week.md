@@ -32,12 +32,17 @@ The internal format of all native week pickers is <code>YYYY-Www</code> (for exa
 The `week` input has no unique props but can make use of the following universal
 FormKit props.
 
-<reference-table input="week" :attrs="['min', 'max', 'step']">
-</reference-table>
+::ReferenceTable
+---
+input: "week" 
+attrs: ['min', 'max', 'step']
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 <div>
   <formkit-input-diagram
@@ -51,5 +56,10 @@ FormKit props.
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key">
-</reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+---
+::
+

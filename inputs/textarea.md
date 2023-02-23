@@ -24,12 +24,17 @@ file: "/_content/examples/textarea/textarea.vue"
 The `textarea` input has no unique props but can make use of the following universal
 FormKit props.
 
-<reference-table input="textarea" :attrs="['cols', 'maxlength', 'minlength', 'placeholder', 'rows']">
-</reference-table>
+::ReferenceTable
+---
+input: "textarea" 
+attrs: ['cols', 'maxlength', 'minlength', 'placeholder', 'rows']
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 <div>
   <formkit-input-diagram
@@ -44,5 +49,10 @@ FormKit props.
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key">
-</reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+---
+::
+

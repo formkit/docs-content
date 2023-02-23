@@ -318,7 +318,7 @@ data: [
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 The autocomplete's structure changes depending on a few different scenarios:
 
@@ -739,9 +739,9 @@ Below is the inner options list (`listbox`) structure from the diagrams above:
 
 ::ReferenceTable
 ---
-  type: "sectionKeys"
-  primary: "section-key"
-  data: [
+type: "sectionKeys"
+primary: "section-key"
+data: [
   {
     'section-key': 'selector',
     description: 'The selector section is a button element that opens the dropdown options list.'

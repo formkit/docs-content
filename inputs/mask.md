@@ -335,21 +335,78 @@ By default, the `mask` input displays each token’s placeholder character. You 
 
 ## Props & Attributes
 
-<reference-table input="mask" :data="[
-  {prop: 'allow-incomplete', type: 'boolean', default: 'false', description: 'By default, the value of a mask input is empty until the pattern is complete. This prop allows the input to use incomplete values.'},
-  {prop: 'mask', type: 'string', default: 'none', description: 'The mask to apply. This is a string composed of tokens (like “#”) and literal string values.'},
-  {prop: 'mode', type: 'string', default: 'shift', description: 'Determines how the mask input operates. Options are <code>shift</code>, <code>replace</code> and <code>select</code>.'},
-  {prop: 'prefix', type: 'string', default: 'none', description: 'Characters that will always appear at the beginning of the input.'},
-  {prop: 'reverse', type: 'boolean', default: 'false', description: 'Runs the mask in reverse — from right to left.'},
-  {prop: 'show-mask', type: 'boolean', default: 'true', description: 'Displays a live representation of the pattern’s placeholder as the internal value of the input.'},
-  {prop: 'suffix', type: 'string', default: 'none', description: 'Characters that will always appear at the end of the input.'},
-  {prop: 'tokens', type: 'Object', default: '{}', description: 'Add new tokens or modify existing ones.'},
-  {prop: 'unmask-value', type: 'boolean', default: 'false', description: 'By default, the value of the input is the same as what is displayed (with formatting). The string literals will removed from the value if this prop is set to true.'}]">
-</reference-table>
+::ReferenceTable
+---
+input: "mask" 
+data: [
+  {
+    prop: "allow-incomplete",
+    type: "boolean",
+    default: "false",
+    description:
+      "By default, the value of a mask input is empty until the pattern is complete. This prop allows the input to use incomplete values.",
+  },
+  {
+    prop: "mask",
+    type: "string",
+    default: "none",
+    description:
+      "The mask to apply. This is a string composed of tokens (like “#”) and literal string values.",
+  },
+  {
+    prop: "mode",
+    type: "string",
+    default: "shift",
+    description:
+      "Determines how the mask input operates. Options are <code>shift</code>, <code>replace</code> and <code>select</code>.",
+  },
+  {
+    prop: "prefix",
+    type: "string",
+    default: "none",
+    description:
+      "Characters that will always appear at the beginning of the input.",
+  },
+  {
+    prop: "reverse",
+    type: "boolean",
+    default: "false",
+    description: "Runs the mask in reverse — from right to left.",
+  },
+  {
+    prop: "show-mask",
+    type: "boolean",
+    default: "true",
+    description:
+      "Displays a live representation of the pattern’s placeholder as the internal value of the input.",
+  },
+  {
+    prop: "suffix",
+    type: "string",
+    default: "none",
+    description: "Characters that will always appear at the end of the input.",
+  },
+  {
+    prop: "tokens",
+    type: "Object",
+    default: "{}",
+    description: "Add new tokens or modify existing ones.",
+  },
+  {
+    prop: "unmask-value",
+    type: "boolean",
+    default: "false",
+    description:
+      "By default, the value of the input is the same as what is displayed (with formatting). The string literals will removed from the value if this prop is set to true.",
+  },
+]
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 <div>
   <formkit-input-diagram
@@ -363,5 +420,10 @@ By default, the `mask` input displays each token’s placeholder character. You 
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key">
-</reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+---
+::
+

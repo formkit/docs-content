@@ -82,12 +82,16 @@ You can also disable your own submit button [via schema](https://formkit.link/6e
 
 The `submit` input (along with [`button`](/inputs/button)) is unique in that it does not actively receive input other than a transient click. However, nearly all of the base input props still technically exist on the input.
 
-<reference-table input="button">
-</reference-table>
+::ReferenceTable
+---
+input: button
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 <div>
   <formkit-input-diagram
@@ -151,5 +155,11 @@ The `submit` input (along with [`button`](/inputs/button)) is unique in that it 
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key" :without="['inner']">
-</reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+without: ['inner']
+---
+::
+

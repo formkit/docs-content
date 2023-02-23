@@ -179,13 +179,18 @@ Explicitly set errors are non-blocking, meaning they do not prevent the form fro
 
 FormKit inputs accept both _universal_ props (ones that apply to all FormKit inputs), and _input-specific_ props. The following table is a comprehensive list of props available to all FormKit inputs.
 
-<reference-table></reference-table>
+:ReferenceTable
 
 ## Events
 
 FormKit inputs emit both _universal_ events (ones that are emitted from all inputs), and _input-specific_ events. The following table is a comprehensive list of events emitted by all FormKit inputs.
 
-<reference-table type="events" primary="event"></reference-table>
+::ReferenceTable
+---
+type: "events"
+primary: "event"
+---
+::
 
 <callout type="info" label="Vue events">
   The above are Vue events emitted by <code>@formkit/vue</code>. <code>@formkit/core</code> also emits <a href="/essentials/architecture#core-events">its own events</a> as part of the lifecycle of <a href="/essentials/architecture#node">core nodes</a>.
@@ -201,8 +206,13 @@ Inputs are composed of chunks of HTML called "sections". Each section has a "key
 
 Many section keys are universally available while others are specific to a given input type (you can define your own for custom inputs as well). The following table is a comprehensive list of those that are generally available in all inputs:
 
-<reference-table type="sectionKeys" primary="section-key">
-</reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+---
+::
+
 
 ## Restructure markup
 

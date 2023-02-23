@@ -39,10 +39,29 @@ file: "/_content/examples/list-validity/list-validity.vue"
 
 ## Props & Attributes
 
-<reference-table input="list" :data="[{ prop: 'disabled', type: 'Boolean', default: 'false', description: 'Disables all the inputs in the list.'}]" :without="['help', 'label', 'prefix-icon', 'suffix-icon', 'validation', 'validation-visibility', 'validation-label']">
-</reference-table>
+::ReferenceTable
+---
+input: "list" 
+data: [
+  {
+    prop: "disabled",
+    type: "Boolean",
+    default: "false",
+    description: "Disables all the inputs in the list.",
+  },
+]
+without: ['help', 'label', 'prefix-icon', 'suffix-icon', 'validation', 'validation-visibility', 'validation-label']
+---
+::
+
 
 ## Sections
 
-<reference-table type="sectionKeys" primary="section-key" :without="['outer','prefix', 'suffix', 'prefixIcon', 'suffixIcon', 'label','inner','input','help','messages','message']">
-</reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+without: ['outer','prefix', 'suffix', 'prefixIcon', 'suffixIcon', 'label','inner','input','help','messages','message']
+---
+::
+

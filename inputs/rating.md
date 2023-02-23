@@ -97,18 +97,58 @@ file: "/_content/examples/rating/rating-colors.vue"
 
 ## Props & Attributes
 
-<reference-table input="rating" :data="[
-{prop: 'min', type: 'Number', default: '0', description: 'The minimum number of icons that can be selected.'},
-{prop: 'max', type: 'Number', default: '5', description: 'The maximum number of icons that are rendered.'},
-{prop: 'step', type: 'Number', default: '1', description: 'The step or increment that should be applied to the `rating` icons. Accepted values are between `0.01` and `1`'},
-{prop: 'hover-highlight', type: 'Boolean', default: 'true', description: 'Determines whether to show the selected state of the icon/image when hovered over.'},
-{prop: 'off-color', type: 'String', default: 'undefined', description: 'Sets the color to be applied on the given icons when they have not been selected.'},
-{prop: 'on-color', type: 'String', default: 'undefined', description: 'Sets the color to be applied on the given icons when they have been selected.'}]">
-</reference-table>
+::ReferenceTable
+---
+input: "rating" 
+data: [
+  {
+    prop: "min",
+    type: "Number",
+    default: "0",
+    description: "The minimum number of icons that can be selected.",
+  },
+  {
+    prop: "max",
+    type: "Number",
+    default: "5",
+    description: "The maximum number of icons that are rendered.",
+  },
+  {
+    prop: "step",
+    type: "Number",
+    default: "1",
+    description:
+      "The step or increment that should be applied to the `rating` icons. Accepted values are between `0.01` and `1`",
+  },
+  {
+    prop: "hover-highlight",
+    type: "Boolean",
+    default: "true",
+    description:
+      "Determines whether to show the selected state of the icon/image when hovered over.",
+  },
+  {
+    prop: "off-color",
+    type: "String",
+    default: "undefined",
+    description:
+      "Sets the color to be applied on the given icons when they have not been selected.",
+  },
+  {
+    prop: "on-color",
+    type: "String",
+    default: "undefined",
+    description:
+      "Sets the color to be applied on the given icons when they have been selected.",
+  },
+]
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 <div>
   <formkit-input-diagram
@@ -205,7 +245,11 @@ file: "/_content/examples/rating/rating-colors.vue"
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key" :data="[
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key" 
+data: [
   {
     'section-key': 'itemsWrapper',
     description: 'A wrapper for all of the rating items (both on and off).'
@@ -226,5 +270,7 @@ file: "/_content/examples/rating/rating-colors.vue"
     'section-key': 'onItemWrapper',
     description: 'Immediate parent around each on item.'
   },
-  ]">
-</reference-table>
+]
+---
+::
+

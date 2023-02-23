@@ -29,11 +29,21 @@ Since <code>hidden</code> inputs are not intended for display to end users, Form
 The `hidden` input has no unique props but can make use of the following universal
 FormKit props.
 
-<reference-table :without="['help', 'label', 'errors', 'prefix-icon', 'suffix-icon', ]">
-</reference-table>
+::ReferenceTable
+---
+without: ['help', 'label', 'errors', 'prefix-icon', 'suffix-icon', ]
+---
+::
+
 
 ## Sections
 
 Hidden inputs do not render all of the surrounding markup typical of other inputs. As such, most section keys do not apply.
 
-<reference-table type="sectionKeys" primary="section-key" :without="['outer', 'wrapper', 'label', 'inner', 'help', 'messages', 'message', 'prefix', 'prefixIcon', 'suffix', 'suffixIcon']"></reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+without: ['outer', 'wrapper', 'label', 'inner', 'help', 'messages', 'message', 'prefix', 'prefixIcon', 'suffix', 'suffixIcon']
+---
+::

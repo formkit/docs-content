@@ -23,12 +23,17 @@ file: "/_content/examples/password/password.vue"
 
 The `password` input has no unique props but can make use of the following universal FormKit props.
 
-<reference-table input="password" :attrs="['maxlength', 'minlength', 'placeholder']">
-</reference-table>
+::ReferenceTable
+---
+input: "password" 
+attrs: ['maxlength', 'minlength', 'placeholder']
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 <div>
   <formkit-input-diagram
@@ -42,5 +47,10 @@ The `password` input has no unique props but can make use of the following unive
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key">
-</reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+---
+::
+

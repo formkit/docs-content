@@ -178,41 +178,116 @@ file: [
 
 ## Props & Attributes (multi-step)
 
-<reference-table
-  input="multi-step"
-  :data="[
-    {prop: 'allowIncomplete', type: 'boolean', default: 'true', description: 'When <code>true</code>, allows users to navigate between steps even if current step is invalid.'},
-    {prop: 'tabStyle', type: 'string', default: 'tab', description: 'Used to set a data-attribute for creating tab styles. Default theme ships with support for <code>tab</code> and <code>progress</code> tab styles.'},
-    {prop: 'hideProgressLabels', type: 'boolean', default: 'false', description: 'When true, hides labels for the <code>progress</code> tab style.'},
-    {prop: 'validStepIcon', type: 'string', default: 'check', description: 'Specifies an icon to put in the <code>badge</code> section when a step is valid. When applied to the <code>multi-step</code> the icon will be applied to all child <code>step</code> inputs.'},
-    {prop: 'beforeStepChange', type: 'function', default: 'undefined', description: 'A function to run before the active step is changed. The function is supplied with a context object containing <code>currentStep</code> and <code>targetStep</code> which are both FormKit <code>node</code> context objects. Additionally, <code>delta</code> is supplied as an integer which reflects the distance between <code>currentStep</code> and <code>targetStep</code>. When supplied to the <code>multi-step</code> this function will fire on every <code>step</code> change.'}
-  ]"
-  :without="[
-    'help',
-    'prefix-icon',
-    'suffix-icon',
-  ]">
-</reference-table>
+::ReferenceTable
+---
+input: "multi-step"
+data: [
+  {
+    prop: "allowIncomplete",
+    type: "boolean",
+    default: "true",
+    description:
+      "When <code>true</code>, allows users to navigate between steps even if current step is invalid.",
+  },
+  {
+    prop: "tabStyle",
+    type: "string",
+    default: "tab",
+    description:
+      "Used to set a data-attribute for creating tab styles. Default theme ships with support for <code>tab</code> and <code>progress</code> tab styles.",
+  },
+  {
+    prop: "hideProgressLabels",
+    type: "boolean",
+    default: "false",
+    description:
+      "When true, hides labels for the <code>progress</code> tab style.",
+  },
+  {
+    prop: "validStepIcon",
+    type: "string",
+    default: "check",
+    description:
+      "Specifies an icon to put in the <code>badge</code> section when a step is valid. When applied to the <code>multi-step</code> the icon will be applied to all child <code>step</code> inputs.",
+  },
+  {
+    prop: "beforeStepChange",
+    type: "function",
+    default: "undefined",
+    description:
+      "A function to run before the active step is changed. The function is supplied with a context object containing <code>currentStep</code> and <code>targetStep</code> which are both FormKit <code>node</code> context objects. Additionally, <code>delta</code> is supplied as an integer which reflects the distance between <code>currentStep</code> and <code>targetStep</code>. When supplied to the <code>multi-step</code> this function will fire on every <code>step</code> change.",
+  },
+]
+without: ['help', 'prefix-icon', 'suffix-icon']
+---
+::
+
 
 ## Props & Attributes (step)
 
-<reference-table 
-  input="step" 
-  :data="[
-    {prop: 'label', type: 'string', default: '', description: 'Used to change the tab label of the step. If not custom label is supplied the step\'s <code>name</code> will be used.'},
-    {prop: 'prevLabel', type: 'string', default: 'Previous', description: 'Used to change the label of the default <code>prevAction</code> button.'},
-    {prop: 'nextLabel', type: 'string', default: 'Next', description: 'Used to change the label of the default <code>nextAction</code> button.'},
-    {prop: 'prevAttrs', type: 'object', default: {}, description: 'Used to apply attributes to the default <code>prevAction</code> button input.'},
-    {prop: 'nextAttrs', type: 'object', default: {}, description: 'Used to apply attributes to the default <code>nextAction</code> button input.'},
-    {prop: 'validStepIcon', type: 'string', default: 'check', description: 'Specifies an icon to put in the <code>badge</code> section when the step is valid. When applied to a <code>step</code> the icon will be applied only to the target <code>step</code>.'},
-    {prop: 'beforeStepChange', type: 'function', default: 'undefined', description: 'A function to run before the active step is changed. The function is supplied with a context object containing <code>currentStep</code> and <code>targetStep</code> which are both FormKit <code>node</code> context objects. Additionally, <code>delta</code> is supplied as an integer which reflects the distance between <code>currentStep</code> and <code>targetStep</code>. When supplied to a <code>step</code> this function will fire only when navigating away from the specified <code>step</code>.'}
-  ]"
-  :without="[
-    'help',
-    'prefix-icon',
-    'suffix-icon',
-  ]">
-</reference-table>
+::ReferenceTable
+---
+
+input: step 
+data: [
+  {
+    prop: "label",
+    type: "string",
+    default: "",
+    description:
+      "Used to change the tab label of the step. If not custom label is supplied the step's <code>name</code> will be used.",
+  },
+  {
+    prop: "prevLabel",
+    type: "string",
+    default: "Previous",
+    description:
+      "Used to change the label of the default <code>prevAction</code> button.",
+  },
+  {
+    prop: "nextLabel",
+    type: "string",
+    default: "Next",
+    description:
+      "Used to change the label of the default <code>nextAction</code> button.",
+  },
+  {
+    prop: "prevAttrs",
+    type: "object",
+    default: {},
+    description:
+      "Used to apply attributes to the default <code>prevAction</code> button input.",
+  },
+  {
+    prop: "nextAttrs",
+    type: "object",
+    default: {},
+    description:
+      "Used to apply attributes to the default <code>nextAction</code> button input.",
+  },
+  {
+    prop: "validStepIcon",
+    type: "string",
+    default: "check",
+    description:
+      "Specifies an icon to put in the <code>badge</code> section when the step is valid. When applied to a <code>step</code> the icon will be applied only to the target <code>step</code>.",
+  },
+  {
+    prop: "beforeStepChange",
+    type: "function",
+    default: "undefined",
+    description:
+      "A function to run before the active step is changed. The function is supplied with a context object containing <code>currentStep</code> and <code>targetStep</code> which are both FormKit <code>node</code> context objects. Additionally, <code>delta</code> is supplied as an integer which reflects the distance between <code>currentStep</code> and <code>targetStep</code>. When supplied to a <code>step</code> this function will fire only when navigating away from the specified <code>step</code>.",
+  },
+]
+without: [
+  'help',
+  'prefix-icon',
+  'suffix-icon',
+]
+---
+::
+
 
 ## Sections
 
@@ -289,7 +364,11 @@ file: [
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key" :data="[
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+data: [
   {
     'section-key': 'tabs',
     description: 'A wrapper around all of the tabs.'
@@ -312,7 +391,7 @@ file: [
   },
   {
     'section-key': 'step',
-    description: 'A wrapper around step content from the default slot and the step\'s action buttons. Each step has visibility styling automatically applied depending on if it is the current active step.'
+    description: 'A wrapper around step content from the default slot and the step’s action buttons. Each step has visibility styling automatically applied depending on if it is the current active step.'
   },
   {
     'section-key': 'stepInner',
@@ -330,7 +409,8 @@ file: [
     'section-key': 'stepNext',
     description: 'A wrapper around the action button for navigating to the next step.'
   }
-]" :without="[
+] 
+without: [
   'label',
   'prefix',
   'prefixIcon',
@@ -341,5 +421,6 @@ file: [
   'help',
   'messages',
   'message'
-]">
-</reference-table>
+]
+---
+::

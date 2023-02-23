@@ -113,27 +113,119 @@ The `toggle` input is built atop HTML's [native checkbox input](https://develope
 
 ## Props & Attributes
 
-<reference-table :without="['prefix-icon', 'suffix-icon']" input="rating" :data="[
-{prop: 'alt-label-position', type: 'Boolean', default: 'undefined', description: 'Moves the label above the toggle.'},
-{prop: 'off-value', type: 'any', default: 'false', description: 'The value when the toggle is unchecked.'},
-{prop: 'on-value', type: 'any', default: 'true', description: 'The value when the toggle is checked.'},
-{prop: 'off-value-label', type: 'String', default: 'undefined', description: 'The text of the Value label when the toggle is unchecked.'},
-{prop: 'on-value-label', type: 'String', default: 'undefined', description: 'The text of the Value label when the toggle is checked.'},
-{prop: 'value-label-display', type: 'String', default: 'undefined', description: 'The `on` and `off` value labels will always default to being displayed outside and to the right of the toggle. Other accepted values include `inner` to set the value labels inside of the toggle, and `hidden` which hides the value labels.'},
-{prop: 'value-label-color-off', type: 'String', default: 'undefined', description: 'Used to set the color of the value label when the toggle is unchecked.'},
-{prop: 'value-label-color-on', type: 'String', default: 'undefined', description: 'Used to set the color of the value label when the toggle is checked.'},
-{prop: 'thumb-icon', type: 'String', default: 'undefined', description: 'This prop is used to set the icon that will be placed inside the thumb section.'},
-{prop: 'thumb-color-off', type: 'String', default: 'undefined', description: 'Sets the background color of the thumb section when the toggle is unchecked.'},
-{prop: 'thumb-color-on', type: 'String', default: 'undefined', description: 'Sets the background color of the thumb section when the toggle is checked.'},
-{prop: 'icon-color-off', type: 'String', default: 'undefined', description: 'The color the icon should be set to when `toggle-icon` prop is set and the toggle is unchecked.'},
-{prop: 'icon-color-on', type: 'String', default: 'undefined', description: 'The color the icon should be set to when `toggle-icon` prop is set and the toggle is checked.'},
-{prop: 'track-color-off', type: 'String', default: 'undefined', description: 'Sets the background color of the `track` section when the toggle is unchecked.'},
-{prop: 'track-color-on', type: 'String', default: 'undefined', description: 'Sets the background color of the `track` section when toggle is checked.'}]">
-</reference-table>
+::ReferenceTable
+---
+without: ['prefix-icon', 'suffix-icon'] 
+input: "rating" 
+data: [
+  {
+    prop: "alt-label-position",
+    type: "Boolean",
+    default: "undefined",
+    description: "Moves the label above the toggle.",
+  },
+  {
+    prop: "off-value",
+    type: "any",
+    default: "false",
+    description: "The value when the toggle is unchecked.",
+  },
+  {
+    prop: "on-value",
+    type: "any",
+    default: "true",
+    description: "The value when the toggle is checked.",
+  },
+  {
+    prop: "off-value-label",
+    type: "String",
+    default: "undefined",
+    description: "The text of the Value label when the toggle is unchecked.",
+  },
+  {
+    prop: "on-value-label",
+    type: "String",
+    default: "undefined",
+    description: "The text of the Value label when the toggle is checked.",
+  },
+  {
+    prop: "value-label-display",
+    type: "String",
+    default: "undefined",
+    description:
+      "The `on` and `off` value labels will always default to being displayed outside and to the right of the toggle. Other accepted values include `inner` to set the value labels inside of the toggle, and `hidden` which hides the value labels.",
+  },
+  {
+    prop: "value-label-color-off",
+    type: "String",
+    default: "undefined",
+    description:
+      "Used to set the color of the value label when the toggle is unchecked.",
+  },
+  {
+    prop: "value-label-color-on",
+    type: "String",
+    default: "undefined",
+    description:
+      "Used to set the color of the value label when the toggle is checked.",
+  },
+  {
+    prop: "thumb-icon",
+    type: "String",
+    default: "undefined",
+    description:
+      "This prop is used to set the icon that will be placed inside the thumb section.",
+  },
+  {
+    prop: "thumb-color-off",
+    type: "String",
+    default: "undefined",
+    description:
+      "Sets the background color of the thumb section when the toggle is unchecked.",
+  },
+  {
+    prop: "thumb-color-on",
+    type: "String",
+    default: "undefined",
+    description:
+      "Sets the background color of the thumb section when the toggle is checked.",
+  },
+  {
+    prop: "icon-color-off",
+    type: "String",
+    default: "undefined",
+    description:
+      "The color the icon should be set to when `toggle-icon` prop is set and the toggle is unchecked.",
+  },
+  {
+    prop: "icon-color-on",
+    type: "String",
+    default: "undefined",
+    description:
+      "The color the icon should be set to when `toggle-icon` prop is set and the toggle is checked.",
+  },
+  {
+    prop: "track-color-off",
+    type: "String",
+    default: "undefined",
+    description:
+      "Sets the background color of the `track` section when the toggle is unchecked.",
+  },
+  {
+    prop: "track-color-on",
+    type: "String",
+    default: "undefined",
+    description:
+      "Sets the background color of the `track` section when toggle is checked.",
+  },
+]
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 <div>
   <formkit-input-diagram
@@ -219,7 +311,11 @@ The `toggle` input is built atop HTML's [native checkbox input](https://develope
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key" :data="[
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key" 
+data: [
   {
     'section-key': 'track',
     description: 'The track section is the background of the toggle (the area that the thumb slides on).'
@@ -244,5 +340,7 @@ The `toggle` input is built atop HTML's [native checkbox input](https://develope
     'section-key': 'innerLabel',
     description: 'A label element used when value-label props are provided and value-label-display is set to inner.'
   }
-]">
-</reference-table>
+]
+---
+::
+

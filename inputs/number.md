@@ -24,12 +24,17 @@ file: "/_content/examples/number/number.vue"
 The `number` input has no unique props but can make use of the following universal
 FormKit props and native attributes.
 
-<reference-table :attrs="['min', 'max', 'step']" input="number">
-</reference-table>
+::ReferenceTable
+---
+input: "number"
+attrs: ['min', 'max', 'step']
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 <div>
   <formkit-input-diagram
@@ -45,5 +50,10 @@ FormKit props and native attributes.
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key">
-</reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+---
+::
+

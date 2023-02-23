@@ -24,12 +24,17 @@ file: "/_content/examples/search/search.vue"
 The `search` input has no unique props but can make use of the following universal
 FormKit props.
 
-<reference-table input="search" :attrs="['maxlength', 'minlength', 'placeholder']">
-</reference-table>
+::ReferenceTable
+---
+input: "search"
+attrs: ['maxlength', 'minlength', 'placeholder']
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 <div>
   <formkit-input-diagram
@@ -43,5 +48,10 @@ FormKit props.
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key">
-</reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+---
+::
+

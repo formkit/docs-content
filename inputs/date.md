@@ -27,12 +27,17 @@ The internal format of all native date pickers is <code>YYYY-MM-DD</code>. This 
 The `date` input has no unique props but can make use of the following universal
 FormKit props.
 
-<reference-table input="date" :attrs="['min', 'max', 'step']">
-</reference-table>
+::ReferenceTable
+---
+input: "date" 
+attrs: ['min', 'max', 'step']
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 <div>
   <formkit-input-diagram
@@ -46,5 +51,10 @@ FormKit props.
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key">
-</reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+---
+::
+

@@ -106,22 +106,72 @@ returning errors for both the repeater and one child:
 
 ## Props & Attributes
 
-<reference-table input="rating" :data="[
-  {prop: 'add-label', type: 'string', default: 'null', description: 'Used to change the label of the add button.'},
-  {prop: 'add-attrs', type: 'object', default: {}, description: 'Used to apply attributes to the add button element.'},
-  {prop: 'add-button', type: 'boolean', default: 'true', description: 'Conditional for whether to show the add button.'},
-  {prop: 'up-control', type: 'boolean', default: 'true', description: 'Conditional for whether to show the up control.'},
-  {prop: 'down-control', type: 'boolean', default: 'true', description: 'Conditional for whether to show the down control.'},
-  {prop: 'insert-control', type: 'boolean', default: 'false', description: 'Conditional for whether to show the insert control.'},
-  {prop: 'remove-control', type: 'boolean', default: 'true', description: 'Conditional for whether to show the remove control.'},
-  {prop: 'min', type: 'Number', default: '1', description: 'The minimum number of children.'},
-  {prop: 'max', type: 'Number', default: 'null', description: 'The maximum number of children.'}
-  ]">
-</reference-table>
+::ReferenceTable
+---
+input: "rating" 
+data: [
+  {
+    prop: "add-label",
+    type: "string",
+    default: "null",
+    description: "Used to change the label of the add button.",
+  },
+  {
+    prop: "add-attrs",
+    type: "object",
+    default: {},
+    description: "Used to apply attributes to the add button element.",
+  },
+  {
+    prop: "add-button",
+    type: "boolean",
+    default: "true",
+    description: "Conditional for whether to show the add button.",
+  },
+  {
+    prop: "up-control",
+    type: "boolean",
+    default: "true",
+    description: "Conditional for whether to show the up control.",
+  },
+  {
+    prop: "down-control",
+    type: "boolean",
+    default: "true",
+    description: "Conditional for whether to show the down control.",
+  },
+  {
+    prop: "insert-control",
+    type: "boolean",
+    default: "false",
+    description: "Conditional for whether to show the insert control.",
+  },
+  {
+    prop: "remove-control",
+    type: "boolean",
+    default: "true",
+    description: "Conditional for whether to show the remove control.",
+  },
+  {
+    prop: "min",
+    type: "Number",
+    default: "1",
+    description: "The minimum number of children.",
+  },
+  {
+    prop: "max",
+    type: "Number",
+    default: "null",
+    description: "The maximum number of children.",
+  },
+]
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 <div>
   <formkit-input-diagram
@@ -304,10 +354,14 @@ returning errors for both the repeater and one child:
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key" :data="[
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key" 
+data: [
   {
     'section-key': 'fieldset',
-    description: 'A fieldset element that acts as the repeater\'s wrapper.'
+    description: 'A fieldset element that acts as the repeater’s wrapper.'
   },
   {
     'section-key': 'legend',
@@ -315,7 +369,7 @@ returning errors for both the repeater and one child:
   },
   {
     'section-key': 'items',
-    description: 'A ul element that wraps the repeater\'s items.'
+    description: 'A ul element that wraps the repeater’s items.'
   },
   {
     'section-key': 'item',
@@ -331,7 +385,7 @@ returning errors for both the repeater and one child:
   },
   {
     'section-key': 'controls',
-    description: 'A ul element that wraps the repeater\'s controls.'
+    description: 'A ul element that wraps the repeater’s controls.'
   },
   {
     'section-key': 'controlLabel',
@@ -347,7 +401,7 @@ returning errors for both the repeater and one child:
   },
   {
     'section-key': 'moveUpIcon',
-    description: 'A span element that renders the upControl\'s icon.'
+    description: 'A span element that renders the upControl’s icon.'
   },
   {
     'section-key': 'down',
@@ -359,7 +413,7 @@ returning errors for both the repeater and one child:
   },
   {
     'section-key': 'moveDownIcon',
-    description: 'A span element that renders the downControl\'s icon.'
+    description: 'A span element that renders the downControl’s icon.'
   },
   {
     'section-key': 'insert',
@@ -371,7 +425,7 @@ returning errors for both the repeater and one child:
   },
   {
     'section-key': 'insertIcon',
-    description: 'A span element that renders the insertControl\'s icon.'
+    description: 'A span element that renders the insertControl’s icon.'
   },
   {
     'section-key': 'remove',
@@ -383,7 +437,9 @@ returning errors for both the repeater and one child:
   },
   {
     'section-key': 'removeIcon',
-    description: 'A span element that renders the removeControl\'s icon.'
+    description: 'A span element that renders the removeControl’s icon.'
   },
-]">
-</reference-table>
+]
+---
+::
+

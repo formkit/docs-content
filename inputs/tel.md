@@ -28,12 +28,17 @@ Phone number formats vary <em>greatly</em> around the world (some localities eve
 The `tel` input has no unique props but can make use of the following universal
 FormKit props.
 
-<reference-table input="tel" :attrs="['maxlength', 'minlength', 'placeholder']">
-</reference-table>
+::ReferenceTable
+---
+input: "tel" 
+attrs: ['maxlength', 'minlength', 'placeholder']
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
 <div>
   <formkit-input-diagram
@@ -47,5 +52,10 @@ FormKit props.
   </formkit-input-diagram>
 </div>
 
-<reference-table type="sectionKeys" primary="section-key">
-</reference-table>
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+---
+::
+
