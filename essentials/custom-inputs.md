@@ -7,22 +7,32 @@ description: Create your own inputs that automatically inherit FormKit’s value
 
 :PageToc
 
-<cta label="Building your first custom input?" type="ghost" href="/guides/create-a-custom-input" button="Read the guide"></cta>
+<cta
+label: "Building your first custom input?" type="ghost" href="/guides/create-a-custom-input" button="Read the guide"
+---</cta>
 
 FormKit includes [many inputs](/inputs) out of the box, but you can also define your own inputs that automatically inherit FormKit’s value-added features like validation, error messages, data modeling, grouping, labels, help text and others.
 
-<callout type="info" label="Modify or restructure an existing input">
+::Callout
+---
+type: "info"
+label: "Modify or restructure an existing input"
+---
 If your use case requires modifications of an existing input, such as moving sections, changing or restructuring HTML elements, etc., consider using FormKit's <a href="/guides/export-and-restructure-inputs">input export feature</a>.
-</callout>
+::
 
 Inputs are comprised of two essential parts:
 
 1. [An input definition](#input-definition).
 2. The input’s code: [a schema](#schema-inputs) or a [component](#component-inputs).
 
-<callout type="warning" label="Start with the guide">
+::Callout
+---
+type: "warning"
+label: "Start with the guide"
+---
 If you are just getting started with custom inputs, consider reading the “<a href="/guides/create-a-custom-input">Create a custom input</a>” guide. The content on this page is intended to explain the intricacies of custom inputs for advanced use cases like authoring a plugin or library and is not required for many common use cases.
-</callout>
+::
 
 ## Registering inputs
 
@@ -123,9 +133,13 @@ Let’s refactor our hello world input to use its own plugin:
 ---
 ::
 
-<callout type="tip" label="Plugin inheritance">
+::Callout
+---
+type: "tip"
+label: "Plugin inheritance"
+---
 Notice in the above example our plugin was defined on a parent of the element that actually used it! This is thanks to <a href="/essentials/architecture#plugins">plugin inheritance</a> — a core feature of FormKit plugins.
-</callout>
+::
 
 ## Schema vs component
 
@@ -136,9 +150,13 @@ Your input can be written using [FormKit’s schema](/essentials/schema) or a ge
 | Vue    | <ul><li>Learning curve (you likely know how to write a Vue component).</li><li>More mature dev tooling.</li><li>Slightly faster initial render.</li></ul>                                                                                                                                                                                     | <ul><li>Cannot use the <a href="/essentials/inputs#sections-schema"><code>:sections-schema</code> prop</a> to modify structure.</li><li>Plugins cannot modify schema to change rendered output.</li><li>Framework specific (Vue only).</li><li>Easy to write inputs that don’t play well with the FormKit ecosystem.</li></ul> |
 | Schema | <ul><li>Structure can be modified via the <code>:sections-schema</code> prop (if you allow it).</li><li>Plugins can modify/change the rendered output.</li><li>Framework agnostic (future portability to when FormKit supports new frameworks).</li><li>Ecosystem compatibility (great for publishing your own open source inputs).</li></ul> | <ul><li>Learning curve (need to <a href="/essentials/schema">understand schemas</a>).</li><li>Slightly slower initial render.</li><li>Less mature dev tooling.</li></ul>                                                                                                                                                       |
 
-<callout type="warning" label="Components in schemas">
+::Callout
+---
+type: "warning"
+label: "Components in schemas"
+---
 Even if you prefer to write a custom input using a standard Vue Component, you can still use a schema in your input definition. Please read the <a href="#using-createinput-to-extend-the-base-schema">Using <code>createInput</code> to extend the base schema</a> section.
-</callout>
+::
 
 The primary takeaway is if you are planning to use a custom input on multiple projects — then consider using the schema-based approach. If your custom input will only be used on a single project and flexibility is not a concern, use a Vue component.
 
@@ -276,9 +294,13 @@ The equivalent in a Vue template:
 </template>
 ```
 
-<callout type="warning" label="_value vs value">
+::Callout
+---
+type: "warning"
+label: "_value vs value"
+---
 The only time the uncommitted input <code>_value</code> should be used is for displaying the value on the input itself — in all other locations, it is important to use the committed <code>value</code>.
-</callout>
+::
 
 ## Adding props
 
@@ -332,9 +354,13 @@ This is the simplest possible input and does not leverage any of FormKit’s bui
 ---
 ::
 
-<callout type="tip" label="DOM Input">
+::Callout
+---
+type: "tip"
+label: "DOM Input"
+---
 In the above example the <code>$handlers.DOMInput</code> is a built-in convenience function for <code>(event) => node.input(event.target.value)</code>.
-</callout>
+::
 
 ### Autocomplete input
 

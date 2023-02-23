@@ -19,13 +19,21 @@ select a week.
 ---
 ::
 
-<callout type="danger" label="Compatibility warning">
+::Callout
+---
+type: "danger"
+label: "Compatibility warning"
+---
 Week inputs are not currently supported in FireFox or Safari.
-</callout>
+::
 
-<callout type="warning" label="Formatting">
+::Callout
+---
+type: "warning"
+label: "Formatting"
+---
 The internal format of all native week pickers is <code>YYYY-Www</code> (for example: <code>2017-W06</code>). This is true even though the format of the week displayed to the user may be different.</code>.
-</callout>
+::
 
 ## Props & Attributes
 

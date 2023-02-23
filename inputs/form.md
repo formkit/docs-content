@@ -62,9 +62,13 @@ You can populate an entire form by providing a `value` prop to the `<FormKit typ
 ---
 ::
 
-<callout type="danger" label="v-model and reactive objects">
+::Callout
+---
+type: "danger"
+label: "v-model and reactive objects"
+---
 Be sure to either <code>v-model</code> a <code>ref</code> or a property of a <code>reactive</code> object. Do not <code>v-model</code> the reactive object itself as it <a href="https://github.com/formkit/formkit/issues/58#issuecomment-1029250016">leads to unexpected behavior</a>.
-</callout>
+::
 
 ## Submitting
 
@@ -77,9 +81,13 @@ Forms are usually submitted through user actions like clicking a submit button o
 5. If all inputs are valid it fires the `@submit` event.
 6. If the `@submit` handler returns a `Promise`, sets the form’s state to `loading` until it resolves.
 
-<callout type="warning" label="Avoid v-model for collecting and submitting form data">
+::Callout
+---
+type: "warning"
+label: "Avoid v-model for collecting and submitting form data"
+---
 Using <code>v-model</code> data in your submit handler can lead to unintended form mutations. FormKit <em>automatically</em> collects form data for you, so use the unbound copy of your form’s data that is passed to your submission handler instead. 
-</callout>
+::
 
 ### Submitting via XHR/Fetch request
 
@@ -149,9 +157,13 @@ In addition to not firing the submit event, a message is displayed above the sub
 ---
 ::
 
-<callout type="tip" label="Global customization">
+::Callout
+---
+type: "tip"
+label: "Global customization"
+---
 If you want to change the incomplete message across all forms on your project, you can modify the i18n locale message for <code>ui.incomplete</code>.
-</callout>
+::
 
 ### Submit invalid event
 
@@ -177,9 +189,13 @@ The validity of all inputs within a form is tracked automatically in the [contex
 ---
 ::
 
-<callout type="tip" label="Getting the context object">
+::Callout
+---
+type: "tip"
+label: "Getting the context object"
+---
 In the above example we extract the context object from the <code>#default</code> slot, but there are other ways as well. The context object is available on each input’s core node on the <code>node.context</code> property, and you can fetch an input’s node <a href="/essentials/architecture#getting-a-components-node">a number of ways</a>.
-</callout>
+::
 
 ## Disabling
 
@@ -192,9 +208,13 @@ To disable all the inputs in a given form, including the submit button, you can 
 ---
 ::
 
-<callout type="tip" label="Disabled automatically">
+::Callout
+---
+type: "tip"
+label: "Disabled automatically"
+---
 When using an async <code>@submit</code> handler FormKit will automatically disable the form (and set the state to <code>loading</code>) while the submit handler is pending.
-</callout>
+::
 
 ## Resetting
 
@@ -207,9 +227,13 @@ You can reset your form (or any input) back to it’s initial state by calling `
 ---
 ::
 
-<callout type="tip" label="Composition API">
+::Callout
+---
+type: "tip"
+label: "Composition API"
+---
 When using the composition api you can directly access the reset function by importing it from core: <code>import { reset } from '@formkit/core'</code>.
-</callout>
+::
 
 ### Initial values
 
@@ -287,10 +311,14 @@ If you prefer to preserve errors by default, you can change the default behavior
 ---
 ::
 
-<callout type="input" label="Composition API">
+::Callout
+---
+type: "input"
+label: "Composition API"
+---
 When using Vue 3’s composition API, you can access <code>setErrors</code> and <code>clearErrors</code> by importing them directly from <code>@formkit/vue</code>.<br><br>
 <code>import { setErrors, clearErrors } from '@formkit/vue'</code>
-</callout>
+::
 
 ### Input errors
 

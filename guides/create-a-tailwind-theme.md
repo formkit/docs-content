@@ -9,13 +9,21 @@ description: Follow this guide to learn how to leverage Tailwind CSS with your F
 
 In this guide, we’ll walk through the process of creating a custom Tailwind theme for your forms and inputs. Tailwind has risen to the forefront of CSS utility class libraries, and FormKit was authored with its capabilities in mind. Let’s get started!
 
-<callout type="tip" label="SFC Build tool">
+::Callout
+---
+type: "tip"
+label: "SFC Build tool"
+---
 This guide assumes you are using a standard Vue 3 build tool like Vite, Nuxt 3, or Vue CLI that will allow you to import <code>.vue</code> single file components.
-</callout>
+::
 
-<callout type="warning" label="Don't include the default theme">
+::Callout
+---
+type: "warning"
+label: "Don't include the default theme"
+---
 If you plan to use Tailwind CSS for your form styles then please ensure that your project is <strong>not</strong> importing the base <code>genesis</code> theme that ships with FormKit — otherwise you will get weird styling results.
-</callout>
+::
 
 ## Inline usage
 
@@ -94,9 +102,13 @@ createApp(App)
   .mount('#app')
 ```
 
-<callout type="warning" label="Path needed if using formkit.config.js">
+::Callout
+---
+type: "warning"
+label: "Path needed if using formkit.config.js"
+---
 If you are using a single file for configuration, like <code>formkit.config.js</code> within Nuxt, instead of <code>app.js</code>, you will need to add the path to that file to your <code>tailwind.config.js</code> inside the <code>content</code> property:
-</callout>
+::
 
 ```js
 // tailwind.config.js for Nuxt users
@@ -138,10 +150,14 @@ Here is a `text` input with Tailwind classes applied:
 
 The `formKitTailwind` plugin from `@formkit/themes` provides a number of variants you can use in your class lists to dynamically respond to input and form state.
 
-<callout type="tip" label="Group variants">
+::Callout
+---
+type: "tip"
+label: "Group variants"
+---
 If you're using variants in a nested case, the variants may be linked to its parent instead of itself.
 To fix that, add to the outer section <code>group/{modifier}</code>, and use the variant with the same modifier <code>formkit-invalid/{modifier}:</code>
-</callout>
+::
 
 The currently provided variants are:
 
@@ -187,9 +203,13 @@ Now we're cooking! To create a comprehensive theme all we need to do is define c
 
 There are some improvements we can make though. The `generateClasses` helper function from `@formkit/themes` allows for a special `global` key that will apply to _all_ inputs. This is helpful for `sectionKeys` such as `help` and `messages` that are usually styled the same across all input types in a project.
 
-<callout type="tip" label="Global and Family Class Lists">
+::Callout
+---
+type: "tip"
+label: "Global and Family Class Lists"
+---
 By using the <code>global</code> and <code>family:</code> keys in your theme object you can apply a class lists to <em>all</em> inputs that have a given <code>sectionKey</code> either globally or within a family of inputs. This is useful for things like labels or help text when you want to share styling across a wide variety of inputs.
-</callout>
+::
 
 Let's create a "Kitchen Sink" of input types, each having their defined class lists applied. Here is the theme in isolation for better readability:
 
@@ -380,12 +400,16 @@ export default {
 
 And here is our Tailwind theme when it is applied to all available FormKit inputs:
 
-<callout type="tip" label="FormKit icons">
+::Callout
+---
+type: "tip"
+label: "FormKit icons"
+---
 FormKit inputs ship with their own <code>decorator</code> icons that can be used in place of browser-default styles that typcially ship with checkboxes, radios, select inputs, and more.
 
 If you want to use these types of icons in your Tailwind theme be sure to import them from <code>@formkit/icons</code> and include them in your FormKit config.
 
-</callout>
+::
 
 ::Example
 ---
@@ -449,4 +473,6 @@ Here are some ways to take the above guide even further:
 
 Hopefully, this guide helped you understand how classes are applied to FormKit inputs and how you can leverage the `formKitTailwind` plugin from the `@formkit/themes` package to make use of Tailwind in your FormKit projects. If you want to dive in deeper, try reading about the [core internals of FormKit](/essentials/architecture) and [the FormKit schema](/essentials/schema)!
 
-<cta label="Want more? Start by reading about FormKit core." button="Dig deeper" href="/essentials/architecture"></cta>
+<cta
+label: "Want more? Start by reading about FormKit core." button="Dig deeper" href="/essentials/architecture"
+---</cta>

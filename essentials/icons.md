@@ -44,11 +44,15 @@ For most users **no installation is required** to use icons (although we recomme
 for best performarnce). Icon support is provided via a 1st-party FormKit plugin called `createThemePlugin()` — This plugin
 is enabled by default if you are using FormKit's `defaultConfig()`.
 
-<callout type="note" label="Icon functionality is installed by default in FormKit">
+::Callout
+---
+type: "note"
+label: "Icon functionality is installed by default in FormKit"
+---
 The FormKit <code>createThemePlugin()</code> is enabled by default in the FormKit’s <code>defaultConfig()</code>. If your
 project is using <code>defaultConfig()</code> (this is usually the case), then getting started is as simple as using the
 <code>${section}-icon</code> props available on <code>FormKit</code> components — no additional setup required.
-</callout>
+::
 
 When using the `defaultConfig` that ships with FormKit there are several top-level configuration options you can use to
 customize your experience. See the `createThemePlugin` docs in the next section for expanded explanations of each.
@@ -144,10 +148,14 @@ createApp(App).use(plugin, defaultConfig({
 }).mount('#app')
 ```
 
-<callout type="note" label="Performance">
+::Callout
+---
+type: "note"
+label: "Performance"
+---
 FormKit automatically loads missing icons from its icon package via CDN. This is great for quickly getting up
 and running, but we recommend registering icons you know you will end up using into the <code>iconRegistry</code> for best performance.
-</callout>
+::
 
 ## Outputting icons
 
@@ -212,12 +220,14 @@ If you want to use a 3rd-party icon set in your FormKit project you can supply a
 (either globally, at the node config level, or as a component prop) which is responsible for retrieving icons that do not
 already exist in the `iconRegistry`.
 
-<callout type="note" label="Loaders are for fallbacks">
-
+::Callout
+---
+type: "note"
+label: "Loaders are for fallbacks"
+---
 The `iconLoaderUrl` and `iconLoader` functions are _only meant to handle missing icons_! For the best possible performance
 you can (and should) load any SVG icons you know you will be using into the `iconRegistry` by using the `icons` configuration prop in your FormKit config.
-
-</callout>
+::
 
 Sometimes — in cases such as a form builder or CMS — you don't know in advance which icons you’ll need. That's where remote loading of icons shines.
 

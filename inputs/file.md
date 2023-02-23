@@ -34,9 +34,13 @@ This structure can be used to pre-populate a file input with previously uploaded
   file: "/_content/examples/file-populate/file-populate.vue"
 ---
 ::
-<callout type="tip" label="Display only">
+::Callout
+---
+type: "tip"
+label: "Display only"
+---
 Pre-populating an input with file names is for display purposes only. It’s an optional feature that provides a consistent interface to convey that a file was <em>previously</em> uploaded — however — a <a href="https://developer.mozilla.org/en-US/docs/Web/API/FileList">FileList</a> is not attached to the actual <code>&lt;input&gt;</code> tag for upload.
-</callout>
+::
 
 ### Uploading files
 

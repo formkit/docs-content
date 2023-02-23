@@ -114,9 +114,13 @@ file: "/_content/examples/autocomplete-pro/autocomplete-selection-slot.vue"
 
 The autocomplete supports multi-select and is available for either the `text-input` or `option` selection appearance. To enable multi-select, simply set the `multiple` prop.
 
-<callout type="warning" label="Using the multiple prop">
+::Callout
+---
+type: "warning"
+label: "Using the multiple prop"
+---
 When setting the <code>multiple</code> prop, the autocomplete's value must always be an array.
-</callout>
+::
 
 ### Text-input multi-select
 

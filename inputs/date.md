@@ -18,9 +18,13 @@ The `date` input uses HTML's [native date picker](https://developer.mozilla.org/
 ---
 ::
 
-<callout type="warning" label="Formatting">
+::Callout
+---
+type: "warning"
+label: "Formatting"
+---
 The internal format of all native date pickers is <code>YYYY-MM-DD</code>. This is true even though the format of the date displayed to the user may be different. For example U.S. based browsers display date format as <code>MM/DD/YYYY</code>.
-</callout>
+::
 
 ## Props & Attributes
 

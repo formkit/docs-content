@@ -64,9 +64,12 @@ prop.
 ---
 ::
 
-<callout type="warning">
+::Callout
+---
+type: "warning"
+---
 The <code>value</code> prop should only be used for setting the <em>initial</em> value of an input. It will not react to changes after the component has been created.
-</callout>
+::
 
 ### Using `v-model`
 
@@ -93,9 +96,12 @@ object](/essentials/architecture#node), and using the `node.input()` method is t
 ---
 ::
 
-<callout type="tip">
+::Callout
+---
+type: "tip"
+---
 Calls to <code>node.input()</code> are debounced, and thus asynchronous (use the <code>delay</code> prop to change the length of the debounce). You can <code>await node.input(val)</code> to determine when the input has settled.
-</callout>
+::
 
 ### Using a parent
 
@@ -155,9 +161,13 @@ To illustrate this, let's get the `group`'s `value` from the `#default` slot pro
 ::
 
 
-<callout type="info" label="Group & List delay">
+::Callout
+---
+type: "info"
+label: "Group & List delay"
+---
 The delay prop’s default is <code>20</code> milliseconds. However, <code>group</code> and <code>list</code> inputs use <code>0</code> milliseconds by default to prevent the debounce delay from “building up” at each level of depth.
-</callout>
+::
 
 ## Explicit errors
 
@@ -171,9 +181,13 @@ Validation errors are not the only way to set errors on an input. You can also e
 ::
 
 
-<callout type="info" label="Non blocking">
+::Callout
+---
+type: "info"
+label: "Non blocking"
+---
 Explicitly set errors are non-blocking, meaning they do not prevent the form from submitting the way validation errors do. You can read more about error handling on the <a href="/inputs/form#error-handling">form documentation</a>.
-</callout>
+::
 
 ## Props & attributes
 
@@ -192,9 +206,13 @@ primary: "event"
 ---
 ::
 
-<callout type="info" label="Vue events">
+::Callout
+---
+type: "info"
+label: "Vue events"
+---
   The above are Vue events emitted by <code>@formkit/vue</code>. <code>@formkit/core</code> also emits <a href="/essentials/architecture#core-events">its own events</a> as part of the lifecycle of <a href="/essentials/architecture#node">core nodes</a>.
-</callout>
+::
 
 ## Sections
 
@@ -218,7 +236,9 @@ primary: "section-key"
 
 At times you may find it necessary to restructure the HTML inside a FormKit input, such as adding, editing, moving, or removing sections. This can be done by exporting the input (using the CLI tool), making the desired changes, and then using the modified input in your project. Read the [guide on exporting inputs](/guides/export-and-restructure-inputs) to learn how.
 
-<cta href="/guides/export-and-restructure-inputs" label="Learn to restructure your inputs" button="Export inputs docs"></cta>
+<cta href="/guides/export-and-restructure-inputs"
+label: "Learn to restructure your inputs" button="Export inputs docs"
+---</cta>
 
 ## Slots
 
@@ -234,9 +254,13 @@ For example, if we wanted to use a slot to define the label of an input, we coul
 ::
 
 
-<callout type="warning" label="Consider section schema">
+::Callout
+---
+type: "warning"
+label: "Consider section schema"
+---
 A disadvantage of using slots is you often need to re-create unrelated features to make the change you desire. For example, using slots would require you to re-implement any classes applied to those sections (which can be done by using <code>context.classes.sectionName</code>).<br><br>To help address this shortcoming, FormKit is also able to <a href="#sections-schema">selectively override/extend the underlying schema</a> of each section allowing complex structural modification often with no loss of functionality.
-</callout>
+::
 
 ## Sections schema
 
@@ -277,4 +301,6 @@ Section schemas can also change the content being output using advanced schema l
 ---
 ::
 
-<cta label="Learn more about how schemas work" href="/essentials/schema" button="Gimme more schema">
+<cta
+label: "Learn more about how schemas work" href="/essentials/schema" button="Gimme more schema"
+---

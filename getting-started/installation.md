@@ -11,9 +11,13 @@ description: Get up and running with FormKit in your project.
 
 The simplest way to get a new project started with FormKit is by using FormKit CLI's `create-app`. Alternatively, if you already have a project, you can manually install [with Vue](#with-vue), [with Nuxt](#with-nuxt) or [with Astro](#with-astro).
 
-<callout type="info" label="Try it out">
+::Callout
+---
+type: "info"
+label: "Try it out"
+---
 You can also try out all FormKit features using our <a href="/playground">playground</a>.
-</callout>
+::
 
 ### Prerequisites
 
@@ -62,13 +66,21 @@ Most new projects use a build tool like Vite, Snowpack, or webpack. This makes i
 npm install @formkit/vue
 ```
 
-<callout type="tip" label="next">
+::Callout
+---
+type: "tip"
+label: "next"
+---
 You can install the upcoming version of FormKit (unstable) anytime by opting to installing the "next" version tag: <code>npm install @formkit/vue@next</code>
-</callout>
+::
 
-<callout type="warning" label="Vue 2">
+::Callout
+---
+type: "warning"
+label: "Vue 2"
+---
 FormKit only supports Vue 3. If you're required to use Vue 2 on a project, consider using the spiritual ancestor of FormKit — <a href="https://vueformulate.com" target="_blank">Vue Formulate</a>.
-</callout>
+::
 
 The `@formkit/vue` package ships with a Vue plugin and a default configuration for easy setup:
 
@@ -99,9 +111,13 @@ Using FormKit with Nuxt requires minimal setup. First include the Nuxt module as
 npm install @formkit/nuxt
 ```
 
-<callout type="warning" label="Nuxt 2">
+::Callout
+---
+type: "warning"
+label: "Nuxt 2"
+---
 FormKit only supports Nuxt 3. If you're required to use Nuxt 2 on a project, consider using the spiritual ancestor of FormKit — <a href="https://vueformulate.com" target="_blank">Vue Formulate</a> — which also ships with its own Nuxt module.
-</callout>
+::
 
 Then in your `nuxt.config` file add the module to your modules list:
 
@@ -148,9 +164,13 @@ export default (app: App) => {
 }
 ```
 
-<callout type="warning" label="Vue Components">
+::Callout
+---
+type: "warning"
+label: "Vue Components"
+---
 Astro does not let you use <code>FormKit</code> directly inside Astro files, so you should create a wrapper around your forms.
-</callout>
+::
 
 Now you can add FormKit to your Astro Vue components, so that you can create a component inside the components folder:
 
@@ -175,9 +195,13 @@ Now you can add FormKit to your Astro Vue components, so that you can create a c
 
 After that, you just need to import and use it inside your Astro files:
 
-<callout type="warning" label="Client Hydration">
+::Callout
+---
+type: "warning"
+label: "Client Hydration"
+---
 FormKit works best with client hydration enabled, so make sure to use `client:visible` or `client:load`.
-</callout>
+::
 
 ```js
 // src/pages/index.astro
@@ -194,9 +218,13 @@ That's it! You're now ready to use the `<FormKit>` component in your Astro appli
 
 If you would like to supply your own configuration, you can either extend `defaultConfig` by passing a [configuration object]() to it, or replace with your own configuration object, which allows for improved tree-shaking (only include the rules and languages you want to actually use) and more fine-grained control:
 
-<callout type="info" label="Hierarchical configuration">
+::Callout
+---
+type: "info"
+label: "Hierarchical configuration"
+---
 FormKit uses a unique hierarchical configuration system that is well suited for forms, meaning that all configurations defined globally are available to all inputs.
-</callout>
+::
 
 ```js
 // formkit.config.js
@@ -274,9 +302,13 @@ The default FormKit theme (called "genesis") can be added via CDN or by installi
 
 To load `genesis` via CDN, supply it to the `theme` property of your `defaultConfig`:
 
-<callout type="warning" label="Nuxt Config">
+::Callout
+---
+type: "warning"
+label: "Nuxt Config"
+---
 If you're using nuxt your configuration would be inside of <code>formkit.config.ts</code>
-</callout>
+::
 
 ```js
 ...
@@ -301,9 +333,13 @@ import '@formkit/themes/genesis'
 
 ### For Tailwind
 
-<callout type="danger" label="Issue in Beta.14">
+::Callout
+---
+type: "danger"
+label: "Issue in Beta.14"
+---
 There is an issue affecting the <code>1.0.0-beta.14</code> version of <code>@formkit/themes</code> which will make it impossible to import <code>genesis</code>. Please install <code>@formkit/themes@next</code> in your project to bypass this issue until <code>1.0.0-beta.15</code> is released. You can follow the issue discussion <a href="https://github.com/formkit/formkit/issues/560" target="_blank">on Github.</a>
-</callout>
+::
 
 FormKit ships with a Tailwind version of the Genesis theme. To use this pre-made Tailwind theme in your project import it from `@formkit/themes/dist/tailwindcss/genesis` and add it to your `formkit.config.js`. You'll also want to include the neccessary `genesisIcons` import from `@formkit/icons`.
 
@@ -376,9 +412,13 @@ const proPlugin = createProPlugin('fk-00000000000', {
 
 Lastly, add the plugin to your FormKit config:
 
-<callout type="warning" label="Nuxt Config">
+::Callout
+---
+type: "warning"
+label: "Nuxt Config"
+---
 If you're using nuxt your configuration would be inside of <code>formkit.config.ts</code>
-</callout>
+::
 
 ```js
 // main.js or formkit.config.ts
@@ -400,4 +440,6 @@ import '@formkit/pro/genesis'
 
 That's it! now your pro inputs should be beautifully styled.
 
-<cta label="Creating your first form with FormKit" href="/getting-started/your-first-form" button="Next step"></cta>
+<cta
+label: "Creating your first form with FormKit" href="/getting-started/your-first-form" button="Next step"
+---</cta>

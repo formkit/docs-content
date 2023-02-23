@@ -19,9 +19,13 @@ file: "/_content/examples/time/time.vue"
 ::
 
 
-<callout type="warning" label="Formatting">
+::Callout
+---
+type: "warning"
+label: "Formatting"
+---
 The internal format of all native time pickers is <code>HH:MM</code>. This is true even though the format of the time displayed to the user may be 12 hour or 24 hour.
-</callout>
+::
 
 ## Props & Attributes
 

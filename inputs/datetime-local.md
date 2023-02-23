@@ -18,9 +18,13 @@ The `datetime-local` input uses HTML's [native datetime-local picker](https://de
 ---
 ::
 
-<callout type="warning" label="Formatting">
+::Callout
+---
+type: "warning"
+label: "Formatting"
+---
 The internal format of all native datetime-local pickers is <code>YYYY-MM-DDTHH:MM</code>. This is true even though the format of the datetime-local displayed to the user may be different. For example U.S. based browsers display datetime-local format as <code>MM/DD/YYYY, HH:MM AM/PM</code>.
-</callout>
+::
 
 ## Props & Attributes
 

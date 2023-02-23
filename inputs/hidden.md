@@ -20,9 +20,12 @@ tabs: "html,render"
 ::
 
 
-<callout type="warning">
+::Callout
+---
+type: "warning"
+---
 Since <code>hidden</code> inputs are not intended for display to end users, FormKit does not render common user-facing features such as the <code>label</code>, <code>help text</code> , or <code>messages</code>.<br><br>Validation rules can still be applied to a hidden input that will prevent a form from submitting, but please note that the errors will not be displayed on this hidden input.
-</callout>
+::
 
 ## Props & Attributes
 

@@ -59,9 +59,13 @@ HTML elements are defined using the `$el` property. You can use `$el` to render 
 ---
 ::
 
-<callout type="tip" name: "The style attribute">
+::Callout
+---
+type: "tip" 
+name: "The style attribute"
+---
 Notice in the above example that the <code>style</code> attribute is unique in that it should be defined as an object of style to value pairs rather than a string.
-</callout>
+::
 
 ## Components ($cmp)
 
@@ -76,9 +80,13 @@ into `FormKitSchema` with the `library` prop:
 ---
 ::
 
-<callout type="warning" label="Components as props">
+::Callout
+---
+type: "warning"
+label: "Components as props"
+---
 In order to pass concrete components via the <code>library</code> prop, it's best to wrap your library with <a href="https://vuejs.org/api/reactivity-advanced.html#markraw">Vue’s <code>markRaw</code> signature</a>.
-</callout>
+::
 
 ## References
 
@@ -94,9 +102,13 @@ To reference a value from the data object, you simply use a dollar sign `$` foll
 ---
 ::
 
-<callout type="warning" label="Important note">
+::Callout
+---
+type: "warning"
+label: "Important note"
+---
 Notice in the above example that we used an array to concatenate "Hello" and "$location". We did this because data references and logical expressions in the schema must always begin with a dollar sign <code>$</code> — otherwise they are treated as unparsed string literals.
-</callout>
+::
 
 ### Referencing functions
 
@@ -122,9 +134,13 @@ Just like JavaScript — you can access properties of a deeply nested object usi
 ---
 ::
 
-<callout type="info" label="Reserved words">
+::Callout
+---
+type: "info"
+label: "Reserved words"
+---
 Schema references can have any structure or properties, but at the root of the data reference object there are 2 reserved words: <code>$slots</code> and <code>$get</code>.
-</callout>
+::
 
 ## Expressions
 
@@ -138,9 +154,13 @@ Schemas also support logic in the form of boolean logic, comparison, and arithme
 ---
 ::
 
-<callout type="tip" label="Labeling expressions">
+::Callout
+---
+type: "tip"
+label: "Labeling expressions"
+---
 Expressions must always begin with a <code>$</code>. If the first element of an expression is a data reference (ex: <code>$count + 2</code>), then it already begins with a <code>$</code> and no further labeling is required. However, often the first character of an expression is not a dollar sign — these expressions need to be "labeled" with <code>$:</code> — for example <code>$: ($count * 3) - 7</code>.
-</callout>
+::
 
 Although it looks very much like JavaScript — *schema expressions are not JavaScript*. They are better thought of as a templating language. Expressions are compiled down to functional JavaScript at `setup` but the syntax is not 1-1 compatible with JavaScript. This improves performance and provides a critical layer of security as only explicitly exposed data and functionality can be executed.
 
@@ -223,9 +243,13 @@ Both `$el` and `$cmp` schema nodes support looping. The loop syntax is similar t
 ---
 ::
 
-<callout type="tip" label="Casting">
+::Callout
+---
+type: "tip"
+label: "Casting"
+---
 Sometimes schema expressions need to cast a string to a number. For example, keys are always string values during an iteration, so in the above example it was necessary to cast <code>$key</code> to an integer before adding it to <code>1</code>. To perform this cast, we simply multiplied by 1: <code>$key * 1</code> before performing our addition.
-</callout>
+::
 
 ## Slots
 

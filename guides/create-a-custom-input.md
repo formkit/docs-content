@@ -9,9 +9,13 @@ description: Follow this guide to learn how to create, register, and use a custo
 
 In this guide, we’ll walk through the process of creating, registering, and using a custom input. Specifically, we’re going create a "one-time password" input ("OTP" for short). OTPs are commonly used for two-factor authentication when a user is required to type in a code sent via SMS or authenticator app. Let’s get started!
 
-<callout type="tip" label="SFC Build tool">
+::Callout
+---
+type: "tip"
+label: "SFC Build tool"
+---
 This guide assumes you are using a standard Vue 3 build tool like Vite, Nuxt 3, or Vue CLI that will allow you to import <code>.vue</code> single file components.
-</callout>
+::
 
 ## Creating a component
 
@@ -110,9 +114,13 @@ OK — we have multiple inputs! Our first requirement is complete:
 
 - ~Users enter a series of digits, and each digit has its own `<input>` tag.~
 
-<callout type="tip" label="Styling">
+::Callout
+---
+type: "tip"
+label: "Styling"
+---
 We’ve added a touch of CSS in the above example, but in general we’re not going to dive into styling in this guide. It is recommended to use <code>context.classes.yourKey</code> as the class name of elements in your input.
-</callout>
+::
 
 ## Interactivity
 
@@ -217,4 +225,6 @@ Our one-time password input is working great! Here are some ideas for additional
 
 Hopefully this guide helped you understand how custom inputs are declared, written, and registered. If you want to dive in deeper, try reading about the [core internals of FormKit](/essentials/architecture) and [creating custom inputs](/essentials/custom-inputs)!
 
-<cta label="Want more? Start by reading about FormKit core." button="Dig deeper" href="/essentials/architecture"></cta>
+<cta
+label: "Want more? Start by reading about FormKit core." button="Dig deeper" href="/essentials/architecture"
+---</cta>

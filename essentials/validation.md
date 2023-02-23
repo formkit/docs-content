@@ -60,9 +60,13 @@ Validation rules are always computed in realtime — meaning a given field will 
 | dirty      | Errors are shown after a user modifies the value of an input.          |
 | submit     | Errors are shown only after a user attempts to submit a form.          |
 
-<callout type="info" label="Form submission">
+::Callout
+---
+type: "info"
+label: "Form submission"
+---
 If an input is inside a <a href="/inputs/form">form</a>, then <em>any</em> remaining validation messages will be displayed to the end user when a user attempts to submit the form.
-</callout>
+::
 
 ### Setting validation visibility for an entire group
 
@@ -149,9 +153,13 @@ The optional hint allows a failing validation rule to not prevent form submissio
 ---
 ::
 
-<callout type="tip" label="Combining hints">
+::Callout
+---
+type: "tip"
+label: "Combining hints"
+---
 You can use rule hints together. To do so, just place multiple hints before the rule declaration: <code>required|*+(200)min:10</code>.
-</callout>
+::
 
 ## Available rules
 
@@ -306,9 +314,13 @@ Ensures the format of an input’s date matches a specific date format. The form
 | YY    | Two-digit year                                                |
 | YYYY  | Four-digit year                                               |
 
-<callout type="warning" label="">
+::Callout
+---
+type: "warning"
+label: ""
+---
 Native date inputs always output the same format <code>YYYY-MM-DD ...</code> even though they display dates according to the browser’s locale. Using this rule to specify a <em>different</em> format would result in an input that can never be valid.
-</callout>
+::
 
 ::Example
 ---
@@ -588,9 +600,13 @@ To add a validation to a specific input use the `validation-rules` prop.
 ---
 ::
 
-<callout type="tip" label="Custom message">
+::Callout
+---
+type: "tip"
+label: "Custom message"
+---
 Your custom rules probably need a custom message — the next section of the docs will cover that.
-</callout>
+::
 
 ## Custom messages
 

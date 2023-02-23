@@ -140,18 +140,28 @@ app.use(
 )
 ```
 
-<callout type="tip" label="Message keys">
+::Callout
+---
+type: "tip"
+label: "Message keys"
+---
 Messages are generally found under a locale’s <code>ui</code> or <code>validation</code> property. To see a full list of keys and messages <a href="https://github.com/formkit/formkit/blob/master/packages/i18n/src/locales/en.ts">checkout the english locale.</a>
-</callout>
+::
 
 ## Adding your language
 
 Writing a locale for a language you know is a great way to contribute to FormKit and an easy way to get started with open source too! We are always eager to see pull requests for new locales. To support this effort, we’ve created a locale builder — a small web app to make the translation process as easy as possible.
 
-<cta href="https://i18n.formkit.com" label="Help others who speak your language!" button="Contribute a locale"></cta>
+<cta href="https://i18n.formkit.com"
+label: "Help others who speak your language!" button="Contribute a locale"
+---</cta>
 
 Of course, you are not required to use our locale builder to submit a language, and are more than welcome to submit a standard pull request with your locale included.
 
-<callout type="info" label="Localization">
+::Callout
+---
+type: "info"
+label: "Localization"
+---
 If your language is already on the list (let's say English), but your locality speaks a variation of that language (like 🇬🇧 <code>en-GB</code>), please feel free to submit your localized language.
-</callout>
+::

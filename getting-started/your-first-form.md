@@ -11,9 +11,13 @@ description: Creating your first form and understanding FormKit.
 
 Let's start by creating our first FormKit form! We'll learn some of FormKit's key features and how they benefit you. We'll also pick up some nice tips along the way — like how to manage form state without using `v-model`.
 
-<callout type="info" label="Composition API">
+::Callout
+---
+type: "info"
+label: "Composition API"
+---
 This guide assumes you are are familiar with the <a href="https://vuejs.org/guide/introduction.html#api-styles">Vue Composition API</a>.
-</callout>
+::
 
 <VideoCard
   title="Robust Vue.js Forms - Vue School Course"
@@ -107,9 +111,13 @@ First, let's create a basic form and add more inputs so we have content to work 
 
 We will use one of the inputs called `form`, which will make grouping and validation of fields much easier. You just need to wrap all yours inputs inside a `<FormKit type="form">`:
 
-<callout type="info" label="Form values">
+::Callout
+---
+type: "info"
+label: "Form values"
+---
 The <code>form</code> type will actively collect all the values from child inputs using the <code>name</code> of each input as a data object for you (just like <code>group</code>).
-</callout>
+::
 
 ::Example
 ---
@@ -177,9 +185,13 @@ With those features combined, we can get an input's core `node`, listen for and 
 
 The code now got a bit less readable, so let's extract the logic to another file and use a plugin instead. Note that we are placing the new `updateAttributesPlugin` only on the `class` input, so it will not affect any other input. We will also learn another useful feature called [traversal](/essentials/architecture#traversal) by using the `at` function of a node:
 
-<callout type="warning" label="at() uses name">
+::Callout
+---
+type: "warning"
+label: "at() uses name"
+---
 The <code>at</code> function uses the <code>name</code> attributes instead of the <code>id</code> that <code>getNode</code> uses.
-</callout>
+::
 
 ::Example
 ---
@@ -196,9 +208,13 @@ The <code>at</code> function uses the <code>name</code> attributes instead of th
 
 Let's assume that while different characters are better at different attributes, that none should be too powerful. We can do this by creating a budget of points, and adding group validation to the attributes `group` to ensure they do not exceed 20 points in totality. We'll learn a new feature — [custom rules](/essentials/validation#custom-rules) — to accomplish this:
 
-<callout type="warning" label="Groups do not display messages by default">
+::Callout
+---
+type: "warning"
+label: "Groups do not display messages by default"
+---
 By default, the <code>group</code> type does not output any markup, so to show validation errors we need to manually add it.
-</callout>
+::
 
 ::Example
 ---
@@ -219,9 +235,13 @@ Sometimes forms need to show or hide fields depending on the value of another in
 - [Context object](/essentials/configuration) — We can access an input's value (along with other data) inside our form because all `FormKit` components receive their [context object](https://formkit.com/essentials/configuration) in the `#default` [slot prop](https://vuejs.org/guide/components/slots.html#scoped-slots).
 - The value of a `group` - The value of [group](/inputs/group) (and `form`) input is an object with the values of its children, keyed by the childrens' `name`s.
 
-<callout type="info" label="Vue's key property">
+::Callout
+---
+type: "info"
+label: "Vue's key property"
+---
 When using conditional rendering, note that Vue needs hints to know that a DOM element needs a re-render, instead of trying to reuse it. We can add a unique <code>key</code> property to the element to help Vue.
-</callout>
+::
 
 So, let's grab the context object of the `group` input and extract the `value`: `#default="{ value }"`. We want to add a small easter egg for our user if they decide to change all attributes to 1:
 

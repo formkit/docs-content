@@ -7,17 +7,25 @@ description: Follow this guide to learn how to build a multi-step form with Form
 
 :PageToc
 
-<callout type="warning" label="Official Multi-Step Plugin">
+::Callout
+---
+type: "warning"
+label: "Official Multi-Step Plugin"
+---
 Starting with <code>1.0.0-beta.15</code> FormKit ships an official 1st-party plugin that creates a <code>multi-step</code> input type. <br><br> While there is still value in understanding how to build a multi-step input on your own — if you're looking for the easiest way to use a multi-step input in your project check out the <a href="/plugins/multi-step">official FormKit multi-step plugin</a> — it's free and open-source!
-</callout>
+::
 
 Few interactions on the web cause as much displeasure for a user as being confronted with a large, intimidating form. Multi-step forms can alleviate this pain by breaking a large form into smaller approachable steps — but they can also be complicated to build.
 
 In this guide, we'll walk through building a multi-step form with FormKit and see how we can provide an elevated user experience with minimal code. Let's get started!
 
-<callout type="info" label="Composition API">
+::Callout
+---
+type: "info"
+label: "Composition API"
+---
 This guide assumes you are are familiar with the <a href="https://vuejs.org/guide/introduction.html#api-styles">Vue Composition API</a>.
-</callout>
+::
 
 ## Requirements
 
@@ -96,9 +104,13 @@ const stepNames = ['contactInfo', 'organizationInfo', 'application']
 
 Here's what it looks like put together:
 
-<callout type="info" label="Styles not included">
+::Callout
+---
+type: "info"
+label: "Styles not included"
+---
   The CSS for multi-step forms — such as the tabs in this example — is not included in the default Genesis theme. Styles were custom-written for this example and you will need to provide your own.
-</callout>
+::
 
 ::Example
 ---
@@ -235,9 +247,13 @@ const stepPlugin = (node) => {
 }
 ```
 
-<callout type="tip" label="Blocking validation messages vs errors">
+::Callout
+---
+type: "tip"
+label: "Blocking validation messages vs errors"
+---
 FormKit makes a distinction between frontend validation messages (<code>messages</code> of type <code>validation</code>), and errors (<code>messages</code> of type <code>error</code>).
-</callout>
+::
 
 Let's update our example to show both types of errors with the following requirements:
 
@@ -367,7 +383,9 @@ Here it is — a fully functioning multi-step form:
 ---
 ::
 
-<cta label="Want to see it built using FormKit Schema?" button="Check out the Playground" href="https://formkit.link/7b74e4469f5c6eb1820cea4423a3ccbe" type="ghost"></cta>
+<cta
+label: "Want to see it built using FormKit Schema?" button="Check out the Playground" href="https://formkit.link/7b74e4469f5c6eb1820cea4423a3ccbe" type="ghost"
+---</cta>
 
 ## Ways to improve
 
@@ -379,4 +397,6 @@ Of course, there are always ways to improve anything, and this form is no except
 
 We've covered a lot of topics in this guide and hope you've learned more about FormKit and how to use it to make multi-step forms easier!
 
-<cta label="Want to use a multi-step input in your project?" button="Try the official plugin" href="/plugins/multi-step"></cta>
+<cta
+label: "Want to use a multi-step input in your project?" button="Try the official plugin" href="/plugins/multi-step"
+---</cta>

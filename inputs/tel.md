@@ -19,9 +19,13 @@ file: "/_content/examples/tel/tel.vue"
 ::
 
 
-<callout type="tip" label="Phone number validation">
+::Callout
+---
+type: "tip"
+label: "Phone number validation"
+---
 Phone number formats vary <em>greatly</em> around the world (some localities even include letters in their phone numbers!) — be cautious validating phone numbers unless you know your audience is exclusively from a given location.
-</callout>
+::
 
 ## Props & Attributes
 

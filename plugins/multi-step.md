@@ -140,9 +140,13 @@ If you want to add a custom action such as a form submit to a `multi-step` — 
 
 The `stepNext` and `stepPrevious` sections have access to the `incrementStep` handler — which returns a callable function — to enable programatic navigation.
 
-<callout type="warning" label="Tab navigation">
+::Callout
+---
+type: "warning"
+label: "Tab navigation"
+---
 By default, the <code>stepNext</code> in a multi-step input uses event listeners to capture tab navigation via keyboard and allow users to cycle through all available steps within a multi-step.<br><br>If you want to preserve this behaviour in your own custom <code>stepNext</code> implementation then be sure to add a <code>data-next="true"</code> attribute to your focusable element that triggers step navigation.
-</callout>
+::
 
 ::Example
 ---

@@ -37,9 +37,13 @@ file: "/_content/examples/group-validity/group-validity.vue"
 
 Even though a `group` can have validation rules and input errors, it does not include any functionality to show validation messages and errors by default. The group ships no HTML at all. If you’d like to display those errors — you can add the `<FormKitMessages />` as a child of the `group`.
 
-<callout type="tip" label="Configuration">
+::Callout
+---
+type: "tip"
+label: "Configuration"
+---
 Further documentation on the <code>FormKitMessages</code> component can be found on the <a href="/inputs/forms#moving-validation-and-error-messages">form documentation page</a>.
-</callout>
+::
 
 ## Props & Attributes
 

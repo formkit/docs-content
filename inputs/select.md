@@ -54,7 +54,11 @@ file: "/_content/examples/select-objects/select-objects.vue"
 ::
 
 
-<callout type="tip" label="Option attributes">
+::Callout
+---
+type: "tip"
+label: "Option attributes"
+---
 To pass additional attributes to each <code>&lt;option&gt;</code> element, your object can also contain an <code>attrs</code> property.<br><br>
 <code class="block">[
   {
@@ -65,7 +69,7 @@ To pass additional attributes to each <code>&lt;option&gt;</code> element, your 
     }
   }
 ]</code>
-</callout>
+::
 
 ### Default slot
 
@@ -79,9 +83,12 @@ file: "/_content/examples/select-slot/select-slot.vue"
 ::
 
 
-<callout type="warning">
+::Callout
+---
+type: "warning"
+---
 When using the default slot to output options, you should not use the <code>placeholder</code> or <code>options</code> props.
-</callout>
+::
 
 ## Multiple
 
@@ -95,13 +102,21 @@ file: "/_content/examples/select-multiple/select-multiple.vue"
 ::
 
 
-<callout type="tip" label="Alternatives">
+::Callout
+---
+type: "tip"
+label: "Alternatives"
+---
 Select inputs with the <code>multiple</code> attribute can be challenging for some users because they require holding-down the control or command keys to perform multiple selections. Depending on your audience, you may want to consider using a <a href="/inputs/checkbox">checkbox input with <code>options</code></a> instead.
-</callout>
+::
 
-<callout type="warning" label="Multiple with default slot">
+::Callout
+---
+type: "warning"
+label: "Multiple with default slot"
+---
 When using the default slot in conjunction with the <code>multiple</code> attribute you must explicitly assign the <code>selected</code> attribute to each option.
-</callout>
+::
 
 ## Props & Attributes
 

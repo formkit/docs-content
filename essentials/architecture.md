@@ -42,9 +42,13 @@ Every `<FormKit>` component owns a single core node, and each node must be one o
 - [List](#list)
 - [Group](#group)
 
-<callout type="tip" label="Input vs node types">
+::Callout
+---
+type: "tip"
+label: "Input vs node types"
+---
 Core nodes are always one of three types (input, list, or group). These are not the same as input types — of which there can be unlimited variation. Strictly speaking all inputs have 2 types: their node type (like <code>input</code>), and their input type (like <code>checkbox</code>).
-</callout>
+::
 
 ### Input
 
@@ -145,9 +149,13 @@ The above code will result in each node having the following configuration:
   <figcaption>Notice how the list subtree is pink.</figcaption>
 </figure>
 
-<callout type="tip" label="Use props to read config">
+::Callout
+---
+type: "tip"
+label: "Use props to read config"
+---
 It is best practice to read configuration values from <code>node.props</code> rather than <code>node.config</code>. The next section details this feature.
-</callout>
+::
 
 ### Props
 
@@ -175,9 +183,13 @@ console.log(child.props.flavor)
 // outputs: 'cherry'
 ```
 
-<callout type="tip" label="FormKit component props">
+::Callout
+---
+type: "tip"
+label: "FormKit component props"
+---
 When using the <code>&lt;FormKit&gt;</code> component, any props defined for the input <code>type</code> are automatically set as <code>node.props</code> properties. For example: <code>&lt;FormKit label="Email" /&gt;</code> would result in <code>node.props.label</code> being <code>Email</code>.
-</callout>
+::
 
 ### Setting values
 
@@ -206,9 +218,13 @@ username.input('jordan-goat98').then(() => {
 
 Because `node.input()` is asynchronous, the rest of our form does not need to recompute its dependencies on every keystroke. It also provides an opportunity to perform modifications to the unsettled value before it is "committed" to the rest of the form. However — for internal node use only — a `_value` property containing the unsettled value of the input is also available.
 
-<callout type="danger" label="Don’t assign values">
+::Callout
+---
+type: "danger"
+label: "Don’t assign values"
+---
 You cannot <em>directly</em> assign the value of an input <code>node.value = 'foo'</code>. Instead, you should always use <code>node.input(value)</code>
-</callout>
+::
 
 ### Value settlement
 
@@ -244,9 +260,13 @@ async function someEvent () {
 }
 ```
 
-<callout type="tip" label="The form type">
+::Callout
+---
+type: "tip"
+label: "The form type"
+---
 The <code>&lt;FormKit type="form"&gt;</code> input already incorporates this await behavior. It will not call your <code>@submit</code> handler until your form is completely settled. However when building advanced inputs it can be useful to understand these underlying principles.
-</callout>
+::
 
 ### Getting a component’s node
 
@@ -260,9 +280,12 @@ Sometimes it can be helpful to get the underlying instance of a node from the Vu
 
 When using FormKit with the Vue plugin (recommended), you can access a node by assigning it an `id` and then accessing it by that property.
 
-<callout type="warning">
+::Callout
+---
+type: "warning"
+---
 You must assign the input an <code>id</code> to use this method.
-</callout>
+::
 
 ::Example
 ---
@@ -271,10 +294,14 @@ You must assign the input an <code>id</code> to use this method.
 ---
 ::
 
-<callout type="info" label="Composition API">
+::Callout
+---
+type: "info"
+label: "Composition API"
+---
 When using Vue’s composition API, you don’t have access to <code>this</code> within <code>setup</code>. You can access the same <code>getNode()</code> function by importing it from <code>@formkit/core</code>.<br><br>
 <code>import { getNode } from '@formkit/core'</code>
-</callout>
+::
 
 #### Using the node event
 
@@ -375,9 +402,13 @@ Notice how traversing the `list` uses numeric keys, this is because the `list` t
   <figcaption>Traversal path of <code>group.at('users.0.password')</code> shown in red.</figcaption>
 </figure>
 
-<callout type="tip" label="Array paths">
+::Callout
+---
+type: "tip"
+label: "Array paths"
+---
 Node addresses may also be expressed as arrays. For example <code>node.at('foo.bar')</code> could be expressed as <code>node.at(['foo', 'bar'])</code>.
-</callout>
+::
 
 ### Traversal tokens
 
@@ -523,9 +554,13 @@ The following is a comprehensive list of all events emitted by `@formkit/core`.�
 | `unsettled:{counterName}` | boolean                         | no      | Emitted anytime a specific ledger [counter](#value-settlement) becomes unsettled (goes above zero).                    |
 | `text`                    | string or `FormKitTextFragment` | no      | Emitted after the `text` hook has run — typically when processing interface text that may have been translated.        |
 
-<callout type="info" label="Prop events on config changes">
+::Callout
+---
+type: "info"
+label: "Prop events on config changes"
+---
 When a configuration option changes, any inheriting nodes (including the origin node) will also emit <code>prop</code> and <code>prop:{propName}</code> events, so long as they do not override that property in their own <code>props</code> or <code>config</code> objects.
-</callout>
+::
 
 ### Emitting events
 
@@ -574,9 +609,13 @@ node.hook.prop((payload, next) => {
 })
 ```
 
-<callout type="tip" label="Use with plugins">
+::Callout
+---
+type: "tip"
+label: "Use with plugins"
+---
 Hooks can be registered anywhere in your application, but the most common place hooks are used is in a plugin.
-</callout>
+::
 
 ## Plugins
 
@@ -628,7 +667,9 @@ Experienced developers will notice a few exciting properties of this plugin-libr
 3. A plugin can bundle new inputs along with plugin logic making installation simple for end users.
 4. The library function has full control over what conditions result in a call to `node.define()`. Frequently, this is simply checking `node.props.type` but you can define different inputs based on other conditions, like if a particular prop is set.
 
-<cta label="Learn to create your own custom inputs" button="Custom input docs" href="/essentials/custom-inputs"></cta>
+<cta
+label: "Learn to create your own custom inputs" button="Custom input docs" href="/essentials/custom-inputs"
+---</cta>
 
 ## Message store
 
@@ -669,9 +710,13 @@ Each message (`FormKitMessage` in TypeScript) in the store is an object with the
 }
 ```
 
-<callout type="tip" label="Create message helper">
+::Callout
+---
+type: "tip"
+label: "Create message helper"
+---
 A helper function <code>createMessage({})</code> can be imported from <code>@formkit/core</code> to merge your message data with the above default values to create a new message object.
-</callout>
+::
 
 ### Read and write messages
 
@@ -692,9 +737,13 @@ console.log(node.store.clickHole.value)
 // outputs: 'Please click 100 times.'
 ```
 
-<callout type="info" label="Message locales">
+::Callout
+---
+type: "info"
+label: "Message locales"
+---
 Messages will automatically be translated if the <code>@formkit/i18n</code> plugin is installed and a matching key is available in the active locale. <a href="/essentials/internationalization">Read the i18n docs</a>.
-</callout>
+::
 
 ## Ledger
 
@@ -715,6 +764,10 @@ Notice the second argument of `node.ledger.count()` is a function. This function
 
 When using a counter on a `group` or `list` node, the counter will propagate down the tree summing the value of all messages passing the criteria function and then tracking that count for store changes.
 
-<callout type="tip" label="Validation counter">
+::Callout
+---
+type: "tip"
+label: "Validation counter"
+---
 The validation plugin already declares a counter called <code>blocking</code> which counts the blocking property of all messages. This is how FormKit forms know if all their children are "valid".
-</callout>
+::

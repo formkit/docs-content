@@ -112,9 +112,12 @@ tabs: "html"
 ::
 
 
-<callout type="tip">
+::Callout
+---
+type: "tip"
+---
 In addition to the four methods listed above, more generalized overrides are also available, like overriding an input’s schema, using the <code>classes</code> node hook, or utilizing slots:
-</callout>
+::
 
 ## Section-key class props
 
@@ -216,9 +219,12 @@ tabs: "html"
 ::
 
 
-<callout type="tip">
+::Callout
+---
+type: "tip"
+---
 Because <code>rootClasses</code> is a configuration option, you can apply it per input, per group, or globally.
-</callout>
+::
 
 ## Modifying classes within schema
 
@@ -273,9 +279,13 @@ tabs: "render,html"
 
 ### Using the provided Genesis theme
 
-<callout type="danger" label="Issue in Beta.14">
+::Callout
+---
+type: "danger"
+label: "Issue in Beta.14"
+---
 There is an issue affecting the <code>1.0.0-beta.14</code> version of <code>@formkit/themes</code> which will make it impossible to import <code>genesis</code>. Please install <code>@formkit/themes@next</code> in your project to bypass this issue until <code>1.0.0-beta.15</code> is released. You can follow the issue discussion <a href="https://github.com/formkit/formkit/issues/560" target="_blank">on Github.</a>
-</callout>
+::
 
 FormKit ships with an optional default Tailwind theme called Genesis. To use this pre-made Tailwind theme in your project import it from `@formkit/themes/tailwindcss/genesis` and add it to your `formkit.config.js`. You'll also want to include the neccessary `genesisIcons` import from `@formkit/icons`.
 
@@ -316,4 +326,6 @@ Want to create your own Tailwind theme? We've written a guide walking through th
 
 The guide concludes with a complete reproduction of the FormKit Genesis CSS theme written in Tailwind.
 
-<cta label="Guide: Create a Tailwind CSS theme" button="Read now" href="/guides/create-a-tailwind-theme"></cta>
+<cta
+label: "Guide: Create a Tailwind CSS theme" button="Read now" href="/guides/create-a-tailwind-theme"
+---</cta>

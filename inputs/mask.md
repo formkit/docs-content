@@ -92,10 +92,14 @@ Additionally, when an input is in select mode, the user can use the arrow or tab
 ---
 ::
 
-<callout type="tip" label="Select mode options">
+::Callout
+---
+type: "tip"
+label: "Select mode options"
+---
 The <code>selectDirection</code> token property controls which direction new
 characters flow into the selected range. You can fill "empty" selection characters with a predetermined value (like leading zeros "0") by using the <code>selectFill</code> property. See <a href="#creating-new-tokens">token properties</a>.
-</callout>
+::
 
 ## Tokens
 
@@ -163,9 +167,13 @@ For example, a new token that accepts letters and numbers, and is represented by
 }
 ```
 
-<callout type="warning" label="Placeholders should not match pattern">
+::Callout
+---
+type: "warning"
+label: "Placeholders should not match pattern"
+---
 Any <code>placeholder</code> you define should not match the Regex <code>pattern</code> provided in the token definition.
-</callout>
+::
 
 #### Add tokens via prop
 
@@ -208,9 +216,13 @@ In addition to creating new tokens, the `tokens` prop can also modify existing t
 
 In `select` mode, `char` tokens are grouped together into a selection range.
 
-<callout type="tip" label="Placeholders">
+::Callout
+---
+type: "tip"
+label: "Placeholders"
+---
 A <code>char</code> token should only ever represent 1 character, and its placeholder should also only be a single character in length.
-</callout>
+::
 
 ### Enum Tokens
 
@@ -225,9 +237,13 @@ A date with auto-completing month names could be well represented with enums:
 ---
 ::
 
-<callout type="warning" label="Select mode requirement">
+::Callout
+---
+type: "warning"
+label: "Select mode requirement"
+---
 Enums are only supported in <code>select</code> mode. When any <code>enum</code> token is found in a mask string, the <code>mode</code> of the input is forcibly set to <code>select</code>.
-</callout>
+::
 
 ## Groups
 
@@ -247,9 +263,13 @@ Group options allow you to apply functionality to an entire group using a pipe `
 - **repeat** — allows a group to be repeated an infinite number of times.
 - **placeholder** — A character to hold space prior to user input.
 
-<callout type="info" label="Group placeholders">
+::Callout
+---
+type: "info"
+label: "Group placeholders"
+---
 A placeholder defined within a group has a higher specificity than a placeholder defined in the token definition and will override it.
-</callout>
+::
 
 #### Option parameters
 
@@ -264,9 +284,13 @@ You can string group options together:
 ---
 ::
 
-<callout type="warning" label="Can't be used in select mode">
+::Callout
+---
+type: "warning"
+label: "Can't be used in select mode"
+---
   Groups cannot be used in select mode. An exception will be thrown.
-</callout>
+::
 
 ## Prefix & suffix
 
@@ -279,9 +303,13 @@ You can ensure certain characters always appear at the beginning or end of an in
 ---
 ::
 
-<callout type="warning" label="Values can't match the mask">
+::Callout
+---
+type: "warning"
+label: "Values can't match the mask"
+---
   Your prefix and suffix content can't match the mask. For instance, if your mask has a digit token <code>#</code>, your prefix/suffix can't contain numbers.
-</callout>
+::
 
 ## Running the mask in reverse
 
@@ -294,9 +322,13 @@ In specific circumstances, you may want to run your mask in reverse. The mask wi
 ---
 ::
 
-<callout type="warning" label="Shift mode requirement">
+::Callout
+---
+type: "warning"
+label: "Shift mode requirement"
+---
 Running a mask in reverse only works in shift mode.
-</callout>
+::
 
 ## Mask values
 

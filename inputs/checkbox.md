@@ -21,9 +21,13 @@ file: "/_content/examples/checkbox-single/checkbox-single.vue"
 ::
 
 
-<callout type="warning" label="Checked Attribute Unnecessary">
+::Callout
+---
+type: "warning"
+label: "Checked Attribute Unnecessary"
+---
 In order to improve API consistency across all FormKit inputs — FormKit uses the <code>value</code> as the initial state of the input. The <code>checked</code> prop/attribute should not be used directly.
-</callout>
+::
 
 ## Multiple checkboxes
 

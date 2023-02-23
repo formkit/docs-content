@@ -223,7 +223,9 @@ const submit = (fields, node) => {
     <!-- we will change all form components to be FormKit -->
     <FormKit type="form" :value="initialState" @submit="submit" submit-label="Log in">
       <FormKit type="email" label="Email" name: "email" validation="required|email" />
-      <FormKit type="password" label="Password" name: "password" validation="required">
+      <FormKit type="password"
+label: "Password" name: "password" validation="required"
+---
         <template #label="context">
           <span :class="context.classes.label">
             {{ context.label }}
@@ -345,4 +347,6 @@ const submit = (fields, node) => {
 
 With all of our previous logic encapsulated into a plugin it is now trivial to add FormKit to our project. Adding FormKit to a Laravel 9 application using Breeze with Vue.js and Inertia provides both developers and application end-users with a better overall form experience.
 
-<cta label="Ready to dive deeper into FormKit?" button="Learn more about FormKit's unique architecture" href="/essentials/architecture"></cta>
+<cta
+label: "Ready to dive deeper into FormKit?" button="Learn more about FormKit's unique architecture" href="/essentials/architecture"
+---</cta>

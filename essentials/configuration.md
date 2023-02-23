@@ -182,26 +182,6 @@ When registering the `@formkit/vue` plugin, you can provide prop values to be in
 ---
 ::
 
-<!-- ### Props worth configuring
-
-Any plugin or feature can can read and write values to the `node.props` object so the following list is inherently not comprehensive depending on the plugins installed on your inputs — however the following table details some of the props leveraged by FormKit’s first-party plugins (validation, inputs, i18n etc):
-
-| prop                | default                 | description                                                                                                          |
-| ------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `delay`             | `20`                    | Milliseconds that a node is debounced before committing it’s `_value` to the `value` (and the rest of the nodes).    |
-| `id`                | `input\_{n}`            | The input of the node                                                                                                |
-| `type`              | `text`                  | Used by the `@formkit/inputs` library to determine which input definition to load (think `text`, `select`, `radio`). |
-| `isForm`            | `boolean`               | Used by `@formkit/core` to determine if an input is an actual form element.                                          |
-| `definition`        | `FormKitTypeDefinition` | The current input definition, should only be set via `node.define()`.                                                |
-| `initial`           | `unknown`               | The value first set on a given node.                                                                                 |
-| `options`           | `FormKitOptions`        | The options passed to `checkbox`, `radio`, and `select` inputs.                                                      |
-| `onValue`           | `offValue`              | The on and off values for checkboxes.                                                                                |
-| `incompleteMessage` | `"Form incomplete"`     | The message displayed to users when the form validation is not complete and they try to submit                       |
-
-<callout type="warning" label="Caution">
-This table is intended as a reference, but does not
-</callout> -->
-
 ## What is node config?
 
 Props are pretty powerful, but in addition to `node.props`, core nodes all have a config object `node.config`. This is where configuration hierarchy comes in. The `node.config` object acts like initial values for `node.props`. If a given prop is requested, like `node.props.validation`, and that property is not explicitly set using any of the [methods discussed above](#what-are-node-props), then FormKit will check the `node.config` object to see if it has a value. If it does not have a value, then it recursively checks the node parent's config object — then the grandparent's config object — and so on — until a value is found or it reaches a node with no parent.

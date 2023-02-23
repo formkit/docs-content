@@ -21,9 +21,13 @@ file: "/_content/examples/list/list.vue"
 ::
 
 
-<callout type="tip" label="Performance">
+::Callout
+---
+type: "tip"
+label: "Performance"
+---
 Vue’s handy <code>v-model</code> is fully supported in FormKit with bi-directional data flow even on lists and groups. However, if your form needs extremely high performance consider using the <a href="/essentials/architecture">core node</a> to read/write instead of v-model.
-</callout>
+::
 
 ## Validity of children
 
