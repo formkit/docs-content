@@ -408,17 +408,16 @@ data: [
 
 :SectionKeysIntro
 
-<div>
-  <formkit-input-diagram
-    label-content="Enter a phone number"
-    prefix-icon-content="📞"
-    input-icon-content="+1 (434) 221-7541"
-    suffix-content="❤️"
-    help-content="Please enter your phone number."
-    message-content="Phone number is required."
-  >
-  </formkit-input-diagram>
-</div>
+::FormKitInputDiagram
+---
+label-content: "Enter a phone number"
+prefix-icon-content: "📞"
+input-icon-content: "+1 (434) 221-7541"
+suffix-content: "❤️"
+help-content: "Please enter your phone number."
+message-content: "Phone number is required."
+---
+::
 
 ::ReferenceTable
 ---

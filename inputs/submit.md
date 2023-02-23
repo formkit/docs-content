@@ -93,67 +93,66 @@ input: button
 
 :SectionKeysIntro
 
-<div>
-  <formkit-input-diagram
-    class="input-diagram--button"
-    :schema="[
+::FormKitInputDiagram
+---
+class: "input-diagram--button"
+schema: [
+  {
+    name: 'outer',
+    children: [
       {
-        name: 'outer',
+        name: 'messages',
+        position: 'right',
         children: [
           {
-            name: 'messages',
-            position: 'right',
+            name: 'message',
+            content: 'You were too slow. Try again.',
+            position: 'right'
+          }
+        ]
+      },
+      {
+        name: 'wrapper',
+        position: 'right',
+        children: [
+          {
+            name: 'input',
+            position: 'left',
+            class: 'flex button button--pro',
             children: [
               {
-                name: 'message',
-                content: 'You were too slow. Try again.',
-                position: 'right'
+                name: 'prefixIcon',
+                content: '🧑‍🦰'
+              },
+              {
+                name: 'prefix',
+              },
+              {
+                name: 'label',
+                content: 'Create profile',
+              },
+              {
+                name: 'suffix',
+                position: 'right',
+              },
+              {
+                name: 'suffixIcon',
+                position: 'right',
+                content: '🚀'
               }
             ]
           },
-          {
-            name: 'wrapper',
-            position: 'right',
-            children: [
-              {
-                name: 'input',
-                position: 'left',
-                class: 'flex button button--pro',
-                children: [
-                  {
-                    name: 'prefixIcon',
-                    content: '🧑‍🦰'
-                  },
-                  {
-                    name: 'prefix',
-                  },
-                  {
-                    name: 'label',
-                    content: 'Create profile',
-                  },
-                  {
-                    name: 'suffix',
-                    position: 'right',
-                  },
-                  {
-                    name: 'suffixIcon',
-                    position: 'right',
-                    content: '🚀'
-                  }
-                ]
-              },
-            ]
-          },
-          {
-            name: 'help',
-            content: 'Quick double tap to submit.'
-          }
         ]
+      },
+      {
+        name: 'help',
+        content: 'Quick double tap to submit.'
       }
-    ]"
-  >
-  </formkit-input-diagram>
-</div>
+    ]
+  }
+]
+---
+::
 
 ::ReferenceTable
 ---

@@ -139,81 +139,80 @@ data: [
 
 :SectionKeysIntro
 
-<div>
-  <formkit-input-diagram
-    class="input-diagram--select"
-    :schema="[
-        {
-          name: 'outer',
-          children: [
-            {
-              name: 'wrapper',
-              position: 'right',
-              children: [
-                {
-                  name: 'label',
-                  content: 'Smoothie size',
-                  position: 'right',
-                }, 
-                {
-                  name: 'inner',
-                  children: [
-                    {
-                      name: 'prefixIcon',
-                      content: '👩🏼‍🦱'
-                    },
-                    {
-                      name: 'prefix',
-                    },
-                    {
-                      name: 'input',
-                      children: [
-                        {
-                          name: 'option',
-                          content: 'Medium'
-                        }
-                      ]
-                    },
-                    {
-                      name: 'selectIcon',
-                      position: 'right',
-                      content: '⌄',
-                      class: 'center-vert'
-                    },
-                    {
-                      name: 'suffix',
-                      position: 'right',
-                    },
-                    {
-                      name: 'suffixIcon',
-                      position: 'right',
-                    },
-                  ]
-                },
-              ]
-            },
-            {
-              name: 'help',
-              content: 'Choose a smoothie size.',
-              position: 'right'
-            },
-            {
-              name: 'messages',
-              position: 'right',
-              children: [
-                {
-                  name: 'message',
-                  content: 'You must make a selection.',
-                  position: 'right'
-                }
-              ]
-            }
-          ]
-        }
-      ]"
-  >
-  </formkit-input-diagram>
-</div>
+::FormKitInputDiagram
+---
+class: "input-diagram--select"
+schema: [
+  {
+    name: 'outer',
+    children: [
+      {
+        name: 'wrapper',
+        position: 'right',
+        children: [
+          {
+            name: 'label',
+            content: 'Smoothie size',
+            position: 'right',
+          }, 
+          {
+            name: 'inner',
+            children: [
+              {
+                name: 'prefixIcon',
+                content: '👩🏼‍🦱'
+              },
+              {
+                name: 'prefix',
+              },
+              {
+                name: 'input',
+                children: [
+                  {
+                    name: 'option',
+                    content: 'Medium'
+                  }
+                ]
+              },
+              {
+                name: 'selectIcon',
+                position: 'right',
+                content: '⌄',
+                class: 'center-vert'
+              },
+              {
+                name: 'suffix',
+                position: 'right',
+              },
+              {
+                name: 'suffixIcon',
+                position: 'right',
+              },
+            ]
+          },
+        ]
+      },
+      {
+        name: 'help',
+        content: 'Choose a smoothie size.',
+        position: 'right'
+      },
+      {
+        name: 'messages',
+        position: 'right',
+        children: [
+          {
+            name: 'message',
+            content: 'You must make a selection.',
+            position: 'right'
+          }
+        ]
+      }
+    ]
+  }
+]
+---
+::
 
 ::ReferenceTable
 ---

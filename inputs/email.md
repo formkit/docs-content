@@ -34,17 +34,16 @@ attrs: ['placeholder']
 
 :SectionKeysIntro
 
-<div>
-  <formkit-input-diagram
-    prefix-icon-content="📧"
-    suffix-icon-content="✈️"
-    label-content="Email address"
-    input-content="test@example.com"
-    help-content="Please use your school email address."
-    message-content="Please provide a valid email."
-  >
-  </formkit-input-diagram>
-</div>
+::FormKitInputDiagram
+---
+prefix-icon-content: "📧"
+suffix-icon-content: "✈️"
+label-content: "Email address"
+input-content: "test@example.com"
+help-content: "Please use your school email address."
+message-content: "Please provide a valid email."
+---
+::
 
 ::ReferenceTable
 ---

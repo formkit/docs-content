@@ -173,186 +173,185 @@ data: [
 
 :SectionKeysIntro
 
-<div>
-  <formkit-input-diagram
-    :hide-on-small="true"
-    class="input-diagram--autocomplete-outer autocomplete-option-single"
-    :schema="[
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--autocomplete-outer autocomplete-option-single"
+schema: [
+  {
+    name: 'outer',
+    children: [
       {
-        name: 'outer',
+        name: 'fieldset',
         children: [
           {
-            name: 'fieldset',
+            name: 'legend',
+            content: 'Guests',
+            class: 'center-vert',
+          },
+          {
+            name: 'help',
+            content: 'Note guests you will bring to the race track.',
+          },
+          {
+            name: 'inner',
             children: [
               {
-                name: 'legend',
-                content: 'Guests',
-                class: 'center-vert',
+                name: 'prefix',
+                class: 'tiny-section'
               },
               {
-                name: 'help',
-                content: 'Note guests you will bring to the race track.',
-              },
-              {
-                name: 'inner',
+                name: 'items',
+                class: 'flex-grow',
                 children: [
                   {
-                    name: 'prefix',
-                    class: 'tiny-section'
-                  },
-                  {
-                    name: 'items',
-                    class: 'flex-grow',
+                    name: 'item',
+                    class: 'flex',
                     children: [
                       {
-                        name: 'item',
-                        class: 'flex',
+                        name: 'content',
+                        class: 'flex-grow',
+                        content: 'Repeated fields here.'
+                      },
+                      {
+                        name: 'controls',
+                        class: '',
+                        position: 'right',
                         children: [
                           {
-                            name: 'content',
-                            class: 'flex-grow',
-                            content: 'Repeated fields here.'
+                            name: 'up',
+                            position: 'right',
+                            class: 'small-pad spacing-bottom',
+                            children: [
+                              {
+                                name: 'upControl',
+                                position: 'right',
+                                class: 'small-pad flex',
+                                children: [
+                                  {
+                                    name: 'controlLabel',
+                                    position: 'right',
+                                    class: 'small-pad tiny-section'
+                                  },
+                                  {
+                                    name: 'moveUpIcon',
+                                    position: 'right',
+                                    content: '↑',
+                                    class: 'small-pad flex-grow'
+                                  }
+                                ]
+                              },
+                            ]
                           },
                           {
-                            name: 'controls',
-                            class: '',
+                            name: 'remove',
+                            position: 'right',
+                            class: 'small-pad spacing-bottom',
+                            children: [
+                              {
+                                name: 'removeControl',
+                                class: 'small-pad flex',
+                                position: 'right',
+                                children: [
+                                  {
+                                    name: 'controlLabel',
+                                    position: 'right',
+                                    class: 'small-pad tiny-section'
+                                  },
+                                  {
+                                    name: 'removeIcon',
+                                    position: 'right',
+                                    content: '🗑',
+                                    class: 'small-pad'
+                                  }
+                                ]
+                              },
+                            ]
+                          },
+                          {
+                            name: 'insert',
+                            position: 'right',
+                            class: 'small-pad spacing-bottom',
+                            children: [
+                              {
+                                name: 'insertControl',
+                                class: 'small-pad flex',
+                                position: 'right',
+                                children: [
+                                  {
+                                    name: 'controlLabel',
+                                    position: 'right',
+                                    class: 'small-pad tiny-section'
+                                  },
+                                  {
+                                    name: 'addIcon',
+                                    position: 'right',
+                                    content: '➕',
+                                    class: 'small-pad'
+                                  }
+                                ]
+                              },
+                            ]
+                          },
+                          {
+                            name: 'down',
+                            class: 'small-pad spacing-bottom',
                             position: 'right',
                             children: [
                               {
-                                name: 'up',
+                                name: 'downControl',
+                                class: 'small-pad flex',
                                 position: 'right',
-                                class: 'small-pad spacing-bottom',
                                 children: [
                                   {
-                                    name: 'upControl',
+                                    name: 'controlLabel',
                                     position: 'right',
-                                    class: 'small-pad flex',
-                                    children: [
-                                      {
-                                        name: 'controlLabel',
-                                        position: 'right',
-                                        class: 'small-pad tiny-section'
-                                      },
-                                      {
-                                        name: 'moveUpIcon',
-                                        position: 'right',
-                                        content: '↑',
-                                        class: 'small-pad flex-grow'
-                                      }
-                                    ]
+                                    class: 'small-pad tiny-section'
                                   },
+                                  {
+                                    name: 'moveDownIcon',
+                                    position: 'right',
+                                    content: '↓',
+                                    class: 'small-pad'
+                                  }
                                 ]
                               },
-                              {
-                                name: 'remove',
-                                position: 'right',
-                                class: 'small-pad spacing-bottom',
-                                children: [
-                                  {
-                                    name: 'removeControl',
-                                    class: 'small-pad flex',
-                                    position: 'right',
-                                    children: [
-                                      {
-                                        name: 'controlLabel',
-                                        position: 'right',
-                                        class: 'small-pad tiny-section'
-                                      },
-                                      {
-                                        name: 'removeIcon',
-                                        position: 'right',
-                                        content: '🗑',
-                                        class: 'small-pad'
-                                      }
-                                    ]
-                                  },
-                                ]
-                              },
-                              {
-                                name: 'insert',
-                                position: 'right',
-                                class: 'small-pad spacing-bottom',
-                                children: [
-                                  {
-                                    name: 'insertControl',
-                                    class: 'small-pad flex',
-                                    position: 'right',
-                                    children: [
-                                      {
-                                        name: 'controlLabel',
-                                        position: 'right',
-                                        class: 'small-pad tiny-section'
-                                      },
-                                      {
-                                        name: 'addIcon',
-                                        position: 'right',
-                                        content: '➕',
-                                        class: 'small-pad'
-                                      }
-                                    ]
-                                  },
-                                ]
-                              },
-                              {
-                                name: 'down',
-                                class: 'small-pad spacing-bottom',
-                                position: 'right',
-                                children: [
-                                  {
-                                    name: 'downControl',
-                                    class: 'small-pad flex',
-                                    position: 'right',
-                                    children: [
-                                      {
-                                        name: 'controlLabel',
-                                        position: 'right',
-                                        class: 'small-pad tiny-section'
-                                      },
-                                      {
-                                        name: 'moveDownIcon',
-                                        position: 'right',
-                                        content: '↓',
-                                        class: 'small-pad'
-                                      }
-                                    ]
-                                  },
-                                ]
-                              }
                             ]
                           }
                         ]
                       }
                     ]
-                  },
-                  {
-                    name: 'suffix',
-                    position: 'right',
-                    class: 'tiny-section'
-                  },
+                  }
                 ]
               },
               {
-                name: 'addButton',
-                class: 'button button--pro margin-collapse',
-                content: 'Add guest'
-              }
+                name: 'suffix',
+                position: 'right',
+                class: 'tiny-section'
+              },
             ]
           },
           {
-            name: 'messages',
-            children: [
-              {
-                name: 'message',
-                content: 'Sorry, you may not add more than 3 guests.',
-              }
-            ]
+            name: 'addButton',
+            class: 'button button--pro margin-collapse',
+            content: 'Add guest'
+          }
+        ]
+      },
+      {
+        name: 'messages',
+        children: [
+          {
+            name: 'message',
+            content: 'Sorry, you may not add more than 3 guests.',
           }
         ]
       }
-    ]"
-  >
-  </formkit-input-diagram>
-</div>
+    ]
+  }
+]
+---
+::
 
 ::ReferenceTable
 ---

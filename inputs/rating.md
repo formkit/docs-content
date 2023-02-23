@@ -150,100 +150,99 @@ data: [
 
 :SectionKeysIntro
 
-<div>
-  <formkit-input-diagram
-    :hide-on-small="true"
-    class="input-diagram--rating"
-    :schema="[
-        {
-          name: 'outer',
-          position: 'right',
-          children: [
-            {
-              name: 'wrapper',
-              position: 'right',
-              children: [
-                {
-                  name: 'label',
-                  content: 'Rate your experience at our theater',
-                  position: 'right',
-                  class: 'center-vert'
-                },
-                {
-                  name: 'inner',
-                  children: [
-                    {
-                      name: 'prefixIcon',
-                      class: 'tiny-section'
-                    },
-                    {
-                      name: 'prefix',
-                      class: 'tiny-section'
-                    },
-                    {
-                      name: 'itemsWrapper',
-                      children: [
-                        {
-                          name: 'onItems',
-                          children: [
-                            {
-                              name: 'onItemWrapper',
-                              content: '⭐️',
-                              class: 'border-solid'
-                            }
-                          ]
-                        },
-                        {
-                          name: 'offItems',
-                          children: [
-                            {
-                              name: 'offItemWrapper',
-                              content: '✩',
-                              class: 'border-solid'
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      name: 'input'
-                    },
-                    {
-                      name: 'suffix',
-                      position: 'right',
-                      class: 'tiny-section'
-                    },
-                    {
-                      name: 'suffixIcon',
-                      position: 'right',
-                      class: 'tiny-section'
-                    },
-                  ]
-                },
-              ]
-            },
-            {
-              name: 'help',
-              content: 'We will send you a gift card if you give us 5 stars.',
-              position: 'right'
-            },
-            {
-              name: 'messages',
-              position: 'right',
-              children: [
-                {
-                  name: 'message',
-                  content: 'You must provide a rating.',
-                  position: 'right'
-                }
-              ]
-            }
-          ]
-        }
-      ]"
-  >
-  </formkit-input-diagram>
-</div>
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--rating"
+schema: [
+  {
+    name: 'outer',
+    position: 'right',
+    children: [
+      {
+        name: 'wrapper',
+        position: 'right',
+        children: [
+          {
+            name: 'label',
+            content: 'Rate your experience at our theater',
+            position: 'right',
+            class: 'center-vert'
+          },
+          {
+            name: 'inner',
+            children: [
+              {
+                name: 'prefixIcon',
+                class: 'tiny-section'
+              },
+              {
+                name: 'prefix',
+                class: 'tiny-section'
+              },
+              {
+                name: 'itemsWrapper',
+                children: [
+                  {
+                    name: 'onItems',
+                    children: [
+                      {
+                        name: 'onItemWrapper',
+                        content: '⭐️',
+                        class: 'border-solid'
+                      }
+                    ]
+                  },
+                  {
+                    name: 'offItems',
+                    children: [
+                      {
+                        name: 'offItemWrapper',
+                        content: '✩',
+                        class: 'border-solid'
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                name: 'input'
+              },
+              {
+                name: 'suffix',
+                position: 'right',
+                class: 'tiny-section'
+              },
+              {
+                name: 'suffixIcon',
+                position: 'right',
+                class: 'tiny-section'
+              },
+            ]
+          },
+        ]
+      },
+      {
+        name: 'help',
+        content: 'We will send you a gift card if you give us 5 stars.',
+        position: 'right'
+      },
+      {
+        name: 'messages',
+        position: 'right',
+        children: [
+          {
+            name: 'message',
+            content: 'You must provide a rating.',
+            position: 'right'
+          }
+        ]
+      }
+    ]
+  }
+]
+---
+::
 
 ::ReferenceTable
 ---

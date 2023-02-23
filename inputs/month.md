@@ -38,17 +38,16 @@ FormKit props.
 
 :SectionKeysIntro
 
-<div>
-  <formkit-input-diagram
-    label-content="Month you met your significant other"
-    prefix-icon-content="📅"
-    input-icon-content="2010-05"
-    suffix-content="❤️"
-    help-content="We'll divide groups based on how long you've been together."
-    message-content="Month is required."
-  >
-  </formkit-input-diagram>
-</div>
+::FormKitInputDiagram
+---
+label-content: "Month you met your significant other"
+prefix-icon-content: "📅"
+input-icon-content: "2010-05"
+suffix-content: "❤️"
+help-content: "We'll divide groups based on how long you've been together."
+message-content: "Month is required."
+---
+::
 
 ::ReferenceTable
 ---

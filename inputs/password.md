@@ -35,17 +35,16 @@ attrs: ['maxlength', 'minlength', 'placeholder']
 
 :SectionKeysIntro
 
-<div>
-  <formkit-input-diagram
-    label-content="Password"
-    prefix-icon-content="🤫"
-    input-content="···········"
-    suffix-icon-content="🤐"
-    help-content="Keep this hidden in a safe place."
-    message-content="Password is required."
-  >
-  </formkit-input-diagram>
-</div>
+::FormKitInputDiagram
+---
+label-content: "Password"
+prefix-icon-content: "🤫"
+input-content: "···········"
+suffix-icon-content: "🤐"
+help-content: "Keep this hidden in a safe place."
+message-content: "Password is required."
+---
+::
 
 ::ReferenceTable
 ---

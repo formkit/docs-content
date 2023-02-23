@@ -39,17 +39,16 @@ attrs: ['min', 'max', 'step']
 
 :SectionKeysIntro
 
-<div>
-  <formkit-input-diagram
-    label-content="Date of birth"
-    prefix-icon-content="📅"
-    input-content="Jan. 1 1970"
-    suffix-icon-content="👌"
-    help-content="Please tell us your date of birth."
-    message-content="Date is required."
-  >
-  </formkit-input-diagram>
-</div>
+::FormKitInputDiagram
+---
+label-content: "Date of birth"
+prefix-icon-content: "📅"
+input-content: "Jan. 1 1970"
+suffix-icon-content: "👌"
+help-content: "Please tell us your date of birth."
+message-content: "Date is required."
+---
+::
 
 ::ReferenceTable
 ---

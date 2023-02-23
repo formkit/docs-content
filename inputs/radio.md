@@ -79,98 +79,97 @@ data: [
 
 :SectionKeysIntro
 
-<div>
-  <formkit-input-diagram
-    class="input-diagram--radio radio-multiple"
-    :schema="[
+::FormKitInputDiagram
+---
+class: "input-diagram--radio radio-multiple"
+schema: [
+  {
+    name: 'outer',
+    children: [
       {
-        name: 'outer',
+        name: 'fieldset',
         children: [
           {
-            name: 'fieldset',
+            name: 'legend',
+            content: 'Mowing time preference',
+            class: 'margin-collapse',
+            position: 'right',
+          },
+          {
+            name: 'help',
+            content: 'Choose which time is least disruptive to you.',
+            position: 'right',
+          },
+          {
+            name: 'options',
+            position: 'right',
             children: [
               {
-                name: 'legend',
-                content: 'Mowing time preference',
-                class: 'margin-collapse',
-                position: 'right',
-              },
-              {
-                name: 'help',
-                content: 'Choose which time is least disruptive to you.',
-                position: 'right',
-              },
-              {
-                name: 'options',
+                name: 'option',
                 position: 'right',
                 children: [
                   {
-                    name: 'option',
+                    name: 'wrapper',
                     position: 'right',
                     children: [
                       {
-                        name: 'wrapper',
-                        position: 'right',
+                        name: 'inner',
                         children: [
                           {
-                            name: 'inner',
+                            name: 'prefix',
+                          },
+                          {
+                            name: 'input',
+                          },
+                          {
+                            name: 'decorator',
                             children: [
                               {
-                                name: 'prefix',
-                              },
-                              {
-                                name: 'input',
-                              },
-                              {
-                                name: 'decorator',
-                                children: [
-                                  {
-                                    name: 'decoratorIcon',
-                                    content: '🔘',
-                                  }
-                                ]
-                              },
-                              {
-                                name: 'suffix',
-                              },
+                                name: 'decoratorIcon',
+                                content: '🔘',
+                              }
                             ]
                           },
                           {
-                            name: 'label',
-                            content: 'Morning',
-                            position: 'right',
-                            class: 'margin-standard center-vert'
-                          }
+                            name: 'suffix',
+                          },
                         ]
                       },
                       {
-                        name: 'optionHelp',
-                        content: 'We`ll come between 7-11 am on Tuesdays.',
+                        name: 'label',
+                        content: 'Morning',
                         position: 'right',
-                      },
+                        class: 'margin-standard center-vert'
+                      }
                     ]
-                  }
+                  },
+                  {
+                    name: 'optionHelp',
+                    content: 'We`ll come between 7-11 am on Tuesdays.',
+                    position: 'right',
+                  },
                 ]
               }
             ]
-          },
-          {
-              name: 'messages',
-              position: 'right',
-              children: [
-                {
-                  name: 'message',
-                  content: 'You must make a selection.',
-                  position: 'right',
-                }
-              ]
-            }
+          }
         ]
-      }
-    ]"
-  >
-  </formkit-input-diagram>
-</div>
+      },
+      {
+          name: 'messages',
+          position: 'right',
+          children: [
+            {
+              name: 'message',
+              content: 'You must make a selection.',
+              position: 'right',
+            }
+          ]
+        }
+    ]
+  }
+]
+---
+::
 
 ::ReferenceTable
 ---

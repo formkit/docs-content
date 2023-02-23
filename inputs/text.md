@@ -36,17 +36,16 @@ attrs: ['maxlength', 'minlength', 'placeholder']
 
 :SectionKeysIntro
 
-<div>
-  <formkit-input-diagram
-    prefix-icon-content="👩🏽‍💼"
-    suffix-icon-content=""
-    label-content="First name"
-    input-content="Sunita"
-    help-content="Enter your first name only."
-    message-content="First name is required."
-  >
-  </formkit-input-diagram>
-</div>
+::FormKitInputDiagram
+---
+prefix-icon-content: "👩🏽‍💼"
+suffix-icon-content: ""
+label-content: "First name"
+input-content: "Sunita"
+help-content: "Enter your first name only."
+message-content: "First name is required."
+---
+::
 
 ::ReferenceTable
 ---

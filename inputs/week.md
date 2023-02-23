@@ -44,17 +44,16 @@ attrs: ['min', 'max', 'step']
 
 :SectionKeysIntro
 
-<div>
-  <formkit-input-diagram
-    prefix-icon-content="🗓"
-    suffix-icon-content=""
-    label-content="Installation week"
-    input-content="2022-W42"
-    help-content="Which week will work best for your patio installation?"
-    message-content="Installation week is required."
-  >
-  </formkit-input-diagram>
-</div>
+::FormKitInputDiagram
+---
+prefix-icon-content: "🗓"
+suffix-icon-content: ""
+label-content: "Installation week"
+input-content: "2022-W42"
+help-content: "Which week will work best for your patio installation?"
+message-content: "Installation week is required."
+---
+::
 
 ::ReferenceTable
 ---

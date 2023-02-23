@@ -29,17 +29,16 @@ FormKit props.
 
 :SectionKeysIntro
 
-<div>
-  <formkit-input-diagram
-    label-content="Favorite color"
-    input-content="Color selector here"
-    help-content="Select your favorite color."
-    message-content="Only primary colors allowed."
-    prefix-icon-content="🎨"
-    suffix-icon-content="👍"
-  >
-  </formkit-input-diagram>
-</div>
+::FormKitInputDiagram
+---
+label-content: "Favorite color"
+input-content: "Color selector here"
+help-content: "Select your favorite color."
+message-content: "Only primary colors allowed."
+prefix-icon-content: "🎨"
+suffix-icon-content: "👍"
+---
+::
 
 ::ReferenceTable
 ---

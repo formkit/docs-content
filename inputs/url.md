@@ -40,17 +40,16 @@ attrs: ['minlength', 'maxlength', 'placeholder']
 
 :SectionKeysIntro
 
-<div>
-  <formkit-input-diagram
-    prefix-icon-content="🌎"
-    suffix-icon-content=""
-    label-content="Personal website URL"
-    input-content="https://mywebsite.com"
-    help-content="Tell us where to find your personal website."
-    message-content="Please include a valid url."
-  >
-  </formkit-input-diagram>
-</div>
+::FormKitInputDiagram
+---
+prefix-icon-content: "🌎"
+suffix-icon-content: ""
+label-content: "Personal website URL"
+input-content: "https://mywebsite.com"
+help-content: "Tell us where to find your personal website."
+message-content: "Please include a valid url."
+---
+::
 
 ::ReferenceTable
 ---

@@ -36,17 +36,16 @@ attrs: ['maxlength', 'minlength', 'placeholder']
 
 :SectionKeysIntro
 
-<div>
-  <formkit-input-diagram
-    prefix-icon-content="🔍"
-    suffix-icon-content="→"
-    label-content="Search everything"
-    input-content="Best climate for tomatoes"
-    help-content="Enter search term and press enter to search."
-    message-content="Please enter a search term."
-  >
-  </formkit-input-diagram>
-</div>
+::FormKitInputDiagram
+---
+prefix-icon-content: "🔍"
+suffix-icon-content: "→"
+label-content: "Search everything"
+input-content: "Best climate for tomatoes"
+help-content: "Enter search term and press enter to search."
+message-content: "Please enter a search term."
+---
+::
 
 ::ReferenceTable
 ---
