@@ -326,6 +326,10 @@ Want to create your own Tailwind theme? We've written a guide walking through th
 
 The guide concludes with a complete reproduction of the FormKit Genesis CSS theme written in Tailwind.
 
-<cta
-label: "Guide: Create a Tailwind CSS theme" button="Read now" href="/guides/create-a-tailwind-theme"
----</cta>
+::Cta
+---
+label: "Guide: Create a Tailwind CSS theme" 
+button: "Read now" 
+href: "/guides/create-a-tailwind-theme"
+---
+::

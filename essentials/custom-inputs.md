@@ -7,9 +7,14 @@ description: Create your own inputs that automatically inherit FormKit’s value
 
 :PageToc
 
-<cta
-label: "Building your first custom input?" type="ghost" href="/guides/create-a-custom-input" button="Read the guide"
----</cta>
+::Cta
+---
+label: "Building your first custom input?" 
+type: "ghost" 
+href: "/guides/create-a-custom-input" 
+button: "Read the guide"
+---
+::
 
 FormKit includes [many inputs](/inputs) out of the box, but you can also define your own inputs that automatically inherit FormKit’s value-added features like validation, error messages, data modeling, grouping, labels, help text and others.
 

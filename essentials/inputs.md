@@ -138,12 +138,14 @@ We discuss validation in more detail on its [own documentation page](/essentials
 ::
 
 
-<cta
-  href="/essentials/validation"
-  label="Learn more about validation rules"
-  button="Read the docs"
-  type="ghost">
-</cta>
+::Cta
+---
+href: "/essentials/validation"
+label: "Learn more about validation rules"
+button: "Read the docs"
+type: "ghost"
+---
+::
 
 ## Debouncing
 
@@ -236,9 +238,13 @@ primary: "section-key"
 
 At times you may find it necessary to restructure the HTML inside a FormKit input, such as adding, editing, moving, or removing sections. This can be done by exporting the input (using the CLI tool), making the desired changes, and then using the modified input in your project. Read the [guide on exporting inputs](/guides/export-and-restructure-inputs) to learn how.
 
-<cta href="/guides/export-and-restructure-inputs"
-label: "Learn to restructure your inputs" button="Export inputs docs"
----</cta>
+::Cta
+--- 
+href: "/guides/export-and-restructure-inputs"
+label: "Learn to restructure your inputs" 
+button: "Export inputs docs"
+---
+::
 
 ## Slots
 
@@ -301,6 +307,9 @@ Section schemas can also change the content being output using advanced schema l
 ---
 ::
 
-<cta
-label: "Learn more about how schemas work" href="/essentials/schema" button="Gimme more schema"
+::Cta
+---
+label: "Learn more about how schemas work" 
+href: "/essentials/schema" 
+button: "Gimme more schema"
 ---

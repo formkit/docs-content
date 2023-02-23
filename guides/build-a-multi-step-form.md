@@ -383,9 +383,14 @@ Here it is — a fully functioning multi-step form:
 ---
 ::
 
-<cta
-label: "Want to see it built using FormKit Schema?" button="Check out the Playground" href="https://formkit.link/7b74e4469f5c6eb1820cea4423a3ccbe" type="ghost"
----</cta>
+::Cta
+---
+label: "Want to see it built using FormKit Schema?" 
+button: "Check out the Playground" 
+href: "https://formkit.link/7b74e4469f5c6eb1820cea4423a3ccbe" 
+type: "ghost"
+---
+::
 
 ## Ways to improve
 
@@ -397,6 +402,10 @@ Of course, there are always ways to improve anything, and this form is no except
 
 We've covered a lot of topics in this guide and hope you've learned more about FormKit and how to use it to make multi-step forms easier!
 
-<cta
-label: "Want to use a multi-step input in your project?" button="Try the official plugin" href="/plugins/multi-step"
----</cta>
+::Cta
+---
+label: "Want to use a multi-step input in your project?" 
+button: "Try the official plugin" 
+href: "/plugins/multi-step"
+---
+::

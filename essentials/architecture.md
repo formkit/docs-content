@@ -667,9 +667,13 @@ Experienced developers will notice a few exciting properties of this plugin-libr
 3. A plugin can bundle new inputs along with plugin logic making installation simple for end users.
 4. The library function has full control over what conditions result in a call to `node.define()`. Frequently, this is simply checking `node.props.type` but you can define different inputs based on other conditions, like if a particular prop is set.
 
-<cta
-label: "Learn to create your own custom inputs" button="Custom input docs" href="/essentials/custom-inputs"
----</cta>
+::Cta
+---
+label: "Learn to create your own custom inputs" 
+button: "Custom input docs" 
+href: "/essentials/custom-inputs"
+---
+::
 
 ## Message store
 

@@ -11,8 +11,6 @@ FormKit comes with over 130 icons out-of-the-box! With the exception of the bran
 
 Using icons in your project is as easy as providing your desired icon name to one of an input's icon props.
 
-<client-only >
-
 ```html
 <FormKit prefix-icon="email" />
 <FormKit suffix-icon="settings" />

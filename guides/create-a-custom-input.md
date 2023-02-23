@@ -225,6 +225,10 @@ Our one-time password input is working great! Here are some ideas for additional
 
 Hopefully this guide helped you understand how custom inputs are declared, written, and registered. If you want to dive in deeper, try reading about the [core internals of FormKit](/essentials/architecture) and [creating custom inputs](/essentials/custom-inputs)!
 
-<cta
-label: "Want more? Start by reading about FormKit core." button="Dig deeper" href="/essentials/architecture"
----</cta>
+::Cta
+---
+label: "Want more? Start by reading about FormKit core." 
+button: "Dig deeper" 
+href: "/essentials/architecture"
+---
+::

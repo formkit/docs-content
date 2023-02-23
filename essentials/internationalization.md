@@ -55,8 +55,14 @@ Currently, FormKit supports the following languages (in the `@formkit/i18n` pack
 
 Although flags are <a href="http://www.flagsarenotlanguages.com/blog/why-flags-do-not-represent-language/">poor representations of languages</a> (flags indicate a geographic nation, while languages can be spoken in many ares of the world), we use the flags in the list above to indicate the location of the contributor who created that particular locale.
 
-<cta href="https://i18n.formkit.com" type="ghost" label="Help others who speak your language!
-" button="Contribute a locale"></cta>
+::Cta
+--- 
+href: "https://i18n.formkit.com" 
+type: "ghost" 
+label: "Help others who speak your language!" 
+button: "Contribute a locale"
+---
+::
 
 ## Using a locale
 
@@ -152,9 +158,13 @@ Messages are generally found under a locale’s <code>ui</code> or <code>validat
 
 Writing a locale for a language you know is a great way to contribute to FormKit and an easy way to get started with open source too! We are always eager to see pull requests for new locales. To support this effort, we’ve created a locale builder — a small web app to make the translation process as easy as possible.
 
-<cta href="https://i18n.formkit.com"
-label: "Help others who speak your language!" button="Contribute a locale"
----</cta>
+::Cta
+--- 
+href: "https://i18n.formkit.com"
+label: "Help others who speak your language!" 
+button: "Contribute a locale"
+---
+::
 
 Of course, you are not required to use our locale builder to submit a language, and are more than welcome to submit a standard pull request with your locale included.
 
