@@ -54,32 +54,23 @@ name="Taglist"
 :min-height="550"
 file="/_content/examples/transfer-list/transfer-list-empty-message.vue"></example>
 
-## Max
+## Sorting selected values
 
-The `max` prop allows you to limit the number of options that can be selected. When the `max` limit is reached, the taglist input will disable the listbox:
-
-<example
-name="Taglist"
-:min-height="550"
-file="/_content/examples/taglist/taglist-max.vue"></example>
-
-## Close on select
-
-If you would like the taglist's listbox to remain open in between selections, set the `close-on-select` prop to `false`:
+The transfer list allows you to sort selected values by dragging and dropping. In this example, the target list will not be validated until "Lulu Cabrera" is set to the top of the VIP list:
 
 <example
-name="Taglist"
+name="Transfer List"
 :min-height="550"
-file="/_content/examples/taglist/taglist-close-on-select.vue"></example>
+file="/_content/examples/transfer-list/transfer-list-sorting-selected-values.vue"></example>
 
 ## Slots
 
-Just like the [Dropdown input](/inputs/dropdown) or [Autocomplete input](/inputs/autocomplete), the taglist input allows you to utilize slots to customize the look and feel of the options list and the selected option by leveraging the [renderless component pattern](https://adamwathan.me/renderless-components-in-vuejs/).
+The transfer list input allows you to utilize slots to customize the look and feel of the options list and the selected option by leveraging the [renderless component pattern](https://adamwathan.me/renderless-components-in-vuejs/).
 
-In this example, we are going to use the `tag` slot to customize the look of the tags:
+In this example, we are going to use the `option` slot to customize the look of the options list:
 
 <example
-name="Taglist"
+name="Transfer List"
 :min-height="550"
 file="/\_content/examples/taglist/taglist-slots.vue"></example>
 
