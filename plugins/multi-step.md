@@ -5,7 +5,7 @@ description: Easily add multi-step sections to your FormKit forms.
 
 # Multi-Step Input
 
-<page-toc></page-toc>
+:PageToc
 
 FormKit ships with a first-party multi-step input plugin available from the `@formkit/addons` package. This input allows you to easily break your forms into multiple steps. Breaking forms into multiple steps can improve the user-experice of larger forms by keeping them feeling small and approachable compared to listing all inputs at once.
 
@@ -32,16 +32,18 @@ export default config
 
 #### A quick demonstration of the `multi-step` input type in action:
 
-<example
-name="Multi-Step Introduction"
-:file="[
-  '/\_content/examples/multi-step/intro/intro.vue',
-  '/\_content/examples/multi-step/stepOne.vue',
-  '/\_content/examples/multi-step/stepTwo.vue',
-  '/\_content/examples/multi-step/stepThree.vue',
-  '/\_content/examples/multi-step/formkit.config.js'
-]">
-</example>
+::Example
+---
+name: "Multi-Step Introduction"
+file: [
+'/\_content/examples/multi-step/intro/intro.vue',
+'/\_content/examples/multi-step/stepOne.vue',
+'/\_content/examples/multi-step/stepTwo.vue',
+'/\_content/examples/multi-step/stepThree.vue',
+'/\_content/examples/multi-step/formkit.config.js'
+]
+---
+::
 
 ## Usage
 
@@ -56,7 +58,7 @@ Using these inputs together is as simple as wrapping any markup you want to have
 
 ```html
 <FormKit type="multi-step">
-  <FormKit type="step" name="stepOne">
+  <FormKit type="step" name: "stepOne">
     <!-- content for stepOne goes here! -->
   </FormKit>
 </FormKit>
@@ -73,14 +75,16 @@ The `multi-step` input ships with two available tab styles.
 - `tab`: The default tab experience. Each step name is show in a tab with an active state. Error count is shown in the top right of the tab.
 - `progress`: A progress bar style where each step is a "node" on a timeline of total steps. With this display mode you can also use the `hide-progress-labels` prop to hide the step names.
 
-<example
-name="Multi-Step Introduction"
-:file="[
-  '/\_content/examples/multi-step/tab-style/tab-style.vue',
-  '/\_content/examples/multi-step/tab-style/multi-step-content.vue',
-  '/\_content/examples/multi-step/formkit.config.js'
-]">
-</example>
+::Example
+---
+name: "Multi-Step Introduction"
+file: [
+'/\_content/examples/multi-step/tab-style/tab-style.vue',
+'/\_content/examples/multi-step/tab-style/multi-step-content.vue',
+'/\_content/examples/multi-step/formkit.config.js'
+]
+---
+::
 
 ## Step labels
 
@@ -90,28 +94,32 @@ By default the `multi-step` input will use the `name` attribute of its child `st
 - `prev-label`: an override for the `stepPrevious` button label which defaults to `Back`.
 - `next-label`: an override for the `stepNext` button label which defaults to `Next`.
 
-<example
-name="Step Labels"
-:file="[
-  '/\_content/examples/multi-step/step-labels/step-labels.vue',
-  '/\_content/examples/multi-step/formkit.config.js'
-]">
-</example>
+::Example
+---
+name: "Step Labels"
+file: [
+'/\_content/examples/multi-step/step-labels/step-labels.vue',
+'/\_content/examples/multi-step/formkit.config.js'
+]
+---
+::
 
 ## Allow incomplete steps
 
 By default the `multi-step` input will allow advancing to later steps even if the current step or a step between the current step and the target step has blocking validation messages. To prevent a user from jumping ahead set the `allow-incomplete` prop to `false`.
 
-<example
-name="Allow Incomplete"
-:file="[
-  '/\_content/examples/multi-step/allow-incomplete/allow-incomplete.vue',
-  '/\_content/examples/multi-step/stepOne.vue',
-  '/\_content/examples/multi-step/stepTwo.vue',
-  '/\_content/examples/multi-step/stepThree.vue',
-  '/\_content/examples/multi-step/formkit.config.js'
-]">
-</example>
+::Example
+---
+name: "Allow Incomplete"
+file: [
+'/\_content/examples/multi-step/allow-incomplete/allow-incomplete.vue',
+'/\_content/examples/multi-step/stepOne.vue',
+'/\_content/examples/multi-step/stepTwo.vue',
+'/\_content/examples/multi-step/stepThree.vue',
+'/\_content/examples/multi-step/formkit.config.js'
+]
+---
+::
 
 ## Valid step icon
 
@@ -122,13 +130,15 @@ You can either:
 - Change the `valid-step-icon` on the `multi-step` input to change the icon for all steps inside the input.
 - Change the `valid-step-icon` on a `step` input to change or override the icon just for that step.
 
-<example
-name="Valid Step Icon"
-:file="[
-  '/\_content/examples/multi-step/valid-step-icon/valid-step-icon.vue',
-  '/\_content/examples/multi-step/formkit.config.js'
-]">
-</example>
+::Example
+---
+name: "Valid Step Icon"
+file: [
+'/\_content/examples/multi-step/valid-step-icon/valid-step-icon.vue',
+'/\_content/examples/multi-step/formkit.config.js'
+]
+---
+::
 
 ## Customizing step actions
 
@@ -142,13 +152,15 @@ The `stepNext` and `stepPrevious` sections have access to the `incrementStep` ha
 By default, the <code>stepNext</code> in a multi-step input uses event listeners to capture tab navigation via keyboard and allow users to cycle through all available steps within a multi-step.<br><br>If you want to preserve this behaviour in your own custom <code>stepNext</code> implementation then be sure to add a <code>data-next="true"</code> attribute to your focusable element that triggers step navigation.
 </callout>
 
-<example
-name="Customizing step actions"
-:file="[
-  '/\_content/examples/multi-step/step-actions/step-actions.vue',
-  '/\_content/examples/multi-step/formkit.config.js'
-]">
-</example>
+::Example
+---
+name: "Customizing step actions"
+file: [
+'/\_content/examples/multi-step/step-actions/step-actions.vue',
+'/\_content/examples/multi-step/formkit.config.js'
+]
+---
+::
 
 ## The beforeStepChange event
 
@@ -162,13 +174,15 @@ Your `beforeStepChange` function should return a `Boolean`. Returning `false` wi
 
 `beforeStepChange` can be used on your `multi-step` input in which case it will apply to _all_ steps. Additionally you can use `beforeStepChange` on a specific `step` input to run your function only when navigating away from the step which has the function assigned. `beforeStepChange` applied to a `step` will override any `beforeStepChange` set on a parent `multi-step` if one exists.
 
-<example
-name="beforeStepChange"
-:file="[
-  '/\_content/examples/multi-step/before-step-change/before-step-change.vue',
-  '/\_content/examples/multi-step/formkit.config.js'
-]">
-</example>
+::Example
+---
+name: "beforeStepChange"
+file: [
+'/\_content/examples/multi-step/before-step-change/before-step-change.vue',
+'/\_content/examples/multi-step/formkit.config.js'
+]
+---
+::
 
 ## Props & Attributes (multi-step)
 

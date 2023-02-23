@@ -4,7 +4,7 @@ title: formkit/utils
 
 # @formkit/utils
 
-<page-toc></page-toc>
+:PageToc
 
 ## Introduction
 
@@ -36,7 +36,7 @@ assignDeep<A extends Record<PropertyKey, any>, B extends Record<PropertyKey, any
 
 #### Returns
 
- `A & B`
+`A & B`
 
 ### camel()
 
@@ -58,7 +58,7 @@ camel(str: string): string;
 
 #### Returns
 
- `string`
+`string`
 
 ### clone()
 
@@ -81,7 +81,7 @@ clone<T extends Record<string, unknown> | unknown[] | null>(obj: T, explicit?: s
 
 #### Returns
 
- `T`
+`T`
 
 ### cloneAny()
 
@@ -103,7 +103,7 @@ cloneAny<T>(obj: T): T;
 
 #### Returns
 
- `T`
+`T`
 
 ### dedupe()
 
@@ -126,7 +126,7 @@ dedupe<T extends any[] | Set<any>, X extends any[] | Set<any>>(arr1: T, arr2?: X
 
 #### Returns
 
- `any[]`
+`any[]`
 
 ### empty()
 
@@ -148,7 +148,7 @@ empty(value: any): boolean;
 
 #### Returns
 
- `boolean`
+`boolean`
 
 ### eq()
 
@@ -173,7 +173,7 @@ eq(valA: any, valB: any, deep?: boolean, explicit?: string[]): boolean;
 
 #### Returns
 
- `boolean`
+`boolean`
 
 ### escapeExp()
 
@@ -195,7 +195,7 @@ escapeExp(string: string): string;
 
 #### Returns
 
- `string`
+`string`
 
 ### except()
 
@@ -218,7 +218,7 @@ except(obj: Record<string, any>, toRemove: Array<string | RegExp>): Record<strin
 
 #### Returns
 
- `Record<string, any>`
+`Record<string, any>`
 
 ### extend()
 
@@ -243,7 +243,7 @@ extend(original: Record<string, any>, additional: Record<string, any> | string |
 
 #### Returns
 
- `Record<string, any> | string | null`
+`Record<string, any> | string | null`
 
 ### getAt()
 
@@ -266,7 +266,7 @@ getAt(obj: any, addr: string): unknown;
 
 #### Returns
 
- `unknown`
+`unknown`
 
 ### has()
 
@@ -292,7 +292,7 @@ has(obj: {
 
 #### Returns
 
- `boolean`
+`boolean`
 
 ### init()
 
@@ -316,7 +316,7 @@ init<T extends object>(obj: T): T & {
 
 #### Returns
 
- `T & { __init?: true }`
+`T & { __init?: true }`
 
 ### isObject()
 
@@ -338,7 +338,7 @@ isObject(o: unknown): o is Record<PropertyKey, unknown> | unknown[];
 
 #### Returns
 
- `boolean`
+`boolean`
 
 ### isPojo()
 
@@ -360,7 +360,7 @@ isPojo(o: any): o is Record<string, any>;
 
 #### Returns
 
- `boolean`
+`boolean`
 
 ### isQuotedString()
 
@@ -382,7 +382,7 @@ isQuotedString(str: string): boolean;
 
 #### Returns
 
- `boolean`
+`boolean`
 
 #### Examples
 
@@ -421,7 +421,7 @@ isRecord(o: unknown): o is Record<PropertyKey, unknown>;
 
 #### Returns
 
- `boolean`
+`boolean`
 
 ### kebab()
 
@@ -443,7 +443,7 @@ kebab(str: string): string;
 
 #### Returns
 
- `string`
+`string`
 
 ### nodeProps()
 
@@ -465,7 +465,7 @@ nodeProps(...sets: Array<Record<string, any>>): Record<string, any>;
 
 #### Returns
 
- `Record<string, any>`
+`Record<string, any>`
 
 ### nodeType()
 
@@ -487,7 +487,7 @@ nodeType(type: string): 'list' | 'group' | 'input';
 
 #### Returns
 
- `'list' | 'group' | 'input'`
+`'list' | 'group' | 'input'`
 
 ### only()
 
@@ -510,7 +510,7 @@ only(obj: Record<string, any>, include: Array<string | RegExp>): Record<string, 
 
 #### Returns
 
- `Record<string, any>`
+`Record<string, any>`
 
 ### parseArgs()
 
@@ -532,7 +532,7 @@ parseArgs(str: string): string[];
 
 #### Returns
 
- `string[]`
+`string[]`
 
 ### regexForFormat()
 
@@ -554,7 +554,7 @@ regexForFormat(format: string): RegExp;
 
 #### Returns
 
- `RegExp`
+`RegExp`
 
 #### Examples
 
@@ -586,7 +586,7 @@ rmEscapes(str: string): string;
 
 #### Returns
 
- `string`
+`string`
 
 ### setify()
 
@@ -608,7 +608,7 @@ setify<T>(items: Set<T> | T[] | null | undefined): Set<T>;
 
 #### Returns
 
- `Set<T>`
+`Set<T>`
 
 #### Examples
 
@@ -644,7 +644,7 @@ shallowClone<T>(obj: T, explicit?: string[]): T;
 
 #### Returns
 
- `T`
+`T`
 
 ### slugify()
 
@@ -663,11 +663,11 @@ slugify(str: string): string;
 #### Parameters
 
 - `str` — String to be slugified to a URL
--safe string.
+  -safe string.
 
 #### Returns
 
- `string`
+`string`
 
 ### spread()
 
@@ -690,7 +690,7 @@ spread<T>(obj: T, explicit?: string[]): T;
 
 #### Returns
 
- `T`
+`T`
 
 ### token()
 
@@ -708,7 +708,7 @@ token(): string;
 
 #### Returns
 
- string
+string
 
 #### Examples
 
@@ -743,7 +743,7 @@ undefine(value: unknown): true | undefined;
 
 #### Returns
 
- `true | undefined`
+`true | undefined`
 
 ### whenAvailable()
 
@@ -773,7 +773,7 @@ The date token strings that can be used for date formatting.
 <client-only>
 
 ```typescript
-type FormKitDateTokens = 'MM' | 'M' | 'DD' | 'D' | 'YYYY' | 'YY';
+type FormKitDateTokens = 'MM' | 'M' | 'DD' | 'D' | 'YYYY' | 'YY'
 ```
 
 </client-only>

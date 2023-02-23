@@ -5,7 +5,7 @@ description: Examples you can use in your project today.
 
 # Examples
 
-<page-toc></page-toc>
+:PageToc
 
 A broad collection of examples with working code you can use in your project today.
 

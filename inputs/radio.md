@@ -3,9 +3,9 @@ title: Radio Input
 description: A native HTML radio input with support for one or many nested options elements.
 ---
 
-<InputPageHero title="Radio"></InputPageHero>
+:InputPageHero{title="Radio"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `radio` input uses HTML's [native radio inputs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio) to allow a user to select one value from a series of options. The `options` prop is required for radio inputs and can be provided in 3 ways:
 
@@ -17,25 +17,37 @@ The `radio` input uses HTML's [native radio inputs](https://developer.mozilla.or
 
 The simplest way to provide options is an array of strings. The provided strings will be used for both the label and the value of the option.
 
-<example
-name="Radio input"
-file="/_content/examples/radio-strings/radio-strings.vue"></example>
+::Example
+---
+name: "Radio input"
+file: "/_content/examples/radio-strings/radio-strings.vue"
+---
+::
+
 
 ### Value / Label object
 
 You may also provide the `options` prop where the keys are values and the values of each property are labels.
 
-<example
-name="Radio input"
-file="/_content/examples/radio-object/radio-object.vue"></example>
+::Example
+---
+name: "Radio input"
+file: "/_content/examples/radio-object/radio-object.vue"
+---
+::
+
 
 ### Array of objects
 
 The most flexible way to define options is by providing an array of objects. The objects _must_ include `value` and `label` properties — but may also include a `help` property as well as an `attrs` object of additional attributes to apply to each radio input tag.
 
-<example
-name="Radio input"
-file="/_content/examples/radio-objects/radio-objects.vue"></example>
+::Example
+---
+name: "Radio input"
+file: "/_content/examples/radio-objects/radio-objects.vue"
+---
+::
+
 
 ## Props & Attributes
 

@@ -3,9 +3,9 @@ title: Submit Input
 description: A native HTML button element used in place of a native HTML submit input.
 ---
 
-<InputPageHero title="Submit"></InputPageHero>
+:InputPageHero{title="Submit"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `submit` input uses HTML's [native button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button). The `label` prop is used to populate the text of the button — or alternatively you can use the default slot.
 
@@ -17,25 +17,37 @@ Type <code>submit</code> input uses a <code>button</code> element instead of an 
 
 The easiest way to set the `label` of a `submit` button is with the `label` prop:
 
-<example
-  name="Submit input"
-  file="/_content/examples/submit/submit-base.vue"></example>
+::Example
+---
+  name: "Submit input"
+  file: "/_content/examples/submit/submit-base.vue"
+---
+::
+
 
 ## Default slot
 
 The default slot can also be used to add text and UI to the button:
 
-<example
-  name="Submit input"
-  file="/_content/examples/submit/submit-default-slot.vue"></example>
+::Example
+---
+  name: "Submit input"
+  file: "/_content/examples/submit/submit-default-slot.vue"
+---
+::
+
 
 ## Event listeners
 
 You can also bind event listeners:
 
-<example
-  name="Submit input"
-  file="/_content/examples/submit/submit-events.vue"></example>
+::Example
+---
+  name: "Submit input"
+  file: "/_content/examples/submit/submit-events.vue"
+---
+::
+
 
 ## Provided submit button
 
@@ -69,9 +81,7 @@ You can also disable your own submit button [via schema](https://formkit.link/6e
 <client-only>
 
 ```html
-<FormKit type="button" :ignore="false">
-  Add a section
-</FormKit>
+<FormKit type="button" :ignore="false"> Add a section </FormKit>
 ```
 
 ## Props & Attributes
@@ -82,6 +92,7 @@ The `submit` input (along with [`button`](/inputs/button)) is unique in that it 
 </reference-table>
 
 ## Sections
+
 <section-keys-intro></section-keys-intro>
 
 <div>

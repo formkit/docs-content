@@ -5,7 +5,7 @@ description: Follow this guide to learn how to create, register, and use a custo
 
 # Export and restructure inputs
 
-<page-toc></page-toc>
+:PageToc
 
 FormKit inputs ship with a lot of markup. This is useful for ensuring inputs are written in an accessible manner. However, sometimes it makes sense to modify the existing structure of a FormKit input. Using the FormKit CLI, we can export FormKit's open source inputs and modify their original structure — or even their functionality.
 
@@ -277,15 +277,19 @@ export const floatingLabelTextInput = {
 
 After adding appropriate styling, we can see that our new custom input has its `<label>` moved within the HTML structure and uses floating labels:
 
-<example
-  :file="[
+::Example
+---
+  file: [
     '/_content/examples/guides/export-inputs/final-result/example.vue',
     '/_content/examples/guides/export-inputs/final-result/floatingLabelTextInput.js',
     '/_content/examples/guides/export-inputs/final-result/formkit.config.js',
-  ]"
-  init-file-tab="example.vue"
-  init-file-tab="formkit.config.js"
-  :editable="true"></example>
+  ]
+  init-file-tab: "example.vue"
+  init-file-tab: "formkit.config.js"
+  editable: true
+---
+::
+
 
 ## Next steps
 

@@ -4,7 +4,7 @@ title: formkit/inputs
 
 # @formkit/inputs
 
-<page-toc></page-toc>
+:PageToc
 
 ## Introduction
 
@@ -33,7 +33,7 @@ $attrs(attrs: FormKitSchemaAttributes | (() => FormKitSchemaAttributes), section
 
 #### Returns
 
- [FormKitSchemaExtendableSection](#formkitschemaextendablesection)
+[FormKitSchemaExtendableSection](#formkitschemaextendablesection)
 
 ### $extend()
 
@@ -56,7 +56,7 @@ $extend(section: FormKitSchemaExtendableSection, extendWith: Partial<FormKitSche
 
 #### Returns
 
- [FormKitSchemaExtendableSection](#formkitschemaextendablesection)
+[FormKitSchemaExtendableSection](#formkitschemaextendablesection)
 
 ### $for()
 
@@ -80,7 +80,7 @@ $for(varName: string, inName: string, section: FormKitSchemaExtendableSection): 
 
 #### Returns
 
- [FormKitSchemaExtendableSection](#formkitschemaextendablesection)
+[FormKitSchemaExtendableSection](#formkitschemaextendablesection)
 
 ### $if()
 
@@ -104,7 +104,7 @@ $if(condition: string, then: FormKitSchemaExtendableSection, otherwise?: FormKit
 
 #### Returns
 
- [FormKitSchemaExtendableSection](#formkitschemaextendablesection)
+[FormKitSchemaExtendableSection](#formkitschemaextendablesection)
 
 ### $root()
 
@@ -126,7 +126,7 @@ $root(section: FormKitSchemaExtendableSection): FormKitExtendableSchemaRoot;
 
 #### Returns
 
- [FormKitSchemaExtendableSection](#formkitschemaextendablesection)
+[FormKitSchemaExtendableSection](#formkitschemaextendablesection)
 
 ## Features
 
@@ -146,7 +146,7 @@ checkboxes(node: FormKitNode): void;
 
 #### Parameters
 
-* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+- `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
 
 ### defaultIcon()
 
@@ -164,12 +164,12 @@ defaultIcon(sectionKey: string, defaultIcon: string): (node: FormKitNode) => voi
 
 #### Parameters
 
-* `sectionKey` — the location the icon should be loaded.
-* `defaultIcon` — the icon that should be loaded if a match is found in the user's CSS.
+- `sectionKey` — the location the icon should be loaded.
+- `defaultIcon` — the icon that should be loaded if a match is found in the user's CSS.
 
 #### Returns
 
- A [FormKitPlugin](/api-reference/formkit-core#formkitplugin).
+A [FormKitPlugin](/api-reference/formkit-core#formkitplugin).
 
 ### files()
 
@@ -187,7 +187,7 @@ files(node: FormKitNode): void;
 
 #### Parameters
 
-* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+- `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
 
 ### initialValue()
 
@@ -205,7 +205,7 @@ initialValue(node: FormKitNode): void;
 
 #### Parameters
 
-* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+- `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
 
 ### localize()
 
@@ -223,12 +223,12 @@ localize(key: string, value?: string): (node: FormKitNode) => void;
 
 #### Parameters
 
-* `key` — The key of the message.
-* `value` — The value of the message.
+- `key` — The key of the message.
+- `value` — The value of the message.
 
 #### Returns
 
- A [FormKitPlugin](/api-reference/formkit-core#formkitplugin).
+A [FormKitPlugin](/api-reference/formkit-core#formkitplugin).
 
 ### normalizeBoxes()
 
@@ -249,11 +249,11 @@ normalizeBoxes(node: FormKitNode): FormKitMiddleware<{
 
 #### Parameters
 
-* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+- `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
 
 #### Returns
 
- A [FormKitMiddleware](/api-reference/formkit-node#formkitmiddleware).
+A [FormKitMiddleware](/api-reference/formkit-node#formkitmiddleware).
 
 ### options()
 
@@ -271,7 +271,7 @@ options(node: FormKitNode): void;
 
 #### Parameters
 
-* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+- `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
 
 ### radios()
 
@@ -289,7 +289,7 @@ radios(node: FormKitNode): void;
 
 #### Parameters
 
-* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+- `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
 
 ## Functions
 
@@ -307,12 +307,12 @@ composable(key: string, schema: FormKitInputSchema): FormKitSchemaComposable;
 
 #### Parameters
 
-* `key` — A new section key name.
-* `schema` — The default schema in this composable slot.
+- `key` — A new section key name.
+- `schema` — The default schema in this composable slot.
 
 #### Returns
 
- [FormKitSchemaComposable](/api-reference/formkit-core#formkitschemacomposable)
+[FormKitSchemaComposable](/api-reference/formkit-core#formkitschemacomposable)
 
 ### createLibraryPlugin()
 
@@ -330,11 +330,11 @@ createLibraryPlugin(...libraries: FormKitLibrary[]): FormKitPlugin;
 
 #### Parameters
 
-* `libraries` — One or many [FormKitLibrary](/api-reference/formkit-core#formkitlibrary).
+- `libraries` — One or many [FormKitLibrary](/api-reference/formkit-core#formkitlibrary).
 
 #### Returns
 
- [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+[FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
 ### createSection()
 
@@ -354,13 +354,13 @@ createSection(section: string, el: string | (() => FormKitSchemaNode), root: fal
 
 #### Parameters
 
-* `section` — A single section of schema
-* `el` — The element or a function that returns a schema node.
-* `root` — When true, returns a FormKitExtendableSchemaRoot. When false, returns a FormKitSchemaExtendableSection.
+- `section` — A single section of schema
+- `el` — The element or a function that returns a schema node.
+- `root` — When true, returns a FormKitExtendableSchemaRoot. When false, returns a FormKitSchemaExtendableSection.
 
 #### Returns
 
- Returns a [FormKitExtendableSchemaRoot](/api-reference/formkit-core#formkitextendableschemaroot) or a [FormKitSchemaExtendableSection](/api-reference/formkit-core#formkitschemaextendablesection).
+Returns a [FormKitExtendableSchemaRoot](/api-reference/formkit-core#formkitextendableschemaroot) or a [FormKitSchemaExtendableSection](/api-reference/formkit-core#formkitschemaextendablesection).
 
 ### disables()
 
@@ -378,7 +378,7 @@ disables(node: FormKitNode): void;
 
 #### Parameters
 
-* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+- `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
 
 ### extendSchema()
 
@@ -396,12 +396,12 @@ extendSchema(schema: FormKitSchemaNode, extension?: Partial<FormKitSchemaNode>):
 
 #### Parameters
 
-* `schema` — The base schema node.
-* `extension` — The values to extend on the base schema node.
+- `schema` — The base schema node.
+- `extension` — The values to extend on the base schema node.
 
 #### Returns
 
- [FormKitSchemaNode](/api-reference/formkit-core#formkitschemanode)
+[FormKitSchemaNode](/api-reference/formkit-core#formkitschemanode)
 
 ### findSection()
 
@@ -419,12 +419,12 @@ findSection(schema: FormKitSchemaNode[], target: string): [false, false] | [Form
 
 #### Parameters
 
-* `schema` — A [FormKitSchemaNode](/api-reference/formkit-core#formkitschemanode) array.
-* `target` — The name of the section to find.
+- `schema` — A [FormKitSchemaNode](/api-reference/formkit-core#formkitschemanode) array.
+- `target` — The name of the section to find.
 
 #### Returns
 
- a tuple of the schema and the section or a tuple of `false` and `false` if not found.
+a tuple of the schema and the section or a tuple of `false` and `false` if not found.
 
 ### form()
 
@@ -442,7 +442,7 @@ form(node: FormKitNode): void;
 
 #### Parameters
 
-* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+- `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
 
 ### ignore()
 
@@ -460,7 +460,7 @@ ignore(node: FormKitNode): void;
 
 #### Parameters
 
-* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+- `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
 
 ### isSchemaObject()
 
@@ -478,11 +478,11 @@ isSchemaObject(schema: Partial<FormKitSchemaNode>): schema is FormKitSchemaDOMNo
 
 #### Parameters
 
-* `schema` — returns `true` if the node is a schema node but not a string or conditional.
+- `schema` — returns `true` if the node is a schema node but not a string or conditional.
 
 #### Returns
 
- `boolean`
+`boolean`
 
 ### isSlotCondition()
 
@@ -504,11 +504,11 @@ isSlotCondition(node: FormKitSchemaNode): node is {
 
 #### Parameters
 
-* `node` — A [FormKitSchemaNode](/api-reference/formkit-core#formkitschemanode).
+- `node` — A [FormKitSchemaNode](/api-reference/formkit-core#formkitschemanode).
 
 #### Returns
 
- `boolean`
+`boolean`
 
 #### Examples
 
@@ -540,12 +540,12 @@ normalizeOptions(options: FormKitOptionsProp): FormKitOptionsList;
 
 #### Parameters
 
-* `options` — An un
--normalized [FormKitOptionsProp](#formkitoptionsprop).
+- `options` — An un
+  -normalized [FormKitOptionsProp](#formkitoptionsprop).
 
 #### Returns
 
- A list of [FormKitOptionsList](#formkitoptionslist).
+A list of [FormKitOptionsList](#formkitoptionslist).
 
 ### select()
 
@@ -563,7 +563,7 @@ select(node: FormKitNode): void;
 
 #### Parameters
 
-* `node` — A formkit node.
+- `node` — A formkit node.
 
 ### useSchema()
 
@@ -581,11 +581,11 @@ useSchema(inputSection: FormKitSection): FormKitExtendableSchemaRoot;
 
 #### Parameters
 
-* `inputSection` — Content to store in the input section key location.
+- `inputSection` — Content to store in the input section key location.
 
 #### Returns
 
- [FormKitExtendableSchemaRoot](/api-reference/formkit-core#formkitextendableschemaroot)
+[FormKitExtendableSchemaRoot](/api-reference/formkit-core#formkitextendableschemaroot)
 
 ## TypeScript
 
@@ -597,8 +597,8 @@ A single file object in FormKit’s synthetic "FileList".
 
 ```typescript
 interface FormKitFile {
-    file?: File;
-    name: string;
+  file?: File
+  name: string
 }
 ```
 
@@ -612,13 +612,13 @@ Options should always be formatted as an array of objects with label and value p
 
 ```typescript
 interface FormKitOptionsItem {
-    __original?: any;
-    [index: string]: any;
-    attrs?:{
-        disabled?: boolean;
-    }&Record<string, any>;
-    label: string;
-    value: unknown;
+  __original?: any
+  [index: string]: any
+  attrs?: {
+    disabled?: boolean
+  } & Record<string, any>
+  label: string
+  value: unknown
 }
 ```
 
@@ -632,10 +632,10 @@ Allows for prop extensions to be defined by using an interface whose keys are ig
 
 ```typescript
 interface FormKitOptionsPropExtensions {
-    arrayOfNumbers: number[];
-    arrayOfStrings: string[];
-    optionsList: FormKitOptionsList;
-    valueLabelPojo: Record<string | number, string>;
+  arrayOfNumbers: number[]
+  arrayOfStrings: string[]
+  optionsList: FormKitOptionsList
+  valueLabelPojo: Record<string | number, string>
 }
 ```
 
@@ -649,8 +649,8 @@ A function that is called with an extensions argument and returns a valid schema
 
 ```typescript
 interface FormKitSchemaExtendableSection {
-    _s?: string;
-    (extensions: Record<string, Partial<FormKitSchemaNode>>): FormKitSchemaNode;
+  _s?: string
+  (extensions: Record<string, Partial<FormKitSchemaNode>>): FormKitSchemaNode
 }
 ```
 
@@ -664,7 +664,7 @@ A function that when called, returns a function that can in turn be called with 
 
 ```typescript
 interface FormKitSection<T = FormKitSchemaExtendableSection> {
-    (...children: Array<FormKitSchemaExtendableSection | string>): T;
+  (...children: Array<FormKitSchemaExtendableSection | string>): T
 }
 ```
 
@@ -678,22 +678,22 @@ Synthetic props are props that are not explicitly declared as props, but should 
 
 ```typescript
 interface FormKitSyntheticPropsExtensions {
-    accept: string;
-    action: string;
-    actions: boolean;
-    disabled: string | boolean;
-    enctype: string;
-    help: string;
-    ignore: string | boolean;
-    label: string;
-    max: string | number;
-    method: string;
-    min: string | number;
-    multiple: string | boolean;
-    options: FormKitOptionsProp;
-    preserve: string | boolean;
-    preserveErrors: string | boolean;
-    step: string | number;
+  accept: string
+  action: string
+  actions: boolean
+  disabled: string | boolean
+  enctype: string
+  help: string
+  ignore: string | boolean
+  label: string
+  max: string | number
+  method: string
+  min: string | number
+  multiple: string | boolean
+  options: FormKitOptionsProp
+  preserve: string | boolean
+  preserveErrors: string | boolean
+  step: string | number
 }
 ```
 
@@ -706,7 +706,7 @@ A synthetic array-based "FileList".
 <client-only>
 
 ```typescript
-type FormKitFileValue = FormKitFile[];
+type FormKitFileValue = FormKitFile[]
 ```
 
 </client-only>
@@ -718,7 +718,11 @@ Either a schema node, or a function that returns a schema node.
 <client-only>
 
 ```typescript
-type FormKitInputSchema = ((children?: string | FormKitSchemaNode[] | FormKitSchemaCondition) => FormKitSchemaNode) | FormKitSchemaNode;
+type FormKitInputSchema =
+  | ((
+      children?: string | FormKitSchemaNode[] | FormKitSchemaCondition
+    ) => FormKitSchemaNode)
+  | FormKitSchemaNode
 ```
 
 </client-only>
@@ -730,7 +734,7 @@ An array of option items.
 <client-only>
 
 ```typescript
-type FormKitOptionsList = FormKitOptionsItem[];
+type FormKitOptionsList = FormKitOptionsItem[]
 ```
 
 </client-only>
@@ -742,7 +746,8 @@ The types of options that can be passed to the options prop.
 <client-only>
 
 ```typescript
-type FormKitOptionsProp = FormKitOptionsPropExtensions[keyof FormKitOptionsPropExtensions];
+type FormKitOptionsProp =
+  FormKitOptionsPropExtensions[keyof FormKitOptionsPropExtensions]
 ```
 
 </client-only>
@@ -755,8 +760,8 @@ The synthetic prop types.
 
 ```typescript
 type FormKitSyntheticProps = {
-    [Property in keyof FormKitSyntheticPropsExtensions]: FormKitSyntheticPropsExtensions[Property];
-};
+  [Property in keyof FormKitSyntheticPropsExtensions]: FormKitSyntheticPropsExtensions[Property]
+}
 ```
 
 </client-only>

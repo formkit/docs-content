@@ -3,19 +3,21 @@ title: Week Input
 description: A native HTML week picker.
 ---
 
-<InputPageHero title="Week"></InputPageHero>
+:InputPageHero{title="Week"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `week` input uses the HTML's [native week picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/week) to allow users to easily
 select a week.
 
 ## Basic example
 
-<example
-  name="Week input"
-  file="/_content/examples/week/week.vue">
-</example>
+::Example
+---
+  name: "Week input"
+  file: "/_content/examples/week/week.vue"
+---
+::
 
 <callout type="danger" label="Compatibility warning">
 Week inputs are not currently supported in FireFox or Safari.
@@ -34,6 +36,7 @@ FormKit props.
 </reference-table>
 
 ## Sections
+
 <section-keys-intro></section-keys-intro>
 
 <div>

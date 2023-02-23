@@ -3,17 +3,21 @@ title: Textarea Input
 description: A native HTML textarea input.
 ---
 
-<InputPageHero title="Textarea"></InputPageHero>
+:InputPageHero{title="Textarea"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `textarea` input uses HTML's [native textarea input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea). It allows a user to enter multiple lines of text and is resizable in most browsers.
 
 ## Basic example
 
-<example
-name="Textarea input"
-file="/_content/examples/textarea/textarea.vue"></example>
+::Example
+---
+name: "Textarea input"
+file: "/_content/examples/textarea/textarea.vue"
+---
+::
+
 
 ## Props & Attributes
 
@@ -24,6 +28,7 @@ FormKit props.
 </reference-table>
 
 ## Sections
+
 <section-keys-intro></section-keys-intro>
 
 <div>

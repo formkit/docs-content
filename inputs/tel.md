@@ -3,17 +3,21 @@ title: Tel (Telephone) Input
 description: A native HTML tel input.
 ---
 
-<InputPageHero title="Telephone"></InputPageHero>
+:InputPageHero{title="Telephone"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `tel` input uses HTML's [native tel input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel) and allows a user to enter a telephone number. Telephone numbers can also be entered with standard text inputs but some browsers (especially mobile ones) may improve the experience of entering telephone numbers by showing a different keypad.
 
 ## An example
 
-<example
-name="Tel input"
-file="/_content/examples/tel/tel.vue"></example>
+::Example
+---
+name: "Tel input"
+file: "/_content/examples/tel/tel.vue"
+---
+::
+
 
 <callout type="tip" label="Phone number validation">
 Phone number formats vary <em>greatly</em> around the world (some localities even include letters in their phone numbers!) — be cautious validating phone numbers unless you know your audience is exclusively from a given location.
@@ -28,6 +32,7 @@ FormKit props.
 </reference-table>
 
 ## Sections
+
 <section-keys-intro></section-keys-intro>
 
 <div>
@@ -41,7 +46,6 @@ FormKit props.
   >
   </formkit-input-diagram>
 </div>
-
 
 <reference-table type="sectionKeys" primary="section-key">
 </reference-table>

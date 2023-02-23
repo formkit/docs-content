@@ -4,7 +4,7 @@ title: formkit/validation
 
 # @formkit/validation
 
-<page-toc></page-toc>
+:PageToc
 
 ## Introduction
 
@@ -78,7 +78,7 @@ The interface for the localized validation message registry.
 
 ```typescript
 interface FormKitValidationMessages {
-    [index: string]: string | ((...args: FormKitValidationI18NArgs) => string);
+  [index: string]: string | ((...args: FormKitValidationI18NArgs) => string)
 }
 ```
 
@@ -92,7 +92,7 @@ FormKit validation rules are structured as on object of key/function pairs where
 
 ```typescript
 interface FormKitValidationRules {
-    [index: string]: FormKitValidationRule;
+  [index: string]: FormKitValidationRule
 }
 ```
 
@@ -106,14 +106,14 @@ Defines what fully parsed validation rules look like.
 
 ```typescript
 type FormKitValidation = {
-    rule: FormKitValidationRule;
-    args: any[];
-    timer: number;
-    state: boolean | null;
-    queued: boolean;
-    deps: FormKitDependencies;
-    messageObserver?: FormKitObservedNode;
-} & FormKitValidationHints;
+  rule: FormKitValidationRule
+  args: any[]
+  timer: number
+  state: boolean | null
+  queued: boolean
+  deps: FormKitDependencies
+  messageObserver?: FormKitObservedNode
+} & FormKitValidationHints
 ```
 
 </client-only>
@@ -125,7 +125,7 @@ Defines what validation rules look like when they are parsed, but have not neces
 <client-only>
 
 ```typescript
-type FormKitValidationIntent = [string | FormKitValidationRule, ...any[]];
+type FormKitValidationIntent = [string | FormKitValidationRule, ...any[]]
 ```
 
 </client-only>
@@ -138,9 +138,9 @@ Signature for a generic validation rule. It accepts an input — often a string 
 
 ```typescript
 type FormKitValidationRule = {
-    (node: FormKitNode, ...args: any[]): boolean | Promise<boolean>;
-    ruleName?: string;
-} & Partial<FormKitValidationHints>;
+  (node: FormKitNode, ...args: any[]): boolean | Promise<boolean>
+  ruleName?: string
+} & Partial<FormKitValidationHints>
 ```
 
 </client-only>

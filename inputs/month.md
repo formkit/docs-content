@@ -3,9 +3,9 @@ title: Month Input
 description: A native HTML month picker.
 ---
 
-<InputPageHero title="Month"></InputPageHero>
+:InputPageHero{title="Month"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `month` input uses HTML's [native month picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/month) to allow users to easily select a month.
 
@@ -15,10 +15,12 @@ Month inputs are not currently supported in FireFox or Safari.
 
 ## Basic example
 
-<example
-  name="Month input"
-  file="/_content/examples/month/month.vue">
-</example>
+::Example
+---
+  name: "Month input"
+  file: "/_content/examples/month/month.vue"
+---
+::
 
 <callout type="warning" label="Formatting">
 The internal format of all native month pickers is <code>YYYY-MM</code>. This is true
@@ -34,6 +36,7 @@ FormKit props.
 </reference-table>
 
 ## Sections
+
 <section-keys-intro></section-keys-intro>
 
 <div>

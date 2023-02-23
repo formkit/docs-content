@@ -3,17 +3,21 @@ title: Password Input
 description: A native HTML password input.
 ---
 
-<InputPageHero title="Password"></InputPageHero>
+:InputPageHero{title="Password"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `password` input uses HTML's [native password input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/password). It allows a user to privately enter their password. When creating new passwords, this input is often compiled with the `confirm` validation rule.
 
 ## An example
 
-<example
-name="Password input"
-file="/_content/examples/password/password.vue"></example>
+::Example
+---
+name: "Password input"
+file: "/_content/examples/password/password.vue"
+---
+::
+
 
 ## Props & Attributes
 
@@ -23,6 +27,7 @@ The `password` input has no unique props but can make use of the following unive
 </reference-table>
 
 ## Sections
+
 <section-keys-intro></section-keys-intro>
 
 <div>

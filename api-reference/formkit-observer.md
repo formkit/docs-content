@@ -4,7 +4,7 @@ title: formkit/observer
 
 # @formkit/observer
 
-<page-toc></page-toc>
+:PageToc
 
 ## Introduction
 
@@ -33,7 +33,7 @@ createObserver(node: FormKitNode, dependencies?: FormKitDependencies): FormKitOb
 
 #### Returns
 
- Returns a [FormKitObservedNode](/api-reference/formkit-observer#formkitobservednode).
+Returns a [FormKitObservedNode](/api-reference/formkit-observer#formkitobservednode).
 
 ### diffDeps()
 
@@ -56,7 +56,7 @@ diffDeps(previous: FormKitDependencies, current: FormKitDependencies): [FormKitD
 
 #### Returns
 
- A tuple of maps: `toAdd` and `toRemove`.
+A tuple of maps: `toAdd` and `toRemove`.
 
 ### isKilled()
 
@@ -78,7 +78,7 @@ isKilled(node: FormKitObservedNode): boolean;
 
 #### Returns
 
- A `boolean` indicating if the node is revoked.
+A `boolean` indicating if the node is revoked.
 
 ### removeListeners()
 
@@ -108,13 +108,16 @@ An API-compatible FormKitNode that is able to determine the full dependency tree
 
 ```typescript
 interface FormKitObservedNode extends FormKitNode {
-    _node: FormKitNode;
-    deps: FormKitDependencies;
-    kill: () => undefined;
-    observe: () => void;
-    receipts: FormKitObserverReceipts;
-    stopObserve: () => FormKitDependencies;
-    watch:<TextendsFormKitWatchable>(block: T, after?: (value: ReturnType<T>) => void) => void;
+  _node: FormKitNode
+  deps: FormKitDependencies
+  kill: () => undefined
+  observe: () => void
+  receipts: FormKitObserverReceipts
+  stopObserve: () => FormKitDependencies
+  watch: <TextendsFormKitWatchable>(
+    block: T,
+    after?: (value: ReturnType<T>) => void
+  ) => void
 }
 ```
 
@@ -128,7 +131,7 @@ A callback to watch for nodes.
 
 ```typescript
 interface FormKitWatchable<T = unknown> {
-    (node: FormKitObservedNode): T;
+  (node: FormKitObservedNode): T
 }
 ```
 

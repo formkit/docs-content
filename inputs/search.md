@@ -3,17 +3,21 @@ title: Search Input
 description: A native HTML search input.
 ---
 
-<InputPageHero title="Search"></InputPageHero>
+:InputPageHero{title="Search"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `search` input uses HTML's [native search input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/search). Generally, search inputs are the same as text inputs, but may have different styling or features based on the browser. For example, browsers often add a small "X" to clear the input when it has a value.
 
 ## Basic example
 
-<example
-name="Search input"
-file="/_content/examples/search/search.vue"></example>
+::Example
+---
+name: "Search input"
+file: "/_content/examples/search/search.vue"
+---
+::
+
 
 ## Props & Attributes
 
@@ -24,6 +28,7 @@ FormKit props.
 </reference-table>
 
 ## Sections
+
 <section-keys-intro></section-keys-intro>
 
 <div>

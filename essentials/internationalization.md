@@ -5,7 +5,7 @@ description: Translate FormKit UI and validation messages into supported languag
 
 # Internationalization (i18n)
 
-<page-toc></page-toc>
+:PageToc
 
 FormKit ships with internationalization support for all of its interfaces and validation messages.
 
@@ -96,25 +96,29 @@ There are two ways to change your active locale:
 
 When using Vue’s options API, you have access to `this.$formkit` which contains `setLocale('de')` — a purpose-built method that globally changes the current locale:
 
-<example
-  name="Changing locale example"
-  :file="[
+::Example
+---
+  name: "Changing locale example"
+  file: [
     '/_content/examples/locale-change/locale-change.vue',
     '/_content/examples/locale-change/formkit.config.js'
-  ]">
-</example>
+  ]
+---
+::
 
 ### Using root `config`
 
 When using the composition API, you won’t have access to `this.$formkit`. Instead, you can fetch and modify the root FormKit configuration object. This is made available globally via Vue’s `inject` mechanism and a unique Symbol:
 
-<example
-  name="Changing locale via config"
-  :file="[
+::Example
+---
+  name: "Changing locale via config"
+  file: [
     '/_content/examples/locale-change-config/locale-change-config.vue',
     '/_content/examples/locale-change-config/formkit.config.js'
-  ]">
-</example>
+  ]
+---
+::
 
 ## Overriding
 

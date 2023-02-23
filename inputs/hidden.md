@@ -3,18 +3,22 @@ title: Hidden Input
 description: A native HTML hidden input.
 ---
 
-<InputPageHero title="Hidden"></InputPageHero>
+:InputPageHero{title="Hidden"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `hidden` input uses HTML's [native hidden input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/hidden). It is not a visible element, and should only be used to provide data that is not entered by a user.
 
 ## Basic example
 
-<example
-name="Hidden input"
-file="/_content/examples/hidden/hidden.vue"
-tabs="html,render"></example>
+::Example
+---
+name: "Hidden input"
+file: "/_content/examples/hidden/hidden.vue"
+tabs: "html,render"
+---
+::
+
 
 <callout type="warning">
 Since <code>hidden</code> inputs are not intended for display to end users, FormKit does not render common user-facing features such as the <code>label</code>, <code>help text</code> , or <code>messages</code>.<br><br>Validation rules can still be applied to a hidden input that will prevent a form from submitting, but please note that the errors will not be displayed on this hidden input.

@@ -3,17 +3,21 @@ title: Number Input
 description: A native HTML number input
 ---
 
-<InputPageHero title="Number"></InputPageHero>
+:InputPageHero{title="Number"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `number` input uses HTML's [native number input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number). It allows a user to enter a single integer or decimal value.
 
 ## Basic example
 
-<example
-name="Number input"
-file="/_content/examples/number/number.vue"></example>
+::Example
+---
+name: "Number input"
+file: "/_content/examples/number/number.vue"
+---
+::
+
 
 ## Props & Attributes
 
@@ -24,6 +28,7 @@ FormKit props and native attributes.
 </reference-table>
 
 ## Sections
+
 <section-keys-intro></section-keys-intro>
 
 <div>

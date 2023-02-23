@@ -4,7 +4,7 @@ title: formkit/themes
 
 # @formkit/themes
 
-<page-toc></page-toc>
+:PageToc
 
 ## Introduction
 
@@ -72,7 +72,7 @@ generateClasses(classes: Record<string, Record<string, string>>): Record<string,
 
 #### Returns
 
- An object of sectionKeys with class functions.
+An object of sectionKeys with class functions.
 
 ## TypeScript
 
@@ -84,7 +84,7 @@ A function that returns an icon SVG string.
 
 ```typescript
 interface FormKitIconLoader {
-    (iconName: string): string | undefined | Promise<string | undefined>;
+  (iconName: string): string | undefined | Promise<string | undefined>
 }
 ```
 
@@ -98,7 +98,7 @@ A function that returns a remote URL for retrieving an SVG icon by name.
 
 ```typescript
 interface FormKitIconLoaderUrl {
-    (iconName: string): string | undefined;
+  (iconName: string): string | undefined
 }
 ```
 

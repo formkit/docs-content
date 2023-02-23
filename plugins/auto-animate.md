@@ -5,7 +5,7 @@ description: Add smoothing transitions to your FormKit inputs using AutoAnimate.
 
 # AutoAnimate Plugin
 
-<page-toc></page-toc>
+:PageToc
 
 [AutoAnimate](https://auto-animate.formkit.com/) is a zero-config, drop-in animation utility that adds smooth transitions to any web app. It also works great with FormKit.
 
@@ -55,13 +55,15 @@ If you've installed it correctly, you should have smooth transitions when showin
 
 ## Example
 
-<example
-name="AutoAnimate example"
-init-file-tab="formkit.config.js"
-:file="[
-  '/\_content/examples/auto-animate/auto-animate.vue',
-  '/\_content/examples/auto-animate/formkit.config.js'
-]">
-</example>
+::Example
+---
+name: "AutoAnimate example"
+init-file-tab: "formkit.config.js"
+file: [
+'/\_content/examples/auto-animate/auto-animate.vue',
+'/\_content/examples/auto-animate/formkit.config.js'
+]
+---
+::
 
 That's pretty much all you need to do! AutoAnimate is intended to be a zero-config drop in utility. However, if you really want to fine tune the plugin a little more, you can provide your own AutoAnimate options or plugins. Read more about this on the [AutoAnimate documentation site](https://auto-animate.formkit.com/#usage).

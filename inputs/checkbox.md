@@ -3,9 +3,9 @@ title: Checkbox Input
 description: A native HTML checkbox input with support for one or many nested options elements.
 ---
 
-<InputPageHero title="Checkbox"></InputPageHero>
+:InputPageHero{title="Checkbox"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `checkbox` input uses HTML's [native checkbox input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox). It can display one or many options to a user and is a great way to allow users to select multiple items from a list. FormKit supports both single and multiple checkbox inputs.
 
@@ -13,9 +13,13 @@ The `checkbox` input uses HTML's [native checkbox input](https://developer.mozil
 
 By default the checkbox type will render a single checkbox and uses `boolean` values. In order for a single checkbox to be checked — the current value of the input must match the `on-value` of that input (by default, a single checkbox uses `true` as the `on-value`).
 
-<example
-name="Checkbox input"
-file="/_content/examples/checkbox-single/checkbox-single.vue"></example>
+::Example
+---
+name: "Checkbox input"
+file: "/_content/examples/checkbox-single/checkbox-single.vue"
+---
+::
+
 
 <callout type="warning" label="Checked Attribute Unnecessary">
 In order to improve API consistency across all FormKit inputs — FormKit uses the <code>value</code> as the initial state of the input. The <code>checked</code> prop/attribute should not be used directly.
@@ -35,25 +39,37 @@ The value of a checkbox input with multiple `options` is an array of the selecte
 
 The simplest way to provide options is an array of strings. The provided strings will be used for both the label and the value of the option.
 
-<example
-name="Checkbox input"
-file="/_content/examples/checkbox-strings/checkbox-strings.vue"></example>
+::Example
+---
+name: "Checkbox input"
+file: "/_content/examples/checkbox-strings/checkbox-strings.vue"
+---
+::
+
 
 ### Value / Label object
 
 You may also provide the `options` prop where the keys are values and the values of each property are labels.
 
-<example
-name="Checkbox input"
-file="/_content/examples/checkbox-object/checkbox-object.vue"></example>
+::Example
+---
+name: "Checkbox input"
+file: "/_content/examples/checkbox-object/checkbox-object.vue"
+---
+::
+
 
 ### Array of objects
 
 The most flexible way to define options is by providing an array of objects. The objects _must_ include `value` and `label` properties — but may also include a `help` property as well as an `attrs` object of additional attributes to apply to each checkbox input tag.
 
-<example
-name="Checkbox input"
-file="/_content/examples/checkbox-objects/checkbox-objects.vue"></example>
+::Example
+---
+name: "Checkbox input"
+file: "/_content/examples/checkbox-objects/checkbox-objects.vue"
+---
+::
+
 
 ## Props & Attributes
 

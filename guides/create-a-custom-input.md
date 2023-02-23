@@ -5,7 +5,7 @@ description: Follow this guide to learn how to create, register, and use a custo
 
 # Create a custom input
 
-<page-toc></page-toc>
+:PageToc
 
 In this guide, we’ll walk through the process of creating, registering, and using a custom input. Specifically, we’re going create a "one-time password" input ("OTP" for short). OTPs are commonly used for two-factor authentication when a user is required to type in a code sent via SMS or authenticator app. Let’s get started!
 
@@ -43,13 +43,15 @@ As we build out our input, we’ll want to visualize its progress, so let’s cr
 
 We’ll call this sample form `Register.vue`:
 
-<example
-  name="One-time password - register"
-  :file="[
+::Example
+---
+  name: "One-time password - register"
+  file: [
     '/_content/examples/otp-register/Register.vue',
     '/_content/examples/otp-register/OneTimePassword.vue',
-  ]">
-</example>
+  ]
+---
+::
 
 Excellent! Now we can iterate on our `OneTimePassword.vue` file and see the results. One of the first things to notice is how our input already supports labels, help text, validation, and other universal FormKit props. Those features come courtesy of `createInput()`.
 
@@ -61,14 +63,16 @@ Let’s open up `OneTimePassword.vue` again and change our `<div>` to an `<input
 
 All custom inputs are passed the almighty [context object](/essentials/configuration) as the `context` prop. In order for our input to _set_ its value, it needs to call `context.node.input(value)`. To properly _display_ the value of our input, we should set the input’s `:value` attribute to `context._value`.
 
-<example
-  name="One-time password - first value"
-  init-file-tab="OneTimePassword.vue"
-  :file="[
+::Example
+---
+  name: "One-time password - first value"
+  init-file-tab: "OneTimePassword.vue"
+  file: [
     '/_content/examples/otp-first-value/Register.vue',
     '/_content/examples/otp-first-value/OneTimePassword.vue',
-  ]">
-</example>
+  ]
+---
+::
 
 Our little baby input is all grown up! It might not look pretty, but it now reads and writes values. As proof, try setting the initial value of the form’s `values` object to `{ two_factor_code: '12345' }` and you'll see the input gets auto-populated with the value.
 
@@ -99,14 +103,16 @@ createInput(OneTimePassword, {
 
 We now have access to `context.digits`. Back in `OneTimePassword.vue`, let's use that to output the correct number of `<input>` tags.
 
-<example
-  name="One-time password - input tags"
-  init-file-tab="OneTimePassword.vue"
-  :file="[
+::Example
+---
+  name: "One-time password - input tags"
+  init-file-tab: "OneTimePassword.vue"
+  file: [
     '/_content/examples/otp-tags/Register.vue',
     '/_content/examples/otp-tags/OneTimePassword.vue',
-  ]">
-</example>
+  ]
+---
+::
 
 OK — we have multiple inputs! Our first requirement is complete:
 
@@ -124,13 +130,17 @@ Notice in the above example that when you type into one input all the other inpu
 - The input handler should call `focus()` on the next input.
 - When the string is the same length as `digits`, we update the value of the input by calling `context.node.input()`.
 
-<example
-  name="One-time password - input handlers"
-  init-file-tab="OneTimePassword.vue"
-  :file="[
+::Example
+---
+  name: "One-time password - input handlers"
+  init-file-tab: "OneTimePassword.vue"
+  file: [
     '/_content/examples/otp-handlers/Register.vue',
     '/_content/examples/otp-handlers/OneTimePassword.vue',
-  ]"></example>
+  ]
+---
+::
+
 
 Great! This is starting to work like we expect. Let’s check our requirements again:
 
@@ -164,14 +174,16 @@ handlePaste(e) {
 
 </client-only>
 
-<example
-  name="One-time password - copy paste"
-  init-file-tab="OneTimePassword.vue"
-  :file="[
+::Example
+---
+  name: "One-time password - copy paste"
+  init-file-tab: "OneTimePassword.vue"
+  file: [
     '/_content/examples/otp-copy-paste/Register.vue',
     '/_content/examples/otp-copy-paste/OneTimePassword.vue',
-  ]">
-</example>
+  ]
+---
+::
 
 Our requirements are all complete!
 

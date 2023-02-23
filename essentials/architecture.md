@@ -5,7 +5,7 @@ description: A zero-dependency package that is responsible for nearly all of For
 
 # Architecture
 
-<page-toc></page-toc>
+:PageToc
 
 ## Introduction
 
@@ -296,10 +296,12 @@ When using FormKit with the Vue plugin (recommended), you can access a node by a
 You must assign the input an <code>id</code> to use this method.
 </callout>
 
-<example
-  name="Get core node"
-  file="/_content/examples/node-get/node-get.vue">
-</example>
+::Example
+---
+  name: "Get core node"
+  file: "/_content/examples/node-get/node-get.vue"
+---
+::
 
 <callout type="info" label="Composition API">
 When using Vue’s composition API, you don’t have access to <code>this</code> within <code>setup</code>. You can access the same <code>getNode()</code> function by importing it from <code>@formkit/core</code>.<br><br>
@@ -310,19 +312,23 @@ When using Vue’s composition API, you don’t have access to <code>this</code>
 
 Another way to get the underlying `node` is to listen to the `@node` event which is emitted only once when the component first initializes the node.
 
-<example
-  name="Node event"
-  file="/_content/examples/node-event/node-event.vue">
-</example>
+::Example
+---
+  name: "Node event"
+  file: "/_content/examples/node-event/node-event.vue"
+---
+::
 
 #### Using a template ref
 
 Assigning a `<FormKit>` component to a `ref` also allows easy access to the node.
 
-<example
-  name="Node ref"
-  file="/_content/examples/node-ref/node-ref.vue">
-</example>
+::Example
+---
+  name: "Node ref"
+  file: "/_content/examples/node-ref/node-ref.vue"
+---
+::
 
 ## Traversal
 
@@ -683,11 +689,13 @@ In addition to extending and modifying nodes, plugins serve one additional role 
 
 For example, if we wanted to create a plugin that exposed a couple new inputs: `italy` and `france` we could write a plugin to do this:
 
-<example
-  name="Plugin library"
-  file="/_content/examples/plugin-library/plugin-library.vue"
-  layout="auto">
-</example>
+::Example
+---
+  name: "Plugin library"
+  file: "/_content/examples/plugin-library/plugin-library.vue"
+  layout: "auto"
+---
+::
 
 Experienced developers will notice a few exciting properties of this plugin-library pattern:
 
@@ -780,10 +788,12 @@ One of the keys to FormKit’s performance is its ability to efficiently count m
 
 Let's say we want to count how many messages are currently being displayed. We could do this by counting messages with the `visible` property set to `true`.
 
-<example
-  name="Count visible"
-  file="/_content/examples/count-visible/count-visible.vue">
-</example>
+::Example
+---
+  name: "Count visible"
+  file: "/_content/examples/count-visible/count-visible.vue"
+---
+::
 
 Notice the second argument of `node.ledger.count()` is a function. This function accepts a message as an argument and expects the return value to be a boolean, indicating whether that message should be counted or not. This allows you to craft arbitrary counters for any message type.
 

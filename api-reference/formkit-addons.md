@@ -4,7 +4,7 @@ title: formkit/addons
 
 # @formkit/addons
 
-<page-toc></page-toc>
+:PageToc
 
 ## Introduction
 
@@ -34,7 +34,7 @@ createAutoAnimatePlugin(options?: AutoAnimateOptions): FormKitPlugin;
 
 #### Returns
 
- [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+[FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
 #### Examples
 
@@ -46,13 +46,16 @@ import App from 'App.vue'
 import { createAutoAnimatePlugin } from '@formkit/addons'
 import { plugin, defaultConfig } from '@formkit/vue'
 
-createApp(app).use(plugin, defaultPlugin({
-  plugins: [
-    createAutoAnimatePlugin({
-      // optional config
-    })
-  ]
-}))
+createApp(app).use(
+  plugin,
+  defaultPlugin({
+    plugins: [
+      createAutoAnimatePlugin({
+        // optional config
+      }),
+    ],
+  })
+)
 ```
 
 </client-only>
@@ -77,7 +80,7 @@ createFloatingLabelsPlugin(FloatingLabelsOptions?: FloatingLabelsOptions): FormK
 
 #### Returns
 
- A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
 ### createMultiStepPlugin()
 
@@ -99,7 +102,7 @@ createMultiStepPlugin(options?: MultiStepOptions): FormKitPlugin;
 
 #### Returns
 
- A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
 ## TypeScript
 
@@ -111,7 +114,7 @@ The options to be passed to [createFloatingLabelsPlugin](#createfloatinglabelspl
 
 ```typescript
 interface FloatingLabelsOptions {
-    useAsDefault?: boolean;
+  useAsDefault?: boolean
 }
 ```
 
@@ -125,9 +128,9 @@ The options to be passed to [createMultiStepPlugin](#createmultistepplugin)
 
 ```typescript
 interface MultiStepOptions {
-    allowIncomplete?: boolean;
-    hideProgressLabels?: boolean;
-    tabStyle?:'tab' | 'progress';
+  allowIncomplete?: boolean
+  hideProgressLabels?: boolean
+  tabStyle?: 'tab' | 'progress'
 }
 ```
 

@@ -5,7 +5,7 @@ description: Follow this guide to learn how to build a multi-step form with Form
 
 # Build a multi-step form
 
-<page-toc></page-toc>
+:PageToc
 
 <callout type="warning" label="Official Multi-Step Plugin">
 Starting with <code>1.0.0-beta.15</code> FormKit ships an official 1st-party plugin that creates a <code>multi-step</code> input type. <br><br> While there is still value in understanding how to build a multi-step input on your own — if you're looking for the easiest way to use a multi-step input in your project check out the <a href="/plugins/multi-step">official FormKit multi-step plugin</a> — it's free and open-source!
@@ -35,13 +35,15 @@ First, let's create a basic form _without steps_ so we have content to work with
 
 We'll include a mix of validation rules for each input, and limit each section to 1 question for now until we have the full structure in place. Lastly, for the purposes of this guide, we'll output the collected form data at the bottom of each example:
 
-<example
-  :file="[
+::Example
+---
+  file: [
     '/_content/examples/guides/multi-step-form/basic-form/example.vue'
-  ]"
-  :bp="880"
-  :editable="true">
-</example>
+  ]
+  bp: 880
+  editable: true
+---
+::
 
 ## Breaking the form into sections
 
@@ -55,7 +57,7 @@ A group itself becomes valid when all its children (and their children) are vali
 
 ```html
 <!-- Only showing a single group here for brevity -->
-<FormKit type="group" name="contactInfo">
+<FormKit type="group" name: "contactInfo">
   <FormKit type="email" label="*Email address" validation="required|email" />
 </FormKit>
 ...
@@ -70,7 +72,7 @@ In our case, we're also going to want wrapping HTML. Let's put each group into a
 ```html
 <!-- Only showing a single group here for brevity -->
 <section v-show="step === 'contactInfo'">
-  <FormKit type="group" name="contactInfo">
+  <FormKit type="group" name: "contactInfo">
     <FormKit type="email" label="*Email address" validation="required|email" />
   </FormKit>
 </section>
@@ -114,13 +116,15 @@ Here's what it looks like put together:
   The CSS for multi-step forms — such as the tabs in this example — is not included in the default Genesis theme. Styles were custom-written for this example and you will need to provide your own.
 </callout>
 
-<example
-  :file="[
+::Example
+---
+  file: [
     '/_content/examples/guides/multi-step-form/form-in-steps/example.vue'
-  ]"
-  :bp="880"
-  :editable="true">
-</example>
+  ]
+  bp: 880
+  editable: true
+---
+::
 
 It's starting to look like a real multi-step form! There's more work to be done though as we've got a few issues:
 
@@ -222,15 +226,17 @@ We'll also make a few other improvements:
 - Create a utils.js file for our utility functions.
 - Set the 1st step we find as the `activeStep`.
 
-<example
-  :file="[
+::Example
+---
+  file: [
     '/_content/examples/guides/multi-step-form/showing-validity/example.vue',
     '/_content/examples/guides/multi-step-form/showing-validity/useSteps.js',
     '/_content/examples/guides/multi-step-form/showing-validity/utils.js',
-  ]"
-  :bp="880"
-  :editable="true">
-</example>
+  ]
+  bp: 880
+  editable: true
+---
+::
 
 ## Showing errors
 
@@ -340,15 +346,17 @@ We'll use the same UI for both types of errors since end-users don't really care
 
 We are almost to the finish line! Here's our current form — which can now tell a user when they have properly _or improperly_ filled out each step:
 
-<example
-  :file="[
+::Example
+---
+  file: [
     '/_content/examples/guides/multi-step-form/showing-all-state/example.vue',
     '/_content/examples/guides/multi-step-form/showing-all-state/useSteps.js',
     '/_content/examples/guides/multi-step-form/showing-all-state/utils.js',
-  ]"
-  :bp="880"
-  :editable="true">
-</example>
+  ]
+  bp: 880
+  editable: true
+---
+::
 
 ## Form submission and receiving errors
 
@@ -399,15 +407,17 @@ And Voilà! 🎉 We are finished! In addition to our submit handler, we've added
 
 Here it is — a fully functioning multi-step form:
 
-<example
-  :file="[
+::Example
+---
+  file: [
     '/_content/examples/guides/multi-step-form/final-form/example.vue',
     '/_content/examples/guides/multi-step-form/final-form/useSteps.js',
     '/_content/examples/guides/multi-step-form/final-form/utils.js'
-  ]"
-  :bp="880"
-  :editable="true">
-</example>
+  ]
+  bp: 880
+  editable: true
+---
+::
 
 <cta label="Want to see it built using FormKit Schema?" button="Check out the Playground" href="https://formkit.link/7b74e4469f5c6eb1820cea4423a3ccbe" type="ghost"></cta>
 

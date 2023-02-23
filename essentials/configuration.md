@@ -5,7 +5,7 @@ description: Learn to customize your forms to your precise needs.
 
 # Configuration
 
-<page-toc></page-toc>
+:PageToc
 
 ## Introduction
 
@@ -161,32 +161,38 @@ Let’s see how we can set the validation rules of an input (`node.props.validat
 
 If you have a node instance, you can directly assign it a prop value:
 
-<example
-  name="Direct node assignment"
-  file="/_content/examples/node-assignment/node-assignment.vue">
-</example>
+::Example
+---
+  name: "Direct node assignment"
+  file: "/_content/examples/node-assignment/node-assignment.vue"
+---
+::
 
 ### 2. Component props
 
 Any props passed to the `<FormKit>` input are assigned to the `node.props` object (you know the drill).
 
-<example
-  name="Component props"
-  file="/_content/examples/component-props/component-props.vue">
-</example>
+::Example
+---
+  name: "Component props"
+  file: "/_content/examples/component-props/component-props.vue"
+---
+::
 
 ### 3. Vue plugin options
 
 When registering the `@formkit/vue` plugin, you can provide prop values to be injected into to all `<FormKit>` components.
 
-<example
-  name="Component props"
-  :file="[
+::Example
+---
+  name: "Component props"
+  file: [
     '/_content/examples/vue-plugin-props/vue-plugin-props.vue',
     '/_content/examples/vue-plugin-props/formkit.config.js',
-  ]"
-  init-file-tab="formkit.config.js">
-</example>
+  ]
+  init-file-tab: "formkit.config.js"
+---
+::
 
 <!-- ### Props worth configuring
 
@@ -219,9 +225,11 @@ Props are pretty powerful, but in addition to `node.props`, core nodes all have 
 
 What does this mean in practice? When you combine the tree like structure of forms (and their corresponding core nodes) and this hierarchical configuration you can do some pretty exciting things. For example, here we set the validation visibility of an entire form:
 
-<example
-  name="Validation visibility"
-  file="/_content/examples/validation-visibility/validation-visibility.vue">
-</example>
+::Example
+---
+  name: "Validation visibility"
+  file: "/_content/examples/validation-visibility/validation-visibility.vue"
+---
+::
 
 It’s worth noting that plugins have their own inheritance model which differs from `config` and `props`, and is described in more detail in the [core documentation](/essentials/architecture).

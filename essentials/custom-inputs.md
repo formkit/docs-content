@@ -5,7 +5,7 @@ description: Create your own inputs that automatically inherit FormKit’s value
 
 # Custom inputs
 
-<page-toc></page-toc>
+:PageToc
 
 <cta label="Building your first custom input?" type="ghost" href="/guides/create-a-custom-input" button="Read the guide"></cta>
 
@@ -60,10 +60,12 @@ Input definitions are objects that contain the necessary information to initiali
 
 Let’s make the simplest possible input — one that only outputs "Hello world".
 
-<example
-  name="Custom input"
-  file="/_content/examples/custom-input/custom-input.vue">
-</example>
+::Example
+---
+  name: "Custom input"
+  file: "/_content/examples/custom-input/custom-input.vue"
+---
+::
 
 Even though this simplistic example doesn’t contain any input/output mechanism, it still qualifies as a full input. It can have a value, run validation rules (they wont be displayed, but they can block form submissions), and execute plugins. Fundamentally, all inputs are [core nodes](/essentials/architecture#node) and the input’s definition provides the mechanisms to interact with that node.
 
@@ -100,13 +102,15 @@ createApp(App)
 
 Now that we’ve defined our input we can use it anywhere in the application:
 
-<example
-  name="Custom input"
-  :file="[
+::Example
+---
+  name: "Custom input"
+  file: [
     '/_content/examples/custom-input-default-config/custom-input-default-config.vue',
     '/_content/examples/custom-input-default-config/formkit.config.js'
-  ]">
-</example>
+  ]
+---
+::
 
 ### Plugin libraries
 
@@ -120,10 +124,12 @@ The above example extends the `@formkit/inputs` library (via `defaultConfig`). H
 
 Let’s refactor our hello world input to use its own plugin:
 
-<example
-  name="Custom input - plugin"
-  file="/_content/examples/custom-input-plugin/custom-input-plugin.vue">
-</example>
+::Example
+---
+  name: "Custom input - plugin"
+  file: "/_content/examples/custom-input-plugin/custom-input-plugin.vue"
+---
+::
 
 <callout type="tip" label="Plugin inheritance">
 Notice in the above example our plugin was defined on a parent of the element that actually used it! This is thanks to <a href="/essentials/architecture#plugins">plugin inheritance</a> — a core feature of FormKit plugins.
@@ -136,7 +142,7 @@ Your input can be written using [FormKit’s schema](/essentials/schema) or a ge
 | Code   | Pros                                                                                                                                                                                                                                                                                                                                          | Cons                                                                                                                                                                                                                                                                                                                           |
 | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Vue    | <ul><li>Learning curve (you likely know how to write a Vue component).</li><li>More mature dev tooling.</li><li>Slightly faster initial render.</li></ul>                                                                                                                                                                                     | <ul><li>Cannot use the <a href="/essentials/inputs#sections-schema"><code>:sections-schema</code> prop</a> to modify structure.</li><li>Plugins cannot modify schema to change rendered output.</li><li>Framework specific (Vue only).</li><li>Easy to write inputs that don’t play well with the FormKit ecosystem.</li></ul> |
-| Schema | <ul><li>Structure can be modified via the <code>:sections-schema</code> prop (if you allow it).</li><li>Plugins can modify/change the rendered output.</li><li>Framework agnostic (future portability to when FormKit supports new frameworks).</li><li>Ecosystem compatibility (great for publishing your own open source inputs).</li></ul> | <ul><li>Learning curve (need to <a href="/essentials/schema">understand schemas</a>).</li><li>Slightly slower initial render.</li><li>Less mature dev tooling.</li></ul>                                                                                                                                                         |
+| Schema | <ul><li>Structure can be modified via the <code>:sections-schema</code> prop (if you allow it).</li><li>Plugins can modify/change the rendered output.</li><li>Framework agnostic (future portability to when FormKit supports new frameworks).</li><li>Ecosystem compatibility (great for publishing your own open source inputs).</li></ul> | <ul><li>Learning curve (need to <a href="/essentials/schema">understand schemas</a>).</li><li>Slightly slower initial render.</li><li>Less mature dev tooling.</li></ul>                                                                                                                                                       |
 
 <callout type="warning" label="Components in schemas">
 Even if you prefer to write a custom input using a standard Vue Component, you can still use a schema in your input definition. Please read the <a href="#using-createinput-to-extend-the-base-schema">Using <code>createInput</code> to extend the base schema</a> section.
@@ -198,19 +204,23 @@ When providing a _component_ as the first argument, `createInput` will generate 
 
 When providing a schema object, your schema is directly injected into the base schema object. Notice that our hello world example now supports outputting "standard" FormKit features like labels, help text, and validation:
 
-<example
-  name="Create input"
-  file="/_content/examples/create-input/create-input.vue">
-</example>
+::Example
+---
+  name: "Create input"
+  file: "/_content/examples/create-input/create-input.vue"
+---
+::
 
 #### Writing schema inputs from scratch
 
 It might make sense to write your inputs completely from scratch without using any of the base schema features. When doing so, just provide the [input definition](#input-definition) your full schema object.
 
-<example
-  name="Create input"
-  file="/_content/examples/scratch-schema-input/scratch-schema-input.vue">
-</example>
+::Example
+---
+  name: "Create input"
+  file: "/_content/examples/scratch-schema-input/scratch-schema-input.vue"
+---
+::
 
 In the above example, we were able to re-create the same features as the `createInput` example — namely — label, help text, and validation message output. However, we are still missing a number of "standard" FormKit features like slot support. If you are attempting to publish your input or maintain API compatibility with the other FormKit inputs, take a look at the [input checklist](#input-checklist).
 
@@ -304,17 +314,21 @@ The [standard FormKit props](/essentials/inputs#props--attributes) that you can 
 
 If you need additional props, you can declare them in your input definition. Props can also be used for internal input state (much like a `ref` in a Vue 3 component). FormKit uses the `props` namespace for both purposes (see the autocomplete example below for an example of this). Props should _always_ be defined in camelCase and used in your Vue templates with kebab-case.
 
-<example
-  name="Custom props"
-  file="/_content/examples/custom-props/custom-props.vue">
-</example>
+::Example
+---
+  name: "Custom props"
+  file: "/_content/examples/custom-props/custom-props.vue"
+---
+::
 
 When extending the base schema by using the `createInput` helper, pass a second argument with input definition values to merge:
 
-<example
-  name="Custom props - createInput"
-  file="/_content/examples/custom-props-create-input/custom-props-create-input.vue">
-</example>
+::Example
+---
+  name: "Custom props - createInput"
+  file: "/_content/examples/custom-props-create-input/custom-props-create-input.vue"
+---
+::
 
 ## Adding features
 
@@ -324,10 +338,12 @@ Features are defined in an array to encourage code reuse when possible. For exam
 
 As an example, let's imagine you want to build an input that allows users to enter two numbers, and the value of the input is the sum of those two numbers:
 
-<example
-  name="Custom input - sum numbers"
-  file="/_content/examples/custom-sum/custom-sum.vue">
-</example>
+::Example
+---
+  name: "Custom input - sum numbers"
+  file: "/_content/examples/custom-sum/custom-sum.vue"
+---
+::
 
 ## Examples
 
@@ -337,10 +353,12 @@ Below are some examples of custom inputs. They are not intended to be comprehens
 
 This is the simplest possible input and does not leverage any of FormKit’s built in DOM structure and only outputs a text input — however it is a fully functional member of the group it is nested inside of and able to read and write values.
 
-<example
-  name="Create input"
-  file="/_content/examples/standard-text-input/standard-text-input.vue">
-</example>
+::Example
+---
+  name: "Create input"
+  file: "/_content/examples/standard-text-input/standard-text-input.vue"
+---
+::
 
 <callout type="tip" label="DOM Input">
 In the above example the <code>$handlers.DOMInput</code> is a built-in convenience function for <code>(event) => node.input(event.target.value)</code>.
@@ -350,10 +368,12 @@ In the above example the <code>$handlers.DOMInput</code> is a built-in convenien
 
 Let’s take a look at a slightly more complex example that utilizes `createInput` to provide all the standard FormKit structure while still providing a custom input interface.
 
-<example
-  name="Create input"
-  file="/_content/examples/autocomplete/autocomplete.vue">
-</example>
+::Example
+---
+  name: "Create input"
+  file: "/_content/examples/autocomplete/autocomplete.vue"
+---
+::
 
 ## Input checklist
 

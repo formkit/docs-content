@@ -3,18 +3,20 @@ title: Color Input
 description: A native HTML color picker.
 ---
 
-<InputPageHero title="Color"></InputPageHero>
+:InputPageHero{title="Color"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `color` input uses HTML's [native color picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color) to allow users to easily select a hexadecimal color.
 
 ## Basic example
 
-<example
-  name="Color input"
-  file="/_content/examples/color-example/color-example.vue">
-</example>
+::Example
+---
+  name: "Color input"
+  file: "/_content/examples/color-example/color-example.vue"
+---
+::
 
 ## Props & Attributes
 

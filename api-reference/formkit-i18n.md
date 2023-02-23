@@ -4,7 +4,7 @@ title: formkit/i18n
 
 # @formkit/i18n
 
-<page-toc></page-toc>
+:PageToc
 
 ## Introduction
 
@@ -32,7 +32,7 @@ createI18nPlugin(registry: FormKitLocaleRegistry): FormKitPlugin;
 
 #### Returns
 
- [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+[FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
 ### date()
 
@@ -54,7 +54,7 @@ date(date: string | Date): string;
 
 #### Returns
 
- `string`
+`string`
 
 ### list()
 
@@ -77,7 +77,7 @@ list(items: string[], conjunction?: string): string;
 
 #### Returns
 
- `string`
+`string`
 
 ### order()
 
@@ -100,7 +100,7 @@ order(first: string | number, second: string | number): [smaller: number | strin
 
 #### Returns
 
- `[smaller: number | string, larger: number | string]`
+`[smaller: number | string, larger: number | string]`
 
 ### sentence()
 
@@ -122,7 +122,7 @@ sentence(str: string): string;
 
 #### Returns
 
- `string`
+`string`
 
 ## TypeScript
 
@@ -134,8 +134,8 @@ A locale is just a collection of locale message registries, they are keyed by th
 
 ```typescript
 interface FormKitLocale {
-    [index: string]: FormKitLocaleMessages;
-    ui: FormKitLocaleMessages;
+  [index: string]: FormKitLocaleMessages
+  ui: FormKitLocaleMessages
 }
 ```
 
@@ -149,7 +149,7 @@ A registry of locale messages — this is simply a keyed/value object with strin
 
 ```typescript
 interface FormKitLocaleMessages {
-    [index: string]: string | ((...args: any[]) => string);
+  [index: string]: string | ((...args: any[]) => string)
 }
 ```
 
@@ -163,7 +163,7 @@ The locale registry is just a key-value pair of locale indexes ('ar', 'en', 'it'
 
 ```typescript
 interface FormKitLocaleRegistry {
-    [index: string]: FormKitLocale;
+  [index: string]: FormKitLocale
 }
 ```
 

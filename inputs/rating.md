@@ -3,43 +3,59 @@ title: Rating Input
 description: A Pro input that allows users to provide feedback based on a numeric scale represented by icons/images.
 ---
 
-<InputPageHero title="Rating"></InputPageHero>
+:InputPageHero{title="Rating"}
 
-<page-toc></page-toc>
+:PageToc
 
-<ProInstallSnippet></ProInstallSnippet>
+:ProInstallSnippet
 
 ## Basic example
 
 The `rating` input allows users to provide feedback based on a numeric scale represented by icons/images:
 
-<example
-name="Rating"
-file="/_content/examples/rating/rating-base.vue"></example>
+::Example
+---
+name: "Rating"
+file: "/_content/examples/rating/rating-base.vue"
+---
+::
+
 
 ## Min/max
 
 The `min` and `max` props define the minimum and maximum values an end-user can select. The `max` determines the number of icons rendered:
 
-<example
-name="Rating"
-file="/_content/examples/rating/rating-min-max.vue"></example>
+::Example
+---
+name: "Rating"
+file: "/_content/examples/rating/rating-min-max.vue"
+---
+::
+
 
 ## Step
 
 By default, the `rating` input will increment by 1. The `step` prop will allow you to set the step size between each value. For example, if you set `step="0.5"`, the end-user can select any value that is a multiple of `0.5`. Steps must be a value between `0.01` and `1`:
 
-<example
-name="Rating"
-file="/_content/examples/rating/rating-step.vue"></example>
+::Example
+---
+name: "Rating"
+file: "/_content/examples/rating/rating-step.vue"
+---
+::
+
 
 ## Icons
 
 By default, the `rating` input uses FormKit's own star icon. You can change which icon is being used by setting the `rating-icon` prop. This prop accepts a string that will use FormKit's [icon plugin](/essentials/icons):
 
-<example
-name="Rating"
-file="/_content/examples/rating/rating-icon.vue"></example>
+::Example
+---
+name: "Rating"
+file: "/_content/examples/rating/rating-icon.vue"
+---
+::
+
 
 ### Slots for icons
 
@@ -47,25 +63,37 @@ file="/_content/examples/rating/rating-icon.vue"></example>
 
 Instead of specifying an icon via the FormKit icon plugin, you can pass a raw SVG using the `default` slot:
 
-<example
-name="Rating"
-file="/_content/examples/rating/rating-default-slot.vue"></example>
+::Example
+---
+name: "Rating"
+file: "/_content/examples/rating/rating-default-slot.vue"
+---
+::
+
 
 #### Named slots
 
 Lastly, you can use the `offItem` and `onItem` slots to pass whatever assets you want.In this example, we'll use different images for the `off` and `on` states:
 
-<example
-name="Rating"
-file="/_content/examples/rating/rating-named-slots.vue"></example>
+::Example
+---
+name: "Rating"
+file: "/_content/examples/rating/rating-named-slots.vue"
+---
+::
+
 
 ## Colors
 
 In addition to supplying an icon, you can also specify the color via props. Setting the `off-color` prop will change the color of the icons when they are not selected. The `on-color` prop will change the color of the icons when they are selected:
 
-<example
-name="Rating"
-file="/_content/examples/rating/rating-colors.vue"></example>
+::Example
+---
+name: "Rating"
+file: "/_content/examples/rating/rating-colors.vue"
+---
+::
+
 
 ## Props & Attributes
 

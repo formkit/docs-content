@@ -5,7 +5,7 @@ description: Easily add icons to your inputs using the provided FormKit icons or
 
 # Icons
 
-<page-toc></page-toc>
+:PageToc
 
 FormKit comes with over 130 icons out-of-the-box! With the exception of the brand icons (like YouTube, TikTok, or Visa) all icons are original and MIT-licensed for free use within your project. You can use [our icons](#available-icons), [add your own](#adding-icons-to-the-iconregistry), or easily [connect to a 3rd-party icon set](#using-3rd-party-libraries).
 
@@ -25,12 +25,14 @@ It's that easy! 🎉
 
 #### A quick demo of icons in action
 
-<example
-name="Icons Introduction"
-file="/\_content/examples/icons/intro.vue"
-formkit-version="next"
-view="render">
-</example>
+::Example
+---
+name: "Icons Introduction"
+file: "/_content/examples/icons/intro.vue"
+formkit-version: "next"
+view: "render"
+---
+::
 
 ## Available icons
 
@@ -177,30 +179,36 @@ The `select` input has a `select-icon` prop that allows you to change the icon u
 
 The `file` input has `file-remove-icon` and `file-item-icon` props:
 
-<example
-name="Icons Introduction"
-file="/\_content/examples/icons/usage-basic.vue">
-</example>
+::Example
+---
+name: "Icons Introduction"
+file: "/_content/examples/icons/usage-basic.vue"
+---
+::
 
 ### Using custom SVG icons
 
 Sometimes you need to render a one-off icon in your project. You can directly supply an SVG definition to an icon prop
 and the SVG will be rendered for you:
 
-<example
-name="Icons Introduction"
-file="/\_content/examples/icons/inline-svg.vue">
-</example>
+::Example
+---
+name: "Icons Introduction"
+file: "/_content/examples/icons/inline-svg.vue"
+---
+::
 
 ### Using the `<FormKitIcon />` component
 
 FormKit ships with a component called `<FormKitIcon />` that allows you out output any icon from the `iconRegistry` anywhere
 within your project. Need an icon you're using in FormKit on some other part of your UI? No problem:
 
-<example
-name="Icon Component"
-file="/\_content/examples/icons/icon-component.vue">
-</example>
+::Example
+---
+name: "Icon Component"
+file: "/_content/examples/icons/icon-component.vue"
+---
+::
 
 ## Icon click handlers
 
@@ -209,10 +217,12 @@ have a corresponding `@prefix-icon-click` prop, etc.
 
 Each click-handler prop receives the input's core `node` and the click `event` as arguments.
 
-<example
-name="Icons Introduction"
-file="/\_content/examples/icons/handle-click.vue">
-</example>
+::Example
+---
+name: "Icons Introduction"
+file: "/_content/examples/icons/handle-click.vue"
+---
+::
 
 ## Using 3rd-party libraries
 
@@ -238,24 +248,28 @@ Sometimes — in cases such as a form builder or CMS — you don't know in advan
 
 Below is an implementation of FormKit loading icons from FontAwesome by replacing the `iconLoaderUrl` with a different CDN path.
 
-<example
-name="FontAwesome Icons"
-init-file-tab="formkit.config.js"
-:file="[
+::Example
+---
+name: "FontAwesome Icons"
+init-file-tab: "formkit.config.js"
+file: [
   '/\_content/examples/icons/font-awesome/index.vue',
   '/\_content/examples/icons/font-awesome/formkit.config.js'
-]">
-</example>
+]
+---
+::
 
 ### An example Heroicons `iconLoader``
 
 Below is an implementation of FormKit with a fully custom `iconLoader` that fetches missing icons from Heroicons instead of the FormKit icon set.
 
-<example
-name="Heroicons Icons"
-init-file-tab="formkit.config.js"
-:file="[
+::Example
+---
+name: "Heroicons Icons"
+init-file-tab: "formkit.config.js"
+file: [
   '/\_content/examples/icons/heroicons/index.vue',
   '/\_content/examples/icons/heroicons/formkit.config.js'
-]">
-</example>
+]
+---
+::

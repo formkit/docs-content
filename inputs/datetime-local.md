@@ -3,18 +3,20 @@ title: Datetime-local Input
 description: A native HTML datetime-local picker.
 ---
 
-<InputPageHero title="Datetime-local"></InputPageHero>
+:InputPageHero{title="Datetime-local"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `datetime-local` input uses HTML's [native datetime-local picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local) to allow users to easily select a date and time based on their browser’s locale.
 
 ## Basic example
 
-<example
-  name="Datetime-local input"
-  file="/_content/examples/datetime-local-example/datetime-local-example.vue">
-</example>
+::Example
+---
+  name: "Datetime-local input"
+  file: "/_content/examples/datetime-local-example/datetime-local-example.vue"
+---
+::
 
 <callout type="warning" label="Formatting">
 The internal format of all native datetime-local pickers is <code>YYYY-MM-DDTHH:MM</code>. This is true even though the format of the datetime-local displayed to the user may be different. For example U.S. based browsers display datetime-local format as <code>MM/DD/YYYY, HH:MM AM/PM</code>.
@@ -28,6 +30,7 @@ The `datetime-local` input has no unique props but can make use of the following
 </reference-table>
 
 ## Sections
+
 <section-keys-intro></section-keys-intro>
 
 <div>

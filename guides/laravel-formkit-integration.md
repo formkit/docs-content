@@ -5,7 +5,7 @@ description: FormKit and Laravel are both powerful tools for building web applic
 
 # Integrating FormKit with Laravel 9: Streamlining form creation and validation
 
-<page-toc></page-toc>
+:PageToc
 
 ## Introduction
 
@@ -268,8 +268,8 @@ const submit = (fields, node) => {
 
     <!-- we will change all form components to be FormKit -->
     <FormKit type="form" :value="initialState" @submit="submit" submit-label="Log in">
-      <FormKit type="email" label="Email" name="email" validation="required|email" />
-      <FormKit type="password" label="Password" name="password" validation="required">
+      <FormKit type="email" label="Email" name: "email" validation="required|email" />
+      <FormKit type="password" label="Password" name: "password" validation="required">
         <template #label="context">
           <span :class="context.classes.label">
             {{ context.label }}
@@ -284,7 +284,7 @@ const submit = (fields, node) => {
         </template>
       </FormKit>
 
-      <FormKit type="checkbox" name="remember" label="Remember me" />
+      <FormKit type="checkbox" name: "remember" label="Remember me" />
     </FormKit>
   </GuestLayout>
 </template>

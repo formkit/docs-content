@@ -5,7 +5,7 @@ description: Add custom styling to your FormKit components - both globally and p
 
 # Styling
 
-<page-toc></page-toc>
+:PageToc
 
 FormKit ships robust and accessible markup — but with no assumptions about your
 desired styles. There is an _optional_ base theme (as seen in these docs)
@@ -64,10 +64,12 @@ For styling purposes some attributes are automatically added to and removed from
 
 You can use the above attributes to easily provide realtime visual feedback for users filling out your forms:
 
-<example
-name="Appending classes"
-file="/\_content/examples/outer-data-attrs/outer-data-attrs.vue">
-</example>
+::Example
+---
+name: "Appending classes"
+file: "/_content/examples/outer-data-attrs/outer-data-attrs.vue"
+---
+::
 
 ## Custom classes
 
@@ -87,28 +89,40 @@ The classes follow a strict hierarchy. Initially, classes are produced by the `r
 
 To append a class, simply return the string you want to append, or provide an object of classes with boolean values — `true` properties will be appended:
 
-<example
-name="Appending classes"
-file="/_content/examples/append-classes/append-classes.vue"
-tabs="html"></example>
+::Example
+---
+name: "Appending classes"
+file: "/_content/examples/append-classes/append-classes.vue"
+tabs: "html"
+---
+::
+
 
 ## Resetting classes
 
 Classes produced by all earlier hierarchy steps can be completely removed by providing a special (not rendered) class `$reset` in either string format or object format:
 
-<example
-name="Resetting classes"
-file="/_content/examples/resetting-classes/resetting-classes.vue"
-tabs="html"></example>
+::Example
+---
+name: "Resetting classes"
+file: "/_content/examples/resetting-classes/resetting-classes.vue"
+tabs: "html"
+---
+::
+
 
 ## Removing classes
 
 Classes produced by an earlier step in the class hierarchy can be selectively removed by providing an object with the value `false` for the class you want to remove or by providing a class name to a `{section-key}-class` prop that starts with `$remove:` and matches an existing class in the class list. This includes removing formkit's default `formkit-` prefixed classes:
 
-<example
-name="Removing classes"
-file="/_content/examples/removing-classes/removing-classes.vue"
-tabs="html"></example>
+::Example
+---
+name: "Removing classes"
+file: "/_content/examples/removing-classes/removing-classes.vue"
+tabs: "html"
+---
+::
+
 
 <callout type="tip">
 In addition to the four methods listed above, more generalized overrides are also available, like overriding an input’s schema, using the <code>classes</code> node hook, or utilizing slots:
@@ -118,19 +132,27 @@ In addition to the four methods listed above, more generalized overrides are als
 
 The simplest way to modify the classes of an element inside a FormKit input is via the `{section-key}-class` props. To add a class to a specific section element, like `label`, you simply add the `label-class` prop:
 
-<example
-name="Section-key class"
-file="/_content/examples/section-key-class/section-key-class.vue"
-tabs="html"></example>
+::Example
+---
+name: "Section-key class"
+file: "/_content/examples/section-key-class/section-key-class.vue"
+tabs: "html"
+---
+::
+
 
 ## Classes prop
 
 The classes prop is similar to the section-key class prop except it allows setting classes on all sections at the same time:
 
-<example
-name="Classes prop"
-file="/_content/examples/classes-prop/classes-prop.vue"
-tabs="html"></example>
+::Example
+---
+name: "Classes prop"
+file: "/_content/examples/classes-prop/classes-prop.vue"
+tabs: "html"
+---
+::
+
 
 ## Classes configuration
 
@@ -138,19 +160,27 @@ The classes configuration option is similar to the classes prop, except it appli
 
 ### Global class configuration
 
-<example
-  name="Global configuration"
-  file="/_content/examples/global-classes/global-classes.vue"
-  mode="editor"
-  :editable="false"
-  :line-numbers="false"></example>
+::Example
+---
+  name: "Global configuration"
+  file: "/_content/examples/global-classes/global-classes.vue"
+  mode: "editor"
+  editable: false
+  :line-numbers="false"
+---
+::
+
 
 ### Class configuration on a group, list, or form
 
-<example
-name="Classes prop"
-file="/_content/examples/classes-config/classes-config.vue"
-tabs="render,html"></example>
+::Example
+---
+name: "Classes prop"
+file: "/_content/examples/classes-config/classes-config.vue"
+tabs: "render,html"
+---
+::
+
 
 ## Using generateClasses from @formkit/themes
 
@@ -158,14 +188,18 @@ FormKit ships with a helper function called `generateClasses` included in `@form
 
 The `generateClasses` function takes a javascript object keyed by input type with values of a sub-object keyed by `${sectionKey}` with values of strings. With this function you can quickly apply class lists to sections within inputs based on a given inputs' type.
 
-<example
-name="generateClasses example"
-:file="[
-  '/_content/examples/generate-classes/generate-classes.vue',
-  '/_content/examples/generate-classes/formkit.config.js'
-]"
-init-file-tab="formkit.config.js"
-tabs="html"></example>
+::Example
+---
+name: "generateClasses example"
+file: [
+'/_content/examples/generate-classes/generate-classes.vue',
+'/_content/examples/generate-classes/formkit.config.js'
+]
+init-file-tab: "formkit.config.js"
+tabs: "html"
+---
+::
+
 
 ## The rootClasses function
 
@@ -185,10 +219,14 @@ classes to your entire project - you can also use it with the `config` prop to o
 a specific form or input within your project with a class list computed from the logic
 within your provided function:
 
-<example
-name="Root classes function"
-file="/_content/examples/root-classes/root-classes.vue"
-tabs="html"></example>
+::Example
+---
+name: "Root classes function"
+file: "/_content/examples/root-classes/root-classes.vue"
+tabs: "html"
+---
+::
+
 
 <callout type="tip">
 Because <code>rootClasses</code> is a configuration option, you can apply it per input, per group, or globally.
@@ -242,10 +280,14 @@ Much like the [classes prop](#classes-prop) on a `<FormKit>` component, you can 
 
 Since config is passed down to descendant inputs, you can alter classes via config on a parent, such as a `form`, `list`, or a `group`, and this will affect all descendants to any depth:
 
-<example
-name="Classes prop"
-file="/_content/examples/classes-config-schema/classes-config-schema.vue"
-tabs="render,html"></example>
+::Example
+---
+name: "Classes prop"
+file: "/_content/examples/classes-config-schema/classes-config-schema.vue"
+tabs: "render,html"
+---
+::
+
 
 ## Tailwind CSS
 

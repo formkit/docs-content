@@ -3,18 +3,20 @@ title: Email Input
 description: A native HTML email input.
 ---
 
-<InputPageHero title="Email"></InputPageHero>
+:InputPageHero{title="Email"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `email` input uses HTML's [native email input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email).
 
 ## An example
 
-<example
-  name="Email input"
-  file="/_content/examples/email-example/email-example.vue">
-</example>
+::Example
+---
+  name: "Email input"
+  file: "/_content/examples/email-example/email-example.vue"
+---
+::
 
 ## Props & Attributes
 
@@ -24,6 +26,7 @@ The `email` input has no unique props but can make use of the following universa
 </reference-table>
 
 ## Sections
+
 <section-keys-intro></section-keys-intro>
 
 <div>

@@ -3,9 +3,9 @@ title: Mask Input
 description: An input that formats text to a given pattern as a user types.
 ---
 
-<InputPageHero title="Mask"></InputPageHero>
+:InputPageHero{title="Mask"}
 
-<page-toc></page-toc>
+:PageToc
 
 ## Introduction
 
@@ -20,17 +20,19 @@ The `mask` input automatically transforms user input to match a provided format.
 
 ## Basic example
 
-<example
-  name="Mask input"
-  file="/_content/examples/mask/basic.vue">
-</example>
+::Example
+---
+  name: "Mask input"
+  file: "/_content/examples/mask/basic.vue"
+---
+::
 
 ## Masks
 
 The mask is the desired format of the input. It is passed to the `mask` prop where it is parsed for tokens. The mask is comprised of:
 
 - **Tokens** - A string representation of a user-editable region. Shown in white below.
-- **String literals** -  Any character that is not a token. Not user-editable. Shown in orange below.
+- **String literals** - Any character that is not a token. Not user-editable. Shown in orange below.
 
 <img class="max-w-full rounded-card" src="https://cdn.formk.it/web-assets/mask-format-2.png" alt="Image of mask string with tokens and string literals in different colors.">
 
@@ -43,10 +45,12 @@ The mask input comes with 4 built-in tokens:
 - `a` - Accepts an alphabetical character.
 - `*` - Accepts any character.
 
-<example
-  name="Mask input"
-  file="/_content/examples/mask/simple.vue">
-</example>
+::Example
+---
+  name: "Mask input"
+  file: "/_content/examples/mask/simple.vue"
+---
+::
 
 ### Escaping built-ins
 
@@ -72,10 +76,12 @@ The mask input supports 3 entry modes:
 
 By default, the characters of a mask are automatically shifted forward when typing. This is notable when a mask is already populated and you place the cursor at or near the beginning of the input and begin typing. The characters following your cursor are "shifted" forward as you type. In replace mode, however, subsequent characters are overwritten with a new value:
 
-<example
-  name="Mask input - shift vs replace"
-  file="/_content/examples/mask/shift-replace.vue">
-</example>
+::Example
+---
+  name: "Mask input - shift vs replace"
+  file: "/_content/examples/mask/shift-replace.vue"
+---
+::
 
 ### Select mode
 
@@ -83,10 +89,12 @@ In select mode, equivalent `char` type tokens are grouped into selectable text r
 
 Additionally, when an input is in select mode, the user can use the arrow or tab keys to shift their focus from one selection range to another:
 
-<example
-  name="Mask input - select"
-  file="/_content/examples/mask/select.vue">
-</example>
+::Example
+---
+  name: "Mask input - select"
+  file: "/_content/examples/mask/select.vue"
+---
+::
 
 <callout type="tip" label="Select mode options">
 The <code>selectDirection</code> token property controls which direction new
@@ -176,29 +184,35 @@ Any <code>placeholder</code> you define should not match the Regex <code>pattern
 To pass a new token to the mask input, you can use the `tokens` prop which
 expects an object with keys that match the `token` property. For example, our new token in the above example can be applied directly:
 
-<example
-  name="Mask input"
-  file="/_content/examples/mask/tokens-prop.vue">
-</example>
+::Example
+---
+  name: "Mask input"
+  file: "/_content/examples/mask/tokens-prop.vue"
+---
+::
 
 #### Add tokens globally
 
 To register your mask tokens globally, extend the `config` property of your global FormKit configuration:
 
-<example
-  name="Mask input global"
-  :file="['/_content/examples/mask/tokens-global.vue', '/_content/examples/mask/formkit.config.js']"
-  init-file-tab="formkit.config.js">
-</example>
+::Example
+---
+  name: "Mask input global"
+  file: ['/_content/examples/mask/tokens-global.vue', '/_content/examples/mask/formkit.config.js']
+  init-file-tab: "formkit.config.js"
+---
+::
 
 ### Modify tokens
 
 In addition to creating new tokens, the `tokens` prop can also modify existing tokens. Any value provided to the `tokens` prop will be merged into the existing tokens for that input. For example, the digit token’s (`#`) has no `selectFill` by default. To add one, simply extend it:
 
-<example
-  name="Mask input - select fill"
-  file="/_content/examples/mask/select-fill.vue">
-</example>
+::Example
+---
+  name: "Mask input - select fill"
+  file: "/_content/examples/mask/select-fill.vue"
+---
+::
 
 ### Char tokens
 
@@ -216,10 +230,12 @@ Enum tokens allow for variable length masks within a predefined set of options. 
 
 A date with auto-completing month names could be well represented with enums:
 
-<example
-  name="Mask input – enum"
-  file="/_content/examples/mask/enum.vue">
-</example>
+::Example
+---
+  name: "Mask input – enum"
+  file: "/_content/examples/mask/enum.vue"
+---
+::
 
 <callout type="warning" label="Select mode requirement">
 Enums are only supported in <code>select</code> mode. When any <code>enum</code> token is found in a mask string, the <code>mode</code> of the input is forcibly set to <code>select</code>.
@@ -232,7 +248,8 @@ Groups are a way to to treat multiple mask characters as a single unit. You crea
 <client-only>
 
 ```html
-<FormKit mask="id{-a#a}" type="mask" /> <!-- "-a#a" is the group -->
+<FormKit mask="id{-a#a}" type="mask" />
+<!-- "-a#a" is the group -->
 ```
 
 </client-only>
@@ -256,24 +273,27 @@ Arguments can be passed to a group option by using a colon, such as `placeholder
 
 You can string group options together:
 
-<example
-  name="Mask input"
-  file="/_content/examples/mask/groups.vue">
-</example>
+::Example
+---
+  name: "Mask input"
+  file: "/_content/examples/mask/groups.vue"
+---
+::
 
 <callout type="warning" label="Can't be used in select mode">
   Groups cannot be used in select mode. An exception will be thrown.
 </callout>
 
-
 ## Prefix & suffix
 
 You can ensure certain characters always appear at the beginning or end of an input by using the `prefix` and `suffix` props, respectively:
 
-<example
-  name="Mask input"
-  file="/_content/examples/mask/prefix-suffix.vue">
-</example>
+::Example
+---
+  name: "Mask input"
+  file: "/_content/examples/mask/prefix-suffix.vue"
+---
+::
 
 <callout type="warning" label="Values can't match the mask">
   Your prefix and suffix content can't match the mask. For instance, if your mask has a digit token <code>#</code>, your prefix/suffix can't contain numbers.
@@ -283,10 +303,12 @@ You can ensure certain characters always appear at the beginning or end of an in
 
 In specific circumstances, you may want to run your mask in reverse. The mask will test if user input fulfills the mask from right to left. This is common in currency-type inputs and can be applied by adding the `reverse` prop:
 
-<example
-  name="Mask input"
-  file="/_content/examples/mask/reverse.vue">
-</example>
+::Example
+---
+  name: "Mask input"
+  file: "/_content/examples/mask/reverse.vue"
+---
+::
 
 <callout type="warning" label="Shift mode requirement">
 Running a mask in reverse only works in shift mode.
@@ -298,28 +320,34 @@ Running a mask in reverse only works in shift mode.
 
 A mask’s value is not considered "complete" until the user has filled the entire pattern. Until that point, FormKit will consider the value of the input "empty". This makes it convenient to use with validation rules like `required`. However, if you’d like to accept incomplete values, you can via the `allow-incomplete` prop:
 
-<example
-  name="Mask input - allow incomplete"
-  file="/_content/examples/mask/allow-incomplete.vue">
-</example>
+::Example
+---
+  name: "Mask input - allow incomplete"
+  file: "/_content/examples/mask/allow-incomplete.vue"
+---
+::
 
 ### Unmasked values
 
 By default, the value of a mask input includes the formatting provided via the `mask` prop. However, if you'd like the raw unmasked value with the string literals removed, you can use the `unmask-value` prop:
 
-<example
-  name="Mask input - unmask value"
-  file="/_content/examples/mask/unmask-value.vue">
-</example>
+::Example
+---
+  name: "Mask input - unmask value"
+  file: "/_content/examples/mask/unmask-value.vue"
+---
+::
 
 ## Hiding the mask
 
 By default, the `mask` input displays each token’s placeholder character. You can disable this behavior (except in select mode) while still applying formatting automatically via the `show-mask` prop:
 
-<example
-  name="Mask input - show mask"
-  file="/_content/examples/mask/show-mask.vue">
-</example>
+::Example
+---
+  name: "Mask input - show mask"
+  file: "/_content/examples/mask/show-mask.vue"
+---
+::
 
 ## Props & Attributes
 

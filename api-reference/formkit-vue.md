@@ -4,7 +4,7 @@ title: formkit/vue
 
 # @formkit/vue
 
-<page-toc></page-toc>
+:PageToc
 
 ## Introduction
 
@@ -33,7 +33,7 @@ createInput(schemaOrComponent: FormKitSchemaNode | FormKitSection | Component, d
 
 #### Returns
 
- [FormKitTypeDefinition](/api-reference/formkit-core#formkittypedefinition)
+[FormKitTypeDefinition](/api-reference/formkit-core#formkittypedefinition)
 
 ### useInput()
 
@@ -57,7 +57,7 @@ useInput(props: FormKitComponentProps, context: SetupContext<any>, options?: For
 
 #### Returns
 
- [FormKitNode](/api-reference/formkit-core#formkitnode)
+[FormKitNode](/api-reference/formkit-core#formkitnode)
 
 ### watchVerbose()
 
@@ -88,12 +88,16 @@ The global instance of the FormKit plugin.
 
 ```typescript
 interface FormKitVuePlugin {
-    clearErrors: (formId: string) => void;
-    get: (id: string) => FormKitNode | undefined;
-    reset: (formId: string, resetTo?: unknown) => void;
-    setErrors: (formId: string, errors: string[] | Record<string, string | string[]>, inputErrors?: string[] | Record<string, string | string[]>) => void;
-    setLocale: (locale: string) => void;
-    submit: (formId: string) => void;
+  clearErrors: (formId: string) => void
+  get: (id: string) => FormKitNode | undefined
+  reset: (formId: string, resetTo?: unknown) => void
+  setErrors: (
+    formId: string,
+    errors: string[] | Record<string, string | string[]>,
+    inputErrors?: string[] | Record<string, string | string[]>
+  ) => void
+  setLocale: (locale: string) => void
+  submit: (formId: string) => void
 }
 ```
 
@@ -106,7 +110,9 @@ The allowed options for defaultConfig.
 <client-only>
 
 ```typescript
-type DefaultConfigOptions = FormKitOptions & Partial<PluginConfigs> & Record<string, unknown>;
+type DefaultConfigOptions = FormKitOptions &
+  Partial<PluginConfigs> &
+  Record<string, unknown>
 ```
 
 </client-only>

@@ -3,18 +3,20 @@ title: Date Input
 description: A native HTML date picker.
 ---
 
-<InputPageHero title="Date"></InputPageHero>
+:InputPageHero{title="Date"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `date` input uses HTML's [native date picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date) to allow users to easily select a date.
 
 ## Basic example
 
-<example
-  name="Date input"
-  file="/_content/examples/date-example/date-example.vue">
-</example>
+::Example
+---
+  name: "Date input"
+  file: "/_content/examples/date-example/date-example.vue"
+---
+::
 
 <callout type="warning" label="Formatting">
 The internal format of all native date pickers is <code>YYYY-MM-DD</code>. This is true even though the format of the date displayed to the user may be different. For example U.S. based browsers display date format as <code>MM/DD/YYYY</code>.
@@ -29,6 +31,7 @@ FormKit props.
 </reference-table>
 
 ## Sections
+
 <section-keys-intro></section-keys-intro>
 
 <div>

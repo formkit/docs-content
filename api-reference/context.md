@@ -5,7 +5,7 @@ description: FormKit provides a reactive context object to expose data to slots,
 
 # Context object
 
-<page-toc></page-toc>
+:PageToc
 
 ## Introduction
 

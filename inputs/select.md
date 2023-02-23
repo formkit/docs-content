@@ -3,9 +3,9 @@ title: Select Input
 description: A native HTML select input. Supports both single-value and multi-value selections.
 ---
 
-<InputPageHero title="Select"></InputPageHero>
+:InputPageHero{title="Select"}
 
-<page-toc></page-toc>
+:PageToc
 
 The select input uses HTML's [native select input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select). Select inputs can be single value selections, or multi-value selections by using the `multiple` attribute. There are 4 ways to provide options to a select input:
 
@@ -22,25 +22,37 @@ Select lists are most commonly used to select a single item from a list of optio
 
 The simplest way to provide options is an array of strings. The provided strings will be used for both the label and the value of the option.
 
-<example
-name="Select input - strings"
-file="/_content/examples/select-strings/select-strings.vue"></example>
+::Example
+---
+name: "Select input - strings"
+file: "/_content/examples/select-strings/select-strings.vue"
+---
+::
+
 
 ### Value / Label object
 
 You may also provide the `options` prop where the keys are values and the values of each property are labels.
 
-<example
-name="Select input"
-file="/_content/examples/select/select.vue"></example>
+::Example
+---
+name: "Select input"
+file: "/_content/examples/select/select.vue"
+---
+::
+
 
 ### Array of objects
 
 The most flexible way to define options is by providing an array of objects. The objects _must_ include `value` and `label` properties — but may also include a `help` property as well as an `attrs` object of additional attributes to apply to each select input tag.
 
-<example
-name="Select input - objects"
-file="/_content/examples/select-objects/select-objects.vue"></example>
+::Example
+---
+name: "Select input - objects"
+file: "/_content/examples/select-objects/select-objects.vue"
+---
+::
+
 
 <callout type="tip" label="Option attributes">
 To pass additional attributes to each <code>&lt;option&gt;</code> element, your object can also contain an <code>attrs</code> property.<br><br>
@@ -59,9 +71,13 @@ To pass additional attributes to each <code>&lt;option&gt;</code> element, your 
 
 Sometimes it may be desirable to manually output the contents of a select list in order to create specialized structures. This can be done by using the `default` slot to explicitly output your options.
 
-<example
-name="Select input - objects"
-file="/_content/examples/select-slot/select-slot.vue"></example>
+::Example
+---
+name: "Select input - objects"
+file: "/_content/examples/select-slot/select-slot.vue"
+---
+::
+
 
 <callout type="warning">
 When using the default slot to output options, you should not use the <code>placeholder</code> or <code>options</code> props.
@@ -71,9 +87,13 @@ When using the default slot to output options, you should not use the <code>plac
 
 The `select` input also supports a `multiple` attribute that allows for multi-selection. When used with FormKit, this option produces an array of values.
 
-<example
-name="Select input - objects"
-file="/_content/examples/select-multiple/select-multiple.vue"></example>
+::Example
+---
+name: "Select input - objects"
+file: "/_content/examples/select-multiple/select-multiple.vue"
+---
+::
+
 
 <callout type="tip" label="Alternatives">
 Select inputs with the <code>multiple</code> attribute can be challenging for some users because they require holding-down the control or command keys to perform multiple selections. Depending on your audience, you may want to consider using a <a href="/inputs/checkbox">checkbox input with <code>options</code></a> instead.

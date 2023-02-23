@@ -5,7 +5,7 @@ description: Get involved in the FormKit community — troubleshooting support, 
 
 # Community
 
-<page-toc></page-toc>
+:PageToc
 
 ## Involvement
 

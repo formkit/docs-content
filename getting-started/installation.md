@@ -5,7 +5,7 @@ description: Get up and running with FormKit in your project.
 
 # Installation
 
-<page-toc></page-toc>
+:PageToc
 
 ## Introduction
 
@@ -209,8 +209,8 @@ Now you can add FormKit to your Astro Vue components, so that you can create a c
 
 <template>
   <FormKit type="form" @submit="submitHandler">
-    <FormKit type="text" label="Name" name="name" />
-    <FormKit type="email" label="Email" name="email" />
+    <FormKit type="text" label="Name" name: "name" />
+    <FormKit type="email" label="Email" name: "email" />
   </FormKit>
 </template>
 ```

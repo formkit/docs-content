@@ -3,17 +3,21 @@ title: Text Input
 description: A native HTML text input.
 ---
 
-<InputPageHero title="Text"></InputPageHero>
+:InputPageHero{title="Text"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `text` input uses HTML's [native text input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text). It allows a user to enter a single line of text.
 
 ## Basic example
 
-<example
-name="Text input"
-file="/_content/examples/text/text.vue"></example>
+::Example
+---
+name: "Text input"
+file: "/_content/examples/text/text.vue"
+---
+::
+
 
 ## Props & Attributes
 
@@ -24,6 +28,7 @@ FormKit props.
 </reference-table>
 
 ## Sections
+
 <section-keys-intro></section-keys-intro>
 
 <div>

@@ -3,11 +3,11 @@ title: Repeater Input
 description: A Pro input that allows users to add, remove, and re-arrange repeatable input groups.
 ---
 
-<InputPageHero title="Repeater"></InputPageHero>
+:InputPageHero{title="Repeater"}
 
-<page-toc></page-toc>
+:PageToc
 
-<ProInstallSnippet></ProInstallSnippet>
+:ProInstallSnippet
 
 ## Basic example
 
@@ -15,9 +15,13 @@ The `repeater` input is for repeating groups of inputs. You can use any number o
 
 By default, the repeater input has the ability to shift, add, and remove items:
 
-<example
-name="Repeater"
-file="/_content/examples/repeater/repeater-base.vue"></example>
+::Example
+---
+name: "Repeater"
+file: "/_content/examples/repeater/repeater-base.vue"
+---
+::
+
 
 Unlike most other FormKit input types, the repeater input is of type [list](/inputs/list). You can see above that the `users` property (our repeater's value) is an array.
 
@@ -25,33 +29,49 @@ Unlike most other FormKit input types, the repeater input is of type [list](/inp
 
 In the previous example, the 'Add Users' button is provided by default, and the button label is derived from the repeater's `label`. We're able to customize the label by using the `add-button` prop and setting it to a `string`, or remove it completely by setting it to `false`. Alternatively, similar to the `submit-attrs` prop on the [FormKit's forms](/inputs/form), we can provide an object of attributes to be applied to the button with `add-attrs`. In this example, we change the label of the repeater from `Add Users` to `My custom label` using the `add-label` prop:
 
-<example
-name="Repeater"
-file="/_content/examples/repeater/repeater-add-button-attrs.vue"></example>
+::Example
+---
+name: "Repeater"
+file: "/_content/examples/repeater/repeater-add-button-attrs.vue"
+---
+::
+
 
 ## Min/max
 
 Like many other FormKit inputs, the repeater comes with a `min` and `max` prop. You can use these props to limit the number of items to be added or removed.
 
-<example
-name="Repeater"
-file="/_content/examples/repeater/repeater-min-max.vue"></example>
+::Example
+---
+name: "Repeater"
+file: "/_content/examples/repeater/repeater-min-max.vue"
+---
+::
+
 
 ## Controls
 
 The repeater input by default comes with a set of controls that allow you to shift, add, and remove items. You can control the visibility of these controls by setting the `upControl`, `downControl`, `insertControl`, and `removeControl` props to `true` or `false`.
 
-<example
-name="Repeater"
-file="/_content/examples/repeater/repeater-insert-control.vue"></example>
+::Example
+---
+name: "Repeater"
+file: "/_content/examples/repeater/repeater-insert-control.vue"
+---
+::
+
 
 ## Custom controls
 
 With FormKit's repeater, you are not restricted to our default controls. You can manipulate the repeater in anyway you want:
 
-<example
-name="Repeater"
-file="/_content/examples/repeater/repeater-controls.vue"></example>
+::Example
+---
+name: "Repeater"
+file: "/_content/examples/repeater/repeater-controls.vue"
+---
+::
+
 
 ## Setting errors
 
@@ -80,9 +100,13 @@ to conveniently set errors at depth. Read more about error handling
 [here](/inputs/form#error-handling). Here's an example of a fake backend
 returning errors for both the repeater and one child:
 
-<example
-  name="Repeater"
-  file="/_content/examples/repeater/errors/repeater-errors.vue"></example>
+::Example
+---
+  name: "Repeater"
+  file: "/_content/examples/repeater/errors/repeater-errors.vue"
+---
+::
+
 
 ## Props & Attributes
 

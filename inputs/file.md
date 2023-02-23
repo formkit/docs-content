@@ -3,9 +3,9 @@ title: File Input
 description: A native HTML file input with support for multiple files, drag and drop, clearing the input, and repopulating from an array.
 ---
 
-<InputPageHero title="File"></InputPageHero>
+:InputPageHero{title="File"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `file` input uses HTML's [native file input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file). It allows users to select files from their device for upload. In addition to native input features, it adds support for:
 
@@ -15,10 +15,12 @@ The `file` input uses HTML's [native file input](https://developer.mozilla.org/e
 
 ## Basic example
 
-<example
-  name="File input"
-  file="/_content/examples/file/file.vue">
-</example>
+::Example
+---
+  name: "File input"
+  file: "/_content/examples/file/file.vue"
+---
+::
 
 ## Array value
 
@@ -26,10 +28,12 @@ The value of the `file` type should always be an array of objects where each obj
 
 This structure can be used to pre-populate a file input with previously uploaded file values:
 
-<example
-  name="File input"
-  file="/_content/examples/file-populate/file-populate.vue">
-</example>
+::Example
+---
+  name: "File input"
+  file: "/_content/examples/file-populate/file-populate.vue"
+---
+::
 <callout type="tip" label="Display only">
 Pre-populating an input with file names is for display purposes only. It’s an optional feature that provides a consistent interface to convey that a file was <em>previously</em> uploaded — however — a <a href="https://developer.mozilla.org/en-US/docs/Web/API/FileList">FileList</a> is not attached to the actual <code>&lt;input&gt;</code> tag for upload.
 </callout>
@@ -38,10 +42,12 @@ Pre-populating an input with file names is for display purposes only. It’s an 
 
 The file upload process is left to your form’s submission handler. When submitting the form [via full page request](/inputs/form#submitting-as-a-page-request) no further processing is necessary, however when submitting [via XHR/Fetch request](/inputs/form#submitting-via-xhrfetch-request) you will need to create an [instance of `FormData`](https://developer.mozilla.org/en-US/docs/Web/API/FormData) with the files attached. Here is a working example:
 
-<example
-  name="File input"
-  file="/_content/examples/file-upload/file-upload.vue">
-</example>
+::Example
+---
+  name: "File input"
+  file: "/_content/examples/file-upload/file-upload.vue"
+---
+::
 
 ## Props & Attributes
 

@@ -5,7 +5,7 @@ description: FormKit is a form authoring framework for Vue developers that makes
 
 # What is FormKit?
 
-<page-toc></page-toc>
+:PageToc
 
 ## Introduction
 
