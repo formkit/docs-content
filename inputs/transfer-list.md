@@ -1,6 +1,6 @@
 ---
 title: Transfer List Input
-description: A Pro input that allows users to search and select from a customizable options list. Supports single and multi-value selections.
+description: The transfer list input allows users to transfer values between two lists. It is useful for situations where you need to select multiple values from a large list of options.
 ---
 
 <InputPageHero title="Transfer List"></InputPageHero>
@@ -11,12 +11,12 @@ description: A Pro input that allows users to search and select from a customiza
 
 ## Basic example
 
-The `taglist` input allows users to search through a list of options and apply any number of tags. Users can also drag and drop tags to re-order:
+The transfer list input is ideal for situations where the end-user needs to select and sort multiple values from a list of options. In this example, we are going to pass the transfer list an array of guest names to the `options` prop and allow the user to select VIPs:
 
 <example
-name="Taglist"
+name="Transfer List"
 :min-height="550"
-file="/\_content/examples/taglist/taglist-base.vue"></example>
+file="/\_content/examples/transfer-list/transfer-list-basic-example.vue"></example>
 
 ## Defining options
 
@@ -27,32 +27,32 @@ The `options` prop can accept three different formats of values:
 - An object literal with key-value pairs <code>{ a: 'A', b: 'B', c: 'C' }</code>
 - A function that returns any of the above
 
+## Searchable
+
+For larger lists of options, you can show allow the end-user to filter options by setting the `searchable` prop:
+
+<example
+name="Transfer List"
+:min-height="550"
+file="/\_content/examples/transfer-list/transfer-list-searchable.vue"></example>
+
 ## Filtering
 
-The taglist input will filter options with its own internal search function. You can replace this search function by providing the `filter` prop a function of your own. Your function will receive two arguments, the `option` being iterated over and the current `search` value:
+The transfer list input will filter options with its own internal search function. You can replace this search function by providing the `filter` prop a function of your own. Your function will receive two arguments, the `option` being iterated over and the current `search` value:
 
 <example
 name="Taglist"
 :min-height="550"
-file="/_content/examples/taglist/taglist-filter.vue"></example>
+file="/_content/examples/transfer-list/transfer-list-filter.vue"></example>
 
-## Empty message
+## Source and target empty message
 
-The taglist input, by default, will close the listbox when no search results are found while filtering. You can change this behavior by assigning the `empty-message` prop a message to display when no results are found:
-
-<example
-name="Taglist"
-:min-height="550"
-file="/_content/examples/taglist/taglist-empty-message.vue"></example>
-
-## Allow new values
-
-The taglist input, unlike the dropdown or autocomplete inputs, allows you to enter an arbitrary value (a value not in the list of options). This is useful for creating new tags on the fly. To enable this feature, set the `allow-new-values` prop to `true`.
+If you would like to indicate to the user that the source or target list is empty, you can set the `source-empty-message` and `target-empty-message` props:
 
 <example
 name="Taglist"
 :min-height="550"
-file="/_content/examples/taglist/taglist-allow-new-values.vue"></example>
+file="/_content/examples/transfer-list/transfer-list-empty-message.vue"></example>
 
 ## Max
 
@@ -282,4 +282,4 @@ file="/_content/examples/taglist/taglist-full.vue"></example>
     description: 'A span element that acts as a wrapper for the emptyMessage section.'
   }
 ]">
-</reference-table>
+</reference-table>-->
