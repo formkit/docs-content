@@ -87,7 +87,6 @@ Validation is one of the main features of FormKit. It helps the user know if the
 ---
 ::
 
-</client-only>
 
 Note that the `min` and `max` props above are built-in browser props for a range input, and represent the top and bottom of the range slider .
 
@@ -134,15 +133,11 @@ The first feature of a form that we'll explore is that we have a `@submit` event
 
 As convenience when using `type="form"`, the `form` outputs a submit button automatically. For our case, a "Submit" text does not show the intent of the form correctly. To fix that, we can use the `submit-label` prop, which is a `form`-specific feature. We can by simply add `submit-label="Create Character"` to show the intent of the form:
 
-<client-only>
-
 ```html
 <FormKit type="form" @submit="createCharacter" submit-label="Create Character">
   <!-- Rest of our creation form -->
 </FormKit>
 ```
-
-</client-only>
 
 ### Grouping related inputs
 

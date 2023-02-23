@@ -62,8 +62,6 @@ Although flags are <a href="http://www.flagsarenotlanguages.com/blog/why-flags-d
 
 FormKit’s `defaultConfig` includes the english locale by default — to add an additional locale, import it from `@formkit/i18n` and append it to the `locales` option when you initialized the FormKit plugin. To set the active locale specify it with the `locale` option:
 
-<client-only>
-
 ```js
 import { createApp } from 'vue'
 import App from 'App.vue'
@@ -82,8 +80,6 @@ app.use(
 )
 app.mount('#app')
 ```
-
-</client-only>
 
 ## Changing the active locale
 
@@ -124,8 +120,6 @@ When using the composition API, you won’t have access to `this.$formkit`. Inst
 
 If you find a phrase in your locale isn’t worded the way you prefer, you can override those individual messages globally in your configuration. You can do this by providing a `messages` object to the `defaultConfig`:
 
-<client-only>
-
 ```js
 import { createApp } from 'vue'
 import { plugin, defaultConfig } from '@formkit/vue'
@@ -145,8 +139,6 @@ app.use(
   })
 )
 ```
-
-</client-only>
 
 <callout type="tip" label="Message keys">
 Messages are generally found under a locale’s <code>ui</code> or <code>validation</code> property. To see a full list of keys and messages <a href="https://github.com/formkit/formkit/blob/master/packages/i18n/src/locales/en.ts">checkout the english locale.</a>

@@ -18,13 +18,9 @@ Creates the observer.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 createObserver(node: FormKitNode, dependencies?: FormKitDependencies): FormKitObservedNode;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -41,13 +37,9 @@ Determines which nodes should be added as dependencies and which should be remov
 
 #### Signature
 
-<client-only>
-
 ```typescript
 diffDeps(previous: FormKitDependencies, current: FormKitDependencies): [FormKitDependencies, FormKitDependencies];
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -64,13 +56,9 @@ Checks if the given node is revoked.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 isKilled(node: FormKitObservedNode): boolean;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -86,13 +74,9 @@ Remove all the receipts from the observed node and subtree.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 removeListeners(receipts: FormKitObserverReceipts): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -103,8 +87,6 @@ removeListeners(receipts: FormKitObserverReceipts): void;
 ### FormKitObservedNode
 
 An API-compatible FormKitNode that is able to determine the full dependency tree of nodes and their values.
-
-<client-only>
 
 ```typescript
 interface FormKitObservedNode extends FormKitNode {
@@ -121,18 +103,12 @@ interface FormKitObservedNode extends FormKitNode {
 }
 ```
 
-</client-only>
-
 ### FormKitWatchable
 
 A callback to watch for nodes.
-
-<client-only>
 
 ```typescript
 interface FormKitWatchable<T = unknown> {
   (node: FormKitObservedNode): T
 }
 ```
-
-</client-only>

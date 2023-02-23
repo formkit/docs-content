@@ -15,18 +15,12 @@ In this guide, we'll export the text input, and restructure it to better support
 
 FormKit comes with its own CLI to make exporting inputs a breeze. At the base directory of your project, run:
 
-<client-only>
-
 ```sh
 npx formkit export
 ```
 
-</client-only>
-
 Running this command prompts you to select any of FormKit's open source
 inputs to export:
-
-<client-only>
 
 ```
 ? What input do you want to export? ›
@@ -42,12 +36,8 @@ inputs to export:
   ↓ select
 ```
 
-</client-only>
-
 We're going to select the text input and allow the CLI to create a new `/inputs`
 directory within `/src`:
-
-<client-only>
 
 ```
 ✔ What input do you want to export? › text
@@ -56,11 +46,7 @@ directory within `/src`:
 ./src/inputs
 ```
 
-</client-only>
-
 Taking a look at our exported input, `text.js`, we can see the underlying sections that make up the FormKit input. These sections are provided as small composable functions. Each section represents a single `FormKitSchemaNode` and the arguments passed to that section are its children:
-
-<client-only>
 
 ```js
 // text.js
@@ -114,14 +100,10 @@ export const text = {
 }
 ```
 
-</client-only>
-
 In this example, we are not going to overwrite the default FormKit text input,
 but instead, create a custom text input that is going to use floating labels.
 Let's go ahead and rename the text file we just exported to
 `floatingLabelTextInput.js`:
-
-<client-only>
 
 ```sh
 src/
@@ -129,12 +111,8 @@ src/
   |   |- t̶e̶x̶t̶ floatingLabelTextInput.js
 ```
 
-</client-only>
-
 In `floatingLabelTextInput.js`, let's change the name of the
 exported variable to `floatingLabelTextInput` from `text`.
-<client-only>
-
 ```js
 ...
 export const t̶e̶x̶t̶ floatingLabelTextInput = {
@@ -143,13 +121,9 @@ export const t̶e̶x̶t̶ floatingLabelTextInput = {
 
 ```
 
-</client-only>
-
 ## Register input
 
 To globally register our "new" input, we need add our `floatingLabelTextInput` to the global config. We can do this wherever we are registering the FormKit plugin:
-
-<client-only>
 
 ```js
 //main.js
@@ -168,13 +142,9 @@ const config = defaultConfig({
 createApp(App).use(plugin, config).mount('#app')
 ```
 
-</client-only>
-
 ## Modifying schema
 
 Now we're going to modify the schema of `floatingLabelTextInput` to better support floating labels, which are usually implemented using the CSS sibling selector: `~`. In order to use a CSS selector like `:focus ~ label`, our `<label>` tag needs to be placed after our `<input>` tag. With our schema already exported, this change is easy to make:
-
-<client-only>
 
 ```js
 export const floatingLabelTextInput = {
@@ -201,23 +171,15 @@ export const floatingLabelTextInput = {
 
 ```
 
-</client-only>
-
 ## Using helpers
 
 The `@formkit/inputs` package exports a number of helper functions that can be easily applied to the composable schema functions. Available helpers are:
-
-<client-only>
 
 ```js
 import { $attrs, $if, $for, $extend, $root } from '@formkit/inputs'
 ```
 
-</client-only>
-
 Importing the `$attrs` function from FormKit's input package allows us to extend the schema of any section with additional attributes. In this example, we are using it to modify the label section and change its class from `formkit-label` to `formkit-label-floating`. Additionally, we’ll add a `data-has-value` attribute:
-
-<client-only>
 
 ```js
 import {
@@ -273,8 +235,6 @@ export const floatingLabelTextInput = {
 }
 ```
 
-</client-only>
-
 After adding appropriate styling, we can see that our new custom input has its `<label>` moved within the HTML structure and uses floating labels:
 
 ::Example
@@ -285,7 +245,6 @@ After adding appropriate styling, we can see that our new custom input has its `
     '/_content/examples/guides/export-inputs/final-result/formkit.config.js',
   ]
   init-file-tab: "example.vue"
-  init-file-tab: "formkit.config.js"
   editable: true
 ---
 ::

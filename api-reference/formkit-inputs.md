@@ -18,13 +18,9 @@ Applies attributes to a given schema section by applying a higher order function
 
 #### Signature
 
-<client-only>
-
 ```typescript
 $attrs(attrs: FormKitSchemaAttributes | (() => FormKitSchemaAttributes), section: FormKitSchemaExtendableSection): FormKitSchemaExtendableSection;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -41,13 +37,9 @@ Extends a schema node with a given set of extensions.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 $extend(section: FormKitSchemaExtendableSection, extendWith: Partial<FormKitSchemaNode>): FormKitSchemaExtendableSection;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -64,13 +56,9 @@ Applies a condition to a given schema section.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 $for(varName: string, inName: string, section: FormKitSchemaExtendableSection): (extensions: Record<string, Partial<FormKitSchemaNode>>) => FormKitSchemaNode;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -88,13 +76,9 @@ Applies a condition to a given schema section.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 $if(condition: string, then: FormKitSchemaExtendableSection, otherwise?: FormKitSchemaExtendableSection): FormKitSchemaExtendableSection;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -112,13 +96,9 @@ Creates a root schema section.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 $root(section: FormKitSchemaExtendableSection): FormKitExtendableSchemaRoot;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -136,13 +116,9 @@ A feature that adds checkbox selection support.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 checkboxes(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -154,13 +130,9 @@ Adds icon props definition.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 defaultIcon(sectionKey: string, defaultIcon: string): (node: FormKitNode) => void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -177,13 +149,9 @@ A feature to add file handling support to an input.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 files(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -195,13 +163,9 @@ A feature that ensures the input has an `initialValue` prop.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 initialValue(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -213,13 +177,9 @@ Creates a new feature that generates a localization message of type ui for use o
 
 #### Signature
 
-<client-only>
-
 ```typescript
 localize(key: string, value?: string): (node: FormKitNode) => void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -236,16 +196,12 @@ A feature that normalizes box types (checkboxes, radios).
 
 #### Signature
 
-<client-only>
-
 ```typescript
 normalizeBoxes(node: FormKitNode): FormKitMiddleware<{
     prop: string | symbol;
     value: any;
 }>;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -261,13 +217,9 @@ A feature that converts the options prop to usable values, to be used by a featu
 
 #### Signature
 
-<client-only>
-
 ```typescript
 options(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -279,13 +231,9 @@ A feature to check if the value being checked is the current value.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 radios(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -297,13 +245,9 @@ radios(node: FormKitNode): void;
 
 #### Signature
 
-<client-only>
-
 ```typescript
 composable(key: string, schema: FormKitInputSchema): FormKitSchemaComposable;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -320,13 +264,9 @@ Creates a plugin based on a list of [FormKitLibrary](/api-reference/formkit-core
 
 #### Signature
 
-<client-only>
-
 ```typescript
 createLibraryPlugin(...libraries: FormKitLibrary[]): FormKitPlugin;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -342,15 +282,11 @@ Creates a new reusable section.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 createSection(section: string, el: string | null | (() => FormKitSchemaNode), root: true): FormKitSection<FormKitExtendableSchemaRoot>;
 createSection(section: string, el: string | null | (() => FormKitSchemaNode)): FormKitSection<FormKitSchemaExtendableSection>;
 createSection(section: string, el: string | (() => FormKitSchemaNode), root: false): FormKitSection<FormKitSchemaExtendableSection>;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -368,13 +304,9 @@ A feature that allows disabling children of this node.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 disables(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -386,13 +318,9 @@ Extends a single schema node with an extension. The extension can be any partial
 
 #### Signature
 
-<client-only>
-
 ```typescript
 extendSchema(schema: FormKitSchemaNode, extension?: Partial<FormKitSchemaNode>): FormKitSchemaNode;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -409,13 +337,9 @@ Finds a seciton by name in a schema.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 findSection(schema: FormKitSchemaNode[], target: string): [false, false] | [FormKitSchemaNode[], FormKitSchemaCondition];
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -432,13 +356,9 @@ A feature to add a submit handler and actions section.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 form(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -450,13 +370,9 @@ A feature that applies `ignore="true"` by default.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 ignore(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -468,13 +384,9 @@ Type guard for schema objects.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 isSchemaObject(schema: Partial<FormKitSchemaNode>): schema is FormKitSchemaDOMNode | FormKitSchemaComponent | FormKitSchemaFormKit;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -490,8 +402,6 @@ Checks if the current schema node is a slot condition.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 isSlotCondition(node: FormKitSchemaNode): node is {
     if: string;
@@ -499,8 +409,6 @@ isSlotCondition(node: FormKitSchemaNode): node is {
     else: FormKitSchemaNode | FormKitSchemaNode[];
 };
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -512,8 +420,6 @@ isSlotCondition(node: FormKitSchemaNode): node is {
 
 #### Examples
 
-<client-only>
-
 ```js
 {
  if: '$slot.name',
@@ -522,21 +428,15 @@ isSlotCondition(node: FormKitSchemaNode): node is {
 } // this schema node would return true.
 ```
 
-</client-only>
-
 ### normalizeOptions()
 
 A function to normalize an array of objects, array of strings, or object of key-values to use an array of objects with value and label properties.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 normalizeOptions(options: FormKitOptionsProp): FormKitOptionsList;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -553,13 +453,9 @@ Converts the options prop to usable values.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 select(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -571,13 +467,9 @@ Creates an input schema with all of the wrapping base schema.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 useSchema(inputSection: FormKitSection): FormKitExtendableSchemaRoot;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -593,8 +485,6 @@ useSchema(inputSection: FormKitSection): FormKitExtendableSchemaRoot;
 
 A single file object in FormKit’s synthetic "FileList".
 
-<client-only>
-
 ```typescript
 interface FormKitFile {
   file?: File
@@ -602,13 +492,9 @@ interface FormKitFile {
 }
 ```
 
-</client-only>
-
 ### FormKitOptionsItem
 
 Options should always be formatted as an array of objects with label and value properties.
-
-<client-only>
 
 ```typescript
 interface FormKitOptionsItem {
@@ -622,13 +508,9 @@ interface FormKitOptionsItem {
 }
 ```
 
-</client-only>
-
 ### FormKitOptionsPropExtensions
 
 Allows for prop extensions to be defined by using an interface whose keys are ignored, but values are applied to a union type. This allows for any third party code to extend the options prop by using module augmentation to add new values to the union type.
-
-<client-only>
 
 ```typescript
 interface FormKitOptionsPropExtensions {
@@ -639,13 +521,9 @@ interface FormKitOptionsPropExtensions {
 }
 ```
 
-</client-only>
-
 ### FormKitSchemaExtendableSection
 
 A function that is called with an extensions argument and returns a valid schema node.
-
-<client-only>
 
 ```typescript
 interface FormKitSchemaExtendableSection {
@@ -654,13 +532,9 @@ interface FormKitSchemaExtendableSection {
 }
 ```
 
-</client-only>
-
 ### FormKitSection
 
 A function that when called, returns a function that can in turn be called with an extension parameter.
-
-<client-only>
 
 ```typescript
 interface FormKitSection<T = FormKitSchemaExtendableSection> {
@@ -668,13 +542,9 @@ interface FormKitSection<T = FormKitSchemaExtendableSection> {
 }
 ```
 
-</client-only>
-
 ### FormKitSyntheticPropsExtensions
 
 Synthetic props are props that are not explicitly declared as props, but should be treated as props to the outside world.
-
-<client-only>
 
 ```typescript
 interface FormKitSyntheticPropsExtensions {
@@ -697,25 +567,17 @@ interface FormKitSyntheticPropsExtensions {
 }
 ```
 
-</client-only>
-
 ### FormKitFileValue
 
 A synthetic array-based "FileList".
-
-<client-only>
 
 ```typescript
 type FormKitFileValue = FormKitFile[]
 ```
 
-</client-only>
-
 ### FormKitInputSchema
 
 Either a schema node, or a function that returns a schema node.
-
-<client-only>
 
 ```typescript
 type FormKitInputSchema =
@@ -725,43 +587,29 @@ type FormKitInputSchema =
   | FormKitSchemaNode
 ```
 
-</client-only>
-
 ### FormKitOptionsList
 
 An array of option items.
-
-<client-only>
 
 ```typescript
 type FormKitOptionsList = FormKitOptionsItem[]
 ```
 
-</client-only>
-
 ### FormKitOptionsProp
 
 The types of options that can be passed to the options prop.
-
-<client-only>
 
 ```typescript
 type FormKitOptionsProp =
   FormKitOptionsPropExtensions[keyof FormKitOptionsPropExtensions]
 ```
 
-</client-only>
-
 ### FormKitSyntheticProps
 
 The synthetic prop types.
-
-<client-only>
 
 ```typescript
 type FormKitSyntheticProps = {
   [Property in keyof FormKitSyntheticPropsExtensions]: FormKitSyntheticPropsExtensions[Property]
 }
 ```
-
-</client-only>

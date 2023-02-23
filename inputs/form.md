@@ -40,7 +40,7 @@ Excluding backend functionality, here is a fully featured form with inputs (`for
   name: "Register example"
   file: "/_content/examples/register/register.vue"
   layout: "column"
-  data-render-fullsize
+  data-render-fullsize: true
 ---
 ::
 
@@ -326,13 +326,9 @@ You can also conveniently set error messages for all inputs in your form (or [gr
 
 By default, a form’s validation and error messages are placed directly above the form’s actions section. However, you can choose to render these anywhere on your page by using the `<FormKitMessages />` component. `<FormKitMessages />` is not a globally registered component — you must import it:
 
-<client-only>
-
 ```js
 import { FormKitMessages } from '@formkit/vue'
 ```
-
-</client-only>
 
 There are two ways to use `<FormKitMessages />`:
 

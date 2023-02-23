@@ -516,8 +516,6 @@ Checks if the input value appears to be a properly formatted URL including the p
 
 Validation rules are functions that accept a [core node](/essentials/architecture#node) and return a boolean value — `true` for passing and `false` for failing. Additionally, any arguments passed to the validation rule are available as arguments `1-n`. Writing your own is straight forward — for example:
 
-<client-only>
-
 ```js
 /**
  * File: my-custom-rules/monday.js
@@ -531,13 +529,9 @@ const monday = function (node) {
 export default monday
 ```
 
-</client-only>
-
 ### Defining custom rule behaviors
 
 As mentioned in the [validation rule hints](#rule-hints) section, validation rules — including your custom rules — operate according to default behaviors: they run in sequence, are skipped when the input's value is empty, are synchronous, and are blocking. If you want your rule's defaults to operate differently, you can override these on your custom validation rule:
-
-<client-only>
 
 ```js
 /**
@@ -556,8 +550,6 @@ monday.force = true
 export default monday
 ```
 
-</client-only>
-
 You can also override these behaviors on a case-by-case basis with [rule hints](#rule-hints).
 
 Once you have a validation function written — you need to register the validation rule with FormKit — either globally or specifically on an input.
@@ -565,8 +557,6 @@ Once you have a validation function written — you need to register the validat
 ### Adding a rule globally
 
 To use a validation rule anywhere in your project, you can specify it wherever your FormKit plugin is registered with Vue.
-
-<client-only>
 
 ```js
 import { createApp } from 'vue'
@@ -580,17 +570,11 @@ createApp(App).use(plugin, defaultConfig({
 })).mount('#app')
 ```
 
-</client-only>
-
 Once installed you can use your validation rule in anywhere in your project.
-
-<client-only>
 
 ```html
 <FormKit validation="required|monday" />
 ```
-
-</client-only>
 
 ### Adding a rule via prop
 
@@ -667,8 +651,6 @@ Let’s re-write the above example using a function instead of a string for even
 
 If there are validation rule messages you'd like to override (or add) across your entire project, you can define those message rules when registering FormKit under the language key you'd like to override:
 
-<client-only>
-
 ```js
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -688,8 +670,6 @@ createApp(App).use(plugin, defaultConfig({
   }
 })).mount('#app')
 ```
-
-</client-only>
 
 ## Moving validation messages
 

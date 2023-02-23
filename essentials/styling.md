@@ -17,8 +17,6 @@ called `Genesis` that you can use in your projects.
 
 To load `genesis` via CDN, supply it to the `theme` property of your `defaultConfig`.
 
-<client-only>
-
 ```js
 ...
 defaultConfig({
@@ -27,29 +25,19 @@ defaultConfig({
 ...
 ```
 
-</client-only>
-
 #### Direct import
 
 To install Genesis, first install the `@formkit/themes` package.
-
-<client-only>
 
 ```sh
 npm install @formkit/themes
 ```
 
-</client-only>
-
 Then in your `main.js` (wherever you boot Vue up) include the Genesis `theme.css` (this assumes you are using a build tool like Vite, Webpack, Snowpack, or Nuxt):
-
-<client-only>
 
 ```js
 import '@formkit/themes/genesis'
 ```
-
-</client-only>
 
 ## Outer attributes
 
@@ -166,7 +154,7 @@ The classes configuration option is similar to the classes prop, except it appli
   file: "/_content/examples/global-classes/global-classes.vue"
   mode: "editor"
   editable: false
-  :line-numbers="false"
+  line-numbers: false
 ---
 ::
 
@@ -240,8 +228,6 @@ In addition to modifying classes via config or props _on a `<FormKit>` component
 
 Within schema, you can also modify the classes of an element inside an input via the `{section-key}Class` properties. For example, to add a class to the label section, you can add the `labelClass` property:
 
-<client-only>
-
 ```js
 {
   $formkit: 'text',
@@ -251,13 +237,9 @@ Within schema, you can also modify the classes of an element inside an input via
 },
 ```
 
-</client-only>
-
 ### Classes prop within schema
 
 Much like the [classes prop](#classes-prop) on a `<FormKit>` component, you can modify the class list for any [section](/essentials/inputs#sections) of an input with the `classes` property on a schema node:
-
-<client-only>
 
 ```js
 {
@@ -273,8 +255,6 @@ Much like the [classes prop](#classes-prop) on a `<FormKit>` component, you can 
   },
 },
 ```
-
-</client-only>
 
 ### Config within schema
 
@@ -299,8 +279,6 @@ There is an issue affecting the <code>1.0.0-beta.14</code> version of <code>@for
 
 FormKit ships with an optional default Tailwind theme called Genesis. To use this pre-made Tailwind theme in your project import it from `@formkit/themes/tailwindcss/genesis` and add it to your `formkit.config.js`. You'll also want to include the neccessary `genesisIcons` import from `@formkit/icons`.
 
-<client-only>
-
 ```js
 // formkit.config.js
 import { generateClasses } from '@formkit/themes'
@@ -317,11 +295,7 @@ export default {
 }
 ```
 
-</client-only>
-
 The `genesis` theme import is nice for brevity, but the Tailwind parser will need to be provided the path to the full theme file in your `node_modules` in order to know which classes are being used. Additionally you should add the `FormKitVariants` plugin to your `tailwind.config.js` in order to make use of helpful FormKit variants such as `formkit-invalid:` in your project.
-
-<client-only>
 
 ```js
 // tailwind.config.js
@@ -335,8 +309,6 @@ module.exports = {
   plugins: [FormKitVariants],
 }
 ```
-
-</client-only>
 
 ### Building your own Tailwind CSS theme
 

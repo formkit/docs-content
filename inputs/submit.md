@@ -57,8 +57,6 @@ Note that FormKit forms automatically [output a submit button](/inputs/form#prov
 
 If you use your own submit button, you can dynamically disable it according to the form's disabled status (`context.disabled`), which you can pull from the `#default` slot prop:
 
-<client-only>
-
 ```html
 <FormKit
   type="form"
@@ -70,15 +68,11 @@ If you use your own submit button, you can dynamically disable it according to t
 </FormKit>
 ```
 
-</client-only>
-
 You can also disable your own submit button [via schema](https://formkit.link/6e6d3e9b251a3662af15bd0c1c55e4be).
 
 ## Ignored input
 
 <ignored-input-docs></ignored-input-docs>
-
-<client-only>
 
 ```html
 <FormKit type="button" :ignore="false"> Add a section </FormKit>

@@ -33,15 +33,11 @@ FormKit Inputs are not confined to what is available in "native" HTML. Our seper
 
 While you’re free to use FormKit inputs by themselves, you’ll usually want to [group them into a form](/inputs/form):
 
-<client-only>
-
 ```html
 <FormKit type="form">
   <!-- ... your form inputs -->
 </FormKit>
 ```
-
-</client-only>
 
 The [form type](/inputs/form) provides a host of features including value collection, initial value setting, form submission, error handling, loading states, and more.
 

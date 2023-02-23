@@ -35,8 +35,6 @@ When creating one of these "mini applications" that we call core nodes, some opt
 
 For example, in a typical FormKit Vue registration, we use `defaultConfig` which is just a function that returns core node options:
 
-<client-only>
-
 ```js
 import { createApp } from 'vue'
 import App from 'App.vue'
@@ -46,13 +44,9 @@ import { plugin, defaultConfig } from '@formkit/vue'
 createApp(App).use(plugin, defaultConfig)
 ```
 
-</client-only>
-
 ### Available node options
 
 The following is a list of all the available options that can be used when registering FormKit or creating a node individually. Options that are passed to the `@formkit/vue` plugin will be applied to every `<FormKit>` component’s core node when it is created.
-
-<client-only>
 
 ```js
 createNode({
@@ -99,15 +93,11 @@ createNode({
 })
 ```
 
-</client-only>
-
 ### What is `defaultConfig`?
 
 Developers familiar with FormKit will notice that the above list of node options differs slightly from the values that can be passed into the `defaultConfig` function.
 
 Many of FormKit’s features, like validation, inputs, and Vue support are provided courtesy of first-party plugins. The `defaultConfig` function configures many of these plugins before they are given over to the Vue plugin as node options. So, `defaultConfig` can accept any of the above node options, but also a few extras:
-
-<client-only>
 
 ```js
 defaultConfig({
@@ -142,8 +132,6 @@ defaultConfig({
   ...nodeOptions,
 })
 ```
-
-</client-only>
 
 ## What are node props?
 

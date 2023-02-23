@@ -21,13 +21,9 @@ Performs a recursive `Object.assign`
 
 #### Signature
 
-<client-only>
-
 ```typescript
 assignDeep<A extends Record<PropertyKey, any>, B extends Record<PropertyKey, any>>(a: A, b: B): A & B;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -44,13 +40,9 @@ This converts kebab-case to camelCase. It ONLY converts from kebab to camel.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 camel(str: string): string;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -66,13 +58,9 @@ Perform a recursive clone on a given object. Only intended to be used for simple
 
 #### Signature
 
-<client-only>
-
 ```typescript
 clone<T extends Record<string, unknown> | unknown[] | null>(obj: T, explicit?: string[]): T;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -89,13 +77,9 @@ Clones anything. If the item is scalar, no worries, it passes it back. If it is 
 
 #### Signature
 
-<client-only>
-
 ```typescript
 cloneAny<T>(obj: T): T;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -111,13 +95,9 @@ Given 2 arrays, return them as a combined array with no duplicates.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 dedupe<T extends any[] | Set<any>, X extends any[] | Set<any>>(arr1: T, arr2?: X): any[];
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -134,13 +114,9 @@ Determines if a value is empty or not.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 empty(value: any): boolean;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -156,13 +132,9 @@ Compare two values for equality, optionally at depth.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 eq(valA: any, valB: any, deep?: boolean, explicit?: string[]): boolean;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -181,13 +153,9 @@ Escape a string for use in regular expressions.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 escapeExp(string: string): string;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -203,13 +171,9 @@ Return a new (shallow) object with any desired props removed.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 except(obj: Record<string, any>, toRemove: Array<string | RegExp>): Record<string, any>;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -226,13 +190,9 @@ Recursively merge data from additional into original returning a new object.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 extend(original: Record<string, any>, additional: Record<string, any> | string | null, extendArrays?: boolean, ignoreUndefined?: boolean): Record<string, any> | string | null;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -251,13 +211,9 @@ Get a specific value via dot notation.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 getAt(obj: any, addr: string): unknown;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -274,16 +230,12 @@ Checks if the given property exists on the given object.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 has(obj: {
     [index: string]: any;
     [index: number]: any;
 }, property: string | symbol | number): boolean;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -300,15 +252,11 @@ Defines an object as an initial value.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 init<T extends object>(obj: T): T & {
     __init?: true;
 };
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -324,13 +272,9 @@ Checks if an object is a simple array or record.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 isObject(o: unknown): o is Record<PropertyKey, unknown> | unknown[];
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -346,13 +290,9 @@ Attempts to determine if an object is a POJO (Plain Old JavaScript Object). Most
 
 #### Signature
 
-<client-only>
-
 ```typescript
 isPojo(o: any): o is Record<string, any>;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -368,13 +308,9 @@ Determine if the given string is fully quoted.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 isQuotedString(str: string): boolean;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -385,8 +321,6 @@ isQuotedString(str: string): boolean;
 `boolean`
 
 #### Examples
-
-<client-only>
 
 ```javascript
 hello - false
@@ -399,21 +333,15 @@ hello - false
 'hello === world' - true
 ```
 
-</client-only>
-
 ### isRecord()
 
 Determines if an object is an object.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 isRecord(o: unknown): o is Record<PropertyKey, unknown>;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -429,13 +357,9 @@ This converts camel-case to kebab case. It ONLY converts from camel to kebab.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 kebab(str: string): string;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -451,13 +375,9 @@ Filters out values from an object that should not be considered "props" of a cor
 
 #### Signature
 
-<client-only>
-
 ```typescript
 nodeProps(...sets: Array<Record<string, any>>): Record<string, any>;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -473,13 +393,9 @@ Given a FormKit input type, returns the correct lowerCased() type.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 nodeType(type: string): 'list' | 'group' | 'input';
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -495,13 +411,9 @@ Extracts a set of keys from a given object. Importantly, this will extract value
 
 #### Signature
 
-<client-only>
-
 ```typescript
 only(obj: Record<string, any>, include: Array<string | RegExp>): Record<string, any>;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -518,13 +430,9 @@ Parse a string for comma-separated arguments.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 parseArgs(str: string): string[];
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -540,13 +448,9 @@ Given a string date format, return a regex to match against.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 regexForFormat(format: string): RegExp;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -558,13 +462,9 @@ regexForFormat(format: string): RegExp;
 
 #### Examples
 
-<client-only>
-
 ```javascript
 regexForFormat('MM') // returns '(0[1-9]|1[012])'
 ```
-
-</client-only>
 
 ### rmEscapes()
 
@@ -572,13 +472,9 @@ Remove extra escape characters.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 rmEscapes(str: string): string;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -594,13 +490,9 @@ Creates a new set of the specified type and uses the values from an Array or an 
 
 #### Signature
 
-<client-only>
-
 ```typescript
 setify<T>(items: Set<T> | T[] | null | undefined): Set<T>;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -612,8 +504,6 @@ setify<T>(items: Set<T> | T[] | null | undefined): Set<T>;
 
 #### Examples
 
-<client-only>
-
 ```javascript
 import { setify } from '@formkit/utils'
 
@@ -621,21 +511,15 @@ const tk = setify(['a', 'b'])
 // Set(2) {'a', 'b'}
 ```
 
-</client-only>
-
 ### shallowClone()
 
 Shallowly clones the given object.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 shallowClone<T>(obj: T, explicit?: string[]): T;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -652,13 +536,9 @@ Turn any string into a URL/DOM-safe string.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 slugify(str: string): string;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -675,13 +555,9 @@ Spreads an object or an array, otherwise returns the same value.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 spread<T>(obj: T, explicit?: string[]): T;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -698,21 +574,15 @@ Generates a random string.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 token(): string;
 ```
-
-</client-only>
 
 #### Returns
 
 string
 
 #### Examples
-
-<client-only>
 
 ```javascript
 import { token } from '@formkit/utils'
@@ -721,21 +591,15 @@ const tk = token()
 // 'jkbyqnphqm'
 ```
 
-</client-only>
-
 ### undefine()
 
 Determines if the value of a prop that is either present (true) or not present (undefined). For example, the prop disabled should disable by just existing, but what if it is set to the string "false" — then it should not be disabled.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 undefine(value: unknown): true | undefined;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -751,13 +615,9 @@ Uses a global mutation observer to wait for a given element to appear in the DOM
 
 #### Signature
 
-<client-only>
-
 ```typescript
 whenAvailable(childId: string, callback: (el: Element) => void): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -770,10 +630,6 @@ whenAvailable(childId: string, callback: (el: Element) => void): void;
 
 The date token strings that can be used for date formatting.
 
-<client-only>
-
 ```typescript
 type FormKitDateTokens = 'MM' | 'M' | 'DD' | 'D' | 'YYYY' | 'YY'
 ```
-
-</client-only>

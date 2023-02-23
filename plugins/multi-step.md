@@ -13,8 +13,6 @@ FormKit ships with a first-party multi-step input plugin available from the `@fo
 
 To get started, import `createMultiStepPlugin` from `@formkit/addons` along with the accompanying styles. The styles are completely standalone and have no dependency on the `genesis` theme that ships with FormKit. This means that if you are using Tailwind to style your inputs, your input styles will still display as expected when wrapped in the `multi-step` input type.
 
-<client-only>
-
 ```js
 // formkit.config.js
 import { defaultConfig } from '@formkit/vue'
@@ -27,8 +25,6 @@ const config = defaultConfig({
 
 export default config
 ```
-
-</client-only>
 
 #### A quick demonstration of the `multi-step` input type in action:
 
@@ -54,8 +50,6 @@ The `createMultiStepPlugin` function registers two new input types for you to us
 
 Using these inputs together is as simple as wrapping any markup you want to have present within a step in a multi-step form.
 
-<client-only>
-
 ```html
 <FormKit type="multi-step">
   <FormKit type="step" name: "stepOne">
@@ -65,8 +59,6 @@ Using these inputs together is as simple as wrapping any markup you want to have
 ```
 
 Out-of-the-box the parent `multi-step` input will track the validity of the inputs contained in each child `step` input and prevent advancing to the next `step` until the current step is valid. The count of total blocking validations and errors will be shown next to the current step name if a user attempts to advance to the next step or submit the form before satisfying the current step's input validations.
-
-</client-only>
 
 ## Tab style
 

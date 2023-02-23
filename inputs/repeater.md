@@ -78,8 +78,6 @@ file: "/_content/examples/repeater/repeater-controls.vue"
 You can set errors on a repeater or any repeatable item using dot notation. Here we are using the
 [`setErrors`](/inputs/form#using-nodeseterrors) helper, but there are other methods as well:
 
-<client-only>
-
 ```js
 // the 2nd argument of setErrors is input-level errors
 formNode.setErrors( null, // no form errors,
@@ -92,8 +90,6 @@ formNode.setErrors( null, // no form errors,
   }
 )
 ```
-
-</client-only>
 
 Remember, your submit handler is passed the form's core `node` and can be used
 to conveniently set errors at depth. Read more about error handling

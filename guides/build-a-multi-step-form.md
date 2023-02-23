@@ -53,8 +53,6 @@ To start, let's wrap each section of inputs with a [group](/inputs/group) (`<For
 
 A group itself becomes valid when all its children (and their children) are valid:
 
-<client-only>
-
 ```html
 <!-- Only showing a single group here for brevity -->
 <FormKit type="group" name: "contactInfo">
@@ -63,11 +61,7 @@ A group itself becomes valid when all its children (and their children) are vali
 ...
 ```
 
-</client-only>
-
 In our case, we're also going to want wrapping HTML. Let's put each group into a "step" section which we can conditionally show and hide:
-
-<client-only>
 
 ```html
 <!-- Only showing a single group here for brevity -->
@@ -79,20 +73,12 @@ In our case, we're also going to want wrapping HTML. Let's put each group into a
 ...
 ```
 
-</client-only>
-
 Next, let's introduce some navigation UI so we can toggle between each step:
-
-<client-only>
 
 ```js
 // for now, manually set step names
 const stepNames = ['contactInfo', 'organizationInfo', 'application']
 ```
-
-</client-only>
-
-<client-only>
 
 ```html
 <!-- Set up tab-navigation UI. On click, change step -->
@@ -107,8 +93,6 @@ const stepNames = ['contactInfo', 'organizationInfo', 'application']
   </li>
 </ul>
 ```
-
-</client-only>
 
 Here's what it looks like put together:
 
@@ -143,8 +127,6 @@ We'll leverage FormKit's [plugin](/essentials/architecture#plugins) functionalit
 
 Here's our custom plugin, called `stepPlugin`:
 
-<client-only>
-
 ```js
 // our plugin and our template code will make use of 'steps'
 const steps = reactive({})
@@ -168,11 +150,7 @@ const stepPlugin = (node) => {
 }
 ```
 
-</client-only>
-
 The resulting `steps` reactive object from our plugin above looks like this:
-
-<client-only>
 
 ```js
 {
@@ -182,25 +160,17 @@ The resulting `steps` reactive object from our plugin above looks like this:
 }
 ```
 
-</client-only>
-
 To use our plugin, we'll add it to our root form `<FormKit type="form" />`. This means that every top-level group in our form will inherit the plugin:
-
-<client-only>
 
 ```html
 <FormKit type="form" :plugins="[stepPlugin]"> ... rest of the form </FormKit>
 ```
-
-</client-only>
 
 ## Showing validity
 
 Now that our template has real-time access to each group's validity state via our plugin, let's write the UI to show this data in the step navigation bar.
 
 We also no longer need to manually define our steps since our plugin is dynamically storing the name of all groups in the `steps` object. Let's add a `data-step-valid="true"` attribute to each step if it's valid so we can target with CSS:
-
-<client-only>
 
 ```html
 <ul class="steps">
@@ -215,8 +185,6 @@ We also no longer need to manually define our steps since our plugin is dynamica
   </li>
 </ul>
 ```
-
-</client-only>
 
 With these updates, our form is now capable of informing a user when they have correctly filled out all of the fields in a given step!
 
@@ -249,8 +217,6 @@ FormKit uses its [message store](/essentials/architecture#message-store) to trac
 
 With our plugin already in place, it's relatively simple to add tracking for both:
 
-<client-only>
-
 ```js
 const stepPlugin = (node) => {
   ...
@@ -269,8 +235,6 @@ const stepPlugin = (node) => {
 }
 ```
 
-</client-only>
-
 <callout type="tip" label="Blocking validation messages vs errors">
 FormKit makes a distinction between frontend validation messages (<code>messages</code> of type <code>validation</code>), and errors (<code>messages</code> of type <code>error</code>).
 </callout>
@@ -283,8 +247,6 @@ Let's update our example to show both types of errors with the following require
 ### Adding a group blur event
 
 Since "blurring a group" doesn't exist in HTML, we'll introduce it in our plugin with an array called `visitedSteps`. Here's the relevant code:
-
-<client-only>
 
 ```js
 import { watch } from 'vue'
@@ -321,15 +283,11 @@ const stepPlugin = (node) => {
 }
 ```
 
-</client-only>
-
 You might be wondering why we are walking all of the descendants of a given step (`node.walk()`) and creating messages with a key of `submitted` and value of `true`? When a user attempts to submit a form, this is how FormKit informs itself that all inputs are in a `submitted` state. In this state, FormKit forces any blocking validation messages to appear. We are manually triggering the same thing in our "group blur" event.
 
 ### The error UI
 
 We'll use the same UI for both types of errors since end-users don't really care about the distinction. Here's our updated step HTML, which outputs a red bubble with the sum total of the errors `errorCount` + `blockingCount`:
-
-<client-only>
 
 ```html
 <li v-for="(step, stepName) in steps" class="step" ...>
@@ -341,8 +299,6 @@ We'll use the same UI for both types of errors since end-users don't really care
   {{ camel2title(stepName) }}
 </li>
 ```
-
-</client-only>
 
 We are almost to the finish line! Here's our current form — which can now tell a user when they have properly _or improperly_ filled out each step:
 
@@ -364,17 +320,11 @@ The last piece of the puzzle is submitting the form and handling any errors we r
 
 We submit the form by adding an `@submit` handler to the `<FormKit type="form">`:
 
-<client-only>
-
 ```html
 <FormKit type="form" @submit="submitApp"> ... rest of form</FormKit>
 ```
 
-</client-only>
-
 And here's our submit handler:
-
-<client-only>
 
 ```js
 const submitApp = async (formData, node) => {
@@ -387,8 +337,6 @@ const submitApp = async (formData, node) => {
   }
 }
 ```
-
-</client-only>
 
 Notice that FormKit passes our submit handler 2 helpful arguments: the form's data in a single request-ready object (which we're calling `formData`), and the form's underlying core `node`, which we can use to clear errors or set any returned errors using the `node.clearErrors()` and `node.setErrors()` helpers, respectively.
 

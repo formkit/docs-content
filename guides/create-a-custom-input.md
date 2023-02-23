@@ -17,8 +17,6 @@ This guide assumes you are using a standard Vue 3 build tool like Vite, Nuxt 3, 
 
 To get started, let's create our input’s component file. We'll call it `OneTimePassword.vue`:
 
-<client-only>
-
 ```html
 <script setup>
   const props = defineProps({
@@ -30,8 +28,6 @@ To get started, let's create our input’s component file. We'll call it `OneTim
   <div>More to come here...</div>
 </template>
 ```
-
-</client-only>
 
 FormKit provides a lot of input features out-of-the-box that we're going to want to preserve — like labels, help text, and showing error messages. All we really want to modify is the input section of our input. We can preserve these standard FormKit features by using the `createInput` utility function from the `@formkit/vue` package.
 
@@ -91,15 +87,11 @@ Ok, now that we understand how to create an input, how to use it, and how to rea
 
 For our first requirement, we need `n` `<input>` tags. Perhaps it would be best to expose the number of digits as a prop. To do that, we need to inform our `createInput` function that we want to accept a new prop:
 
-<client-only>
-
 ```js
 createInput(OneTimePassword, {
   props: ['digits'],
 })
 ```
-
-</client-only>
 
 We now have access to `context.digits`. Back in `OneTimePassword.vue`, let's use that to output the correct number of `<input>` tags.
 
@@ -157,8 +149,6 @@ Looks like we only have one thing left to do — copy & paste support. Fortunate
 
 All we need to do is capture the copy/paste event on any of our input tags, get the text being pasted, and set the `tmp` value to that string of digits. Let’s whip up another event handler:
 
-<client-only>
-
 ```js
 handlePaste(e) {
   const paste = e.clipboardData.getData('text')
@@ -171,8 +161,6 @@ handlePaste(e) {
   }
 }
 ```
-
-</client-only>
 
 ::Example
 ---
@@ -190,8 +178,6 @@ Our requirements are all complete!
 ## Registration
 
 Now that we've worked up an excellent input, let’s register it with our application so we can use it anywhere by just using the string `otp`. Open up your Vue application’s main file (where `app.use(formKit)` is). We’ll just add to it:
-
-<client-only>
 
 ```js
 import { createApp } from 'Vue'
@@ -213,17 +199,11 @@ app.use(
 app.mount('#app')
 ```
 
-</client-only>
-
 Done! Now you can use your input anywhere in your application:
-
-<client-only>
 
 ```html
 <FormKit type="otp" digits="4" />
 ```
-
-</client-only>
 
 ## Next steps
 

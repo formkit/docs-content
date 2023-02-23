@@ -19,8 +19,6 @@ Using icons in your project is as easy as providing your desired icon name to on
 <FormKit type="select" select-icon="caretDown" />
 ```
 
-</client-only>
-
 It's that easy! 🎉
 
 #### A quick demo of icons in action
@@ -55,8 +53,6 @@ project is using <code>defaultConfig()</code> (this is usually the case), then g
 When using the `defaultConfig` that ships with FormKit there are several top-level configuration options you can use to
 customize your experience. See the `createThemePlugin` docs in the next section for expanded explanations of each.
 
-<client-only>
-
 ```js
 import { createApp } from 'vue'
 import App from 'App.vue'
@@ -71,8 +67,6 @@ createApp(App).use(plugin, defaultConfig({
 }).mount('#app')
 ```
 
-</client-only>
-
 ### If your project uses a custom config
 
 If your project is **not** using FormKit’s provided `defaultConfig` then you will need to install
@@ -80,8 +74,6 @@ the `createThemePlugin()` in your FormKit project's config:
 
 - Import `createThemePlugin()` from the `@formkit/themes` package.
 - Add `createThemePlugin()` to your project's plugin array inside of your FormKit config.
-
-<client-only>
 
 ```js
 import { createApp } from 'vue'
@@ -98,8 +90,6 @@ createApp(App).use(plugin, {
   ...
 }.mount('#app')
 ```
-
-</client-only>
 
 The `createThemePlugin` takes 4 optional arguments:
 
@@ -131,15 +121,9 @@ Remotely loaded SVGs are added to the internal `iconRegistry` the first time an 
 Magic CDNs are great — but for the best possible performance you should register icons you know you will be using locally in your project.
 You can do this by adding icons to your root FormKit config. FormKit's 1st-party icons can be imported from the `@formkit/icons` package.
 
-<client-only>
-
 ```bash
 yarn add @formkit/icons
 ```
-
-</client-only>
-
-<client-only>
 
 ```js
 import { createApp } from 'vue'
@@ -159,8 +143,6 @@ createApp(App).use(plugin, defaultConfig({
   ...
 }).mount('#app')
 ```
-
-</client-only>
 
 <callout type="note" label="Performance">
 FormKit automatically loads missing icons from its icon package via CDN. This is great for quickly getting up

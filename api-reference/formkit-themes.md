@@ -18,13 +18,9 @@ Returns a function responsible for loading an icon by name.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 createIconHandler(iconLoader?: FormKitIconLoader, iconLoaderUrl?: FormKitIconLoaderUrl): FormKitIconLoader;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -37,13 +33,9 @@ Creates the theme plugin based on a given theme name.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 createThemePlugin(theme?: string, icons?: Record<string, string | undefined>, iconLoaderUrl?: FormKitIconLoaderUrl, iconLoader?: FormKitIconLoader): (node: FormKitNode) => any;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -58,13 +50,9 @@ A function to generate FormKit class functions from a JavaScript object.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 generateClasses(classes: Record<string, Record<string, string>>): Record<string, string | FormKitClasses | Record<string, boolean>>;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -80,26 +68,18 @@ An object of sectionKeys with class functions.
 
 A function that returns an icon SVG string.
 
-<client-only>
-
 ```typescript
 interface FormKitIconLoader {
   (iconName: string): string | undefined | Promise<string | undefined>
 }
 ```
 
-</client-only>
-
 ### FormKitIconLoaderUrl
 
 A function that returns a remote URL for retrieving an SVG icon by name.
-
-<client-only>
 
 ```typescript
 interface FormKitIconLoaderUrl {
   (iconName: string): string | undefined
 }
 ```
-
-</client-only>

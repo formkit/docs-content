@@ -20,13 +20,9 @@ Adds auto-animate to each input automatically:
 
 #### Signature
 
-<client-only>
-
 ```typescript
 createAutoAnimatePlugin(options?: AutoAnimateOptions): FormKitPlugin;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -37,8 +33,6 @@ createAutoAnimatePlugin(options?: AutoAnimateOptions): FormKitPlugin;
 [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
 #### Examples
-
-<client-only>
 
 ```javascript
 import { createApp } from 'vue'
@@ -58,21 +52,15 @@ createApp(app).use(
 )
 ```
 
-</client-only>
-
 ### createFloatingLabelsPlugin()
 
 Creates a new floating label plugin.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 createFloatingLabelsPlugin(FloatingLabelsOptions?: FloatingLabelsOptions): FormKitPlugin;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -88,13 +76,9 @@ Creates a new multi-step plugin.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 createMultiStepPlugin(options?: MultiStepOptions): FormKitPlugin;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -110,21 +94,15 @@ A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
 The options to be passed to [createFloatingLabelsPlugin](#createfloatinglabelsplugin)
 
-<client-only>
-
 ```typescript
 interface FloatingLabelsOptions {
   useAsDefault?: boolean
 }
 ```
 
-</client-only>
-
 ### MultiStepOptions
 
 The options to be passed to [createMultiStepPlugin](#createmultistepplugin)
-
-<client-only>
 
 ```typescript
 interface MultiStepOptions {
@@ -133,5 +111,3 @@ interface MultiStepOptions {
   tabStyle?: 'tab' | 'progress'
 }
 ```
-
-</client-only>

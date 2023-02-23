@@ -13,25 +13,17 @@ FormKit's schema is a JSON-serializable data format for storing DOM structures a
 
 Schemas are rendered using FormKit's `<FormKitSchema>` component, which is not registered globally by default. You will need to import it:
 
-<client-only>
-
 ```js
 import { FormKitSchema } from '@formkit/vue'
 ```
-
-</client-only>
 
 ## Form generation example
 
 FormKit ships with first-class support for generating forms using schema. This makes it possible to store generated forms in databases, files, or even QR codes! To generate a form, pass your schema array to the `<FormKitSchema>` component using the `:schema` prop.
 
-<client-only>
-
 ```html
 <FormKitSchema :schema="yourSchemaArray" />
 ```
-
-</client-only>
 
 Let’s look at a quick example:
 
@@ -263,8 +255,6 @@ At times it may be necessary to pass an object of variable or unknown attributes
 
 At times it may be necessary to prevent a given attribute or prop from being parsed. This can be done by prefixing an attribute or prop with `__raw__`:
 
-<client-only>
-
 ```js
 {
   $cmp: 'PriceComponent',
@@ -273,8 +263,6 @@ At times it may be necessary to prevent a given attribute or prop from being par
   }
 }
 ```
-
-</client-only>
 
 In the above example, the `__raw__` prefix will be removed, and the unparsed value of `$2.99` will be passed as the `price` prop to the `PriceComponent`.
 

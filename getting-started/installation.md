@@ -29,17 +29,11 @@ You can also try out all FormKit features using our <a href="/playground">playgr
 
 At your terminal, run `npx formkit create-app` to start your new project:
 
-<client-only>
-
 ```sh
 npx formkit create-app
 ```
 
-</client-only>
-
 `create-app` will ask you some questions about your project so it can determine what it needs to install and setup for you:
-
-<client-only>
 
 ```sh
 ✔ Please enter a name for the project › <your-project-name>
@@ -49,11 +43,7 @@ npx formkit create-app
 ✔ Enter a project key from https://pro.formkit.com: › <fk-00000000000>
 ```
 
-</client-only>
-
 Once this is completed, you can follow the instructions to install all dependencies and start a development server:
-
-<client-only>
 
 ```sh
 Created formkit-app!
@@ -64,19 +54,13 @@ To run your new app:
 🚀 npm run dev
 ```
 
-</client-only>
-
 ## With Vue
 
 Most new projects use a build tool like Vite, Snowpack, or webpack. This makes installing npm dependencies a piece of cake 🍰:
 
-<client-only>
-
 ```sh
 npm install @formkit/vue
 ```
-
-</client-only>
 
 <callout type="tip" label="next">
 You can install the upcoming version of FormKit (unstable) anytime by opting to installing the "next" version tag: <code>npm install @formkit/vue@next</code>
@@ -88,8 +72,6 @@ FormKit only supports Vue 3. If you're required to use Vue 2 on a project, consi
 
 The `@formkit/vue` package ships with a Vue plugin and a default configuration for easy setup:
 
-<client-only>
-
 ```js
 import { createApp } from 'vue'
 import { plugin, defaultConfig } from '@formkit/vue'
@@ -99,8 +81,6 @@ createApp(App).use(plugin, defaultConfig).mount('#app')
 // remember, each Vue plugin needs its own .use()
 // .use(router).use(plugin2)
 ```
-
-</client-only>
 
 That's it! You're now ready to use the `<FormKit>` component in your Vue 3 application.
 
@@ -115,21 +95,15 @@ That's it! You're now ready to use the `<FormKit>` component in your Vue 3 appli
 
 Using FormKit with Nuxt requires minimal setup. First include the Nuxt module as a dependency within your project:
 
-<client-only>
-
 ```sh
 npm install @formkit/nuxt
 ```
-
-</client-only>
 
 <callout type="warning" label="Nuxt 2">
 FormKit only supports Nuxt 3. If you're required to use Nuxt 2 on a project, consider using the spiritual ancestor of FormKit — <a href="https://vueformulate.com" target="_blank">Vue Formulate</a> — which also ships with its own Nuxt module.
 </callout>
 
 Then in your `nuxt.config` file add the module to your modules list:
-
-<client-only>
 
 ```js
 // nuxt.config
@@ -138,8 +112,6 @@ export default defineNuxtConfig({
 })
 ```
 
-</client-only>
-
 That's it! FormKit is now registered in your project using the default config and you can start using the `<FormKit>` component.
 
 ## With Astro
@@ -147,8 +119,6 @@ That's it! FormKit is now registered in your project using the default config an
 First, we need to install Astro's Vue integration. You can refer to [Astro's Vue integration docs](https://docs.astro.build/en/guides/integrations-guide/vue/) for more detail.
 
 Inside of Astro's config file (`astro.config.*`), let's add an entrypoint `_app`. The `_app` entrypoint file is just a configuration file for Vue:
-
-<client-only>
 
 ```js
 // astro.config.mjs
@@ -160,21 +130,13 @@ export default defineConfig({
 })
 ```
 
-</client-only>
-
 Next, install the `@formKit/vue` package:
-
-<client-only>
 
 ```sh
 npm install @formkit/vue
 ```
 
-</client-only>
-
 The `@formkit/vue` package ships with a Vue plugin and a default configuration for easy setup:
-
-<client-only>
 
 ```js
 // src/pages/_app.ts
@@ -186,15 +148,11 @@ export default (app: App) => {
 }
 ```
 
-</client-only>
-
 <callout type="warning" label="Vue Components">
 Astro does not let you use <code>FormKit</code> directly inside Astro files, so you should create a wrapper around your forms.
 </callout>
 
 Now you can add FormKit to your Astro Vue components, so that you can create a component inside the components folder:
-
-<client-only>
 
 ```html
 <script setup>
@@ -215,15 +173,11 @@ Now you can add FormKit to your Astro Vue components, so that you can create a c
 </template>
 ```
 
-</client-only>
-
 After that, you just need to import and use it inside your Astro files:
 
 <callout type="warning" label="Client Hydration">
 FormKit works best with client hydration enabled, so make sure to use `client:visible` or `client:load`.
 </callout>
-
-<client-only>
 
 ```js
 // src/pages/index.astro
@@ -234,8 +188,6 @@ import Form from '../components/Form.vue';
 <Form client:visible />
 ```
 
-</client-only>
-
 That's it! You're now ready to use the `<FormKit>` component in your Astro application.
 
 ## Configuring
@@ -245,8 +197,6 @@ If you would like to supply your own configuration, you can either extend `defau
 <callout type="info" label="Hierarchical configuration">
 FormKit uses a unique hierarchical configuration system that is well suited for forms, meaning that all configurations defined globally are available to all inputs.
 </callout>
-
-<client-only>
 
 ```js
 // formkit.config.js
@@ -265,8 +215,6 @@ import config from 'formkit.config.js'
 app.use(plugin, defaultConfig(config))
 ```
 
-</client-only>
-
 ### Configuring Nuxt
 
 Nuxt already automatically uses `formkit.config.js` that is at the root of your project to extend FormKit's functionality.
@@ -274,8 +222,6 @@ Nuxt already automatically uses `formkit.config.js` that is at the root of your 
 This configuration file will be automatically included if detected in your project directory. If you would like to supply a custom
 path to your `formkit.config`, you can override the default location using the `configFile` option under the `formkit` key.
 **Any path you supply should be relative to the root of your Nuxt project**:
-
-<client-only>
 
 ```js
 // nuxt.config
@@ -287,13 +233,9 @@ export default defineNuxtConfig({
 })
 ```
 
-</client-only>
-
 By default, your configuration will _extend_ the `defaultConfig` that ships with FormKit. This is the desired behavior
 for the majority of projects. However, if you need to define the entire FormKit config yourself — from scratch — you may do so
 by setting the `defaultConfig` option for the module to `false`:
-
-<client-only>
 
 ```js
 // nuxt.config
@@ -311,8 +253,6 @@ export default defineNuxtConfig({
 
 For TypeScript users, it can be helpful to type your `formkit.config.ts` export as `DefaultConfigOptions` explicitly:
 
-<client-only>
-
 ```js
 // formkit.config.ts
 import { fr } from '@formkit/i18n'
@@ -326,8 +266,6 @@ const config: DefaultConfigOptions = {
 export default config
 ```
 
-</client-only>
-
 ## Adding Genesis theme
 
 The default FormKit theme (called "genesis") can be added via CDN or by installing the `@formkit/themes` package.
@@ -340,8 +278,6 @@ To load `genesis` via CDN, supply it to the `theme` property of your `defaultCon
 If you're using nuxt your configuration would be inside of <code>formkit.config.ts</code>
 </callout>
 
-<client-only>
-
 ```js
 ...
 defaultConfig({
@@ -350,28 +286,18 @@ defaultConfig({
 ...
 ```
 
-</client-only>
-
 ### Direct import
-
-<client-only>
 
 ```sh
 npm install @formkit/themes
 ```
 
-</client-only>
-
 Assuming you are using a bundler like Vite, Webpack or Nuxt — you can then directly import the theme:
-
-<client-only>
 
 ```js
 // main.js or formkit.config.ts
 import '@formkit/themes/genesis'
 ```
-
-</client-only>
 
 ### For Tailwind
 
@@ -380,8 +306,6 @@ There is an issue affecting the <code>1.0.0-beta.14</code> version of <code>@for
 </callout>
 
 FormKit ships with a Tailwind version of the Genesis theme. To use this pre-made Tailwind theme in your project import it from `@formkit/themes/dist/tailwindcss/genesis` and add it to your `formkit.config.js`. You'll also want to include the neccessary `genesisIcons` import from `@formkit/icons`.
-
-<client-only>
 
 ```js
 // formkit.config.js
@@ -399,11 +323,7 @@ export default {
 }
 ```
 
-</client-only>
-
 The `genesis` theme import is nice for brevity, but the Tailwind parser will need to be provided the path to the full theme file in your `node_modules` in order to know which classes are being used. Additionally you should add the `FormKitVariants` plugin to your `tailwind.config.js` in order to make use of helpful FormKit variants such as `formkit-invalid:` in your project.
-
-<client-only>
 
 ```js
 // tailwind.config.js
@@ -418,8 +338,6 @@ module.exports = {
 }
 ```
 
-</client-only>
-
 ## Adding Pro Inputs
 
 Installing FormKit Pro is easy! Here are the steps:
@@ -432,30 +350,20 @@ Login to your FormKit Pro account at [pro.formkit.com](https://pro.formkit.com) 
 
 Next, install the `@formkit/pro`:
 
-<client-only>
-
 ```bash
 npm install @formkit/pro
 ```
 
-</client-only>
-
 #### 3. Configure your project
 
 Import the `createProPlugin` helper and any desired Pro Inputs from `@formkit/pro`:
-
-<client-only>
 
 ```js
 // main.js or formkit.config.ts
 import { createProPlugin, rating, toggle } from '@formkit/pro'
 ```
 
-</client-only>
-
 Create the Pro plugin with your `Project Key` and desired Pro Inputs:
-
-<client-only>
 
 ```js
 // main.js or formkit.config.ts
@@ -466,15 +374,11 @@ const proPlugin = createProPlugin('fk-00000000000', {
 })
 ```
 
-</client-only>
-
 Lastly, add the plugin to your FormKit config:
 
 <callout type="warning" label="Nuxt Config">
 If you're using nuxt your configuration would be inside of <code>formkit.config.ts</code>
 </callout>
-
-<client-only>
 
 ```js
 // main.js or formkit.config.ts
@@ -483,13 +387,9 @@ const config = defaultConfig({
 })
 ```
 
-</client-only>
-
 ### Adding Pro Genesis Theme
 
 Formkit extends the default Genesis theme for Pro Inputs. You can directly import it:
-
-<client-only>
 
 ```js
 // main.js or formkit.config.ts
@@ -497,8 +397,6 @@ Formkit extends the default Genesis theme for Pro Inputs. You can directly impor
 import '@formkit/themes/genesis'
 import '@formkit/pro/genesis'
 ```
-
-</client-only>
 
 That's it! now your pro inputs should be beautifully styled.
 

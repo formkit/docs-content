@@ -44,20 +44,14 @@ The package enables you to author your theme as a JavaScript object grouped by i
 
 To get started we need to add the package to our project.
 
-<client-only>
-
 ```bash
 npm install @formkit/themes
 ```
-
-</client-only>
 
 From there we need to do two things:
 
 - Add the `formKitTailwind` plugin from `@formkit/themes` to our project's `tailwind.config.js` file.
 - Import the `generateClasses` helper function from `@formkit/themes` and use it where we define our FormKit config options.
-
-<client-only>
 
 ```js
 // tailwind.config.js
@@ -100,13 +94,9 @@ createApp(App)
   .mount('#app')
 ```
 
-</client-only>
-
 <callout type="warning" label="Path needed if using formkit.config.js">
 If you are using a single file for configuration, like <code>formkit.config.js</code> within Nuxt, instead of <code>app.js</code>, you will need to add the path to that file to your <code>tailwind.config.js</code> inside the <code>content</code> property:
 </callout>
-
-<client-only>
 
 ```js
 // tailwind.config.js for Nuxt users
@@ -118,8 +108,6 @@ export default {
   plugins: [formKitTailwind],
 }
 ```
-
-</client-only>
 
 Once this setup is complete we are ready to begin writing our Tailwind theme!
 
@@ -204,8 +192,6 @@ By using the <code>global</code> and <code>family:</code> keys in your theme obj
 </callout>
 
 Let's create a "Kitchen Sink" of input types, each having their defined class lists applied. Here is the theme in isolation for better readability:
-
-<client-only>
 
 ```js
 // The following Tailwind theme aspires to be a reproduction of the
@@ -391,8 +377,6 @@ export default {
   },
 }
 ```
-
-</client-only>
 
 And here is our Tailwind theme when it is applied to all available FormKit inputs:
 
