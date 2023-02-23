@@ -11,12 +11,14 @@ description: FormKit is a form authoring framework for Vue developers that makes
 
 FormKit is far more than a UI library. It is a _form building framework_ for Vue developers that makes authoring high quality production-ready forms faster, more accessible, with better DX and UX, and less code. It is easy to learn, and ships with production-ready features like inputs, validation rules, and submission/error handling.
 
-<VideoCard
-  title="FormKit Overview Trailer"
-  poster="https://cdn.formk.it/web-assets/formkit-poster.jpg"
-  watch-time="1 min"
-  youtube-id="89dijjTlveI">
-</VideoCard>
+::VideoCard
+---
+title: "FormKit Overview Trailer"
+poster: "https://cdn.formk.it/web-assets/formkit-poster.jpg"
+watch-time: "1 min"
+youtube-id: "89dijjTlveI"
+---
+::
 
 <ArticleCard
   img="https://cdn.formk.it/web-assets/og-introducing-formkit.jpeg"
@@ -97,9 +99,11 @@ Generating forms from JSON is great — that's why schema is a sub-feature of Fo
 
 Prefer to learn by watching? Vue School has an excellent course to help you get started using FormKit to build robust forms for Vue.js. Learn the basics as well as more advanced topics, then head back here to the docs when you need to fill in the gaps for specific use cases.
 
-<VideoCard
-  title="Robust Vue.js Forms - Vue School Course"
-  poster="https://cdn.formk.it/web-assets/robust-vue-js-forms-with-formkit-2.jpg"
-  watch-time="1 hr, 49 mins"
-  external-vid="https://vueschool.io/courses/robust-vue-js-forms-with-formkit?friend=formkit">
-</VideoCard>
+::VideoCard
+---
+title: "Robust Vue.js Forms - Vue School Course"
+poster: "https://cdn.formk.it/web-assets/robust-vue-js-forms-with-formkit-2.jpg"
+watch-time: "1 hr, 49 mins"
+external-vid: "https://vueschool.io/courses/robust-vue-js-forms-with-formkit?friend=formkit"
+---
+::

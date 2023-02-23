@@ -11,12 +11,14 @@ FormKit makes front end validation simple by letting you declare your validation
 
 ## Declaring rules
 
-<VideoCard
-  title="How to Validate an Input - Vue School Course"
-  poster="https://cdn.formk.it/web-assets/robust-vue-js-forms-with-formkit-2.jpg"
-  watch-time="8 mins"
-  external-vid="https://vueschool.io/lessons/how-to-validate-a-form-input?friend=formkit">
-</VideoCard>
+::VideoCard
+---
+title: "How to Validate an Input - Vue School Course"
+poster: "https://cdn.formk.it/web-assets/robust-vue-js-forms-with-formkit-2.jpg"
+watch-time: "8 mins"
+external-vid: "https://vueschool.io/lessons/how-to-validate-a-form-input?friend=formkit"
+---
+::
 
 Declaring which validation rules apply to a given input is as simple as providing a `validation` prop. Rules can be declared using two syntaxes:
 
@@ -82,12 +84,14 @@ Due to FormKit's config inheritance, you can set `validation-visibility` at a `f
 
 ## Rule hints
 
-<VideoCard
-  title="Validation rule hints overview"
-  poster="https://cdn.formk.it/web-assets/validation-hint-example.png"
-  watch-time="2 mins"
-  youtube-id="4mbLuF8fnAc">
-</VideoCard>
+::VideoCard
+---
+title: "Validation rule hints overview"
+poster: "https://cdn.formk.it/web-assets/validation-hint-example.png"
+watch-time: "2 mins"
+youtube-id: "4mbLuF8fnAc"
+---
+::
 
 Validation rules operate according to a few default features, which you can change on a case-by-case basis with "rule hints":
 

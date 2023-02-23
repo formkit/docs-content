@@ -192,12 +192,14 @@ Let's add some variants for `formkit-invalid` and `formkit-disabled` to our text
 
 ## A complete Tailwind theme — recreating Genesis CSS
 
-<VideoCard
-  title="Create a Tailwind CSS Theme - Vue School Course"
-  poster="https://cdn.formk.it/web-assets/robust-vue-js-forms-with-formkit-2.jpg"
-  watch-time="11 mins"
-  external-vid="https://vueschool.io/lessons/create-a-tailwind-css-theme-for-formkit?friend=formkit">
-</VideoCard>
+::VideoCard
+---
+title: "Create a Tailwind CSS Theme - Vue School Course"
+poster: "https://cdn.formk.it/web-assets/robust-vue-js-forms-with-formkit-2.jpg"
+watch-time: "11 mins"
+external-vid: "https://vueschool.io/lessons/create-a-tailwind-css-theme-for-formkit?friend=formkit"
+---
+::
 
 Now we're cooking! To create a comprehensive theme all we need to do is define class lists for the `sectionKeys` of all the other input types we'll use in our project.
 

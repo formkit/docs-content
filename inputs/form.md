@@ -46,12 +46,14 @@ Excluding backend functionality, here is a fully featured form with inputs (`for
 
 ## Populating
 
-<VideoCard
-  title="Form Population and Submission - Vue School Course"
-  poster="https://cdn.formk.it/web-assets/robust-vue-js-forms-with-formkit-2.jpg"
-  watch-time="8 mins"
-  external-vid="https://vueschool.io/lessons/form-population-and-submission?friend=formkit">
-</VideoCard>
+::VideoCard
+---
+title: "Form Population and Submission - Vue School Course"
+poster: "https://cdn.formk.it/web-assets/robust-vue-js-forms-with-formkit-2.jpg"
+watch-time: "8 mins"
+external-vid: "https://vueschool.io/lessons/form-population-and-submission?friend=formkit"
+---
+::
 
 You can populate an entire form by providing a `value` prop to the `<FormKit type="form">`. The `value` prop should be an object of input name to input value pairs. You may also use `v-model` to populate a form if you require two-way data binding:
 

@@ -11,12 +11,14 @@ description: Add smoothing transitions to your FormKit inputs using AutoAnimate.
 
 FormKit doesn't need much animation, but a small tasteful amount can make it clear when elements pop on and off a page, or move around — such as validation messages.
 
-<VideoCard
-  title="Using AutoAnimate with FormKit"
-  poster="https://cdn.formk.it/web-assets/formkit-poster.jpg"
-  watch-time="1 min"
-  youtube-id="UpN1-tkQcjk">
-</VideoCard>
+::VideoCard
+---
+title: "Using AutoAnimate with FormKit"
+poster: "https://cdn.formk.it/web-assets/formkit-poster.jpg"
+watch-time: "1 min"
+youtube-id: "UpN1-tkQcjk"
+---
+::
 
 ## Installation
 

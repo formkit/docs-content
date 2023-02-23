@@ -98,12 +98,14 @@ That's it! You're now ready to use the `<FormKit>` component in your Vue 3 appli
 
 ## With Nuxt
 
-<VideoCard
-  title="Nuxt 3 Setup - Vue School Course"
-  poster="https://cdn.formk.it/web-assets/robust-vue-js-forms-with-formkit-2.jpg"
-  watch-time="4 mins"
-  external-vid="https://vueschool.io/lessons/project-setup-and-formkit-config?friend=formkit">
-</VideoCard>
+::VideoCard
+---
+title: "Nuxt 3 Setup - Vue School Course"
+poster: "https://cdn.formk.it/web-assets/robust-vue-js-forms-with-formkit-2.jpg"
+watch-time: "4 mins"
+external-vid: "https://vueschool.io/lessons/project-setup-and-formkit-config?friend=formkit"
+---
+::
 
 Using FormKit with Nuxt requires minimal setup. First include the Nuxt module as a dependency within your project:
 

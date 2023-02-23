@@ -19,12 +19,14 @@ label: "Composition API"
 This guide assumes you are are familiar with the <a href="https://vuejs.org/guide/introduction.html#api-styles">Vue Composition API</a>.
 ::
 
-<VideoCard
-  title="Robust Vue.js Forms - Vue School Course"
-  poster="https://cdn.formk.it/web-assets/robust-vue-js-forms-with-formkit-2.jpg"
-  watch-time="1 hr, 49 mins"
-  external-vid="https://vueschool.io/courses/robust-vue-js-forms-with-formkit?friend=formkit">
-</VideoCard>
+::VideoCard
+---
+title: "Robust Vue.js Forms - Vue School Course"
+poster: "https://cdn.formk.it/web-assets/robust-vue-js-forms-with-formkit-2.jpg"
+watch-time: "1 hr, 49 mins"
+external-vid: "https://vueschool.io/courses/robust-vue-js-forms-with-formkit?friend=formkit"
+---
+::
 
 ## Our first input
 
