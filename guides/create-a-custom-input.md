@@ -45,11 +45,11 @@ We’ll call this sample form `Register.vue`:
 
 ::Example
 ---
-  name: "One-time password - register"
-  file: [
-    '/_content/examples/otp-register/Register.vue',
-    '/_content/examples/otp-register/OneTimePassword.vue',
-  ]
+name: "One-time password - register"
+file: [
+  '/_content/examples/otp-register/Register.vue',
+  '/_content/examples/otp-register/OneTimePassword.vue',
+]
 ---
 ::
 
@@ -65,12 +65,12 @@ All custom inputs are passed the almighty [context object](/essentials/configura
 
 ::Example
 ---
-  name: "One-time password - first value"
-  init-file-tab: "OneTimePassword.vue"
-  file: [
-    '/_content/examples/otp-first-value/Register.vue',
-    '/_content/examples/otp-first-value/OneTimePassword.vue',
-  ]
+name: "One-time password - first value"
+init-file-tab: "OneTimePassword.vue"
+file: [
+  '/_content/examples/otp-first-value/Register.vue',
+  '/_content/examples/otp-first-value/OneTimePassword.vue',
+]
 ---
 ::
 
@@ -101,12 +101,12 @@ We now have access to `context.digits`. Back in `OneTimePassword.vue`, let's use
 
 ::Example
 ---
-  name: "One-time password - input tags"
-  init-file-tab: "OneTimePassword.vue"
-  file: [
-    '/_content/examples/otp-tags/Register.vue',
-    '/_content/examples/otp-tags/OneTimePassword.vue',
-  ]
+name: "One-time password - input tags"
+init-file-tab: "OneTimePassword.vue"
+file: [
+  '/_content/examples/otp-tags/Register.vue',
+  '/_content/examples/otp-tags/OneTimePassword.vue',
+]
 ---
 ::
 
@@ -132,12 +132,12 @@ Notice in the above example that when you type into one input all the other inpu
 
 ::Example
 ---
-  name: "One-time password - input handlers"
-  init-file-tab: "OneTimePassword.vue"
-  file: [
-    '/_content/examples/otp-handlers/Register.vue',
-    '/_content/examples/otp-handlers/OneTimePassword.vue',
-  ]
+name: "One-time password - input handlers"
+init-file-tab: "OneTimePassword.vue"
+file: [
+  '/_content/examples/otp-handlers/Register.vue',
+  '/_content/examples/otp-handlers/OneTimePassword.vue',
+]
 ---
 ::
 
@@ -172,12 +172,12 @@ handlePaste(e) {
 
 ::Example
 ---
-  name: "One-time password - copy paste"
-  init-file-tab: "OneTimePassword.vue"
-  file: [
-    '/_content/examples/otp-copy-paste/Register.vue',
-    '/_content/examples/otp-copy-paste/OneTimePassword.vue',
-  ]
+name: "One-time password - copy paste"
+init-file-tab: "OneTimePassword.vue"
+file: [
+  '/_content/examples/otp-copy-paste/Register.vue',
+  '/_content/examples/otp-copy-paste/OneTimePassword.vue',
+]
 ---
 ::
 

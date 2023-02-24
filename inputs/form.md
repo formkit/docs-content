@@ -59,8 +59,8 @@ You can populate an entire form by providing a `value` prop to the `<FormKit typ
 
 ::Example
 ---
-  name: "Text example"
-  file: "/_content/examples/form-population/form-population.vue"
+name: "Text example"
+file: "/_content/examples/form-population/form-population.vue"
 ---
 ::
 
@@ -101,8 +101,8 @@ The most common method of form submission in a modern SPA is an XHR request (thi
 
 ::Example
 ---
-  name: "Text example"
-  file: "/_content/examples/form-xhr/form-xhr.vue"
+name: "Text example"
+file: "/_content/examples/form-xhr/form-xhr.vue"
 ---
 ::
 
@@ -112,8 +112,8 @@ To submit a form via page request, simply leave off the `@submit` handler. Just 
 
 ::Example
 ---
-  name: "Text example"
-  file: "/_content/examples/form-page/form-page.vue"
+name: "Text example"
+file: "/_content/examples/form-page/form-page.vue"
 ---
 ::
 
@@ -128,8 +128,8 @@ While submitting a form using any standard HTML method is valid (like clicking a
 
 ::Example
 ---
-  name: "Text example"
-  file: "/_content/examples/form-submit/form-submit.vue"
+name: "Text example"
+file: "/_content/examples/form-submit/form-submit.vue"
 ---
 ::
 
@@ -139,8 +139,8 @@ You can also submit a form programmatically by calling `node.submit()` on the fo
 
 ::Example
 ---
-  name: "Text example"
-  file: "/_content/examples/node-submit/node-submit.vue"
+name: "Text example"
+file: "/_content/examples/node-submit/node-submit.vue"
 ---
 ::
 
@@ -154,8 +154,8 @@ In addition to not firing the submit event, a message is displayed above the sub
 
 ::Example
 ---
-  name: "Text example"
-  file: "/_content/examples/incomplete-message/incomplete-message.vue"
+name: "Text example"
+file: "/_content/examples/incomplete-message/incomplete-message.vue"
 ---
 ::
 
@@ -175,8 +175,8 @@ For example, we could use this event to alert our users of the failing validatio
 
 ::Example
 ---
-  name: "Submit invalid"
-  file: "/_content/examples/submit-invalid/submit-invalid.vue"
+name: "Submit invalid"
+file: "/_content/examples/submit-invalid/submit-invalid.vue"
 ---
 ::
 
@@ -186,8 +186,8 @@ The validity of all inputs within a form is tracked automatically in the [contex
 
 ::Example
 ---
-  name: "Text example"
-  file: "/_content/examples/form-validity/form-validity.vue"
+name: "Text example"
+file: "/_content/examples/form-validity/form-validity.vue"
 ---
 ::
 
@@ -205,8 +205,8 @@ To disable all the inputs in a given form, including the submit button, you can 
 
 ::Example
 ---
-  name: "Disabled example"
-  file: "/_content/examples/form-disabled/form-disabled.vue"
+name: "Disabled example"
+file: "/_content/examples/form-disabled/form-disabled.vue"
 ---
 ::
 
@@ -224,8 +224,8 @@ You can reset your form (or any input) back to it’s initial state by calling `
 
 ::Example
 ---
-  name: "Reset example"
-  file: "/_content/examples/reset-form/reset-form.vue"
+name: "Reset example"
+file: "/_content/examples/reset-form/reset-form.vue"
 ---
 ::
 
@@ -264,8 +264,8 @@ Like with any FormKit input, you can directly assign errors using the `errors` p
 
 ::Example
 ---
-  name: "Form errors prop example"
-  file: "/_content/examples/form-errors/form-errors.vue"
+name: "Form errors prop example"
+file: "/_content/examples/form-errors/form-errors.vue"
 ---
 ::
 
@@ -275,8 +275,8 @@ Setting your form’s errors using `node.setErrors` is convenient since your sub
 
 ::Example
 ---
-  name: "setErrors"
-  file: "/_content/examples/node-set-errors/node-set-errors.vue"
+name: "setErrors"
+file: "/_content/examples/node-set-errors/node-set-errors.vue"
 ---
 ::
 
@@ -286,8 +286,8 @@ Alternatively, you can set errors directly on a form by giving the form an `id` 
 
 ::Example
 ---
-  name: "setErrors"
-  file: "/_content/examples/set-errors/set-errors.vue"
+name: "setErrors"
+file: "/_content/examples/set-errors/set-errors.vue"
 ---
 ::
 
@@ -299,8 +299,8 @@ To clear all the errors on the form (regardless of the `preserve-errors` prop) c
 
 ::Example
 ---
-  name: "clearErrors"
-  file: "/_content/examples/auto-clear-errors/auto-clear-errors.vue"
+name: "clearErrors"
+file: "/_content/examples/auto-clear-errors/auto-clear-errors.vue"
 ---
 ::
 
@@ -308,8 +308,8 @@ If you prefer to preserve errors by default, you can change the default behavior
 
 ::Example
 ---
-  name: "preserveErrors"
-  file: "/_content/examples/preserve-errors-config/preserve-errors-config.vue"
+name: "preserveErrors"
+file: "/_content/examples/preserve-errors-config/preserve-errors-config.vue"
 ---
 ::
 
@@ -336,8 +336,8 @@ The most basic way to display errors on a form is using the `errors` prop that i
 
 ::Example
 ---
-  name: "errors prop"
-  file: "/_content/examples/errors-prop/errors-prop.vue"
+name: "errors prop"
+file: "/_content/examples/errors-prop/errors-prop.vue"
 ---
 ::
 
@@ -347,8 +347,8 @@ You can also conveniently set error messages for all inputs in your form (or [gr
 
 ::Example
 ---
-  name: "input errors prop"
-  file: "/_content/examples/input-errors-prop/input-errors-prop.vue"
+name: "input errors prop"
+file: "/_content/examples/input-errors-prop/input-errors-prop.vue"
 ---
 ::
 
@@ -371,8 +371,8 @@ Place a `<FormKitMessages />` component anywhere _inside_ your form, and the for
 
 ::Example
 ---
-  name: "input errors prop"
-  file: "/_content/examples/formkit-messages/automatic.vue"
+name: "input errors prop"
+file: "/_content/examples/formkit-messages/automatic.vue"
 ---
 ::
 
@@ -382,8 +382,8 @@ To move messages anywhere in the DOM — even _outside_ the form — you can pas
 
 ::Example
 ---
-  name: "input errors prop"
-  file: "/_content/examples/formkit-messages/toast.vue"
+name: "input errors prop"
+file: "/_content/examples/formkit-messages/toast.vue"
 ---
 ::
 
@@ -403,8 +403,8 @@ When inputs are unmounted from a form — for example when using `v-if` — the 
 
 ::Example
 ---
-  name: "input errors prop"
-  file: "/_content/examples/preserve-prop/preserve-prop.vue"
+name: "input errors prop"
+file: "/_content/examples/preserve-prop/preserve-prop.vue"
 ---
 ::
 
@@ -412,7 +412,7 @@ When inputs are unmounted from a form — for example when using `v-if` — the 
 
 Forms are technically considered `input` types — so they share many of the universal props that standard inputs use.
 
-<form-props-table></form-props-table>
+:FormPropsTable
 
 ## Sections
 

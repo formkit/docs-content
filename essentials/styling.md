@@ -153,11 +153,11 @@ The classes configuration option is similar to the classes prop, except it appli
 
 ::Example
 ---
-  name: "Global configuration"
-  file: "/_content/examples/global-classes/global-classes.vue"
-  mode: "editor"
-  editable: false
-  line-numbers: false
+name: "Global configuration"
+file: "/_content/examples/global-classes/global-classes.vue"
+mode: "editor"
+editable: false
+line-numbers: false
 ---
 ::
 

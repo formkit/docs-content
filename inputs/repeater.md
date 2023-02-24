@@ -98,8 +98,8 @@ returning errors for both the repeater and one child:
 
 ::Example
 ---
-  name: "Repeater"
-  file: "/_content/examples/repeater/errors/repeater-errors.vue"
+name: "Repeater"
+file: "/_content/examples/repeater/errors/repeater-errors.vue"
 ---
 ::
 

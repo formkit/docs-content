@@ -29,8 +29,8 @@ Let’s look at a quick example:
 
 ::Example
 ---
-  name: "Generating forms"
-  file: "/_content/examples/generating/generating.vue"
+name: "Generating forms"
+file: "/_content/examples/generating/generating.vue"
 ---
 ::
 
@@ -53,9 +53,9 @@ HTML elements are defined using the `$el` property. You can use `$el` to render 
 
 ::Example
 ---
-  name: "Schema - elements"
-  file: "/_content/examples/schema-elements/schema-elements.vue"
-  layout: "auto"
+name: "Schema - elements"
+file: "/_content/examples/schema-elements/schema-elements.vue"
+layout: "auto"
 ---
 ::
 
@@ -74,9 +74,9 @@ into `FormKitSchema` with the `library` prop:
 
 ::Example
 ---
-  name: "Schema - components"
-  file: "/_content/examples/schema-components/schema-components.vue"
-  layout: "auto"
+name: "Schema - components"
+file: "/_content/examples/schema-components/schema-components.vue"
+layout: "auto"
 ---
 ::
 
@@ -96,9 +96,9 @@ To reference a value from the data object, you simply use a dollar sign `$` foll
 
 ::Example
 ---
-  name: "Schema - data"
-  file: "/_content/examples/schema-data/schema-data.vue"
-  layout: "auto"
+name: "Schema - data"
+file: "/_content/examples/schema-data/schema-data.vue"
+layout: "auto"
 ---
 ::
 
@@ -116,9 +116,9 @@ Schemas support calling functions that are in your original reference data — 
 
 ::Example
 ---
-  name: "Schema - functions"
-  file: "/_content/examples/schema-functions/schema-functions.vue"
-  layout: "auto"
+name: "Schema - functions"
+file: "/_content/examples/schema-functions/schema-functions.vue"
+layout: "auto"
 ---
 ::
 
@@ -128,9 +128,9 @@ Just like JavaScript — you can access properties of a deeply nested object usi
 
 ::Example
 ---
-  name: "Schema - functions"
-  file: "/_content/examples/schema-dot-syntax/schema-dot-syntax.vue"
-  layout: "auto"
+name: "Schema - functions"
+file: "/_content/examples/schema-dot-syntax/schema-dot-syntax.vue"
+layout: "auto"
 ---
 ::
 
@@ -148,9 +148,9 @@ Schemas also support logic in the form of boolean logic, comparison, and arithme
 
 ::Example
 ---
-  name: "Schema - expressions"
-  file: "/_content/examples/schema-expressions/schema-expressions.vue"
-  layout: "auto"
+name: "Schema - expressions"
+file: "/_content/examples/schema-expressions/schema-expressions.vue"
+layout: "auto"
 ---
 ::
 
@@ -197,9 +197,9 @@ Both `$el` and `$cmp` schema nodes can leverage an `if` property that roughly eq
 
 ::Example
 ---
-  name: "Schema - conditional"
-  file: "/_content/examples/schema-conditional/schema-conditional.vue"
-  layout: "auto"
+name: "Schema - conditional"
+file: "/_content/examples/schema-conditional/schema-conditional.vue"
+layout: "auto"
 ---
 ::
 
@@ -213,9 +213,9 @@ You can use the `if/then/else` object anywhere you would normally use a schema n
 
 ::Example
 ---
-  name: "Schema - conditional object"
-  file: "/_content/examples/schema-conditional-object/schema-conditional-object.vue"
-  layout: "auto"
+name: "Schema - conditional object"
+file: "/_content/examples/schema-conditional-object/schema-conditional-object.vue"
+layout: "auto"
 ---
 ::
 
@@ -225,9 +225,9 @@ You can also use `if/then/else` statements to conditionally output the values of
 
 ::Example
 ---
-  name: "Schema - conditional attrs"
-  file: "/_content/examples/schema-conditional-attrs/schema-conditional-attrs.vue"
-  layout: "auto"
+name: "Schema - conditional attrs"
+file: "/_content/examples/schema-conditional-attrs/schema-conditional-attrs.vue"
+layout: "auto"
 ---
 ::
 
@@ -237,9 +237,9 @@ Both `$el` and `$cmp` schema nodes support looping. The loop syntax is similar t
 
 ::Example
 ---
-  name: "Schema - loops"
-  file: "/_content/examples/schema-loops/schema-loops.vue"
-  layout: "auto"
+name: "Schema - loops"
+file: "/_content/examples/schema-loops/schema-loops.vue"
+layout: "auto"
 ---
 ::
 
@@ -257,9 +257,9 @@ Schemas can render the slot content of the `<FormKitSchema>` component anywhere 
 
 ::Example
 ---
-  name: "Schema - slots"
-  file: "/_content/examples/schema-slots/schema-slots.vue"
-  layout: "auto"
+name: "Schema - slots"
+file: "/_content/examples/schema-slots/schema-slots.vue"
+layout: "auto"
 ---
 ::
 
@@ -269,9 +269,9 @@ At times it may be necessary to pass an object of variable or unknown attributes
 
 ::Example
 ---
-  name: "Schema - bind"
-  file: "/_content/examples/schema-bind/schema-bind.vue"
-  layout: "auto"
+name: "Schema - bind"
+file: "/_content/examples/schema-bind/schema-bind.vue"
+layout: "auto"
 ---
 ::
 
@@ -310,9 +310,9 @@ Assuming you globally registered the `FormKit` component — you can render your
 
 ::Example
 ---
-  name: "Schema - formkit"
-  file: "/_content/examples/schema-formkit/schema-formkit.vue"
-  layout: "auto"
+name: "Schema - formkit"
+file: "/_content/examples/schema-formkit/schema-formkit.vue"
+layout: "auto"
 ---
 ::
 
@@ -324,8 +324,8 @@ When using the `$formkit` shorthand, the `props` object is flattened with the to
 
 ::Example
 ---
-  name: "Generating forms - sugar"
-  file: "/_content/examples/generating-sugar/generating-sugar.vue"
+name: "Generating forms - sugar"
+file: "/_content/examples/generating-sugar/generating-sugar.vue"
 ---
 ::
 
@@ -335,9 +335,9 @@ The schema format has one built-in function specific to FormKit Inputs: the `$ge
 
 ::Example
 ---
-  name: "Schema - formkit"
-  file: "/_content/examples/schema-get/schema-get.vue"
-  layout: "auto"
+name: "Schema - formkit"
+file: "/_content/examples/schema-get/schema-get.vue"
+layout: "auto"
 ---
 ::
 
@@ -347,7 +347,7 @@ To render a form element, you can either use the `$formkit: 'form'` schema node,
 
 ::Example
 ---
-  name: "Generating forms - form"
-  file: "/_content/examples/generating-form/generating-form.vue"
+name: "Generating forms - form"
+file: "/_content/examples/generating-form/generating-form.vue"
 ---
 ::

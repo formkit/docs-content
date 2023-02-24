@@ -34,7 +34,7 @@ view: "render"
 
 The `@formkit/icons` package ships with over 130 common icons to make getting started easy! Use the search below to filter the available icons:
 
-<icon-gallery></icon-gallery>
+:IconGallery
 
 ## Installation & setup
 

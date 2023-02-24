@@ -21,8 +21,8 @@ Month inputs are not currently supported in FireFox or Safari.
 
 ::Example
 ---
-  name: "Month input"
-  file: "/_content/examples/month/month.vue"
+name: "Month input"
+file: "/_content/examples/month/month.vue"
 ---
 ::
 

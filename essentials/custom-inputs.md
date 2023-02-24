@@ -73,8 +73,8 @@ Let’s make the simplest possible input — one that only outputs "Hello world"
 
 ::Example
 ---
-  name: "Custom input"
-  file: "/_content/examples/custom-input/custom-input.vue"
+name: "Custom input"
+file: "/_content/examples/custom-input/custom-input.vue"
 ---
 ::
 
@@ -111,11 +111,11 @@ Now that we’ve defined our input we can use it anywhere in the application:
 
 ::Example
 ---
-  name: "Custom input"
-  file: [
-    '/_content/examples/custom-input-default-config/custom-input-default-config.vue',
-    '/_content/examples/custom-input-default-config/formkit.config.js'
-  ]
+name: "Custom input"
+file: [
+  '/_content/examples/custom-input-default-config/custom-input-default-config.vue',
+  '/_content/examples/custom-input-default-config/formkit.config.js'
+]
 ---
 ::
 
@@ -133,8 +133,8 @@ Let’s refactor our hello world input to use its own plugin:
 
 ::Example
 ---
-  name: "Custom input - plugin"
-  file: "/_content/examples/custom-input-plugin/custom-input-plugin.vue"
+name: "Custom input - plugin"
+file: "/_content/examples/custom-input-plugin/custom-input-plugin.vue"
 ---
 ::
 
@@ -179,15 +179,14 @@ All of FormKit’s core inputs are written using schemas to allow for the greate
 It is important to understand the basic structure of a “standard” FormKit input, which is broken down into [sections](/essentials/inputs#sections):
 
 <figure class="full">
-  <formkit-input-diagram
+  <FormKitInputDiagram
     label-content="Email address"
     prefix-content=""
     suffix-content=""
     input-content="test@example.com"
     help-content="Please use your school email address."
     message-content="Please provide a valid email."
-  >
-  </formkit-input-diagram>
+  />
   <figcaption>Composition of a standard FormKit text input.</figcaption>
 </figure>
 
@@ -217,8 +216,8 @@ When providing a schema object, your schema is directly injected into the base s
 
 ::Example
 ---
-  name: "Create input"
-  file: "/_content/examples/create-input/create-input.vue"
+name: "Create input"
+file: "/_content/examples/create-input/create-input.vue"
 ---
 ::
 
@@ -228,8 +227,8 @@ It might make sense to write your inputs completely from scratch without using a
 
 ::Example
 ---
-  name: "Create input"
-  file: "/_content/examples/scratch-schema-input/scratch-schema-input.vue"
+name: "Create input"
+file: "/_content/examples/scratch-schema-input/scratch-schema-input.vue"
 ---
 ::
 
@@ -315,8 +314,8 @@ If you need additional props, you can declare them in your input definition. Pro
 
 ::Example
 ---
-  name: "Custom props"
-  file: "/_content/examples/custom-props/custom-props.vue"
+name: "Custom props"
+file: "/_content/examples/custom-props/custom-props.vue"
 ---
 ::
 
@@ -324,8 +323,8 @@ When extending the base schema by using the `createInput` helper, pass a second 
 
 ::Example
 ---
-  name: "Custom props - createInput"
-  file: "/_content/examples/custom-props-create-input/custom-props-create-input.vue"
+name: "Custom props - createInput"
+file: "/_content/examples/custom-props-create-input/custom-props-create-input.vue"
 ---
 ::
 
@@ -373,8 +372,8 @@ Let’s take a look at a slightly more complex example that utilizes `createInpu
 
 ::Example
 ---
-  name: "Create input"
-  file: "/_content/examples/autocomplete/autocomplete.vue"
+name: "Create input"
+file: "/_content/examples/autocomplete/autocomplete.vue"
 ---
 ::
 
@@ -401,4 +400,4 @@ FormKit exposes dozens of value-added features to even the most mundane inputs. 
 
 There are several features in the above schema that may not be immediately obvious like the `onBlur` handler. The following checklist is intended to help input authors cover all their bases:
 
-<input-checklist></input-checklist>
+<InputChecklist />

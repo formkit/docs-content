@@ -24,8 +24,8 @@ youtube-id: "J4mkd7UsjIM"
 
 ::Example
 ---
-  name: "Mask input"
-  file: "/_content/examples/mask/basic.vue"
+name: "Mask input"
+file: "/_content/examples/mask/basic.vue"
 ---
 ::
 
@@ -49,8 +49,8 @@ The mask input comes with 4 built-in tokens:
 
 ::Example
 ---
-  name: "Mask input"
-  file: "/_content/examples/mask/simple.vue"
+name: "Mask input"
+file: "/_content/examples/mask/simple.vue"
 ---
 ::
 
@@ -76,8 +76,8 @@ By default, the characters of a mask are automatically shifted forward when typi
 
 ::Example
 ---
-  name: "Mask input - shift vs replace"
-  file: "/_content/examples/mask/shift-replace.vue"
+name: "Mask input - shift vs replace"
+file: "/_content/examples/mask/shift-replace.vue"
 ---
 ::
 
@@ -89,8 +89,8 @@ Additionally, when an input is in select mode, the user can use the arrow or tab
 
 ::Example
 ---
-  name: "Mask input - select"
-  file: "/_content/examples/mask/select.vue"
+name: "Mask input - select"
+file: "/_content/examples/mask/select.vue"
 ---
 ::
 
@@ -184,8 +184,8 @@ expects an object with keys that match the `token` property. For example, our ne
 
 ::Example
 ---
-  name: "Mask input"
-  file: "/_content/examples/mask/tokens-prop.vue"
+name: "Mask input"
+file: "/_content/examples/mask/tokens-prop.vue"
 ---
 ::
 
@@ -195,9 +195,9 @@ To register your mask tokens globally, extend the `config` property of your glob
 
 ::Example
 ---
-  name: "Mask input global"
-  file: ['/_content/examples/mask/tokens-global.vue', '/_content/examples/mask/formkit.config.js']
-  init-file-tab: "formkit.config.js"
+name: "Mask input global"
+file: ['/_content/examples/mask/tokens-global.vue', '/_content/examples/mask/formkit.config.js']
+init-file-tab: "formkit.config.js"
 ---
 ::
 
@@ -207,8 +207,8 @@ In addition to creating new tokens, the `tokens` prop can also modify existing t
 
 ::Example
 ---
-  name: "Mask input - select fill"
-  file: "/_content/examples/mask/select-fill.vue"
+name: "Mask input - select fill"
+file: "/_content/examples/mask/select-fill.vue"
 ---
 ::
 
@@ -234,8 +234,8 @@ A date with auto-completing month names could be well represented with enums:
 
 ::Example
 ---
-  name: "Mask input – enum"
-  file: "/_content/examples/mask/enum.vue"
+name: "Mask input – enum"
+file: "/_content/examples/mask/enum.vue"
 ---
 ::
 
@@ -281,8 +281,8 @@ You can string group options together:
 
 ::Example
 ---
-  name: "Mask input"
-  file: "/_content/examples/mask/groups.vue"
+name: "Mask input"
+file: "/_content/examples/mask/groups.vue"
 ---
 ::
 
@@ -300,8 +300,8 @@ You can ensure certain characters always appear at the beginning or end of an in
 
 ::Example
 ---
-  name: "Mask input"
-  file: "/_content/examples/mask/prefix-suffix.vue"
+name: "Mask input"
+file: "/_content/examples/mask/prefix-suffix.vue"
 ---
 ::
 
@@ -319,8 +319,8 @@ In specific circumstances, you may want to run your mask in reverse. The mask wi
 
 ::Example
 ---
-  name: "Mask input"
-  file: "/_content/examples/mask/reverse.vue"
+name: "Mask input"
+file: "/_content/examples/mask/reverse.vue"
 ---
 ::
 
@@ -340,8 +340,8 @@ A mask’s value is not considered "complete" until the user has filled the enti
 
 ::Example
 ---
-  name: "Mask input - allow incomplete"
-  file: "/_content/examples/mask/allow-incomplete.vue"
+name: "Mask input - allow incomplete"
+file: "/_content/examples/mask/allow-incomplete.vue"
 ---
 ::
 
@@ -351,8 +351,8 @@ By default, the value of a mask input includes the formatting provided via the `
 
 ::Example
 ---
-  name: "Mask input - unmask value"
-  file: "/_content/examples/mask/unmask-value.vue"
+name: "Mask input - unmask value"
+file: "/_content/examples/mask/unmask-value.vue"
 ---
 ::
 
@@ -362,8 +362,8 @@ By default, the `mask` input displays each token’s placeholder character. You 
 
 ::Example
 ---
-  name: "Mask input - show mask"
-  file: "/_content/examples/mask/show-mask.vue"
+name: "Mask input - show mask"
+file: "/_content/examples/mask/show-mask.vue"
 ---
 ::
 
