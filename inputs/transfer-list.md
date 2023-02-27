@@ -123,20 +123,45 @@ name="Taglist"
 The transfer list input can be limited to a maximum number of selected values by setting the `max` prop. For just this example, let's set the max prop to 2 to limit the number of VIPs that can be selected:
 
 <example
-name="Taglist"
+name="Transfer List"
 :min-height="550"
 :file="[
   '/\_content/examples/transfer-list/transfer-list-max.vue',
   '/\_content/examples/transfer-list/guests.js'
 ]"></example>
 
-## Asynchronous options
+## Asynchronicity
 
-Instead of passing a static list of options to the `options` prop, you can assign it to an asynchronous function that loads the options from an API or another source.
+<!--Instead of passing a static list of options to the `options` prop, you can assign it to an asynchronous function that loads the options from an API or another source.-->
 
-### Search
+### Asynchronous options
 
-In this example, we'll assign the `options` prop the `searchGuests` function. By doing so, the searchGuests function will receive the `context` object as an argument. Within this context object is the `search` property, which is the current search value. To perform our search, we'll use the search value as the query parameter for our API request:
+Here we have a transfer list input that loads its options from an asynchronous function. The function is called when the component is mounted and the options are subsequently loaded into the source list box:
+
+<example
+name="Transfer List"
+:min-height="550"
+file="/\_content/examples/transfer-list/transfer-list-async-options.vue"></example>
+
+#### Pagination
+
+Now let's say that our api request does not fetch all the options we need but instead returns a paginated response. The transfer list input can handle pagination with minor configuration to the asynchronous function.
+
+When assigning the options prop to an asynchronous function, the function will be called with the FormKit context object at its first argument. This context object contains a `page` property (the current page we are attempting to load) that is tracked by the transfer list input, and `hasNextPage`, which is a callback function we can use to tell the transfer list that there are more options to load:
+
+<example
+name="Transfer List"
+:min-height="550"
+file="/\_content/examples/transfer-list/transfer-list-async-options-pagination.vue"></example>
+
+#### Search
+
+The transfer list input can also load options asynchronously when the user searches. In this example, we'll add back the `searchable` prop. When the user searches, the getGuests function will now be called with the same context object as before, but this time, we will destructure just the `search` proprerty. Additionally, we'll modify the getGuests function to only return guests when a search value is provided:
+
+<example
+name="Transfer List"
+:min-height="550"
+file="/\_content/examples/transfer-list/transfer-list-async-options-search.vue"></example>
 
 <!--## Sorting selected values
 
