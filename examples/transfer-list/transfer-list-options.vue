@@ -5,10 +5,11 @@ import { guests } from 'guests.js'
 <template>
   <FormKit
     type="transferlist"
-    :options="guests"
     label="Choose VIPs for the party"
     source-label="Guests"
     target-label="VIPs"
-    searchable
+    source-empty-message="No guests found"
+    target-empty-message="No VIPs selected"
+    :options="guests"
   />
 </template>

@@ -6,9 +6,6 @@ import { guests } from 'guests.js'
   <FormKit
     type="form"
     #default="{ value }"
-    :value="{
-      vips: ['Monica Baker', 'Marion Blanchard']
-    }"
   >
     <FormKit
       name="vips"
@@ -19,8 +16,6 @@ import { guests } from 'guests.js'
       source-empty-message="No guests found"
       target-empty-message="No VIPs selected"
       :options="guests"
-      searchable
-      placeholder="Search guests"
     />
     <pre>{{ value }}</pre>
   </FormKit>

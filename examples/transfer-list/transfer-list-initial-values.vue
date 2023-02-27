@@ -19,8 +19,6 @@ import { guests } from 'guests.js'
       source-empty-message="No guests found"
       target-empty-message="No VIPs selected"
       :options="guests"
-      searchable
-      placeholder="Search guests"
     />
     <pre>{{ value }}</pre>
   </FormKit>

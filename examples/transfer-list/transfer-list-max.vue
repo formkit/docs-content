@@ -1,5 +1,8 @@
 <script setup>
 import { guests } from 'guests.js'
+
+const customFilter = (option, search) =>
+  option.label.toLowerCase().startsWith(search.toLowerCase())
 </script>
 
 <template>
@@ -21,6 +24,8 @@ import { guests } from 'guests.js'
       :options="guests"
       searchable
       placeholder="Search guests"
+      :filter="customFilter"
+      :max="2"
     />
     <pre>{{ value }}</pre>
   </FormKit>

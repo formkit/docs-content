@@ -9,16 +9,45 @@ description: The transfer list input allows users to transfer values between two
 
 <ProInstallSnippet></ProInstallSnippet>
 
-## Basic example
-
-The transfer list input is ideal for situations where the end-user needs to select and sort multiple values from a list of options. In this example, we are going to pass the transfer list an array of guest names to the `options` prop and allow the user to select VIPs:
+The transfer list input is ideal for situations where the end-user needs to select and sort multiple values from a list of options. In this example, we are allowing the end-user to select from a group of guests and move them to a VIP list:
 
 <example
 name="Transfer List"
 :min-height="550"
 file="/\_content/examples/transfer-list/transfer-list-basic-example.vue"></example>
 
-## Defining options
+## Getting started
+
+In this section, we will be recreating the above 'Guest vs VIP' example from scratch.
+
+### Base input
+
+Below is an example of the transfer list input with the minimum required props. As you can see, there are two list boxes: the source list box and the target list box. The source list box will contain the list of options, and the target list box will contain the selected options:
+
+<example
+name="Transfer List"
+:min-height="300"
+file="/\_content/examples/transfer-list/transfer-list-base.vue"></example>
+
+### Labels
+
+Let's add some label props to make clear to the end-user how to use the transfer list input. We'll add a `label` prop to explain the directive to the user, and `source-label` and `target-label` props to indicate which list box is the source and which is the target:
+
+<example
+name="Transfer List"
+:min-height="300"
+file="/\_content/examples/transfer-list/transfer-list-labels.vue"></example>
+
+#### Source and target empty messages
+
+In this state, with no options passed and no values selected, we can display a custom message to the user by setting the `source-empty-message` and `target-empty-message` props:
+
+<example
+name="Transfer List"
+:min-height="300"
+file="/\_content/examples/transfer-list/transfer-list-empty-messages.vue"></example>
+
+### Defining options
 
 The `options` prop can accept three different formats of values:
 
@@ -27,34 +56,89 @@ The `options` prop can accept three different formats of values:
 - An object literal with key-value pairs <code>{ a: 'A', b: 'B', c: 'C' }</code>
 - A function that returns any of the above
 
-## Searchable
-
-For larger lists of options, you can show allow the end-user to filter options by setting the `searchable` prop:
+Let's go ahead and populate the transfer list's options with a list of guest names:
 
 <example
 name="Transfer List"
 :min-height="550"
-file="/\_content/examples/transfer-list/transfer-list-searchable.vue"></example>
+:file="[
+  '/\_content/examples/transfer-list/transfer-list-options.vue',
+  '/\_content/examples/transfer-list/guests.js'
+]"></example>
 
-## Filtering
+### Values
 
-The transfer list input will filter options with its own internal search function. You can replace this search function by providing the `filter` prop a function of your own. Your function will receive two arguments, the `option` being iterated over and the current `search` value:
+The value of the transfer list input will always be in the structure of an array and the selected option values from the source options list will be appended to the array. To show the value changing in the example below, let's wrap the transfer list input in a FormKit form, set the name of the transfer list input to `vips`, and show the value of the form itself in a `<pre>` tag (if you are unfamiliar with FormKit forms, you can read more about it [here](/getting-started/your-first-form)):
+
+<example
+name="Transfer List"
+:min-height="550"
+:file="[
+  '/\_content/examples/transfer-list/transfer-list-values.vue',
+  '/\_content/examples/transfer-list/guests.js'
+]"></example>
+
+#### Initial values
+
+The transfer list input can be pre-populated with values by setting the `value` prop. In this example, we'll set the `value` prop to an array of strings that match the `value` keys of the options:
+
+<example
+name="Transfer List"
+:min-height="550"
+:file="[
+  '/\_content/examples/transfer-list/transfer-list-initial-values.vue',
+  '/\_content/examples/transfer-list/guests.js'
+]"></example>
+
+Please note that if you pass the transfer list input a value that does not match any of the options, the value will still be added to the array, but it will not be displayed in the target list box.
+
+### Searchable
+
+The transfer list input can be made searchable by setting the `searchable` prop. In this example we'll set the `searchable` prop and also set a `placeholder` prop for the search input:
+
+<example
+name="Transfer List"
+:min-height="550"
+:file="[
+  '/\_content/examples/transfer-list/transfer-list-searchable.vue',
+  '/\_content/examples/transfer-list/guests.js'
+]"></example>
+
+Keep in mind that the search input only searches through the options list. It does not search through the selected values.
+
+#### Filtering
+
+The transfer list input will filter options with its own internal search function. You can replace this search function by providing the `filter` prop a function of your own. Your function will receive two arguments, the option being iterated over and the current search value:
 
 <example
 name="Taglist"
 :min-height="550"
-file="/_content/examples/transfer-list/transfer-list-filter.vue"></example>
+:file="[
+  '/\_content/examples/transfer-list/transfer-list-filter.vue',
+  '/\_content/examples/transfer-list/guests.js'
+]"></example>
 
-## Source and target empty message
+### Max
 
-If you would like to indicate to the user that the source or target list is empty, you can set the `source-empty-message` and `target-empty-message` props:
+The transfer list input can be limited to a maximum number of selected values by setting the `max` prop. For just this example, let's set the max prop to 2 to limit the number of VIPs that can be selected:
 
 <example
 name="Taglist"
 :min-height="550"
-file="/_content/examples/transfer-list/transfer-list-empty-message.vue"></example>
+:file="[
+  '/\_content/examples/transfer-list/transfer-list-max.vue',
+  '/\_content/examples/transfer-list/guests.js'
+]"></example>
 
-## Sorting selected values
+## Asynchronous options
+
+Instead of passing a static list of options to the `options` prop, you can assign it to an asynchronous function that loads the options from an API or another source.
+
+### Search
+
+In this example, we'll assign the `options` prop the `searchGuests` function. By doing so, the searchGuests function will receive the `context` object as an argument. Within this context object is the `search` property, which is the current search value. To perform our search, we'll use the search value as the query parameter for our API request:
+
+<!--## Sorting selected values
 
 The transfer list allows you to sort selected values by dragging and dropping. In this example, the target list will not be validated until "Lulu Cabrera" is set to the top of the VIP list:
 
@@ -131,7 +215,7 @@ Now let's combine what we've learned so far by leveraging the `tag` slot for cus
 <example
 name="Taglist"
 :min-height="550"
-file="/_content/examples/taglist/taglist-full.vue"></example>
+file="/_content/examples/taglist/taglist-full.vue"></example>-->
 
 ## Props & Attributes
 

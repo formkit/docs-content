@@ -1,14 +1,11 @@
 <script setup>
-import { guests } from 'guests.js'
 </script>
 
 <template>
   <FormKit
     type="transferlist"
-    :options="guests"
     label="Choose VIPs for the party"
     source-label="Guests"
     target-label="VIPs"
-    searchable
   />
 </template>
