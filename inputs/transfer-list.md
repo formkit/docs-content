@@ -122,6 +122,10 @@ name="Taglist"
   '/\_content/examples/transfer-list/guests.js'
 ]"></example>
 
+#### Clear on select
+
+By default, the transfer list input will clear the search input on select. You can change this behavior by setting the `clear-on-select` prop to `false`:
+
 ### Max
 
 The transfer list input can be limited to a maximum number of selected values by setting the `max` prop. For just this example, let's set the max prop to 2 to limit the number of VIPs that can be selected:
@@ -231,84 +235,6 @@ name="Transfer List"
   '/\_content/examples/transfer-list/utils.js'
 ]"></example>
 
-<!--## Sorting selected values
-
-The transfer list allows you to sort selected values by dragging and dropping. In this example, the target list will not be validated until "Lulu Cabrera" is set to the top of the VIP list:
-
-<example
-name="Transfer List"
-:min-height="550"
-file="/_content/examples/transfer-list/transfer-list-sorting-selected-values.vue"></example>
-
-## Slots
-
-The transfer list input allows you to utilize slots to customize the look and feel of the options list and the selected option by leveraging the [renderless component pattern](https://adamwathan.me/renderless-components-in-vuejs/).
-
-In this example, we are going to use the `option` slot to customize the look of the options list:
-
-<example
-name="Transfer List"
-:min-height="550"
-file="/\_content/examples/taglist/taglist-slots.vue"></example>
-
->
-
-## Loading options
-
-Instead of passing a static list of options to the `options` prop, you can assign it to a function. Doing so is useful when you need to load options from an API or another source.
-
-### Search parameter
-
-In this example, we'll assign the `options` prop the `searchMovies` function. By doing so, `searchMovies` will receive the `context` object as an argument. Within this `context` object is the `search` property, which is the current search value. To perform our search, we'll use the `search` value as the query parameter for our API request:
-
-<example
-name="Taglist"
-:min-height="550"
-file="/_content/examples/taglist/taglist-single-request.vue"></example>
-
-### Page and hasNextPage parameters
-
-A likely scenario you'll encounter is needing to search through a paginated API. This can be done by referencing the same `context` object as before. Within this object, we can utilize the `page` and `hasNextPage` properties. The `page` property is the current page number, and the `hasNextPage` property is a function to be called when there are more pages to load:
-
-<example
-name="Taglist"
-:min-height="550"
-file="/_content/examples/taglist/taglist-pagination.vue"></example>
-
-### Loading Style
-
-Instead of requiring your users to click the <i>Load more</i> button to load additional options, you can set the `loadOnScroll` prop to true, which will paginate options as you scroll to the bottom of the options list.
-
-### Option loader
-
-#### Rehydrating values
-
-FormKit's taglist input also provides an `optionLoader` prop that allows you to rehydrate values that are not in the options list. In this example, we'll provide the taglist an initial value (a movie ID), and assign the optionLoader to a function that will make a request to the API to get the movie:
-
-<example
-name="Taglist"
-:min-height="550"
-file="/_content/examples/taglist/taglist-pagination-option-loader.vue"></example>
-
-Notice in the example above that the optionLoader function is passed two arguments: the `value` of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption is used for preventing unnecessary lookups. If the cachedOption is not `null` it means that the selected option has already been loaded, and you can return the cachedOption directly.
-
-#### Fetching additional data
-
-Instead of using the `optionLoader` prop to rehydrate values that are not in the options list, you can use the optionLoader to perform a look-up to fetch additional data, or even just modify the option's current label. In this example, we'll use the optionLoader to fetch the movie's poster image:
-
-<example
-name="Taglist"
-:min-height="550"
-file="/_content/examples/taglist/taglist-option-loader-additional-data.vue"></example>
-
-## Full example
-
-Now let's combine what we've learned so far by leveraging the `tag` slot for custom markup, and setting the `options` prop to a function that will return pages of movies from an API:
-
-<example
-name="Taglist"
-:min-height="550"
-file="/_content/examples/taglist/taglist-full.vue"></example>-->
 
 ## Props & Attributes
 
@@ -326,18 +252,6 @@ file="/_content/examples/taglist/taglist-full.vue"></example>-->
     description: 'The list of options the user can select from.'
   },
   {
-    prop: 'load-on-scroll',
-    type: 'boolean',
-    default: 'false',
-    description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'
-  },
-  {
-    prop: 'open-on-click',
-    type: 'boolean',
-    default: 'false',
-    description: 'The autocomplete is expanded upon focus of the input, as opposed to waiting to expand until a search value is entered.'
-  },
-  {
     prop: 'filter',
     type: 'function',
     default: 'null',
@@ -350,20 +264,16 @@ file="/_content/examples/taglist/taglist-full.vue"></example>-->
     description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'
   },
   {
-    prop: 'allow-new-values',
-    type: 'boolean',
-    default: 'false', description: 'Allows end-user to enter a new value that does not exist within the options list.'
-  },
-  {
-    prop: 'disable-drag-and-drop',
-    type: 'boolean',
-    default: 'true', description: 'Disabled end-user from sorting tags by dragging and dropping.'
-  },
-  {
-    prop: 'empty-message',
+    prop: 'source-empty-message',
     type: 'string',
     default: 'undefined',
     description: 'Renders a message when there are no options to display.'
+  },
+  {
+    prop: 'target-empty-message',
+    type: 'string',
+    default: 'undefined',
+    description: 'Renders a message when there are no values to display'
   },
   {
     prop: 'max',
@@ -372,82 +282,190 @@ file="/_content/examples/taglist/taglist-full.vue"></example>-->
     description: 'Limits the number of options that can be selected.'
   },
   {
-    prop: 'close-on-select',
+    prop: 'clearOnSelect',
     type: 'boolean',
     default: 'true',
-    description: 'Closes the listbox when an option is selected.'
+    description: 'Clears the search input after selecting an option (only for options that are not loaded via function).'
+  },
+  {
+    prop: 'searchable',
+    type: 'boolean',
+    default: 'false',
+    description: 'Enables the search input.'
+  },
+  {
+    prop: 'source-label',
+    type: 'string',
+    default: 'undefined',
+    description: 'Renders a label for the source list.'
+  },
+  {
+    prop: 'target-label',
+    type: 'string',
+    default: 'undefined',
+    description: 'Renders a label for the target list.'
+  },
+  {
+    prop: 'transfer-on-select',
+    type: 'boolean',
+    default: 'true',
+    description: 'Automatically transfers selected options to the target list. If set to false, will render transfer forward and transfer backward buttons.'
   }
 ]">
 </reference-table>
 
 <reference-table type="sectionKeys" primary="section-key" :data="[
   {
-    'section-key': 'selector',
-    description: 'The selector section is a button element that opens the dropdown options list.'
+    'section-key': 'fieldset',
+    description: 'A fieldset element that acts as the root element for the transfer list input.'
   },
   {
-    'section-key': 'selections',
-    description: 'Contains individual selection sections.'
+    'section-key': 'legend',
+    description: 'A legend element that renders the label.'
   },
   {
-    'section-key': 'selection',
-    description: 'Contains the selected option.'
+    'section-key': 'source',
+    description: 'A div element that contains the sourceHeader, sourceControls, and sourceListItems sections.'
   },
   {
-    'section-key': 'listitem',
-    description: 'A list item element that contains the option section.'
+    'section-key': 'sourceHeader',
+    description: 'A div element that contains the sourceHeaderLabel and sourceHeaderItemCount sections'
   },
   {
-    'section-key': 'option',
-    description: 'A div that contains the option content.'
+    'section-key': 'sourceHeaderLabel',
+    description: 'A label element that renders the sourceLabel prop.'
   },
   {
-    'section-key': 'listbox',
-    description: 'The listbox section is a ul element that contains the options list.'
+    'section-key': 'sourceHeaderItemCount',
+    description: 'A span element that renders the number of items and number of items selected in the source list.'
   },
   {
-    'section-key': 'dropdownWrapper',
-    description: 'Wraps the listbox section. A div that handles scrolling the listbox.'
+    'section-key': 'sourceControls',
+    description: 'A div element that contains the sourceSearchINput and sourceSearchClear sections'
   },
   {
-    'section-key': 'optionLoading',
-    description: 'A span element that is conditionally rendered within the selected option when loading is occurring.'
+    'section-key': 'sourceSearch',
+    description: 'A div element that contains the sourceSearchInput and sourceSearchClear sections'
   },
   {
-    'section-key': 'loaderIcon',
-    description: 'An element for outputting an icon in the selector element when loading is occurring.'
+    'section-key': 'sourceSearchInput',
+    description: 'A text input element used for searching.'
   },
   {
-    'section-key': 'selectIcon',
-    description: 'An element for outputting an icon in the selector element when the dropdown is closed.'
-  },
-  {
-    'section-key': 'loadMore',
-    description: 'A list item element that is conditionally rendered at the bottom of the options list when there are more pages to load.'
-  },
-  {
-    'section-key': 'loadMoreInner',
-    description: 'A span element that acts as a wrapper for the loaderIcon within the loadMore section.'
-  },
-  {
-    'section-key': 'removeSelection',
-    description: 'A button element used for removing a specific selection.'
+    'section-key': 'sourceSearchClear',
+    description: 'A button element that clears the search input.'
   },
   {
     'section-key': 'closeIcon',
-    description: 'An element for outputting an icon within the removeSelection button.'
+    description: 'The span used containing the icon for the clear search input.'
   },
   {
-    'section-key': 'listboxButton',
-    description: 'A button element that is used to open the dropdown.'
+    'section-key': 'sourceListItems',
+    description: 'A ul element that contains the sourceListItems.'
   },
   {
-    'section-key': 'emptyMessage',
-    description: 'A list item element that is conditionally rendered when there are no options to display.'
+    'section-key': 'sourceEmptyMessage',
+    description: 'A li element that contains the emptyMessageInner section.'
   },
   {
     'section-key': 'emptyMessageInner',
-    description: 'A span element that acts as a wrapper for the emptyMessage section.'
+    description: 'A span element that renders the provided empty message text.'
+  },
+  {
+    'section-key': 'sourceListItem',
+    description: 'A li element for the sourceListItems section that contains the sourceOption section.'
+  },
+  {
+    'section-key': 'selectIcon',
+    description: 'A span elemenet that renders the selected icon when the sourceListItem is set to selected.'
+  },
+  {
+    'section-key': 'sourceOption',
+    description: 'A div element that renders the option label.'
+  },
+  {
+    'section-key': 'sourceLoadMore',
+    description: 'A li element that contains the loadMoreInner section.'
+  },
+  {
+    'section-key': 'loadMoreInner',
+    description: 'A span element that renders the loading icon.'
+  },
+  {
+    'section-key': 'loaderIcon',
+    description: 'A span element that outputs an icon when loading is occurring.'
+  },
+  {
+    'section-key': 'transferControls',
+    description: 'A div element that contains the transferButtonForwardAll, transferButtonForward, transferButtonBackward, and transferButtonBackwardAll sections.'
+  },
+  {
+    'section-key': 'transferButtonForwardAll',
+    description: 'A button element that transfers all options to the target list.'
+  },
+  {
+    'section-key': 'transferButtonForward',
+    description: 'A button element that transfers selected options to the target list.'
+  },
+  {
+    'section-key': 'transferButtonBackward',
+    description: 'A button element that transfers selected options to the source list.'
+  },
+  {
+    'section-key': 'transferButtonBackwardAll',
+    description: 'A button element that transfers all options to the source list.'
+  },
+  {
+    'section-key': 'controlLabel',
+    description: 'A span element that renders the control label.'
+  },
+  {
+    'section-key': 'fastForwardIcon',
+    description: 'A span element that renders the fast forward icon.'
+  },
+  {
+    'section-key': 'moveRightIcon',
+    description: 'A span element that renders the move right icon.'
+  },
+  {
+    'section-key': 'moveLeftIcon',
+    description: 'A span element that renders the move left icon.'
+  },
+  {
+    'section-key': 'rewindIcon',
+    description: 'A span element that renders the rewind icon.'
+  },
+  {
+    'section-key': 'target',
+    description: 'A div element that contains the targetHeader, targetControls, and targetListItems sections.'
+  },
+  {
+    'section-key': 'targetHeader',
+    description: 'A div element that contains the targetHeaderLabel and targetHeaderItemCount sections'
+  },
+  {
+    'section-key': 'targetHeaderLabel',
+    description: 'A label element that renders the targetLabel prop.'
+  },
+  {
+    'section-key': 'targetHeaderItemCount',
+    description: 'A span element that renders the number of items and number of items selected in the target list.'
+  },
+  {
+    'section-key': 'targetListItems',
+    description: 'A ul element that contains the targetListItems.'
+  },
+  {
+    'section-key': 'targetEmptyMessage',
+    description: 'A li element that contains the emptyMessageInner section.'
+  },
+  {
+    'target-key': 'targetListItem',
+    description: 'A li element for the targetListItems section that contains the targetOption section.'
+  },
+  {
+    'section-key': 'targetLoadMore',
+    description: 'A li element that contains the loadMoreInner section.'
   }
 ]">
 </reference-table>
