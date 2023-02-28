@@ -130,6 +130,18 @@ name="Transfer List"
   '/\_content/examples/transfer-list/guests.js'
 ]"></example>
 
+### Transfer on select
+
+By default, the transfer list input will add or remove options on click. You can change this behavior by setting the `transfer-on-select` prop to `false`. Now, the transfer list will behave more like a traditional transfer list.
+
+<example
+name="Transfer List"
+:min-height="550"
+:file="[
+  '/\_content/examples/transfer-list/transfer-list-transfer-on-select.vue',
+  '/\_content/examples/transfer-list/guests.js'
+]"></example>
+
 ## Asynchronicity
 
 ### Asynchronous options

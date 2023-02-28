@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 async function getGuests() {
   const res = await fetch('https://api-formkit-docs-examples.formkit.workers.dev/all-guests')
   if (res.ok) {
@@ -32,16 +32,24 @@ async function getGuest(id, cachedOption) {
     }
   }
 }
+
+function initials(str: string) {
+  return str
+    .split(' ')
+    .slice(0, 2)
+    .map((item) => item.charAt(0).toUpperCase())
+    .join('')
+}
+
 </script>
 
 <template>
   <FormKit
     type="form"
-    #default="{ value }"
     :actions="false"
     :value="{
       vips: [
-        3, 4
+        1
       ]
     }"
   >
@@ -58,33 +66,77 @@ async function getGuest(id, cachedOption) {
     >
       <template #targetOption="{ option }">
         <div class="flex">
-          <div class="item">
-            Name: {{ option.label }}
-          </div>
-          <div class="item">
-            Age: {{ option.age }}
-          </div>
-          <div class="item">
-            Email: {{ option.email }}
-          </div>
-          <div class="item">
-            Phone: {{ option.phone }}
+          <span class="avatar">
+            <span class="initials">{{ initials(option.label) }}</span>
+          </span>
+          <div class="info">
+            <div class="item">
+              {{ option.label + ` (${option.age})` }}
+            </div>
+            <div class="item-small">
+              {{ option.email }}
+            </div>
+            <div class="item-small">
+              {{ option.phone }}
+            </div>
           </div>
         </div>
       </template>
     </FormKit>
-    <pre>{{ value }}</pre>
   </FormKit>
 </template>
 
 <style scoped>
 .flex {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
-
 .item {
   font-size: 0.8em;
+  margin-bottom: 0.2em;
+}
+
+.item-small {
+  font-size: 0.7em;
+  color: #666;
+  margin-bottom: 0.1em;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+}
+
+.avatar {
+  font-size: 33px;
+  overflow: hidden;
+  display: block;
+  border-radius: 2em;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  flex: 0 0 1em;
+  background-color: rgb(2, 117, 255);
+  margin-right: 0.5em;
+}
+
+.initials {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 2em;
+  overflow: hidden;
+  background: var(--gradient-avatar);
+  color: white;
+  font-size: 0.35em;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 </style>
