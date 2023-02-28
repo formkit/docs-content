@@ -16,11 +16,7 @@ async function getGuests() {
 }
 
 async function getGuest(id, cachedOption) {
-  console.log('cachedOption', cachedOption)
-  if (cachedOption.hasLoaded) {
-    console.log('return early')
-    return cachedOption
-  }
+  if (cachedOption.hasLoaded) return
   const res = await fetch(`https://api-formkit-docs-examples.formkit.workers.dev/guests/${id}`)
   if (res.ok) {
     const data = await res.json()
