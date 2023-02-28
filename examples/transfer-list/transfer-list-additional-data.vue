@@ -1,10 +1,10 @@
 <script setup>
-async function getGuests({ page, hasNextPage }) {
-  const res = await fetch(`https://api-formkit-docs-examples.formkit.workers.dev/guests?page=${page}`)
+async function getGuests() {
+  const res = await fetch(`https://api-formkit-docs-examples.formkit.workers.dev/all-guests`)
   if (res.ok) {
     const data = await res.json()
     if (data.data) {
-      return data.map((result) => {
+      return data.data.map((result) => {
         return {
           label: result.name,
           value: result.id,
@@ -13,6 +13,19 @@ async function getGuests({ page, hasNextPage }) {
     }
   }
   return []
+}
+
+async function getGuest(id) {
+  const res = await fetch(`https://api-formkit-docs-examples.formkit.workers.dev/guests/${id}`)
+  if (res.ok) {
+    const data = await res.json()
+    if (data.data) {
+      return {
+        label: data.data.name + ` (${data.data.age})`,
+        value: data.data.id,
+      }
+    }
+  }
 }
 </script>
 
@@ -30,6 +43,7 @@ async function getGuests({ page, hasNextPage }) {
       source-empty-message="No guests found"
       target-empty-message="No VIPs selected"
       :options="getGuests"
+      :option-loader="getGuest"
     />
     <pre>{{ value }}</pre>
   </FormKit>

@@ -14,11 +14,11 @@ The transfer list input is ideal for situations where the end-user needs to sele
 <example
 name="Transfer List"
 :min-height="550"
-file="/\_content/examples/transfer-list/transfer-list-basic-example.vue"></example>
+file="/\_content/examples/transfer-list/transfer-list-full-example.vue"></example>
 
 ## Getting started
 
-In this section, we will be recreating the above 'Guest vs VIP' example from scratch.
+In this section, we will be covering the basics of how to replicate the 'Guests vs VIPs' example from above.
 
 ### Base input
 
@@ -132,8 +132,6 @@ name="Transfer List"
 
 ## Asynchronicity
 
-<!--Instead of passing a static list of options to the `options` prop, you can assign it to an asynchronous function that loads the options from an API or another source.-->
-
 ### Asynchronous options
 
 Here we have a transfer list input that loads its options from an asynchronous function. The function is called when the component is mounted and the options are subsequently loaded into the source list box:
@@ -156,12 +154,47 @@ file="/\_content/examples/transfer-list/transfer-list-async-options-pagination.v
 
 #### Search
 
-The transfer list input can also load options asynchronously when the user searches. In this example, we'll add back the `searchable` prop. When the user searches, the getGuests function will now be called with the same context object as before, but this time, we will destructure just the `search` proprerty. Additionally, we'll modify the getGuests function to only return guests when a search value is provided:
+The transfer list input can also load options asynchronously when the user searches. In this example, we'll add back the `searchable` prop, and change the getGuests function to searchGuests. When the user searches, the searchGuests function will now be called with the same context object as before, but this time, we will destructure just the `search` proprerty. Additionally, we'll modify the getGuests function to only return guests when a search value is provided:
 
 <example
 name="Transfer List"
 :min-height="550"
 file="/\_content/examples/transfer-list/transfer-list-async-options-search.vue"></example>
+
+### Option loader
+
+#### Rehydrating values
+
+The transfer list input also provides an optionLoader prop that allows you to rehydrate values that are not in the options list. In this example, we'll provide the transfer list an initial value (a guest ID), and assign the optionLoader to a function that will make a request to the API to fetch the individual guest data:
+
+<example
+name="Transfer List"
+:min-height="550"
+file="/\_content/examples/transfer-list/transfer-list-rehydrating-values.vue"></example>
+
+Notice in the example above that the optionLoader function is passed two arguments: the value of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption is used for preventing unnecessary lookups; if the cachedOption is not null it means that the selected option has already been loaded, and you can return the cachedOption directly.
+
+#### Fetching additional data
+
+Instead of using the optionLoader prop to rehydrate values that are not in the options list, you can use the optionLoader to perform a look-up to fetch additional data on selected value. In this example, after selecting an option, we are going to perform a look-up to load the selected guest's age:
+
+<example
+name="Transfer List"
+:min-height="550"
+file="/\_content/examples/transfer-list/transfer-list-additional-data.vue"></example>
+
+## Slots
+
+Just like any other FormKit input, the transfer list input allows you to utilize slots to customize its markup.
+
+### Source and target options
+
+Now that we are loading additional data on selected values (the age and email address of the selected guest), let's customize the look of the selected values by using the `target-option` slots:
+
+<example
+name="Transfer List"
+:min-height="550"
+file="/\_content/examples/transfer-list/transfer-list-options-slot.vue"></example>
 
 <!--## Sorting selected values
 
