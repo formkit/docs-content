@@ -67,7 +67,7 @@ input: 'button'
 
 :SectionKeysIntro
 
-::FormkitInputDiagram
+::FormKitInputDiagram
 ---
 class: "input-diagram--button"
 schema: [

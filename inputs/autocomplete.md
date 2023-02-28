@@ -331,7 +331,7 @@ The autocomplete's structure changes depending on a few different scenarios:
 
 ### Selection appearance `text-input`
 
-::formkit-input-diagram
+::FormKitInputDiagram
 ---
 hide-on-small: true
 class: "input-diagram--autocomplete-outer autocomplete-text-input"
