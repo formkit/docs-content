@@ -33,7 +33,7 @@ import  { initials } from 'utils.js'
           </span>
           <div class="info">
             <div class="item">
-              {{ option.label + ` (${option.age})` }}
+              {{ option.label }}
             </div>
             <div class="item-small">
               {{ option.email }}
