@@ -1,19 +1,5 @@
 <script setup>
-async function getGuests() {
-  const res = await fetch('https://api-formkit-docs-examples.formkit.workers.dev/all-guests')
-  if (res.ok) {
-    const data = await res.json()
-    if (data.data) {
-      return data.data.map((result) => {
-        return {
-          label: result.name,
-          value: result.id,
-        }
-      })
-    }
-  }
-  return []
-}
+import { getGuests } from 'api.js'
 </script>
 
 <template>

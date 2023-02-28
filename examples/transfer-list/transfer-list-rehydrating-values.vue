@@ -1,37 +1,5 @@
 <script setup>
-async function searchGuests({ search }) {
-  if (!search) {
-    return []
-  }
-  const res = await fetch(`https://api-formkit-docs-examples.formkit.workers.dev/guests?search=${search}`)
-  if (res.ok) {
-    const data = await res.json()
-    if (data.data) {
-      return data.data.map((result) => {
-        return {
-          label: result.name,
-          value: result.id,
-        }
-      })
-    }
-  }
-  return []
-}
-
-async function getGuest(id, cachedOption) {
-  if (cachedOption) return cachedOption
-  const res = await fetch(`https://api-formkit-docs-examples.formkit.workers.dev/guests/${id}`)
-  if (res.ok) {
-    const data = await res.json()
-    console.log('data', data)
-    if (data.data) {
-      return {
-        label: data.data.name,
-        value: data.data.id,
-      }
-    }
-  }
-}
+import { searchGuests, getGuest } from 'api.js'
 </script>
 
 <template>

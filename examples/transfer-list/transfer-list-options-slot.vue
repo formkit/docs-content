@@ -1,46 +1,6 @@
-<script setup lang="ts">
-async function getGuests() {
-  const res = await fetch('https://api-formkit-docs-examples.formkit.workers.dev/all-guests')
-  if (res.ok) {
-    const data = await res.json()
-    if (data.data) {
-      return data.data.map((result) => {
-        return {
-          label: result.name,
-          value: result.id,
-        }
-      })
-    }
-  }
-  return []
-}
-
-async function getGuest(id, cachedOption) {
-  if (cachedOption.hasLoaded) return
-  const res = await fetch(`https://api-formkit-docs-examples.formkit.workers.dev/guests/${id}`)
-  if (res.ok) {
-    const data = await res.json()
-    if (data.data) {
-      return {
-        label: data.data.name,
-        value: data.data.id,
-        age: data.data.age,
-        phone: data.data.phone,
-        email: data.data.email,
-        hasLoaded: true,
-      }
-    }
-  }
-}
-
-function initials(str: string) {
-  return str
-    .split(' ')
-    .slice(0, 2)
-    .map((item) => item.charAt(0).toUpperCase())
-    .join('')
-}
-
+<script setup>
+import { getGuests, loadGuest } from 'api.js'
+import  { initials } from 'utils.js'
 </script>
 
 <template>
@@ -62,7 +22,7 @@ function initials(str: string) {
       source-empty-message="No guests found"
       target-empty-message="No VIPs selected"
       :options="getGuests"
-      :option-loader="getGuest"
+      :option-loader="loadGuest"
     >
       <template #targetOption="{ option }">
         <div class="flex">

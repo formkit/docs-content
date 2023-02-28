@@ -1,22 +1,5 @@
 <script setup>
-async function getGuests({ page, hasNextPage }) {
-  const res = await fetch(`https://api-formkit-docs-examples.formkit.workers.dev/guests?page=${page}`)
-  if (res.ok) {
-    const data = await res.json()
-    if (data.data) {
-      if (data.current_page < data.total_pages) {
-        hasNextPage()
-      }
-      return data.data.map((result) => {
-        return {
-          label: result.name,
-          value: result.id,
-        }
-      })
-    }
-  }
-  return []
-}
+import { paginateGuests } from 'api.js'
 </script>
 
 <template>
@@ -33,7 +16,7 @@ async function getGuests({ page, hasNextPage }) {
       target-label="VIPs"
       source-empty-message="No guests found"
       target-empty-message="No VIPs selected"
-      :options="getGuests"
+      :options="paginateGuests"
     />
     <pre>{{ value }}</pre>
   </FormKit>

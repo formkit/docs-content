@@ -14,7 +14,11 @@ The transfer list input is ideal for situations where the end-user needs to sele
 <example
 name="Transfer List"
 :min-height="550"
-file="/\_content/examples/transfer-list/transfer-list-full-example.vue"></example>
+:file="[
+  '/\_content/examples/transfer-list/transfer-list-full-example.vue',
+  '/\_content/examples/transfer-list/api.js',
+  '/\_content/examples/transfer-list/utils.js'
+]"></example>
 
 ## Getting started
 
@@ -151,7 +155,10 @@ Here we have a transfer list input that loads its options from an asynchronous f
 <example
 name="Transfer List"
 :min-height="550"
-file="/\_content/examples/transfer-list/transfer-list-async-options.vue"></example>
+:file="[
+  '/\_content/examples/transfer-list/transfer-list-async-options.vue',
+  '/\_content/examples/transfer-list/api.js'
+]"></example>
 
 #### Pagination
 
@@ -162,7 +169,10 @@ When assigning the options prop to an asynchronous function, the function will b
 <example
 name="Transfer List"
 :min-height="550"
-file="/\_content/examples/transfer-list/transfer-list-async-options-pagination.vue"></example>
+:file="[
+  '/\_content/examples/transfer-list/transfer-list-async-options-pagination.vue',
+  '/\_content/examples/transfer-list/api.js'
+]"></example>
 
 #### Search
 
@@ -171,7 +181,10 @@ The transfer list input can also load options asynchronously when the user searc
 <example
 name="Transfer List"
 :min-height="550"
-file="/\_content/examples/transfer-list/transfer-list-async-options-search.vue"></example>
+:file="[
+  '/\_content/examples/transfer-list/transfer-list-async-options-search.vue',
+  '/\_content/examples/transfer-list/api.js'
+]"></example>
 
 ### Option loader
 
@@ -182,7 +195,10 @@ The transfer list input also provides an optionLoader prop that allows you to re
 <example
 name="Transfer List"
 :min-height="550"
-file="/\_content/examples/transfer-list/transfer-list-rehydrating-values.vue"></example>
+:file="[
+  '/\_content/examples/transfer-list/transfer-list-rehydrating-values.vue',
+  '/\_content/examples/transfer-list/api.js'
+]"></example>
 
 Notice in the example above that the optionLoader function is passed two arguments: the value of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption is used for preventing unnecessary lookups; if the cachedOption is not null it means that the selected option has already been loaded, and you can return the cachedOption directly.
 
@@ -193,7 +209,10 @@ Instead of using the optionLoader prop to rehydrate values that are not in the o
 <example
 name="Transfer List"
 :min-height="550"
-file="/\_content/examples/transfer-list/transfer-list-additional-data.vue"></example>
+:file="[
+  '/\_content/examples/transfer-list/transfer-list-additional-data.vue',
+  '/\_content/examples/transfer-list/api.js'
+]"></example>
 
 ## Slots
 
@@ -206,7 +225,11 @@ Now that we are loading additional data on selected values (the age and email ad
 <example
 name="Transfer List"
 :min-height="550"
-file="/\_content/examples/transfer-list/transfer-list-options-slot.vue"></example>
+:file="[
+  '/\_content/examples/transfer-list/transfer-list-options-slot.vue',
+  '/\_content/examples/transfer-list/api.js',
+  '/\_content/examples/transfer-list/utils.js'
+]"></example>
 
 <!--## Sorting selected values
 
@@ -427,4 +450,4 @@ file="/_content/examples/taglist/taglist-full.vue"></example>-->
     description: 'A span element that acts as a wrapper for the emptyMessage section.'
   }
 ]">
-</reference-table>-->
+</reference-table>

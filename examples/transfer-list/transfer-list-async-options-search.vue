@@ -1,22 +1,5 @@
 <script setup>
-async function searchGuests({ search }) {
-  if (!search) {
-    return []
-  }
-  const res = await fetch(`https://api-formkit-docs-exmaples.formkit.workers.dev/guests?search=${search}`)
-  if (res.ok) {
-    const data = await res.json()
-    if (data.data) {
-      return data.data.map((result) => {
-        return {
-          label: result.name,
-          value: result.id,
-        }
-      })
-    }
-  }
-  return []
-}
+import { searchGuests } from 'api.js'
 </script>
 
 <template>
