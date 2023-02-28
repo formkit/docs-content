@@ -179,14 +179,18 @@ All of FormKit’s core inputs are written using schemas to allow for the greate
 It is important to understand the basic structure of a “standard” FormKit input, which is broken down into [sections](/essentials/inputs#sections):
 
 <figure class="full">
-  <FormKitInputDiagram
-    label-content="Email address"
-    prefix-content=""
-    suffix-content=""
-    input-content="test@example.com"
-    help-content="Please use your school email address."
-    message-content="Please provide a valid email."
-  />
+
+  ::FormKitInputDiagram
+  ---
+  label-content: "Email address"
+  prefix-content: ""
+  suffix-content: ""
+  input-content: "test@example.com"
+  help-content: "Please use your school email address."
+  message-content: "Please provide a valid email."
+  ---
+  ::
+
   <figcaption>Composition of a standard FormKit text input.</figcaption>
 </figure>
 
