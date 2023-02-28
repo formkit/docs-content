@@ -4,7 +4,10 @@ async function getGuests({ page, hasNextPage }) {
   if (res.ok) {
     const data = await res.json()
     if (data.data) {
-      return data.map((result) => {
+      if (data.current_page < data.total_pages) {
+        hasNextPage()
+      }
+      return data.data.map((result) => {
         return {
           label: result.name,
           value: result.id,
@@ -20,6 +23,7 @@ async function getGuests({ page, hasNextPage }) {
   <FormKit
     type="form"
     #default="{ value }"
+    :actions="false"
   >
     <FormKit
       name="vips"

@@ -43,6 +43,7 @@ async function getGuest(id, cachedOption) {
         22, 10
       ]
     }"
+    :actions="false"
   >
     <FormKit
       name="vips"

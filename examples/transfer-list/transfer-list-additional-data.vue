@@ -33,6 +33,7 @@ async function getGuest(id) {
   <FormKit
     type="form"
     #default="{ value }"
+    :actions="false"
   >
     <FormKit
       name="vips"

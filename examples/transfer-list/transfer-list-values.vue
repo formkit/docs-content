@@ -6,6 +6,7 @@ import { guests } from 'guests.js'
   <FormKit
     type="form"
     #default="{ value }"
+    :actions="false"
   >
     <FormKit
       name="vips"

@@ -12,6 +12,7 @@ const customFilter = (option, search) =>
     :value="{
       vips: ['Monica Baker', 'Marion Blanchard']
     }"
+    :actions="false"
   >
     <FormKit
       name="vips"

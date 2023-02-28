@@ -9,6 +9,7 @@ import { guests } from 'guests.js'
     :value="{
       vips: ['Monica Baker', 'Marion Blanchard']
     }"
+    :actions="false"
   >
     <FormKit
       name="vips"

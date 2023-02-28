@@ -21,7 +21,6 @@ async function getGuest(id, cachedOption) {
   if (res.ok) {
     const data = await res.json()
     if (data.data) {
-      console.log('data', data.data)
       return {
         label: data.data.name,
         value: data.data.id,
@@ -39,6 +38,12 @@ async function getGuest(id, cachedOption) {
   <FormKit
     type="form"
     #default="{ value }"
+    :actions="false"
+    :value="{
+      vips: [
+        3, 4
+      ]
+    }"
   >
     <FormKit
       name="vips"

@@ -20,6 +20,7 @@ async function getGuests() {
   <FormKit
     type="form"
     #default="{ value }"
+    :actions="false"
   >
     <FormKit
       name="vips"
