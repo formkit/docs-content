@@ -5,3 +5,7 @@ export function initials(str) {
     .map((item) => item.charAt(0).toUpperCase())
     .join('')
 }
+
+export const michaelJordan = (node) => {
+  return node.value[0] === '34'
+}

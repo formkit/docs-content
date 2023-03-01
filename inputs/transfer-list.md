@@ -239,12 +239,15 @@ name="Transfer List"
 
 ### Ranked order
 
+The transfer list input can be used to create a ranked list, let's do that with the greatest NBA players:
+
 <example
 name="Transfer List"
 :min-height="550"
 :file="[
   '/\_content/examples/transfer-list/transfer-list-ranking.vue',
-  '/\_content/examples/transfer-list/nba-top-players.js'
+  '/\_content/examples/transfer-list/nba-top-players.js',
+  '/\_content/examples/transfer-list/utils.js'
 ]"></example>
 
 ## Props & Attributes

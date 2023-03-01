@@ -1,5 +1,6 @@
 <script setup>
 import { nbaTopPlayers } from 'nba-top-players.js'
+import { michaelJordan } from 'utils.js'
 </script>
 
 <template>
@@ -13,6 +14,12 @@ import { nbaTopPlayers } from 'nba-top-players.js'
     placeholder="Search"
     target-label="Your top 10"
     source-label="All-time NBA players"
+    validation="michaelJordan"
+    :validation-rules="{ michaelJordan }"
+    validation-visibility="dirty"
+    :validation-messages="{
+      michaelJordan: 'Michael Jordan is the undisputed GOAT.'
+    }"
   >
     <template #sourceOption="{ option }">
       <div class="flex">
