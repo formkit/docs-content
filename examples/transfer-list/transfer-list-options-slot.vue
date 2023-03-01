@@ -13,6 +13,7 @@ import  { initials } from 'utils.js'
       ]
     }"
   >
+    <!-- %partial%::html:: -->
     <FormKit
       name="vips"
       type="transferlist"
@@ -43,6 +44,7 @@ import  { initials } from 'utils.js'
         </div>
       </template>
     </FormKit>
+    <!-- %partial%::html:: -->
   </FormKit>
 </template>
 

@@ -235,6 +235,17 @@ name="Transfer List"
   '/\_content/examples/transfer-list/utils.js'
 ]"></example>
 
+## Examples
+
+### Ranked order
+
+<example
+name="Transfer List"
+:min-height="550"
+:file="[
+  '/\_content/examples/transfer-list/transfer-list-ranking.vue',
+  '/\_content/examples/transfer-list/nba-top-players.js'
+]"></example>
 
 ## Props & Attributes
 
