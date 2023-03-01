@@ -314,6 +314,12 @@ name="Transfer List"
 ]">
 </reference-table>
 
+## Sections
+
+You can target a specific section of an input using that section's "key", allowing you to modify that section's classes, HTML (via :sections-schema), or content (via slots). Read more about sections here.
+
+### Wrapper of transfer list
+
 <div>
   <formkit-input-diagram
     :hide-on-small="true"
@@ -338,208 +344,17 @@ name="Transfer List"
                 class: 'flex',
                 children: [
                   {
-                    name: 'source',
-                    children: [
-                      {
-                        name: 'sourceHeader',
-                        class: 'flex',
-                        children: [
-                          {
-                            name: 'sourceHeaderLabel',
-                            content: 'Guests'
-                          },
-                          {
-                            name: 'sourceHeaderItemCount',
-                            content: '97'
-                          }
-                        ]
-                      },
-                      {
-                        name: 'sourceControls',
-                        children: [
-                          {
-                            name: 'sourceSearch',
-                            class: 'flex',
-                            children: [
-                              {
-                                name: 'sourceSearchInput',
-                              },
-                              {
-                                name: 'sourceSearchClear',
-                                class: 'small-pad',
-                                children: [
-                                  {
-                                    name: 'closeIcon',
-                                    content: '✕'
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        name: 'sourceListItems',
-                        children: [
-                          {
-                            name: 'sourceEmptyMessage',
-                            children: [
-                              {
-                                name: 'emptyMessageInner',
-                                content: 'No guests found'
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        name: 'sourceListItem',
-                        children: [
-                          {
-                            name: 'selectedIcon',
-                            content: '✓'
-                          },
-                          {
-                            name: 'sourceOption',
-                            content: 'John Doe'
-                          }
-                        ]
-                      },
-                      {
-                        name: 'sourceLoadMore',
-                        children: [
-                          {
-                            name: 'loadMoreInner',
-                            content: 'Load more',
-                            children: [
-                              {
-                                name: 'loaderIcon',
-                                content: '⌛'
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                    ]
+                    content: 'Source list',
+                    name: 'source'
                   },
                   {
-                    name: 'transferControls',
-                    children: [
-                      {
-                        name: 'transferButtonForwardAll',
-                        children: [
-                          {
-                            name: 'controlLabel',
-                            content: 'Add all values'
-                          },
-                          {
-                            name: 'fastForwardIcon',
-                            content: '⇥'
-                          }
-                        ]
-                      },
-                      {
-                        name: 'transferButtonForward',
-                        children: [
-                          {
-                            name: 'controlLabel',
-                            content: 'Add selected values'
-                          },
-                          {
-                            name: 'forwardIcon',
-                            content: '⇒'
-                          }
-                        ]
-                      },
-                      {
-                        name: 'transferButtonBackward',
-                        children: [
-                          {
-                            name: 'controlLabel',
-                            content: 'Remove selected values'
-                          },
-                          {
-                            name: 'backwardIcon',
-                            content: '⇐'
-                          }
-                        ]
-                      },
-                      {
-                        name: 'transferButtonBackwardAll',
-                        children: [
-                          {
-                            name: 'controlLabel',
-                            content: 'Remove all values'
-                          },
-                          {
-                            name: 'fastBackwardIcon',
-                            content: '⇤'
-                          }
-                        ]
-                      }
-                    ]
+                    content: 'Transfer controls',
+                    name: 'transferControls'
                   },
                   {
-                    name: 'target',
-                    children: [
-                      {
-                        name: 'targetHeader',
-                        class: 'flex',
-                        children: [
-                          {
-                            name: 'targetHeaderLabel',
-                            content: 'VIPs'
-                          },
-                          {
-                            name: 'targetHeaderItemCount',
-                            content: '3'
-                          }
-                        ]
-                      },
-                      {
-                        name: 'targetListItems',
-                        children: [
-                          {
-                            name: 'targetEmptyMessage',
-                            children: [
-                              {
-                                name: 'emptyMessageInner',
-                                content: 'No VIPs selected'
-                              }
-                            ]
-                          },
-                          {
-                            name: 'targetListItem',
-                            children: [
-                              {
-                                name: 'selectedIcon',
-                                content: '✓'
-                              },
-                              {
-                                name: 'targetOption',
-                                content: 'John Doe'
-                              }
-                            ]
-                          },
-                          {
-                            name: 'targetLoadMore',
-                            children: [
-                              {
-                                name: 'loadMoreInner',
-                                content: 'Load more',
-                                children: [
-                                  {
-                                    name: 'loaderIcon',
-                                    content: '⌛'
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  },
+                    content: 'Target list',
+                    name: 'target'
+                  }
                 ]
               },
               {
@@ -559,6 +374,264 @@ name="Transfer List"
   >
   </formkit-input-diagram>
 </div>
+
+### Source
+
+<div>
+  <formkit-input-diagram
+    :hide-on-small="true"
+    class="input-diagram--transfer-list"
+    :schema="[
+      {
+        name: 'source',
+        children: [
+          {
+            name: 'sourceHeader',
+            class: 'flex',
+            children: [
+              {
+                name: 'sourceHeaderLabel',
+                content: 'Guests'
+              },
+              {
+                name: 'sourceHeaderItemCount',
+                content: '97'
+              }
+            ]
+          },
+          {
+            name: 'sourceControls',
+            children: [
+              {
+                name: 'sourceSearch',
+                class: 'flex',
+                children: [
+                  {
+                    name: 'sourceSearchInput',
+                    class: 'large'
+                  },
+                  {
+                    name: 'sourceSearchClear',
+                    class: 'small',
+                    children: [
+                      {
+                        name: 'closeIcon',
+                        content: '✕'
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: 'sourceListItems',
+            children: [
+              {
+                name: 'sourceEmptyMessage',
+                children: [
+                  {
+                    name: 'emptyMessageInner',
+                    content: 'No guests found'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: 'sourceListItem',
+            class: 'flex',
+            children: [
+              {
+                name: 'selectedIcon',
+                content: '✓',
+                class: 'small'
+              },
+              {
+                name: 'sourceOption',
+                content: 'John Doe',
+                class: 'large'
+              }
+            ]
+          },
+          {
+            name: 'sourceLoadMore',
+            class: 'flex',
+            children: [
+              {
+                name: 'loadMoreInner',
+                children: [
+                  {
+                    name: 'loaderIcon',
+                    content: '⌛',
+                  }
+                ]
+              }
+            ]
+          },
+        ]
+      },
+    ]"
+  >
+  </formkit-input-diagram>
+</div>
+
+### Transfer controls
+
+<div>
+ <formkit-input-diagram
+    :hide-on-small="true"
+    class="input-diagram--transfer-list"
+    :schema="[
+      {
+        name: 'transferControls',
+        children: [
+          {
+            name: 'transferButtonForwardAll',
+            class: 'flex',
+            children: [
+              {
+                name: 'controlLabel',
+                class: 'small',
+              },
+              {
+                name: 'fastForwardIcon',
+                content: '⇥',
+                class: 'large'
+              }
+            ]
+          },
+          {
+            name: 'transferButtonForward',
+            class: 'flex',
+            children: [
+              {
+                name: 'controlLabel',
+                class: 'small'
+              },
+              {
+                name: 'forwardIcon',
+                content: '⇒',
+                class: 'large'
+              }
+            ]
+          },
+          {
+            name: 'transferButtonBackward',
+            class: 'flex',
+            children: [
+              {
+                name: 'controlLabel',
+                class: 'small'
+              },
+              {
+                name: 'backwardIcon',
+                content: '⇐',
+                class: 'large'
+              }
+            ]
+          },
+          {
+            name: 'transferButtonBackwardAll',
+            class: 'flex',
+            children: [
+              {
+                name: 'controlLabel',
+                class: 'small'
+              },
+              {
+                name: 'fastBackwardIcon',
+                content: '⇤',
+                class: 'large'
+              }
+            ]
+          }
+        ]
+      },
+    ]"
+  >
+  </formkit-input-diagram>
+</div>
+
+### Target
+
+<div>
+ <formkit-input-diagram
+    :hide-on-small="true"
+    class="input-diagram--transfer-list"
+    :schema="[
+       {
+        name: 'target',
+        children: [
+          {
+            name: 'targetHeader',
+            class: 'flex',
+            children: [
+              {
+                name: 'targetHeaderLabel',
+                content: 'VIPs',
+                class: 'large'
+              },
+              {
+                name: 'targetHeaderItemCount',
+                content: '3',
+                class: 'small'
+              }
+            ]
+          },
+          {
+            name: 'targetListItems',
+            children: [
+              {
+                name: 'targetEmptyMessage',
+                children: [
+                  {
+                    name: 'emptyMessageInner',
+                    content: 'No VIPs selected'
+                  }
+                ]
+              },
+              {
+                name: 'targetListItem',
+                class: 'flex',
+                children: [
+                  {
+                    name: 'selectedIcon',
+                    content: '✓',
+                    class: 'small'
+                  },
+                  {
+                    name: 'targetOption',
+                    content: 'John Doe',
+                    class: 'large'
+                  }
+                ]
+              },
+              {
+                name: 'targetLoadMore',
+                class: 'flex',
+                children: [
+                  {
+                    name: 'loadMoreInner',
+                    children: [
+                      {
+                        name: 'loaderIcon',
+                        content: '⌛'
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+    ]"
+  >
+  </formkit-input-diagram>
+</div>
+
+
 
 <reference-table type="sectionKeys" primary="section-key" :data="[
   {
