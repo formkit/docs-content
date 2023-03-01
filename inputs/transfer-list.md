@@ -314,6 +314,243 @@ name="Transfer List"
 ]">
 </reference-table>
 
+<div>
+  <formkit-input-diagram
+    :hide-on-small="true"
+    class="input-diagram--autocomplete-outer autocomplete-option-single"
+    :schema="[
+      {
+        name: 'outer',
+        children: [
+          {
+            name: 'fieldset',
+            children: [
+              {
+                name: 'legend',
+                content: 'Choose VIPs for the party',
+              },
+              {
+                name: 'help',
+                content: 'You can select up to 3 VIPs.',
+              },
+              {
+                name: 'wrapper',
+                class: 'flex',
+                children: [
+                  {
+                    name: 'source',
+                    children: [
+                      {
+                        name: 'sourceHeader',
+                        class: 'flex',
+                        children: [
+                          {
+                            name: 'sourceHeaderLabel',
+                            content: 'Guests'
+                          },
+                          {
+                            name: 'sourceHeaderItemCount',
+                            content: '97'
+                          }
+                        ]
+                      },
+                      {
+                        name: 'sourceControls',
+                        children: [
+                          {
+                            name: 'sourceSearch',
+                            class: 'flex',
+                            children: [
+                              {
+                                name: 'sourceSearchInput',
+                              },
+                              {
+                                name: 'sourceSearchClear',
+                                class: 'small-pad',
+                                children: [
+                                  {
+                                    name: 'closeIcon',
+                                    content: '✕'
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        name: 'sourceListItems',
+                        children: [
+                          {
+                            name: 'sourceEmptyMessage',
+                            children: [
+                              {
+                                name: 'emptyMessageInner',
+                                content: 'No guests found'
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        name: 'sourceListItem',
+                        children: [
+                          {
+                            name: 'selectedIcon',
+                            content: '✓'
+                          },
+                          {
+                            name: 'sourceOption',
+                            content: 'John Doe'
+                          }
+                        ]
+                      },
+                      {
+                        name: 'sourceLoadMore',
+                        children: [
+                          {
+                            name: 'loadMoreInner',
+                            content: 'Load more',
+                            children: [
+                              {
+                                name: 'loaderIcon',
+                                content: '⌛'
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                    ]
+                  },
+                  {
+                    name: 'transferControls',
+                    children: [
+                      {
+                        name: 'transferButtonForwardAll',
+                        children: [
+                          {
+                            name: 'controlLabel',
+                            content: 'Add all values'
+                          },
+                          {
+                            name: 'fastForwardIcon',
+                            content: '⇥'
+                          }
+                        ]
+                      },
+                      {
+                        name: 'transferButtonForward',
+                        children: [
+                          {
+                            name: 'controlLabel',
+                            content: 'Add selected values'
+                          },
+                          {
+                            name: 'forwardIcon',
+                            content: '⇒'
+                          }
+                        ]
+                      },
+                      {
+                        name: 'transferButtonBackward',
+                        children: [
+                          {
+                            name: 'controlLabel',
+                            content: 'Remove selected values'
+                          },
+                          {
+                            name: 'backwardIcon',
+                            content: '⇐'
+                          }
+                        ]
+                      },
+                      {
+                        name: 'transferButtonBackwardAll',
+                        children: [
+                          {
+                            name: 'controlLabel',
+                            content: 'Remove all values'
+                          },
+                          {
+                            name: 'fastBackwardIcon',
+                            content: '⇤'
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                      name: 'target',
+                      children: [
+                        {
+                          name: 'targetHeader',
+                          class: 'flex',
+                          children: [
+                            {
+                              name: 'targetHeaderLabel',
+                              content: 'VIPs'
+                            },
+                            {
+                              name: 'targetHeaderItemCount',
+                              content: '3'
+                            }
+                          ]
+                        },
+                        {
+                          name: 'targetListItems',
+                          children: [
+                            {
+                              name: 'targetEmptyMessage',
+                              children: [
+                                {
+                                  name: 'emptyMessageInner',
+                                  content: 'No VIPs selected'
+                                }
+                              ]
+                            },
+                            {
+                              name: 'targetListItem',
+                              children: [
+                                {
+                                  name: 'selectedIcon',
+                                  content: '✓'
+                                },
+                                {
+                                  name: 'targetOption',
+                                  content: 'John Doe'
+                                }
+                              ]
+                            },
+                            {
+                              name: 'targetLoadMore',
+                              children: [
+                                {
+                                  name: 'loadMoreInner',
+                                  content: 'Load more',
+                                  children: [
+                                    {
+                                      name: 'loaderIcon',
+                                      content: '⌛'
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                ]
+              },
+            ]
+          }
+        ]
+      }
+    ]"
+  >
+  </formkit-input-diagram>
+</div>
+
 <reference-table type="sectionKeys" primary="section-key" :data="[
   {
     'section-key': 'fieldset',
