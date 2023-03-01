@@ -480,68 +480,77 @@ name="Transfer List"
                     ]
                   },
                   {
-                      name: 'target',
-                      children: [
-                        {
-                          name: 'targetHeader',
-                          class: 'flex',
-                          children: [
-                            {
-                              name: 'targetHeaderLabel',
-                              content: 'VIPs'
-                            },
-                            {
-                              name: 'targetHeaderItemCount',
-                              content: '3'
-                            }
-                          ]
-                        },
-                        {
-                          name: 'targetListItems',
-                          children: [
-                            {
-                              name: 'targetEmptyMessage',
-                              children: [
-                                {
-                                  name: 'emptyMessageInner',
-                                  content: 'No VIPs selected'
-                                }
-                              ]
-                            },
-                            {
-                              name: 'targetListItem',
-                              children: [
-                                {
-                                  name: 'selectedIcon',
-                                  content: '✓'
-                                },
-                                {
-                                  name: 'targetOption',
-                                  content: 'John Doe'
-                                }
-                              ]
-                            },
-                            {
-                              name: 'targetLoadMore',
-                              children: [
-                                {
-                                  name: 'loadMoreInner',
-                                  content: 'Load more',
-                                  children: [
-                                    {
-                                      name: 'loaderIcon',
-                                      content: '⌛'
-                                    }
-                                  ]
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      ]
-                    },
+                    name: 'target',
+                    children: [
+                      {
+                        name: 'targetHeader',
+                        class: 'flex',
+                        children: [
+                          {
+                            name: 'targetHeaderLabel',
+                            content: 'VIPs'
+                          },
+                          {
+                            name: 'targetHeaderItemCount',
+                            content: '3'
+                          }
+                        ]
+                      },
+                      {
+                        name: 'targetListItems',
+                        children: [
+                          {
+                            name: 'targetEmptyMessage',
+                            children: [
+                              {
+                                name: 'emptyMessageInner',
+                                content: 'No VIPs selected'
+                              }
+                            ]
+                          },
+                          {
+                            name: 'targetListItem',
+                            children: [
+                              {
+                                name: 'selectedIcon',
+                                content: '✓'
+                              },
+                              {
+                                name: 'targetOption',
+                                content: 'John Doe'
+                              }
+                            ]
+                          },
+                          {
+                            name: 'targetLoadMore',
+                            children: [
+                              {
+                                name: 'loadMoreInner',
+                                content: 'Load more',
+                                children: [
+                                  {
+                                    name: 'loaderIcon',
+                                    content: '⌛'
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
                 ]
               },
+              {
+                name: 'messages',
+                children: [
+                  {
+                    name: 'message',
+                    content: 'Sorry, you may not add more than 3 guests.',
+                  }
+                ]
+              }
             ]
           }
         ]
