@@ -1,5 +1,7 @@
 export async function getGuests() {
-  const res = await fetch('https://api-formkit-docs-examples.formkit.workers.dev/all-guests')
+  const res = await fetch(
+    'https://api-formkit-docs-examples.formkit.workers.dev/guests'
+  )
   if (res.ok) {
     const data = await res.json()
     if (data.data) {
@@ -15,7 +17,9 @@ export async function getGuests() {
 }
 
 export async function paginateGuests({ page, hasNextPage }) {
-  const res = await fetch(`https://api-formkit-docs-examples.formkit.workers.dev/guests?page=${page}`)
+  const res = await fetch(
+    `https://api-formkit-docs-examples.formkit.workers.dev/guests?page=${page}`
+  )
   if (res.ok) {
     const data = await res.json()
     if (data.data) {
@@ -37,7 +41,9 @@ export async function searchGuests({ search }) {
   if (!search) {
     return []
   }
-  const res = await fetch(`https://api-formkit-docs-exmaples.formkit.workers.dev/guests?search=${search}`)
+  const res = await fetch(
+    `https://api-formkit-docs-exmaples.formkit.workers.dev/guests?search=${search}`
+  )
   if (res.ok) {
     const data = await res.json()
     if (data.data) {
@@ -54,7 +60,9 @@ export async function searchGuests({ search }) {
 
 export async function getGuest(id, cachedOption) {
   if (cachedOption) return cachedOption
-  const res = await fetch(`https://api-formkit-docs-examples.formkit.workers.dev/guests/${id}`)
+  const res = await fetch(
+    `https://api-formkit-docs-examples.formkit.workers.dev/guests/${id}`
+  )
   if (res.ok) {
     const data = await res.json()
     if (data.data) {
@@ -68,7 +76,9 @@ export async function getGuest(id, cachedOption) {
 
 export async function loadGuest(id, cachedOption) {
   if (cachedOption.hasLoaded) return
-  const res = await fetch(`https://api-formkit-docs-examples.formkit.workers.dev/guests/${id}`)
+  const res = await fetch(
+    `https://api-formkit-docs-examples.formkit.workers.dev/guests/${id}`
+  )
   if (res.ok) {
     const data = await res.json()
     if (data.data) {

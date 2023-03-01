@@ -55,7 +55,7 @@ file="/\_content/examples/transfer-list/transfer-list-empty-messages.vue"></exam
 
 The `options` prop can accept three different formats of values:
 
-- An array of objects with `value` and `label` keys (see example above)
+- An array of objects with `value` and `label` keys
 - An array of strings <code>['A', 'B', 'C']</code>
 - An object literal with key-value pairs <code>{ a: 'A', b: 'B', c: 'C' }</code>
 - A function that returns any of the above
@@ -644,8 +644,6 @@ You can target a specific section of an input using that section's "key", allowi
   >
   </formkit-input-diagram>
 </div>
-
-
 
 <reference-table type="sectionKeys" primary="section-key" :data="[
   {
