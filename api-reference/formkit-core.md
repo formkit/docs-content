@@ -4,7 +4,7 @@ title: formkit/core
 
 # @formkit/core
 
-<page-toc></page-toc>
+:PageToc
 
 ## Introduction
 
@@ -23,18 +23,14 @@ Add a child to a node. The node must be a group or list.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 add: (node: FormKitNode, index?: number) => FormKitNode
 ```
 
-</client-only>
-
 #### Parameters
 
-- node — A [FormKitNode](#formkitnode). 
-- index *optional* — A index to where it will added to.
+- node — A [FormKitNode](#formkitnode).
+- index _optional_ — A index to where it will added to.
 
 #### Returns
 
@@ -46,13 +42,9 @@ The address of the current node from the root of the tree.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 address: FormKitAddress
 ```
-
-</client-only>
 
 #### Returns
 
@@ -64,13 +56,9 @@ Adds props to the given node by removing them from node.props.attrs and moving t
 
 #### Signature
 
-<client-only>
-
 ```typescript
 addProps: (props: string[]) => FormKitNode
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -84,19 +72,15 @@ The [FormKitNode](#formkitnode).
 
 Gets a node at another address. Addresses are dot-syntax paths (or arrays) of node names. For example: `form.users.0.first_name`. There are a few "special" traversal tokens as well:
 
-- `$root` — Selects the root node. 
-- `$parent` — Selects the parent node. 
+- `$root` — Selects the root node.
+- `$parent` — Selects the parent node.
 - `$self` — Selects the current node.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 at: (address: FormKitAddress | string) => FormKitNode | undefined
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -112,13 +96,9 @@ An array of child nodes (groups and lists).
 
 #### Signature
 
-<client-only>
-
 ```typescript
 children: Array<FormKitNode>
 ```
-
-</client-only>
 
 #### Returns
 
@@ -130,18 +110,14 @@ Clears the errors of the node, and optionally all the children.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 clearErrors: (clearChildren?: boolean, sourceKey?: string) => FormKitNode
 ```
 
-</client-only>
-
 #### Parameters
 
-- `clearChildren` *optional* — If it should clear the children. 
-- `sourceKey` *optional* — A source key to use for reset.
+- `clearChildren` _optional_ — If it should clear the children.
+- `sourceKey` _optional_ — A source key to use for reset.
 
 #### Returns
 
@@ -154,13 +130,9 @@ An object of [FormKitConfig](#formkitconfig) that is shared tree
 
 #### Signature
 
-<client-only>
-
 ```typescript
 config: FormKitConfig
 ```
-
-</client-only>
 
 #### Returns
 
@@ -172,13 +144,9 @@ Defines the current input's library type definition including node type, schema,
 
 #### Signature
 
-<client-only>
-
 ```typescript
 define: (definition: FormKitTypeDefinition) => void
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -190,13 +158,9 @@ Removes the node from the global registry, its parent, and emits the 'destroying
 
 #### Signature
 
-<client-only>
-
 ```typescript
 destroy: () => void
 ```
-
-</client-only>
 
 ### each()
 
@@ -204,13 +168,9 @@ Perform given callback on each of the given node's children.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 each: (callback: FormKitChildCallback) => void
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -222,19 +182,15 @@ Emit an event from the node so it can be listened by [on](#on).
 
 #### Signature
 
-<client-only>
-
 ```typescript
 emit: (event: string, payload?: any, bubble?: boolean) => FormKitNode
 ```
 
-</client-only>
-
 #### Parameters
 
-- `event` — The event name to be emitted. 
-- `payload` *optional* — A value to be passed together with the event. 
-- `bubble` *optional* — If the event should bubble to the parent.
+- `event` — The event name to be emitted.
+- `payload` _optional_ — A value to be passed together with the event.
+- `bubble` _optional_ — If the event should bubble to the parent.
 
 #### Returns
 
@@ -246,21 +202,17 @@ Within a given tree, find a node matching a given selector. Selectors can be sim
 
 #### Signature
 
-<client-only>
-
 ```typescript
 find: (
- selector: string,
- searcher?: keyof FormKitNode | FormKitSearchFunction
+  selector: string,
+  searcher?: keyof FormKitNode | FormKitSearchFunction
 ) => FormKitNode | undefined
 ```
 
-</client-only>
-
 #### Parameters
 
-- `selector` — A selector string. 
-- `searcher` *optional* — A keyof [FormKitNode](#formkitnode) or [FormKitSearchFunction](#formkitsearchfunction).
+- `selector` — A selector string.
+- `searcher` _optional_ — A keyof [FormKitNode](#formkitnode) or [FormKitSearchFunction](#formkitsearchfunction).
 
 #### Returns
 
@@ -272,13 +224,9 @@ Set of hooks.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 hook: FormKitHooks
 ```
-
-</client-only>
 
 #### Returns
 
@@ -290,13 +238,9 @@ The index of a node compared to its siblings. This is only applicable in cases w
 
 #### Signature
 
-<client-only>
-
 ```typescript
 index: number
 ```
-
-</client-only>
 
 #### Returns
 
@@ -308,18 +252,14 @@ The function used to set the value of a node. All changes to a node's value shou
 
 #### Signature
 
-<client-only>
-
 ```typescript
 input: (value: unknown, async?: boolean) => Promise<unknown>
 ```
 
-</client-only>
-
 #### Parameters
 
-- `value` — Any value to used for the node. 
-- `async` *optional* — If the input should happen asynchronously.
+- `value` — Any value to used for the node.
+- `async` _optional_ — If the input should happen asynchronously.
 
 #### Returns
 
@@ -331,13 +271,9 @@ Begins as false, set to true when the node is finished being created.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 isCreated: boolean
 ```
-
-</client-only>
 
 #### Returns
 
@@ -349,13 +285,9 @@ Boolean reflecting the settlement state of the node and its subtree.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 isSettled: boolean
 ```
-
-</client-only>
 
 #### Returns
 
@@ -367,13 +299,9 @@ A counting ledger for arbitrary message counters.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 ledger: FormKitLedger
 ```
-
-</client-only>
 
 #### Returns
 
@@ -385,13 +313,9 @@ The name of the input in the node tree. When a node is a child of a list, this a
 
 #### Signature
 
-<client-only>
-
 ```typescript
 name: string
 ```
-
-</client-only>
 
 #### Returns
 
@@ -403,13 +327,9 @@ Removes an event listener by its token. Receipts can be shared among many event 
 
 #### Signature
 
-<client-only>
-
 ```typescript
 off: (receipt: string) => FormKitNode
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -425,17 +345,13 @@ Adds an event listener for a given event, and returns a "receipt" which is a ran
 
 #### Signature
 
-<client-only>
-
 ```typescript
 on: (eventName: string, listener: FormKitEventListener) => string
 ```
 
-</client-only>
-
 #### Parameters
 
-- `eventName` — The event name to listen to. 
+- `eventName` — The event name to listen to.
 - `listener` — A [FormKitEventListener](#formkiteventlistener) to run when the event happens.
 
 #### Returns
@@ -448,13 +364,9 @@ The parent of a node.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 parent: FormKitNode | null
 ```
-
-</client-only>
 
 #### Returns
 
@@ -466,13 +378,9 @@ An proxied object of props. These are typically provided by the adapter of choic
 
 #### Signature
 
-<client-only>
-
 ```typescript
 props: Partial<FormKitProps>
 ```
-
-</client-only>
 
 #### Returns
 
@@ -484,13 +392,9 @@ Removes a child from the node.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 remove: (node: FormKitNode) => FormKitNode
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -506,13 +410,9 @@ Resets the node’s value back to its original value.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 reset: () => FormKitNode
 ```
-
-</client-only>
 
 #### Returns
 
@@ -524,13 +424,9 @@ Retrieves the root node of a tree. This is accomplished via tree-traversal on-re
 
 #### Signature
 
-<client-only>
-
 ```typescript
 root: FormKitNode
 ```
-
-</client-only>
 
 #### Returns
 
@@ -542,18 +438,14 @@ Sets errors on the input, and optionally to child inputs.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 setErrors: (localErrors: ErrorMessages, childErrors?: ErrorMessages) => void
 ```
 
-</client-only>
-
 #### Parameters
 
-- `localErrors` — A [ErrorMessages](#errormessages) to be used. 
-- `childErrors` *optional* — A [ErrorMessages](#errormessages) to be used for children.
+- `localErrors` — A [ErrorMessages](#errormessages) to be used.
+- `childErrors` _optional_ — A [ErrorMessages](#errormessages) to be used for children.
 
 ### settled
 
@@ -561,13 +453,9 @@ A promise that resolves when a node and its entire subtree is settled. In other 
 
 #### Signature
 
-<client-only>
-
 ```typescript
 settled: Promise<unknown>
 ```
-
-</client-only>
 
 #### Returns
 
@@ -579,13 +467,9 @@ The internal node store.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 store: FormKitStore
 ```
-
-</client-only>
 
 #### Returns
 
@@ -597,13 +481,9 @@ Triggers a submit event on the nearest form.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 submit: () => void
 ```
-
-</client-only>
 
 ### t()
 
@@ -611,13 +491,9 @@ A text or translation function that exposes a given string to the "text" hook. A
 
 #### Signature
 
-<client-only>
-
 ```typescript
 t: (key: string | FormKitTextFragment) => string
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -633,13 +509,9 @@ The type of node, should only be 'input', 'list', or 'group'.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 type: FormKitNodeType
 ```
-
-</client-only>
 
 #### Returns
 
@@ -651,23 +523,19 @@ Registers a new plugin on the node and its subtree.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 use: (
- plugin: FormKitPlugin | FormKitPlugin[] | Set<FormKitPlugin>,
- run?: boolean,
- library?: boolean
+  plugin: FormKitPlugin | FormKitPlugin[] | Set<FormKitPlugin>,
+  run?: boolean,
+  library?: boolean
 ) => FormKitNode
 ```
 
-</client-only>
-
 #### Parameters
 
-- `plugin` — A [FormKitPlugin](#formkitplugin) or an Array or Set of [FormKitPlugin](#formkitplugin). 
-- `run` *optional* — Should the plugin be executed on creation. 
-- `library` *optional* — Should the plugin's library function be executed on creation.
+- `plugin` — A [FormKitPlugin](#formkitplugin) or an Array or Set of [FormKitPlugin](#formkitplugin).
+- `run` _optional_ — Should the plugin be executed on creation.
+- `library` _optional_ — Should the plugin's library function be executed on creation.
 
 #### Returns
 
@@ -679,13 +547,9 @@ The value of the input. This should never be directly modified. Any desired muta
 
 #### Signature
 
-<client-only>
-
 ```typescript
 readonly value: unknown
 ```
-
-</client-only>
 
 ### walk()
 
@@ -693,18 +557,14 @@ Performs a function on the node and every node in its subtree. This is an expens
 
 #### Signature
 
-<client-only>
-
 ```typescript
 walk: (callback: FormKitChildCallback, stopOnFalse?: boolean) => void
 ```
 
-</client-only>
-
 #### Parameters
 
-- `callback` — A [FormKitChildCallback](#formkitchildcallback) to be executed for each child. 
-- `stopOnFalse` *optional* — If it should stop when the return is false.
+- `callback` — A [FormKitChildCallback](#formkitchildcallback) to be executed for each child.
+- `stopOnFalse` _optional_ — If it should stop when the return is false.
 
 ## Functions
 
@@ -714,13 +574,9 @@ Perform a breadth-first search on a node subtree and locate the first instance o
 
 #### Signature
 
-<client-only>
-
 ```typescript
 bfs(tree: FormKitNode, searchValue: string | number, searchGoal?: keyof FormKitNode | FormKitSearchFunction): FormKitNode | undefined;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -730,7 +586,7 @@ bfs(tree: FormKitNode, searchValue: string | number, searchGoal?: keyof FormKitN
 
 #### Returns
 
- A [FormKitNode](#formkitnode) or `undefined`.
+A [FormKitNode](#formkitnode) or `undefined`.
 
 ### clearErrors()
 
@@ -738,13 +594,9 @@ Clears errors on the node and optionally its children.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 clearErrors(id: string, clearChildren?: boolean): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -757,13 +609,9 @@ Compiles a logical string like `"a != z || b == c"` into a single function. The 
 
 #### Signature
 
-<client-only>
-
 ```typescript
 compile(expr: string): FormKitCompilerOutput;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -771,24 +619,20 @@ compile(expr: string): FormKitCompilerOutput;
 
 #### Returns
 
- A [FormKitCompilerOutput](#formkitcompileroutput).
+A [FormKitCompilerOutput](#formkitcompileroutput).
 
 #### Examples
 
-<client-only>
-
 ```typescript
 let name = {
-  value: 'jon'
+  value: 'jon',
 }
 const condition = compile("$name == 'bob'").provide((token) => {
- return () => name.value // must return a function!
+  return () => name.value // must return a function!
 })
 
 condition() // false
 ```
-
-</client-only>
 
 ### createClasses()
 
@@ -796,13 +640,9 @@ Function that produces a standardized object representation of CSS classes.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 createClasses(propertyKey: string, node: FormKitNode, sectionClassList?: FormKitClasses | string | Record<string, boolean>): Record<string, boolean>;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -812,7 +652,7 @@ createClasses(propertyKey: string, node: FormKitNode, sectionClassList?: FormKit
 
 #### Returns
 
- `Record<string, boolean>`
+`Record<string, boolean>`
 
 ### createConfig()
 
@@ -820,13 +660,9 @@ Creates a new instance of a global configuration option. This object is essentia
 
 #### Signature
 
-<client-only>
-
 ```typescript
 createConfig(options?: Partial<FormKitConfig>): FormKitRootConfig;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -834,7 +670,7 @@ createConfig(options?: Partial<FormKitConfig>): FormKitRootConfig;
 
 #### Returns
 
- A [FormKitRootConfig](#formkitrootconfig).
+A [FormKitRootConfig](#formkitrootconfig).
 
 ### createMessage()
 
@@ -842,13 +678,9 @@ Creates a new FormKitMessage object.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 createMessage(conf: Partial<FormKitMessage>, node?: FormKitNode): FormKitMessageProps;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -857,7 +689,7 @@ createMessage(conf: Partial<FormKitMessage>, node?: FormKitNode): FormKitMessage
 
 #### Returns
 
- A [FormKitMessageProps](#formkitmessageprops).
+A [FormKitMessageProps](#formkitmessageprops).
 
 ### createNode()
 
@@ -865,13 +697,9 @@ Creates a new instance of a FormKit Node. Nodes are the atomic unit of a FormKit
 
 #### Signature
 
-<client-only>
-
 ```typescript
 createNode(options?: FormKitOptions): FormKitNode;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -879,11 +707,9 @@ createNode(options?: FormKitOptions): FormKitNode;
 
 #### Returns
 
- A [FormKitNode](/api-reference/formkit-core#formkitnode).
+A [FormKitNode](/api-reference/formkit-core#formkitnode).
 
 #### Examples
-
-<client-only>
 
 ```javascript
 import { createNode } from '@formkit/core'
@@ -897,21 +723,15 @@ console.log(input.value)
 // 'hello node world'
 ```
 
-</client-only>
-
 ### createValue()
 
 Creates the initial value for a node based on the options passed in and the type of the input.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 createValue(options: FormKitOptions): unknown;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -919,7 +739,7 @@ createValue(options: FormKitOptions): unknown;
 
 #### Returns
 
- `unknown`
+`unknown`
 
 ### deregister()
 
@@ -927,13 +747,9 @@ Deregister a node from the registry.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 deregister(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -945,13 +761,9 @@ Emits an error. Generally should result in an exception.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 error(code: number, data?: any): never;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -964,13 +776,9 @@ Combines multiple class lists into a single list.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 generateClassList(node: FormKitNode, property: string, ...args: Record<string, boolean>[]): string | null;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -980,7 +788,7 @@ generateClassList(node: FormKitNode, property: string, ...args: Record<string, b
 
 #### Returns
 
- `string | null`
+`string | null`
 
 ### getNode()
 
@@ -988,13 +796,9 @@ Get a node by a particular id.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 getNode(id: string): FormKitNode | undefined;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -1002,7 +806,7 @@ getNode(id: string): FormKitNode | undefined;
 
 #### Returns
 
- A [FormKitNode](#formkitnode) or `undefined`.
+A [FormKitNode](#formkitnode) or `undefined`.
 
 ### isComponent()
 
@@ -1010,13 +814,9 @@ Type narrow that a node is a DOM node.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 isComponent(node: string | Record<PropertyKey, any>): node is FormKitSchemaComponent;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -1024,7 +824,7 @@ isComponent(node: string | Record<PropertyKey, any>): node is FormKitSchemaCompo
 
 #### Returns
 
- `boolean`
+`boolean`
 
 ### isConditional()
 
@@ -1032,14 +832,10 @@ Determines if a node is conditionally rendered or not.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 isConditional(node: FormKitSchemaNode): node is FormKitSchemaCondition;
 isConditional(node: FormKitSchemaAttributesCondition | FormKitSchemaAttributes): node is FormKitSchemaAttributesCondition;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -1047,7 +843,7 @@ isConditional(node: FormKitSchemaAttributesCondition | FormKitSchemaAttributes):
 
 #### Returns
 
- `boolean`
+`boolean`
 
 ### isDOM()
 
@@ -1055,13 +851,9 @@ Type narrow that a node is a DOM node.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 isDOM(node: string | Record<PropertyKey, any>): node is FormKitSchemaDOMNode;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -1069,7 +861,7 @@ isDOM(node: string | Record<PropertyKey, any>): node is FormKitSchemaDOMNode;
 
 #### Returns
 
- `boolean`
+`boolean`
 
 ### isList()
 
@@ -1077,13 +869,9 @@ A simple type guard to determine if the context being evaluated is a list type.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 isList(arg: FormKitContextShape): arg is FormKitListContext;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -1091,7 +879,7 @@ isList(arg: FormKitContextShape): arg is FormKitListContext;
 
 #### Returns
 
- Returns a `boolean`.
+Returns a `boolean`.
 
 ### isNode()
 
@@ -1099,13 +887,9 @@ Determine if a given object is a node.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 isNode(node: any): node is FormKitNode;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -1113,11 +897,9 @@ isNode(node: any): node is FormKitNode;
 
 #### Returns
 
- Returns a `boolean`.
+Returns a `boolean`.
 
 #### Examples
-
-<client-only>
 
 ```javascript
 import { isNode, createNode } from '@formkit/core'
@@ -1127,7 +909,7 @@ const input = createNode({
   value: 'hello node world',
 })
 
-const obj = {};
+const obj = {}
 
 isNode(obj)
 // false
@@ -1136,21 +918,15 @@ isNode(input)
 // true
 ```
 
-</client-only>
-
 ### isSugar()
 
 Determines if the node is syntactic sugar or not.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 isSugar(node: FormKitSchemaNode): node is FormKitSchemaFormKit;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -1158,7 +934,7 @@ isSugar(node: FormKitSchemaNode): node is FormKitSchemaFormKit;
 
 #### Returns
 
- `boolean`
+`boolean`
 
 ### names()
 
@@ -1166,15 +942,11 @@ Create a name-based dictionary of all children in an array.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 names(children: FormKitNode[]): {
     [index: string]: FormKitNode;
 };
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -1182,7 +954,7 @@ names(children: FormKitNode[]): {
 
 #### Returns
 
- A dictionary of named [FormKitNode](#formkitnode).
+A dictionary of named [FormKitNode](#formkitnode).
 
 ### register()
 
@@ -1190,13 +962,9 @@ Registers a node to the registry _if_ the node is a root node, _or_ if the node 
 
 #### Signature
 
-<client-only>
-
 ```typescript
 register(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -1208,13 +976,9 @@ Resets an input to its "initial" value. If the input is a group or list it reset
 
 #### Signature
 
-<client-only>
-
 ```typescript
 reset(id: string | FormKitNode, resetTo?: unknown): FormKitNode | undefined;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -1223,7 +987,7 @@ reset(id: string | FormKitNode, resetTo?: unknown): FormKitNode | undefined;
 
 #### Returns
 
- A [FormKitNode](#formkitnode) or `undefined`.
+A [FormKitNode](#formkitnode) or `undefined`.
 
 ### resetCount()
 
@@ -1231,13 +995,9 @@ Resets the global number of node registrations, useful for deterministic node na
 
 #### Signature
 
-<client-only>
-
 ```typescript
 resetCount(): void;
 ```
-
-</client-only>
 
 ### resetRegistry()
 
@@ -1245,13 +1005,9 @@ Resets the entire registry. Deregisters all nodes and removes all listeners.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 resetRegistry(): void;
 ```
-
-</client-only>
 
 ### setErrors()
 
@@ -1259,13 +1015,9 @@ Sets errors on a form, group, or input.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 setErrors(id: string, localErrors: ErrorMessages, childErrors?: ErrorMessages): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -1279,13 +1031,9 @@ Submits a FormKit form programmatically.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 submitForm(id: string): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -1297,13 +1045,9 @@ Converts syntactic sugar nodes to standard nodes.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 sugar<T extends FormKitSchemaNode>(node: T): Exclude<FormKitSchemaNode, string | FormKitSchemaFormKit>;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -1311,7 +1055,7 @@ sugar<T extends FormKitSchemaNode>(node: T): Exclude<FormKitSchemaNode, string |
 
 #### Returns
 
- A [FormKitSchemaNode](#formkitschemanode) without the properties of [FormKitSchemaFormKit](#formkitschemaformkit).
+A [FormKitSchemaNode](#formkitschemanode) without the properties of [FormKitSchemaFormKit](#formkitschemaformkit).
 
 ### warn()
 
@@ -1319,13 +1063,9 @@ Globally emits a warning.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 warn(code: number, data?: any): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -1338,18 +1078,14 @@ A way of watching changes in the global registry.
 
 #### Signature
 
-<client-only>
-
 ```typescript
 watchRegistry(id: string, callback: FormKitEventListener): void;
 ```
 
-</client-only>
-
 #### Parameters
 
 - `id` — A dot
--syntax id where the node is located.
+  -syntax id where the node is located.
 - `callback` — A callback in the format of [FormKitEventListener](#formkiteventlistener) to notify when the node is set or removed.
 
 ## TypeScript
@@ -1358,909 +1094,750 @@ watchRegistry(id: string, callback: FormKitEventListener): void;
 
 The callback type for node.each().
 
-<client-only>
-
 ```typescript
 interface FormKitChildCallback {
-    (child: FormKitNode): any;
+  (child: FormKitNode): any
 }
 ```
-
-</client-only>
 
 ### FormKitChildValue
 
 A descriptor of a child value, generally passed up a node tree.
 
-<client-only>
-
 ```typescript
 interface FormKitChildValue {
-    from?: number | symbol;
-    name: string | number | symbol;
-    value: any;
+  from?: number | symbol
+  name: string | number | symbol
+  value: any
 }
 ```
-
-</client-only>
 
 ### FormKitClasses
 
 Definition for a function that produces CSS classes.
 
-<client-only>
-
 ```typescript
 interface FormKitClasses {
-    (node: FormKitNode, sectionKey: string): string | Record<string, boolean>;
+  (node: FormKitNode, sectionKey: string): string | Record<string, boolean>
 }
 ```
-
-</client-only>
 
 ### FormKitCompilerOutput
 
 The compiler output, a function that adds the required tokens.
 
-<client-only>
-
 ```typescript
 interface FormKitCompilerOutput {
-    (tokens?: Record<string, any>): boolean | number | string;
-    provide: FormKitCompilerProvider;
+  (tokens?: Record<string, any>): boolean | number | string
+  provide: FormKitCompilerProvider
 }
 ```
-
-</client-only>
 
 ### FormKitConfig
 
 General "app" like configuration options, these are automatically inherited by all children — they are not reactive.
 
-<client-only>
-
 ```typescript
 interface FormKitConfig {
-    [index: string]: any;
-    classes?: Record<string, FormKitClasses | string | Record<string, boolean>>;
-    delimiter: string;
-    rootClasses: (sectionKey: string, node: FormKitNode) => Record<string, boolean>;
-    rootConfig?: FormKitRootConfig;
+  [index: string]: any
+  classes?: Record<string, FormKitClasses | string | Record<string, boolean>>
+  delimiter: string
+  rootClasses: (
+    sectionKey: string,
+    node: FormKitNode
+  ) => Record<string, boolean>
+  rootConfig?: FormKitRootConfig
 }
 ```
-
-</client-only>
 
 ### FormKitContext
 
 The interface of a FormKit node's context object. A FormKit node is a proxy of this object.
 
-<client-only>
-
 ```typescript
 interface FormKitContext {
-    _d: number;
-    _e: FormKitEventEmitter;
-    _resolve: ((value: unknown) => void) | false;
-    _tmo: number | false;
-    _value: unknown;
-    children: Array<FormKitNode>;
-    config: FormKitConfig;
-    context?: FormKitFrameworkContext;
-    hook: FormKitHooks;
-    isCreated: boolean;
-    isSettled: boolean;
-    ledger: FormKitLedger;
-    name: string | symbol;
-    parent: FormKitNode | null;
-    plugins: Set<FormKitPlugin>;
-    props: Partial<FormKitProps>;
-    settled: Promise<unknown>;
-    store: FormKitStore;
-    traps: FormKitTraps;
-    type: FormKitNodeType;
-    value: unknown;
+  _d: number
+  _e: FormKitEventEmitter
+  _resolve: ((value: unknown) => void) | false
+  _tmo: number | false
+  _value: unknown
+  children: Array<FormKitNode>
+  config: FormKitConfig
+  context?: FormKitFrameworkContext
+  hook: FormKitHooks
+  isCreated: boolean
+  isSettled: boolean
+  ledger: FormKitLedger
+  name: string | symbol
+  parent: FormKitNode | null
+  plugins: Set<FormKitPlugin>
+  props: Partial<FormKitProps>
+  settled: Promise<unknown>
+  store: FormKitStore
+  traps: FormKitTraps
+  type: FormKitNodeType
+  value: unknown
 }
 ```
-
-</client-only>
 
 ### FormKitContextShape
 
 Define the most basic shape of a context object for type guards trying to reason about a context's value.
 
-<client-only>
-
 ```typescript
 interface FormKitContextShape {
-    _value: unknown;
-    type: FormKitNodeType;
-    value: unknown;
+  _value: unknown
+  type: FormKitNodeType
+  value: unknown
 }
 ```
-
-</client-only>
 
 ### FormKitCounter
 
 The counter object used to perform instance counting within a tree.
 
-<client-only>
-
 ```typescript
 interface FormKitCounter {
-    condition: FormKitCounterCondition;
-    count: number;
-    name: string;
-    node: FormKitNode;
-    promise: Promise<void>;
-    resolve: () => void;
+  condition: FormKitCounterCondition
+  count: number
+  name: string
+  node: FormKitNode
+  promise: Promise<void>
+  resolve: () => void
 }
 ```
-
-</client-only>
 
 ### FormKitCounterCondition
 
 Ledger counters require a condition function that determines if a given message applies to it or not.
 
-<client-only>
-
 ```typescript
 interface FormKitCounterCondition {
-    (message: FormKitMessage): boolean;
+  (message: FormKitMessage): boolean
 }
 ```
-
-</client-only>
 
 ### FormKitDispatcher
 
 The FormKitDispatcher interface is responsible creating/running "hooks".
 
-<client-only>
-
 ```typescript
 interface FormKitDispatcher<T> {
-    (dispatchable: FormKitMiddleware<T>): number;
-    dispatch: (payload: T) => T;
-    remove: (dispatchable: FormKitMiddleware<T>) => void;
-    unshift: (dispatchable: FormKitMiddleware<T>) => number;
+  (dispatchable: FormKitMiddleware<T>): number
+  dispatch: (payload: T) => T
+  remove: (dispatchable: FormKitMiddleware<T>) => void
+  unshift: (dispatchable: FormKitMiddleware<T>) => number
 }
 ```
-
-</client-only>
 
 ### FormKitEvent
 
 The internal structure of a FormKitEvent.
 
-<client-only>
-
 ```typescript
 interface FormKitEvent {
-    bubble: boolean;
-    name: string;
-    origin: FormKitNode;
-    payload: any;
+  bubble: boolean
+  name: string
+  origin: FormKitNode
+  payload: any
 }
 ```
-
-</client-only>
 
 ### FormKitEventEmitter
 
 The FormKitEventEmitter definition.
 
-<client-only>
-
 ```typescript
 interface FormKitEventEmitter {
-    (node: FormKitNode, event: FormKitEvent): void;
-    off: (receipt: string) => void;
-    on: (eventName: string, listener: FormKitEventListener) => string;
-    pause: (node?: FormKitNode) => void;
-    play: (node?: FormKitNode) => void;
+  (node: FormKitNode, event: FormKitEvent): void
+  off: (receipt: string) => void
+  on: (eventName: string, listener: FormKitEventListener) => string
+  pause: (node?: FormKitNode) => void
+  play: (node?: FormKitNode) => void
 }
 ```
-
-</client-only>
 
 ### FormKitEventListener
 
 Event listener functions definition.
 
-<client-only>
-
 ```typescript
 interface FormKitEventListener {
-    (event: FormKitEvent): void;
-    receipt?: string;
+  (event: FormKitEvent): void
+  receipt?: string
 }
 ```
-
-</client-only>
 
 ### FormKitExtendableSchemaRoot
 
 Defines a function that allows selectively overriding a given schema.
 
-<client-only>
-
 ```typescript
 interface FormKitExtendableSchemaRoot {
-    (extensions: Record<string, Partial<FormKitSchemaNode> | FormKitSchemaCondition>): FormKitSchemaNode[];
+  (
+    extensions: Record<
+      string,
+      Partial<FormKitSchemaNode> | FormKitSchemaCondition
+    >
+  ): FormKitSchemaNode[]
 }
 ```
-
-</client-only>
 
 ### FormKitFrameworkContext
 
 Context object to be created by and used by each respective UI framework. No values are created or output by FormKitCore, but this interface should be followed by each respective plugin.
 
-<client-only>
-
 ```typescript
 interface FormKitFrameworkContext {
-    _value: any;
-    [index: string]: unknown;
-    attrs: Record<string, any>;
-    classes: Record<string, string>;
-    fns: Record<string, (...args: any[]) => any>;
-    handlers:{
-        blur: () => void;
-        touch: () => void;
-        DOMInput: (e: Event) => void;
-    }&Record<string, (...args: any[]) => void>;
-    help?: string;
-    id: string;
-    label?: string;
-    messages: Record<string, FormKitMessage>;
-    node: FormKitNode;
-    options?: Array<Record<string, any>&{
-        label: string;
-        value: any;
-    }>;
-    state: FormKitFrameworkContextState;
-    type: string;
-    value: any;
+  _value: any
+  [index: string]: unknown
+  attrs: Record<string, any>
+  classes: Record<string, string>
+  defaultMessagePlacement: boolean
+  fns: Record<string, (...args: any[]) => any>
+  handlers: {
+    blur: () => void
+    touch: () => void
+    DOMInput: (e: Event) => void
+  } & Record<string, (...args: any[]) => void>
+  help?: string
+  id: string
+  label?: string
+  messages: Record<string, FormKitMessage>
+  node: FormKitNode
+  options?: Array<
+    Record<string, any> & {
+      label: string
+      value: any
+    }
+  >
+  state: FormKitFrameworkContextState
+  type: string
+  value: any
 }
 ```
-
-</client-only>
 
 ### FormKitFrameworkContextState
 
 The state inside a node’s framework context. Usually used to track things like blurred and validity states.
 
-<client-only>
-
 ```typescript
 interface FormKitFrameworkContextState {
-    [index: string]: boolean;
-    blurred: boolean;
-    complete: boolean;
-    dirty: boolean;
-    errors: boolean;
-    rules: boolean;
-    settled: boolean;
-    submitted: boolean;
-    valid: boolean;
-    validationVisible: boolean;
+  [index: string]: boolean
+  blurred: boolean
+  complete: boolean
+  dirty: boolean
+  errors: boolean
+  rules: boolean
+  settled: boolean
+  submitted: boolean
+  valid: boolean
+  validationVisible: boolean
 }
 ```
-
-</client-only>
 
 ### FormKitGroupValue
 
 FormKit inputs of type 'group' must have keyed values by default.
 
-<client-only>
-
 ```typescript
 interface FormKitGroupValue {
-    __init?: boolean;
-    [index: string]: unknown;
+  __init?: boolean
+  [index: string]: unknown
 }
 ```
-
-</client-only>
 
 ### FormKitHandlerPayload
 
 Describes the data passing through the error and warning handlers.
 
-<client-only>
-
 ```typescript
 interface FormKitHandlerPayload {
-    code: number;
-    data: any;
-    message?: string;
+  code: number
+  data: any
+  message?: string
 }
 ```
-
-</client-only>
 
 ### FormKitHooks
 
 The available hooks for middleware.
 
-<client-only>
-
 ```typescript
 interface FormKitHooks {
-    classes: FormKitDispatcher<{
-        property: string;
-        classes: Record<string, boolean>;
-    }>;
-    commit: FormKitDispatcher<any>;
-    error: FormKitDispatcher<string>;
-    init: FormKitDispatcher<FormKitNode>;
-    input: FormKitDispatcher<any>;
-    message: FormKitDispatcher<FormKitMessage>;
-    prop: FormKitDispatcher<{
-        prop: string | symbol;
-        value: any;
-    }>;
-    schema: FormKitDispatcher<FormKitSchemaNode[] | FormKitSchemaCondition>;
-    setErrors: FormKitDispatcher<{
-        localErrors: ErrorMessages;
-        childErrors?: ErrorMessages;
-    }>;
-    submit: FormKitDispatcher<Record<string, any>>;
-    text: FormKitDispatcher<FormKitTextFragment>;
+  classes: FormKitDispatcher<{
+    property: string
+    classes: Record<string, boolean>
+  }>
+  commit: FormKitDispatcher<any>
+  error: FormKitDispatcher<string>
+  init: FormKitDispatcher<FormKitNode>
+  input: FormKitDispatcher<any>
+  message: FormKitDispatcher<FormKitMessage>
+  prop: FormKitDispatcher<{
+    prop: string | symbol
+    value: any
+  }>
+  schema: FormKitDispatcher<FormKitSchemaNode[] | FormKitSchemaCondition>
+  setErrors: FormKitDispatcher<{
+    localErrors: ErrorMessages
+    childErrors?: ErrorMessages
+  }>
+  submit: FormKitDispatcher<Record<string, any>>
+  text: FormKitDispatcher<FormKitTextFragment>
 }
 ```
-
-</client-only>
 
 ### FormKitLedger
 
 The FormKit ledger, a general-purpose message counting service provided by FormKit core for counting messages throughout a tree.
 
-<client-only>
-
 ```typescript
 interface FormKitLedger {
-    count: (name: string, condition?: FormKitCounterCondition, increment?: number) => Promise<void>;
-    init: (node: FormKitNode) => void;
-    merge: (child: FormKitNode) => void;
-    settled: (name: string) => Promise<void>;
-    unmerge: (child: FormKitNode) => void;
-    value: (name: string) => number;
+  count: (
+    name: string,
+    condition?: FormKitCounterCondition,
+    increment?: number
+  ) => Promise<void>
+  init: (node: FormKitNode) => void
+  merge: (child: FormKitNode) => void
+  settled: (name: string) => Promise<void>
+  unmerge: (child: FormKitNode) => void
+  value: (name: string) => number
 }
 ```
-
-</client-only>
 
 ### FormKitLibrary
 
 A library of inputs, keyed by the name of the type.
 
-<client-only>
-
 ```typescript
 interface FormKitLibrary {
-    [index: string]: FormKitTypeDefinition;
+  [index: string]: FormKitTypeDefinition
 }
 ```
-
-</client-only>
 
 ### FormKitListContext
 
 The simplest definition for a context of type "list".
 
-<client-only>
-
 ```typescript
 interface FormKitListContext {
-    _value: FormKitListValue;
-    type:'list';
-    value: FormKitListValue;
+  _value: FormKitListValue
+  type: 'list'
+  value: FormKitListValue
 }
 ```
-
-</client-only>
 
 ### FormKitMessageMeta
 
 Messages have can have any arbitrary meta data attached to them.
 
-<client-only>
-
 ```typescript
 interface FormKitMessageMeta {
-    [index: string]: any;
-    i18nArgs?: any[];
-    messageKey?: string;
+  [index: string]: any
+  i18nArgs?: any[]
+  messageKey?: string
 }
 ```
-
-</client-only>
 
 ### FormKitMessageProps
 
 The structure of a core FormKitMessage. These messages are used to store information about the state of a node.
 
-<client-only>
-
 ```typescript
 interface FormKitMessageProps {
-    blocking: boolean;
-    key: string;
-    meta: FormKitMessageMeta;
-    type: string;
-    value?: string | number | boolean;
-    visible: boolean;
+  blocking: boolean
+  key: string
+  meta: FormKitMessageMeta
+  type: string
+  value?: string | number | boolean
+  visible: boolean
 }
 ```
-
-</client-only>
 
 ### FormKitMessageStore
 
 Defines the actual store of messages.
 
-<client-only>
-
 ```typescript
 interface FormKitMessageStore {
-    [index: string]: FormKitMessage;
+  [index: string]: FormKitMessage
 }
 ```
-
-</client-only>
 
 ### FormKitPlugin
 
 The base interface definition for a FormKitPlugin. It's just a function that accepts a node argument.
 
-<client-only>
-
 ```typescript
 interface FormKitPlugin {
-    (node: FormKitNode): false | any | void;
-    library?: (node: FormKitNode) => void;
+  (node: FormKitNode): false | any | void
+  library?: (node: FormKitNode) => void
 }
 ```
-
-</client-only>
 
 ### FormKitSchemaAttributesCondition
 
 Conditions nested inside attribute declarations.
 
-<client-only>
-
 ```typescript
 interface FormKitSchemaAttributesCondition {
-    else?: FormKitAttributeValue;
-    if: string;
-    then: FormKitAttributeValue;
+  else?: FormKitAttributeValue
+  if: string
+  then: FormKitAttributeValue
 }
 ```
-
-</client-only>
 
 ### FormKitSchemaComposable
 
 Definition for a function that can extend a given schema node.
 
-<client-only>
-
 ```typescript
 interface FormKitSchemaComposable {
-    (extendWith?: Partial<FormKitSchemaNode>, children?: string | FormKitSchemaNode[] | FormKitSchemaCondition, ...args: any[]): FormKitSchemaNode;
+  (
+    extendWith?: Partial<FormKitSchemaNode>,
+    children?: string | FormKitSchemaNode[] | FormKitSchemaCondition,
+    ...args: any[]
+  ): FormKitSchemaNode
 }
 ```
-
-</client-only>
 
 ### FormKitSchemaContext
 
 The context that is passed from one schema render to the next.
 
-<client-only>
-
 ```typescript
 interface FormKitSchemaContext {
-    __FK_SCP: Map<symbol, Record<string, any>>;
-    [index: string]: any;
+  __FK_SCP: Map<symbol, Record<string, any>>
+  [index: string]: any
 }
 ```
-
-</client-only>
 
 ### FormKitSchemaProps
 
 Properties available in all schema nodes.
 
-<client-only>
-
 ```typescript
 interface FormKitSchemaProps {
-    bind?: string;
-    children?: string | FormKitSchemaNode[] | FormKitSchemaCondition;
-    for?: FormKitListStatement;
-    if?: string;
-    key?: string;
-    meta?: FormKitSchemaMeta;
+  bind?: string
+  children?: string | FormKitSchemaNode[] | FormKitSchemaCondition
+  for?: FormKitListStatement
+  if?: string
+  key?: string
+  meta?: FormKitSchemaMeta
 }
 ```
-
-</client-only>
 
 ### FormKitTrap
 
 The definition of a FormKitTrap. These are somewhat like methods on each FormKitNode. They are always symmetrical (get/set) — although it's acceptable for either to throw an Exception.
 
-<client-only>
-
 ```typescript
 interface FormKitTrap {
-    get: TrapGetter;
-    set: TrapSetter;
+  get: TrapGetter
+  set: TrapSetter
 }
 ```
-
-</client-only>
 
 ### KeyedValue
 
 Arbitrary data that has properties. Could be a POJO, could be an array.
 
-<client-only>
-
 ```typescript
 interface KeyedValue {
-    [index: number]: any;
-    [index: string]: any;
+  [index: number]: any
+  [index: string]: any
 }
 ```
-
-</client-only>
 
 ### FormKitAddress
 
 Describes the path to a particular node from the top of the tree.
 
-<client-only>
-
 ```typescript
-type FormKitAddress = Array<string | number>;
+type FormKitAddress = Array<string | number>
 ```
-
-</client-only>
 
 ### FormKitAttributeValue
 
 The possible value types of attributes (in the schema).
 
-<client-only>
-
 ```typescript
-type FormKitAttributeValue = string | number | boolean | undefined | FormKitSchemaAttributes | FormKitSchemaAttributesCondition;
+type FormKitAttributeValue =
+  | string
+  | number
+  | boolean
+  | undefined
+  | FormKitSchemaAttributes
+  | FormKitSchemaAttributesCondition
 ```
-
-</client-only>
 
 ### FormKitCompilerProvider
 
 A function that accepts a callback with a token as the only argument, and must return a function that provides the true value of the token.
 
-<client-only>
-
 ```typescript
-type FormKitCompilerProvider = (callback: (requirements: string[]) => Record<string, () => any>) => FormKitCompilerOutput;
+type FormKitCompilerProvider = (
+  callback: (requirements: string[]) => Record<string, () => any>
+) => FormKitCompilerOutput
 ```
-
-</client-only>
 
 ### FormKitListStatement
 
 A full loop statement in tuple syntax. Can be read like "foreach value, key? in list".
 
-<client-only>
-
 ```typescript
-type FormKitListStatement = [value: any, key: number | string, list: FormKitListValue] | [value: any, list: FormKitListValue];
+type FormKitListStatement =
+  | [value: any, key: number | string, list: FormKitListValue]
+  | [value: any, list: FormKitListValue]
 ```
-
-</client-only>
 
 ### FormKitListValue
 
 The value being listed out. Can be an array, an object, or a number.
 
-<client-only>
-
 ```typescript
-type FormKitListValue = string | Record<string, any> | Array<string | number | Record<string, any>> | number;
+type FormKitListValue =
+  | string
+  | Record<string, any>
+  | Array<string | number | Record<string, any>>
+  | number
 ```
-
-</client-only>
 
 ### FormKitMessage
 
 A FormKit message is immutable, so all properties should be readonly.
 
-<client-only>
-
 ```typescript
-type FormKitMessage = Readonly<FormKitMessageProps>;
+type FormKitMessage = Readonly<FormKitMessageProps>
 ```
-
-</client-only>
 
 ### FormKitMiddleware
 
 All FormKitMiddleware conform to the pattern of accepting a payload and a `next()` function. They can either pass the payload to the next middleware explicitly (as an argument of next), or implicitly (no argument for next).
 
-<client-only>
-
 ```typescript
-type FormKitMiddleware<T = unknown> = (payload: T, next: (payload?: T) => T) => T;
+type FormKitMiddleware<T = unknown> = (
+  payload: T,
+  next: (payload?: T) => T
+) => T
 ```
-
-</client-only>
 
 ### FormKitNodeType
 
 These are the types of nodes that can be created. These are different from the type of inputs available and rather describe their purpose in the tree.
 
-<client-only>
-
 ```typescript
-type FormKitNodeType = 'input' | 'list' | 'group';
+type FormKitNodeType = 'input' | 'list' | 'group'
 ```
-
-</client-only>
 
 ### FormKitOptions
 
 Options that can be used to instantiate a new node via createNode().
 
-<client-only>
-
 ```typescript
-type FormKitOptions = Partial<Omit<FormKitContext, 'children' | 'plugins' | 'config' | 'hook'> & {
-    config: Partial<FormKitConfig>;
-    props: Partial<FormKitProps>;
-    children: FormKitNode[] | Set<FormKitNode>;
-    index?: number;
-    plugins: FormKitPlugin[];
-    alias: string;
-    schemaAlias: string;
-}>;
+type FormKitOptions = Partial<
+  Omit<FormKitContext, 'children' | 'plugins' | 'config' | 'hook'> & {
+    config: Partial<FormKitConfig>
+    props: Partial<FormKitProps>
+    children: FormKitNode[] | Set<FormKitNode>
+    index?: number
+    plugins: FormKitPlugin[]
+    alias: string
+    schemaAlias: string
+  }
+>
 ```
-
-</client-only>
 
 ### FormKitProps
 
 The user-land per-instance "props", which are generally akin to the props passed into components on the front end.
 
-<client-only>
-
 ```typescript
 type FormKitProps = {
-    delay: number;
-    id: string;
-    validationLabelStrategy?: (node?: FormKitNode) => string;
-    validationRules?: Record<string, (node: FormKitNode) => boolean | Promise<boolean>>;
-    validationMessages?: Record<string, ((ctx: {
-        name: string;
-        args: any[];
-        node: FormKitNode;
-    }) => string) | string>;
-    definition?: FormKitTypeDefinition;
-    [index: string]: any;
-} & FormKitConfig;
+  delay: number
+  id: string
+  validationLabelStrategy?: (node?: FormKitNode) => string
+  validationRules?: Record<
+    string,
+    (node: FormKitNode) => boolean | Promise<boolean>
+  >
+  validationMessages?: Record<
+    string,
+    ((ctx: { name: string; args: any[]; node: FormKitNode }) => string) | string
+  >
+  definition?: FormKitTypeDefinition
+  context?: FormKitFrameworkContext
+  [index: string]: any
+} & FormKitConfig
 ```
-
-</client-only>
 
 ### FormKitSchemaAttributes
 
 DOM attributes are simple string dictionaries.
 
-<client-only>
-
 ```typescript
-type FormKitSchemaAttributes = {
-    [index: string]: FormKitAttributeValue;
-} | null | FormKitSchemaAttributesCondition;
+type FormKitSchemaAttributes =
+  | {
+      [index: string]: FormKitAttributeValue
+    }
+  | null
+  | FormKitSchemaAttributesCondition
 ```
-
-</client-only>
 
 ### FormKitSchemaComponent
 
 Properties available when defining a generic non-FormKit component.
 
-<client-only>
-
 ```typescript
 type FormKitSchemaComponent = {
-    $cmp: string;
-    props?: Record<string, any>;
-} & FormKitSchemaProps;
+  $cmp: string
+  props?: Record<string, any>
+} & FormKitSchemaProps
 ```
-
-</client-only>
 
 ### FormKitSchemaCondition
 
 A schema node that determines _which_ content to render.
 
-<client-only>
-
 ```typescript
 type FormKitSchemaCondition = {
-    if: string;
-    then: FormKitSchemaNode | FormKitSchemaNode[];
-    else?: FormKitSchemaNode | FormKitSchemaNode[];
-};
+  if: string
+  then: FormKitSchemaNode | FormKitSchemaNode[]
+  else?: FormKitSchemaNode | FormKitSchemaNode[]
+}
 ```
-
-</client-only>
 
 ### FormKitSchemaDOMNode
 
 Properties available when using a DOM node.
 
-<client-only>
-
 ```typescript
 type FormKitSchemaDOMNode = {
-    $el: string | null;
-    attrs?: FormKitSchemaAttributes;
-} & FormKitSchemaProps;
+  $el: string | null
+  attrs?: FormKitSchemaAttributes
+} & FormKitSchemaProps
 ```
-
-</client-only>
 
 ### FormKitSchemaFormKit
 
 Syntactic sugar for a FormKitSchemaComponent node that uses FormKit.
 
-<client-only>
-
 ```typescript
 type FormKitSchemaFormKit = {
-    $formkit: string;
-} & Record<string, any> & FormKitSchemaProps;
+  $formkit: string
+} & Record<string, any> &
+  FormKitSchemaProps
 ```
-
-</client-only>
 
 ### FormKitSchemaNode
 
 Properties available then defining a schema node.
 
-<client-only>
-
 ```typescript
-type FormKitSchemaNode = FormKitSchemaDOMNode | FormKitSchemaComponent | FormKitSchemaTextNode | FormKitSchemaCondition | FormKitSchemaFormKit;
+type FormKitSchemaNode =
+  | FormKitSchemaDOMNode
+  | FormKitSchemaComponent
+  | FormKitSchemaTextNode
+  | FormKitSchemaCondition
+  | FormKitSchemaFormKit
 ```
-
-</client-only>
 
 ### FormKitSchemaTextNode
 
 A simple text node.
 
-<client-only>
-
 ```typescript
-type FormKitSchemaTextNode = string;
+type FormKitSchemaTextNode = string
 ```
-
-</client-only>
 
 ### FormKitSearchFunction
 
 Breadth and depth-first searches can use a callback of this notation.
 
-<client-only>
-
 ```typescript
-type FormKitSearchFunction = (node: FormKitNode, searchTerm?: string | number) => boolean;
+type FormKitSearchFunction = (
+  node: FormKitNode,
+  searchTerm?: string | number
+) => boolean
 ```
-
-</client-only>
 
 ### FormKitStore
 
 The message store contains all of the messages that pertain to a given node.
 
-<client-only>
-
 ```typescript
 type FormKitStore = FormKitMessageStore & {
-    _n: FormKitNode;
-    _b: Array<[messages: FormKitMessage[], clear?: MessageClearer]>;
-    _m: ChildMessageBuffer;
-    _r?: string;
-    buffer: boolean;
-} & FormKitStoreTraps;
+  _n: FormKitNode
+  _b: Array<[messages: FormKitMessage[], clear?: MessageClearer]>
+  _m: ChildMessageBuffer
+  _r?: string
+  buffer: boolean
+} & FormKitStoreTraps
 ```
-
-</client-only>
 
 ### FormKitTextFragment
 
 Text fragments are small pieces of text used for things like interface validation messages, or errors that may be exposed for modification or even translation.
 
-<client-only>
-
 ```typescript
 type FormKitTextFragment = Partial<FormKitMessageProps> & {
-    key: string;
-    value: string;
-    type: string;
-};
+  key: string
+  value: string
+  type: string
+}
 ```
-
-</client-only>
 
 ### FormKitTraps
 
 The map signature for a node's traps Map.
 
-<client-only>
-
 ```typescript
-type FormKitTraps = Map<string | symbol, FormKitTrap>;
+type FormKitTraps = Map<string | symbol, FormKitTrap>
 ```
-
-</client-only>
 
 ### FormKitTypeDefinition
 
 Definition of a library item — when registering a new library item, these are the required and available properties.
 
-<client-only>
-
 ```typescript
 type FormKitTypeDefinition = {
-    type: FormKitNodeType;
-    family?: string;
-    forceTypeProp?: string;
-    props?: string[];
-    schema?: FormKitExtendableSchemaRoot | FormKitSchemaNode[] | FormKitSchemaCondition;
-    component?: unknown;
-    library?: Record<string, unknown>;
-    features?: Array<(node: FormKitNode) => void>;
-};
+  type: FormKitNodeType
+  family?: string
+  forceTypeProp?: string
+  props?: string[]
+  schema?:
+    | FormKitExtendableSchemaRoot
+    | FormKitSchemaNode[]
+    | FormKitSchemaCondition
+  component?: unknown
+  library?: Record<string, unknown>
+  features?: Array<(node: FormKitNode) => void>
+}
 ```
-
-</client-only>
 
 ### TrapGetter
 
 Signature for any of the node's getter traps. Keep in mind that because these are traps and not class methods, their response types are declared explicitly in the FormKitNode interface.
 
-<client-only>
-
 ```typescript
-type TrapGetter = ((node: FormKitNode, context: FormKitContext, ...args: any[]) => unknown) | false;
+type TrapGetter =
+  | ((node: FormKitNode, context: FormKitContext, ...args: any[]) => unknown)
+  | false
 ```
-
-</client-only>
 
 ### TrapSetter
 
 The signature for a node's trap setter — these are more rare than getter traps, but can be useful for blocking access to certain context properties or modifying the behavior of an assignment (ex. see setParent).
 
-<client-only>
-
 ```typescript
-type TrapSetter = ((node: FormKitNode, context: FormKitContext, property: string | number | symbol, value: any) => boolean | never) | false;
+type TrapSetter =
+  | ((
+      node: FormKitNode,
+      context: FormKitContext,
+      property: string | number | symbol,
+      value: any
+    ) => boolean | never)
+  | false
 ```
-
-</client-only>

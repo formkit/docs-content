@@ -4,7 +4,7 @@ title: formkit/addons
 
 # @formkit/addons
 
-<page-toc></page-toc>
+:PageToc
 
 ## Introduction
 
@@ -20,13 +20,9 @@ Adds auto-animate to each input automatically:
 
 #### Signature
 
-<client-only>
-
 ```typescript
 createAutoAnimatePlugin(options?: AutoAnimateOptions): FormKitPlugin;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -34,11 +30,9 @@ createAutoAnimatePlugin(options?: AutoAnimateOptions): FormKitPlugin;
 
 #### Returns
 
- [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+[FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
 #### Examples
-
-<client-only>
 
 ```javascript
 import { createApp } from 'vue'
@@ -46,13 +40,74 @@ import App from 'App.vue'
 import { createAutoAnimatePlugin } from '@formkit/addons'
 import { plugin, defaultConfig } from '@formkit/vue'
 
-createApp(app).use(plugin, defaultPlugin({
-  plugins: [
-    createAutoAnimatePlugin({
-      // optional config
-    })
-  ]
-}))
+createApp(app).use(
+  plugin,
+  defaultPlugin({
+    plugins: [
+      createAutoAnimatePlugin({
+        // optional config
+      }),
+    ],
+  })
+)
 ```
 
-</client-only>
+### createFloatingLabelsPlugin()
+
+Creates a new floating label plugin.
+
+#### Signature
+
+```typescript
+createFloatingLabelsPlugin(FloatingLabelsOptions?: FloatingLabelsOptions): FormKitPlugin;
+```
+
+#### Parameters
+
+- `FloatingLabelsOptions` — The options of [FloatingLabelsOptions](#floatinglabelsoptions) to pass to the plugin
+
+#### Returns
+
+A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+
+### createMultiStepPlugin()
+
+Creates a new multi-step plugin.
+
+#### Signature
+
+```typescript
+createMultiStepPlugin(options?: MultiStepOptions): FormKitPlugin;
+```
+
+#### Parameters
+
+- `options` — The options of [MultiStepOptions](#multistepoptions) to pass to the plugin
+
+#### Returns
+
+A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+
+## TypeScript
+
+### FloatingLabelsOptions
+
+The options to be passed to [createFloatingLabelsPlugin](#createfloatinglabelsplugin)
+
+```typescript
+interface FloatingLabelsOptions {
+  useAsDefault?: boolean
+}
+```
+
+### MultiStepOptions
+
+The options to be passed to [createMultiStepPlugin](#createmultistepplugin)
+
+```typescript
+interface MultiStepOptions {
+  allowIncomplete?: boolean
+  hideProgressLabels?: boolean
+  tabStyle?: 'tab' | 'progress'
+}
+```

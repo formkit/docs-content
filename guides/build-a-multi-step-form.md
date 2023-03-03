@@ -5,15 +5,27 @@ description: Follow this guide to learn how to build a multi-step form with Form
 
 # Build a multi-step form
 
-<page-toc></page-toc>
+:PageToc
+
+::Callout
+---
+type: "warning"
+label: "Official Multi-Step Plugin"
+---
+Starting with <code>1.0.0-beta.15</code> FormKit ships an official 1st-party plugin that creates a <code>multi-step</code> input type. <br><br> While there is still value in understanding how to build a multi-step input on your own — if you're looking for the easiest way to use a multi-step input in your project check out the <a href="/plugins/multi-step">official FormKit multi-step plugin</a> — it's free and open-source!
+::
 
 Few interactions on the web cause as much displeasure for a user as being confronted with a large, intimidating form. Multi-step forms can alleviate this pain by breaking a large form into smaller approachable steps — but they can also be complicated to build.
 
 In this guide, we'll walk through building a multi-step form with FormKit and see how we can provide an elevated user experience with minimal code. Let's get started!
 
-<callout type="info" label="Composition API">
+::Callout
+---
+type: "info"
+label: "Composition API"
+---
 This guide assumes you are are familiar with the <a href="https://vuejs.org/guide/introduction.html#api-styles">Vue Composition API</a>.
-</callout>
+::
 
 ## Requirements
 
@@ -31,13 +43,15 @@ First, let's create a basic form _without steps_ so we have content to work with
 
 We'll include a mix of validation rules for each input, and limit each section to 1 question for now until we have the full structure in place. Lastly, for the purposes of this guide, we'll output the collected form data at the bottom of each example:
 
-<example
-  :file="[
-    '/_content/examples/guides/multi-step-form/basic-form/example.vue'
-  ]"
-  :bp="880"
-  :editable="true">
-</example>
+::Example
+---
+file: [
+  '/_content/examples/guides/multi-step-form/basic-form/example.vue'
+]
+bp: 880
+editable: true
+---
+::
 
 ## Breaking the form into sections
 
@@ -47,46 +61,32 @@ To start, let's wrap each section of inputs with a [group](/inputs/group) (`<For
 
 A group itself becomes valid when all its children (and their children) are valid:
 
-<client-only>
-
 ```html
 <!-- Only showing a single group here for brevity -->
-<FormKit type="group" name="contactInfo">
+<FormKit type="group" name: "contactInfo">
   <FormKit type="email" label="*Email address" validation="required|email" />
 </FormKit>
 ...
 ```
 
-</client-only>
-
 In our case, we're also going to want wrapping HTML. Let's put each group into a "step" section which we can conditionally show and hide:
-
-<client-only>
 
 ```html
 <!-- Only showing a single group here for brevity -->
 <section v-show="step === 'contactInfo'">
-  <FormKit type="group" name="contactInfo">
+  <FormKit type="group" name: "contactInfo">
     <FormKit type="email" label="*Email address" validation="required|email" />
   </FormKit>
 </section>
 ...
 ```
 
-</client-only>
-
 Next, let's introduce some navigation UI so we can toggle between each step:
-
-<client-only>
 
 ```js
 // for now, manually set step names
 const stepNames = ['contactInfo', 'organizationInfo', 'application']
 ```
-
-</client-only>
-
-<client-only>
 
 ```html
 <!-- Set up tab-navigation UI. On click, change step -->
@@ -102,21 +102,25 @@ const stepNames = ['contactInfo', 'organizationInfo', 'application']
 </ul>
 ```
 
-</client-only>
-
 Here's what it looks like put together:
 
-<callout type="info" label="Styles not included">
+::Callout
+---
+type: "info"
+label: "Styles not included"
+---
   The CSS for multi-step forms — such as the tabs in this example — is not included in the default Genesis theme. Styles were custom-written for this example and you will need to provide your own.
-</callout>
+::
 
-<example
-  :file="[
-    '/_content/examples/guides/multi-step-form/form-in-steps/example.vue'
-  ]"
-  :bp="880"
-  :editable="true">
-</example>
+::Example
+---
+file: [
+  '/_content/examples/guides/multi-step-form/form-in-steps/example.vue'
+]
+bp: 880
+editable: true
+---
+::
 
 It's starting to look like a real multi-step form! There's more work to be done though as we've got a few issues:
 
@@ -134,8 +138,6 @@ One important concept to remember about FormKit is that every `<FormKit>` compon
 We'll leverage FormKit's [plugin](/essentials/architecture#plugins) functionality to do this job. While the term "plugin" may sound intimidating, plugins in FormKit are just setup functions that are called when a node is created. Plugins are inherited by all descendants (such as children within a group).
 
 Here's our custom plugin, called `stepPlugin`:
-
-<client-only>
 
 ```js
 // our plugin and our template code will make use of 'steps'
@@ -160,11 +162,7 @@ const stepPlugin = (node) => {
 }
 ```
 
-</client-only>
-
 The resulting `steps` reactive object from our plugin above looks like this:
-
-<client-only>
 
 ```js
 {
@@ -174,25 +172,17 @@ The resulting `steps` reactive object from our plugin above looks like this:
 }
 ```
 
-</client-only>
-
 To use our plugin, we'll add it to our root form `<FormKit type="form" />`. This means that every top-level group in our form will inherit the plugin:
-
-<client-only>
 
 ```html
 <FormKit type="form" :plugins="[stepPlugin]"> ... rest of the form </FormKit>
 ```
-
-</client-only>
 
 ## Showing validity
 
 Now that our template has real-time access to each group's validity state via our plugin, let's write the UI to show this data in the step navigation bar.
 
 We also no longer need to manually define our steps since our plugin is dynamically storing the name of all groups in the `steps` object. Let's add a `data-step-valid="true"` attribute to each step if it's valid so we can target with CSS:
-
-<client-only>
 
 ```html
 <ul class="steps">
@@ -208,8 +198,6 @@ We also no longer need to manually define our steps since our plugin is dynamica
 </ul>
 ```
 
-</client-only>
-
 With these updates, our form is now capable of informing a user when they have correctly filled out all of the fields in a given step!
 
 We'll also make a few other improvements:
@@ -218,15 +206,17 @@ We'll also make a few other improvements:
 - Create a utils.js file for our utility functions.
 - Set the 1st step we find as the `activeStep`.
 
-<example
-  :file="[
-    '/_content/examples/guides/multi-step-form/showing-validity/example.vue',
-    '/_content/examples/guides/multi-step-form/showing-validity/useSteps.js',
-    '/_content/examples/guides/multi-step-form/showing-validity/utils.js',
-  ]"
-  :bp="880"
-  :editable="true">
-</example>
+::Example
+---
+file: [
+  '/_content/examples/guides/multi-step-form/showing-validity/example.vue',
+  '/_content/examples/guides/multi-step-form/showing-validity/useSteps.js',
+  '/_content/examples/guides/multi-step-form/showing-validity/utils.js',
+]
+bp: 880
+editable: true
+---
+::
 
 ## Showing errors
 
@@ -238,8 +228,6 @@ Showing errors is more nuanced. Though the user may not be aware, there are actu
 FormKit uses its [message store](/essentials/architecture#message-store) to track both of these types of errors/messages.
 
 With our plugin already in place, it's relatively simple to add tracking for both:
-
-<client-only>
 
 ```js
 const stepPlugin = (node) => {
@@ -259,11 +247,13 @@ const stepPlugin = (node) => {
 }
 ```
 
-</client-only>
-
-<callout type="tip" label="Blocking validation messages vs errors">
+::Callout
+---
+type: "tip"
+label: "Blocking validation messages vs errors"
+---
 FormKit makes a distinction between frontend validation messages (<code>messages</code> of type <code>validation</code>), and errors (<code>messages</code> of type <code>error</code>).
-</callout>
+::
 
 Let's update our example to show both types of errors with the following requirements:
 
@@ -273,8 +263,6 @@ Let's update our example to show both types of errors with the following require
 ### Adding a group blur event
 
 Since "blurring a group" doesn't exist in HTML, we'll introduce it in our plugin with an array called `visitedSteps`. Here's the relevant code:
-
-<client-only>
 
 ```js
 import { watch } from 'vue'
@@ -311,15 +299,11 @@ const stepPlugin = (node) => {
 }
 ```
 
-</client-only>
-
 You might be wondering why we are walking all of the descendants of a given step (`node.walk()`) and creating messages with a key of `submitted` and value of `true`? When a user attempts to submit a form, this is how FormKit informs itself that all inputs are in a `submitted` state. In this state, FormKit forces any blocking validation messages to appear. We are manually triggering the same thing in our "group blur" event.
 
 ### The error UI
 
 We'll use the same UI for both types of errors since end-users don't really care about the distinction. Here's our updated step HTML, which outputs a red bubble with the sum total of the errors `errorCount` + `blockingCount`:
-
-<client-only>
 
 ```html
 <li v-for="(step, stepName) in steps" class="step" ...>
@@ -332,19 +316,19 @@ We'll use the same UI for both types of errors since end-users don't really care
 </li>
 ```
 
-</client-only>
-
 We are almost to the finish line! Here's our current form — which can now tell a user when they have properly _or improperly_ filled out each step:
 
-<example
-  :file="[
-    '/_content/examples/guides/multi-step-form/showing-all-state/example.vue',
-    '/_content/examples/guides/multi-step-form/showing-all-state/useSteps.js',
-    '/_content/examples/guides/multi-step-form/showing-all-state/utils.js',
-  ]"
-  :bp="880"
-  :editable="true">
-</example>
+::Example
+---
+file: [
+  '/_content/examples/guides/multi-step-form/showing-all-state/example.vue',
+  '/_content/examples/guides/multi-step-form/showing-all-state/useSteps.js',
+  '/_content/examples/guides/multi-step-form/showing-all-state/utils.js',
+]
+bp: 880
+editable: true
+---
+::
 
 ## Form submission and receiving errors
 
@@ -352,17 +336,11 @@ The last piece of the puzzle is submitting the form and handling any errors we r
 
 We submit the form by adding an `@submit` handler to the `<FormKit type="form">`:
 
-<client-only>
-
 ```html
 <FormKit type="form" @submit="submitApp"> ... rest of form</FormKit>
 ```
 
-</client-only>
-
 And here's our submit handler:
-
-<client-only>
 
 ```js
 const submitApp = async (formData, node) => {
@@ -375,8 +353,6 @@ const submitApp = async (formData, node) => {
   }
 }
 ```
-
-</client-only>
 
 Notice that FormKit passes our submit handler 2 helpful arguments: the form's data in a single request-ready object (which we're calling `formData`), and the form's underlying core `node`, which we can use to clear errors or set any returned errors using the `node.clearErrors()` and `node.setErrors()` helpers, respectively.
 
@@ -395,17 +371,26 @@ And Voilà! 🎉 We are finished! In addition to our submit handler, we've added
 
 Here it is — a fully functioning multi-step form:
 
-<example
-  :file="[
-    '/_content/examples/guides/multi-step-form/final-form/example.vue',
-    '/_content/examples/guides/multi-step-form/final-form/useSteps.js',
-    '/_content/examples/guides/multi-step-form/final-form/utils.js'
-  ]"
-  :bp="880"
-  :editable="true">
-</example>
+::Example
+---
+file: [
+  '/_content/examples/guides/multi-step-form/final-form/example.vue',
+  '/_content/examples/guides/multi-step-form/final-form/useSteps.js',
+  '/_content/examples/guides/multi-step-form/final-form/utils.js'
+]
+bp: 880
+editable: true
+---
+::
 
-<cta label="Want to see it built using FormKit Schema?" button="Check out the Playground" href="https://formkit.link/7b74e4469f5c6eb1820cea4423a3ccbe" type="ghost"></cta>
+::Cta
+---
+label: "Want to see it built using FormKit Schema?" 
+button: "Check out the Playground" 
+href: "https://formkit.link/7b74e4469f5c6eb1820cea4423a3ccbe" 
+type: "ghost"
+---
+::
 
 ## Ways to improve
 
@@ -417,4 +402,10 @@ Of course, there are always ways to improve anything, and this form is no except
 
 We've covered a lot of topics in this guide and hope you've learned more about FormKit and how to use it to make multi-step forms easier!
 
-<cta label="Want more? Start by reading about FormKit core." button="Dig deeper" href="/essentials/architecture"></cta>
+::Cta
+---
+label: "Want to use a multi-step input in your project?" 
+button: "Try the official plugin" 
+href: "/plugins/multi-step"
+---
+::

@@ -5,7 +5,7 @@ description: Get involved in the FormKit community — troubleshooting support, 
 
 # Community
 
-<page-toc></page-toc>
+:PageToc
 
 ## Involvement
 
@@ -41,6 +41,16 @@ Community involvement and contributions are one of the most important aspects of
     />
 </a>
 
+<a class="no-underline" href="https://zammad.com">
+    <img
+        class="docs-partner"
+        src="https://cdn.formk.it/web-assets/sponsors/zammad_logo-transparent.png"
+        alt="PerByte logo"
+        target="_blank"
+        style="display:inline-block;vertical-align: middle;width: 120px;margin-right: 25px;"
+    />
+</a>
+
 ### Backers
 
 [uscreen](https://uscreen.de), [gfenn08](https://github.com/gfenn08), [Ryan E](https://github.com/VikingDadMedic)
@@ -53,13 +63,17 @@ We invite you to contribute to FormKit! There are many ways to help — from cre
 
 We encourage contributions to the FormKit open source code bases! When contributing, consider first discussing your desired change with the core team via [GitHub issues](https://github.com/formkit/formkit/issues) or [Discord](https://discord.gg/Vhu97pAC76).
 
-#### Contributors to [`formkit/formkit`](https://github.com/formkit/formkit)
+#### Contributors to `formkit/formkit`
 
-<a href="https://github.com/formkit/formkit/graphs/contributors"><img src="https://contributors-img.web.app/image?repo=formkit/formkit" /></a>
+<a href="https://github.com/formkit/formkit/graphs/contributors">
+    <img src="https://contributors-img.web.app/image?repo=formkit/formkit">
+</a>
 
-#### Contributors to [`formkit/docs-content`](https://github.com/formkit/docs-content)
+#### Contributors to `formkit/docs-content`
 
-<a href="https://github.com/formkit/docs-content/graphs/contributors"><img src="https://contributors-img.web.app/image?repo=formkit/docs-content" /></a>
+<a href="https://github.com/formkit/docs-content/graphs/contributors">
+    <img src="https://contributors-img.web.app/image?repo=formkit/docs-content">
+</a>
 
 Thank you to all contributors and community members who help us improve FormKit every day.
 

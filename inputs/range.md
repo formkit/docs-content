@@ -3,43 +3,57 @@ title: Range Input
 description: A native HTML range input.
 ---
 
-<InputPageHero title="Range"></InputPageHero>
+:InputPageHero{title="Range"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `range` input uses HTML's [native range input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) to let user select a number with a graphic slider.
 
 ## Basic example
 
-<example
-name="Range input"
-file="/_content/examples/range/range.vue"></example>
+::Example
+---
+name: "Range input"
+file: "/_content/examples/range/range.vue"
+---
+::
+
 
 ## Props & Attributes
 
 The `range` input has no unique props but can make use of the following universal
 FormKit props.
 
-<reference-table input="range" :attrs="['min', 'max', 'step']">
-</reference-table>
+::ReferenceTable
+---
+input: "range"
+attrs: ['min', 'max', 'step']
+---
+::
+
 
 ## Sections
-<section-keys-intro></section-keys-intro>
 
-<div>
-  <formkit-input-diagram
-    class="input-diagram--range"
-    prefix-icon-content="😭"
-    prefix-content="$0"
-    suffix-content="$1B"
-    suffix-icon-content="💰"
-    label-content="Net worth"
-    input-content=""
-    help-content="What's your approximate net worth?"
-    message-content="Sorry. Our service is only for low-income families."
-  >
-  </formkit-input-diagram>
-</div>
+:SectionKeysIntro
 
-<reference-table type="sectionKeys" primary="section-key">
-</reference-table>
+::FormKitInputDiagram
+---
+class: "input-diagram--range"
+prefix-icon-content: "😭"
+prefix-content: "$0"
+suffix-content: "$1B"
+suffix-icon-content: "💰"
+label-content: "Net worth"
+input-content: ""
+help-content: "What's your approximate net worth?"
+message-content: "Sorry. Our service is only for low-income families."
+---
+::
+
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+---
+::
+
