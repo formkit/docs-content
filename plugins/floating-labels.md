@@ -5,7 +5,7 @@ description: easily add floating labels to your text and textarea inputs.
 
 # Floating Labels Plugin
 
-<page-toc></page-toc>
+:PageToc
 
 Using the `createFloatingLabelsPlugin` function from `@formkit/addons` you can easily add a floating label treatment to any `text` family (`text`, `email`, `url`, `date`, etc) or `textarea` FormKit input.
 
@@ -14,8 +14,6 @@ Using the `createFloatingLabelsPlugin` function from `@formkit/addons` you can e
 To install the floating labels plugin we need to import it from `@formkit/addons`, add it our FormKit config, and include the supporting CSS styles (or provide your own).
 
 The `createFloatingLabelsPlugin` has one option you can configure which controls whether the floating label treatment is the default treatment on applicable inputs.
-
-<client-only>
 
 ```js
 // formkit.config.js
@@ -34,23 +32,21 @@ const config = defaultConfig({
 export default config
 ```
 
-</client-only>
-
 ## Usage
 
 By default the floating label plugin only take affect on a FormKit input if you set the new `floating-label` prop to `true`.
 
-<example
-name="Floating Label Manual"
-:file="[
-  '/\_content/examples/floating-labels/off-by-default/off-by-default.vue',
-  '/\_content/examples/floating-labels/off-by-default/formkit.config.js'
-]">
-</example>
+::Example
+---
+name: "Floating Label Manual"
+file: [
+'/\_content/examples/floating-labels/off-by-default/off-by-default.vue',
+'/\_content/examples/floating-labels/off-by-default/formkit.config.js'
+]
+---
+::
 
 If you would like to use floating labels by default then pass the `useAsDefault` option to the plugin when you install it.
-
-<client-only>
 
 ```js
 // formkit.config.js
@@ -63,16 +59,16 @@ plugins: [
 ...
 ```
 
-</client-only>
-
 When floating labels are set as the default you can still disable them on a FormKit input by setting the `floating-label` prop to `false`.
 
-<example
-name="Floating Label Automatic"
-:file="[
-  '/\_content/examples/floating-labels/on-by-default/on-by-default.vue',
-  '/\_content/examples/floating-labels/on-by-default/formkit.config.js'
-]">
-</example>
+::Example
+---
+name: "Floating Label Automatic"
+file: [
+'/\_content/examples/floating-labels/on-by-default/on-by-default.vue',
+'/\_content/examples/floating-labels/on-by-default/formkit.config.js'
+]
+---
+::
 
 That's It! Floating labels on your FormKit inputs in as little as 3 additional lines of code.

@@ -5,15 +5,13 @@ description: Easily add multi-step sections to your FormKit forms.
 
 # Multi-Step Input
 
-<page-toc></page-toc>
+:PageToc
 
 FormKit ships with a first-party multi-step input plugin available from the `@formkit/addons` package. This input allows you to easily break your forms into multiple steps. Breaking forms into multiple steps can improve the user-experice of larger forms by keeping them feeling small and approachable compared to listing all inputs at once.
 
 ## Installation
 
 To get started, import `createMultiStepPlugin` from `@formkit/addons` along with the accompanying styles. The styles are completely standalone and have no dependency on the `genesis` theme that ships with FormKit. This means that if you are using Tailwind to style your inputs, your input styles will still display as expected when wrapped in the `multi-step` input type.
-
-<client-only>
 
 ```js
 // formkit.config.js
@@ -28,20 +26,20 @@ const config = defaultConfig({
 export default config
 ```
 
-</client-only>
-
 #### A quick demonstration of the `multi-step` input type in action:
 
-<example
-name="Multi-Step Introduction"
-:file="[
-  '/\_content/examples/multi-step/intro/intro.vue',
-  '/\_content/examples/multi-step/stepOne.vue',
-  '/\_content/examples/multi-step/stepTwo.vue',
-  '/\_content/examples/multi-step/stepThree.vue',
-  '/\_content/examples/multi-step/formkit.config.js'
-]">
-</example>
+::Example
+---
+name: "Multi-Step Introduction"
+file: [
+'/\_content/examples/multi-step/intro/intro.vue',
+'/\_content/examples/multi-step/stepOne.vue',
+'/\_content/examples/multi-step/stepTwo.vue',
+'/\_content/examples/multi-step/stepThree.vue',
+'/\_content/examples/multi-step/formkit.config.js'
+]
+---
+::
 
 ## Usage
 
@@ -52,19 +50,15 @@ The `createMultiStepPlugin` function registers two new input types for you to us
 
 Using these inputs together is as simple as wrapping any markup you want to have present within a step in a multi-step form.
 
-<client-only>
-
 ```html
 <FormKit type="multi-step">
-  <FormKit type="step" name="stepOne">
+  <FormKit type="step" name: "stepOne">
     <!-- content for stepOne goes here! -->
   </FormKit>
 </FormKit>
 ```
 
 Out-of-the-box the parent `multi-step` input will track the validity of the inputs contained in each child `step` input and prevent advancing to the next `step` until the current step is valid. The count of total blocking validations and errors will be shown next to the current step name if a user attempts to advance to the next step or submit the form before satisfying the current step's input validations.
-
-</client-only>
 
 ## Tab style
 
@@ -73,14 +67,16 @@ The `multi-step` input ships with two available tab styles.
 - `tab`: The default tab experience. Each step name is show in a tab with an active state. Error count is shown in the top right of the tab.
 - `progress`: A progress bar style where each step is a "node" on a timeline of total steps. With this display mode you can also use the `hide-progress-labels` prop to hide the step names.
 
-<example
-name="Multi-Step Introduction"
-:file="[
-  '/\_content/examples/multi-step/tab-style/tab-style.vue',
-  '/\_content/examples/multi-step/tab-style/multi-step-content.vue',
-  '/\_content/examples/multi-step/formkit.config.js'
-]">
-</example>
+::Example
+---
+name: "Multi-Step Introduction"
+file: [
+'/\_content/examples/multi-step/tab-style/tab-style.vue',
+'/\_content/examples/multi-step/tab-style/multi-step-content.vue',
+'/\_content/examples/multi-step/formkit.config.js'
+]
+---
+::
 
 ## Step labels
 
@@ -90,28 +86,32 @@ By default the `multi-step` input will use the `name` attribute of its child `st
 - `prev-label`: an override for the `stepPrevious` button label which defaults to `Back`.
 - `next-label`: an override for the `stepNext` button label which defaults to `Next`.
 
-<example
-name="Step Labels"
-:file="[
-  '/\_content/examples/multi-step/step-labels/step-labels.vue',
-  '/\_content/examples/multi-step/formkit.config.js'
-]">
-</example>
+::Example
+---
+name: "Step Labels"
+file: [
+'/\_content/examples/multi-step/step-labels/step-labels.vue',
+'/\_content/examples/multi-step/formkit.config.js'
+]
+---
+::
 
 ## Allow incomplete steps
 
 By default the `multi-step` input will allow advancing to later steps even if the current step or a step between the current step and the target step has blocking validation messages. To prevent a user from jumping ahead set the `allow-incomplete` prop to `false`.
 
-<example
-name="Allow Incomplete"
-:file="[
-  '/\_content/examples/multi-step/allow-incomplete/allow-incomplete.vue',
-  '/\_content/examples/multi-step/stepOne.vue',
-  '/\_content/examples/multi-step/stepTwo.vue',
-  '/\_content/examples/multi-step/stepThree.vue',
-  '/\_content/examples/multi-step/formkit.config.js'
-]">
-</example>
+::Example
+---
+name: "Allow Incomplete"
+file: [
+'/\_content/examples/multi-step/allow-incomplete/allow-incomplete.vue',
+'/\_content/examples/multi-step/stepOne.vue',
+'/\_content/examples/multi-step/stepTwo.vue',
+'/\_content/examples/multi-step/stepThree.vue',
+'/\_content/examples/multi-step/formkit.config.js'
+]
+---
+::
 
 ## Valid step icon
 
@@ -122,13 +122,15 @@ You can either:
 - Change the `valid-step-icon` on the `multi-step` input to change the icon for all steps inside the input.
 - Change the `valid-step-icon` on a `step` input to change or override the icon just for that step.
 
-<example
-name="Valid Step Icon"
-:file="[
-  '/\_content/examples/multi-step/valid-step-icon/valid-step-icon.vue',
-  '/\_content/examples/multi-step/formkit.config.js'
-]">
-</example>
+::Example
+---
+name: "Valid Step Icon"
+file: [
+'/\_content/examples/multi-step/valid-step-icon/valid-step-icon.vue',
+'/\_content/examples/multi-step/formkit.config.js'
+]
+---
+::
 
 ## Customizing step actions
 
@@ -138,17 +140,23 @@ If you want to add a custom action such as a form submit to a `multi-step` — 
 
 The `stepNext` and `stepPrevious` sections have access to the `incrementStep` handler — which returns a callable function — to enable programatic navigation.
 
-<callout type="warning" label="Tab navigation">
+::Callout
+---
+type: "warning"
+label: "Tab navigation"
+---
 By default, the <code>stepNext</code> in a multi-step input uses event listeners to capture tab navigation via keyboard and allow users to cycle through all available steps within a multi-step.<br><br>If you want to preserve this behaviour in your own custom <code>stepNext</code> implementation then be sure to add a <code>data-next="true"</code> attribute to your focusable element that triggers step navigation.
-</callout>
+::
 
-<example
-name="Customizing step actions"
-:file="[
-  '/\_content/examples/multi-step/step-actions/step-actions.vue',
-  '/\_content/examples/multi-step/formkit.config.js'
-]">
-</example>
+::Example
+---
+name: "Customizing step actions"
+file: [
+'/\_content/examples/multi-step/step-actions/step-actions.vue',
+'/\_content/examples/multi-step/formkit.config.js'
+]
+---
+::
 
 ## The beforeStepChange event
 
@@ -162,128 +170,208 @@ Your `beforeStepChange` function should return a `Boolean`. Returning `false` wi
 
 `beforeStepChange` can be used on your `multi-step` input in which case it will apply to _all_ steps. Additionally you can use `beforeStepChange` on a specific `step` input to run your function only when navigating away from the step which has the function assigned. `beforeStepChange` applied to a `step` will override any `beforeStepChange` set on a parent `multi-step` if one exists.
 
-<example
-name="beforeStepChange"
-:file="[
-  '/\_content/examples/multi-step/before-step-change/before-step-change.vue',
-  '/\_content/examples/multi-step/formkit.config.js'
-]">
-</example>
+::Example
+---
+name: "beforeStepChange"
+file: [
+'/\_content/examples/multi-step/before-step-change/before-step-change.vue',
+'/\_content/examples/multi-step/formkit.config.js'
+]
+---
+::
 
 ## Props & Attributes (multi-step)
 
-<reference-table
-  input="multi-step"
-  :data="[
-    {prop: 'allowIncomplete', type: 'boolean', default: 'true', description: 'When <code>true</code>, allows users to navigate between steps even if current step is invalid.'},
-    {prop: 'tabStyle', type: 'string', default: 'tab', description: 'Used to set a data-attribute for creating tab styles. Default theme ships with support for <code>tab</code> and <code>progress</code> tab styles.'},
-    {prop: 'hideProgressLabels', type: 'boolean', default: 'false', description: 'When true, hides labels for the <code>progress</code> tab style.'},
-    {prop: 'validStepIcon', type: 'string', default: 'check', description: 'Specifies an icon to put in the <code>badge</code> section when a step is valid. When applied to the <code>multi-step</code> the icon will be applied to all child <code>step</code> inputs.'},
-    {prop: 'beforeStepChange', type: 'function', default: 'undefined', description: 'A function to run before the active step is changed. The function is supplied with a context object containing <code>currentStep</code> and <code>targetStep</code> which are both FormKit <code>node</code> context objects. Additionally, <code>delta</code> is supplied as an integer which reflects the distance between <code>currentStep</code> and <code>targetStep</code>. When supplied to the <code>multi-step</code> this function will fire on every <code>step</code> change.'}
-  ]"
-  :without="[
-    'help',
-    'prefix-icon',
-    'suffix-icon',
-  ]">
-</reference-table>
+::ReferenceTable
+---
+input: "multi-step"
+data: [
+  {
+    prop: "allowIncomplete",
+    type: "boolean",
+    default: "true",
+    description:
+      "When <code>true</code>, allows users to navigate between steps even if current step is invalid.",
+  },
+  {
+    prop: "tabStyle",
+    type: "string",
+    default: "tab",
+    description:
+      "Used to set a data-attribute for creating tab styles. Default theme ships with support for <code>tab</code> and <code>progress</code> tab styles.",
+  },
+  {
+    prop: "hideProgressLabels",
+    type: "boolean",
+    default: "false",
+    description:
+      "When true, hides labels for the <code>progress</code> tab style.",
+  },
+  {
+    prop: "validStepIcon",
+    type: "string",
+    default: "check",
+    description:
+      "Specifies an icon to put in the <code>badge</code> section when a step is valid. When applied to the <code>multi-step</code> the icon will be applied to all child <code>step</code> inputs.",
+  },
+  {
+    prop: "beforeStepChange",
+    type: "function",
+    default: "undefined",
+    description:
+      "A function to run before the active step is changed. The function is supplied with a context object containing <code>currentStep</code> and <code>targetStep</code> which are both FormKit <code>node</code> context objects. Additionally, <code>delta</code> is supplied as an integer which reflects the distance between <code>currentStep</code> and <code>targetStep</code>. When supplied to the <code>multi-step</code> this function will fire on every <code>step</code> change.",
+  },
+]
+without: ['help', 'prefix-icon', 'suffix-icon']
+---
+::
+
 
 ## Props & Attributes (step)
 
-<reference-table 
-  input="step" 
-  :data="[
-    {prop: 'label', type: 'string', default: '', description: 'Used to change the tab label of the step. If not custom label is supplied the step\'s <code>name</code> will be used.'},
-    {prop: 'prevLabel', type: 'string', default: 'Previous', description: 'Used to change the label of the default <code>prevAction</code> button.'},
-    {prop: 'nextLabel', type: 'string', default: 'Next', description: 'Used to change the label of the default <code>nextAction</code> button.'},
-    {prop: 'prevAttrs', type: 'object', default: {}, description: 'Used to apply attributes to the default <code>prevAction</code> button input.'},
-    {prop: 'nextAttrs', type: 'object', default: {}, description: 'Used to apply attributes to the default <code>nextAction</code> button input.'},
-    {prop: 'validStepIcon', type: 'string', default: 'check', description: 'Specifies an icon to put in the <code>badge</code> section when the step is valid. When applied to a <code>step</code> the icon will be applied only to the target <code>step</code>.'},
-    {prop: 'beforeStepChange', type: 'function', default: 'undefined', description: 'A function to run before the active step is changed. The function is supplied with a context object containing <code>currentStep</code> and <code>targetStep</code> which are both FormKit <code>node</code> context objects. Additionally, <code>delta</code> is supplied as an integer which reflects the distance between <code>currentStep</code> and <code>targetStep</code>. When supplied to a <code>step</code> this function will fire only when navigating away from the specified <code>step</code>.'}
-  ]"
-  :without="[
-    'help',
-    'prefix-icon',
-    'suffix-icon',
-  ]">
-</reference-table>
+::ReferenceTable
+---
+
+input: step 
+data: [
+  {
+    prop: "label",
+    type: "string",
+    default: "",
+    description:
+      "Used to change the tab label of the step. If not custom label is supplied the step's <code>name</code> will be used.",
+  },
+  {
+    prop: "prevLabel",
+    type: "string",
+    default: "Previous",
+    description:
+      "Used to change the label of the default <code>prevAction</code> button.",
+  },
+  {
+    prop: "nextLabel",
+    type: "string",
+    default: "Next",
+    description:
+      "Used to change the label of the default <code>nextAction</code> button.",
+  },
+  {
+    prop: "prevAttrs",
+    type: "object",
+    default: {},
+    description:
+      "Used to apply attributes to the default <code>prevAction</code> button input.",
+  },
+  {
+    prop: "nextAttrs",
+    type: "object",
+    default: {},
+    description:
+      "Used to apply attributes to the default <code>nextAction</code> button input.",
+  },
+  {
+    prop: "validStepIcon",
+    type: "string",
+    default: "check",
+    description:
+      "Specifies an icon to put in the <code>badge</code> section when the step is valid. When applied to a <code>step</code> the icon will be applied only to the target <code>step</code>.",
+  },
+  {
+    prop: "beforeStepChange",
+    type: "function",
+    default: "undefined",
+    description:
+      "A function to run before the active step is changed. The function is supplied with a context object containing <code>currentStep</code> and <code>targetStep</code> which are both FormKit <code>node</code> context objects. Additionally, <code>delta</code> is supplied as an integer which reflects the distance between <code>currentStep</code> and <code>targetStep</code>. When supplied to a <code>step</code> this function will fire only when navigating away from the specified <code>step</code>.",
+  },
+]
+without: [
+  'help',
+  'prefix-icon',
+  'suffix-icon',
+]
+---
+::
+
 
 ## Sections
 
-<div>
-  <formkit-input-diagram
-    class="input-diagram--multi-step multi-step"
-    :schema="[
-        {
-          name: 'outer',
-          position: 'right',
-          children: [
-            {
-              name: 'wrapper',
-              position: 'right',
-              children: [
-                {
-                  name: 'tabs',
-                  children: [
-                    {
-                      name: 'tab',
-                      class: 'flex',
-                      children: [
-                        {
-                          name: 'tabLabel',
-                          content: 'Step Name'
-                        },
-                        {
-                          name: 'badge',
-                          position: 'right',
-                          content: '⚠️',
-                          class: 'grow-0'
-                        }
-                      ]
-                    },
-                  ]
-                },
-                {
-                  name: 'steps',
-                  children: [
-                    {
-                      name: 'step',
-                      children: [
-                        {
-                          name: 'stepInner',
-                          position: 'right',
-                          class: 'text-center',
-                          content: '... Step content ...'
-                        },
-                        {
-                          name: 'stepActions',
-                          class: 'flex',
-                          children: [
-                            {
-                              name: 'stepPrevious',
-                              content: 'Back'
-                            },
-                            {
-                              name: 'stepNext',
-                              position: 'right',
-                              content: 'Next'
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                  ]
-                },
-              ]
-            }
-          ]
-        }
-      ]"
-  >
-  </formkit-input-diagram>
-</div>
+::FormKitInputDiagram
+---
+class: "input-diagram--multi-step multi-step"
+schema: [
+  {
+    name: 'outer',
+    position: 'right',
+    children: [
+      {
+        name: 'wrapper',
+        position: 'right',
+        children: [
+          {
+            name: 'tabs',
+            children: [
+              {
+                name: 'tab',
+                class: 'flex',
+                children: [
+                  {
+                    name: 'tabLabel',
+                    content: 'Step Name'
+                  },
+                  {
+                    name: 'badge',
+                    position: 'right',
+                    content: '⚠️',
+                    class: 'grow-0'
+                  }
+                ]
+              },
+            ]
+          },
+          {
+            name: 'steps',
+            children: [
+              {
+                name: 'step',
+                children: [
+                  {
+                    name: 'stepInner',
+                    position: 'right',
+                    class: 'text-center',
+                    content: '... Step content ...'
+                  },
+                  {
+                    name: 'stepActions',
+                    class: 'flex',
+                    children: [
+                      {
+                        name: 'stepPrevious',
+                        content: 'Back'
+                      },
+                      {
+                        name: 'stepNext',
+                        position: 'right',
+                        content: 'Next'
+                      }
+                    ]
+                  }
+                ]
+              },
+            ]
+          },
+        ]
+      }
+    ]
+  }
+]
+---
+::
 
-<reference-table type="sectionKeys" primary="section-key" :data="[
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+data: [
   {
     'section-key': 'tabs',
     description: 'A wrapper around all of the tabs.'
@@ -306,7 +394,7 @@ name="beforeStepChange"
   },
   {
     'section-key': 'step',
-    description: 'A wrapper around step content from the default slot and the step\'s action buttons. Each step has visibility styling automatically applied depending on if it is the current active step.'
+    description: 'A wrapper around step content from the default slot and the step’s action buttons. Each step has visibility styling automatically applied depending on if it is the current active step.'
   },
   {
     'section-key': 'stepInner',
@@ -324,7 +412,8 @@ name="beforeStepChange"
     'section-key': 'stepNext',
     description: 'A wrapper around the action button for navigating to the next step.'
   }
-]" :without="[
+] 
+without: [
   'label',
   'prefix',
   'prefixIcon',
@@ -335,5 +424,6 @@ name="beforeStepChange"
   'help',
   'messages',
   'message'
-]">
-</reference-table>
+]
+---
+::

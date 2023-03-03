@@ -3,42 +3,56 @@ title: Number Input
 description: A native HTML number input
 ---
 
-<InputPageHero title="Number"></InputPageHero>
+:InputPageHero{title="Number"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `number` input uses HTML's [native number input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number). It allows a user to enter a single integer or decimal value.
 
 ## Basic example
 
-<example
-name="Number input"
-file="/_content/examples/number/number.vue"></example>
+::Example
+---
+name: "Number input"
+file: "/_content/examples/number/number.vue"
+---
+::
+
 
 ## Props & Attributes
 
 The `number` input has no unique props but can make use of the following universal
 FormKit props and native attributes.
 
-<reference-table :attrs="['min', 'max', 'step']" input="number">
-</reference-table>
+::ReferenceTable
+---
+input: "number"
+attrs: ['min', 'max', 'step']
+---
+::
+
 
 ## Sections
-<section-keys-intro></section-keys-intro>
 
-<div>
-  <formkit-input-diagram
-    label-content="Age you learned Algebra"
-    prefix-icon-content="="
-    prefix-content=""
-    input-content="13"
-    suffix-content=""
-    suffix-icon-content="✔️"
-    help-content="We'll incorporate this into our survey data."
-    message-content="Age you learned Algebra is required."
-  >
-  </formkit-input-diagram>
-</div>
+:SectionKeysIntro
 
-<reference-table type="sectionKeys" primary="section-key">
-</reference-table>
+::FormKitInputDiagram
+---
+label-content: "Age you learned Algebra"
+prefix-icon-content: "="
+prefix-content: ""
+input-content: "13"
+suffix-content: ""
+suffix-icon-content: "✔️"
+help-content: "We'll incorporate this into our survey data."
+message-content: "Age you learned Algebra is required."
+---
+::
+
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+---
+::
+
