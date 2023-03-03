@@ -462,7 +462,8 @@ file: [
   '/_content/examples/guides/tailwind-theme/tailwind-theme/Rating.vue',
   '/_content/examples/guides/tailwind-theme/tailwind-theme/Repeater.vue',
   '/_content/examples/guides/tailwind-theme/tailwind-theme/Taglist.vue',
-  '/_content/examples/guides/tailwind-theme/tailwind-theme/Toggle.vue'
+  '/_content/examples/guides/tailwind-theme/tailwind-theme/Toggle.vue',
+  '/_content/examples/guides/tailwind-theme/tailwind-theme/Transferlist.vue'
 ]
 init-file-tab: "formkit.config.js"
 css-framework: "tailwind"
