@@ -3,40 +3,54 @@ title: Search Input
 description: A native HTML search input.
 ---
 
-<InputPageHero title="Search"></InputPageHero>
+:InputPageHero{title="Search"}
 
-<page-toc></page-toc>
+:PageToc
 
 The `search` input uses HTML's [native search input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/search). Generally, search inputs are the same as text inputs, but may have different styling or features based on the browser. For example, browsers often add a small "X" to clear the input when it has a value.
 
 ## Basic example
 
-<example
-name="Search input"
-file="/_content/examples/search/search.vue"></example>
+::Example
+---
+name: "Search input"
+file: "/_content/examples/search/search.vue"
+---
+::
+
 
 ## Props & Attributes
 
 The `search` input has no unique props but can make use of the following universal
 FormKit props.
 
-<reference-table input="search" :attrs="['maxlength', 'minlength', 'placeholder']">
-</reference-table>
+::ReferenceTable
+---
+input: "search"
+attrs: ['maxlength', 'minlength', 'placeholder']
+---
+::
+
 
 ## Sections
-<section-keys-intro></section-keys-intro>
 
-<div>
-  <formkit-input-diagram
-    prefix-icon-content="🔍"
-    suffix-icon-content="→"
-    label-content="Search everything"
-    input-content="Best climate for tomatoes"
-    help-content="Enter search term and press enter to search."
-    message-content="Please enter a search term."
-  >
-  </formkit-input-diagram>
-</div>
+:SectionKeysIntro
 
-<reference-table type="sectionKeys" primary="section-key">
-</reference-table>
+::FormKitInputDiagram
+---
+prefix-icon-content: "🔍"
+suffix-icon-content: "→"
+label-content: "Search everything"
+input-content: "Best climate for tomatoes"
+help-content: "Enter search term and press enter to search."
+message-content: "Please enter a search term."
+---
+::
+
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+---
+::
+

@@ -3,20 +3,24 @@ title: Taglist Input
 description: A Pro input that allows users to search and select from a customizable options list. Supports single and multi-value selections.
 ---
 
-<InputPageHero title="Taglist"></InputPageHero>
+:InputPageHero{title="Taglist"}
 
-<page-toc></page-toc>
+:PageToc
 
-<ProInstallSnippet></ProInstallSnippet>
+:ProInstallSnippet
 
 ## Basic example
 
 The `taglist` input allows users to search through a list of options and apply any number of tags. Users can also drag and drop tags to re-order:
 
-<example
-name="Taglist"
-:min-height="550"
-file="/\_content/examples/taglist/taglist-base.vue"></example>
+::Example
+---
+name: "Taglist"
+min-hight: 550
+file: "/_content/examples/taglist/taglist-base.vue"
+---
+::
+
 
 ## Defining options
 
@@ -31,46 +35,66 @@ The `options` prop can accept three different formats of values:
 
 The taglist input will filter options with its own internal search function. You can replace this search function by providing the `filter` prop a function of your own. Your function will receive two arguments, the `option` being iterated over and the current `search` value:
 
-<example
-name="Taglist"
-:min-height="550"
-file="/_content/examples/taglist/taglist-filter.vue"></example>
+::Example
+---
+name: "Taglist"
+min-hight: 550
+file: "/_content/examples/taglist/taglist-filter.vue"
+---
+::
+
 
 ## Empty message
 
 The taglist input, by default, will close the listbox when no search results are found while filtering. You can change this behavior by assigning the `empty-message` prop a message to display when no results are found:
 
-<example
-name="Taglist"
-:min-height="550"
-file="/_content/examples/taglist/taglist-empty-message.vue"></example>
+::Example
+---
+name: "Taglist"
+min-hight: 550
+file: "/_content/examples/taglist/taglist-empty-message.vue"
+---
+::
+
 
 ## Allow new values
 
 The taglist input, unlike the dropdown or autocomplete inputs, allows you to enter an arbitrary value (a value not in the list of options). This is useful for creating new tags on the fly. To enable this feature, set the `allow-new-values` prop to `true`.
 
-<example
-name="Taglist"
-:min-height="550"
-file="/_content/examples/taglist/taglist-allow-new-values.vue"></example>
+::Example
+---
+name: "Taglist"
+min-hight: 550
+file: "/_content/examples/taglist/taglist-allow-new-values.vue"
+---
+::
+
 
 ## Max
 
 The `max` prop allows you to limit the number of options that can be selected. When the `max` limit is reached, the taglist input will disable the listbox:
 
-<example
-name="Taglist"
-:min-height="550"
-file="/_content/examples/taglist/taglist-max.vue"></example>
+::Example
+---
+name: "Taglist"
+min-hight: 550
+file: "/_content/examples/taglist/taglist-max.vue"
+---
+::
+
 
 ## Close on select
 
 If you would like the taglist's listbox to remain open in between selections, set the `close-on-select` prop to `false`:
 
-<example
-name="Taglist"
-:min-height="550"
-file="/_content/examples/taglist/taglist-close-on-select.vue"></example>
+::Example
+---
+name: "Taglist"
+min-hight: 550
+file: "/_content/examples/taglist/taglist-close-on-select.vue"
+---
+::
+
 
 ## Slots
 
@@ -78,10 +102,14 @@ Just like the [Dropdown input](/inputs/dropdown) or [Autocomplete input](/inputs
 
 In this example, we are going to use the `tag` slot to customize the look of the tags:
 
-<example
-name="Taglist"
-:min-height="550"
-file="/\_content/examples/taglist/taglist-slots.vue"></example>
+::Example
+---
+name: "Taglist"
+min-hight: 550
+file: "/_content/examples/taglist/taglist-slots.vue"
+---
+::
+
 
 >
 
@@ -93,19 +121,27 @@ Instead of passing a static list of options to the `options` prop, you can assig
 
 In this example, we'll assign the `options` prop the `searchMovies` function. By doing so, `searchMovies` will receive the `context` object as an argument. Within this `context` object is the `search` property, which is the current search value. To perform our search, we'll use the `search` value as the query parameter for our API request:
 
-<example
-name="Taglist"
-:min-height="550"
-file="/_content/examples/taglist/taglist-single-request.vue"></example>
+::Example
+---
+name: "Taglist"
+min-hight: 550
+file: "/_content/examples/taglist/taglist-single-request.vue"
+---
+::
+
 
 ### Page and hasNextPage parameters
 
 A likely scenario you'll encounter is needing to search through a paginated API. This can be done by referencing the same `context` object as before. Within this object, we can utilize the `page` and `hasNextPage` properties. The `page` property is the current page number, and the `hasNextPage` property is a function to be called when there are more pages to load:
 
-<example
-name="Taglist"
-:min-height="550"
-file="/_content/examples/taglist/taglist-pagination.vue"></example>
+::Example
+---
+name: "Taglist"
+min-hight: 550
+file: "/_content/examples/taglist/taglist-pagination.vue"
+---
+::
+
 
 ### Loading Style
 
@@ -117,10 +153,14 @@ Instead of requiring your users to click the <i>Load more</i> button to load add
 
 FormKit's taglist input also provides an `optionLoader` prop that allows you to rehydrate values that are not in the options list. In this example, we'll provide the taglist an initial value (a movie ID), and assign the optionLoader to a function that will make a request to the API to get the movie:
 
-<example
-name="Taglist"
-:min-height="550"
-file="/_content/examples/taglist/taglist-pagination-option-loader.vue"></example>
+::Example
+---
+name: "Taglist"
+min-hight: 550
+file: "/_content/examples/taglist/taglist-pagination-option-loader.vue"
+---
+::
+
 
 Notice in the example above that the optionLoader function is passed two arguments: the `value` of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption is used for preventing unnecessary lookups. If the cachedOption is not `null` it means that the selected option has already been loaded, and you can return the cachedOption directly.
 
@@ -128,23 +168,34 @@ Notice in the example above that the optionLoader function is passed two argumen
 
 Instead of using the `optionLoader` prop to rehydrate values that are not in the options list, you can use the optionLoader to perform a look-up to fetch additional data, or even just modify the option's current label. In this example, we'll use the optionLoader to fetch the movie's poster image:
 
-<example
-name="Taglist"
-:min-height="550"
-file="/_content/examples/taglist/taglist-option-loader-additional-data.vue"></example>
+::Example
+---
+name: "Taglist"
+min-hight: 550
+file: "/_content/examples/taglist/taglist-option-loader-additional-data.vue"
+---
+::
+
 
 ## Full example
 
 Now let's combine what we've learned so far by leveraging the `tag` slot for custom markup, and setting the `options` prop to a function that will return pages of movies from an API:
 
-<example
-name="Taglist"
-:min-height="550"
-file="/_content/examples/taglist/taglist-full.vue"></example>
+::Example
+---
+name: "Taglist"
+min-hight: 550
+file: "/_content/examples/taglist/taglist-full.vue"
+---
+::
+
 
 ## Props & Attributes
 
-<reference-table input="taglist" :data="[
+::ReferenceTable
+---
+input: "taglist" 
+data: [
   {
     prop: 'debounce',
     type: 'number',
@@ -209,10 +260,16 @@ file="/_content/examples/taglist/taglist-full.vue"></example>
     default: 'true',
     description: 'Closes the listbox when an option is selected.'
   }
-]">
-</reference-table>
+]
+---
+::
 
-<reference-table type="sectionKeys" primary="section-key" :data="[
+
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key" 
+data: [
   {
     'section-key': 'selector',
     description: 'The selector section is a button element that opens the dropdown options list.'
@@ -281,5 +338,7 @@ file="/_content/examples/taglist/taglist-full.vue"></example>
     'section-key': 'emptyMessageInner',
     description: 'A span element that acts as a wrapper for the emptyMessage section.'
   }
-]">
-</reference-table>
+]
+---
+::
+

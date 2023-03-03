@@ -3,11 +3,11 @@ title: Repeater Input
 description: A Pro input that allows users to add, remove, and re-arrange repeatable input groups.
 ---
 
-<InputPageHero title="Repeater"></InputPageHero>
+:InputPageHero{title="Repeater"}
 
-<page-toc></page-toc>
+:PageToc
 
-<ProInstallSnippet></ProInstallSnippet>
+:ProInstallSnippet
 
 ## Basic example
 
@@ -15,9 +15,13 @@ The `repeater` input is for repeating groups of inputs. You can use any number o
 
 By default, the repeater input has the ability to shift, add, and remove items:
 
-<example
-name="Repeater"
-file="/_content/examples/repeater/repeater-base.vue"></example>
+::Example
+---
+name: "Repeater"
+file: "/_content/examples/repeater/repeater-base.vue"
+---
+::
+
 
 Unlike most other FormKit input types, the repeater input is of type [list](/inputs/list). You can see above that the `users` property (our repeater's value) is an array.
 
@@ -25,40 +29,54 @@ Unlike most other FormKit input types, the repeater input is of type [list](/inp
 
 In the previous example, the 'Add Users' button is provided by default, and the button label is derived from the repeater's `label`. We're able to customize the label by using the `add-button` prop and setting it to a `string`, or remove it completely by setting it to `false`. Alternatively, similar to the `submit-attrs` prop on the [FormKit's forms](/inputs/form), we can provide an object of attributes to be applied to the button with `add-attrs`. In this example, we change the label of the repeater from `Add Users` to `My custom label` using the `add-label` prop:
 
-<example
-name="Repeater"
-file="/_content/examples/repeater/repeater-add-button-attrs.vue"></example>
+::Example
+---
+name: "Repeater"
+file: "/_content/examples/repeater/repeater-add-button-attrs.vue"
+---
+::
+
 
 ## Min/max
 
 Like many other FormKit inputs, the repeater comes with a `min` and `max` prop. You can use these props to limit the number of items to be added or removed.
 
-<example
-name="Repeater"
-file="/_content/examples/repeater/repeater-min-max.vue"></example>
+::Example
+---
+name: "Repeater"
+file: "/_content/examples/repeater/repeater-min-max.vue"
+---
+::
+
 
 ## Controls
 
 The repeater input by default comes with a set of controls that allow you to shift, add, and remove items. You can control the visibility of these controls by setting the `upControl`, `downControl`, `insertControl`, and `removeControl` props to `true` or `false`.
 
-<example
-name="Repeater"
-file="/_content/examples/repeater/repeater-insert-control.vue"></example>
+::Example
+---
+name: "Repeater"
+file: "/_content/examples/repeater/repeater-insert-control.vue"
+---
+::
+
 
 ## Custom controls
 
 With FormKit's repeater, you are not restricted to our default controls. You can manipulate the repeater in anyway you want:
 
-<example
-name="Repeater"
-file="/_content/examples/repeater/repeater-controls.vue"></example>
+::Example
+---
+name: "Repeater"
+file: "/_content/examples/repeater/repeater-controls.vue"
+---
+::
+
 
 ## Setting errors
 
 You can set errors on a repeater or any repeatable item using dot notation. Here we are using the
 [`setErrors`](/inputs/form#using-nodeseterrors) helper, but there are other methods as well:
-
-<client-only>
 
 ```js
 // the 2nd argument of setErrors is input-level errors
@@ -73,221 +91,276 @@ formNode.setErrors( null, // no form errors,
 )
 ```
 
-</client-only>
-
 Remember, your submit handler is passed the form's core `node` and can be used
 to conveniently set errors at depth. Read more about error handling
 [here](/inputs/form#error-handling). Here's an example of a fake backend
 returning errors for both the repeater and one child:
 
-<example
-  name="Repeater"
-  file="/_content/examples/repeater/errors/repeater-errors.vue"></example>
+::Example
+---
+name: "Repeater"
+file: "/_content/examples/repeater/errors/repeater-errors.vue"
+---
+::
+
 
 ## Props & Attributes
 
-<reference-table input="rating" :data="[
-  {prop: 'add-label', type: 'string', default: 'null', description: 'Used to change the label of the add button.'},
-  {prop: 'add-attrs', type: 'object', default: {}, description: 'Used to apply attributes to the add button element.'},
-  {prop: 'add-button', type: 'boolean', default: 'true', description: 'Conditional for whether to show the add button.'},
-  {prop: 'up-control', type: 'boolean', default: 'true', description: 'Conditional for whether to show the up control.'},
-  {prop: 'down-control', type: 'boolean', default: 'true', description: 'Conditional for whether to show the down control.'},
-  {prop: 'insert-control', type: 'boolean', default: 'false', description: 'Conditional for whether to show the insert control.'},
-  {prop: 'remove-control', type: 'boolean', default: 'true', description: 'Conditional for whether to show the remove control.'},
-  {prop: 'min', type: 'Number', default: '1', description: 'The minimum number of children.'},
-  {prop: 'max', type: 'Number', default: 'null', description: 'The maximum number of children.'}
-  ]">
-</reference-table>
+::ReferenceTable
+---
+input: "rating" 
+data: [
+  {
+    prop: "add-label",
+    type: "string",
+    default: "null",
+    description: "Used to change the label of the add button.",
+  },
+  {
+    prop: "add-attrs",
+    type: "object",
+    default: {},
+    description: "Used to apply attributes to the add button element.",
+  },
+  {
+    prop: "add-button",
+    type: "boolean",
+    default: "true",
+    description: "Conditional for whether to show the add button.",
+  },
+  {
+    prop: "up-control",
+    type: "boolean",
+    default: "true",
+    description: "Conditional for whether to show the up control.",
+  },
+  {
+    prop: "down-control",
+    type: "boolean",
+    default: "true",
+    description: "Conditional for whether to show the down control.",
+  },
+  {
+    prop: "insert-control",
+    type: "boolean",
+    default: "false",
+    description: "Conditional for whether to show the insert control.",
+  },
+  {
+    prop: "remove-control",
+    type: "boolean",
+    default: "true",
+    description: "Conditional for whether to show the remove control.",
+  },
+  {
+    prop: "min",
+    type: "Number",
+    default: "1",
+    description: "The minimum number of children.",
+  },
+  {
+    prop: "max",
+    type: "Number",
+    default: "null",
+    description: "The maximum number of children.",
+  },
+]
+---
+::
+
 
 ## Sections
 
-<section-keys-intro></section-keys-intro>
+:SectionKeysIntro
 
-<div>
-  <formkit-input-diagram
-    :hide-on-small="true"
-    class="input-diagram--autocomplete-outer autocomplete-option-single"
-    :schema="[
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--autocomplete-outer autocomplete-option-single"
+schema: [
+  {
+    name: 'outer',
+    children: [
       {
-        name: 'outer',
+        name: 'fieldset',
         children: [
           {
-            name: 'fieldset',
+            name: 'legend',
+            content: 'Guests',
+            class: 'center-vert',
+          },
+          {
+            name: 'help',
+            content: 'Note guests you will bring to the race track.',
+          },
+          {
+            name: 'inner',
             children: [
               {
-                name: 'legend',
-                content: 'Guests',
-                class: 'center-vert',
+                name: 'prefix',
+                class: 'tiny-section'
               },
               {
-                name: 'help',
-                content: 'Note guests you will bring to the race track.',
-              },
-              {
-                name: 'inner',
+                name: 'items',
+                class: 'flex-grow',
                 children: [
                   {
-                    name: 'prefix',
-                    class: 'tiny-section'
-                  },
-                  {
-                    name: 'items',
-                    class: 'flex-grow',
+                    name: 'item',
+                    class: 'flex',
                     children: [
                       {
-                        name: 'item',
-                        class: 'flex',
+                        name: 'content',
+                        class: 'flex-grow',
+                        content: 'Repeated fields here.'
+                      },
+                      {
+                        name: 'controls',
+                        class: '',
+                        position: 'right',
                         children: [
                           {
-                            name: 'content',
-                            class: 'flex-grow',
-                            content: 'Repeated fields here.'
+                            name: 'up',
+                            position: 'right',
+                            class: 'small-pad spacing-bottom',
+                            children: [
+                              {
+                                name: 'upControl',
+                                position: 'right',
+                                class: 'small-pad flex',
+                                children: [
+                                  {
+                                    name: 'controlLabel',
+                                    position: 'right',
+                                    class: 'small-pad tiny-section'
+                                  },
+                                  {
+                                    name: 'moveUpIcon',
+                                    position: 'right',
+                                    content: '↑',
+                                    class: 'small-pad flex-grow'
+                                  }
+                                ]
+                              },
+                            ]
                           },
                           {
-                            name: 'controls',
-                            class: '',
+                            name: 'remove',
+                            position: 'right',
+                            class: 'small-pad spacing-bottom',
+                            children: [
+                              {
+                                name: 'removeControl',
+                                class: 'small-pad flex',
+                                position: 'right',
+                                children: [
+                                  {
+                                    name: 'controlLabel',
+                                    position: 'right',
+                                    class: 'small-pad tiny-section'
+                                  },
+                                  {
+                                    name: 'removeIcon',
+                                    position: 'right',
+                                    content: '🗑',
+                                    class: 'small-pad'
+                                  }
+                                ]
+                              },
+                            ]
+                          },
+                          {
+                            name: 'insert',
+                            position: 'right',
+                            class: 'small-pad spacing-bottom',
+                            children: [
+                              {
+                                name: 'insertControl',
+                                class: 'small-pad flex',
+                                position: 'right',
+                                children: [
+                                  {
+                                    name: 'controlLabel',
+                                    position: 'right',
+                                    class: 'small-pad tiny-section'
+                                  },
+                                  {
+                                    name: 'addIcon',
+                                    position: 'right',
+                                    content: '➕',
+                                    class: 'small-pad'
+                                  }
+                                ]
+                              },
+                            ]
+                          },
+                          {
+                            name: 'down',
+                            class: 'small-pad spacing-bottom',
                             position: 'right',
                             children: [
                               {
-                                name: 'up',
+                                name: 'downControl',
+                                class: 'small-pad flex',
                                 position: 'right',
-                                class: 'small-pad spacing-bottom',
                                 children: [
                                   {
-                                    name: 'upControl',
+                                    name: 'controlLabel',
                                     position: 'right',
-                                    class: 'small-pad flex',
-                                    children: [
-                                      {
-                                        name: 'controlLabel',
-                                        position: 'right',
-                                        class: 'small-pad tiny-section'
-                                      },
-                                      {
-                                        name: 'moveUpIcon',
-                                        position: 'right',
-                                        content: '↑',
-                                        class: 'small-pad flex-grow'
-                                      }
-                                    ]
+                                    class: 'small-pad tiny-section'
                                   },
+                                  {
+                                    name: 'moveDownIcon',
+                                    position: 'right',
+                                    content: '↓',
+                                    class: 'small-pad'
+                                  }
                                 ]
                               },
-                              {
-                                name: 'remove',
-                                position: 'right',
-                                class: 'small-pad spacing-bottom',
-                                children: [
-                                  {
-                                    name: 'removeControl',
-                                    class: 'small-pad flex',
-                                    position: 'right',
-                                    children: [
-                                      {
-                                        name: 'controlLabel',
-                                        position: 'right',
-                                        class: 'small-pad tiny-section'
-                                      },
-                                      {
-                                        name: 'removeIcon',
-                                        position: 'right',
-                                        content: '🗑',
-                                        class: 'small-pad'
-                                      }
-                                    ]
-                                  },
-                                ]
-                              },
-                              {
-                                name: 'insert',
-                                position: 'right',
-                                class: 'small-pad spacing-bottom',
-                                children: [
-                                  {
-                                    name: 'insertControl',
-                                    class: 'small-pad flex',
-                                    position: 'right',
-                                    children: [
-                                      {
-                                        name: 'controlLabel',
-                                        position: 'right',
-                                        class: 'small-pad tiny-section'
-                                      },
-                                      {
-                                        name: 'addIcon',
-                                        position: 'right',
-                                        content: '➕',
-                                        class: 'small-pad'
-                                      }
-                                    ]
-                                  },
-                                ]
-                              },
-                              {
-                                name: 'down',
-                                class: 'small-pad spacing-bottom',
-                                position: 'right',
-                                children: [
-                                  {
-                                    name: 'downControl',
-                                    class: 'small-pad flex',
-                                    position: 'right',
-                                    children: [
-                                      {
-                                        name: 'controlLabel',
-                                        position: 'right',
-                                        class: 'small-pad tiny-section'
-                                      },
-                                      {
-                                        name: 'moveDownIcon',
-                                        position: 'right',
-                                        content: '↓',
-                                        class: 'small-pad'
-                                      }
-                                    ]
-                                  },
-                                ]
-                              }
                             ]
                           }
                         ]
                       }
                     ]
-                  },
-                  {
-                    name: 'suffix',
-                    position: 'right',
-                    class: 'tiny-section'
-                  },
+                  }
                 ]
               },
               {
-                name: 'addButton',
-                class: 'button button--pro margin-collapse',
-                content: 'Add guest'
-              }
+                name: 'suffix',
+                position: 'right',
+                class: 'tiny-section'
+              },
             ]
           },
           {
-            name: 'messages',
-            children: [
-              {
-                name: 'message',
-                content: 'Sorry, you may not add more than 3 guests.',
-              }
-            ]
+            name: 'addButton',
+            class: 'button button--pro margin-collapse',
+            content: 'Add guest'
+          }
+        ]
+      },
+      {
+        name: 'messages',
+        children: [
+          {
+            name: 'message',
+            content: 'Sorry, you may not add more than 3 guests.',
           }
         ]
       }
-    ]"
-  >
-  </formkit-input-diagram>
-</div>
+    ]
+  }
+]
+---
+::
 
-<reference-table type="sectionKeys" primary="section-key" :data="[
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key" 
+data: [
   {
     'section-key': 'fieldset',
-    description: 'A fieldset element that acts as the repeater\'s wrapper.'
+    description: 'A fieldset element that acts as the repeater’s wrapper.'
   },
   {
     'section-key': 'legend',
@@ -295,7 +368,7 @@ returning errors for both the repeater and one child:
   },
   {
     'section-key': 'items',
-    description: 'A ul element that wraps the repeater\'s items.'
+    description: 'A ul element that wraps the repeater’s items.'
   },
   {
     'section-key': 'item',
@@ -311,7 +384,7 @@ returning errors for both the repeater and one child:
   },
   {
     'section-key': 'controls',
-    description: 'A ul element that wraps the repeater\'s controls.'
+    description: 'A ul element that wraps the repeater’s controls.'
   },
   {
     'section-key': 'controlLabel',
@@ -327,7 +400,7 @@ returning errors for both the repeater and one child:
   },
   {
     'section-key': 'moveUpIcon',
-    description: 'A span element that renders the upControl\'s icon.'
+    description: 'A span element that renders the upControl’s icon.'
   },
   {
     'section-key': 'down',
@@ -339,7 +412,7 @@ returning errors for both the repeater and one child:
   },
   {
     'section-key': 'moveDownIcon',
-    description: 'A span element that renders the downControl\'s icon.'
+    description: 'A span element that renders the downControl’s icon.'
   },
   {
     'section-key': 'insert',
@@ -351,7 +424,7 @@ returning errors for both the repeater and one child:
   },
   {
     'section-key': 'insertIcon',
-    description: 'A span element that renders the insertControl\'s icon.'
+    description: 'A span element that renders the insertControl’s icon.'
   },
   {
     'section-key': 'remove',
@@ -363,7 +436,9 @@ returning errors for both the repeater and one child:
   },
   {
     'section-key': 'removeIcon',
-    description: 'A span element that renders the removeControl\'s icon.'
+    description: 'A span element that renders the removeControl’s icon.'
   },
-]">
-</reference-table>
+]
+---
+::
+
