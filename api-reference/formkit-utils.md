@@ -745,6 +745,25 @@ undefine(value: unknown): true | undefined;
 
  `true | undefined`
 
+### whenAvailable()
+
+Uses a global mutation observer to wait for a given element to appear in the DOM.
+
+#### Signature
+
+<client-only>
+
+```typescript
+whenAvailable(childId: string, callback: (el: Element) => void): void;
+```
+
+</client-only>
+
+#### Parameters
+
+- `childId` — The id of the child node.
+- `callback` — The callback to call when the child node is found.
+
 ## TypeScript
 
 ### FormKitDateTokens

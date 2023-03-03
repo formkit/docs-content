@@ -3,7 +3,7 @@ title: Form
 description: Collect all of your FormKit data, submit to your server, and handle server-side error messages.
 ---
 
-# Form
+<InputPageHero title="Form"></InputPageHero>
 
 <page-toc></page-toc>
 

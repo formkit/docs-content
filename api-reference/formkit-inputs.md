@@ -403,6 +403,29 @@ extendSchema(schema: FormKitSchemaNode, extension?: Partial<FormKitSchemaNode>):
 
  [FormKitSchemaNode](/api-reference/formkit-core#formkitschemanode)
 
+### findSection()
+
+Finds a seciton by name in a schema.
+
+#### Signature
+
+<client-only>
+
+```typescript
+findSection(schema: FormKitSchemaNode[], target: string): [false, false] | [FormKitSchemaNode[], FormKitSchemaCondition];
+```
+
+</client-only>
+
+#### Parameters
+
+* `schema` — A [FormKitSchemaNode](/api-reference/formkit-core#formkitschemanode) array.
+* `target` — The name of the section to find.
+
+#### Returns
+
+ a tuple of the schema and the section or a tuple of `false` and `false` if not found.
+
 ### form()
 
 A feature to add a submit handler and actions section.

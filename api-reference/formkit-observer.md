@@ -108,12 +108,13 @@ An API-compatible FormKitNode that is able to determine the full dependency tree
 
 ```typescript
 interface FormKitObservedNode extends FormKitNode {
+    _node: FormKitNode;
     deps: FormKitDependencies;
-    kill: () => void;
+    kill: () => undefined;
     observe: () => void;
     receipts: FormKitObserverReceipts;
     stopObserve: () => FormKitDependencies;
-    watch: (block: FormKitWatchable) => void;
+    watch:<TextendsFormKitWatchable>(block: T, after?: (value: ReturnType<T>) => void) => void;
 }
 ```
 
@@ -126,8 +127,8 @@ A callback to watch for nodes.
 <client-only>
 
 ```typescript
-interface FormKitWatchable {
-    (node: FormKitObservedNode): any;
+interface FormKitWatchable<T = unknown> {
+    (node: FormKitObservedNode): T;
 }
 ```
 

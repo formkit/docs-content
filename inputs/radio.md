@@ -40,7 +40,7 @@ file="/_content/examples/radio-objects/radio-objects.vue"></example>
 ## Props & Attributes
 
 <reference-table input="radio" :without="['prefix-icon', 'suffix-icon']" :data="[
-  {prop: 'decorator-icon', type: 'String', default: '’’', description: 'Specifies <a href=&quot;/plugins/icons&quot;>an icon</a> to put in the <code>decoratorIcon</code> section. Shows when the radio is checked. Defaults to the <code>radioDecorator</code> icon.'},
+  {prop: 'decorator-icon', type: 'String', default: '’’', description: 'Specifies <a href=&quot;/essentials/icons&quot;>an icon</a> to put in the <code>decoratorIcon</code> section. Shows when the radio is checked. Defaults to the <code>radioDecorator</code> icon.'},
   {prop: 'options', type: 'Array/Object', default: '[]', description: 'An object of value/label pairs or an array of strings, or an array of objects that <em>must</em> contain a label and value property.'}
   ]">
 </reference-table>
@@ -141,7 +141,6 @@ file="/_content/examples/radio-objects/radio-objects.vue"></example>
   >
   </formkit-input-diagram>
 </div>
-
 
 <reference-table type="sectionKeys" primary="section-key" :without="['prefixIcon', 'suffixIcon']" :data="[
   {'section-key': 'decorator', description: 'Responsible for the element immediately following the input element — usually used for styling.'},

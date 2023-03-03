@@ -33,10 +33,9 @@ By default, the `rating` input will increment by 1. The `step` prop will allow y
 name="Rating"
 file="/_content/examples/rating/rating-step.vue"></example>
 
-
 ## Icons
 
-By default, the `rating` input uses FormKit's own star icon. You can change which icon is being used by setting the `rating-icon` prop. This prop accepts a string that will use FormKit's [icon plugin](/plugins/icons):
+By default, the `rating` input uses FormKit's own star icon. You can change which icon is being used by setting the `rating-icon` prop. This prop accepts a string that will use FormKit's [icon plugin](/essentials/icons):
 
 <example
 name="Rating"
@@ -201,4 +200,3 @@ file="/_content/examples/rating/rating-colors.vue"></example>
   },
   ]">
 </reference-table>
-

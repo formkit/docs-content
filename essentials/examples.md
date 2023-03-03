@@ -76,6 +76,12 @@ Use a plugin to set all initial input values to an empty string <code>""</code> 
 </ExampleCard>
 
 <ExampleCard
+  href="https://formkit.link/82a8f02c1651812d710b28d300334d99"
+  title="Add a manually toggleable loading spinner to 'button'-type inputs">
+Use a plugin to allow inputs in the <code>button</code> family to have a loading spinner that can be toggled at-will with a new <code>loading</code> prop.
+</ExampleCard>
+
+<ExampleCard
   href="https://formkit.link/c253b391d5f16f226457073bb6dc30c4"
   title="Automatically set an input's name, label, and help text based on the id">
 Use a plugin to automatically set an input's <code>name</code>, <code>label</code>, and <code>help</code> props based on the <code>id</code>. Reduces repetitive prop declarations in your HTML.
