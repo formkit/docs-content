@@ -3,22 +3,26 @@ title: Transfer List Input
 description: The transfer list input allows users to transfer values between two lists. It is useful for situations where you need to select multiple values from a large list of options.
 ---
 
-<InputPageHero title="Transfer List"></InputPageHero>
+:InputPageHero{title="Transfer List"}
 
-<page-toc></page-toc>
+:PageToc
 
-<ProInstallSnippet></ProInstallSnippet>
+:ProInstallSnippet
 
 The transfer list input is ideal for situations where the end-user needs to select and sort multiple values from a list of options. In this example, we are allowing the end-user to select from a group of guests and move them to a VIP list:
 
-<example
-name="Transfer List"
-:min-height="550"
-:file="[
-  '/\_content/examples/transfer-list/transfer-list-full-example.vue',
-  '/\_content/examples/transfer-list/api.js',
-  '/\_content/examples/transfer-list/utils.js'
-]"></example>
+::Example
+---
+name: "Transfer List"
+min-height: 550
+file: [
+  '/_content/examples/transfer-list/transfer-list-full-example.vue',
+  '/_content/examples/transfer-list/api.js',
+  '/_content/examples/transfer-list/utils.js'
+]
+---
+::
+
 
 ## Getting started
 
@@ -28,28 +32,37 @@ In this section, we will be covering the basics of how to replicate the 'Guests 
 
 Below is an example of the transfer list input with the minimum required props. As you can see, there are two list boxes: the source list box and the target list box. The source list box will contain the list of options, and the target list box will contain the selected options:
 
-<example
-name="Transfer List"
-:min-height="300"
-file="/\_content/examples/transfer-list/transfer-list-base.vue"></example>
+::Example
+---
+name: "Transfer List"
+min-height: 300
+file: "/_content/examples/transfer-list/transfer-list-base.vue"
+---
+::
 
 ### Labels
 
 Let's add some label props to make clear to the end-user how to use the transfer list input. We'll add a `label` prop to explain the directive to the user, and `source-label` and `target-label` props to indicate which list box is the source and which is the target:
 
-<example
-name="Transfer List"
-:min-height="300"
-file="/\_content/examples/transfer-list/transfer-list-labels.vue"></example>
+::Example
+---
+name: "Transfer List"
+min-height: 300
+file: "/_content/examples/transfer-list/transfer-list-labels.vue"
+---
+::
 
 #### Source and target empty messages
 
 In this state, with no options passed and no values selected, we can display a custom message to the user by setting the `source-empty-message` and `target-empty-message` props:
 
-<example
-name="Transfer List"
-:min-height="300"
-file="/\_content/examples/transfer-list/transfer-list-empty-messages.vue"></example>
+::Example
+---
+name: "Transfer List"
+min-height: 300
+file: "/_content/examples/transfer-list/transfer-list-empty-messages.vue"
+---
+::
 
 ### Defining options
 
@@ -62,37 +75,46 @@ The `options` prop can accept three different formats of values:
 
 Let's go ahead and populate the transfer list's options with a list of guest names:
 
-<example
-name="Transfer List"
-:min-height="550"
-:file="[
-  '/\_content/examples/transfer-list/transfer-list-options.vue',
-  '/\_content/examples/transfer-list/guests.js'
-]"></example>
+::Example
+---
+name: "Transfer List"
+min-height: 550
+file: [
+  '/_content/examples/transfer-list/transfer-list-options.vue',
+  '/_content/examples/transfer-list/guests.js'
+]
+---
+::
 
 ### Values
 
 The value of the transfer list input will always be in the structure of an array and the selected option values from the source options list will be appended to the array. To show the value changing in the example below, let's wrap the transfer list input in a FormKit form, set the name of the transfer list input to `vips`, and show the value of the form itself in a `<pre>` tag (if you are unfamiliar with FormKit forms, you can read more about it [here](/getting-started/your-first-form)):
 
-<example
-name="Transfer List"
-:min-height="550"
-:file="[
-  '/\_content/examples/transfer-list/transfer-list-values.vue',
-  '/\_content/examples/transfer-list/guests.js'
-]"></example>
+::Example
+---
+name: "Transfer List"
+min-height: 550
+file: [
+  '/_content/examples/transfer-list/transfer-list-values.vue',
+  '/_content/examples/transfer-list/guests.js'
+]
+---
+::
 
 #### Initial values
 
 The transfer list input can be pre-populated with values by setting the `value` prop. In this example, we'll set the `value` prop to an array of strings that match the `value` keys of the options:
 
-<example
-name="Transfer List"
-:min-height="550"
-:file="[
-  '/\_content/examples/transfer-list/transfer-list-initial-values.vue',
-  '/\_content/examples/transfer-list/guests.js'
-]"></example>
+::Example
+---
+name: "Transfer List"
+min-height: 550
+file: [
+  '/_content/examples/transfer-list/transfer-list-initial-values.vue',
+  '/_content/examples/transfer-list/guests.js'
+]
+---
+::
 
 Please note that if you pass the transfer list input a value that does not match any of the options, the value will still be added to the array, but it will not be displayed in the target list box.
 
@@ -100,13 +122,16 @@ Please note that if you pass the transfer list input a value that does not match
 
 The transfer list input can be made searchable by setting the `searchable` prop. In this example we'll set the `searchable` prop and also set a `placeholder` prop for the search input:
 
-<example
-name="Transfer List"
-:min-height="550"
-:file="[
-  '/\_content/examples/transfer-list/transfer-list-searchable.vue',
-  '/\_content/examples/transfer-list/guests.js'
-]"></example>
+::Example
+---
+name: "Transfer List"
+min-height: 550
+file: [
+  '/_content/examples/transfer-list/transfer-list-searchable.vue',
+  '/_content/examples/transfer-list/guests.js'
+]
+---
+::
 
 Keep in mind that the search input only searches through the options list. It does not search through the selected values.
 
@@ -114,13 +139,16 @@ Keep in mind that the search input only searches through the options list. It do
 
 The transfer list input will filter options with its own internal search function. You can replace this search function by providing the `filter` prop a function of your own. Your function will receive two arguments, the option being iterated over and the current search value:
 
-<example
-name="Taglist"
-:min-height="550"
-:file="[
-  '/\_content/examples/transfer-list/transfer-list-filter.vue',
-  '/\_content/examples/transfer-list/guests.js'
-]"></example>
+::Example
+---
+name: "Taglist"
+min-height: 550
+file: [
+  '/_content/examples/transfer-list/transfer-list-filter.vue',
+  '/_content/examples/transfer-list/guests.js'
+]
+---
+::
 
 #### Clear on select
 
@@ -130,25 +158,31 @@ By default, the transfer list input will clear the search input on select. You c
 
 The transfer list input can be limited to a maximum number of selected values by setting the `max` prop. For just this example, let's set the max prop to 2 to limit the number of VIPs that can be selected:
 
-<example
-name="Transfer List"
-:min-height="550"
-:file="[
-  '/\_content/examples/transfer-list/transfer-list-max.vue',
-  '/\_content/examples/transfer-list/guests.js'
-]"></example>
+::Example
+---
+name: "Transfer List"
+min-height: 550
+file: [
+  '/_content/examples/transfer-list/transfer-list-max.vue',
+  '/_content/examples/transfer-list/guests.js'
+]
+---
+::
 
 ### Transfer on select
 
 By default, the transfer list input will add or remove options on click. You can change this behavior by setting the `transfer-on-select` prop to `false`. Now, the transfer list will behave more like a traditional transfer list.
 
-<example
-name="Transfer List"
-:min-height="550"
-:file="[
-  '/\_content/examples/transfer-list/transfer-list-transfer-on-select.vue',
-  '/\_content/examples/transfer-list/guests.js'
-]"></example>
+::Example
+---
+name: "Transfer List"
+min-height: 550
+file: [
+  '/_content/examples/transfer-list/transfer-list-transfer-on-select.vue',
+  '/_content/examples/transfer-list/guests.js'
+]
+---
+::
 
 ## Asynchronicity
 
@@ -156,13 +190,16 @@ name="Transfer List"
 
 Here we have a transfer list input that loads its options from an asynchronous function. The function is called when the component is mounted and the options are subsequently loaded into the source list box:
 
-<example
-name="Transfer List"
-:min-height="550"
-:file="[
-  '/\_content/examples/transfer-list/transfer-list-async-options.vue',
-  '/\_content/examples/transfer-list/api.js'
-]"></example>
+::Example
+---
+name: "Transfer List"
+min-height: 550
+file: [
+  '/_content/examples/transfer-list/transfer-list-async-options.vue',
+  '/_content/examples/transfer-list/api.js'
+]
+---
+::
 
 #### Pagination
 
@@ -170,25 +207,31 @@ Now let's say that our api request does not fetch all the options we need but in
 
 When assigning the options prop to an asynchronous function, the function will be called with the FormKit context object at its first argument. This context object contains a `page` property (the current page we are attempting to load) that is tracked by the transfer list input, and `hasNextPage`, which is a callback function we can use to tell the transfer list that there are more options to load:
 
-<example
-name="Transfer List"
-:min-height="550"
-:file="[
-  '/\_content/examples/transfer-list/transfer-list-async-options-pagination.vue',
-  '/\_content/examples/transfer-list/api.js'
-]"></example>
+::Example
+---
+name: "Transfer List"
+min-height: 550
+file: [
+  '/_content/examples/transfer-list/transfer-list-async-options-pagination.vue',
+  '/_content/examples/transfer-list/api.js'
+]
+---
+::
 
 #### Search
 
 The transfer list input can also load options asynchronously when the user searches. In this example, we'll add back the `searchable` prop, and change the getGuests function to searchGuests. When the user searches, the searchGuests function will now be called with the same context object as before, but this time, we will destructure just the `search` proprerty. Additionally, we'll modify the getGuests function to only return guests when a search value is provided:
 
-<example
-name="Transfer List"
-:min-height="550"
-:file="[
-  '/\_content/examples/transfer-list/transfer-list-async-options-search.vue',
-  '/\_content/examples/transfer-list/api.js'
-]"></example>
+::Example
+---
+name: "Transfer List"
+min-height: 550
+file: [
+  '/_content/examples/transfer-list/transfer-list-async-options-search.vue',
+  '/_content/examples/transfer-list/api.js'
+]
+---
+::
 
 ### Option loader
 
@@ -196,13 +239,16 @@ name="Transfer List"
 
 The transfer list input also provides an optionLoader prop that allows you to rehydrate values that are not in the options list. In this example, we'll provide the transfer list an initial value (a guest ID), and assign the optionLoader to a function that will make a request to the API to fetch the individual guest data:
 
-<example
-name="Transfer List"
-:min-height="550"
-:file="[
-  '/\_content/examples/transfer-list/transfer-list-rehydrating-values.vue',
-  '/\_content/examples/transfer-list/api.js'
-]"></example>
+::Example
+---
+name: "Transfer List"
+min-height: 550
+file: [
+  '/_content/examples/transfer-list/transfer-list-rehydrating-values.vue',
+  '/_content/examples/transfer-list/api.js'
+]
+---
+::
 
 Notice in the example above that the optionLoader function is passed two arguments: the value of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption is used for preventing unnecessary lookups; if the cachedOption is not null it means that the selected option has already been loaded, and you can return the cachedOption directly.
 
@@ -210,13 +256,16 @@ Notice in the example above that the optionLoader function is passed two argumen
 
 Instead of using the optionLoader prop to rehydrate values that are not in the options list, you can use the optionLoader to perform a look-up to fetch additional data on selected value. In this example, after selecting an option, we are going to perform a look-up to load the selected guest's age:
 
-<example
-name="Transfer List"
-:min-height="550"
-:file="[
-  '/\_content/examples/transfer-list/transfer-list-additional-data.vue',
-  '/\_content/examples/transfer-list/api.js'
-]"></example>
+::Example
+---
+name: "Transfer List"
+min-height: 550
+file: [
+  '/_content/examples/transfer-list/transfer-list-additional-data.vue',
+  '/_content/examples/transfer-list/api.js'
+]
+---
+::
 
 ## Slots
 
@@ -226,14 +275,17 @@ Just like any other FormKit input, the transfer list input allows you to utilize
 
 Now that we are loading additional data on selected values (the age and email address of the selected guest), let's customize the look of the selected values by using the `target-option` slots:
 
-<example
-name="Transfer List"
-:min-height="550"
-:file="[
-  '/\_content/examples/transfer-list/transfer-list-options-slot.vue',
-  '/\_content/examples/transfer-list/api.js',
-  '/\_content/examples/transfer-list/utils.js'
-]"></example>
+::Example
+---
+name: "Transfer List"
+min-height: 550
+file: [
+  '/_content/examples/transfer-list/transfer-list-options-slot.vue',
+  '/_content/examples/transfer-list/api.js',
+  '/_content/examples/transfer-list/utils.js'
+]
+---
+::
 
 ## Examples
 
@@ -241,18 +293,24 @@ name="Transfer List"
 
 The transfer list input can be used to create a ranked list, let's do that with the greatest NBA players:
 
-<example
-name="Transfer List"
-:min-height="550"
-:file="[
-  '/\_content/examples/transfer-list/transfer-list-ranking.vue',
-  '/\_content/examples/transfer-list/nba-top-players.js',
-  '/\_content/examples/transfer-list/utils.js'
-]"></example>
+::Example
+---
+name: "Transfer List"
+min-height: 550
+file: [
+  '/_content/examples/transfer-list/transfer-list-ranking.vue',
+  '/_content/examples/transfer-list/nba-top-players.js',
+  '/_content/examples/transfer-list/utils.js'
+]
+---
+::
 
 ## Props & Attributes
 
-<reference-table input="taglist" :data="[
+::ReferenceTable
+---
+input: "taglist"
+data: [
   {
     prop: 'debounce',
     type: 'number',
@@ -325,135 +383,287 @@ name="Transfer List"
     default: 'true',
     description: 'Automatically transfers selected options to the target list. If set to false, will render transfer forward and transfer backward buttons.'
   }
-]">
-</reference-table>
+]
+---
+::
 
 ## Sections
 
-You can target a specific section of an input using that section's "key", allowing you to modify that section's classes, HTML (via :sections-schema), or content (via slots). Read more about sections here.
+You can target a specific section of an input using that section's "key", allowing you to modify that section's classes, HTML (via `:sections-schema`), or content (via slots). Read more about sections here.
 
 ### Wrapper of transfer list
 
-<div>
-  <formkit-input-diagram
-    :hide-on-small="true"
-    class="input-diagram--autocomplete-outer autocomplete-option-single"
-    :schema="[
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--autocomplete-outer autocomplete-option-single"
+schema: [
+  {
+    name: 'outer',
+    children: [
       {
-        name: 'outer',
+        name: 'fieldset',
         children: [
           {
-            name: 'fieldset',
+            name: 'legend',
+            content: 'Choose VIPs for the party',
+          },
+          {
+            name: 'help',
+            content: 'You can select up to 3 VIPs.',
+          },
+          {
+            name: 'wrapper',
+            class: 'flex',
             children: [
               {
-                name: 'legend',
-                content: 'Choose VIPs for the party',
+                content: 'Source list',
+                name: 'source'
               },
               {
-                name: 'help',
-                content: 'You can select up to 3 VIPs.',
+                content: 'Transfer controls',
+                name: 'transferControls'
               },
               {
-                name: 'wrapper',
-                class: 'flex',
+                content: 'Target list',
+                name: 'target'
+              }
+            ]
+          },
+          {
+            name: 'messages',
+            children: [
+              {
+                name: 'message',
+                content: 'Sorry, you may not add more than 3 guests.',
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
+---
+::
+
+### Source
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--transfer-list"
+schema: [
+  {
+    name: 'source',
+    children: [
+      {
+        name: 'sourceHeader',
+        class: 'flex',
+        children: [
+          {
+            name: 'sourceHeaderLabel',
+            content: 'Guests'
+          },
+          {
+            name: 'sourceHeaderItemCount',
+            content: '97'
+          }
+        ]
+      },
+      {
+        name: 'sourceControls',
+        children: [
+          {
+            name: 'sourceSearch',
+            class: 'flex',
+            children: [
+              {
+                name: 'sourceSearchInput',
+                class: 'large'
+              },
+              {
+                name: 'sourceSearchClear',
+                class: 'small',
                 children: [
                   {
-                    content: 'Source list',
-                    name: 'source'
-                  },
-                  {
-                    content: 'Transfer controls',
-                    name: 'transferControls'
-                  },
-                  {
-                    content: 'Target list',
-                    name: 'target'
-                  }
-                ]
-              },
-              {
-                name: 'messages',
-                children: [
-                  {
-                    name: 'message',
-                    content: 'Sorry, you may not add more than 3 guests.',
+                    name: 'closeIcon',
+                    content: '✕'
                   }
                 ]
               }
             ]
           }
         ]
-      }
-    ]"
-  >
-  </formkit-input-diagram>
-</div>
-
-### Source
-
-<div>
-  <formkit-input-diagram
-    :hide-on-small="true"
-    class="input-diagram--transfer-list"
-    :schema="[
+      },
       {
-        name: 'source',
+        name: 'sourceListItems',
         children: [
           {
-            name: 'sourceHeader',
-            class: 'flex',
+            name: 'sourceEmptyMessage',
             children: [
               {
-                name: 'sourceHeaderLabel',
-                content: 'Guests'
-              },
+                name: 'emptyMessageInner',
+                content: 'No guests found'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        name: 'sourceListItem',
+        class: 'flex',
+        children: [
+          {
+            name: 'selectedIcon',
+            content: '✓',
+            class: 'small'
+          },
+          {
+            name: 'sourceOption',
+            content: 'John Doe',
+            class: 'large'
+          }
+        ]
+      },
+      {
+        name: 'sourceLoadMore',
+        class: 'flex',
+        children: [
+          {
+            name: 'loadMoreInner',
+            children: [
               {
-                name: 'sourceHeaderItemCount',
-                content: '97'
+                name: 'loaderIcon',
+                content: '⌛',
+              }
+            ]
+          }
+        ]
+      },
+    ]
+  },
+]
+---
+::
+
+### Transfer controls
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--transfer-list"
+schema: [
+  {
+    name: 'transferControls',
+    children: [
+      {
+        name: 'transferButtonForwardAll',
+        class: 'flex',
+        children: [
+          {
+            name: 'controlLabel',
+            class: 'small',
+          },
+          {
+            name: 'fastForwardIcon',
+            content: '⇥',
+            class: 'large'
+          }
+        ]
+      },
+      {
+        name: 'transferButtonForward',
+        class: 'flex',
+        children: [
+          {
+            name: 'controlLabel',
+            class: 'small'
+          },
+          {
+            name: 'forwardIcon',
+            content: '⇒',
+            class: 'large'
+          }
+        ]
+      },
+      {
+        name: 'transferButtonBackward',
+        class: 'flex',
+        children: [
+          {
+            name: 'controlLabel',
+            class: 'small'
+          },
+          {
+            name: 'backwardIcon',
+            content: '⇐',
+            class: 'large'
+          }
+        ]
+      },
+      {
+        name: 'transferButtonBackwardAll',
+        class: 'flex',
+        children: [
+          {
+            name: 'controlLabel',
+            class: 'small'
+          },
+          {
+            name: 'fastBackwardIcon',
+            content: '⇤',
+            class: 'large'
+          }
+        ]
+      }
+    ]
+  },
+]
+---
+::
+
+### Target
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--transfer-list"
+schema: [
+    {
+    name: 'target',
+    children: [
+      {
+        name: 'targetHeader',
+        class: 'flex',
+        children: [
+          {
+            name: 'targetHeaderLabel',
+            content: 'VIPs',
+            class: 'large'
+          },
+          {
+            name: 'targetHeaderItemCount',
+            content: '3',
+            class: 'small'
+          }
+        ]
+      },
+      {
+        name: 'targetListItems',
+        children: [
+          {
+            name: 'targetEmptyMessage',
+            children: [
+              {
+                name: 'emptyMessageInner',
+                content: 'No VIPs selected'
               }
             ]
           },
           {
-            name: 'sourceControls',
-            children: [
-              {
-                name: 'sourceSearch',
-                class: 'flex',
-                children: [
-                  {
-                    name: 'sourceSearchInput',
-                    class: 'large'
-                  },
-                  {
-                    name: 'sourceSearchClear',
-                    class: 'small',
-                    children: [
-                      {
-                        name: 'closeIcon',
-                        content: '✕'
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            name: 'sourceListItems',
-            children: [
-              {
-                name: 'sourceEmptyMessage',
-                children: [
-                  {
-                    name: 'emptyMessageInner',
-                    content: 'No guests found'
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            name: 'sourceListItem',
+            name: 'targetListItem',
             class: 'flex',
             children: [
               {
@@ -462,14 +672,14 @@ You can target a specific section of an input using that section's "key", allowi
                 class: 'small'
               },
               {
-                name: 'sourceOption',
+                name: 'targetOption',
                 content: 'John Doe',
                 class: 'large'
               }
             ]
           },
           {
-            name: 'sourceLoadMore',
+            name: 'targetLoadMore',
             class: 'flex',
             children: [
               {
@@ -477,175 +687,25 @@ You can target a specific section of an input using that section's "key", allowi
                 children: [
                   {
                     name: 'loaderIcon',
-                    content: '⌛',
-                  }
-                ]
-              }
-            ]
-          },
-        ]
-      },
-    ]"
-  >
-  </formkit-input-diagram>
-</div>
-
-### Transfer controls
-
-<div>
- <formkit-input-diagram
-    :hide-on-small="true"
-    class="input-diagram--transfer-list"
-    :schema="[
-      {
-        name: 'transferControls',
-        children: [
-          {
-            name: 'transferButtonForwardAll',
-            class: 'flex',
-            children: [
-              {
-                name: 'controlLabel',
-                class: 'small',
-              },
-              {
-                name: 'fastForwardIcon',
-                content: '⇥',
-                class: 'large'
-              }
-            ]
-          },
-          {
-            name: 'transferButtonForward',
-            class: 'flex',
-            children: [
-              {
-                name: 'controlLabel',
-                class: 'small'
-              },
-              {
-                name: 'forwardIcon',
-                content: '⇒',
-                class: 'large'
-              }
-            ]
-          },
-          {
-            name: 'transferButtonBackward',
-            class: 'flex',
-            children: [
-              {
-                name: 'controlLabel',
-                class: 'small'
-              },
-              {
-                name: 'backwardIcon',
-                content: '⇐',
-                class: 'large'
-              }
-            ]
-          },
-          {
-            name: 'transferButtonBackwardAll',
-            class: 'flex',
-            children: [
-              {
-                name: 'controlLabel',
-                class: 'small'
-              },
-              {
-                name: 'fastBackwardIcon',
-                content: '⇤',
-                class: 'large'
-              }
-            ]
-          }
-        ]
-      },
-    ]"
-  >
-  </formkit-input-diagram>
-</div>
-
-### Target
-
-<div>
- <formkit-input-diagram
-    :hide-on-small="true"
-    class="input-diagram--transfer-list"
-    :schema="[
-       {
-        name: 'target',
-        children: [
-          {
-            name: 'targetHeader',
-            class: 'flex',
-            children: [
-              {
-                name: 'targetHeaderLabel',
-                content: 'VIPs',
-                class: 'large'
-              },
-              {
-                name: 'targetHeaderItemCount',
-                content: '3',
-                class: 'small'
-              }
-            ]
-          },
-          {
-            name: 'targetListItems',
-            children: [
-              {
-                name: 'targetEmptyMessage',
-                children: [
-                  {
-                    name: 'emptyMessageInner',
-                    content: 'No VIPs selected'
-                  }
-                ]
-              },
-              {
-                name: 'targetListItem',
-                class: 'flex',
-                children: [
-                  {
-                    name: 'selectedIcon',
-                    content: '✓',
-                    class: 'small'
-                  },
-                  {
-                    name: 'targetOption',
-                    content: 'John Doe',
-                    class: 'large'
-                  }
-                ]
-              },
-              {
-                name: 'targetLoadMore',
-                class: 'flex',
-                children: [
-                  {
-                    name: 'loadMoreInner',
-                    children: [
-                      {
-                        name: 'loaderIcon',
-                        content: '⌛'
-                      }
-                    ]
+                    content: '⌛'
                   }
                 ]
               }
             ]
           }
         ]
-      },
-    ]"
-  >
-  </formkit-input-diagram>
-</div>
+      }
+    ]
+  },
+]
+---
+::
 
-<reference-table type="sectionKeys" primary="section-key" :data="[
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+data: [
   {
     'section-key': 'fieldset',
     description: 'A fieldset element that acts as the root element for the transfer list input.'
@@ -798,5 +858,6 @@ You can target a specific section of an input using that section's "key", allowi
     'section-key': 'targetLoadMore',
     description: 'A li element that contains the loadMoreInner section.'
   }
-]">
-</reference-table>
+]
+---
+::
