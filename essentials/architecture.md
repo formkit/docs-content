@@ -26,7 +26,9 @@ The functionality of FormKit core is not exposed to your application via a centr
 This mirrors HTML — in fact DOM structure is actually a [general tree](https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/GenTreeIntro.html) and FormKit core nodes reflect this structure. For example, a simple login form could be drawn as the following tree graph:
 
 <figure>
-  <SimpleTree />
+
+  :SimpleTree
+
   <figcaption>Hover over each node to see its initial options.</figcaption>
 </figure>
 
@@ -145,8 +147,11 @@ const parent = createNode({
 The above code will result in each node having the following configuration:
 
 <figure>
-  <ConfigTree />
+
+  :ConfigTree
+
   <figcaption>Notice how the list subtree is pink.</figcaption>
+
 </figure>
 
 ::Callout
@@ -235,7 +240,9 @@ To solve this, FormKit’s nodes automatically track tree, subtree, and node "di
 The following graph illustrates this "disturbance counting". Click on any input node (blue) to simulate calling `node.input()` and notice how the whole form is always aware of how many nodes are "disturbed" at any given time. When the root node has a disturbed count of `0` the form is settled and safe to submit.
 
 <figure>
-  <DisturbanceTree />
+
+  :DisturbanceTree
+
   <figcaption>Click on the inputs (blue) to simulate calling a user input.</figcaption>
 </figure>
 To ensure a given tree (form), subtree (group), or node (input) is "settled" you can await the `node.settled` property:
@@ -398,7 +405,9 @@ console.log(group.at('users.0.password').value)
 Notice how traversing the `list` uses numeric keys, this is because the `list` type uses array indexes automatically.
 
 <figure>
-  <TraversalTree />
+
+  :TraversalTree
+
   <figcaption>Traversal path of <code>group.at('users.0.password')</code> shown in red.</figcaption>
 </figure>
 
@@ -461,7 +470,9 @@ console.log(secondEmail.at('$parent.$parent.0.email').value)
 ```
 
 <figure>
-  <TraversalTree2 />
+  
+  :TraversalTree2
+  
   <figcaption>Traversal path of <code>secondEmail.at('$parent.$parent.0.email')</code> shown in red.</figcaption>
 </figure>
 
@@ -642,7 +653,9 @@ const node = createNode([
 In the example above, the plugin is only defined on the parent, but the child also inherits the plugin. The function `myPlugin` will be called twice — once for each node in the graph (which only has two in this example):
 
 <figure>
-  <PluginTree />
+  
+  :PluginTree
+
   <figcaption>The plugin is inherited by the child, but executed independently.</figcaption>
 </figure>
 

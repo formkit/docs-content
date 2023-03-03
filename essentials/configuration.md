@@ -25,7 +25,9 @@ There is no global FormKit instance that controls the application. Instead, you 
 One last thing about nodes — they can all have parent nodes. Groups and lists can also have children. For example, a login form might have two children — the email and password inputs. You can draw this relationship as a simple tree diagram:
 
 <figure>
-  <SimpleTree />
+
+  :SimpleTree
+  
   <figcaption>Hover over each node to see its initial options.</figcaption>
 </figure>
 
