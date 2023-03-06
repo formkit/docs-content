@@ -20,7 +20,7 @@ export default {
 
 <template>
   <!-- %partial%::html:: -->
-  <FormKit type="form" v-model="data" @submit="handleSubmit">
+  <FormKit type="form" #default="{ value }" @submit="handleSubmit">
     <FormKit
       type="text"
       label="Your Email"
@@ -49,7 +49,14 @@ export default {
         length: 'Instructions cannot be more than 120 characters.',
       }"
     />
+
+    <pre wrap>{{ value }}</pre>
   </FormKit>
   <!-- %partial% -->
-  <pre wrap>{{ data }}</pre>
 </template>
+
+<style>
+pre[wrap] {
+  margin-bottom: 1em !important;
+}
+</style>
