@@ -157,6 +157,14 @@ Add a loading spinner to your input when an async validation rule is pending val
 
 ::ExampleCard
 ---
+href: "https://formkit.link/a26b429970759494b991579129603664"
+title: "Keep submit button disabled until a form changes"
+---
+Only enable a save/submit button if a user has changed any value inside a form.
+::
+
+::ExampleCard
+---
 href: "https://formkit.link/ff768a042681afaa932cce9690dd3bfc"
 title: "Add transitions to validation messages"
 ---
