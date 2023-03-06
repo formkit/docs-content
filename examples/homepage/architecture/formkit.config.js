@@ -1,8 +1,11 @@
 import { defaultConfig } from '@formkit/vue'
 import { createMultiStepPlugin } from '@formkit/addons'
 
-const config = defaultConfig({
-  plugins: [createMultiStepPlugin()],
+const multiStepPlugin = createMultiStepPlugin({
+  tabStyle: 'progress',
+  allowIncomplete: false,
 })
 
-export default config
+export default defaultConfig({
+  plugins: [multiStepPlugin],
+})

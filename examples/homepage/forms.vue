@@ -1,26 +1,24 @@
-<script>
-export default {
-  data() {
-    return {
-      data: {
-        name: '',
-        favorite_food: '',
-        instructions: '',
-      },
-    }
-  },
-  methods: {
-    async handleSubmit() {
-      await new Promise((r) => setTimeout(r, 2000))
-      alert('Thank you!')
-    },
-  },
+<script setup>
+const data = {
+  email: 'hello@formkit.com',
+  favorite_food: 'Pizza',
+  instructions: '',
+}
+
+async function handleSubmit() {
+  await new Promise((r) => setTimeout(r, 2000))
+  alert('Thank you!')
 }
 </script>
 
 <template>
   <!-- %partial%::html:: -->
-  <FormKit type="form" #default="{ value }" @submit="handleSubmit">
+  <FormKit
+    type="form"
+    #default="{ value }"
+    @submit="handleSubmit"
+    :value="data"
+  >
     <FormKit
       type="text"
       label="Your Email"

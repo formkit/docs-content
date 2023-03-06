@@ -2,12 +2,14 @@
   <FormKit
     type="text"
     label="Name"
+    name="name"
     prefix-icon="avatarMan"
     validation="required"
   />
   <FormKit
     type="email"
     label="Email"
+    name="email"
     prefix-icon="email"
     validation="required|email"
   />

@@ -2,12 +2,18 @@
 import StepOne from './stepOne.vue'
 import StepTwo from './stepTwo.vue'
 import StepThree from './stepThree.vue'
+
+const data = {
+  name: 'John FormKit',
+  email: 'hello@formkit.com',
+  phone: '(555) 555-5555',
+}
 </script>
-<!-- %partial% -->
 <template>
   <FormKit type="form" :actions="false">
-    <FormKit type="multi-step" tab-style="progress">
-      <FormKit type="step" name="personalInfo">
+    <!-- %partial% -->
+    <FormKit type="multi-step">
+      <FormKit type="step" name="personalInfo" :value="data">
         <StepOne />
       </FormKit>
 
@@ -22,6 +28,6 @@ import StepThree from './stepThree.vue'
         </template>
       </FormKit>
     </FormKit>
+    <!-- %partial% -->
   </FormKit>
 </template>
-<!-- %partial% -->
