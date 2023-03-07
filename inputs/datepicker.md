@@ -97,7 +97,92 @@ short | `7:05 PM`, `19:05`
 
 ### Token formats
 
-You can use token based
-## Sequence
+You can use the `format` prop to explicitly set a tokenized date format. A token format is represented by a string with any arbitrary characters and one or more of the strings in the table below.
+
+FormKit interfaces with the `Intl.DateTimeFormat` to automatically internationalize tokens based on the current `locale`. For example, the token `MMMM` for `2000-01-01` would produce `January` for the `en` locale but would produce `一月` for the `zh` locale.
+
+Token    | Examples                | Description
+---------|-------------------------|-------------------------------------
+`YY`     | `99`, `23`, `00`        | 2 digit year
+`YYYY`   | `1999`, `2023`, `2100`  | 4 digit year
+`M`      | `1`, `12`               | The month 1-12
+`MM`     |  `01`, `12`             | The month 01-12
+`MMM`    | `Jan`, `Feb`            | Short name Jan-Dec
+`MMMM`   | `January`, `February`   | Full name January - December
+`D`      | `1`, `9`, `22`          | The day of the month 1-31
+`DD`     | `01`, `09`, `22`        | The day of the month 01-31
+`d`      | `M`, `T`, `W`, `T`, `F`, `S`, `S` | Single digit day "T"
+`ddd`    | `Thu`, `Sat`            | Short day name Thu
+`dddd`   | `Monday`, `Tuesday`     | Full day name Wednesday
+`H`      | `0`, `13`, `23`         | Minimum hour digits, 24 hour, 0-23
+`HH`     | `00`, `13`, `23`        | 2 hour digits, 24 hour, 00-23
+`h`      | `12`, `1`, `11`         | Minimum hour digits, 12 hour clock, 1-12
+`hh`     | `12`, `01`, `11`        | 2 hour digits, 12 hour clock, 01-12
+`m`      | `1`, `59`               | The minute 0-59
+`mm`     |  `01`, `59`             | The minute 00-59
+`s`      | `1`, `59`               | The second 0-59
+`ss`     | `01`, `59`              | The second 00-59
+`a`      | `am`, `pm`              | am/pm
+`A`      | `AM`, `PM`              | AM/PM
+
+
+::Callout
+---
+  type: 'tip'
+  label: 'Internationalization'
+---
+Although FormKit will internationalize your tokens automatically — if your form is intended for a broadly international audience consider using date styles instead of tokens as this leads to a more readable date in many locales.
+::
+
+::Example
+---
+  name: 'Datepicker tokens'
+  file: '/_content/examples/datepicker/datepicker-tokens.vue'
+  min-height: 500
+---
+::
+
+To include letters in the your format that are themselves tokens (like `a`) you can escape those tokens with a backslash `\` before the character.
+
+::Example
+---
+  name: 'Datepicker escape tokens'
+  file: '/_content/examples/datepicker/datepicker-escape-tokens.vue'
+  min-height: 500
+---
+::
+
+## Panel sequence
+
+The datepicker’s calendar popup has four "panels":
+
+- `day` — Shows a traditional calendar view of a month which each day selectable.
+- `month` — Shows the 12 months of the year.
+- `year` — Shows a decade or years at a time.
+- `time` — Shows the time of day.
+
+When a user opens the datepicker’s popup, they will be shown one or more of these panels. You can modify which panels are displayed to the user and the sequence those panels should be displayed in by providing a `sequence` prop. The default `sequence` value is `['day']` (which allows you to navigate to the `month` and `year` panels).
+
+For example, when selecting a birthday it is natural to first select the birth year, then the month, then the day. The `sequence` prop allows this behavior.
+
+::Example
+---
+  name: 'Datepicker sequence'
+  file: '/_content/examples/datepicker/datepicker-sequence.vue'
+  min-height: 500
+---
+::
+
+### Selecting time
+
+The `time` panel can be used to allow a user to select a specific time of day. If you choose a `format` that includes time (like `YYYY-MM-DD HH:mm`) — you’ll likely want to include `time` panel to your sequence.
+
+::Example
+---
+  name: 'Datepicker time'
+  file: '/_content/examples/datepicker/datepicker-time.vue'
+  min-height: 500
+---
+::
 
 ## Disabling dates
