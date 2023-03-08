@@ -101,6 +101,14 @@ You can use the `format` prop to explicitly set a tokenized date format. A token
 
 FormKit interfaces with the `Intl.DateTimeFormat` to automatically internationalize tokens based on the current `locale`. For example, the token `MMMM` for `2000-01-01` would produce `January` for the `en` locale but would produce `一月` for the `zh` locale.
 
+::Callout
+---
+  type: 'warning'
+  label: 'Dates required'
+---
+It is possible, when using tokens, to create non-parsable dates. For example, if your input only displays the day of the week (`dddd`). You can use non-parsable date formats only in `picker-only` mode. If you’d like to allow your users to type in their date, your format must include at least a month, day, and year token.
+::
+
 Token    | Examples                | Description
 ---------|-------------------------|-------------------------------------
 `YY`     | `99`, `23`, `00`        | 2 digit year
@@ -184,5 +192,35 @@ The `time` panel can be used to allow a user to select a specific time of day. I
   min-height: 500
 ---
 ::
+
+## Values
+
+Like all inputs, the `value` of the datepicker is both what is produced by the datepicker, and what is read back into the datepicker for hydration. By default the format of the value is a UTC normalized [ISO8601](https://www.w3.org/TR/NOTE-datetime) string (example: `2014-11-27T03:59:00.000Z`). However, this format can be changed to any of the supported date style or a token formats [listed above](#date-format) by using the `value-format` prop.
+
+A valid question is why not always use `ISO8601`? Although it’s the most popular way to work with dates — it’s machine readable and human readable — it’s not *very* human readable. For example, if your form sends a contact request email to an catering business then `ISO8601` would likely not be the best choice.
+
+::Callout
+---
+  type: warning
+  label: Complete dates
+---
+Keep in mind, the value format must contain all the necessary data to re-constitute a date object, at a minimum this includes month, day, year. If your input requests information from the user that is not represented in your value format, those details will be lost.
+::
+
+### Date styles
+
+To use a date style as the value, simply pass the style you’d like to use to the `value-format` prop.
+
+::Example
+---
+  name: 'Datepicker style value'
+  file: '/_content/examples/datepicker/datepicker-style-value.vue'
+  min-height: 500
+---
+::
+
+
+## Timezones
+
 
 ## Disabling dates
