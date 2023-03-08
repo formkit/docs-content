@@ -201,10 +201,10 @@ A valid question is why not always use `ISO8601`? Although it’s the most popul
 
 ::Callout
 ---
-  type: warning
+  type: tip
   label: Complete dates
 ---
-Keep in mind, the value format must contain all the necessary data to re-constitute a date object, at a minimum this includes month, day, year. If your input requests information from the user that is not represented in your value format, those details will be lost.
+The value format must contain all the necessary data to re-constitute a date object, at a minimum this includes month, day, year. If your input requests information from the user that is not represented in your value format, those details will be lost.
 ::
 
 ### Date styles
@@ -219,6 +219,60 @@ To use a date style as the value, simply pass the style you’d like to use to t
 ---
 ::
 
+### Token formats
+
+Values can also be represented in any arbitrary format by using formatting tokens.
+
+::Example
+---
+  name: 'Datepicker token value'
+  file: '/_content/examples/datepicker/datepicker-token-value.vue'
+  min-height: 500
+---
+::
+
+### Setting values (hydrating)
+
+Values passed to a datepicker must:
+
+1. Match the `value-format` in the current `value-locale` OR.
+2. Be a native JavaScript `Date` object.
+
+Although native `Date` objects are always accepted as valid *inputs* for a datepicker, they will be immediately transformed into the `value-format` specified.
+
+#### Matching the `value-format`
+
+
+::Example
+---
+  name: 'Datepicker value locale'
+  file: '/_content/examples/datepicker/datepicker-matching-value.vue'
+  min-height: 500
+---
+::
+
+#### Using a native `Date`
+
+::Example
+---
+  name: 'Datepicker value locale'
+  file: '/_content/examples/datepicker/datepicker-native-date.vue'
+  min-height: 500
+---
+::
+
+
+### Value locale
+
+Since the format of the value needs to be parsed using the same locale it was created with, it is recommended to always specify the `value-locale` when defining a custom `value-format`. This ensures that no matter what the locale of the user entering the date is the value will stay consistent.
+
+::Example
+---
+  name: 'Datepicker value locale'
+  file: '/_content/examples/datepicker/datepicker-value-locale.vue'
+  min-height: 500
+---
+::
 
 ## Timezones
 
