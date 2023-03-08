@@ -266,6 +266,14 @@ Although native `Date` objects are always accepted as valid *inputs* for a datep
 
 Since the format of the value needs to be parsed using the same locale it was created with, it is recommended to always specify the `value-locale` when defining a custom `value-format`. This ensures that no matter what the locale of the user entering the date is the value will stay consistent.
 
+::Callout
+---
+  type: 'note'
+  label: 'Timezone vs Locale'
+---
+Changing the `value-locale` has no effect on the `timezone` of the date being picked. See the [timezone documentation](#timezone) below for further explanation.
+::
+
 ::Example
 ---
   name: 'Datepicker value locale'
@@ -276,5 +284,44 @@ Since the format of the value needs to be parsed using the same locale it was cr
 
 ## Timezones
 
+Time is a notoriously hard thing to work with in any software development, but especially browser-based JavaScript. To help ease this pain, the datepicker supports the ability to explicitly specify the `timezone` of the input.
+
+::CollapsedDetails
+---
+  label: 'Timezones, dates, and formats deep dive'
+---
+To better understand how the `timezone` prop operates, it is useful to have an initial understand of the `Date` object in JavaScript. The date object in JavaScript is fundamentally a a Unix timestamp (number of milliseconds since `Jan 1 1970 at 00:00:00Z`). However, it is *always* localized to the client’s time. This localization is expressed in an an offset from `UTC`. Your browser’s current time is:
+
+:CurrentTime{label="Client (browser) time"}
+
+When the offset is applied to the "clock time" you arrive at the current time in UTC:
+
+:CurrentTime{methodName="toISOString" label="UTC"}
+
+When using `value-format` tokens in the datepicker, those tokens will operate using the client’s timezone. For example, if your format requests the `HH` token it would return:
+
+:CurrentTime{methodName="getHours" label="HH format token"}
+
+Compare that to the above dates, and you’ll see it is the same as the `hours` portion of the local time. Why does this matter? Read on.
+
+### A case study
+
+Let’s consider a reservation app for a restaurant located in Amsterdam (`UTC +100/+200`). It’s a popular destination for tourists and they often make reservations several weeks before they travel (in their home country).
+
+The datepicker, by default, will ask the tourist for the date and time of their desired reservation — but the date selected will be their *local* time, not the time in amsterdam. Even though the `value-format` is outputting UTC, the time will not be correlated to the time in Amsterdam (unless that is where the tourist is when booking).
+
+Generally speaking, there are 2 solutions to this problem:
+
+#### Option 1: Indeterminate time
+
+Use an "indeterminate" time. An indeterminate time is a time without a specific correlation the underlying Unix Timestamp. For example, `2pm on March 13th` is not UTC and has no explicit offset. In other words `2pm on March 13th` describes an specific time at an indeterminate location. You can do this with format tokens like (`YYYY-MM-DD HH:mm`) as long as you do not use the offset in your value (`Z`).
+
+This would work for our restaurant app as long as a backend is able to attach the appropriate an appropriate timezone or offset to this indeterminate time `2023-03-13 14:00 GMT+0100` to arrive at the appropriate UTC (what this app requires in it’s database). The remaining challenge, for the backend developer, is knowing what offset to use in their target locality (it varies based on date in `Europe/Amsterdam`).
+
+#### Options 2: Using the datepicker’s `timezone` prop
+
+Alternatively, the `timezone` prop of the datepicker will perform this correction for you automatically. Simply state "where" the datepicker is picking time for — in our example `timezone="Europe/Amsterdam"`. The user’s experience will not change at all, but the time they select will be in the target timezone. A user in `America/New_York` (`+0400`) who selects `2pm on March 13th` in their datepicker, will yield a UTC value of `2023-03-13T13:00:00Z` which is `2pm` in Amsterdam. This allows for simple storage and hydration of your for using a `UTC` format.
+
+::
 
 ## Disabling dates
