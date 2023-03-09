@@ -284,13 +284,14 @@ Changing the `value-locale` has no effect on the `timezone` of the date being pi
 
 ## Timezones
 
-Time is a notoriously hard thing to work with in any software development, but especially browser-based JavaScript. To help ease this pain, the datepicker supports the ability to explicitly specify the `timezone` of the input.
+Time is a notoriously hard thing to work with in any software environment, but especially browser-based JavaScript. The `datepicker` provides some options to help work around these challenges.
+
 
 ::CollapsedDetails
 ---
-  label: 'Timezones, dates, and formats deep dive'
+  label: 'Timezones, dates, and formats case study'
 ---
-To better understand how the `timezone` prop operates, it is useful to have an initial understand of the `Date` object in JavaScript. The date object in JavaScript is fundamentally a a Unix timestamp (number of milliseconds since `Jan 1 1970 at 00:00:00Z`). However, it is *always* localized to the client’s time. This localization is expressed in an an offset from `UTC`. Your browser’s current time is:
+In order to work with dates and times in JavaScript it is useful to have an initial understand of the `Date` object. The date object in JavaScript is fundamentally a a Unix timestamp (number of milliseconds since `Jan 1 1970 at 00:00:00Z`). However, it is *always* localized to the client’s time. This localization is expressed in an an offset from `UTC`. Your browser’s current time is:
 
 :CurrentTime{label="Client (browser) time"}
 
@@ -306,22 +307,63 @@ Compare that to the above dates, and you’ll see it is the same as the `hours` 
 
 ### A case study
 
-Let’s consider a reservation app for a restaurant located in Amsterdam (`UTC +100/+200`). It’s a popular destination for tourists and they often make reservations several weeks before they travel (in their home country).
+Let’s consider a reservation app for a restaurant located in Amsterdam (`UTC +100/+200`). It’s a popular destination for tourists and they often make reservations several weeks before they travel (while in their home country).
 
-The datepicker, by default, will ask the tourist for the date and time of their desired reservation — but the date selected will be their *local* time, not the time in amsterdam. Even though the `value-format` is outputting UTC, the time will not be correlated to the time in Amsterdam (unless that is where the tourist is when booking).
+The datepicker, by default, will ask the tourist for the date and time of their desired reservation — but (by default) the selection will be their *local* time, not the time in Amsterdam. Even though the `value-format` is outputting UTC, the time will not be the intended reservation time in Amsterdam (unless they happen to be in the same timezone).
 
 Generally speaking, there are 2 solutions to this problem:
 
 #### Option 1: Indeterminate time
 
-Use an "indeterminate" time. An indeterminate time is a time without a specific correlation the underlying Unix Timestamp. For example, `2pm on March 13th` is not UTC and has no explicit offset. In other words `2pm on March 13th` describes an specific time at an indeterminate location. You can do this with format tokens like (`YYYY-MM-DD HH:mm`) as long as you do not use the offset in your value (`Z`).
+Use an "indeterminate" time (sometimes referred to as "wall time"). An indeterminate time is a time without a specific correlation the underlying Unix Timestamp. For example, `2pm on March 13th` is not UTC and has no explicit offset. `2pm on March 13th` describes an specific time at an indeterminate location/timezone. You can do this with format tokens like (`YYYY-MM-DD HH:mm`) as long as you do not use the offset in your value (`Z`).
 
-This would work for our restaurant app as long as a backend is able to attach the appropriate an appropriate timezone or offset to this indeterminate time `2023-03-13 14:00 GMT+0100` to arrive at the appropriate UTC (what this app requires in it’s database). The remaining challenge, for the backend developer, is knowing what offset to use in their target locality (it varies based on date in `Europe/Amsterdam`).
+This would work for our restaurant app as long as a backend is able to attach an appropriate timezone or offset to this indeterminate time `2023-03-13 14:00 GMT+0100` to arrive at the appropriate UTC time (what this fictitious app requires in it’s database). The remaining challenge, for a backend developer, is knowing what offset to apply to the date to ensure it becomes "Amsterdam time" (this offset varies based on the time of year due to daylight savings in `Europe/Amsterdam`).
 
 #### Options 2: Using the datepicker’s `timezone` prop
 
-Alternatively, the `timezone` prop of the datepicker will perform this correction for you automatically. Simply state "where" the datepicker is picking time for — in our example `timezone="Europe/Amsterdam"`. The user’s experience will not change at all, but the time they select will be in the target timezone. A user in `America/New_York` (`+0400`) who selects `2pm on March 13th` in their datepicker, will yield a UTC value of `2023-03-13T13:00:00Z` which is `2pm` in Amsterdam. This allows for simple storage and hydration of your for using a `UTC` format.
+Alternatively, the `timezone` prop of the datepicker will perform the offset correction for you automatically. Simply state "where" the datepicker is picking time for — in our example `timezone="Europe/Amsterdam"`. The user’s experience will not change at all, but the time they select will be in the target timezone. A user in `America/New_York` (`+0400`) who selects `2pm on March 13th` in their datepicker, will yield a UTC value of `2023-03-13T13:00:00Z` which is `2pm` in Amsterdam. This allows for simple storage and hydration of your for using a `UTC` format.
+::
 
+### Indeterminate
+
+By default the datepicker uses the client’s local timezone when a selection is made. The value of the output is determined by the `value-format` ([see above](#values)) — by default this is a `UTC` normalized `ISO8601` string. However, by specifying a custom format you can achieve an "indeterminate" time (also called "wall time"). This is a date and/or time with no specific correlation to a given timezone.
+
+For example, when you set an alarm on your phone for `8:00 AM` — that time is "indeterminate" — it has no correlation to timezone. If you live in Rome, and travel to Tokyo, your alarm will ring at `8:00 AM` in Tokyo the same as it would ring at `8:00 AM` in Rome. It’s impossible to represent a this as UTC.
+
+You can achieve indeterminate time with the datepicker by providing no timezone or offset information in your `value-format` — it is up to the interpreter of the date to add that information. The tokens in a `value-format` always output local client values — so by leaving any timezone or offset (`Z`) data out of the value it is inherently "indeterminate".
+
+::Example
+---
+  name: 'Datepicker indeterminate'
+  file: '/_content/examples/datepicker/datepicker-indeterminate.vue'
+  min-height: 600
+---
+::
+
+### Specifying a timezone
+
+For some applications, it is necessary to select the time in a given location — this can be quite challenging. To help ease this pain, the datepicker supports the ability to explicitly specify the `timezone` of the input.
+
+The `timezone` prop lets you specify the "location" of the datepicker based on browser supported [IANA timezones](https://www.iana.org/time-zones). This is important when you’d like to allow users to select a date and time in a given geographic location, no matter what the client’s location is. Some example use cases are:
+
+- Restaurant reservations
+- Car rental pickup time
+- Hotel check in time
+
+There are plenty of times where the `timezone` should *not* be used (default’s to client time):
+
+- Scheduling a Zoom meeting
+- Setting a reminder notification
+- Creating a calendar event
+
+In the example below, a user needs to pickup a rental car in Kolkata, India after an international flight. The user looks at their ticket — the flight arrives in Kolkata at `1:45 PM`. They’d like to pick the car up at `2:30 PM`. These facts are true no matter where in the world the user is booking the trip from. In this case we should set the timezone to `Asia/Kolkata`. The offset in Kolkata is `+5:30` — so selecting `2:30 PM` in `Kolkata` is equivalent to `09:00 AM` UTC.
+
+::Example
+---
+  name: 'Datepicker timezone'
+  file: '/_content/examples/datepicker/datepicker-timezone.vue'
+  min-height: 600
+---
 ::
 
 ## Disabling dates
