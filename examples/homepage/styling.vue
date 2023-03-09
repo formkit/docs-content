@@ -1,24 +1,27 @@
-<script>
-export default {
-  methods: {
-    async handleSubmit() {
-      await new Promise((r) => setTimeout(r, 400))
-      alert('Thank you!')
-    }
-  }
+<script setup>
+const data = {
+  text_2: 'Tailwind CSS',
+  text_3: 'FormKit',
+  textarea_4: 'I like that our whole team can use it and it’s easy to customize.'
+}
+
+async function handleSubmit() {
+  await new Promise((r) => setTimeout(r, 400))
+  alert('Thank you!')
 }
 </script>
 
-%partial%
 <template>
   <FormKit
     type="form"
+    :value="data"
     @submit="handleSubmit"
     form-class="selection:bg-pink-200 my-8 mx-auto w-full max-w-2xl bg-white border-2 border-green-400 p-6 shadow-lg rounded-lg"
     :submit-attrs="{
       'input-class': 'bg-green-500 py-2 px-4 mt-4 rounded-md text-white'
     }"
   >
+    %partial%
     <div class="flex">
       <FormKit
         label="CSS Framework"
@@ -30,7 +33,6 @@ export default {
           input: 'appearance-none border-none p-0 focus:outline-none focus:border-transparent focus:ring-0',
           label: 'my-tailwind-label'
         }"
-        value="Tailwind"
       />
       <FormKit
         label="Form Framework"
@@ -42,21 +44,19 @@ export default {
           input: 'appearance-none border-none p-0 focus:outline-none focus:border-transparent focus:ring-0',
           label: 'my-tailwind-label'
         }"
-        value="FormKit"
       />
     </div>
     <FormKit
-      label="What is your favorite Tailwind feature?"
+      label="What is your favorite Tailwind CSS feature?"
       type="textarea"
       :classes="{
-        input: 'shadow border-gray-300 appearance-none rounded py-4 px-5 w-full h-32 text-gray-700 leading-tight focus:outline-none focus:border-transparent focus:ring-4 focus:ring-green-500 focus:ring-opacity-50',
+        input: 'shadow border border-gray-300 appearance-none rounded py-4 px-5 w-full h-32 text-gray-700 leading-tight focus:outline-none focus:border-transparent focus:ring-4 focus:ring-green-500 focus:ring-opacity-50',
         label: 'my-tailwind-label'
       }"
-      value="I like the really long class lists."
     />
+    %partial%
   </FormKit>
 </template>
-%partial%
 
 <style>
 html[data-active-tab="render"] {

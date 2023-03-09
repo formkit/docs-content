@@ -1,0 +1,24 @@
+<template>
+  <FormKit
+    type="text"
+    label="Name"
+    name="name"
+    prefix-icon="avatarMan"
+    validation="required"
+  />
+  <FormKit
+    type="email"
+    label="Email"
+    name="email"
+    prefix-icon="email"
+    validation="required|email"
+  />
+  <FormKit
+    type="mask"
+    name="phone"
+    mask="(###) ###-####"
+    label="Phone"
+    prefix-icon="telephone"
+    validation="required"
+  />
+</template>
