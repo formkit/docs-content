@@ -75,7 +75,7 @@ export async function getGuest(id, cachedOption) {
 }
 
 export async function loadGuest(id, cachedOption) {
-  if (cachedOption.hasLoaded) return
+  if (cachedOption.hasLoaded) return cachedOption
   const res = await fetch(
     `https://api-formkit-docs-examples.formkit.workers.dev/guests/${id}`
   )
