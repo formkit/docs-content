@@ -14,7 +14,7 @@ The `text` input uses HTML's [native text input](https://developer.mozilla.org/e
 ::Example
 ---
 name: "Text input"
-file: "/_content/_examples/text/text.vue"
+file: "_content/_examples/text/text.vue"
 ---
 ::
 

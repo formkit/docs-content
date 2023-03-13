@@ -297,7 +297,7 @@ You must assign the input an <code>id</code> to use this method.
 ::Example
 ---
   name: "Get core node"
-  file: "/_content/_examples/node-get/node-get.vue"
+  file: "_content/_examples/node-get/node-get.vue"
 ---
 ::
 
@@ -317,7 +317,7 @@ Another way to get the underlying `node` is to listen to the `@node` event which
 ::Example
 ---
   name: "Node event"
-  file: "/_content/_examples/node-event/node-event.vue"
+  file: "_content/_examples/node-event/node-event.vue"
 ---
 ::
 
@@ -328,7 +328,7 @@ Assigning a `<FormKit>` component to a `ref` also allows easy access to the node
 ::Example
 ---
   name: "Node ref"
-  file: "/_content/_examples/node-ref/node-ref.vue"
+  file: "_content/_examples/node-ref/node-ref.vue"
 ---
 ::
 
@@ -668,7 +668,7 @@ For example, if we wanted to create a plugin that exposed a couple new inputs: `
 ::Example
 ---
   name: "Plugin library"
-  file: "/_content/_examples/plugin-library/plugin-library.vue"
+  file: "_content/_examples/plugin-library/plugin-library.vue"
   layout: "auto"
 ---
 ::
@@ -773,7 +773,7 @@ Let's say we want to count how many messages are currently being displayed. We c
 ::Example
 ---
   name: "Count visible"
-  file: "/_content/_examples/count-visible/count-visible.vue"
+  file: "_content/_examples/count-visible/count-visible.vue"
 ---
 ::
 

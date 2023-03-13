@@ -14,7 +14,7 @@ The `date` input uses HTML's [native date picker](https://developer.mozilla.org/
 ::Example
 ---
   name: "Date input"
-  file: "/_content/_examples/date-example/date-example.vue"
+  file: "_content/_examples/date-example/date-example.vue"
 ---
 ::
 

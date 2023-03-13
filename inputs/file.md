@@ -18,7 +18,7 @@ The `file` input uses HTML's [native file input](https://developer.mozilla.org/e
 ::Example
 ---
 name: "File input"
-file: "/_content/_examples/file/file.vue"
+file: "_content/_examples/file/file.vue"
 ---
 ::
 
@@ -31,7 +31,7 @@ This structure can be used to pre-populate a file input with previously uploaded
 ::Example
 ---
 name: "File input"
-file: "/_content/_examples/file-populate/file-populate.vue"
+file: "_content/_examples/file-populate/file-populate.vue"
 ---
 ::
 
@@ -50,7 +50,7 @@ The file upload process is left to your form’s submission handler. When submit
 ::Example
 ---
   name: "File input"
-  file: "/_content/_examples/file-upload/file-upload.vue"
+  file: "_content/_examples/file-upload/file-upload.vue"
 ---
 ::
 

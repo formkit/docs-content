@@ -36,7 +36,7 @@ Below is an example of the transfer list input with the minimum required props. 
 ---
 name: "Transfer List"
 min-height: 300
-file: "/_content/_examples/transfer-list/transfer-list-base.vue"
+file: "_content/_examples/transfer-list/transfer-list-base.vue"
 ---
 ::
 
@@ -48,7 +48,7 @@ Let's add some label props to make clear to the end-user how to use the transfer
 ---
 name: "Transfer List"
 min-height: 300
-file: "/_content/_examples/transfer-list/transfer-list-labels.vue"
+file: "_content/_examples/transfer-list/transfer-list-labels.vue"
 ---
 ::
 
@@ -60,7 +60,7 @@ In this state, with no options passed and no values selected, we can display a c
 ---
 name: "Transfer List"
 min-height: 300
-file: "/_content/_examples/transfer-list/transfer-list-empty-messages.vue"
+file: "_content/_examples/transfer-list/transfer-list-empty-messages.vue"
 ---
 ::
 
