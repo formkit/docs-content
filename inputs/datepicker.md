@@ -324,7 +324,7 @@ This would work for our restaurant app as long as a backend is able to attach an
 Alternatively, the `timezone` prop of the datepicker will perform the offset correction for you automatically. Simply state "where" the datepicker is picking time for — in our example `timezone="Europe/Amsterdam"`. The user’s experience will not change at all, but the time they select will be in the target timezone. A user in `America/New_York` (`+0400`) who selects `2pm on March 13th` in their datepicker, will yield a UTC value of `2023-03-13T13:00:00Z` which is `2pm` in Amsterdam. This allows for simple storage and hydration of your for using a `UTC` format.
 ::
 
-### Indeterminate
+### Indeterminate timezone
 
 By default the datepicker uses the client’s local timezone when a selection is made. The value of the output is determined by the `value-format` ([see above](#values)) — by default this is a `UTC` normalized `ISO8601` string. However, by specifying a custom format you can achieve an "indeterminate" time (also called "wall time"). This is a date and/or time with no specific correlation to a given timezone.
 
@@ -366,4 +366,79 @@ In the example below, a user needs to pickup a rental car in Kolkata, India afte
 ---
 ::
 
+::Callout
+---
+  type: 'tip'
+  label: 'Polyfilling Timezones'
+---
+Most browsers ship with a comprehensive IANA database built into `Intl.DateTimeFormat`. This is excellent since FormKit does not need to ship the (quite extensive) timezone database to the client’s browser. However, some older browser may not have the IANA database. This data can be polyfilled easily by using [polyfill.io](https://polyfill.io/v3/url-builder) with `Intl.DateTimeFormat.~timeZone.all`.
+::
+
 ## Disabling dates
+
+It is often necessary to disable specific dates in the datepicker. There are three ways to disable dates in the datepicker:
+
+- `min-date` — a prop to control what the first available date is.
+- `max-date` - a prop to control what the last available date is.
+- `disabled-dates` - a prop to control whether or not any arbitrary date should be disabled.
+
+Any date that is disabled cannot be selected in the datepicker’s pop up, however an unavailable date can still be set as the initial value or by typing it into the input (when it isn’t in `picker-only` mode). To handle these edge cases the datepicker has a built-in validation rule (that cannot be disabled) that ensures only valid dates can be submitted. The validation rule’s key is `invalidDate`.
+
+### Min date
+
+Often it is necessary to disable dates that are prior to a particular date. For example, booking a hotel room should only happen for dates in the future. To do this, use the `min-date` prop with either an `ISO8601` compatible string, or, a native `Date` object.
+
+::Example
+---
+  name: 'Datepicker min-date'
+  file: '/_content/examples/datepicker/datepicker-min-date.vue'
+  min-height: 500
+---
+::
+
+### Max date
+
+To all dates after a given date, use the `max-date` prop. For example, a birthday selector should only allow past dates. To do this, use the `max-date` prop with either an `ISO8601` compatible string, or, a native `Date` object.
+
+::Example
+---
+  name: 'Datepicker min-date'
+  file: '/_content/examples/datepicker/datepicker-max-date.vue'
+  min-height: 500
+---
+::
+
+::Callout
+---
+  type: 'tip'
+  label: 'Min & max dates together'
+---
+You can use `min-date` and `max-date` at the same time. Not only will this limit the range of dates, but additionally it will limit the available *years* to only valid years when using text entry. 
+::
+
+### Disabled days
+
+Often our applications require substantially more granularity when disabling dates than `min-date` and `max-date` allows. The datepicker allows fine-grained control by leveraging the `disabled-days` prop.
+
+The `disabled-days` prop expects a function that is passed 2 arguments: the [core node](http://localhost:3000/essentials/architecture#node) and a `Date` object. The responsibility of the function is to return a boolean indicating if the date is disabled (`true` is disabled).
+
+The `disabled-days` prop supersedes `min-date` and `max-date` — you can choose to re-implement the base functionality by accessing `node.props.minDate` or `node.props.maxDate`.
+
+::Callout
+---
+  type: warning
+  label: Fast and synchronous
+---
+It’s important that the provided functions is synchronous and fast — it will be called frequently and repeatedly. For example, if you need to fetch information from a database, do it outside of this function and use this function to access memoized results.
+::
+
+#### Example: disabled weekends
+::Example
+---
+  name: 'Datepicker disabled weekends'
+  file: '/_content/examples/datepicker/datepicker-disabled-days-weekend.vue'
+  min-height: 500
+---
+::
+
+
