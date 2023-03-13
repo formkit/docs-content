@@ -14,7 +14,7 @@ The `url` input uses HTML's [native url input](https://developer.mozilla.org/en-
 ::Example
 ---
 name: "URL input"
-file: "/_content/_examples/url/url.vue"
+file: "_content/_examples/url/url.vue"
 ---
 ::
 

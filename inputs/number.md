@@ -14,7 +14,7 @@ The `number` input uses HTML's [native number input](https://developer.mozilla.o
 ::Example
 ---
 name: "Number input"
-file: "/_content/_examples/number/number.vue"
+file: "_content/_examples/number/number.vue"
 ---
 ::
 

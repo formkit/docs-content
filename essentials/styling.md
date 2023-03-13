@@ -55,7 +55,7 @@ You can use the above attributes to easily provide realtime visual feedback for 
 ::Example
 ---
 name: "Appending classes"
-file: "/_content/_examples/outer-data-attrs/outer-data-attrs.vue"
+file: "_content/_examples/outer-data-attrs/outer-data-attrs.vue"
 ---
 ::
 
@@ -80,7 +80,7 @@ To append a class, simply return the string you want to append, or provide an ob
 ::Example
 ---
 name: "Appending classes"
-file: "/_content/_examples/append-classes/append-classes.vue"
+file: "_content/_examples/append-classes/append-classes.vue"
 tabs: "html"
 ---
 ::
@@ -93,7 +93,7 @@ Classes produced by all earlier hierarchy steps can be completely removed by pro
 ::Example
 ---
 name: "Resetting classes"
-file: "/_content/_examples/resetting-classes/resetting-classes.vue"
+file: "_content/_examples/resetting-classes/resetting-classes.vue"
 tabs: "html"
 ---
 ::
@@ -106,7 +106,7 @@ Classes produced by an earlier step in the class hierarchy can be selectively re
 ::Example
 ---
 name: "Removing classes"
-file: "/_content/_examples/removing-classes/removing-classes.vue"
+file: "_content/_examples/removing-classes/removing-classes.vue"
 tabs: "html"
 ---
 ::
@@ -126,7 +126,7 @@ The simplest way to modify the classes of an element inside a FormKit input is v
 ::Example
 ---
 name: "Section-key class"
-file: "/_content/_examples/section-key-class/section-key-class.vue"
+file: "_content/_examples/section-key-class/section-key-class.vue"
 tabs: "html"
 ---
 ::
@@ -139,7 +139,7 @@ The classes prop is similar to the section-key class prop except it allows setti
 ::Example
 ---
 name: "Classes prop"
-file: "/_content/_examples/classes-prop/classes-prop.vue"
+file: "_content/_examples/classes-prop/classes-prop.vue"
 tabs: "html"
 ---
 ::
@@ -154,7 +154,7 @@ The classes configuration option is similar to the classes prop, except it appli
 ::Example
 ---
 name: "Global configuration"
-file: "/_content/_examples/global-classes/global-classes.vue"
+file: "_content/_examples/global-classes/global-classes.vue"
 mode: "editor"
 editable: false
 line-numbers: false
@@ -167,7 +167,7 @@ line-numbers: false
 ::Example
 ---
 name: "Classes prop"
-file: "/_content/_examples/classes-config/classes-config.vue"
+file: "_content/_examples/classes-config/classes-config.vue"
 tabs: "render,html"
 ---
 ::
@@ -213,7 +213,7 @@ within your provided function:
 ::Example
 ---
 name: "Root classes function"
-file: "/_content/_examples/root-classes/root-classes.vue"
+file: "_content/_examples/root-classes/root-classes.vue"
 tabs: "html"
 ---
 ::
@@ -269,7 +269,7 @@ Since config is passed down to descendant inputs, you can alter classes via conf
 ::Example
 ---
 name: "Classes prop"
-file: "/_content/_examples/classes-config-schema/classes-config-schema.vue"
+file: "_content/_examples/classes-config-schema/classes-config-schema.vue"
 tabs: "render,html"
 ---
 ::

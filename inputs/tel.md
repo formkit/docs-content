@@ -14,7 +14,7 @@ The `tel` input uses HTML's [native tel input](https://developer.mozilla.org/en-
 ::Example
 ---
 name: "Tel input"
-file: "/_content/_examples/tel/tel.vue"
+file: "_content/_examples/tel/tel.vue"
 ---
 ::
 

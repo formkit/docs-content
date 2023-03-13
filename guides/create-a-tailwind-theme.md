@@ -33,7 +33,7 @@ If your component represents your entire form and your project only requires a s
 
 ::Example
 ---
-file: "/_content/_examples/guides/tailwind-theme/inline-usage/example.vue"
+file: "_content/_examples/guides/tailwind-theme/inline-usage/example.vue"
 css-framework: "tailwind"
 add-tailwind-files: false
 editable: true

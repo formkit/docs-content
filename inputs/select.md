@@ -25,7 +25,7 @@ The simplest way to provide options is an array of strings. The provided strings
 ::Example
 ---
 name: "Select input - strings"
-file: "/_content/_examples/select-strings/select-strings.vue"
+file: "_content/_examples/select-strings/select-strings.vue"
 ---
 ::
 
@@ -37,7 +37,7 @@ You may also provide the `options` prop where the keys are values and the values
 ::Example
 ---
 name: "Select input"
-file: "/_content/_examples/select/select.vue"
+file: "_content/_examples/select/select.vue"
 ---
 ::
 
@@ -49,7 +49,7 @@ The most flexible way to define options is by providing an array of objects. The
 ::Example
 ---
 name: "Select input - objects"
-file: "/_content/_examples/select-objects/select-objects.vue"
+file: "_content/_examples/select-objects/select-objects.vue"
 ---
 ::
 
@@ -78,7 +78,7 @@ Sometimes it may be desirable to manually output the contents of a select list i
 ::Example
 ---
 name: "Select input - objects"
-file: "/_content/_examples/select-slot/select-slot.vue"
+file: "_content/_examples/select-slot/select-slot.vue"
 ---
 ::
 
@@ -97,7 +97,7 @@ The `select` input also supports a `multiple` attribute that allows for multi-se
 ::Example
 ---
 name: "Select input - objects"
-file: "/_content/_examples/select-multiple/select-multiple.vue"
+file: "_content/_examples/select-multiple/select-multiple.vue"
 ---
 ::
 

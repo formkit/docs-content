@@ -14,7 +14,7 @@ The `color` input uses HTML's [native color picker](https://developer.mozilla.or
 ::Example
 ---
   name: "Color input"
-  file: "/_content/_examples/color-example/color-example.vue"
+  file: "_content/_examples/color-example/color-example.vue"
 ---
 ::
 

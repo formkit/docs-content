@@ -25,7 +25,7 @@ youtube-id: "J4mkd7UsjIM"
 ::Example
 ---
 name: "Mask input"
-file: "/_content/_examples/mask/basic.vue"
+file: "_content/_examples/mask/basic.vue"
 ---
 ::
 
@@ -50,7 +50,7 @@ The mask input comes with 4 built-in tokens:
 ::Example
 ---
 name: "Mask input"
-file: "/_content/_examples/mask/simple.vue"
+file: "_content/_examples/mask/simple.vue"
 ---
 ::
 
@@ -77,7 +77,7 @@ By default, the characters of a mask are automatically shifted forward when typi
 ::Example
 ---
 name: "Mask input - shift vs replace"
-file: "/_content/_examples/mask/shift-replace.vue"
+file: "_content/_examples/mask/shift-replace.vue"
 ---
 ::
 
@@ -90,7 +90,7 @@ Additionally, when an input is in select mode, the user can use the arrow or tab
 ::Example
 ---
 name: "Mask input - select"
-file: "/_content/_examples/mask/select.vue"
+file: "_content/_examples/mask/select.vue"
 ---
 ::
 
@@ -185,7 +185,7 @@ expects an object with keys that match the `token` property. For example, our ne
 ::Example
 ---
 name: "Mask input"
-file: "/_content/_examples/mask/tokens-prop.vue"
+file: "_content/_examples/mask/tokens-prop.vue"
 ---
 ::
 
@@ -208,7 +208,7 @@ In addition to creating new tokens, the `tokens` prop can also modify existing t
 ::Example
 ---
 name: "Mask input - select fill"
-file: "/_content/_examples/mask/select-fill.vue"
+file: "_content/_examples/mask/select-fill.vue"
 ---
 ::
 
@@ -235,7 +235,7 @@ A date with auto-completing month names could be well represented with enums:
 ::Example
 ---
 name: "Mask input – enum"
-file: "/_content/_examples/mask/enum.vue"
+file: "_content/_examples/mask/enum.vue"
 ---
 ::
 
@@ -282,7 +282,7 @@ You can string group options together:
 ::Example
 ---
 name: "Mask input"
-file: "/_content/_examples/mask/groups.vue"
+file: "_content/_examples/mask/groups.vue"
 ---
 ::
 
@@ -301,7 +301,7 @@ You can ensure certain characters always appear at the beginning or end of an in
 ::Example
 ---
 name: "Mask input"
-file: "/_content/_examples/mask/prefix-suffix.vue"
+file: "_content/_examples/mask/prefix-suffix.vue"
 ---
 ::
 
@@ -320,7 +320,7 @@ In specific circumstances, you may want to run your mask in reverse. The mask wi
 ::Example
 ---
 name: "Mask input"
-file: "/_content/_examples/mask/reverse.vue"
+file: "_content/_examples/mask/reverse.vue"
 ---
 ::
 
@@ -341,7 +341,7 @@ A mask’s value is not considered "complete" until the user has filled the enti
 ::Example
 ---
 name: "Mask input - allow incomplete"
-file: "/_content/_examples/mask/allow-incomplete.vue"
+file: "_content/_examples/mask/allow-incomplete.vue"
 ---
 ::
 
@@ -352,7 +352,7 @@ By default, the value of a mask input includes the formatting provided via the `
 ::Example
 ---
 name: "Mask input - unmask value"
-file: "/_content/_examples/mask/unmask-value.vue"
+file: "_content/_examples/mask/unmask-value.vue"
 ---
 ::
 
@@ -363,7 +363,7 @@ By default, the `mask` input displays each token’s placeholder character. You 
 ::Example
 ---
 name: "Mask input - show mask"
-file: "/_content/_examples/mask/show-mask.vue"
+file: "_content/_examples/mask/show-mask.vue"
 ---
 ::
 

@@ -14,7 +14,7 @@ The `hidden` input uses HTML's [native hidden input](https://developer.mozilla.o
 ::Example
 ---
 name: "Hidden input"
-file: "/_content/_examples/hidden/hidden.vue"
+file: "_content/_examples/hidden/hidden.vue"
 tabs: "html,render"
 ---
 ::
