@@ -416,20 +416,6 @@ If you want to use these types of icons in your Tailwind theme be sure to import
 ::Example
 ---
 file: [
-<<<<<<< Updated upstream
-  '/_content/examples/guides/tailwind-theme/tailwind-theme/example.vue',
-  '/_content/examples/guides/tailwind-theme/tailwind-theme/theme.js',
-  '/_content/examples/guides/tailwind-theme/tailwind-theme/formkit.config.js',
-  '/_content/examples/guides/tailwind-theme/tailwind-theme/tailwind.config.js',
-  '/_content/examples/guides/tailwind-theme/tailwind-theme/KitchenSinkForm.vue',
-  '/_content/examples/guides/tailwind-theme/tailwind-theme/Autocomplete.vue',
-  '/_content/examples/guides/tailwind-theme/tailwind-theme/Dropdown.vue',
-  '/_content/examples/guides/tailwind-theme/tailwind-theme/Mask.vue',
-  '/_content/examples/guides/tailwind-theme/tailwind-theme/Rating.vue',
-  '/_content/examples/guides/tailwind-theme/tailwind-theme/Repeater.vue',
-  '/_content/examples/guides/tailwind-theme/tailwind-theme/Taglist.vue',
-  '/_content/examples/guides/tailwind-theme/tailwind-theme/Toggle.vue'
-=======
   '/_content/_examples/guides/tailwind-theme/tailwind-theme/example.vue',
   '/_content/_examples/guides/tailwind-theme/tailwind-theme/theme.js',
   '/_content/_examples/guides/tailwind-theme/tailwind-theme/formkit.config.js',
@@ -443,7 +429,6 @@ file: [
   '/_content/_examples/guides/tailwind-theme/tailwind-theme/Taglist.vue',
   '/_content/_examples/guides/tailwind-theme/tailwind-theme/Toggle.vue',
   '/_content/_examples/guides/tailwind-theme/tailwind-theme/Transferlist.vue'
->>>>>>> Stashed changes
 ]
 init-file-tab: "formkit.config.js"
 css-framework: "tailwind"
