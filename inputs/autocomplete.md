@@ -17,7 +17,7 @@ The autocomplete input allows you to search through a list of options. In this f
 ---
 name: "Autocomplete"
 min-height: 550
-file: "/_content/examples/autocomplete-pro/autocomplete-base.vue"
+file: "/_content/_examples/autocomplete-pro/autocomplete-base.vue"
 ---
 ::
 
@@ -38,7 +38,7 @@ The autocomplete input will filter options with its own internal search function
 ---
 name: "Autocomplete"
 min-height: 550
-file: "/_content/examples/autocomplete-pro/autocomplete-filter.vue"
+file: "/_content/_examples/autocomplete-pro/autocomplete-filter.vue"
 ---
 ::
 
@@ -50,7 +50,7 @@ The autocomplete input, by default, will close the listbox when no search result
 ---
 name: "Autocomplete"
 min-height: 550
-file: "/_content/examples/autocomplete-pro/autocomplete-empty-message.vue"
+file: "/_content/_examples/autocomplete-pro/autocomplete-empty-message.vue"
 ---
 ::
 
@@ -66,7 +66,7 @@ The autocomplete input will default to the `text-input` selection appearance. Wh
 ---
 name: "Autocomplete"
 min-height: 300
-file: "/_content/examples/autocomplete-pro/autocomplete-text-input.vue"
+file: "/_content/_examples/autocomplete-pro/autocomplete-text-input.vue"
 ---
 ::
 
@@ -78,7 +78,7 @@ Alternatively, you can set the selection appearance of the autocomplete to `opti
 ---
 name: "Autocomplete"
 min-height: 300
-file: "/_content/examples/autocomplete-pro/autocomplete-option.vue"
+file: "/_content/_examples/autocomplete-pro/autocomplete-option.vue"
 ---
 ::
 
@@ -94,7 +94,7 @@ In this example, we'll use the options slot to display car brands and their logo
 ---
 name: "Autocomplete"
 min-height: 550
-file: "/_content/examples/autocomplete-pro/autocomplete-option-slot.vue"
+file: "/_content/_examples/autocomplete-pro/autocomplete-option-slot.vue"
 ---
 ::
 
@@ -106,7 +106,7 @@ If you only want to customize the display of the selected option, use the `selec
 ---
 name: "Autocomplete"
 min-height: 550
-file: "/_content/examples/autocomplete-pro/autocomplete-selection-slot.vue"
+file: "/_content/_examples/autocomplete-pro/autocomplete-selection-slot.vue"
 ---
 ::
 
@@ -130,7 +130,7 @@ For the `text-input` selection appearance, the selected options display as a com
 ---
 name: "Autocomplete"
 min-height: 550
-file: "/_content/examples/autocomplete-pro/autocomplete-selection-appearance-text-multiple.vue"
+file: "/_content/_examples/autocomplete-pro/autocomplete-selection-appearance-text-multiple.vue"
 ---
 ::
 
@@ -142,7 +142,7 @@ For the `option` selection appearance, the selected options display as a list of
 ---
 name: "Autocomplete"
 min-height: 550
-file: "/_content/examples/autocomplete-pro/autocomplete-selection-appearance-option-multiple.vue"
+file: "/_content/_examples/autocomplete-pro/autocomplete-selection-appearance-option-multiple.vue"
 ---
 ::
 
@@ -154,7 +154,7 @@ The `max` prop allows you to limit the number of options that can be selected. W
 ---
 name: "Autocomplete"
 min-height: 550
-file: "/_content/examples/autocomplete-pro/autocomplete-max.vue"
+file: "/_content/_examples/autocomplete-pro/autocomplete-max.vue"
 ---
 ::
 
@@ -166,7 +166,7 @@ If you would like the autocomplete's listbox to remain open in between selection
 ---
 name: "Autocomplete"
 min-height: 550
-file: "/_content/examples/autocomplete-pro/autocomplete-close-on-select.vue"
+file: "/_content/_examples/autocomplete-pro/autocomplete-close-on-select.vue"
 ---
 ::
 
@@ -182,7 +182,7 @@ In this example, we'll assign the `options` prop the `searchMovies` function. By
 ---
 name: "Autocomplete"
 min-height: 550
-file: "/_content/examples/autocomplete-pro/autocomplete-single-request.vue"
+file: "/_content/_examples/autocomplete-pro/autocomplete-single-request.vue"
 ---
 ::
 
@@ -194,7 +194,7 @@ A likely scenario you'll encounter is needing to search through a paginated API.
 ---
 name: "Autocomplete"
 min-height: 550
-file: "/_content/examples/autocomplete-pro/autocomplete-pagination.vue"
+file: "/_content/_examples/autocomplete-pro/autocomplete-pagination.vue"
 ---
 ::
 
@@ -212,7 +212,7 @@ FormKit's autocomplete input also provides an `optionLoader` prop that allows yo
 ---
 name: "Autocomplete"
 min-height: 550
-file: "/_content/examples/autocomplete-pro/autocomplete-pagination-option-loader.vue"
+file: "/_content/_examples/autocomplete-pro/autocomplete-pagination-option-loader.vue"
 ---
 ::
 
@@ -226,7 +226,7 @@ Instead of using the `optionLoader` prop to rehydrate values that are not in the
 ---
 name: "Autocomplete"
 min-height: 550
-file: "/_content/examples/autocomplete-pro/autocomplete-option-loader-additional-data.vue"
+file: "/_content/_examples/autocomplete-pro/autocomplete-option-loader-additional-data.vue"
 ---
 ::
 
@@ -238,7 +238,7 @@ Now let's combine what we've learned so far by leveraging the `option` slot for 
 ---
 name: "Dropdown"
 min-height: 550
-file: "/_content/examples/autocomplete-pro/autocomplete-full.vue"
+file: "/_content/_examples/autocomplete-pro/autocomplete-full.vue"
 ---
 ::
 

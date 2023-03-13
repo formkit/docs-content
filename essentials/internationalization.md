@@ -102,8 +102,8 @@ When using Vue’s options API, you have access to `this.$formkit` which contain
 ---
   name: "Changing locale example"
   file: [
-    '/_content/examples/locale-change/locale-change.vue',
-    '/_content/examples/locale-change/formkit.config.js'
+    '/_content/_examples/locale-change/locale-change.vue',
+    '/_content/_examples/locale-change/formkit.config.js'
   ]
 ---
 ::
@@ -116,8 +116,8 @@ When using the composition API, you won’t have access to `this.$formkit`. Inst
 ---
   name: "Changing locale via config"
   file: [
-    '/_content/examples/locale-change-config/locale-change-config.vue',
-    '/_content/examples/locale-change-config/formkit.config.js'
+    '/_content/_examples/locale-change-config/locale-change-config.vue',
+    '/_content/_examples/locale-change-config/formkit.config.js'
   ]
 ---
 ::

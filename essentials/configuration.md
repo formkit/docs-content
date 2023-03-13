@@ -154,7 +154,7 @@ If you have a node instance, you can directly assign it a prop value:
 ::Example
 ---
   name: "Direct node assignment"
-  file: "/_content/examples/node-assignment/node-assignment.vue"
+  file: "/_content/_examples/node-assignment/node-assignment.vue"
 ---
 ::
 
@@ -165,7 +165,7 @@ Any props passed to the `<FormKit>` input are assigned to the `node.props` objec
 ::Example
 ---
   name: "Component props"
-  file: "/_content/examples/component-props/component-props.vue"
+  file: "/_content/_examples/component-props/component-props.vue"
 ---
 ::
 
@@ -177,8 +177,8 @@ When registering the `@formkit/vue` plugin, you can provide prop values to be in
 ---
   name: "Component props"
   file: [
-    '/_content/examples/vue-plugin-props/vue-plugin-props.vue',
-    '/_content/examples/vue-plugin-props/formkit.config.js',
+    '/_content/_examples/vue-plugin-props/vue-plugin-props.vue',
+    '/_content/_examples/vue-plugin-props/formkit.config.js',
   ]
   init-file-tab: "formkit.config.js"
 ---
@@ -198,7 +198,7 @@ What does this mean in practice? When you combine the tree like structure of for
 ::Example
 ---
   name: "Validation visibility"
-  file: "/_content/examples/validation-visibility/validation-visibility.vue"
+  file: "/_content/_examples/validation-visibility/validation-visibility.vue"
 ---
 ::
 

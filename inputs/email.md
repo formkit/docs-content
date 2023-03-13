@@ -14,7 +14,7 @@ The `email` input uses HTML's [native email input](https://developer.mozilla.org
 ::Example
 ---
 name: "Email input"
-file: "/_content/examples/email-example/email-example.vue"
+file: "/_content/_examples/email-example/email-example.vue"
 ---
 ::
 

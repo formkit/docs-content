@@ -14,7 +14,7 @@ The `datetime-local` input uses HTML's [native datetime-local picker](https://de
 ::Example
 ---
   name: "Datetime-local input"
-  file: "/_content/examples/datetime-local-example/datetime-local-example.vue"
+  file: "/_content/_examples/datetime-local-example/datetime-local-example.vue"
 ---
 ::
 

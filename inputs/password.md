@@ -14,7 +14,7 @@ The `password` input uses HTML's [native password input](https://developer.mozil
 ::Example
 ---
 name: "Password input"
-file: "/_content/examples/password/password.vue"
+file: "/_content/_examples/password/password.vue"
 ---
 ::
 

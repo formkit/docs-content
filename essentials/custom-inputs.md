@@ -74,7 +74,7 @@ Let’s make the simplest possible input — one that only outputs "Hello world"
 ::Example
 ---
 name: "Custom input"
-file: "/_content/examples/custom-input/custom-input.vue"
+file: "/_content/_examples/custom-input/custom-input.vue"
 ---
 ::
 
@@ -113,8 +113,8 @@ Now that we’ve defined our input we can use it anywhere in the application:
 ---
 name: "Custom input"
 file: [
-  '/_content/examples/custom-input-default-config/custom-input-default-config.vue',
-  '/_content/examples/custom-input-default-config/formkit.config.js'
+  '/_content/_examples/custom-input-default-config/custom-input-default-config.vue',
+  '/_content/_examples/custom-input-default-config/formkit.config.js'
 ]
 ---
 ::
@@ -134,7 +134,7 @@ Let’s refactor our hello world input to use its own plugin:
 ::Example
 ---
 name: "Custom input - plugin"
-file: "/_content/examples/custom-input-plugin/custom-input-plugin.vue"
+file: "/_content/_examples/custom-input-plugin/custom-input-plugin.vue"
 ---
 ::
 
@@ -221,7 +221,7 @@ When providing a schema object, your schema is directly injected into the base s
 ::Example
 ---
 name: "Create input"
-file: "/_content/examples/create-input/create-input.vue"
+file: "/_content/_examples/create-input/create-input.vue"
 ---
 ::
 
@@ -232,7 +232,7 @@ It might make sense to write your inputs completely from scratch without using a
 ::Example
 ---
 name: "Create input"
-file: "/_content/examples/scratch-schema-input/scratch-schema-input.vue"
+file: "/_content/_examples/scratch-schema-input/scratch-schema-input.vue"
 ---
 ::
 
@@ -319,7 +319,7 @@ If you need additional props, you can declare them in your input definition. Pro
 ::Example
 ---
 name: "Custom props"
-file: "/_content/examples/custom-props/custom-props.vue"
+file: "/_content/_examples/custom-props/custom-props.vue"
 ---
 ::
 
@@ -328,7 +328,7 @@ When extending the base schema by using the `createInput` helper, pass a second 
 ::Example
 ---
 name: "Custom props - createInput"
-file: "/_content/examples/custom-props-create-input/custom-props-create-input.vue"
+file: "/_content/_examples/custom-props-create-input/custom-props-create-input.vue"
 ---
 ::
 
@@ -343,7 +343,7 @@ As an example, let's imagine you want to build an input that allows users to ent
 ::Example
 ---
   name: "Custom input - sum numbers"
-  file: "/_content/examples/custom-sum/custom-sum.vue"
+  file: "/_content/_examples/custom-sum/custom-sum.vue"
 ---
 ::
 
@@ -358,7 +358,7 @@ This is the simplest possible input and does not leverage any of FormKit’s bui
 ::Example
 ---
   name: "Create input"
-  file: "/_content/examples/standard-text-input/standard-text-input.vue"
+  file: "/_content/_examples/standard-text-input/standard-text-input.vue"
 ---
 ::
 
@@ -377,7 +377,7 @@ Let’s take a look at a slightly more complex example that utilizes `createInpu
 ::Example
 ---
 name: "Create input"
-file: "/_content/examples/autocomplete/autocomplete.vue"
+file: "/_content/_examples/autocomplete/autocomplete.vue"
 ---
 ::
 

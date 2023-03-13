@@ -17,7 +17,7 @@ The `dropdown` input allows users to select a value from a customizable list of 
 ---
 name: "Dropdown"
 min-height: 550
-file: "/_content/examples/dropdown/dropdown-base.vue"
+file: "/_content/_examples/dropdown/dropdown-base.vue"
 ---
 ::
 
@@ -39,7 +39,7 @@ The dropdown input, by default, will be rendered in a disabled state if no optio
 ---
 name: "Dropdown"
 min-height: 550
-file: "/_content/examples/dropdown/dropdown-empty-message.vue"
+file: "/_content/_examples/dropdown/dropdown-empty-message.vue"
 ---
 ::
 
@@ -56,7 +56,7 @@ The `dropdown` input allows you to customize the look and feel of each option by
 ---
 name: "Dropdown"
 min-height: 550
-file: "/_content/examples/dropdown/dropdown-option-slot.vue"
+file: "/_content/_examples/dropdown/dropdown-option-slot.vue"
 ---
 ::
 
@@ -69,7 +69,7 @@ If you only want to customize the display of the selected option, use the `selec
 ---
 name: "Dropdown"
 min-height: 550
-file: "/_content/examples/dropdown/dropdown-selection-slot.vue"
+file: "/_content/_examples/dropdown/dropdown-selection-slot.vue"
 ---
 ::
 
@@ -88,7 +88,7 @@ Let's say we had an API endpoint that returned all the options we needed for a g
 ---
 name: "Dropdown"
 min-height: 550
-file: "/_content/examples/dropdown/dropdown-single-request.vue"
+file: "/_content/_examples/dropdown/dropdown-single-request.vue"
 ---
 ::
 
@@ -103,7 +103,7 @@ What about loading options from an API where you need to be able to make multipl
 ---
 name: "Dropdown"
 min-height: 550
-file: "/_content/examples/dropdown/dropdown-pagination.vue"
+file: "/_content/_examples/dropdown/dropdown-pagination.vue"
 ---
 ::
 
@@ -120,7 +120,7 @@ FormKit's dropdown input also provides an `optionLoader` prop that allows you to
 ---
 name: "Dropdown"
 min-height: 550
-file: "/_content/examples/dropdown/dropdown-option-loader.vue"
+file: "/_content/_examples/dropdown/dropdown-option-loader.vue"
 ---
 ::
 
@@ -135,7 +135,7 @@ Instead of using the `optionLoader` prop to rehydrate values that are not in the
 ---
 name: "Dropdown"
 min-height: 550
-file: "/_content/examples/dropdown/dropdown-option-loader-review.vue"
+file: "/_content/_examples/dropdown/dropdown-option-loader-review.vue"
 ---
 ::
 
@@ -148,7 +148,7 @@ If you would rather allow the user to load more options without having to click 
 ---
 name: "Dropdown"
 min-height: 550
-file: "/_content/examples/dropdown/dropdown-pagination-load-on-scroll.vue"
+file: "/_content/_examples/dropdown/dropdown-pagination-load-on-scroll.vue"
 ---
 ::
 
@@ -161,7 +161,7 @@ Now let's combine what we've learned so far by leveraging the `option` slot for 
 ---
 name: "Dropdown"
 min-height: 550
-file: "/_content/examples/dropdown/dropdown-full.vue"
+file: "/_content/_examples/dropdown/dropdown-full.vue"
 ---
 ::
 
@@ -174,7 +174,7 @@ When using the dropdown with static options, FormKit's dropdown also comes with 
 ---
 name: "Dropdown"
 min-height: 550
-file: "/_content/examples/dropdown/dropdown-overscroll.vue"
+file: "/_content/_examples/dropdown/dropdown-overscroll.vue"
 ---
 ::
 

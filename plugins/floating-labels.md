@@ -40,8 +40,8 @@ By default the floating label plugin only take affect on a FormKit input if you 
 ---
 name: "Floating Label Manual"
 file: [
-'/\_content/examples/floating-labels/off-by-default/off-by-default.vue',
-'/\_content/examples/floating-labels/off-by-default/formkit.config.js'
+'/\_content/_examples/floating-labels/off-by-default/off-by-default.vue',
+'/\_content/_examples/floating-labels/off-by-default/formkit.config.js'
 ]
 ---
 ::
@@ -65,8 +65,8 @@ When floating labels are set as the default you can still disable them on a Form
 ---
 name: "Floating Label Automatic"
 file: [
-'/\_content/examples/floating-labels/on-by-default/on-by-default.vue',
-'/\_content/examples/floating-labels/on-by-default/formkit.config.js'
+'/\_content/_examples/floating-labels/on-by-default/on-by-default.vue',
+'/\_content/_examples/floating-labels/on-by-default/formkit.config.js'
 ]
 ---
 ::
