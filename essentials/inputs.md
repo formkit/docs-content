@@ -14,7 +14,7 @@ FormKit Inputs are similar to HTML inputs but turbocharged with much needed feat
 ::Example
 ---
   name: "Text input"
-  file: "/_content/examples/single-component/single-component.vue"
+  file: "/_content/_examples/single-component/single-component.vue"
 ---
 ::
 
@@ -24,7 +24,7 @@ FormKit Inputs are not confined to what is available in "native" HTML. Our seper
 ---
   name: "Text input"
   file: [
-    '/_content/examples/single-component/single-component-pro.vue',
+    '/_content/_examples/single-component/single-component-pro.vue',
   ]
 ---
 ::
@@ -60,7 +60,7 @@ prop.
 ::Example
 ---
   name: "Value prop"
-  file: "/_content/examples/value-prop/value-prop.vue"
+  file: "/_content/_examples/value-prop/value-prop.vue"
 ---
 ::
 
@@ -80,7 +80,7 @@ Using `v-model` allows for two-way reactive data binding with any FormKit input.
 ::Example
 ---
   name: "Input v-model"
-  file: "/_content/examples/v-model/v-model.vue"
+  file: "/_content/_examples/v-model/v-model.vue"
 ---
 ::
 
@@ -92,7 +92,7 @@ object](/essentials/architecture#node), and using the `node.input()` method is t
 ::Example
 ---
   name: "Input v-model"
-  file: "/_content/examples/node-input/node-input.vue"
+  file: "/_content/_examples/node-input/node-input.vue"
 ---
 ::
 
@@ -110,7 +110,7 @@ Parent inputs like `list`, `group`, and `form` are also able to directly set the
 ::Example
 ---
   name: "Parent input"
-  file: "/_content/examples/parent-input/parent-input.vue"
+  file: "/_content/_examples/parent-input/parent-input.vue"
 ---
 ::
 
@@ -121,7 +121,7 @@ In nearly all cases, attributes set on the `<FormKit>` component will be passed 
 ::Example
 ---
   name: "Text input"
-  file: "/_content/examples/attributes/attributes.vue"
+  file: "/_content/_examples/attributes/attributes.vue"
   tabs: "html"
 ---
 ::
@@ -133,7 +133,7 @@ We discuss validation in more detail on its [own documentation page](/essentials
 ::Example
 ---
   name: "Simple validation"
-  file: "/_content/examples/simple-validation/simple-validation.vue"
+  file: "/_content/_examples/simple-validation/simple-validation.vue"
 ---
 ::
 
@@ -158,7 +158,7 @@ To illustrate this, let's get the `group`'s `value` from the `#default` slot pro
 ::Example
 ---
   name: "Delay prop"
-  file: "/_content/examples/delay-prop/delay-prop.vue"
+  file: "/_content/_examples/delay-prop/delay-prop.vue"
 ---
 ::
 
@@ -178,7 +178,7 @@ Validation errors are not the only way to set errors on an input. You can also e
 ::Example
 ---
   name: "Simple validation"
-  file: "/_content/examples/simple-errors/simple-errors.vue"
+  file: "/_content/_examples/simple-errors/simple-errors.vue"
 ---
 ::
 
@@ -255,7 +255,7 @@ For example, if we wanted to use a slot to define the label of an input, we coul
 ::Example
 ---
   name: "Label slot"
-  file: "/_content/examples/label-slot/label-slot.vue"
+  file: "/_content/_examples/label-slot/label-slot.vue"
 ---
 ::
 
@@ -279,7 +279,7 @@ For example, by default FormKit uses an unordered list (`<ul>` and `<li>`) to ou
 ::Example
 ---
   name: "Sections schema"
-  file: "/_content/examples/schema-overrides/schema-overrides.vue"
+  file: "/_content/_examples/schema-overrides/schema-overrides.vue"
   tabs: "html,render"
 ---
 ::
@@ -291,7 +291,7 @@ For accessibility and flexibility, FormKit uses several wrapper elements like th
 ::Example
 ---
   name: "No wrappers"
-  file: "/_content/examples/schema-wrappers/schema-wrappers.vue"
+  file: "/_content/_examples/schema-wrappers/schema-wrappers.vue"
   tabs: "html,render"
 ---
 ::
@@ -303,7 +303,7 @@ Section schemas can also change the content being output using advanced schema l
 ::Example
 ---
   name: "No wrappers"
-  file: "/_content/examples/schema-content/schema-content.vue"
+  file: "/_content/_examples/schema-content/schema-content.vue"
 ---
 ::
 

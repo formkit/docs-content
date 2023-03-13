@@ -240,9 +240,9 @@ After adding appropriate styling, we can see that our new custom input has its `
 ::Example
 ---
 file: [
-  '/_content/examples/guides/export-inputs/final-result/example.vue',
-  '/_content/examples/guides/export-inputs/final-result/floatingLabelTextInput.js',
-  '/_content/examples/guides/export-inputs/final-result/formkit.config.js',
+  '/_content/_examples/guides/export-inputs/final-result/example.vue',
+  '/_content/_examples/guides/export-inputs/final-result/floatingLabelTextInput.js',
+  '/_content/_examples/guides/export-inputs/final-result/formkit.config.js',
 ]
 init-file-tab: "example.vue"
 editable: true

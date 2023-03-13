@@ -14,7 +14,7 @@ The `time` input uses HTML's [native time input](https://developer.mozilla.org/e
 ::Example
 ---
 name: "Time input"
-file: "/_content/examples/time/time.vue"
+file: "/_content/_examples/time/time.vue"
 ---
 ::
 
