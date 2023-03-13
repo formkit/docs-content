@@ -54,8 +54,8 @@ If you've installed it correctly, you should have smooth transitions when showin
 name: "AutoAnimate example"
 init-file-tab: "formkit.config.js"
 file: [
-'/\_content/examples/auto-animate/auto-animate.vue',
-'/\_content/examples/auto-animate/formkit.config.js'
+'/\_content/_examples/auto-animate/auto-animate.vue',
+'/\_content/_examples/auto-animate/formkit.config.js'
 ]
 ---
 ::

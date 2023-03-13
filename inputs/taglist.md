@@ -17,7 +17,7 @@ The `taglist` input allows users to search through a list of options and apply a
 ---
 name: "Taglist"
 min-hight: 550
-file: "/_content/examples/taglist/taglist-base.vue"
+file: "_content/_examples/taglist/taglist-base.vue"
 ---
 ::
 
@@ -39,7 +39,7 @@ The taglist input will filter options with its own internal search function. You
 ---
 name: "Taglist"
 min-hight: 550
-file: "/_content/examples/taglist/taglist-filter.vue"
+file: "_content/_examples/taglist/taglist-filter.vue"
 ---
 ::
 
@@ -52,7 +52,7 @@ The taglist input, by default, will close the listbox when no search results are
 ---
 name: "Taglist"
 min-hight: 550
-file: "/_content/examples/taglist/taglist-empty-message.vue"
+file: "_content/_examples/taglist/taglist-empty-message.vue"
 ---
 ::
 
@@ -65,7 +65,7 @@ The taglist input, unlike the dropdown or autocomplete inputs, allows you to ent
 ---
 name: "Taglist"
 min-hight: 550
-file: "/_content/examples/taglist/taglist-allow-new-values.vue"
+file: "_content/_examples/taglist/taglist-allow-new-values.vue"
 ---
 ::
 
@@ -78,7 +78,7 @@ The `max` prop allows you to limit the number of options that can be selected. W
 ---
 name: "Taglist"
 min-hight: 550
-file: "/_content/examples/taglist/taglist-max.vue"
+file: "_content/_examples/taglist/taglist-max.vue"
 ---
 ::
 
@@ -91,7 +91,7 @@ If you would like the taglist's listbox to remain open in between selections, se
 ---
 name: "Taglist"
 min-hight: 550
-file: "/_content/examples/taglist/taglist-close-on-select.vue"
+file: "_content/_examples/taglist/taglist-close-on-select.vue"
 ---
 ::
 
@@ -106,7 +106,7 @@ In this example, we are going to use the `tag` slot to customize the look of the
 ---
 name: "Taglist"
 min-hight: 550
-file: "/_content/examples/taglist/taglist-slots.vue"
+file: "_content/_examples/taglist/taglist-slots.vue"
 ---
 ::
 
@@ -125,7 +125,7 @@ In this example, we'll assign the `options` prop the `searchMovies` function. By
 ---
 name: "Taglist"
 min-hight: 550
-file: "/_content/examples/taglist/taglist-single-request.vue"
+file: "_content/_examples/taglist/taglist-single-request.vue"
 ---
 ::
 
@@ -138,7 +138,7 @@ A likely scenario you'll encounter is needing to search through a paginated API.
 ---
 name: "Taglist"
 min-hight: 550
-file: "/_content/examples/taglist/taglist-pagination.vue"
+file: "_content/_examples/taglist/taglist-pagination.vue"
 ---
 ::
 
@@ -157,7 +157,7 @@ FormKit's taglist input also provides an `optionLoader` prop that allows you to 
 ---
 name: "Taglist"
 min-hight: 550
-file: "/_content/examples/taglist/taglist-pagination-option-loader.vue"
+file: "_content/_examples/taglist/taglist-pagination-option-loader.vue"
 ---
 ::
 
@@ -172,7 +172,7 @@ Instead of using the `optionLoader` prop to rehydrate values that are not in the
 ---
 name: "Taglist"
 min-hight: 550
-file: "/_content/examples/taglist/taglist-option-loader-additional-data.vue"
+file: "_content/_examples/taglist/taglist-option-loader-additional-data.vue"
 ---
 ::
 
@@ -185,7 +185,7 @@ Now let's combine what we've learned so far by leveraging the `tag` slot for cus
 ---
 name: "Taglist"
 min-hight: 550
-file: "/_content/examples/taglist/taglist-full.vue"
+file: "_content/_examples/taglist/taglist-full.vue"
 ---
 ::
 

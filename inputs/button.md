@@ -16,7 +16,7 @@ The easiest way to set the `label` of a button is with the `label` prop:
 ::Example
 ---
 name: "Button input"
-file: "/_content/examples/button/button-base.vue"
+file: "_content/_examples/button/button-base.vue"
 ---
 ::
 
@@ -27,7 +27,7 @@ The default slot can also be used to add text and UI to the button:
 ::Example
 ---
 name: "Button input"
-file: "/_content/examples/button/button-default-slot.vue"
+file: "_content/_examples/button/button-default-slot.vue"
 ---
 ::
 
@@ -38,7 +38,7 @@ You can also bind event listeners:
 ::Example
 ---
 name: "Button input"
-file: "/_content/examples/button/button-events.vue"
+file: "_content/_examples/button/button-events.vue"
 ---
 ::
 

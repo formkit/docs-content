@@ -32,7 +32,7 @@ Validation rules can be declared by specifying each desired rule name separated 
 ::Example
 ---
 name: "Validation strings"
-file: "/_content/examples/validation-strings/validation-strings.vue"
+file: "_content/_examples/validation-strings/validation-strings.vue"
 layout: "auto"
 ---
 ::
@@ -46,7 +46,7 @@ This is especially helpful if the arguments being provided need to be actual Jav
 ::Example
 ---
 name: "Validation arrays"
-file: "/_content/examples/validation-arrays/validation-arrays.vue"
+file: "_content/_examples/validation-arrays/validation-arrays.vue"
 layout: "auto"
 ---
 ::
@@ -77,7 +77,7 @@ Due to FormKit's config inheritance, you can set `validation-visibility` at a `f
 ::Example
 ---
 name: "Validation Visibility"
-file: "/_content/examples/validation-visibility/validation-visibility.vue"
+file: "_content/_examples/validation-visibility/validation-visibility.vue"
 layout: "auto"
 ---
 ::
@@ -116,7 +116,7 @@ At times it makes sense to debounce your validation rules. To do this use the de
 ::Example
 ---
 name: "Debounce hint"
-file: "/_content/examples/debounce-hint/debounce-hint.vue"
+file: "_content/_examples/debounce-hint/debounce-hint.vue"
 layout: "auto"
 ---
 ::
@@ -128,7 +128,7 @@ Sometimes you want a validation rule to run even when an input is empty. You can
 ::Example
 ---
 name: "Empty hint"
-file: "/_content/examples/empty-hint/empty-hint.vue"
+file: "_content/_examples/empty-hint/empty-hint.vue"
 layout: "auto"
 ---
 ::
@@ -140,7 +140,7 @@ The force hint ensures a validation rule will run even if a rule that is defined
 ::Example
 ---
 name: "Force hint"
-file: "/_content/examples/force-hint/force-hint.vue"
+file: "_content/_examples/force-hint/force-hint.vue"
 layout: "auto"
 ---
 ::
@@ -152,7 +152,7 @@ The optional hint allows a failing validation rule to not prevent form submissio
 ::Example
 ---
 name: "Optional hint"
-file: "/_content/examples/optional-hint/optional-hint.vue"
+file: "_content/_examples/optional-hint/optional-hint.vue"
 layout: "auto"
 ---
 ::
@@ -199,7 +199,7 @@ The value must be `yes`, `on`, `1` or `true`. Useful for checkbox inputs — oft
 ::Example
 ---
 name: "Accepted"
-file: "/_content/examples/rule-accepted/rule-accepted.vue"
+file: "_content/_examples/rule-accepted/rule-accepted.vue"
 layout: "auto"
 ---
 ::
@@ -211,7 +211,7 @@ Checks if a value is only alphabetical characters. There are two character sets:
 ::Example
 ---
 name: "Alpha"
-file: "/_content/examples/rule-alpha/rule-alpha.vue"
+file: "_content/_examples/rule-alpha/rule-alpha.vue"
 layout: "auto"
 ---
 ::
@@ -223,7 +223,7 @@ Checks if a value is only made of alphabetical characters or numeric digits. For
 ::Example
 ---
 name: "Alphanumeric"
-file: "/_content/examples/rule-alphanumeric/rule-alphanumeric.vue"
+file: "_content/_examples/rule-alphanumeric/rule-alphanumeric.vue"
 layout: "auto"
 ---
 ::
@@ -235,7 +235,7 @@ Checks if a value is only made of alphabetical characters or spaces. For the alp
 ::Example
 ---
 name: "Alphanumeric"
-file: "/_content/examples/rule-alpha-spaces/rule-alpha-spaces.vue"
+file: "_content/_examples/rule-alpha-spaces/rule-alpha-spaces.vue"
 layout: "auto"
 ---
 ::
@@ -247,7 +247,7 @@ Checks if a number is (inclusively) between two other numbers. The input value m
 ::Example
 ---
 name: "Between"
-file: "/_content/examples/rule-between/rule-between.vue"
+file: "_content/_examples/rule-between/rule-between.vue"
 layout: "auto"
 ---
 ::
@@ -264,7 +264,7 @@ Note: the two inputs must be in the same `group` or `form`.
 ::Example
 ---
 name: "Confirm"
-file: "/_content/examples/rule-confirm/rule-confirm.vue"
+file: "_content/_examples/rule-confirm/rule-confirm.vue"
 layout: "auto"
 ---
 ::
@@ -276,7 +276,7 @@ Determines if a date is after the current date or a date supplied as the rule's 
 ::Example
 ---
 name: "Date after"
-file: "/_content/examples/rule-date-after/rule-date-after.vue"
+file: "_content/_examples/rule-date-after/rule-date-after.vue"
 layout: "auto"
 ---
 ::
@@ -288,7 +288,7 @@ Determines if a date is before the current date or a date supplied as the rule's
 ::Example
 ---
 name: "Date before"
-file: "/_content/examples/rule-date-before/rule-date-before.vue"
+file: "_content/_examples/rule-date-before/rule-date-before.vue"
 layout: "auto"
 ---
 ::
@@ -300,7 +300,7 @@ Determines if a date is between (and including) the two dates supplied as the ru
 ::Example
 ---
 name: "Date between"
-file: "/_content/examples/rule-date-between/rule-date-between.vue"
+file: "_content/_examples/rule-date-between/rule-date-between.vue"
 layout: "auto"
 ---
 ::
@@ -329,7 +329,7 @@ Native date inputs always output the same format <code>YYYY-MM-DD ...</code> eve
 ::Example
 ---
 name: "Date format"
-file: "/_content/examples/rule-date-format/rule-date-format.vue"
+file: "_content/_examples/rule-date-format/rule-date-format.vue"
 layout: "auto"
 ---
 ::
@@ -341,7 +341,7 @@ Checks if the input contains a valid email address.
 ::Example
 ---
 name: "Email"
-file: "/_content/examples/rule-email/rule-email.vue"
+file: "_content/_examples/rule-email/rule-email.vue"
 layout: "auto"
 ---
 ::
@@ -353,7 +353,7 @@ Checks if the input's value ends with a given substring.
 ::Example
 ---
 name: "Ends with"
-file: "/_content/examples/rule-ends-with/rule-ends-with.vue"
+file: "_content/_examples/rule-ends-with/rule-ends-with.vue"
 layout: "auto"
 ---
 ::
@@ -365,7 +365,7 @@ Checks that the input's value matches at least one of the provided arguments.
 ::Example
 ---
 name: "Is"
-file: "/_content/examples/rule-is/rule-is.vue"
+file: "_content/_examples/rule-is/rule-is.vue"
 layout: "auto"
 ---
 ::
@@ -377,7 +377,7 @@ Checks that the input’s value is over a given length, or between two length va
 ::Example
 ---
 name: "Is"
-file: "/_content/examples/rule-length/rule-length.vue"
+file: "_content/_examples/rule-length/rule-length.vue"
 layout: "auto"
 ---
 ::
@@ -389,7 +389,7 @@ Checks if the input matches a particular value or pattern. If you pass multiple 
 ::Example
 ---
 name: "Is"
-file: "/_content/examples/rule-matches/rule-matches.vue"
+file: "_content/_examples/rule-matches/rule-matches.vue"
 layout: "auto"
 ---
 ::
@@ -399,7 +399,7 @@ Instead of passing in strings within the validation prop for simple matching, yo
 ::Example
 ---
 name: "Matches"
-file: "/_content/examples/rule-matches/rule-matches-inline-regex.vue"
+file: "_content/_examples/rule-matches/rule-matches-inline-regex.vue"
 layout: "auto"
 ---
 ::
@@ -409,7 +409,7 @@ When using the string [String Syntax](#string-syntax) you cannot escape characte
 ::Example
 ---
 name: "Matches"
-file: "/_content/examples/rule-matches/rule-matches-array-syntax.vue"
+file: "_content/_examples/rule-matches/rule-matches-array-syntax.vue"
 layout: "auto"
 ---
 ::
@@ -421,7 +421,7 @@ Checks that a <code>Number</code> is less than a maximum value. The maximum valu
 ::Example
 ---
 name: "Max"
-file: "/_content/examples/rule-max/rule-max.vue"
+file: "_content/_examples/rule-max/rule-max.vue"
 layout: "auto"
 ---
 ::
@@ -431,7 +431,7 @@ You can also use this rule to validate that the length of an <code>Array</code> 
 ::Example
 ---
 name: "Max"
-file: "/_content/examples/rule-max/rule-max-array.vue"
+file: "_content/_examples/rule-max/rule-max-array.vue"
 layout: "auto"
 ---
 ::
@@ -443,7 +443,7 @@ Checks that a <code>Number</code> is more than a minimum value. The minimum valu
 ::Example
 ---
 name: "Max"
-file: "/_content/examples/rule-min/rule-min.vue"
+file: "_content/_examples/rule-min/rule-min.vue"
 layout: "auto"
 ---
 ::
@@ -453,7 +453,7 @@ You can also use this rule to validate that the length of an <code>Array</code> 
 ::Example
 ---
 name: "Max"
-file: "/_content/examples/rule-min/rule-min-array.vue"
+file: "_content/_examples/rule-min/rule-min-array.vue"
 layout: "auto"
 ---
 ::
@@ -465,7 +465,7 @@ Checks to ensure the input data does not match a set of predefined values.
 ::Example
 ---
 name: "Not"
-file: "/_content/examples/rule-not/rule-not.vue"
+file: "_content/_examples/rule-not/rule-not.vue"
 layout: "auto"
 ---
 ::
@@ -477,7 +477,7 @@ Checks if the input is a valid number as evaluated by <code>isNaN()</code>.
 ::Example
 ---
 name: "Number"
-file: "/_content/examples/rule-number/rule-number.vue"
+file: "_content/_examples/rule-number/rule-number.vue"
 layout: "auto"
 ---
 ::
@@ -489,7 +489,7 @@ Checks if the input is empty.
 ::Example
 ---
 name: "Required"
-file: "/_content/examples/rule-required/rule-required.vue"
+file: "_content/_examples/rule-required/rule-required.vue"
 layout: "auto"
 ---
 ::
@@ -499,7 +499,7 @@ If you don't want whitespace to cause the `required` rule to pass, you can pass 
 ::Example
 ---
 name: "Required"
-file: "/_content/examples/rule-required/rule-required-trim.vue"
+file: "_content/_examples/rule-required/rule-required-trim.vue"
 layout: "auto"
 ---
 ::
@@ -511,7 +511,7 @@ Checks if the input starts with one of the provided options.
 ::Example
 ---
 name: "starts_with"
-file: "/_content/examples/rule-starts-with/rule-starts-with.vue"
+file: "_content/_examples/rule-starts-with/rule-starts-with.vue"
 layout: "auto"
 ---
 ::
@@ -523,7 +523,7 @@ Checks if the input value appears to be a properly formatted URL including the p
 ::Example
 ---
 name: "url"
-file: "/_content/examples/rule-url/rule-url.vue"
+file: "_content/_examples/rule-url/rule-url.vue"
 layout: "auto"
 ---
 ::
@@ -599,7 +599,7 @@ To add a validation to a specific input use the `validation-rules` prop.
 ::Example
 ---
 name: "Custom validation rules"
-file: "/_content/examples/validation-custom/validation-custom.vue"
+file: "_content/_examples/validation-custom/validation-custom.vue"
 layout: "auto"
 ---
 ::
@@ -619,7 +619,7 @@ There are several ways to customize your validation message. The most basic of w
 ::Example
 ---
 name: "Custom validation rules"
-file: "/_content/examples/validation-label/validation-label.vue"
+file: "_content/_examples/validation-label/validation-label.vue"
 layout: "auto"
 ---
 ::
@@ -640,7 +640,7 @@ To override a validation message on a single FormKit input, add the `validation-
 ::Example
 ---
 name: "Custom validation rules"
-file: "/_content/examples/validation-custom-messages/validation-custom-messages.vue"
+file: "_content/_examples/validation-custom-messages/validation-custom-messages.vue"
 layout: "auto"
 ---
 ::
@@ -662,7 +662,7 @@ Let’s re-write the above example using a function instead of a string for even
 ::Example
 ---
 name: "Custom validation rules"
-file: "/_content/examples/validation-custom-messages/validation-custom-messages-function.vue"
+file: "_content/_examples/validation-custom-messages/validation-custom-messages-function.vue"
 layout: "auto"
 ---
 ::
@@ -698,7 +698,7 @@ If you would like to render an input’s validation messages outside of the `<Fo
 ::Example
 ---
 name: "Submit invalid"
-file: "/_content/examples/formkit-messages/normal-input.vue"
+file: "_content/_examples/formkit-messages/normal-input.vue"
 ---
 ::
 
@@ -709,6 +709,6 @@ To get all the validation messages from an [input’s core node](/essentials/arc
 ::Example
 ---
 name: "Submit invalid"
-file: "/_content/examples/submit-invalid/submit-invalid.vue"
+file: "_content/_examples/submit-invalid/submit-invalid.vue"
 ---
 ::

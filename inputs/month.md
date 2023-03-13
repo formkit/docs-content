@@ -22,7 +22,7 @@ Month inputs are not currently supported in FireFox or Safari.
 ::Example
 ---
 name: "Month input"
-file: "/_content/examples/month/month.vue"
+file: "_content/_examples/month/month.vue"
 ---
 ::
 

@@ -24,7 +24,7 @@ It's that easy! 🎉
 ::Example
 ---
 name: "Icons Introduction"
-file: "/_content/examples/icons/intro.vue"
+file: "_content/_examples/icons/intro.vue"
 formkit-version: "next"
 view: "render"
 ---
@@ -170,7 +170,7 @@ The `file` input has `file-remove-icon` and `file-item-icon` props:
 ::Example
 ---
 name: "Icons Introduction"
-file: "/_content/examples/icons/usage-basic.vue"
+file: "_content/_examples/icons/usage-basic.vue"
 ---
 ::
 
@@ -182,7 +182,7 @@ and the SVG will be rendered for you:
 ::Example
 ---
 name: "Icons Introduction"
-file: "/_content/examples/icons/inline-svg.vue"
+file: "_content/_examples/icons/inline-svg.vue"
 ---
 ::
 
@@ -194,7 +194,7 @@ within your project. Need an icon you're using in FormKit on some other part of 
 ::Example
 ---
 name: "Icon Component"
-file: "/_content/examples/icons/icon-component.vue"
+file: "_content/_examples/icons/icon-component.vue"
 ---
 ::
 
@@ -208,7 +208,7 @@ Each click-handler prop receives the input's core `node` and the click `event` a
 ::Example
 ---
 name: "Icons Introduction"
-file: "/_content/examples/icons/handle-click.vue"
+file: "_content/_examples/icons/handle-click.vue"
 ---
 ::
 
@@ -243,8 +243,8 @@ Below is an implementation of FormKit loading icons from FontAwesome by replacin
 name: "FontAwesome Icons"
 init-file-tab: "formkit.config.js"
 file: [
-  '/\_content/examples/icons/font-awesome/index.vue',
-  '/\_content/examples/icons/font-awesome/formkit.config.js'
+  '/\_content/_examples/icons/font-awesome/index.vue',
+  '/\_content/_examples/icons/font-awesome/formkit.config.js'
 ]
 ---
 ::
@@ -258,8 +258,8 @@ Below is an implementation of FormKit with a fully custom `iconLoader` that fetc
 name: "Heroicons Icons"
 init-file-tab: "formkit.config.js"
 file: [
-  '/\_content/examples/icons/heroicons/index.vue',
-  '/\_content/examples/icons/heroicons/formkit.config.js'
+  '/\_content/_examples/icons/heroicons/index.vue',
+  '/\_content/_examples/icons/heroicons/formkit.config.js'
 ]
 ---
 ::

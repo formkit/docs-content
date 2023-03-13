@@ -14,7 +14,7 @@ The `range` input uses HTML's [native range input](https://developer.mozilla.org
 ::Example
 ---
 name: "Range input"
-file: "/_content/examples/range/range.vue"
+file: "_content/_examples/range/range.vue"
 ---
 ::
 

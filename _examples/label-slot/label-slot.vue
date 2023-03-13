@@ -28,8 +28,11 @@ const airlines = {
 </template>
 %partial%
 
-<style scoped>
+<style>
 img {
   aspect-ratio: 120 / 46;
+}
+.formkit-option {
+  margin-bottom: 0;
 }
 </style>
