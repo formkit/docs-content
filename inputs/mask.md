@@ -367,6 +367,28 @@ file: "_content/_examples/mask/show-mask.vue"
 ---
 ::
 
+## Overlay (colorizing a mask)
+
+By default, a mask’s value is displayed via via the value of it’s input element. Although this works "out of the box" it does now allow for the text be stylistically differentiated. For example it would be nice if the "literal" portions of the mask looked different than the "placeholder" portions.
+
+To achieve this effect, you can enable an `overlay` which reveals DOM elements that are positioned directly over the input itself. The text inside the input is still there, but it will be transparent. In general the necessary overlay positioning styles are automatically applied for you.
+
+The overlay contains 4 possible sections you can target your styles at:
+
+- Literal (`.formkit-overlay-literal` or `overlay-literal-class`)
+- Placeholder (`.formkit-overlay-placeholder` or `overlay-placeholder-class`)
+- Enum (`.formkit-overlay-enum` or `overlay-enum-class`)
+- Char (`.formkit-overlay-char` or `overlay-char-class`)
+
+The default genesis theme 
+
+::Example
+---
+name: "Mask input - overlay"
+file: "_content/_examples/mask/overlay.vue"
+---
+::
+
 ## Props & Attributes
 
 ::ReferenceTable
