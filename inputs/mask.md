@@ -417,6 +417,13 @@ data: [
       "Determines how the mask input operates. Options are <code>shift</code>, <code>replace</code> and <code>select</code>.",
   },
   {
+    prop: "overlay",
+    type: "boolean",
+    default: "false",
+    description:
+      "Renders DOM elements that mimic the text input to allow the differentiation in the stylization of the mask.",
+  },
+  {
     prop: "prefix",
     type: "string",
     default: "none",

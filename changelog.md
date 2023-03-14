@@ -17,6 +17,7 @@ Beta 16 is the first version of FormKit that does not have a [pre-release identi
 #### 💪 New features
 
 - FormKit Pro now includes the [transfer list](/inputs/transfer-list) input. A great option for helping your users select information from a large set of data.
+- The [mask input](/inputs/mask) now supports multiple colors by providing an `overlay` option.
 - Adds a new `dirty-behavior` prop allows users to opt into a `compare` behavior which compares the current value of the input to the original value of the input. If the input is changed back to its original state the `context.state.dirty` flag will revert back to false.
 - The [floating labels](/plugins/floating-labels) plugin now supports FormKit Pro inputs.
 - The [floating labels](/plugins/floating-labels) plugin now hide placeholders until focused ([#574](https://github.com/formkit/formkit/issues/574)).
