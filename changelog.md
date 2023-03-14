@@ -7,6 +7,8 @@ description: What's new in the latest version of FormKit?.
 
 ## 0.16.0 (Beta 16)
 
+### March 14, 2023
+
 ::Callout
 ---
   type: warning
@@ -14,6 +16,7 @@ description: What's new in the latest version of FormKit?.
 ---
 Beta 16 is the first version of FormKit that does not have a [pre-release identifier](https://docs.npmjs.com/cli/v9/commands/npm-version#preid). Beta 16 and all remaining beta versions will be released under the `0.x.x` semantic version. The first stable release will be `1.0.0` and is targeted for later this year. This change in versioning should help with package manager dependency resolution as we complete our beta release cycles.
 ::
+
 #### 💪 New features
 
 - FormKit Pro now includes the [transfer list](/inputs/transfer-list) input. A great option for helping your users select information from a large set of data.
