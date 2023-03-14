@@ -5,6 +5,31 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 0.16.0 (Beta 16)
+
+::Callout
+---
+  type: warning
+  label: 'New version scheme'
+---
+Beta 16 is the first version of FormKit that does not have a [pre-release identifier](https://docs.npmjs.com/cli/v9/commands/npm-version#preid). Beta 16 and all remaining beta versions will be released under the `0.x.x` semantic version. The first stable release will be `1.0.0` and is targeted for later this year. This change in versioning should help with package manager dependency resolution as we complete our beta release cycles.
+::
+#### 💪 New features
+
+- FormKit Pro now includes the [transfer list](/inputs/transfer-list) input. A great option for helping your users select information from a large set of data.
+- Adds a new `dirty-behavior` prop allows users to opt into a `compare` behavior which compares the current value of the input to the original value of the input. If the input is changed back to its original state the `context.state.dirty` flag will revert back to false.
+- The [floating labels](/plugins/floating-labels) plugin now supports FormKit Pro inputs.
+- The [floating labels](/plugins/floating-labels) plugin now hide placeholders until focused ([#574](https://github.com/formkit/formkit/issues/574)).
+- Adds i18n translations for some new ui and validation rules.
+
+#### 🐛 Bugfixes
+
+- The `options` prop (used in [select](/inputs/select), [radio](/inputs/radio), [checkboxes](/inputs/checkbox) and some pro inputs) can now differentiate between `null` and `undefined` values.
+- Fixes issues with the `@formkit/nuxt` module and syntax highlighting.
+- Fixes a bug that caused the `dirty` state of an unrelated input to get incorrectly set `true` when an object (like a group) was updated ([#520](https://github.com/formkit/formkit/issues/520)).
+- Fixes a bug that caused forms to not receive the `submitted` state like the form’s children on an unsuccessful form submission ([#503](https://github.com/formkit/formkit/issues/503)).
+
+
 ## 1.0.0-beta.15
 
 ### February 6, 2023
