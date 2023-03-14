@@ -84,7 +84,7 @@ export async function loadGuest(id, cachedOption) {
     if (data.data) {
       return {
         name: data.data.name,
-        label: data.data.name + ` (${data.data.age})`,
+        label: data.data.name + ` (age ${data.data.age})`,
         value: data.data.id,
         age: data.data.age,
         phone: data.data.phone,
