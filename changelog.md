@@ -29,6 +29,7 @@ Beta 16 is the first version of FormKit that does not have a [pre-release identi
 - Fixes issues with the `@formkit/nuxt` module and syntax highlighting.
 - Fixes a bug that caused the `dirty` state of an unrelated input to get incorrectly set `true` when an object (like a group) was updated ([#520](https://github.com/formkit/formkit/issues/520)).
 - Fixes a bug that caused forms to not receive the `submitted` state like the form’s children on an unsuccessful form submission ([#503](https://github.com/formkit/formkit/issues/503)).
+- The [multi-step](/plugins/multi-step) input now preserves step order when conditionally rendering steps ([#613](https://github.com/formkit/formkit/issues/520)).
 
 
 ## 1.0.0-beta.15
