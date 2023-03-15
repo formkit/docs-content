@@ -1,124 +1,97 @@
 ---
-title: Integrating FormKit with Laravel 9 — Streamlining Form Creation and Validation
+title: Integrating FormKit with Laravel — Streamlining Form Creation and Validation
 description: FormKit and Laravel are both powerful tools for building web applications, but they can be even more effective when used together.
 ---
 
-# Integrating FormKit with Laravel 9: Streamlining form creation and validation
+# Integrating FormKit with Laravel
 
-<page-toc></page-toc>
+:PageToc
 
 ## Introduction
 
-FormKit and Laravel are both powerful tools for building web applications — and they're even more effective when used together.
+Building web applications with Laravel becomes even more effective when integrating it with FormKit. By combining these powerful tools, you will benefit from streamlined form creation and validation processes.
 
-By integrating FormKit with Laravel, developers can streamline the form creation and validation process and take advantage of the benefits of both tools. In this article, we will explore how to integrate FormKit with Laravel 9, — covering everything you need to get started — and concluding with a plugin you can use in your own projects for effortless integration.
+In this guide, we'll cover everything you need to know to get started building powerful forms with Laravel using FormKit. Then, we'll conclude with a way to avoid all the boilerplate and get spun up quicker using a third-party plugin (which is maintained by a FormKit team member) that integrates FormKit with Inertia.
 
-## Why using FormKit will speed up your development
+## Why use FormKit?
 
-Witing our own components will work for a smaller form — but without a tremendous amount of manual effort it is difficult to fully meet the requirements of a complex web application. Here are a few reasons why using FormKit will help us build better forms:
+There are a lot of considerations when building complex web applications. Using FormKit, you can offload much of that effort and focus on building better forms. Here are some reasons why you should use FormKit:
 
-1. **Time-saving:** FormKit provides a simple, consistent, and easy-to-use API that allows you to quickly create and manage forms, saving us time and effort.
-2. **Accessibility:** FormKit has accessibility as a first concern and outputs an accessible DOM structure out-of the-box.
-3. **Value handling:** FormKit collects the values from child inputs to their parents automatically, making it data-collection effortless when submitting our form.
-4. **Error handling:** FormKit automatically handles front-end form validation and error messages, making it easy to ensure that our form data is accurate and the experience is user-friendly.
-5. **Customization:** FormKit allows us to extensively customize the look and feel of our forms, including adding arbitrary CSS classes and attributes at any depth of component markup.
+- **Consistent API:** FormKit uses a single component for all of its inputs.
+- **Accessible:** With 24+ accessible inputs powered, FormKit gives you an accessible DOM structure out-of-the-box.
+- **Better DX and UX:** FormKit bakes 20+ production-ready rules directly into the inputs, automatically handling front-end form validation and providing users with instant feedback.
+- **Customization:** You have all of the control. FormKit allows you to easily style your form by modifying its classes and even HTML. And for those advanced developers, it's also fully extensible, complete with hooks, events, plugins, libraries, and schemas.
 
-So let's walk through how to setup Laravel 9 and FormKit to together.
+## Getting started
 
-## Installing Laravel 9 with Laravel Sail
+Let's begin setting up Laravel and FormKit using Laravel Sail. Laravel Sail is a lightweight command-line interface for interacting with Laravel's default Docker configuration. With minimal setup, you can spin up a local development environment.
 
-Laravel Sail is a light-weight command-line interface for interacting with Laravel's default Docker configuration. It allows us to spin up a local development environment with minimal setup. To install Laravel 9 with Laravel Sail, we will need to have Docker and Docker Compose installed on our system.
+::Callout
+---
+type: "info"
+label: "Preperation"
+---
+This guide assumes you have Docker and Docker Compose installed on your machine. To get started, you only need to install [Docker Desktop](https://www.docker.com/products/docker-desktop).
+::
 
-We can create a new Laravel Sail application by running the following command, where `laravel-formkit` is the name of our app:
-
-<client-only>
+### Installing Laravel with Laravel Sail
+With Docker already installed, we can create a new Laravel Sail application by running the following command, where `laravel-formkit` is the name of our app:
 
 ```bash
 curl -s https://laravel.build/laravel-formkit | bash
 ```
 
-</client-only>
+Feel free to change `laravel-formkit` in this URL to anything you like - it just needs to contain alphanumeric characters, dashes, and underscores.
 
-We can change `laravel-formkit` in this URL to anything we prefer - we just need to make sure the application name only contains alpha-numeric characters, dashes, and underscores.
 
-Now we can navigate to the newly created directory and start our local development environment by running the following command:
-
-<client-only>
+Navigate to the newly created directory:
 
 ```bash
 cd laravel-formkit
-
-./vendor/bin/sail up
-
-./vendor/bin/sail artisan migrate
 ```
 
-</client-only>
+We can start our local development environment in detached mode (runs in the background) by running the following command:
 
-This command will start up the Docker containers for our project and configure the necessary services.
+```bash
+./vendor/bin/sail up
+```
 
-Once the environment is up and running we can access our application in a browser by visiting `http://localhost`. For management of our Laravel project we can run any command inside the application's Docker container by using `./vendor/bin/sail` followed by the command we want to run.
+Once the environment is up and running, we can access our application in a browser by visiting `http://localhost`.
 
-## Adding Vue.js with Laravel Breeze to a Laravel 9 Application
 
-Laravel Breeze is a simple, minimal implementation of all of Laravel's authentication features. This includes login, registration, password reset, email verification, and more. Laravel Breeze also includes support for Vue.js out-of-the-box, making it simple to add authentication to our Laravel 9 applications.
+### Adding Laravel Breeze
 
-To add Laravel Breeze to our Laravel 9 application we need to install it using Composer:
+Laravel Breeze gives you a starting point for your Laravel application by automatically scaffolding your application with the routes, controllers, and views you'll need to register and authenticate your application's users. It also offers Vue scaffolding, so let's add Laravel Breeze to our application.
 
-<client-only>
+We can add Laravel Breeze by installing it via Composer:
 
 ```bash
 ./vendor/bin/sail composer require laravel/breeze --dev
 ```
 
-</client-only>
-
-Next, we need to run the `breeze:install vue` command:
-
-<client-only>
+Running this opens up the `breeze:install` command that will allow us to install Vue:
 
 ```bash
 ./vendor/bin/sail artisan breeze:install vue
 ```
 
-</client-only>
-
-This command will install the necessary views, routes, and controllers for authentication, as well as the Vue.js components that make up the default front-end of the Laravel authentication system.
-
-To serve Vue.js components we will need to run the following command to compile our project's assets:
-
-<client-only>
+Now that we've scaffolded our application, we can compile our front-end assets and serve our application by running the following commands:
 
 ```bash
 npm install && npm run dev
-
-# The reason to run npm without sail is because,
-# some files cannot be found if run inside of it.
 ```
 
-</client-only>
+To access the login page go to `http://localhost/login`, or to view the registration page, go to `http://localhost/register`. Here we should see our application's Vue.js front end.
 
-Now when we access the login page by at `http://localhost/login` or the registration page by at `http://localhost/register` we should see our application's Vue.js front-end.
+### Adding FormKit
 
-By adding Laravel Breeze to our Laravel 9 application we've quickly added authentication functionality to our application and we are set up to Vue.js for our applicaiton's front-end.
-
-## Adding FormKit to Vue.js: Enhancing Form Functionality
-
-FormKit provides a convenient way to handle form submission, errors, and loading state. We can integrate FormKit with Laravel Inertia to keep our application state consistent.
-
-To get started we need to install FormKit using `npm` or `yarn`:
-
-<client-only>
+As we discussed in [Why use FormKit?](#why-use-formkit) there are many reasons to leverage the form-building framework features of FormKit. To begin using these features, let's add FormKit to our application. We can install it using `npm` or `yarn`:
 
 ```bash
 npm install @formkit/vue
 ```
 
-</client-only>
-
-Next, we will go to our `resources/js/app.js` file so that we can add FormKit as a plugin to Vue.js:
-
-<client-only>
+Next, we'll add FormKit to Vue.js as a plugin. Let's open up resources/js/app.js to import `FormKitPlugin` and `defaultConfig` from `@formkit/vue` and begin using it within our app:
 
 ```js
 import '../css/app.css'
@@ -127,8 +100,8 @@ import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m'
-import { plugin as FormKitPlugin, defaultConfig } from '@formkit/vue' // Import FormKit plugin and defaultConfig here
-
+import { plugin as FormKitPlugin, defaultConfig } from '@formkit/vue' // Here we import our plugin and default config
+ 
 const appName =
   window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel'
 
@@ -143,7 +116,7 @@ createInertiaApp({
     return createApp({ render: () => h(App, props) })
       .use(plugin)
       .use(ZiggyVue, Ziggy)
-      .use(FormKitPlugin, defaultConfig) // Add the plugin here
+      .use(FormKitPlugin, defaultConfig) // Here we use our imported plugin and default config
       .mount(el)
   },
   progress: {
@@ -152,100 +125,43 @@ createInertiaApp({
 })
 ```
 
-</client-only>
-
-Lastly, we should add some styling to our forms so that they look nice. FormKit ships with a beautiful default theme called `genesis` — it even has a [Tailwind CSS version](/essentials/styling#tailwind-css) if that's your preference! To use FormKit's default theme we need to install it from `@formkit/themes`:
-
-<client-only>
+Lastly, we'll add FormKit's convenient base theme `Genesis` to add some styles to our forms. `Genesis` even has a [Tailwind CSS](/essentials/styling#tailwind-css) version if that's your preference. To use FormKit's base theme, we can install it from `@formkit/themes`:
 
 ```bash
 npm install @formkit/themes
 ```
 
-</client-only>
-
-And then we can import the theme:
-
-<client-only>
+Then we can import the theme by adding it below the other import statments in `resources/js/app.js`:
 
 ```js
-import { plugin as FormKitPlugin, defaultConfig } from '@formkit/vue' // Import FormKit plugin and defaultConfig here
 import '@formkit/themes/genesis'
 ```
 
-</client-only>
+### Integrating Back-End Responses with FormKit
 
-Great! Now we have installed FormKit with Vue.js and have access to powerful tooling to enhance the functionality of our forms inside our Laravel application.
+One of the key benefits of using FormKit is its ability to easily integrate with your back-end and handle form submissions, errors, and loading state.
 
-## Laravel Breeze Input Components vs. FormKit Component
+You can configure FormKit to send a request to our back-end, handle the response, and update the form's state accordingly when a form is submitted.
 
-Laravel Breeze comes with a built-in solution for creating forms in Laravel — a set of pre-designed input components that can be easily dropped into your views. However, using these componest requires us as the developers to write large amounts of boilerplate and assume responsibility for input handling, ensuring an accessibile DOM structure, input validation, and much more.
-
-Here is a basic form built using Lavarel's provided input components:
-
-<client-only>
+Open up `resources/js/Pages/Auth/Login.vue` so we can begin updating our project's login page to use FormKit:
 
 ```html
-<form @submit.prevent="submit">
-  <div>
-    <InputLabel for="email" value="Email" />
-    <TextInput
-      id="email"
-      type="email"
-      class="mt-1 block w-full"
-      v-model="form.email"
-      required
-      autofocus
-      autocomplete="username"
-    />
-    <InputError class="mt-2" :message="form.errors.email" />
-  </div>
-</form>
-```
-
-</client-only>
-
-In comparison, FormKit provides a more customizable and flexible solution for form building. FormKit allows us to create custom form components, gives us control over the form markup and logic, and comes pre-plummed with accessible markup, validation and error handling and so much more. Here's our same form written with FormKit — much cleaner:
-
-<client-only>
-
-```html
-// less boilerplate, better validation, built-in translations and automatic
-accessibility in our markup.
-<FormKit type="form" @submit="submit">
-  <FormKit type="email" label="email" validation="required|email" />
-</FormKit>
-```
-
-</client-only>
-
-## Integrating Backend Responses with FormKit
-
-One of the key benefits of using FormKit in our project is its ability to easily integrate with your backend and handle form submissions, errors, and loading state.
-
-When a form is submitted, FormKit can be configured to send a request to our backend, handle the response, and update the form's state accordingly.
-
-First — let's update our project's login page to use FormKit. Comments are included throughout to explain the example architecture.
-
-<client-only>
-
-```vue
 <script setup>
-// we can remove all breeze input imports.
+// We can remove all breeze input imports.
 import GuestLayout from '@/Layouts/GuestLayout.vue';
-// we also won't be using `useForm` from Inertia, instead we will use `router`.
+// We also won't be using `useForm` from Inertia. Instead, we will use `router`.
 import { Head, Link, router } from '@inertiajs/vue3';
 
 defineProps({
-  canResetPassword: Boolean,
-  status: String,
+ canResetPassword: Boolean,
+ status: String,
 });
 
-// set to the initial values for our FormKit form.
+// Set to the initial values for our FormKit form.
 const initialState = {
-  email: '',
-  password: '',
-  remember: false,
+ email: '',
+ password: '',
+ remember: false,
 };
 
 // FormKit collects all form values for you automatically at infinite depth.
@@ -256,20 +172,18 @@ const submit = (fields, node) => {
     onFinish: () => node.reset(),
   });
 };
-</script>
 
+</script>
 <template>
   <GuestLayout>
     <Head title="Log in" />
-
     <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
       {{ status }}
     </div>
-
     <!-- we will change all form components to be FormKit -->
     <FormKit type="form" :value="initialState" @submit="submit" submit-label="Log in">
       <FormKit type="email" label="Email" name="email" validation="required|email" />
-      <FormKit type="password" label="Password" name="password" validation="required">
+      <FormKit type="password" label="Password" name="password" validation="required" />
         <template #label="context">
           <span :class="context.classes.label">
             {{ context.label }}
@@ -280,101 +194,82 @@ const submit = (fields, node) => {
             >
               Forgot your password?
             </Link>
-          <span>
+          </span>
         </template>
-      </FormKit>
-
-      <FormKit type="checkbox" name="remember" label="Remember me" />
+        <FormKit type="checkbox" name="remember" label="Remember me" />
     </FormKit>
   </GuestLayout>
 </template>
 ```
 
-</client-only>
+We're getting there! Though, if we try to run this example, we'll notice some missing features because of the lack of integration between Inertia and FormKit. Our loading state, disabled state, and back-end errors aren't available yet. Adding these features requires us to integrate the FormKit node with the Inertia router inside our submit handler:
 
-We're getting there! But if we try to run this example we will notice that there are some missing features because of how Inertia works with FormKit. Our loading state, disabled state and backend errors aren't there yet. Adding those features requires integrating the FormKit `node` with the Inertia `router` inside our submit handler:
-
-<client-only>
+First, import the `createMessage` helper so that we can create a loading message:
 
 ```js
-// first import the createMessage helper, so that we can create a loading message.
 import { createMessage } from '@formkit/core';
+```
 
+Now, we can alter the submit handler to integrate the FormKit node and Inertia router:
+
+```js
 const submit = (fields, node) => {
-  // here we create a loading message with visibility set to false.
+  // Here, we create a loading message with visibility set to false.
   const loadingMessage = createMessage({
     key: 'loading',
     visible: false,
     value: true,
   });
-
   router.post(route('login'), fields, {
-    onStart = (visit) => {
-      // when Inertia starts a fetch we need to disable the form and start loading.
-      // To do this, first we add the loading message to the FormKit form's message store.
+    onStart: (visit) => {
+      // When Inertia starts a fetch, we'll disable the form and start loading.
+      // To do this, we'll first add the loading message to the FormKit form message store.
       node.store.set(loadingMessage);
-
       // Then we add the disabled state
       node.props.disabled = true;
     },
     onFinish: () => {
-      // When Inertia finishes its request we need to re-enable our form.
-      // First we remove the loading message from the FormKit form's message store
+      // When Inertia finishes its request, we need to re-enable our form.
+      // First, we remove the loading message from the FormKit form's message store
       node.store.remove('loading');
-
       // Then we remove the disabled state
       node.props.disabled = false;
-
       node.reset();
     },
     onError: (errors) => {
-      // In the event we have back-end errors we need to supply them to the form.
+      // Should we have back-end errors, we need to supply them to the form.
       // `setErrors` will propagate any error field in the errors object to the correct form children.
       node.setErrors([], errors);
     }
   });
 };
 ```
+## Remove Code Repetition
 
-</client-only>
+Now that we've integrated FormKit with Inertia and understand the process of doing so, it would be time-consuming to do this manually for every form in a much larger project.
 
-And there we have it! FormKit is now integrated neatly with Inertia in our Laravel project.
+Fortunately, we have a [third-party plugin](https://github.com/GustavoFenilli/formkit-addon-inertia) (maintained by a FormKit team member) at our disposal for integrating FormKit with Inertia.
 
-In conclusion, FormKit is a powerful and flexible form library for Vue.js applications — including those powered by Laravel. By using FormKit we can take advantage of its many advanced features to create user-friendly forms that provide a better experience for our users.
-
-The process of integrating FormKit with Laravel is straightforward and it will help you keep our codebase more consistent and maintainable. Regardless of our application's form complexity, FormKit provides a robust solution that can meet our project's needs.
-
-## Remove Code Repetition: Using Plugins
-
-While it's great to understand how we can integrate FormKit with Inertia — it would still be difficult to do manually for every form in a larger project. It would be great if we could encapsulate this setup in a plugin and apply it across our entire project.
-
-Fortunately there is a [3rd-party plugin](https://github.com/GustavoFenilli/formkit-addon-inertia) (maintained by a FormKit team member) that integrates FormKit tightly with Inertia.
-
-First, we need to install it:
-
-<client-only>
+Let's get that installed:
 
 ```bash
 npm install formkit-addon-inertia
 ```
 
-</client-only>
-
-Next, we need to add the plugin to our FormKit configuration by extending the `defaultConfig`:
-
-<client-only>
+Next, we need to import the plugin in `resources/js/app.js`:
 
 ```js
-// app.js
-
-// we import the new InertiaPlugin here
 import { plugin as inertiaPlugin } from 'formkit-addon-inertia'
+```
 
+Now we can update our FormKit configuration by extending the `defaultConfig`:
+
+```js
 return (
   createApp({ render: () => h(App, props) })
     .use(plugin)
     .use(ZiggyVue, Ziggy)
-    // here we are extending the defaultConfig with out configuration
+    // Here we are extending the defaultConfig to use our inertiaPlugin
     .use(
       FormKitPlugin,
       defaultConfig({
@@ -385,49 +280,40 @@ return (
 )
 ```
 
-</client-only>
-
-Lastly, we go back to our submit function and update it:
-
-<client-only>
+Now, we can go back to `resources/js/Pages/Auth/Login.vue` and update the submit handler we altered in the previous section to work with our new plugin:
 
 ```js
 const submit = (fields, node) => {
-  // we use our new context.inertia object from node added by the plugin instead.
-  // When using the plugin all of the disabled, loading and error states are handled for us automatically.
+  // We use our new context.inertia object from the node added by the plugin instead.
+  // When using the plugin, all of the disabled, loading, and error states are handled for us automatically.
   node.context.inertia.post(route('login'), fields, {
     onFinish: (_, node) => {
       // Our FormKit node is passed to our Inerta callbacks so that we can
-      // do clean up such as reseting the form after submit.
+      // clean up things such as resetting the form after submission.
       node.reset()
     },
   })
 }
 ```
 
-</client-only>
+It's now super easy to add FormKit to our application with all that previous logic wrapped up into a plugin. Adding FormKit to a Laravel application delivers a better form development experience for developers and end-users with an exceptional user experience.
 
-With all of our previous logic encapsulated into a plugin it is now trivial to add FormKit to our project. Adding FormKit to a Laravel 9 application using Breeze with Vue.js and Inertia provides both developers and application end-users with a better overall form experience.
+## Bonus: Adding Orders to our Application
 
-## FormKit At Day-to-Day
+Adding FormKit to the existing login page was a good introduction. However, let's add a new migration, model, controller, and form to our application to give more insight into how well FormKit works when it's integrated with Laravel.
 
-Even tho the Login page example is good, it might not be enough to show how well FormKit works and integrates with Laravel, so we will be creating a day-to-day use case about ordering a free t-shirt promotion in our website.
 
 ### Creating The Order Migration
 
-To generate a migration we use the `make:migration` Artisan command. The new migration will be placed in your `database/migrations` directory:
+We'll be adding the ability for users to order a free promotional t-shirt, so let's begin by generating a new migration for our `Orders`.
 
-<client-only>
+To generate a migration, we'll use the Artisan command make:migration:
 
 ```bash
 ./vendor/bin/sail artisan make:migration create_orders_table
 ```
 
-</client-only>
-
-Now we will take a look at the generated file `create_orders_table.php` and update to add the fields that we need to make our project work:
-
-<client-only>
+Let's take a look at the migration generated for us in the `database/migrations` directory and begin updating it with the additional fields that we'll need to take our orders:
 
 ```php
 <?php
@@ -450,11 +336,10 @@ return new class extends Migration
       $table->string('name');
       $table->string('email');
       $table->string('address');
-      $table->enum('size', ['xs', 'sm', 'md', 'lg', 'xl'])->default('md');
-      $table->text('notes');
+      $table->enum('size', ['s', 'm', 'l', 'xl', 'xxl']);
+      $table->text('notes')->nullable(true);
     });
   }
-
   /**
    * Reverse the migrations.
    *
@@ -467,33 +352,23 @@ return new class extends Migration
 };
 ```
 
-</client-only>
-
-Now we can run the migration to see if everything is working:
-
-<client-only>
+Now we can run our migrations to include our newly added fields on the Orders table:
 
 ```bash
 ./vendor/bin/sail artisan migrate
 ```
 
-</client-only>
-
 ### Creating The Order Model
 
-We now need to create a model to work with the new table we created via migration, to generate a model we use the `make:model` Artisan command. The new model will be placed in your `app/Models` directory:
+We need an Order model for the Order migration we just created. You can generate new models in Laravel using the Artisan command make:model.
 
-<client-only>
+Let's create our Order model by running the following command:
 
 ```bash
 ./vendor/bin/sail artisan make:model Order
 ```
 
-</client-only>
-
-Now we will take a look at the generated file `Order.php` and add the functionality that is needed:
-
-<client-only>
+Having generated our `Order` model, we'll need to add some functionality. Open up `Order.php` in the `app/Models` directory and add the following attributes to the `$fillable` property on the `Order` model like so:
 
 ```php
 <?php
@@ -513,135 +388,25 @@ class Order extends Model
 }
 ```
 
-</client-only>
-
 ### Creating The Order Controller
 
-We now need to create a controller to work with the new model we created, to generate a controller we use the `make:controller` Artisan command. The new controller will be placed in your `app/Http/Controllers` directory:
+Now we need an Order controller for the Order model we just created. You can generate new controllers in Laravel using the Artisan command `make:controller`.
 
-<client-only>
+Let's create our Order controller by running the following command:
 
 ```bash
 ./vendor/bin/sail artisan make:controller OrderController
 ```
 
-</client-only>
+Let's look at the `OrderController.php` file generated for us. You can find it in the `app/Http/Controller` directory. Here we can add `show` and `store` methods to handle the functionality when visiting those routes.
 
-We also need to add the new controller to the `routes/web.php`, as a post to the `store` and `create` methods so we can see it running:
+```FINISH ARTICLE```
 
-<client-only>
 
-```php
-use App\Http\Controllers\OrderController;
-
-Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
-Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
-```
-
-</client-only>
-
-Now we will take a look at the generated file `OrderController.php` and add the `store` and `create` methods that will be called when visiting those routes:
-
-<client-only>
-
-```php
-<?php
- 
-namespace App\Http\Controllers;
- 
-use App\Models\Order;
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rules\Enum;
-use Inertia\Inertia;
-
-enum OrderSize {
-  case XS = 'xs';
-  case SM = 'sm';
-  case MD = 'md';
-  case LG = 'lg';
-  case XL = 'xl';
-}
- 
-class OrderController extends Controller
-{
-  /**
-   * Show the order form page.
-   *
-   * @return \Inertia\Inertia
-   */
-  public function create($id)
-  {
-    return Inertia::render('Order/Create');
-  }
-
-  /**
-   * Store a new order.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @return \Inertia\Inertia
-   */
-  public function store(Request $request)
-  {
-    Order::create($request->validate([
-      'name' => 'required|max:255',
-      'email' => 'required|max:50|email',
-      'address' => 'required',
-      'size' => ['required', new Enum(OrderSize::class)],
-    ]));
-
-    return to_route('orders.create');
-  }
-}
-```
-
-</client-only>
-
-### Creating The Order Page
-
-Lastly, we need to create our order page, with both FormKit frontend validation and Laravel backend validation we will improve UX and DX tremendously:
-
-<client-only>
-
-```vue
-<script setup>
-import { Head, Link, router } from '@inertiajs/vue3';
-
-const initialState = {
-  name: '',
-  email: '',
-  address: '',
-  size: 'md',
-  notes: ''
-};
-
-const submit = (fields, node) => {
-  router.post(route('orders.store'), fields, {
-    onFinish: () => node.reset(),
-  });
-};
-</script>
-
-<template>
-  <Head title="Create Order" />
-
-  <FormKit type="form" :value="initialState" @submit="submit" submit-label="Create Order">
-    <FormKit type="text" label="Name" name="name" validation="required|length:1,255" />
-    <FormKit type="email" label="Email" name="email" validation="required|length:1,50|email" />
-    <FormKit type="text" label="Address" name="address" validation="required" />
-    <FormKit type="radio" label="Size" name="size" :options="[{
-      xs: 'Extra Small',
-      sm: 'Small',
-      md: 'Medium',
-      lg: 'Large',
-      xl: 'Extra Large'
-    }]" validation="required" />
-    <FormKit type="textarea" name="notes" label="Notes" />
-  </FormKit>
-</template>
-```
-
-</client-only>
-
-Now we can see that even more complex forms in Laravel can be easily integrated with FormKit.
-
-<cta label="Ready to dive deeper into FormKit?" button="Learn more about FormKit's unique architecture" href="/essentials/architecture"></cta>
+::Cta
+---
+label: "Ready to dive deeper into FormKit?" 
+button: "Learn more about FormKit's architecture" 
+href: "/essentials/architecture"
+---
+::
