@@ -108,5 +108,6 @@ const inputOptions = {
     <Repeater />
     <Taglist />
     <Toggle />
+    <Transferlist />
   </FormKit>
 </template>

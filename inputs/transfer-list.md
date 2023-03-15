@@ -9,6 +9,8 @@ description: The transfer list input allows users to transfer values between two
 
 :ProInstallSnippet
 
+## Introduction
+
 The transfer list input is ideal for situations where the end-user needs to select and sort multiple values from a list of options. In this example, we are allowing the end-user to select from a group of guests and move them to a VIP list:
 
 ::Example
@@ -78,7 +80,7 @@ Let's go ahead and populate the transfer list's options with a list of guest nam
 ::Example
 ---
 name: "Transfer List"
-min-height: 550
+min-height: 450
 file: [
   '/_content/_examples/transfer-list/transfer-list-options.vue',
   '/_content/_examples/transfer-list/guests.js'
@@ -88,7 +90,7 @@ file: [
 
 ### Values
 
-The value of the transfer list input will always be in the structure of an array and the selected option values from the source options list will be appended to the array. To show the value changing in the example below, let's wrap the transfer list input in a FormKit form, set the name of the transfer list input to `vips`, and show the value of the form itself in a `<pre>` tag (if you are unfamiliar with FormKit forms, you can read more about it [here](/getting-started/your-first-form)):
+The _value_ of the transfer list input is an array. Selected option values from the source list will be appended to the array. To show the value changing in the example below, let's wrap the transfer list input in a FormKit form, set the name of the transfer list input to `vips`, and show the value of the form itself in a `<pre>` tag (if you are unfamiliar with FormKit forms, you can read more [here](/getting-started/your-first-form)):
 
 ::Example
 ---
@@ -103,7 +105,7 @@ file: [
 
 #### Initial values
 
-The transfer list input can be pre-populated with values by setting the `value` prop. In this example, we'll set the `value` prop to an array of strings that match the `value` keys of the options:
+The transfer list input can be pre-populated with values by setting the `value` prop on the `transferlist` itself or a wrapping `form` or `group`. Remember that the values you pass to the `value` prop need to match the keys of the values in your option list:
 
 ::Example
 ---
@@ -116,7 +118,9 @@ file: [
 ---
 ::
 
-Please note that if you pass the transfer list input a value that does not match any of the options, the value will still be added to the array, but it will not be displayed in the target list box.
+<callout type="info" label="Non-matching values">
+If you pass the transfer list input a value that does not match any of the options, the value will still be added to the array, but it will not be displayed in the target list box.
+</callout>
 
 ### Searchable
 
@@ -133,7 +137,10 @@ file: [
 ---
 ::
 
-Keep in mind that the search input only searches through the options list. It does not search through the selected values.
+
+<callout type="info" label="Only the options are searched">
+The search input only searches through the options in the source options list. It does not return options that have already been transferred to the target list.
+</callout>
 
 #### Filtering
 
@@ -171,7 +178,7 @@ file: [
 
 ### Transfer on select
 
-By default, the transfer list input will add or remove options on click. You can change this behavior by setting the `transfer-on-select` prop to `false`. Now, the transfer list will behave more like a traditional transfer list.
+By default, the transfer list input will add or remove options on click. You can change this behavior by setting the `transfer-on-select` prop to `false`. Now, the transfer list will behave more like a traditional transfer list:
 
 ::Example
 ---
@@ -184,7 +191,7 @@ file: [
 ---
 ::
 
-## Asynchronicity
+## Asynchrony
 
 ### Asynchronous options
 
@@ -203,14 +210,14 @@ file: [
 
 #### Pagination
 
-Now let's say that our api request does not fetch all the options we need but instead returns a paginated response. The transfer list input can handle pagination with minor configuration to the asynchronous function.
+Now let's say that our API request does not fetch all the options we need, but instead returns a paginated response. The transfer list input can handle pagination with minor configuration to the asynchronous function.
 
-When assigning the options prop to an asynchronous function, the function will be called with the FormKit context object at its first argument. This context object contains a `page` property (the current page we are attempting to load) that is tracked by the transfer list input, and `hasNextPage`, which is a callback function we can use to tell the transfer list that there are more options to load:
+When assigning the options prop to an asynchronous function, the function will be called with the FormKit context object as its first argument. This context object contains a `page` property (the current page we are attempting to load) that is tracked by the transfer list input, and `hasNextPage`, which is a callback function we can use to tell the transfer list that there are more options to load:
 
 ::Example
 ---
 name: "Transfer List"
-min-height: 550
+min-height: 500
 file: [
   '/_content/_examples/transfer-list/transfer-list-async-options-pagination.vue',
   '/_content/_examples/transfer-list/api.js'
@@ -220,7 +227,7 @@ file: [
 
 #### Search
 
-The transfer list input can also load options asynchronously when the user searches. In this example, we'll add back the `searchable` prop, and change the getGuests function to searchGuests. When the user searches, the searchGuests function will now be called with the same context object as before, but this time, we will destructure just the `search` proprerty. Additionally, we'll modify the getGuests function to only return guests when a search value is provided:
+The transfer list input can also load options asynchronously when the user searches. In this example, we'll add back the `searchable` prop, and change `getGuests()` to `searchGuests()`. When the user searches, `searchGuests()` will now be called with the same context object as before, but this time, we will destructure just the `search` property. Additionally, we'll modify `getGuests()` to only return guests when a search value is provided:
 
 ::Example
 ---
@@ -237,12 +244,12 @@ file: [
 
 #### Rehydrating values
 
-The transfer list input also provides an optionLoader prop that allows you to rehydrate values that are not in the options list. In this example, we'll provide the transfer list an initial value (a guest ID), and assign the optionLoader to a function that will make a request to the API to fetch the individual guest data:
+The transfer list input also provides an `optionLoader` prop that allows you to rehydrate values that are not in the options list. In this example, we'll provide the transfer list an initial value (a guest ID), and assign the `optionLoader` to a function that will make a request to the API to fetch the individual guest data:
 
 ::Example
 ---
 name: "Transfer List"
-min-height: 550
+min-height: 350
 file: [
   '/_content/_examples/transfer-list/transfer-list-rehydrating-values.vue',
   '/_content/_examples/transfer-list/api.js'
@@ -250,11 +257,11 @@ file: [
 ---
 ::
 
-Notice in the example above that the optionLoader function is passed two arguments: the value of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption is used for preventing unnecessary lookups; if the cachedOption is not null it means that the selected option has already been loaded, and you can return the cachedOption directly.
+Notice in the example above that the optionLoader function `getGuest` is passed two arguments: the value of the selected option (in this case, the movie ID) and the `cachedOption`. The `cachedOption` is used for preventing unnecessary lookups; if the `cachedOption` is not `null` it means the selected option has already been loaded, and you can return the `cachedOption` directly.
 
 #### Fetching additional data
 
-Instead of using the optionLoader prop to rehydrate values that are not in the options list, you can use the optionLoader to perform a look-up to fetch additional data on selected value. In this example, after selecting an option, we are going to perform a look-up to load the selected guest's age:
+You can also use use the `optionLoader` to fetch additional data on selected values that is not already in the options list. In this example, after selecting an option, we are going to perform a look-up to load the selected guest's age:
 
 ::Example
 ---
@@ -354,7 +361,7 @@ data: [
     description: 'Limits the number of options that can be selected.'
   },
   {
-    prop: 'clearOnSelect',
+    prop: 'clear-on-select',
     type: 'boolean',
     default: 'true',
     description: 'Clears the search input after selecting an option (only for options that are not loaded via function).'

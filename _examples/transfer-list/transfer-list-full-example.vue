@@ -10,7 +10,7 @@ import  { initials } from 'utils.js'
     :actions="false"
     :value="{
       vips: [
-        1
+        3, 6
       ]
     }"
   >
@@ -82,7 +82,7 @@ import  { initials } from 'utils.js'
   height: 1em;
   flex: 0 0 1em;
   background-color: rgb(2, 117, 255);
-  margin-right: 0.5em;
+  margin-right: 0.3em;
 }
 
 .initials {

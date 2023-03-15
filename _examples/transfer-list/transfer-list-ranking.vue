@@ -51,7 +51,6 @@ import { michaelJordan } from 'utils.js'
 <style scoped>
 .flex {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
