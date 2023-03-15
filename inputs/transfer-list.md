@@ -118,10 +118,6 @@ file: [
 ---
 ::
 
-<callout type="info" label="Non-matching values">
-If you pass the transfer list input a value that does not match any of the options, the value will still be added to the array, but it will not be displayed in the target list box.
-</callout>
-
 ### Searchable
 
 The transfer list input can be made searchable by setting the `searchable` prop. In this example we'll set the `searchable` prop and also set a `placeholder` prop for the search input:
