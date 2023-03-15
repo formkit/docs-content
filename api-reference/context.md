@@ -151,7 +151,13 @@ Current state of the input:
    */
   complete: boolean
   /**
-   * If the input has had a value typed into it or a change made to it.
+   * The dirty-behavior prop controls how this state is set. By default it is
+   * considered dirty if any mutation was made to the input, but once a mutation
+   * has been made and dirty is `true` it stops checking.
+   * 
+   * Alternatively the dirty-behavior prop can be set to `compare` which will
+   * diff the changes between the current value and the initial value after
+   * every mutation — this means if the input returns back to its initial value * dirty will become `false` again.
    */
   dirty: boolean
   /**

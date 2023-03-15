@@ -32,6 +32,7 @@ Beta 16 is the first version of FormKit that does not have a [pre-release identi
 - The [floating labels](/plugins/floating-labels) plugin now hides placeholders until focused ([#574](https://github.com/formkit/formkit/issues/574)).
 - Fixes a bug that caused forms to not receive the `submitted` state like the form’s children on an unsuccessful form submission ([#503](https://github.com/formkit/formkit/issues/503)).
 - The [multi-step](/plugins/multi-step) input now preserves step order when conditionally rendering steps ([#613](https://github.com/formkit/formkit/issues/613)).
+- Fixes a tailwind styling bug for checkboxes and radios ([#584](https://github.com/formkit/formkit/issues/584)).
 
 
 ## 1.0.0-beta.15
