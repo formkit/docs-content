@@ -8,6 +8,241 @@ description: A Pro input that allows users to select a date via pop up calendar 
 :PageToc
 
 :ProInstallSnippet
+
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--datepicker"
+schema: [
+  {
+    name: "outer",
+    position: "right",
+    children: [
+      {
+        name: "wrapper",
+        children: [
+          {
+            name: "label",
+            content: "Select a date",
+            class: "center-vert",
+          },
+          {
+            name: "inner",
+            children: [
+              {
+                name: "prefixIcon",
+                class: "tiny-section",
+              },
+              {
+                name: "prefix",
+                class: "tiny-section",
+              },
+              {
+                name: "input",
+                content: "November 26, 2014",
+              },
+              {
+                name: "openButton",
+                position: "right",
+                class: "small-pad center-vert",
+                children: [
+                  {
+                    name: "calendarIcon",
+                    content: "📅",
+                    position: "right",
+                  },
+                ],
+              },
+              {
+                name: "suffix",
+                position: "right",
+                class: "tiny-section",
+              },
+              {
+                name: "suffixIcon",
+                position: "right",
+                class: "tiny-section",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "help",
+        content: "Pick your arrival date.",
+        position: "right",
+      },
+      {
+        name: "messages",
+        children: [
+          {
+            name: "message",
+            content: "Sorry, that date is not available.",
+          },
+        ],
+      },
+    ],
+  },
+]
+---
+::
+
+
+### Overlay
+
+This section is located inside the `inner` section when the `overlay` prop is added.
+<!-- 
+        panelWrapper(
+          panelHeader(
+            prev(prevLabel('$ui.prev.value'), icon('prev')),
+            yearsHeader('$decade'),
+            monthsHeader(yearButton()),
+            daysHeader(monthButton(), yearButton()),
+            timeHeader(monthButton(), dayButton(), yearButton()),
+            next(nextLabel('$ui.next.value'), icon('next'))
+          ),
+          panel(
+            years(year('$fns.format($year, $yearFormat)')),
+          ),
+        ), -->
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--overlay"
+schema: [
+  {
+    name: "overlay",
+    children: [
+      {
+        name: "overlay-parts",
+        class: 'overlay-parts',
+        children: [
+          { name: 'overlayPlaceholder',  },
+          { name: 'overlayLiteral' },
+          { name: 'overlayChar', position: 'right' },
+          { name: 'overlayEnum', position: 'right' },
+        ]
+      }
+    ]
+  },
+]
+---
+::
+
+### Years panel
+
+The panel appears below the input element inside the `inner` section when the datepicker popup is open.
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--datepicker-panel"
+schema: [
+  {
+    name: 'panel-wrapper',
+    position: 'right',
+    children: [
+      {
+        name: 'panel-header',
+        class: 'panel-header',
+        children: [
+          {
+            name: 'prev',
+            class: 'icon-button',
+            children: [
+              {
+                name: 'prev-label',
+                content: 'Prev',
+              },
+              {
+                name: 'prev-icon',
+                content: '👈',
+              },
+            ],
+          },
+          {
+            name: 'years-header',
+            class: 'header-main',
+            content: '2010 - 2020',
+          },
+          {
+            name: 'next',
+            position: 'right',
+            class: 'icon-button',
+            children: [
+              {
+                name: 'next-label',
+                position: 'right',
+                content: 'Next',
+              },
+              {
+                name: 'next-icon',
+                position: 'right',
+                content: '👉',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'panel',
+        position: 'right',
+        children: [
+          {
+            name: 'years',
+            class: 'years',
+            children: [
+              {
+                name: 'year',
+                content: '2010',
+              },
+              {
+                name: 'year',
+                content: '2011',
+              },
+              {
+                name: 'year',
+                content: '2012',
+              },
+              {
+                name: 'year',
+                content: '2013',
+              },
+              {
+                name: 'year',
+                content: '2014',
+              },
+              {
+                name: 'year',
+                content: '2015',
+              },
+              {
+                name: 'year',
+                content: '2016',
+              },
+              {
+                name: 'year',
+                content: '2017',
+              },
+              {
+                name: 'year',
+                content: '2018',
+              },
+              {
+                name: 'year',
+                content: '2019',
+              }
+            ],
+          }
+        ]
+      }
+    ],
+  },
+]
+---
+::
+
 ## Basic example
 
 The `datepicker` input allows users to select a date from a customizable calendar, and type the date directly into the input with full internationalization support.
@@ -441,11 +676,163 @@ It’s important that the provided function is fast and synchronous — it will
 ---
 ::
 
-#### Example: bike rental
+#### Example: fetch from API
 ::Example
 ---
   name: 'Datepicker random disabled'
   file: '/_content/_examples/datepicker/datepicker-random-disabled.vue'
   min-height: 500
+---
+::
+
+### Scan for availability
+
+When navigating the calendar pop up via keyboard, the datepicker will not allow you to select a disabled date. However this can be annoying as it can create areas of inaccessibility if some available dates are "sandwiched" between unavailable dates.
+
+To make the user experience better, the datepicker will automatically scan forward or backward (depending on the direction desired) for the next available date to select. The maximum number of days to scan for an available day is controlled by the `maxScan` prop (7 days by default).
+
+#### Example: max-scan
+::Example
+---
+  name: 'Datepicker max-scan'
+  file: '/_content/_examples/datepicker/datepicker-max-scan.vue'
+  min-height: 500
+---
+::
+
+## Props & Attributes
+
+::ReferenceTable
+---
+input: "datepicker"
+data: [
+  {
+    prop: 'date-format',
+    type: 'string',
+    default: 'D',
+    description: 'The token format to use in the calendar for dates in the month.'
+  },
+  {
+    prop: 'disabled-days',
+    type: 'function',
+    default: 'min/max date logic',
+    description: 'A function that is passed the core node and a `Date` object and must return if the date is disabled (`true` is disabled).'
+  },
+  {
+    prop: 'format',
+    type: 'string/object',
+    default: "date: 'long'",
+    description: 'The format to display to the user in the select input.'
+  },
+  {
+    prop: 'max-date',
+    type: 'Date | ISO8601',
+    default: 'none',
+    description: 'The maximum date the user is allowed to select.'
+  },
+  {
+    prop: 'max-scan',
+    type: 'number',
+    default: '7',
+    description: 'The maximum number of days to scan forward or backward when looking for an available date to jump to via keyboard navigation.'
+  },
+  {
+    prop: 'min-date',
+    type: 'Date | ISO8601',
+    default: 'none',
+    description: 'The earliest date the user is allowed to select.'
+  },
+  {
+    prop: 'month-button-format',
+    type: 'string',
+    default: 'MMMM',
+    description: 'The date format token to use for the month panel button in the calendar popup.'
+  },
+  {
+    prop: 'month-format',
+    type: 'string',
+    default: 'MMMM',
+    description: 'The date format token to use for each of the 12 months on the month panel.'
+  },
+  {
+    prop: 'overlay',
+    type: 'boolean',
+    default: 'false',
+    description: 'Whether or not to display a mask overlay. Read more about overlays in the mask input documentation (has no effect in pickerOnly` mode).'
+  },
+  {
+    prop: 'picker-only',
+    type: 'boolean',
+    default: 'false',
+    description: 'Whether or not to allow the date to be entered via text input. When picker-only is enabled, only the picker can be used to select a date.'
+  },
+  {
+    prop: 'show-months',
+    type: 'number',
+    default: '1',
+    description: 'The number of months to render in the popup when on the day panel.'
+  },
+  {
+    prop: 'sequence',
+    type: 'array',
+    default: "['day']",
+    description: 'The sequence of panels to walk a user through when they open the datepicker calendar view. Options are `year`, `month`, `day`, `time`.'
+  },
+  {
+    prop: 'value-format',
+    type: 'string/object',
+    default: 'ISO8601',
+    description: 'The format to record as the value of the input. This can be composed with any token format, date style, or `ISO8601`.'
+  },
+  {
+    prop: 'value-locale',
+    type: 'string',
+    default: '`node.props.locale`',
+    description: 'The locale to use for the `valueFormat`. When using format tokens in the `valueFormat` prop it is highly recommend to set an explicit `valueFormat`.'
+  },
+  {
+    prop: 'week-start',
+    type: 'number',
+    default: '0',
+    description: 'The day of the week to start the `day` panel’s calendar on. 0-6 where 0 = Sunday and 6 = Saturday.'
+  },
+  {
+    prop: 'week-day-format',
+    type: 'string',
+    default: 'd',
+    description: 'The date format token used to render the day of the week column headers.'
+  },
+  {
+    prop: 'year-format',
+    type: 'string',
+    default: 'YYYY',
+    description: 'The date format token used to render the years in the `year` panel.'
+  }
+]
+---
+::
+
+
+## Sections
+
+You can target a specific section of an input using that section's "key", allowing you to modify that section's classes, HTML (via `:sections-schema`), or content (via slots). Read more about sections here.
+
+
+### Datepicker wrapper
+
+
+
+### Section keys
+
+::ReferenceTable
+---
+type: "sectionKeys"
+primary: "section-key"
+data: [
+  {
+    "section-key": "calendar",
+    description: "The wrapper immediately around the calendar.",
+  },
+]
 ---
 ::

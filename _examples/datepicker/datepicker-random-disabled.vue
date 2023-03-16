@@ -23,14 +23,18 @@ function disabledDays(node, date) {
 </script>
 
 <template>
+  <h3>Bike rental (fetch from API)</h3>
   <FormKit
     type="datepicker"
     name="pickup"
-    label="Next available workday"
-    placeholder="Select a workday"
-    picker-only
+    label="Pickup date."
+    placeholder="Select a pickup date"
+    help="Select what day you want to pickup your bike"
     :min-date="new Date()"
     :max-date="new Date(new Date().setDate(new Date().getDate() + 90))"
     :disabled-days="disabledDays"
-  />
+    picker-only
+  >
+    <template #day> </template>
+  </FormKit>
 </template>
