@@ -335,9 +335,13 @@ return new class extends Migration
       $table->id();
       $table->string('name');
       $table->string('email');
-      $table->string('address');
+      $table->string('street_address');
+      $table->string('city');
+      $table->string('state');
+      $table->string('postal_code');
       $table->enum('size', ['s', 'm', 'l', 'xl', 'xxl']);
-      $table->text('notes')->nullable(true);
+      $table->text('comments')->nullable(true);
+      $table->timestamps();
     });
   }
   /**
@@ -384,7 +388,7 @@ class Order extends Model
    *
    * @var array
    */
-  protected $fillable = ['name', 'email', 'address', 'size', 'notes'];
+  protected $fillable = ['name', 'email', 'street_address', 'city', 'state', 'postal_code', 'size', 'comments'];
 }
 ```
 
@@ -398,9 +402,187 @@ Let's create our Order controller by running the following command:
 ./vendor/bin/sail artisan make:controller OrderController
 ```
 
-Let's look at the `OrderController.php` file generated for us. You can find it in the `app/Http/Controller` directory. Here we can add `show` and `store` methods to handle the functionality when visiting those routes.
+Let's look at the `OrderController.php` file generated for us. You can find it in the `app/Http/Controller` directory. Here we can add `create` and `store` methods to handle the functionality when visiting those routes.
 
-```FINISH ARTICLE```
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Order;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\Enum;
+use Inertia\Inertia;
+
+enum OrderSize:string {
+  case S = 's';
+  case M = 'm';
+  case L = 'l';
+  case XL = 'xl';
+  case XXL = 'xxl';
+}
+
+class OrderController extends Controller
+{
+  /**
+   * Show the order form page.
+   *
+   * @return \Inertia\Inertia
+   */
+  public function create()
+  {
+    $orders = Order::all();
+    return Inertia::render('Orders/Create', [
+      'orders' => $orders
+    ]);
+  }
+
+  /**
+   * Store a new order.
+   *
+   * @param \Illuminate\Http\Request $request
+   * @return \Inertia\Inertia
+   */
+  public function store(Request $request)
+  {
+    $order = Order::create($request->validate([
+      'name' => 'required',
+      'email' => 'required|email',
+      'street_address' => 'required',
+      'city' => 'required',
+      'state' => 'required',
+      'postal_code' => 'required',
+      'size' => ['required', new Enum(OrderSize::class)],
+      'comments' => 'nullable|string'
+    ]));
+    return to_route('orders.create');
+  }
+}
+```
+
+Speaking of routes, we'll need to add our routes to support the new show and store controller methods. Open routes/web.php to add the following:
+
+```php
+Route::get('/orders', [App\Http\Controllers\OrderController, 'create'])->name('orders.create');
+Route::post('/orders/new', [App\Http\Controllers\OrderController, 'store'])->name('orders.store');
+```
+
+### Creating The Order Page
+
+Now let's create our order page. First, create a new directory called `Orders` inside of `resources/js/Pages`. Here we'll add a new file called `Create.vue`.
+
+First, let's add our functionality inside our script tag:
+
+```js
+<script setup>
+import { Head, Link, router } from '@inertiajs/vue3';
+import { createMessage } from '@formkit/core';
+
+defineProps({
+  orders: Array
+})
+
+const shirtSizes =[
+  { value: 's', label: 'Small' },
+  { value: 'm', label: 'Medium' },
+  { value: 'l', label: 'Large' },
+  { value: 'xl', label: 'X-Large' },
+  { value: 'xxl', label: 'XX-Large' },
+];
+
+const submit = (fields, node) => {
+  const loadingMessage = createMessage({
+    key: 'loading',
+    visible: false,
+    value: true,
+  });
+
+  router.post(route('orders.store'), fields, {
+    onStart: () => {
+      node.store.set(loadingMessage);
+      node.props.disabled = true;
+    },
+    onSuccess: () => {
+      node.store.remove('loading');
+      node.props.disabled = false;
+      node.reset();
+    },
+    onError: (errors) => {
+      node.store.remove('loading');
+      node.props.disabled = false;
+      node.setErrors([], errors);
+    }
+  });
+};
+</script>
+```
+
+Let's now add our order form inside of our template:
+
+```js
+<template>
+  <Head title="Create Order" />
+  <div class="min-h-screen flex flex-row flex-wrap sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+    <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md sm:rounded-lg">
+      <h1 class="text-center font-bold text-2xl pt-4 pb-8">Get your promotional shirt!</h1>
+      <FormKit type="form" @submit="submit" submit-label="Create Order">
+        <FormKit type="text" label="Name" name="name" validation="required" />
+        <FormKit type="email" label="Email" name="email" validation="required|email" />
+        <FormKit type="select" name="size" :options="shirtSizes" placeholder="Select a shirt size" validation="required" label="Shirt Size" />
+        <FormKit name="street_address" label="Street Address" validation="required"/>
+        <FormKit class="basis-1/2" name="city" label="City" validation="required" />
+        <div class="flex flex-row space-x-4">
+          <FormKit class="basis-1/2" name="state" label="State/Province" validation="required" />
+          <FormKit class="basis-1/2" name="postal_code" label="Postal Code" validation="required" />
+        </div>
+        <FormKit type="textarea" name="comments" label="Comments" />
+        <template #actions>
+          <FormKit type="submit" label="Send me a t-shirt!" />
+        </template>
+      </FormKit>
+    </div>
+    // Orders table goes here
+  </div>
+</template>
+```
+
+We have a form to accept orders, but let's add a table to view any orders that are submitted:
+
+```js
+<div class="w-full sm:w-3/4 mt-12 mb-12 px-6 py-4 bg-white shadow-md sm:rounded-lg">
+  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+      <div class="overflow-hidden">
+        <table v-if="orders.length" class="min-w-full text-left text-sm font-light table-fixed">
+          <thead class="border-b font-medium dark:border-neutral-500">
+            <tr>
+              <th scope="col" class="px-6 py-4">#</th>
+              <th scope="col" class="px-6 py-4">Name</th>
+              <th scope="col" class="px-6 py-4">Email</th>
+              <th scope="col" class="px-6 py-4">Address</th>
+              <th scope="col" class="px-6 py-4">Size</th>
+              <th scope="col" class="px-6 py-4">Comments</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="order in orders" class="border-b dark:border-neutral-500">
+              <td class="whitespace-nowrap px-6 py-4 font-medium">{{ order.id }}</td>
+              <td class="whitespace-nowrap px-6 py-4">{{ order.name }}</td>
+              <td class="whitespace-nowrap px-6 py-4">{{ order.email }}</td>
+              <td class="whitespace-nowrap px-6 py-4">{{ order.street_address }} {{ order.city }}, {{ order.state }} {{ order.postal_code }}</td>
+              <td class="whitespace-nowrap px-6 py-4 uppercase">{{ order.size }}</td>
+              <td class="whitespace-nowrap px-6 py-4">{{ order.comments }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <h1 v-else>No orders available!</h1>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+There we have it! Now we can see how adding FormKit to our Laravel application saves us time by simplifying the code it takes to build production-ready forms all while tremendously improving our UX and DX.
 
 
 ::Cta
