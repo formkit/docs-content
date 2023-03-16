@@ -429,7 +429,7 @@ The `disabled-days` prop supersedes `min-date` and `max-date` — you can choose
   type: warning
   label: Fast and synchronous
 ---
-It’s important that the provided functions is synchronous and fast — it will be called frequently and repeatedly. For example, if you need to fetch information from a database, do it outside of this function and use this function to access memoized results.
+It’s important that the provided function is fast and synchronous — it will be called frequently and repeatedly. For example, if you need to fetch information from a database, do it outside of this function and use this function to access memoized results.
 ::
 
 #### Example: disabled weekends
@@ -441,4 +441,11 @@ It’s important that the provided functions is synchronous and fast — it wil
 ---
 ::
 
-
+#### Example: bike rental
+::Example
+---
+  name: 'Datepicker random disabled'
+  file: '/_content/_examples/datepicker/datepicker-random-disabled.vue'
+  min-height: 500
+---
+::
