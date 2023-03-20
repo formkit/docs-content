@@ -1429,7 +1429,147 @@ primary: "section-key"
 data: [
   {
     "section-key": "calendar",
-    description: "The wrapper immediately around the calendar.",
+    description: "The wrapper immediately around the calendar on the day panel.",
+  },
+  {
+    "section-key": "calendarHeader",
+    description: "The wrapper around the header columns on the day panel.",
+  },
+  {
+    "section-key": "calendarWeeks",
+    description: "The wrapper immediately around each row of weeks on the day panel.",
+  },
+  {
+    "section-key": "day",
+    description: "The content of the day — by default contains the numeric day. In this slot/section you can use <code>context.day</code> (<code>$day</code> in schema) to get the date object for the given day.",
+  },
+  {
+    "section-key": "dayButton",
+    description: "The button displayed in the header of the time panel which navigates to the day panel.",
+  },
+  {
+    "section-key": "dayCell",
+    description: "The wrapper immediately around the date section. In this slot/section you can use <code>context.day</code> (<code>$day</code> in schema) to get the date object for the given day.",
+  },
+  {
+    "section-key": "daysHeader",
+    description: "The wrapper around the header columns on the date panel.",
+  },
+  {
+    "section-key": "month",
+    description: "The section that renders the actual month names on the month panel. In this slot/section you can use <code>context.month</code> (<code>$month</code> in schema) to get the date object for the given month.",
+  },
+  {
+    "section-key": "monthButton",
+    description: "The button in the header of the day and time panels that navigates to the month panel.",
+  },
+  {
+    "section-key": "months",
+    description: "The wrapper immediately around the month sections on the month panel.",
+  },
+  {
+    "section-key": "monthsHeader",
+    description: "The wrapper immediately around the header buttons (yearButton) on the month panel.",
+  },
+  {
+    "section-key": "next",
+    description: "In the panel header the button responsible for navigating to the next month or decade.",
+  },
+  {
+    "section-key": "nextLabel",
+    description: "The section responsible for rendering the text content of the next button in the panel header.",
+  },
+  {
+    "section-key": "openButton",
+    description: "The button responsible for opening the picker dialog.",
+  },
+  {
+    "section-key": "overlay",
+    description: "The outer wrapper of the overlay. The overlay is used to mimc the text that is in the text input during text-entry mode to allow for styling.",
+  },
+  {
+    "section-key": "overlayChar",
+    description: "A section containing overlay characters of type char",
+  },
+  {
+    "section-key": "overlayEnum",
+    description: "A section containing overlay characters of type enum",
+  },
+  {
+    "section-key": "overlayInner",
+    description: "An inner wrapper immediately inside the overlay section.",
+  },
+  {
+    "section-key": "overlayLiteral",
+    description: "A section containing overlay characters of type literal",
+  },
+  {
+    "section-key": "overlayParts",
+    description: "A section containing all the overlay parts as immediate children.",
+  },
+  {
+    "section-key": "overlayPlaceholder",
+    description: "A section containing overlay characters of type placeholder.",
+  },
+  {
+    "section-key": "panel",
+    description: "A wrapper around the currently active panel. This is rendered below the panelHeader as a sibling.",
+  },
+  {
+    "section-key": "panelHeader",
+    description: "A wrapper around the header of each panel where the panel’s navigation buttons are located. This is a sibling of the panel section.",
+  },
+  {
+    "section-key": "panelWrapper",
+    description: "A wrapper around the panel and panelHeader sections, this section is responsible for showing or hiding the picker dialog.",
+  },
+  {
+    "section-key": "prev",
+    description: "In the panel header the button responsible for navigating to the previous month or decade.",
+  },
+  {
+    "section-key": "prevLabel",
+    description: "The section responsible for rendering the text content of the prev button in the panel header.",
+  },
+  {
+    "section-key": "time",
+    description: "The time panel that contains the timeInput.",
+  },
+  {
+    "section-key": "timeHeader",
+    description: "The panel header of the time panel with navigation buttons to the year, month, and day panels.",
+  },
+  {
+    "section-key": "timeInput",
+    description: "A native HTML <code>time</code> input responsible for setting the time of the selected date.",
+  },
+  {
+    "section-key": "week",
+    description: "A wrapper around a row of 7 days on the day panel.",
+  },
+  {
+    "section-key": "weekDay",
+    description: "The cell responsible for rendering the day of the week in the calendar header of the day panel (M, T, W etc...).",
+  },
+  {
+    "section-key": "weekDays",
+    description: "The wrapper element around the days of the week on the calendar’s header on the day panel.",
+  },
+  {
+    "section-key": "year",
+    description: "The element responsible for rendering each of the years available on the year panel.",
+  },
+  {
+    "section-key": "yearButton",
+    description: "The button in the header of the month, day, and time panels that navigates to the year panel.",
+  },
+  {
+    "section-key": "years",
+    description: "The years panel, responsible for rendering a decade of years at a time.",
+  },
+  {
+    "section-key": "yearsHeader",
+    description: "The panel header when on the years panel, shows the current decade year range.",
   },
 ]
 ---
