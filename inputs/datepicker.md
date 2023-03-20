@@ -9,240 +9,6 @@ description: A Pro input that allows users to select a date via pop up calendar 
 
 :ProInstallSnippet
 
-
-::FormKitInputDiagram
----
-hide-on-small: true
-class: "input-diagram--datepicker"
-schema: [
-  {
-    name: "outer",
-    position: "right",
-    children: [
-      {
-        name: "wrapper",
-        children: [
-          {
-            name: "label",
-            content: "Select a date",
-            class: "center-vert",
-          },
-          {
-            name: "inner",
-            children: [
-              {
-                name: "prefixIcon",
-                class: "tiny-section",
-              },
-              {
-                name: "prefix",
-                class: "tiny-section",
-              },
-              {
-                name: "input",
-                content: "November 26, 2014",
-              },
-              {
-                name: "openButton",
-                position: "right",
-                class: "small-pad center-vert",
-                children: [
-                  {
-                    name: "calendarIcon",
-                    content: "📅",
-                    position: "right",
-                  },
-                ],
-              },
-              {
-                name: "suffix",
-                position: "right",
-                class: "tiny-section",
-              },
-              {
-                name: "suffixIcon",
-                position: "right",
-                class: "tiny-section",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        name: "help",
-        content: "Pick your arrival date.",
-        position: "right",
-      },
-      {
-        name: "messages",
-        children: [
-          {
-            name: "message",
-            content: "Sorry, that date is not available.",
-          },
-        ],
-      },
-    ],
-  },
-]
----
-::
-
-
-### Overlay
-
-This section is located inside the `inner` section when the `overlay` prop is added.
-<!-- 
-        panelWrapper(
-          panelHeader(
-            prev(prevLabel('$ui.prev.value'), icon('prev')),
-            yearsHeader('$decade'),
-            monthsHeader(yearButton()),
-            daysHeader(monthButton(), yearButton()),
-            timeHeader(monthButton(), dayButton(), yearButton()),
-            next(nextLabel('$ui.next.value'), icon('next'))
-          ),
-          panel(
-            years(year('$fns.format($year, $yearFormat)')),
-          ),
-        ), -->
-::FormKitInputDiagram
----
-hide-on-small: true
-class: "input-diagram--overlay"
-schema: [
-  {
-    name: "overlay",
-    children: [
-      {
-        name: "overlay-parts",
-        class: 'overlay-parts',
-        children: [
-          { name: 'overlayPlaceholder',  },
-          { name: 'overlayLiteral' },
-          { name: 'overlayChar', position: 'right' },
-          { name: 'overlayEnum', position: 'right' },
-        ]
-      }
-    ]
-  },
-]
----
-::
-
-### Years panel
-
-The panel appears below the input element inside the `inner` section when the datepicker popup is open.
-
-::FormKitInputDiagram
----
-hide-on-small: true
-class: "input-diagram--datepicker-panel"
-schema: [
-  {
-    name: 'panel-wrapper',
-    position: 'right',
-    children: [
-      {
-        name: 'panel-header',
-        class: 'panel-header',
-        children: [
-          {
-            name: 'prev',
-            class: 'icon-button',
-            children: [
-              {
-                name: 'prev-label',
-                content: 'Prev',
-              },
-              {
-                name: 'prev-icon',
-                content: '👈',
-              },
-            ],
-          },
-          {
-            name: 'years-header',
-            class: 'header-main',
-            content: '2010 - 2020',
-          },
-          {
-            name: 'next',
-            position: 'right',
-            class: 'icon-button',
-            children: [
-              {
-                name: 'next-label',
-                position: 'right',
-                content: 'Next',
-              },
-              {
-                name: 'next-icon',
-                position: 'right',
-                content: '👉',
-              },
-            ],
-          },
-        ],
-      },
-      {
-        name: 'panel',
-        position: 'right',
-        children: [
-          {
-            name: 'years',
-            class: 'years',
-            children: [
-              {
-                name: 'year',
-                content: '2010',
-              },
-              {
-                name: 'year',
-                content: '2011',
-              },
-              {
-                name: 'year',
-                content: '2012',
-              },
-              {
-                name: 'year',
-                content: '2013',
-              },
-              {
-                name: 'year',
-                content: '2014',
-              },
-              {
-                name: 'year',
-                content: '2015',
-              },
-              {
-                name: 'year',
-                content: '2016',
-              },
-              {
-                name: 'year',
-                content: '2017',
-              },
-              {
-                name: 'year',
-                content: '2018',
-              },
-              {
-                name: 'year',
-                content: '2019',
-              }
-            ],
-          }
-        ]
-      }
-    ],
-  },
-]
----
-::
-
 ## Basic example
 
 The `datepicker` input allows users to select a date from a customizable calendar, and type the date directly into the input with full internationalization support.
@@ -818,7 +584,839 @@ data: [
 You can target a specific section of an input using that section's "key", allowing you to modify that section's classes, HTML (via `:sections-schema`), or content (via slots). Read more about sections here.
 
 
-### Datepicker wrapper
+
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--datepicker"
+schema: [
+  {
+    name: "outer",
+    position: "right",
+    children: [
+      {
+        name: "wrapper",
+        children: [
+          {
+            name: "label",
+            content: "Select a date",
+            class: "center-vert",
+          },
+          {
+            name: "inner",
+            children: [
+              {
+                name: "prefixIcon",
+                class: "tiny-section",
+              },
+              {
+                name: "prefix",
+                class: "tiny-section",
+              },
+              {
+                name: "input",
+                content: "November 26, 2014",
+              },
+              {
+                name: "openButton",
+                position: "right",
+                class: "small-pad center-vert",
+                children: [
+                  {
+                    name: "calendarIcon",
+                    content: "📅",
+                    position: "right",
+                  },
+                ],
+              },
+              {
+                name: "suffix",
+                position: "right",
+                class: "tiny-section",
+              },
+              {
+                name: "suffixIcon",
+                position: "right",
+                class: "tiny-section",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "help",
+        content: "Pick your arrival date.",
+        position: "right",
+      },
+      {
+        name: "messages",
+        children: [
+          {
+            name: "message",
+            content: "Sorry, that date is not available.",
+          },
+        ],
+      },
+    ],
+  },
+]
+---
+::
+
+
+### Overlay
+
+This section is located inside the `inner` section when the `overlay` prop is added.
+<!-- 
+        panelWrapper(
+          panelHeader(
+            prev(prevLabel('$ui.prev.value'), icon('prev')),
+            yearsHeader('$decade'),
+            monthsHeader(yearButton()),
+            daysHeader(monthButton(), yearButton()),
+            timeHeader(monthButton(), dayButton(), yearButton()),
+            next(nextLabel('$ui.next.value'), icon('next'))
+          ),
+          panel(
+            years(year('$fns.format($year, $yearFormat)')),
+          ),
+        ), -->
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--overlay"
+schema: [
+  {
+    name: "overlay",
+    children: [
+      {
+        name: "overlay-parts",
+        class: 'overlay-parts',
+        children: [
+          { name: 'overlayPlaceholder',  },
+          { name: 'overlayLiteral' },
+          { name: 'overlayChar', position: 'right' },
+          { name: 'overlayEnum', position: 'right' },
+        ]
+      }
+    ]
+  },
+]
+---
+::
+
+### Years panel
+
+The panel appears below the input element inside the `inner` section when the datepicker popup is open.
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--datepicker-panel"
+schema: [
+  {
+    name: 'panel-wrapper',
+    position: 'right',
+    children: [
+      {
+        name: 'panel-header',
+        class: 'panel-header',
+        children: [
+          {
+            name: 'prev',
+            class: 'icon-button',
+            children: [
+              {
+                name: 'prev-label',
+                content: 'Prev',
+              },
+              {
+                name: 'prev-icon',
+                content: '👈',
+              },
+            ],
+          },
+          {
+            name: 'years-header',
+            class: 'header-main',
+            content: '2010 - 2020',
+          },
+          {
+            name: 'next',
+            position: 'right',
+            class: 'icon-button',
+            children: [
+              {
+                name: 'next-label',
+                position: 'right',
+                content: 'Next',
+              },
+              {
+                name: 'next-icon',
+                position: 'right',
+                content: '👉',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'panel',
+        position: 'right',
+        children: [
+          {
+            name: 'years',
+            class: 'years',
+            children: [
+              {
+                name: 'year',
+                content: '2010',
+              },
+              {
+                name: 'year',
+                content: '2011',
+              },
+              {
+                name: 'year',
+                content: '2012',
+              },
+              {
+                name: 'year',
+                content: '2013',
+              },
+              {
+                name: 'year',
+                content: '2014',
+              },
+              {
+                name: 'year',
+                content: '2015',
+              },
+              {
+                name: 'year',
+                content: '2016',
+              },
+              {
+                name: 'year',
+                content: '2017',
+              },
+              {
+                name: 'year',
+                content: '2018',
+              },
+              {
+                name: 'year',
+                content: '2019',
+              }
+            ],
+          }
+        ]
+      }
+    ],
+  },
+]
+---
+::
+
+
+### Months panel
+
+The panel appears below the input element inside the `inner` section when the datepicker popup is open.
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--datepicker-panel"
+schema: [
+  {
+    name: 'panel-wrapper',
+    position: 'right',
+    children: [
+      {
+        name: 'panel-header',
+        class: 'panel-header',
+        position: 'right',
+        children: [
+          {
+            name: 'months-header',
+            class: 'header-main',
+            children: [
+              {
+                name: 'year-button',
+                position: 'right',
+                content: '2027',
+              }
+            ]
+          }
+        ],
+      },
+      {
+        name: 'panel',
+        position: 'right',
+        children: [
+          {
+            name: 'months',
+            class: 'months',
+            children: [
+              {
+                name: 'month',
+                content: 'Jan',
+              },
+              {
+                name: 'month',
+                content: 'Feb',
+              },
+              {
+                name: 'month',
+                content: 'Mar',
+              },
+              {
+                name: 'month',
+                content: 'Apr',
+              },
+              {
+                name: 'month',
+                content: 'May',
+              },
+              {
+                name: 'month',
+                content: 'Jun',
+              },
+              {
+                name: 'month',
+                content: 'Jul',
+              },
+              {
+                name: 'month',
+                content: 'Aug',
+              },
+              {
+                name: 'month',
+                content: 'Sep',
+              },
+              {
+                name: 'month',
+                content: 'Oct',
+              },
+              {
+                name: 'month',
+                content: 'Nov',
+              },
+              {
+                name: 'month',
+                content: 'Dec',
+              }
+            ],
+          }
+        ]
+      }
+    ],
+  },
+]
+---
+::
+
+### Day panel
+
+The panel appears below the input element inside the `inner` section when the datepicker popup is open.
+
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--datepicker-panel"
+schema: [
+  {
+    name: 'panel-wrapper',
+    position: 'right',
+    children: [
+      {
+        name: 'panel-header',
+        class: 'panel-header',
+        children: [
+          {
+            name: 'prev',
+            class: 'icon-button',
+            children: [
+              {
+                name: 'prev-label',
+                content: 'Prev',
+              },
+              {
+                name: 'prev-icon',
+                content: '👈',
+              },
+            ],
+          },
+          {
+            name: 'days-header',
+            class: 'header-main',
+            children: [
+              {
+                name: 'month-button',
+                content: 'Feb',
+                position: 'right',
+              },
+              {
+                name: 'year-button',
+                content: '2026',
+                position: 'right',
+              }
+            ]
+          },
+          {
+            name: 'next',
+            position: 'right',
+            class: 'icon-button',
+            children: [
+              {
+                name: 'next-label',
+                position: 'right',
+                content: 'Next',
+              },
+              {
+                name: 'next-icon',
+                position: 'right',
+                content: '👉',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'panel',
+        position: 'right',
+        children: [
+          {
+            name: 'calendar',
+            class: 'calendar',
+            position: 'right',
+            children: [
+              {
+                name: 'calendar-header',
+                class: 'calendar-header',
+                children: [
+                  {
+                    name: 'week-days',
+                    class: 'week',
+                    position: 'right',
+                    children: [
+                      {
+                        name: 'week-day',
+                        content: 'S',
+                      },
+                      {
+                        name: 'week-day',
+                        content: 'M',
+                      },
+                      {
+                        name: 'week-day',
+                        content: 'T',
+                      },
+                      {
+                        name: 'week-day',
+                        content: 'W',
+                      },
+                      {
+                        name: 'week-day',
+                        content: 'T',
+                      },
+                      {
+                        name: 'week-day',
+                        content: 'F',
+                      },
+                      {
+                        name: 'week-day',
+                        content: 'S',
+                      },
+                    ]
+                  }
+                ]
+              },
+              {
+                name: 'calendar-weeks',
+                class: 'calendar-weeks',
+                position: 'right',
+                children: [
+                  {
+                    name: 'week',
+                    class: 'week',
+                    children: [
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '1',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '2',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '3',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '4',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '5',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '6',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '7',
+                          }
+                        ]
+                      },
+                    ]
+                  },
+                  {
+                    name: 'week',
+                    class: 'week',
+                    children: [
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '8',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '9',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '10',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '11',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '12',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '13',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '14',
+                          }
+                        ]
+                      },
+                    ]
+                  },
+                  {
+                    name: 'week',
+                    class: 'week',
+                    children: [
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '15',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '16',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '17',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '18',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '19',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '20',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '21',
+                          }
+                        ]
+                      },
+                    ]
+                  },
+                  {
+                    name: 'week',
+                    class: 'week',
+                    children: [
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '22',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '23',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '24',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '25',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '26',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '27',
+                          }
+                        ]
+                      },
+                      {
+                        name: 'day-cell',
+                        class: 'day-cell',
+                        children: [
+                          {
+                            name: 'day',
+                            content: '28',
+                          }
+                        ]
+                      },
+                    ]
+                  }
+                ]
+              }
+            ],
+          }
+        ]
+      }
+    ],
+  },
+]
+---
+:: 
+
+
+### Time panel
+
+The panel appears below the input element inside the `inner` section when the datepicker popup is open.
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--datepicker-panel"
+schema: [
+  {
+    name: 'panel-wrapper',
+    position: 'right',
+    children: [
+      {
+        name: 'panel-header',
+        class: 'panel-header',
+        children: [
+          {
+            name: 'time-header',
+            class: 'header-main time-header',
+            position: 'right',
+            children: [
+              {
+                name: 'month-button',
+                content: 'February',
+              },
+              {
+                name: 'day-button',
+                content: '17',
+              },
+              {
+                name: 'year-button',
+                position: 'right',
+                content: '2027',
+              }
+            ]
+          }
+        ],
+      },
+      {
+        name: 'panel',
+        position: 'right',
+        children: [
+          {
+            name: 'time',
+            class: 'time',
+            children: [
+              {
+                name: 'time-input',
+                position: 'right',
+                content: '12:00 AM',
+              }
+            ]
+          }
+        ]
+      }
+    ],
+  },
+]
+---
+::
 
 
 
