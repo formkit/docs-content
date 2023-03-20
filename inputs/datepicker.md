@@ -456,7 +456,7 @@ It’s important that the provided function is fast and synchronous — it will
 
 When navigating the calendar pop up via keyboard, the datepicker will not allow you to select a disabled date. However this can be annoying as it can create areas of inaccessibility if some available dates are "sandwiched" between unavailable dates.
 
-To make the user experience better, the datepicker will automatically scan forward or backward (depending on the direction desired) for the next available date to select. The maximum number of days to scan for an available day is controlled by the `maxScan` prop (7 days by default).
+To make the user experience better, the datepicker will automatically scan forward or backward (depending on the direction desired) for the next available date to select. The maximum number of days to scan for an available day is controlled by the `maxScan` prop (7 days by default):
 
 #### Example: max-scan
 ::Example
