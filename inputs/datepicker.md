@@ -223,7 +223,7 @@ To use a date style as the value, simply pass the style you’d like to use to t
 
 ### Token formats
 
-Values can also be represented in any arbitrary format by using formatting tokens.
+Values can also be represented in any arbitrary format by using formatting tokens:
 
 ::Example
 ---
@@ -237,7 +237,7 @@ Values can also be represented in any arbitrary format by using formatting token
 
 Values passed to a datepicker must:
 
-1. Match the `value-format` in the current `value-locale` OR.
+1. Match the `value-format` in the current `value-locale` OR,
 2. Be a native JavaScript `Date` object.
 
 Although native `Date` objects are always accepted as valid *inputs* for a datepicker, they will be immediately transformed into the `value-format` specified.
@@ -266,7 +266,7 @@ Although native `Date` objects are always accepted as valid *inputs* for a datep
 
 ### Value locale
 
-Since the format of the value needs to be parsed using the same locale it was created with, it is recommended to always specify the `value-locale` when defining a custom `value-format`. This ensures that no matter what the locale of the user entering the date is the value will stay consistent.
+Since the format of the value needs to be parsed using the same locale it was created with, it is recommended to always specify the `value-locale` when defining a custom `value-format`. This ensures that no matter what the locale of the user entering the date is, the value will stay consistent:
 
 ::Callout
 ---
@@ -293,7 +293,7 @@ Time is a notoriously hard thing to work with in any software environment, but e
 ---
   label: 'Timezones, dates, and formats case study'
 ---
-In order to work with dates and times in JavaScript it is useful to have an initial understand of the `Date` object. The date object in JavaScript is fundamentally a a Unix timestamp (number of milliseconds since `Jan 1 1970 at 00:00:00Z`). However, it is *always* localized to the client’s time. This localization is expressed in an an offset from `UTC`. Your browser’s current time is:
+In order to work with dates and times in JavaScript, it is useful to have a basic understanding of the `Date` object. The date object in JavaScript is fundamentally a Unix timestamp (number of milliseconds since `Jan 1 1970 at 00:00:00Z`). However, it is *always* localized to the client’s time. This localization is expressed in an an offset from `UTC`. Your browser’s current time is:
 
 :CurrentTime{label="Client (browser) time"}
 
@@ -317,22 +317,22 @@ Generally speaking, there are 2 solutions to this problem:
 
 #### Option 1: Indeterminate time
 
-Use an "indeterminate" time (sometimes referred to as "wall time"). An indeterminate time is a time without a specific correlation the underlying Unix Timestamp. For example, `2pm on March 13th` is not UTC and has no explicit offset. `2pm on March 13th` describes an specific time at an indeterminate location/timezone. You can do this with format tokens like (`YYYY-MM-DD HH:mm`) as long as you do not use the offset in your value (`Z`).
+Use an "indeterminate" time (sometimes referred to as "wall time"). An indeterminate time is a time without a specific correlation the an underlying Unix Timestamp. For example, `2pm on March 13th` is not UTC and has no explicit offset. `2pm on March 13th` describes a specific time at an indeterminate location/timezone. You can do this with format tokens like (`YYYY-MM-DD HH:mm`) as long as you do not use the offset in your value (`Z`).
 
-This would work for our restaurant app as long as a backend is able to attach an appropriate timezone or offset to this indeterminate time `2023-03-13 14:00 GMT+0100` to arrive at the appropriate UTC time (what this fictitious app requires in it’s database). The remaining challenge, for a backend developer, is knowing what offset to apply to the date to ensure it becomes "Amsterdam time" (this offset varies based on the time of year due to daylight savings in `Europe/Amsterdam`).
+This would work for our restaurant app as long as a backend is able to attach an appropriate timezone or offset to this indeterminate time `2023-03-13 14:00 GMT+0100` to arrive at the appropriate UTC time (what this fictitious app requires in its database). The remaining challenge, for a backend developer, is knowing what offset to apply to the date to ensure it becomes "Amsterdam time" (this offset varies based on the time of year due to daylight savings in `Europe/Amsterdam`).
 
 #### Options 2: Using the datepicker’s `timezone` prop
 
-Alternatively, the `timezone` prop of the datepicker will perform the offset correction for you automatically. Simply state "where" the datepicker is picking time for — in our example `timezone="Europe/Amsterdam"`. The user’s experience will not change at all, but the time they select will be in the target timezone. A user in `America/New_York` (`+0400`) who selects `2pm on March 13th` in their datepicker, will yield a UTC value of `2023-03-13T13:00:00Z` which is `2pm` in Amsterdam. This allows for simple storage and hydration of your for using a `UTC` format.
+Alternatively, the `timezone` prop of the datepicker will perform the offset correction for you automatically. Simply state "where" the datepicker is picking time for — in our example `timezone="Europe/Amsterdam"`. The user’s experience will not change at all, but the time they select will be in the target timezone. A user in `America/New_York` (`+0400`) who selects `2pm on March 13th` in their datepicker, will yield a UTC value of `2023-03-13T13:00:00Z` which is `2pm` in Amsterdam. This allows for simple storage and hydration of your date using a `UTC` format.
 ::
 
 ### Indeterminate timezone
 
-By default the datepicker uses the client’s local timezone when a selection is made. The value of the output is determined by the `value-format` ([see above](#values)) — by default this is a `UTC` normalized `ISO8601` string. However, by specifying a custom format you can achieve an "indeterminate" time (also called "wall time"). This is a date and/or time with no specific correlation to a given timezone.
+By default, the datepicker uses the client’s local timezone when a selection is made. The value of the output is determined by the `value-format` ([see above](#values)) — by default this is a `UTC` normalized `ISO8601` string. However, by specifying a custom format, you can achieve an "indeterminate" time (also called "wall time"). This is a date and/or time with no specific correlation to a given timezone.
 
 For example, when you set an alarm on your phone for `8:00 AM` — that time is "indeterminate" — it has no correlation to timezone. If you live in Rome, and travel to Tokyo, your alarm will ring at `8:00 AM` in Tokyo the same as it would ring at `8:00 AM` in Rome. It’s impossible to represent a this as UTC.
 
-You can achieve indeterminate time with the datepicker by providing no timezone or offset information in your `value-format` — it is up to the interpreter of the date to add that information. The tokens in a `value-format` always output local client values — so by leaving any timezone or offset (`Z`) data out of the value it is inherently "indeterminate".
+You can achieve indeterminate time with the datepicker by providing no timezone or offset information in your `value-format` — it is up to the interpreter of the date to add that information. The tokens in a `value-format` always output local client values — so by leaving any timezone or offset (`Z`) data out of the value, it is inherently "indeterminate":
 
 ::Example
 ---
@@ -358,7 +358,7 @@ There are plenty of times where the `timezone` should *not* be used (default’s
 - Setting a reminder notification
 - Creating a calendar event
 
-In the example below, a user needs to pickup a rental car in Kolkata, India after an international flight. The user looks at their ticket — the flight arrives in Kolkata at `1:45 PM`. They’d like to pick the car up at `2:30 PM`. These facts are true no matter where in the world the user is booking the trip from. In this case we should set the timezone to `Asia/Kolkata`. The offset in Kolkata is `+5:30` — so selecting `2:30 PM` in `Kolkata` is equivalent to `09:00 AM` UTC.
+In the example below, a user needs to pickup a rental car in Kolkata, India after an international flight. The user looks at their ticket — the flight arrives in Kolkata at `1:45 PM`. They’d like to pick the car up 45 minutes later at `2:30 PM`. These facts are true no matter where in the world the user is booking the trip from. In this case, we should set the timezone to `Asia/Kolkata`. The offset in Kolkata is `+5:30` — so selecting `2:30 PM` in `Kolkata` is equivalent to `09:00 AM` UTC:
 
 ::Example
 ---
@@ -380,7 +380,7 @@ Most browsers ship with a comprehensive IANA database built into `Intl.DateTimeF
 
 It is often necessary to disable specific dates in the datepicker. There are three ways to disable dates in the datepicker:
 
-- `min-date` — a prop to control what the first available date is.
+- `min-date` - a prop to control what the first available date is.
 - `max-date` - a prop to control what the last available date is.
 - `disabled-dates` - a prop to control whether or not any arbitrary date should be disabled.
 
@@ -388,7 +388,7 @@ Any date that is disabled cannot be selected in the datepicker’s pop up, howev
 
 ### Min date
 
-Often it is necessary to disable dates that are prior to a particular date. For example, booking a hotel room should only happen for dates in the future. To do this, use the `min-date` prop with either an `ISO8601` compatible string, or, a native `Date` object.
+Often it is necessary to disable dates that are prior to a particular date. For example, booking a hotel room should only happen for dates in the future. To do this, use the `min-date` prop with either an `ISO8601` compatible string or a native `Date` object:
 
 ::Example
 ---
@@ -400,7 +400,7 @@ Often it is necessary to disable dates that are prior to a particular date. For 
 
 ### Max date
 
-To all dates after a given date, use the `max-date` prop. For example, a birthday selector should only allow past dates. To do this, use the `max-date` prop with either an `ISO8601` compatible string, or, a native `Date` object.
+To disable all dates after a given date, use the `max-date` prop. For example, a birthday selector should only allow past dates. To do this, use the `max-date` prop with either an `ISO8601` compatible string or a native `Date` object:
 
 ::Example
 ---

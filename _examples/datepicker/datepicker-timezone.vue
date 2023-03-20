@@ -10,7 +10,7 @@ async function reserve(_data, node) {
 <template>
   <FormKit type="form" v-model="value" @submit="reserve">
     <!-- %partial%::html:: -->
-    <h3>Car reservation (CCU airport)</h3>
+    <h3>Car reservation (CCU Kolkata airport)</h3>
     <div class="rental-car-card" />
     <FormKit
       type="datepicker"
