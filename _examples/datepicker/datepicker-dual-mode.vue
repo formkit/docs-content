@@ -5,7 +5,7 @@
       name="date"
       label="Meeting date"
       :format="{ date: 'short' }"
-      help="What date should we schedule the meeting."
+      help="What date should we schedule the meeting?"
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

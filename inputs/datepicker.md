@@ -1,9 +1,9 @@
 ---
-title: Date Picker Input
+title: Datepicker Input
 description: A Pro input that allows users to select a date via pop up calendar or typing the date in using their preferred localization.
 ---
 
-:InputPageHero{title="Date Picker"}
+:InputPageHero{title="Datepicker"}
 
 :PageToc
 
@@ -11,7 +11,7 @@ description: A Pro input that allows users to select a date via pop up calendar 
 
 ## Basic example
 
-The `datepicker` input allows users to select a date from a customizable calendar, and type the date directly into the input with full internationalization support.
+The `datepicker` input allows users to select a date from a customizable calendar, and type the date directly into the input with full internationalization support:
 
 ::Example
 ---
@@ -26,9 +26,8 @@ The `datepicker` input allows users to select a date from a customizable calenda
 FormKit uses a unique masking solution to allow users to type dates into the datepicker input (while limiting the available options to only valid values) or select their date via a calendar input.
 ### Dual entry
 
-By default users can click or tab into any of the "parts" of the displayed date (month, date year etc) in the text input and type their desired value. Matching values will be displayed with automatic completion. In addition to typing the value of each segment of the date, users can hit the up arrow/down arrow keys to cycle through available options for each segment.
-
-By clicking the "calendar" icon to the right of the input, users can also display a calendar popup to select their date visually.
+- **Text entry** - By default, users can click or tab into any of the "parts" of the displayed date (month, date, year, etc.) in the text input and type their desired value. Matching values will be displayed with automatic completion. In addition to typing, users can hit the up/down arrow keys to cycle through available options for each segment.
+- **Picker entry** - By clicking the "calendar" icon to the right of the input, users can also display a calendar popup to select their date visually:
 
 ::Example
 ---
@@ -41,14 +40,14 @@ By clicking the "calendar" icon to the right of the input, users can also displa
 ::Callout
 ---
   type: tip
-  label: Overlay mode
+  label: Placeholder
 ---
-When using dual entry mode you must enable the `overlay` to show a placeholder. This is not necessary with `picker-only` enabled.
+To show a placeholder when in dual entry mode, you must enable the `overlay`. This is not necessary with `picker-only` enabled.
 ::
 
 ### Picker only
 
-At times it may be desirable to disable the text-entry mechanism all together and ensure someone uses the date picker dialog to enter their date. This can be enabled by adding a `picker-only` prop. In `picker-only` mode clicking on the input will open the dialog immediately. Additionally using an `overlay` is not required for placeholder support.
+You can disable the text-entry mechanism and ensure someone uses the datepicker dialog to enter their date by adding the `picker-only` prop. In `picker-only` mode, clicking on the input will open the dialog immediately. Additionally, using an `overlay` is not required for placeholder support:
 
 ::Example
 ---
@@ -60,13 +59,13 @@ At times it may be desirable to disable the text-entry mechanism all together an
 
 ## Date format
 
-The date picker supports `Intl.DateTimeFormat` "styled dates", as well as token based date formats. To change the format displayed to the user, modify the `format` prop.
+The datepicker supports [`Intl.DateTimeFormat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) "styled dates", as well as token-based date formats. To change the format displayed to the user, modify the `format` prop.
 
 ### Styled formats
 
-If your audience is international, you should consider sticking with "styled dates" since they are the most natural date formats in each locale. The default format for a date picker is `long`.
+If your audience is international, you should consider sticking with "[styled dates](#date-styles)" since they are the most natural date formats in each locale. The default format for a datepicker is `long`.
 
-The `format` prop can accept a simple string like `long` or `medium` in which case it uses the corresponding `Intl.DateTimeFormat` `dateStyle`. Alternatively you can provide an object with `date` and `time` properties and their respective `Intl.DateTimeFormat` styles (`{ date: 'long', time: 'short' }`).
+The `format` prop can accept a simple string like `long` or `medium`, in which case it uses the corresponding `Intl.DateTimeFormat` `dateStyle`. Alternatively, you can provide an object with `date` and `time` properties and their respective `Intl.DateTimeFormat` styles (`{ date: 'long', time: 'short' }`).
 
 
 ::Example
@@ -79,7 +78,7 @@ The `format` prop can accept a simple string like `long` or `medium` in which ca
 
 #### Date styles
 
-Enable any of the following date styles by assigning the `format` prop
+Enable any of the following date styles with the `format` prop:
 
 Format Style | Examples
 -------|------------
@@ -100,7 +99,7 @@ short | `7:05 PM`, `19:05`
 
 You can use the `format` prop to explicitly set a tokenized date format. A token format is represented by a string with any arbitrary characters and one or more of the strings in the table below.
 
-FormKit interfaces with the `Intl.DateTimeFormat` to automatically internationalize tokens based on the current `locale`. For example, the token `MMMM` for `2000-01-01` would produce `January` for the `en` locale but would produce `一月` for the `zh` locale.
+FormKit interfaces with the [`Intl.DateTimeFormat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) to automatically internationalize tokens based on the current `locale`. For example, the token `MMMM` for `2000-01-01` would produce `January` for the `en` locale but would produce `一月` for the `zh` locale.
 
 ::Callout
 ---
@@ -121,8 +120,8 @@ Token    | Examples                | Description
 `D`      | `1`, `9`, `22`          | The day of the month 1-31
 `DD`     | `01`, `09`, `22`        | The day of the month 01-31
 `d`      | `M`, `T`, `W`, `T`, `F`, `S`, `S` | Single digit day "T"
-`ddd`    | `Thu`, `Sat`            | Short day name Thu
-`dddd`   | `Monday`, `Tuesday`     | Full day name Wednesday
+`ddd`    | `Thu`, `Sat`            | Short day name "Thu"
+`dddd`   | `Monday`, `Tuesday`     | Full day name "Wednesday"
 `H`      | `0`, `13`, `23`         | Minimum hour digits, 24 hour, 0-23
 `HH`     | `00`, `13`, `23`        | 2 hour digits, 24 hour, 00-23
 `h`      | `12`, `1`, `11`         | Minimum hour digits, 12 hour clock, 1-12
@@ -151,7 +150,9 @@ Although FormKit will internationalize your tokens automatically — if your for
 ---
 ::
 
-To include letters in the your format that are themselves tokens (like `a`) you can escape those tokens with a backslash `\` before the character.
+#### Escaping tokens
+
+To include letters in the your format that are themselves tokens (like `a`), you can escape those tokens with a backslash `\` before the character:
 
 ::Example
 ---
@@ -165,14 +166,14 @@ To include letters in the your format that are themselves tokens (like `a`) you 
 
 The datepicker’s calendar popup has four "panels":
 
-- `day` — Shows a traditional calendar view of a month which each day selectable.
+- `day` — Shows a traditional calendar view of a month with each day selectable.
 - `month` — Shows the 12 months of the year.
-- `year` — Shows a decade or years at a time.
+- `year` — Shows a decade of years at a time.
 - `time` — Shows the time of day.
 
 When a user opens the datepicker’s popup, they will be shown one or more of these panels. You can modify which panels are displayed to the user and the sequence those panels should be displayed in by providing a `sequence` prop. The default `sequence` value is `['day']` (which allows you to navigate to the `month` and `year` panels).
 
-For example, when selecting a birthday it is natural to first select the birth year, then the month, then the day. The `sequence` prop allows this behavior.
+For example, when selecting a birthday, it is natural to first select the birth year, then the month, then the day. The `sequence` prop allows this behavior:
 
 ::Example
 ---
@@ -184,7 +185,7 @@ For example, when selecting a birthday it is natural to first select the birth y
 
 ### Selecting time
 
-The `time` panel can be used to allow a user to select a specific time of day. If you choose a `format` that includes time (like `YYYY-MM-DD HH:mm`) — you’ll likely want to include `time` panel to your sequence.
+The `time` panel can be used to allow a user to select a specific time of day. If you choose a `format` that includes time (like `YYYY-MM-DD HH:mm`), you’ll likely want to include `time` panel to your sequence:
 
 ::Example
 ---
@@ -196,9 +197,9 @@ The `time` panel can be used to allow a user to select a specific time of day. I
 
 ## Values
 
-Like all inputs, the `value` of the datepicker is both what is produced by the datepicker, and what is read back into the datepicker for hydration. By default the format of the value is a UTC normalized [ISO8601](https://www.w3.org/TR/NOTE-datetime) string (example: `2014-11-27T03:59:00.000Z`). However, this format can be changed to any of the supported date style or a token formats [listed above](#date-format) by using the `value-format` prop.
+Like all inputs, the `value` of the datepicker is both what is produced by the datepicker, and what is read back into the datepicker for hydration. By default, the format of the value is a UTC-normalized [ISO8601](https://www.w3.org/TR/NOTE-datetime) string (example: `2014-11-27T03:59:00.000Z`). However, this format can be changed to any of the supported date style or a token formats [listed above](#date-format) by using the `value-format` prop.
 
-A valid question is why not always use `ISO8601`? Although it’s the most popular way to work with dates — it’s machine readable and human readable — it’s not *very* human readable. For example, if your form sends a contact request email to an catering business then `ISO8601` would likely not be the best choice.
+A valid question is why not always use `ISO8601`? Although it’s the most popular way to work with dates — it’s machine *and* human readable — it’s not *very* human readable. For example, if your form sends a contact request email to a catering business, then `ISO8601` would likely not be the best choice.
 
 ::Callout
 ---
@@ -210,7 +211,7 @@ The value format must contain all the necessary data to re-constitute a date obj
 
 ### Date styles
 
-To use a date style as the value, simply pass the style you’d like to use to the `value-format` prop.
+To use a date style as the value, simply pass the style you’d like to use to the `value-format` prop:
 
 ::Example
 ---
