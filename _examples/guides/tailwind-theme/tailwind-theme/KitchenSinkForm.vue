@@ -1,5 +1,6 @@
 <script setup>
 import Autocomplete from './Autocomplete.vue'
+import Datepicker from './Datepicker.vue'
 import Dropdown from './Dropdown.vue'
 import Mask from './Mask.vue'
 import Rating from './Rating.vue'
@@ -41,67 +42,40 @@ const inputOptions = {
 </script>
 
 <template>
-  <FormKit 
-    type="form"
-    :actions="false"
-  >
+  <FormKit type="form" :actions="false">
     <h2>Native Inputs</h2>
-    <template 
-      v-for="inputType in inputTypes"
-      :key="inputType"
-    >
+    <template v-for="inputType in inputTypes" :key="inputType">
       <template v-if="inputType === 'repeater'">
-        <FormKit
-          id="repeater"
-          label="TailwindRepeater input"
-          :type="inputType"
-          help="Help text for the Repeater input"
-          :add-label="inputType === 'repeater' ? 'Add Person' : null"
-        >
-          <FormKit
-            type="text"
-            name="name"
-            label="Name"
-          />
+        <FormKit id="repeater" label="TailwindRepeater input" :type="inputType" help="Help text for the Repeater input"
+          :add-label="inputType === 'repeater' ? 'Add Person' : null">
+          <FormKit type="text" name="name" label="Name" />
         </FormKit>
       </template>
       <template v-else>
         <template v-if="Array.isArray(inputOptions[inputType])">
           <template v-if="inputType.split('_')[1]">
-            <FormKit
-              :label="'Tailwind ' + inputType + ' input'"
-              :type="inputType.split('_')[0]"
-              :placeholder="inputType + ' input placeholder'"
-              :options="inputOptions[inputType]"
+            <FormKit :label="'Tailwind ' + inputType + ' input'" :type="inputType.split('_')[0]"
+              :placeholder="inputType + ' input placeholder'" :options="inputOptions[inputType]"
               :help="'Help text for the ' + inputType + ' input'"
-              :add-label="inputType === 'repeater' ? 'Add Person' : null"
-              multiple="true"
-            />
+              :add-label="inputType === 'repeater' ? 'Add Person' : null" multiple="true" />
           </template>
           <template v-else>
-            <FormKit
-              :label="'Tailwind ' + inputType + ' input'"
-              :type="inputType.split('_')[0]"
-              :placeholder="inputType + ' input placeholder'"
-              :options="inputOptions[inputType]"
-              :help="'Help text for the ' + inputType + ' input'"
-            />
+            <FormKit :label="'Tailwind ' + inputType + ' input'" :type="inputType.split('_')[0]"
+              :placeholder="inputType + ' input placeholder'" :options="inputOptions[inputType]"
+              :help="'Help text for the ' + inputType + ' input'" />
           </template>
         </template>
         <template v-else>
-          <FormKit
-            :label="'Tailwind ' + inputType + ' input'"
-            :type="inputType.split('_')[0]"
-            :placeholder="inputType + ' input placeholder'"
-            :help="'Help text for the ' + inputType + ' input'"
+          <FormKit :label="'Tailwind ' + inputType + ' input'" :type="inputType.split('_')[0]"
+            :placeholder="inputType + ' input placeholder'" :help="'Help text for the ' + inputType + ' input'"
             :add-label="inputType === 'repeater' ? 'Add Person' : null"
-            :multiple="inputType.split('_')[1] === 'multiple'"
-          />
+            :multiple="inputType.split('_')[1] === 'multiple'" />
         </template>
       </template>
     </template>
 
-    <Autocomplete /> 
+    <Autocomplete />
+    <Datepicker />
     <Dropdown />
     <Mask />
     <Rating />
