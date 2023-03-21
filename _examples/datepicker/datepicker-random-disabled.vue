@@ -14,7 +14,7 @@ function disabledDays(node, date) {
   // Re-implement min-date and max-date
   if (node.props.minDate && date < node.props.minDate) return true
   if (node.props.maxDate && date > node.props.maxDate) return true
-  // If the date is a weekend, disable it.
+
   for (const [start, end] of unavailableDates) {
     if (date >= start && date <= end) return true
   }
@@ -35,6 +35,27 @@ function disabledDays(node, date) {
     :disabled-days="disabledDays"
     picker-only
   >
-    <template #day> </template>
+    <template #day="{ classes, day, fns, minDate, maxDate }">
+      <div :class="classes.day">
+        {{ day.getDate()}}
+        <div v-if="fns.isDisabled(day) && day > minDate && day < maxDate" class="disabled-indicator"></div>
+      </div>
+    </template>
   </FormKit>
 </template>
+
+<style scoped>
+.formkit-day {
+  position: relative;
+}
+.disabled-indicator {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: red;
+  position:absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+</style>

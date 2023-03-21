@@ -669,20 +669,7 @@ schema: [
 ### Overlay
 
 This section is located inside the `inner` section when the `overlay` prop is added.
-<!-- 
-        panelWrapper(
-          panelHeader(
-            prev(prevLabel('$ui.prev.value'), icon('prev')),
-            yearsHeader('$decade'),
-            monthsHeader(yearButton()),
-            daysHeader(monthButton(), yearButton()),
-            timeHeader(monthButton(), dayButton(), yearButton()),
-            next(nextLabel('$ui.next.value'), icon('next'))
-          ),
-          panel(
-            years(year('$fns.format($year, $yearFormat)')),
-          ),
-        ), -->
+
 ::FormKitInputDiagram
 ---
 hide-on-small: true
