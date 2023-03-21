@@ -40,9 +40,9 @@ FormKit uses a unique masking solution to allow users to type dates into the dat
 ::Callout
 ---
   type: tip
-  label: Placeholder
+  label: Placeholder & Overlay
 ---
-To show a placeholder when in dual entry mode, you must enable the `overlay`. This is not necessary with `picker-only` enabled.
+To show a placeholder when in dual entry mode, you must enable the mask `overlay`. This is not necessary with `picker-only` enabled. Learn more about [masks and overlays here](/inputs/mask#overlay-colorizing-a-mask).
 ::
 
 ### Picker only
