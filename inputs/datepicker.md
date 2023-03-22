@@ -11,7 +11,16 @@ description: A Pro input that allows users to select a date via pop up calendar 
 
 ## Basic example
 
-The `datepicker` input allows users to select a date from a customizable calendar, and type the date directly into the input with full internationalization support:
+The `datepicker` input allows users to select a date from a customizable calendar, and type the date directly into the input with full internationalization support.
+
+::VideoCard
+---
+title: "Datepicker Overview"
+poster: "https://cdn.formk.it/web-assets/Datepicker_thumbnail.jpg"
+watch-time: "5 mins"
+youtube-id: "c-P-DUZeU1U"
+---
+::
 
 ::Example
 ---
