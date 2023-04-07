@@ -1,4 +1,4 @@
-import { arrowDown, arrowUp, check, circle, close, down, fileDoc, spinner, star, trash, } from "@formkit/icons"
+import { arrowDown, arrowUp, check, circle, close, down, fileDoc, spinner, star, trash, date, left, right, } from "@formkit/icons"
 import { generateClasses } from '@formkit/themes'
 import theme from './theme.js'
 
@@ -7,7 +7,7 @@ const config = {
     // pass our theme object to generateClasses
     classes: generateClasses(theme)
   },
-  icons: { 
+  icons: {
     // include supporting icons from @formkit/icons
     arrowDown,
     arrowUp,
@@ -21,6 +21,9 @@ const config = {
     spinner,
     star,
     trash,
+    date,
+    left,
+    right,
   }
 }
 

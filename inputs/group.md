@@ -42,7 +42,7 @@ Even though a `group` can have validation rules and input errors, it does not in
 type: "tip"
 label: "Configuration"
 ---
-Further documentation on the <code>FormKitMessages</code> component can be found on the <a href="/inputs/forms#moving-validation-and-error-messages">form documentation page</a>.
+Further documentation on the <code>FormKitMessages</code> component can be found on the <a href="/inputs/form#moving-validation-and-error-messages">form documentation page</a>.
 ::
 
 ## Props & Attributes

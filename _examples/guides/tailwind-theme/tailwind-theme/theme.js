@@ -50,6 +50,10 @@ export default {
     inner: 'flex items-center max-w-md ring-1 ring-gray-400 focus-within:ring-blue-500 focus-within:ring-2 [&>label:first-child]:focus-within:text-blue-500 rounded mb-1',
     input: 'w-full px-3 py-2 border-none text-base text-gray-700 placeholder-gray-400',
   },
+  'family:date': {
+    inner: 'flex items-center max-w-md ring-1 ring-gray-400 focus-within:ring-blue-500 focus-within:ring-2 [&>label:first-child]:focus-within:text-blue-500 rounded mb-1',
+    input: 'w-full px-3 py-2 border-none text-gray-700 placeholder-gray-400',
+  },
 
   // Specific styles apply only to a given input type
   color: {
@@ -97,6 +101,64 @@ export default {
     option: 'grow text-ellipsis',
     selection: 'static flex left-0 top-0 right-0 bottom-0 mt-0 mb-2 rounded bg-gray-100',
   },
+  datepicker: {
+    inner: 'relative',
+    panelWrapper: 'absolute top-[calc(100%_+_0.5em)] drop-shadow-[0_0_1.25em_rgba(0,0,0,.25)] rounded-md p-5 bg-white z-10',
+    panelHeader: 'grid grid-cols-[2.5em_1fr_2.5em] justify-center items-center border-b-2 mb-4 pb-4',
+    input: 'selection:bg-blue-400',
+    monthsHeader: 'flex items-center justify-center col-start-2 col-end-2',
+    timeHeader: 'flex items-center justify-center col-start-2 col-end-2',
+    overlayPlaceholder: 'text-gray-400',
+    months: 'flex flex-wrap',
+    month: `
+      flex items-center justify-center
+      w-[calc(33%_-_1em)] m-2 p-2 rounded-md
+      bg-gray-200
+      aria-selected:bg-blue-500 aria-selected:text-white
+      focus:outline focus:outline-2 focus:outline-blue-500 focus:outline-offset-2 focus:bg-white focus:text-black
+      data-[is-extra=true]:opacity-25
+      formkit-disabled:opacity-50 formkit-disabled:cursor-default formkit-disabled:pointer-events-none
+    `,
+    yearsHeader: 'flex items-center justify-center col-start-2 col-end-2',
+    years: 'flex flex-wrap max-w-[35em]',
+    year: `
+      flex items-center justify-center
+      w-[calc(20%_-_1em)] m-2 p-2 rounded-md
+      bg-gray-200
+      aria-selected:bg-blue-500 aria-selected:text-white
+      focus:outline focus:outline-2 focus:outline-blue-500 focus:outline-offset-2 focus:bg-white focus:text-black
+      data-[is-extra=true]:opacity-25
+      formkit-disabled:opacity-50 formkit-disabled:cursor-default formkit-disabled:pointer-events-none
+    `,
+    weekDays: 'flex',
+    weekDay: 'flex w-[2.25em] h-[1em] m-1 items-center justify-center rounded-md font-medium lowercase',
+    week: 'flex formkit-disabled:opacity-50 formkit-disabled:cursor-default formkit-disabled:pointer-events-none',
+    day: `
+      flex items-center justify-center
+      w-[2.25em] h-[2.25em] m-1 p-2 rounded-md
+      bg-gray-200
+      aria-selected:bg-blue-500 aria-selected:text-white
+      focus:outline focus:outline-2 focus:outline-blue-500 focus:outline-offset-2 focus:bg-white focus:text-black
+      data-[is-extra=true]:opacity-25
+      formkit-disabled:opacity-50 formkit-disabled:cursor-default formkit-disabled:pointer-events-none
+    `,
+    timeInput: 'w-full border-2 border-gray-300 rounded-md p-2 my-[2em] focus-visible:outline-blue-500',
+    daysHeader: 'flex items-center justify-center',
+    prev: 'mr-auto px-3 py-1 hover:bg-gray-100 hover:rounded-lg col-start-1 col-end-1',
+    prevLabel: 'hidden',
+    prevIcon: 'flex w-3 select-none [&>svg]:w-full',
+    dayButton: 'appearance-none cursor-pointer px-3 py-1 border-2 rounded-lg mx-1 hover:border-blue-500',
+    monthButton: 'appearance-none cursor-pointer px-3 py-1 border-2 rounded-lg mx-1 hover:border-blue-500',
+    yearButton: 'appearance-none cursor-pointer px-3 py-1 border-2 rounded-lg mx-1 hover:border-blue-500',
+    next: 'ml-auto px-3 py-1 hover:bg-gray-100 hover:rounded col-start-3 col-end-3',
+    nextLabel: 'hidden',
+    nextIcon: 'flex w-3 select-none [&>svg]:w-full',
+    openButton: `
+      appearance-none border-0 bg-transparent flex p-0 self-stretch cursor-pointer
+      focus-visible:outline-none focus-visible:text-white focus-visible:bg-blue-500
+    `,
+    calendarIcon: 'flex w-8 grow-0 shrink-0 self-stretch select-none [&>svg]:w-full [&>svg]:m-auto [&>svg]:max-h-[1em] [&>svg]:max-w-[1em]',
+  },
   mask: {
     inner: 'flex items-center max-w-md ring-1 ring-gray-400 focus-within:ring-blue-500 focus-within:ring-2 [&>label:first-child]:focus-within:text-blue-500 rounded mb-1',
     input: 'w-full px-3 py-2 border-none text-base text-gray-700 placeholder-gray-400',
@@ -140,5 +202,40 @@ export default {
     track: 'p-0.5 min-w-[3em] relative rounded-full transition-all bg-gray-400 peer-checked:bg-blue-500 peer-checked:[&>div:last-child]:left-full peer-checked:[&>div:last-child]:-translate-x-full peer-checked:[&>div:first-child:not(:last-child)]:left-0 peer-checked:[&>div:first-child:not(:last-child)]:translate-x-0',
     valueLabel: 'font-bold text-sm',
     wrapper: 'flex flex-wrap items-center mb-1'
+  },
+  transferlist: {
+    outer: `
+      [&_.dnd-placeholder]:bg-blue-500 [&_.dnd-placeholder]:text-white
+      [&_.dnd-placeholder_svg]:text-white
+      [&_.dnd-children-hidden]:w-full [&_.dnd-children-hidden]:p-0 [&_.dnd-children-hidden]:flex [&_.dnd-children-hidden]:flex-col [&_.dnd-children-hidden]:border-none
+      [&_.dnd-children-hidden_span]:hidden
+      [&_.dnd-children-hidden_.formkit-transferlist-option]:hidden
+      [&_.dnd-multiple-selections_span]:inline-block
+      [&_.dnd-multiple-selections_.formkit-transferlist-option]:inline-block
+    `,
+    fieldset: '$reset max-w-2xl',
+    wrapper: 'flex max-h-[350px] flex-col sm:flex-row justify-between w-full max-w-none',
+    help: 'pb-2',
+    transferlist: 'sm:w-3/5 shadow-md flex flex-col min-h-[350px] max-h-[350px] border rounded overflow-hidden select-none bg-gray-50',
+    transferlistHeader: 'flex bg-gray-100 justify-between items-center border-b p-3',
+    transferlistHeaderItemCount: 'ml-auto text-sm',
+    transferlistListItems: 'list-none bg-gray-50 h-full sm:max-w-xs overflow-x-hidden overflow-y-auto',
+    transferlistListItem: 'pl-8 relative aria-selected:bg-blue-600 aria-selected:data-[is-active=true]:bg-blue-600 aria-selected:text-white aria-selected:data-[is-active=true]:text-white first:-mt-px first:border-t py-2 px-3 flex relative border-b bg-white data-[is-active=true]:text-blue-500 data-[is-active=true]:bg-gray-100 cursor-pointer group-data-[is-max=true]:cursor-not-allowed items-center',
+    transferlistOption: 'text-sm',
+    transferControls: 'flex sm:flex-col justify-center mx-auto my-2 sm:mx-2 sm:my-auto border rounded',
+    transferlistButton: 'text-sm disabled:cursor-not-allowed disabled:bg-gray-200 disabled:opacity-50 first:rounded-l last:rounded-r sm:first:rounded-t sm:last:rounded-b appearance-none p-2 m-0 cursor-pointer h-10 border-none rounded-none bg-gray-50 hover:outline disabled:hover:outline-none hover:outline-1 hover:outline-black hover:text-blue-500 disabled:hover:text-current hover:z-10',
+    sourceEmptyMessage: 'appearance-none border-none w-full p-0 m-0 text-center text-gray-500 italic',
+    sourceListItems: 'group-data-[is-max=true]:opacity-50',
+    targetEmptyMessage: 'appearance-none border-none w-full p-0 m-0 text-center text-gray-500 italic',
+    emptyMessageInner: 'flex items-center justify-center p-2 text-sm',
+    transferlistControls: 'bg-white px-3 py-2 border-b',
+    transferlistSearch: 'flex border rounded items-center',
+    transferlistSearchInput: 'border-none p-1 w-full bg-transparent outline-none text-sm',
+    controlLabel: 'hidden',
+    selectedIcon: 'w-3 absolute left-3 select-none',
+    fastForwardIcon: 'w-10 flex select-none [&>svg]:m-auto [&>svg]:w-full [&>svg]:max-w-[1rem] [&>svg]:max-h-[1rem] rotate-90 sm:rotate-0',
+    moveRightIcon: 'w-10 flex select-none [&>svg]:m-auto [&>svg]:w-full [&>svg]:max-w-[1rem] [&>svg]:max-h-[1rem] rotate-90 sm:rotate-0',
+    moveLeftIcon: 'w-10 flex select-none [&>svg]:m-auto [&>svg]:w-full [&>svg]:max-w-[1rem] [&>svg]:max-h-[1rem] rotate-90 sm:rotate-0',
+    rewindIcon: 'w-10 flex select-none [&>svg]:m-auto [&>svg]:w-full [&>svg]:max-w-[1rem] [&>svg]:max-h-[1rem] rotate-90 sm:rotate-0',
   }
 }

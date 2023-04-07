@@ -59,7 +59,7 @@ Validation rules are always computed in realtime — meaning a given field will 
 | ---------- | ---------------------------------------------------------------------- |
 | blur       | _(Default)_ Errors are shown after a user removes focus from an input. |
 | live       | Errors are always visible.                                             |
-| dirty      | Errors are shown after a user modifies the value of an input.          |
+| dirty      | Errors are shown after a user modifies the value of an input.           |
 | submit     | Errors are shown only after a user attempts to submit a form.          |
 
 ::Callout
