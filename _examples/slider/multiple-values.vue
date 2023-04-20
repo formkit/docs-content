@@ -10,7 +10,7 @@
       max="500"
       help="I now render two control handles"
     />
-    <pre wrap>{{ value.slider }}</pre>
     <!-- %partial%::html:: -->
+    <pre wrap>{{ value.slider }}</pre>
   </FormKit>
 </template>
