@@ -5,6 +5,14 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 0.17.0 (Beta 17)
+
+### TBD
+
+#### 🐛 Bugfixes
+- The `range` icon in `@formkit/icons` has been updated to only show one control handle since HTML range inputs do not support multiple values. The old multi-handle icon has been repurposed for the new `slider` FormKit Pro input.
+
+
 ## 0.16.0 (Beta 16)
 
 ### March 14, 2023
