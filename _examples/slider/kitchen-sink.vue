@@ -13,7 +13,7 @@ const chartData = Array(100)
     type="slider"
     label="Choose your price range"
     :value="[800, 1200]"
-    :tooltip-format="(v) => `$${v}`"
+    :tooltip-format="(v) => `&dollar;${v}`"
     :tooltip="true"
     :min="0"
     :max="2000"
