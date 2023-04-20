@@ -30,11 +30,11 @@ const chartData = Array(100)
       label: 'Maximum',
     }"
     :marks="[
-      { value: 0, label: '$0' },
-      { value: 500, label: '$500' },
-      { value: 1000, label: '$1000' },
-      { value: 1500, label: '$1500' },
-      { value: 2000, label: '$2000' },
+      { at: 0, label: '$0' },
+      { at: 500, label: '$500' },
+      { at: 1000, label: '$1000' },
+      { at: 1500, label: '$1500' },
+      { at: 2000, label: '$2000' },
     ]"
     :mark-labels="true"
     :chart="chartData"
