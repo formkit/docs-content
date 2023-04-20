@@ -178,7 +178,7 @@ You can render a bar chart above the slider with arbitrary values by suppling an
 - `at`: The position (value) on the track where the bar for the chart should render.
 - `value`: A numeric value that will be used to calculate the relative height of the bar in the chart.
 
-The `slider` input will iterate over you `chart` array and determive the largest `value` contained in the array, and then divide all other values by that largest value to determive the relative heights for rendering the bars of the chart.
+The `slider` input will iterate over you `chart` array and determine the largest `value` contained in the array, and then divide all other values by that largest value to determine the relative heights for rendering the bars of the chart.
 
 ::Example
 ---
