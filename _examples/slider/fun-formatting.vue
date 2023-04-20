@@ -1,6 +1,6 @@
 <script setup>
 function emotionClass(node) {
-  const value = node.value
+  const value = node._value
   if (value < 25) {
     return 'red'
   } else if (value < 50) {
@@ -22,9 +22,7 @@ function emotionClass(node) {
     label="About how large should the spacing be?"
     help="This is a rough estimate."
     :value="[25, 75]"
-    :tooltip-format="
-      (value, handle) => (handle === 'min' ? '👉' : '👈')
-    "
+    :tooltip-format="(value, handle) => (handle === 'min' ? '👉' : '👈')"
     tooltip-class="large"
   />
 
