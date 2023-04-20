@@ -51,7 +51,7 @@ Whenever you have a handle focused on a `slider` input you can type a value on y
 
 ## Multi-value
 
-To render two value handles on a `slider` input supply an array as the input's value. Control handles can be dragged through eachother and your resulting array value will always be returned sorted in order from smallest to largest.
+To render two value handles on a `slider` input supply an array as the input's value. Control handles can be dragged through each other and your resulting array value will always be returned sorted in order from smallest to largest.
 
 ::Example
 ---
@@ -126,7 +126,7 @@ file: "_content/_examples/slider/linked-input-attrs.vue"
 
 ### Basic usage
 
-The `slider` input supports the rendering of marks on the input's track. The behaviour works as follows. By setting the `marks` property to `true` marks will be rendered at every `steps` interval. 
+The `slider` input supports the rendering of marks on the input's track. By setting the `marks` property to `true` marks will be rendered at every `steps` interval. 
 
 ::Example
 ---
@@ -148,7 +148,7 @@ file: "_content/_examples/slider/mark-labels.vue"
 
 ### Custom marks
 
-By suppling an array of objects to the `marks` prop instead of a boolean you can place arbirtary marks on the slider's track. Mark objects shold have the folloing properties: 
+By supplying an array of objects to the `marks` prop instead of a boolean you can place arbirtary marks on the slider's track. Mark objects shold have the folloing properties: 
 
 - `at`: The position (value) on the track where the mark should render.
 - `label`: The label to render for the mark if the `mark-labels` prop is enabled.
