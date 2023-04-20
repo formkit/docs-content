@@ -107,7 +107,7 @@ file: "_content/_examples/slider/linked-inputs.vue"
 ---
 ::
 
-### linked input attributes
+### Linked input attributes
 
 The linked `number` inputs are FormKit inputs. You can apply props to them using the provided props:
 
