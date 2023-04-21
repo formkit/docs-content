@@ -30,7 +30,7 @@ Community involvement and contributions are one of the most important aspects of
 
 ### Silver sponsors
 
-<a class="no-underline" href="https://peakcrypto.com/">
+<a class="no-underline" href="https://www.peakcrypto.com/">
     <img
         class="docs-partner"
         src="https://cdn.formk.it/web-assets/sponsors/peak-crypto.svg"
