@@ -163,6 +163,7 @@ The currently provided variants are:
 
 - `formkit-disabled:`
 - `formkit-invalid:`
+- `formkit-checked:`
 - `formkit-errors:`
 - `formkit-complete:`
 - `formkit-loading:`
