@@ -7,6 +7,8 @@ description: An input that formats text to a given pattern as a user types.
 
 :PageToc
 
+:ProInstallSnippet
+
 ## Introduction
 
 The `mask` input automatically transforms user input to match a provided format. Used appropriately, mask inputs can provide an improved user experience by removing any ambiguity for the desired value (for example a phone number or social security number).
