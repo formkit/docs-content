@@ -1,5 +1,5 @@
 ---
-title: Save to LocalStorace
+title: Save to LocalStorage
 description: Save unsubmitted user form input to localStorage to prevent data loss.
 ---
 
