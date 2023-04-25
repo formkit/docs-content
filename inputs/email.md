@@ -9,6 +9,15 @@ description: A native HTML email input.
 
 The `email` input uses HTML's [native email input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email).
 
+::Callout
+---
+type: "tip"
+label: "Pro Alternative"
+---
+Need more flexibility than the native HTML `email` input provides? <a href="/inputs/mask">Check out the `mask` input</a> available in FormKit Pro.
+::
+
+
 ## An example
 
 ::Example

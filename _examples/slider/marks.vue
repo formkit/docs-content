@@ -6,7 +6,7 @@
     help="By default, marks are rendered at every step interval."
     value="50"
     step="10"
-    :marks="true"
+    marks
   />
   <!-- %partial%::html:: -->
 </template>

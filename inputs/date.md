@@ -9,6 +9,14 @@ description: A native HTML date picker.
 
 The `date` input uses HTML's [native date picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date) to allow users to easily select a date.
 
+::Callout
+---
+type: "tip"
+label: "Pro Alternative"
+---
+Need more flexibility than the native HTML `date` input provides? <a href="/inputs/datepicker">Check out the `datepicker` input</a> available in FormKit Pro.
+::
+
 ## Basic example
 
 ::Example

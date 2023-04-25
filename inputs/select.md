@@ -14,6 +14,14 @@ The select input uses HTML's [native select input](https://developer.mozilla.org
 - An array of objects with `label` and `value` properties (the same as the [checkbox](/inputs/checkbox) and [radio](/inputs/radio) inputs)
 - Using `<option>` tags directly inside the `default` slot.
 
+::Callout
+---
+type: "tip"
+label: "Pro Alternative"
+---
+Need more flexibility than the native HTML `select` input provides? <a href="/inputs/dropdown">Check out the `dropdown` input</a> available in FormKit Pro.
+::
+
 ## Single selection
 
 Select lists are most commonly used to select a single item from a list of options.

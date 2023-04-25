@@ -9,7 +9,7 @@
         return `${handle === 'min' ? 'Min' : 'Max'}: ${value}`
       }
     "
-    :tooltip="true"
+    tooltip="true"
     help="I apply custom formatting to my tooltips"
   />
   <!-- %partial%::html:: -->

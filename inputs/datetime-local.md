@@ -9,6 +9,14 @@ description: A native HTML datetime-local picker.
 
 The `datetime-local` input uses HTML's [native datetime-local picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local) to allow users to easily select a date and time based on their browser’s locale.
 
+::Callout
+---
+type: "tip"
+label: "Pro Alternative"
+---
+Need more flexibility than the native HTML `datetime-local` input provides? <a href="/inputs/datepicker">Check out the `datepicker` input</a> available in FormKit Pro.
+::
+
 ## Basic example
 
 ::Example

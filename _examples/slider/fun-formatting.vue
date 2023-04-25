@@ -30,7 +30,7 @@ function emotionClass(node) {
     type="slider"
     label="What do you think of FormKit?"
     help="be honest."
-    :value="80"
+    value="80"
     :tooltip-format="
       (value) => {
         if (value < 25) {
@@ -46,7 +46,7 @@ function emotionClass(node) {
         }
       }
     "
-    :tooltip="true"
+    tooltip="true"
     :fill-class="emotionClass"
     tooltip-class="large"
   />

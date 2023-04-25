@@ -10,8 +10,8 @@
       { at: 37, label: '37°C' },
       { at: 100, label: '100°C' },
     ]"
-    :mark-labels="true"
-    :snap-to-mark="true"
+    mark-labels
+    snap-to-marks
   />
   <!-- %partial%::html:: -->
 </template>

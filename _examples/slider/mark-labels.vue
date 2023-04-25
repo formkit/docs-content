@@ -6,8 +6,8 @@
     help="Labels can be enabled via prop."
     value="50"
     step="10"
-    :marks="true"
-    :mark-labels="true"
+    marks
+    mark-labels
   />
   <!-- %partial%::html:: -->
 </template>

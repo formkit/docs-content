@@ -522,7 +522,7 @@ layout: "auto"
 
 ### Max
 
-Checks that a <code>Number</code> is less than a maximum value. The maximum value defaults to <code>10</code>.
+Checks that a <code>Number</code> is less than or equal to a maximum value. The maximum value defaults to <code>10</code>.
 
 ::Example
 ---
@@ -532,7 +532,7 @@ layout: "auto"
 ---
 ::
 
-You can also use this rule to validate that the length of an <code>Array</code> is less than a maximum value.
+You can also use this rule to validate that the length of an <code>Array</code> is less than or equal to a maximum value.
 
 ::Example
 ---
@@ -544,7 +544,7 @@ layout: "auto"
 
 ### Min
 
-Checks that a <code>Number</code> is more than a minimum value. The minimum value defaults to <code>1</code>.
+Checks that a <code>Number</code> is greater than or equal to a minimum value. The minimum value defaults to <code>1</code>.
 
 ::Example
 ---
@@ -554,7 +554,7 @@ layout: "auto"
 ---
 ::
 
-You can also use this rule to validate that the length of an <code>Array</code> is more than a minimum value.
+You can also use this rule to validate that the length of an <code>Array</code> is more than or equal to a minimum value.
 
 ::Example
 ---
