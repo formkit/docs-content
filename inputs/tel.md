@@ -9,6 +9,15 @@ description: A native HTML tel input.
 
 The `tel` input uses HTML's [native tel input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel) and allows a user to enter a telephone number. Telephone numbers can also be entered with standard text inputs but some browsers (especially mobile ones) may improve the experience of entering telephone numbers by showing a different keypad.
 
+::Callout
+---
+type: "tip"
+label: "Pro Alternative"
+---
+Need more flexibility than the native HTML `tel` input provides? <a href="/inputs/mask">Check out the `mask` input</a> available in FormKit Pro.
+::
+
+
 ## An example
 
 ::Example

@@ -9,6 +9,15 @@ description: A native HTML range input.
 
 The `range` input uses HTML's [native range input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) to let user select a number with a graphic slider.
 
+::Callout
+---
+type: "tip"
+label: "Pro Alternative"
+---
+Need more flexibility than the native HTML `range` input provides? <a href="/inputs/slider">Check out the `slider` input</a> available in FormKit Pro.
+::
+
+
 ## Basic example
 
 ::Example
