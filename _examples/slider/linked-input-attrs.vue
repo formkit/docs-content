@@ -2,10 +2,10 @@
   <!-- %partial%::html:: -->
   <FormKit
     type="slider"
-    :max="1000"
+    max="1000"
     :value="[300, 800]"
     label="Linked input attrs"
-    :show-input="true"
+    show-input
     :input-attrs="{
       sectionsSchema: {
         prefix: {

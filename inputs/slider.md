@@ -162,11 +162,11 @@ file: "_content/_examples/slider/custom-marks.vue"
 
 ### Snap to marks
 
-When supplying custom marks you may want to force the selection to snap to the provided marks. This can be achieved with the `snap-to-mark` prop. When `snap-to-mark` is `true` keyboard events will jump to the next closest mark and entered values through keyboard or linked inputs will snap to the nearest available mark.
+When supplying custom marks you may want to force the selection to snap to the provided marks. This can be achieved with the `snap-to-marks` prop. When `snap-to-marks` is `true` keyboard events will jump to the next closest mark and entered values through keyboard or linked inputs will snap to the nearest available mark.
 
 ::Example
 ---
-name: "Custom Marks"
+name: "Snap to Marks"
 file: "_content/_examples/slider/snap-to-marks.vue"
 ---
 ::
@@ -273,7 +273,7 @@ data: [
       "Renders FormKit <code>type=\"number\"</code> input(s) that are linked to the slider's value(s)",
   },
   {
-    prop: "snap-to-mark",
+    prop: "snap-to-marks",
     type: "boolean",
     default: "false",
     description: "When enabled, forces user selection to snap to marks"

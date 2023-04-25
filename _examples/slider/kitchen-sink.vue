@@ -14,11 +14,11 @@ const chartData = Array(100)
     label="Choose your price range"
     :value="[800, 1200]"
     :tooltip-format="(v) => `&dollar;${v}`"
-    :tooltip="true"
-    :min="0"
-    :max="2000"
-    :show-input="true"
-    :step="25"
+    tooltip="true"
+    min="0"
+    max="2000"
+    show-input
+    step="25"
     :input-attrs="{
       floatingLabel: true,
       prefixIcon: 'dollar',
@@ -36,7 +36,7 @@ const chartData = Array(100)
       { at: 1500, label: '$1500' },
       { at: 2000, label: '$2000' },
     ]"
-    :mark-labels="true"
+    mark-labels
     :chart="chartData"
   />
   <!-- %partial%::html:: -->
