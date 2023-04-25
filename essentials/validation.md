@@ -426,7 +426,7 @@ layout: "auto"
 ---
 ::
 
-You can also use this rule to validate that the length of an <code>Array</code> is less than a maximum value.
+You can also use this rule to validate that the length of an <code>Array</code> is less than or equal to a maximum value.
 
 ::Example
 ---
@@ -448,7 +448,7 @@ layout: "auto"
 ---
 ::
 
-You can also use this rule to validate that the length of an <code>Array</code> is more than a minimum value.
+You can also use this rule to validate that the length of an <code>Array</code> is more than or equal to a minimum value.
 
 ::Example
 ---
