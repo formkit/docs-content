@@ -34,7 +34,7 @@ export default config
 
 ## Usage
 
-By default the floating label plugin only takes affect on a FormKit input if you set the new `floating-label` prop to `true`.
+By default the floating label plugin only takes effect on a FormKit input if you set the new `floating-label` prop to `true`.
 
 ::Example
 ---
