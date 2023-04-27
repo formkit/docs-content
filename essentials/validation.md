@@ -372,7 +372,7 @@ layout: "auto"
 
 ### Length
 
-Checks that the input’s value is over a given length, or between two length values. It works to validate arrays (like [lists](/inputs/list)), objects (like [groups](/inputs/group)), or string lengths.
+Checks that the input’s value is over a given length, or between two length values. It works to validate arrays (like [lists](/inputs/list)), objects (like [groups](/inputs/group)), or string lengths. Can be used to simulate the native `maxlength` and `minlength` as well.
 
 ::Example
 ---

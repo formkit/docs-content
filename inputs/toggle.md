@@ -11,7 +11,7 @@ description: The `toggle` input is used to choose one of two values; it is a goo
 
 ## Basic example
 
-The `toggle` input offers a choice between one of two values; it's a great option when you want the user to toggle a feature on or off:
+The `toggle` input — sometimes called a "switch" — offers a choice between one of two values; it's a great option when you want the user to toggle a feature on or off:
 
 ::Example
 ---

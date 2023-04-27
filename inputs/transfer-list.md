@@ -11,6 +11,15 @@ description: The transfer list input allows users to transfer values between two
 
 ## Introduction
 
+::VideoCard
+---
+title: "Transfer List Overview"
+poster: "https://cdn.formk.it/web-assets/transfer-list-thumbnail.png"
+watch-time: "1 min"
+youtube-id: "7sl29qqye3A"
+---
+::
+
 The transfer list input is ideal for situations where the end-user needs to select and sort multiple values from a list of options. In this example, we are allowing the end-user to select from a group of guests and move them to a VIP list:
 
 ::Example
