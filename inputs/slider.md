@@ -21,6 +21,15 @@ The `slider` input is an advanced and highly configurable version of the native 
 - Force selection to snap to tick marks.
 - Render bar chart data linked to selection values.
 
+::VideoCard
+---
+title: "Slider Overview"
+poster: "https://cdn.formk.it/web-assets/slider-thumbnail.png"
+watch-time: "7 mins"
+youtube-id: "BtY1FcpqRJk"
+---
+::
+
 ## Basic example
 
 ::Example
