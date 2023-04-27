@@ -61,7 +61,7 @@ Community involvement and contributions are one of the most important aspects of
 
 ### Backers
 
-[uscreen](https://uscreen.de), [gfenn08](https://github.com/gfenn08), [Ryan E](https://github.com/VikingDadMedic)
+[uscreen](https://uscreen.de), [gfenn08](https://github.com/gfenn08), [Ryan E](https://github.com/VikingDadMedic), [João Bondim](https://github.com/JesterIruka)
 
 ## Contribute
 
