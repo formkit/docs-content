@@ -1,7 +1,6 @@
 // formkit.config.js
 import { defaultConfig } from '@formkit/vue'
 import { createLocalStoragePlugin } from '@formkit/addons'
-import '@formkit/addons/css/floatingLabels'
 
 const config = defaultConfig({
   plugins: [
