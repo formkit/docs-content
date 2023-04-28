@@ -1,9 +1,9 @@
 ---
-title: Multi-Step Input
+title: Multi-Step Input Plugin
 description: Easily add multi-step sections to your FormKit forms.
 ---
 
-# Multi-Step Input
+# Multi-Step Input Plugin
 
 :PageToc
 
