@@ -10,8 +10,9 @@ description: What's new in the latest version of FormKit?.
 ### TBD
 
 #### 💪 New features
-- New [Save to localStorage plugin] for saving user progress in forms and protecting against lost data in the event of an unexpected event.
-- New [Auto-height textarea plugin] to create `textarea` inputs with dynamically resizing height.
+- New [Save to localStorage plugin](/plugins/local-storage) for saving user progress in forms and protecting against lost data in the event of an unexpected event.
+- New [Auto-height textarea plugin](/plugins/auto-height-textarea) to create `textarea` inputs with dynamically resizing height.
+- **Pro:** New [Slider input](/inputs/slider).
 
 #### 🐛 Bugfixes
 - The FormKit Observer will now observe changes to `node._value` in instances where you want to operate on the non-debounced input value.
