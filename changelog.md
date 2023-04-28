@@ -9,7 +9,12 @@ description: What's new in the latest version of FormKit?.
 
 ### TBD
 
+#### 💪 New features
+- New [Save to localStorage plugin] for saving user progress in forms and protecting against lost data in the event of an unexpected event.
+- New [Auto-height textarea plugin] to create `textarea` inputs with dynamically resizing height.
+
 #### 🐛 Bugfixes
+- The FormKit Observer will now observe changes to `node._value` in instances where you want to operate on the non-debounced input value.
 - The `range` icon in `@formkit/icons` has been updated to only show one control handle since HTML range inputs do not support multiple values. The old multi-handle icon has been repurposed for the new `slider` FormKit Pro input.
 
 
