@@ -9,6 +9,7 @@ const submitHandler = async function () {
 </script>
 
 <template>
+  <p><em><small>Enter partial data, then refresh the page.</small></em></p>
   <!-- %partial% -->
   <FormKit 
     type="form" 

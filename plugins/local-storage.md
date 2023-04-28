@@ -7,16 +7,20 @@ description: Save unsubmitted user form input to localStorage to prevent data lo
 
 :PageToc
 
-Using the `createLocalStoragePlugin` function from `@formkit/addons` you can easily save unsubmitted user form inputs to localStorage which will be restored on page load. This is great for preventing data loss in the event a user's browser crashes or some other unforseen issue causes your application to reload before the user can submit their data.
+Using the `createLocalStoragePlugin` function from `@formkit/addons`, you can easily save unsubmitted user form inputs to localStorage which will be restored on page load. This is great for preventing data loss in the event a user's browser crashes, tab is closed, or other unforeseen issue causes your application to reload before the user can submit their data.
 
 ## Installation
 
-To install the localStorage plugin we need to import it from `@formkit/addons`, add it our FormKit config, and then enable the plugin on our target form.
+To install the localStorage plugin, we need to:
 
-The `createLocalStoragePlugin` has two options you can configure.
+1. import it from `@formkit/addons`.
+2. Add it to our FormKit config as a plugin.
+3. Add the `use-local-storage` prop to the target form.
 
-- `prefix`: The prefix assigned to your localStoarge key. Defaults to `formkit`.
-- `maxAge`: The time (in milliseconds) that the saved localStorage should be considered valid. Defaults to 1 hour.
+The `createLocalStoragePlugin` has two options you can configure:
+
+- `prefix` - The prefix assigned to your localStorage key. Defaults to `formkit`.
+- `maxAge` - The time (in milliseconds) that the saved localStorage should be considered valid. Defaults to 1 hour.
 
 ```js
 // formkit.config.js
@@ -50,4 +54,4 @@ file: [
 ---
 ::
 
-That's It! Your form data will now be saved on every `commit` event that the `form` recieves. It will remain valid until the `maxAge` set in your plugin config, and the localStorage data is cleared when the `submit` event fires on the target form.
+That's it! Your form data will now be saved on every `commit` event that the `form` receives. It will remain valid until the `maxAge` set in your plugin config, and the localStorage data is cleared when the `submit` event fires on the target form.

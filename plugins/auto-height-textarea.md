@@ -11,7 +11,11 @@ Using the `createAutoHeightTextareaPlugin` function from `@formkit/addons` you c
 
 ## Installation
 
-To install the auto-height textarea plugin we need to import it from `@formkit/addons`, add it our FormKit config, and then enable the plugin on our target form.
+To install the auto-height textarea plugin, we need to:
+
+1. import it from `@formkit/addons`.
+2. Add it to our FormKit config as a plugin.
+3. Add the new `auto-height` prop to any `textarea`.
 
 ```js
 // formkit.config.js
