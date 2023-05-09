@@ -7,9 +7,9 @@ description: Use your Zod schema to validate your FormKit forms.
 
 :PageToc
 
-Using the `createZodPlugin` function from the `@formkit/zod` package you enable validation of your FormKit forms with your Zod schema.
+With the `@formkit/zod` package you can easily enable validation of your FormKit forms with your Zod schema. This provides a convenient way to have isomorphic types and ensure that your front-end and back-end are using the same validation rules.
 
-When validating against a Zod schema all validation errors will be mapped correctly to their corresponding inputs, show or hide based on your form / input's `validation-visibility` prop, and prevent submission when form data does not pass validaiton with Zod.
+When validating against a Zod schema all validation errors will be mapped to their corresponding inputs, show or hide based on your form / input's `validation-visibility` prop, and prevent submission when form data does not pass validaiton with Zod.
 
 ## Installation
 
@@ -19,10 +19,15 @@ The Zod Plugin is intended to run on a FormKit form. Your usage of the plugin wi
 
 To use the Zod plugin we need to import the `createZodPlugin` function from `@formkit/zod`, call the `createZodPlugin` function to create receive our `zodPlugin` and `submitHandler`, and then add them both to our FormKit form.
 
-The `createZodplugin` function takes two arguments:
+The `createZodPlugin` function takes two arguments:
 
 - `zodSchema`: The Zod schema that you would like to use to validate against the form.
 - `submitCallback`: a function you would like to run once validation has succeeded on your form — this is where you would handle posting your data to your backend or other submit-related tasks. You form data will be provided with full TypeScript support based on your Zod schema.
+
+The `createZodPlugin` will return a tuple of:
+
+- `zodPlugin`: The plugin that should be applied to your target form's `plugins` prop.
+- `submitHandler`: The submit handler that should be attached to your form's `@sumbit` action. When the form data passes validation of your provided Zod schema your `sumbitCallback` will fire.
 
 ### For form validation
 
