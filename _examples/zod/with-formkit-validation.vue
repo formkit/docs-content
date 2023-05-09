@@ -24,14 +24,30 @@ const [zodPlugin, submitHandler] = createZodPlugin(
 </script>
 
 <template>
-  <h1>Validation from Zod schema</h1>
+  <h1>Zod with FormKit Validation</h1>
   <FormKit type="form" :plugins="[zodPlugin]" @submit="submitHandler">
     <FormKit type="group" name="personalInfo">
-      <FormKit type="text" name="firstName" label="First Name" />
-      <FormKit type="text" name="lastName" label="Last Name" />
+      <FormKit
+        validation="required|length:3,25"
+        type="text"
+        name="firstName"
+        label="First name"
+      />
+      <FormKit
+        validation="required|length:3,25"
+        type="text"
+        name="lastName"
+        label="Last name"
+      />
     </FormKit>
-    <FormKit type="text" name="email" label="Your email" />
     <FormKit
+      validation="required|email"
+      type="text"
+      name="email"
+      label="Your email"
+    />
+    <FormKit
+      validation="required|min:2"
       type="checkbox"
       name="arrayMin"
       label="Zod features"

@@ -45,6 +45,28 @@ import-map: '/\_content/_examples/zod/importMap.json'
 
 Now your FormKit form will use your Zod Schema for validation — and all messages will adjacent to each matching FormKit just live native FormKit validation!
 
+### In addition to FormKit validation
+
+Using Zod to validate your form doesn't mean you have to forgo using FormKit's built-in validation messages. If you add FormKit validation to your FormKit inputs then Zod validation errors will only show if all FormKit validations have been satisfied and there are remaining unsatisfied Zod validations.
+
+This has a few benefits:
+
+- You can use FormKit's built-in rules such as `confirm` which don't have easy-to-use equivalents within Zod.
+- Your messages can be translated to one of the many existing languges in `@formkit/i18n` without any additional effort on your part.
+- The built-in FormKit validation messages are written to be contextually aware of your input names and knowing that they will be attached directly to their corresponding inputs — so they are more precise and easier to understand than their generic Zod counterparts.
+
+Here's the same form as before, but now using FormKit validation messages in addition to Zod schema validaiton.
+
+::Example
+---
+name: "Zod Validation with FormKit Validation"
+file: [
+'/\_content/_examples/zod/with-formkit-validation.vue',
+]
+import-map: '/\_content/_examples/zod/importMap.json'
+---
+::
+
 ### For setting form errors
 
 If you need to set errors on your form you can do so with the `node.setZodErrors` function that is made available by the `zodPlugin`. The `node.setZodErrors` function accepts a `ZodError` object and will map the errors to each input. Any non-matching errors will be shown as form-level errors.
