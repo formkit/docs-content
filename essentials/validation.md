@@ -197,6 +197,7 @@ FormKit ships with over 20 production-ready validation rules, covering most vali
 - [not](#not)
 - [number](#number)
 - [required](#required)
+- [require_one](#require-one)
 - [starts_with](#starts-with)
 - [symbol](#symbol)
 - [uppercase](#uppercase)
@@ -606,6 +607,18 @@ If you don't want whitespace to cause the `required` rule to pass, you can pass 
 ---
 name: "Required"
 file: "_content/_examples/rule-required/rule-required-trim.vue"
+layout: "auto"
+---
+::
+
+### Require One
+
+Checks multiple inputs and passes if any of them have a value.
+
+::Example
+---
+name: "Required One"
+file: "_content/_examples/rule-require-one/rule-require-one.vue"
 layout: "auto"
 ---
 ::
