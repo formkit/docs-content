@@ -109,3 +109,9 @@ watch-time: "1 hr, 49 mins"
 external-vid: "https://vueschool.io/courses/robust-vue-js-forms-with-formkit?friend=formkit"
 ---
 ::
+
+## FormKit Discord server
+
+If you need generalized help or want to make connections within the community, consider joining the official FormKit Discord. Over 1200 developers along with the core team members have active discussion there. If you are not already a member (it's free and open), you'll need to use the following invite link to join the server:
+
+<LinkDiscord></LinkDiscord>
