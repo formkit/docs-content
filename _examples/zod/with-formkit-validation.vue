@@ -29,6 +29,7 @@ const [zodPlugin, submitHandler] = createZodPlugin(
     <FormKit type="group" name="personalInfo">
       <FormKit
         validation="required|length:3,25"
+        validation-visibility="live"
         type="text"
         name="firstName"
         label="First name"
