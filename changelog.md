@@ -10,6 +10,7 @@ description: What's new in the latest version of FormKit?.
 ### TBD
 
 #### 💪 New features
+- New [FormKit Zod plugin](/plugins/zod) — Validate your FormKit forms using Zod schema.
 - New [Save to localStorage plugin](/plugins/local-storage) for saving user progress in forms and protecting against lost data in the event of an unexpected event.
 - New [Auto-height textarea plugin](/plugins/auto-height-textarea) to create `textarea` inputs with dynamically resizing height.
 - **Pro:** New [Slider input](/inputs/slider).
