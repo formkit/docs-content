@@ -27,7 +27,7 @@ The `createZodPlugin` function takes two arguments:
 The `createZodPlugin` will return a tuple of:
 
 - `zodPlugin`: The plugin that should be applied to your target form's `plugins` prop.
-- `submitHandler`: The submit handler that should be attached to your form's `@sumbit` action. When the form data passes validation of your provided Zod schema your `sumbitCallback` will fire.
+- `submitHandler`: The submit handler that should be attached to your form's `@submit` action. When the form data passes validation of your provided Zod schema your `submitCallback` will fire.
 
 ### For form validation
 
