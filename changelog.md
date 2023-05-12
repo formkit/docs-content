@@ -11,15 +11,19 @@ description: What's new in the latest version of FormKit?.
 - New [FormKit Zod plugin](/plugins/zod) — Validate your FormKit forms using Zod schema.
 - [New `dynamic` list prop](/inputs/lists) allows you to easily create your own repeaters.
 - New [Save to localStorage plugin](/plugins/local-storage) for saving user progress in forms and protecting against lost data in the event of an unexpected event.
+- Adds new validation rules: `require_one` (thanks [@devoidofgenius](https://github.com/devoidofgenius)), `contains_alpha`, `contains_alphanumeric`, `contains_alpha_space`, `contains_symbol`, `contains_uppercase`, `contains_lowercase`, `contains_numeric`, `symbol`, `uppercase`, and `lowercase` (thanks [@riderx](https://github.com/riderx)).
 - New [Auto-height textarea plugin](/plugins/auto-height-textarea) to create `textarea` inputs with dynamically resizing height.
 - **Pro:** New [Slider input](/inputs/slider).
 - Adds new `commitRaw` event that fires even if there is no change to the input value.
 - `FormKitSchema` can now use a single root node (instead of a fragment)
 - All FormKit inputs now use a root node instead of a fragment meaning standard Vue directives like `v-show` now work adding a `key` to dynamic inputs is generally no longer required ([#528](https://github.com/formkit/formkit/issues/528)).
+- The AutoAnimate plugin now supports animating the repeater input and other Pro inputs.
 - Values passed into the `node.reset()` function become the new default value for the input ([#621](https://github.com/formkit/formkit/issues/621)).
 - Adds traditional Chinese 🇨🇳 (`zh-TW`)
 - Adds Latvian 🇱🇻 (`lv`)
 - Adds Tetum 🇹🇱 (`tet`)
+- Adds new ability to extend a core node with `node.extend()`.
+
 
 
 ### ⚡️ Performance
