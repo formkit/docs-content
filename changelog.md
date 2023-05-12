@@ -9,7 +9,7 @@ description: What's new in the latest version of FormKit?.
 
 #### 💪 New features
 - New [FormKit Zod plugin](/plugins/zod) — Validate your FormKit forms using Zod schema.
-- [New `dynamic` list prop](/inputs/lists) allows you to easily create your own repeaters.
+- [New `dynamic` list prop](/inputs/list) allows you to easily create your own repeaters.
 - New [Save to localStorage plugin](/plugins/local-storage) for saving user progress in forms and protecting against lost data in the event of an unexpected event.
 - Adds new validation rules: `require_one` (thanks [@devoidofgenius](https://github.com/devoidofgenius)), `contains_alpha`, `contains_alphanumeric`, `contains_alpha_space`, `contains_symbol`, `contains_uppercase`, `contains_lowercase`, `contains_numeric`, `symbol`, `uppercase`, and `lowercase` (thanks [@riderx](https://github.com/riderx)).
 - New [Auto-height textarea plugin](/plugins/auto-height-textarea) to create `textarea` inputs with dynamically resizing height.
