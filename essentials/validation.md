@@ -175,6 +175,13 @@ FormKit ships with over 20 production-ready validation rules, covering most vali
 - [alpha_spaces](#alpha-spaces)
 - [between](#between)
 - [confirm](#confirm)
+- [contains_alpha](#contains-alpha)
+- [contains_alphanumeric](#contains-alphanumeric)
+- [contains_alpha_spaces](#contains-alpha-spaces)
+- [contains_lowercase](#contains-lowercase)
+- [contains_numeric](#contains-numeric)
+- [contains_symbol](#contains-symbol)
+- [contains_uppercase](#contains-uppercase)
 - [date_after](#date-after)
 - [date_before](#date-before)
 - [date_between](#date-between)
@@ -183,13 +190,17 @@ FormKit ships with over 20 production-ready validation rules, covering most vali
 - [ends_with](#ends-with)
 - [is](#is)
 - [length](#length)
+- [lowercase](#lowercase)
 - [matches](#matches)
 - [max](#max)
 - [min](#min)
 - [not](#not)
 - [number](#number)
 - [required](#required)
+- [require_one](#require-one)
 - [starts_with](#starts-with)
+- [symbol](#symbol)
+- [uppercase](#uppercase)
 - [url](#url)
 
 ### Accepted
@@ -265,6 +276,90 @@ Note: the two inputs must be in the same `group` or `form`.
 ---
 name: "Confirm"
 file: "_content/_examples/rule-confirm/rule-confirm.vue"
+layout: "auto"
+---
+::
+
+### Contains Alpha
+
+Checks if a value contains alphabetical characters. There are two character sets: latin and default. Latin characters are strictly `[a-zA-Z]`, while the default set includes most accented characters, such as `ä`, `ù`, or `ś`.
+
+::Example
+---
+name: "Contains Alpha"
+file: "_content/_examples/rule-contains-alpha/rule-contains-alpha.vue"
+layout: "auto"
+---
+::
+
+### Contains Alphanumeric
+
+Checks if a value contains either alphabetical characters or numeric digits. For the alphabetical portion you can pass `default` or `latin` - see [contains alpha](#contains-alpha)) above.
+
+::Example
+---
+name: "Contains Alphanumeric"
+file: "_content/_examples/rule-contains-alphanumeric/rule-contains-alphanumeric.vue"
+layout: "auto"
+---
+::
+
+### Contains Alpha-spaces
+
+Checks if a value contains alphabetical characters or spaces. For the alphabetical portion you can pass `default` or `latin` - see [contains alpha](#contains-alpha)) above.
+
+::Example
+---
+name: "Alphanumeric"
+file: "_content/_examples/rule-contains-alpha-spaces/rule-contains-alpha-spaces.vue"
+layout: "auto"
+---
+::
+
+### Contains Lowercase
+
+Checks if a value contains a lowercase character. There are two character sets: latin and default. Latin characters are strictly `[a-zA-Z]`, while the default set includes most accented characters, such as `ä`, `ù`, or `ś`.
+
+::Example
+---
+name: "Lowercase"
+file: "_content/_examples/rule-contains-lowercase/rule-contains-lowercase.vue"
+layout: "auto"
+---
+::
+
+### Contains Numeric
+
+Checks if a value contains a number.
+
+::Example
+---
+name: "Contains Numeric"
+file: "_content/_examples/rule-contains-numeric/rule-contains-numeric.vue"
+layout: "auto"
+---
+::
+
+### Contains Symbol
+
+Checks if a value contains a symbol.
+
+::Example
+---
+name: "Contains Numeric"
+file: "_content/_examples/rule-contains-symbol/rule-contains-symbol.vue"
+layout: "auto"
+---
+::
+
+### Contains Uppercase
+
+Checks if a value contains a uppercase character. There are two character sets: latin and default. Latin characters are strictly `[a-zA-Z]`, while the default set includes most accented characters, such as `ä`, `ù`, or `ś`.
+
+::Example
+---
+name: "Contains Uppercase"
+file: "_content/_examples/rule-contains-uppercase/rule-contains-uppercase.vue"
 layout: "auto"
 ---
 ::
@@ -378,6 +473,18 @@ Checks that the input’s value is over a given length, or between two length va
 ---
 name: "Is"
 file: "_content/_examples/rule-length/rule-length.vue"
+layout: "auto"
+---
+::
+
+### Lowercase
+
+Checks if a value consists of only lowercase characters. There are two character sets: latin and default. Latin characters are strictly `[a-zA-Z]`, while the default set includes most accented characters, such as `ä`, `ù`, or `ś`.
+
+::Example
+---
+name: "Lowercase"
+file: "_content/_examples/rule-lowercase/rule-lowercase.vue"
 layout: "auto"
 ---
 ::
@@ -504,6 +611,18 @@ layout: "auto"
 ---
 ::
 
+### Require One
+
+Checks multiple inputs and passes if any of them have a value.
+
+::Example
+---
+name: "Required One"
+file: "_content/_examples/rule-require-one/rule-require-one.vue"
+layout: "auto"
+---
+::
+
 ### Starts With
 
 Checks if the input starts with one of the provided options.
@@ -512,6 +631,30 @@ Checks if the input starts with one of the provided options.
 ---
 name: "starts_with"
 file: "_content/_examples/rule-starts-with/rule-starts-with.vue"
+layout: "auto"
+---
+::
+
+### Symbol
+
+Checks if a value consists of only symbols.
+
+::Example
+---
+name: "Symbol"
+file: "_content/_examples/rule-symbol/rule-symbol.vue"
+layout: "auto"
+---
+::
+
+### Uppercase
+
+Checks if a value consists of only uppercase characters. There are two character sets: latin and default. Latin characters are strictly `[a-zA-Z]`, while the default set includes most accented characters, such as `ä`, `ù`, or `ś`.
+
+::Example
+---
+name: "Uppercase"
+file: "_content/_examples/rule-uppercase/rule-uppercase.vue"
 layout: "auto"
 ---
 ::
