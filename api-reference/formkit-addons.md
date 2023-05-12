@@ -4,7 +4,7 @@ title: formkit/addons
 
 # @formkit/addons
 
-:PageToc
+<page-toc></page-toc>
 
 ## Introduction
 
@@ -20,19 +20,26 @@ Adds auto-animate to each input automatically:
 
 #### Signature
 
+<client-only>
+
 ```typescript
-createAutoAnimatePlugin(options?: AutoAnimateOptions): FormKitPlugin;
+createAutoAnimatePlugin(options?: AutoAnimateOptions, animationTargets?: Record<string, string[]>): FormKitPlugin;
 ```
+
+</client-only>
 
 #### Parameters
 
-- `options` — [AutoAnimateOptions](https://github.com/formkit/auto-animate/blob/master/src/index.ts#L596)
+- `options` *optional* — [AutoAnimateOptions](https://github.com/formkit/auto-animate/blob/master/src/index.ts#L596)
+- `animationTargets` *optional* — A map of input types and an array of their sections that should be animated.
 
 #### Returns
 
-[FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+ [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
 #### Examples
+
+<client-only>
 
 ```javascript
 import { createApp } from 'vue'
@@ -40,17 +47,43 @@ import App from 'App.vue'
 import { createAutoAnimatePlugin } from '@formkit/addons'
 import { plugin, defaultConfig } from '@formkit/vue'
 
-createApp(app).use(
-  plugin,
-  defaultPlugin({
-    plugins: [
-      createAutoAnimatePlugin({
-        // optional config
-      }),
-    ],
-  })
-)
+createApp(app).use(plugin, defaultPlugin({
+  plugins: [
+    createAutoAnimatePlugin({
+      // optional config
+      duration: 250,
+      easing: 'ease-in-out',
+      delay: 0,
+    },
+    {
+      // optional animation targets object
+      global: ['outer', 'inner'],
+      form: ['form'],
+      repeater: ['items'],
+    })
+  ]
+}))
 ```
+
+</client-only>
+
+### createAutoHeightTextareaPlugin()
+
+Creates a new auto-height textarea plugin.
+
+#### Signature
+
+<client-only>
+
+```typescript
+createAutoHeightTextareaPlugin(): FormKitPlugin;
+```
+
+</client-only>
+
+#### Returns
+
+ A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
 ### createFloatingLabelsPlugin()
 
@@ -58,17 +91,43 @@ Creates a new floating label plugin.
 
 #### Signature
 
+<client-only>
+
 ```typescript
 createFloatingLabelsPlugin(FloatingLabelsOptions?: FloatingLabelsOptions): FormKitPlugin;
 ```
 
+</client-only>
+
 #### Parameters
 
-- `FloatingLabelsOptions` — The options of [FloatingLabelsOptions](#floatinglabelsoptions) to pass to the plugin
+- `FloatingLabelsOptions` *optional* — The options of [FloatingLabelsOptions](#floatinglabelsoptions) to pass to the plugin
 
 #### Returns
 
-A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+ A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+
+### createLocalStoragePlugin()
+
+Creates a new save-to-local-storage plugin.
+
+#### Signature
+
+<client-only>
+
+```typescript
+createLocalStoragePlugin(LocalStorageOptions?: LocalStorageOptions): FormKitPlugin;
+```
+
+</client-only>
+
+#### Parameters
+
+- `LocalStorageOptions` *optional* — The options of [LocalStorageOptions](#localstorageoptions) to pass to the plugin
+
+#### Returns
+
+ A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
 ### createMultiStepPlugin()
 
@@ -76,17 +135,21 @@ Creates a new multi-step plugin.
 
 #### Signature
 
+<client-only>
+
 ```typescript
 createMultiStepPlugin(options?: MultiStepOptions): FormKitPlugin;
 ```
 
+</client-only>
+
 #### Parameters
 
-- `options` — The options of [MultiStepOptions](#multistepoptions) to pass to the plugin
+- `options` *optional* — The options of [MultiStepOptions](#multistepoptions) to pass to the plugin
 
 #### Returns
 
-A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+ A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
 ## TypeScript
 
@@ -94,20 +157,43 @@ A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
 The options to be passed to [createFloatingLabelsPlugin](#createfloatinglabelsplugin)
 
+<client-only>
+
 ```typescript
 interface FloatingLabelsOptions {
-  useAsDefault?: boolean
+    useAsDefault?: boolean;
 }
 ```
+
+</client-only>
+
+### LocalStorageOptions
+
+The options to be passed to [createLocalStoragePlugin](#createlocalstorageplugin)
+
+<client-only>
+
+```typescript
+interface LocalStorageOptions {
+    maxAge?: number;
+    prefix?: string;
+}
+```
+
+</client-only>
 
 ### MultiStepOptions
 
 The options to be passed to [createMultiStepPlugin](#createmultistepplugin)
 
+<client-only>
+
 ```typescript
 interface MultiStepOptions {
-  allowIncomplete?: boolean
-  hideProgressLabels?: boolean
-  tabStyle?: 'tab' | 'progress'
+    allowIncomplete?: boolean;
+    hideProgressLabels?: boolean;
+    tabStyle?:'tab' | 'progress';
 }
 ```
+
+</client-only>
