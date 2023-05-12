@@ -37,6 +37,7 @@ description: What's new in the latest version of FormKit?.
 - Fixes a bug that caused `v-model` to only fire input events on every other input ([#463](https://github.com/formkit/formkit/issues/463))
 - Fixes a bug that caused the schema to iterate over the value of an array if the array had a length of 1 and the only value in the array was a number ([#635](https://github.com/formkit/formkit/issues/635))
 - Fixes an issue that caused `node.walk()` to prematurely end when using `stopOnFalse`.
+- Fixes memory leak in SPA browsing and SSR environments ([#475](https://github.com/formkit/formkit/issues/475))
 
 
 ## 0.16.0 (Beta 16)
