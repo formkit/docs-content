@@ -7,17 +7,36 @@ description: What's new in the latest version of FormKit?.
 
 ## 0.17.0 (Beta 17)
 
-### TBD
-
 #### 💪 New features
 - New [FormKit Zod plugin](/plugins/zod) — Validate your FormKit forms using Zod schema.
+- [New `dynamic` list prop](/inputs/lists) allows you to easily create your own repeaters.
 - New [Save to localStorage plugin](/plugins/local-storage) for saving user progress in forms and protecting against lost data in the event of an unexpected event.
 - New [Auto-height textarea plugin](/plugins/auto-height-textarea) to create `textarea` inputs with dynamically resizing height.
 - **Pro:** New [Slider input](/inputs/slider).
+- Adds new `commitRaw` event that fires even if there is no change to the input value.
+- `FormKitSchema` can now use a single root node (instead of a fragment)
+- All FormKit inputs now use a root node instead of a fragment meaning standard Vue directives like `v-show` now work adding a `key` to dynamic inputs is generally no longer required ([#528](https://github.com/formkit/formkit/issues/528)).
+- Values passed into the `node.reset()` function become the new default value for the input ([#621](https://github.com/formkit/formkit/issues/621)).
+- Adds traditional Chinese 🇨🇳 (`zh-TW`)
+- Adds Latvian 🇱🇻 (`lv`)
+- Adds Tetum 🇹🇱 (`tet`)
+
+
+### ⚡️ Performance
+
+- Dramatically improved the performance of mounting inputs in a large form (5-10x faster).
+- Improved performance of hydrating a form by diffing scalar values before inputting.
+- Reduced the noise on the `@input` event and removed the now unnecessary debounce on the change event.
 
 #### 🐛 Bugfixes
-- The FormKit Observer will now observe changes to `node._value` in instances where you want to operate on the non-debounced input value.
+- The `@formkit/observer` will now observe changes to `node._value` in instances where you want to operate on the non-debounced input value.
 - The `range` icon in `@formkit/icons` has been updated to only show one control handle since HTML range inputs do not support multiple values. The old multi-handle icon has been repurposed for the new `slider` FormKit Pro input.
+- **Pro:** Fixes a bug that caused nested `repeater` inputs to not hydrate properly ([#458](https://github.com/formkit/formkit/issues/458)).
+- **Pro:** Fixes a bug that caused nested `repeater` inputs to throw an error when being removed ([#457](https://github.com/formkit/formkit/issues/457)).
+- Fixes a bug that caused the blur event to fire multiple times when manually binding to the `@blur` event on a custom input ([#413](https://github.com/formkit/formkit/issues/413)).
+- Fixes a bug that caused `v-model` to only fire input events on every other input ([#463](https://github.com/formkit/formkit/issues/463))
+- Fixes a bug that caused the schema to iterate over the value of an array if the array had a length of 1 and the only value in the array was a number ([#635](https://github.com/formkit/formkit/issues/635))
+- Fixes an issue that caused `node.walk()` to prematurely end when using `stopOnFalse`.
 
 
 ## 0.16.0 (Beta 16)
