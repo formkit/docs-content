@@ -38,9 +38,22 @@ import { plugin, defaultConfig } from '@formkit/vue'
 
 createApp(App).use(plugin, defaultConfig({
   plugins: [
-    createAutoAnimatePlugin({
-      // optional config
-    })
+    createAutoAnimatePlugin(
+      { 
+        /* optional AutoAnimate config */
+        // default:
+        duration: 250,
+        easing: 'ease-in-out',
+        delay: 0,
+      },
+      { 
+        /* optional animation targets object */
+        // default:
+        global: ['outer', 'inner'],
+        form: ['form'],
+        repeater: ['items'],
+      }
+    )
   ]
 }).mount('#app')
 ```
