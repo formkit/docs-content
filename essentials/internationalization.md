@@ -18,6 +18,7 @@ Currently, FormKit supports the following languages (in the `@formkit/i18n` pack
 - 🇧🇬 Bulgarian (bg) — 🙏&nbsp;@ivanov1234159
 - <img src="/img/catalan.png" alt="Catalan flag (Senyera)" class="rare-flag"> Catalan (ca) — 🙏&nbsp;@petergithubmgw
 - 🇨🇳 Chinese (zh) — 🙏&nbsp;@myleslee
+- 🇨🇳 Chinese Traditional (zh-TW) — 🙏&nbsp;@actocoa 
 - 🇭🇷 Croatian (hr) — 🙏&nbsp;@antemarkic
 - 🇨🇿 Czech (cs) — 🙏&nbsp;@dfridrich
 - 🇩🇰 Danish (da) — 🙏&nbsp;@bjerggaard
@@ -35,6 +36,7 @@ Currently, FormKit supports the following languages (in the `@formkit/i18n` pack
 - 🇯🇵 Japanese (ja) - 🙏&nbsp;@wonyx
 - 🇰🇿 Kazakh (kk) - 🙏&nbsp;@ilya-raevskiy
 - 🇰🇷 Korean (ko) - 🙏&nbsp;@bwp618, @titusdecali
+- 🇱🇻 Latvian (lv) - 🙏&nbsp;@Bamslation 
 - 🇳🇴 Norwegian Bokmål (nb) - 🙏&nbsp;@hognevevle
 - 🇮🇷 Persian (fa) - 🙏&nbsp;@shahabbasian
 - 🇵🇱 Polish (pl) - 🙏&nbsp;@xxSkyy
@@ -47,6 +49,7 @@ Currently, FormKit supports the following languages (in the `@formkit/i18n` pack
 - 🇦🇷 Spanish (es) - 🙏&nbsp;@inibg
 - 🇸🇪 Swedish (sv) - 🙏&nbsp;@purung
 - 🇹🇯 Tajik (tg) - 🙏&nbsp;@devixrootix
+- 🇹🇱 Tetum (tet) - 🙏&nbsp;@joshbrooks
 - 🇹🇭 Thai (th) - 🙏&nbsp;@pknn
 - 🇺🇦 Ukrainian (uk) - 🙏&nbsp;@aresofficial
 - 🇺🇿 Uzbek (uz) - 🙏&nbsp;@root5427

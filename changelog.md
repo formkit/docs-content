@@ -7,6 +7,8 @@ description: What's new in the latest version of FormKit?.
 
 ## 0.17.0 (Beta 17)
 
+### May 12, 2023
+
 #### 💪 New features
 - New [FormKit Zod plugin](/plugins/zod) — Validate your FormKit forms using Zod schema.
 - [New `dynamic` list prop](/inputs/list) allows you to easily create your own repeaters.
