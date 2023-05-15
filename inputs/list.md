@@ -161,7 +161,7 @@ without: ['help', 'label', 'prefix-icon', 'suffix-icon', 'validation', 'validati
 ---
 type: "sectionKeys"
 primary: "section-key"
-without: ['outer','prefix', 'suffix', 'prefixIcon', 'suffixIcon', 'label','inner','input','help','messages','message']
+without: ['outer','prefix', 'wrapper', 'suffix', 'prefixIcon', 'suffixIcon', 'label','inner','input','help','messages','message']
 ---
 ::
 
