@@ -97,6 +97,16 @@ file: [
 ---
 ::
 
+#### Dynamic list in schema
+::Example
+---
+name: "Dynamic list"
+file: [
+  "_content/_examples/list/list-dynamic-schema.vue",
+]
+---
+::
+
 
 ## Validity of children
 
