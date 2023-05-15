@@ -3,7 +3,7 @@
   <FormKit
     type="text"
     label="Enter your desired gamertag"
-    value="pistola"
+    value="bistro3000"
     validation="contains_uppercase"
     validation-visibility="live"
     validation-label="gamertag"

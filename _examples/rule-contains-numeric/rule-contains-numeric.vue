@@ -3,7 +3,7 @@
   <FormKit
     type="text"
     label="Enter your desired gamertag"
-    value="Snipedown"
+    value="Smackdown"
     validation="contains_numeric"
     validation-visibility="live"
     validation-label="gamertag"
