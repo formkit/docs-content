@@ -38,7 +38,7 @@ const user = ref(1)
   <hr />
   <div :key="user">
     <p>
-      <em><small>Data in the form is keyed to each user ID</small></em>
+      <em><small>Data in localStorage is keyed to each user ID</small></em>
     </p>
     <!-- %partial% -->
     <FormKit
