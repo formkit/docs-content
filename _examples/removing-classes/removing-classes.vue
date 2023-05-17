@@ -6,7 +6,7 @@
     }"
   />
   <FormKit 
-    outer-class="!formkit-outer"
+    outer-class="$remove:formkit-outer"
   />
   <!-- %partial%::html:: -->
 </template>
