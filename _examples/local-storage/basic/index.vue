@@ -1,7 +1,7 @@
 <script setup>
-const submitHandler = async function () {
+const submitHandler = async function (payload, node) {
   await new Promise((r) => setTimeout(r, 2000))
-  window.location.reload()
+  node.reset()
 }
 </script>
 

@@ -70,6 +70,20 @@ file: [
 
 That's it! Your form data will now be saved on every `commit` event that the `form` receives. It will remain valid until the `maxAge` set in your plugin config, and the localStorage data is cleared when the `submit` event fires on the target form.
 
+### Restoring values on failed submit
+
+When a user submits your form the matching localStorage entry for the form is deleted. Before deletion the value of the localStorage entry is stored in-memory and can be recovered by calling the `node.restoreCache()` method in your submit handler. This is useful for restoring user-entered data in the event that you have a failure in your submission process such as a server error.
+
+::Example
+---
+name: "Save with Key"
+file: [
+'/\_content/_examples/local-storage/restore/index.vue',
+'/\_content/_examples/local-storage/restore/formkit.config.js'
+]
+---
+::
+
 ### With unique keys
 
 If you are saving data to localStorage in the context of an app where multiple users might share the same device you can provide a `key` that is unique to the user and each user will then have their own localStorage entry.

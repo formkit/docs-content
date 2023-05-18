@@ -1,6 +1,6 @@
 <script setup>
 import { createLocalStoragePlugin } from '@formkit/addons'
-const submitHandler = async function () { await new Promise((r) => setTimeout(r, 2000)); window.location.reload() }
+const submitHandler = async function (payload, node) { await new Promise((r) => setTimeout(r, 2000)); node.reset() }
 
 async function beforeSave (value) {
   // fake delay for mock API call
