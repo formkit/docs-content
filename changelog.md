@@ -5,6 +5,30 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 0.17.2 (Beta 17)
+
+### May 17, 2023
+
+### 🐛 Bug fixes:
+
+- Fixes an issue that caused deeply nested v-model’s to not update when a mutation originated at depth (#722)
+- Fixes an issue that caused custom inputs that overrode the `text` family of inputs to re-use the first schema(#719)
+- Exports type `FormKitValidationMessage` to help type validation message functions (#695)
+
+### 💪 New features
+
+- localStorage plugin now supports new options: `key`, `control`, `debounce`, `beforeSave`, and `beforeLoad`.
+- localStorage plugin can now be applied to any input of type `group`. eg (`form`, group`, `multi-step`, etc).
+
+## 0.17.1 (Beta 17)
+
+### May 16, 2023
+
+### 🐛 Bug fixes
+
+- Fixed a bug that caused and error to be thrown when a dynamic list was initialized with identical initial scalar values (#715)
+- Fixed a bug that caused the `value` property of a slot to not be updated in some edge cases (#717).
+
 ## 0.17.0 (Beta 17)
 
 ### May 12, 2023
