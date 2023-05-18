@@ -9,7 +9,7 @@ async function beforeSave (value) {
 }
 async function beforeLoad (value) {
   // fake delay for mock API call
-  // not that form is disabled until this is resolved
+  // note that form is disabled until this is resolved
   await new Promise((r) => setTimeout(r, 1000))
   return JSON.parse(atob(value))
 }
