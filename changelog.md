@@ -17,8 +17,8 @@ description: What's new in the latest version of FormKit?.
 
 ### 💪 New features
 
-- localStorage plugin now supports new options: `key`, `control`, `debounce`, `beforeSave`, and `beforeLoad`.
-- localStorage plugin can now be applied to any input of type `group`. eg (`form`, group`, `multi-step`, etc).
+- [localStorage plugin](/plugins/local-storage) now supports new options: `key`, `control`, `debounce`, `beforeSave`, and `beforeLoad`.
+- [localStorage plugin](/plugins/local-storage) can now be applied to any input of internal type `group`. eg (`form`, `group`, `multi-step`, etc).
 
 ## 0.17.1 (Beta 17)
 
