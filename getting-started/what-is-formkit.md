@@ -22,7 +22,7 @@ youtube-id: "89dijjTlveI"
 
 ### What the heck is a form framework?
 
-Why do I need a full-fledge framework for forms? Aren't forms easy? In this live candid interview FormKit author Justin Schroeder gives an overview of what FormKit brings to your project. Hint: it's way more than just UI.
+Why do I need a full-fledged framework for forms? Aren't forms easy? In this live candid interview, FormKit author Justin Schroeder gives an overview of what FormKit brings to your project. Hint: it's way more than just UI.
 
 ::VideoCard
 ---
