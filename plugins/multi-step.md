@@ -91,10 +91,10 @@ file: [
 
 ## Step labels
 
-By default the `multi-step` input will use the `name` attribute of its child `step` inputs to generate labels for steps. If you'd like more control over the display of your step names you can use the `label` prop. You can also customize the labels that appear in the `stepActions` section of your `step` using the `prev-label` and `next-label` props.
+By default the `multi-step` input will use the `name` attribute of its child `step` inputs to generate labels for steps. If you'd like more control over the display of your step names you can use the `label` prop. You can also customize the labels that appear in the `stepActions` section of your `step` using the `previous-label` and `next-label` props.
 
 - `label`: An override for the step name that should appear in the multi-step tabs.
-- `prev-label`: an override for the `stepPrevious` button label which defaults to `Back`.
+- `previous-label`: an override for the `stepPrevious` button label which defaults to `Back`.
 - `next-label`: an override for the `stepNext` button label which defaults to `Next`.
 
 ::Example

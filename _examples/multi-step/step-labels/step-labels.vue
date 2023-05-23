@@ -10,7 +10,7 @@
       <FormKit type="text" label="Name" />
     </FormKit>
 
-    <FormKit type="step" name="stepTwo" prev-label="Go back to previous step">
+    <FormKit type="step" name="stepTwo" previous-label="Go back to previous step">
       <FormKit type="textarea" label="Your story" />
     </FormKit>
     <!-- %partial% -->
