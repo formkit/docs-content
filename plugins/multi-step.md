@@ -253,11 +253,11 @@ data: [
       "Used to change the tab label of the step. If not custom label is supplied the step's <code>name</code> will be used.",
   },
   {
-    prop: "prevLabel",
+    prop: "previousLabel",
     type: "string",
     default: "Previous",
     description:
-      "Used to change the label of the default <code>prevAction</code> button.",
+      "Used to change the label of the default <code>previousAction</code> button.",
   },
   {
     prop: "nextLabel",
@@ -267,11 +267,11 @@ data: [
       "Used to change the label of the default <code>nextAction</code> button.",
   },
   {
-    prop: "prevAttrs",
+    prop: "previousAttrs",
     type: "object",
     default: {},
     description:
-      "Used to apply attributes to the default <code>prevAction</code> button input.",
+      "Used to apply attributes to the default <code>previousAction</code> button input.",
   },
   {
     prop: "nextAttrs",
