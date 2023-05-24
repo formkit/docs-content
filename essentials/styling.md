@@ -279,14 +279,6 @@ tabs: "render,html"
 
 ### Using the provided Genesis theme
 
-::Callout
----
-type: "danger"
-label: "Issue in Beta.14"
----
-There is an issue affecting the <code>1.0.0-beta.14</code> version of <code>@formkit/themes</code> which will make it impossible to import <code>genesis</code>. Please install <code>@formkit/themes@next</code> in your project to bypass this issue until <code>1.0.0-beta.15</code> is released. You can follow the issue discussion <a href="https://github.com/formkit/formkit/issues/560" target="_blank">on Github.</a>
-::
-
 FormKit ships with an optional default Tailwind theme called Genesis. To use this pre-made Tailwind theme in your project import it from `@formkit/themes/tailwindcss/genesis` and add it to your `formkit.config.js`. You'll also want to include the neccessary `genesisIcons` import from `@formkit/icons`.
 
 ```js
