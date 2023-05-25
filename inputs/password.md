@@ -18,7 +18,7 @@ file: "_content/_examples/password/password.vue"
 ---
 ::
 
-### Fancy password input with icons
+### Toggle password visibility
 
 By leveraging the [icons](/essentials/icons) support built in to FormKit you can easily create a password input where password visibility can be toggled. 
 
