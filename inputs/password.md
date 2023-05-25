@@ -9,12 +9,23 @@ description: A native HTML password input.
 
 The `password` input uses HTML's [native password input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/password). It allows a user to privately enter their password. When creating new passwords, this input is often compiled with the `confirm` validation rule.
 
-## An example
+## Example
 
 ::Example
 ---
 name: "Password input"
 file: "_content/_examples/password/password.vue"
+---
+::
+
+### Fancy password input with icons
+
+By leveraging the [icons](/essentials/icons) support built in to FormKit you can easily create a password input where password visibility can be toggled. 
+
+::Example
+---
+name: "Password input"
+file: "_content/_examples/icons/handle-click.vue"
 ---
 ::
 
