@@ -30,6 +30,14 @@ The `options` prop can accept three different formats of values:
 - An object literal with key-value pairs <code>{ a: 'A', b: 'B', c: 'C' }</code>
 - A function that returns any of the above
 
+::Callout
+---
+type: "warning"
+label: "Empty options"
+---
+If you assign options as an empty array, the input will be rendered in a disabled state.
+::
+
 ## Filtering
 
 The autocomplete input will filter options with its own internal search function. You can replace this search function by providing the `filter` prop a function of your own. Your function will receive two arguments, the `option` being iterated over and the current `search` value:

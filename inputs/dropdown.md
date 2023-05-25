@@ -31,6 +31,14 @@ The `options` prop can accept three different formats of values:
 - An object literal with key-value pairs `{ a: 'A', b: 'B', c: 'C' }`
 - A function that returns any of the above
 
+::Callout
+---
+type: "warning"
+label: "Empty options"
+---
+If you assign options as an empty array, the input will be rendered in a disabled state.
+::
+
 ## Empty message
 
 The dropdown input, by default, will be rendered in a disabled state if no options are passed. Optionally, you may pass the `empty-message` prop a message to display when no options are available:
@@ -183,7 +191,7 @@ file: "_content/_examples/dropdown/dropdown-overscroll.vue"
 
 ::ReferenceTable
 ---
-input: "dropdown" 
+input: "dropdown"
 data: [
   {
     "prop": "options",
@@ -392,7 +400,7 @@ schema: [
 ::ReferenceTable
 ---
 type: "sectionKeys"
-primary: "section-key" 
+primary: "section-key"
 data: [
   {
     "section-key": "selector",
