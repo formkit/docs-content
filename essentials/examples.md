@@ -57,7 +57,7 @@ Create a custom schema-powered submit button that dynamically disables while the
 
 ::ExampleCard
 ---
-href: "https://formkit.link/285cdf588b052d6084a5e3f7fa43189a"
+href: "https://formkit.link/7e3aafb98dd293e2d2168ecc5ff14dbf"
 title: "Add an asterisk to the labels of all required inputs"
 ---
 Use a plugin to add an asterisk (\*) to the label area of inputs that have the "required" rule.
