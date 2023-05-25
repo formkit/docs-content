@@ -40,7 +40,7 @@ async function handleSubmit() {
       name="instructions"
       label="Special Instructions"
       placeholder="Allergies? No-contact delivery? Let us know."
-      :help="`${data.instructions.length} / 120`"
+      :help="`${value.instructions ? value.instructions.length : 0} / 120`"
       validation="length:0,120"
       validation-visibility="live"
       :validation-messages="{
