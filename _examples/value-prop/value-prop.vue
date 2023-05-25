@@ -1,4 +1,5 @@
 <template>
+  <!-- %partial% -->
   <FormKit
     label="Username"
     type="text"
@@ -6,4 +7,5 @@
     validation="required|matches:/^@[a-zA-Z]+$/|length:5"
     value="@useFormKit"
   />
+  <!-- %partial% -->
 </template>

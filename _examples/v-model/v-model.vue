@@ -1,23 +1,22 @@
-<script>
-export default {
-  data () {
-    return {
-      city: 'Florence',
-      cities: [
-        'Prague', 'Rome', 'Berlin',
-        'Amsterdam', 'Barcelona', 'London'
-      ]
-    }
-  },
-  methods: {
-    randomCity () {
-      const index = Math.floor(Math.random() * (this.cities.length - 1))
-      if (this.cities[index] !== this.city) {
-        this.city = this.cities[index]
-      } else {
-        this.randomCity()
-      }
-    }
+<script setup>
+import { ref } from 'vue'
+
+const city = ref('Florence')
+const cities = ref([
+  'Prague',
+  'Rome',
+  'Berlin',
+  'Amsterdam',
+  'Barcelona',
+  'London',
+])
+
+function randomCity() {
+  const index = Math.floor(Math.random() * (cities.value.length - 1))
+  if (cities.value[index] !== city.value) {
+    city.value = cities.value[index]
+  } else {
+    randomCity()
   }
 }
 </script>
