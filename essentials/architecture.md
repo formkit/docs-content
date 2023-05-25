@@ -279,19 +279,19 @@ The <code>&lt;FormKit type="form"&gt;</code> input already incorporates this awa
 
 Sometimes it can be helpful to get the underlying instance of a node from the Vue `<FormKit>` component. There are three primary methods of fetching an input’s node.
 
-- Using the Vue plugin’s `$formkit.get()` (or `getNode()` for composition API)
+- Using `getNode()` (or the Vue plugin’s `$formkit.get()` for Options API)
 - Using the `@node` event.
 - Using a template `ref`.
 
-#### Using `this.$formkit.get()`
+#### Using `getNode()`
 
-When using FormKit with the Vue plugin (recommended), you can access a node by assigning it an `id` and then accessing it by that property.
+When using FormKit you can access a node by assigning it an `id` and then accessing it by that property via the `getNode()` function.
 
 ::Callout
 ---
 type: "warning"
 ---
-You must assign the input an <code>id</code> to use this method.
+You must assign the input an `id` to use this method.
 ::
 
 ::Example
@@ -304,10 +304,9 @@ You must assign the input an <code>id</code> to use this method.
 ::Callout
 ---
 type: "info"
-label: "Composition API"
+label: "Options API"
 ---
-When using Vue’s composition API, you don’t have access to <code>this</code> within <code>setup</code>. You can access the same <code>getNode()</code> function by importing it from <code>@formkit/core</code>.<br><br>
-<code>import { getNode } from '@formkit/core'</code>
+When using Vue’s Options API You can access the same `getNode()` behavior by using `this.$formkit.get()`.
 ::
 
 #### Using the node event

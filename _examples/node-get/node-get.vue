@@ -1,10 +1,11 @@
-<script>
-export default {
-  mounted() {
-    const node = this.$formkit.get('manufacturer')
-    node.input('Samsung', false)
-  },
-}
+<script setup>
+import { onMounted } from 'vue'
+import { getNode } from '@formkit/core'
+
+onMounted(() => {
+  const node = getNode('manufacturer')
+  node.input('Samsung', false)
+})
 </script>
 
 <template>
