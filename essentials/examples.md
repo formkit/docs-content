@@ -21,7 +21,7 @@ The <code>form</code> type automatically adds a submit button. Add classes so it
 
 ::ExampleCard
 ---
-href: "https://formkit.link/9ac0e8367b11dea7fb434e4eb4202899"
+href: "https://formkit.link/469d06dfe2742c12703c6a6ad5a68bec"
 title: "Using a list to repeat an input"
 ---
 Using the <code>list</code> type, we can create repeater inputs that can have multiple values. This example uses a loop to let users add/remove email addresses.
@@ -47,7 +47,7 @@ Use the <code>FormKitSchema</code> component to render the multi-step form from 
 
 ::ExampleCard
 ---
-href: "https://formkit.link/8dd946de8306d04a71b7d4a16a3d0853"
+href: "https://formkit.link/a1fe49306a5096e8bffb9a09c0f4fa71"
 title: "Custom schema submit button with disabled state and loading spinner"
 ---
 Create a custom schema-powered submit button that dynamically disables while the form is submitting and provides a loading spinner.
@@ -73,7 +73,7 @@ Use a plugin to cast string values to numbers. Useful if you want inputs of type
 
 ::ExampleCard
 ---
-href: "https://formkit.link/2ef52f3658d785aaf6acecf6244ae8d0"
+href: "https://formkit.link/8da382e1be36fd3b6bfb75d663a4a9cf"
 title: "Remove the inner wrapper on all checkboxes"
 ---
 Use a plugin to modify the HTML of all descendant checkbox inputs.
@@ -189,7 +189,7 @@ A working starter project on StackBlitz with Nuxt, FormKit and Tailwind CSS.
 
 ::ExampleCard
 ---
-href: "https://formkit.link/bf75ae909d0a9f60a86a33b87e436860"
+href: "https://formkit.link/648b2fb96bdf8dd1b2ff6f646ac453a4"
 title: "Produce dynamic classes based on an input's state"
 ---
 Use the <code>rootClasses</code> config function and FormKit props to produce a dynamic classes based on input state. Helpful for Tailwind and other CSS utility libraries.
@@ -197,7 +197,7 @@ Use the <code>rootClasses</code> config function and FormKit props to produce a 
 
 ::ExampleCard
 ---
-href: "https://formkit.link/2996e00e965c970d1631b35380fc409e"
+href: "https://formkit.link/ff5873ed046024331002687c3730db9e"
 title: "Create reactive UI variations of FormKit inputs using “features”"
 ---
 Create UI variations of FormKit inputs (like buttons) that update based on reactive data in your components.
