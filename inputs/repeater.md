@@ -25,6 +25,17 @@ file: "_content/_examples/repeater/repeater-base.vue"
 
 Unlike most other FormKit input types, the repeater input is of type [list](/inputs/list). You can see above that the `users` property (our repeater's value) is an array.
 
+## Schema example
+
+Like all other FormKit inputs, the Repeater is able to be used in a form written in FormKit [schema](/essentials/schema).
+
+::Example
+---
+name: "Repeater"
+file: "_content/_examples/repeater/repeater-schema.vue"
+---
+::
+
 ## Add button attrs
 
 In the previous example, the 'Add Users' button is provided by default, and the button label is derived from the repeater's `label`. We're able to customize the label by using the `add-button` prop and setting it to a `string`, or remove it completely by setting it to `false`. Alternatively, similar to the `submit-attrs` prop on the [FormKit's forms](/inputs/form), we can provide an object of attributes to be applied to the button with `add-attrs`. In this example, we change the label of the repeater from `Add Users` to `My custom label` using the `add-label` prop:
