@@ -117,5 +117,5 @@ file: [
 type: "warning"
 label: "Clearing user data"
 ---
-`localStorage` form information should be considered transient and ultimately stored in a database. We recommend clearing `localStorage` keys related to form data when a user logs out of your appliacitons. You can do this by looping over `Object.entries(localStorage)` and removing all `localStorage` entries that start with <code>${prefix}-${id}</code> from your plugin configuration.
+`localStorage` form information should be considered transient and ultimately stored in a database. We recommend clearing `localStorage` keys related to form data when a user logs out of your applications. You can do this by looping over `Object.entries(localStorage)` and removing all `localStorage` entries that start with <code>${prefix}-${id}</code> from your plugin configuration.
 ::
