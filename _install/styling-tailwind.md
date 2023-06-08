@@ -1,6 +1,6 @@
 ### For Tailwind
 
-FormKit ships with a Tailwind version of the Genesis theme. To use this pre-made Tailwind theme in your project import it from `@formkit/themes/dist/tailwindcss/genesis` and add it to your `formkit.config.js`. You'll also want to include the neccessary `genesisIcons` import from `@formkit/icons`.
+FormKit ships with a Tailwind version of the Genesis theme. To use this pre-made Tailwind theme in your project import it from `@formkit/themes/tailwindcss/genesis` and add it to your `formkit.config.js`. You'll also want to include the neccessary `genesisIcons` import from `@formkit/icons`.
 
 ```sh
 npm install @formkit/themes @formkit/icons

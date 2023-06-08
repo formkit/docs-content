@@ -1,6 +1,6 @@
 ## Configuration
 
-to configure FormKit create a `formkit.config.ts` in the root of your Nuxt project. The provided Nuxt module automatically uses the `formkit.config.ts` that is at the root of your project to extend FormKit's functionality. Your config file should export a [configuration object](/essentials/configuration#what-is-defaultconfig).
+To configure FormKit create a `formkit.config.ts` in the root of your Nuxt project. The provided Nuxt module automatically uses the `formkit.config.ts` that is at the root of your project to extend FormKit's functionality. Your config file should export a [configuration object](/essentials/configuration#what-is-defaultconfig).
 
 ### formkit.config.ts
 ```js
