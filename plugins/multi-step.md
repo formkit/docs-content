@@ -63,7 +63,7 @@ Using these inputs together is as simple as wrapping any markup you want to have
 
 ```html
 <FormKit type="multi-step">
-  <FormKit type="step" name: "stepOne">
+  <FormKit type="step" name="stepOne">
     <!-- content for stepOne goes here! -->
   </FormKit>
 </FormKit>
