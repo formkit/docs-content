@@ -1,5 +1,5 @@
 ---
-title: Community
+title: Community & support
 description: Get involved in the FormKit community — troubleshooting support, feature requests, project roadmap discussion, and more.
 ---
 
