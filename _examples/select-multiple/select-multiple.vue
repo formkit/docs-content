@@ -9,7 +9,7 @@ const values = ref(['allergies'])
     type="select"
     multiple
     label="Serious medical conditions"
-    name="country"
+    name="medical_conditions"
     :options="[
       { label: 'Outie belly button', value: 'outie' },
       { label: 'Large feet', value: 'lg-feet' },
