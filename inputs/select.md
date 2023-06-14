@@ -151,7 +151,7 @@ data: [
     type: "String",
     default: "’’",
     description:
-      "Specifies <a href=&quot;/essentials/icons&quot;>an icon</a> to put in the <code>selectIcon</code> section. Defaults to the <code>down</code> icon.",
+      "Specifies <a href=&quot;/essentials/icons&quot;>an icon</a> to put in the <code>selectIcon</code> section. Defaults to the <code>select</code> icon.",
   },
 ]
 ---
