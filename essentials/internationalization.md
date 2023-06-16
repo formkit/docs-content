@@ -31,12 +31,14 @@ Currently, FormKit supports the following languages (in the `@formkit/i18n` pack
 - 🇬🇷 Greek (el) — 🙏&nbsp;@mendrinos
 - 🇮🇱 Hebrew (he) - 🙏&nbsp;@Hepi420
 - 🇭🇺 Hungarian (hu) — 🙏&nbsp;@KristofKekesi
+- 🇮🇸 Icelandic (is) - 🙏&nbsp;@Gunsobal
 - 🇮🇩 Indonesian (id) - 🙏&nbsp;@rama-adi
 - 🇮🇹 Italian (it) - 🙏&nbsp;@punga78, @Archetipo95
 - 🇯🇵 Japanese (ja) - 🙏&nbsp;@wonyx
 - 🇰🇿 Kazakh (kk) - 🙏&nbsp;@ilya-raevskiy
 - 🇰🇷 Korean (ko) - 🙏&nbsp;@bwp618, @titusdecali
 - 🇱🇻 Latvian (lv) - 🙏&nbsp;@Bamslation 
+- 🇲🇳 Mongolian (mn) - 🙏&nbsp;@zemunkh
 - 🇳🇴 Norwegian Bokmål (nb) - 🙏&nbsp;@hognevevle
 - 🇮🇷 Persian (fa) - 🙏&nbsp;@shahabbasian
 - 🇵🇱 Polish (pl) - 🙏&nbsp;@xxSkyy
