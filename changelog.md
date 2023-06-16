@@ -13,7 +13,7 @@ description: What's new in the latest version of FormKit?.
 
 - Adds 🇲🇳 Mongolian (mn) language - [#747](https://github.com/formkit/formkit/issues/747)
 - Adds 🇮🇸 Icelandic (is) language [#748](https://github.com/formkit/formkit/issues/748)
-- Adds new `node.next()`, `node.previous()`, and `node.goTo()` extesions for `multi-step` inputs via MultiStep plugin. This allows for easier external control of `multi-step` input navigation. [#685](https://github.com/orgs/formkit/discussions/685)
+- Adds new `node.next()`, `node.previous()`, and `node.goTo()` extensions for `multi-step` inputs via MultiStep plugin. This allows for easier external control of `multi-step` input navigation. [#685](https://github.com/orgs/formkit/discussions/685)
 - Adds new `node.restoreCache()` extension for the localStorage plugin to allow restoring of form values to cache on failed submit. [#727](https://github.com/formkit/formkit/pull/727)
 
 ### 🐛 Bug fixes:
