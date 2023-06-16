@@ -5,6 +5,26 @@ description: What's new in the latest version of FormKit?.
 
 # Changelog
 
+## 0.17.3 (Beta 17)
+
+### June 16, 2023
+
+### 💪 New features
+
+- Adds 🇲🇳 Mongolian (mn) language - [#747](https://github.com/formkit/formkit/issues/747)
+- Adds 🇮🇸 Icelandic (is) language [#748](https://github.com/formkit/formkit/issues/748)
+- Adds new `node.next()`, `node.previous()`, and `node.goTo()` extensions for `multi-step` inputs via MultiStep plugin. This allows for easier external control of `multi-step` input navigation. [#685](https://github.com/orgs/formkit/discussions/685)
+- Adds new `node.restoreCache()` extension for the localStorage plugin to allow restoring of form values to cache on failed submit. [#727](https://github.com/formkit/formkit/pull/727)
+
+### 🐛 Bug fixes:
+
+- Fixes SSR hydration issues for the `multi-step` input. [#720](https://github.com/formkit/formkit/issues/720)
+- Fixes issue where `blur` event could cause console errors on route change. [#735](https://github.com/formkit/formkit/issues/735)
+- Fixes issue where Pro inputs would break when used with the Floating Labels plugin. [#742](https://github.com/formkit/formkit/issues/742)
+- MultiStep `beforeStepChange` now works with `async` function calls. [#743](https://github.com/formkit/formkit/issues/743)
+- Fixes issue where `file` inputs would not allow re-uploading the same file after calling `reset`. [#762](https://github.com/formkit/formkit/issues/762)
+- Prevents Genesis CSS keyframe naming conflict by adding `fk-` prefix. 
+
 ## 0.17.2 (Beta 17)
 
 ### May 17, 2023
