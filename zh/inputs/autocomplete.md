@@ -1,246 +1,246 @@
 ---
-title: Autocomplete Input
-description: A Pro input that allows users to search and select from a customizable options list. Supports single and multi-value selections.
+title: 自动完成输入
+description: 一种 Pro 输入框，允许用户从可自定义的选项列表中搜索和选择。支持单选和多选。
 ---
 
-:InputPageHero{title="Autocomplete"}
+:InputPageHero{title="自动完成"}
 
 :PageToc
 
 :ProInstallSnippet
 
-## Basic example
+## 基本示例
 
-The autocomplete input allows you to search through a list of options. In this first example, let's provide the `options` prop a list of countries:
+自动完成输入框允许您在选项列表中进行搜索。在第一个示例中，让我们给 `options` 属性提供一个国家列表：
 
 ::Example
 ---
-name: "Autocomplete"
+name: "自动完成"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-base.vue"
 ---
 ::
 
-## Defining options
+## 定义选项
 
-The `options` prop can accept three different formats of values:
+`options` 属性可以接受三种不同格式的值：
 
-- An array of objects with `value` and `label` keys (see example above)
-- An array of strings <code>['A', 'B', 'C']</code>
-- An object literal with key-value pairs <code>{ a: 'A', b: 'B', c: 'C' }</code>
-- A function that returns any of the above
+- 一个带有 `value` 和 `label` 键的对象数组（参见上面的示例）
+- 一个字符串数组 <code>['A', 'B', 'C']</code>
+- 一个键值对的对象文字 <code>{ a: 'A', b: 'B', c: 'C' }</code>
+- 返回上述任意类型的函数
 
 ::Callout
 ---
 type: "warning"
-label: "Empty options"
+label: "空选项"
 ---
-If you assign options as an empty array, the input will be rendered in a disabled state.
+如果将选项分配为空数组，输入框将以禁用状态呈现。
 ::
 
-## Filtering
+## 过滤
 
-The autocomplete input will filter options with its own internal search function. You can replace this search function by providing the `filter` prop a function of your own. Your function will receive two arguments, the `option` being iterated over and the current `search` value:
+自动完成输入框将使用内部的搜索函数过滤选项。您可以通过向 `filter` 属性提供自定义的过滤函数来替换此搜索函数。您的函数将接收两个参数，正在迭代的 `option` 和当前的 `search` 值：
 
 ::Example
 ---
-name: "Autocomplete"
+name: "自动完成"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-filter.vue"
 ---
 ::
 
-## Empty message
+## 空消息
 
-The autocomplete input, by default, will close the listbox when no search results are found while filtering. You can change this behavior by assigning the `empty-message` prop a message to display when no results are found:
+自动完成输入框默认情况下，当搜索结果为空时，列表框将关闭。您可以通过将 `empty-message` 属性分配一个消息来更改此行为，以在未找到结果时显示消息：
 
 ::Example
 ---
-name: "Autocomplete"
+name: "自动完成"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-empty-message.vue"
 ---
 ::
 
-## Selection appearance
+## 选择外观
 
-The autocomplete input has a `selectionAppearance` prop that determines the way a selected option is displayed.
+自动完成输入框有一个 `selectionAppearance` 属性，用于确定所选选项的显示方式。
 
-### Text input
+### 文本输入
 
-The autocomplete input will default to the `text-input` selection appearance. When an option is selected, the text input will display the selected option's label:
+自动完成输入框将默认使用 `text-input` 选择外观。当选择了一个选项时，文本输入框将显示所选选项的标签：
 
 ::Example
 ---
-name: "Autocomplete"
+name: "自动完成"
 min-height: 300
 file: "_content/_examples/autocomplete-pro/autocomplete-text-input.vue"
 ---
 ::
 
-### Option
+### 选项
 
-Alternatively, you can set the selection appearance of the autocomplete to `option`. In this mode, when a selection is made the text input is removed and will be replaced with a div containing the selected option's label. Additionally, the `option` selection appearance will render a `removeSelection` button that will clear the selection when clicked:
+或者，您可以将自动完成的选择外观设置为 `option`。在这种模式下，当选择完成后，文本输入框将被删除，并用包含所选选项标签的 div 元素进行替换。此外，`option` 选择外观还会呈现一个 `removeSelection` 按钮，单击该按钮将清除所选选项：
 
 ::Example
 ---
-name: "Autocomplete"
+name: "自动完成"
 min-height: 300
 file: "_content/_examples/autocomplete-pro/autocomplete-option.vue"
 ---
 ::
 
-## Slots
+## 插槽
 
-Just like the [Dropdown input](/inputs/dropdown), the autocomplete input allows you to utilize slots to customize the look and feel of the options list and the selected option by leveraging the [renderless component pattern](https://adamwathan.me/renderless-components-in-vuejs/).
+就像[下拉输入框](/inputs/dropdown)一样，自动完成输入框允许您使用插槽来自定义选项列表和所选选项的外观和感觉，借助 [渲染无组件模式](https://adamwathan.me/renderless-components-in-vuejs/)。
 
-### Option slot
+### 选项插槽
 
-In this example, we'll use the options slot to display car brands and their logos:
+在此示例中，我们将使用选项插槽来显示汽车品牌和它们的标志：
 
 ::Example
 ---
-name: "Autocomplete"
+name: "自动完成"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-option-slot.vue"
 ---
 ::
 
-### Selection slot
+### 所选项插槽
 
-If you only want to customize the display of the selected option, use the `selection` slot:
+如果只想自定义所选选项的显示方式，请使用 `selection` 插槽：
 
 ::Example
 ---
-name: "Autocomplete"
+name: "自动完成"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-selection-slot.vue"
 ---
 ::
 
-## Multi-select
+## 多选
 
-The autocomplete supports multi-select and is available for either the `text-input` or `option` selection appearance. To enable multi-select, simply set the `multiple` prop.
+自动完成支持多选，并且适用于 `text-input` 或 `option` 选择外观。要启用多选功能，只需设置 `multiple` 属性。
 
 ::Callout
 ---
 type: "warning"
-label: "Using the multiple prop"
+label: "使用 multiple 属性"
 ---
-When setting the <code>multiple</code> prop, the autocomplete's value must always be an array.
+当设置 <code>multiple</code> 属性时，自动完成的值必须始终是一个数组。
 ::
 
-### Text-input multi-select
+### 文本输入的多选
 
-For the `text-input` selection appearance, the selected options display as a comma-separated list:
+对于 `text-input` 选择外观，所选选项会显示为逗号分隔的列表：
 
 ::Example
 ---
-name: "Autocomplete"
+name: "自动完成"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-selection-appearance-text-multiple.vue"
 ---
 ::
 
-### Option multi-select
+### 选项的多选
 
-For the `option` selection appearance, the selected options display as a list of `divs` which render below the text input:
+对于 `option` 选择外观，所选选项会显示为文本输入框下方的 `div` 列表：
 
 ::Example
 ---
-name: "Autocomplete"
+name: "自动完成"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-selection-appearance-option-multiple.vue"
 ---
 ::
 
-### Max
+### 最大值
 
-The `max` prop allows you to limit the number of options that can be selected. When the `max` limit is reached, the autocomplete input will disable the listbox:
+`max` 属性允许您限制可以选择的选项数。当达到 `max` 限制时，自动完成输入框将禁用列表框：
 
 ::Example
 ---
-name: "Autocomplete"
+name: "自动完成"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-max.vue"
 ---
 ::
 
-### Close on select
+### 选择后关闭
 
-If you would like the autocomplete's listbox to remain open in between selections, set the `close-on-select` prop to `false`:
+如果希望自动完成的列表框在选择之间保持打开状态，请将 `close-on-select` 属性设置为 `false`：
 
 ::Example
 ---
-name: "Autocomplete"
+name: "自动完成"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-close-on-select.vue"
 ---
 ::
 
-## Loading options
+## 加载选项
 
-Instead of passing a static list of options to the `options` prop, you can assign it to a function. Doing so is useful when you need to load options from an API or another source.
+与将静态选项列表传递给 `options` 属性不同，您可以将其分配给一个函数。这样做对于需要从 API 或其他来源加载选项的情况非常有用。
 
-### Search parameter
+### 搜索参数
 
-In this example, we'll assign the `options` prop the `searchMovies` function. By doing so, `searchMovies` will receive the `context` object as an argument. Within this `context` object is the `search` property, which is the current search value. To perform our search, we'll use the `search` value as the query parameter for our API request:
+在此示例中，我们将 `options` 属性分配给 `searchMovies` 函数。通过这样做，`searchMovies` 将接收 `context` 对象作为参数。在该 `context` 对象中，有一个 `search` 属性，它是当前的搜索值。为了执行搜索，我们将使用 `search` 值作为 API 请求的查询参数：
 
 ::Example
 ---
-name: "Autocomplete"
+name: "自动完成"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-single-request.vue"
 ---
 ::
 
-### Page and hasNextPage parameters
+### page 和 hasNextPage 参数
 
-A likely scenario you'll encounter is needing to search through a paginated API. This can be done by referencing the same `context` object as before. Within this object, we can utilize the `page` and `hasNextPage` properties. The `page` property is the current page number, and the `hasNextPage` property is a function to be called when there are more pages to load:
+您可能会遇到的一个常见情况是需要搜索分页的 API。通过引用前面提到的同一个 `context` 对象，可以实现这一点。在此对象中，我们可以利用 `page` 和 `hasNextPage` 属性。`page` 属性是当前页码，`hasNextPage` 属性是在加载更多页面时要调用的函数：
 
 ::Example
 ---
-name: "Autocomplete"
+name: "自动完成"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-pagination.vue"
 ---
 ::
 
-### Loading Style
+### 加载样式
 
-Instead of requiring your users to click the <i>Load more</i> button to load additional options, you can set the `loadOnScroll` prop to true, which will paginate options as you scroll to the bottom of the options list.
+与其要求用户点击“加载更多”按钮来加载其他选项，您可以将 `loadOnScroll` 属性设置为 `true`，这样在滚动到选项列表底部时将分页加载选项。
 
-### Option loader
+### 选项加载器
 
-#### Rehydrating values
+#### 恢复值
 
-FormKit's autocomplete input also provides an `optionLoader` prop that allows you to rehydrate values that are not in the options list. In this example, we'll provide the autocomplete an initial value (a movie ID), and assign the optionLoader to a function that will make a request to the API to get the movie:
+FormKit 的自动完成输入框还提供了 `optionLoader` 属性，可以用于恢复不在选项列表中的值。在此示例中，我们将为自动完成输入框提供一个初始值（电影 ID），并将 `optionLoader` 分配给一个函数，该函数将向 API 发送请求以获取电影：
 
 ::Example
 ---
-name: "Autocomplete"
+name: "自动完成"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-pagination-option-loader.vue"
 ---
 ::
 
-Notice in the example above that the optionLoader function is passed two arguments: the `value` of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption prop is used for preventing unnecessary lookups. If the cachedOption is not `null` it means that the selected option has already been loaded, and you can return the cachedOption directly.
+请注意，上面的示例中，`optionLoader` 函数接收两个参数：所选选项的 `value`（在本例中为电影 ID）和 `cachedOption`。`cachedOption` 属性用于防止不必要的查找。如果 `cachedOption` 不为 `null`，则意味着已经加载了所选选项，您可以直接返回 `cachedOption`。
 
-#### Fetching additional data
+#### 获取其他数据
 
-Instead of using the `optionLoader` prop to rehydrate values that are not in the options list, you can use the optionLoader to perform a look-up to fetch additional data. In this example, after selecting an option, we are going to perform a look-up to load the selected option's movie review:
+除了使用 `optionLoader` 属性来恢复不在选项列表中的值之外，您还可以使用 `optionLoader` 执行查找以获取其他数据。在此示例中，选择选项后，我们将执行查找以加载所选选项的电影评论：
 
 ::Example
 ---
-name: "Autocomplete"
+name: "自动完成"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-option-loader-additional-data.vue"
 ---
 ::
 
-## Full example
+## 完整示例
 
-Now let's combine what we've learned so far by leveraging the `option` slot for custom markup, and setting the `options` prop to a function that will return pages of movies from an API:
+现在让我们结合到目前为止学到的知识，通过使用 `option` 插槽进行自定义标记，并将 `options` 属性设置为一个函数，该函数将从 API 返回电影的页面：
 
 ::Example
 ---
@@ -250,9 +250,9 @@ file: "_content/_examples/autocomplete-pro/autocomplete-full.vue"
 ---
 ::
 
-<!-- ## Accessibility -->
+<!-- ## 辅助功能 -->
 
-## Props & Attributes
+## Props 和属性
 
 ::ReferenceTable
 ---
@@ -262,82 +262,82 @@ data: [
     prop: "debounce",
     type: "number",
     default: "200",
-    description: "Number of milliseconds to debounce calls to an options function.",
+    description: "调用选项函数的延迟时间（以毫秒为单位）。",
   },
   {
     prop: "options",
     type: "any",
     default: "[]",
-    description: "The list of options the user can select from.",
+    description: "用户可以从中选择的选项列表。",
   },
   {
     prop: "load-on-scroll",
     type: "boolean",
     default: "false",
-    description: "When set to <code>true</code>, the dropdown will try loading more options based on the end-user`s scroll position",
+    description: "当设置为 <code>true</code> 时，根据终端用户的滚动位置尝试加载更多选项。",
   },
   {
     prop: "selection-appearance",
     type: "string",
     default: "text-input",
-    description: "Changes the way the option label is display.",
+    description: "更改选项标签的显示方式。",
   },
   {
     prop: "multiple",
     type: "boolean",
     default: "false",
-    description: "Allows for multiple selections.",
+    description: "允许多个选择。",
   },
   {
     prop: "open-on-click",
     type: "boolean",
     default: "false",
-    description: "The autocomplete is expanded upon focus of the input, as opposed to waiting to expand until a search value is entered.",
+    description: "在输入框获得焦点时展开自动完成输入框，而不是等到输入搜索值。",
   },
   {
     prop: "filter",
     type: "function",
     default: "null",
-    description: "Used to apply your own custom filter function for static options.",
+    description: "用于应用自定义的静态选项过滤函数。",
   },
   {
     prop: "option-loader",
     type: "function",
     default: "null",
-    description: "Used for hydrating initial value, or performing an additional request to load more information of a selected option.",
+    description: "用于恢复初始值或执行其他请求以加载所选选项的更多信息。",
   },
   {
     prop: "empty-message",
     type: "string",
     default: "undefined",
-    description: "Renders a message when there are no options to display.",
+    description: "当没有选项可显示时，呈现的消息。",
   },
   {
     prop: "max",
     type: "number",
     default: "undefined",
-    description: "Limits the number of options that can be selected.",
+    description: "限制可以选择的选项数。",
   },
   {
     prop: "close-on-select",
     type: "boolean",
     default: "true",
-    description: "Closes the listbox when an option is selected.",
+    description: "当选择选项时关闭列表框。",
   },
 ]
 ---
 ::
 
-## Sections
+## 部分
 
 :SectionKeysIntro
 
-The autocomplete's structure changes depending on a few different scenarios:
+自动完成输入框的结构根据几种不同情况而变化：
 
-- Whether `selection-appearance` has been set to `text-input` (the default) or `option`.
-- Whether multiple selections are enabled via the `multiple` attribute.
+- 是否已将 `selection-appearance` 设置为 `text-input`（默认值）或 `option`。
+- 是否通过 `multiple` 属性启用多选。
 
-### Selection appearance `text-input`
+### 选择外观 `text-input`
 
 ::FormKitInputDiagram
 ---
@@ -353,7 +353,7 @@ schema: [
         children: [
           {
             name: "label",
-            content: "Your favorite athletes",
+            content: "您最喜欢的运动员",
             class: "center-vert",
           },
           {
@@ -409,7 +409,7 @@ schema: [
       },
       {
         name: "help",
-        content: "Search for your favorite athletes.",
+        content: "搜索您最喜欢的运动员。",
         position: "right",
       },
       {
@@ -417,7 +417,7 @@ schema: [
         children: [
           {
             name: "message",
-            content: "Sorry, that athlete could not be found.",
+            content: "抱歉，找不到该运动员。",
           },
         ],
       },
@@ -427,7 +427,7 @@ schema: [
 ---
 ::
 
-### Selection appearance `option`, single selection
+### 选择外观 `option`，单个选择
 
 ::FormKitInputDiagram
 ---
@@ -443,7 +443,7 @@ schema: [
         children: [
           {
             name: 'label',
-            content: 'Your favorite athlete',
+            content: '您最喜欢的运动员',
             class: 'center-vert',
             position: 'right'
           },
@@ -534,7 +534,7 @@ schema: [
       },
       {
         name: 'help',
-        content: 'Search for your favorite athlete.',
+        content: '搜索您最喜欢的运动员。',
         position: 'right'
       },
       {
@@ -543,7 +543,7 @@ schema: [
         children: [
           {
             name: 'message',
-            content: 'Sorry, that athlete could not be found.',
+            content: '抱歉，找不到该运动员。',
             position: 'right'
           }
         ]
@@ -554,7 +554,7 @@ schema: [
 ---
 ::
 
-### Selection appearance `option`, multiple selection
+### 选择外观 `option`，多个选择
 
 ::FormKitInputDiagram
 ---
@@ -570,7 +570,7 @@ schema: [
         children: [
           {
             name: 'label',
-            content: 'Your favorite athlete',
+            content: '您最喜欢的运动员',
             class: 'center-vert',
             position: 'right'
           },
@@ -663,14 +663,14 @@ schema: [
       },
       {
         name: 'help',
-        content: 'Search for your favorite athlete.',
+        content: '搜索您最喜欢的运动员。',
       },
       {
         name: 'messages',
         children: [
           {
             name: 'message',
-            content: 'Sorry, that athlete could not be found.',
+            content: '抱歉，找不到该运动员。',
           }
         ]
       }
@@ -680,9 +680,9 @@ schema: [
 ---
 ::
 
-### Inner listbox structure
+### 内部选项列表结构
 
-Below is the inner options list (`listbox`) structure from the diagrams above:
+下面是上面图示中的内部选项列表（`listbox`）结构：
 
 ::FormKitInputDiagram
 ---
@@ -702,7 +702,7 @@ schema: [
             children: [
               {
                 name: 'emptyMessageInner',
-                content: 'No options to display.',
+                content: '没有要显示的选项。',
               }
             ]
           },
@@ -753,71 +753,71 @@ primary: "section-key"
 data: [
   {
     'section-key': 'selector',
-    description: 'The selector section is a button element that opens the dropdown options list.'
+    description: '选择器部分是一个打开下拉选项列表的按钮元素。'
   },
   {
     'section-key': 'selections',
-    description: 'Contains individual selection sections.'
+    description: '包含各个选择部分。'
   },
   {
     'section-key': 'selection',
-    description: 'Contains the selected option.'
+    description: '包含所选选项。'
   },
   {
     'section-key': 'listitem',
-    description: 'A list item element that contains the option section.'
+    description: '列表项元素，包含选项部分。'
   },
   {
     'section-key': 'option',
-    description: 'A div that contains the option content.'
+    description: '包含选项内容的 div。'
   },
   {
     'section-key': 'listbox',
-    description: 'The listbox section is a ul element that contains the options list.'
+    description: '列表框部分是一个 ul 元素，包含选项列表。'
   },
   {
     'section-key': 'dropdownWrapper',
-    description: 'Wraps the listbox section. A div that handles scrolling the listbox.'
+    description: '包装列表框部分的 div。负责滚动列表框。'
   },
   {
     'section-key': 'optionLoading',
-    description: 'A span element that is conditionally rendered within the selected option when loading is occurring.'
+    description: '在加载进行中时条件渲染在所选选项内部的 span 元素。'
   },
   {
     'section-key': 'loaderIcon',
-    description: 'An element for outputting an icon in the selector element when loading is occurring.'
+    description: '用于在选择器元素中输出图标的元素，表示加载进行中。'
   },
   {
     'section-key': 'selectIcon',
-    description: 'An element for outputting an icon in the selector element when the dropdown is closed.'
+    description: '用于在选择器元素中输出图标，表示下拉列表已关闭。'
   },
   {
     'section-key': 'loadMore',
-    description: 'A list item element that is conditionally rendered at the bottom of the options list when there are more pages to load.'
+    description: '在有更多页面需要加载时，在选项列表底部条件渲染的列表项元素。'
   },
   {
     'section-key': 'loadMoreInner',
-    description: 'A span element that acts as a wrapper for the loaderIcon within the loadMore section.'
+    description: '用于在 loadMore 部分内部包装 loaderIcon 的 span 元素。'
   },
   {
     'section-key': 'removeSelection',
-    description: 'A button element used for removing a specific selection.'
+    description: '用于移除特定选择的按钮元素。'
   },
   {
     'section-key': 'closeIcon',
-    description: 'An element for outputting an icon within the removeSelection button.'
+    description: '在 removeSelection 按钮内部输出图标的元素。'
   },
   {
     'section-key': 'listboxButton',
-    description: 'A button element that is used to open the dropdown.'
+    description: '用于打开下拉列表的按钮元素。'
   },
   {
     'section-key': 'emptyMessage',
-    description: 'A list item element that is conditionally rendered when there are no options to display.'
+    description: '在没有要显示的选项时条件渲染的列表项元素。'
   },
   {
     'section-key': 'emptyMessageInner',
-    description: 'A span element that acts as a wrapper for the emptyMessage section.'
+    description: '用于在 emptyMessage 部分内部包装的 span 元素。'
   }
 ]
 ---
