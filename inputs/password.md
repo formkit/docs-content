@@ -5,7 +5,7 @@ description: A native HTML password input.
 
 ::InputPageHero
 ---
-title: "Password"
+type: "Password"
 ---
 ::
 

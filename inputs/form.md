@@ -5,7 +5,7 @@ description: Collect all of your FormKit data, submit to your server, and handle
 
 ::InputPageHero
 ---
-title: "Form"
+type: "Form"
 ---
 ::
 

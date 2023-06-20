@@ -5,7 +5,7 @@ description: A native HTML button element.
 
 ::InputPageHero
 ---
-title: "Button"
+type: "Button"
 ---
 ::
 

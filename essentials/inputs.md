@@ -47,14 +47,14 @@ The [form type](/inputs/form) provides a host of features including value collec
 
 There are 4 ways to set the value of an input:
 
-- Using the `value` prop.
+- Using the `value` prop (Note: only sets *initial* value).
 - Using `v-model`.
 - Using FormKit's node `node.input()` method.
 - Setting the value of a parent `FormKit` component.
 
 ### Using `value` prop
 
-You can set the initial value of a single input or a group of inputs using the `value`
+You can set the *initial* value of a single input or a group of inputs using the `value`
 prop.
 
 ::Example

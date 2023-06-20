@@ -5,7 +5,7 @@ description: A native HTML email input.
 
 ::InputPageHero
 ---
-title: "Email"
+type: "Email"
 ---
 ::
 

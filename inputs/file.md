@@ -5,7 +5,7 @@ description: A native HTML file input with support for multiple files, drag and 
 
 ::InputPageHero
 ---
-title: "File"
+type: "File"
 ---
 ::
 

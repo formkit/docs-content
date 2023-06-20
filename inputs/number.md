@@ -5,7 +5,7 @@ description: A native HTML number input
 
 ::InputPageHero
 ---
-title: "Number"
+type: "Number"
 ---
 ::
 

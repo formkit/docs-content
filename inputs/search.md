@@ -5,7 +5,7 @@ description: A native HTML search input.
 
 ::InputPageHero
 ---
-title: "Search"
+type: "Search"
 ---
 ::
 

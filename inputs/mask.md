@@ -5,7 +5,7 @@ description: An input that formats text to a given pattern as a user types.
 
 ::InputPageHero
 ---
-title: "Mask"
+type: "Mask"
 ---
 ::
 

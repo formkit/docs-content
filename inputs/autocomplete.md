@@ -5,7 +5,7 @@ description: A Pro input that allows users to search and select from a customiza
 
 ::InputPageHero
 ---
-title: "Autocomplete"
+type: "Autocomplete"
 ---
 ::
 
@@ -278,7 +278,7 @@ data: [
     prop: "load-on-scroll",
     type: "boolean",
     default: "false",
-    description: "When set to <code>true</code>, the dropdown will try loading more options based on the end-user`s scroll position",
+    description: "When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position",
   },
   {
     prop: "selection-appearance",

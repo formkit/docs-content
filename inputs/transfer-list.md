@@ -5,7 +5,7 @@ description: The transfer list input allows users to transfer values between two
 
 ::InputPageHero
 ---
-title: "Transfer List"
+type: "Transfer List"
 ---
 ::
 

@@ -5,7 +5,7 @@ description: A native HTML textarea input.
 
 ::InputPageHero
 ---
-title: "Textarea"
+type: "Textarea"
 ---
 ::
 

@@ -5,7 +5,7 @@ description: A Pro input that allows users to select a date via pop up calendar 
 
 ::InputPageHero
 ---
-title: "Datepicker"
+type: "Datepicker"
 ---
 ::
 

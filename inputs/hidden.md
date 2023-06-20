@@ -5,7 +5,7 @@ description: A native HTML hidden input.
 
 ::InputPageHero
 ---
-title: "Hidden"
+type: "Hidden"
 ---
 ::
 

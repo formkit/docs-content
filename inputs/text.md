@@ -5,7 +5,7 @@ description: A native HTML text input.
 
 ::InputPageHero
 ---
-title: "Text"
+type: "Text"
 ---
 ::
 

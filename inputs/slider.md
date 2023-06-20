@@ -5,7 +5,7 @@ description: An advanced range input with support for multiple values.
 
 ::InputPageHero
 ---
-title: "Slider"
+type: "Slider"
 ---
 ::
 

@@ -5,7 +5,7 @@ description: A Pro input that allows users to search and select from a customiza
 
 ::InputPageHero
 ---
-title: "Taglist"
+type: "Taglist"
 ---
 ::
 

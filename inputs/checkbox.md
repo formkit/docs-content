@@ -5,7 +5,7 @@ description: A native HTML checkbox input with support for one or many nested op
 
 ::InputPageHero
 ---
-title: "Checkbox"
+type: "Checkbox"
 ---
 ::
 

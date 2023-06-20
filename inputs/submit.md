@@ -5,7 +5,7 @@ description: A native HTML button element used in place of a native HTML submit 
 
 ::InputPageHero
 ---
-title: "Submit"
+type: "Submit"
 ---
 ::
 

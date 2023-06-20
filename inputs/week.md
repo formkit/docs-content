@@ -5,7 +5,7 @@ description: A native HTML week picker.
 
 ::InputPageHero
 ---
-title: "Week"
+type: "Week"
 ---
 ::
 
