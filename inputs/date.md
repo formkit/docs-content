@@ -3,7 +3,11 @@ title: Date Input
 description: A native HTML date picker.
 ---
 
-:InputPageHero{title="Date"}
+::InputPageHero
+---
+title: "Date"
+---
+::
 
 :PageToc
 

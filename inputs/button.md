@@ -3,7 +3,11 @@ title: Button Input
 description: A native HTML button element.
 ---
 
-:InputPageHero{title="Button"}
+::InputPageHero
+---
+title: "Button"
+---
+::
 
 :PageToc
 

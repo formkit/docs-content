@@ -3,7 +3,11 @@ title: Dropdown Input
 description: A Pro input that allows users to select from a customizable options list.
 ---
 
-:InputPageHero{title="Dropdown"}
+::InputPageHero
+---
+title: "Dropdown"
+---
+::
 
 :PageToc
 

@@ -3,7 +3,11 @@ title: Number Input
 description: A native HTML number input
 ---
 
-:InputPageHero{title="Number"}
+::InputPageHero
+---
+title: "Number"
+---
+::
 
 :PageToc
 

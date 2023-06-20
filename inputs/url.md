@@ -3,7 +3,11 @@ title: URL Input
 description: A native HTML url input.
 ---
 
-:InputPageHero{title="URL"}
+::InputPageHero
+---
+title: "URL"
+---
+::
 
 :PageToc
 

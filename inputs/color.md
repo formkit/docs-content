@@ -3,7 +3,11 @@ title: Color Input
 description: A native HTML color picker.
 ---
 
-:InputPageHero{title="Color"}
+::InputPageHero
+---
+title: "Color"
+---
+::
 
 :PageToc
 

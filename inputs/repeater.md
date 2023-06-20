@@ -3,7 +3,11 @@ title: Repeater Input
 description: A Pro input that allows users to add, remove, and re-arrange repeatable input groups.
 ---
 
-:InputPageHero{title="Repeater"}
+::InputPageHero
+---
+title: "Repeater"
+---
+::
 
 :PageToc
 

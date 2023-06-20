@@ -3,7 +3,11 @@ title: Tel (Telephone) Input
 description: A native HTML tel input.
 ---
 
-:InputPageHero{title="Telephone"}
+::InputPageHero
+---
+title: "Telephone"
+---
+::
 
 :PageToc
 

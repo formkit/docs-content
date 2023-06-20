@@ -3,7 +3,11 @@ title: Text Input
 description: A native HTML text input.
 ---
 
-:InputPageHero{title="Text"}
+::InputPageHero
+---
+title: "Text"
+---
+::
 
 :PageToc
 

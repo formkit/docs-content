@@ -3,7 +3,11 @@ title: Rating Input
 description: A Pro input that allows users to provide feedback based on a numeric scale represented by icons/images.
 ---
 
-:InputPageHero{title="Rating"}
+::InputPageHero
+---
+title: "Rating"
+---
+::
 
 :PageToc
 

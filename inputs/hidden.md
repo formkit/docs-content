@@ -3,7 +3,11 @@ title: Hidden Input
 description: A native HTML hidden input.
 ---
 
-:InputPageHero{title="Hidden"}
+::InputPageHero
+---
+title: "Hidden"
+---
+::
 
 :PageToc
 

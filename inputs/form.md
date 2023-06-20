@@ -3,7 +3,11 @@ title: Form
 description: Collect all of your FormKit data, submit to your server, and handle server-side error messages.
 ---
 
-:InputPageHero{title="Form"}
+::InputPageHero
+---
+title: "Form"
+---
+::
 
 :PageToc
 

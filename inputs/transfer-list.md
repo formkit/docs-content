@@ -3,7 +3,11 @@ title: Transfer List Input
 description: The transfer list input allows users to transfer values between two lists. It is useful for situations where you need to select multiple values from a large list of options.
 ---
 
-:InputPageHero{title="Transfer List"}
+::InputPageHero
+---
+title: "Transfer List"
+---
+::
 
 :PageToc
 

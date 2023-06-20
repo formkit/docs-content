@@ -3,7 +3,11 @@ title: Range Input
 description: A native HTML range input.
 ---
 
-:InputPageHero{title="Range"}
+::InputPageHero
+---
+title: "Range"
+---
+::
 
 :PageToc
 
