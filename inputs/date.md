@@ -5,7 +5,7 @@ description: A native HTML date picker.
 
 ::InputPageHero
 ---
-title: "Date"
+type: "Date"
 ---
 ::
 

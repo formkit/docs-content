@@ -5,7 +5,7 @@ description: A native HTML time input.
 
 ::InputPageHero
 ---
-title: "Time"
+type: "Time"
 ---
 ::
 

@@ -5,7 +5,7 @@ description: A Pro input that allows users to provide feedback based on a numeri
 
 ::InputPageHero
 ---
-title: "Rating"
+type: "Rating"
 ---
 ::
 

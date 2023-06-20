@@ -5,7 +5,7 @@ description: A native HTML radio input with support for one or many nested optio
 
 ::InputPageHero
 ---
-title: "Radio"
+type: "Radio"
 ---
 ::
 

@@ -5,7 +5,7 @@ description: A native HTML color picker.
 
 ::InputPageHero
 ---
-title: "Color"
+type: "Color"
 ---
 ::
 

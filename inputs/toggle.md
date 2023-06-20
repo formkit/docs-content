@@ -5,7 +5,7 @@ description: The toggle input is used to choose one of two values; it is a good 
 
 ::InputPageHero
 ---
-title: "Toggle"
+type: "Toggle"
 ---
 ::
 

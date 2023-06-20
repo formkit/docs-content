@@ -5,7 +5,7 @@ description: A Pro input that allows users to select from a customizable options
 
 ::InputPageHero
 ---
-title: "Dropdown"
+type: "Dropdown"
 ---
 ::
 

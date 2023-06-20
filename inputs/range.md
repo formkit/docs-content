@@ -5,7 +5,7 @@ description: A native HTML range input.
 
 ::InputPageHero
 ---
-title: "Range"
+type: "Range"
 ---
 ::
 

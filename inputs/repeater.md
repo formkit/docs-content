@@ -5,7 +5,7 @@ description: A Pro input that allows users to add, remove, and re-arrange repeat
 
 ::InputPageHero
 ---
-title: "Repeater"
+type: "Repeater"
 ---
 ::
 

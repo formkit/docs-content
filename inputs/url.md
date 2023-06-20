@@ -5,7 +5,7 @@ description: A native HTML url input.
 
 ::InputPageHero
 ---
-title: "URL"
+type: "URL"
 ---
 ::
 

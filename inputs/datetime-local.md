@@ -5,7 +5,7 @@ description: A native HTML datetime-local picker.
 
 ::InputPageHero
 ---
-title: "Datetime-local"
+type: "Datetime-local"
 ---
 ::
 

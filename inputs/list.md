@@ -5,7 +5,7 @@ description: An invisible FormKit input that allows you to logically structure y
 
 ::InputPageHero
 ---
-title: "List"
+type: "List"
 ---
 ::
 

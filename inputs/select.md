@@ -5,7 +5,7 @@ description: A native HTML select input. Supports both single-value and multi-va
 
 ::InputPageHero
 ---
-title: "Select"
+type: "Select"
 ---
 ::
 

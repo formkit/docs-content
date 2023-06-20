@@ -5,7 +5,7 @@ description: A native HTML tel input.
 
 ::InputPageHero
 ---
-title: "Telephone"
+type: "Telephone"
 ---
 ::
 
