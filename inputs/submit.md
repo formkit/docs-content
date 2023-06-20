@@ -3,7 +3,11 @@ title: Submit Input
 description: A native HTML button element used in place of a native HTML submit input.
 ---
 
-:InputPageHero{title="Submit"}
+::InputPageHero
+---
+title: "Submit"
+---
+::
 
 :PageToc
 

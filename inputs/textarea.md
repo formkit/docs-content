@@ -3,7 +3,11 @@ title: Textarea Input
 description: A native HTML textarea input.
 ---
 
-:InputPageHero{title="Textarea"}
+::InputPageHero
+---
+title: "Textarea"
+---
+::
 
 :PageToc
 

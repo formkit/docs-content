@@ -3,7 +3,11 @@ title: Radio Input
 description: A native HTML radio input with support for one or many nested options elements.
 ---
 
-:InputPageHero{title="Radio"}
+::InputPageHero
+---
+title: "Radio"
+---
+::
 
 :PageToc
 

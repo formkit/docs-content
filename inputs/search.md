@@ -3,7 +3,11 @@ title: Search Input
 description: A native HTML search input.
 ---
 
-:InputPageHero{title="Search"}
+::InputPageHero
+---
+title: "Search"
+---
+::
 
 :PageToc
 

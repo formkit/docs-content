@@ -3,7 +3,11 @@ title: Datetime-local Input
 description: A native HTML datetime-local picker.
 ---
 
-:InputPageHero{title="Datetime-local"}
+::InputPageHero
+---
+title: "Datetime-local"
+---
+::
 
 :PageToc
 

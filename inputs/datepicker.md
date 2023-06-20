@@ -3,7 +3,11 @@ title: Datepicker Input
 description: A Pro input that allows users to select a date via pop up calendar or typing the date in using their preferred localization.
 ---
 
-:InputPageHero{title="Datepicker"}
+::InputPageHero
+---
+title: "Datepicker"
+---
+::
 
 :PageToc
 
@@ -304,16 +308,16 @@ Time is a notoriously hard thing to work with in any software environment, but e
 ---
 In order to work with dates and times in JavaScript, it is useful to have a basic understanding of the `Date` object. The date object in JavaScript is fundamentally a Unix timestamp (number of milliseconds since `Jan 1 1970 at 00:00:00Z`). However, it is *always* localized to the client’s time. This localization is expressed in an an offset from `UTC`. Your browser’s current time is:
 
-:CurrentTime{label="Client (browser) time"}
-
+:CurrentTime{label="Client (browser) time
+---
 When the offset is applied to the "clock time" you arrive at the current time in UTC:
 
-:CurrentTime{methodName="toISOString" label="UTC"}
-
+:CurrentTime{methodName="toISOString" label="UTC
+---
 When using `value-format` tokens in the datepicker, those tokens will operate using the client’s timezone. For example, if your format requests the `HH` token it would return:
 
-:CurrentTime{methodName="getHours" label="HH format token"}
-
+:CurrentTime{methodName="getHours" label="HH format token
+---
 Compare that to the above dates, and you’ll see it is the same as the `hours` portion of the local time. Why does this matter? Read on.
 
 ### A case study

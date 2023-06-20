@@ -3,7 +3,11 @@ title: Month Input
 description: A native HTML month picker.
 ---
 
-:InputPageHero{title="Month"}
+::InputPageHero
+---
+title: "Month"
+---
+::
 
 :PageToc
 

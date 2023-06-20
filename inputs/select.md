@@ -3,7 +3,11 @@ title: Select Input
 description: A native HTML select input. Supports both single-value and multi-value selections.
 ---
 
-:InputPageHero{title="Select"}
+::InputPageHero
+---
+title: "Select"
+---
+::
 
 :PageToc
 

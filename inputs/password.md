@@ -3,7 +3,11 @@ title: Password Input
 description: A native HTML password input.
 ---
 
-:InputPageHero{title="Password"}
+::InputPageHero
+---
+title: "Password"
+---
+::
 
 :PageToc
 

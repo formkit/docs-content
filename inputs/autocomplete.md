@@ -3,7 +3,11 @@ title: Autocomplete Input
 description: A Pro input that allows users to search and select from a customizable options list. Supports single and multi-value selections.
 ---
 
-:InputPageHero{title="Autocomplete"}
+::InputPageHero
+---
+title: "Autocomplete"
+---
+::
 
 :PageToc
 

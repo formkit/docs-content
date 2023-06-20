@@ -3,7 +3,11 @@ title: Time Input
 description: A native HTML time input.
 ---
 
-:InputPageHero{title="Time"}
+::InputPageHero
+---
+title: "Time"
+---
+::
 
 :PageToc
 

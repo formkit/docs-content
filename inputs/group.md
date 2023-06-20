@@ -3,7 +3,11 @@ title: Group Input
 description: An invisible FormKit input that allows you to logically structure your form data as an object.
 ---
 
-:InputPageHero{title="Group"}
+::InputPageHero
+---
+title: "Group"
+---
+::
 
 :PageToc
 

@@ -3,7 +3,11 @@ title: Slider Input
 description: An advanced range input with support for multiple values.
 ---
 
-:InputPageHero{title="Slider"}
+::InputPageHero
+---
+title: "Slider"
+---
+::
 
 :PageToc
 

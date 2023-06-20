@@ -3,7 +3,11 @@ title: Week Input
 description: A native HTML week picker.
 ---
 
-:InputPageHero{title="Week"}
+::InputPageHero
+---
+title: "Week"
+---
+::
 
 :PageToc
 

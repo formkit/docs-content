@@ -3,7 +3,11 @@ title: Email Input
 description: A native HTML email input.
 ---
 
-:InputPageHero{title="Email"}
+::InputPageHero
+---
+title: "Email"
+---
+::
 
 :PageToc
 
