@@ -121,6 +121,6 @@ If you have a specific question about how to use FormKit, please ask it on Stack
 
 - Star on [GitHub](https://github.com/formkit/formkit) ⭐️. This helps visibility.
 - Subscribe to the [email list](https://t.co/hEBF5FZPrB).
-- Follow on [Twitter](https://twitter.com/formkit).
+- Follow on [Twitter](https://twitter.com/FormKit).
 - Join the [Discord](https://discord.gg/NZ6nchBDGx).
 - Subscribe on [YouTube](https://www.youtube.com/formkit).
