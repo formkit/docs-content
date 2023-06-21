@@ -307,6 +307,8 @@ Section schemas can also change the content being output using advanced schema l
 ---
 ::
 
+### Learn more about schema
+
 ::Cta
 ---
 label: "Learn more about how schemas work" 
