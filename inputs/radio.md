@@ -65,7 +65,7 @@ data: [
     type: "String",
     default: "’’",
     description:
-      "Specifies <a href=&quot;/essentials/icons&quot;>an icon</a> to put in the <code>decoratorIcon</code> section. Shows when the radio is checked. Defaults to the <code>radioDecorator</code> icon.",
+      'Specifies <a href="/essentials/icons">an icon</a> to put in the <code>decoratorIcon</code> section. Shows when the radio is checked. Defaults to the <code>radioDecorator</code> icon.',
   },
   {
     prop: "options",
