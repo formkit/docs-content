@@ -40,7 +40,7 @@ Short on time? Read the introduction post that explains the goals of FormKit wri
 ---
 img: "https://cdn.formk.it/web-assets/og-introducing-formkit.jpeg"
 label: "Article"
-title: 'Read the full "Introducing FormKit" manifesto from core team member Justin Schroeder on DEV.to.'
+title: "Read the full \"Introducing FormKit\" manifesto from core team member Justin Schroeder on DEV.to."
 href: "https://dev.to/justinschroeder/introducing-formkit-a-vue-3-form-building-framework-53ji"
 ---
 ::
