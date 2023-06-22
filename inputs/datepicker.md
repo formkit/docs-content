@@ -501,7 +501,7 @@ data: [
   {
     prop: "format",
     type: "string/object",
-    default: "date: "long"",
+    default: "date: 'long'",
     description: "The format to display to the user in the select input."
   },
   {

@@ -230,7 +230,7 @@ schema: [
                       },
                       {
                         name: "controls",
-                        class: ",
+                        class: "",
                         position: "right",
                         children: [
                           {
