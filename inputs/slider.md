@@ -332,95 +332,95 @@ hide-on-small: true
 class: "input-diagram--slider"
 schema: [
   {
-    name: 'outer',
-    position: 'right',
+    name: "outer",
+    position: "right",
     children: [
       {
-        name: 'wrapper',
-        position: 'right',
+        name: "wrapper",
+        position: "right",
         children: [
           {
-            name: 'label',
-            content: 'Choose your price range',
-            position: 'right',
-            class: 'center-vert'
+            name: "label",
+            content: "Choose your price range",
+            position: "right",
+            class: "center-vert"
           },
           {
-            name: 'help',
-            content: 'Select available locations by price',
-            position: 'right'
+            name: "help",
+            content: "Select available locations by price",
+            position: "right"
           },
           {
-            name: 'sliderInner',
-            position: 'right',
-            class: 'flex',
+            name: "sliderInner",
+            position: "right",
+            class: "flex",
             children: [
               {
-                name: 'prefixIcon',
-                class: 'small flex-shrink'
+                name: "prefixIcon",
+                class: "small flex-shrink"
               },
               {
-                name: 'prefix',
-                class: 'small flex-shrink'
+                name: "prefix",
+                class: "small flex-shrink"
               },
               {
-                name: 'track',
-                position: 'right',
-                class: 'flex-grow',
+                name: "track",
+                position: "right",
+                class: "flex-grow",
                 children: [
                   {
-                    name: 'chart',
+                    name: "chart",
                     children: [
                       {
-                        name: 'chartBar',
-                        content: '📊',
-                        class: 'border-solid text-center'
+                        name: "chartBar",
+                        content: "📊",
+                        class: "border-solid text-center"
                       }
                     ]
                   },
                   {
-                    name: 'trackWrapper',
-                    position: 'right',
+                    name: "trackWrapper",
+                    position: "right",
                     children: [
                       {
-                        name: 'trackInner',
-                        position: 'right',
+                        name: "trackInner",
+                        position: "right",
                         children: [
                           {
-                            name: 'fill',
-                            class: 'border-solid'
+                            name: "fill",
+                            class: "border-solid"
                           },
                           {
-                            name: 'marks',
-                            class: 'border-solid text-center',
-                            content: '...',
+                            name: "marks",
+                            class: "border-solid text-center",
+                            content: "...",
                             children: [
                               {
-                                name: 'markLabel'
+                                name: "markLabel"
                               }
                             ]
                           },
                           {
-                            name: 'handles',
-                            class: 'flex',
+                            name: "handles",
+                            class: "flex",
                             children: [
                               {
-                                name: 'handleMin',
-                                class: 'border-solid text-center',
-                                content: '⚪',
+                                name: "handleMin",
+                                class: "border-solid text-center",
+                                content: "⚪",
                                 children: [
                                   {
-                                    name: 'tooltipMin'
+                                    name: "tooltipMin"
                                   }
                                 ]
                               },
                               {
-                                name: 'handleMax',
-                                class: 'border-solid text-center',
-                                content: '⚪',
+                                name: "handleMax",
+                                class: "border-solid text-center",
+                                content: "⚪",
                                 children: [
                                   {
-                                    name: 'tooltipMax'
+                                    name: "tooltipMax"
                                   }
                                 ]
                               }
@@ -433,47 +433,47 @@ schema: [
                 ]
               },
               {
-                name: 'suffix',
-                position: 'right',
-                class: 'small flex-shrink'
+                name: "suffix",
+                position: "right",
+                class: "small flex-shrink"
               },
               {
-                name: 'suffixIcon',
-                position: 'right',
-                class: 'small flex-shrink'
+                name: "suffixIcon",
+                position: "right",
+                class: "small flex-shrink"
               },
               {
-                name: 'maxValue (single)',
-                position: 'right',
-                class: 'small flex-shrink',
+                name: "maxValue (single)",
+                position: "right",
+                class: "small flex-shrink",
               },
             ]
           },
         ]
       },
       {
-        name: 'linkedValues',
-        class: 'flex',
+        name: "linkedValues",
+        class: "flex",
         children: [
           {
             name: minValue,
-            class: 'border-solid'
+            class: "border-solid"
           },
           {
             name: maxValue,
-            position: 'right',
-            class: 'border-solid'
+            position: "right",
+            class: "border-solid"
           }
         ]
       },
       {
-        name: 'messages',
-        position: 'right',
+        name: "messages",
+        position: "right",
         children: [
           {
-            name: 'message',
-            content: 'You must provide a rating.',
-            position: 'right'
+            name: "message",
+            content: "You must provide a rating.",
+            position: "right"
           }
         ]
       }
@@ -488,79 +488,79 @@ schema: [
 ---
 type: "sectionKeys"
 primary: "section-key"
-without: ['inner']
+without: ["inner"]
 data: [
   {
-    'section-key': 'chart',
-    description: 'A container for the chart bar elements.'
+    "section-key": "chart",
+    description: "A container for the chart bar elements."
   },
   {
-    'section-key': 'chartBar',
-    description: 'An individual bar for the chart element.'
+    "section-key": "chartBar",
+    description: "An individual bar for the chart element."
   },
   {
-    'section-key': 'fill',
-    description: 'The fill for the selected range on the slider input.'
+    "section-key": "fill",
+    description: "The fill for the selected range on the slider input."
   },
   {
-    'section-key': 'handleMax',
-    description: 'The maximum value selection handle. This is the default handle for single-value slider inputs.'
+    "section-key": "handleMax",
+    description: "The maximum value selection handle. This is the default handle for single-value slider inputs."
   },
   {
-    'section-key': 'handleMin',
-    description: 'The minimum value selection handle.'
+    "section-key": "handleMin",
+    description: "The minimum value selection handle."
   },
   {
-    'section-key': 'handles',
-    description: 'A container for the track selection handles'
+    "section-key": "handles",
+    description: "A container for the track selection handles"
   },
   {
-    'section-key': 'linkedValues',
-    description: 'A wrapper for the linked inputs for the slider’s minimum and maximum values.'
+    "section-key": "linkedValues",
+    description: "A wrapper for the linked inputs for the slider’s minimum and maximum values."
   },
   {
-    'section-key': 'mark',
-    description: 'An individual mark on the track.'
+    "section-key": "mark",
+    description: "An individual mark on the track."
   },
   {
-    'section-key': 'markLabel',
-    description: 'The label for an individual mark on the track.'
+    "section-key": "markLabel",
+    description: "The label for an individual mark on the track."
   },
   {
-    'section-key': 'marks',
-    description: 'A container for all of the marks on the track'
+    "section-key": "marks",
+    description: "A container for all of the marks on the track"
   },
   {
-    'section-key': 'maxValue',
-    description: 'The linked FormKit number input for the slider’s maximum value. If the slider only has a single value this is rendered as a direct descendant of the <code>sliderInner</div> section.'
+    "section-key": "maxValue",
+    description: "The linked FormKit number input for the slider’s maximum value. If the slider only has a single value this is rendered as a direct descendant of the <code>sliderInner</div> section."
   },
   {
-    'section-key': 'minValue',
-    description: 'The linked FormKit number input for the slider’s minimum value.'
+    "section-key": "minValue",
+    description: "The linked FormKit number input for the slider’s minimum value."
   },
   {
-    'section-key': 'sliderInner',
-    description: 'The interior div that contains the slider input content.'
+    "section-key": "sliderInner",
+    description: "The interior div that contains the slider input content."
   },
   {
-    'section-key': 'track',
-    description: 'A wrapper that contains all of the track markup for the slider input.'
+    "section-key": "track",
+    description: "A wrapper that contains all of the track markup for the slider input."
   },
   {
-    'section-key': 'trackInner',
-    description: 'An interior wrapper for styling purposes that contains all of the track markup excluding the chart.'
+    "section-key": "trackInner",
+    description: "An interior wrapper for styling purposes that contains all of the track markup excluding the chart."
   },
   {
-    'section-key': 'trackWrapper',
-    description: 'A wrapper that contains all of the track markup excluding the chart.'
+    "section-key": "trackWrapper",
+    description: "A wrapper that contains all of the track markup excluding the chart."
   },
   {
-    'section-key': 'tooltipMin',
-    description: 'The tooltip for the minimum value selection handle'
+    "section-key": "tooltipMin",
+    description: "The tooltip for the minimum value selection handle"
   },
   {
-    'section-key': 'tooltipMax',
-    description: 'The tooltip for the maximum value selection handle'
+    "section-key": "tooltipMax",
+    description: "The tooltip for the maximum value selection handle"
   },
 ]
 ---

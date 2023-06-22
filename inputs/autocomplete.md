@@ -439,60 +439,60 @@ hide-on-small: true
 class: "input-diagram--autocomplete-outer autocomplete-option-single"
 schema: [
   {
-    name: 'outer',
-    position: 'right',
+    name: "outer",
+    position: "right",
     children: [
       {
-        name: 'wrapper',
+        name: "wrapper",
         children: [
           {
-            name: 'label',
-            content: 'Your favorite athlete',
-            class: 'center-vert',
-            position: 'right'
+            name: "label",
+            content: "Your favorite athlete",
+            class: "center-vert",
+            position: "right"
           },
           {
-            name: 'inner',
+            name: "inner",
             children: [
               {
-                name: 'prefixIcon',
-                class: 'tiny-section'
+                name: "prefixIcon",
+                class: "tiny-section"
               },
               {
-                name: 'prefix',
-                class: 'tiny-section'
+                name: "prefix",
+                class: "tiny-section"
               },
               {
-                name: 'input',
-                class: 'flex-grow-0'
+                name: "input",
+                class: "flex-grow-0"
               },
               {
-                name: 'selections',
-                class: 'flex flex-grow small-pad',
+                name: "selections",
+                class: "flex flex-grow small-pad",
                 children: [
                   {
-                    name: 'selection',
-                    class: 'flex flex-grow small-pad',
+                    name: "selection",
+                    class: "flex flex-grow small-pad",
                     children: [
                       {
-                        name: 'option',
-                        content: 'Pelé',
-                        class: 'flex flex-grow small-pad',
+                        name: "option",
+                        content: "Pelé",
+                        class: "flex flex-grow small-pad",
                         children: [
                           {
-                            name: 'optionLoading',
-                            class: 'flex-grow-0'
+                            name: "optionLoading",
+                            class: "flex-grow-0"
                           }
                         ]
                       },
                       {
-                        name: 'removeSelection',
-                        class: 'small-pad',
+                        name: "removeSelection",
+                        class: "small-pad",
                         children: [
                           {
-                            name: 'closeIcon',
-                            content: 'X',
-                            class: 'small-pad'
+                            name: "closeIcon",
+                            content: "X",
+                            class: "small-pad"
                           }
                         ]
                       }
@@ -501,54 +501,54 @@ schema: [
                 ]
               },
               {
-                name: 'loaderIcon',
-                position: 'right'
+                name: "loaderIcon",
+                position: "right"
               },
               {
-                name: 'listboxButton',
-                position: 'right',
-                class: 'small-pad center-vert',
+                name: "listboxButton",
+                position: "right",
+                class: "small-pad center-vert",
                 children: [
                   {
-                    name: 'selectIcon',
-                    content: '⌄',
-                    position: 'right'
+                    name: "selectIcon",
+                    content: "⌄",
+                    position: "right"
                   }
                 ]
               },
               {
-                name: 'listbox',
-                content: 'Tiger Pelé',
-                class: 'wrap-text',
-                position: 'right'
+                name: "listbox",
+                content: "Tiger Pelé",
+                class: "wrap-text",
+                position: "right"
               },
               {
-                name: 'suffix',
-                position: 'right',
-                class: 'tiny-section'
+                name: "suffix",
+                position: "right",
+                class: "tiny-section"
               },
               {
-                name: 'suffixIcon',
-                position: 'right',
-                class: 'tiny-section'
+                name: "suffixIcon",
+                position: "right",
+                class: "tiny-section"
               },
             ]
           },
         ]
       },
       {
-        name: 'help',
-        content: 'Search for your favorite athlete.',
-        position: 'right'
+        name: "help",
+        content: "Search for your favorite athlete.",
+        position: "right"
       },
       {
-        name: 'messages',
-        position: 'right',
+        name: "messages",
+        position: "right",
         children: [
           {
-            name: 'message',
-            content: 'Sorry, that athlete could not be found.',
-            position: 'right'
+            name: "message",
+            content: "Sorry, that athlete could not be found.",
+            position: "right"
           }
         ]
       }
@@ -566,96 +566,96 @@ hide-on-small: true
 class: "input-diagram--autocomplete-outer autocomplete-option-single"
 schema: [
   {
-    name: 'outer',
-    position: 'right',
+    name: "outer",
+    position: "right",
     children: [
       {
-        name: 'wrapper',
+        name: "wrapper",
         children: [
           {
-            name: 'label',
-            content: 'Your favorite athlete',
-            class: 'center-vert',
-            position: 'right'
+            name: "label",
+            content: "Your favorite athlete",
+            class: "center-vert",
+            position: "right"
           },
           {
-            name: 'inner',
+            name: "inner",
             children: [
               {
-                name: 'prefixIcon',
-                class: 'tiny-section'
+                name: "prefixIcon",
+                class: "tiny-section"
               },
               {
-                name: 'prefix',
-                class: 'tiny-section'
+                name: "prefix",
+                class: "tiny-section"
               },
               {
-                name: 'input',
+                name: "input",
               },
               {
-                name: 'loaderIcon',
-                position: 'right'
+                name: "loaderIcon",
+                position: "right"
               },
               {
-                name: 'listboxButton',
-                position: 'right',
-                class: 'center-vert small-pad',
+                name: "listboxButton",
+                position: "right",
+                class: "center-vert small-pad",
                 children: [
                   {
-                    name: 'selectIcon',
-                    content: '⌄',
-                    position: 'right'
+                    name: "selectIcon",
+                    content: "⌄",
+                    position: "right"
                   }
                 ]
               },
               {
-                name: 'listbox',
-                content: 'Tiger Pelé',
-                class: 'wrap-text',
-                position: 'right'
+                name: "listbox",
+                content: "Tiger Pelé",
+                class: "wrap-text",
+                position: "right"
               },
               {
-                name: 'suffix',
-                position: 'right',
-                class: 'tiny-section'
+                name: "suffix",
+                position: "right",
+                class: "tiny-section"
               },
               {
-                name: 'suffixIcon',
-                position: 'right',
-                class: 'tiny-section'
+                name: "suffixIcon",
+                position: "right",
+                class: "tiny-section"
               },
             ]
           },
           {
-            name: 'selections',
-            class: 'flex flex-grow',
+            name: "selections",
+            class: "flex flex-grow",
             children: [
               {
-                name: 'selection',
-                class: 'flex flex-grow',
+                name: "selection",
+                class: "flex flex-grow",
                 children: [
                   {
-                    name: 'option',
-                    content: 'Pelé',
-                    class: 'flex flex-grow',
+                    name: "option",
+                    content: "Pelé",
+                    class: "flex flex-grow",
                     children: [
                       {
-                        name: 'optionLoading',
-                        class: 'flex-grow-0',
-                        position: 'right'
+                        name: "optionLoading",
+                        class: "flex-grow-0",
+                        position: "right"
                       }
                     ]
                   },
                   {
-                    name: 'removeSelection',
-                    class: 'small-pad',
-                    position: 'right',
+                    name: "removeSelection",
+                    class: "small-pad",
+                    position: "right",
                     children: [
                       {
-                        name: 'closeIcon',
-                        content: 'X',
-                        class: 'small-pad',
-                        position: 'right'
+                        name: "closeIcon",
+                        content: "X",
+                        class: "small-pad",
+                        position: "right"
                       }
                     ]
                   }
@@ -666,15 +666,15 @@ schema: [
         ]
       },
       {
-        name: 'help',
-        content: 'Search for your favorite athlete.',
+        name: "help",
+        content: "Search for your favorite athlete.",
       },
       {
-        name: 'messages',
+        name: "messages",
         children: [
           {
-            name: 'message',
-            content: 'Sorry, that athlete could not be found.',
+            name: "message",
+            content: "Sorry, that athlete could not be found.",
           }
         ]
       }
@@ -694,49 +694,49 @@ hide-on-small: true
 class: "input-diagram--autocomplete"
 schema: [
   {
-    name: 'dropdownWrapper',
-    position: 'right',
+    name: "dropdownWrapper",
+    position: "right",
     children: [
       {
-        name: 'listbox',
-        position: 'right',
+        name: "listbox",
+        position: "right",
         children: [
         {
-            name: 'emptyMessage',
+            name: "emptyMessage",
             children: [
               {
-                name: 'emptyMessageInner',
-                content: 'No options to display.',
+                name: "emptyMessageInner",
+                content: "No options to display.",
               }
             ]
           },
           {
-            name: 'listitem',
-            class: 'flex flex-grow',
-            position: 'right',
+            name: "listitem",
+            class: "flex flex-grow",
+            position: "right",
             children: [
               {
-                name: 'selectedIcon',
-                content: '✔️'
+                name: "selectedIcon",
+                content: "✔️"
               },
               {
-                name: 'option',
-                content: 'Serena',
-                position: 'right',
-                class: 'flex flex-grow'
+                name: "option",
+                content: "Serena",
+                position: "right",
+                class: "flex flex-grow"
               },
             ]
           },
           {
-            name: 'loadMore',
+            name: "loadMore",
             children: [
               {
-                name: 'loadMoreInner',
+                name: "loadMoreInner",
                 children: [
                   {
-                    name: 'loaderIcon',
-                    content: '⏳',
-                    class: 'text-center'
+                    name: "loaderIcon",
+                    content: "⏳",
+                    class: "text-center"
                   }
                 ]
               },
@@ -756,72 +756,72 @@ type: "sectionKeys"
 primary: "section-key"
 data: [
   {
-    'section-key': 'selector',
-    description: 'The selector section is a button element that opens the dropdown options list.'
+    "section-key": "selector",
+    description: "The selector section is a button element that opens the dropdown options list."
   },
   {
-    'section-key': 'selections',
-    description: 'Contains individual selection sections.'
+    "section-key": "selections",
+    description: "Contains individual selection sections."
   },
   {
-    'section-key': 'selection',
-    description: 'Contains the selected option.'
+    "section-key": "selection",
+    description: "Contains the selected option."
   },
   {
-    'section-key': 'listitem',
-    description: 'A list item element that contains the option section.'
+    "section-key": "listitem",
+    description: "A list item element that contains the option section."
   },
   {
-    'section-key': 'option',
-    description: 'A div that contains the option content.'
+    "section-key": "option",
+    description: "A div that contains the option content."
   },
   {
-    'section-key': 'listbox',
-    description: 'The listbox section is a ul element that contains the options list.'
+    "section-key": "listbox",
+    description: "The listbox section is a ul element that contains the options list."
   },
   {
-    'section-key': 'dropdownWrapper',
-    description: 'Wraps the listbox section. A div that handles scrolling the listbox.'
+    "section-key": "dropdownWrapper",
+    description: "Wraps the listbox section. A div that handles scrolling the listbox."
   },
   {
-    'section-key': 'optionLoading',
-    description: 'A span element that is conditionally rendered within the selected option when loading is occurring.'
+    "section-key": "optionLoading",
+    description: "A span element that is conditionally rendered within the selected option when loading is occurring."
   },
   {
-    'section-key': 'loaderIcon',
-    description: 'An element for outputting an icon in the selector element when loading is occurring.'
+    "section-key": "loaderIcon",
+    description: "An element for outputting an icon in the selector element when loading is occurring."
   },
   {
-    'section-key': 'selectIcon',
-    description: 'An element for outputting an icon in the selector element when the dropdown is closed.'
+    "section-key": "selectIcon",
+    description: "An element for outputting an icon in the selector element when the dropdown is closed."
   },
   {
-    'section-key': 'loadMore',
-    description: 'A list item element that is conditionally rendered at the bottom of the options list when there are more pages to load.'
+    "section-key": "loadMore",
+    description: "A list item element that is conditionally rendered at the bottom of the options list when there are more pages to load."
   },
   {
-    'section-key': 'loadMoreInner',
-    description: 'A span element that acts as a wrapper for the loaderIcon within the loadMore section.'
+    "section-key": "loadMoreInner",
+    description: "A span element that acts as a wrapper for the loaderIcon within the loadMore section."
   },
   {
-    'section-key': 'removeSelection',
-    description: 'A button element used for removing a specific selection.'
+    "section-key": "removeSelection",
+    description: "A button element used for removing a specific selection."
   },
   {
-    'section-key': 'closeIcon',
-    description: 'An element for outputting an icon within the removeSelection button.'
+    "section-key": "closeIcon",
+    description: "An element for outputting an icon within the removeSelection button."
   },
   {
-    'section-key': 'listboxButton',
-    description: 'A button element that is used to open the dropdown.'
+    "section-key": "listboxButton",
+    description: "A button element that is used to open the dropdown."
   },
   {
-    'section-key': 'emptyMessage',
-    description: 'A list item element that is conditionally rendered when there are no options to display.'
+    "section-key": "emptyMessage",
+    description: "A list item element that is conditionally rendered when there are no options to display."
   },
   {
-    'section-key': 'emptyMessageInner',
-    description: 'A span element that acts as a wrapper for the emptyMessage section.'
+    "section-key": "emptyMessageInner",
+    description: "A span element that acts as a wrapper for the emptyMessage section."
   }
 ]
 ---

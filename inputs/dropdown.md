@@ -238,94 +238,94 @@ hide-on-small: true
 class: "input-diagram--dropdown-outer"
 schema: [
   {
-    name: 'outer',
-    position: 'right',
+    name: "outer",
+    position: "right",
     children: [
       {
-        name: 'wrapper',
-        position: 'right',
+        name: "wrapper",
+        position: "right",
         children: [
           {
-            name: 'label',
-            position: 'right',
-            content: 'Select t-shirt color',
-            class: 'center-vert'
+            name: "label",
+            position: "right",
+            content: "Select t-shirt color",
+            class: "center-vert"
           },
           {
-            name: 'inner',
+            name: "inner",
             children: [
               {
-                name: 'prefixIcon',
-                class: 'tiny-section'
+                name: "prefixIcon",
+                class: "tiny-section"
               },
               {
-                name: 'prefix',
-                class: 'tiny-section'
+                name: "prefix",
+                class: "tiny-section"
               },
               {
-                name: 'selector',
-                class: 'flex flex-grow',
+                name: "selector",
+                class: "flex flex-grow",
                 children: [
                   {
-                    name: 'selection',
-                    class: 'flex-grow',
+                    name: "selection",
+                    class: "flex-grow",
                     children: [
                       {
-                        name: 'option',
-                        content: 'Gray',
-                        class: 'flex border-solid',
+                        name: "option",
+                        content: "Gray",
+                        class: "flex border-solid",
                         children: [
                           {
-                            name: 'optionLoading',
-                            class: 'flex-grow-0'
+                            name: "optionLoading",
+                            class: "flex-grow-0"
                           }
                         ]
                       }
                     ]
                   },
                   {
-                      name: 'loaderIcon'
+                      name: "loaderIcon"
                   },
                   {
-                    name: 'selectIcon',
-                    content: '⌄',
-                    class: 'center-vert'
+                    name: "selectIcon",
+                    content: "⌄",
+                    class: "center-vert"
                   }
                 ]
               },
               {
-                name: 'listbox',
-                content: 'Blue Gray Tan',
-                class: 'wrap-text',
-                position: 'right'
+                name: "listbox",
+                content: "Blue Gray Tan",
+                class: "wrap-text",
+                position: "right"
               },
               {
-                name: 'suffix',
-                position: 'right',
-                class: 'tiny-section'
+                name: "suffix",
+                position: "right",
+                class: "tiny-section"
               },
               {
-                name: 'suffixIcon',
-                position: 'right',
-                class: 'tiny-section'
+                name: "suffixIcon",
+                position: "right",
+                class: "tiny-section"
               },
             ]
           },
         ]
       },
       {
-        name: 'help',
-        content: 'Turn sound effects on and off.',
-        position: 'right'
+        name: "help",
+        content: "Turn sound effects on and off.",
+        position: "right"
       },
       {
-        name: 'messages',
-        position: 'right',
+        name: "messages",
+        position: "right",
         children: [
           {
-            name: 'message',
-            content: 'Something wrong happened.',
-            position: 'right'
+            name: "message",
+            content: "Something wrong happened.",
+            position: "right"
           }
         ]
       }
@@ -345,49 +345,49 @@ hide-on-small: true
 class: "input-diagram--dropdown"
 schema: [
   {
-    name: 'dropdownWrapper',
-    position: 'right',
+    name: "dropdownWrapper",
+    position: "right",
     children: [
       {
-        name: 'listbox',
-        position: 'right',
+        name: "listbox",
+        position: "right",
         children: [
         {
-            name: 'emptyMessage',
+            name: "emptyMessage",
             children: [
               {
-                name: 'emptyMessageInner',
-                content: 'No options to display.',
+                name: "emptyMessageInner",
+                content: "No options to display.",
               }
             ]
           },
           {
-            name: 'listitem',
-            class: 'flex flex-grow',
-            position: 'right',
+            name: "listitem",
+            class: "flex flex-grow",
+            position: "right",
             children: [
               {
-                name: 'selectedIcon',
-                content: '✔️'
+                name: "selectedIcon",
+                content: "✔️"
               },
               {
-                name: 'option',
-                content: 'Gray',
-                position: 'right',
-                class: 'flex flex-grow'
+                name: "option",
+                content: "Gray",
+                position: "right",
+                class: "flex flex-grow"
               },
             ]
           },
           {
-            name: 'loadMore',
+            name: "loadMore",
             children: [
               {
-                name: 'loadMoreInner',
+                name: "loadMoreInner",
                 children: [
                   {
-                    name: 'loaderIcon',
-                    content: '⏳',
-                    class: 'text-center'
+                    name: "loaderIcon",
+                    content: "⏳",
+                    class: "text-center"
                   }
                 ]
               },

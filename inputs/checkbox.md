@@ -132,57 +132,57 @@ The checkbox input has a different construction depending on if it's a single or
 class: "input-diagram--checkbox checkbox-single"
 schema: [
   {
-    name: 'outer',
-    position: 'right',
+    name: "outer",
+    position: "right",
     children: [
       {
-        name: 'wrapper',
-        position: 'right',
+        name: "wrapper",
+        position: "right",
         children: [
           {
-            name: 'inner',
+            name: "inner",
             children: [
               {
-                name: 'prefix',
+                name: "prefix",
               },
               {
-                name: 'input',
+                name: "input",
               },
               {
-                name: 'decorator',
+                name: "decorator",
                 children: [
                   {
-                    name: 'decoratorIcon',
-                    content: '✅',
+                    name: "decoratorIcon",
+                    content: "✅",
                   }
                 ]
               },
               {
-                name: 'suffix'
+                name: "suffix"
               },
             ]
           },
           {
-            name: 'label',
-            content: 'I would like a free t-shirt',
-            position: 'right',
-            class: 'center-vert'
+            name: "label",
+            content: "I would like a free t-shirt",
+            position: "right",
+            class: "center-vert"
           },
         ]
       },
       {
-        name: 'help',
-        content: 'We will send a free-shirt if you have this box selected.',
-        position: 'right'
+        name: "help",
+        content: "We will send a free-shirt if you have this box selected.",
+        position: "right"
       },
       {
-        name: 'messages',
-        position: 'right',
+        name: "messages",
+        position: "right",
         children: [
           {
-            name: 'message',
-            content: 'You must make a selection.',
-            position: 'right'
+            name: "message",
+            content: "You must make a selection.",
+            position: "right"
           }
         ]
       }
@@ -199,69 +199,69 @@ schema: [
 class: "input-diagram--checkbox checkbox-multiple"
 schema: [
   {
-    name: 'outer',
+    name: "outer",
     children: [
       {
-        name: 'fieldset',
+        name: "fieldset",
         children: [
           {
-            name: 'legend',
-            content: 'Topics',
-            class: 'margin-collapse',
-            position: 'right',
+            name: "legend",
+            content: "Topics",
+            class: "margin-collapse",
+            position: "right",
           },
           {
-            name: 'help',
-            content: 'Choose the topics you`d like to learn this year.',
-            position: 'right',
+            name: "help",
+            content: "Choose the topics you`d like to learn this year.",
+            position: "right",
           },
           {
-            name: 'options',
-            position: 'right',
+            name: "options",
+            position: "right",
             children: [
               {
-                name: 'option',
-                position: 'right',
+                name: "option",
+                position: "right",
                 children: [
                   {
-                    name: 'wrapper',
-                    position: 'right',
+                    name: "wrapper",
+                    position: "right",
                     children: [
                       {
-                        name: 'inner',
+                        name: "inner",
                         children: [
                           {
-                            name: 'prefix',
+                            name: "prefix",
                           },
                           {
-                            name: 'input',
+                            name: "input",
                           },
                           {
-                            name: 'decorator',
+                            name: "decorator",
                             children: [
                               {
-                                name: 'decoratorIcon',
-                                content: '✅',
+                                name: "decoratorIcon",
+                                content: "✅",
                               }
                             ]
                           },
                           {
-                            name: 'suffix',
+                            name: "suffix",
                           },
                         ]
                       },
                       {
-                        name: 'label',
-                        content: 'Gardening',
-                        position: 'right',
-                        class: 'margin-standard center-vert'
+                        name: "label",
+                        content: "Gardening",
+                        position: "right",
+                        class: "margin-standard center-vert"
                       }
                     ]
                   },
                   {
-                    name: 'optionHelp',
-                    content: 'We`ll be studying soil, plants, and seasons.',
-                    position: 'right',
+                    name: "optionHelp",
+                    content: "We`ll be studying soil, plants, and seasons.",
+                    position: "right",
                   },
                 ]
               }
@@ -270,13 +270,13 @@ schema: [
         ]
       },
       {
-          name: 'messages',
-          position: 'right',
+          name: "messages",
+          position: "right",
           children: [
             {
-              name: 'message',
-              content: 'You must make a selection.',
-              position: 'right',
+              name: "message",
+              content: "You must make a selection.",
+              position: "right",
             }
           ]
         }

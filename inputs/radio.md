@@ -88,69 +88,69 @@ data: [
 class: "input-diagram--radio radio-multiple"
 schema: [
   {
-    name: 'outer',
+    name: "outer",
     children: [
       {
-        name: 'fieldset',
+        name: "fieldset",
         children: [
           {
-            name: 'legend',
-            content: 'Mowing time preference',
-            class: 'margin-collapse',
-            position: 'right',
+            name: "legend",
+            content: "Mowing time preference",
+            class: "margin-collapse",
+            position: "right",
           },
           {
-            name: 'help',
-            content: 'Choose which time is least disruptive to you.',
-            position: 'right',
+            name: "help",
+            content: "Choose which time is least disruptive to you.",
+            position: "right",
           },
           {
-            name: 'options',
-            position: 'right',
+            name: "options",
+            position: "right",
             children: [
               {
-                name: 'option',
-                position: 'right',
+                name: "option",
+                position: "right",
                 children: [
                   {
-                    name: 'wrapper',
-                    position: 'right',
+                    name: "wrapper",
+                    position: "right",
                     children: [
                       {
-                        name: 'inner',
+                        name: "inner",
                         children: [
                           {
-                            name: 'prefix',
+                            name: "prefix",
                           },
                           {
-                            name: 'input',
+                            name: "input",
                           },
                           {
-                            name: 'decorator',
+                            name: "decorator",
                             children: [
                               {
-                                name: 'decoratorIcon',
-                                content: '🔘',
+                                name: "decoratorIcon",
+                                content: "🔘",
                               }
                             ]
                           },
                           {
-                            name: 'suffix',
+                            name: "suffix",
                           },
                         ]
                       },
                       {
-                        name: 'label',
-                        content: 'Morning',
-                        position: 'right',
-                        class: 'margin-standard center-vert'
+                        name: "label",
+                        content: "Morning",
+                        position: "right",
+                        class: "margin-standard center-vert"
                       }
                     ]
                   },
                   {
-                    name: 'optionHelp',
-                    content: 'We`ll come between 7-11 am on Tuesdays.',
-                    position: 'right',
+                    name: "optionHelp",
+                    content: "We`ll come between 7-11 am on Tuesdays.",
+                    position: "right",
                   },
                 ]
               }
@@ -159,13 +159,13 @@ schema: [
         ]
       },
       {
-          name: 'messages',
-          position: 'right',
+          name: "messages",
+          position: "right",
           children: [
             {
-              name: 'message',
-              content: 'You must make a selection.',
-              position: 'right',
+              name: "message",
+              content: "You must make a selection.",
+              position: "right",
             }
           ]
         }
@@ -179,7 +179,7 @@ schema: [
 ---
 type: "sectionKeys"
 primary: "section-key" 
-without: ['prefixIcon', 'suffixIcon'] 
+without: ["prefixIcon", "suffixIcon"] 
 data: [
   {
     "section-key": "decorator",

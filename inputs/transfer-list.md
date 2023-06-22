@@ -328,76 +328,76 @@ file: [
 input: "taglist"
 data: [
   {
-    prop: 'debounce',
-    type: 'number',
-    default: '200',
-    description: 'Number of milliseconds to debounce calls to an options function.'
+    prop: "debounce",
+    type: "number",
+    default: "200",
+    description: "Number of milliseconds to debounce calls to an options function."
   },
   {
-    prop: 'options',
-    type: 'any',
-    default: '[]',
-    description: 'The list of options the user can select from.'
+    prop: "options",
+    type: "any",
+    default: "[]",
+    description: "The list of options the user can select from."
   },
   {
-    prop: 'filter',
-    type: 'function',
-    default: 'null',
-    description: 'Used to apply your own custom filter function for static options.'
+    prop: "filter",
+    type: "function",
+    default: "null",
+    description: "Used to apply your own custom filter function for static options."
   },
   {
-    prop: 'option-loader',
-    type: 'function',
-    default: 'null',
-    description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'
+    prop: "option-loader",
+    type: "function",
+    default: "null",
+    description: "Used for hydrating initial value, or performing an additional request to load more information of a selected option."
   },
   {
-    prop: 'source-empty-message',
-    type: 'string',
-    default: 'undefined',
-    description: 'Renders a message when there are no options to display.'
+    prop: "source-empty-message",
+    type: "string",
+    default: "undefined",
+    description: "Renders a message when there are no options to display."
   },
   {
-    prop: 'target-empty-message',
-    type: 'string',
-    default: 'undefined',
-    description: 'Renders a message when there are no values to display'
+    prop: "target-empty-message",
+    type: "string",
+    default: "undefined",
+    description: "Renders a message when there are no values to display"
   },
   {
-    prop: 'max',
-    type: 'number',
-    default: 'undefined',
-    description: 'Limits the number of options that can be selected.'
+    prop: "max",
+    type: "number",
+    default: "undefined",
+    description: "Limits the number of options that can be selected."
   },
   {
-    prop: 'clear-on-select',
-    type: 'boolean',
-    default: 'true',
-    description: 'Clears the search input after selecting an option (only for options that are not loaded via function).'
+    prop: "clear-on-select",
+    type: "boolean",
+    default: "true",
+    description: "Clears the search input after selecting an option (only for options that are not loaded via function)."
   },
   {
-    prop: 'searchable',
-    type: 'boolean',
-    default: 'false',
-    description: 'Enables the search input.'
+    prop: "searchable",
+    type: "boolean",
+    default: "false",
+    description: "Enables the search input."
   },
   {
-    prop: 'source-label',
-    type: 'string',
-    default: 'undefined',
-    description: 'Renders a label for the source list.'
+    prop: "source-label",
+    type: "string",
+    default: "undefined",
+    description: "Renders a label for the source list."
   },
   {
-    prop: 'target-label',
-    type: 'string',
-    default: 'undefined',
-    description: 'Renders a label for the target list.'
+    prop: "target-label",
+    type: "string",
+    default: "undefined",
+    description: "Renders a label for the target list."
   },
   {
-    prop: 'transfer-on-select',
-    type: 'boolean',
-    default: 'true',
-    description: 'Automatically transfers selected options to the target list. If set to false, will render transfer forward and transfer backward buttons.'
+    prop: "transfer-on-select",
+    type: "boolean",
+    default: "true",
+    description: "Automatically transfers selected options to the target list. If set to false, will render transfer forward and transfer backward buttons."
   }
 ]
 ---
@@ -416,43 +416,43 @@ hide-on-small: true
 class: "input-diagram--autocomplete-outer autocomplete-option-single"
 schema: [
   {
-    name: 'outer',
+    name: "outer",
     children: [
       {
-        name: 'fieldset',
+        name: "fieldset",
         children: [
           {
-            name: 'legend',
-            content: 'Choose VIPs for the party',
+            name: "legend",
+            content: "Choose VIPs for the party",
           },
           {
-            name: 'help',
-            content: 'You can select up to 3 VIPs.',
+            name: "help",
+            content: "You can select up to 3 VIPs.",
           },
           {
-            name: 'wrapper',
-            class: 'flex',
+            name: "wrapper",
+            class: "flex",
             children: [
               {
-                content: 'Source list',
-                name: 'source'
+                content: "Source list",
+                name: "source"
               },
               {
-                content: 'Transfer controls',
-                name: 'transferControls'
+                content: "Transfer controls",
+                name: "transferControls"
               },
               {
-                content: 'Target list',
-                name: 'target'
+                content: "Target list",
+                name: "target"
               }
             ]
           },
           {
-            name: 'messages',
+            name: "messages",
             children: [
               {
-                name: 'message',
-                content: 'Sorry, you may not add more than 3 guests.',
+                name: "message",
+                content: "Sorry, you may not add more than 3 guests.",
               }
             ]
           }
@@ -472,40 +472,40 @@ hide-on-small: true
 class: "input-diagram--transfer-list"
 schema: [
   {
-    name: 'source',
+    name: "source",
     children: [
       {
-        name: 'sourceHeader',
-        class: 'flex',
+        name: "sourceHeader",
+        class: "flex",
         children: [
           {
-            name: 'sourceHeaderLabel',
-            content: 'Guests'
+            name: "sourceHeaderLabel",
+            content: "Guests"
           },
           {
-            name: 'sourceHeaderItemCount',
-            content: '97'
+            name: "sourceHeaderItemCount",
+            content: "97"
           }
         ]
       },
       {
-        name: 'sourceControls',
+        name: "sourceControls",
         children: [
           {
-            name: 'sourceSearch',
-            class: 'flex',
+            name: "sourceSearch",
+            class: "flex",
             children: [
               {
-                name: 'sourceSearchInput',
-                class: 'large'
+                name: "sourceSearchInput",
+                class: "large"
               },
               {
-                name: 'sourceSearchClear',
-                class: 'small',
+                name: "sourceSearchClear",
+                class: "small",
                 children: [
                   {
-                    name: 'closeIcon',
-                    content: '✕'
+                    name: "closeIcon",
+                    content: "✕"
                   }
                 ]
               }
@@ -514,45 +514,45 @@ schema: [
         ]
       },
       {
-        name: 'sourceListItems',
+        name: "sourceListItems",
         children: [
           {
-            name: 'sourceEmptyMessage',
+            name: "sourceEmptyMessage",
             children: [
               {
-                name: 'emptyMessageInner',
-                content: 'No guests found'
+                name: "emptyMessageInner",
+                content: "No guests found"
               }
             ]
           }
         ]
       },
       {
-        name: 'sourceListItem',
-        class: 'flex',
+        name: "sourceListItem",
+        class: "flex",
         children: [
           {
-            name: 'selectedIcon',
-            content: '✓',
-            class: 'small'
+            name: "selectedIcon",
+            content: "✓",
+            class: "small"
           },
           {
-            name: 'sourceOption',
-            content: 'John Doe',
-            class: 'large'
+            name: "sourceOption",
+            content: "John Doe",
+            class: "large"
           }
         ]
       },
       {
-        name: 'sourceLoadMore',
-        class: 'flex',
+        name: "sourceLoadMore",
+        class: "flex",
         children: [
           {
-            name: 'loadMoreInner',
+            name: "loadMoreInner",
             children: [
               {
-                name: 'loaderIcon',
-                content: '⌛',
+                name: "loaderIcon",
+                content: "⌛",
               }
             ]
           }
@@ -572,65 +572,65 @@ hide-on-small: true
 class: "input-diagram--transfer-list"
 schema: [
   {
-    name: 'transferControls',
+    name: "transferControls",
     children: [
       {
-        name: 'transferButtonForwardAll',
-        class: 'flex',
+        name: "transferButtonForwardAll",
+        class: "flex",
         children: [
           {
-            name: 'controlLabel',
-            class: 'small',
+            name: "controlLabel",
+            class: "small",
           },
           {
-            name: 'fastForwardIcon',
-            content: '⇥',
-            class: 'large'
+            name: "fastForwardIcon",
+            content: "⇥",
+            class: "large"
           }
         ]
       },
       {
-        name: 'transferButtonForward',
-        class: 'flex',
+        name: "transferButtonForward",
+        class: "flex",
         children: [
           {
-            name: 'controlLabel',
-            class: 'small'
+            name: "controlLabel",
+            class: "small"
           },
           {
-            name: 'forwardIcon',
-            content: '⇒',
-            class: 'large'
+            name: "forwardIcon",
+            content: "⇒",
+            class: "large"
           }
         ]
       },
       {
-        name: 'transferButtonBackward',
-        class: 'flex',
+        name: "transferButtonBackward",
+        class: "flex",
         children: [
           {
-            name: 'controlLabel',
-            class: 'small'
+            name: "controlLabel",
+            class: "small"
           },
           {
-            name: 'backwardIcon',
-            content: '⇐',
-            class: 'large'
+            name: "backwardIcon",
+            content: "⇐",
+            class: "large"
           }
         ]
       },
       {
-        name: 'transferButtonBackwardAll',
-        class: 'flex',
+        name: "transferButtonBackwardAll",
+        class: "flex",
         children: [
           {
-            name: 'controlLabel',
-            class: 'small'
+            name: "controlLabel",
+            class: "small"
           },
           {
-            name: 'fastBackwardIcon',
-            content: '⇤',
-            class: 'large'
+            name: "fastBackwardIcon",
+            content: "⇤",
+            class: "large"
           }
         ]
       }
@@ -648,62 +648,62 @@ hide-on-small: true
 class: "input-diagram--transfer-list"
 schema: [
     {
-    name: 'target',
+    name: "target",
     children: [
       {
-        name: 'targetHeader',
-        class: 'flex',
+        name: "targetHeader",
+        class: "flex",
         children: [
           {
-            name: 'targetHeaderLabel',
-            content: 'VIPs',
-            class: 'large'
+            name: "targetHeaderLabel",
+            content: "VIPs",
+            class: "large"
           },
           {
-            name: 'targetHeaderItemCount',
-            content: '3',
-            class: 'small'
+            name: "targetHeaderItemCount",
+            content: "3",
+            class: "small"
           }
         ]
       },
       {
-        name: 'targetListItems',
+        name: "targetListItems",
         children: [
           {
-            name: 'targetEmptyMessage',
+            name: "targetEmptyMessage",
             children: [
               {
-                name: 'emptyMessageInner',
-                content: 'No VIPs selected'
+                name: "emptyMessageInner",
+                content: "No VIPs selected"
               }
             ]
           },
           {
-            name: 'targetListItem',
-            class: 'flex',
+            name: "targetListItem",
+            class: "flex",
             children: [
               {
-                name: 'selectedIcon',
-                content: '✓',
-                class: 'small'
+                name: "selectedIcon",
+                content: "✓",
+                class: "small"
               },
               {
-                name: 'targetOption',
-                content: 'John Doe',
-                class: 'large'
+                name: "targetOption",
+                content: "John Doe",
+                class: "large"
               }
             ]
           },
           {
-            name: 'targetLoadMore',
-            class: 'flex',
+            name: "targetLoadMore",
+            class: "flex",
             children: [
               {
-                name: 'loadMoreInner',
+                name: "loadMoreInner",
                 children: [
                   {
-                    name: 'loaderIcon',
-                    content: '⌛'
+                    name: "loaderIcon",
+                    content: "⌛"
                   }
                 ]
               }
@@ -723,156 +723,156 @@ type: "sectionKeys"
 primary: "section-key"
 data: [
   {
-    'section-key': 'fieldset',
-    description: 'A fieldset element that acts as the root element for the transfer list input.'
+    "section-key": "fieldset",
+    description: "A fieldset element that acts as the root element for the transfer list input."
   },
   {
-    'section-key': 'legend',
-    description: 'A legend element that renders the label.'
+    "section-key": "legend",
+    description: "A legend element that renders the label."
   },
   {
-    'section-key': 'source',
-    description: 'A div element that contains the sourceHeader, sourceControls, and sourceListItems sections.'
+    "section-key": "source",
+    description: "A div element that contains the sourceHeader, sourceControls, and sourceListItems sections."
   },
   {
-    'section-key': 'sourceHeader',
-    description: 'A div element that contains the sourceHeaderLabel and sourceHeaderItemCount sections'
+    "section-key": "sourceHeader",
+    description: "A div element that contains the sourceHeaderLabel and sourceHeaderItemCount sections"
   },
   {
-    'section-key': 'sourceHeaderLabel',
-    description: 'A label element that renders the sourceLabel prop.'
+    "section-key": "sourceHeaderLabel",
+    description: "A label element that renders the sourceLabel prop."
   },
   {
-    'section-key': 'sourceHeaderItemCount',
-    description: 'A span element that renders the number of items and number of items selected in the source list.'
+    "section-key": "sourceHeaderItemCount",
+    description: "A span element that renders the number of items and number of items selected in the source list."
   },
   {
-    'section-key': 'sourceControls',
-    description: 'A div element that contains the sourceSearchINput and sourceSearchClear sections'
+    "section-key": "sourceControls",
+    description: "A div element that contains the sourceSearchINput and sourceSearchClear sections"
   },
   {
-    'section-key': 'sourceSearch',
-    description: 'A div element that contains the sourceSearchInput and sourceSearchClear sections'
+    "section-key": "sourceSearch",
+    description: "A div element that contains the sourceSearchInput and sourceSearchClear sections"
   },
   {
-    'section-key': 'sourceSearchInput',
-    description: 'A text input element used for searching.'
+    "section-key": "sourceSearchInput",
+    description: "A text input element used for searching."
   },
   {
-    'section-key': 'sourceSearchClear',
-    description: 'A button element that clears the search input.'
+    "section-key": "sourceSearchClear",
+    description: "A button element that clears the search input."
   },
   {
-    'section-key': 'closeIcon',
-    description: 'The span used containing the icon for the clear search input.'
+    "section-key": "closeIcon",
+    description: "The span used containing the icon for the clear search input."
   },
   {
-    'section-key': 'sourceListItems',
-    description: 'A ul element that contains the sourceListItems.'
+    "section-key": "sourceListItems",
+    description: "A ul element that contains the sourceListItems."
   },
   {
-    'section-key': 'sourceEmptyMessage',
-    description: 'A li element that contains the emptyMessageInner section.'
+    "section-key": "sourceEmptyMessage",
+    description: "A li element that contains the emptyMessageInner section."
   },
   {
-    'section-key': 'emptyMessageInner',
-    description: 'A span element that renders the provided empty message text.'
+    "section-key": "emptyMessageInner",
+    description: "A span element that renders the provided empty message text."
   },
   {
-    'section-key': 'sourceListItem',
-    description: 'A li element for the sourceListItems section that contains the sourceOption section.'
+    "section-key": "sourceListItem",
+    description: "A li element for the sourceListItems section that contains the sourceOption section."
   },
   {
-    'section-key': 'selectIcon',
-    description: 'A span elemenet that renders the selected icon when the sourceListItem is set to selected.'
+    "section-key": "selectIcon",
+    description: "A span elemenet that renders the selected icon when the sourceListItem is set to selected."
   },
   {
-    'section-key': 'sourceOption',
-    description: 'A div element that renders the option label.'
+    "section-key": "sourceOption",
+    description: "A div element that renders the option label."
   },
   {
-    'section-key': 'sourceLoadMore',
-    description: 'A li element that contains the loadMoreInner section.'
+    "section-key": "sourceLoadMore",
+    description: "A li element that contains the loadMoreInner section."
   },
   {
-    'section-key': 'loadMoreInner',
-    description: 'A span element that renders the loading icon.'
+    "section-key": "loadMoreInner",
+    description: "A span element that renders the loading icon."
   },
   {
-    'section-key': 'loaderIcon',
-    description: 'A span element that outputs an icon when loading is occurring.'
+    "section-key": "loaderIcon",
+    description: "A span element that outputs an icon when loading is occurring."
   },
   {
-    'section-key': 'transferControls',
-    description: 'A div element that contains the transferButtonForwardAll, transferButtonForward, transferButtonBackward, and transferButtonBackwardAll sections.'
+    "section-key": "transferControls",
+    description: "A div element that contains the transferButtonForwardAll, transferButtonForward, transferButtonBackward, and transferButtonBackwardAll sections."
   },
   {
-    'section-key': 'transferButtonForwardAll',
-    description: 'A button element that transfers all options to the target list.'
+    "section-key": "transferButtonForwardAll",
+    description: "A button element that transfers all options to the target list."
   },
   {
-    'section-key': 'transferButtonForward',
-    description: 'A button element that transfers selected options to the target list.'
+    "section-key": "transferButtonForward",
+    description: "A button element that transfers selected options to the target list."
   },
   {
-    'section-key': 'transferButtonBackward',
-    description: 'A button element that transfers selected options to the source list.'
+    "section-key": "transferButtonBackward",
+    description: "A button element that transfers selected options to the source list."
   },
   {
-    'section-key': 'transferButtonBackwardAll',
-    description: 'A button element that transfers all options to the source list.'
+    "section-key": "transferButtonBackwardAll",
+    description: "A button element that transfers all options to the source list."
   },
   {
-    'section-key': 'controlLabel',
-    description: 'A span element that renders the control label.'
+    "section-key": "controlLabel",
+    description: "A span element that renders the control label."
   },
   {
-    'section-key': 'fastForwardIcon',
-    description: 'A span element that renders the fast forward icon.'
+    "section-key": "fastForwardIcon",
+    description: "A span element that renders the fast forward icon."
   },
   {
-    'section-key': 'moveRightIcon',
-    description: 'A span element that renders the move right icon.'
+    "section-key": "moveRightIcon",
+    description: "A span element that renders the move right icon."
   },
   {
-    'section-key': 'moveLeftIcon',
-    description: 'A span element that renders the move left icon.'
+    "section-key": "moveLeftIcon",
+    description: "A span element that renders the move left icon."
   },
   {
-    'section-key': 'rewindIcon',
-    description: 'A span element that renders the rewind icon.'
+    "section-key": "rewindIcon",
+    description: "A span element that renders the rewind icon."
   },
   {
-    'section-key': 'target',
-    description: 'A div element that contains the targetHeader, targetControls, and targetListItems sections.'
+    "section-key": "target",
+    description: "A div element that contains the targetHeader, targetControls, and targetListItems sections."
   },
   {
-    'section-key': 'targetHeader',
-    description: 'A div element that contains the targetHeaderLabel and targetHeaderItemCount sections'
+    "section-key": "targetHeader",
+    description: "A div element that contains the targetHeaderLabel and targetHeaderItemCount sections"
   },
   {
-    'section-key': 'targetHeaderLabel',
-    description: 'A label element that renders the targetLabel prop.'
+    "section-key": "targetHeaderLabel",
+    description: "A label element that renders the targetLabel prop."
   },
   {
-    'section-key': 'targetHeaderItemCount',
-    description: 'A span element that renders the number of items and number of items selected in the target list.'
+    "section-key": "targetHeaderItemCount",
+    description: "A span element that renders the number of items and number of items selected in the target list."
   },
   {
-    'section-key': 'targetListItems',
-    description: 'A ul element that contains the targetListItems.'
+    "section-key": "targetListItems",
+    description: "A ul element that contains the targetListItems."
   },
   {
-    'section-key': 'targetEmptyMessage',
-    description: 'A li element that contains the emptyMessageInner section.'
+    "section-key": "targetEmptyMessage",
+    description: "A li element that contains the emptyMessageInner section."
   },
   {
-    'target-key': 'targetListItem',
-    description: 'A li element for the targetListItems section that contains the targetOption section.'
+    "target-key": "targetListItem",
+    description: "A li element for the targetListItems section that contains the targetOption section."
   },
   {
-    'section-key': 'targetLoadMore',
-    description: 'A li element that contains the loadMoreInner section.'
+    "section-key": "targetLoadMore",
+    description: "A li element that contains the loadMoreInner section."
   }
 ]
 ---

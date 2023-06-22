@@ -102,60 +102,60 @@ hide-on-small: true
 class: "input-diagram--file file-single"
 schema: [
   {
-    name: 'outer',
+    name: "outer",
     children: [
       {
-        name: 'wrapper',
-        position: 'right',
+        name: "wrapper",
+        position: "right",
         children: [
           {
-            name: 'label',
-            content: 'Your resumé',
-            position: 'right',
+            name: "label",
+            content: "Your resumé",
+            position: "right",
           }, 
           {
-            name: 'inner',
+            name: "inner",
             children: [
               {
-                name: 'prefixIcon',
-                content: '🗄'
+                name: "prefixIcon",
+                content: "🗄"
               },
               {
-                name: 'prefix',
+                name: "prefix",
               },
               {
-                name: 'input',
+                name: "input",
               },
               {
-                name: 'noFiles',
+                name: "noFiles",
                 children: [
                   {
-                    name: 'noFilesIcon',
+                    name: "noFilesIcon",
                   }
                 ]
               },
               {
-                name: 'fileList',
+                name: "fileList",
                 children: [
                   {
-                    name: 'fileItem',
+                    name: "fileItem",
                     children: [
                       {
-                        name: 'fileItemIcon',
-                        content: '📁'
+                        name: "fileItemIcon",
+                        content: "📁"
                       },
                       {
-                        name: 'fileName',
-                        content: 'my-resume.pdf'
+                        name: "fileName",
+                        content: "my-resume.pdf"
                       },
                       {
-                        name: 'fileRemove',
-                        position: 'right',
+                        name: "fileRemove",
+                        position: "right",
                         children: [
                           {
-                            name: 'fileRemoveIcon',
-                            content: 'X',
-                            position: 'right',
+                            name: "fileRemoveIcon",
+                            content: "X",
+                            position: "right",
                           }
                         ]
                       },
@@ -164,30 +164,30 @@ schema: [
                 ]
               },
               {
-                name: 'suffix',
-                position: 'right',
+                name: "suffix",
+                position: "right",
               },
               {
-                name: 'suffixIcon',
-                position: 'right',
+                name: "suffixIcon",
+                position: "right",
               },
             ]
           },
         ]
       },
       {
-        name: 'help',
-        content: 'Upload your resumé.',
-        position: 'right'
+        name: "help",
+        content: "Upload your resumé.",
+        position: "right"
       },
       {
-        name: 'messages',
-        position: 'right',
+        name: "messages",
+        position: "right",
         children: [
           {
-            name: 'message',
-            content: 'Only supports .pdf and .docx extensions.',
-            position: 'right'
+            name: "message",
+            content: "Only supports .pdf and .docx extensions.",
+            position: "right"
           }
         ]
       }
@@ -205,88 +205,88 @@ hide-on-small: true
 class: "input-diagram--file file-multiple"
 schema: [
   {
-    name: 'outer',
+    name: "outer",
     children: [
       {
-        name: 'wrapper',
-        position: 'right',
+        name: "wrapper",
+        position: "right",
         children: [
           {
-            name: 'label',
-            content: 'Your resumé',
-            position: 'right',
+            name: "label",
+            content: "Your resumé",
+            position: "right",
           }, 
           {
-            name: 'inner',
+            name: "inner",
             children: [
               {
-                name: 'prefixIcon',
-                content: '🗄'
+                name: "prefixIcon",
+                content: "🗄"
               },
               {
-                name: 'prefix',
+                name: "prefix",
               },
               {
-                name: 'input',
+                name: "input",
               },
               {
-                name: 'fileList',
+                name: "fileList",
                 children: [
                   {
-                    name: 'fileItem',
+                    name: "fileItem",
                     children: [
                       {
-                        name: 'fileItemIcon',
-                        content: '📁'
+                        name: "fileItemIcon",
+                        content: "📁"
                       },
                       {
-                        name: 'fileName',
-                        content: 'my-resume.pdf'
+                        name: "fileName",
+                        content: "my-resume.pdf"
                       },
                     ]
                   }
                 ]
               },
               {
-                name: 'fileRemove',
-                content: 'Remove all',
-                position: 'right',
+                name: "fileRemove",
+                content: "Remove all",
+                position: "right",
               },
               {
-                name: 'noFiles',
-                position: 'right',
+                name: "noFiles",
+                position: "right",
                 children: [
                   {
-                    name: 'noFilesIcon',
-                    position: 'right',
+                    name: "noFilesIcon",
+                    position: "right",
                   }
                 ]
               },
               {
-                name: 'suffix',
-                position: 'right',
+                name: "suffix",
+                position: "right",
               },
               {
-                name: 'suffixIcon',
-                position: 'right',
+                name: "suffixIcon",
+                position: "right",
               },
             ]
           },
         ]
       },
       {
-        name: 'help',
-        content: 'Upload your resumé.',
-        position: 'right'
+        name: "help",
+        content: "Upload your resumé.",
+        position: "right"
       },
       {
-        name: 'messages',
-        position: 'right',
+        name: "messages",
+        position: "right",
         children: [
           {
-            name: 'message',
-            content: 'Only supports .pdf and .docx extensions.',
-            position: 'right'
+            name: "message",
+            content: "Only supports .pdf and .docx extensions.",
+            position: "right"
           }
         ]
       }
