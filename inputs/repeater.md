@@ -194,140 +194,140 @@ hide-on-small: true
 class: "input-diagram--autocomplete-outer autocomplete-option-single"
 schema: [
   {
-    name: 'outer',
+    name: "outer",
     children: [
       {
-        name: 'fieldset',
+        name: "fieldset",
         children: [
           {
-            name: 'legend',
-            content: 'Guests',
-            class: 'center-vert',
+            name: "legend",
+            content: "Guests",
+            class: "center-vert",
           },
           {
-            name: 'help',
-            content: 'Note guests you will bring to the race track.',
+            name: "help",
+            content: "Note guests you will bring to the race track.",
           },
           {
-            name: 'inner',
+            name: "inner",
             children: [
               {
-                name: 'prefix',
-                class: 'tiny-section'
+                name: "prefix",
+                class: "tiny-section"
               },
               {
-                name: 'items',
-                class: 'flex-grow',
+                name: "items",
+                class: "flex-grow",
                 children: [
                   {
-                    name: 'item',
-                    class: 'flex',
+                    name: "item",
+                    class: "flex",
                     children: [
                       {
-                        name: 'content',
-                        class: 'flex-grow',
-                        content: 'Repeated fields here.'
+                        name: "content",
+                        class: "flex-grow",
+                        content: "Repeated fields here."
                       },
                       {
-                        name: 'controls',
-                        class: '',
-                        position: 'right',
+                        name: "controls",
+                        class: ",
+                        position: "right",
                         children: [
                           {
-                            name: 'up',
-                            position: 'right',
-                            class: 'small-pad spacing-bottom',
+                            name: "up",
+                            position: "right",
+                            class: "small-pad spacing-bottom",
                             children: [
                               {
-                                name: 'upControl',
-                                position: 'right',
-                                class: 'small-pad flex',
+                                name: "upControl",
+                                position: "right",
+                                class: "small-pad flex",
                                 children: [
                                   {
-                                    name: 'controlLabel',
-                                    position: 'right',
-                                    class: 'small-pad tiny-section'
+                                    name: "controlLabel",
+                                    position: "right",
+                                    class: "small-pad tiny-section"
                                   },
                                   {
-                                    name: 'moveUpIcon',
-                                    position: 'right',
-                                    content: '↑',
-                                    class: 'small-pad flex-grow'
+                                    name: "moveUpIcon",
+                                    position: "right",
+                                    content: "↑",
+                                    class: "small-pad flex-grow"
                                   }
                                 ]
                               },
                             ]
                           },
                           {
-                            name: 'remove',
-                            position: 'right',
-                            class: 'small-pad spacing-bottom',
+                            name: "remove",
+                            position: "right",
+                            class: "small-pad spacing-bottom",
                             children: [
                               {
-                                name: 'removeControl',
-                                class: 'small-pad flex',
-                                position: 'right',
+                                name: "removeControl",
+                                class: "small-pad flex",
+                                position: "right",
                                 children: [
                                   {
-                                    name: 'controlLabel',
-                                    position: 'right',
-                                    class: 'small-pad tiny-section'
+                                    name: "controlLabel",
+                                    position: "right",
+                                    class: "small-pad tiny-section"
                                   },
                                   {
-                                    name: 'removeIcon',
-                                    position: 'right',
-                                    content: '🗑',
-                                    class: 'small-pad'
+                                    name: "removeIcon",
+                                    position: "right",
+                                    content: "🗑",
+                                    class: "small-pad"
                                   }
                                 ]
                               },
                             ]
                           },
                           {
-                            name: 'insert',
-                            position: 'right',
-                            class: 'small-pad spacing-bottom',
+                            name: "insert",
+                            position: "right",
+                            class: "small-pad spacing-bottom",
                             children: [
                               {
-                                name: 'insertControl',
-                                class: 'small-pad flex',
-                                position: 'right',
+                                name: "insertControl",
+                                class: "small-pad flex",
+                                position: "right",
                                 children: [
                                   {
-                                    name: 'controlLabel',
-                                    position: 'right',
-                                    class: 'small-pad tiny-section'
+                                    name: "controlLabel",
+                                    position: "right",
+                                    class: "small-pad tiny-section"
                                   },
                                   {
-                                    name: 'addIcon',
-                                    position: 'right',
-                                    content: '➕',
-                                    class: 'small-pad'
+                                    name: "addIcon",
+                                    position: "right",
+                                    content: "➕",
+                                    class: "small-pad"
                                   }
                                 ]
                               },
                             ]
                           },
                           {
-                            name: 'down',
-                            class: 'small-pad spacing-bottom',
-                            position: 'right',
+                            name: "down",
+                            class: "small-pad spacing-bottom",
+                            position: "right",
                             children: [
                               {
-                                name: 'downControl',
-                                class: 'small-pad flex',
-                                position: 'right',
+                                name: "downControl",
+                                class: "small-pad flex",
+                                position: "right",
                                 children: [
                                   {
-                                    name: 'controlLabel',
-                                    position: 'right',
-                                    class: 'small-pad tiny-section'
+                                    name: "controlLabel",
+                                    position: "right",
+                                    class: "small-pad tiny-section"
                                   },
                                   {
-                                    name: 'moveDownIcon',
-                                    position: 'right',
-                                    content: '↓',
-                                    class: 'small-pad'
+                                    name: "moveDownIcon",
+                                    position: "right",
+                                    content: "↓",
+                                    class: "small-pad"
                                   }
                                 ]
                               },
@@ -340,25 +340,25 @@ schema: [
                 ]
               },
               {
-                name: 'suffix',
-                position: 'right',
-                class: 'tiny-section'
+                name: "suffix",
+                position: "right",
+                class: "tiny-section"
               },
             ]
           },
           {
-            name: 'addButton',
-            class: 'button button--pro margin-collapse',
-            content: 'Add guest'
+            name: "addButton",
+            class: "button button--pro margin-collapse",
+            content: "Add guest"
           }
         ]
       },
       {
-        name: 'messages',
+        name: "messages",
         children: [
           {
-            name: 'message',
-            content: 'Sorry, you may not add more than 3 guests.',
+            name: "message",
+            content: "Sorry, you may not add more than 3 guests.",
           }
         ]
       }
@@ -374,84 +374,84 @@ type: "sectionKeys"
 primary: "section-key" 
 data: [
   {
-    'section-key': 'fieldset',
-    description: 'A fieldset element that acts as the repeater’s wrapper.'
+    "section-key": "fieldset",
+    description: "A fieldset element that acts as the repeater’s wrapper."
   },
   {
-    'section-key': 'legend',
-    description: 'A legend element that renders the label.'
+    "section-key": "legend",
+    description: "A legend element that renders the label."
   },
   {
-    'section-key': 'items',
-    description: 'A ul element that wraps the repeater’s items.'
+    "section-key": "items",
+    description: "A ul element that wraps the repeater’s items."
   },
   {
-    'section-key': 'item',
-    description: 'A li element that is rendered for each repeater item.'
+    "section-key": "item",
+    description: "A li element that is rendered for each repeater item."
   },
   {
-    'section-key': 'content',
-    description: 'A container for the group section.'
+    "section-key": "content",
+    description: "A container for the group section."
   },
   {
-    'section-key': 'group',
-    description: 'Does not render an element. It structures the default slot into an object data structure. '
+    "section-key": "group",
+    description: "Does not render an element. It structures the default slot into an object data structure. "
   },
   {
-    'section-key': 'controls',
-    description: 'A ul element that wraps the repeater’s controls.'
+    "section-key": "controls",
+    description: "A ul element that wraps the repeater’s controls."
   },
   {
-    'section-key': 'controlLabel',
-    description: 'A span element that renders the label of the given control.'
+    "section-key": "controlLabel",
+    description: "A span element that renders the label of the given control."
   },
   {
-    'section-key': 'up',
-    description: 'A li element that renders the up control.'
+    "section-key": "up",
+    description: "A li element that renders the up control."
   },
   {
-    'section-key': 'upControl',
-    description: 'A button element that renders the up control.'
+    "section-key": "upControl",
+    description: "A button element that renders the up control."
   },
   {
-    'section-key': 'moveUpIcon',
-    description: 'A span element that renders the upControl’s icon.'
+    "section-key": "moveUpIcon",
+    description: "A span element that renders the upControl’s icon."
   },
   {
-    'section-key': 'down',
-    description: 'A li element that renders the down control.'
+    "section-key": "down",
+    description: "A li element that renders the down control."
   },
   {
-    'section-key': 'downControl',
-    description: 'A button element that renders the down control.'
+    "section-key": "downControl",
+    description: "A button element that renders the down control."
   },
   {
-    'section-key': 'moveDownIcon',
-    description: 'A span element that renders the downControl’s icon.'
+    "section-key": "moveDownIcon",
+    description: "A span element that renders the downControl’s icon."
   },
   {
-    'section-key': 'insert',
-    description: 'A li element that renders the insert control.'
+    "section-key": "insert",
+    description: "A li element that renders the insert control."
   },
   {
-    'section-key': 'insertControl',
-    description: 'A button element that renders the insert control.'
+    "section-key": "insertControl",
+    description: "A button element that renders the insert control."
   },
   {
-    'section-key': 'insertIcon',
-    description: 'A span element that renders the insertControl’s icon.'
+    "section-key": "insertIcon",
+    description: "A span element that renders the insertControl’s icon."
   },
   {
-    'section-key': 'remove',
-    description: 'A li element that renders the remove control.'
+    "section-key": "remove",
+    description: "A li element that renders the remove control."
   },
   {
-    'section-key': 'removeControl',
-    description: 'A button element that renders the remove control.'
+    "section-key": "removeControl",
+    description: "A button element that renders the remove control."
   },
   {
-    'section-key': 'removeIcon',
-    description: 'A span element that renders the removeControl’s icon.'
+    "section-key": "removeIcon",
+    description: "A span element that renders the removeControl’s icon."
   },
 ]
 ---

@@ -63,7 +63,7 @@ The `button` input is unique in that it does not actively receive input other th
 
 ::ReferenceTable
 ---
-input: 'button'
+input: "button"
 ---
 ::
 
@@ -76,56 +76,56 @@ input: 'button'
 class: "input-diagram--button"
 schema: [
   {
-    name: 'outer',
+    name: "outer",
     children: [
       {
-        name: 'messages',
-        position: 'right',
+        name: "messages",
+        position: "right",
         children: [
           {
-            name: 'message',
-            content: 'Validation messages about the button.',
-            position: 'right'
+            name: "message",
+            content: "Validation messages about the button.",
+            position: "right"
           }
         ]
       },
       {
-        name: 'wrapper',
-        position: 'right',
+        name: "wrapper",
+        position: "right",
         children: [
           {
-            name: 'input',
-            position: 'left',
-            class: 'flex button button--pro',
+            name: "input",
+            position: "left",
+            class: "flex button button--pro",
             children: [
               {
-                name: 'prefixIcon',
-                content: '🤟'
+                name: "prefixIcon",
+                content: "🤟"
               },
               {
-                name: 'prefix',
+                name: "prefix",
               },
               {
-                name: 'label',
-                content: 'Submit application',
+                name: "label",
+                content: "Submit application",
               },
               {
-                name: 'suffix',
-                position: 'right',
+                name: "suffix",
+                position: "right",
               },
               {
-                name: 'suffixIcon',
-                position: 'right',
-                content: '🚀'
+                name: "suffixIcon",
+                position: "right",
+                content: "🚀"
               },
             ]
           },
         ]
       },
       {
-        name: 'help',
-        position: 'right',
-        content: 'Click this button to submit your application. '
+        name: "help",
+        position: "right",
+        content: "Click this button to submit your application. "
       }
     ]
   }
@@ -135,8 +135,8 @@ schema: [
 
 ::ReferenceTable
 ---
-type: 'sectionKeys'
-primary: 'section-key'
-without: ['inner']
+type: "sectionKeys"
+primary: "section-key"
+without: ["inner"]
 ---
 ::

@@ -28,8 +28,8 @@ youtube-id: "c-P-DUZeU1U"
 
 ::Example
 ---
-  name: 'Datepicker basic'
-  file: '/_content/_examples/datepicker/datepicker-basic.vue'
+  name: "Datepicker basic"
+  file: "/_content/_examples/datepicker/datepicker-basic.vue"
   min-height: 500
 ---
 ::
@@ -44,8 +44,8 @@ FormKit uses a unique masking solution to allow users to type dates into the dat
 
 ::Example
 ---
-  name: 'Datepicker basic'
-  file: '/_content/_examples/datepicker/datepicker-dual-mode.vue'
+  name: "Datepicker basic"
+  file: "/_content/_examples/datepicker/datepicker-dual-mode.vue"
   min-height: 500
 ---
 ::
@@ -64,8 +64,8 @@ You can disable the text-entry mechanism and ensure someone uses the datepicker 
 
 ::Example
 ---
-  name: 'Datepicker picker-only'
-  file: '/_content/_examples/datepicker/datepicker-picker-only.vue'
+  name: "Datepicker picker-only"
+  file: "/_content/_examples/datepicker/datepicker-picker-only.vue"
   min-height: 500
 ---
 ::
@@ -83,8 +83,8 @@ The `format` prop can accept a simple string like `long` or `medium`, in which c
 
 ::Example
 ---
-  name: 'Datepicker style formats'
-  file: '/_content/_examples/datepicker/datepicker-styles.vue'
+  name: "Datepicker style formats"
+  file: "/_content/_examples/datepicker/datepicker-styles.vue"
   min-height: 500
 ---
 ::
@@ -116,8 +116,8 @@ FormKit interfaces with the [`Intl.DateTimeFormat`](https://developer.mozilla.or
 
 ::Callout
 ---
-  type: 'warning'
-  label: 'Dates required'
+  type: "warning"
+  label: "Dates required"
 ---
 It is possible, when using tokens, to create non-parsable dates. For example, if your input only displays the day of the week (`dddd`). You can use non-parsable date formats only in `picker-only` mode. If you’d like to allow your users to type in their date, your format must include at least a month, day, and year token.
 ::
@@ -149,16 +149,16 @@ Token    | Examples                | Description
 
 ::Callout
 ---
-  type: 'tip'
-  label: 'Internationalization'
+  type: "tip"
+  label: "Internationalization"
 ---
 Although FormKit will internationalize your tokens automatically — if your form is intended for a broadly international audience consider using date styles instead of tokens as this leads to a more readable date in many locales.
 ::
 
 ::Example
 ---
-  name: 'Datepicker tokens'
-  file: '/_content/_examples/datepicker/datepicker-tokens.vue'
+  name: "Datepicker tokens"
+  file: "/_content/_examples/datepicker/datepicker-tokens.vue"
   min-height: 500
 ---
 ::
@@ -169,8 +169,8 @@ To include letters in the your format that are themselves tokens (like `a`), you
 
 ::Example
 ---
-  name: 'Datepicker escape tokens'
-  file: '/_content/_examples/datepicker/datepicker-escape-tokens.vue'
+  name: "Datepicker escape tokens"
+  file: "/_content/_examples/datepicker/datepicker-escape-tokens.vue"
   min-height: 500
 ---
 ::
@@ -190,8 +190,8 @@ For example, when selecting a birthday, it is natural to first select the birth 
 
 ::Example
 ---
-  name: 'Datepicker sequence'
-  file: '/_content/_examples/datepicker/datepicker-sequence.vue'
+  name: "Datepicker sequence"
+  file: "/_content/_examples/datepicker/datepicker-sequence.vue"
   min-height: 500
 ---
 ::
@@ -202,8 +202,8 @@ The `time` panel can be used to allow a user to select a specific time of day. I
 
 ::Example
 ---
-  name: 'Datepicker time'
-  file: '/_content/_examples/datepicker/datepicker-time.vue'
+  name: "Datepicker time"
+  file: "/_content/_examples/datepicker/datepicker-time.vue"
   min-height: 500
 ---
 ::
@@ -228,8 +228,8 @@ To use a date style as the value, simply pass the style you’d like to use to t
 
 ::Example
 ---
-  name: 'Datepicker style value'
-  file: '/_content/_examples/datepicker/datepicker-style-value.vue'
+  name: "Datepicker style value"
+  file: "/_content/_examples/datepicker/datepicker-style-value.vue"
   min-height: 500
 ---
 ::
@@ -240,8 +240,8 @@ Values can also be represented in any arbitrary format by using formatting token
 
 ::Example
 ---
-  name: 'Datepicker token value'
-  file: '/_content/_examples/datepicker/datepicker-token-value.vue'
+  name: "Datepicker token value"
+  file: "/_content/_examples/datepicker/datepicker-token-value.vue"
   min-height: 500
 ---
 ::
@@ -260,8 +260,8 @@ Although native `Date` objects are always accepted as valid *inputs* for a datep
 
 ::Example
 ---
-  name: 'Datepicker value locale'
-  file: '/_content/_examples/datepicker/datepicker-matching-value.vue'
+  name: "Datepicker value locale"
+  file: "/_content/_examples/datepicker/datepicker-matching-value.vue"
   min-height: 500
 ---
 ::
@@ -270,8 +270,8 @@ Although native `Date` objects are always accepted as valid *inputs* for a datep
 
 ::Example
 ---
-  name: 'Datepicker value locale'
-  file: '/_content/_examples/datepicker/datepicker-native-date.vue'
+  name: "Datepicker value locale"
+  file: "/_content/_examples/datepicker/datepicker-native-date.vue"
   min-height: 500
 ---
 ::
@@ -283,16 +283,16 @@ Since the format of the value needs to be parsed using the same locale it was cr
 
 ::Callout
 ---
-  type: 'note'
-  label: 'Timezone vs Locale'
+  type: "note"
+  label: "Timezone vs Locale"
 ---
 Changing the `value-locale` has no effect on the `timezone` of the date being picked. See the [timezone documentation](#timezone) below for further explanation.
 ::
 
 ::Example
 ---
-  name: 'Datepicker value locale'
-  file: '/_content/_examples/datepicker/datepicker-value-locale.vue'
+  name: "Datepicker value locale"
+  file: "/_content/_examples/datepicker/datepicker-value-locale.vue"
   min-height: 500
 ---
 ::
@@ -304,20 +304,20 @@ Time is a notoriously hard thing to work with in any software environment, but e
 
 ::CollapsedDetails
 ---
-  label: 'Timezones, dates, and formats case study'
+  label: "Timezones, dates, and formats case study"
 ---
 In order to work with dates and times in JavaScript, it is useful to have a basic understanding of the `Date` object. The date object in JavaScript is fundamentally a Unix timestamp (number of milliseconds since `Jan 1 1970 at 00:00:00Z`). However, it is *always* localized to the client’s time. This localization is expressed in an an offset from `UTC`. Your browser’s current time is:
 
-:CurrentTime{label="Client (browser) time
----
+:CurrentTime{label="Client (browser) time"}
+
 When the offset is applied to the "clock time" you arrive at the current time in UTC:
 
-:CurrentTime{methodName="toISOString" label="UTC
----
+:CurrentTime{methodName="toISOString" label="UTC"}
+
 When using `value-format` tokens in the datepicker, those tokens will operate using the client’s timezone. For example, if your format requests the `HH` token it would return:
 
-:CurrentTime{methodName="getHours" label="HH format token
----
+:CurrentTime{methodName="getHours" label="HH format token"}
+
 Compare that to the above dates, and you’ll see it is the same as the `hours` portion of the local time. Why does this matter? Read on.
 
 ### A case study
@@ -349,8 +349,8 @@ You can achieve indeterminate time with the datepicker by providing no timezone 
 
 ::Example
 ---
-  name: 'Datepicker indeterminate'
-  file: '/_content/_examples/datepicker/datepicker-indeterminate.vue'
+  name: "Datepicker indeterminate"
+  file: "/_content/_examples/datepicker/datepicker-indeterminate.vue"
   min-height: 600
 ---
 ::
@@ -375,16 +375,16 @@ In the example below, a user needs to pickup a rental car in Kolkata, India afte
 
 ::Example
 ---
-  name: 'Datepicker timezone'
-  file: '/_content/_examples/datepicker/datepicker-timezone.vue'
+  name: "Datepicker timezone"
+  file: "/_content/_examples/datepicker/datepicker-timezone.vue"
   min-height: 600
 ---
 ::
 
 ::Callout
 ---
-  type: 'tip'
-  label: 'Polyfilling Timezones'
+  type: "tip"
+  label: "Polyfilling Timezones"
 ---
 Most browsers ship with a comprehensive IANA database built into `Intl.DateTimeFormat`. This is excellent since FormKit does not need to ship the (quite extensive) timezone database to the client’s browser. However, some older browser may not have the IANA database. This data can be polyfilled easily by using [polyfill.io](https://polyfill.io/v3/url-builder) with `Intl.DateTimeFormat.~timeZone.all`.
 ::
@@ -405,8 +405,8 @@ Often it is necessary to disable dates that are prior to a particular date. For 
 
 ::Example
 ---
-  name: 'Datepicker min-date'
-  file: '/_content/_examples/datepicker/datepicker-min-date.vue'
+  name: "Datepicker min-date"
+  file: "/_content/_examples/datepicker/datepicker-min-date.vue"
   min-height: 500
 ---
 ::
@@ -417,16 +417,16 @@ To disable all dates after a given date, use the `max-date` prop. For example, a
 
 ::Example
 ---
-  name: 'Datepicker min-date'
-  file: '/_content/_examples/datepicker/datepicker-max-date.vue'
+  name: "Datepicker min-date"
+  file: "/_content/_examples/datepicker/datepicker-max-date.vue"
   min-height: 500
 ---
 ::
 
 ::Callout
 ---
-  type: 'tip'
-  label: 'Min & max dates together'
+  type: "tip"
+  label: "Min & max dates together"
 ---
 You can use `min-date` and `max-date` at the same time. Not only will this limit the range of dates, but additionally it will limit the available *years* to only valid years when using text entry. 
 ::
@@ -450,8 +450,8 @@ It’s important that the provided function is fast and synchronous — it will
 #### Example: disabled weekends
 ::Example
 ---
-  name: 'Datepicker disabled weekends'
-  file: '/_content/_examples/datepicker/datepicker-disabled-days-weekend.vue'
+  name: "Datepicker disabled weekends"
+  file: "/_content/_examples/datepicker/datepicker-disabled-days-weekend.vue"
   min-height: 500
 ---
 ::
@@ -459,8 +459,8 @@ It’s important that the provided function is fast and synchronous — it will
 #### Example: fetch from API
 ::Example
 ---
-  name: 'Datepicker random disabled'
-  file: '/_content/_examples/datepicker/datepicker-random-disabled.vue'
+  name: "Datepicker random disabled"
+  file: "/_content/_examples/datepicker/datepicker-random-disabled.vue"
   min-height: 500
 ---
 ::
@@ -474,8 +474,8 @@ To make the user experience better, the datepicker will automatically scan forwa
 #### Example: max-scan
 ::Example
 ---
-  name: 'Datepicker max-scan'
-  file: '/_content/_examples/datepicker/datepicker-max-scan.vue'
+  name: "Datepicker max-scan"
+  file: "/_content/_examples/datepicker/datepicker-max-scan.vue"
   min-height: 500
 ---
 ::
@@ -487,106 +487,106 @@ To make the user experience better, the datepicker will automatically scan forwa
 input: "datepicker"
 data: [
   {
-    prop: 'date-format',
-    type: 'string',
-    default: 'D',
-    description: 'The token format to use in the calendar for dates in the month.'
+    prop: "date-format",
+    type: "string",
+    default: "D",
+    description: "The token format to use in the calendar for dates in the month."
   },
   {
-    prop: 'disabled-days',
-    type: 'function',
-    default: 'min/max date logic',
-    description: 'A function that is passed the core node and a `Date` object and must return if the date is disabled (`true` is disabled).'
+    prop: "disabled-days",
+    type: "function",
+    default: "min/max date logic",
+    description: "A function that is passed the core node and a `Date` object and must return if the date is disabled (`true` is disabled)."
   },
   {
-    prop: 'format',
-    type: 'string/object',
-    default: "date: 'long'",
-    description: 'The format to display to the user in the select input.'
+    prop: "format",
+    type: "string/object",
+    default: "date: "long"",
+    description: "The format to display to the user in the select input."
   },
   {
-    prop: 'max-date',
-    type: 'Date | ISO8601',
-    default: 'none',
-    description: 'The maximum date the user is allowed to select.'
+    prop: "max-date",
+    type: "Date | ISO8601",
+    default: "none",
+    description: "The maximum date the user is allowed to select."
   },
   {
-    prop: 'max-scan',
-    type: 'number',
-    default: '7',
-    description: 'The maximum number of days to scan forward or backward when looking for an available date to jump to via keyboard navigation.'
+    prop: "max-scan",
+    type: "number",
+    default: "7",
+    description: "The maximum number of days to scan forward or backward when looking for an available date to jump to via keyboard navigation."
   },
   {
-    prop: 'min-date',
-    type: 'Date | ISO8601',
-    default: 'none',
-    description: 'The earliest date the user is allowed to select.'
+    prop: "min-date",
+    type: "Date | ISO8601",
+    default: "none",
+    description: "The earliest date the user is allowed to select."
   },
   {
-    prop: 'month-button-format',
-    type: 'string',
-    default: 'MMMM',
-    description: 'The date format token to use for the month panel button in the calendar popup.'
+    prop: "month-button-format",
+    type: "string",
+    default: "MMMM",
+    description: "The date format token to use for the month panel button in the calendar popup."
   },
   {
-    prop: 'month-format',
-    type: 'string',
-    default: 'MMMM',
-    description: 'The date format token to use for each of the 12 months on the month panel.'
+    prop: "month-format",
+    type: "string",
+    default: "MMMM",
+    description: "The date format token to use for each of the 12 months on the month panel."
   },
   {
-    prop: 'overlay',
-    type: 'boolean',
-    default: 'false',
-    description: 'Whether or not to display a mask overlay. Read more about overlays in the mask input documentation (has no effect in pickerOnly` mode).'
+    prop: "overlay",
+    type: "boolean",
+    default: "false",
+    description: "Whether or not to display a mask overlay. Read more about overlays in the mask input documentation (has no effect in pickerOnly` mode)."
   },
   {
-    prop: 'picker-only',
-    type: 'boolean',
-    default: 'false',
-    description: 'Whether or not to allow the date to be entered via text input. When picker-only is enabled, only the picker can be used to select a date.'
+    prop: "picker-only",
+    type: "boolean",
+    default: "false",
+    description: "Whether or not to allow the date to be entered via text input. When picker-only is enabled, only the picker can be used to select a date."
   },
   {
-    prop: 'show-months',
-    type: 'number',
-    default: '1',
-    description: 'The number of months to render in the popup when on the day panel.'
+    prop: "show-months",
+    type: "number",
+    default: "1",
+    description: "The number of months to render in the popup when on the day panel."
   },
   {
-    prop: 'sequence',
-    type: 'array',
+    prop: "sequence",
+    type: "array",
     default: "['day']",
-    description: 'The sequence of panels to walk a user through when they open the datepicker calendar view. Options are `year`, `month`, `day`, `time`.'
+    description: "The sequence of panels to walk a user through when they open the datepicker calendar view. Options are `year`, `month`, `day`, `time`."
   },
   {
-    prop: 'value-format',
-    type: 'string/object',
-    default: 'ISO8601',
-    description: 'The format to record as the value of the input. This can be composed with any token format, date style, or `ISO8601`.'
+    prop: "value-format",
+    type: "string/object",
+    default: "ISO8601",
+    description: "The format to record as the value of the input. This can be composed with any token format, date style, or `ISO8601`."
   },
   {
-    prop: 'value-locale',
-    type: 'string',
-    default: '`node.props.locale`',
-    description: 'The locale to use for the `valueFormat`. When using format tokens in the `valueFormat` prop it is highly recommend to set an explicit `valueFormat`.'
+    prop: "value-locale",
+    type: "string",
+    default: "`node.props.locale`",
+    description: "The locale to use for the `valueFormat`. When using format tokens in the `valueFormat` prop it is highly recommend to set an explicit `valueFormat`."
   },
   {
-    prop: 'week-start',
-    type: 'number',
-    default: '0',
-    description: 'The day of the week to start the `day` panel’s calendar on. 0-6 where 0 = Sunday and 6 = Saturday.'
+    prop: "week-start",
+    type: "number",
+    default: "0",
+    description: "The day of the week to start the `day` panel’s calendar on. 0-6 where 0 = Sunday and 6 = Saturday."
   },
   {
-    prop: 'week-day-format',
-    type: 'string',
-    default: 'd',
-    description: 'The date format token used to render the day of the week column headers.'
+    prop: "week-day-format",
+    type: "string",
+    default: "d",
+    description: "The date format token used to render the day of the week column headers."
   },
   {
-    prop: 'year-format',
-    type: 'string',
-    default: 'YYYY',
-    description: 'The date format token used to render the years in the `year` panel.'
+    prop: "year-format",
+    type: "string",
+    default: "YYYY",
+    description: "The date format token used to render the years in the `year` panel."
   }
 ]
 ---
@@ -693,12 +693,12 @@ schema: [
     children: [
       {
         name: "overlay-parts",
-        class: 'overlay-parts',
+        class: "overlay-parts",
         children: [
-          { name: 'overlayPlaceholder',  },
-          { name: 'overlayLiteral' },
-          { name: 'overlayChar', position: 'right' },
-          { name: 'overlayEnum', position: 'right' },
+          { name: "overlayPlaceholder",  },
+          { name: "overlayLiteral" },
+          { name: "overlayChar", position: "right" },
+          { name: "overlayEnum", position: "right" },
         ]
       }
     ]
@@ -717,98 +717,98 @@ hide-on-small: true
 class: "input-diagram--datepicker-panel"
 schema: [
   {
-    name: 'panel-wrapper',
-    position: 'right',
+    name: "panel-wrapper",
+    position: "right",
     children: [
       {
-        name: 'panel-header',
-        class: 'panel-header',
+        name: "panel-header",
+        class: "panel-header",
         children: [
           {
-            name: 'prev',
-            class: 'icon-button',
+            name: "prev",
+            class: "icon-button",
             children: [
               {
-                name: 'prev-label',
-                content: 'Prev',
+                name: "prev-label",
+                content: "Prev",
               },
               {
-                name: 'prev-icon',
-                content: '👈',
+                name: "prev-icon",
+                content: "👈",
               },
             ],
           },
           {
-            name: 'years-header',
-            class: 'header-main',
-            content: '2010 - 2020',
+            name: "years-header",
+            class: "header-main",
+            content: "2010 - 2020",
           },
           {
-            name: 'next',
-            position: 'right',
-            class: 'icon-button',
+            name: "next",
+            position: "right",
+            class: "icon-button",
             children: [
               {
-                name: 'next-label',
-                position: 'right',
-                content: 'Next',
+                name: "next-label",
+                position: "right",
+                content: "Next",
               },
               {
-                name: 'next-icon',
-                position: 'right',
-                content: '👉',
+                name: "next-icon",
+                position: "right",
+                content: "👉",
               },
             ],
           },
         ],
       },
       {
-        name: 'panel',
-        position: 'right',
+        name: "panel",
+        position: "right",
         children: [
           {
-            name: 'years',
-            class: 'years',
+            name: "years",
+            class: "years",
             children: [
               {
-                name: 'year',
-                content: '2010',
+                name: "year",
+                content: "2010",
               },
               {
-                name: 'year',
-                content: '2011',
+                name: "year",
+                content: "2011",
               },
               {
-                name: 'year',
-                content: '2012',
+                name: "year",
+                content: "2012",
               },
               {
-                name: 'year',
-                content: '2013',
+                name: "year",
+                content: "2013",
               },
               {
-                name: 'year',
-                content: '2014',
+                name: "year",
+                content: "2014",
               },
               {
-                name: 'year',
-                content: '2015',
+                name: "year",
+                content: "2015",
               },
               {
-                name: 'year',
-                content: '2016',
+                name: "year",
+                content: "2016",
               },
               {
-                name: 'year',
-                content: '2017',
+                name: "year",
+                content: "2017",
               },
               {
-                name: 'year',
-                content: '2018',
+                name: "year",
+                content: "2018",
               },
               {
-                name: 'year',
-                content: '2019',
+                name: "year",
+                content: "2019",
               }
             ],
           }
@@ -831,82 +831,82 @@ hide-on-small: true
 class: "input-diagram--datepicker-panel"
 schema: [
   {
-    name: 'panel-wrapper',
-    position: 'right',
+    name: "panel-wrapper",
+    position: "right",
     children: [
       {
-        name: 'panel-header',
-        class: 'panel-header',
-        position: 'right',
+        name: "panel-header",
+        class: "panel-header",
+        position: "right",
         children: [
           {
-            name: 'months-header',
-            class: 'header-main',
+            name: "months-header",
+            class: "header-main",
             children: [
               {
-                name: 'year-button',
-                position: 'right',
-                content: '2027',
+                name: "year-button",
+                position: "right",
+                content: "2027",
               }
             ]
           }
         ],
       },
       {
-        name: 'panel',
-        position: 'right',
+        name: "panel",
+        position: "right",
         children: [
           {
-            name: 'months',
-            class: 'months',
+            name: "months",
+            class: "months",
             children: [
               {
-                name: 'month',
-                content: 'Jan',
+                name: "month",
+                content: "Jan",
               },
               {
-                name: 'month',
-                content: 'Feb',
+                name: "month",
+                content: "Feb",
               },
               {
-                name: 'month',
-                content: 'Mar',
+                name: "month",
+                content: "Mar",
               },
               {
-                name: 'month',
-                content: 'Apr',
+                name: "month",
+                content: "Apr",
               },
               {
-                name: 'month',
-                content: 'May',
+                name: "month",
+                content: "May",
               },
               {
-                name: 'month',
-                content: 'Jun',
+                name: "month",
+                content: "Jun",
               },
               {
-                name: 'month',
-                content: 'Jul',
+                name: "month",
+                content: "Jul",
               },
               {
-                name: 'month',
-                content: 'Aug',
+                name: "month",
+                content: "Aug",
               },
               {
-                name: 'month',
-                content: 'Sep',
+                name: "month",
+                content: "Sep",
               },
               {
-                name: 'month',
-                content: 'Oct',
+                name: "month",
+                content: "Oct",
               },
               {
-                name: 'month',
-                content: 'Nov',
+                name: "month",
+                content: "Nov",
               },
               {
-                name: 'month',
-                content: 'Dec',
+                name: "month",
+                content: "Dec",
               }
             ],
           }
@@ -929,416 +929,416 @@ hide-on-small: true
 class: "input-diagram--datepicker-panel"
 schema: [
   {
-    name: 'panel-wrapper',
-    position: 'right',
+    name: "panel-wrapper",
+    position: "right",
     children: [
       {
-        name: 'panel-header',
-        class: 'panel-header',
+        name: "panel-header",
+        class: "panel-header",
         children: [
           {
-            name: 'prev',
-            class: 'icon-button',
+            name: "prev",
+            class: "icon-button",
             children: [
               {
-                name: 'prev-label',
-                content: 'Prev',
+                name: "prev-label",
+                content: "Prev",
               },
               {
-                name: 'prev-icon',
-                content: '👈',
+                name: "prev-icon",
+                content: "👈",
               },
             ],
           },
           {
-            name: 'days-header',
-            class: 'header-main',
+            name: "days-header",
+            class: "header-main",
             children: [
               {
-                name: 'month-button',
-                content: 'Feb',
-                position: 'right',
+                name: "month-button",
+                content: "Feb",
+                position: "right",
               },
               {
-                name: 'year-button',
-                content: '2026',
-                position: 'right',
+                name: "year-button",
+                content: "2026",
+                position: "right",
               }
             ]
           },
           {
-            name: 'next',
-            position: 'right',
-            class: 'icon-button',
+            name: "next",
+            position: "right",
+            class: "icon-button",
             children: [
               {
-                name: 'next-label',
-                position: 'right',
-                content: 'Next',
+                name: "next-label",
+                position: "right",
+                content: "Next",
               },
               {
-                name: 'next-icon',
-                position: 'right',
-                content: '👉',
+                name: "next-icon",
+                position: "right",
+                content: "👉",
               },
             ],
           },
         ],
       },
       {
-        name: 'panel',
-        position: 'right',
+        name: "panel",
+        position: "right",
         children: [
           {
-            name: 'calendar',
-            class: 'calendar',
-            position: 'right',
+            name: "calendar",
+            class: "calendar",
+            position: "right",
             children: [
               {
-                name: 'calendar-header',
-                class: 'calendar-header',
+                name: "calendar-header",
+                class: "calendar-header",
                 children: [
                   {
-                    name: 'week-days',
-                    class: 'week',
-                    position: 'right',
+                    name: "week-days",
+                    class: "week",
+                    position: "right",
                     children: [
                       {
-                        name: 'week-day',
-                        content: 'S',
+                        name: "week-day",
+                        content: "S",
                       },
                       {
-                        name: 'week-day',
-                        content: 'M',
+                        name: "week-day",
+                        content: "M",
                       },
                       {
-                        name: 'week-day',
-                        content: 'T',
+                        name: "week-day",
+                        content: "T",
                       },
                       {
-                        name: 'week-day',
-                        content: 'W',
+                        name: "week-day",
+                        content: "W",
                       },
                       {
-                        name: 'week-day',
-                        content: 'T',
+                        name: "week-day",
+                        content: "T",
                       },
                       {
-                        name: 'week-day',
-                        content: 'F',
+                        name: "week-day",
+                        content: "F",
                       },
                       {
-                        name: 'week-day',
-                        content: 'S',
+                        name: "week-day",
+                        content: "S",
                       },
                     ]
                   }
                 ]
               },
               {
-                name: 'calendar-weeks',
-                class: 'calendar-weeks',
-                position: 'right',
+                name: "calendar-weeks",
+                class: "calendar-weeks",
+                position: "right",
                 children: [
                   {
-                    name: 'week',
-                    class: 'week',
+                    name: "week",
+                    class: "week",
                     children: [
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '1',
+                            name: "day",
+                            content: "1",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '2',
+                            name: "day",
+                            content: "2",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '3',
+                            name: "day",
+                            content: "3",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '4',
+                            name: "day",
+                            content: "4",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '5',
+                            name: "day",
+                            content: "5",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '6',
+                            name: "day",
+                            content: "6",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '7',
+                            name: "day",
+                            content: "7",
                           }
                         ]
                       },
                     ]
                   },
                   {
-                    name: 'week',
-                    class: 'week',
+                    name: "week",
+                    class: "week",
                     children: [
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '8',
+                            name: "day",
+                            content: "8",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '9',
+                            name: "day",
+                            content: "9",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '10',
+                            name: "day",
+                            content: "10",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '11',
+                            name: "day",
+                            content: "11",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '12',
+                            name: "day",
+                            content: "12",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '13',
+                            name: "day",
+                            content: "13",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '14',
+                            name: "day",
+                            content: "14",
                           }
                         ]
                       },
                     ]
                   },
                   {
-                    name: 'week',
-                    class: 'week',
+                    name: "week",
+                    class: "week",
                     children: [
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '15',
+                            name: "day",
+                            content: "15",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '16',
+                            name: "day",
+                            content: "16",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '17',
+                            name: "day",
+                            content: "17",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '18',
+                            name: "day",
+                            content: "18",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '19',
+                            name: "day",
+                            content: "19",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '20',
+                            name: "day",
+                            content: "20",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '21',
+                            name: "day",
+                            content: "21",
                           }
                         ]
                       },
                     ]
                   },
                   {
-                    name: 'week',
-                    class: 'week',
+                    name: "week",
+                    class: "week",
                     children: [
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '22',
+                            name: "day",
+                            content: "22",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '23',
+                            name: "day",
+                            content: "23",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '24',
+                            name: "day",
+                            content: "24",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '25',
+                            name: "day",
+                            content: "25",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '26',
+                            name: "day",
+                            content: "26",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '27',
+                            name: "day",
+                            content: "27",
                           }
                         ]
                       },
                       {
-                        name: 'day-cell',
-                        class: 'day-cell',
+                        name: "day-cell",
+                        class: "day-cell",
                         children: [
                           {
-                            name: 'day',
-                            content: '28',
+                            name: "day",
+                            content: "28",
                           }
                         ]
                       },
@@ -1367,47 +1367,47 @@ hide-on-small: true
 class: "input-diagram--datepicker-panel"
 schema: [
   {
-    name: 'panel-wrapper',
-    position: 'right',
+    name: "panel-wrapper",
+    position: "right",
     children: [
       {
-        name: 'panel-header',
-        class: 'panel-header',
+        name: "panel-header",
+        class: "panel-header",
         children: [
           {
-            name: 'time-header',
-            class: 'header-main time-header',
-            position: 'right',
+            name: "time-header",
+            class: "header-main time-header",
+            position: "right",
             children: [
               {
-                name: 'month-button',
-                content: 'February',
+                name: "month-button",
+                content: "February",
               },
               {
-                name: 'day-button',
-                content: '17',
+                name: "day-button",
+                content: "17",
               },
               {
-                name: 'year-button',
-                position: 'right',
-                content: '2027',
+                name: "year-button",
+                position: "right",
+                content: "2027",
               }
             ]
           }
         ],
       },
       {
-        name: 'panel',
-        position: 'right',
+        name: "panel",
+        position: "right",
         children: [
           {
-            name: 'time',
-            class: 'time',
+            name: "time",
+            class: "time",
             children: [
               {
-                name: 'time-input',
-                position: 'right',
-                content: '12:00 AM',
+                name: "time-input",
+                position: "right",
+                content: "12:00 AM",
               }
             ]
           }

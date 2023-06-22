@@ -311,58 +311,58 @@ without: [
 class: "input-diagram--multi-step multi-step"
 schema: [
   {
-    name: 'outer',
-    position: 'right',
+    name: "outer",
+    position: "right",
     children: [
       {
-        name: 'wrapper',
-        position: 'right',
+        name: "wrapper",
+        position: "right",
         children: [
           {
-            name: 'tabs',
+            name: "tabs",
             children: [
               {
-                name: 'tab',
-                class: 'flex',
+                name: "tab",
+                class: "flex",
                 children: [
                   {
-                    name: 'tabLabel',
-                    content: 'Step Name'
+                    name: "tabLabel",
+                    content: "Step Name"
                   },
                   {
-                    name: 'badge',
-                    position: 'right',
-                    content: '⚠️',
-                    class: 'grow-0'
+                    name: "badge",
+                    position: "right",
+                    content: "⚠️",
+                    class: "grow-0"
                   }
                 ]
               },
             ]
           },
           {
-            name: 'steps',
+            name: "steps",
             children: [
               {
-                name: 'step',
+                name: "step",
                 children: [
                   {
-                    name: 'stepInner',
-                    position: 'right',
-                    class: 'text-center',
-                    content: '... Step content ...'
+                    name: "stepInner",
+                    position: "right",
+                    class: "text-center",
+                    content: "... Step content ..."
                   },
                   {
-                    name: 'stepActions',
-                    class: 'flex',
+                    name: "stepActions",
+                    class: "flex",
                     children: [
                       {
-                        name: 'stepPrevious',
-                        content: 'Back'
+                        name: "stepPrevious",
+                        content: "Back"
                       },
                       {
-                        name: 'stepNext',
-                        position: 'right',
-                        content: 'Next'
+                        name: "stepNext",
+                        position: "right",
+                        content: "Next"
                       }
                     ]
                   }
@@ -384,57 +384,57 @@ type: "sectionKeys"
 primary: "section-key"
 data: [
   {
-    'section-key': 'tabs',
-    description: 'A wrapper around all of the tabs.'
+    "section-key": "tabs",
+    description: "A wrapper around all of the tabs."
   },
   {
-    'section-key': 'tab',
-    description: 'A button element that contains the tab name and the decorator to reflect validation state.'
+    "section-key": "tab",
+    description: "A button element that contains the tab name and the decorator to reflect validation state."
   },
   {
-    'section-key': 'tabLabel',
-    description: 'A span element that contains the name of the tab.'
+    "section-key": "tabLabel",
+    description: "A span element that contains the name of the tab."
   },
   {
-    'section-key': 'badge',
-    description: 'A span element used as a decorator for showing current tab validity state.'
+    "section-key": "badge",
+    description: "A span element used as a decorator for showing current tab validity state."
   },
   {
-    'section-key': 'steps',
-    description: 'A wrapper around all steps.'
+    "section-key": "steps",
+    description: "A wrapper around all steps."
   },
   {
-    'section-key': 'step',
-    description: 'A wrapper around step content from the default slot and the step’s action buttons. Each step has visibility styling automatically applied depending on if it is the current active step.'
+    "section-key": "step",
+    description: "A wrapper around step content from the default slot and the step’s action buttons. Each step has visibility styling automatically applied depending on if it is the current active step."
   },
   {
-    'section-key': 'stepInner',
-    description: 'A wrapper around the default slot content for a step.'
+    "section-key": "stepInner",
+    description: "A wrapper around the default slot content for a step."
   },
   {
-    'section-key': 'stepActions',
-    description: 'A wrapper around the action buttons for moving between steps.'
+    "section-key": "stepActions",
+    description: "A wrapper around the action buttons for moving between steps."
   },
   {
-    'section-key': 'stepPrevious',
-    description: 'A wrapper around the action button for navigating to the previous step.'
+    "section-key": "stepPrevious",
+    description: "A wrapper around the action button for navigating to the previous step."
   },
   {
-    'section-key': 'stepNext',
-    description: 'A wrapper around the action button for navigating to the next step.'
+    "section-key": "stepNext",
+    description: "A wrapper around the action button for navigating to the next step."
   }
 ] 
 without: [
-  'label',
-  'prefix',
-  'prefixIcon',
-  'inner',
-  'suffix',
-  'suffixIcon',
-  'input',
-  'help',
-  'messages',
-  'message'
+  "label",
+  "prefix",
+  "prefixIcon",
+  "inner",
+  "suffix",
+  "suffixIcon",
+  "input",
+  "help",
+  "messages",
+  "message"
 ]
 ---
 ::

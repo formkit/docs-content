@@ -209,68 +209,68 @@ file: "_content/_examples/taglist/taglist-full.vue"
 input: "taglist"
 data: [
   {
-    prop: 'debounce',
-    type: 'number',
-    default: '200',
-    description: 'Number of milliseconds to debounce calls to an options function.'
+    prop: "debounce",
+    type: "number",
+    default: "200",
+    description: "Number of milliseconds to debounce calls to an options function."
   },
   {
-    prop: 'options',
-    type: 'any',
-    default: '[]',
-    description: 'The list of options the user can select from.'
+    prop: "options",
+    type: "any",
+    default: "[]",
+    description: "The list of options the user can select from."
   },
   {
-    prop: 'load-on-scroll',
-    type: 'boolean',
-    default: 'false',
-    description: 'When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position'
+    prop: "load-on-scroll",
+    type: "boolean",
+    default: "false",
+    description: "When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position"
   },
   {
-    prop: 'open-on-click',
-    type: 'boolean',
-    default: 'false',
-    description: 'The autocomplete is expanded upon focus of the input, as opposed to waiting to expand until a search value is entered.'
+    prop: "open-on-click",
+    type: "boolean",
+    default: "false",
+    description: "The autocomplete is expanded upon focus of the input, as opposed to waiting to expand until a search value is entered."
   },
   {
-    prop: 'filter',
-    type: 'function',
-    default: 'null',
-    description: 'Used to apply your own custom filter function for static options.'
+    prop: "filter",
+    type: "function",
+    default: "null",
+    description: "Used to apply your own custom filter function for static options."
   },
   {
-    prop: 'option-loader',
-    type: 'function',
-    default: 'null',
-    description: 'Used for hydrating initial value, or performing an additional request to load more information of a selected option.'
+    prop: "option-loader",
+    type: "function",
+    default: "null",
+    description: "Used for hydrating initial value, or performing an additional request to load more information of a selected option."
   },
   {
-    prop: 'allow-new-values',
-    type: 'boolean',
-    default: 'false', description: 'Allows end-user to enter a new value that does not exist within the options list.'
+    prop: "allow-new-values",
+    type: "boolean",
+    default: "false", description: "Allows end-user to enter a new value that does not exist within the options list."
   },
   {
-    prop: 'disable-drag-and-drop',
-    type: 'boolean',
-    default: 'true', description: 'Disabled end-user from sorting tags by dragging and dropping.'
+    prop: "disable-drag-and-drop",
+    type: "boolean",
+    default: "true", description: "Disabled end-user from sorting tags by dragging and dropping."
   },
   {
-    prop: 'empty-message',
-    type: 'string',
-    default: 'undefined',
-    description: 'Renders a message when there are no options to display.'
+    prop: "empty-message",
+    type: "string",
+    default: "undefined",
+    description: "Renders a message when there are no options to display."
   },
   {
-    prop: 'max',
-    type: 'number',
-    default: 'undefined',
-    description: 'Limits the number of options that can be selected.'
+    prop: "max",
+    type: "number",
+    default: "undefined",
+    description: "Limits the number of options that can be selected."
   },
   {
-    prop: 'close-on-select',
-    type: 'boolean',
-    default: 'true',
-    description: 'Closes the listbox when an option is selected.'
+    prop: "close-on-select",
+    type: "boolean",
+    default: "true",
+    description: "Closes the listbox when an option is selected."
   }
 ]
 ---
@@ -283,72 +283,72 @@ type: "sectionKeys"
 primary: "section-key"
 data: [
   {
-    'section-key': 'selector',
-    description: 'The selector section is a button element that opens the dropdown options list.'
+    "section-key": "selector",
+    description: "The selector section is a button element that opens the dropdown options list."
   },
   {
-    'section-key': 'selections',
-    description: 'Contains individual selection sections.'
+    "section-key": "selections",
+    description: "Contains individual selection sections."
   },
   {
-    'section-key': 'selection',
-    description: 'Contains the selected option.'
+    "section-key": "selection",
+    description: "Contains the selected option."
   },
   {
-    'section-key': 'listitem',
-    description: 'A list item element that contains the option section.'
+    "section-key": "listitem",
+    description: "A list item element that contains the option section."
   },
   {
-    'section-key': 'option',
-    description: 'A div that contains the option content.'
+    "section-key": "option",
+    description: "A div that contains the option content."
   },
   {
-    'section-key': 'listbox',
-    description: 'The listbox section is a ul element that contains the options list.'
+    "section-key": "listbox",
+    description: "The listbox section is a ul element that contains the options list."
   },
   {
-    'section-key': 'dropdownWrapper',
-    description: 'Wraps the listbox section. A div that handles scrolling the listbox.'
+    "section-key": "dropdownWrapper",
+    description: "Wraps the listbox section. A div that handles scrolling the listbox."
   },
   {
-    'section-key': 'optionLoading',
-    description: 'A span element that is conditionally rendered within the selected option when loading is occurring.'
+    "section-key": "optionLoading",
+    description: "A span element that is conditionally rendered within the selected option when loading is occurring."
   },
   {
-    'section-key': 'loaderIcon',
-    description: 'An element for outputting an icon in the selector element when loading is occurring.'
+    "section-key": "loaderIcon",
+    description: "An element for outputting an icon in the selector element when loading is occurring."
   },
   {
-    'section-key': 'selectIcon',
-    description: 'An element for outputting an icon in the selector element when the dropdown is closed.'
+    "section-key": "selectIcon",
+    description: "An element for outputting an icon in the selector element when the dropdown is closed."
   },
   {
-    'section-key': 'loadMore',
-    description: 'A list item element that is conditionally rendered at the bottom of the options list when there are more pages to load.'
+    "section-key": "loadMore",
+    description: "A list item element that is conditionally rendered at the bottom of the options list when there are more pages to load."
   },
   {
-    'section-key': 'loadMoreInner',
-    description: 'A span element that acts as a wrapper for the loaderIcon within the loadMore section.'
+    "section-key": "loadMoreInner",
+    description: "A span element that acts as a wrapper for the loaderIcon within the loadMore section."
   },
   {
-    'section-key': 'removeSelection',
-    description: 'A button element used for removing a specific selection.'
+    "section-key": "removeSelection",
+    description: "A button element used for removing a specific selection."
   },
   {
-    'section-key': 'closeIcon',
-    description: 'An element for outputting an icon within the removeSelection button.'
+    "section-key": "closeIcon",
+    description: "An element for outputting an icon within the removeSelection button."
   },
   {
-    'section-key': 'listboxButton',
-    description: 'A button element that is used to open the dropdown.'
+    "section-key": "listboxButton",
+    description: "A button element that is used to open the dropdown."
   },
   {
-    'section-key': 'emptyMessage',
-    description: 'A list item element that is conditionally rendered when there are no options to display.'
+    "section-key": "emptyMessage",
+    description: "A list item element that is conditionally rendered when there are no options to display."
   },
   {
-    'section-key': 'emptyMessageInner',
-    description: 'A span element that acts as a wrapper for the emptyMessage section.'
+    "section-key": "emptyMessageInner",
+    description: "A span element that acts as a wrapper for the emptyMessage section."
   }
 ]
 ---

@@ -236,75 +236,75 @@ data: [
 class: "input-diagram--toggle"
 schema: [
   {
-    name: 'outer',
-    position: 'right',
+    name: "outer",
+    position: "right",
     children: [
       {
-        name: 'wrapper',
-        position: 'right',
+        name: "wrapper",
+        position: "right",
         children: [
           {
-            name: 'altLabel',
-            position: 'right',
-            class: 'center-vert'
+            name: "altLabel",
+            position: "right",
+            class: "center-vert"
           },
           {
-            name: 'inner',
+            name: "inner",
             children: [
               {
-                name: 'prefix',
+                name: "prefix",
               },
               {
-                name: 'input',
+                name: "input",
               },
               {
-                name: 'track',
-                class: 'flex-grow flex',
+                name: "track",
+                class: "flex-grow flex",
                 children: [
                   {
-                    name: 'innerLabel',
+                    name: "innerLabel",
                   },
                   {
-                    name: 'thumb',
-                    class: 'flex-grow text-center border-solid',
+                    name: "thumb",
+                    class: "flex-grow text-center border-solid",
                     children: [
                       {
-                        name: 'thumbIcon',
-                        content: '⚫️'
+                        name: "thumbIcon",
+                        content: "⚫️"
                       }
                     ]
                   }
                 ]
               },
               {
-                name: 'suffix',
-                position: 'right',
+                name: "suffix",
+                position: "right",
               },
             ]
           },
           {
-            name: 'valueLabel',
-            position: 'right',
+            name: "valueLabel",
+            position: "right",
           },
           {
-            name: 'label',
-            content: 'Sound effects'
+            name: "label",
+            content: "Sound effects"
           }
         ]
       },
       {
-        name: 'help',
-        content: 'Turn sound effects on and off.',
-        position: 'right'
+        name: "help",
+        content: "Turn sound effects on and off.",
+        position: "right"
       },
       {
-        name: 'messages',
-        position: 'right',
+        name: "messages",
+        position: "right",
         children: [
           {
-            name: 'message',
-            content: 'Something wrong happened.',
-            position: 'right'
+            name: "message",
+            content: "Something wrong happened.",
+            position: "right"
           }
         ]
       }
@@ -320,28 +320,28 @@ type: "sectionKeys"
 primary: "section-key" 
 data: [
   {
-    'section-key': 'track',
-    description: 'The track section is the background of the toggle (the area that the thumb slides on).'
+    "section-key": "track",
+    description: "The track section is the background of the toggle (the area that the thumb slides on)."
   },
   {
-    'section-key': 'thumb',
-    description: 'The thumb section is the element that slides on the track.'
+    "section-key": "thumb",
+    description: "The thumb section is the element that slides on the track."
   },
   {
-    'section-key': 'thumbIcon',
-    description: 'The thumbIcon section is the icon that is rendered inside the thumb section (when thumb-icon prop is set).'
+    "section-key": "thumbIcon",
+    description: "The thumbIcon section is the icon that is rendered inside the thumb section (when thumb-icon prop is set)."
   },
   {
-    'section-key': 'valueLabel',
-    description: 'An additional label element, rendered when value-label props are used. Displayed to the right of the toggle.'
+    "section-key": "valueLabel",
+    description: "An additional label element, rendered when value-label props are used. Displayed to the right of the toggle."
   },
   {
-    'section-key': 'altLabel',
-    description: 'A label element for the label. This label is rendered when value-label props are being used.'
+    "section-key": "altLabel",
+    description: "A label element for the label. This label is rendered when value-label props are being used."
   },
   {
-    'section-key': 'innerLabel',
-    description: 'A label element used when value-label props are provided and value-label-display is set to inner.'
+    "section-key": "innerLabel",
+    description: "A label element used when value-label props are provided and value-label-display is set to inner."
   }
 ]
 ---

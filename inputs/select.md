@@ -171,67 +171,67 @@ data: [
 class: "input-diagram--select"
 schema: [
   {
-    name: 'outer',
+    name: "outer",
     children: [
       {
-        name: 'wrapper',
-        position: 'right',
+        name: "wrapper",
+        position: "right",
         children: [
           {
-            name: 'label',
-            content: 'Smoothie size',
-            position: 'right',
+            name: "label",
+            content: "Smoothie size",
+            position: "right",
           }, 
           {
-            name: 'inner',
+            name: "inner",
             children: [
               {
-                name: 'prefixIcon',
-                content: '👩🏼‍🦱'
+                name: "prefixIcon",
+                content: "👩🏼‍🦱"
               },
               {
-                name: 'prefix',
+                name: "prefix",
               },
               {
-                name: 'input',
+                name: "input",
                 children: [
                   {
-                    name: 'option',
-                    content: 'Medium'
+                    name: "option",
+                    content: "Medium"
                   }
                 ]
               },
               {
-                name: 'selectIcon',
-                position: 'right',
-                content: '⌄',
-                class: 'center-vert'
+                name: "selectIcon",
+                position: "right",
+                content: "⌄",
+                class: "center-vert"
               },
               {
-                name: 'suffix',
-                position: 'right',
+                name: "suffix",
+                position: "right",
               },
               {
-                name: 'suffixIcon',
-                position: 'right',
+                name: "suffixIcon",
+                position: "right",
               },
             ]
           },
         ]
       },
       {
-        name: 'help',
-        content: 'Choose a smoothie size.',
-        position: 'right'
+        name: "help",
+        content: "Choose a smoothie size.",
+        position: "right"
       },
       {
-        name: 'messages',
-        position: 'right',
+        name: "messages",
+        position: "right",
         children: [
           {
-            name: 'message',
-            content: 'You must make a selection.',
-            position: 'right'
+            name: "message",
+            content: "You must make a selection.",
+            position: "right"
           }
         ]
       }
