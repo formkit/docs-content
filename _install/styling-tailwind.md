@@ -10,7 +10,7 @@ npm install @formkit/themes @formkit/icons
 // formkit.config.js
 import { generateClasses } from '@formkit/themes'
 import { genesisIcons } from '@formkit/icons'
-import genesis from '@formkit/themes/tailwindcss/genesis'
+import genesis from '@formkit/themes/dist/tailwindcss/genesis'
 
 export default {
   icons: {
