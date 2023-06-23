@@ -285,7 +285,7 @@ FormKit ships with an optional default Tailwind theme called Genesis. To use thi
 // formkit.config.js
 import { generateClasses } from '@formkit/themes'
 import { genesisIcons } from '@formkit/icons'
-import genesis from '@formkit/themes/tailwindcss/genesis'
+import genesis from '@formkit/themes/dist/tailwindcss/genesis'
 
 export default {
   icons: {
@@ -320,8 +320,8 @@ The guide concludes with a complete reproduction of the FormKit Genesis CSS them
 
 ::Cta
 ---
-label: "Guide: Create a Tailwind CSS theme" 
-button: "Read now" 
+label: "Guide: Create a Tailwind CSS theme"
+button: "Read now"
 href: "/guides/create-a-tailwind-theme"
 ---
 ::
