@@ -6,17 +6,15 @@ To configure FormKit create a `formkit.config.js` in the root of your Nuxt proje
 ```js
 import { fr } from '@formkit/i18n'
 
-const config = {
+export default {
   locales: { fr },
   locale: 'fr',
 }
-
-export default config
 ```
 
 ### Using environment variables in formkit.config.js
 
-There may be instances where you want to use Nuxt's `runtimeConfig` variables inside of your `formkit.config.js` file — such as keeping a FormKit Pro API key from being published in your codebase. Do achieve this you can use `defineFormKitConfig` and return a function which itself will return your configuration object. Your `defineFormKitConfig` function will be called by Nuxt and have access to `runtimeConfig`.
+There may be instances where you want to use Nuxt's `runtimeConfig` variables inside of your `formkit.config.js` file — such as keeping a FormKit Pro API key from being published in your codebase. To achieve this you can provie a function to `defineFormKitConfig` which returns a configuration object. Your function will be called by Nuxt and have access to `runtimeConfig`.
 
 ```js
 import { fr } from '@formkit/i18n'
