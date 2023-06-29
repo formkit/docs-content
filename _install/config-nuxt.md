@@ -14,6 +14,31 @@ const config = {
 export default config
 ```
 
+### Using environment variables in formkit.config.js
+
+There may be instances where you want to use Nuxt's `runtimeConfig` variables inside of your `formkit.config.js` file — such as keeping a FormKit Pro API key from being published in your codebase. Do achieve this you can use `defineFormKitConfig` and return a function which itself will return your configuration object. Your `defineFormKitConfig` function will be called by Nuxt and have access to `runtimeConfig`.
+
+```js
+import { fr } from '@formkit/i18n'
+import { defineFormKitConfig } from '@formkit/vue'
+import { createProPlugin, inputs } from '@formkit/pro'
+
+export default defineFormKitConfig(() => {
+  // here we can access `useRuntimeConfig` because
+  // our function will be called by Nuxt.
+  const config = useRuntimeConfig()
+
+  // and we can use the variables to import secrets
+  const pro = createProPlugin(config.FORMKIT_PRO_KEY, inputs)
+
+  return {
+    plugins: [pro],
+    locales: { fr },
+    locale: 'fr',
+  }
+})
+```
+
 ### Defining a custom FormKit config path
 
 If you would like to supply a custom path to your `formkit.config`, you can override the default location using the `configFile` option under the `formkit` key. **Any path you supply should be relative to the root of your Nuxt project**:
