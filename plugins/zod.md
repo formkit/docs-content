@@ -35,11 +35,11 @@ Here is an example of using a Zod schema to validate a FormKit form. It's import
 
 ::Example
 ---
-name: "Zod Validation"
+name: 'Zod Validation'
 file: [
-"/\_content/_examples/zod/validation.vue",
+'/\_content/_examples/zod/validation.vue',
 ]
-import-map: "/\_content/_examples/zod/importMap.json"
+import-map: '/\_content/_examples/zod/importMap.json'
 ---
 ::
 
@@ -59,11 +59,11 @@ Here's the same form as before, but now using FormKit validation messages in add
 
 ::Example
 ---
-name: "Zod Validation with FormKit Validation"
+name: 'Zod Validation with FormKit Validation'
 file: [
-"/\_content/_examples/zod/with-formkit-validation.vue",
+'/\_content/_examples/zod/with-formkit-validation.vue',
 ]
-import-map: "/\_content/_examples/zod/importMap.json"
+import-map: '/\_content/_examples/zod/importMap.json'
 ---
 ::
 
@@ -73,10 +73,10 @@ If you need to set errors on your form you can do so with the `node.setZodErrors
 
 ::Example
 ---
-name: "Zod Errors"
+name: 'Zod Errors'
 file: [
-"/\_content/_examples/zod/errors.vue",
+'/\_content/_examples/zod/errors.vue',
 ]
-import-map: "/\_content/_examples/zod/importMap.json"
+import-map: '/\_content/_examples/zod/importMap.json'
 ---
 ::
