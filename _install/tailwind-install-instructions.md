@@ -1,6 +1,6 @@
 If you have not already, add Tailwind CSS to your project following their [installation instructions](https://tailwindcss.com/docs/installation)
 
-FormKit provides a Tailwind version of the Genesis theme you can use as starting point in your own project. To use this pre-made Tailwind theme copy the following theme into a file (something like `tailwind-theme.js`) in your project.
+FormKit provides a Tailwind version of the Genesis theme you can use as a starting point in your own project. To use this pre-made Tailwind theme copy the following theme into a file (something like `tailwind-theme.js`) in your project.
 
 :TailwindTheme
 
