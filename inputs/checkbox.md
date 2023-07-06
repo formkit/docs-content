@@ -91,7 +91,7 @@ data: [
     type: "String",
     default: "’’",
     description:
-      "Specifies <a href='essentials/icons'>an icon</a> to put in the <code>decoratorIcon</code> section. Shows when the checkbox is checked. Defaults to the <code>checkboxDecorator</code> icon.",
+      "Specifies <a href='/essentials/icons'>an icon</a> to put in the <code>decoratorIcon</code> section. Shows when the checkbox is checked. Defaults to the <code>checkboxDecorator</code> icon.",
   },
   {
     prop: "options",

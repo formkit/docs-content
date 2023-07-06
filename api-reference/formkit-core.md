@@ -876,7 +876,7 @@ createMessage(conf: Partial<FormKitMessage>, node?: FormKitNode): FormKitMessage
 #### Parameters
 
 - `conf` — An object of optional properties of [FormKitMessage](#formkitmessage).
-- `node` *optional* — A [FormKitNode](/api-reference/formkit-node#formkitnode).
+- `node` *optional* — A [FormKitNode](/api-reference/formkit-core#formkitnode).
 
 #### Returns
 
