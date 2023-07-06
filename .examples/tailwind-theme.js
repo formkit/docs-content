@@ -32,11 +32,11 @@ export default {
     suffixIcon: '$reset block w-4 ml-2 stretch',
   },
   'family:dropdown': {
-    dropdownWrapper: 'my-2 w-full drop-shadow-lg rounded [&::-webkit-scrollbar]:hidden',
+    dropdownWrapper: 'my-2 w-full shadow-lg rounded [&::-webkit-scrollbar]:hidden',
     emptyMessageInner: 'flex items-center justify-center text-sm p-2 text-center w-full text-gray-500 [&>span]:mr-3 [&>span]:ml-0',
     inner: 'max-w-md relative flex ring-1 ring-gray-400 focus-within:ring-blue-500 focus-within:ring-2 rounded mb-1 formkit-disabled:focus-within:ring-gray-400 formkit-disabled:focus-within:ring-1 [&>span:first-child]:focus-within:text-blue-500',
     input: 'w-full px-3 py-2',
-    listbox: 'bg-white drop-shadow-lg rounded overflow-hidden',
+    listbox: 'bg-white shadow-lg rounded overflow-hidden',
     listboxButton: 'flex w-12 self-stretch justify-center mx-auto',
     listitem: 'pl-7 relative hover:bg-gray-300 data-[is-active="true"]:bg-gray-300 data-[is-active="true"]:aria-selected:bg-blue-600 aria-selected:bg-blue-600 aria-selected:text-white',
     loaderIcon: 'ml-auto',
@@ -105,7 +105,7 @@ export default {
   },
   datepicker: {
     inner: 'relative',
-    panelWrapper: 'absolute top-[calc(100%_+_0.5em)] drop-shadow-[0_0_1.25em_rgba(0,0,0,.25)] rounded-md p-5 bg-white z-10',
+    panelWrapper: 'absolute top-[calc(100%_+_0.5em)] shadow-[0_0_1.25em_rgba(0,0,0,.25)] rounded-md p-5 bg-white z-10',
     panelHeader: 'grid grid-cols-[2.5em_1fr_2.5em] justify-center items-center border-b-2 mb-4 pb-4',
     input: 'selection:bg-blue-400',
     monthsHeader: 'flex items-center justify-center col-start-2 col-end-2',
