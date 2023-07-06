@@ -28,6 +28,17 @@ Community involvement and contributions are one of the most important aspects of
     />
 </a>
 
+### Gold sponsors
+
+<a class="no-underline" href="https://fieldman.co?utm_source=formkit&utm_medium=web">
+    <img
+        class="docs-partner"
+        src="https://cdn.formk.it/web-assets/sponsors/fieldman-logo.svg"
+        alt="Fieldman logo"
+        style="display:inline-block;vertical-align: middle;width: 175px;margin-right: 25px;margin-top: 10px;"
+    />
+</a>
+
 ### Silver sponsors
 
 <a class="no-underline" href="https://www.peakcrypto.com/">
@@ -35,7 +46,7 @@ Community involvement and contributions are one of the most important aspects of
         class="docs-partner"
         src="https://cdn.formk.it/web-assets/sponsors/peak-crypto.svg"
         alt="Peak Crypto"
-        style="display:inline-block;vertical-align: middle;width: 150px;margin-right: 25px;margin-top: 10px;"
+        style="display:inline-block;vertical-align: middle;width: 135px;margin-right: 25px;margin-top: 10px;"
     />
 </a>
 
