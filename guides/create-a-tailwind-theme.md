@@ -235,7 +235,7 @@ If you want to use these types of icons in your Tailwind theme be sure to import
 ---
 file: [
   '/_content/_examples/guides/tailwind-theme/tailwind-theme/example.vue',
-  '/_content/_examples/guides/tailwind-theme/tailwind-theme/theme.js',
+  '/_content/_examples/tailwind-theme.js',
   '/_content/_examples/guides/tailwind-theme/tailwind-theme/formkit.config.js',
   '/_content/_examples/guides/tailwind-theme/tailwind-theme/tailwind.config.js',
   '/_content/_examples/guides/tailwind-theme/tailwind-theme/KitchenSinkForm.vue',
@@ -270,7 +270,7 @@ Of particular importance when doing an override is the special [`$reset` modifie
 ---
 file: [
   '/_content/_examples/guides/tailwind-theme/override/example.vue',
-  '/_content/_examples/guides/tailwind-theme/override/theme.js',
+  '/_content/_examples/tailwind-theme.js',
   '/_content/_examples/guides/tailwind-theme/override/formkit.config.js',
   '/_content/_examples/guides/tailwind-theme/override/tailwind.config.js',
 ]

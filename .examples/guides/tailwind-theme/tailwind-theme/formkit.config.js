@@ -1,6 +1,6 @@
 import { arrowDown, arrowUp, check, circle, close, down, fileDoc, spinner, star, trash, date, left, right, } from "@formkit/icons"
 import { generateClasses } from '@formkit/themes'
-import theme from './theme.js'
+import theme from './tailwind-theme.js'
 
 const config = {
   config: {
