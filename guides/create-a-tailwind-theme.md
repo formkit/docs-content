@@ -59,7 +59,8 @@ npm install @formkit/themes
 From there we need to do two things:
 
 - Add the `formKitTailwind` plugin from `@formkit/themes` to our project's `tailwind.config.js` file.
-- Import the `generateClasses` helper function from `@formkit/themes` and use it where we define our FormKit config options.
+- Create a theme file (something like `tailwind-theme.js`) in our project.
+- Import the `generateClasses` helper function from `@formkit/themes` and use it with our theme in our FormKit config options.
 
 ```js
 // tailwind.config.js
@@ -67,10 +68,27 @@ const formKitTailwind = require('@formkit/themes/tailwindcss');
 
 module.exports {
   ...
+  content: [
+    ...
+    './tailwind-theme.js',
+  ],
   plugins: [
     formKitTailwind
   ]
   ...
+}
+```
+
+```js
+// tailwind-theme.js
+export default {
+  // our theme will go here.
+  // ...
+  // text: {
+  //   label: 'font-bold text-gray-300',
+  //   ...
+  // }
+  // ...
 }
 ```
 
@@ -80,6 +98,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { plugin, defaultConfig } from '@formkit/vue'
 import { generateClasses } from '@formkit/themes'
+import myTailwindTheme from './tailwind-theme.js'
 import '../dist/index.css' // wherever your Tailwind styles exist
 
 createApp(App)
@@ -87,38 +106,11 @@ createApp(App)
     plugin,
     defaultConfig({
       config: {
-        classes: generateClasses({
-          // our theme will go here.
-          // ...
-          // text: {
-          //   label: 'font-bold text-gray-300',
-          //   ...
-          // }
-          // ...
-        }),
+        classes: generateClasses(myTailwindTheme),
       },
     })
   )
   .mount('#app')
-```
-
-::Callout
----
-type: "warning"
-label: "Path needed if using formkit.config.js"
----
-If you are using a single file for configuration, like <code>formkit.config.js</code> within Nuxt, instead of <code>app.js</code>, you will need to add the path to that file to your <code>tailwind.config.js</code> inside the <code>content</code> property:
-::
-
-```js
-// tailwind.config.js for Nuxt users
-const formKitTailwind = require('@formkit/themes/tailwindcss')
-
-export default {
-  // add the formkit.config.js file
-  content: ['./src/**/*.{html,js}', './path/to/formkit.config.js'],
-  plugins: [formKitTailwind],
-}
 ```
 
 Once this setup is complete we are ready to begin writing our Tailwind theme!
@@ -135,10 +127,11 @@ Here is a `text` input with Tailwind classes applied:
 ---
 file: [
   '/_content/_examples/guides/tailwind-theme/tailwind-text-input/example.vue',
+  '/_content/_examples/guides/tailwind-theme/tailwind-text-input/tailwind-theme.js',
   '/_content/_examples/guides/tailwind-theme/tailwind-text-input/formkit.config.js',
   '/_content/_examples/guides/tailwind-theme/tailwind-text-input/tailwind.config.js'
 ]
-init-file-tab: "formkit.config.js"
+init-file-tab: "tailwind-theme.js"
 css-framework: "tailwind"
 add-tailwind-files: false
 editable: true
@@ -180,10 +173,11 @@ Let's add some variants for `formkit-invalid` and `formkit-disabled` to our text
 ---
 file: [
   '/_content/_examples/guides/tailwind-theme/tailwind-variants/example.vue',
+  '/_content/_examples/guides/tailwind-theme/tailwind-variants/tailwind-theme.js',
   '/_content/_examples/guides/tailwind-theme/tailwind-variants/formkit.config.js',
   '/_content/_examples/guides/tailwind-theme/tailwind-variants/tailwind.config.js'
 ]
-init-file-tab: "formkit.config.js"
+init-file-tab: "tailwind-theme.js"
 css-framework: "tailwind"
 add-tailwind-files: false
 editable: true
@@ -235,7 +229,7 @@ If you want to use these types of icons in your Tailwind theme be sure to import
 ---
 file: [
   '/_content/_examples/guides/tailwind-theme/tailwind-theme/example.vue',
-  '/_content/_examples/guides/tailwind-theme/tailwind-theme/theme.js',
+  '/_content/_examples/tailwind-theme.js',
   '/_content/_examples/guides/tailwind-theme/tailwind-theme/formkit.config.js',
   '/_content/_examples/guides/tailwind-theme/tailwind-theme/tailwind.config.js',
   '/_content/_examples/guides/tailwind-theme/tailwind-theme/KitchenSinkForm.vue',
@@ -270,7 +264,7 @@ Of particular importance when doing an override is the special [`$reset` modifie
 ---
 file: [
   '/_content/_examples/guides/tailwind-theme/override/example.vue',
-  '/_content/_examples/guides/tailwind-theme/override/theme.js',
+  '/_content/_examples/tailwind-theme.js',
   '/_content/_examples/guides/tailwind-theme/override/formkit.config.js',
   '/_content/_examples/guides/tailwind-theme/override/tailwind.config.js',
 ]
