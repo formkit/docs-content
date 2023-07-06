@@ -89,7 +89,7 @@ Use a plugin to append an icon before validation messages by extending the schem
 
 ::ExampleCard
 ---
-href: "https://formkit.link/2a7d57ad1321810f4365c2ea0ae80142"
+href: "https://formkit.link/d5c3d554d55dbe94984c48f826ae84f7"
 title: "Set initial values to empty strings instead of undefined"
 ---
 Use a plugin to set all initial input values to an empty string <code>""</code> instead of <code>undefined</code>.
