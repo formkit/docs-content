@@ -183,8 +183,8 @@ The `generateClasses` function takes a javascript object keyed by input type wit
 ---
 name: "generateClasses example"
 file: [
-'/_content/_examples/generate-classes/generate-classes.vue',
-'/_content/_examples/generate-classes/formkit.config.js'
+'_content/_examples/generate-classes/generate-classes.vue',
+'_content/_examples/generate-classes/formkit.config.js'
 ]
 init-file-tab: "formkit.config.js"
 tabs: "html"

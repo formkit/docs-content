@@ -24,7 +24,7 @@ FormKit Inputs are not confined to what is available in "native" HTML. Our seper
 ---
   name: "Text input"
   file: [
-    '/_content/_examples/single-component/single-component-pro.vue',
+    '_content/_examples/single-component/single-component-pro.vue',
   ]
 ---
 ::

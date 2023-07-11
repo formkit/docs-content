@@ -31,9 +31,9 @@ The transfer list input is ideal for situations where the end-user needs to sele
 name: "Transfer List"
 min-height: 550
 file: [
-  '/_content/_examples/transfer-list/transfer-list-full-example.vue',
-  '/_content/_examples/transfer-list/api.js',
-  '/_content/_examples/transfer-list/utils.js'
+  '_content/_examples/transfer-list/transfer-list-full-example.vue',
+  '_content/_examples/transfer-list/api.js',
+  '_content/_examples/transfer-list/utils.js'
 ]
 ---
 ::
@@ -95,8 +95,8 @@ Let's go ahead and populate the transfer list's options with a list of guest nam
 name: "Transfer List"
 min-height: 450
 file: [
-  '/_content/_examples/transfer-list/transfer-list-options.vue',
-  '/_content/_examples/transfer-list/guests.js'
+  '_content/_examples/transfer-list/transfer-list-options.vue',
+  '_content/_examples/transfer-list/guests.js'
 ]
 ---
 ::
@@ -110,8 +110,8 @@ The _value_ of the transfer list input is an array. Selected option values from 
 name: "Transfer List"
 min-height: 550
 file: [
-  '/_content/_examples/transfer-list/transfer-list-values.vue',
-  '/_content/_examples/transfer-list/guests.js'
+  '_content/_examples/transfer-list/transfer-list-values.vue',
+  '_content/_examples/transfer-list/guests.js'
 ]
 ---
 ::
@@ -125,8 +125,8 @@ The transfer list input can be pre-populated with values by setting the `value` 
 name: "Transfer List"
 min-height: 550
 file: [
-  '/_content/_examples/transfer-list/transfer-list-initial-values.vue',
-  '/_content/_examples/transfer-list/guests.js'
+  '_content/_examples/transfer-list/transfer-list-initial-values.vue',
+  '_content/_examples/transfer-list/guests.js'
 ]
 ---
 ::
@@ -140,8 +140,8 @@ The transfer list input can be made searchable by setting the `searchable` prop.
 name: "Transfer List"
 min-height: 550
 file: [
-  '/_content/_examples/transfer-list/transfer-list-searchable.vue',
-  '/_content/_examples/transfer-list/guests.js'
+  '_content/_examples/transfer-list/transfer-list-searchable.vue',
+  '_content/_examples/transfer-list/guests.js'
 ]
 ---
 ::
@@ -160,8 +160,8 @@ The transfer list input will filter options with its own internal search functio
 name: "Taglist"
 min-height: 550
 file: [
-  '/_content/_examples/transfer-list/transfer-list-filter.vue',
-  '/_content/_examples/transfer-list/guests.js'
+  '_content/_examples/transfer-list/transfer-list-filter.vue',
+  '_content/_examples/transfer-list/guests.js'
 ]
 ---
 ::
@@ -179,8 +179,8 @@ The transfer list input can be limited to a maximum number of selected values by
 name: "Transfer List"
 min-height: 550
 file: [
-  '/_content/_examples/transfer-list/transfer-list-max.vue',
-  '/_content/_examples/transfer-list/guests.js'
+  '_content/_examples/transfer-list/transfer-list-max.vue',
+  '_content/_examples/transfer-list/guests.js'
 ]
 ---
 ::
@@ -194,8 +194,8 @@ By default, the transfer list input will add or remove options on click. You can
 name: "Transfer List"
 min-height: 550
 file: [
-  '/_content/_examples/transfer-list/transfer-list-transfer-on-select.vue',
-  '/_content/_examples/transfer-list/guests.js'
+  '_content/_examples/transfer-list/transfer-list-transfer-on-select.vue',
+  '_content/_examples/transfer-list/guests.js'
 ]
 ---
 ::
@@ -211,8 +211,8 @@ Here we have a transfer list input that loads its options from an asynchronous f
 name: "Transfer List"
 min-height: 550
 file: [
-  '/_content/_examples/transfer-list/transfer-list-async-options.vue',
-  '/_content/_examples/transfer-list/api.js'
+  '_content/_examples/transfer-list/transfer-list-async-options.vue',
+  '_content/_examples/transfer-list/api.js'
 ]
 ---
 ::
@@ -228,8 +228,8 @@ When assigning the options prop to an asynchronous function, the function will b
 name: "Transfer List"
 min-height: 500
 file: [
-  '/_content/_examples/transfer-list/transfer-list-async-options-pagination.vue',
-  '/_content/_examples/transfer-list/api.js'
+  '_content/_examples/transfer-list/transfer-list-async-options-pagination.vue',
+  '_content/_examples/transfer-list/api.js'
 ]
 ---
 ::
@@ -243,8 +243,8 @@ The transfer list input can also load options asynchronously when the user searc
 name: "Transfer List"
 min-height: 550
 file: [
-  '/_content/_examples/transfer-list/transfer-list-async-options-search.vue',
-  '/_content/_examples/transfer-list/api.js'
+  '_content/_examples/transfer-list/transfer-list-async-options-search.vue',
+  '_content/_examples/transfer-list/api.js'
 ]
 ---
 ::
@@ -260,8 +260,8 @@ The transfer list input also provides an `optionLoader` prop that allows you to 
 name: "Transfer List"
 min-height: 350
 file: [
-  '/_content/_examples/transfer-list/transfer-list-rehydrating-values.vue',
-  '/_content/_examples/transfer-list/api.js'
+  '_content/_examples/transfer-list/transfer-list-rehydrating-values.vue',
+  '_content/_examples/transfer-list/api.js'
 ]
 ---
 ::
@@ -277,8 +277,8 @@ You can also use use the `optionLoader` to fetch additional data on selected val
 name: "Transfer List"
 min-height: 550
 file: [
-  '/_content/_examples/transfer-list/transfer-list-additional-data.vue',
-  '/_content/_examples/transfer-list/api.js'
+  '_content/_examples/transfer-list/transfer-list-additional-data.vue',
+  '_content/_examples/transfer-list/api.js'
 ]
 ---
 ::
@@ -296,9 +296,9 @@ Now that we are loading additional data on selected values (the age and email ad
 name: "Transfer List"
 min-height: 550
 file: [
-  '/_content/_examples/transfer-list/transfer-list-options-slot.vue',
-  '/_content/_examples/transfer-list/api.js',
-  '/_content/_examples/transfer-list/utils.js'
+  '_content/_examples/transfer-list/transfer-list-options-slot.vue',
+  '_content/_examples/transfer-list/api.js',
+  '_content/_examples/transfer-list/utils.js'
 ]
 ---
 ::
@@ -314,9 +314,9 @@ The transfer list input can be used to create a ranked list, let's do that with 
 name: "Transfer List"
 min-height: 550
 file: [
-  '/_content/_examples/transfer-list/transfer-list-ranking.vue',
-  '/_content/_examples/transfer-list/nba-top-players.js',
-  '/_content/_examples/transfer-list/utils.js'
+  '_content/_examples/transfer-list/transfer-list-ranking.vue',
+  '_content/_examples/transfer-list/nba-top-players.js',
+  '_content/_examples/transfer-list/utils.js'
 ]
 ---
 ::

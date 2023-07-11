@@ -126,10 +126,10 @@ Here is a `text` input with Tailwind classes applied:
 ::Example
 ---
 file: [
-  '/_content/_examples/guides/tailwind-theme/tailwind-text-input/example.vue',
-  '/_content/_examples/guides/tailwind-theme/tailwind-text-input/tailwind-theme.js',
-  '/_content/_examples/guides/tailwind-theme/tailwind-text-input/formkit.config.js',
-  '/_content/_examples/guides/tailwind-theme/tailwind-text-input/tailwind.config.js'
+  '_content/_examples/guides/tailwind-theme/tailwind-text-input/example.vue',
+  '_content/_examples/guides/tailwind-theme/tailwind-text-input/tailwind-theme.js',
+  '_content/_examples/guides/tailwind-theme/tailwind-text-input/formkit.config.js',
+  '_content/_examples/guides/tailwind-theme/tailwind-text-input/tailwind.config.js'
 ]
 init-file-tab: "tailwind-theme.js"
 css-framework: "tailwind"
@@ -172,10 +172,10 @@ Let's add some variants for `formkit-invalid` and `formkit-disabled` to our text
 ::Example
 ---
 file: [
-  '/_content/_examples/guides/tailwind-theme/tailwind-variants/example.vue',
-  '/_content/_examples/guides/tailwind-theme/tailwind-variants/tailwind-theme.js',
-  '/_content/_examples/guides/tailwind-theme/tailwind-variants/formkit.config.js',
-  '/_content/_examples/guides/tailwind-theme/tailwind-variants/tailwind.config.js'
+  '_content/_examples/guides/tailwind-theme/tailwind-variants/example.vue',
+  '_content/_examples/guides/tailwind-theme/tailwind-variants/tailwind-theme.js',
+  '_content/_examples/guides/tailwind-theme/tailwind-variants/formkit.config.js',
+  '_content/_examples/guides/tailwind-theme/tailwind-variants/tailwind.config.js'
 ]
 init-file-tab: "tailwind-theme.js"
 css-framework: "tailwind"
@@ -228,20 +228,20 @@ If you want to use these types of icons in your Tailwind theme be sure to import
 ::Example
 ---
 file: [
-  '/_content/_examples/guides/tailwind-theme/tailwind-theme/example.vue',
-  '/_content/_examples/tailwind-theme.js',
-  '/_content/_examples/guides/tailwind-theme/tailwind-theme/formkit.config.js',
-  '/_content/_examples/guides/tailwind-theme/tailwind-theme/tailwind.config.js',
-  '/_content/_examples/guides/tailwind-theme/tailwind-theme/KitchenSinkForm.vue',
-  '/_content/_examples/guides/tailwind-theme/tailwind-theme/Autocomplete.vue',
-  '/_content/_examples/guides/tailwind-theme/tailwind-theme/Datepicker.vue',
-  '/_content/_examples/guides/tailwind-theme/tailwind-theme/Dropdown.vue',
-  '/_content/_examples/guides/tailwind-theme/tailwind-theme/Mask.vue',
-  '/_content/_examples/guides/tailwind-theme/tailwind-theme/Rating.vue',
-  '/_content/_examples/guides/tailwind-theme/tailwind-theme/Repeater.vue',
-  '/_content/_examples/guides/tailwind-theme/tailwind-theme/Taglist.vue',
-  '/_content/_examples/guides/tailwind-theme/tailwind-theme/Toggle.vue',
-  '/_content/_examples/guides/tailwind-theme/tailwind-theme/Transferlist.vue'
+  '_content/_examples/guides/tailwind-theme/tailwind-theme/example.vue',
+  '_content/_examples/tailwind-theme.js',
+  '_content/_examples/guides/tailwind-theme/tailwind-theme/formkit.config.js',
+  '_content/_examples/guides/tailwind-theme/tailwind-theme/tailwind.config.js',
+  '_content/_examples/guides/tailwind-theme/tailwind-theme/KitchenSinkForm.vue',
+  '_content/_examples/guides/tailwind-theme/tailwind-theme/Autocomplete.vue',
+  '_content/_examples/guides/tailwind-theme/tailwind-theme/Datepicker.vue',
+  '_content/_examples/guides/tailwind-theme/tailwind-theme/Dropdown.vue',
+  '_content/_examples/guides/tailwind-theme/tailwind-theme/Mask.vue',
+  '_content/_examples/guides/tailwind-theme/tailwind-theme/Rating.vue',
+  '_content/_examples/guides/tailwind-theme/tailwind-theme/Repeater.vue',
+  '_content/_examples/guides/tailwind-theme/tailwind-theme/Taglist.vue',
+  '_content/_examples/guides/tailwind-theme/tailwind-theme/Toggle.vue',
+  '_content/_examples/guides/tailwind-theme/tailwind-theme/Transferlist.vue'
 ]
 init-file-tab: "formkit.config.js"
 css-framework: "tailwind"
@@ -263,10 +263,10 @@ Of particular importance when doing an override is the special [`$reset` modifie
 ::Example
 ---
 file: [
-  '/_content/_examples/guides/tailwind-theme/override/example.vue',
-  '/_content/_examples/tailwind-theme.js',
-  '/_content/_examples/guides/tailwind-theme/override/formkit.config.js',
-  '/_content/_examples/guides/tailwind-theme/override/tailwind.config.js',
+  '_content/_examples/guides/tailwind-theme/override/example.vue',
+  '_content/_examples/tailwind-theme.js',
+  '_content/_examples/guides/tailwind-theme/override/formkit.config.js',
+  '_content/_examples/guides/tailwind-theme/override/tailwind.config.js',
 ]
 init-file-tab: "example.vue"
 css-framework: "tailwind"

@@ -177,8 +177,8 @@ When registering the `@formkit/vue` plugin, you can provide prop values to be in
 ---
   name: "Component props"
   file: [
-    '/_content/_examples/vue-plugin-props/vue-plugin-props.vue',
-    '/_content/_examples/vue-plugin-props/formkit.config.js',
+    '_content/_examples/vue-plugin-props/vue-plugin-props.vue',
+    '_content/_examples/vue-plugin-props/formkit.config.js',
   ]
   init-file-tab: "formkit.config.js"
 ---
