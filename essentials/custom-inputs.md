@@ -399,7 +399,7 @@ FormKit exposes dozens of value-added features to even the most mundane inputs. 
     value: '$_value',
     id: '$id',
   }
-]
+}
 ```
 
 There are several features in the above schema that may not be immediately obvious like the `onBlur` handler. The following checklist is intended to help input authors cover all their bases:
