@@ -774,7 +774,7 @@ Uses a global mutation observer to wait for a given element to appear in the DOM
 <client-only>
 
 ```typescript
-whenAvailable(childId: string, callback: (el: Element) => void): void;
+whenAvailable(childId: string, callback: (el: Element) => void, root?: Document | ShadowRoot): void;
 ```
 
 </client-only>
@@ -783,6 +783,7 @@ whenAvailable(childId: string, callback: (el: Element) => void): void;
 
 - `childId` — The id of the child node.
 - `callback` — The callback to call when the child node is found.
+- `root` *optional*
 
 ## TypeScript
 

@@ -35,6 +35,22 @@ createInput(schemaOrComponent: FormKitSchemaNode | FormKitSection | Component, d
 
  [FormKitTypeDefinition](/api-reference/formkit-core#formkittypedefinition)
 
+### defineFormKitConfig()
+
+#### Signature
+
+<client-only>
+
+```typescript
+defineFormKitConfig(config: DefaultConfigOptions | (() => DefaultConfigOptions)): () => DefaultConfigOptions;
+```
+
+</client-only>
+
+#### Parameters
+
+- `config`
+
 ### onSSRComplete()
 
 Register a callback for when SSR is complete. No-op if not in a server context.
@@ -169,6 +185,7 @@ interface PluginConfigs {
     iconLoaderUrl: FormKitIconLoaderUrl;
     icons: Record<string, string | undefined>;
     inputs: FormKitLibrary;
+    locale: string;
     locales: FormKitLocaleRegistry;
     messages: Record<string, Partial<FormKitLocale>>;
     rules: Record<string, FormKitValidationRule>;

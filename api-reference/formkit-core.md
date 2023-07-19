@@ -876,7 +876,7 @@ createMessage(conf: Partial<FormKitMessage>, node?: FormKitNode): FormKitMessage
 #### Parameters
 
 - `conf` — An object of optional properties of [FormKitMessage](#formkitmessage).
-- `node` *optional* — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+- `node` *optional* — A [FormKitNode](/api-reference/formkit-node#formkitnode).
 
 #### Returns
 
@@ -1650,6 +1650,7 @@ Context object to be created by and used by each respective UI framework. No val
 
 ```typescript
 interface FormKitFrameworkContext {
+    __root?: Document | ShadowRoot;
     _value: any;
     [index: string]: unknown;
     attrs: Record<string, any>;
@@ -1671,6 +1672,7 @@ interface FormKitFrameworkContext {
         label: string;
         value: any;
     }>;
+    slots: Record<string, CallableFunction>;
     state: FormKitFrameworkContextState;
     type: string;
     value: any;
@@ -2203,6 +2205,7 @@ The user-land per-instance "props", which are generally akin to the props passed
 
 ```typescript
 type FormKitProps = {
+    __root?: Document | ShadowRoot;
     delay: number;
     id: string;
     validationLabelStrategy?: (node?: FormKitNode) => string;

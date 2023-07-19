@@ -116,14 +116,14 @@ Creates a new save-to-local-storage plugin.
 <client-only>
 
 ```typescript
-createLocalStoragePlugin(LocalStorageOptions?: LocalStorageOptions): FormKitPlugin;
+createLocalStoragePlugin(localStorageOptions?: LocalStorageOptions): FormKitPlugin;
 ```
 
 </client-only>
 
 #### Parameters
 
-- `LocalStorageOptions` *optional* — The options of [LocalStorageOptions](#localstorageoptions) to pass to the plugin
+- `localStorageOptions` *optional*
 
 #### Returns
 
@@ -175,6 +175,11 @@ The options to be passed to [createLocalStoragePlugin](#createlocalstorageplugin
 
 ```typescript
 interface LocalStorageOptions {
+    beforeLoad?: (payload: any) => any;
+    beforeSave?: (payload: any) => any;
+    control?: string;
+    debounce?: number;
+    key?: string | number;
     maxAge?: number;
     prefix?: string;
 }

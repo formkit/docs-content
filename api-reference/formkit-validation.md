@@ -88,6 +88,20 @@ interface FormKitValidationHints {
 
 </client-only>
 
+### FormKitValidationMessage
+
+The interface for the localized validation message function.
+
+<client-only>
+
+```typescript
+interface FormKitValidationMessage {
+    (...args: FormKitValidationI18NArgs): string;
+}
+```
+
+</client-only>
+
 ### FormKitValidationMessages
 
 The interface for the localized validation message registry.
@@ -96,7 +110,7 @@ The interface for the localized validation message registry.
 
 ```typescript
 interface FormKitValidationMessages {
-    [index: string]: string | ((...args: FormKitValidationI18NArgs) => string);
+    [index: string]: string | FormKitValidationMessage;
 }
 ```
 
