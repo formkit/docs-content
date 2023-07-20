@@ -253,7 +253,7 @@ normalizeBoxes(node: FormKitNode): FormKitMiddleware<{
 
 #### Returns
 
- A [FormKitMiddleware](/api-reference/formkit-core#formkitmiddleware).
+ A [FormKitMiddleware](/api-reference/formkit-node#formkitmiddleware).
 
 ### options()
 
