@@ -27,7 +27,7 @@ file: "_content/_examples/toggle/toggle-base.vue"
 
 ## Values
 
-The `toggle` checked and unchecked states will default to `true` and `false` respectively. Changing these values can be done by passing the `onValue` and `offValue` props. In this example, we will set the `onValue` to the string `'active'` and the `offValue` to the string `'inactive'`:
+The values for the toggle are `undefined` if not-interacted with, `true` if checked, and `false` if unchecked. You can change these values by passing the `onValue` and `offValue` props. In this example, we will set the `onValue` to the string `'active'` and the `offValue` to the string `'inactive'`:
 
 ::Example
 ---
