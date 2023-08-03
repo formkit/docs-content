@@ -66,6 +66,61 @@ file: "_content/_examples/autocomplete-pro/autocomplete-empty-message.vue"
 ---
 ::
 
+## (NEW) Open on click
+
+To enable opening the autocomplete's listbox on click of its search input, set the `open-on-click` prop to `true`:
+
+::Example
+---
+name: "Autocomplete"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-open-on-click.vue"
+---
+::
+
+## (NEW) Open on focus
+
+If you would like to open the autocomplete's listbox anytime its search input is focused, set the `open-on-focus` prop to `true`:
+
+::Callout
+---
+type: "warning"
+label: "Open on focus vs Open on click"
+---
+Open on focus encompasses open on click.
+::
+
+## (NEW) Clear search on open
+
+
+::Example
+---
+name: "Autocomplete"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-clear-search-on-open.vue"
+---
+::
+
+## (NEW) Selection removable
+
+::Example
+---
+name: "Autocomplete"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-selection-removable.vue"
+---
+::
+
+## (NEW) Open on remove
+
+::Example
+---
+name: "Autocomplete"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-open-on-remove.vue"
+---
+::
+
 ## Selection appearance
 
 The autocomplete input has a `selectionAppearance` prop that determines the way a selected option is displayed.
@@ -213,6 +268,26 @@ file: "_content/_examples/autocomplete-pro/autocomplete-pagination.vue"
 ### Loading Style
 
 Instead of requiring your users to click the <i>Load more</i> button to load additional options, you can set the `loadOnScroll` prop to true, which will paginate options as you scroll to the bottom of the options list.
+
+### Load on created
+
+::Example
+---
+name: "Autocomplete"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-load-on-created.vue"
+---
+::
+
+### Always load on open
+
+::Example
+---
+name: "Autocomplete"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-always-load-on-open.vue"
+---
+::
 
 ### Option loader
 
