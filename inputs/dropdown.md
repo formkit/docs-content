@@ -157,7 +157,7 @@ file: "_content/_examples/dropdown/dropdown-close-on-select.vue"
 ---
 ::
 
-### Max
+### (NEW) Max
 
 The `max` prop allows you to limit the number of options that can be selected. When the `max` limit is reached, the listbox will close and the end-user will no longer be able to select additional values.
 
@@ -198,7 +198,7 @@ file: "_content/_examples/dropdown/dropdown-selection-slot.vue"
 ---
 ::
 
-### Tags slot
+### (NEW) Tags slot
 
 When the `multiple` prop is set, you can use the `tags` slot to customize the look and feel of each selected option:
 
@@ -289,7 +289,7 @@ file: "_content/_examples/dropdown/dropdown-pagination-load-on-scroll.vue"
 ---
 ::
 
-### Load on created
+### (NEW) Load on created
 
 If you would rather load options when the dropdown is created, you can set the `load-on-created` prop to true, and our function, `loadCurrentlyPopularMovies` will be called without the user needing to expand the listbox:
 
@@ -301,7 +301,7 @@ file: "_content/_examples/dropdown/dropdown-load-on-created.vue"
 ---
 ::
 
-### Always load on open
+### (NEW) Always load on open
 
 By default the dropdown will only load options asynchronously once (upon the listbox being expanded). If you would like to load options every time the listbox is expanded, you can set the `always-load-on-open` prop to true:
 
