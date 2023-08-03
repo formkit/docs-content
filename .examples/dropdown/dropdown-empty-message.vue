@@ -11,4 +11,6 @@
   </FormKit>
 </template>
 
-<style></style>
+<style>
+@import 'https://cdn.jsdelivr.net/npm/@formkit/pro@dev/genesis.css';
+</style>
