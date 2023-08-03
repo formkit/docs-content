@@ -15,6 +15,8 @@ const frameworks = [
       label="Choose a frontend framework"
       placeholder="Example placeholder"
       :options="frameworks"
+      value="vue"
+      open-on-focus
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

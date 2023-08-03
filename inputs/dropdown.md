@@ -55,6 +55,120 @@ file: "_content/_examples/dropdown/dropdown-empty-message.vue"
 ---
 ::
 
+## (NEW) Selection Removable
+
+If you would like to allow users to remove the selected value, simply set the `selection-removable` prop to true. This will render a close icon next to the selected value:
+
+::Callout
+---
+type: "warning"
+label: "Single select only"
+---
+The <code>selection-removable</code> prop can only be used in `single-select` mode.
+::
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-selection-removable.vue"
+---
+::
+
+## (NEW) Open on remove
+
+By default, when the `selection-removable` prop is set to `true`, the dropdown will not open after the selected value is removed. You can change this behavior by setting the `open-on-remove` prop to `true`:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-open-on-remove.vue"
+---
+::
+
+## (NEW) Open on focus
+
+If you would like expand the listbox as soon as the dropdown input is focused, you can use the `open-on-focus` prop:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-open-on-focus.vue"
+---
+::
+
+## (NEW) Multi-select
+
+The `multiple` prop allows users to select multiple options:
+
+::Callout
+---
+type: "warning"
+label: "Using the multiple prop"
+---
+When setting the <code>multiple</code> prop, the autocomplete's value must always be an array.
+::
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-multiple.vue"
+---
+::
+
+### (NEW) Selection Appearance
+
+#### Truncate
+
+By default a dropdown with prop `multiple` will have the selection appearance of `truncate`. This means that the selected options will be truncated with an ellipsis if the selection is too long to fit in the input. The `truncate` appearance can be set explicitly with the `selection-appearance` prop:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-truncate.vue"
+---
+::
+
+#### Tags
+
+Alternatively, you can set the `selection-appearance` prop to `tags`
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-tags.vue"
+---
+::
+
+### (NEW) Close on select
+
+By default, when the `multiple` prop is set, the dropdown will not close after an option is selected. You can change this behavior by setting the `close-on-select` prop to `true`:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-close-on-select.vue"
+---
+::
+
+### Max
+
+The `max` prop allows you to limit the number of options that can be selected. When the `max` limit is reached, the listbox will close and the end-user will no longer be able to select additional values.
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-max.vue"
+---
+::
+
 
 ## Slots
 
@@ -72,7 +186,6 @@ file: "_content/_examples/dropdown/dropdown-option-slot.vue"
 ---
 ::
 
-
 ### Selection slot
 
 If you only want to customize the display of the selected option, use the `selection` slot:
@@ -82,6 +195,18 @@ If you only want to customize the display of the selected option, use the `selec
 name: "Dropdown"
 min-height: 550
 file: "_content/_examples/dropdown/dropdown-selection-slot.vue"
+---
+::
+
+### Tags slot
+
+When the `multiple` prop is set, you can use the `tags` slot to customize the look and feel of each selected option:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-tag-slot.vue"
 ---
 ::
 
@@ -161,6 +286,30 @@ If you would rather allow the user to load more options without having to click 
 name: "Dropdown"
 min-height: 550
 file: "_content/_examples/dropdown/dropdown-pagination-load-on-scroll.vue"
+---
+::
+
+### Load on created
+
+If you would rather load options when the dropdown is created, you can set the `load-on-created` prop to true, and our function, `loadCurrentlyPopularMovies` will be called without the user needing to expand the listbox:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-load-on-created.vue"
+---
+::
+
+### Always load on open
+
+By default the dropdown will only load options asynchronously once (upon the listbox being expanded). If you would like to load options every time the listbox is expanded, you can set the `always-load-on-open` prop to true:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-always-load-on-open.vue"
 ---
 ::
 
