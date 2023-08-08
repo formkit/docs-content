@@ -4,32 +4,26 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://reactjs.or
 
 <template>
   <FormKit
-    type="form"
-    #default="{ value }"
-    :actions="false"
+    name="framework"
+    type="dropdown"
+    label="Choose a front end framework"
+    placeholder="Example placeholder"
+    :options="frameworks"
+    value="vue"
   >
-    <FormKit
-      name="framework"
-      type="dropdown"
-      label="Choose a front end framework"
-      placeholder="Example placeholder"
-      :options="frameworks"
-    >
-      <!--SELECTION SLOT-->
-      <template #selection="{ option }">
-        <div class="formkit-option">
-          <img
-            :src="option.asset"
-            alt="optionAvatar"
-          />
-          <span>
-            {{ option.label }}
-          </span>
-        </div>
-      </template>
-      <!---->
-    </FormKit>
-    <pre wrap>{{ value }}</pre>
+    <!--SELECTION SLOT-->
+    <template #selection="{ option }">
+      <div class="formkit-option">
+        <img
+          :src="option.asset"
+          alt="optionAvatar"
+        />
+        <span>
+          {{ option.label }}
+        </span>
+      </div>
+    </template>
+    <!---->
   </FormKit>
 </template>
 

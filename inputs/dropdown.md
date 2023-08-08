@@ -13,20 +13,7 @@ type: "Dropdown"
 
 :ProInstallSnippet
 
-## Basic example
-
-The `dropdown` input allows users to select a value from a customizable list of options:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-base.vue"
----
-::
-
-
-## Defining options
+The `dropdown` input allows users to select a value from a list of options. Unlike native select elements, the dropdown input allows you to customize both its appearance and behavior.
 
 The `options` prop can accept three different formats of values:
 
@@ -35,13 +22,176 @@ The `options` prop can accept three different formats of values:
 - An object literal with key-value pairs `{ a: 'A', b: 'B', c: 'C' }`
 - A function that returns any of the above
 
+## Basic examples
+### Single-select
+
+By default, the dropdown input will render in single-select mode:
+
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-single.vue"
+---
+::
+
+### Multi-select
+
+By setting the `multiple` prop the dropdown input will render in multi-select mode:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-multiple.vue"
+---
+::
+
+Notice in the example above that because the `multiple` prop is set, the `value` prop must be an array.
+
+## Dynamic options
+
+Instead of passing a static list of options to the `options` prop, you can assign them dynamically.
+
+Let's say we had an API endpoint that returned all the options we needed for a given `dropdown` input. Here is an example of how we could write the `dropdown` input to load options from a single request:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-single-request.vue"
+---
+::
+
+### Multiple pages
+
+What about loading options from an API where you need to be able to make multiple requests to perform pagination? When a function is set to the `options` prop it is passed FormKit node's `context` object as an argument. Within this context object are `page` and `hasNextPage` properties. The page property is the current page number, and the hasNextPage property is a function to be called when there are more pages to load:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-pagination.vue"
+---
+::
+
+### Option loader
+
+FormKit's dropdown input also provides an `optionLoader` prop that allows you to rehydrate values that are not in the options list. In this example, we'll provide the autocomplete an initial value (two movie IDs), and assign the optionLoader to a function that will make a request to the API to load the movie titles:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-option-loader.vue"
+---
+::
+
+Notice in the example above that the optionLoader function is passed two arguments: the `value` of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption prop is used for preventing unnecessary lookups. If the cachedOption is not `null` it means that the selected option has already been loaded, and you can return the cachedOption directly.
+
+
+### Load on scroll
+
+If you would rather allow the user to load more options without having to click the <i>Load more</i> option at the bottom of the options list, you can set the `load-on-scroll` prop to true, and our function, `loadCurrentlyPopularMovies` will be called again:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-pagination-load-on-scroll.vue"
+---
+::
+
+### (NEW) Load on created
+
+If you would rather load options when the dropdown is created, you can set the `load-on-created` prop to true, and our function, `loadCurrentlyPopularMovies` will be called without the user needing to expand the listbox:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-load-on-created.vue"
+---
+::
+
+### (NEW) Always load on open
+
+By default the dropdown will only load options asynchronously once (upon the listbox being expanded). If you would like to load options every time the listbox is expanded, you can set the `always-load-on-open` prop to true:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-always-load-on-open.vue"
+---
+::
+
+## Option appearance
+
+Unlike native select elements, the dropdown input allows you to customize the options list with markup.
+
+### Option slot
+
+The dropdown input allows you to customize the look and feel of each option by using the option slot. In this example, we are using the option slot to display each option's asset; logo and name:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-option-slot.vue"
+---
+::
+
+### Options appearance prop
+
+If you would like to render each listitem option with a checkbox next to each, you can do so by setting the `options-appearance` prop to `checkbox`:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-checkbox.vue"
+---
+::
+
 ::Callout
 ---
 type: "warning"
-label: "Empty options"
+label: "Multi select only"
 ---
-If you assign options as an empty array, the input will be rendered in a disabled state.
+Setting `options-appearance` to `checkbox` can only be done when the prop `multiple` is set.
 ::
+
+## Selection appearance
+
+### Selection slot
+
+If you only want to customize the display of the selected option, use the selection slot:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-selection-slot.vue"
+---
+::
+<!--## Selection appearance
+
+The dropdown input allows you to customize the look and feel of each option by using the option slot. In this example, we are using the option slot to display each option's asset; logo and name:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-option-slot.vue"
+---
+::-->
+
+
+## Asynchronous options
+
+
 
 ## Empty message
 
@@ -207,109 +357,6 @@ When the `multiple` prop is set, you can use the `tags` slot to customize the lo
 name: "Dropdown"
 min-height: 550
 file: "_content/_examples/dropdown/dropdown-tag-slot.vue"
----
-::
-
-
-## Loading options
-
-Instead of passing a static list of options to the `options` prop, you can assign it to a function. Doing so is useful when you need to load options from an API or another source.
-
-<!-- Example of loading options via API without pagination. -->
-
-### Single request
-
-Let's say we had an API endpoint that returned all the options we needed for a given `dropdown` input. Here is an example of how we could write the `dropdown` input to load options from a single request:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-single-request.vue"
----
-::
-
-
-In the example above, we are assigning the `options` prop to the `loadHorrorMovies` function. After the request, we're iterating over the results to ensure that we return an array of objects with explicit `value` and `label` properties.
-
-### Multiple pages
-
-What about loading options from an API where you need to be able to make multiple requests to perform pagination? When a function is set to the `options` prop it is passed FormKit node's `context` object as an argument. Within this `context` object are `page` and `hasNextPage` properties. The `page` property is the current page number, and the `hasNextPage` property is a function to be called when there are more pages to load:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-pagination.vue"
----
-::
-
-
-In the above example, we are calling `hasNextPage` when we determine there are more pages to load. When this is done, FormKit appends a `Load more` option at the end of the rendered options list and automatically increments its `page` property. When the user selects the `Load more` option, the function assigned to the `options` prop is called again, and the process repeats.
-
-### Option loader
-
-#### Rehydrating values
-
-FormKit's dropdown input also provides an `optionLoader` prop that allows you to rehydrate values that are not in the options list. In this example, we'll provide the autocomplete an initial value (a movie ID), and assign the optionLoader to a function that will make a request to the API to get the movie:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-option-loader.vue"
----
-::
-
-
-Notice in the example above that the optionLoader function is passed two arguments: the `value` of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption prop is used for preventing unnecessary lookups. If the cachedOption is not `null` it means that the selected option has already been loaded, and you can return the cachedOption directly.
-
-#### Fetching additional data
-
-Instead of using the `optionLoader` prop to rehydrate values that are not in the options list, you can use the optionLoader to perform a look-up to fetch additional data. In this example, after selecting an option, we are going to perform a look-up to load the selected option's movie review:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-option-loader-review.vue"
----
-::
-
-
-### Load on scroll
-
-If you would rather allow the user to load more options without having to click the <i>Load more</i> option at the bottom of the options list, you can set the `load-on-scroll` prop to true, and our function, `loadCurrentlyPopularMovies` will be called again:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-pagination-load-on-scroll.vue"
----
-::
-
-### (NEW) Load on created
-
-If you would rather load options when the dropdown is created, you can set the `load-on-created` prop to true, and our function, `loadCurrentlyPopularMovies` will be called without the user needing to expand the listbox:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-load-on-created.vue"
----
-::
-
-### (NEW) Always load on open
-
-By default the dropdown will only load options asynchronously once (upon the listbox being expanded). If you would like to load options every time the listbox is expanded, you can set the `always-load-on-open` prop to true:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-always-load-on-open.vue"
 ---
 ::
 

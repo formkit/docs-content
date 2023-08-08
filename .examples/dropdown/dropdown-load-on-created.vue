@@ -20,35 +20,15 @@ async function loadHorrorMovies() {
 
 <template>
   <FormKit
-    type="form"
-    #default="{ value }"
-    :actions="false"
-  >
-    <!--Setting the `options` prop to async function `loadHorrorMovies`-->
-    <FormKit
-      name="horrorMovie"
-      type="dropdown"
-      label="Select a horror movie"
-      placeholder="Example placeholder"
-      :options="loadHorrorMovies"
-			load-on-created
-    />
-    <pre wrap>{{ value }}</pre>
-  </FormKit>
+    name="horrorMovie"
+    type="dropdown"
+    label="Select a horror movie"
+    placeholder="Example placeholder"
+    :options="loadHorrorMovies"
+    load-on-created
+  />
 </template>
 
 <style>
-.formkit-option {
-  display: flex;
-  align-items: center;
-}
 
-.formkit-option img {
-  width: 20%;
-  margin-right: 20px;
-}
-
-.option-overview {
-  font-size: 12px;
-}
 </style>

@@ -1,5 +1,6 @@
 <script setup>
 async function loadHorrorMovies() {
+  await new Promise((resolve) => setTimeout(resolve, 500))
   const res = await fetch(`https://api.themoviedb.org/4/list/8219282?page=1&api_key=f48bcc9ed9cbce41f6c28ea181b67e14`)
   if (res.ok) {
     const data = await res.json()
@@ -19,34 +20,10 @@ async function loadHorrorMovies() {
 
 <template>
   <FormKit
-    type="form"
-    #default="{ value }"
-    :actions="false"
-  >
-    <!--Setting the `options` prop to async function `loadHorrorMovies`-->
-    <FormKit
-      name="horrorMovie"
-      type="dropdown"
-      label="Select a horror movie"
-      placeholder="Example placeholder"
-      :options="loadHorrorMovies"
-    />
-    <pre wrap>{{ value }}</pre>
-  </FormKit>
+    name="horrorMovie"
+    type="dropdown"
+    label="Select a horror movie"
+    placeholder="Example placeholder"
+    :options="loadHorrorMovies"
+  />
 </template>
-
-<style>
-.formkit-option {
-  display: flex;
-  align-items: center;
-}
-
-.formkit-option img {
-  width: 20%;
-  margin-right: 20px;
-}
-
-.option-overview {
-  font-size: 12px;
-}
-</style>

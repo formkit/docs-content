@@ -12,7 +12,7 @@ const frameworks = [
     <FormKit
       type="dropdown"
       name="framework"
-      label="Choose a frontend framework"
+      label="Choose your favorite frontend framework"
       placeholder="Example placeholder"
       :options="frameworks"
     />

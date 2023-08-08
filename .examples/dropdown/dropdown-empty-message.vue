@@ -1,14 +1,17 @@
 <template>
-  <FormKit type="form" #default="{ value }" :actions="false">
-    <FormKit label="Dropdown with no options." :options="[]" type="dropdown" />
+  <div>
     <FormKit
-      label="Dropdown with no options, and with empty message prop"
+      label="No options."
+      :options="[]"
+      type="dropdown"
+    />
+    <FormKit
+      label="No options, empty message set."
       :options="[]"
       type="dropdown"
       empty-message="No options here!"
     />
-    <pre wrap>{{ value }}</pre>
-  </FormKit>
+  </div>
 </template>
 
 <style>

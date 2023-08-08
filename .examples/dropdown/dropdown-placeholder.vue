@@ -3,19 +3,27 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
 </script>
 
 <template>
-  <FormKit type="form" #default="{ value }" :actions="false">
+  <div>
     <FormKit
-      type="dropdown"
-      name="countries"
-      label="Choose your favorite countries"
-      placeholder="Afghanistan, Albania..."
+      label="No placeholder"
       :options="countries"
-      multiple
-      max="3"
-      :value="['AF', 'AL']"
+      type="dropdown"
+      placeholder="Select a country"
     />
-    <pre wrap>{{ value }}</pre>
-  </FormKit>
+    <FormKit
+      label="Placeholder"
+      :options="countries"
+      type="dropdown"
+      placeholder="Select a country"
+    />
+    <FormKit
+      label="Placeholder with non-falsy value"
+      :options="countries"
+      type="dropdown"
+      placeholder="Select a country"
+      value="US"
+    />
+  </div>
 </template>
 
 <style>

@@ -35,17 +35,16 @@ async function loadMovie(id, cachedOption) {
     <FormKit
       type="dropdown"
       name="currentlyPopularMovie"
-      label="Choose a currently popular movie"
-      placeholder="Example placeholder"
+      label="Choose some currently popular movies you want to see."
+      placeholder="Avatar, Star Wars..."
       :options="loadCurrentlyPopularMovies"
       :option-loader="loadMovie"
-      :value="597"
+      multiple
+      :value="[597, 800]"
     />
   </FormKit>
 </template>
 
 <style>
-.movie-review {
-  white-space: pre-wrap;
-}
+@import 'https://cdn.jsdelivr.net/npm/@formkit/pro@dev/genesis.css';
 </style>

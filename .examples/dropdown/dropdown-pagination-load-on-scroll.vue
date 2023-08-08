@@ -12,17 +12,14 @@ async function loadCurrentlyPopularMovies({ page, hasNextPage }) {
 
 <template>
   <FormKit
-    type="form"
-    #default="{ value }"
-    :actions="false"
-  >
-    <!--Setting load-on-scroll prop-->
-    <FormKit
-      type="dropdown"
-      label="Choose a currently popular movie"
-      :options="loadCurrentlyPopularMovies"
-      load-on-scroll
-    />
-    <pre wrap>{{ value }}</pre>
-  </FormKit>
+    type="dropdown"
+    label="Choose a currently popular movie"
+    placeholder="Titanic, Star Wars..."
+    :options="loadCurrentlyPopularMovies"
+    load-on-scroll
+  />
 </template>
+
+<style>
+
+</style>

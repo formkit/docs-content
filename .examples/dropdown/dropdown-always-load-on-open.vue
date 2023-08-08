@@ -31,7 +31,7 @@ async function loadHorrorMovies() {
       label="Select a horror movie"
       placeholder="Example placeholder"
       :options="loadHorrorMovies"
-			always-load-on-open
+      always-load-on-open
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

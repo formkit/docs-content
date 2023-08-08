@@ -9,26 +9,11 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://s3.amazona
     label="Choose a frontend framework"
     placeholder="Example placeholder"
     :options="frameworks"
-  >
-    <template #option="{ option }">
-      <div class="formkit-option">
-        <img :src="option.asset" alt="optionAvatar" />
-        <span>
-          {{ option.label }}
-        </span>
-      </div>
-    </template>
-  </FormKit>
+    options-appearance="checkbox"
+    multiple
+  />
 </template>
 
 <style>
-.formkit-option {
-  display: flex;
-  align-items: center;
-}
-.formkit-option img {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-}
+@import 'https://cdn.jsdelivr.net/npm/@formkit/pro@dev/genesis.css';
 </style>
