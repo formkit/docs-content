@@ -22,6 +22,14 @@ The `options` prop can accept three different formats of values:
 - An object literal with key-value pairs `{ a: 'A', b: 'B', c: 'C' }`
 - A function that returns any of the above
 
+::Callout
+---
+type: "warning"
+label: "Empty options"
+---
+If you assign options as an empty array, the input will be rendered in a disabled state.
+::
+
 ## Basic examples
 
 ### Single-select

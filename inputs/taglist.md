@@ -13,6 +13,23 @@ type: "Taglist"
 
 :ProInstallSnippet
 
+The `taglist` input allows users to search through a list of options and apply any number of tags. Users can also drag and drop tags to re-order:
+
+The `options` prop can accept three different formats of values:
+
+- An array of objects with `value` and `label` keys (see example above)
+- An array of strings `['A', 'B', 'C']`
+- An object literal with key-value pairs `{ a: 'A', b: 'B', c: 'C' }`
+- A function that returns any of the above
+
+::Callout
+---
+type: "warning"
+label: "Empty options"
+---
+If you assign options as an empty array, the input will be rendered in a disabled state.
+::
+
 ## Basic example
 
 The `taglist` input allows users to search through a list of options and apply any number of tags. Users can also drag and drop tags to re-order:
@@ -23,24 +40,6 @@ name: "Taglist"
 min-hight: 550
 file: "_content/_examples/taglist/taglist-base.vue"
 ---
-::
-
-
-## Defining options
-
-The `options` prop can accept three different formats of values:
-
-- An array of objects with `value` and `label` keys (see example above)
-- An array of strings <code>['A', 'B', 'C']</code>
-- An object literal with key-value pairs <code>{ a: 'A', b: 'B', c: 'C' }</code>
-- A function that returns any of the above
-
-::Callout
----
-type: "warning"
-label: "Empty options"
----
-If you assign options as an empty array, the input will be rendered in a disabled state.
 ::
 
 ## Filtering
@@ -54,20 +53,6 @@ min-hight: 550
 file: "_content/_examples/taglist/taglist-filter.vue"
 ---
 ::
-
-
-## Empty message
-
-The taglist input, by default, will close the listbox when no search results are found while filtering. You can change this behavior by assigning the `empty-message` prop a message to display when no results are found:
-
-::Example
----
-name: "Taglist"
-min-hight: 550
-file: "_content/_examples/taglist/taglist-empty-message.vue"
----
-::
-
 
 ## Allow new values
 
@@ -94,7 +79,6 @@ file: "_content/_examples/taglist/taglist-max.vue"
 ---
 ::
 
-
 ## Close on select
 
 If you would like the taglist's listbox to remain open in between selections, set the `close-on-select` prop to `false`:
@@ -107,25 +91,7 @@ file: "_content/_examples/taglist/taglist-close-on-select.vue"
 ---
 ::
 
-
-## Slots
-
-Just like the [Dropdown input](/inputs/dropdown) or [Autocomplete input](/inputs/autocomplete), the taglist input allows you to utilize slots to customize the look and feel of the options list and the selected option by leveraging the [renderless component pattern](https://adamwathan.me/renderless-components-in-vuejs/).
-
-In this example, we are going to use the `tag` slot to customize the look of the tags:
-
-::Example
----
-name: "Taglist"
-min-hight: 550
-file: "_content/_examples/taglist/taglist-slots.vue"
----
-::
-
-
->
-
-## Loading options
+## Dynamic options
 
 Instead of passing a static list of options to the `options` prop, you can assign it to a function. Doing so is useful when you need to load options from an API or another source.
 
@@ -176,15 +142,73 @@ file: "_content/_examples/taglist/taglist-pagination-option-loader.vue"
 
 Notice in the example above that the optionLoader function is passed two arguments: the `value` of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption is used for preventing unnecessary lookups. If the cachedOption is not `null` it means that the selected option has already been loaded, and you can return the cachedOption directly.
 
-#### Fetching additional data
+## Tag appearance
 
-Instead of using the `optionLoader` prop to rehydrate values that are not in the options list, you can use the optionLoader to perform a look-up to fetch additional data, or even just modify the option's current label. In this example, we'll use the optionLoader to fetch the movie's poster image:
+Just like the [Dropdown input](/inputs/dropdown) or [Autocomplete input](/inputs/autocomplete), the taglist input allows you to utilize slots to customize the look and feel of the options list and the selected option by leveraging the [renderless component pattern](https://adamwathan.me/renderless-components-in-vuejs/).
+
+In this example, we are going to use the `tag` slot to customize the look of the tags:
 
 ::Example
 ---
 name: "Taglist"
 min-hight: 550
-file: "_content/_examples/taglist/taglist-option-loader-additional-data.vue"
+file: "_content/_examples/taglist/taglist-slots.vue"
+---
+::
+## Behavioral props
+
+### Empty message
+
+The taglist input, by default, will not expand the listbox when no search results are found while filtering. You can change this behavior by assigning the `empty-message` prop a message to display when no results are found:
+
+::Example
+---
+name: "taglist"
+min-height: 550
+file: "_content/_examples/taglist/taglist-empty-message.vue"
+---
+::
+### (NEW) Open on click
+
+To enable opening the taglist's listbox on click of its search input, set the `open-on-click` prop to `true`:
+
+::Example
+---
+name: "taglist"
+min-height: 550
+file: "_content/_examples/taglist/taglist-open-on-click.vue"
+---
+::
+
+### (NEW) Open on focus
+
+If you would like to open the taglist's listbox anytime its search input is focused, set the `open-on-focus` prop to `true`:
+
+::Example
+---
+name: "taglist"
+min-height: 550
+file: "_content/_examples/taglist/taglist-open-on-focus.vue"
+---
+::
+
+::Callout
+---
+type: "warning"
+label: "Open on focus vs Open on click"
+---
+Open on focus encompasses open on click.
+::
+
+### (NEW) Open on remove
+
+If you want the listbox to expand when an selection is removed, use the `open-on-remove` prop:
+
+::Example
+---
+name: "Autocomplete"
+min-height: 550
+file: "_content/_examples/taglist/taglist-open-on-remove.vue"
 ---
 ::
 
@@ -271,6 +295,35 @@ data: [
     type: "boolean",
     default: "true",
     description: "Closes the listbox when an option is selected."
+  },
+  {
+    "prop": "open-on-remove",
+    type: "boolean",
+    default: "false",
+    "description": "When the `selection-removable` prop is set to `true`, the dropdown will not open after the selected value is removed. You can change this behavior by setting the `open-on-remove` prop to `true`."
+  },
+  {
+    "prop": "open-on-focus",
+    "type": "boolean",
+    "default": "false"
+  },
+  {
+    "prop": "options-appearance",
+    type: "string",
+    default: "undefined",
+    "description": "For multi-select dropdowns, this prop allows you to customize the look and feel of the selected options. Possible values are `default` (the default) or `checkbox`."
+  },
+  {
+    "prop": "always-load-on-open",
+    type: "boolean",
+    default: "false",
+    "description": "When set to `true`, the dropdown will always load the options when the listbox is opened."
+  },
+  {
+    name: "load-on-created",
+    type: "boolean",
+    default: "false",
+    "description": "When set to `true`, the dropdown will load the options when the node is created."
   }
 ]
 ---
