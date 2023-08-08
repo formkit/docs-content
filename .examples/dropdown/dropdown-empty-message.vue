@@ -1,7 +1,7 @@
 <template>
   <div>
     <FormKit
-      label="No options."
+      label="No"
       :options="[]"
       type="dropdown"
     />
@@ -15,5 +15,4 @@
 </template>
 
 <style>
-@import 'https://cdn.jsdelivr.net/npm/@formkit/pro@dev/genesis.css';
 </style>

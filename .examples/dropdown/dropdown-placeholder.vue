@@ -25,7 +25,3 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
     />
   </div>
 </template>
-
-<style>
-@import 'https://cdn.jsdelivr.net/npm/@formkit/pro@dev/genesis.css';
-</style>

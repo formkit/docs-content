@@ -4,20 +4,14 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
 
 <template>
   <FormKit
-    type="form"
-    #default="{ value }"
-    :actions="false"
-  >
-    <FormKit
-      type="autocomplete"
-      name="autocomplete"
-      label="Search for a country"
-      :options="countries"
-      placeholder="Example: United States"
-      :filter="(option, search) =>
-        option.label.toLowerCase().startsWith(search.toLowerCase())"
-    />
-    <pre wrap>{{ value }}</pre>
-  </FormKit>
+    type="autocomplete"
+    name="autocomplete"
+    label="Search for a country"
+    :options="countries"
+    placeholder="Example: United States"
+    :filter="(option, search) =>
+      option.label.toLowerCase().startsWith(search.toLowerCase())"
+  />
+  <pre wrap>{{ value }}</pre>
 </template>
 

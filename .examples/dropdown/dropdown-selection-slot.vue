@@ -68,7 +68,6 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://reactjs.or
 </template>
 
 <style>
-@import 'https://cdn.jsdelivr.net/npm/@formkit/pro@dev/genesis.css';
 .formkit-option {
   display: flex;
   align-items: center;

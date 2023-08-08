@@ -18,5 +18,4 @@ const sandwichToppings = [{ label: 'Lettuce', value: 'lettuce' }, { label: 'Toma
 </template>
 
 <style>
-@import 'https://cdn.jsdelivr.net/npm/@formkit/pro@dev/genesis.css';
 </style>

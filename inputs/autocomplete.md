@@ -13,33 +13,40 @@ type: "Autocomplete"
 
 :ProInstallSnippet
 
-## Basic example
-
-The autocomplete input allows you to search through a list of options. In this first example, let's provide the `options` prop a list of countries:
-
-::Example
----
-name: "Autocomplete"
-min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-base.vue"
----
-::
-
-## Defining options
+The `autocomplete` input allows you to search through a list of options.
 
 The `options` prop can accept three different formats of values:
 
 - An array of objects with `value` and `label` keys (see example above)
-- An array of strings <code>['A', 'B', 'C']</code>
-- An object literal with key-value pairs <code>{ a: 'A', b: 'B', c: 'C' }</code>
+- An array of strings `['A', 'B', 'C']`
+- An object literal with key-value pairs `{ a: 'A', b: 'B', c: 'C' }`
 - A function that returns any of the above
 
-::Callout
+## Basic examples
+
+### Single-select
+
+By default, the dropdown input will render in single-select mode:
+
+
+::Example
 ---
-type: "warning"
-label: "Empty options"
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-single.vue"
 ---
-If you assign options as an empty array, the input will be rendered in a disabled state.
+::
+
+### Multi-select
+
+By setting the `multiple` prop the dropdown input will render in multi-select mode:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-multiple.vue"
+---
 ::
 
 ## Filtering
@@ -54,196 +61,13 @@ file: "_content/_examples/autocomplete-pro/autocomplete-filter.vue"
 ---
 ::
 
-## Empty message
-
-The autocomplete input, by default, will close the listbox when no search results are found while filtering. You can change this behavior by assigning the `empty-message` prop a message to display when no results are found:
-
-::Example
----
-name: "Autocomplete"
-min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-empty-message.vue"
----
-::
-
-## (NEW) Open on click
-
-To enable opening the autocomplete's listbox on click of its search input, set the `open-on-click` prop to `true`:
-
-::Example
----
-name: "Autocomplete"
-min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-open-on-click.vue"
----
-::
-
-## (NEW) Open on focus
-
-If you would like to open the autocomplete's listbox anytime its search input is focused, set the `open-on-focus` prop to `true`:
-
-::Callout
----
-type: "warning"
-label: "Open on focus vs Open on click"
----
-Open on focus encompasses open on click.
-::
-
-## (NEW) Clear search on open
-
-
-::Example
----
-name: "Autocomplete"
-min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-clear-search-on-open.vue"
----
-::
-
-## (NEW) Selection removable
-
-::Example
----
-name: "Autocomplete"
-min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-selection-removable.vue"
----
-::
-
-## (NEW) Open on remove
-
-::Example
----
-name: "Autocomplete"
-min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-open-on-remove.vue"
----
-::
-
-## Selection appearance
-
-The autocomplete input has a `selectionAppearance` prop that determines the way a selected option is displayed.
-
-### Text input
-
-The autocomplete input will default to the `text-input` selection appearance. When an option is selected, the text input will display the selected option's label:
-
-::Example
----
-name: "Autocomplete"
-min-height: 300
-file: "_content/_examples/autocomplete-pro/autocomplete-text-input.vue"
----
-::
-
-### Option
-
-Alternatively, you can set the selection appearance of the autocomplete to `option`. In this mode, when a selection is made the text input is removed and will be replaced with a div containing the selected option's label. Additionally, the `option` selection appearance will render a `removeSelection` button that will clear the selection when clicked:
-
-::Example
----
-name: "Autocomplete"
-min-height: 300
-file: "_content/_examples/autocomplete-pro/autocomplete-option.vue"
----
-::
-
-## Slots
-
-Just like the [Dropdown input](/inputs/dropdown), the autocomplete input allows you to utilize slots to customize the look and feel of the options list and the selected option by leveraging the [renderless component pattern](https://adamwathan.me/renderless-components-in-vuejs/).
-
-### Option slot
-
-In this example, we'll use the options slot to display car brands and their logos:
-
-::Example
----
-name: "Autocomplete"
-min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-option-slot.vue"
----
-::
-
-### Selection slot
-
-If you only want to customize the display of the selected option, use the `selection` slot:
-
-::Example
----
-name: "Autocomplete"
-min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-selection-slot.vue"
----
-::
-
-## Multi-select
-
-The autocomplete supports multi-select and is available for either the `text-input` or `option` selection appearance. To enable multi-select, simply set the `multiple` prop.
-
-::Callout
----
-type: "warning"
-label: "Using the multiple prop"
----
-When setting the <code>multiple</code> prop, the autocomplete's value must always be an array.
-::
-
-### Text-input multi-select
-
-For the `text-input` selection appearance, the selected options display as a comma-separated list:
-
-::Example
----
-name: "Autocomplete"
-min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-selection-appearance-text-multiple.vue"
----
-::
-
-### Option multi-select
-
-For the `option` selection appearance, the selected options display as a list of `divs` which render below the text input:
-
-::Example
----
-name: "Autocomplete"
-min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-selection-appearance-option-multiple.vue"
----
-::
-
-### Max
-
-The `max` prop allows you to limit the number of options that can be selected. When the `max` limit is reached, the autocomplete input will disable the listbox:
-
-::Example
----
-name: "Autocomplete"
-min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-max.vue"
----
-::
-
-### Close on select
-
-If you would like the autocomplete's listbox to remain open in between selections, set the `close-on-select` prop to `false`:
-
-::Example
----
-name: "Autocomplete"
-min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-close-on-select.vue"
----
-::
-
-## Loading options
+## Dynamic options
 
 Instead of passing a static list of options to the `options` prop, you can assign it to a function. Doing so is useful when you need to load options from an API or another source.
 
 ### Search parameter
 
-In this example, we'll assign the `options` prop the `searchMovies` function. By doing so, `searchMovies` will receive the `context` object as an argument. Within this `context` object is the `search` property, which is the current search value. To perform our search, we'll use the `search` value as the query parameter for our API request:
+In this example, we'll assign the `options` prop the `searchMovies` function. By doing so, searchMovies will receive the `context` object as an argument. Within this context object is the `search` property, which is the current search value. To perform our search, we'll use the search value as the query parameter for our API request:
 
 ::Example
 ---
@@ -255,37 +79,13 @@ file: "_content/_examples/autocomplete-pro/autocomplete-single-request.vue"
 
 ### Page and hasNextPage parameters
 
-A likely scenario you'll encounter is needing to search through a paginated API. This can be done by referencing the same `context` object as before. Within this object, we can utilize the `page` and `hasNextPage` properties. The `page` property is the current page number, and the `hasNextPage` property is a function to be called when there are more pages to load:
+A likely scenario you'll encounter is needing to search through a paginated API. This can be done by referencing the same `context` object as before. Within this object, we can utilize the `page` and `hasNextPage` properties. The page property is the current page number, and the hasNextPage property is a function to be called when there are more pages to load:
 
 ::Example
 ---
 name: "Autocomplete"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-pagination.vue"
----
-::
-
-### Loading Style
-
-Instead of requiring your users to click the <i>Load more</i> button to load additional options, you can set the `loadOnScroll` prop to true, which will paginate options as you scroll to the bottom of the options list.
-
-### Load on created
-
-::Example
----
-name: "Autocomplete"
-min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-load-on-created.vue"
----
-::
-
-### Always load on open
-
-::Example
----
-name: "Autocomplete"
-min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-always-load-on-open.vue"
 ---
 ::
 
@@ -305,15 +105,158 @@ file: "_content/_examples/autocomplete-pro/autocomplete-pagination-option-loader
 
 Notice in the example above that the optionLoader function is passed two arguments: the `value` of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption prop is used for preventing unnecessary lookups. If the cachedOption is not `null` it means that the selected option has already been loaded, and you can return the cachedOption directly.
 
-#### Fetching additional data
+### Loading Style
 
-Instead of using the `optionLoader` prop to rehydrate values that are not in the options list, you can use the optionLoader to perform a look-up to fetch additional data. In this example, after selecting an option, we are going to perform a look-up to load the selected option's movie review:
+Instead of requiring your users to click the <i>Load more</i> button to load additional options, you can set the `loadOnScroll` prop to true, which will paginate options as you scroll to the bottom of the options list.
+
+### Load on created
+
+If you would rather load options when the dropdown is created, you can set the `load-on-created` prop to true, and our function, `loadCurrentlyPopularMovies` will be called without the user needing to expand the listbox:
 
 ::Example
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-option-loader-additional-data.vue"
+file: "_content/_examples/autocomplete-pro/autocomplete-load-on-created.vue"
+---
+::
+
+## Option appearance
+
+### Option slot
+
+The autocomplete input allows you to customize the look and feel of each option by using the option slot. In this example, we are using the option slot to display each option's asset; logo and name:
+
+::Example
+---
+name: "Autocomplete"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-option-slot.vue"
+---
+::
+
+## Selection appearance
+
+The autocomplete input allows you to customize the look and feel of the selected option.
+
+### Selection appearance prop
+
+The autocomplete input allows you to customize the look and feel of the selected option by using the `selection-appearance` prop. For either the single-select or multi-select
+autocomplete, you can set the selection-appearance prop to `text-input` (default) or `option`:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-selection-appearance.vue"
+---
+::
+
+### Selection slot
+
+If you only want to customize the display of the selected option, set the selection appearance to `option`.
+
+::Example
+---
+name: "Autocomplete"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-selection-slot.vue"
+---
+
+::
+
+
+## Behavioral props
+
+### Empty message
+
+The autocomplete input, by default, will not expand the listbox when no search results are found while filtering. You can change this behavior by assigning the `empty-message` prop a message to display when no results are found:
+
+::Example
+---
+name: "Autocomplete"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-empty-message.vue"
+---
+::
+### (NEW) Open on click
+
+To enable opening the autocomplete's listbox on click of its search input, set the `open-on-click` prop to `true`:
+
+::Example
+---
+name: "Autocomplete"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-open-on-click.vue"
+---
+::
+
+### (NEW) Open on click
+
+To enable opening the autocomplete's listbox on click of its search input, set the `open-on-click` prop to `true`:
+
+::Example
+---
+name: "Autocomplete"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-open-on-click.vue"
+---
+::
+
+### (NEW) Open on focus
+
+If you would like to open the autocomplete's listbox anytime its search input is focused, set the `open-on-focus` prop to `true`:
+
+::Example
+---
+name: "Autocomplete"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-open-on-focus.vue"
+---
+::
+
+::Callout
+---
+type: "warning"
+label: "Open on focus vs Open on click"
+---
+Open on focus encompasses open on click.
+::
+
+### (NEW) Clear search on open
+
+For single-select autocompletes only, if you would like to clear the search input when the listbox is opened, set the `clear-search-on-open`:
+
+::Example
+---
+name: "Autocomplete"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-clear-search-on-open.vue"
+---
+::
+
+### (NEW) Selection removable
+
+For single-select autocompletes only, if you would like to allow the user to remove the selected option, set the `selection-removable`. The
+`selection-removable` prop defaults to try when setting `selection-appearance` to `option`.
+
+::Example
+---
+name: "Autocomplete"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-selection-removable.vue"
+---
+::
+
+### (NEW) Open on remove
+
+If you want the listbox to expand when an selection is removed, use the `open-on-remove` prop:
+
+::Example
+---
+name: "Autocomplete"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-open-on-remove.vue"
 ---
 ::
 
@@ -398,11 +341,34 @@ data: [
     description: "Limits the number of options that can be selected.",
   },
   {
-    prop: "close-on-select",
+    "prop": "open-on-remove",
     type: "boolean",
-    default: "true",
-    description: "Closes the listbox when an option is selected.",
+    default: "false",
+    "description": "When the `selection-removable` prop is set to `true`, the dropdown will not open after the selected value is removed. You can change this behavior by setting the `open-on-remove` prop to `true`."
   },
+  {
+    "prop": "open-on-focus",
+    "type": "boolean",
+    "default": "false"
+  },
+  {
+    "prop": "options-appearance",
+    type: "string",
+    default: "undefined",
+    "description": "For multi-select dropdowns, this prop allows you to customize the look and feel of the selected options. Possible values are `default` (the default) or `checkbox`."
+  },
+  {
+    "prop": "always-load-on-open",
+    type: "boolean",
+    default: "false",
+    "description": "When set to `true`, the dropdown will always load the options when the listbox is opened."
+  },
+  {
+    name: "load-on-created",
+    type: "boolean",
+    default: "false",
+    "description": "When set to `true`, the dropdown will load the options when the node is created."
+  }
 ]
 ---
 ::

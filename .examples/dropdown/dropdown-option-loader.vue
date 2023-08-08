@@ -44,5 +44,5 @@ async function loadMovie(id, cachedOption) {
 </template>
 
 <style>
-@import 'https://cdn.jsdelivr.net/npm/@formkit/pro@dev/genesis.css';
+
 </style>

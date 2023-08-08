@@ -68,7 +68,6 @@ const frameworks = [
 </template>
 
 <style>
-@import 'https://cdn.jsdelivr.net/npm/@formkit/pro@dev/genesis.css';
 
 .formkit-tag {
   display: flex;

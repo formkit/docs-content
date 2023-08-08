@@ -21,21 +21,14 @@ async function searchMovies({ search }) {
 </script>
 
 <template>
+  <!--Setting the `options` prop to async function `loadHorrorMovies`-->
   <FormKit
-    type="form"
-    #default="{ value }"
-    :actions="false"
-  >
-    <!--Setting the `options` prop to async function `loadHorrorMovies`-->
-    <FormKit
-      name="movie"
-      type="autocomplete"
-      label="Search for your favorite movie"
-      placeholder="Example: Shawshank Redemption"
-      :options="searchMovies"
-    />
-    <pre wrap>{{ value }}</pre>
-  </FormKit>
+    name="movie"
+    type="autocomplete"
+    label="Search for your favorite movie"
+    placeholder="Example: Shawshank Redemption"
+    :options="searchMovies"
+  />
 </template>
 
 <style>

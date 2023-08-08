@@ -4,7 +4,7 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://s3.amazona
 
 <template>
   <FormKit
-    type="dropdown"
+    type="autocomplete"
     name="framework"
     label="Choose a frontend framework"
     placeholder="Example placeholder"

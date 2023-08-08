@@ -22,5 +22,4 @@ async function loadCurrentlyPopularMovies({ page, hasNextPage }) {
 </template>
 
 <style>
-@import 'https://cdn.jsdelivr.net/npm/@formkit/pro@dev/genesis.css';
 </style>
