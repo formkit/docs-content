@@ -9,7 +9,7 @@ description: Scan barcodes and QR codes
 
 ## Introduction
 
-The `barcode` input type is a stanadlone input published the FormKit team. It is powered by the [zxing](https://github.com/zxing/zxing) library and allows scanning of a variety of 1D and 2D barcode types using cameras connected to your browsing device.
+The `barcode` input type is a stanadlone input published by FormKit. It is powered by the [zxing](https://github.com/zxing/zxing) library and allows scanning of a variety of 1D and 2D barcode types using cameras connected to your browsing device.
 
 ## Installation
 
@@ -17,7 +17,7 @@ The `barcode` input type is a stanadlone input published the FormKit team. It is
 ---
 type: warning
 ---
-The `barcode` input has a dependency on `@zxing/library` which is rather heavy (about 100kb minified + gzipped). You shoud only include this input in your project if you need specifially barcode scanning capability via connected cameras. For manual barcode entry please consider using a `mask` or `text` input with custom validation rules.
+The `barcode` input has a dependency on `@zxing/library` which is rather heavy (about 100kb minified + gzipped). You shoud only include this input in your project if you specifially need barcode scanning capability via connected cameras. For manual barcode entry please consider using a `mask` or `text` input with custom validation rules.
 ::
 
 To install the `barcode` input add the `@formkit/barcode` package to your project's dependencies.
@@ -31,14 +31,17 @@ Then, in your FormKit configuration file import the input and its styles. Then a
 ```js
 // formkit.config
 ...
-import barcode from '@formkit/barcode'
+import { barcode } from '@formkit/barcode'
 import '@formkit/barcode/genesis'
+
 ...
+
 const config = defaultConfig({
   inputs: {
     barcode
   }
 })
+
 ...
 ```
 
