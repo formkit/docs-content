@@ -31,18 +31,16 @@ async function loadMovie(id, cachedOption) {
 </script>
 
 <template>
-  <FormKit type="form" :actions="false">
-    <FormKit
-      type="dropdown"
-      name="currentlyPopularMovie"
-      label="Choose some currently popular movies you want to see."
-      placeholder="Avatar, Star Wars..."
-      :options="loadCurrentlyPopularMovies"
-      :option-loader="loadMovie"
-      multiple
-      :value="[597, 800]"
-    />
-  </FormKit>
+  <FormKit
+    type="dropdown"
+    name="currentlyPopularMovie"
+    label="Choose some currently popular movies you want to see."
+    placeholder="Avatar, Star Wars..."
+    :options="loadCurrentlyPopularMovies"
+    :option-loader="loadMovie"
+    multiple
+    :value="[597, 800]"
+  />
 </template>
 
 <style>

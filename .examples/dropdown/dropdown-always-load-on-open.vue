@@ -20,21 +20,13 @@ async function loadHorrorMovies() {
 
 <template>
   <FormKit
-    type="form"
-    #default="{ value }"
-    :actions="false"
-  >
-    <!--Setting the `options` prop to async function `loadHorrorMovies`-->
-    <FormKit
-      name="horrorMovie"
-      type="dropdown"
-      label="Select a horror movie"
-      placeholder="Example placeholder"
-      :options="loadHorrorMovies"
-      always-load-on-open
-    />
-    <pre wrap>{{ value }}</pre>
-  </FormKit>
+    name="horrorMovie"
+    type="dropdown"
+    label="Select a horror movie"
+    placeholder="Example placeholder"
+    :options="loadHorrorMovies"
+    always-load-on-open
+  />
 </template>
 
 <style>

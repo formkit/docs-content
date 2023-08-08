@@ -131,18 +131,6 @@ file: "_content/_examples/dropdown/dropdown-always-load-on-open.vue"
 
 Unlike native select elements, the dropdown input allows you to customize the options list with markup.
 
-### Option slot
-
-The dropdown input allows you to customize the look and feel of each option by using the option slot. In this example, we are using the option slot to display each option's asset; logo and name:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-option-slot.vue"
----
-::
-
 ### Options appearance prop
 
 If you would like to render each listitem option with a checkbox next to each, you can do so by setting the `options-appearance` prop to `checkbox`:
@@ -163,7 +151,35 @@ label: "Multi select only"
 Setting `options-appearance` to `checkbox` can only be done when the prop `multiple` is set.
 ::
 
+### Option slot
+
+The dropdown input allows you to customize the look and feel of each option by using the option slot. In this example, we are using the option slot to display each option's asset; logo and name:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-option-slot.vue"
+---
+::
+
 ## Selection appearance
+
+The dropdown input allows you to customize the look and feel of the selected option.
+
+### Selection appearance prop
+
+When using the dropdown input as a `multi-select`, you can customize the look and feel of the selected options by setting the `selection-appearance` prop to either `truncate` (the default) or `tags`.
+
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-selection-appearance.vue"
+---
+::
+
 
 ### Selection slot
 
@@ -175,25 +191,12 @@ name: "Dropdown"
 min-height: 550
 file: "_content/_examples/dropdown/dropdown-selection-slot.vue"
 ---
+
 ::
-<!--## Selection appearance
 
-The dropdown input allows you to customize the look and feel of each option by using the option slot. In this example, we are using the option slot to display each option's asset; logo and name:
+## Behavioral props
 
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-option-slot.vue"
----
-::-->
-
-
-## Asynchronous options
-
-
-
-## Empty message
+### Empty Message
 
 The dropdown input, by default, will be rendered in a disabled state if no options are passed. Optionally, you may pass the `empty-message` prop a message to display when no options are available:
 
@@ -202,6 +205,18 @@ The dropdown input, by default, will be rendered in a disabled state if no optio
 name: "Dropdown"
 min-height: 550
 file: "_content/_examples/dropdown/dropdown-empty-message.vue"
+---
+::
+
+### Overscroll
+
+When using the dropdown with static options, FormKit's dropdown also comes with a unique feature called `overscroll`. In this example, we'll see what the behavior is when setting `behavior` to overscroll:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-overscroll.vue"
 ---
 ::
 
@@ -237,63 +252,6 @@ file: "_content/_examples/dropdown/dropdown-open-on-remove.vue"
 ---
 ::
 
-## (NEW) Open on focus
-
-If you would like expand the listbox as soon as the dropdown input is focused, you can use the `open-on-focus` prop:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-open-on-focus.vue"
----
-::
-
-## (NEW) Multi-select
-
-The `multiple` prop allows users to select multiple options:
-
-::Callout
----
-type: "warning"
-label: "Using the multiple prop"
----
-When setting the <code>multiple</code> prop, the autocomplete's value must always be an array.
-::
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-multiple.vue"
----
-::
-
-### (NEW) Selection Appearance
-
-#### Truncate
-
-By default a dropdown with prop `multiple` will have the selection appearance of `truncate`. This means that the selected options will be truncated with an ellipsis if the selection is too long to fit in the input. The `truncate` appearance can be set explicitly with the `selection-appearance` prop:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-truncate.vue"
----
-::
-
-#### Tags
-
-Alternatively, you can set the `selection-appearance` prop to `tags`
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-tags.vue"
----
-::
 
 ### (NEW) Close on select
 
@@ -307,85 +265,17 @@ file: "_content/_examples/dropdown/dropdown-close-on-select.vue"
 ---
 ::
 
-### (NEW) Max
+## (NEW) Open on focus
 
-The `max` prop allows you to limit the number of options that can be selected. When the `max` limit is reached, the listbox will close and the end-user will no longer be able to select additional values.
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-max.vue"
----
-::
-
-
-## Slots
-
-Unlike native select elements, the `dropdown` input allows you to customize the options list with markup.
-
-### Option slot
-
-The `dropdown` input allows you to customize the look and feel of each option by using the `option` slot. In this example, we are using the `option` slot to display each option's asset; logo and name:
+If you would like expand the listbox as soon as the dropdown input is focused, you can use the `open-on-focus` prop:
 
 ::Example
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-option-slot.vue"
+file: "_content/_examples/dropdown/dropdown-open-on-focus.vue"
 ---
 ::
-
-### Selection slot
-
-If you only want to customize the display of the selected option, use the `selection` slot:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-selection-slot.vue"
----
-::
-
-### (NEW) Tags slot
-
-When the `multiple` prop is set, you can use the `tags` slot to customize the look and feel of each selected option:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-tag-slot.vue"
----
-::
-
-
-## Full example
-
-Now let's combine what we've learned so far by leveraging the `option` slot for custom markup and setting the `options` prop to a function that will return pages of movies from an API:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-full.vue"
----
-::
-
-
-## Overscroll
-
-When using the dropdown with static options, FormKit's dropdown also comes with a unique feature called `overscroll`. In this example, we'll see what the behavior is when setting `overscroll` to true:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-overscroll.vue"
----
-::
-
 
 ## Props & Attributes
 
@@ -416,6 +306,66 @@ data: [
     "type": "string",
     "default": "undefined",
     "description": "Renders a message when there are no options to display."
+  },
+  {
+    "prop": "selection-appearance",
+    type: "string",
+    default: "truncate",
+    "description": "For multi-select dropdowns, this prop allows you to customize the look and feel of the selected options. Possible values are `truncate` (the default) or `tags`."
+  },
+  {
+    "prop": "selection-removable",
+    type: "boolean",
+    default: "false",
+    "description": "For single-select dropdowns, this prop allows you to remove the selected value."
+  },
+  {
+    "prop": "open-on-remove",
+    type: "boolean",
+    default: "false",
+    "description": "When the `selection-removable` prop is set to `true`, the dropdown will not open after the selected value is removed. You can change this behavior by setting the `open-on-remove` prop to `true`."
+  },
+  {
+    "prop": "close-on-select",
+    type: "boolean",
+    default: "false",
+    "description": "When the `multiple` prop is set, the dropdown will not close after an option is selected. You can change this behavior by setting the `close-on-select` prop to `true`."
+  },
+  {
+    "prop": "open-on-focus",
+    type: "boolean",
+    default: "false",
+    "description": "If you would like expand the listbox as soon as the dropdown input is focused, you can use the `open-on-focus` prop."
+  },
+  {
+    "prop": "options-appearance",
+    type: "string",
+    default: "undefined",
+    "description": "For multi-select dropdowns, this prop allows you to customize the look and feel of the selected options. Possible values are `default` (the default) or `checkbox`."
+  },
+  {
+    "prop": "multiple",
+    type: "boolean",
+    default: "false",
+    "description": "When set to `true`, the dropdown will allow the user to select multiple options."
+  },
+  {
+    "prop": "behavior",
+    type: "string",
+    default: "undefined",
+    "description": "When set to `overscroll`, the dropdown will allow the user to select multiple options."
+  },
+  {
+    "prop": "always-load-on-open",
+    type: "boolean",
+    default: "false",
+    "description": "When set to `true`, the dropdown will always load the options when the listbox is opened."
+  },
+  {
+    "load-on-created",
+    type: "boolean",
+    default: "false",
+    "description": "When set to `true`, the dropdown will load the options when the node is created."
   }
 ]
 ---
@@ -426,7 +376,9 @@ data: [
 
 :SectionKeysIntro
 
-### Outer structure
+### Dropdown single-select
+
+#### Dropdown single-select Outer structure
 
 ::FormKitInputDiagram
 ---
@@ -531,7 +483,7 @@ schema: [
 ---
 ::
 
-### Inner listbox structure
+#### Inner listbox structure
 
 Below is the inner options list (`listbox`) structure from the diagram above:
 

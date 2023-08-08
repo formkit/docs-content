@@ -5,11 +5,17 @@ const frameworks = [
   { label: 'Angular', value: 'angular' },
   { label: 'Svelte', value: 'svelte' },
 ]
+
+function focusDropdown() {
+  document.querySelector('#dropdown').focus()
+}
 </script>
 
 <template>
-  <FormKit type="form" #default="{ value }" :actions="false">
+  <div>
+    <FormKit type="button" @click="focusDropdown">Click me to focus dropdown</FormKit>
     <FormKit
+      id="dropdown"
       type="dropdown"
       name="framework"
       label="Choose a frontend framework"
@@ -18,8 +24,7 @@ const frameworks = [
       value="vue"
       open-on-focus
     />
-    <pre wrap>{{ value }}</pre>
-  </FormKit>
+  </div>
 </template>
 
 <style></style>

@@ -11,7 +11,7 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
       placeholder="Afghanistan, Albania..."
       :options="countries"
       multiple
-			:close-on-select="true"
+      :close-on-select="true"
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>
