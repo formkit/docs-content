@@ -395,9 +395,7 @@ data: [
 
 :SectionKeysIntro
 
-### Dropdown single-select
-
-#### Dropdown single-select Outer structure
+### Selector structure
 
 ::FormKitInputDiagram
 ---
@@ -434,37 +432,22 @@ schema: [
                 class: "flex flex-grow",
                 children: [
                   {
-                    name: "selection",
-                    class: "flex-grow",
-                    children: [
-                      {
-                        name: "option",
-                        content: "Gray",
-                        class: "flex border-solid",
-                        children: [
-                          {
-                            name: "optionLoading",
-                            class: "flex-grow-0"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                      name: "loaderIcon"
+                    name: "placeholder",
+                    content: "Select t-shirt color",
                   },
                   {
                     name: "selectIcon",
                     content: "⌄",
-                    class: "center-vert"
+                  },
+                  {
+                    name: "loaderIcon",
+                    content: "⌛",
+                  },
+                  {
+                    name: "closeIcon",
+                    content: "×",
                   }
                 ]
-              },
-              {
-                name: "listbox",
-                content: "Blue Gray Tan",
-                class: "wrap-text",
-                position: "right"
               },
               {
                 name: "suffix",
@@ -502,9 +485,7 @@ schema: [
 ---
 ::
 
-#### Inner listbox structure
-
-Below is the inner options list (`listbox`) structure from the diagram above:
+### Listbox structure
 
 ::FormKitInputDiagram
 ---
@@ -559,6 +540,145 @@ schema: [
                 ]
               },
             ]
+          },
+        ]
+      },
+    ]
+  }
+]
+---
+::
+
+### Selection structure
+
+#### Dropdown Single
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--dropdown-outer"
+schema: [
+  {
+    name: "selector",
+    class: "flex flex-grow",
+    children: [
+      {
+        name: "selection",
+        class: "flex flex-grow",
+        children: [
+          {
+            name: "option",
+            content: "Gray",
+            class: "flex flex-grow border-solid",
+          },
+        ]
+      },
+    ]
+  }
+]
+---
+::
+
+#### Dropdown Truncate
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--dropdown-outer"
+schema: [
+  {
+    name: "selector",
+    class: "flex flex-grow",
+    children: [
+      {
+        name: "selectorSelectionsWrapper",
+        class: "flex flex-grow",
+        children: [
+          {
+            name: "selectorSelections",
+            class: "flex flex-grow border-solid",
+            children: [
+              {
+                name: "selectorSelectionsItem",
+                content: 'Gray'
+              },
+              {
+                name: "selectorSelectionsItem",
+                content: 'Blue'
+              }
+            ]
+          },
+        ]
+      },
+      {
+        name: "truncationCount",
+        content: '+1',
+        class: 'grow-0 center-vert'
+      }
+    ]
+  }
+]
+---
+::
+
+#### Dropdown Tags
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--dropdown-outer"
+schema: [
+  {
+    name: "selector",
+    class: "flex flex-grow",
+    children: [
+      {
+        name: "tagsWrapper",
+        class: "flex flex-grow",
+        children: [
+          {
+            name: "tags",
+            class: "flex flex-grow border-solid",
+            children: [
+              {
+                name: "tagWrapper",
+                children: [
+                  {
+                    name: "tag",
+                    class: 'flex',
+                    children: [
+                      {
+                        name: "tagLabel",
+                        content: 'Gray'
+                      },
+                      {
+                        name: "removeSelection",
+                        content: '×'
+                      }
+                    ]
+                  },
+                ]
+              },
+              {
+                name: "tagWrapper",
+                children: [
+                  {
+                    name: "tag",
+                    class: 'flex',
+                    children: [
+                      {
+                        name: "tagLabel",
+                        content: 'Blue'
+                      },
+                      {
+                        name: "removeSelection",
+                        content: '×'
+                      }
+                    ]
+                  },
+                ]
+              }
+            ],
           },
         ]
       },
@@ -628,6 +748,46 @@ data: [
   {
     "section-key": "emptyMessageInner",
     "description": "A span element that acts as a wrapper for the emptyMessage section."
+  },
+  {
+    "section-key": "tagsWrapper",
+    "description": "A div element that wraps the tags section."
+  },
+  {
+    "section-key": "tags",
+    "description": "A div element that contains the tags."
+  },
+  {
+    "section-key": "tagWrapper",
+    "description": "A div element that wraps the tag."
+  },
+  {
+    "section-key": "tag",
+    "description": "A div element that contains the tag label and removeSelection section."
+  },
+  {
+    "section-key": "tagLabel",
+    "description": "A span element that contains the tag label."
+  },
+  {
+    "section-key": "removeSelection",
+    "description": "A span element that contains the removeSelection icon."
+  },
+  {
+    "section-key": "selectorSelectionsWrapper",
+    "description": "A div element that wraps the selectorSelections section."
+  },
+  {
+    "section-key": "selectorSelections",
+    "description": "A div element that contains the selectorSelectionsItem sections."
+  },
+  {
+    "section-key": "selectorSelectionsItem",
+    "description": "A div element that contains the selectorSelectionsItem content."
+  },
+  {
+    "section-key": "truncationCount",
+    "description": "A div element that contains the truncationCount content."
   }
 ]
 ---
