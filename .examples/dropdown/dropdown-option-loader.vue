@@ -34,7 +34,7 @@ async function loadMovie(id, cachedOption) {
   <FormKit
     type="dropdown"
     name="currentlyPopularMovie"
-    label="Choose some currently popular movies you want to see."
+    label="Choose some movies you would like to see"
     placeholder="Avatar, Star Wars..."
     :options="loadCurrentlyPopularMovies"
     :option-loader="loadMovie"

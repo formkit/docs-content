@@ -6,7 +6,7 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://reactjs.or
   <FormKit
     name="framework"
     type="dropdown"
-    label="Choose a front end framework"
+    label="Single-select"
     placeholder="Example placeholder"
     :options="frameworks"
     value="vue"
@@ -28,7 +28,7 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://reactjs.or
   <FormKit
       type="dropdown"
       name="framework"
-      label="Choose a frontend framework"
+      label="Tags appearance"
       placeholder="Example placeholder"
       :options="frameworks"
       multiple

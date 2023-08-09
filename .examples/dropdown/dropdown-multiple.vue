@@ -7,8 +7,8 @@ const sandwichToppings = [{ label: 'Lettuce', value: 'lettuce' }, { label: 'Toma
     <FormKit
       type="dropdown"
       name="sandwich_toppings"
-      label="Sandwich toppings"
-      placeholder="Select as many toppings as you would like"
+      label="Select as many toppings as you would like"
+      placeholder="Lettuce, tomato, onion, etc."
       :options="sandwichToppings"
       multiple
       :value="['lettuce', 'tomato']"
@@ -16,6 +16,3 @@ const sandwichToppings = [{ label: 'Lettuce', value: 'lettuce' }, { label: 'Toma
     <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>
-
-<style>
-</style>

@@ -11,13 +11,15 @@ async function loadCurrentlyPopularMovies({ page, hasNextPage }) {
 </script>
 
 <template>
+  <!-- %partial% -->
   <FormKit
     type="dropdown"
     label="Choose a currently popular movie"
-    placeholder="Titanic, Star Wars..."
+    placeholder="Star Wars Part XV"
     :options="loadCurrentlyPopularMovies"
     load-on-scroll
   />
+  <!-- %partial% -->
 </template>
 
 <style>

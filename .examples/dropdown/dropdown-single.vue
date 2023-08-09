@@ -8,11 +8,9 @@ const frameworks = [{ label: 'React', value: 'react' }, { label: 'Vue', value: '
       type="dropdown"
       name="framework"
       label="Choose your favorite frontend framework"
-      placeholder="Example placeholder"
+      placeholder="Backbone.js"
       :options="frameworks"
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>
-
-<style></style>

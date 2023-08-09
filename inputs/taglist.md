@@ -66,31 +66,6 @@ file: "_content/_examples/taglist/taglist-allow-new-values.vue"
 ---
 ::
 
-
-## Max
-
-The `max` prop allows you to limit the number of options that can be selected. When the `max` limit is reached, the taglist input will disable the listbox:
-
-::Example
----
-name: "Taglist"
-min-hight: 550
-file: "_content/_examples/taglist/taglist-max.vue"
----
-::
-
-## Close on select
-
-If you would like the taglist's listbox to remain open in between selections, set the `close-on-select` prop to `false`:
-
-::Example
----
-name: "Taglist"
-min-hight: 550
-file: "_content/_examples/taglist/taglist-close-on-select.vue"
----
-::
-
 ## Dynamic options
 
 Instead of passing a static list of options to the `options` prop, you can assign it to a function. Doing so is useful when you need to load options from an API or another source.
@@ -120,7 +95,6 @@ file: "_content/_examples/taglist/taglist-pagination.vue"
 ---
 ::
 
-
 ### Loading Style
 
 Instead of requiring your users to click the <i>Load more</i> button to load additional options, you can set the `loadOnScroll` prop to true, which will paginate options as you scroll to the bottom of the options list.
@@ -139,6 +113,21 @@ file: "_content/_examples/taglist/taglist-pagination-option-loader.vue"
 ---
 ::
 
+### Loading Style
+
+Instead of requiring your users to click the <i>Load more</i> button to load additional options, you can set the `loadOnScroll` prop to true, which will paginate options as you scroll to the bottom of the options list.
+
+### Load on created
+
+If you would rather load options when the taglist is created, you can set the `load-on-created` prop to true, and our function, `loadCurrentlyPopularMovies` will be called without the user needing to expand the listbox:
+
+::Example
+---
+name: "Taglist"
+min-height: 550
+file: "_content/_examples/taglist/taglist-load-on-created.vue"
+---
+::
 
 Notice in the example above that the optionLoader function is passed two arguments: the `value` of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption is used for preventing unnecessary lookups. If the cachedOption is not `null` it means that the selected option has already been loaded, and you can return the cachedOption directly.
 
@@ -168,6 +157,43 @@ min-height: 550
 file: "_content/_examples/taglist/taglist-empty-message.vue"
 ---
 ::
+
+### Max
+
+The `max` prop allows you to limit the number of options that can be selected. When the `max` limit is reached, the taglist input will disable the listbox:
+
+::Example
+---
+name: "Taglist"
+min-hight: 550
+file: "_content/_examples/taglist/taglist-max.vue"
+---
+::
+
+### Close on select
+
+If you would like the taglist's listbox to remain open in between selections, set the `close-on-select` prop to `false`:
+
+::Example
+---
+name: "Taglist"
+min-hight: 550
+file: "_content/_examples/taglist/taglist-close-on-select.vue"
+---
+::
+
+### (NEW) Reload on commit
+
+If you want the options to be reloaded (with static options, this would filter the options with the value of empty string, and with dynamic options, this would make a request to the options loader with the value of empty string) when the user commits a selection, use the `reload-on-commit` prop:
+
+::Example
+---
+name: "Autocomplete"
+min-height: 550
+file: "_content/_examples/taglist/taglist-reload-on-commit.vue"
+---
+::
+
 ### (NEW) Open on click
 
 To enable opening the taglist's listbox on click of its search input, set the `open-on-click` prop to `true`:
