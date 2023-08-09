@@ -187,6 +187,33 @@ min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-empty-message.vue"
 ---
 ::
+
+### (NEW) Close on select
+
+If you would like the listbox to remain expanded after selecting a value, you can set `close-on-select` to `false`.
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-close-on-select.vue"
+---
+::
+
+### (NEW) Reload on commit
+
+If you want the options to be reloaded (with static options, this would filter the options with the value of empty string, and with dynamic options, this would make a request to the options loader with the value of empty string) when the user commits a selection, use the `reload-on-commit` prop:
+
+::Example
+---
+name: "Autocomplete"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-reload-on-commit.vue"
+---
+::
+
+
+
 ### (NEW) Open on click
 
 To enable opening the autocomplete's listbox on click of its search input, set the `open-on-click` prop to `true`:
@@ -268,6 +295,17 @@ file: "_content/_examples/autocomplete-pro/autocomplete-open-on-remove.vue"
 ---
 ::
 
+### (NEW) Max
+
+If you would like to limit the number of options that can be selected, you can use the `max` prop:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/autocomplete-pro/autocomplete-max.vue"
+---
+
 ## Full example
 
 Now let's combine what we've learned so far by leveraging the `option` slot for custom markup, and setting the `options` prop to a function that will return pages of movies from an API:
@@ -280,7 +318,6 @@ file: "_content/_examples/autocomplete-pro/autocomplete-full.vue"
 ---
 ::
 
-<!-- ## Accessibility -->
 
 ## Props & Attributes
 
