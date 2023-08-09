@@ -56,13 +56,22 @@ file: "_content/_examples/dropdown/dropdown-multiple.vue"
 ---
 ::
 
+::Callout
+---
+type: "info"
+label: "Multi-select input value"
+---
 Notice in the example above that because the `multiple` prop is set, the `value` prop must be an array.
+
+::
+
 
 ## Dynamic options
 
 Instead of passing a static list of options to the `options` prop, you can assign them dynamically.
 
-Let's say we had an API endpoint that returned all the options we needed for a given `dropdown` input. Here is an example of how we could write the `dropdown` input to load options from a single request:
+
+Let's say we had an API endpoint that returned all the options we needed for a given `dropdown` input. Here is an example of how we could write the dropdown input to load options from a single request:
 
 ::Example
 ---
@@ -86,7 +95,7 @@ file: "_content/_examples/dropdown/dropdown-pagination.vue"
 
 ### Option loader
 
-FormKit's dropdown input also provides an `optionLoader` prop that allows you to rehydrate values that are not in the options list. In this example, we'll provide the autocomplete an initial value (two movie IDs), and assign the optionLoader to a function that will make a request to the API to load the movie titles:
+FormKit's dropdown input also provides an `optionLoader` prop that allows you to rehydrate values that are not in the options list. In this example, we'll provide the dropdown an initial value (two movie IDs), and assign the optionLoader to a function that will make a request to the API to load the movie titles:
 
 ::Example
 ---
@@ -204,6 +213,8 @@ file: "_content/_examples/dropdown/dropdown-selection-slot.vue"
 
 ## Behavioral props
 
+The following props allow you to customize the behavior of the dropdown input.
+
 ### Empty Message
 
 The dropdown input, by default, will be rendered in a disabled state if no options are passed. Optionally, you may pass the `empty-message` prop a message to display when no options are available:
@@ -228,7 +239,7 @@ file: "_content/_examples/dropdown/dropdown-overscroll.vue"
 ---
 ::
 
-## (NEW) Selection Removable
+### (NEW) Selection Removable
 
 If you would like to allow users to remove the selected value, simply set the `selection-removable` prop to true. This will render a close icon next to the selected value:
 
@@ -248,7 +259,7 @@ file: "_content/_examples/dropdown/dropdown-selection-removable.vue"
 ---
 ::
 
-## (NEW) Open on remove
+### (NEW) Open on remove
 
 By default, when the `selection-removable` prop is set to `true`, the dropdown will not open after the selected value is removed. You can change this behavior by setting the `open-on-remove` prop to `true`:
 
@@ -273,7 +284,7 @@ file: "_content/_examples/dropdown/dropdown-close-on-select.vue"
 ---
 ::
 
-## (NEW) Open on focus
+### (NEW) Open on focus
 
 If you would like expand the listbox as soon as the dropdown input is focused, you can use the `open-on-focus` prop:
 

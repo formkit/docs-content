@@ -39,7 +39,7 @@ async function loadMovie(id, cachedOption) {
     :options="loadCurrentlyPopularMovies"
     :option-loader="loadMovie"
     multiple
-    :value="[597, 800]"
+    :value="[597, 598]"
   />
 </template>
 
