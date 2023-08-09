@@ -413,6 +413,18 @@ data: [
     type: "boolean",
     default: "false",
     "description": "When set to `true`, the dropdown will load the options when the node is created."
+  },
+  {
+    name: "clear-search-on-open",
+    type: "boolean",
+    default: "false",
+    "description": "When set to `true`, the search input will be cleared when the listbox is opened."
+  },
+  {
+    "name": "max",
+    "type": "number | string",
+    "default": "undefined",
+    "description": "If you would like to limit the number of options that can be selected, you can use the `max` prop (applies only to multi-select)."
   }
 ]
 ---
