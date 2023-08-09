@@ -296,6 +296,18 @@ file: "_content/_examples/dropdown/dropdown-open-on-focus.vue"
 ---
 ::
 
+### (NEW) Max
+
+If you would like to limit the number of options that can be selected, you can use the `max` prop:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-max.vue"
+---
+::
+
 ## Props & Attributes
 
 ::ReferenceTable
@@ -385,6 +397,12 @@ data: [
     type: "boolean",
     default: "false",
     "description": "When set to `true`, the dropdown will load the options when the node is created."
+  },
+  {
+    "name": "max",
+    "type": "number | string",
+    "default": "undefined",
+    "description": "If you would like to limit the number of options that can be selected, you can use the `max` prop (applies only to multi-select)."
   }
 ]
 ---
