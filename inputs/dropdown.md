@@ -381,7 +381,7 @@ data: [
     "description": "When set to `true`, the dropdown will always load the options when the listbox is opened."
   },
   {
-    "load-on-created",
+    name: "load-on-created",
     type: "boolean",
     default: "false",
     "description": "When set to `true`, the dropdown will load the options when the node is created."
