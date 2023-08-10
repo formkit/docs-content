@@ -202,7 +202,7 @@ file: "_content/_examples/autocomplete-pro/autocomplete-close-on-select.vue"
 
 ### Reload on commit
 
-If you want the options to be reloaded (with static options, this would filter the options with the value of empty string, and with dynamic options, this would make a request to the options loader with the value of empty string) when the user commits a selection, use the `reload-on-commit` prop:
+If you want the options to be reloaded (with static options, this would filter the options with the value of empty string, and with dynamic options, this would call to the options loader with an empty string `search` property) when the user commits a selection, use the `reload-on-commit` prop:
 
 ::Example
 ---
