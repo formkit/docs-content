@@ -13,7 +13,7 @@ function focusTaglist() {
 
 <template>
   <div>
-    <FormKit type="button" @click="focusTaglist">Click me to focus dropdown</FormKit>
+    <FormKit type="button" @click="focusTaglist">Click me to focus taglist</FormKit>
     <FormKit
       id="taglist"
       type="taglist"
