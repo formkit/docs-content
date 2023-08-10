@@ -213,19 +213,6 @@ file: "_content/_examples/autocomplete-pro/autocomplete-reload-on-commit.vue"
 ::
 
 
-
-### Open on click
-
-To enable opening the autocomplete's listbox on click of its search input, set the `open-on-click` prop to `true`:
-
-::Example
----
-name: "Autocomplete"
-min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-open-on-click.vue"
----
-::
-
 ### Open on click
 
 To enable opening the autocomplete's listbox on click of its search input, set the `open-on-click` prop to `true`:
