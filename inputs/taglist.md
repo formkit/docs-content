@@ -182,7 +182,7 @@ file: "_content/_examples/taglist/taglist-close-on-select.vue"
 ---
 ::
 
-### (NEW) Reload on commit
+### Reload on commit
 
 If you want the options to be reloaded (with static options, this would filter the options with the value of empty string, and with dynamic options, this would make a request to the options loader with the value of empty string) when the user commits a selection, use the `reload-on-commit` prop:
 
@@ -194,7 +194,7 @@ file: "_content/_examples/taglist/taglist-reload-on-commit.vue"
 ---
 ::
 
-### (NEW) Open on click
+### Open on click
 
 To enable opening the taglist's listbox on click of its search input, set the `open-on-click` prop to `true`:
 
@@ -206,7 +206,7 @@ file: "_content/_examples/taglist/taglist-open-on-click.vue"
 ---
 ::
 
-### (NEW) Open on focus
+### Open on focus
 
 If you would like to open the taglist's listbox anytime its search input is focused, set the `open-on-focus` prop to `true`:
 
@@ -226,7 +226,7 @@ label: "Open on focus vs Open on click"
 Open on focus encompasses open on click.
 ::
 
-### (NEW) Open on remove
+### Open on remove
 
 If you want the listbox to expand when an selection is removed, use the `open-on-remove` prop:
 

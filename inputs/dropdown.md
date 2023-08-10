@@ -81,7 +81,7 @@ file: "_content/_examples/dropdown/dropdown-single-request.vue"
 ---
 ::
 
-#### (NEW) Always load on open
+#### Always load on open
 
 By default the dropdown will only load options asynchronously once (upon the listbox being expanded). Setting the prop `always-load-on-open`  will cause the dropdown to load options every time the listbox is expanded.
 
@@ -93,7 +93,7 @@ file: "_content/_examples/dropdown/dropdown-always-load-on-open.vue"
 ---
 ::
 
-#### (NEW) Load on created
+#### Load on created
 
 The prop `load-on-created` will cause the dropdown to load options as soon as it is created.
 
@@ -246,7 +246,7 @@ file: "_content/_examples/dropdown/dropdown-overscroll.vue"
 ---
 ::
 
-### (NEW) Selection Removable
+### Selection Removable
 
 If you would like to allow users to remove the selected value, simply set the `selection-removable` prop to true. This will render a close icon next to the selected value:
 
@@ -266,7 +266,7 @@ file: "_content/_examples/dropdown/dropdown-selection-removable.vue"
 ---
 ::
 
-### (NEW) Open on remove
+### Open on remove
 
 By default, when the `selection-removable` prop is set to `true`, the dropdown will not open after the selected value is removed. You can change this behavior by setting the `open-on-remove` prop to `true`:
 
@@ -278,7 +278,7 @@ file: "_content/_examples/dropdown/dropdown-open-on-remove.vue"
 ---
 ::
 
-### (NEW) Close on select
+### Close on select
 
 By default, when the `multiple` prop is set, the dropdown will not close after an option is selected. You can change this behavior by setting the `close-on-select` prop to `true`:
 
@@ -290,7 +290,7 @@ file: "_content/_examples/dropdown/dropdown-close-on-select.vue"
 ---
 ::
 
-### (NEW) Open on focus
+### Open on focus
 
 If you would like expand the listbox as soon as the dropdown input is focused, you can use the `open-on-focus` prop:
 
@@ -302,7 +302,7 @@ file: "_content/_examples/dropdown/dropdown-open-on-focus.vue"
 ---
 ::
 
-### (NEW) Max
+### Max
 
 If you would like to limit the number of options that can be selected, you can use the `max` prop:
 

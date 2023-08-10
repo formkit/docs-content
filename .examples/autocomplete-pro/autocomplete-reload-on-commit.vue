@@ -12,6 +12,7 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
     :reload-on-commit="true"
     :close-on-select="false"
     multiple
+    selection-appearance="option"
   />
 </template>
 

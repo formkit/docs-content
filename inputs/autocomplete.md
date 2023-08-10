@@ -188,7 +188,7 @@ file: "_content/_examples/autocomplete-pro/autocomplete-empty-message.vue"
 ---
 ::
 
-### (NEW) Close on select
+### Close on select
 
 If you would like the listbox to remain expanded after selecting a value, you can set `close-on-select` to `false`.
 
@@ -200,7 +200,7 @@ file: "_content/_examples/autocomplete-pro/autocomplete-close-on-select.vue"
 ---
 ::
 
-### (NEW) Reload on commit
+### Reload on commit
 
 If you want the options to be reloaded (with static options, this would filter the options with the value of empty string, and with dynamic options, this would make a request to the options loader with the value of empty string) when the user commits a selection, use the `reload-on-commit` prop:
 
@@ -214,7 +214,7 @@ file: "_content/_examples/autocomplete-pro/autocomplete-reload-on-commit.vue"
 
 
 
-### (NEW) Open on click
+### Open on click
 
 To enable opening the autocomplete's listbox on click of its search input, set the `open-on-click` prop to `true`:
 
@@ -226,7 +226,7 @@ file: "_content/_examples/autocomplete-pro/autocomplete-open-on-click.vue"
 ---
 ::
 
-### (NEW) Open on click
+### Open on click
 
 To enable opening the autocomplete's listbox on click of its search input, set the `open-on-click` prop to `true`:
 
@@ -238,7 +238,7 @@ file: "_content/_examples/autocomplete-pro/autocomplete-open-on-click.vue"
 ---
 ::
 
-### (NEW) Open on focus
+### Open on focus
 
 If you would like to open the autocomplete's listbox anytime its search input is focused, set the `open-on-focus` prop to `true`:
 
@@ -258,7 +258,7 @@ label: "Open on focus vs Open on click"
 Open on focus encompasses open on click.
 ::
 
-### (NEW) Clear search on open
+### Clear search on open
 
 For single-select autocompletes only, if you would like to clear the search input when the listbox is opened, set the `clear-search-on-open`:
 
@@ -270,7 +270,7 @@ file: "_content/_examples/autocomplete-pro/autocomplete-clear-search-on-open.vue
 ---
 ::
 
-### (NEW) Selection removable
+### Selection removable
 
 For single-select autocompletes only, if you would like to allow the user to remove the selected option, set the `selection-removable`. The
 `selection-removable` prop defaults to try when setting `selection-appearance` to `option`.
@@ -283,7 +283,7 @@ file: "_content/_examples/autocomplete-pro/autocomplete-selection-removable.vue"
 ---
 ::
 
-### (NEW) Open on remove
+### Open on remove
 
 If you want the listbox to expand when an selection is removed, use the `open-on-remove` prop:
 
@@ -295,7 +295,7 @@ file: "_content/_examples/autocomplete-pro/autocomplete-open-on-remove.vue"
 ---
 ::
 
-### (NEW) Max
+### Max
 
 If you would like to limit the number of options that can be selected, you can use the `max` prop:
 
