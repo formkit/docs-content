@@ -11,6 +11,15 @@ description: Scan barcodes and QR codes
 
 The `barcode` input type is a standalone input published by FormKit. It is powered by the [zxing](https://github.com/zxing/zxing) library and allows scanning of a variety of 1D and 2D barcode types using cameras connected to your browsing device.
 
+::ArticleCard
+---
+img: "https://cdn.formk.it/web-assets/github-formkit-barcode.png"
+label: "Open Source"
+title: "The full source code for the barcode input is available on GitHub."
+href: "https://github.com/formkit/barcode"
+---
+::
+
 ## Installation
 
 ::callout
