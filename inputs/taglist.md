@@ -113,6 +113,8 @@ file: "_content/_examples/taglist/taglist-pagination-option-loader.vue"
 ---
 ::
 
+Notice in the example above that the optionLoader function is passed two arguments: the `value` of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption is used for preventing unnecessary lookups. If the cachedOption is not `null` it means that the selected option has already been loaded, and you can return the cachedOption directly.
+
 ### Loading Style
 
 Instead of requiring your users to click the <i>Load more</i> button to load additional options, you can set the `loadOnScroll` prop to true, which will paginate options as you scroll to the bottom of the options list.
@@ -129,7 +131,6 @@ file: "_content/_examples/taglist/taglist-load-on-created.vue"
 ---
 ::
 
-Notice in the example above that the optionLoader function is passed two arguments: the `value` of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption is used for preventing unnecessary lookups. If the cachedOption is not `null` it means that the selected option has already been loaded, and you can return the cachedOption directly.
 
 ## Tag appearance
 
