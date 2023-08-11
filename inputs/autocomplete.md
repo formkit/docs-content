@@ -211,7 +211,7 @@ file: "_content/_examples/autocomplete-pro/autocomplete-close-on-select.vue"
 
 ### Reload on commit
 
-If you want the options to be reloaded (with static options, this would filter the options with the value of empty string, and with dynamic options, this would call to the options loader with an empty string `search` property) when the user commits a selection, use the `reload-on-commit` prop:
+If you want the options to be reloaded when the user commits a selection, use the `reload-on-commit` prop:
 
 ::Example
 ---
@@ -236,7 +236,7 @@ file: "_content/_examples/autocomplete-pro/autocomplete-open-on-click.vue"
 
 ### Open on focus
 
-If you would like to open the autocomplete's listbox anytime its search input is focused, set the `open-on-focus` prop to `true`:
+If you would like to open the autocomplete's listbox anytime the input is clicked, set the `open-on-focus` prop to `true`:
 
 ::Example
 ---
@@ -251,7 +251,7 @@ file: "_content/_examples/autocomplete-pro/autocomplete-open-on-focus.vue"
 type: "warning"
 label: "Open on focus vs Open on click"
 ---
-Open on focus encompasses open on click.
+If `open-on-focus` is used, `open-on-click` will implicitly be set.
 ::
 
 ### Clear search on open
@@ -268,8 +268,16 @@ file: "_content/_examples/autocomplete-pro/autocomplete-clear-search-on-open.vue
 
 ### Selection removable
 
-For single-select autocompletes only, if you would like to allow the user to remove the selected option, set the `selection-removable`. The
-`selection-removable` prop defaults to try when setting `selection-appearance` to `option`.
+For a single-select autocomplete, you can set the `selection-removable` prop. When set to `true`, a remove button will be displayed next to the selected option. This prop is by default set to `true` for autocompletes with selection appearance of `option`.
+
+::Callout
+---
+type: "warning"
+label: "Single select only"
+---
+The <code>selection-removable</code> prop cannot be used for multi-selects.
+::
+
 
 ::Example
 ---

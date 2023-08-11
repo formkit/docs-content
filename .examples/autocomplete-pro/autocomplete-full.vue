@@ -36,7 +36,6 @@ async function searchMovies({ search, page, hasNextPage }) {
       selection-appearance="option"
       multiple
     >
-      <!--HERE WE ARE DEFINING OUR OPTION SLOT-->
       <template #option="{ option }">
         <div class="formkit-option">
           <div class="image-container">
@@ -55,7 +54,6 @@ async function searchMovies({ search, page, hasNextPage }) {
           </div>
         </div>
       </template>
-      <!---->
     </FormKit>
     <pre wrap>{{ value }}</pre>
   </FormKit>

@@ -148,26 +148,6 @@ Notice in the example above that the optionLoader function is passed two argumen
 
 Unlike native select elements, the dropdown input can be customized via. markup.
 
-### Options appearance prop
-
-Setting the prop `options-appearance` to `checkbox` will render a checkbox adjacent to each listitem option. This is useful when you want to allow the user to select multiple options.
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-checkbox.vue"
----
-::
-
-::Callout
----
-type: "warning"
-label: "Multi select only"
----
-Setting `options-appearance` to `checkbox` can only be done when the prop `multiple` is set.
-::
-
 ### Option slot
 
 The dropdown input allows you to customize the look and feel of each option by using the option slot. In this example, we are using the option slot to display each option's asset; logo and name:
@@ -248,14 +228,14 @@ file: "_content/_examples/dropdown/dropdown-overscroll.vue"
 
 ### Selection Removable
 
-If you would like to allow users to remove the selected value, simply set the `selection-removable` prop to true. This will render a close icon next to the selected value:
+If you would like to allow users to remove the selected value, set the `selection-removable` prop to true. This will render a close icon next to the selected value:
 
 ::Callout
 ---
 type: "warning"
 label: "Single select only"
 ---
-The <code>selection-removable</code> prop can only be used in `single-select` mode.
+The selection-removable prop cannot be used for multi-selects.
 ::
 
 ::Example
