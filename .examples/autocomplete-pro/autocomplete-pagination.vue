@@ -21,19 +21,12 @@ async function searchMovies({ search, page, hasNextPage }) {
 
 <template>
   <FormKit
-    type="form"
-    #default="{ value }"
-    :actions="false"
-  >
-    <FormKit
-      name="movie"
-      type="autocomplete"
-      label="Search for your favorite movie"
-      placeholder="Example: Lord of the Rings"
-      :options="searchMovies"
-    />
-    <pre wrap>{{ value }}</pre>
-  </FormKit>
+    name="movie"
+    type="autocomplete"
+    label="Search for your favorite movie"
+    placeholder="Example: Lord of the Rings"
+    :options="searchMovies"
+  />
 </template>
 
 <style>

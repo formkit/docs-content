@@ -3,15 +3,36 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
 </script>
 
 <template>
-  <!-- %partial% -->
   <FormKit
     type="autocomplete"
-    name="autocomplete"
-    label="Search for a country"
+    label="Single-select text input"
+    placheolder="Pick a country"
     :options="countries"
-    placeholder="Example: United States"
-    empty-message="No countries found"
+    value="FR"
   />
-  <!-- %partial% -->
+  <FormKit
+    type="autocomplete"
+    label="Single-select option"
+    placheolder="Pick a country"
+    :options="countries"
+    selection-appearance="option"
+    value="FR"
+  />
+  <FormKit
+    type="autocomplete"
+    label="Multiple text input"
+    placheolder="Pick a country"
+    :options="countries"
+    multiple
+    :value="['FR', 'GR', 'ES']"
+  />
+  <FormKit
+    type="autocomplete"
+    label="Multiple option"
+    placheolder="Pick a country"
+    :options="countries"
+    multiple
+    selection-appearance="option"
+    :value="['FR', 'GR', 'ES']"
+  />
 </template>
-

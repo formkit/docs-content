@@ -13,20 +13,7 @@ type: "Dropdown"
 
 :ProInstallSnippet
 
-## Basic example
-
-The `dropdown` input allows users to select a value from a customizable list of options:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-base.vue"
----
-::
-
-
-## Defining options
+The `dropdown` input allows users to select a value from a list of options. Unlike native select elements, the dropdown input allows you to customize both its appearance and behavior.
 
 The `options` prop can accept three different formats of values:
 
@@ -43,58 +30,48 @@ label: "Empty options"
 If you assign options as an empty array, the input will be rendered in a disabled state.
 ::
 
-## Empty message
+## Basic examples
+### Single-select
 
-The dropdown input, by default, will be rendered in a disabled state if no options are passed. Optionally, you may pass the `empty-message` prop a message to display when no options are available:
+The dropdown input will render in single-select mode by default.
+
 
 ::Example
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-empty-message.vue"
+file: "_content/_examples/dropdown/dropdown-single.vue"
 ---
 ::
 
+### Multi-select
 
-## Slots
-
-Unlike native select elements, the `dropdown` input allows you to customize the options list with markup.
-
-### Option slot
-
-The `dropdown` input allows you to customize the look and feel of each option by using the `option` slot. In this example, we are using the `option` slot to display each option's asset; logo and name:
+Dropdown inputs with the prop `multiple` set will render in multi-select mode.
 
 ::Example
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-option-slot.vue"
+file: "_content/_examples/dropdown/dropdown-multiple.vue"
 ---
 ::
 
-
-### Selection slot
-
-If you only want to customize the display of the selected option, use the `selection` slot:
-
-::Example
+::Callout
 ---
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-selection-slot.vue"
+type: "info"
+label: "Multi-select input value"
 ---
+Notice in the example above that because the `multiple` prop is set, the `value` prop must be an array.
+
 ::
 
 
-## Loading options
+## Dynamic options
 
-Instead of passing a static list of options to the `options` prop, you can assign it to a function. Doing so is useful when you need to load options from an API or another source.
+Instead of passing a static list to the `options` prop, options can be assigned dynamically.
 
-<!-- Example of loading options via API without pagination. -->
 
-### Single request
-
-Let's say we had an API endpoint that returned all the options we needed for a given `dropdown` input. Here is an example of how we could write the `dropdown` input to load options from a single request:
+In this example, the function, `loadHorrorMovies`, makes a request to the API for [TMDB](https://www.themovidedb.org) to load a list of horror movies. Assigning the function to the `options` prop will load the options when the end-user opens the listbox.
 
 ::Example
 ---
@@ -104,12 +81,33 @@ file: "_content/_examples/dropdown/dropdown-single-request.vue"
 ---
 ::
 
+#### Always load on open
 
-In the example above, we are assigning the `options` prop to the `loadHorrorMovies` function. After the request, we're iterating over the results to ensure that we return an array of objects with explicit `value` and `label` properties.
+By default the dropdown will only load options asynchronously once (upon the listbox being expanded). Setting the prop `always-load-on-open`  will cause the dropdown to load options every time the listbox is expanded.
 
-### Multiple pages
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-always-load-on-open.vue"
+---
+::
 
-What about loading options from an API where you need to be able to make multiple requests to perform pagination? When a function is set to the `options` prop it is passed FormKit node's `context` object as an argument. Within this `context` object are `page` and `hasNextPage` properties. The `page` property is the current page number, and the `hasNextPage` property is a function to be called when there are more pages to load:
+#### Load on created
+
+The prop `load-on-created` will cause the dropdown to load options as soon as it is created.
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-load-on-created.vue"
+---
+::
+
+### Pagination
+
+A function assigned the options prop will be passed two arguments: `page` and `hasNextPage`. The page argument indicates the current page number, and hasNextPage is a callback function that indicates whether there are more pages to load.
 
 ::Example
 ---
@@ -119,40 +117,7 @@ file: "_content/_examples/dropdown/dropdown-pagination.vue"
 ---
 ::
 
-
-In the above example, we are calling `hasNextPage` when we determine there are more pages to load. When this is done, FormKit appends a `Load more` option at the end of the rendered options list and automatically increments its `page` property. When the user selects the `Load more` option, the function assigned to the `options` prop is called again, and the process repeats.
-
-### Option loader
-
-#### Rehydrating values
-
-FormKit's dropdown input also provides an `optionLoader` prop that allows you to rehydrate values that are not in the options list. In this example, we'll provide the autocomplete an initial value (a movie ID), and assign the optionLoader to a function that will make a request to the API to get the movie:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-option-loader.vue"
----
-::
-
-
-Notice in the example above that the optionLoader function is passed two arguments: the `value` of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption prop is used for preventing unnecessary lookups. If the cachedOption is not `null` it means that the selected option has already been loaded, and you can return the cachedOption directly.
-
-#### Fetching additional data
-
-Instead of using the `optionLoader` prop to rehydrate values that are not in the options list, you can use the optionLoader to perform a look-up to fetch additional data. In this example, after selecting an option, we are going to perform a look-up to load the selected option's movie review:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-option-loader-review.vue"
----
-::
-
-
-### Load on scroll
+#### Load on scroll
 
 If you would rather allow the user to load more options without having to click the <i>Load more</i> option at the bottom of the options list, you can set the `load-on-scroll` prop to true, and our function, `loadCurrentlyPopularMovies` will be called again:
 
@@ -164,23 +129,94 @@ file: "_content/_examples/dropdown/dropdown-pagination-load-on-scroll.vue"
 ---
 ::
 
+### Option loader
 
-## Full example
-
-Now let's combine what we've learned so far by leveraging the `option` slot for custom markup and setting the `options` prop to a function that will return pages of movies from an API:
+FormKit's dropdown input also provides an `optionLoader` prop that allows you to rehydrate values that are not in the options list. In this example the dropdown is provided an initial value (two movie IDs). The `optionLoader` function is called for each value that is not in the options list.
 
 ::Example
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-full.vue"
+file: "_content/_examples/dropdown/dropdown-option-loader.vue"
 ---
 ::
 
+Notice in the example above that the optionLoader function is passed two arguments: the `value` of the selected option (in this case, the movie ID) and the `cachedOption`. The cachedOption prop is used for preventing unnecessary lookups. If the cachedOption is not `null` it means that the selected option has already been loaded, and you can return the cachedOption directly.
 
-## Overscroll
 
-When using the dropdown with static options, FormKit's dropdown also comes with a unique feature called `overscroll`. In this example, we'll see what the behavior is when setting `overscroll` to true:
+## Option appearance
+
+Unlike native select elements, the dropdown input can be customized via. markup.
+
+### Option slot
+
+The dropdown input allows you to customize the look and feel of each option by using the option slot. In this example, we are using the option slot to display each option's asset; logo and name:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-option-slot.vue"
+---
+::
+
+## Selection appearance
+
+The dropdown input allows you to customize the look and feel of the selected option(s).
+
+### Selection appearance prop
+
+When using the dropdown input as a `multi-select`, you can customize the look and feel of the selected options by setting the `selection-appearance` prop to either `truncate` (the default) or `tags`.
+
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-selection-appearance.vue"
+---
+::
+
+### Selection slot
+
+If you only want to customize the display of the selected option, use the selection slot (as opposed to the option slot mentioned above):
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-selection-slot.vue"
+---
+
+::
+
+::Callout
+---
+type: "warning"
+label: "Single-select and tags only"
+---
+The selection slot does not exist on the multi-select dropdown with selection appearance `truncate`.
+::
+
+## Behavioral props
+
+The following props allow you to customize the behavior of the dropdown input.
+
+### Empty Message
+
+The dropdown input, by default, will be rendered in a disabled state if no options are passed. Optionally, you may pass the `empty-message` prop a message to display when no options are available:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-empty-message.vue"
+---
+::
+
+### Overscroll
+
+When using the dropdown with static options, FormKit's dropdown also comes with a feature called `overscroll`:
 
 ::Example
 ---
@@ -190,6 +226,73 @@ file: "_content/_examples/dropdown/dropdown-overscroll.vue"
 ---
 ::
 
+### Selection Removable
+
+If you would like to allow users to remove the selected value, set the `selection-removable` prop to true. This will render a close icon next to the selected value:
+
+::Callout
+---
+type: "warning"
+label: "Single select only"
+---
+The selection-removable prop cannot be used for multi-selects.
+::
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-selection-removable.vue"
+---
+::
+
+### Open on remove
+
+By default, when the `selection-removable` prop is set to `true`, the dropdown will not open after the selected value is removed. You can change this behavior by setting the `open-on-remove` prop to `true`:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-open-on-remove.vue"
+---
+::
+
+### Close on select
+
+By default, when the `multiple` prop is set, the dropdown will not close after an option is selected. You can change this behavior by setting the `close-on-select` prop to `true`:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-close-on-select.vue"
+---
+::
+
+### Open on focus
+
+If you would like expand the listbox as soon as the dropdown input is focused, you can use the `open-on-focus` prop:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-open-on-focus.vue"
+---
+::
+
+### Max
+
+If you would like to limit the number of options that can be selected, you can use the `max` prop:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-max.vue"
+---
+::
 
 ## Props & Attributes
 
@@ -220,6 +323,72 @@ data: [
     "type": "string",
     "default": "undefined",
     "description": "Renders a message when there are no options to display."
+  },
+  {
+    "prop": "selection-appearance",
+    type: "string",
+    default: "truncate",
+    "description": "For multi-select dropdowns, this prop allows you to customize the look and feel of the selected options. Possible values are `truncate` (the default) or `tags`."
+  },
+  {
+    "prop": "selection-removable",
+    type: "boolean",
+    default: "false",
+    "description": "For single-select dropdowns, this prop allows you to remove the selected value."
+  },
+  {
+    "prop": "open-on-remove",
+    type: "boolean",
+    default: "false",
+    "description": "When the `selection-removable` prop is set to `true`, the dropdown will not open after the selected value is removed. You can change this behavior by setting the `open-on-remove` prop to `true`."
+  },
+  {
+    "prop": "close-on-select",
+    type: "boolean",
+    default: "false",
+    "description": "When the `multiple` prop is set, the dropdown will not close after an option is selected. You can change this behavior by setting the `close-on-select` prop to `true`."
+  },
+  {
+    "prop": "open-on-focus",
+    type: "boolean",
+    default: "false",
+    "description": "If you would like expand the listbox as soon as the dropdown input is focused, you can use the `open-on-focus` prop."
+  },
+  {
+    "prop": "options-appearance",
+    type: "string",
+    default: "undefined",
+    "description": "For multi-select dropdowns, this prop allows you to customize the look and feel of the selected options. Possible values are `default` (the default) or `checkbox`."
+  },
+  {
+    "prop": "multiple",
+    type: "boolean",
+    default: "false",
+    "description": "When set to `true`, the dropdown will allow the user to select multiple options."
+  },
+  {
+    "prop": "behavior",
+    type: "string",
+    default: "undefined",
+    "description": "When set to `overscroll`, the dropdown will allow the user to select multiple options."
+  },
+  {
+    "prop": "always-load-on-open",
+    type: "boolean",
+    default: "false",
+    "description": "When set to `true`, the dropdown will always load the options when the listbox is opened."
+  },
+  {
+    name: "load-on-created",
+    type: "boolean",
+    default: "false",
+    "description": "When set to `true`, the dropdown will load the options when the node is created."
+  },
+  {
+    "name": "max",
+    "type": "number | string",
+    "default": "undefined",
+    "description": "If you would like to limit the number of options that can be selected, you can use the `max` prop (applies only to multi-select)."
   }
 ]
 ---
@@ -230,7 +399,7 @@ data: [
 
 :SectionKeysIntro
 
-### Outer structure
+### Selector structure
 
 ::FormKitInputDiagram
 ---
@@ -267,37 +436,22 @@ schema: [
                 class: "flex flex-grow",
                 children: [
                   {
-                    name: "selection",
-                    class: "flex-grow",
-                    children: [
-                      {
-                        name: "option",
-                        content: "Gray",
-                        class: "flex border-solid",
-                        children: [
-                          {
-                            name: "optionLoading",
-                            class: "flex-grow-0"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                      name: "loaderIcon"
+                    name: "placeholder",
+                    content: "Select t-shirt color",
                   },
                   {
                     name: "selectIcon",
                     content: "⌄",
-                    class: "center-vert"
+                  },
+                  {
+                    name: "loaderIcon",
+                    content: "⌛",
+                  },
+                  {
+                    name: "closeIcon",
+                    content: "×",
                   }
                 ]
-              },
-              {
-                name: "listbox",
-                content: "Blue Gray Tan",
-                class: "wrap-text",
-                position: "right"
               },
               {
                 name: "suffix",
@@ -335,9 +489,7 @@ schema: [
 ---
 ::
 
-### Inner listbox structure
-
-Below is the inner options list (`listbox`) structure from the diagram above:
+### Listbox structure
 
 ::FormKitInputDiagram
 ---
@@ -392,6 +544,145 @@ schema: [
                 ]
               },
             ]
+          },
+        ]
+      },
+    ]
+  }
+]
+---
+::
+
+### Selection structure
+
+#### Dropdown Single
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--dropdown-outer"
+schema: [
+  {
+    name: "selector",
+    class: "flex flex-grow",
+    children: [
+      {
+        name: "selection",
+        class: "flex flex-grow",
+        children: [
+          {
+            name: "option",
+            content: "Gray",
+            class: "flex flex-grow border-solid",
+          },
+        ]
+      },
+    ]
+  }
+]
+---
+::
+
+#### Dropdown Truncate
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--dropdown-outer"
+schema: [
+  {
+    name: "selector",
+    class: "flex flex-grow",
+    children: [
+      {
+        name: "selectorSelectionsWrapper",
+        class: "flex flex-grow",
+        children: [
+          {
+            name: "selectorSelections",
+            class: "flex flex-grow border-solid",
+            children: [
+              {
+                name: "selectorSelectionsItem",
+                content: 'Gray'
+              },
+              {
+                name: "selectorSelectionsItem",
+                content: 'Blue'
+              }
+            ]
+          },
+        ]
+      },
+      {
+        name: "truncationCount",
+        content: '+1',
+        class: 'grow-0 center-vert'
+      }
+    ]
+  }
+]
+---
+::
+
+#### Dropdown Tags
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--dropdown-outer"
+schema: [
+  {
+    name: "selector",
+    class: "flex flex-grow",
+    children: [
+      {
+        name: "tagsWrapper",
+        class: "flex flex-grow",
+        children: [
+          {
+            name: "tags",
+            class: "flex flex-grow border-solid",
+            children: [
+              {
+                name: "tagWrapper",
+                children: [
+                  {
+                    name: "tag",
+                    class: 'flex',
+                    children: [
+                      {
+                        name: "tagLabel",
+                        content: 'Gray'
+                      },
+                      {
+                        name: "removeSelection",
+                        content: '×'
+                      }
+                    ]
+                  },
+                ]
+              },
+              {
+                name: "tagWrapper",
+                children: [
+                  {
+                    name: "tag",
+                    class: 'flex',
+                    children: [
+                      {
+                        name: "tagLabel",
+                        content: 'Blue'
+                      },
+                      {
+                        name: "removeSelection",
+                        content: '×'
+                      }
+                    ]
+                  },
+                ]
+              }
+            ],
           },
         ]
       },
@@ -461,6 +752,46 @@ data: [
   {
     "section-key": "emptyMessageInner",
     "description": "A span element that acts as a wrapper for the emptyMessage section."
+  },
+  {
+    "section-key": "tagsWrapper",
+    "description": "A div element that wraps the tags section."
+  },
+  {
+    "section-key": "tags",
+    "description": "A div element that contains the tags."
+  },
+  {
+    "section-key": "tagWrapper",
+    "description": "A div element that wraps the tag."
+  },
+  {
+    "section-key": "tag",
+    "description": "A div element that contains the tag label and removeSelection section."
+  },
+  {
+    "section-key": "tagLabel",
+    "description": "A span element that contains the tag label."
+  },
+  {
+    "section-key": "removeSelection",
+    "description": "A span element that contains the removeSelection icon."
+  },
+  {
+    "section-key": "selectorSelectionsWrapper",
+    "description": "A div element that wraps the selectorSelections section."
+  },
+  {
+    "section-key": "selectorSelections",
+    "description": "A div element that contains the selectorSelectionsItem sections."
+  },
+  {
+    "section-key": "selectorSelectionsItem",
+    "description": "A div element that contains the selectorSelectionsItem content."
+  },
+  {
+    "section-key": "truncationCount",
+    "description": "A div element that contains the truncationCount content."
   }
 ]
 ---

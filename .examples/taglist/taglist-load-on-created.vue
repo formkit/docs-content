@@ -2,6 +2,7 @@
 // Search movie receives FormKit's context object
 // which we are destructuring to get the search value.
 async function searchMovies({ search }) {
+    await new Promise(resolve => setTimeout(resolve, 1000))
   if (!search) return [];
   const res = await fetch(`https://api.themoviedb.org/3/search/movie?query=${search || ''}&api_key=f48bcc9ed9cbce41f6c28ea181b67e14&language=en-US&page=1&include_adult=false`)
   if (res.ok) {
@@ -21,13 +22,14 @@ async function searchMovies({ search }) {
 </script>
 
 <template>
-  <!--Setting the `options` prop to async function `loadHorrorMovies`-->
+    <!--Setting the `options` prop to async function `loadHorrorMovies`-->
   <FormKit
     name="movie"
-    type="autocomplete"
+    type="taglist"
     label="Search for your favorite movie"
     placeholder="Example: Shawshank Redemption"
     :options="searchMovies"
+    load-on-created
   />
 </template>
 

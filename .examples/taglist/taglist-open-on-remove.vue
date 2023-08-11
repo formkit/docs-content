@@ -3,15 +3,15 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
 </script>
 
 <template>
-  <!-- %partial% -->
-  <FormKit
-    type="autocomplete"
-    name="autocomplete"
-    label="Search for a country"
-    :options="countries"
-    placeholder="Example: United States"
-    empty-message="No countries found"
-  />
-  <!-- %partial% -->
+	<FormKit
+		type="taglist"
+		name="country"
+		label="Search for a country"
+		placeholder="Example: United States"
+		:options="countries"
+		open-on-remove
+		:value="['US']"
+	/>
+	<pre wrap>{{ value }}</pre>
 </template>
 

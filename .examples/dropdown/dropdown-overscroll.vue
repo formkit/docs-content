@@ -7,10 +7,11 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
   <!-- %partial% -->
   <FormKit
     type="dropdown"
-    label="Select a movie"
+    label="Select a country"
     :options="countries"
     behavior="overscroll"
     value="NP"
+    placeholder="Select a country"
   />
   <!-- %partial% -->
 </template>

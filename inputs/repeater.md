@@ -63,6 +63,17 @@ file: "_content/_examples/repeater/repeater-min-max.vue"
 ---
 ::
 
+## Empty state
+
+When a repeater is allowed to be empty by having its `min` prop set to `0` and having no values, you can control the content rendered in the empty state using the `empty` slot.
+
+::Example
+---
+name: "Repeater"
+file: "_content/_examples/repeater/repeater-empty-state.vue"
+---
+::
+
 
 ## Controls
 

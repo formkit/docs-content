@@ -4,11 +4,6 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
 
 <template>
   <FormKit
-    type="form"
-    #default="{ value }"
-    :actions="false"
-  >
-  <FormKit
     type="autocomplete"
     label="Autocomplete (option appearance) with max prop set to 2"
     :options="countries"
@@ -24,6 +19,5 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
     multiple
     max="2"
   />
-  </FormKit>
 </template>
 

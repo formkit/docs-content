@@ -1,9 +1,13 @@
 <script setup>
+import { topMovies } from './topMovies.js'
 // Search movie receives FormKit's context object
 // which we are destructuring to get the search value,
 // the page, and the hasNextPage parameters.
 async function searchMovies({ search, page, hasNextPage }) {
-  if (!search) return []
+  if (!search) {
+    // When there is no search value we return a static list of top movies
+    return topMovies
+  }
   const res = await fetch(
     `https://api.themoviedb.org/3/search/movie?query=${
       search || ''
@@ -36,7 +40,6 @@ async function searchMovies({ search, page, hasNextPage }) {
       selection-appearance="option"
       multiple
     >
-      <!--HERE WE ARE DEFINING OUR OPTION SLOT-->
       <template #option="{ option }">
         <div class="formkit-option">
           <div class="image-container">
@@ -55,7 +58,6 @@ async function searchMovies({ search, page, hasNextPage }) {
           </div>
         </div>
       </template>
-      <!---->
     </FormKit>
     <pre wrap>{{ value }}</pre>
   </FormKit>

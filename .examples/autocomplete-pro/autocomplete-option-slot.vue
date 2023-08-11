@@ -3,11 +3,6 @@ const carBrands = [{ label: 'Audi', value: 'audi', logo: 'https://s3.amazonaws.c
 </script>
 
 <template>
-<FormKit
-  type="form"
-  #default="{ value }"
-  :actions="false"
->
   <FormKit
     type="autocomplete"
     name="autocomplete"
@@ -30,8 +25,6 @@ const carBrands = [{ label: 'Audi', value: 'audi', logo: 'https://s3.amazonaws.c
       </template>
     <!--/OPTION SLOT-->
   </FormKit>
-  <pre wrap>{{ value }}</pre>
-</FormKit>
 </template>
 
 <style>

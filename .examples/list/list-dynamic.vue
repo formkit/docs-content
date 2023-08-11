@@ -11,6 +11,12 @@
       placeholder="Guest name"
       suffix-icon="trash"
       @suffix-icon-click="() => node.input(value.filter((_, i) => i !== index))"
+      :sections-schema="{
+        suffixIcon: {
+          // change wrapper to a button for accessibility
+          $el: 'button',
+        }
+      }"
     />
     <button type="button" @click="() => node.input(value.concat(''))">
       + Add another
@@ -18,3 +24,12 @@
     <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>
+
+<style>
+.formkit-suffix-icon {
+  appearance: none;
+  background: none;
+  border: none;
+  font-size: 1em;
+}
+</style>
