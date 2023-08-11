@@ -248,7 +248,10 @@ Now let's combine what we've learned so far by leveraging the `tag` slot for cus
 ---
 name: "Taglist"
 min-hight: 550
-file: "_content/_examples/taglist/taglist-full.vue"
+file: [
+  "_content/_examples/taglist/taglist-full-example.vue",
+  "_content/_examples/topMovies.js"
+]
 ---
 ::
 

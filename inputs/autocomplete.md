@@ -320,7 +320,10 @@ Now let's combine what we've learned so far by leveraging the `option` slot for 
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-full.vue"
+file: [
+  "_content/_examples/autocomplete-pro/autocomplete-full.vue",
+  "_content/_examples/topMovies.js"
+]
 ---
 ::
 
