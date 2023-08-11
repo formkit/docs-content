@@ -57,6 +57,15 @@ file: "_content/_examples/autocomplete-pro/autocomplete-multiple.vue"
 ---
 ::
 
+::Callout
+---
+type: "info"
+label: "Multi-select input value"
+---
+Notice in the example above that because the `multiple` prop is set, the `value` prop must be an array.
+
+::
+
 ## Filtering
 
 The autocomplete input will filter options with its own internal search function. You can replace this search function by providing the `filter` prop a function of your own. Your function will receive two arguments, the `option` being iterated over and the current `search` value:

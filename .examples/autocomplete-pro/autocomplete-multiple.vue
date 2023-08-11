@@ -3,13 +3,16 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
 </script>
 
 <template>
-  <FormKit
-    type="autocomplete"
-    name="country"
-    label="Search for a country"
-    placeholder="Example: United States"
-    :options="countries"
-    multiple
-  />
+  <FormKit type="form" #default="{ value }" :actions="false">
+    <FormKit
+      type="autocomplete"
+      name="country"
+      label="Search for a country"
+      placeholder="Example: United States"
+      :options="countries"
+      multiple
+    />
+    <pre wrap>{{ value }}</pre>
+  </FormKit>
 </template>
 
