@@ -216,7 +216,7 @@ file: "_content/_examples/dropdown/dropdown-empty-message.vue"
 
 ### Overscroll
 
-When using the dropdown with static options, FormKit's dropdown also comes with a unique feature called `overscroll`. In this example, we'll see what the behavior is when setting `behavior` to overscroll:
+When using the dropdown with static options, FormKit's dropdown also comes with a feature called `overscroll`:
 
 ::Example
 ---

@@ -68,7 +68,7 @@ file: "_content/_examples/taglist/taglist-allow-new-values.vue"
 
 ## Dynamic options
 
-Instead of passing a static list of options to the `options` prop, you can assign it to a function. Doing so is useful when you need to load options from an API or another source.
+Instead of passing a static list to the `options` prop, you can assign it to a function. Doing so is useful when you need to load options from an API or another source.
 
 ### Search parameter
 

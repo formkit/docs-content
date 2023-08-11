@@ -80,7 +80,7 @@ file: "_content/_examples/autocomplete-pro/autocomplete-filter.vue"
 
 ## Dynamic options
 
-Instead of passing a static list of options to the `options` prop, you can assign it to a function. Doing so is useful when you need to load options from an API or another source.
+Instead of passing a static list to the `options` prop, you can assign it to a function. Doing so is useful when you need to load options from an API or another source.
 
 ### Search parameter
 
@@ -177,7 +177,7 @@ If you only want to customize the display of the selected option, set the select
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-selection-slot.vue"
+file: "_content/_examples/autocomplete-pro/autocomplete-slot-selection.vue"
 ---
 
 ::

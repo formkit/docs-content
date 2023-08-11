@@ -12,18 +12,23 @@ function focusAutocomplete() {
 </script>
 
 <template>
-  <div>
-    <FormKit type="button" @click="focusAutocomplete">Click me to focus autocomplete</FormKit>
-    <FormKit
-      id="autocomplete"
-      type="autocomplete"
-      name="framework"
-      label="Choose a frontend framework"
-      placeholder="Example placeholder"
-      :options="frameworks"
-      open-on-focus
-    />
-  </div>
+  <!-- %partial% -->
+  <FormKit
+    type="button"
+    @click="focusAutocomplete"
+  >
+    Click me to focus autocomplete
+  </FormKit>
+  <FormKit
+    id="autocomplete"
+    type="autocomplete"
+    name="framework"
+    label="Choose a frontend framework"
+    placeholder="Example placeholder"
+    :options="frameworks"
+    open-on-focus
+  />
+  <!-- %partial% -->
 </template>
 
 <style></style>

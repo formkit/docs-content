@@ -3,6 +3,7 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
 </script>
 
 <template>
+  <!-- %partial% -->
   <FormKit
     type="autocomplete"
     name="country"
@@ -11,5 +12,6 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
     :options="countries"
     open-on-click
   />
+  <!-- %partial% -->
 </template>
 

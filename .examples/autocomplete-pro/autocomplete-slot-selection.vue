@@ -10,7 +10,7 @@ const carBrands = [{ label: 'Audi', value: 'audi', logo: 'https://s3.amazonaws.c
     placeholder="Example: Toyota"
     :options="carBrands"
     selection-appearance="option"
-    value="toyota"
+    value="audi"
   >
     <!--SELECTION SLOT-->
       <template #selection="{ selections, handlers }">
