@@ -56,7 +56,7 @@ file: "_content/_examples/taglist/taglist-filter.vue"
 
 ## Allow new values
 
-The taglist input, unlike the dropdown or autocomplete inputs, allows you to enter an arbitrary value (a value not in the list of options). This is useful for creating new tags on the fly. To enable this feature, set the `allow-new-values` prop to `true`.
+The taglist input, unlike the taglist or autocomplete inputs, allows you to enter an arbitrary value (a value not in the list of options). This is useful for creating new tags on the fly. To enable this feature, set the `allow-new-values` prop to `true`.
 
 ::Example
 ---
@@ -134,7 +134,7 @@ file: "_content/_examples/taglist/taglist-load-on-created.vue"
 
 ## Tag appearance
 
-Just like the [Dropdown input](/inputs/dropdown) or [Autocomplete input](/inputs/autocomplete), the taglist input allows you to utilize slots to customize the look and feel of the options list and the selected option by leveraging the [renderless component pattern](https://adamwathan.me/renderless-components-in-vuejs/).
+Just like the [taglist input](/inputs/taglist) or [Autocomplete input](/inputs/autocomplete), the taglist input allows you to utilize slots to customize the look and feel of the options list and the selected option by leveraging the [renderless component pattern](https://adamwathan.me/renderless-components-in-vuejs/).
 
 In this example, we are going to use the `tag` slot to customize the look of the tags:
 
@@ -275,7 +275,7 @@ data: [
     prop: "load-on-scroll",
     type: "boolean",
     default: "false",
-    description: "When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position"
+    description: "When set to `true`, the taglist will try loading more options based on the end-user`s scroll position"
   },
   {
     prop: "open-on-click",
@@ -327,7 +327,7 @@ data: [
     "prop": "open-on-remove",
     type: "boolean",
     default: "false",
-    "description": "When the `selection-removable` prop is set to `true`, the dropdown will not open after the selected value is removed. You can change this behavior by setting the `open-on-remove` prop to `true`."
+    "description": "When the `selection-removable` prop is set to `true`, the taglist will not open after the selected value is removed. You can change this behavior by setting the `open-on-remove` prop to `true`."
   },
   {
     "prop": "open-on-focus",
@@ -338,19 +338,19 @@ data: [
     "prop": "options-appearance",
     type: "string",
     default: "undefined",
-    "description": "For multi-select dropdowns, this prop allows you to customize the look and feel of the selected options. Possible values are `default` (the default) or `checkbox`."
+    "description": "For multi-select taglists, this prop allows you to customize the look and feel of the selected options. Possible values are `default` (the default) or `checkbox`."
   },
   {
     "prop": "always-load-on-open",
     type: "boolean",
     default: "false",
-    "description": "When set to `true`, the dropdown will always load the options when the listbox is opened."
+    "description": "When set to `true`, the taglist will always load the options when the listbox is opened."
   },
   {
     name: "load-on-created",
     type: "boolean",
     default: "false",
-    "description": "When set to `true`, the dropdown will load the options when the node is created."
+    "description": "When set to `true`, the taglist will load the options when the node is created."
   }
 ]
 ---
@@ -364,7 +364,7 @@ primary: "section-key"
 data: [
   {
     "section-key": "selector",
-    description: "The selector section is a button element that opens the dropdown options list."
+    description: "The selector section is a button element that opens the taglist options list."
   },
   {
     "section-key": "selections",
@@ -387,7 +387,7 @@ data: [
     description: "The listbox section is a ul element that contains the options list."
   },
   {
-    "section-key": "dropdownWrapper",
+    "section-key": "taglistWrapper",
     description: "Wraps the listbox section. A div that handles scrolling the listbox."
   },
   {
@@ -400,7 +400,7 @@ data: [
   },
   {
     "section-key": "selectIcon",
-    description: "An element for outputting an icon in the selector element when the dropdown is closed."
+    description: "An element for outputting an icon in the selector element when the taglist is closed."
   },
   {
     "section-key": "loadMore",
@@ -420,7 +420,7 @@ data: [
   },
   {
     "section-key": "listboxButton",
-    description: "A button element that is used to open the dropdown."
+    description: "A button element that is used to open the taglist."
   },
   {
     "section-key": "emptyMessage",

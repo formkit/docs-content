@@ -34,12 +34,12 @@ If you assign options as an empty array, the input will be rendered in a disable
 
 ### Single-select
 
-By default, the dropdown input will render in single-select mode:
+By default, the autocomplete input will render in single-select mode:
 
 
 ::Example
 ---
-name: "Dropdown"
+name: "Autocomplete"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-single.vue"
 ---
@@ -47,11 +47,11 @@ file: "_content/_examples/autocomplete-pro/autocomplete-single.vue"
 
 ### Multi-select
 
-By setting the `multiple` prop the dropdown input will render in multi-select mode:
+By setting the `multiple` prop the autocomplete input will render in multi-select mode:
 
 ::Example
 ---
-name: "Dropdown"
+name: "Autocomplete"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-multiple.vue"
 ---
@@ -119,7 +119,7 @@ Instead of requiring your users to click the <i>Load more</i> button to load add
 
 ### Load on created
 
-If you would rather load options when the dropdown is created, you can set the `load-on-created` prop to true, and our function, `loadCurrentlyPopularMovies` will be called without the user needing to expand the listbox:
+If you would rather load options when the autocomplete is created, you can set the `load-on-created` prop to true, and our function, `loadCurrentlyPopularMovies` will be called without the user needing to expand the listbox:
 
 ::Example
 ---
@@ -154,7 +154,7 @@ autocomplete, you can set the selection-appearance prop to `text-input` (default
 
 ::Example
 ---
-name: "Dropdown"
+name: "Autocomplete"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-selection-appearance.vue"
 ---
@@ -194,7 +194,7 @@ If you would like the listbox to remain expanded after selecting a value, you ca
 
 ::Example
 ---
-name: "Dropdown"
+name: "Autocomplete"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-close-on-select.vue"
 ---
@@ -288,7 +288,7 @@ If you would like to limit the number of options that can be selected, you can u
 
 ::Example
 ---
-name: "Dropdown"
+name: "Autocomplete"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-max.vue"
 ---
@@ -301,7 +301,7 @@ Now let's combine what we've learned so far by leveraging the `option` slot for 
 
 ::Example
 ---
-name: "Dropdown"
+name: "Autocomplete"
 min-height: 550
 file: "_content/_examples/autocomplete-pro/autocomplete-full.vue"
 ---
@@ -330,7 +330,7 @@ data: [
     prop: "load-on-scroll",
     type: "boolean",
     default: "false",
-    description: "When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position",
+    description: "When set to `true`, the autocomplete will try loading more options based on the end-user`s scroll position",
   },
   {
     prop: "selection-appearance",
@@ -378,7 +378,7 @@ data: [
     "prop": "open-on-remove",
     type: "boolean",
     default: "false",
-    "description": "When the `selection-removable` prop is set to `true`, the dropdown will not open after the selected value is removed. You can change this behavior by setting the `open-on-remove` prop to `true`."
+    "description": "When the `selection-removable` prop is set to `true`, the autocomplete will not open after the selected value is removed. You can change this behavior by setting the `open-on-remove` prop to `true`."
   },
   {
     "prop": "open-on-focus",
@@ -389,19 +389,19 @@ data: [
     "prop": "options-appearance",
     type: "string",
     default: "undefined",
-    "description": "For multi-select dropdowns, this prop allows you to customize the look and feel of the selected options. Possible values are `default` (the default) or `checkbox`."
+    "description": "For multi-select autocompletes, this prop allows you to customize the look and feel of the selected options. Possible values are `default` (the default) or `checkbox`."
   },
   {
     "prop": "always-load-on-open",
     type: "boolean",
     default: "false",
-    "description": "When set to `true`, the dropdown will always load the options when the listbox is opened."
+    "description": "When set to `true`, the autocomplete will always load the options when the listbox is opened."
   },
   {
     name: "load-on-created",
     type: "boolean",
     default: "false",
-    "description": "When set to `true`, the dropdown will load the options when the node is created."
+    "description": "When set to `true`, the autocomplete will load the options when the node is created."
   },
   {
     name: "clear-search-on-open",

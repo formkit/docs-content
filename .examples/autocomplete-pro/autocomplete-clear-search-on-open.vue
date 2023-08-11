@@ -15,7 +15,7 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
       placeholder="Example: United States"
       :options="countries"
       clear-search-on-open
-			value="US"
+      value="US"
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

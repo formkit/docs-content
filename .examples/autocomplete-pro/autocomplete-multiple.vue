@@ -9,7 +9,6 @@ const countries = [{ label: 'Afghanistan', value: 'AF' },{ label: 'Åland Island
     label="Search for a country"
     placeholder="Example: United States"
     :options="countries"
-    selection-appearance="option"
     multiple
   />
 </template>
