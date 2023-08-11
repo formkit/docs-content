@@ -137,7 +137,7 @@ Defines what fully parsed validation rules look like.
 <client-only>
 
 ```typescript
-type FormKitValidation = {
+export type FormKitValidation = {
     rule: FormKitValidationRule;
     args: any[];
     timer: number;
@@ -157,7 +157,7 @@ The arguments that are passed to the validation messages in the i18n plugin.
 <client-only>
 
 ```typescript
-type FormKitValidationI18NArgs = [
+export type FormKitValidationI18NArgs = [
     {
         node: FormKitNode;
         name: string;
@@ -176,7 +176,7 @@ Defines what validation rules look like when they are parsed, but have not neces
 <client-only>
 
 ```typescript
-type FormKitValidationIntent = [string | FormKitValidationRule, ...any[]];
+export type FormKitValidationIntent = [string | FormKitValidationRule, ...any[]];
 ```
 
 </client-only>
@@ -188,7 +188,7 @@ Signature for a generic validation rule. It accepts an input — often a string 
 <client-only>
 
 ```typescript
-type FormKitValidationRule = {
+export type FormKitValidationRule = {
     (node: FormKitNode, ...args: any[]): boolean | Promise<boolean>;
     ruleName?: string;
 } & Partial<FormKitValidationHints>;

@@ -225,7 +225,7 @@ Emit an event from the node so it can be listened by [on](#formkitnode).
 <client-only>
 
 ```typescript
-emit: (event: string, payload?: any, bubble?: boolean) => FormKitNode
+emit: (event: string, payload?: any, bubble?: boolean, meta: Record<string, unknown>) => FormKitNode
 ```
 
 </client-only>
@@ -1467,7 +1467,7 @@ interface FormKitConfig {
     [index: string]: any;
     classes?: Record<string, FormKitClasses | string | Record<string, boolean>>;
     delimiter: string;
-    rootClasses: (sectionKey: string, node: FormKitNode) => Record<string, boolean>;
+    rootClasses: ((sectionKey: string, node: FormKitNode) => Record<string, boolean>) | false;
     rootConfig?: FormKitRootConfig;
 }
 ```
@@ -1585,6 +1585,7 @@ The internal structure of a FormKitEvent.
 ```typescript
 interface FormKitEvent {
     bubble: boolean;
+    meta?: Record<string, unknown>;
     name: string;
     origin: FormKitNode;
     payload: any;
@@ -1649,9 +1650,9 @@ Context object to be created by and used by each respective UI framework. No val
 <client-only>
 
 ```typescript
-interface FormKitFrameworkContext {
+interface FormKitFrameworkContext<T = any> {
     __root?: Document | ShadowRoot;
-    _value: any;
+    _value: T;
     [index: string]: unknown;
     attrs: Record<string, any>;
     classes: Record<string, string>;
@@ -1675,7 +1676,7 @@ interface FormKitFrameworkContext {
     slots: Record<string, CallableFunction>;
     state: FormKitFrameworkContextState;
     type: string;
-    value: any;
+    value: T;
 }
 ```
 
@@ -2051,7 +2052,7 @@ Child messages that were not immediately applied due to the child not existing.
 <client-only>
 
 ```typescript
-type ChildMessageBuffer = Map<string, Array<[FormKitMessage[], MessageClearer | undefined]>>;
+export type ChildMessageBuffer = Map<string, Array<[FormKitMessage[], MessageClearer | undefined]>>;
 ```
 
 </client-only>
@@ -2063,7 +2064,7 @@ Error messages.
 <client-only>
 
 ```typescript
-type ErrorMessages = string | string[] | Record<string, string | string[]>;
+export type ErrorMessages = string | string[] | Record<string, string | string[]>;
 ```
 
 </client-only>
@@ -2075,7 +2076,7 @@ Describes the path to a particular node from the top of the tree.
 <client-only>
 
 ```typescript
-type FormKitAddress = Array<string | number>;
+export type FormKitAddress = Array<string | number>;
 ```
 
 </client-only>
@@ -2087,7 +2088,7 @@ The possible value types of attributes (in the schema).
 <client-only>
 
 ```typescript
-type FormKitAttributeValue = string | number | boolean | undefined | FormKitSchemaAttributes | FormKitSchemaAttributesCondition;
+export type FormKitAttributeValue = string | number | boolean | undefined | FormKitSchemaAttributes | FormKitSchemaAttributesCondition;
 ```
 
 </client-only>
@@ -2099,7 +2100,7 @@ A function that accepts a callback with a token as the only argument, and must r
 <client-only>
 
 ```typescript
-type FormKitCompilerProvider = (callback: (requirements: string[]) => Record<string, () => any>) => FormKitCompilerOutput;
+export type FormKitCompilerProvider = (callback: (requirements: string[]) => Record<string, () => any>) => FormKitCompilerOutput;
 ```
 
 </client-only>
@@ -2111,7 +2112,7 @@ FormKit inputs of type 'list' must have array values by default.
 <client-only>
 
 ```typescript
-type FormKitListContextValue<T = any> = Array<T>;
+export type FormKitListContextValue<T = any> = Array<T>;
 ```
 
 </client-only>
@@ -2123,7 +2124,7 @@ A full loop statement in tuple syntax. Can be read like "foreach value, key? in 
 <client-only>
 
 ```typescript
-type FormKitListStatement = [value: any, key: number | string, list: FormKitListValue] | [value: any, list: FormKitListValue];
+export type FormKitListStatement = [value: any, key: number | string, list: FormKitListValue] | [value: any, list: FormKitListValue];
 ```
 
 </client-only>
@@ -2135,7 +2136,7 @@ The value being listed out. Can be an array, an object, or a number.
 <client-only>
 
 ```typescript
-type FormKitListValue = string | Record<string, any> | Array<string | number | Record<string, any>> | number;
+export type FormKitListValue = string | Record<string, any> | Array<string | number | Record<string, any>> | number;
 ```
 
 </client-only>
@@ -2147,7 +2148,7 @@ A FormKit message is immutable, so all properties should be readonly.
 <client-only>
 
 ```typescript
-type FormKitMessage = Readonly<FormKitMessageProps>;
+export type FormKitMessage = Readonly<FormKitMessageProps>;
 ```
 
 </client-only>
@@ -2159,7 +2160,7 @@ All FormKitMiddleware conform to the pattern of accepting a payload and a `next(
 <client-only>
 
 ```typescript
-type FormKitMiddleware<T = unknown> = (payload: T, next: (payload?: T) => T) => T;
+export type FormKitMiddleware<T = unknown> = (payload: T, next: (payload?: T) => T) => T;
 ```
 
 </client-only>
@@ -2171,7 +2172,7 @@ These are the types of nodes that can be created. These are different from the t
 <client-only>
 
 ```typescript
-type FormKitNodeType = 'input' | 'list' | 'group';
+export type FormKitNodeType = 'input' | 'list' | 'group';
 ```
 
 </client-only>
@@ -2183,7 +2184,7 @@ Options that can be used to instantiate a new node via `createNode()`.
 <client-only>
 
 ```typescript
-type FormKitOptions = Partial<Omit<FormKitContext, 'children' | 'plugins' | 'config' | 'hook'> & {
+export type FormKitOptions = Partial<Omit<FormKitContext, 'children' | 'plugins' | 'config' | 'hook'> & {
     config: Partial<FormKitConfig>;
     props: Partial<FormKitProps>;
     children: FormKitNode[] | Set<FormKitNode>;
@@ -2204,7 +2205,7 @@ The user-land per-instance "props", which are generally akin to the props passed
 <client-only>
 
 ```typescript
-type FormKitProps = {
+export type FormKitProps = {
     __root?: Document | ShadowRoot;
     delay: number;
     id: string;
@@ -2230,7 +2231,7 @@ Global configuration options.
 <client-only>
 
 ```typescript
-type FormKitRootConfig = Partial<FormKitConfig> & {
+export type FormKitRootConfig = Partial<FormKitConfig> & {
     _add: (node: FormKitNode) => void;
     _rm: (node: FormKitNode) => void;
 };
@@ -2245,7 +2246,7 @@ DOM attributes are simple string dictionaries.
 <client-only>
 
 ```typescript
-type FormKitSchemaAttributes = {
+export type FormKitSchemaAttributes = {
     [index: string]: FormKitAttributeValue;
 } | null | FormKitSchemaAttributesCondition;
 ```
@@ -2259,7 +2260,7 @@ Properties available when defining a generic non-FormKit component.
 <client-only>
 
 ```typescript
-type FormKitSchemaComponent = {
+export type FormKitSchemaComponent = {
     $cmp: string;
     props?: Record<string, any>;
 } & FormKitSchemaProps;
@@ -2274,7 +2275,7 @@ A schema node that determines _which_ content to render.
 <client-only>
 
 ```typescript
-type FormKitSchemaCondition = {
+export type FormKitSchemaCondition = {
     if: string;
     then: FormKitSchemaNode | FormKitSchemaNode[];
     else?: FormKitSchemaNode | FormKitSchemaNode[];
@@ -2290,7 +2291,7 @@ An entire schema object or subtree from any entry point. Can be a single node, a
 <client-only>
 
 ```typescript
-type FormKitSchemaDefinition = FormKitSchemaNode | FormKitSchemaNode[] | FormKitSchemaCondition;
+export type FormKitSchemaDefinition = FormKitSchemaNode | FormKitSchemaNode[] | FormKitSchemaCondition;
 ```
 
 </client-only>
@@ -2302,7 +2303,7 @@ Properties available when using a DOM node.
 <client-only>
 
 ```typescript
-type FormKitSchemaDOMNode = {
+export type FormKitSchemaDOMNode = {
     $el: string | null;
     attrs?: FormKitSchemaAttributes;
 } & FormKitSchemaProps;
@@ -2317,7 +2318,7 @@ Syntactic sugar for a FormKitSchemaComponent node that uses FormKit.
 <client-only>
 
 ```typescript
-type FormKitSchemaFormKit = {
+export type FormKitSchemaFormKit = {
     $formkit: string;
 } & Record<string, any> & FormKitSchemaProps;
 ```
@@ -2331,7 +2332,7 @@ Meta attributes are not used when parsing the schema, but can be used to create 
 <client-only>
 
 ```typescript
-type FormKitSchemaMeta = {
+export type FormKitSchemaMeta = {
     [key: string]: string | number | boolean | undefined | null | CallableFunction | FormKitSchemaMeta;
 };
 ```
@@ -2345,7 +2346,7 @@ Properties available then defining a schema node.
 <client-only>
 
 ```typescript
-type FormKitSchemaNode = FormKitSchemaDOMNode | FormKitSchemaComponent | FormKitSchemaTextNode | FormKitSchemaCondition | FormKitSchemaFormKit;
+export type FormKitSchemaNode = FormKitSchemaDOMNode | FormKitSchemaComponent | FormKitSchemaTextNode | FormKitSchemaCondition | FormKitSchemaFormKit;
 ```
 
 </client-only>
@@ -2357,7 +2358,7 @@ A simple text node.
 <client-only>
 
 ```typescript
-type FormKitSchemaTextNode = string;
+export type FormKitSchemaTextNode = string;
 ```
 
 </client-only>
@@ -2369,7 +2370,7 @@ Breadth and depth-first searches can use a callback of this notation.
 <client-only>
 
 ```typescript
-type FormKitSearchFunction = (node: FormKitNode, searchTerm?: string | number) => boolean;
+export type FormKitSearchFunction = (node: FormKitNode, searchTerm?: string | number) => boolean;
 ```
 
 </client-only>
@@ -2381,7 +2382,7 @@ The message store contains all of the messages that pertain to a given node.
 <client-only>
 
 ```typescript
-type FormKitStore = FormKitMessageStore & {
+export type FormKitStore = FormKitMessageStore & {
     _n: FormKitNode;
     _b: Array<[messages: FormKitMessage[], clear?: MessageClearer]>;
     _m: ChildMessageBuffer;
@@ -2399,7 +2400,7 @@ Text fragments are small pieces of text used for things like interface validatio
 <client-only>
 
 ```typescript
-type FormKitTextFragment = Partial<FormKitMessageProps> & {
+export type FormKitTextFragment = Partial<FormKitMessageProps> & {
     key: string;
     value: string;
     type: string;
@@ -2415,7 +2416,7 @@ The map signature for a node's traps Map.
 <client-only>
 
 ```typescript
-type FormKitTraps = Map<string | symbol, FormKitTrap>;
+export type FormKitTraps = Map<string | symbol, FormKitTrap>;
 ```
 
 </client-only>
@@ -2427,7 +2428,7 @@ Definition of a library item — when registering a new library item, these are 
 <client-only>
 
 ```typescript
-type FormKitTypeDefinition = {
+export type FormKitTypeDefinition = {
     type: FormKitNodeType;
     family?: string;
     forceTypeProp?: string;
@@ -2449,7 +2450,7 @@ A string or function that allows clearing messages.
 <client-only>
 
 ```typescript
-type MessageClearer = string | ((message: FormKitMessage) => boolean);
+export type MessageClearer = string | ((message: FormKitMessage) => boolean);
 ```
 
 </client-only>
@@ -2461,7 +2462,7 @@ Signature for any of the node's getter traps. Keep in mind that because these ar
 <client-only>
 
 ```typescript
-type TrapGetter = ((node: FormKitNode, context: FormKitContext, ...args: any[]) => unknown) | false;
+export type TrapGetter = ((node: FormKitNode, context: FormKitContext, ...args: any[]) => unknown) | false;
 ```
 
 </client-only>
@@ -2473,7 +2474,7 @@ The signature for a node's trap setter — these are more rare than getter traps
 <client-only>
 
 ```typescript
-type TrapSetter = ((node: FormKitNode, context: FormKitContext, property: string | number | symbol, value: any) => boolean | never) | false;
+export type TrapSetter = ((node: FormKitNode, context: FormKitContext, property: string | number | symbol, value: any) => boolean | never) | false;
 ```
 
 </client-only>

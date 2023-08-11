@@ -97,7 +97,7 @@ A composable for creating a new FormKit node.
 <client-only>
 
 ```typescript
-useInput(props: FormKitComponentProps, context: SetupContext<any>, options?: FormKitOptions): FormKitNode;
+useInput<Props extends FormKitInputs<Props>, Context extends SetupContext<any, any>>(props: Props, context: Context, options?: FormKitOptions): FormKitNode;
 ```
 
 </client-only>
@@ -128,27 +128,25 @@ interface FormKitComponentLibrary {
 
 </client-only>
 
-### FormKitComponentProps
+### FormKitSetupContext
 
-FormKit props of a component
+Type definition for the FormKit component Vue context.
 
 <client-only>
 
 ```typescript
-interface FormKitComponentProps {
-    classes?: Record<string, string | Record<string, boolean> | FormKitClasses>;
-    config: Record<string, any>;
-    dynamic?: boolean;
-    errors: string[];
-    index?: number;
-    inputErrors: Record<string, string | string[]>;
-    modelValue?: any;
-    name?: string;
-    parent?: FormKitNode;
-    plugins: FormKitPlugin[];
-    sync?: boolean;
-    type?: string | FormKitTypeDefinition;
-    validation?: any;
+interface FormKitSetupContext<Props extends FormKitInputs<Props>> {
+    attrs: any;
+    emit: FormKitEvents<Props>;
+    expose(exposed:{
+        
+    }): void;
+    props:{
+        
+    }&Props&{
+        onInput: (value: any) => void;
+    };
+    slots: Slots<Props>;
 }
 ```
 
@@ -202,7 +200,23 @@ The allowed options for defaultConfig.
 <client-only>
 
 ```typescript
-type DefaultConfigOptions = FormKitOptions & Partial<PluginConfigs> & Record<string, unknown>;
+export type DefaultConfigOptions = FormKitOptions & Partial<PluginConfigs> & Record<string, unknown>;
+```
+
+</client-only>
+
+### FormKitComponent
+
+The TypeScript definition for the FormKit component.
+
+<client-only>
+
+```typescript
+export type FormKitComponent = <Props extends FormKitInputs<Props>>(props: Props & VNodeProps & AllowedComponentProps & ComponentCustomProps, context?: Pick<FormKitSetupContext<Props>, 'attrs' | 'emit' | 'slots'>, setup?: FormKitSetupContext<Props>) => VNode<RendererNode, RendererElement, {
+    [key: string]: any;
+}> & {
+    __ctx?: FormKitSetupContext<Props>;
+};
 ```
 
 </client-only>
@@ -214,7 +228,7 @@ The types of values that can be rendered by Vue.
 <client-only>
 
 ```typescript
-type Renderable = null | string | number | boolean | VirtualNode;
+export type Renderable = null | string | number | boolean | VirtualNode;
 ```
 
 </client-only>
@@ -226,7 +240,7 @@ A list of renderable items.
 <client-only>
 
 ```typescript
-type RenderableList = Renderable | Renderable[] | (Renderable | Renderable[])[];
+export type RenderableList = Renderable | Renderable[] | (Renderable | Renderable[])[];
 ```
 
 </client-only>
@@ -238,7 +252,7 @@ A slot function that can be rendered.
 <client-only>
 
 ```typescript
-type RenderableSlot = (data?: Record<string, any>, key?: object) => RenderableList;
+export type RenderableSlot = (data?: Record<string, any>, key?: object) => RenderableList;
 ```
 
 </client-only>
@@ -250,7 +264,19 @@ An object of slots
 <client-only>
 
 ```typescript
-type RenderableSlots = Record<string, RenderableSlot>;
+export type RenderableSlots = Record<string, RenderableSlot>;
+```
+
+</client-only>
+
+### Slots
+
+The type definition for the FormKit’s slots, this is not intended to be used directly.
+
+<client-only>
+
+```typescript
+export type Slots<Props extends FormKitInputs<Props>> = InputType<Props> extends keyof FormKitInputSlots<Props> ? FormKitInputSlots<Props>[InputType<Props>] : {};
 ```
 
 </client-only>
@@ -262,7 +288,7 @@ The actual signature of a VNode in Vue.
 <client-only>
 
 ```typescript
-type VirtualNode = VNode<RendererNode, RendererElement, {
+export type VirtualNode = VNode<RendererNode, RendererElement, {
     [key: string]: any;
 }>;
 ```

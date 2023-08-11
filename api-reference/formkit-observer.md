@@ -141,7 +141,7 @@ The dependent nodes and the events that are required to watch for changes.
 <client-only>
 
 ```typescript
-type FormKitDependencies = Map<FormKitNode, Set<string>> & {
+export type FormKitDependencies = Map<FormKitNode, Set<string>> & {
     active?: boolean;
 };
 ```
@@ -155,7 +155,7 @@ A Map of nodes with the values being Maps of eventsName: receipt
 <client-only>
 
 ```typescript
-type FormKitObserverReceipts = Map<FormKitNode, {
+export type FormKitObserverReceipts = Map<FormKitNode, {
     [index: string]: string;
 }>;
 ```

@@ -175,6 +175,25 @@ eq(valA: any, valB: any, deep?: boolean, explicit?: string[]): boolean;
 
  `boolean`
 
+### eqRegExp()
+
+A regular expression to test for a valid date string.
+
+#### Signature
+
+<client-only>
+
+```typescript
+eqRegExp(x: RegExp, y: RegExp): boolean;
+```
+
+</client-only>
+
+#### Parameters
+
+- `x` — A RegExp to compare.
+- `y` — A RegExp to compare.
+
 ### escapeExp()
 
 Escape a string for use in regular expressions.
@@ -794,7 +813,7 @@ The date token strings that can be used for date formatting.
 <client-only>
 
 ```typescript
-type FormKitDateTokens = 'MM' | 'M' | 'DD' | 'D' | 'YYYY' | 'YY';
+export type FormKitDateTokens = 'MM' | 'M' | 'DD' | 'D' | 'YYYY' | 'YY';
 ```
 
 </client-only>
