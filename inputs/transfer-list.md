@@ -628,7 +628,7 @@ schema: [
             class: "small"
           },
           {
-            name: "fastBackwardIcon",
+            name: "rewindIcon",
             content: "⇤",
             class: "large"
           }
