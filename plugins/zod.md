@@ -9,7 +9,7 @@ description: Use your Zod schema to validate your FormKit forms.
 
 With the `@formkit/zod` package you can easily enable validation of your FormKit forms with your Zod schema. This provides a convenient way to have isomorphic types and ensure that your front-end and back-end are using the same validation rules.
 
-When validating against a Zod schema all validation errors will be mapped to their corresponding inputs, show or hide based on your form / input's `validation-visibility` prop, and prevent submission when form data does not pass validaiton with Zod.
+When validating against a Zod schema all validation errors will be mapped to their corresponding inputs, show or hide based on your form / input's `validation-visibility` prop, and prevent submission when form data does not pass validation with Zod.
 
 ## Installation
 
