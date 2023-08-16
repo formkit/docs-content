@@ -216,7 +216,7 @@ file: "_content/_examples/dropdown/dropdown-empty-message.vue"
 
 ### Overscroll
 
-When using the dropdown with static options, FormKit's dropdown also comes with a feature called `overscroll`:
+When using the dropdown with static options, FormKit's dropdown also comes with a feature called `overscroll` which renders the listbox directly over the input to maximize the available size for the list:
 
 ::Example
 ---
@@ -370,7 +370,7 @@ data: [
     "prop": "behavior",
     type: "string",
     default: "undefined",
-    "description": "When set to `overscroll`, the dropdown will allow the user to select multiple options."
+    "description": "Renders the listbox directly over the input to maximize the available size for the list."
   },
   {
     "prop": "always-load-on-open",

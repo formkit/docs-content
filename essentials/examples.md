@@ -89,7 +89,7 @@ Use a plugin to append an icon before validation messages by extending the schem
 
 ::ExampleCard
 ---
-href: "https://formkit.link/d5c3d554d55dbe94984c48f826ae84f7"
+href: "https://formkit.link/a09cb95750c894237577650b5648f52b"
 title: "Set initial values to empty strings instead of undefined"
 ---
 Use a plugin to set all initial input values to an empty string <code>""</code> instead of <code>undefined</code>.
@@ -143,6 +143,14 @@ href: "https://formkit.link/d2cc703cbccd569841e92779258788df"
 title: "Conditionally update options of a select input"
 ---
 Conditionally update the <code>options</code> of a <code>select</code> input based on the value of another input.
+::
+
+::ExampleCard
+---
+href: "https://formkit.link/35864d8156cb9c9173a216a1ac9b219f"
+title: "Style radio input options to look like cards"
+---
+Using only new styles (Tailwind Classes in this example) apply a card treatment to the default FormKit Radio input structure.
 ::
 
 ::ExampleCard
