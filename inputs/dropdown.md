@@ -214,18 +214,6 @@ file: "_content/_examples/dropdown/dropdown-empty-message.vue"
 ---
 ::
 
-### Overscroll
-
-When using the dropdown with static options, FormKit's dropdown also comes with a feature called `overscroll` which renders the listbox directly over the input to maximize the available size for the list:
-
-::Example
----
-name: "Dropdown"
-min-height: 550
-file: "_content/_examples/dropdown/dropdown-overscroll.vue"
----
-::
-
 ### Selection Removable
 
 If you would like to allow users to remove the selected value, set the `selection-removable` prop to true. This will render a close icon next to the selected value:
@@ -279,6 +267,18 @@ If you would like expand the listbox as soon as the dropdown input is focused, y
 name: "Dropdown"
 min-height: 550
 file: "_content/_examples/dropdown/dropdown-open-on-focus.vue"
+---
+::
+
+### Overscroll
+
+When using the dropdown with static options, FormKit's dropdown also comes with a feature called `overscroll`. Setting the `behavior` prop to overscroll will render the listbox directly over the input to maximize the available size for the list:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: "_content/_examples/dropdown/dropdown-overscroll.vue"
 ---
 ::
 
