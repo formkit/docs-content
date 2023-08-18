@@ -166,6 +166,11 @@ Current state of the input:
    */
   errors: boolean
   /**
+   * The loading state of the input or form. This property is only added while
+   * the input is loading and is removed when loading is complete.
+   */
+  loading: true | undefined
+  /**
    * True when the input has validation rules. Has nothing to do with the
    * state of those validation rules.
    */
