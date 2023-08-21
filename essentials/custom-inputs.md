@@ -362,7 +362,7 @@ declare module '@formkit/inputs' {
     'my-input': {
       // Define your input `type`:
       type: 'my-input',
-      // Define an optional prop, use camelCase:
+      // Define an optional prop. Use camelCase for all prop names:
       myOptionalProp?: string | number
       // Define a required prop
       superImportantProp: number
