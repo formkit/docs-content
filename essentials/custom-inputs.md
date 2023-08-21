@@ -379,7 +379,7 @@ declare module '@formkit/inputs' {
 
 ### Adding slot types
 
-If you define your own sections and slots in your custom input, you can also add TypeScript support for those. To do so, you must augment the `FormKitInputSlots` type to add your own custom slots:
+If you define your own sections (slots) in your custom input, you can also add TypeScript support for those too. To do so, you must augment the `FormKitInputSlots` type to add your own custom slots:
 
 ```ts
 declare module '@formkit/inputs' {
@@ -403,14 +403,26 @@ declare module '@formkit/inputs' {
   // ... props here
   interface FormKitInputSlots<Props extends FormKitInputs<Props>> {
     'my-input': {
+      // This will be the *only* slot available on the my-input input
       slotName: FormKitFrameworkContext & {
-        // TODO
+          // this will be available as slot data in the `slotName` slot
+          fooBar: string
         }
-      } 
+      }
     }
   }
 }
 ```
+
+::Callout
+---
+type: "warning"
+label: "Augment props first"
+---
+In order to augment the `FormKitInputSlots`, you must first have written an augmentation for `FormKitInputProps` that at least includes the `type` prop.
+::
+
+
 
 ## Examples
 
