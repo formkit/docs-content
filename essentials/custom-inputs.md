@@ -347,6 +347,83 @@ As an example, let's imagine you want to build an input that allows users to ent
 ---
 ::
 
+## TypeScript support
+
+FormKit is written in TypeScript and includes type definitions for all of its core inputs. If you are writing your own inputs and would like to provide TypeScript support you can define your own inputs using two module augmentations:
+
+### Adding prop types
+
+The `type` prop of the `<FormKit>` component is a string that is used as the key of a discriminated union of props (`FormKitInputProps`). By augmenting this type your custom inputs can define their own prop types. To do so you must augment the `FormKitInputProps` type to add your own custom types:
+
+```ts
+declare module '@formkit/inputs' {
+  interface FormKitInputProps<Props extends FormKitInputs<Props>> {
+    // This key and the `type` should match:
+    'my-input': {
+      // Define your input `type`:
+      type: 'my-input',
+      // Define an optional prop. Use camelCase for all prop names:
+      myOptionalProp?: string | number
+      // Define a required prop
+      superImportantProp: number
+      // Define the value type, this should always be a optional!
+      value?: string | number
+      // Use the Prop generic to infer information from another field, notice
+      // we a utility "PropType" to infer the type of the `value` from the Props
+      // generic:
+      someOtherProp?: PropType<Props, 'value'>
+    }
+  }
+}
+```
+
+### Adding slot types
+
+If you define your own sections (slots) in your custom input, you can also add TypeScript support for those too. To do so, you must augment the `FormKitInputSlots` type to add your own custom slots:
+
+```ts
+declare module '@formkit/inputs' {
+  interface FormKitInputProps<Props extends FormKitInputs<Props>> {
+    'my-input' {
+      type: 'my-input'
+      // ... props here
+    }
+  }
+
+  interface FormKitInputSlots<Props extends FormKitInputs<Props>> {
+    'my-input': FormKitBaseSlots<Props>
+  }
+}
+```
+
+In the example above, we use `FormKitBaseSlots` — a TypeScript utility to add all the "basic" slots that most custom inputs implement, like `outer`, `label`, `help`, `message`, etc. However you could also define your own slots entirely from scratch, or augment `FormKitBaseSlots` to add additional slots (`FormKitBaseSlots<Props> & YourCustomSlots`).
+
+```ts
+declare module '@formkit/inputs' {
+  // ... props here
+  interface FormKitInputSlots<Props extends FormKitInputs<Props>> {
+    'my-input': {
+      // This will be the *only* slot available on the my-input input
+      slotName: FormKitFrameworkContext & {
+          // this will be available as slot data in the `slotName` slot
+          fooBar: string
+        }
+      }
+    }
+  }
+}
+```
+
+::Callout
+---
+type: "warning"
+label: "Augment props first"
+---
+In order to augment the `FormKitInputSlots`, you must first have written an augmentation for `FormKitInputProps` that at least includes the `type` prop.
+::
+
+
+
 ## Examples
 
 Below are some examples of custom inputs. They are not intended to be comprehensive or production ready, but rather illustrate some custom input features.
