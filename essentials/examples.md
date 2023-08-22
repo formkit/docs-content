@@ -65,8 +65,8 @@ Use a plugin to add an asterisk (\*) to the label area of inputs that have the "
 
 ::ExampleCard
 ---
-href: "https://formkit.link/b1dc4539bfb84c25ea3702d75af5dc3e"
-title: "Make number inputs return number values"
+href: "https://formkit.link/9d5ee95835fc654a2887b7c391f3e8e7"
+title: "Cast number inputs values from strings to numbers"
 ---
 Use a plugin to cast string values to numbers. Useful if you want inputs of type <code>number</code> to return a JS <code>Number</code> primitive.
 ::
