@@ -34,10 +34,10 @@ const frameworks = [
 			selection-appearance="tags"
     >
       <!--TAG SLOT-->
-      <template #tag="{ handlers, option }">
-        <div class="formkit-tag">
-          <img :src="option.asset" class="formkit-tag-image" />
-          <span class="formkit-tag-label">
+      <template #tag="{ handlers, option, classes }">
+        <div :class="classes.tag">
+          <img :src="option.asset" :class="classes.tagImage" />
+          <span :class="classes.tagLabel">
             {{ option.label }}
           </span>
           <button

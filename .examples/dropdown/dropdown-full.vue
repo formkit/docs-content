@@ -27,8 +27,8 @@ async function loadCurrentlyPopularMovies({ page, hasNextPage }) {
       :load-on-scroll="true"
     >
       <!--HERE WE ARE DEFINING OUR OPTION SLOT-->
-      <template #option="{ option }">
-        <div class="formkit-option">
+      <template #option="{ option, classes }">
+        <div :class="classes.option">
           <img
             :src="`https://image.tmdb.org/t/p/w500${option.poster_path}`"
             alt="optionAvatar"

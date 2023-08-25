@@ -12,8 +12,8 @@ const carBrands = [{ label: 'Audi', value: 'audi', logo: 'https://s3.amazonaws.c
     selection-appearance="option"
   >
     <!--OPTION SLOT-->
-      <template #option="{ option }">
-        <div class="formkit-option">
+      <template #option="{ option, classes }">
+        <div :class="classes.option">
           <img
             :src="option.logo"
             :alt="option.label + ' logo'"

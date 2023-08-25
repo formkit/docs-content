@@ -24,8 +24,8 @@ function getFlagEmoji(countryCode) {
     selection-appearance="option"
   >
     <!--OPTION SLOT-->
-    <template #option="{ option }">
-      <div class="formkit-option">
+    <template #option="{ option, classes }">
+      <div :class="classes.option">
         <span class="decorator">
           {{ getFlagEmoji(option.value) }}
         </span>

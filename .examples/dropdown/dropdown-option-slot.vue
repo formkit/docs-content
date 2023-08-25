@@ -10,8 +10,8 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://s3.amazona
     placeholder="Example placeholder"
     :options="frameworks"
   >
-    <template #option="{ option }">
-      <div class="formkit-option">
+    <template #option="{ option, classes }">
+      <div :class="classes.option">
         <img :src="option.asset" alt="optionAvatar" />
         <span>
           {{ option.label }}

@@ -13,13 +13,13 @@ const carBrands = [{ label: 'Audi', value: 'audi', logo: 'https://s3.amazonaws.c
     value="audi"
   >
     <!--SELECTION SLOT-->
-      <template #selection="{ selections, handlers }">
+      <template #selection="{ selections, handlers, classes }">
         <div
           v-for="option in selections"
           :key="option.value"
-          class="formkit-selection"
+          :class="classes.selection"
         >
-          <div class="formkit-option">
+          <div :class="classes.option">
             <img
               :src="option.logo"
               :alt="option.label + ' logo'"
