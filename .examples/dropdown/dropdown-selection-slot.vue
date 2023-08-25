@@ -32,7 +32,7 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://reactjs.or
       placeholder="Example placeholder"
       :options="frameworks"
       multiple
-			selection-appearance="tags"
+      selection-appearance="tags"
       :value="['vue', 'react']"
     >
       <!--TAG SLOT-->

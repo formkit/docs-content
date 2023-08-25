@@ -56,7 +56,7 @@ file: "_content/_examples/taglist/taglist-filter.vue"
 
 ## Allow new values
 
-The taglist input, unlike the taglist or autocomplete inputs, allows you to enter an arbitrary value (a value not in the list of options). This is useful for creating new tags on the fly. To enable this feature, set the `allow-new-values` prop to `true`.
+The taglist input, unlike the dropdown or autocomplete inputs, allows you to enter an arbitrary value (a value not in the list of options). This is useful for creating new tags on the fly. To enable this feature, set the `allow-new-values` prop to `true`.
 
 ::Example
 ---
