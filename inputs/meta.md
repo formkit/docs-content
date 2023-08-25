@@ -1,23 +1,23 @@
 ---
 title: Meta Input
-description: A meta input used for storing data.
+description: A hidden input that stores arbitrary data.
 ---
 
 ::InputPageHero
 ---
-type: "Hidden"
+type: "Meta"
 ---
 ::
 
 :PageToc
 
-The `meta` input is meant to.//
+The `meta` input is meant to store arbitrary data that is not intended for display to end users. This input is hidden by default and can be used to store data that is not part of the form's schema.
 
 ## Basic example
 
 ::Example
 ---
-name: "Hidden input"
+name: "Meta input"
 file: "_content/_examples/meta/meta.vue"
 tabs: "html,render"
 ---
@@ -38,7 +38,7 @@ FormKit props.
 
 ::ReferenceTable
 ---
-without: ['help', 'label', 'errors', 'prefix-icon', 'suffix-icon', ]
+without: ['help', 'label', 'errors', 'prefix-icon', 'suffix-icon']
 ---
 ::
 
