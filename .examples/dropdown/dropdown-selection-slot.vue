@@ -47,9 +47,9 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://reactjs.or
             tabindex="-1"
             type="button"
             aria-controls="input_1"
-            class="formkit-remove-selection"
+            :class="classes.removeSelection"
           >
-            <span class="formkit-close-icon formkit-icon"
+            <span :class="`${classes.closeIcon} ${classes.icon}`"
               ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 16">
                 <path
                   d="M10,12.5c-.13,0-.26-.05-.35-.15L1.65,4.35c-.2-.2-.2-.51,0-.71,.2-.2,.51-.2,.71,0L10.35,11.65c.2,.2,.2,.51,0,.71-.1,.1-.23,.15-.35,.15Z"
@@ -86,5 +86,8 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://reactjs.or
   width: 20px;
   height: 20px;
   margin-right: 10px;
+}
+.formkit-remove-selection {
+  width: auto !important;
 }
 </style>
