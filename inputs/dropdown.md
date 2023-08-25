@@ -173,7 +173,10 @@ When using the dropdown input as a `multi-select`, you can customize the look an
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-selection-appearance.vue"
+file: [
+  "_content/_examples/dropdown/dropdown-selection-appearance.vue",
+  "_content/_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -254,7 +257,10 @@ By default, when the `multiple` prop is set, the dropdown will not close after a
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-close-on-select.vue"
+file: [
+  "_content/_examples/dropdown/dropdown-close-on-select.vue",
+  "_content/_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -278,7 +284,10 @@ When using the dropdown with static options, FormKit's dropdown also comes with 
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-overscroll.vue"
+file: [
+  "_content/_examples/dropdown/dropdown-overscroll.vue", 
+  "_content/_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -290,7 +299,10 @@ If you would like to limit the number of options that can be selected, you can u
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-max.vue"
+file: [
+  "_content/_examples/dropdown/dropdown-max.vue",
+  "_content/_examples/_data/countries.js"
+]
 ---
 ::
 

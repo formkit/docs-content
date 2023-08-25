@@ -41,7 +41,10 @@ By default, the autocomplete input will render in single-select mode:
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-single.vue"
+file: [
+  "_content/_examples/autocomplete-pro/autocomplete-single.vue",
+  "_content/_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -53,7 +56,10 @@ By setting the `multiple` prop the autocomplete input will render in multi-selec
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-multiple.vue"
+file: [
+  "_content/_examples/autocomplete-pro/autocomplete-multiple.vue",
+  "_content/_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -74,7 +80,10 @@ The autocomplete input will filter options with its own internal search function
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-filter.vue"
+file: [
+  "_content/_examples/autocomplete-pro/autocomplete-filter.vue",
+  "_content/_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -148,7 +157,10 @@ The autocomplete input allows you to customize the look and feel of each option 
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-option-slot.vue"
+file: [
+  "_content/_examples/autocomplete-pro/autocomplete-option-slot.vue",
+  "_content/_examples/_data/car-brands.js"
+]
 ---
 ::
 
@@ -165,7 +177,10 @@ autocomplete, you can set the selection-appearance prop to `text-input` (default
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-selection-appearance.vue"
+file: [
+  "_content/_examples/autocomplete-pro/autocomplete-selection-appearance.vue",
+  "_content/_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -177,7 +192,10 @@ If you only want to customize the display of the selected option, set the select
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-slot-selection.vue"
+file: [
+  "_content/_examples/autocomplete-pro/autocomplete-slot-selection.vue",
+  "_content/_examples/_data/car-brands.js"
+]
 ---
 
 ::
@@ -193,7 +211,10 @@ The autocomplete input, by default, will not expand the listbox when no search r
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-empty-message.vue"
+file: [
+  "_content/_examples/autocomplete-pro/autocomplete-empty-message.vue",
+  "_content/_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -205,7 +226,10 @@ If you would like the listbox to remain expanded after selecting a value, you ca
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-close-on-select.vue"
+file: [
+  "_content/_examples/autocomplete-pro/autocomplete-close-on-select.vue",
+  "_content/_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -217,7 +241,10 @@ If you want the options to be reloaded when the user commits a selection, use th
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-reload-on-commit.vue"
+file: [
+  "_content/_examples/autocomplete-pro/autocomplete-reload-on-commit.vue",
+  "_content/_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -230,7 +257,10 @@ To enable opening the autocomplete's listbox on click of its search input, set t
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-open-on-click.vue"
+file: [
+  "_content/_examples/autocomplete-pro/autocomplete-open-on-click.vue",
+  "_content/_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -262,7 +292,10 @@ For single-select autocompletes only, if you would like to clear the search inpu
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-clear-search-on-open.vue"
+file: [
+  "_content/_examples/autocomplete-pro/autocomplete-clear-search-on-open.vue",
+  "_content/_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -283,7 +316,10 @@ The <code>selection-removable</code> prop cannot be used for multi-selects.
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-selection-removable.vue"
+file: [
+  "_content/_examples/autocomplete-pro/autocomplete-selection-removable.vue",
+  "_content/_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -295,7 +331,10 @@ If you want the listbox to expand when an selection is removed, use the `open-on
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-open-on-remove.vue"
+file: [
+  "_content/_examples/autocomplete-pro/autocomplete-open-on-remove.vue",
+  "_content/_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -307,7 +346,10 @@ If you would like to limit the number of options that can be selected, you can u
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-max.vue"
+file: [
+  "_content/_examples/autocomplete-pro/autocomplete-max.vue",
+  "_content/_examples/_data/countries.js"
+]
 ---
 ::
 
