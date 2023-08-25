@@ -12,8 +12,8 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://reactjs.or
     value="vue"
   >
     <!--SELECTION SLOT-->
-    <template #selection="{ option }">
-      <div class="formkit-option">
+    <template #selection="{ option, classes }">
+      <div :class="classes.option">
         <img
           :src="option.asset"
           alt="optionAvatar"
@@ -36,10 +36,10 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://reactjs.or
       :value="['vue', 'react']"
     >
       <!--TAG SLOT-->
-      <template #tag="{ handlers, option }">
-        <div class="formkit-tag">
-          <img :src="option.asset" class="formkit-tag-image" />
-          <span class="formkit-tag-label">
+      <template #tag="{ handlers, option, classes }">
+        <div :class="classes.tag">
+          <img :src="option.asset" :class="classes.tagImage" />
+          <span :class="classes.tagLabel">
             {{ option.label }}
           </span>
           <button

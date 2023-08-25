@@ -12,14 +12,17 @@ import carBrands from './car-brands.js'
     selection-appearance="option"
   >
     <!--OPTION SLOT-->
-    <template #option="{ option }">
-      <div class="formkit-option">
-        <img :src="option.logo" :alt="option.label + ' logo'" />
-        <span>
-          {{ option.label }}
-        </span>
-      </div>
-    </template>
+      <template #option="{ option, classes }">
+        <div :class="classes.option">
+          <img
+            :src="option.logo"
+            :alt="option.label + ' logo'"
+          />
+          <span>
+            {{ option.label }}
+          </span>
+        </div>
+      </template>
     <!--/OPTION SLOT-->
   </FormKit>
 </template>

@@ -11,29 +11,32 @@ function getFlagEmoji(countryCode) {
 </script>
 
 <template>
-  <FormKit type="form" #default="{ value }" :actions="false">
-    <FormKit
-      type="autocomplete"
-      name="autocomplete"
-      label="Search for a country"
-      :options="countries"
-      value="US"
-      selection-appearance="option"
-    >
-      <!--OPTION SLOT-->
-      <template #option="{ option }">
-        <div class="formkit-option">
-          <span class="decorator">
-            {{ getFlagEmoji(option.value) }}
-          </span>
-          <span>
-            {{ option.label }}
-          </span>
-        </div>
-      </template>
-      <!--/OPTION SLOT-->
-    </FormKit>
-    <pre wrap>{{ value }}</pre>
+<FormKit
+  type="form"
+  #default="{ value }"
+  :actions="false"
+>
+  <FormKit
+    type="autocomplete"
+    name="autocomplete"
+    label="Search for a country"
+    :options="countries"
+    value="US"
+    selection-appearance="option"
+  >
+    <!--OPTION SLOT-->
+    <template #option="{ option, classes }">
+      <div :class="classes.option">
+        <span class="decorator">
+          {{ getFlagEmoji(option.value) }}
+        </span>
+        <span>
+          {{ option.label }}
+        </span>
+      </div>
+    </template>
+    <!--/OPTION SLOT-->
+  </FormKit>
   </FormKit>
 </template>
 
