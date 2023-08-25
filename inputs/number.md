@@ -37,7 +37,7 @@ file: "_content/_examples/number/number-cast.vue"
 
 ## Props & Attributes
 
-The `number` input has only one unique prop `number` which can be used to cast the value of the input to a `number` type. Additionally, the native HTML number input has a few attributes that can be used to control the input.
+The `number` input has only one unique prop, `number`, which can be used to cast the value of the input to a `number` type. Additionally, the native HTML `number` input has a few attributes that can be used to control the input.
 
 ::ReferenceTable
 ---

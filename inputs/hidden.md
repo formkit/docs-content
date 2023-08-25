@@ -31,14 +31,34 @@ type: "warning"
 Since <code>hidden</code> inputs are not intended for display to end users, FormKit does not render common user-facing features such as the <code>label</code>, <code>help text</code> , or <code>messages</code>.<br><br>Validation rules can still be applied to a hidden input that will prevent a form from submitting, but please note that the errors will not be displayed on this hidden input.
 ::
 
+## Cast to number
+
+By default all native HTML `<input>` elements return a string value. The `number` prop allows you to cast the value to a true `number` type. There are two valid values for the `number` prop: `float` and `integer`.
+
+These options use `parseFloat` (default) or `parseInt` respectively. If the value cannot be parsed by the respective function it will set the value to `undefined`. Additionally applying the `number` prop will constrain the `value` of the input to be exclusively `number | undefined` in TypeScript.
+
+::Example
+---
+name: "Hidden cast input"
+file: "_content/_examples/hidden/hidden-cast.vue"
+---
+::
+
 ## Props & Attributes
 
-The `hidden` input has no unique props but can make use of the following universal
-FormKit props.
-
+The `hidden` input has only one unique prop, `number`, which can be used to cast the value of the input to a `number` type.
 ::ReferenceTable
 ---
 without: ['help', 'label', 'errors', 'prefix-icon', 'suffix-icon', ]
+data: [
+  {
+    prop: "number",
+    type: "String",
+    default: "float",
+    description:
+      "Specifies how to cast a value to a number. Valid values are <code>float</code> and <code>integer</code>.",
+  },
+]
 ---
 ::
 
