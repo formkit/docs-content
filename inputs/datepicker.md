@@ -480,12 +480,31 @@ To make the user experience better, the datepicker will automatically scan forwa
 ---
 ::
 
+## Clearable
+
+The datepicker input can be cleared by clicking the "clear" button that appears when the input has a value — this clear button only appears when the `clearable` prop is added:
+
+::Example
+---
+  name: "Datepicker clearable"
+  file: "_content/_examples/datepicker/datepicker-clearable.vue"
+  min-height: 500
+---
+::
+
+
 ## Props & Attributes
 
 ::ReferenceTable
 ---
 input: "datepicker"
 data: [
+  {
+    prop: "clearable",
+    type: "string",
+    default: "false",
+    description: "Adds a clear button to the right of the value. This button only appears when the input has a completed value."
+  },
   {
     prop: "date-format",
     type: "string",
