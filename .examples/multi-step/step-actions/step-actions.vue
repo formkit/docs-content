@@ -10,7 +10,7 @@
           <!-- incrementStep returns a callable function -->
           <FormKit
             type="button"
-            @click="handlers.incrementStep(1, node.context)()"
+            @click="handlers.incrementStep(1)()"
             label="Custom Next"
             data-next="true"
           />
@@ -28,11 +28,11 @@
           <!-- incrementStep returns a callable function -->
           <FormKit
             type="button"
-            @click="handlers.incrementStep(-1, node.context)()"
+            @click="handlers.incrementStep(-1)()"
             label="Custom Previous"
           />
         </template>
-        <!-- 
+        <!--
         normally there is no stepNext section rendered
         on the last step of a multi-step. But we can
         supply our own.
