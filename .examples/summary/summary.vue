@@ -8,6 +8,7 @@ function submitApplication() {
 
 <template>
   <h1>Apply to FormKit University</h1>
+    <p>Submit this form to see the summary.</p>
     <FormKit
       id="fk-univ-app"
       v-slot="{ value: formData }"
