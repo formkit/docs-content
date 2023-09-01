@@ -1659,7 +1659,7 @@ interface FormKitFrameworkContext<T = any> {
     defaultMessagePlacement: boolean;
     fns: Record<string, (...args: any[]) => any>;
     handlers:{
-        blur: () => void;
+        blur: (e?: FocusEvent) => void;
         touch: () => void;
         DOMInput: (e: Event) => void;
     }&Record<string, (...args: any[]) => void>;
@@ -1676,6 +1676,7 @@ interface FormKitFrameworkContext<T = any> {
     slots: Record<string, CallableFunction>;
     state: FormKitFrameworkContextState;
     type: string;
+    ui: Record<string, FormKitMessage>;
     value: T;
 }
 ```
@@ -2160,7 +2161,7 @@ All FormKitMiddleware conform to the pattern of accepting a payload and a `next(
 <client-only>
 
 ```typescript
-export type FormKitMiddleware<T = unknown> = (payload: T, next: (payload?: T) => T) => T;
+export type FormKitMiddleware<T = unknown> = (payload: T, next: (payload: T) => T) => T;
 ```
 
 </client-only>

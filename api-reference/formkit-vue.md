@@ -152,6 +152,21 @@ interface FormKitSetupContext<Props extends FormKitInputs<Props>> {
 
 </client-only>
 
+### FormKitSummaryMessage
+
+<client-only>
+
+```typescript
+interface FormKitSummaryMessage {
+    id: string;
+    key: string;
+    message: string;
+    type: string;
+}
+```
+
+</client-only>
+
 ### FormKitVuePlugin
 
 The global instance of the FormKit plugin.

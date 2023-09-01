@@ -293,6 +293,24 @@ radios(node: FormKitNode): void;
 
 ## Functions
 
+### casts()
+
+A feature that allows casting to numbers.
+
+#### Signature
+
+<client-only>
+
+```typescript
+casts(node: FormKitNode): void;
+```
+
+</client-only>
+
+#### Parameters
+
+* `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+
 ### createLibraryPlugin()
 
 Creates a plugin based on a list of [FormKitLibrary](/api-reference/formkit-core#formkitlibrary).
@@ -549,6 +567,26 @@ normalizeOptions(options: FormKitOptionsProp): FormKitOptionsList;
 
  A list of [FormKitOptionsList](#formkitoptionslist).
 
+### renamesRadios()
+
+Automatically rename any radio inputs.
+
+#### Signature
+
+<client-only>
+
+```typescript
+renamesRadios(node: FormKitNode): void;
+```
+
+</client-only>
+
+#### Parameters
+
+* `node` — A formkit node.
+
+#### Returns
+
 ### select()
 
 Converts the options prop to usable values.
@@ -708,6 +746,7 @@ These are props that are used as conditionals in one or more inputs, and as such
 
 ```typescript
 interface FormKitConditionalProps {
+    number: undefined;
     offValue: undefined;
     onValue: undefined;
     options: undefined;
@@ -718,7 +757,7 @@ interface FormKitConditionalProps {
 
 ### FormKitEventsAsProps
 
-In a perfect world this interface would not be required at all. However, Vue expects the interfaces to be defined as method overloads. Unfortunately since our events interface uses generics UnionToIntersection is not able to be used meaning that we loose event data if we store the events as a standard interface with property keys. The only way we have found to reliably get Volar (as of June 2023) to properly recognize all defined events is to use a the "standard" method overload approach (see FormKitBaseEvents).
+In a perfect world this interface would not be required at all. However, Vue expects the interfaces to be defined as method overloads. Unfortunately since our events interface uses generics UnionToIntersection is not able to be used meaning that we lose event data if we store the events as a standard interface with property keys. The only way we have found to reliably get Volar (as of June 2023) to properly recognize all defined events is to use a the "standard" method overload approach (see FormKitBaseEvents).
 
 (Basically we cannot use the events in this interface to automatically produce the FormKitBaseEvents without Volar loosing event data)
 
@@ -901,7 +940,8 @@ interface FormKitInputProps<Props extends FormKitInputs<Props>> {
     };
     hidden:{
         type:'hidden';
-        value?: string;
+        value?: Props['number']extendsAllReals?number: string;
+        number?:'integer' | 'float' | 'true' | true;
     };
     list:{
         type:'list';
@@ -909,13 +949,18 @@ interface FormKitInputProps<Props extends FormKitInputs<Props>> {
         dynamic?: boolean | 'true' | 'false';
         sync?: boolean | 'true' | 'false';
     };
+    meta:{
+        type:'meta';
+        value?: any;
+    };
     month:{
         type:'month';
         value?: string;
     };
     number:{
         type:'number';
-        value?: string;
+        value?: Props['number']extendsAllReals?number: string;
+        number?:'integer' | 'float' | 'true' | true;
     };
     password:{
         type:'password';
@@ -928,11 +973,13 @@ interface FormKitInputProps<Props extends FormKitInputs<Props>> {
     };
     range:{
         type:'range';
-        value?: string;
+        value?: Props['number']extendsAllReals?number: string;
+        number?:'integer' | 'float' | 'true' | true;
     };
     search:{
         type:'search';
-        value?: string;
+        value?: Props['number']extendsAllReals?number | string: string;
+        number?:'integer' | 'float' | 'true' | true;
     };
     select:{
         type:'select';
@@ -945,11 +992,13 @@ interface FormKitInputProps<Props extends FormKitInputs<Props>> {
     };
     tel:{
         type:'tel';
-        value?: string;
+        value?: Props['number']extendsAllReals?number | string: string;
+        number?:'integer' | 'float' | 'true' | true;
     };
     text:{
         type:'text';
-        value?: string;
+        value?: Props['number']extendsAllReals?number | string: string;
+        number?:'integer' | 'float' | 'true' | true;
     };
     textarea:{
         type:'textarea';
@@ -992,11 +1041,11 @@ There is no automatic inheritance of slots — each slot must be explicitly defi
 
 ```typescript
 interface FormKitInputSlots<Props extends FormKitInputs<Props>> {
+    'datetime-local': FormKitTextSlots<Props>;
     button: FormKitButtonSlots<Props>;
     checkbox: Props['options']extendsAllReals?FormKitBoxSlots<Props>: FormKitBaseSlots<Props>;
     color: FormKitTextSlots<Props>;
     date: FormKitTextSlots<Props>;
-    datetimeLocal: FormKitTextSlots<Props>;
     email: FormKitTextSlots<Props>;
     file: FormKitFileSlots<Props>;
     form:{
@@ -1017,6 +1066,9 @@ interface FormKitInputSlots<Props extends FormKitInputs<Props>> {
     };
     list:{
         default: FormKitSlotData<Props>;
+    };
+    meta:{
+        wrapper: FormKitSlotData<Props>;
     };
     month: FormKitTextSlots<Props>;
     number: FormKitTextSlots<Props>;
@@ -1216,7 +1268,7 @@ The slots available to the button input, these extend the base slots.
 <client-only>
 
 ```typescript
-export type FormKitButtonSlots<Props extends FormKitInputs<Props>> = Omit<FormKitBaseSlots<Props>, 'input' | 'help'> & {
+export type FormKitButtonSlots<Props extends FormKitInputs<Props>> = Omit<FormKitBaseSlots<Props>, 'inner'> & {
     default: FormKitSlotData<Props>;
 };
 ```
@@ -1296,6 +1348,8 @@ export type FormKitOptionsProp = FormKitOptionsPropExtensions[keyof FormKitOptio
 </client-only>
 
 ### FormKitOptionsValue
+
+The proper shape of data to be passed to options prop.
 
 <client-only>
 

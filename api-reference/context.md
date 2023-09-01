@@ -9,7 +9,11 @@ description: FormKit provides a reactive context object to expose data to slots,
 
 ## Introduction
 
-FormKit inputs use a reactive object to expose data to template slots, rules, and the [schema](/essentials/schema) that defines each input. This is called the `context` object and is found in the each input's [core `node` object](/essentials/architecture#node) at `node.context`. The context object has the following properties:
+FormKit inputs use a reactive object to expose data to template slots, rules, and the [schema](/essentials/schema) that defines each input. This is called the `context` object and is found in the each input's [core `node` object](/essentials/architecture#node) at `node.context`.
+
+The context object, in general, can be thought of as a general purpose data store for each input. In almost all cases props passed to the `<FormKit>` component end up in the context object. The context object is the also the slot data passed to all section slots.
+
+The context object always (unless noted) has the following properties:
 
 <div data-tight>
 

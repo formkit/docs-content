@@ -356,6 +356,19 @@ file: "_content/_examples/input-errors-prop/input-errors-prop.vue"
 ---
 ::
 
+## Validation and error summary
+
+It can be helpful for accessibility to provide a summary of validation and error messages at the top of your form. FormKit provides a `<FormKitSummary />` component to render this summary for you — simply nest it inside a `<FormKit type="form">`.
+
+This component will automatically render all of a form’s validation and error messages with jump links to the inputs they apply to. These errors are only shown *after* submitting the form but they are wrapped in an `aria-live` region to ensure screen readers will be notified when the errors present themselves. Additionally the page will automatically be scrolled to the summary box and focused on the first error listed.
+
+::Example
+---
+name: "Summary component"
+file: "_content/_examples/summary/summary.vue"
+---
+::
+
 ## Moving validation and error messages
 
 By default, a form’s validation and error messages are placed directly above the form’s actions section. However, you can choose to render these anywhere on your page by using the `<FormKitMessages />` component. `<FormKitMessages />` is not a globally registered component — you must import it:
