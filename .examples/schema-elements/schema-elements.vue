@@ -1,27 +1,25 @@
 <script>
 export default {
-  data () {
+  data() {
     return {
       schema:
-      // %partial%::js::
-      [
-        {
-          $el: 'div', // try an h1!
-          attrs: {
-            style: { color: 'red' },
-            'data-foo': 'bar'
+        // %partial%::javascript::
+        [
+          {
+            $el: 'div', // try an h1!
+            attrs: {
+              style: { color: 'red' },
+              'data-foo': 'bar',
+            },
+            children: 'Hello world',
           },
-          children: 'Hello world'
-        }
-      ]
+        ]
       // %partial%
     }
-  }
+  },
 }
 </script>
 
 <template>
-  <FormKitSchema
-    :schema="schema"
-  />
+  <FormKitSchema :schema="schema" />
 </template>

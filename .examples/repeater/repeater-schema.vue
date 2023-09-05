@@ -1,6 +1,6 @@
 <script setup>
 const schema = [
-  /* %partial%::js:: */
+  /* %partial%::javascript:: */
   {
     $formkit: 'repeater',
     name: 'users',
@@ -13,11 +13,10 @@ const schema = [
         validation: 'required|email',
       },
     ],
-  }
-  /* %partial%::js:: */
+  },
+  /* %partial%::javascript:: */
 ]
 </script>
-
 
 <template>
   <FormKit

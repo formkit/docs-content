@@ -1,24 +1,43 @@
 <script>
 export default {
-  data () {
+  data() {
     return {
-      // %partial%::js::
+      // %partial%::javascript::
       data: {
         value: 100000,
-        format: (value) => "$" + value.toLocaleString()
+        format: (value) => '$' + value.toLocaleString(),
       },
-      schema: [ // Capsule Schema Format
+      schema: [
+        // Capsule Schema Format
         {
           $el: 'label',
-          children: 'What is your salary?'
+          children: 'What is your salary?',
         },
         {
           if: '$value >= 90000',
-          then: [{ $el: 'h1', children: ['$format($value)'], attrs: { 'data-range': 'high' } }],
+          then: [
+            {
+              $el: 'h1',
+              children: ['$format($value)'],
+              attrs: { 'data-range': 'high' },
+            },
+          ],
           else: {
             if: '$value >= 10000',
-            then: [{ $el: 'h2', children: ['$format($value)'], attrs: { 'data-range': 'medium' } }],
-            else: [{ $el: 'h3', children: 'You need a new job!', attrs: { 'data-range': 'low' } }],
+            then: [
+              {
+                $el: 'h2',
+                children: ['$format($value)'],
+                attrs: { 'data-range': 'medium' },
+              },
+            ],
+            else: [
+              {
+                $el: 'h3',
+                children: 'You need a new job!',
+                attrs: { 'data-range': 'low' },
+              },
+            ],
           },
         },
         {
@@ -26,20 +45,17 @@ export default {
           children: [
             {
               $el: 'small',
-              children: '© All rights reserved.'
-            }
-          ]
-        }
-      ]
-      // %partial%::js::
+              children: '© All rights reserved.',
+            },
+          ],
+        },
+      ],
+      // %partial%::javascript::
     }
-  }
+  },
 }
 </script>
 
 <template>
-  <FormKitSchema
-    :data="data"
-    :schema="schema"
-  />
+  <FormKitSchema :data="data" :schema="schema" />
 </template>
