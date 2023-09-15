@@ -285,7 +285,7 @@ When using the dropdown with static options, FormKit's dropdown also comes with 
 name: "Dropdown"
 min-height: 550
 file: [
-  "_content/_examples/dropdown/dropdown-overscroll.vue", 
+  "_content/_examples/dropdown/dropdown-overscroll.vue",
   "_content/_examples/_data/countries.js"
 ]
 ---
@@ -388,7 +388,7 @@ data: [
     "prop": "always-load-on-open",
     type: "boolean",
     default: "false",
-    "description": "When set to `true`, the dropdown will always load the options when the listbox is opened."
+    "description": "Determines whether the dropdown should always load its options when opened or whether it should reference the options that were previously found when opening."
   },
   {
     name: "load-on-created",

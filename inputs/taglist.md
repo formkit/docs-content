@@ -373,8 +373,8 @@ data: [
   {
     "prop": "always-load-on-open",
     type: "boolean",
-    default: "false",
-    "description": "When set to `true`, the taglist will always load the options when the listbox is opened."
+    default: "true",
+    "description": "Determines whether the taglist should always load its options when opened or whether it should reference the options that were previously found when opening."
   },
   {
     name: "load-on-created",
