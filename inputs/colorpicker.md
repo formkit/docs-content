@@ -35,6 +35,7 @@ The `colorpicker` supports formats in `Hex`, `HSLA` and `RGBA` formats. You can 
 ---
   name: "Color input"
   file: "_content/_examples/colorpicker/format.vue"
+  minHeight: 500
 ---
 ::
 
@@ -46,6 +47,7 @@ There may be times where you wish to show one format to users as a default but r
 ---
   name: "Color input"
   file: "_content/_examples/colorpicker/value-format.vue"
+  minHeight: 400
 ---
 ::
 
@@ -79,6 +81,8 @@ The `colorpicker` also supports grouped `options`. This allows you to create set
 
 You can create a "swatch-only" `color-picker` by using the `panel-controls` and `panel-format` props and setting them to `false`. 
 
+When showing only swatches in pop-over mode (the default) adding the `close-on-select` prop will close the pop-over when a swatch is selected.
+
 ::Example
 ---
   name: "Color input"
@@ -88,12 +92,12 @@ You can create a "swatch-only" `color-picker` by using the `panel-controls` and 
 
 ## Eyedropper
 
-The `colorpicker` input supports the browser-native [Eyedropper API](https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API). If the Eyedropper is supported in your browser and you have not disabled the Eyedropper by setting the `eyedropper` prop to `false` then you will see an eyedropper button to the right of the hue and alpha sliders.
+The `colorpicker` input supports the browser-native [EyeDropper API](https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API). If the EyeDropper is supported in your browser and you have not disabled the EyeDropper by setting the `eye-dropper` prop to `false` then you will see an eyedropper button to the right of the hue and alpha sliders.
 
 ::Example
 ---
   name: "Color input"
-  file: "_content/_examples/colorpicker/eyedropper.vue"
+  file: "_content/_examples/colorpicker/eye-dropper.vue"
 ---
 ::
 
@@ -101,22 +105,15 @@ The `colorpicker` input supports the browser-native [Eyedropper API](https://dev
 
 By default a `colorpicker` input will allow the pasting of any valid color values while user focus is anywhere in the input. Values will be converted immediately to your desired `format`.
 
-::Example
----
-  name: "Color input"
-  file: "_content/_examples/colorpicker/paste.vue"
----
-::
-
 You can disable the ability to paste a value by setting the `allow-paste` prop to `false`.
 
 ::Example
 ---
   name: "Color input"
-  file: "_content/_examples/colorpicker/allow-paste.vue"
+  file: "_content/_examples/colorpicker/paste.vue"
+  min-height: 650
 ---
 ::
-
 
 ## Props & Attributes
 
