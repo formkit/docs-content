@@ -1,6 +1,6 @@
 ---
 title: Colorpicker Input
-description: A colorpicker with support for alpha transparecy, pre-loaded swatches, and multiple color output formats.
+description: A colorpicker with support for alpha transparency, pre-loaded swatches, and multiple color output formats.
 ---
 
 ::InputPageHero
@@ -41,7 +41,7 @@ The `colorpicker` supports formats in `Hex`, `HSLA` and `RGBA` formats. You can 
 
 ### Value format
 
-There may be times where you wish to show one format to users as a default but return a different format. You can use the `format-value` prop to specify a return value format independent of the `format` prop.
+There may be times where you wish to show one format to users as a default but return a different format. You can use the `value-format` prop to specify a return value format independent of the `format` prop.
 
 ::Example
 ---
