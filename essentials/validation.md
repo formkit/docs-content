@@ -735,6 +735,8 @@ Once installed you can use your validation rule in anywhere in your project.
 <FormKit validation="required|monday" />
 ```
 
+To customize the error message which shows up when your custom validation fails, follow the instructions [here](#global-validation-message).
+
 ### Adding a rule via prop
 
 To add a validation to a specific input use the `validation-rules` prop.
