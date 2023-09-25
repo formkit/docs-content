@@ -153,14 +153,6 @@ title: "Style radio input options to look like cards"
 Using only new styles (Tailwind Classes in this example) apply a card treatment to the default FormKit Radio input structure.
 ::
 
-::ExampleCard
----
-href: "https://formkit.link/35864d8156cb9c9173a216a1ac9b219f"
-title: "Style radio input options to look like cards"
----
-Using only new styles (Tailwind Classes in this example) apply a card treatment to the default FormKit Radio input structure.
-::
-
 ## User interface
 
 ::ExampleCard
