@@ -131,6 +131,14 @@ A custom input with +1 and -1 step buttons. Made using <code>createInput()</code
 
 ::ExampleCard
 ---
+href: "https://formkit.link/64b491248a0323b6d574ee05ab221d95"
+title: "A currency input with currency selector"
+---
+A simple custom input that allows users to select a currency and enter a value. Made using <code>createInput()</code>.
+::
+
+::ExampleCard
+---
 href: "https://formkit.link/577824c5b5d563120e20abcaecc0c051"
 title: "Add a link (<a> tag) to a label"
 ---
