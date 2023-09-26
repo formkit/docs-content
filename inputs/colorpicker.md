@@ -90,6 +90,17 @@ When showing only swatches in pop-over mode (the default) adding the `close-on-s
 ---
 ::
 
+### Inputting by swatch name
+
+If your provided swatches via the `options` prop have `label`s then you can call `node.input()` with a swatch name and the associated color will be set for you.
+
+::Example
+---
+  name: "Color input"
+  file: "_content/_examples/colorpicker/input-swatch-name.vue"
+---
+::
+
 ## Eyedropper
 
 The `colorpicker` input supports the browser-native [EyeDropper API](https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API). If the EyeDropper is supported in your browser and you have not disabled the EyeDropper by setting the `eye-dropper` prop to `false` then you will see an eyedropper button to the right of the hue and alpha sliders.
