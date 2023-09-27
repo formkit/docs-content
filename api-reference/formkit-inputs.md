@@ -482,6 +482,24 @@ ignore(node: FormKitNode): void;
 
 * `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
 
+### isGroupOption()
+
+A helper to determine if an option is a group or an option.
+
+#### Signature
+
+<client-only>
+
+```typescript
+isGroupOption(option: FormKitOptionsItem | FormKitOptionsGroupItem | FormKitOptionsGroupItemProp): option is FormKitOptionsGroupItem;
+```
+
+</client-only>
+
+#### Parameters
+
+* `option` — An option
+
 ### isSchemaObject()
 
 Type guard for schema objects.
@@ -553,7 +571,7 @@ A function to normalize an array of objects, array of strings, or object of key-
 <client-only>
 
 ```typescript
-normalizeOptions(options: FormKitOptionsProp): FormKitOptionsList;
+normalizeOptions<T extends FormKitOptionsPropWithGroups>(options: T): T extends FormKitOptionsProp ? FormKitOptionsList : FormKitOptionsListWithGroups;
 ```
 
 </client-only>
@@ -983,7 +1001,7 @@ interface FormKitInputProps<Props extends FormKitInputs<Props>> {
     };
     select:{
         type:'select';
-        options?: FormKitOptionsProp;
+        options?: FormKitOptionsPropWithGroups;
         value?: FormKitOptionsValue<Props['options']>;
     };
     submit:{
@@ -1089,6 +1107,38 @@ interface FormKitInputSlots<Props extends FormKitInputs<Props>> {
 
 </client-only>
 
+### FormKitOptionsGroupItem
+
+Option groups should always be formatted as an array of objects with group and nested options
+
+<client-only>
+
+```typescript
+interface FormKitOptionsGroupItem {
+    attrs?: Record<string, any>;
+    group: string;
+    options: FormKitOptionsList;
+}
+```
+
+</client-only>
+
+### FormKitOptionsGroupItemProp
+
+Option groups should always be formatted as an array of objects with group and nested options
+
+<client-only>
+
+```typescript
+interface FormKitOptionsGroupItemProp {
+    attrs?: Record<string, any>;
+    group: string;
+    options: FormKitOptionsProp;
+}
+```
+
+</client-only>
+
 ### FormKitOptionsItem
 
 Options should always be formatted as an array of objects with label and value properties.
@@ -1186,7 +1236,7 @@ A function that when called, returns a function that can in turn be called with 
 
 ```typescript
 interface FormKitSection<T = FormKitSchemaExtendableSection> {
-    (...children: Array<FormKitSchemaExtendableSection | string>): T;
+    (...children: Array<FormKitSchemaExtendableSection | string | FormKitSchemaCondition>): T;
 }
 ```
 
@@ -1335,6 +1385,30 @@ export type FormKitOptionsList = FormKitOptionsItem[];
 
 </client-only>
 
+### FormKitOptionsListWithGroups
+
+An array of option items with a group.
+
+<client-only>
+
+```typescript
+export type FormKitOptionsListWithGroups = Array<FormKitOptionsItem | FormKitOptionsGroupItem>;
+```
+
+</client-only>
+
+### FormKitOptionsListWithGroupsProp
+
+An array of option items with a group support — where the `option` of the groups can be any valid FormKitOptionsProp type.
+
+<client-only>
+
+```typescript
+export type FormKitOptionsListWithGroupsProp = Array<FormKitOptionsItem | FormKitOptionsGroupItemProp>;
+```
+
+</client-only>
+
 ### FormKitOptionsProp
 
 The types of options that can be passed to the options prop.
@@ -1343,6 +1417,18 @@ The types of options that can be passed to the options prop.
 
 ```typescript
 export type FormKitOptionsProp = FormKitOptionsPropExtensions[keyof FormKitOptionsPropExtensions];
+```
+
+</client-only>
+
+### FormKitOptionsPropWithGroups
+
+The types of options that can be passed to the options prop.
+
+<client-only>
+
+```typescript
+export type FormKitOptionsPropWithGroups = FormKitOptionsProp | FormKitOptionsListWithGroupsProp;
 ```
 
 </client-only>

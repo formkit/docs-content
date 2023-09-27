@@ -264,6 +264,8 @@ extend(original: Record<string, any>, additional: Record<string, any> | string |
 
  `Record<string, any> | string | null`
 
+__NO_SIDE_EFFECTS__
+
 ### getAt()
 
 Get a specific value via dot notation.
