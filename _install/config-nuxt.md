@@ -14,7 +14,7 @@ export default {
 
 ### Using environment variables in formkit.config.js
 
-There may be instances where you want to use Nuxt's `runtimeConfig` variables inside of your `formkit.config.js` file — such as keeping a FormKit Pro API key from being published in your codebase. To achieve this you can provie a function to `defineFormKitConfig` which returns a configuration object. Your function will be called by Nuxt and have access to `runtimeConfig`.
+There may be instances where you want to use Nuxt's `runtimeConfig` variables inside of your `formkit.config.js` file — such as keeping a FormKit Pro API key from being published in your codebase. To achieve this you can provide a function to `defineFormKitConfig` which returns a configuration object. Your function will be called by Nuxt and have access to `runtimeConfig`.
 
 ```js
 import { fr } from '@formkit/i18n'
