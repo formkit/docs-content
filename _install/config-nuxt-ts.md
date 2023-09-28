@@ -50,10 +50,22 @@ If you would like to supply a custom path to your `formkit.config`, you can over
 export default defineNuxtConfig({
   modules: ['@formkit/nuxt'],
   formkit: {
+    autoLoad: true,
     configFile: './my-configs/formkit.config.ts',
   },
 })
 ```
+
+::Callout
+---
+type: "tip"
+label: "Auto loading"
+---
+In the past FormKit used a global plugin to install itself. This has the negative side effect of including itself Nuxt’s entry bundle. To avoid this FormKit now supports an `autoLoad` option. When enabled FormKit no longer uses a global plugin but automatically injects the "global" configuration options only on the pages or components that use it.
+
+In the future this will become the default. To enable it today set `autoLoad: true` in your `nuxt.config.ts`
+::
+
 
 ### Without extending `defaultConfig`
 
@@ -66,9 +78,13 @@ by setting the `defaultConfig` option for the module to `false`:
 export default defineNuxtConfig({
   modules: ['@formkit/nuxt'],
   formkit: {
+    autoLoad: true,
     defaultConfig: false,
     configFile: './my-configs/formkit.config.ts',
     // ^ this is now a full config replacement, not override.
   },
 })
 ```
+
+### Auto loading
+
