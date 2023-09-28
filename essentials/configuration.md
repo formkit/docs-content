@@ -143,7 +143,8 @@ For example, the validation plugin looks at `node.props.validation` to determine
 
 - Direct assignment
 - Component props
-- Vue plugin options
+- Global options
+- Provider options
 
 Let’s see how we can set the validation rules of an input (`node.props.validation`) these three ways:
 
@@ -169,9 +170,9 @@ Any props passed to the `<FormKit>` input are assigned to the `node.props` objec
 ---
 ::
 
-### 3. Vue plugin options
+### 3. Global options
 
-When registering the `@formkit/vue` plugin, you can provide prop values to be injected into to all `<FormKit>` components.
+When registering the `@formkit/vue` plugin (or using `@formkit/nuxt` with a `formkit.config.ts`) you can provide prop values to be injected into to all `<FormKit>` components.
 
 ::Example
 ---
@@ -182,6 +183,20 @@ When registering the `@formkit/vue` plugin, you can provide prop values to be in
   ]
   init-file-tab: "formkit.config.js"
 ---
+::
+
+### 4. Provider options
+
+Similar to global options the `<FormKitProvider>` component allows you to specify what "global" configuration options should be injected into its children. This technique can be used to create a "scoped" configuration for a specific section of an app, override global options for a specific section of an app, or provide more targeted loading of the FormKit library.
+
+When using the `<FormKitProvider>` component, all globally defined options (from global plugin) are removed and only options provided by the provider are used on any `<FormKit>` components within its scope.
+
+::Callout
+---
+label: 'Nuxt module'
+type: 'tip'
+---
+The `@formkit/nuxt` module with `autoLoad: true` enabled automatically wraps your components that use FormKit in a `<FormKitProvider>` component. This keeps formkit from being included in your entry bundle.
 ::
 
 ## What is node config?
