@@ -23,7 +23,7 @@ export default defineNuxtConfig({
   modules: ['@formkit/nuxt'],
   formkit: {
     // Experimental support for auto loading (see note):
-    autoLoad: true
+    autoImport: true
   }
 })
 ```
@@ -35,7 +35,7 @@ That's it! FormKit is now registered in your project using the default config an
 type: "tip"
 label: "Auto loading"
 ---
-In the past FormKit used a global plugin to install itself. This has the negative side effect of including itself Nuxt’s entry bundle. To avoid this FormKit now supports an `autoLoad` option. When enabled FormKit no longer uses a global plugin but automatically injects the "global" configuration options only on the pages or components that use it.
+In the past FormKit used a global plugin to install itself. This has the negative side effect of including itself Nuxt’s entry bundle. To avoid this FormKit now supports an `autoImport` option. When enabled FormKit no longer uses a global plugin but automatically injects the "global" configuration options only on the pages or components that use it.
 
-In the future this will become the default. To enable it today set `autoLoad: true` in your `nuxt.config.ts`
+In the future this will become the default. To enable it today set `autoImport: true` in your `nuxt.config.ts`
 ::

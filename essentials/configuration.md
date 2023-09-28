@@ -196,7 +196,7 @@ When using the `<FormKitProvider>` component, all globally defined options (from
 label: 'Nuxt module'
 type: 'tip'
 ---
-The `@formkit/nuxt` module with `autoLoad: true` enabled automatically wraps your components that use FormKit in a `<FormKitProvider>` component. This keeps formkit from being included in your entry bundle.
+The `@formkit/nuxt` module with `autoImport: true` enabled automatically wraps your components that use FormKit in a `<FormKitProvider>` component. This keeps formkit from being included in your entry bundle.
 ::
 
 ## What is node config?
