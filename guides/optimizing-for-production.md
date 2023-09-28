@@ -29,4 +29,19 @@ app.use(plugin, defaultConfig({
 
 For more details checkout the [source code of the `defaultConfig`](https://github.com/formkit/formkit/blob/master/packages/vue/src/defaultConfig.ts).
 
+## A custom configuration
 
+When optimizing your FormKit installation for production, you may want to create a custom configuration. This will allow you to only include the features, inputs, rules, and messages you are actually using.
+
+For example, consider a project with a registration form that only uses text inputs and the `required` rule. In this case, we only want to use the singular `required` rule, only the `text` input, and only the `required` message in english and german. We can create this custom configuration by not using the defaultConfig and performing our own plugin instantiations:
+
+```ts
+import { createApp } from 'vue'
+import App from './App.vue'
+import { plugin } from '@formkit/vue'
+import { createLibraryPlugin } from '@formkit/inputs'
+
+app.use(plugin, {
+
+})
+```
