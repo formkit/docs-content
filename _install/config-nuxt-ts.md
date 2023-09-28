@@ -86,5 +86,3 @@ export default defineNuxtConfig({
 })
 ```
 
-### Auto loading
-
