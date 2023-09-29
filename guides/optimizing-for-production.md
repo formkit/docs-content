@@ -153,18 +153,29 @@ Fortunately for Nuxt users, the `@formkit/nuxt` module provides a solution to th
 
 Vite users can also leverage automatic injection by using [unplugin-formkit](https://github.com/formkit/unplugin-formkit).
 
-For users of other build tools or for use cases that don’t fit well within the supported features of `unplugin-formkit` using the `<FormKitProvider>` component allows you to provide global configuration to your FormKit inputs at the point of use. Simply wrap your components in the provide and provide a `config` prop:
+For users of other build tools or for use cases that don’t fit well within the supported features of `unplugin-formkit` using the `<FormKitProvider>` component allows you to provide global configuration to your FormKit inputs at the point of use. Simply wrap your components in `<FormKitProvider>` and provide a `config` prop:
 
 ```vue
 <script setup>
 import { FormKitProvider } from '@formkit/vue'
+import type { FormKitOptions } from "@formkit/core"
+
+const formKitConfig: FormKitOptions = {
+  // ... your custom config
+}
 </script>
 
 <template>
-<FormKitProvider>
-
-
-</FormKitProvider>
+  <FormKitProvider :config="formKitConfig">
+    <!-- your FormKit components (can be deeply nested) -->
+  </FormKitProvider>
 </template>
 ```
 
+::Cta
+--- 
+href: "/essentials/configuration"
+label: "Read more about how configuration works." 
+button: "Configuration docs"
+---
+::
