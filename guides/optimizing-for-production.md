@@ -175,7 +175,7 @@ const formKitConfig: FormKitOptions = {
 ::Cta
 --- 
 href: "/essentials/configuration"
-label: "Read more about how to configure FormKit in the documentation."
-text: "The advanced configuration guide covers more options and details on how to optimize FormKit for your use case."
+label: "Read more about how to configure FormKit."
+button: "Configuration docs"
 ---
 
