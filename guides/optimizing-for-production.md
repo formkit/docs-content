@@ -9,16 +9,16 @@ FormKit ships with a lot of functionality out of the box. This is great for gett
 
 ## Examining the defaultConfig
 
-Most FormKit users get started by using the provided `defaultConfig` — but what does this actually include?
+Most FormKit users get started by using the provided `defaultConfig` — but what does this actually include?
 
 - Adds the `@formkit/validation` plugin with all rules.
 - Adds the `@formkit/i18n` plugin with the `en` locale (plus any additional locales you've added).
 - Adds the `@formkit/inputs` plugin with all non-pro inputs.
-- Adds the `@formkit/theme` plugin with CDN loaded icons, or any explicitly loaded icons.
+- Adds the `@formkit/theme` plugin with CDN-loaded icons, or any explicitly loaded icons.
 - Adds the `@formkit/vue` bindings to allow FormKit to interface with Vue.
 - Registers the `@formkit/dev` error interpreter (gives human-readable error messages in development).
 
-The defaultConfig also exposes a convenient object syntax to provide configuration options all of the plugins above. For example, to provide an input to the `@formkit/inputs` plugin instantiation the default config allows you to pass an `inputs` property:
+The `defaultConfig` also exposes a convenient object syntax to provide configuration options for all the plugins above. For example, to provide an input to the `@formkit/inputs` plugin instantiation, the default config allows you to pass an `inputs` property:
 
 ```js
 app.use(plugin, defaultConfig({
@@ -28,7 +28,7 @@ app.use(plugin, defaultConfig({
 }))
 ```
 
-For more details checkout the [source code of the `defaultConfig`](https://github.com/formkit/formkit/blob/master/packages/vue/src/defaultConfig.ts).
+For more details, check out the [source code of the `defaultConfig`](https://github.com/formkit/formkit/blob/master/packages/vue/src/defaultConfig.ts).
 
 ## A custom configuration
 
@@ -58,7 +58,7 @@ async function submit () {
 </template>
 ```
 
-In this case, we only want to use the singular `required` rule, only the `text` input, and only the `required` message in english and german. We can create this tree-shakable custom configuration by not using the `defaultConfig` and instead performing our own plugin instantiations:
+In this case, we only want to use the singular `required` rule, only the `text` input, and only the `required` message in English and German. We can create this tree-shakable custom configuration by not using the `defaultConfig` and instead performing our own plugin instantiations:
 
 ### Using the global plugin:
 
@@ -121,7 +121,7 @@ export default {
 type: 'tip'
 label: 'Custom messages'
 ---
-In the above examples we import the `en` and `de` locales. These include messages that are not used in our example. Instead we could have provided our own custom messages directly:
+In the above examples, we import the `en` and `de` locales. These include messages that are not used in our example. Instead, we could have provided our own custom messages directly:
 
 ```js
 createI18nPlugin({
@@ -147,13 +147,13 @@ createI18nPlugin({
 
 ## Configuration injection (code splitting)
 
-Vue’s plugin architecture is inherently global. The `plugin` in `@formkit/vue` is no different, however this convenience comes with a cost — FormKit will be loaded wherever Vue is loaded, even if it is is not used on the page.
+Vue’s plugin architecture is inherently global. The `plugin` in `@formkit/vue` is no different; however, this convenience comes with a cost—FormKit will be loaded wherever Vue is loaded, even if it is not used on the page.
 
-Fortunately for Nuxt users, the `@formkit/nuxt` module provides a solution to this problem: `autoImport: true`. This option will automatically inject FormKit and it’s configuration only on pages where it is used.
+Fortunately for Nuxt users, the `@formkit/nuxt` module provides a solution to this problem: `autoImport: true`. This option will automatically inject FormKit and its configuration only on pages where it is used.
 
 Vite users can also leverage automatic injection by using [unplugin-formkit](https://github.com/formkit/unplugin-formkit).
 
-For users of other build tools or for use cases that don’t fit well within the supported features of `unplugin-formkit` using the `<FormKitProvider>` component allows you to provide global configuration to your FormKit inputs at the point of use. Simply wrap your components in `<FormKitProvider>` and provide a `config` prop:
+For users of other build tools or for use cases that don’t fit well within the supported features of `unplugin-formkit`, using the `<FormKitProvider>` component allows you to provide global configuration to your FormKit inputs at the point of use. Simply wrap your components in `<FormKitProvider>` and provide a `config` prop:
 
 ```vue
 <script setup>
@@ -175,7 +175,7 @@ const formKitConfig: FormKitOptions = {
 ::Cta
 --- 
 href: "/essentials/configuration"
-label: "Read more about how configuration works." 
-button: "Configuration docs"
+label: "Read more about how to configure FormKit in the documentation."
+text: "The advanced configuration guide covers more options and details on how to optimize FormKit for your use case."
 ---
-::
+
