@@ -13,7 +13,6 @@ npx formkit create-app
 ✔ What framework would you like to use? › Vite / Nuxt
 ✔ What language should be used? › TypeScript / Javascript
 ✔ Would you like to install FormKit Pro? › no / yes
-✔ Enter a project key from https://pro.formkit.com: › <fk-00000000000>
 ```
 
 Once this is completed, you can follow the instructions to install all dependencies and start a development server:

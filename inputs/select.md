@@ -72,7 +72,8 @@ type: "tip"
 label: "Option attributes"
 ---
 To pass additional attributes to each <code>&lt;option&gt;</code> element, your object can also contain an <code>attrs</code> property.<br><br>
-<code class="block">[
+```js
+[
   {
     label: 'My Label',
     value: 'a-value',
@@ -80,9 +81,20 @@ To pass additional attributes to each <code>&lt;option&gt;</code> element, your 
       disabled: true
     }
   }
-]</code>
+]
+```
 ::
 
+### Option groups (`optgroup`)
+
+Using the [array of objects](#array-of-objects) syntax you can also create option groups (`<optgroup>` in HTML). To do so provide a `group` option:
+
+::Example
+---
+name: 'Option groups'
+file: '_content/_examples/select-groups/select-groups.vue'
+---
+::
 ### Default slot
 
 Sometimes it may be desirable to manually output the contents of a select list in order to create specialized structures. This can be done by using the `default` slot to explicitly output your options.
