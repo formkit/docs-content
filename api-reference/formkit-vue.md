@@ -88,6 +88,22 @@ ssrComplete(app: App<any>): void;
 
 - `app` — The Vue application.
 
+### useConfig()
+
+#### Signature
+
+<client-only>
+
+```typescript
+useConfig(config?: FormKitOptions | ((...args: any[]) => FormKitOptions)): void;
+```
+
+</client-only>
+
+#### Parameters
+
+- `config` *optional*
+
 ### useInput()
 
 A composable for creating a new FormKit node.
@@ -143,9 +159,7 @@ interface FormKitSetupContext<Props extends FormKitInputs<Props>> {
     }): void;
     props:{
         
-    }&Props&{
-        onInput: (value: any) => void;
-    };
+    }&Props;
     slots: Slots<Props>;
 }
 ```
