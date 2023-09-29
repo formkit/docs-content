@@ -136,6 +136,330 @@ export default {
     selection:
       'static flex left-0 top-0 right-0 bottom-0 mt-0 mb-2 rounded bg-gray-100',
   },
+  colorpicker: {
+    outer: `
+      group
+      formkit-disabled:cursor-not-allowed
+    `,
+    help: `
+      group-[[data-inline]]:-mt-1 
+      group-[[data-inline]]:mb-2
+    `,
+    inner: `
+      relative
+      inline-flex
+      group-[[data-inline]]:shadow-none
+      group-[[data-inline]]:!ring-1
+      group-[[data-inline]]:!ring-gray-400
+    `,
+    swatchPreview: `
+      w-full
+      flex
+      justify-start
+      items-center
+      p-3
+      rounded-md
+      text-sm
+      cursor-pointer
+      outline-none
+    `,
+    canvasSwatchPreviewWrapper: `
+      relative
+      before:content-['']
+      before:absolute
+      before:top-0
+      before:left-0
+      before:w-full
+      before:h-full
+      before:rounded-sm
+      before:shadow-[inset_0_0_0_1px_rgba(0,0,0,0.2)]
+      before:z-[2]
+    `,
+    canvasSwatchPreview: `
+      rounded
+      aspect-[2/1]
+      w-10
+    `,
+    valueString: `
+      inline-block
+      ml-2
+      mr-1
+    `,
+    panel: `
+      flex
+      flex-col
+      max-w-[300px]
+      p-2
+      rounded
+      bg-white
+      touch-manipulation
+      absolute
+      w-[100vw]
+      top-full
+      left-0
+      border
+      shadow-xl
+      z-10
+      group-[[data-inline]]:static
+      group-[[data-inline]]:w-auto
+      group-[[data-inline]]:shadow-none
+      group-[[data-inline]]:z-auto
+      [@media(max-width:431px)_and_(hover:none)]:group-[&:not([data-inline])]:!fixed
+      [@media(max-width:431px)_and_(hover:none)]:group-[&:not([data-inline])]:top-auto
+      [@media(max-width:431px)_and_(hover:none)]:group-[&:not([data-inline])]:max-w-none
+      [@media(max-width:431px)_and_(hover:none)]:group-[&:not([data-inline])]:bottom-0
+      [@media(max-width:431px)_and_(hover:none)]:group-[&:not([data-inline])]:left-0
+      [@media(max-width:431px)_and_(hover:none)]:group-[&:not([data-inline])]:rounded-none
+    `,
+    panelClose: `
+      flex
+      justify-end
+      items-center
+      mb-1
+      -mt-1
+      border-none
+      bg-none
+      border-b
+      w-[calc(100%+1rem)]
+      -ml-2
+      pt-0
+      pr-2
+      pb-1
+      pl-2
+    `,
+    closeIcon: `
+      w-[2rem]
+      aspect-square
+      p-1
+      rounded-full
+      border
+      [&>svg]:w-full
+      [&>svg]:aspect-square
+      [&>svg]:max-w-none
+      [&>svg]:max-h-none
+    `,
+    controlGroup: `
+      grid
+      [grid-template-areas:'a_a_a'_'b_c_e'_'b_d_e']
+      mb-2
+    `,
+    canvas: `
+      block
+      w-full
+    `,
+    canvasLS: `
+      aspect-[2/1]
+      cursor-pointer
+      rounded-sm
+    `,
+    LS: `
+      [grid-area:a]
+      relative
+      mb-2
+    `,
+    preview: `
+      [grid-area:b]
+      w-8
+      inline-flex
+      relative
+      rounded
+      overflow-hidden
+      aspect-square
+      rounded-sm
+      after:content-['']
+      after:absolute
+      after:top-0
+      after:left-0
+      after:w-full
+      after:h-full
+      after:rounded-sm
+      after:shadow-[inset_0_0_0_1px_rgba(0,0,0,0.2)]
+    `,
+    hue: `
+      [grid-area:c]
+      relative
+      inline-flex
+      h-3/4
+      ml-2
+    `,
+    alpha: `
+      [grid-area:d]
+      relative
+      inline-flex
+      h-3/4
+      ml-2
+    `,
+    eyeDropper: `
+      [grid-area:e]
+      p-1.5
+      ml-2
+      inline-flex
+      self-center
+      justify-self-center
+      aspect-square
+      rounded-sm
+      border
+      cursor-pointer
+      content-center
+      items-center
+    `,
+    eyeDropperIcon: `
+      w-auto
+      [&>svg]:w-5
+    `,
+    control: `
+      absolute
+      bg-white
+      shadow-[0_0_0_2px_rgba(255,255,255,1),0_0_0_3px_rgba(0,0,0,0.2)]
+      -translate-x-1/2
+      -translate-y-1/2
+      pointer-events-none
+      data-[prevent-focus-style]:shadow-[0_0_0_2px_rgba(255,255,255,1),0_0_0_3px_rgba(0,0,0,0.2)]
+      focus-visible:outline-none
+      focus-visible:shadow-[0_0_0_2px_rgba(255,255,255,1),0_0_0_3px_rgba(0,0,0,0.2),0_0_0_4px_rgba(59,130,246,1),0_0_0_5px_rgba(0,0,0,1)]
+    `,
+    controlLS: `
+      w-[10px]
+      h-[10px]
+      rounded-full
+    `,
+    controlHue: `
+      w-[4px]
+      h-[calc(100%-2px)]
+      top-1/2
+      rounded-[1px]
+    `,
+    controlAlpha: `
+      w-[4px]
+      h-[calc(100%-2px)]
+      top-1/2
+      rounded-[1px]
+    `,
+    formatField: `
+      flex
+      items-center
+      justify-center
+      grow
+    `,
+    colorInputGroup: `
+      flex
+      items-center
+      justify-center
+      grow
+    `,
+    fieldGroup: `
+      flex
+      flex-col
+      items-center
+      justify-center
+      w-full
+      mr-1
+      [&>input]:p-1
+      [&>input]:text-sm
+      [&>input]:m-0
+      [&>input]:grow
+      [&>input]:shrink
+      [&>input]:w-full
+      [&>input]:border
+      [&>input]:rounded-sm
+      [&>input]:text-center
+      [&>input]:appearance-none
+      [&>input::-webkit-outer-spin-button]:appearance-none 
+      [&>input::-webkit-inner-spin-button]:appearance-none
+      [&>input::-webkit-inner-spin-button]:m-0
+      [&>input:focus]:outline-none
+      [&>input:focus]:ring
+      [&>input:focus]:ring-blue-500
+      max-[431px]:[&>input]:text-base
+    `,
+    fieldLabel: `
+      text-xs
+      mt-1
+      opacity-50
+    `,
+    formatSwitcher: `
+      flex
+      justify-end
+      self-start
+      mt-1
+      uppercase
+      shrink-0
+      p-1
+      rounded-sm
+      select-none
+    `,
+    switchIcon: `
+      [&>svg]:w-3
+    `,
+    swatches: `
+      flex
+      flex-wrap
+      w[calc(100%+0.5rem)]
+      -ml-1
+      pt-2
+      pb-2
+      mt-2
+      -mb-2
+      border-t
+      overflow-auto
+      max-h-[200px]
+      select-none
+      first:-mt-2
+      first:border-t-0
+    `,
+    swatchGroup: `
+      flex
+      flex-wrap
+      w-full
+      mb-2
+      last:mb-0
+    `,
+    swatchGroupLabel: `
+      block
+      w-full
+      text-sm
+      opacity-50
+    `,
+    swatch: `
+      relative
+      w-full
+      max-w-[calc((100%/10)-0.5rem)]
+      aspect-square
+      m-1
+      cursor-pointer
+      before:content-['']
+      before:absolute
+      before:top-0
+      before:left-0
+      before:w-full
+      before:h-full
+      before:rounded-sm
+      before:shadow-[inset_0_0_0_1px_rgba(0,0,0,0.2)]
+      before:pointer-events-none
+      before:z-[2]
+      data-[active='true']:after:content-['']
+      data-[active='true']:after:block
+      data-[active='true']:after:absolute
+      data-[active='true']:after:w-1.5
+      data-[active='true']:after:h-1.5
+      data-[active='true']:after:top-1/2
+      data-[active='true']:after:left-1/2
+      data-[active='true']:after:pointer-events-none
+      data-[active='true']:after:rounded-full
+      data-[active='true']:after:-translate-x-1/2
+      data-[active='true']:after:-translate-y-1/2
+      data-[active='true']:after:bg-white
+      data-[active='true']:after:z-[2]
+      data-[active='true']:after:ring-1
+      data-[active='true']:after:ring-[rgba(0,0,0,0.33)]
+      [&>canvas]:block
+      [&>canvas]:w-full
+      [&>canvas]:aspect-square
+      [&>canvas]:rounded-sm
+      [&>canvas:focus-visible]:outline-none
+      [&>canvas:focus-visible]:shadow-[0_0_0_2px_rgba(255,255,255,1),0_0_0_4px_rgba(59,130,246,1)]
+    `,
+  },
   datepicker: {
     inner: 'relative',
     panelWrapper:
