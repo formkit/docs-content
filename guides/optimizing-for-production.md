@@ -147,7 +147,7 @@ createI18nPlugin({
 
 ## Configuration injection (code splitting)
 
-Vue’s plugin architecture is inherently global. The `plugin` in `@formkit/vue` is no different; however, this convenience comes with a cost—FormKit will be loaded wherever Vue is loaded, even if it is not used on the page.
+Vue’s plugin architecture is inherently global. The `plugin` in `@formkit/vue` is no different; however, this convenience comes with a cost — FormKit will be loaded wherever Vue is loaded, even if it is not used on the page.
 
 Fortunately for Nuxt users, the `@formkit/nuxt` module provides a solution to this problem: `autoImport: true`. This option will automatically inject FormKit and its configuration only on pages where it is used.
 
