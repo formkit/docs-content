@@ -223,7 +223,7 @@ It's important to note that the visual representation of intervals on a `slider`
 
 ::Example
 ---
-name: "Snap to Marks"
+name: "Intervals"
 file: "_content/_examples/slider/intervals.vue"
 ---
 ::
