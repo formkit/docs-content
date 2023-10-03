@@ -868,7 +868,19 @@ schema: [
                 content: "2027",
               }
             ]
-          }
+          },
+          {
+            name: "panel-close",
+            position: "right",
+            class: "icon-button",
+            children: [
+              {
+                name: "close-icon",
+                position: "right",
+                content: "X",
+              },
+            ],
+          },
         ],
       },
       {
@@ -999,6 +1011,18 @@ schema: [
                 name: "next-icon",
                 position: "right",
                 content: "👉",
+              },
+            ],
+          },
+          {
+            name: "panel-close",
+            position: "right",
+            class: "icon-button",
+            children: [
+              {
+                name: "close-icon",
+                position: "right",
+                content: "X",
               },
             ],
           },
@@ -1410,9 +1434,21 @@ schema: [
                 name: "year-button",
                 position: "right",
                 content: "2027",
-              }
+              },
             ]
-          }
+          },
+          {
+            name: "panel-close",
+            position: "right",
+            class: "icon-button",
+            children: [
+              {
+                name: "close-icon",
+                position: "right",
+                content: "X",
+              },
+            ],
+          },
         ],
       },
       {
@@ -1498,6 +1534,14 @@ data: [
   {
     "section-key": "nextLabel",
     description: "The section responsible for rendering the text content of the next button in the panel header.",
+  },
+  {
+    "section-key": "panelClose",
+    description: "The section responsible for rendering the close button of the datepicker, shown on small touch devices.",
+  },
+  {
+    "section-key": "closeIcon",
+    description: "The icon rendered inside the panelClose section.",
   },
   {
     "section-key": "openButton",
