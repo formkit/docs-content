@@ -91,8 +91,8 @@ Using the [array of objects](#array-of-objects) syntax you can also create optio
 
 ::Example
 ---
-name: 'Option groups'
-file: '_content/_examples/select-groups/select-groups.vue'
+name: "Option groups"
+file: "_content/_examples/select-groups/select-groups.vue"
 ---
 ::
 ### Default slot
