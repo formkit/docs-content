@@ -239,12 +239,12 @@ schema: [
                 name: "swatchPreview",
                 children: [
                   {
-                    name: 'canvasSwatchPreview',
-                    content: '⬛️'
+                    name: "canvasSwatchPreview",
+                    content: "⬛️"
                   },
                   {
-                    name: 'valueString',
-                    content: '#000000'
+                    name: "valueString",
+                    content: "#000000"
                   }
                 ]
               },
@@ -297,7 +297,7 @@ schema: [
       {
         name: "panelClose",
         position: "right",
-        content: '(panelClose is only shown on small touchscreens when in pop-over mode)',
+        content: "(panelClose is only shown on small touchscreens when in pop-over mode)",
         children: [
           {
             name: "iconClose",
@@ -315,15 +315,15 @@ schema: [
             position: "right",
             children: [
               {
-                name: 'canvasLS',
+                name: "canvasLS",
                 position: "right",
-                content: '🖼️'
+                content: "🖼️"
               },
               {
-                name: 'controlLS',
+                name: "controlLS",
                 position: "right",
-                content: '⊙',
-                class: 'tiny-section'
+                content: "⊙",
+                class: "tiny-section"
               }
             ]
           },
@@ -331,8 +331,8 @@ schema: [
             name: "preview",
             children: [
               {
-                name: 'canvasPreview',
-                content: '⬛️',
+                name: "canvasPreview",
+                content: "⬛️",
               }
             ]
           },
@@ -341,15 +341,15 @@ schema: [
             position: "right",
             children: [
               {
-                name: 'canvasHue',
+                name: "canvasHue",
                 position: "right",
-                content: '🌈'
+                content: "🌈"
               },
               {
-                name: 'controlHue',
+                name: "controlHue",
                 position: "right",
-                content: '⊙',
-                class: 'tiny-section'
+                content: "⊙",
+                class: "tiny-section"
               }
             ]
           },
@@ -357,13 +357,13 @@ schema: [
             name: "alpha",
             children: [
               {
-                name: 'canvasAlpha',
-                content: '👻'
+                name: "canvasAlpha",
+                content: "👻"
               },
               {
-                name: 'controlAlpha',
-                content: '⊙',
-                class: 'tiny-section'
+                name: "controlAlpha",
+                content: "⊙",
+                class: "tiny-section"
               }
             ]
           },
@@ -372,85 +372,85 @@ schema: [
             position: "right",
             children: [
               {
-                name: 'iconEyeDropper',
+                name: "iconEyeDropper",
                 position: "right",
-                content: '👁️'
+                content: "👁️"
               },
             ]
           },
         ],
       },
       {
-        name: 'formatField',
+        name: "formatField",
         children: [
           {
-            name: 'colorInputGroup',
+            name: "colorInputGroup",
             children: [
               {
-                name: 'hexField',
-                content: '#️⃣'
+                name: "hexField",
+                content: "#️⃣"
               },
               {
-                name: 'rField',
-                content: '0️⃣'
+                name: "rField",
+                content: "0️⃣"
               },
               {
-                name: 'gField',
-                content: '0️⃣'
+                name: "gField",
+                content: "0️⃣"
               },
               {
-                name: 'bField',
-                content: '0️⃣'
+                name: "bField",
+                content: "0️⃣"
               },
               {
-                name: 'hField',
+                name: "hField",
                 position: "right",
-                content: '0️⃣'
+                content: "0️⃣"
               },
               {
-                name: 'sField',
+                name: "sField",
                 position: "right",
-                content: '0️⃣'
+                content: "0️⃣"
               },
               {
-                name: 'lField',
+                name: "lField",
                 position: "right",
-                content: '0️⃣',
+                content: "0️⃣",
               },
               {
-                name: 'aField',
+                name: "aField",
                 position: "right",
-                content: '1️⃣'
+                content: "1️⃣"
               },
             ]
           },
           {
-            name: 'formatSwitcher',
+            name: "formatSwitcher",
             position: "right",
             children: [
               {
-                name: 'iconSwitch',
+                name: "iconSwitch",
                 position: "right",
-                content: '↕'
+                content: "↕"
               }
             ]
           }
         ]
       },
       {
-        name: 'swatches',
+        name: "swatches",
         children: [
           {
-            name: 'swatch',
-            content: '🟦'
+            name: "swatch",
+            content: "🟦"
           },
           {
-            name: 'swatch',
-            content: '🟥'
+            name: "swatch",
+            content: "🟥"
           },
           {
-            name: 'swatch',
-            content: '🟨'
+            name: "swatch",
+            content: "🟨"
           }
         ]
       }
@@ -488,7 +488,7 @@ schema: [
             name: "inner",
             children: [
               {
-                name: 'panel',
+                name: "panel",
                 children: [
                   {
                     name: "controlGroup",
@@ -498,15 +498,15 @@ schema: [
                         position: "right",
                         children: [
                           {
-                            name: 'canvasLS',
+                            name: "canvasLS",
                             position: "right",
-                            content: '🖼️'
+                            content: "🖼️"
                           },
                           {
-                            name: 'controlLS',
+                            name: "controlLS",
                             position: "right",
-                            content: '⊙',
-                            class: 'tiny-section'
+                            content: "⊙",
+                            class: "tiny-section"
                           }
                         ]
                       },
@@ -514,8 +514,8 @@ schema: [
                         name: "preview",
                         children: [
                           {
-                            name: 'canvasPreview',
-                            content: '⬛️',
+                            name: "canvasPreview",
+                            content: "⬛️",
                           }
                         ]
                       },
@@ -524,15 +524,15 @@ schema: [
                         position: "right",
                         children: [
                           {
-                            name: 'canvasHue',
+                            name: "canvasHue",
                             position: "right",
-                            content: '🌈'
+                            content: "🌈"
                           },
                           {
-                            name: 'controlHue',
+                            name: "controlHue",
                             position: "right",
-                            content: '⊙',
-                            class: 'tiny-section'
+                            content: "⊙",
+                            class: "tiny-section"
                           }
                         ]
                       },
@@ -540,13 +540,13 @@ schema: [
                         name: "alpha",
                         children: [
                           {
-                            name: 'canvasAlpha',
-                            content: '👻'
+                            name: "canvasAlpha",
+                            content: "👻"
                           },
                           {
-                            name: 'controlAlpha',
-                            content: '⊙',
-                            class: 'tiny-section'
+                            name: "controlAlpha",
+                            content: "⊙",
+                            class: "tiny-section"
                           }
                         ]
                       },
@@ -555,85 +555,85 @@ schema: [
                         position: "right",
                         children: [
                           {
-                            name: 'iconEyeDropper',
+                            name: "iconEyeDropper",
                             position: "right",
-                            content: '👁️'
+                            content: "👁️"
                           },
                         ]
                       },
                     ],
                   },
                   {
-                    name: 'formatField',
+                    name: "formatField",
                     children: [
                       {
-                        name: 'colorInputGroup',
+                        name: "colorInputGroup",
                         children: [
                           {
-                            name: 'hexField',
-                            content: '#️⃣'
+                            name: "hexField",
+                            content: "#️⃣"
                           },
                           {
-                            name: 'rField',
-                            content: '0️⃣'
+                            name: "rField",
+                            content: "0️⃣"
                           },
                           {
-                            name: 'gField',
-                            content: '0️⃣'
+                            name: "gField",
+                            content: "0️⃣"
                           },
                           {
-                            name: 'bField',
-                            content: '0️⃣'
+                            name: "bField",
+                            content: "0️⃣"
                           },
                           {
-                            name: 'hField',
+                            name: "hField",
                             position: "right",
-                            content: '0️⃣'
+                            content: "0️⃣"
                           },
                           {
-                            name: 'sField',
+                            name: "sField",
                             position: "right",
-                            content: '0️⃣'
+                            content: "0️⃣"
                           },
                           {
-                            name: 'lField',
+                            name: "lField",
                             position: "right",
-                            content: '0️⃣',
+                            content: "0️⃣",
                           },
                           {
-                            name: 'aField',
+                            name: "aField",
                             position: "right",
-                            content: '1️⃣'
+                            content: "1️⃣"
                           },
                         ]
                       },
                       {
-                        name: 'formatSwitcher',
+                        name: "formatSwitcher",
                         position: "right",
                         children: [
                           {
-                            name: 'iconSwitch',
+                            name: "iconSwitch",
                             position: "right",
-                            content: '↕'
+                            content: "↕"
                           }
                         ]
                       }
                     ]
                   },
                   {
-                    name: 'swatches',
+                    name: "swatches",
                     children: [
                       {
-                        name: 'swatch',
-                        content: '🟦'
+                        name: "swatch",
+                        content: "🟦"
                       },
                       {
-                        name: 'swatch',
-                        content: '🟥'
+                        name: "swatch",
+                        content: "🟥"
                       },
                       {
-                        name: 'swatch',
-                        content: '🟨'
+                        name: "swatch",
+                        content: "🟨"
                       }
                     ]
                   }
