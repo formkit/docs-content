@@ -184,6 +184,50 @@ file: "_content/_examples/slider/snap-to-marks.vue"
 ---
 ::
 
+## Scaling slider values
+
+By default the `slider` input scales values linearly across its entire range. However, you can use the provided `scaling-function` or `intervals` props to change this behavior.
+
+### Using functions
+
+The `scaling-function` prop accepts 3 values:
+
+- The string `linear` — this is the default behavior
+- The string `log` which will apply a logarithmic scaling function to your `slider`
+- An object which consits of two functions named `forward` and `reverse` which will apply your own scaling logic.
+
+When providing a custom scaling function your `forward` function is the comptutation to take a percentage position value on the slider track and convert it to a numeric value.
+
+Your `reverse` function is the inverse — converting a numeric value into a percentage positional value on the slider track.
+
+::Example
+---
+name: "Scaling functions"
+file: [
+  "_content/_examples/slider/scaling-functions.vue",
+  "_content/_examples/slider/scaling-functions.js"
+]
+---
+::
+
+### Using Intervals
+
+The `intervals` prop accepts an array of object where each object defines an interval range on the `slider`. Each obect contains:
+
+- `value`: The point on the `slider` at which the interval begins
+- `step`: The step size that should be used within the interval
+
+Your last interval will cover the range extending from your specified `value` to the `max` prop value on your `slider`. If your lowest interval does not begin at the minimum possible value of your `slider` then an interval covering the range from your `min` slider prop to your first interval will be created for you. Its `step` value will be the value of the `step` prop on your `slider` input.
+
+It's important to note that the visual representation of intervals on a `slider` track is based on the total number of possible steps within a given interval and not the interval's raw numeric value.
+
+::Example
+---
+name: "Intervals"
+file: "_content/_examples/slider/intervals.vue"
+---
+::
+
 ## Chart
 
 You can render a bar chart above the slider with arbitrary values by suppling an array to the `chart` prop. The `chart` array has a similar structure to the `marks` array. Each nested object should contain:
@@ -233,6 +277,12 @@ data: [
     description: "Applies custom attributes to the nested linked FormKit inputs for both min and max values.",
   },
   {
+    prop: "intervals",
+    type: "array",
+    default: "none",
+    description: "An array of interval values consisting of <code>value</code> and <code>step</code> used to define differing scaling for different sections of a slider track.",
+  },
+  {
     prop: "marks",
     type: "boolean || array",
     default: "false",
@@ -277,6 +327,13 @@ data: [
     default: "none",
     description:
       "Characters that will always appear at the beginning of the input.",
+  },
+  {
+    prop: "scaling-function",
+    type: "string || object",
+    default: "linear",
+    description:
+      "Defines scaling behavior for values on the rendered slider track using either a preset value string or a set of custom functions.",
   },
   {
     prop: "show-input",
