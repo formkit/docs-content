@@ -186,17 +186,6 @@ file: "_content/_examples/slider/custom-marks.vue"
 ---
 ::
 
-### Styling marks
-
-You can apply custom classes to your marks and mark labels by using the `class` and `labelClasses` properties on your mark objects.
-
-::Example
----
-name: "Custom Marks"
-file: "_content/_examples/slider/styling-marks.vue"
----
-::
-
 ### Snap to marks
 
 When supplying custom marks you may want to force the selection to snap to the provided marks. This can be achieved with the `snap-to-marks` prop. When `snap-to-marks` is `true` keyboard events will jump to the next closest mark and entered values through keyboard or linked inputs will snap to the nearest available mark.
@@ -205,6 +194,17 @@ When supplying custom marks you may want to force the selection to snap to the p
 ---
 name: "Snap to Marks"
 file: "_content/_examples/slider/snap-to-marks.vue"
+---
+::
+
+### Styling marks
+
+You can apply custom classes to your marks and mark labels by using the `class` and `labelClasses` properties on your mark objects.
+
+::Example
+---
+name: "Custom Marks"
+file: "_content/_examples/slider/styling-marks.vue"
 ---
 ::
 
