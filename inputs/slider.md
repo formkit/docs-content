@@ -73,6 +73,17 @@ file: "_content/_examples/slider/multiple-values.vue"
 ---
 ::
 
+## Customizing handles
+
+Using the `maxHandleInner` (default) and `minHandleInner` slots you can customize the appearance of your `slider` handles. The `maxHandleInner` slot is used for single-value `slider` inputs.
+
+::Example
+---
+name: "Slider Input"
+file: "_content/_examples/slider/customizing-handle.vue"
+---
+::
+
 ## Customizing tooltips
 
 ### Tooltip visibility
@@ -165,11 +176,24 @@ By supplying an array of objects to the `marks` prop instead of a boolean you ca
 
 - `at`: The position (value) on the track where the mark should render.
 - `label`: The label to render for the mark if the `mark-labels` prop is enabled.
+- `class`: A string of classes to apply to the mark element.
+- `labelClasses`: A string of classes to apply to the mark label element.
 
 ::Example
 ---
 name: "Custom Marks"
 file: "_content/_examples/slider/custom-marks.vue"
+---
+::
+
+### Styling marks
+
+You can apply custom classes to your marks and mark labels by using the `class` and `labelClasses` properties on your mark objects.
+
+::Example
+---
+name: "Custom Marks"
+file: "_content/_examples/slider/styling-marks.vue"
 ---
 ::
 
@@ -195,10 +219,6 @@ The `scaling-function` prop accepts 3 values:
 - The string `linear` — this is the default behavior
 - The string `log` which will apply a logarithmic scaling function to your `slider`
 - An object which consits of two functions named `forward` and `reverse` which will apply your own scaling logic.
-
-When providing a custom scaling function your `forward` function is the comptutation to take a percentage position value on the slider track and convert it to a numeric value.
-
-Your `reverse` function is the inverse — converting a numeric value into a percentage positional value on the slider track.
 
 ::Example
 ---
