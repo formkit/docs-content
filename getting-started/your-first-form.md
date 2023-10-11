@@ -235,7 +235,7 @@ init-file-tab: "example.vue"
 Sometimes forms need to show or hide fields depending on the value of another input. We can do this by learning 2 new concepts:
 
 - [Context object](/essentials/configuration) — We can access an input's value (along with other data) inside our form because all `FormKit` components receive their [context object](https://formkit.com/essentials/configuration) in the `#default` [slot prop](https://vuejs.org/guide/components/slots.html#scoped-slots).
-- The value of a `group` - The value of [group](/inputs/group) (and `form`) inputs is an object with the values of its children, keyed by the children's `name`s.
+- The value of a `group` - The value of a [group](/inputs/group) (and `form`) input is an object with the values of its children, keyed by the children's `name`s.
 
 ::Callout
 ---
