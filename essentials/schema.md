@@ -203,6 +203,14 @@ layout: "auto"
 ---
 ::
 
+::Callout
+---
+type: "tip"
+label: "Ensure re-render with a key"
+---
+When adding an <code>if</code> property to <code>$cmp</code> or <code>$formkit</code> schema nodes that have dynamic values, Vue may reuse un-updated values and components for performance reasons. Adding a unique <code>key</code> property to the schema node will ensure Vue correctly re-renders the component.
+::
+
 ### The `if/then/else` object
 
 The `if/then/else` object allows for more complex conditional logic. It can be used to conditionally render nodes, a list of schema nodes, values of the `attrs` object or values of the `props` object. It is also possible to nest `if/then/else` objects to create more complex structures — similar to an `else if` statement in JavaScript.
@@ -261,6 +269,14 @@ name: "Schema - slots"
 file: "_content/_examples/schema-slots/schema-slots.vue"
 layout: "auto"
 ---
+::
+
+::Callout
+---
+type: "tip"
+label: "FormKit input slots"
+---
+Inside of a <code>$formkit</code> schema node, it is also possible to pass content to preexisting FormKit slots like <code>label</code> or <code>prefix</code> inside of the node's <code>__raw__sectionsSchema</code> property. Read more about raw values <a href="#raw-values">below</a>, and `sectionsSchema` in the <a href="/essentials/inputs/#sections-schema">inputs documentation</a>.
 ::
 
 ## Binding attrs and props
