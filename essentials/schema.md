@@ -276,7 +276,7 @@ layout: "auto"
 type: "tip"
 label: "FormKit input slots"
 ---
-It is also possible to use already defined FormKit slots like <code>label</code> by mimicking the use of a slot with <code>__raw__sectionsSchema</code>. For more information on how to use raw values, checkout the "Raw values" section below.
+Inside of a <code>$formkit</code> schema node, it is also possible to pass content to preexisting FormKit slots like <code>label</code> or <code>prefix</code> inside of the node's <code>__raw__sectionsSchema</code> property. Read more about raw values <a href="#raw-values">below</a>, and `sectionsSchema` in the <a href="/essentials/inputs/#sections-schema">inputs documentation</a>.
 ::
 
 ## Binding attrs and props
