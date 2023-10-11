@@ -206,9 +206,9 @@ layout: "auto"
 ::Callout
 ---
 type: "tip"
-label: "If input"
+label: "Ensure re-render with a key"
 ---
-When adding <code>if</code> to <code>$cmp</code> or <code>$formkit</code> that has an input vue might reuse the previous values and components for performance reasons, that may cause errors and unintended behaviour, because of that is advisable to add a unique <code>key</code> to that element so vue correctly rerenders the component.
+When adding an <code>if</code> property to <code>$cmp</code> or <code>$formkit</code> schema nodes that have dynamic values, Vue may reuse un-updated values and components for performance reasons. Adding a unique <code>key</code> property to the schema node will ensure Vue correctly re-renders the component.
 ::
 
 ### The `if/then/else` object
@@ -276,7 +276,7 @@ layout: "auto"
 type: "tip"
 label: "FormKit input slots"
 ---
-It is also possible to use already defined FormKit slots like <code>label</code> by mimicking the use of a slot with <code>__raw__sectionsSchema</code>, for more information on how to use raw values checkout the next sections.
+It is also possible to use already defined FormKit slots like <code>label</code> by mimicking the use of a slot with <code>__raw__sectionsSchema</code>. For more information on how to use raw values, checkout the "Raw values" section below.
 ::
 
 ## Binding attrs and props
