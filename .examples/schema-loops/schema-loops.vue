@@ -10,7 +10,7 @@ const schema = [
       {
         $el: 'li',
         for: ['item', 'key', '$cities'],
-        children: '$: ($key * 1 + 1) + ": " + $item'
+        children: '$: ($key + 1) + ": " + $item'
       }
     ]
   }
