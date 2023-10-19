@@ -53,6 +53,14 @@ title: "Custom schema submit button with disabled state and loading spinner"
 Create a custom schema-powered submit button that dynamically disables while the form is submitting and provides a loading spinner.
 ::
 
+::ExampleCard
+---
+href: "https://formkit.link/793ea66a222f54d54167d9293d8335a1"
+title: "Add a maxlength coutdown to a textarea"
+---
+Adds a simple countdown of characters left in a textarea with a hover tooltip based on the textarea's maxlength prop
+::
+
 ## Plugins
 
 ::ExampleCard
