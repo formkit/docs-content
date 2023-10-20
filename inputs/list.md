@@ -91,7 +91,17 @@ file: "_content/_examples/list/list-dynamic.vue"
 ---
 ::
 
+#### Dynamic list with a nested group
+
+::Example
+---
+name: "Dynamic list"
+file: "_content/_examples/list/list-dynamic-nested-group.vue"
+---
+::
+
 #### Dynamic list using v-model
+
 ::Example
 ---
 name: "Dynamic list"
@@ -102,6 +112,7 @@ file: [
 ::
 
 #### Dynamic list in schema
+
 ::Example
 ---
 name: "Dynamic list"
