@@ -39,7 +39,7 @@ The `@formkit/icons` package ships with over 130 common icons to make getting st
 ## Installation & setup
 
 For most users **no installation is required** to use icons (although we recommend [adding your icons to the `iconRegistry`](#adding-icons-to-the-iconregistry)
-for best performarnce). Icon support is provided via a 1st-party FormKit plugin called `createThemePlugin()` — This plugin
+for best performance). Icon support is provided via a 1st-party FormKit plugin called `createThemePlugin()`. This plugin
 is enabled by default if you are using FormKit's `defaultConfig()`.
 
 ::Callout
@@ -52,7 +52,7 @@ project is using <code>defaultConfig()</code> (this is usually the case), then g
 <code>${section}-icon</code> props available on <code>FormKit</code> components — no additional setup required.
 ::
 
-When using the `defaultConfig` that ships with FormKit there are several top-level configuration options you can use to
+When using the `defaultConfig` that ships with FormKit, you can use several top-level configuration options to
 customize your experience. See the `createThemePlugin` docs in the next section for expanded explanations of each.
 
 ```js
@@ -95,12 +95,12 @@ createApp(App).use(plugin, {
 
 The `createThemePlugin` takes 4 optional arguments:
 
-- `theme`: A string representation of a FormKit theme name, eg. `'genesis'`. When provided, if a a matching FormKit theme is found it will be loaded via CDN automatically.
+- `theme`: A string representation of a FormKit theme name, eg. `'genesis'`. When provided, if a matching FormKit theme is found, it will be loaded via CDN automatically.
 - `icons`: An object of SVG icons to be added to the internal `iconRegistry`. Keys are icon names and values are SVGs, eg `{ heart: '<svg ...' }`
 - `iconLoaderUrl`: A function that receives `iconName` and returns a URL where the icons can be loaded not found in the `iconRegistry`. [See example](#using-fontawesome-with-a-custom-iconloaderurl)
 - `iconLoader`: A function that receives `iconName` and returns a Promise that resolves to a SVG (as a string) or `undefined`. Use this when you need more control than just overriding the `iconLoaderUrl`. [See example](#an-example-heroicons-iconloader)
 
-Once the theme plugin is installed in your project your FormKit inputs will have icon props available to use.
+Once the theme plugin is installed in your project, your FormKit inputs will have icon props available to use.
 
 ## Registering icons
 
@@ -109,12 +109,12 @@ Once the theme plugin is installed in your project your FormKit inputs will have
 FormKit goes through 4 steps when attempting to load an icon. They are, in order:
 
 1. **SVG prop value** - If the prop value is an SVG (e.g. `prefix-icon="<svg ..."`), then the provided SVG will be used.
-2. **The iconRegistry** - If the prop value is a string that is not an SVG then FormKit will look for the icon in its internal `iconRegistry` for a matching key.
-3. **Your project's CSS variables** - If there is a CSS variable that matches `--fk-icon-${yourIconName}` defined in your CSS it will be loaded into the `iconRegistry`. The value of the CSS variable should be a base64-encoded SVG — it should not be wrapped in quotes. This is how FormKit ships default icons for inputs in its 1st-party themes.
-4. **Via CDN** - If no matching icon can be found in your codebase, then a request will be made to the `@formkit/icons` package via CDN. If a matching icon name is found it will be used. You can [override where remote icons are loaded](#using-fontawesome-with-a-custom-iconloaderurl) if you'd like to use a 3rd-party icon library as a fallback.
+2. **The iconRegistry** - If the prop value is a string that is not an SVG, then FormKit will look for the icon in its internal `iconRegistry` for a matching key.
+3. **Your project's CSS variables** - If there is a CSS variable that matches `--fk-icon-${yourIconName}` defined in your CSS, it will be loaded into the `iconRegistry`. The value of the CSS variable should be a base64-encoded SVG — it should not be wrapped in quotes. This is how FormKit ships default icons for inputs in its 1st-party themes.
+4. **Via CDN** - If no matching icon can be found in your codebase, then a request will be made to the `@formkit/icons` package via CDN. If a matching icon name is found it will be used. You can [override where remote icons are loaded](#using-fontawesome-with-a-custom-iconloaderurl) if you'd like to use a 3rd-party icon library as a fallback.
 
 Because FormKit falls back to CDN requests for icons, you can easily get started in a new project by providing supported icon names to your input’s icon props
-and they will be loaded for you automatically — no additional setup required!. 🪄
+and they will be loaded for you automatically — no additional setup required! 🪄
 
 Remotely loaded SVGs are added to the internal `iconRegistry` the first time an icon is fetched. Additional requests for the same icon will be cached until a user reloads your application.
 
@@ -160,7 +160,7 @@ and running, but we recommend registering icons you know you will end up using i
 ### Adding icons to inputs
 
 Many FormKit inputs support `suffix` and `prefix` icons. You can use the `prefix-icon` and `suffix-icon` props on any
-`text`-like input such as `text`, `email`, `search`, `date`, etc. These props are also available on the `select`, `color`,
+`text`-like input such as `text`, `email`, `search`, `date`, etc. These props are available on the `select`, `color`,
 and `range` inputs as well.
 
 The `select` input has a `select-icon` prop that allows you to change the icon used for the select input’s control.
@@ -188,7 +188,7 @@ file: "_content/_examples/icons/inline-svg.vue"
 
 ### Using the `<FormKitIcon />` component
 
-FormKit ships with a component called `<FormKitIcon />` that allows you out output any icon from the `iconRegistry` anywhere
+FormKit ships with a component called `<FormKitIcon />` that allows you to output any icon from the `iconRegistry` anywhere
 within your project. Need an icon you're using in FormKit on some other part of your UI? No problem:
 
 ::Example
@@ -200,8 +200,8 @@ file: "_content/_examples/icons/icon-component.vue"
 
 ## Icon click handlers
 
-Every icon prop registers a click-handler prop. The `prefix-icon` prop will
-have a corresponding `@prefix-icon-click` prop, etc.
+Every icon prop registers a click-handler prop. For example, the `prefix-icon` prop will
+have a corresponding `@prefix-icon-click` prop.
 
 Each click-handler prop receives the input's core `node` and the click `event` as arguments.
 
@@ -214,7 +214,7 @@ file: "_content/_examples/icons/handle-click.vue"
 
 ## Using 3rd-party libraries
 
-If you want to use a 3rd-party icon set in your FormKit project you can supply a custom `iconLoaderUrl` or complete `iconLoader`
+If you want to use a 3rd-party icon set in your FormKit project, you can supply a custom `iconLoaderUrl` or complete `iconLoader`
 (either globally, at the node config level, or as a component prop) which is responsible for retrieving icons that do not
 already exist in the `iconRegistry`.
 
@@ -249,7 +249,7 @@ file: [
 ---
 ::
 
-### An example Heroicons `iconLoader``
+### An example Heroicons `iconLoader`
 
 Below is an implementation of FormKit with a fully custom `iconLoader` that fetches missing icons from Heroicons instead of the FormKit icon set.
 
