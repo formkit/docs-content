@@ -193,7 +193,7 @@ const event = useEventsSystem<[node: FormKitNode]>()
 event.combine(addon)
 ```
 
-The `execute()` function runs the events expects the event and the parameters to returns the expected return of that event callback from Inertia:
+The `execute()` function executes the given event. It expects the event, parameters, and any other parameter passed as a type to `useEventSystem` and returns the result of the event callback from Inertia:
 
 ```ts
 const event = useEventsSystem<[node: FormKitNode]>()
@@ -209,7 +209,7 @@ const result = event.execute('before', visit, node) // runs console.log
 console.log(result) // returns false
 ```
 
-The `toVisitOptions()` functions returns a `VisitOptions` with all events that where passed prior to it by wrapping the `execute()` function, and its already ready to used in Inertia's `router()` function:
+The `toVisitOptions()` functions returns a compatible `VisitOptions` where all event callbacks will be defined for you, and inside it will already have the `execute()` function being returned for convenience making it already ready to be used in Inertia's `router()` function as its options:
 
 ```ts
 const event = useEventsSystem<[node: FormKitNode]>()
