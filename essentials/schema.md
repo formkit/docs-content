@@ -251,14 +251,6 @@ layout: "auto"
 ---
 ::
 
-::Callout
----
-type: "tip"
-label: "Casting"
----
-Sometimes schema expressions need to cast a string to a number. For example, keys are always string values during an iteration, so in the above example it was necessary to cast <code>$key</code> to an integer before adding it to <code>1</code>. To perform this cast, we simply multiplied by 1: <code>$key * 1</code> before performing our addition.
-::
-
 ## Slots
 
 Schemas can render the slot content of the `<FormKitSchema>` component anywhere within the schema that a normal schema node can be rendered. All scoped slots are automatically provided to the schema under the `$slots` reference object:
