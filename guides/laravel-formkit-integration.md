@@ -3,7 +3,7 @@ title: Integrating FormKit with Laravel 10 — Streamlining Form Creation and Va
 description: FormKit and Laravel are both powerful tools for building web applications, but they can be even more effective when used together.
 ---
 
-# Integrating FormKit with Laravel 10: Streamlining form creation and validation
+# Laravel with FormKit
 
 :PageToc
 
@@ -11,7 +11,7 @@ description: FormKit and Laravel are both powerful tools for building web applic
 
 FormKit and Laravel are both powerful tools for building web applications — and they're even more effective when used together.
 
-By integrating FormKit with Laravel, developers can streamline the form creation and validation process and take advantage of the benefits of both tools. In this article, we will explore how to integrate FormKit with Laravel 10, — covering everything you need to get started — and concluding with a plugin you can use in your own projects for effortless integration.
+By integrating FormKit with Laravel, developers can streamline the form creation and validation process and take advantage of the benefits of both tools. In this guide, we will explore how to integrate FormKit with Laravel 10, — covering everything you need to get started — and concluding with a plugin you can use in your own projects for effortless integration.
 
 ## Why using FormKit will speed up your development
 

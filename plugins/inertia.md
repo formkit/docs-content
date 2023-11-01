@@ -1,24 +1,14 @@
 ---
 title: Inertia Plugin
-description: Use this to integrate your FormKit forms with Inertia calls.
+description: A plugin for integrating FormKit with Laravel Inertia.
 ---
 
 # Inertia Plugin
 
 :PageToc
 
-The `@formkit/inertia` plugin aims to seamlessly integrate Inertia.js with FormKit forms, leveraging a robust event system that harnesses Inertia.js event callbacks and FormKit plugins for a smooth and powerful web development experience, and here is why:
+The `@formkit/inertia` plugin aims to seamlessly integrate Inertia.js with FormKit forms, leveraging a robust event system that harnesses Inertia.js event callbacks and FormKit plugins for a smooth and powerful web development experience.
 
-- Your time should be used on creating forms and backends, not integrations.
-- Having an easy to install and use package, makes it so you don't need to care about packaging and publishing.
-
-::Callout
----
-type: "warning"
-label: "Inertia Plugin"
----
-The <code>@formkit/inertia</code> is intended to run on a FormKit form. Your usage of the composable and plugin will be on a per-form basis and each form that requires Inertia integration.
-::
 
 ## Installation
 
@@ -32,7 +22,7 @@ npm install @formkit/inertia
 
 ## Usage
 
-To use the Inertia plugin we need to import the `useForm` function from `@formkit/inertia`, call the `useForm` function to create receive the `form`, it comes with Inertia method calls, reactive states, the plugin event system and the FormKit plugin.
+To use the Inertia plugin we need to import the `useForm` function from `@formkit/inertia`, call the `useForm` function to receive the `form`, it comes with Inertia method calls, reactive states, the plugin event system, and the FormKit plugin.
 
 The `useForm` function can take one optional argument:
 
@@ -40,7 +30,7 @@ The `useForm` function can take one optional argument:
 
 ### Method Calls
 
-To submit the form, `useForm()` returns the methods `get`, `post`, `put`, `patch` and `delete`, any of those will return a suitable function that FormKit `@submit` expects.
+The `useForm()` composable returns the methods `get`, `post`, `put`, `patch` and `delete`. All of these methods will return a suitable function for use as FormKit’s `@submit` handler.
 
 The easiest way to use it is by creating a new `const` with the resulting method of your choice:
 
@@ -49,18 +39,18 @@ The easiest way to use it is by creating a new `const` with the resulting method
   import { useForm } from '@formkit/inertia'
 
   const form = useForm()
-  const submit = form.post('/login')
+  const submitHandler = form.post('/login')
 </script>
 
 <template>
-  <FormKit type="form" @submit="submit" :plugins="[form.plugin]">
+  <FormKit type="form" @submit="submitHandler" :plugins="[form.plugin]">
     <FormKit type="text" name="username" label="Username" />
     <FormKit type="password" name="password" label="Password" />
   </FormKit>
 </template>
 ```
 
-But you can also manually pass the variables to the returned function:
+You could also also define the handler directly in your template:
 
 ```html
 <FormKit
@@ -111,7 +101,7 @@ To cancel a form submission, use the `cancel()` method.
 
 ### States
 
-The `useForm()` returns some helpful reactive states, the Inertia based ones are: `processing`, `progress`, `recentlySuccessful` and `wasSuccessful`, the FormKit based ones are `valid`, `errors`, `dirty` and `node`, those events can be helpful for example for disabling the form submit button if you're using your own submit instead of the provided FormKit one:
+The `useForm()` composable also returns reactive states. The Inertia ones are: `processing`, `progress`, `recentlySuccessful` and `wasSuccessful`, the FormKit based ones are `valid`, `errors`, `dirty` and `node`. For example, you could use the `processing` state to disable the form submit button while Inertia is processing the form (assuming that you’re using your own submit button):
 
 ```html
 <template>
@@ -128,9 +118,9 @@ The `useForm()` returns some helpful reactive states, the Inertia based ones are
 
 ### Event Functions
 
-If you need to new features, or want to run some code on Inertia event callbacks but want to keep the functionality of this package intact, you can use the provided event functions `on()` and `combine()`, those functions are meant to add functions to the event callbacks without having to deal with option merging.
+If you need to new features, or want to run some code on Inertia event callbacks but want to keep the functionality of this package intact, you can use the provided event functions `on()` and `combine()`. These add functions to the event callbacks without having to deal with option merging.
 
-The `on()` function accepts any of the events from Inertia event callbacks without the `on` prefix, those being `before`, `start`, `progress`, `success`, `error`, `cancel`, `finish` and the parameters will be always the event callback parameter then FormKit's node:
+The `on()` function accepts any of the events from Inertia’s event callbacks (without the `on` prefix), specifically: `before`, `start`, `progress`, `success`, `error`, `cancel`, and `finish`. The arguments passed to your callback are the Inertia event’s callback arguments and then FormKit's node:
 
 ```html
 <script setup lang="ts">
@@ -164,9 +154,7 @@ The `combine()` function is just a easier way to add multiple events in a single
 
 ## Event System
 
-The core functionality of all comes from the simple and yet porweful event system wrapper for Inertia visit options, the `useForm()` uses the `useEventsSystem()` to create a way to access and retrive the event callbacks with multiple function calls correctly, without having to deal with object merging.
-
-The `useEventsSystem()` returns 4 functions `on()`, `combine()`, `execute()` and `toVisitOptions()`, the `on` function is just the same as its passed to the return of `useForm`, it also accepts these events `before`, `start`, `progress`, `success`, `error`, `cancel`, `finish`:
+The `useEventsSystem()` composable returns 4 functions `on()`, `combine()`, `execute()` and `toVisitOptions()`. The `on` function accepts these events `before`, `start`, `progress`, `success`, `error`, `cancel`, `finish`:
 
 ```ts
 const event = useEventsSystem()
@@ -184,7 +172,7 @@ event.on('before', (visit, node) => {
 })
 ```
 
-The `combine()` function is meant to be used for easily pass multiple events in a single place:
+The `combine()` function allows you to define multiple events in a single block:
 
 ```ts
 // addon.ts
