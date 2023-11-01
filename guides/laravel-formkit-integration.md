@@ -13,18 +13,6 @@ FormKit and Laravel are both powerful tools for building web applications — an
 
 By integrating FormKit with Laravel, developers can streamline the form creation and validation process and take advantage of the benefits of both tools. In this guide, we will explore how to integrate FormKit with Laravel 10, — covering everything you need to get started — and concluding with a plugin you can use in your own projects for effortless integration.
 
-## Why using FormKit will speed up your development
-
-Witing our own components will work for a smaller form — but without a tremendous amount of manual effort it is difficult to fully meet the requirements of a complex web application. Here are a few reasons why using FormKit will help us build better forms:
-
-1. **Time-saving:** FormKit provides a simple, consistent, and easy-to-use API that allows you to quickly create and manage forms, saving us time and effort.
-2. **Accessibility:** FormKit has accessibility as a first concern and outputs an accessible DOM structure out-of the-box.
-3. **Value handling:** FormKit collects the values from child inputs to their parents automatically, making it data-collection effortless when submitting our form.
-4. **Error handling:** FormKit automatically handles front-end form validation and error messages, making it easy to ensure that our form data is accurate and the experience is user-friendly.
-5. **Customization:** FormKit allows us to extensively customize the look and feel of our forms, including adding arbitrary CSS classes and attributes at any depth of component markup.
-
-So let's walk through how to setup Laravel 10 and FormKit to together.
-
 ## Installing Laravel 10 with Laravel Sail
 
 Laravel Sail is a light-weight command-line interface for interacting with Laravel's default Docker configuration. It allows us to spin up a local development environment with minimal setup. To install Laravel 10 with Laravel Sail, we will need to have Docker and Docker Compose installed on our system.
