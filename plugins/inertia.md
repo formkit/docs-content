@@ -9,14 +9,13 @@ description: A plugin for integrating FormKit with Laravel Inertia.
 
 The `@formkit/inertia` plugin aims to seamlessly integrate Inertia.js with FormKit forms, leveraging a robust event system that harnesses Inertia.js event callbacks and FormKit plugins for a smooth and powerful web development experience.
 
-
 ## Installation
 
-To use the Inertia plugin we need to to have a Laravel project already with Inertia Vue.JS installed and running you can check how by looking into the first sections of the guide [Using FormKit with Laravel Inertia](/guides/using-formkit-with-laravel-inertia).
+To use the Inertia plugin we need to have a Laravel project already with Inertia Vue.JS installed and running you can check how by looking into the first sections of the guide [Using FormKit with Laravel Inertia](/guides/using-formkit-with-laravel-inertia).
 
 Now you can install using your preferred package manager by following this bash command:
 
-```command
+```bash
 npm install @formkit/inertia
 ```
 
@@ -69,7 +68,7 @@ The functions support all [visit options](https://inertiajs.com/manual-visits) f
 type: "info"
 label: "Overwriting"
 ---
-The <code>options</code> event callbacks will overwrite any default events to that specific event, meaning that if you for example add `onStart` you will lose the events from `start` that are for example loading, disabling and processing.
+The <code>options</code> event callbacks will overwrite any default events to that specific event, meaning that if you for example add <code>onStart</code> you will lose the events from <code>start</code> that are for example loading, disabling and processing.
 ::
 
 ```html
@@ -152,21 +151,25 @@ The `combine()` function is just a easier way to add multiple events in a single
 </script>
 ```
 
-## Event System
+## Event Callback Manager
 
-The `useEventsSystem()` composable returns 4 functions `on()`, `combine()`, `execute()` and `toVisitOptions()`. The `on` function accepts these events `before`, `start`, `progress`, `success`, `error`, `cancel`, `finish`:
+The `createEventCallbackManager()` composable returns 3 functions `on()`, `combine()` and `execute()`. The `on` function accepts these events `before`, `start`, `progress`, `success`, `error`, `cancel`, `finish`:
 
 ```ts
-const event = useEventsSystem()
+import { createEventCallbackManager } from '@formkit/ineria'
+
+const event = createEventCallbackManager()
 event.on('before', (visit) => {
   console.log(visit)
 })
 ```
 
-As you can see it only gets `visit` as a parameter because `useEventsSystem()` was not specified that its events will receive more than that, but you can extend by passing an array of types of parameters to it:
+As you can see it only gets `visit` as a parameter because `createEventCallbackManager()` was not specified that its events will receive more than that, but you can extend by passing an array of types of parameters to it:
 
 ```ts
-const event = useEventsSystem<[node: FormKitNode]>()
+import { createEventCallbackManager } from '@formkit/ineria'
+
+const event = createEventCallbackManager<[node: FormKitNode]>()
 event.on('before', (visit, node) => {
   console.log(visit, node)
 })
@@ -176,6 +179,8 @@ The `combine()` function allows you to define multiple events in a single block:
 
 ```ts
 // addon.ts
+import { CombineFunction } from '@formkit/inertia'
+
 return (on) => {
   on('before', (visit, node) => {
     console.log(visit, node)
@@ -184,19 +189,22 @@ return (on) => {
   on('success', (page, node) => {
     console.log(page, node)
   })
-}
+} as CombineFunction<[node: FormKitNode]>
 
 // app.ts
+import { createEventCallbackManager } from '@formkit/ineria'
 import addon from './addon'
 
-const event = useEventsSystem<[node: FormKitNode]>()
+const event = createEventCallbackManager<[node: FormKitNode]>()
 event.combine(addon)
 ```
 
-The `execute()` function executes the given event. It expects the event, parameters, and any other parameter passed as a type to `useEventSystem` and returns the result of the event callback from Inertia:
+The `execute()` function executes the given event. It expects the event, parameters, and any other parameter passed as a type to `createEventCallbackManager` and returns the result of the event callback from Inertia:
 
 ```ts
-const event = useEventsSystem<[node: FormKitNode]>()
+import { createEventCallbackManager } from '@formkit/ineria'
+
+const event = createEventCallbackManager<[node: FormKitNode]>()
 
 event.on('before', (visit, node) => {
   console.log(visit, node)
@@ -207,31 +215,4 @@ event.on('before', (visit, node) => {
 
 const result = event.execute('before', visit, node) // runs console.log
 console.log(result) // returns false
-```
-
-The `toVisitOptions()` functions returns a compatible `VisitOptions` where all event callbacks will be defined for you, and inside it will already have the `execute()` function being returned for convenience making it already ready to be used in Inertia's `router()` function as its options:
-
-```ts
-const event = useEventsSystem<[node: FormKitNode]>()
-
-event.on('before', (visit, node) => {
-  console.log(visit, node)
-})
-event.on('start', (visit, node) => {
-  console.log(visit, node)
-})
-
-const options = event.toVisitOptions(node)
-/**
- * {
- *    onBefore: (visit) => {
- *        return execute('before', visit, node)
- *    },
- *    onStart: (visit) => {
- *        return execute('start', visit, node)
- *    },
- * }
- */
-
-router.post('/login', options)
 ```
