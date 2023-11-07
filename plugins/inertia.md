@@ -21,17 +21,11 @@ npm install @formkit/inertia
 
 ## Usage
 
-To use the Inertia plugin we need to import the `useForm` function from `@formkit/inertia`, call the `useForm` function to receive the `form`, it comes with Inertia method calls, reactive states, the plugin event system, and the FormKit plugin.
+To use the Inertia plugin we need to import the `useForm` function from `@formkit/inertia`, call the `useForm` function to receive the `form`, it comes with Inertia's method calls, reactive states, the addons for extensions, and the FormKit plugin.
 
-The `useForm` function can take one optional argument:
+The `useForm` function takes one optional argument for the initial fields that will be passed to your form via plugin, it will also return methods like `submit`, `get`, `post`, `put`, `patch` and `delete`. All of these methods will return a suitable function for use as FormKit’s `@submit` handler.
 
-- `initialFields`: The initial fields to be passed to your form.
-
-### Method Calls
-
-The `useForm()` composable returns the methods `get`, `post`, `put`, `patch` and `delete`. All of these methods will return a suitable function for use as FormKit’s `@submit` handler.
-
-The easiest way to use it is by creating a new `const` with the resulting method of your choice:
+The easiest way to use it is by creating a new `const` with the resulting method of your choice, and adding the `form.plugin` to the FormKit form `:plugins`:
 
 ```html
 <script setup lang="ts">
@@ -98,8 +92,6 @@ To cancel a form submission, use the `cancel()` method.
 <FormKit type="button" @click="form.cancel()" label="Cancel" />
 ```
 
-### States
-
 The `useForm()` composable also returns reactive states. The Inertia ones are: `processing`, `progress`, `recentlySuccessful` and `wasSuccessful`, the FormKit based ones are `valid`, `errors`, `dirty` and `node`. For example, you could use the `processing` state to disable the form submit button while Inertia is processing the form (assuming that you’re using your own submit button):
 
 ```html
@@ -115,104 +107,36 @@ The `useForm()` composable also returns reactive states. The Inertia ones are: `
 </template>
 ```
 
-### Event Functions
+## Addons
 
-If you need to new features, or want to run some code on Inertia event callbacks but want to keep the functionality of this package intact, you can use the provided event functions `on()` and `combine()`. These add functions to the event callbacks without having to deal with option merging.
-
-The `on()` function accepts any of the events from Inertia’s event callbacks (without the `on` prefix), specifically: `before`, `start`, `progress`, `success`, `error`, `cancel`, and `finish`. The arguments passed to your callback are the Inertia event’s callback arguments and then FormKit's node:
+The main feature for extending functionality is by passing addons to `addon()`, this way you can target multiple events that will be triggered when those are called by Inertia's event callback system, `addon()` accepts a function or an array of functions with `on()`, it accepts any of the events from Inertia’s event callbacks (without the `on` prefix), specifically: `before`, `start`, `progress`, `success`, `error`, `cancel`, `cancelToken` and `finish`. The arguments passed to your callback are the Inertia event’s callback arguments and then FormKit's node:
 
 ```html
 <script setup lang="ts">
   import { useForm } from '@formkit/inertia'
 
   const form = useForm()
-  form.on('before', () => {
-    return confirm('Are you sure you want to delete this user?')
-  })
-</script>
-```
-
-The `combine()` function is just a easier way to add multiple events in a single place:
-
-```html
-<script setup lang="ts">
-  import { useForm } from '@formkit/inertia'
-
-  const form = useForm()
-  form.combine((on) => {
-    on('before', () => {
+  form.addon((on) => {
+    on('before', (visit, node) => {
       return confirm('Are you sure you want to delete this user?')
     })
 
-    on('success', () => {
+    on('success', (page, node) => {
       toast('User deleted.')
     })
   })
 </script>
 ```
 
-## Event Callback Manager
+If you need a single event callback `useForm()` also returns `on()` directly:
 
-The `createEventCallbackManager()` composable returns 3 functions `on()`, `combine()` and `execute()`. The `on` function accepts these events `before`, `start`, `progress`, `success`, `error`, `cancel`, `finish`:
+```html
+<script setup lang="ts">
+  import { useForm } from '@formkit/inertia'
 
-```ts
-import { createEventCallbackManager } from '@formkit/ineria'
-
-const event = createEventCallbackManager()
-event.on('before', (visit) => {
-  console.log(visit)
-})
-```
-
-As you can see it only gets `visit` as a parameter because `createEventCallbackManager()` was not specified that its events will receive more than that, but you can extend by passing an array of types of parameters to it:
-
-```ts
-import { createEventCallbackManager } from '@formkit/ineria'
-
-const event = createEventCallbackManager<[node: FormKitNode]>()
-event.on('before', (visit, node) => {
-  console.log(visit, node)
-})
-```
-
-The `combine()` function allows you to define multiple events in a single block:
-
-```ts
-// addon.ts
-import { CombineFunction } from '@formkit/inertia'
-
-return (on) => {
-  on('before', (visit, node) => {
-    console.log(visit, node)
+  const form = useForm()
+  form.on('before', (visit, node) => {
+    return confirm('Are you sure you want to delete this user?')
   })
-
-  on('success', (page, node) => {
-    console.log(page, node)
-  })
-} as CombineFunction<[node: FormKitNode]>
-
-// app.ts
-import { createEventCallbackManager } from '@formkit/ineria'
-import addon from './addon'
-
-const event = createEventCallbackManager<[node: FormKitNode]>()
-event.combine(addon)
-```
-
-The `execute()` function executes the given event. It expects the event, parameters, and any other parameter passed as a type to `createEventCallbackManager` and returns the result of the event callback from Inertia:
-
-```ts
-import { createEventCallbackManager } from '@formkit/ineria'
-
-const event = createEventCallbackManager<[node: FormKitNode]>()
-
-event.on('before', (visit, node) => {
-  console.log(visit, node)
-})
-event.on('before', (visit, node) => {
-  return false
-})
-
-const result = event.execute('before', visit, node) // runs console.log
-console.log(result) // returns false
+</script>
 ```
