@@ -17,7 +17,11 @@ const value = ref(false)
     <!-- %partial%::html:: -->
       <FormKit
         type="togglebuttons"
-        label="Toggle Me"
+        name="shirt_size"
+        label="T-shirt Size"
+        enforced
+        :options="['Small', 'Medium', 'Large', 'X-Large']"
+        help="Select at least one."
       />
     <!-- %partial%::html:: -->
     <pre wrap>{{ value }}</pre>

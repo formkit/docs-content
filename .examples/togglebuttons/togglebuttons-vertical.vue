@@ -1,8 +1,3 @@
-<script setup>
-import { ref } from 'vue'
-const value = ref(false)
-</script>
-
 <template>
   <!--
     FormKit forms auto-collect values of children inputs.
@@ -10,16 +5,17 @@ const value = ref(false)
   -->
   <FormKit
     type="form"
-    #default="{ value }"
     :actions="false"
   >
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@formkit/pro@dev/genesis.min.css" />
     <!-- %partial%::html:: -->
       <FormKit
         type="togglebuttons"
-        label="Toggle Me"
+        name="pizza_toppings"
+        label="Pizza Toppings"
+        :options="['Pepperoni', 'Sausage', 'Mushroom', 'Black Olives']"
+        vertical
       />
     <!-- %partial%::html:: -->
-    <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>

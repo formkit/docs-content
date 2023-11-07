@@ -17,10 +17,9 @@ const value = ref(false)
     <!-- %partial%::html:: -->
       <FormKit
         type="togglebuttons"
-        name="airplane_mode"
-        label="Airplane Mode"
-        off-label="Airplane Mode Is Off"
-        on-label="Airplane Mode Is On"
+        name="mode"
+        off-label="Light Mode"
+        on-label="Dark Mode"
       />
     <!-- %partial%::html:: -->
     <pre wrap>{{ value }}</pre>

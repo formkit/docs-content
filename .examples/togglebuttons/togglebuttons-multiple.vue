@@ -17,7 +17,10 @@ const value = ref(false)
     <!-- %partial%::html:: -->
       <FormKit
         type="togglebuttons"
-        label="Toggle Me"
+        name="pizza_toppings"
+        label="Pizza Toppings"
+        :options="['Pepperoni', 'Sausage', 'Mushroom', 'Black Olives']"
+        multiple
       />
     <!-- %partial%::html:: -->
     <pre wrap>{{ value }}</pre>
