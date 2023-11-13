@@ -1,5 +1,3 @@
 ## Theming
 
-### For Tailwind
-
 :TailwindInstallInstructions
