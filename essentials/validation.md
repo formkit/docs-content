@@ -849,6 +849,14 @@ file: "_content/_examples/formkit-messages/normal-input.vue"
 
 ## Extracting messages
 
+::Callout
+---
+type: "tip"
+label: "The <FormKitSummary> component"
+---
+FormKit 1.0.0 introduced the [FormKitSummary](/inputs/form#validation-and-error-summary) component which provides an "out of the box" solution to for displaying all the validation messages in a given form or subtree.
+::
+
 To get all the validation messages from an [input’s core node](/essentials/architecture), you can use the `getValidationMessages` function exported from `@formkit/validation`. This function will recursively check the given node and all children for validation messages and return a Map of core nodes to validation messages, making it ideal for use with forms:
 
 ::Example
