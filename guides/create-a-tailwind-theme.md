@@ -17,15 +17,15 @@ label: "SFC Build tool"
 This guide assumes you are using a standard Vue 3 build tool like Vite, Nuxt 3, or Vue CLI that will allow you to import <code>.vue</code> single file components.
 ::
 
+## Inline usage
+
 ::Callout
 ---
 type: "warning"
-label: "Don't include the default theme"
+label: "Not recommended in most cases"
 ---
-If you plan to use Tailwind CSS for your form styles then please ensure that your project is <strong>not</strong> importing the base <code>genesis</code> theme that ships with FormKit — otherwise you will get weird styling results.
+Inline usage can be great for one-offs overrides or very simple forms. For full theme creation keep reading.
 ::
-
-## Inline usage
 
 In the context of a `.vue` file that represents a component, it's possible to create a Tailwind theme using the `section-key` [class props](/essentials/styling#section-key-class-props) or the `classes` [prop](/essentials/styling#classes-prop) provided by FormKit.
 
@@ -40,259 +40,315 @@ editable: true
 ---
 ::
 
-This is a low-barrier way to apply Tailwind styles to your FormKit forms, but what if you have multiple forms? Copy-pasting class lists between components is not ideal and will lead to inadvertent variations in styling across your project over time.
+This is a low-barrier way to apply Tailwind styles to your FormKit forms, but what if you have multiple forms — or you need to handle a large variety of inputs? Copy-pasting class lists between components is not ideal and will lead to inadvertent variations in styling across your project over time.
 
-Let's explore how we can apply Tailwind classes globally to _all_ FormKit inputs within our project.
+Let's explore how we can create a Tailwind theme — with configurable options — that can cover all inputs in your project at a global level.
 
-## Using @formkit/themes
+## Creating a configurable FormKit theme
 
-FormKit ships a first-party package, `@formkit/themes`, that includes Tailwind CSS support — making it easy to create a Tailwind CSS theme for FormKit in your project.
+By following the instructions below we will create a theme like the ones available at [https://themes.formkit.com](https://themes.formkit.com). This includes support for variable configuration options if you as a theme author want to provide them. 
 
-The package enables you to author your theme as a JavaScript object grouped by input `type` and `sectionKey`. Additionally, you can access a number of Tailwind variants based on input and form state such as `formkit-invalid:` and `formkit-disabled:` which allow you to dynamically change your input styling.
+::ArticleCard
+---
+img: "https://themes.formkit.com/og.png"
+label: "FormKit Themes"
+title: "Versatile, configurable, MIT-licensed Tailwind themes for use in your projects. Spend less time styling — more time building."
+href: "https://themes.formkit.com"
+---
+::
 
-To get started we need to add the package to our project.
+Better yet, once your theme is complete — if you provided styling for every available FormKit input — you can submit your theme to be included on [https://themes.formkit.com](https://themes.formkit.com) by [opening a PR](https://github.com/formkit/themes.formkit.com/pulls) against the site repo. Once approved it will become available for anyone else to use in their project via the CLI or web UI.
+
+### Initialize a copy of the starter theme
+
+FormKit provides a starter theme — which comes with structural styles and plentiful comments — that is intended to help new authors get started quickly creating their own FormKit themes. To get started, run the following command in your terminal:
 
 ```bash
-npm install @formkit/themes
+npx formkit create-theme
 ```
 
-From there we need to do three things:
+This will download a copy of the starter theme in the directory where you run the command. The starter theme is a fully functional Vite application that includes a "Kitchen Sink" to help you see how your theme applies to every available input in every available input state as you work.
 
-- Add the `formKitTailwind` plugin from `@formkit/themes` to our project's `tailwind.config.js` file.
-- Create a theme file (something like `tailwind-theme.js`) in our project.
-- Import the `generateClasses` helper function from `@formkit/themes` and use it with our theme in our FormKit config options.
+To begin work on your theme run:
 
-```js
-// tailwind.config.js
-const formKitTailwind = require('@formkit/themes/tailwindcss');
-
-module.exports {
-  ...
-  content: [
-    ...
-    './tailwind-theme.js',
-  ],
-  plugins: [
-    formKitTailwind
-  ]
-  ...
-}
+```bash
+# or npm or yarn
+pnpm install
+pnpm dev
 ```
 
+### The anatomy of the starter theme
+
+The `src` directory in the starter theme contains the following important files and directories:
+
+- `theme.ts`: This is the entry point for your theme. It is where you will configure your theme's metadata, variables, and import your theme's CSS class lists for each input.
+  - `meta`: The meta information such as the theme name, supported inputs, and declarations for light mode and dark mode support.
+  - `variables`: The variables that will be used in your theme's CSS class lists — variables that are assigned an 'editor' will expose UI controls for theme users in the theme editor. More on this below.
+  - `inputs`: An object of input names each mapped to an object of section names and class lists. By default the class lists for each input are done as separate imports.
+- `globals.ts`: This file contains global classes for inputs. Any matching section name (eg, 'outer') will be applied to _every_ FormKit input. A time-saver, but use with caution.
+- `familes/*.ts`: One step higher in specificity than global classes, these files contain class lists for each input family. Families are groupings of similar inputs where sharing of styles makes sense — for example, the 'text' family includes 16+ inputs supported in FormKit. Each family file contains a comment at the top with a list of inputs that are included in that family.
+- `inputs/*.ts`: The most specific class lists for each input. These classes apply only to the input indicated by the file name (assuming you have assigned them correctly in your theme.ts, which is done for you by default). When applicable, these files include a comment indicating which family they inherit classes from.
+
+The remaining files in the starter theme can be ignored (but not removed) as they are scaffolding for the included Vite application and the Kitchen Sink. They will have no material effect on your published theme.
+
+### Working with variables
+
+Variables are a powerful way to share values across your theme and to optionally allow theme users to customize your theme to their liking. Variables are used in your inputs' class lists via the following syntax:
+
 ```js
-// tailwind-theme.js
+// global.ts
 export default {
-  // our theme will go here.
-  // ...
-  // text: {
-  //   label: 'font-bold text-gray-300',
-  //   ...
-  // }
-  // ...
+  outer: `$myVariable`
 }
 ```
 
-```js
-// app.js
-import { createApp } from 'vue'
-import App from './App.vue'
-import { plugin, defaultConfig } from '@formkit/vue'
-import { generateClasses } from '@formkit/themes'
-import myTailwindTheme from './tailwind-theme.js'
-import '../dist/index.css' // wherever your Tailwind styles exist
+The starter theme comes with many variables predefined.
 
-createApp(App)
-  .use(
-    plugin,
-    defaultConfig({
-      config: {
-        classes: generateClasses(myTailwindTheme),
-      },
-    })
-  )
-  .mount('#app')
+#### Basic variables
+
+The following variables are defined for convenience in the starter theme but do _not_ expose any UI for theme users:
+
+- `accentColor`
+- `accentColorStrength`
+- `accentColorStrengthDark`
+- `colorTemperature`
+- `colorTemperatureStrength`
+- `colorTemperatureStrengthDark`
+- `inputMaxWidth`
+
+You can create your own variables in this fashion by providing a new key/value pair in the variables object:
+
+```js
+export default createTheme({
+  ...
+  variables: {
+    ...
+    textSize: 'lg'
+  }
+})
 ```
 
-Once this setup is complete we are ready to begin writing our Tailwind theme!
+Variables can be used in your input's class lists using the following syntax:
 
-## Our first Tailwind input
+```js
+// globals.ts
+export default {
+  // becomes 'text-lg'
+  label: 'text-$textSize'
+}
+```
 
-To start, let's apply some sensible classes to a `text` style input. This will cover a large surface area because we'll easily re-use these styles to other text-like inputs such as `email`, `password`, `date`, etc.
+Putting shared common values into variables allows theme authors to quickly adjust values across all class lists in their theme from a single location.
 
-To specifically target `text` inputs we'll create a `text` key in our theme object and then apply classes to each `sectionKey` as needed.
+### Variables with scales
 
-Here is a `text` input with Tailwind classes applied:
+One of the best aspects of Tailwind is that all values operate on predictable scales. This means that we can provided a "range" for a variable and then move up and down the scale as needed within our theme. 
 
-::Example
----
-file: [
-  '_content/_examples/guides/tailwind-theme/tailwind-text-input/example.vue',
-  '_content/_examples/guides/tailwind-theme/tailwind-text-input/tailwind-theme.js',
-  '_content/_examples/guides/tailwind-theme/tailwind-text-input/formkit.config.js',
-  '_content/_examples/guides/tailwind-theme/tailwind-text-input/tailwind.config.js'
-]
-init-file-tab: "tailwind-theme.js"
-css-framework: "tailwind"
-add-tailwind-files: false
-editable: true
----
-::
+For example, a `spacing` variable might operate using the following Tailwind scale (`0`, `px`, `0.5`, `1`, `1.5`, `2`, `2.5`, `3` etc). By providing a `scale` and default `value` we can give ourselves the ability to step up and down the scale at will.
 
+```js
+spacing: {
+  value: "2",
+  // We can define a scale that we can step through. 
+  // The default value will be used as the starting point.
+  // Because we are defining the scale we can omit default 
+  // Tailwind values like '0' and 'px` if they don't make
+  // sense for our use case.
+  scale: ["0.5", "1", "1.5", "2", "2.5", "3", "4", "6"]
+},
+```
 
-## Using variants
+With the above variable defined we can now dynamically step up and down the scale in our class lists with the following syntax:
 
-The `formKitTailwind` plugin from `@formkit/themes` provides a number of variants you can use in your class lists to dynamically respond to input and form state.
+```js
+// globals.ts
+export default {
+  // becomes 'mb-3' — two steps up our scale
+  outer: 'mb-$spacing(2)',
+  // becomes 'mb-2' — our default scale value
+  label: 'mb-$spacing',
+  // becomes 'mb-1 — two steps down our scale'
+  help: 'mb-$spacing(-2)'
+  // a mix of mulitple values using the same variable
+  // becomes 'mb-1 px-3 py-2'
+  inner: 'mb-$spacing(-2) px-$spacing(2) py-$spacing'
+}
+```
 
-::Callout
----
-type: "tip"
-label: "Group variants"
----
-If you're using variants in a nested case, the variants may be linked to its parent instead of itself.
-To fix that, add to the outer section <code>group/{modifier}</code>, and use the variant with the same modifier <code>formkit-invalid/{modifier}:</code>
-::
+Variables can never exceed the limits of their scales, so `mb-$spacing(100)` would become `mb-6` as that is the upper bound of our provided scale.
 
-The currently provided variants are:
+### Variables with user-controllable values
 
-- `formkit-disabled:`
-- `formkit-invalid:`
-- `formkit-checked:`
-- `formkit-errors:`
-- `formkit-complete:`
-- `formkit-loading:`
-- `formkit-submitted:`
-- `formkit-multiple:`
-- `formkit-prefix-icon`
-- `formkit-suffix-icon`
+Variables are cool — but the real power comes from exposing variables to end-users of our theme and allowing them to configure the values to their own liking. 
 
-You use these variants in the same way you use the built-in Tailwind variants such as `dark:` and `hover:`.
+To do this we provide an `editor` value for our variable. The `editor` determines which UI control is exposed in the theme customization panel. The available `editor` values are as follows:
 
-Let's add some variants for `formkit-invalid` and `formkit-disabled` to our text input:
+- `buttons`: A set of buttons in a group used to select a value. Theme authors must provide their own scale.
+- `color`: A set of swatches each representing a default Tailwind color. By default includes a scale of all 22 available Tailwind colors.
+- `fontSize`: A set of buttons with the letter `A` in different sizes. By default includes a scale from `xs` to `9xl`.
+- `radius`: A set of buttons each depicting a different intensity of border radius. By default includes a scale from `rounded-none` to `rounded-full`.
+- `shadow`: A stepper with a depiction of the selected shadow level. By default includes a scale from `shadows-none` to `shadows-2xl`. 
+- `spacing`: A slider with a range of values with depictions of tighter spacing at the beginning and wider spacing at the end. By default includes a scale from `0` to `96`.
+- `select`: A standard HTML select list that can contain any number of values. Theme authors must provided their own scale.
 
-::Example
----
-file: [
-  '_content/_examples/guides/tailwind-theme/tailwind-variants/example.vue',
-  '_content/_examples/guides/tailwind-theme/tailwind-variants/tailwind-theme.js',
-  '_content/_examples/guides/tailwind-theme/tailwind-variants/formkit.config.js',
-  '_content/_examples/guides/tailwind-theme/tailwind-variants/tailwind.config.js'
-]
-init-file-tab: "tailwind-theme.js"
-css-framework: "tailwind"
-add-tailwind-files: false
-editable: true
----
-::
+You can see an example of each of these editor values by looking at the `Regenesis` theme [here](https://themes.formkit.com/editor?theme=regenesis).
 
+We can update our `spacing` variable to use an appropriate editor.
 
-## A complete Tailwind theme — recreating Genesis CSS
+```js
+spacing: {
+  editor: "spacing",
+  value: "2"
+}
+```
 
-::VideoCard
----
-title: "Create a Tailwind CSS Theme - Vue School Course"
-poster: "https://cdn.formk.it/web-assets/robust-vue-js-forms-with-formkit-2.jpg"
-watch-time: "11 mins"
-external-vid: "https://vueschool.io/lessons/create-a-tailwind-css-theme-for-formkit?friend=formkit"
----
-::
-
-Now we're cooking! To create a comprehensive theme all we need to do is define class lists for the `sectionKeys` of all the other input types we'll use in our project.
-
-There are some improvements we can make though. The `generateClasses` helper function from `@formkit/themes` allows for a special `global` key that will apply to _all_ inputs. This is helpful for `sectionKeys` such as `help` and `messages` that are usually styled the same across all input types in a project.
+Now when we run our theme locally we will see a new control in the theme editor for our `spacing` variable with a slider that allows us to go from `0` to `96` as we step through the default Tailwind scale.
 
 ::Callout
 ---
 type: "tip"
-label: "Global and Family Class Lists"
+label: "User selections affect dynamic values"
 ---
-By using the <code>global</code> and <code>family:</code> keys in your theme object you can apply a class lists to <em>all</em> inputs that have a given <code>sectionKey</code> either globally or within a family of inputs. This is useful for things like labels or help text when you want to share styling across a wide variety of inputs.
+When you expose a variable to a theme user they are changing the base value when they modify a variable. This means that variable usage such as `mb-$spacing(1)` is always one step on the scale above the user's _selected_ value, not the theme's default value.
 ::
 
-Let's create a "Kitchen Sink" of input types, each having their defined class lists applied. Here is the theme in isolation for better readability:
+### Setting min and max for user-controlled variables
 
-:TailwindTheme
+In most cases it makes sense to constrain the available scale for a user defined variable. Allowing our users to adjust `spacing` is great, but we probably don't want them to be able to crank the value all the way up to `96` or all the way down to `0`. We can constrain the range of the scale that is available to a user by using the `min` and `max` properties on our variable.
 
-And here is our Tailwind theme when it is applied to all available FormKit inputs:
+```js
+spacing: {
+  editor: "spacing",
+  value: "2",
+  min: "1",
+  max: "3"
+}
+```
+
+This means that our `spacing` variable will now only allow values `1`, `1.5`, `2`, `2.5`, and `3` to be selected by using via the customizer UI.
+
+### Creating one-off min and max constraints
+
+Sometimes as a theme author you need to clamp or expand available values beyond what is defined in a variable's default scale. You can do this by passing additional `min` and `max` arguments to a particular instance of a variable in a class list.
+
+The provided values for `min` and `max` _must_ be values or the variables associated scale — whether that is a default scale for an editor or a custom scale defined by the theme author.
+
+You can also provide a wildcard `*` symbol as the 2nd argument to allow any valid value on the associated scale.
+
+```js
+// globals.ts
+export default {
+  // steps up 5 steps on the scale. 
+  // sets the min value to 3 
+  // and the max value to 8
+  outer: 'mb-$spacing(5, 3, 8)',
+  // steps down 2 steps on the scale
+  // sets the minimum value to 1 
+  // and the max value to 2
+  label: 'mb-$spacing(-2, 1, 2)',
+  // steps down 2 steps on the scale
+  // allows any valid value on the scale
+  help: 'mb-$spacing(-2,*)'
+}
+```
+
+### Overriding default editor scales
+
+Some `editor` types such as `scale` or `color` come with default scales. However, we can still include a custom `scale` property of our own and override which options are available in the UI.
+
+```js
+accentColor: {
+  editor: "color",
+  value: "blue",
+  // excludes all "gray" colors
+  // included in the default scale
+  scale: [
+    "red",
+    "orange",
+    "amber",
+    "yellow",
+    "lime",
+    "green",
+    "emerald",
+    "teal",
+    "cyan",
+    "sky",
+    "blue",
+    "indigo",
+    "violet",
+    "purple",
+    "fuchsia",
+    "pink",
+    "rose",
+  ],
+},
+```
+
+You can even combine custom scales with `min` and `max` properties to create entirely new scales beyond the values that are available in the default Tailwind scales.
+
+```js
+scale: {
+  editor: "fontSize",
+  value: "base",
+  scale: [
+    // a custom size and accompanying
+    // custom line-hight for the size.
+    "[11px] [line-height:1em]",
+
+    // default values from Tailwind
+    // in a range we find sensible.
+    "xs",
+    "sm",
+    "base",
+    "lg",
+    "xl",
+    "2xl",
+  ],
+  min: "sm",
+  max: "lg",
+},
+```
+
+## Publishing your theme
+
+There are many more comments in the `@formkit/theme-starter` theme itself to help you along your way as you work. 
+
+When you're done creating your theme you can use the included publishing script to build and publish your theme to npm.
+
+First, ensure that you have modified the contents of your theme's `meta` key and `package.json` file to accurate reflect your theme's name, description, version, and author information.
 
 ::Callout
 ---
-type: "tip"
-label: "FormKit icons"
+type: "warning"
+label: "FormKit theme prefix"
 ---
-FormKit inputs ship with their own <code>decorator</code> icons that can be used in place of browser-default styles that typcially ship with checkboxes, radios, select inputs, and more.
-
-If you want to use these types of icons in your Tailwind theme be sure to import them from <code>@formkit/icons</code> and include them in your FormKit config.
-
+It is recommended to name your theme with the prefix `formkit-theme-` to help users discover and understand that your package is a FormKit theme.
 ::
 
-::Example
----
-file: [
-  '_content/_examples/guides/tailwind-theme/tailwind-theme/example.vue',
-  '_content/_examples/tailwind-theme.js',
-  '_content/_examples/guides/tailwind-theme/tailwind-theme/formkit.config.js',
-  '_content/_examples/guides/tailwind-theme/tailwind-theme/tailwind.config.js',
-  '_content/_examples/guides/tailwind-theme/tailwind-theme/KitchenSinkForm.vue',
-  '_content/_examples/guides/tailwind-theme/tailwind-theme/Autocomplete.vue',
-  '_content/_examples/guides/tailwind-theme/tailwind-theme/Datepicker.vue',
-  '_content/_examples/guides/tailwind-theme/tailwind-theme/Dropdown.vue',
-  '_content/_examples/guides/tailwind-theme/tailwind-theme/Mask.vue',
-  '_content/_examples/guides/tailwind-theme/tailwind-theme/Rating.vue',
-  '_content/_examples/guides/tailwind-theme/tailwind-theme/Repeater.vue',
-  '_content/_examples/guides/tailwind-theme/tailwind-theme/Taglist.vue',
-  '_content/_examples/guides/tailwind-theme/tailwind-theme/Toggle.vue',
-  '_content/_examples/guides/tailwind-theme/tailwind-theme/Transferlist.vue'
-]
-init-file-tab: "formkit.config.js"
-css-framework: "tailwind"
-add-tailwind-files: false
-layout: "auto"
-editable: true
----
-::
+When you're ready, run the following command in your terminal
 
+```bash
+#pnpm highly recommended
+pnpm release
+```
 
-## Selective overrides
+This command builds your theme, runs a linter to ensure that your `package.json` is valid, runs a script to bump the version of your theme (and create release notes automatically if you're using semantic commit messages), and then publishes your theme to `npm` under your provided package name.
 
-And there we have it! All FormKit inputs styled with Tailwind utility classes across our entire project.
+users can then install your theme from npm like any other dependency:
 
-If we need to override any specific one-offs within our project, we can do so using the [section-key class props](/essentials/styling#section-key-class-props) or the [classes](/essentials/styling#classes-prop) prop on a given `FormKit` input within our project which was covered in the opening section of this guide.
+```bash
+# for theoretical theme named 'starlight'
+pnpm install formkit-theme-starlight
+```
 
-Of particular importance when doing an override is the special [`$reset` modifier](/essentials/styling#resetting-classes) for class lists. When the FormKit class system encounters a `$reset` class it will erase the current class list for the given section and only collect class names that occur after the `$reset` token was encountered. This is valuable in a system like Tailwind where it would be painful to have to write override classes or individually disable classes for every globally configured class when deviating from our theme:
+## Submitting your theme to themes.formkit.com
 
-::Example
----
-file: [
-  '_content/_examples/guides/tailwind-theme/override/example.vue',
-  '_content/_examples/tailwind-theme.js',
-  '_content/_examples/guides/tailwind-theme/override/formkit.config.js',
-  '_content/_examples/guides/tailwind-theme/override/tailwind.config.js',
-]
-init-file-tab: "example.vue"
-css-framework: "tailwind"
-add-tailwind-files: false
-layout: "auto"
-editable: true
----
-::
+Proud of your theme? Offering something unique that other FormKit users would enjoy using? 
 
+[Open a pull request](https://github.com/formkit/themes.formkit.com/pulls) against the themes.formkit.com repo and submit your theme! If approved — it'll be listed in the theme gallery and be available for anyone to use in their project as easily as the provided 1st-party FormKit themes.
 
-## Next steps
+## Getting help
 
-This guide has walked through creating a Tailwind theme that covers all input types included in FormKit, but there's still more that could be done in your own project.
+Writing a comprehensive FormKit theme is a large undertaking. If you get stuck, need ideas, or otherwise want to talk about creating themes for FormKit be sure to join us in our official Discord community. We're happy to help!
 
-Here are some ways to take the above guide even further:
-
-- Add dark-mode support using Tailwind's built-in `dark:` modifier.
-- Combine multiple variants such as `formkit-invalid:formkit-submitted:` to add extra emphasis to invalid fields when a user tries to submit an incomplete form.
-- Publish your theme as an npm package for easy importing and sharing between projects.
-
-Hopefully, this guide helped you understand how classes are applied to FormKit inputs and how you can leverage the `formKitTailwind` plugin from the `@formkit/themes` package to make use of Tailwind in your FormKit projects. If you want to dive in deeper, try reading about the [core internals of FormKit](/essentials/architecture) and [the FormKit schema](/essentials/schema)!
-
-::Cta
----
-label: "Want more? Start by reading about FormKit core." 
-button: "Dig deeper" 
-href: "/essentials/architecture"
----
-::
+::LinkDiscord
