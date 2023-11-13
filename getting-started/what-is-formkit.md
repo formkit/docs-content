@@ -15,7 +15,7 @@ FormKit is far more than a UI library. It is a comprehensive _form building fram
 
 Why do I need a full-fledged framework for forms? Aren't forms easy? Don't UI libraries and frameworks like Vue already solve all the problems? No — because forms are their own distinct problem set, they represent their own distinct data trees, and they deserve their own framework.
 
-The best overview of FormKit is [Justin Schroeder](https://twitter.com/jpschroeder)'s (the primary author of FormKit) 2023 VueConf US talk called "Conquering Forms in Vue". The video below starts at 7:45 seconds into the talk — but if you have the time it's worth watching from the beginning.
+The best overview of FormKit is [Justin Schroeder](https://twitter.com/jpschroeder)'s (the primary author of FormKit) 2023 VueConf US talk called "Conquering Forms in Vue". The video below starts at ~12 minutes into the talk — but if you have the time it's worth watching from the beginning.
 
 ::VideoCard
 ---
@@ -23,7 +23,7 @@ title: "VueConf US 2023: Conquering Forms in Vue"
 poster: "https://cdn.formk.it/web-assets/formkit-poster.jpg"
 watch-time: "30 mins"
 youtube-id: "4YjegReDw5M"
-start-at: 466
+start-at: 736
 ---
 ::
 
