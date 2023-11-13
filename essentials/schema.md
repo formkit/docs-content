@@ -203,6 +203,14 @@ layout: "auto"
 ---
 ::
 
+::Callout
+---
+type: "tip"
+label: "Ensure re-render with a key"
+---
+When adding an <code>if</code> property to <code>$cmp</code> or <code>$formkit</code> schema nodes that have dynamic values, Vue may reuse un-updated values and components for performance reasons. Adding a unique <code>key</code> property to the schema node will ensure Vue correctly re-renders the component.
+::
+
 ### The `if/then/else` object
 
 The `if/then/else` object allows for more complex conditional logic. It can be used to conditionally render nodes, a list of schema nodes, values of the `attrs` object or values of the `props` object. It is also possible to nest `if/then/else` objects to create more complex structures — similar to an `else if` statement in JavaScript.
@@ -243,14 +251,6 @@ layout: "auto"
 ---
 ::
 
-::Callout
----
-type: "tip"
-label: "Casting"
----
-Sometimes schema expressions need to cast a string to a number. For example, keys are always string values during an iteration, so in the above example it was necessary to cast <code>$key</code> to an integer before adding it to <code>1</code>. To perform this cast, we simply multiplied by 1: <code>$key * 1</code> before performing our addition.
-::
-
 ## Slots
 
 Schemas can render the slot content of the `<FormKitSchema>` component anywhere within the schema that a normal schema node can be rendered. All scoped slots are automatically provided to the schema under the `$slots` reference object:
@@ -261,6 +261,14 @@ name: "Schema - slots"
 file: "_content/_examples/schema-slots/schema-slots.vue"
 layout: "auto"
 ---
+::
+
+::Callout
+---
+type: "tip"
+label: "FormKit input slots"
+---
+Inside of a <code>$formkit</code> schema node, it is also possible to pass content to preexisting FormKit slots like <code>label</code> or <code>prefix</code> inside of the node's <code>__raw__sectionsSchema</code> property. Read more about raw values <a href="#raw-values">below</a>, and `sectionsSchema` in the <a href="/essentials/inputs/#sections-schema">inputs documentation</a>.
 ::
 
 ## Binding attrs and props

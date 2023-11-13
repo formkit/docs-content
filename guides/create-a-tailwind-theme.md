@@ -46,7 +46,7 @@ Let's explore how we can apply Tailwind classes globally to _all_ FormKit inputs
 
 ## Using @formkit/themes
 
-FormKit ships a first-party package `@formkit/themes` that includes Tailwind CSS support — making it easy to create a Tailwind CSS theme for FormKit in your project.
+FormKit ships a first-party package, `@formkit/themes`, that includes Tailwind CSS support — making it easy to create a Tailwind CSS theme for FormKit in your project.
 
 The package enables you to author your theme as a JavaScript object grouped by input `type` and `sectionKey`. Additionally, you can access a number of Tailwind variants based on input and form state such as `formkit-invalid:` and `formkit-disabled:` which allow you to dynamically change your input styling.
 
@@ -56,7 +56,7 @@ To get started we need to add the package to our project.
 npm install @formkit/themes
 ```
 
-From there we need to do two things:
+From there we need to do three things:
 
 - Add the `formKitTailwind` plugin from `@formkit/themes` to our project's `tailwind.config.js` file.
 - Create a theme file (something like `tailwind-theme.js`) in our project.

@@ -26,7 +26,7 @@ Want to quickly try FormKit? You can interact with it directly in our online [Pl
 type: "tip"
 label: "The @next tag"
 ---
-You can install the upcoming version of FormKit (unstable) anytime by opting to installing the "next" version tag: <code>npm install @formkit/vue@next</code>
+You can install the upcoming version of FormKit (unstable) any time by opting to install the "next" version tag: <code>npm install @formkit/vue@next</code>
 ::
 
 

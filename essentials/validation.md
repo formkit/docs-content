@@ -713,6 +713,27 @@ You can also override these behaviors on a case-by-case basis with [rule hints](
 
 Once you have a validation function written — you need to register the validation rule with FormKit — either globally or specifically on an input.
 
+### Multi-input validation rules
+
+Validation rules can depend on values from other inputs in your [form’s tree](/essentials/architecture). To do so, use node traversal to locate another node and access its value:
+
+::Example
+---
+name: "Custom validation dependency"
+file: "_content/_examples/custom-validation-dependency/custom-validation-dependency.vue"
+layout: "auto"
+---
+::
+
+
+::Callout
+---
+type: "warning"
+label: "Pure functions"
+---
+Validation rules should always be pure functions. Use only the arguments passed in and do not perform any side effects.
+::
+
 ### Adding a rule globally
 
 To use a validation rule anywhere in your project, you can specify it wherever your FormKit plugin is registered with Vue.
@@ -848,6 +869,14 @@ file: "_content/_examples/formkit-messages/normal-input.vue"
 ::
 
 ## Extracting messages
+
+::Callout
+---
+type: "tip"
+label: "The <FormKitSummary> component"
+---
+FormKit 1.0.0 introduced the [FormKitSummary](/inputs/form#validation-and-error-summary) component which provides an "out of the box" solution to for displaying all the validation messages in a given form or subtree.
+::
 
 To get all the validation messages from an [input’s core node](/essentials/architecture), you can use the `getValidationMessages` function exported from `@formkit/validation`. This function will recursively check the given node and all children for validation messages and return a Map of core nodes to validation messages, making it ideal for use with forms:
 

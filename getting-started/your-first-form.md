@@ -141,7 +141,7 @@ file: "_content/_examples/guides/your-first-form/character-form-submit/example.v
 
 ### Changing the submit button
 
-As convenience when using `type="form"`, the `form` outputs a submit button automatically. For our case, a "Submit" text does not show the intent of the form correctly. To fix that, we can use the `submit-label` prop, which is a `form`-specific feature. We can by simply add `submit-label="Create Character"` to show the intent of the form:
+As a convenience when using `type="form"`, the `form` outputs a submit button automatically. For our case, a "Submit" text does not show the intent of the form correctly. To fix that, we can use the `submit-label` prop, which is a `form`-specific feature, simply by adding `submit-label="Create Character"` to show the intent of the form:
 
 ```html
 <FormKit type="form" @submit="createCharacter" submit-label="Create Character">
@@ -185,14 +185,14 @@ file: "_content/_examples/guides/your-first-form/character-attributes-update/exa
 
 ### Make it into a plugin
 
-The code now got a bit less readable, so let's extract the logic to another file and use a plugin instead. Note that we are placing the new `updateAttributesPlugin` only on the `class` input, so it will not affect any other input. We will also learn another useful feature called [traversal](/essentials/architecture#traversal) by using the `at` function of a node:
+The code now got a bit less readable, so let's extract the logic to another file to create a plugin instead. Note that we are placing the new `updateAttributesPlugin` only on the `class` input, so it will not affect any other input. We will also learn another useful feature called [traversal](/essentials/architecture#traversal) by using the `at` function of a node:
 
 ::Callout
 ---
 type: "warning"
 label: "at() uses name"
 ---
-The <code>at</code> function uses the <code>name</code> attributes instead of the <code>id</code> that <code>getNode</code> uses.
+The <code>at</code> function uses the <code>name</code> attribute instead of the <code>id</code> that <code>getNode</code> uses.
 ::
 
 ::Example
@@ -208,7 +208,7 @@ init-file-tab: "example.vue"
 
 ## Adding group validation
 
-Let's assume that while different characters are better at different attributes, that none should be too powerful. We can do this by creating a budget of points, and adding group validation to the attributes `group` to ensure they do not exceed 20 points in totality. We'll learn a new feature — [custom rules](/essentials/validation#custom-rules) — to accomplish this:
+Let's assume that while different characters are better at different attributes, none should be too powerful. We can do this by creating a budget of points, and adding group validation to the attributes `group` to ensure they do not exceed 20 points in totality. We'll learn a new feature — [custom rules](/essentials/validation#custom-rules) — to accomplish this:
 
 ::Callout
 ---
@@ -235,7 +235,7 @@ init-file-tab: "example.vue"
 Sometimes forms need to show or hide fields depending on the value of another input. We can do this by learning 2 new concepts:
 
 - [Context object](/essentials/configuration) — We can access an input's value (along with other data) inside our form because all `FormKit` components receive their [context object](https://formkit.com/essentials/configuration) in the `#default` [slot prop](https://vuejs.org/guide/components/slots.html#scoped-slots).
-- The value of a `group` - The value of [group](/inputs/group) (and `form`) input is an object with the values of its children, keyed by the childrens' `name`s.
+- The value of a `group` - The value of a [group](/inputs/group) (and `form`) input is an object with the values of its children, keyed by the children's `name`s.
 
 ::Callout
 ---
@@ -245,7 +245,7 @@ label: "Vue's key property"
 When using conditional rendering, note that Vue needs hints to know that a DOM element needs a re-render, instead of trying to reuse it. We can add a unique <code>key</code> property to the element to help Vue.
 ::
 
-So, let's grab the context object of the `group` input and extract the `value`: `#default="{ value }"`. We want to add a small easter egg for our user if they decide to change all attributes to 1:
+So, let's grab the context object of the `group` input and extract the `value`: `#default="{ value }"`. We want to add a small easter egg for our users if they decide to change all attributes to 1:
 
 ::Example
 ---
