@@ -8,10 +8,39 @@ description: Add custom styling to your FormKit components - both globally and p
 :PageToc
 
 FormKit ships robust and accessible markup — but with no assumptions about your
-desired styles. There is an _optional_ base theme (as seen in these docs)
-called `Genesis` that you can use in your projects.
+desired styles. FormKit provides _optional_ themes you are welcome to use in your project — or you can create your own.
 
-### Installing Genesis theme
+## Tailwind CSS
+
+:TailwindInstallInstructions
+
+### Building your own Tailwind CSS theme
+
+Want to create your own Tailwind theme? Check out our [starter theme](https://github.com/formkit/theme-starter) — which is heavily commented — to get started. You can also follow our guide, "Create a Tailwind CSS theme" to follow along step by step through the theme creation process.
+
+::Cta
+---
+label: "Guide: Create a Tailwind CSS theme"
+button: "Read now"
+href: "/guides/create-a-tailwind-theme"
+---
+::
+
+### Additional styling overrides
+
+Continue reading to learn how to further override the classes that ship with your chosen FormKit theme at global, form, and input levels.
+
+## Installing the legacy Genesis CSS theme
+
+::Callout
+---
+type: "warning"
+label: "Legacy Genesis CSS Theme"
+---
+FormKit now ships much more configurable Tailwind themes available at [themes.formkit.com](https://themes.formkit.com). If you are using the legacy Genesis CSS theme then follow the instructions below — but we encourage you to consider using one of the new Tailwind powered customizable FormKit themes to make your life much simpler.
+
+Eventually the legacy Genesis CSS theme will be deprecated and no longer supported by new Pro inputs.
+::
 
 #### CDN Usage
 
@@ -194,6 +223,14 @@ tabs: "html"
 
 ## The rootClasses function
 
+::Callout
+---
+type: "warning"
+label: "Do not override rootClasses if you are using a theme from themes.formkit.com"
+---
+Themes provided from [https://themes.formkit.com](https://themes.formkit.com) use the `rootClasses` function to apply their class lists. Overriding the `rootClasses` function in your project will effectively uninstall your Tailwind theme. Use [generateClasses](#using-generateclasses-from-formkitthemes) in your config object to apply overrides instead.
+::
+
 `rootClasses` is a configuration function that is responsible
 for producing the default classes for each element. This function already has a default value which produces all the default classes (like `formkit-outer` and `formkit-label`) that ship with FormKit — so replacing this single function allows you to easily replace all initial classes. This makes it an ideal candidate for writing custom themes when using utility frameworks like Tailwind.
 
@@ -271,24 +308,5 @@ Since config is passed down to descendant inputs, you can alter classes via conf
 name: "Classes prop"
 file: "_content/_examples/classes-config-schema/classes-config-schema.vue"
 tabs: "render,html"
----
-::
-
-
-## Tailwind CSS
-
-:TailwindInstallInstructions
-
-### Building your own Tailwind CSS theme
-
-Want to create your own Tailwind theme? We've written a guide walking through the process using both inline class props as well as using the `FormKitVariants` plugin and the `generateClasses` helper function from `@formkit/themes` to create a global Tailwind theme.
-
-The guide concludes with a complete reproduction of the FormKit Genesis CSS theme written in Tailwind.
-
-::Cta
----
-label: "Guide: Create a Tailwind CSS theme"
-button: "Read now"
-href: "/guides/create-a-tailwind-theme"
 ---
 ::
