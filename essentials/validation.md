@@ -713,6 +713,27 @@ You can also override these behaviors on a case-by-case basis with [rule hints](
 
 Once you have a validation function written — you need to register the validation rule with FormKit — either globally or specifically on an input.
 
+### Multi-input validation rules
+
+Validation rules can depend on values from other inputs in your [form’s tree](/essentials/architecture). To do so, use node traversal to locate another node and access its value:
+
+::Example
+---
+name: "Custom validation dependency"
+file: "_content/_examples/custom-validation-dependency/custom-validation-dependency.vue"
+layout: "auto"
+---
+::
+
+
+::Callout
+---
+type: "warning"
+label: "Pure functions"
+---
+Validation rules should always be pure functions. Use only the arguments passed in and do not perform any side effects.
+::
+
 ### Adding a rule globally
 
 To use a validation rule anywhere in your project, you can specify it wherever your FormKit plugin is registered with Vue.
