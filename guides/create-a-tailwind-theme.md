@@ -46,7 +46,7 @@ Let's explore how we can create a Tailwind theme — with configurable options 
 
 ## Creating a configurable FormKit theme
 
-By following the instructions below we will create a theme like the ones available at [https://themes.formkit.com](https://themes.formkit.com). This includes support for variable configuration options if you as a theme author want to provide them. 
+By following the instructions below we will create a theme like the ones available at [https://themes.formkit.com](https://themes.formkit.com). This includes support for user-configurable variables if you choose to provide them. 
 
 ::ArticleCard
 ---
@@ -57,19 +57,29 @@ href: "https://themes.formkit.com"
 ---
 ::
 
-Better yet, once your theme is complete — if you provided styling for every available FormKit input — you can submit your theme to be included on [https://themes.formkit.com](https://themes.formkit.com) by [opening a PR](https://github.com/formkit/themes.formkit.com/pulls) against the site repo. Once approved it will become available for anyone else to use in their project via the CLI or web UI.
+Once your theme is complete you can submit your theme to be included on [https://themes.formkit.com](https://themes.formkit.com) by [opening a PR](https://github.com/formkit/themes.formkit.com/pulls) against the site repo. Once approved it will become available for anyone else to use in their project via the CLI or web UI.
 
 ### Initialize a copy of the starter theme
 
-FormKit provides a starter theme — which comes with structural styles and plentiful comments — that is intended to help new authors get started quickly creating their own FormKit themes. To get started, run the following command in your terminal:
+FormKit provides a starter theme — which comes with structural styles and plentiful comments — that is intended to help new authors cerate their own themes. 
+
+To get started, run the following command in your terminal:
 
 ```bash
 npx formkit create-theme
 ```
 
-This will download a copy of the starter theme in the directory where you run the command. The starter theme is a fully functional Vite application that includes a "Kitchen Sink" to help you see how your theme applies to every available input in every available input state as you work.
+This will download a clean copy of the starter theme for you to work off of. The starter theme is a fully functional Vite application that includes a "Kitchen Sink" to help you see how your classes affect every available FormKit input.
 
-To begin work on your theme run:
+Next, you will need to log in at [https://pro.formkit.com](https://pro.formkit.com) and create a new (free) development key for FormKit Pro. This key will allow you to render the FormKit Pro elements that are included in the Kitchen Sink.
+
+Add your FormKit Pro key to a `.env` file in the root of your project
+
+```
+FORMKIT_PRO_KEY=fk-**********
+```
+
+Once you've added your pro key, run the following commands to begin work on your theme:
 
 ```bash
 # or npm or yarn
@@ -93,7 +103,7 @@ The remaining files in the starter theme can be ignored (but not removed) as the
 
 ### Working with variables
 
-Variables are a powerful way to share values across your theme and to optionally allow theme users to customize your theme to their liking. Variables are used in your inputs' class lists via the following syntax:
+Variables are a powerful way to re-use values across your theme and to allow theme users to customize your theme to their liking. Variables are used in your inputs' class lists via the following syntax:
 
 ```js
 // global.ts
@@ -116,7 +126,13 @@ The following variables are defined for convenience in the starter theme but do 
 - `colorTemperatureStrengthDark`
 - `inputMaxWidth`
 
-You can create your own variables in this fashion by providing a new key/value pair in the variables object:
+The starter theme also ships with the following variables that expose UI controls for theme users:
+
+- `radius`,
+- `spacing`,
+- `scale`
+
+You can create your own basic non-user-configurable variables by providing a new key/value pair in the variables object:
 
 ```js
 export default createTheme({
@@ -191,9 +207,9 @@ To do this we provide an `editor` value for our variable. The `editor` determine
 - `spacing`: A slider with a range of values with depictions of tighter spacing at the beginning and wider spacing at the end. By default includes a scale from `0` to `96`.
 - `select`: A standard HTML select list that can contain any number of values. Theme authors must provided their own scale.
 
-You can see an example of each of these editor values by looking at the `Regenesis` theme [here](https://themes.formkit.com/editor?theme=regenesis).
+You can see an example of each of these editor values by viewing the editor UI for the `Regenesis` theme [here](https://themes.formkit.com/editor?theme=regenesis).
 
-We can update our `spacing` variable to use an appropriate editor.
+We can update our `spacing` variable to use an appropriate editor:
 
 ```js
 spacing: {
@@ -202,7 +218,7 @@ spacing: {
 }
 ```
 
-Now when we run our theme locally we will see a new control in the theme editor for our `spacing` variable with a slider that allows us to go from `0` to `96` as we step through the default Tailwind scale.
+Now we will see a new control in the theme editor for our `spacing` variable with a slider that allows us to go from `0` to `96` as we step through the default Tailwind scale.
 
 ::Callout
 ---
@@ -214,7 +230,7 @@ When you expose a variable to a theme user they are changing the base value when
 
 ### Setting min and max for user-controlled variables
 
-In most cases it makes sense to constrain the available scale for a user defined variable. Allowing our users to adjust `spacing` is great, but we probably don't want them to be able to crank the value all the way up to `96` or all the way down to `0`. We can constrain the range of the scale that is available to a user by using the `min` and `max` properties on our variable.
+In most cases it makes sense to constrain the available scale for a user-configurable variable. Allowing our users to adjust `spacing` is great, but we probably don't want them to be able to crank the value all the way up to `96` or all the way down to `0`. We can constrain the range of the scale that is available to a user by using the `min` and `max` properties on our variable.
 
 ```js
 spacing: {
@@ -229,7 +245,7 @@ This means that our `spacing` variable will now only allow values `1`, `1.5`, `2
 
 ### Creating one-off min and max constraints
 
-Sometimes as a theme author you need to clamp or expand available values beyond what is defined in a variable's default scale. You can do this by passing additional `min` and `max` arguments to a particular instance of a variable in a class list.
+Sometimes as a theme author you need to clamp or expand available values beyond what is defined in a variable's default min and max definition. You can do this by passing additional `min` and `max` arguments to inline instances of a variable.
 
 The provided values for `min` and `max` _must_ be values or the variables associated scale — whether that is a default scale for an editor or a custom scale defined by the theme author.
 
@@ -254,14 +270,14 @@ export default {
 
 ### Overriding default editor scales
 
-Some `editor` types such as `scale` or `color` come with default scales. However, we can still include a custom `scale` property of our own and override which options are available in the UI.
+Some `editor` types such as `scale` or `color` come with default scales. However, we can override the defaults by providing a custom `scale` property.
 
 ```js
 accentColor: {
   editor: "color",
   value: "blue",
   // excludes all "gray" colors
-  // included in the default scale
+  // from the default scale
   scale: [
     "red",
     "orange",
@@ -309,9 +325,9 @@ scale: {
 },
 ```
 
-## Publishing your theme
-
 There are many more comments in the `@formkit/theme-starter` theme itself to help you along your way as you work. 
+
+## Publishing your theme
 
 When you're done creating your theme you can use the included publishing script to build and publish your theme to npm.
 
