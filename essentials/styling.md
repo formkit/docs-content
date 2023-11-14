@@ -84,7 +84,10 @@ You can use the above attributes to easily provide realtime visual feedback for 
 ::Example
 ---
 name: "Appending classes"
-file: "_content/_examples/outer-data-attrs/outer-data-attrs.vue"
+file: [
+  "_content/_examples/outer-data-attrs/outer-data-attrs.vue",
+  "_content/_examples/_no-tailwind/formkit.config.js"
+]
 ---
 ::
 
@@ -109,7 +112,10 @@ To append a class, simply return the string you want to append, or provide an ob
 ::Example
 ---
 name: "Appending classes"
-file: "_content/_examples/append-classes/append-classes.vue"
+file: [
+  "_content/_examples/append-classes/append-classes.vue",
+  "_content/_examples/_no-tailwind/formkit.config.js"
+]
 tabs: "html"
 ---
 ::
@@ -122,7 +128,10 @@ Classes produced by all earlier hierarchy steps can be completely removed by pro
 ::Example
 ---
 name: "Resetting classes"
-file: "_content/_examples/resetting-classes/resetting-classes.vue"
+file: [
+  "_content/_examples/resetting-classes/resetting-classes.vue",
+  "_content/_examples/_no-tailwind/formkit.config.js"
+]
 tabs: "html"
 ---
 ::
@@ -135,7 +144,10 @@ Classes produced by an earlier step in the class hierarchy can be selectively re
 ::Example
 ---
 name: "Removing classes"
-file: "_content/_examples/removing-classes/removing-classes.vue"
+file: [
+  "_content/_examples/removing-classes/removing-classes.vue",
+  "_content/_examples/_no-tailwind/formkit.config.js"
+] 
 tabs: "html"
 ---
 ::
@@ -155,7 +167,10 @@ The simplest way to modify the classes of an element inside a FormKit input is v
 ::Example
 ---
 name: "Section-key class"
-file: "_content/_examples/section-key-class/section-key-class.vue"
+file: [
+  "_content/_examples/section-key-class/section-key-class.vue",
+  "_content/_examples/_no-tailwind/formkit.config.js"
+]
 tabs: "html"
 ---
 ::
@@ -168,7 +183,10 @@ The classes prop is similar to the section-key class prop except it allows setti
 ::Example
 ---
 name: "Classes prop"
-file: "_content/_examples/classes-prop/classes-prop.vue"
+file: [
+  "_content/_examples/classes-prop/classes-prop.vue",
+  "_content/_examples/_no-tailwind/formkit.config.js"
+]
 tabs: "html"
 ---
 ::

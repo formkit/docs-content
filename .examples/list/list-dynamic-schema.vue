@@ -25,11 +25,8 @@ const schema = {
           validationVisibility: 'submit',
         },
         {
-          $el: 'button',
-          attrs: {
-            type: 'button',
-            onClick: '$addItem($node)', // 👈 Call $addItem from data
-          },
+          $formkit: 'button',
+          onClick: '$addItem($node)', // 👈 Call $addItem from data
           children: 'Add a link',
         },
       ],

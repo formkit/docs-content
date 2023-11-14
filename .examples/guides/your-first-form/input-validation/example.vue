@@ -16,7 +16,7 @@
     />
   
     <!-- %partial%::html:: -->
-    <p><em><small>Slide the strength above 9 or below 2.</small></em></p>
+    <p><em><small class="mb-4">Slide the strength above 9 or below 2.</small></em></p>
     <pre wrap>{{ value.strength }}</pre>
   </FormKit>
   </template>

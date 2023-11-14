@@ -11,7 +11,7 @@ const list = ref([
     v-model="list"
     type="list"
   >
-    <p>Please provide a list of emails.</p>
+    <p class="text-base mb-4">Please provide a list of emails.</p>
     <FormKit
       label="Email address"
       validation="required|email"

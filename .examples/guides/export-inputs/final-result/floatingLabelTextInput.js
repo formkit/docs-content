@@ -51,6 +51,10 @@ export const floatingLabelTextInput = {
    */
   type: 'input',
   /**
+   * The family the input belongs to. Will inherit class lists
+   */
+  family: 'text',
+  /**
    * An array of extra props to accept for this input.
    */
   props: [],

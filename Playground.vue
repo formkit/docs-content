@@ -13,8 +13,8 @@
 
 <style scoped>
 /*
-vanilla CSS can go here.
-Keep styles scoped to avoid multiple files
-overwriting each other in the render output.
+This file supports Tailwind CSS. 
+
+If you need vanilla CSS it can go here.
 */
 </style>

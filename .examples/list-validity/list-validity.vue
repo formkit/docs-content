@@ -5,8 +5,8 @@
     type="list"
   >
     <template #default="{ state: { valid } }">
-      <h2>Social media handles</h2>
-      <p>Please provide a your twitter and facebook social media profiles.</p>
+      <h2 class="text-2xl font-bold mb-2">Social media handles</h2>
+      <p class="text-base mb-4">Please provide a your twitter and facebook social media profiles.</p>
       <div
         v-if="!valid"
         class="not-valid"

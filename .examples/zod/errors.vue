@@ -23,8 +23,8 @@ function setupFormNode(node) {
 </script>
 
 <template>
-  <h1>Errors set with node.setZodErrors()</h1>
-  <p>
+  <h1 class="text-2xl font-bold mb-2">Errors set with node.setZodErrors()</h1>
+  <p class="text-base mb-4">
     This form cannot be successfully submitted because
     the form fields do not match the provided schema.<br>
     This is done to illustrate hydration of form-level errors.<br> 

@@ -44,7 +44,7 @@ async function searchMovies({ search, page, hasNextPage }) {
       <template #tag="{ handlers, option, classes }">
         <div :class="classes.tag">
           <img
-            :class="classes.tagImage"
+            class="w-5 mr-2"
             :src="`https://image.tmdb.org/t/p/w500${option.poster_path}`"
             alt="optionAvatar"
           />
@@ -59,11 +59,3 @@ async function searchMovies({ search, page, hasNextPage }) {
     <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>
-
-<style>
-.formkit-tag-image {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
-}
-</style>

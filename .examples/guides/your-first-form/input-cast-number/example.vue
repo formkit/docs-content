@@ -20,5 +20,5 @@ const castNumber = (node) => {
     :plugins="[castNumber]"
   />
 
-  <p><em><small>Strength is now a Number instead of a String.</small></em></p>
+  <p><em><small class="mb-4">Strength is now a Number instead of a String.</small></em></p>
 </template>

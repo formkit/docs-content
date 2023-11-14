@@ -7,7 +7,10 @@ const schema = [
     children: [
       'Hello ',
       '$location'
-    ]
+    ],
+    attrs: {
+      class: 'text-2xl font-bold mb-4'
+    }
   }
 ]
 
@@ -25,7 +28,7 @@ const move = () => {
     :schema="schema"
     :data="data"
   />
-  <button @click="move">
+  <FormKit type="button" @click="move">
     Change location
-  </button>
+  </FormKit>
 </template>

@@ -1,4 +1,9 @@
-import { defaultConfig } from '@formkit/vue'
+/* In this file, export your final config.
+It will automatically be injected into the playground for you.
+Imports from other playground files are supported. */
+
+import { genesisIcons } from '@formkit/icons'
+import { rootClasses } from './formkit.theme.js'
 import { createMultiStepPlugin } from '@formkit/addons'
 
 const multiStepPlugin = createMultiStepPlugin({
@@ -6,6 +11,12 @@ const multiStepPlugin = createMultiStepPlugin({
   allowIncomplete: false,
 })
 
-export default defaultConfig({
+export default {
   plugins: [multiStepPlugin],
-})
+  icons: {
+    ...genesisIcons,
+  },
+  config: {
+    rootClasses,
+  },
+}

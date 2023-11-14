@@ -19,7 +19,16 @@ async function submitHandler(_data, node) {
       type="checkbox"
       label="Soccer nations"
       validation-label="countries"
-      :options="['🇧🇷 Brazil','🇩🇪 Germany','🇮🇹 Italy','🇦🇷 Argentina','🇺🇾 Uruguay','🇫🇷 France','🏴󠁧󠁢󠁥󠁮󠁧󠁿 England','🇪🇸 Spain']"
+      :options="[
+        '🇧🇷 Brazil',
+        '🇩🇪 Germany',
+        '🇮🇹 Italy',
+        '🇦🇷 Argentina',
+        '🇺🇾 Uruguay',
+        '🇫🇷 France',
+        '🏴󠁧󠁢󠁥󠁮󠁧󠁿 England',
+        '🇪🇸 Spain',
+      ]"
       help="Which 4 countries will be in the semi finals of the next world cup?"
       validation="required|*min:2"
     />
@@ -54,12 +63,15 @@ async function submitHandler(_data, node) {
   padding: 1rem;
 }
 
-.toast .formkit-message {
+.toast > * {
   padding: 0.75em;
   border-radius: 0.25em;
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
   background-color: #8d2c2c;
-  color: white;
-  margin-bottom: 0.5em;
+}
+
+.toast li {
+  margin-bottom: 0 !important;
+  color: white !important;
 }
 </style>

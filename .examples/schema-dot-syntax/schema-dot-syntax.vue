@@ -4,7 +4,10 @@ import { reactive } from 'vue'
 const schema = [
   {
     $el: 'h1',
-    children: '$orchard.tree.fruit'
+    children: '$orchard.tree.fruit',
+    attrs: {
+      class: 'text-2xl font-bold mb-4'
+    }
   }
 ]
 const data = reactive({

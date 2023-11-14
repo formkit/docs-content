@@ -19,12 +19,11 @@ const submitHandler = async () => {
     :actions="false"
     #default="{ value }"
   >
-    <h1>Register!</h1>
-    <p>
+    <h1 class="text-2xl font-bold mb-2">Register!</h1>
+    <p class="text-sm mb-4">
       You can put any type of element inside a form, not just FormKit inputs
       (although only FormKit inputs are included with the submission).
     </p>
-    <hr />
     <FormKit
       type="text"
       name="name"
@@ -63,40 +62,19 @@ const submitHandler = async () => {
       />
     </div>
 
-    <FormKit
-      type="submit"
-      label="Register"
-    />
+    <FormKit type="submit" label="Register" />
     <pre wrap>{{ value }}</pre>
   </FormKit>
   <div v-if="submitted">
-    <h2>Submission successful!</h2>
+    <h2 class="text-xl text-green-500">Submission successful!</h2>
   </div>
 </template>
 <!-- %partial% -->
 
-<style>
-p {
-  font-size: 0.9em;
-  color: #646464;
-  line-height: 1.5;
-}
-h1 {
-  margin-top: 0;
-}
-h2 {
-  color: green;
-}
-hr {
-  display: block;
-  height: 1px;
-  margin: 1.5em 0;
-  border: 0;
-  background-color: #e4e4e4;
-}
-.formkit-form {
+<style scoped>
+form {
   width: 420px;
-  padding: 1.5em;
+  padding: 1.5em 1.5em 0 1.5em;
   border: 1px solid #e4e4e4;
   border-radius: 1em;
   margin: 0 auto 1em auto;
@@ -112,9 +90,11 @@ hr {
     display: flex;
     justify-content: space-between;
   }
-
-  .double > .formkit-outer {
-    width: calc(50% - 0.5em);
+  .double > * {
+    width: calc(50% - 0.25em);
+  }
+  .double > *:first-child {
+    margin-right: 0.5em;
   }
 }
 </style>

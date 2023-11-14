@@ -1,7 +1,7 @@
 <template>
   <div>
     <FormKit
-      label="No"
+      label="No options"
       :options="[]"
       type="dropdown"
     />

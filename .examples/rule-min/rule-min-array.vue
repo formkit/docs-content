@@ -6,11 +6,13 @@
       form_1: 'Forms',
       form_2: 'Forms',
       form_3: 'Forms',
-      form_4: 'Forms'
+      form_4: 'Forms',
     }"
     label="Select at least 2 of your interests."
     validation="min:2"
     validation-label="Interests"
+    validation-visibility="live"
+    :value="['form_1']"
   />
   <!-- %partial%::html:: -->
 </template>

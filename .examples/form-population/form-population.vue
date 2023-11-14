@@ -11,13 +11,13 @@ const save = () => {
     :value="{
       location: 'New York City',
       duration: '2 weeks',
-      price: 'average'
+      price: 'average',
     }"
     submit-label="Save"
     @submit="save"
   >
-    <h2>Edit request</h2>
-    <p>Edit your housing request below.</p>
+    <h2 class="text-xl font-bold mb-1">Edit request</h2>
+    <p class="text-base mb-4">Edit your housing request below.</p>
     <FormKit
       type="text"
       name="location"
@@ -40,7 +40,7 @@ const save = () => {
       :options="{
         low: 'Below average',
         average: 'Average',
-        high: 'Super luxe'
+        high: 'Super luxe',
       }"
     />
   </FormKit>

@@ -16,7 +16,8 @@ const schema = [
         prefix: {
           $el: 'div',
           attrs: {
-            class: '$classes.prefix',
+            class:
+              '$classes.prefix + " py-0 px-2 text-sm stretch flex items-center bg-gray-200 mr-2 rounded"',
           },
           children: '$label',
         },

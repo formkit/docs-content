@@ -13,11 +13,6 @@ const handleIconClick = (node, e) => {
     prefix-icon="password"
     suffix-icon="eyeClosed"
     @suffix-icon-click="handleIconClick"
+    suffix-icon-class="hover:text-blue-500"
   />
 </template>
-
-<style>
-.formkit-suffix-icon:hover {
-  color: var(--fk-color-primary);
-}
-</style>

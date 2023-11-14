@@ -1,24 +1,5 @@
 <script setup>
-const frameworks = [
-  { label: 'React', value: 'react', asset: 'https://reactjs.org/logo-og.png' },
-  {
-    label: 'Vue',
-    value: 'vue',
-    asset:
-      'https://brandlogos.net/wp-content/uploads/2022/01/vue.js-logo-brandlogo.net_.png',
-  },
-  {
-    label: 'Angular',
-    value: 'angular',
-    asset: 'https://angular.io/assets/images/logos/angular/angular.png',
-  },
-  {
-    label: 'Svelte',
-    value: 'svelte',
-    asset:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/1200px-Svelte_Logo.svg.png',
-  },
-]
+const frameworks = [{ label: 'React', value: 'react', asset: 'https://s3.amazonaws.com/cdn.formk.it/example-assets/frontend-framework-logos/react-logo.png'}, { label: 'Vue', value: 'vue', asset: 'https://s3.amazonaws.com/cdn.formk.it/example-assets/frontend-framework-logos/vue-logo.png'}, { label: 'Angular', value: 'angular', asset: 'https://s3.amazonaws.com/cdn.formk.it/example-assets/frontend-framework-logos/angular-logo.png',}, { label: 'Svelte', value: 'svelte', asset: 'https://s3.amazonaws.com/cdn.formk.it/example-assets/frontend-framework-logos/svelte-logo.png'}]
 </script>
 
 <template>
@@ -31,9 +12,9 @@ const frameworks = [
     value="vue"
   >
     <!--SELECTION SLOT-->
-    <template #selection="{ option, classes }">
-      <div :class="classes.option">
-        <img :src="option.asset" alt="optionAvatar" />
+    <template #selection="{ option }">
+      <div class="flex items-center">
+        <img :src="option.asset" alt="optionAvatar" class="w-5 mr-2" />
         <span>
           {{ option.label }}
         </span>
@@ -49,12 +30,12 @@ const frameworks = [
     :options="frameworks"
     multiple
     selection-appearance="tags"
-    :value="['vue', 'react']"
+    :value="['vue', 'angular']"
   >
     <!--TAG SLOT-->
     <template #tag="{ handlers, option, classes }">
       <div :class="classes.tag">
-        <img :src="option.asset" :class="classes.tagImage" />
+        <img :src="option.asset" class="w-4 mr-1 bg-white rounded" />
         <span :class="classes.tagLabel">
           {{ option.label }}
         </span>
@@ -82,29 +63,4 @@ const frameworks = [
     </template>
     <!--/TAG SLOT-->
   </FormKit>
-</template>
-
-<style>
-.formkit-option {
-  display: flex;
-  align-items: center;
-}
-.formkit-option img {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-}
-
-.formkit-tag {
-  display: flex;
-  align-items: center;
-}
-.formkit-tag img {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-}
-.formkit-remove-selection {
-  width: auto !important;
-}
-</style>
+</template>s

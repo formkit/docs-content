@@ -319,7 +319,9 @@ If you need additional props, you can declare them in your input definition. Pro
 ::Example
 ---
 name: "Custom props"
-file: "_content/_examples/custom-props/custom-props.vue"
+file: [
+  "_content/_examples/custom-props/custom-props.vue"
+]
 ---
 ::
 
@@ -328,7 +330,9 @@ When extending the base schema by using the `createInput` helper, pass a second 
 ::Example
 ---
 name: "Custom props - createInput"
-file: "_content/_examples/custom-props-create-input/custom-props-create-input.vue"
+file: [
+  "_content/_examples/custom-props-create-input/custom-props-create-input.vue"
+]
 ---
 ::
 
@@ -343,7 +347,10 @@ As an example, let's imagine you want to build an input that allows users to ent
 ::Example
 ---
   name: "Custom input - sum numbers"
-  file: "_content/_examples/custom-sum/custom-sum.vue"
+  file: [
+    "_content/_examples/custom-sum/custom-sum.vue",
+    "_content/_examples/custom-sum/formkit.config.js"
+  ]
 ---
 ::
 
@@ -454,7 +461,12 @@ Let’s take a look at a slightly more complex example that utilizes `createInpu
 ::Example
 ---
 name: "Create input"
-file: "_content/_examples/autocomplete/autocomplete.vue"
+file: [
+  "_content/_examples/autocomplete/autocomplete.vue",
+  "_content/_examples/autocomplete/autocompleteInput.js",
+  "_content/_examples/autocomplete/formkit.config.js"
+]
+initFileTab: 'autocompleteInput.js'
 ---
 ::
 

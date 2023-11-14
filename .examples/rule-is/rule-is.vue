@@ -7,6 +7,7 @@
     validation-visibility="live"
     validation-label="year"
     :validation-messages="{ is: 'Not this buffet — try another.' }"
+    value="cake"
   />
   <!-- %partial%::html:: -->
 </template>

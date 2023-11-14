@@ -1,6 +1,6 @@
 <template>
   <!-- %partial%::html:: -->
-  <h2>Register</h2>
+  <h2 class="text-2xl font-bold mb-4">Register</h2>
   <FormKit
     name="account"
     type="group"

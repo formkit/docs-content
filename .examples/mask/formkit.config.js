@@ -1,5 +1,12 @@
+import { genesisIcons } from "@formkit/icons"
+import { rootClasses } from './formkit.theme.js'
+
 export default {
+  icons: {
+    ...genesisIcons
+  },
   config: {
+    rootClasses,
     tokens: {
       z: {
         type: 'char',
@@ -9,5 +16,5 @@ export default {
         selectDirection: 'left',
       },
     },
-  },
+  }
 }

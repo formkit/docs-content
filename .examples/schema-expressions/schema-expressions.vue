@@ -36,5 +36,5 @@ const data = reactive({
     :schema="schema"
     :data="data"
   />
-  <button @click="data.count++">Add to cart</button>
+  <FormKit type="button" @click="data.count++">Add to cart</FormKit>
 </template>

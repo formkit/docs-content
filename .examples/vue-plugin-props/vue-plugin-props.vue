@@ -2,7 +2,7 @@
   <!-- %partial%::html:: -->
   <!--
     👀 The validation prop is not set here but both
-    inputs are receiving the validation prop from the plugin.
+    inputs are receiving the validation prop from the config.
    -->
   <FormKit
     label="Username"

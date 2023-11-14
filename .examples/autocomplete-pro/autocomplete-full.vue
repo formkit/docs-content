@@ -39,20 +39,22 @@ async function searchMovies({ search, page, hasNextPage }) {
       :options="searchMovies"
       selection-appearance="option"
       multiple
+      remove-selection-class="p-2 pl-0"
     >
       <template #option="{ option }">
-        <div class="formkit-option">
-          <div class="image-container">
+        <div class="flex items-center justify-between">
+          <div class="image-container w-1/4 mr-2">
             <img
               :src="`https://image.tmdb.org/t/p/w500${option.poster_path}`"
               alt="optionAvatar"
+              class="w-full"
             />
           </div>
-          <div class="text-container">
-            <div>
+          <div class="text-container w-full">
+            <div class="text-base leading-none font-bold">
               {{ option.label }}
             </div>
-            <p class="option-overview">
+            <p class="option-overview text-xs">
               {{ option.overview }}
             </p>
           </div>
@@ -62,28 +64,3 @@ async function searchMovies({ search, page, hasNextPage }) {
     <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>
-
-<style>
-.formkit-option {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.formkit-option img {
-  width: 100%;
-  margin-right: 20px;
-}
-
-.option-overview {
-  font-size: 12px;
-}
-
-.image-container {
-  width: 25%;
-}
-
-.text-container {
-  width: 60%;
-}
-</style>

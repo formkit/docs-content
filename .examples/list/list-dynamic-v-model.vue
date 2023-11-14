@@ -49,7 +49,7 @@ const todos = ref([
           </li>
         </ul>
       </div>
-      <button type="button" @click="todos.push('')">Add a todo</button>
+      <FormKit type="button" @click="todos.push('')">Add a todo</FormKit>
       <pre wrap>{{ value }}</pre>
     </FormKit>
   </div>

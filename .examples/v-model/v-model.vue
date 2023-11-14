@@ -28,6 +28,6 @@ function randomCity() {
     help="What is your favorite European city?"
     v-model="city"
   />
-  <button @click="randomCity">Random City</button>
+  <FormKit type="button" @click="randomCity">Random City</FormKit>
   <pre>City: {{ city }}</pre>
 </template>

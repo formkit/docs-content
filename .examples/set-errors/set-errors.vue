@@ -39,7 +39,7 @@ function fakeApiCall(data) {
     submit-label="Order chips"
     @submit="order"
   >
-    <h2>Bulk order</h2>
+    <h2 class="text-xl font-bold mb-4">Bulk order</h2>
     <FormKit
       type="select"
       name="flavor"

@@ -31,7 +31,9 @@ function submitHandler() {
       help="Pick some accessories you need for your job."
     />
   </FormKit>
-  <p>This button is not part of the above form:</p>
+  <p class="text-xs font-italic mb-2">
+    This button is not part of the above form:
+  </p>
   <!-- 👀 Look, this is not part of the form. -->
-  <button @click="submitForm">Submit request</button>
+  <FormKit type="button" @click="submitForm">Submit request</FormKit>
 </template>

@@ -8,7 +8,7 @@
       min="0"
     >
       <template #empty>
-        <h2>Please add a user to get started.</h2>
+        <h2 class="text-xl font-bold mb-4">Please add a user to get started.</h2>
       </template>
       <FormKit
         type="email"

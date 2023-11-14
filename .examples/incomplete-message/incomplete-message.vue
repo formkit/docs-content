@@ -10,7 +10,7 @@ nextMonday.setDate(
     type="form"
     incomplete-message="Achtung! We can not service your Deutsche automobil without all the fields being filled out correctly."
   >
-    <h2>Schedule service</h2>
+    <h2 class="text-xl font-bold mb-4">Schedule service</h2>
     <FormKit
       type="date"
       name="date"

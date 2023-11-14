@@ -14,7 +14,7 @@
   />
 
   <!-- %partial%::html:: -->
-  <p><em><small>Remember: You have a budget of 20 points to build your character.</small></em></p>
+  <p><em><small class="mb-4">Remember: You have a budget of 20 points to build your character.</small></em></p>
   <pre wrap>{{ value.strength }}</pre>
 </FormKit>
 </template>

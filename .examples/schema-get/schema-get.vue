@@ -48,6 +48,6 @@ const schema = [
 </script>
 
 <template>
-  <h2>Order a beverage</h2>
+  <h2 class="text-2xl font-bold mb-4">Order a beverage</h2>
   <FormKitSchema :schema="schema" />
 </template>

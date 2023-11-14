@@ -19,8 +19,8 @@ export default {
 
 <template>
   <FormKit type="form" id="myForm" @submit="handleSubmit">
-    <h2>Newsletter</h2>
-    <p>When this form is submitted the form is reset.</p>
+    <h2 class="text-xl font-bold mb-2">Newsletter</h2>
+    <p class="text-base mb-4">When this form is submitted the form is reset.</p>
     <div class="success" v-if="complete">Submitted successfully!</div>
     <FormKit
       name="email"

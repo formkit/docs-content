@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <h2>Guest list</h2>
+  <h2 class="text-2xl font-bold mb-4">Guest list</h2>
   <FormKit type="list" :value="['']" dynamic #default="{ items, node, value }">
     <FormKit
       v-for="(item, index) in items"
@@ -18,9 +18,9 @@
         }
       }"
     />
-    <button type="button" @click="() => node.input(value.concat(''))">
+    <FormKit type="button" @click="() => node.input(value.concat(''))">
       + Add another
-    </button>
+    </FormKit>
     <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>

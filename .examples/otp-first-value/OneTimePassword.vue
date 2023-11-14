@@ -9,5 +9,5 @@ function handleInput(e) {
 </script>
 
 <template>
-  <input @input="handleInput" :value="props.context._value" />
+  <input @input="handleInput" :value="props.context._value" class="border border-gray-700" />
 </template>

@@ -12,6 +12,9 @@ const schema = [
     // 👀  Oooo, arbitrary markup!
     $el: 'h1',
     children: 'Account Settings',
+    attrs: {
+      class: 'text-2xl font-bold mb-2',
+    },
   },
   {
     $formkit: 'text',
@@ -41,6 +44,9 @@ const schema = [
       '$format($pricePerUser * $get(users).value)',
       ' / month',
     ],
+    attrs: {
+      class: 'text-lg font-bold mb-4',
+    },
   },
   {
     $formkit: 'checkbox',

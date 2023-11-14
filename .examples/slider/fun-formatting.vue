@@ -62,29 +62,25 @@ function emotionClass(node) {
     background-position: 100%;
   }
 }
-
-[data-type='slider'].formkit-outer {
-  margin-top: 1em;
+.large {
+  font-size: 2rem !important;
 }
-[data-type='slider'] .formkit-tooltip.large {
-  font-size: 2rem;
-}
-[data-type='slider'] .formkit-fill.red {
+.red {
   background-color: #f44336;
 }
-[data-type='slider'] .formkit-fill.orange {
+.orange {
   background-color: #ff9800;
 }
-[data-type='slider'] .formkit-fill.yellow {
+.yellow {
   background-color: #baac2e;
 }
-[data-type='slider'] .formkit-fill.blue-green {
+.blue-green {
   background-color: #009688;
 }
-[data-type='slider'] .formkit-fill.green {
+.green {
   background-color: #4caf50;
 }
-[data-type='slider'] .formkit-fill.hyper {
+.hyper {
   animation: hyperbg 0.33s linear infinite;
   background-size: 50%;
   background-image: linear-gradient(

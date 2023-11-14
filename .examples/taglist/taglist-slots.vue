@@ -17,7 +17,7 @@ import carBrands from './car-brands.js'
       <!--TAG SLOT-->
       <template #tag="{ handlers, option, classes }">
         <div :class="classes.tag">
-          <img :src="option.logo" :class="classes.tagImage" />
+          <img :src="option.logo" class="w-5 mr-2 bg-white" />
           <span :class="classes.tagLabel">
             {{ option.label }}
           </span>
@@ -47,11 +47,3 @@ import carBrands from './car-brands.js'
     <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>
-
-<style>
-.formkit-tag-image {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
-}
-</style>

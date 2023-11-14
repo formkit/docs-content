@@ -272,8 +272,7 @@ By combining the provided props for the `slider` component you can create a robu
 ---
 name: "Kitchen Sink"
 file: [
-  "_content/_examples/slider/kitchen-sink.vue", 
-  "_content/_examples/slider/formkit.config.js"
+  "_content/_examples/slider/kitchen-sink.vue",
 ]
 ---
 ::
