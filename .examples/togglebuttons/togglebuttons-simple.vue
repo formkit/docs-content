@@ -8,17 +8,9 @@ const value = ref(false)
     FormKit forms auto-collect values of children inputs.
     Wrap the example in a form so we can display the form values.
   -->
-  <FormKit
-    type="form"
-    #default="{ value }"
-    :actions="false"
-  >
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@formkit/pro@dev/genesis.min.css" />
+  <FormKit type="form" #default="{ value }" :actions="false">
     <!-- %partial%::html:: -->
-      <FormKit
-        type="togglebuttons"
-        label="Toggle Me"
-      />
+    <FormKit type="togglebuttons" label="Toggle Me" />
     <!-- %partial%::html:: -->
     <pre wrap>{{ value }}</pre>
   </FormKit>
