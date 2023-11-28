@@ -7,6 +7,7 @@ const messages = ref([])
 
 function showErrors(node) {
   const validations = getValidationMessages(node)
+  messages.value = []
   validations.forEach((inputMessages) => {
     messages.value = messages.value.concat(
       inputMessages.map((message) => message.value)
