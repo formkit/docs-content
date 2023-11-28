@@ -16,7 +16,6 @@ const value = ref(false)
       label="T-shirt Size"
       enforced
       :options="['Small', 'Medium', 'Large', 'X-Large']"
-      help="Select at least one."
     />
     <!-- %partial%::html:: -->
     <pre wrap>{{ value }}</pre>

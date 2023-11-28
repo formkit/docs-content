@@ -14,10 +14,8 @@ const value = ref(false)
       type="togglebuttons"
       name="shirt_size"
       label="T-shirt Size"
-      multiple
       :options="['Small', 'Medium', 'Large', 'X-Large']"
       :vertical="value.orientation"
-      help="Select at least one."
     />
 
     <FormKit
