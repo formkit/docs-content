@@ -86,6 +86,12 @@ You can also disable your own submit button [via schema](https://formkit.link/6e
 <FormKit type="button" :ignore="false"> Add a section </FormKit>
 ```
 
+## Accessibility
+
+All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
+
+:AccessibilityChecks
+
 ## Props & Attributes
 
 The `submit` input (along with [`button`](/inputs/button)) is unique in that it does not actively receive input other than a transient click. However, nearly all of the base input props still technically exist on the input.
