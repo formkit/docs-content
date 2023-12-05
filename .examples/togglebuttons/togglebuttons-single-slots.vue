@@ -8,8 +8,8 @@
     <FormKit type="togglebuttons"> Airplane mode </FormKit>
 
     <FormKit type="togglebuttons">
-      <template #on> &#9745; Enabled </template>
-      <template #off> &#9744; Disabled </template>
+      <template #on><span class="text-xl">&#9745;</span> Enabled </template>
+      <template #off><span class="text-xl">&#9744;</span> Disabled </template>
     </FormKit>
     <!-- %partial%::html:: -->
   </FormKit>

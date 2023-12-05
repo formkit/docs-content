@@ -17,11 +17,11 @@ The `createFloatingLabelsPlugin` has one option you can configure which controls
 
 ```js
 // formkit.config.js
-import { defaultConfig } from '@formkit/vue'
+import { defineFormKitConfig } from '@formkit/vue'
 import { createFloatingLabelsPlugin } from '@formkit/addons'
 import '@formkit/addons/css/floatingLabels'
 
-const config = defaultConfig({
+const config = defineFormKitConfig({
   plugins: [
     createFloatingLabelsPlugin({
       useAsDefault: true, // defaults to false

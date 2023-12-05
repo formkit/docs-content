@@ -14,7 +14,7 @@ const value = ref(false)
       type="togglebuttons"
       name="pizza_toppings"
       label="Pizza Toppings"
-      :options="['Pepperoni', 'Sausage', 'Mushroom', 'Black Olives']"
+      :options="['Pepperoni', 'Sausage', 'Mushroom', 'Olives']"
       multiple
     />
     <!-- %partial%::html:: -->

@@ -1,4 +1,5 @@
 <template>
+  <!-- %partial%::html:: -->
   <FormKit
     type="text"
     label="Floating Text Label via prop"
@@ -13,4 +14,9 @@
     type="text" 
     label="I have a standard label" 
   />
+  <!-- %partial% -->
 </template>
+
+<style>
+@import "https://cdn.jsdelivr.net/npm/@formkit/addons@1.4.0/dist/css/floatingLabels.css";
+</style>
