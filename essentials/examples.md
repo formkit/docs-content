@@ -65,7 +65,7 @@ Adds a simple countdown of characters left in a textarea with a hover tooltip ba
 
 ::ExampleCard
 ---
-href: "https://formkit.link/7e3aafb98dd293e2d2168ecc5ff14dbf"
+href: "https://formkit.link/d5a3b4c118e7aa205317329780cfc128"
 title: "Add an asterisk to the labels of all required inputs"
 ---
 Use a plugin to add an asterisk (\*) to the label area of inputs that have the "required" rule.
@@ -117,6 +117,14 @@ href: "https://formkit.link/177ecbefd0f5f5e58f6ea0bd7ccf8f6f"
 title: "Automatically set an input's name, label, and help text based on the id"
 ---
 Use a plugin to automatically set an input's <code>name</code>, <code>label</code>, and <code>help</code> props based on the <code>id</code>. Reduces repetitive prop declarations in your HTML.
+::
+
+::ExampleCard
+---
+href: "https://formkit.link/1cabbfff0934788fc0897627017860b2"
+title: "Adds attribute for libraries like @testing-library for testing"
+---
+A plugin that adds the attribute <code>data-testid</code> with the node id for testing libraries.
 ::
 
 ::ExampleCard

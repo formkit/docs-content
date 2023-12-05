@@ -22,7 +22,6 @@ file: "_content/_examples/time/time.vue"
 ---
 ::
 
-
 ::Callout
 ---
 type: "warning"
@@ -30,6 +29,12 @@ label: "Formatting"
 ---
 The internal format of all native time pickers is <code>HH:MM</code>. This is true even though the format of the time displayed to the user may be 12 hour or 24 hour.
 ::
+
+## Accessibility
+
+All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
+
+:AccessibilityChecks
 
 ## Props & Attributes
 

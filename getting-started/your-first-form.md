@@ -111,7 +111,7 @@ file: "_content/_examples/guides/your-first-form/input-cast-number/example.vue"
 
 First, let's create a basic form and add more inputs so we have content to work with. We will add more features to it in each section, like validation, grouping, and changing values based on other inputs.
 
-We will use one of the inputs called `form`, which will make grouping and validation of fields much easier. You just need to wrap all yours inputs inside a `<FormKit type="form">`:
+We will use one of the inputs called `form`, which will make grouping and validation of fields much easier. You just need to wrap all your inputs inside a `<FormKit type="form">`:
 
 ::Callout
 ---
