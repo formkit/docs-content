@@ -9,5 +9,5 @@ If you would like to supply your own configuration, you can either extend `defau
 type: "info"
 label: "Hierarchical configuration"
 ---
-FormKit uses a unique hierarchical configuration system that is well suited for forms, meaning that all configurations defined globally are available to all inputs.
+FormKit uses a unique hierarchical configuration system that is well suited for forms. Any global configuration defined here can be overridden for a single input, a group of inputs, or a form.
 ::
