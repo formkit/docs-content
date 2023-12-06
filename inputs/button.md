@@ -57,12 +57,6 @@ file: "_content/_examples/button/button-events.vue"
 </FormKit>
 ```
 
-## Accessibility
-
-All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
-
-:AccessibilityChecks
-
 ## Props & Attributes
 
 The `button` input is unique in that it does not actively receive input other than a transient click. However, nearly all of the base input props still technically exist on the input.
@@ -146,3 +140,9 @@ primary: "section-key"
 without: ["inner"]
 ---
 ::
+
+## Accessibility
+
+All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
+
+:AccessibilityChecks

@@ -39,12 +39,6 @@ The internal format of all native month pickers is <code>YYYY-MM</code>. This is
 even though the format of the month displayed to the user may be different. For example, U.S. based browsers display the month format as <code>Month Name YYYY</code>.
 ::
 
-## Accessibility
-
-All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
-
-:AccessibilityChecks
-
 ## Props & Attributes
 
 The `month` input has no unique props but can make use of the following universal
@@ -74,3 +68,8 @@ primary: "section-key"
 ---
 ::
 
+## Accessibility
+
+All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
+
+:AccessibilityChecks

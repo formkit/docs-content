@@ -58,12 +58,6 @@ The file upload process is left to your form’s submission handler. When submit
 ---
 ::
 
-## Accessibility
-
-All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
-
-:AccessibilityChecks
-
 ## Props & Attributes
 
 The `file` input has a few unique props. There are also several commonly used native HTML attributes that assist in controlling file uploads.
@@ -344,3 +338,8 @@ data: [
 ---
 ::
 
+## Accessibility
+
+All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
+
+:AccessibilityChecks

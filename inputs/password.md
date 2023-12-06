@@ -33,12 +33,6 @@ file: "_content/_examples/icons/handle-click.vue"
 ---
 ::
 
-## Accessibility
-
-All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
-
-:AccessibilityChecks
-
 ## Props & Attributes
 
 The `password` input has no unique props but can make use of the following universal FormKit props.
@@ -73,3 +67,8 @@ primary: "section-key"
 ---
 ::
 
+## Accessibility
+
+All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
+
+:AccessibilityChecks
