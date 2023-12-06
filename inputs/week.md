@@ -39,12 +39,6 @@ label: "Formatting"
 The internal format of all native week pickers is <code>YYYY-Www</code> (for example: <code>2017-W06</code>). This is true even though the format of the week displayed to the user may be different.</code>.
 ::
 
-## Accessibility
-
-All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
-
-:AccessibilityChecks
-
 ## Props & Attributes
 
 The `week` input has no unique props but can make use of the following universal
@@ -80,3 +74,8 @@ primary: "section-key"
 ---
 ::
 
+## Accessibility
+
+All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
+
+:AccessibilityChecks
