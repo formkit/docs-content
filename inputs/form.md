@@ -92,7 +92,7 @@ Forms are usually submitted through user actions like clicking a submit button o
 type: "warning"
 label: "Avoid v-model for collecting and submitting form data"
 ---
-Using <code>v-model</code> data in your submit handler can lead to unintended form mutations. FormKit <em>automatically</em> collects form data for you, so use the unbound copy of your form’s data that is passed to your submission handler instead. 
+Using <code>v-model</code> data in your submit handler can lead to unintended form mutations. FormKit <em>automatically</em> collects form data for you, so use the unbound copy of your form’s data that is passed to your submission handler instead.
 ::
 
 ### Submitting via XHR/Fetch request
@@ -148,6 +148,50 @@ file: "_content/_examples/node-submit/node-submit.vue"
 ---
 ::
 
+## Disabling
+
+To disable all the inputs in a given form, including the submit button, you can use the `disabled` prop.
+
+::Example
+---
+name: "Disabled example"
+file: "_content/_examples/form-disabled/form-disabled.vue"
+---
+::
+
+::Callout
+---
+type: "tip"
+label: "Disabled automatically"
+---
+When using an async <code>@submit</code> handler, FormKit will automatically disable the form (and set the state to <code>loading</code>) while the submit handler is pending.
+::
+
+## Resetting
+
+You can reset your form (or any input) back to its initial state by calling `$formkit.reset(formId)`.
+
+::Example
+---
+name: "Reset example"
+file: "_content/_examples/reset-form/reset-form.vue"
+---
+::
+
+::Callout
+---
+type: "tip"
+label: "Composition API"
+---
+When using the composition API, you can directly access the reset function by importing it from core: <code>import { reset } from '@formkit/core'</code>.
+::
+
+### Initial values
+
+It’s important to note that the "initial state" of a form is not necessarily an empty form. If you have a default `:value` or `v-model` on the form or on individual inputs in the form, FormKit automatically merges these together to produce your initial value, and will restore to this merged state on reset.
+
+Optionally you can provide a second argument to `reset(formId, initialState)` if you would prefer an alternative reset state.
+
 ## Validation
 
 Forms will not submit until all the inputs in the form are passing their validation rules.
@@ -202,50 +246,6 @@ label: "Getting the context object"
 ---
 In the above example we extract the context object from the <code>#default</code> slot, but there are other ways as well. The context object is available on each input’s core node on the <code>node.context</code> property, and you can fetch an input’s node <a href="/essentials/architecture#getting-a-components-node">a number of ways</a>.
 ::
-
-## Disabling
-
-To disable all the inputs in a given form, including the submit button, you can use the `disabled` prop.
-
-::Example
----
-name: "Disabled example"
-file: "_content/_examples/form-disabled/form-disabled.vue"
----
-::
-
-::Callout
----
-type: "tip"
-label: "Disabled automatically"
----
-When using an async <code>@submit</code> handler, FormKit will automatically disable the form (and set the state to <code>loading</code>) while the submit handler is pending.
-::
-
-## Resetting
-
-You can reset your form (or any input) back to its initial state by calling `$formkit.reset(formId)`.
-
-::Example
----
-name: "Reset example"
-file: "_content/_examples/reset-form/reset-form.vue"
----
-::
-
-::Callout
----
-type: "tip"
-label: "Composition API"
----
-When using the composition API, you can directly access the reset function by importing it from core: <code>import { reset } from '@formkit/core'</code>.
-::
-
-### Initial values
-
-It’s important to note that the "initial state" of a form is not necessarily an empty form. If you have a default `:value` or `v-model` on the form or on individual inputs in the form, FormKit automatically merges these together to produce your initial value, and will restore to this merged state on reset.
-
-Optionally you can provide a second argument to `reset(formId, initialState)` if you would prefer an alternative reset state.
 
 ## Error handling
 
@@ -441,7 +441,7 @@ file: "_content/_examples/preserve-prop/preserve-prop.vue"
 
 ## Accessibility
 
-All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
+All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml):
 
 :AccessibilityChecks
 
@@ -456,7 +456,7 @@ Forms are technically considered `input` types — so they share many of the uni
 ::ReferenceTable
 ---
 type: "sectionKeys"
-primary: "section-key" 
+primary: "section-key"
 data: [
   {
     "section-key": "form",
@@ -477,4 +477,3 @@ data: [
 without: ['outer', 'wrapper','inner', 'label', 'input','help']
 ---
 ::
-
