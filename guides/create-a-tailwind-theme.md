@@ -204,9 +204,9 @@ To do this we provide an `editor` value for our variable. The `editor` determine
 - `color`: A set of swatches each representing a default Tailwind color. By default includes a scale of all 22 available Tailwind colors.
 - `fontSize`: A set of buttons with the letter `A` in different sizes. By default includes a scale from `xs` to `9xl`.
 - `radius`: A set of buttons each depicting a different intensity of border radius. By default includes a scale from `rounded-none` to `rounded-full`.
-- `shadow`: A stepper with a depiction of the selected shadow level. By default includes a scale from `shadows-none` to `shadows-2xl`. 
+- `shadow`: A stepper with a depiction of the selected shadow level. By default includes a scale from `shadow-none` to `shadow-2xl`. 
 - `spacing`: A slider with a range of values with depictions of tighter spacing at the beginning and wider spacing at the end. By default includes a scale from `0` to `96`.
-- `select`: A standard HTML select list that can contain any number of values. Theme authors must provided their own scale.
+- `select`: A standard HTML select list that can contain any number of values. Theme authors must provide their own scale.
 
 You can see an example of each of these editor values by viewing the editor UI for the `Regenesis` theme [here](https://themes.formkit.com/editor?theme=regenesis).
 
@@ -226,10 +226,10 @@ Now we will see a new control in the theme editor for our `spacing` variable wit
 type: "tip"
 label: "User selections affect dynamic values"
 ---
-When you expose a variable to a theme user they are changing the base value when they modify a variable. This means that variable usage such as `mb-$spacing(1)` is always one step on the scale above the user's _selected_ value, not the theme's default value.
+When you expose a variable, users are changing the base value when they modify a variable. This means that variable usage such as `mb-$spacing(1)` is always one step on the scale above the user's _selected_ value, not the theme's default value.
 ::
 
-### Setting min and max for user-controlled variables
+### Setting `min` and `max` for user-controlled variables
 
 In most cases it makes sense to constrain the available scale for a user-configurable variable. Allowing our users to adjust `spacing` is great, but we probably don't want them to be able to crank the value all the way up to `96` or all the way down to `0`. We can constrain the range of the scale that is available to a user by using the `min` and `max` properties on our variable.
 
@@ -246,7 +246,7 @@ This means that our `spacing` variable will now only allow values `1`, `1.5`, `2
 
 ### Creating one-off min and max constraints
 
-Sometimes as a theme author you need to clamp or expand available values beyond what is defined in a variable's default min and max definition. You can do this by passing additional `min` and `max` arguments to inline instances of a variable.
+Sometimes as a theme author you need to clamp or expand available values beyond what is defined in a variable's default `min` and `max` definition. You can do this by passing additional `min` and `max` arguments to inline instances of a variable.
 
 The provided values for `min` and `max` _must_ be values or the variables associated scale — whether that is a default scale for an editor or a custom scale defined by the theme author.
 
