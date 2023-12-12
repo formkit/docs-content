@@ -22,7 +22,13 @@ youtube-id: "Jkd8duonUtc"
 
 ## Installation
 
-To get started, import `createMultiStepPlugin` from `@formkit/addons` along with the accompanying styles. The styles are completely standalone and have no dependency on the `genesis` theme that ships with FormKit. This means that if you are using Tailwind to style your inputs, your input styles will still display as expected when wrapped in the `multi-step` input type.
+To use this plugin with FormKit, install `@formkit/addons`:
+
+```bash
+yarn add @formkit/addons
+```
+
+Once you've installed the addons package, you'll need to register the plugin with FormKit and include the supporting CSS styles:
 
 ```js
 // formkit.config.js
