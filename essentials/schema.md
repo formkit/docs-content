@@ -208,7 +208,7 @@ layout: "auto"
 type: "tip"
 label: "Ensure re-render with a key"
 ---
-When adding an <code>if</code> property to <code>$cmp</code> or <code>$formkit</code> schema nodes that have dynamic values, Vue may reuse un-updated values and components for performance reasons. Adding a unique <code>key</code> property to the schema node will ensure Vue correctly re-renders the component.
+Conditional or iterative (when using `if` or `for`) schema nodes should always include an explicit `key` prop. Without this prop Vue may reuse the DOM nodes from the previous render, which can lead to unexpected behavior, errors, and performance issues.
 ::
 
 ### The `if/then/else` object
