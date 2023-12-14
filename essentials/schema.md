@@ -208,7 +208,7 @@ layout: "auto"
 type: "tip"
 label: "Ensure re-render with a key"
 ---
-When adding an <code>if</code> property to <code>$cmp</code> or <code>$formkit</code> schema nodes that have dynamic values, Vue may reuse un-updated values and components for performance reasons. Adding a unique <code>key</code> property to the schema node will ensure Vue correctly re-renders the component.
+Conditional or iterative (when using `if` or `for`) schema nodes should always include an explicit `key` prop. Without this prop Vue may reuse the DOM nodes from the previous render, which can lead to unexpected behavior, errors, and performance issues.
 ::
 
 ### The `if/then/else` object
@@ -218,6 +218,14 @@ The `if/then/else` object allows for more complex conditional logic. It can be u
 #### Using `if/then/else` on schema nodes
 
 You can use the `if/then/else` object anywhere you would normally use a schema node. This includes the root schema array, or the `children` property of another schema node:
+
+::Callout
+---
+type: "tip"
+label: "Ensure re-render with a key"
+---
+Conditional or iterative (when using `if` or `for`) schema nodes should always include an explicit `key` prop. Without this prop Vue may reuse the DOM nodes from the previous render, which can lead to unexpected behavior, errors, and performance issues.
+::
 
 ::Example
 ---
@@ -242,6 +250,14 @@ layout: "auto"
 ## Loops
 
 Both `$el` and `$cmp` schema nodes support looping. The loop syntax is similar to `v-for` in Vue and expects an object or array to iterate over and a property to assign the current iteration value to. Optionally, you can also capture the index or property of the current iteration:
+
+::Callout
+---
+type: "tip"
+label: "Ensure re-render with a key"
+---
+Conditional or iterative (when using `if` or `for`) schema nodes should always include an explicit `key` prop. Without this prop Vue may reuse the DOM nodes from the previous render, which can lead to unexpected behavior, errors, and performance issues.
+::
 
 ::Example
 ---
