@@ -5,9 +5,9 @@ For TypeScript users, it can be helpful to type your `formkit.config.ts` export 
 ```js
 // formkit.config.ts
 import { fr } from '@formkit/i18n'
-import { defineFormKitConfig } from '@formkit/vue'
+import { defaultConfig } from '@formkit/vue'
 
-export default defineFormKitConfig({
+export default defaultConfig({
   locales: { fr },
   locale: 'fr',
 })

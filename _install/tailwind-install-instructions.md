@@ -25,10 +25,10 @@ You will be guided through choosing an existing theme as starting point for your
 ```js
 // formkit.config.ts
 import { fr } from '@formkit/i18n'
-import { defineFormKitConfig } from '@formkit/vue'
+import { defaultConfig } from '@formkit/vue'
 import { rootClasses } from './formkit.theme'
 
-export default defineFormKitConfig({
+export default defaultConfig({
   locales: { fr },
   locale: 'fr',
   config: {
