@@ -240,6 +240,14 @@ In the above example, we were able to re-create the same features as the `create
 
 ## Component inputs
 
+::Callout
+---
+type: "info"
+label: "Custom inputs vs Vue component wrappers"
+---
+When writing a custom FormKit input while using Vue components it is recommended to not use the FormKit components inside, custom inputs are meant to be written like regular inputs with the advantage of using the FormKit context prop to add the functionality that FormKit requires, if your case is to use a FormKit component with default values, it is recommended instead to use a Vue component wrapper and directly call that component, FormKit inputs work in any level of nesting, or you can also consider using FormKit's <a href="/guides/export-and-restructure-inputs">input export feature</a> to add features and change attrs and props.
+::
+
 For most users, [passing a Vue component to `createInput`](#using-createinput-to-extend-the-base-schema) provides a good balance between customization and value-added features. If you’d like to completely eject from schema-based inputs all together, you can pass a component directly to an input definition.
 
 Component inputs receive a single prop — [the `context` object](/essentials/configuration). It’s then up to you to write a component to encompasses the desired features of FormKit (labels, help text, message display, etc.). Checkout the [input checklist](#input-checklist) for a list of what you’ll want to output.
