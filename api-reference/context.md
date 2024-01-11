@@ -175,6 +175,10 @@ Current state of the input:
    */
   loading: true | undefined
   /**
+   * Indicates if the input is has the "required" validation rule.
+   */
+  required: boolean
+  /**
    * True when the input has validation rules. Has nothing to do with the
    * state of those validation rules.
    */
