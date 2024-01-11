@@ -13,13 +13,13 @@ LocalStorage data is automatically cleared when a form `submit` is called.
 
 ## Installation
 
-To install the localStorage plugin, we need to:
+To use this plugin with FormKit, install `@formkit/addons`:
 
-1. import it from `@formkit/addons`.
-2. Add it to our FormKit config as a plugin.
-3. Add the `use-local-storage` prop to the target form.
+```bash
+yarn add @formkit/addons
+```
 
-The `createLocalStoragePlugin` has options you can configure:
+Once you've installed the addons package, you'll need to register the plugin with FormKit. The `createLocalStoragePlugin` has options you can configure:
 
 - `prefix` - The prefix assigned to your localStorage key. Defaults to `formkit`.
 - `key` - An optional key to include in the localStorage key name, useful for keying data to a particular user. 
