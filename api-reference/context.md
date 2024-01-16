@@ -155,6 +155,12 @@ Current state of the input:
    */
   complete: boolean
   /**
+   * A flag that indicates if the "owning" component of this node has mounted
+   * to the dom or not. Listen to the `mounted` event to be notified when this
+   * flag is changed.
+   */
+  didMount: boolean
+  /**
    * The dirty-behavior prop controls how this state is set. By default it is
    * considered dirty if any mutation was made to the input, but once a mutation
    * has been made and dirty is `true` it stops checking.

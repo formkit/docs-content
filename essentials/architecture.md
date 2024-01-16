@@ -556,6 +556,7 @@ The following is a comprehensive list of all events emitted by `@formkit/core`.Â
 | `message-added`           | `FormKitMessage`                | yes     | Emitted when a new `node.store` message was added.                                                                     |
 | `message-removed`         | `FormKitMessage`                | yes     | Emitted when a `node.store` message was removed.                                                                       |
 | `message-updated`         | `FormKitMessage`                | yes     | Emitted when a `node.store` message was changed.                                                                       |
+| `mounted`                 | none                            | yes     | Emitted when the `<FormKit>` component that owns this node is mounted to the dom.                                      |
 | `prop:{propName}`         | any (the value)                 | yes     | Emitted any time a specific prop is set or changed.                                                                    |
 | `prop`                    | `{ prop: string, value: any }`  | yes     | Emitted any time a prop is set or changed.                                                                             |
 | `reset`                   | `FormKitNode`                   | yes     | Emitted any time a form or group is reset.                                                                             |
