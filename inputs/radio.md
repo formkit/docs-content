@@ -216,3 +216,54 @@ data: [
 All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
 
 :AccessibilityChecks
+
+### Single radio
+
+::AccessibilityTable
+---
+without: ["label"]
+data: [
+  {
+    sectionKey: "decorator",
+    attributes: [
+      { attribute: "aria-hidden", value: "true", description: "Hides the decorator from screen readers." }
+    ]
+  }
+]
+---
+::
+
+### Multiple radio
+
+::AccessibilityTable
+---
+without: ["label"]
+data: [
+  {
+    sectionKey: "fieldset",
+    attributes: [
+      { attribute: "aria-describedby", description: "Associates an element with a description, aiding screen readers." },
+    ]
+  },
+  {
+    sectionKey: "decorator",
+    attributes: [
+      { attribute: "aria-hidden", value: "true", description: "Hides the decorator from screen readers." }
+    ]
+  }
+]
+---
+::
+
+### Keyboard Interactions
+
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["space"],
+    description: "Enable radio toggling whenever the input is in focus."
+  }
+]
+---
+::
