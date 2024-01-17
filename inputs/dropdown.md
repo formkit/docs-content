@@ -401,6 +401,12 @@ data: [
     "type": "number | string",
     "default": "undefined",
     "description": "If you would like to limit the number of options that can be selected, you can use the `max` prop (applies only to multi-select)."
+  },
+  {
+    "name": "deselect",
+    "type": "boolean",
+    "default": "true",
+    "description": "When set to `false`, the end-user cannot deselect a selected option form the listbox."
   }
 ]
 ---
@@ -811,6 +817,6 @@ data: [
 
 ## Accessibility
 
-All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
+All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml):
 
 :AccessibilityChecks
