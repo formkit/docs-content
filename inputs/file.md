@@ -344,18 +344,7 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
-::AccessibilityTable
----
-data: [
-  {
-    sectionKey: "input",
-    attributes: [
-      { attribute: "aria-required", value: "true", description: "Adds the required state when validation is required." },
-    ]
-  },
-]
----
-::
+:AccessibilityTable
 
 ### Keyboard Interactions
 
