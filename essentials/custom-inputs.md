@@ -198,10 +198,11 @@ The `input` section in the diagram above is typically what you’ll swap out whe
 
 #### Using `createInput` to extend the base schema
 
-To create inputs using the base schema you can use the `createInput()` utility from the `@formkit/vue` package. This function accepts 2 arguments:
+To create inputs using the base schema you can use the `createInput()` utility from the `@formkit/vue` package. This function accepts 3 arguments:
 
 - (required) A schema node _or_ a Vue component, which it inserts into the base schema at the `input` section (see diagram above).
 - (optional) An object of [input definition](#input-definition) properties to merge with an auto-generated one.
+- (optional) A sections-schema object (just [like the sections-schema prop](/essentials/inputs#sections-schema)) to merge with the base schema. This lets you modify the wrapping structure of the input.
 
 The function returns a ready-to-use [input definition](#input-definition).
 
@@ -322,7 +323,15 @@ The only time the uncommitted input <code>_value</code> should be used is for di
 
 The [standard FormKit props](/essentials/inputs#props--attributes) that you can pass to the `<FormKit>` component (like `label` or `type`) are available in the root of the [context object](/essentials/configuration) and in the [core node `props`](/essentials/architecture#config--props), and you can use these props in your schema by directly referencing them in expressions (ex: `$label`). Any props passed to a `<FormKit>` component that are not _node props_ end up in the `context.attrs` object (just `$attrs` in the schema).
 
-If you need additional props, you can declare them in your input definition. Props can also be used for internal input state (much like a `ref` in a Vue 3 component). FormKit uses the `props` namespace for both purposes (see the autocomplete example below for an example of this). Props should _always_ be defined in camelCase and used in your Vue templates with kebab-case.
+If you need additional props, you can declare them in your input definition. Props can also be used to accept new props from the `<FormKit>` component but they are also used for internal input state (much like a `ref` in a Vue 3 component).
+
+FormKit uses the `props` namespace for both purposes (see the autocomplete example below for an example of this). Props should _always_ be defined in camelCase and used in your Vue templates with kebab-case. There are 2 ways to define props:
+
+1. [Array notation](#array-notation).
+2. [Object notation](#object-notation).
+3. [The node.addProps() method](#add-props-method)
+
+### Array notation
 
 ::Example
 ---
@@ -340,6 +349,36 @@ When extending the base schema by using the `createInput` helper, pass a second 
 name: "Custom props - createInput"
 file: [
   "_content/_examples/custom-props-create-input/custom-props-create-input.vue"
+]
+---
+::
+
+### Object notation
+
+Object notation gives you fine grained control over how your props are defined by giving you the ability to:
+
+- Define a default value.
+- Define `boolean` props that can be passed without a value.
+- Define custom getter/setter functions.
+
+::Example
+---
+name: "Custom props - object notation"
+file: [
+  "_content/_examples/custom-props-create-input/custom-props-object-notation.vue"
+]
+---
+::
+
+### Add props method (`node.addProps()`)
+
+You can dynamically add props using the `node.addProps()` method in any runtime environment where you have access to the node. For custom inputs this is particularly helpful when used in a features. Both array notation and object notation are supported (see above).
+
+::Example
+---
+name: "Custom props - node.addProps"
+file: [
+  "_content/_examples/custom-props-create-input/custom-props-add-props.vue"
 ]
 ---
 ::

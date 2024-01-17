@@ -11,9 +11,13 @@ Using the `createMaxLengthCountdownPlugin` function from `@formkit/addons` you c
 
 ## Installation
 
-To install the maxlength countdown plugin we need to import it from `@formkit/addons`, add it our FormKit config, and include the supporting CSS styles (or provide your own).
+To use this plugin with FormKit, install `@formkit/addons`:
 
-The `createMaxLengthCountdownPlugin` has a few options you can configure: 
+```bash
+yarn add @formkit/addons
+```
+
+Once you've installed the addons package, you'll need to register the plugin with FormKit, and include the supporting CSS styles (or provide your own). The `createMaxLengthCountdownPlugin` has a few options you can configure: 
 
 - **useAsDefault** *Boolean* Default: `false`, whether to apply this plugin to fields with the maxlength attr by default or can be enabled on a field by field basis
 - **maxlengthRemainingText** *String* Default: `'remaining characters'`

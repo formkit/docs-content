@@ -11,9 +11,13 @@ Using the `createFloatingLabelsPlugin` function from `@formkit/addons` you can e
 
 ## Installation
 
-To install the floating labels plugin we need to import it from `@formkit/addons`, add it our FormKit config, and include the supporting CSS styles (or provide your own).
+To use this plugin with FormKit, install `@formkit/addons`:
 
-The `createFloatingLabelsPlugin` has one option you can configure which controls whether the floating label treatment is the default treatment on applicable inputs.
+```bash
+yarn add @formkit/addons
+```
+
+Once you've installed the addons package, you'll need to register the plugin with FormKit and include the supporting CSS styles. The `createFloatingLabelsPlugin` has one option you can configure which controls whether the floating label treatment is the default treatment on applicable inputs:
 
 ```js
 // formkit.config.js

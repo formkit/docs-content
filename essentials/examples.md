@@ -65,7 +65,7 @@ Adds a simple countdown of characters left in a textarea with a hover tooltip ba
 
 ::ExampleCard
 ---
-href: "https://formkit.link/51bb54aaa81191456f171cf728d42d5e"
+href: "https://formkit.link/39ef1ce063059b72671fc5f15d1295c6"
 title: "Add an asterisk to the labels of all required inputs"
 ---
 Use a plugin to add an asterisk (\*) to the label area of inputs that have the "required" rule.
