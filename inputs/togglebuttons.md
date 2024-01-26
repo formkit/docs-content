@@ -133,15 +133,6 @@ file: "_content/_examples/togglebuttons/togglebuttons-single-slots.vue"
 ---
 ::
 
-### ARIA
-
-- The field's containing unordered list of options has `role="group"`.
-- Each option element's button has `aria-pressed="<bool>"` according to the button state and `aria-label` is provided by the option's label
-
-### Keyboard
-
-Toggle buttons are in DOM order and can navigated with the tab key. The button behavior follows standard keyboard semantics.
-
 ## Props & Attributes
 
 ::ReferenceTable
