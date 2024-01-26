@@ -360,3 +360,56 @@ data: [
 All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
 
 :AccessibilityChecks
+
+### Single toggle button
+
+::AccessibilityTable
+---
+without: ["input"]
+data: [
+  {
+    sectionKey: "singleToggle",
+    attributes: [
+      { attribute: "aria-label", description: "Provides an accessible name." },
+      { attribute: "aria-pressed", description: "Indicates the pressed state of toggle button." },
+      { attribute: "role", value: "checkbox", description: "Indicates to assistive technologies that this element functions as a checkbox." },
+    ]
+  }
+]
+---
+::
+
+### Multiple toggle buttons
+
+::AccessibilityTable
+---
+without: ["input", "icon"]
+data: [
+  {
+    sectionKey: "multiToggle",
+    attributes: [
+      { attribute: "aria-label", description: "Provides an accessible name." },
+      { attribute: "aria-pressed", description: "Indicates the pressed state of toggle button." },
+      { attribute: "role", value: "checkbox or radio", description: "Indicates to assistive technologies that this element functions as a checkbox if has options or radio if not." },
+    ]
+  }
+  {
+    sectionKey: "options",
+    attributes: [
+      { attribute: "group", value: "checkbox or radio", description: "Indicates to assistive technologies that this element functions as a group." },
+      { attribute: "aria-labelledby", description: "Associates this element as a label for the input." },
+    ]
+  }
+  {
+    sectionKey: "option",
+    attributes: [
+      { attribute: "listitem", value: "checkbox or radio", description: "Indicates to assistive technologies that this element functions as listitem." },
+    ]
+  }
+]
+---
+::
+
+### Keyboard Interactions
+
+:KeyboardEventsTable
