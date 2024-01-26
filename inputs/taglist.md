@@ -468,3 +468,61 @@ data: [
 All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
 
 :AccessibilityChecks
+
+::AccessibilityTable
+---
+data: [
+  {
+    sectionKey: "input",
+    attributes: [
+      { attribute: "tabindex", value: "0", description: "Prioritizes keyboard focus order by setting it to 0." },
+      { attribute: "role", value: "combobox", description: "Indicates to assistive technologies that this element functions as a combobox." },
+      { attribute: "readonly", description: "Restrict user edits, ensuring data integrity and a controlled, informative user experience." },
+      { attribute: "aria-autocomplete", value: "list", description: "Guides input suggestions, presenting a collection of values that could complete the user's input." },
+      { attribute: "aria-expanded", description: "Conveys the expandable state when the element is in focus." },
+      { attribute: "aria-controls", description: "Associates the listbox element, with this element." },
+      { attribute: "aria-describedby", description: "Associates an element with a description, aiding screen readers." },
+      { attribute: "aria-activedescendant", description: "Manage focus to the current active descendent element." },
+    ]
+  },
+  {
+    sectionKey: "listboxButton",
+    attributes: [
+      { attribute: "tabindex", value: "-1", description: "Prioritizes keyboard focus order by setting it to -1." },
+      { attribute: "aria-haspopup", value: "true", description: "Signals that an element triggers a pop-up or menu" },
+      { attribute: "aria-expanded", description: "Conveys the expandable state when the element is in focus." },
+      { attribute: "aria-controls", description: "Associates the listbox element, with this element." },
+    ]
+  },
+  {
+    sectionKey: "tagWrapper",
+    attributes: [
+      { attribute: "tabindex", value: "-1", description: "Prioritizes keyboard focus order by setting it to -1." },
+    ]
+  },
+  {
+    sectionKey: "tag",
+    attributes: [
+      { attribute: "role", value: "button", description: "Indicates to assistive technologies that this element functions as a button." },
+    ]
+  },
+  {
+    sectionKey: "tags",
+    attributes: [
+      { attribute: "aria-live", value: "polite", description: "Communicates dynamic content changes when selections are on the screen." }, 
+    ]
+  },
+  {
+    sectionKey: "removeSelection",
+    attributes: [
+      { attribute: "tabindex", value: "-1", description: "Removes the prioritization of keyboard focus on this element." },
+      { attribute: "aria-controls", description: "Associates the input element, with this element." },
+    ]
+  }
+]
+---
+::
+
+### Keyboard Interactions
+
+:KeyboardEventsTable
