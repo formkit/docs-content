@@ -1643,3 +1643,85 @@ data: [
 All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
 
 :AccessibilityChecks
+
+::AccessibilityTable
+---
+data: [
+  {
+    sectionKey: "panelWrapper",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "aria-modal", value: "true", description: "Indicates the modal dialog is present and it blocks interaction with other elements on the page." },
+      { attribute: "aria-label", description: "Provides an accessible name." },
+    ]
+  },
+  {
+    sectionKey: "weekDay",
+    attributes: [
+      { attribute: "aria-label", description: "Provides an accessible name." },
+    ]
+  },
+  {
+    sectionKey: "dayCell",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to 0 when its the same day and -1 when its not." },
+      { attribute: "aria-selected", description: "Indicates whether the day is currently selected." },
+      { attribute: "aria-label", description: "Provides an accessible name." },
+    ]
+  },
+  {
+    sectionKey: "openButton",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when its in picker only mode and 0 when its not." },
+      { attribute: "aria-label", description: "Provides an accessible name." },
+      { attribute: "aria-haspopup", value: "true", description: "Signals the presence of a pop-up menu or dialog triggered by this interaction." },
+      { attribute: "aria-expanded", description: "Indicates whether the colorpicker element is currently expanded or collapsed." },
+      { attribute: "aria-controls", description: "Links this element to the ID of the listbox element." },
+    ]
+  },
+  {
+    sectionKey: "year",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to 0 when its the same year and -1 when its not." },
+      { attribute: "aria-selected", description: "Indicates whether the year is currently selected." },
+    ]
+  },
+  {
+    sectionKey: "month",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to 0 when its the same month and -1 when its not." },
+      { attribute: "aria-selected", description: "Indicates whether the month is currently selected." },
+    ]
+  },
+  {
+    sectionKey: "panelHeader",
+    attributes: [
+      { attribute: "aria-live", value: "polite", description: "Annouces to screen readers that this element was dynamically updated without interrupting the current task." },
+    ]
+  },
+  {
+    sectionKey: "dayButton",
+    attributes: [
+      { attribute: "tabindex", value: "2", description: "Prioritizes keyboard focus order by setting it to 2." },
+    ]
+  },
+  {
+    sectionKey: "removeSelection",
+    attributes: [
+      { attribute: "aria-controls", description: "Links this element to the ID of the input element." },
+    ]
+  },
+  {
+    sectionKey: "panelClose",
+    attributes: [
+      { attribute: "tabindex", value: "-1", description: "Prioritizes keyboard focus order by setting it to -1." },
+      { attribute: "aria-label", description: "Provides an accessible name." },
+    ]
+  },
+]
+---
+::
+
+### Keyboard Interactions
+
+:KeyboardEventsTable
