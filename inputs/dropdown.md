@@ -820,3 +820,68 @@ data: [
 All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml):
 
 :AccessibilityChecks
+
+::AccessibilityTable
+---
+data: [
+  {
+    sectionKey: "selector",
+    attributes: [
+      { attribute: "tabindex", value: "0", description: "Prioritizes keyboard focus order by setting it to 0" },
+      { attribute: "aria-haspopup", value: "listbox", description: "Signals the presence of a pop-up listbox triggered by interaction." },
+      { attribute: "aria-expanded", description: "Indicates whether the dropdown element is currently expanded or collapsed." },
+      { attribute: "aria-controls", description: "Links this element to the ID of the listbox element." },
+      { attribute: "aria-describedBy", description: "Associate this element with descriptive text from another element." },
+    ]
+  },
+  {
+    sectionKey: "placeholder",
+    attributes: [
+      { attribute: "aria-hidden", value: "true", description: "Makes this element not exposed to the accessibility API when no placeholder exists." },
+    ]
+  },
+  {
+    sectionKey: "removeSelection",
+    attributes: [
+      { attribute: "tabindex", value: "-1", description: "Prioritizes keyboard focus order by setting it to -1" },
+      { attribute: "aria-controls", description: "Links this element to the ID of the input element." },
+    ]
+  },
+  {
+    sectionKey: "selections",
+    attributes: [
+      { attribute: "aria-live", value: "polite", description: "Annouces to screen readers that this element was dynamically updated without interrupting the current task." },
+      { attribute: "aria-hidden", value: "true", description: "Makes this element not exposed to the accessibility API." },
+    ]
+  },
+  {
+    sectionKey: "selectionsItem",
+    attributes: [
+      { attribute: "aria-hidden", value: "true", description: "Makes this element not exposed to the accessibility API when last visible index and index are greater than last visible index." },
+    ]
+  },
+  {
+    sectionKey: "tagWrapper",
+    attributes: [
+      { attribute: "tabindex", value: "0", description: "Prioritizes keyboard focus order by setting it to 0" },
+    ]
+  },
+  {
+    sectionKey: "tag",
+    attributes: [
+      { attribute: "tabindex", value: "0", description: "Prioritizes keyboard focus order by setting it to 0" },
+    ]
+  },
+  {
+    sectionKey: "tagsWrapper",
+    attributes: [
+      { attribute: "aria-live", value: "polite", description: "Annouces to screen readers that this element was dynamically updated without interrupting the current task." },
+    ]
+  },
+]
+---
+::
+
+### Keyboard Interactions
+
+:KeyboardEventsTable
