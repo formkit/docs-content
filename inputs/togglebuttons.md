@@ -396,14 +396,14 @@ data: [
   {
     sectionKey: "options",
     attributes: [
-      { attribute: "group", value: "checkbox or radio", description: "Indicates to assistive technologies that this element functions as a group." },
+      { attribute: "role", value: "group", description: "Indicates to assistive technologies that this element functions as a group." },
       { attribute: "aria-labelledby", description: "Associates this element as a label for the input." },
     ]
   }
   {
     sectionKey: "option",
     attributes: [
-      { attribute: "listitem", value: "checkbox or radio", description: "Indicates to assistive technologies that this element functions as listitem." },
+      { attribute: "role", value: "listitem", description: "Indicates to assistive technologies that this element functions as listitem." },
     ]
   }
 ]
