@@ -383,14 +383,14 @@ data: [
       { attribute: "aria-pressed", description: "Indicates the pressed state of toggle button." },
       { attribute: "role", value: "checkbox or radio", description: "Indicates to assistive technologies that this element functions as a checkbox if has options or radio if not." },
     ]
-  }
+  },
   {
     sectionKey: "options",
     attributes: [
       { attribute: "role", value: "group", description: "Indicates to assistive technologies that this element functions as a group." },
       { attribute: "aria-labelledby", description: "Associates this element as a label for the input." },
     ]
-  }
+  },
   {
     sectionKey: "option",
     attributes: [
