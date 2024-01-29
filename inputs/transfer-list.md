@@ -883,3 +883,157 @@ data: [
 All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
 
 :AccessibilityChecks
+
+::AccessibilityTable
+---
+without: ["label", "input", "icon"]
+data: [
+  {
+    sectionKey: "fieldset",
+    attributes: [
+      { attribute: "role", value: "presentation", description: "Indicates to assistive technologies that this element functions as presentation." },
+      { attribute: "aria-describedby", description: "Associates an element with a description, aiding screen readers." },
+    ]
+  },
+  {
+    sectionKey: "sourceHeader",
+    attributes: [
+      { attribute: "role", value: "presentation", description: "Indicates to assistive technologies that this element functions as presentation." },
+    ]
+  },
+  {
+    sectionKey: "sourceHeaderLabel",
+    attributes: [
+      { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
+    ]
+  },
+  {
+    sectionKey: "sourceHeaderItemCount",
+    attributes: [
+      { attribute: "role", value: "presentation", description: "Indicates to assistive technologies that this element functions as presentation." },
+      { attribute: "aria-label", description: "Provides an accessible name." },
+    ]
+  },
+  {
+    sectionKey: "sourceSearchInput",
+    attributes: [
+      { attribute: "role", value: "searchbox", description: "Indicates to assistive technologies that this element functions as a searchbox." },
+      { attribute: "aria-label", description: "Provides an accessible name." },
+    ]
+  },
+  {
+    sectionKey: "sourceSearchClear",
+    attributes: [
+      { attribute: "aria-label", description: "Provides an accessible name." },
+    ]
+  },
+  {
+    sectionKey: "sourceListItems",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when searchable or there are no source options and 0 when otherwise." },
+      { attribute: "aria-activedescendant", description: "Manage focus to the current active descendent element." },
+      { attribute: "role", value: "listbox", description: "Indicates to assistive technologies that this element functions as a listbox." },
+      { attribute: "aria-multiselectable", value: "true", description: "Indicate it allows multiple items to be selected simultaneously." },
+      { attribute: "aria-roledescription", description: "Provides a description that this element role." },
+    ]
+  },
+  {
+    sectionKey: "sourceListItem",
+    attributes: [
+      { attribute: "aria-selected", description: "Indicate this element is currently selected." },
+      { attribute: "role", value: "option", description: "Indicates to assistive technologies that this element functions as a option." },
+    ]
+  },
+  {
+    sectionKey: "sourceLoadMore",
+    attributes: [
+      { attribute: "tabindex", value: "-1", description: "Prioritizes keyboard focus order by setting it to -1." },
+      { attribute: "aria-selected", value: "false", description: "Indicate this element is never selected." },
+    ]
+  },
+  {
+    sectionKey: "sourceEmptyMessage",
+    attributes: [
+      { attribute: "role", value: "presentation", description: "Indicates to assistive technologies that this element functions as presentation." },
+    ]
+  },
+  {
+    sectionKey: "targetHeader",
+    attributes: [
+      { attribute: "role", value: "presentation", description: "Indicates to assistive technologies that this element functions as presentation." },
+    ]
+  },
+  {
+    sectionKey: "targetHeaderLabel",
+    attributes: [
+      { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
+    ]
+  },
+  {
+    sectionKey: "targetHeaderItemCount",
+    attributes: [
+      { attribute: "role", value: "presentation", description: "Indicates to assistive technologies that this element functions as presentation." },
+      { attribute: "aria-label", description: "Provides an accessible name." },
+    ]
+  },
+  {
+    sectionKey: "targetListItems",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when searchable or there are no source options and 0 when otherwise." },
+      { attribute: "aria-activedescendant", description: "Manage focus to the current active descendent element." },
+      { attribute: "role", value: "listbox", description: "Indicates to assistive technologies that this element functions as a listbox." },
+      { attribute: "aria-multiselectable", value: "true", description: "Indicate it allows multiple items to be selected simultaneously." },
+      { attribute: "aria-roledescription", description: "Provides a description that this element role." },
+    ]
+  },
+  {
+    sectionKey: "targetListItem",
+    attributes: [
+      { attribute: "aria-selected", description: "Indicate this element is currently selected." },
+      { attribute: "role", value: "option", description: "Indicates to assistive technologies that this element functions as a option." },
+    ]
+  },
+  {
+    sectionKey: "targetLoadMore",
+    attributes: [
+      { attribute: "tabindex", value: "-1", description: "Prioritizes keyboard focus order by setting it to -1." },
+      { attribute: "aria-selected", value: "false", description: "Indicate this element is never selected." },
+    ]
+  },
+  {
+    sectionKey: "targetEmptyMessage",
+    attributes: [
+      { attribute: "role", value: "presentation", description: "Indicates to assistive technologies that this element functions as presentation." },
+    ]
+  },
+  {
+    sectionKey: "transferButtonForward",
+    attributes: [
+      { attribute: "aria-label", description: "Provides an accessible name." },
+    ]
+  },
+  {
+    sectionKey: "transferButtonForwardAll",
+    attributes: [
+      { attribute: "aria-label", description: "Provides an accessible name." },
+    ]
+  },
+  {
+    sectionKey: "transferButtonBackward",
+    attributes: [
+      { attribute: "aria-label", description: "Provides an accessible name." },
+    ]
+  },
+  {
+    sectionKey: "transferButtonBackwardAll",
+    attributes: [
+      { attribute: "aria-label", description: "Provides an accessible name." },
+    ]
+  },
+]
+---
+::
+
+### Keyboard Interactions
+
+:KeyboardEventsTable

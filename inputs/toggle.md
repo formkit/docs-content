@@ -345,3 +345,33 @@ data: [
 All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
 
 :AccessibilityChecks
+
+::AccessibilityTable
+---
+without: ["input", "icon"],
+data: [
+  {
+    sectionKey: "altLabel",
+    attributes: [
+      { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
+    ]
+  },
+  {
+    sectionKey: "valueLabel",
+    attributes: [
+      { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
+    ]
+  },
+  {
+    sectionKey: "inner",
+    attributes: [
+      { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
+    ]
+  },
+]
+---
+::
+
+### Keyboard Interactions
+
+:KeyboardEventsTable
