@@ -475,7 +475,7 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 ::AccessibilityTable
 ---
-without: ["input", "label", "icon"],
+without: ["input", "label", "icon"]
 data: [
   {
     sectionKey: "items",
