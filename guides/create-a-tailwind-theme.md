@@ -332,7 +332,7 @@ There are many more comments in the `@formkit/theme-starter` theme itself to hel
 
 When you're done creating your theme you can use the included publishing script to build and publish your theme to npm.
 
-First, ensure that you have modified the contents of your theme's `meta` key and `package.json` file to accurate reflect your theme's name, description, version, and author information.
+First, ensure that you have modified the contents of your theme's `meta` key and `package.json` file to accurately reflect your theme's name, description, version, and author information.
 
 ::Callout
 ---
@@ -356,14 +356,14 @@ This command builds your theme, runs a linter to ensure that your `package.json`
 To use a theme that you have published to `npm`, first install it as a dependency in your project:
 
 ```bash
-pnpm install your-theme-package
+pnpm install formkit-theme-my-theme
 ```
 
 Once the theme has been installed as dependency you build your theme with the `formkit` CLI `theme` command.
 
 ```bash
 # will resolve from your local node_modules
-npx formkit@latest theme --theme=your-theme-package
+npx formkit@latest theme --theme=formkit-theme-my-theme
 ```
 
 This command will produce a `formkit.theme.(mjs|ts)` file in your project's root directory. To complete the setup you will need to do the following two things:
@@ -401,9 +401,9 @@ Need to change some of the available variables in your theme? This can be done b
 
 ```js
 // formkit.theme.config.ts
-import yourThemePackage from 'your-theme-package'
+import myTheme from 'formkit-theme-my-theme'
 
-export default yourThemePackage({
+export default myTheme({
   // modify any variables that are available in your theme
   radius: 'rounded-full',
   spacing: '2.5',
