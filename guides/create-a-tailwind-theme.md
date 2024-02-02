@@ -332,7 +332,7 @@ There are many more comments in the `@formkit/theme-starter` theme itself to hel
 
 When you're done creating your theme you can use the included publishing script to build and publish your theme to npm.
 
-First, ensure that you have modified the contents of your theme's `meta` key and `package.json` file to accurate reflect your theme's name, description, version, and author information.
+First, ensure that you have modified the contents of your theme's `meta` key and `package.json` file to accurately reflect your theme's name, description, version, and author information.
 
 ::Callout
 ---
@@ -351,18 +351,85 @@ pnpm release
 
 This command builds your theme, runs a linter to ensure that your `package.json` is valid, runs a script to bump the version of your theme (and create release notes automatically if you're using semantic commit messages), and then publishes your theme to `npm` under your provided package name.
 
-users can then install your theme from npm like any other dependency:
+## Installing a published theme
+
+To use a theme that you have published to `npm`, first install it as a dependency in your project:
 
 ```bash
-# for theoretical theme named 'starlight'
-pnpm install formkit-theme-starlight
+pnpm install formkit-theme-my-theme
 ```
+
+Once the theme has been installed as dependency you build your theme with the `formkit` CLI `theme` command.
+
+```bash
+# will resolve from your local node_modules
+npx formkit@latest theme --theme=formkit-theme-my-theme
+```
+
+This command will produce a `formkit.theme.(mjs|ts)` file in your project's root directory. To complete the setup you will need to do the following two things:
+
+- Import the `rootClasses` function from your built theme into your `formkit.config` file
+- Add the `formkit.theme` file to your `tailwind.config` file's `content` array.
+
+```js
+// formkit.config.ts
+import { defaultConfig } from '@formkit/vue'
+import { rootClasses } from './formkit.theme'
+
+export default defaultConfig({
+  ...
+  config: {
+    rootClasses,
+  },
+})
+```
+
+```js
+// tailwind.config.js
+module.exports = {
+  ...
+  content: [
+    "./app.vue",
+    "./formkit.theme.ts" // <-- add your theme file
+  ]
+}
+```
+
+## Customizing the variables of a published theme
+
+Need to change some of the available variables in your theme? This can be done by importing and overriding your theme in an intermediate file and then passing that intermediate file to the `formkit` CLI. For this example let's create a file called `formkit.theme.config.ts` in the root of our project. In this file we will import our theme and re-export it passing in variable overrides.
+
+```js
+// formkit.theme.config.ts
+import myTheme from 'formkit-theme-my-theme'
+
+export default myTheme({
+  // modify any variables that are available in your theme
+  radius: 'rounded-full',
+  spacing: '2.5',
+  accentColor: 'violet'
+})
+```
+
+Now you can use the `formkit` CLI to build your theme with your customizations applied.
+
+```bash
+# will generate your theme with your variable overrides
+npx formkit theme --theme=formkit.theme.config.ts
+```
+
+Install the resulting `formkit.theme.(mjs|ts)` file by following the same instructions from the section above — adding the `rootClasses` to your `formkit.config` file and including the `formkit.theme.(mjs|ts)` file in your `tailwind.config` file's content array.
 
 ## Submitting your theme to themes.formkit.com
 
 Proud of your theme? Offering something unique that other FormKit users would enjoy using? 
 
-[Open a pull request](https://github.com/formkit/themes.formkit.com/pulls) against the themes.formkit.com repo and submit your theme! If approved — it'll be listed in the theme gallery and be available for anyone to use in their project as easily as the provided 1st-party FormKit themes.
+[Open a pull request](https://github.com/formkit/themes.formkit.com/pulls) against the `themes.formkit.com` repo and submit your theme! Once approved it'll be listed in the theme gallery and be available for anyone to use in their project as easily as the provided 1st-party FormKit themes.
+
+```bash
+# installable directly from themes.formkit.com once merged
+npx formkit theme --theme=your-awesome-theme
+```
 
 ## Getting help
 
