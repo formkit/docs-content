@@ -415,7 +415,7 @@ Notice how traversing the `list` uses numeric keys, this is because the `list` t
 type: "tip"
 label: "Array paths"
 ---
-Node addresses may also be expressed as arrays. For example <code>node.at('foo.bar')</code> could be expressed as <code>node.at(['foo', 'bar'])</code>.
+Node addresses may also be expressed as arrays. For example `node.at('foo.bar')` could be expressed as `node.at(['foo', 'bar'])`.
 ::
 
 ### Traversal tokens
