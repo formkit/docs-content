@@ -18,5 +18,5 @@
 </template>
 
 <style>
-@import "https://cdn.jsdelivr.net/npm/@formkit/addons@1.4.0/dist/css/floatingLabels.css";
+@import "https://cdn.jsdelivr.net/npm/@formkit/addons@latest/dist/css/floatingLabels.css";
 </style>
