@@ -351,15 +351,26 @@ pnpm release
 
 This command builds your theme, runs a linter to ensure that your `package.json` is valid, runs a script to bump the version of your theme (and create release notes automatically if you're using semantic commit messages), and then publishes your theme to `npm` under your provided package name.
 
-## Installing a published theme
+## Installing a published 3rd-party theme
 
-To use a theme that you have published to `npm`, first install it as a dependency in your project:
+To use a third-party theme that you or someone else has published to `npm`, first install it as a dev dependency in your project:
 
 ```bash
-pnpm install formkit-theme-my-theme
+pnpm add -D formkit-theme-my-theme
 ```
 
-Once the theme has been installed as dependency you build your theme with the `formkit` CLI `theme` command.
+::Callout
+---
+type: "warning"
+label: "PNPM requires formkit CLI dependency"
+---
+If you are using `pnpm` you will need to ensure you have the `formkit` command line package as a dev dependency in your project. If you are not using `pnpm` you can skip this step.
+```bash
+pnpm add -D formkit
+```
+::
+
+Once the theme has been installed as dependency you can build your theme with the `formkit` CLI `theme` command.
 
 ```bash
 # will resolve from your local node_modules
@@ -415,7 +426,7 @@ Now you can use the `formkit` CLI to build your theme with your customizations a
 
 ```bash
 # will generate your theme with your variable overrides
-npx formkit theme --theme=formkit.theme.config.ts
+npx formkit@latest theme --theme=formkit.theme.config.ts
 ```
 
 Install the resulting `formkit.theme.(mjs|ts)` file by following the same instructions from the section above — adding the `rootClasses` to your `formkit.config` file and including the `formkit.theme.(mjs|ts)` file in your `tailwind.config` file's content array.
@@ -427,8 +438,8 @@ Proud of your theme? Offering something unique that other FormKit users would en
 [Open a pull request](https://github.com/formkit/themes.formkit.com/pulls) against the `themes.formkit.com` repo and submit your theme! Once approved it'll be listed in the theme gallery and be available for anyone to use in their project as easily as the provided 1st-party FormKit themes.
 
 ```bash
-# installable directly from themes.formkit.com once merged
-npx formkit theme --theme=your-awesome-theme
+# installable directly by name from themes.formkit.com once merged
+npx formkit@latest theme --theme=my-theme
 ```
 
 ## Getting help
