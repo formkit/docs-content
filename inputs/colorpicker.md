@@ -193,6 +193,12 @@ data: [
     default: "true",
     description: "Allows pasting any valid color string of <code>Hex</code>, <code>HSLA</code>, or <code>RGBA</code> format into a <code>colorpicker</code> that contains the user's focus. The pasted string will immediately be set as the value of the <code>colorpicker</code> and converted to the desired format.",
   },
+  {
+    prop: "popover",
+    type: "boolean",
+    default: "false",
+    description: "Renders the input's UI panel using the browser Popover API."
+  }
 ]
 ---
 ::

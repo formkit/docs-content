@@ -6,6 +6,7 @@
       label="Conference date"
       placeholder="Select a date"
       help="When are you hosting your next conference?"
+      popover
       picker-only
     />
     <pre wrap>{{ value }}</pre>

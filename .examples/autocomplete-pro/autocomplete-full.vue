@@ -39,6 +39,7 @@ async function searchMovies({ search, page, hasNextPage }) {
       :options="searchMovies"
       selection-appearance="option"
       multiple
+      popover
       remove-selection-class="p-2 pl-0"
     >
       <template #option="{ option }">

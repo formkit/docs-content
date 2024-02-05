@@ -40,6 +40,7 @@ async function loadMovie(id, cachedOption) {
       placeholder="Example placeholder"
       :options="loadCurrentlyPopularMovies"
       :option-loader="loadMovie"
+      popover
     />
     <pre class="movie-review">{{ movieReview }}</pre>
   </FormKit>

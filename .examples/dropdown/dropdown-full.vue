@@ -23,6 +23,7 @@ async function loadCurrentlyPopularMovies({ page, hasNextPage }) {
       name="currentlyPopularMovie"
       type="dropdown"
       label="Choose a currently popular movie"
+      popover
       :options="loadCurrentlyPopularMovies"
       :load-on-scroll="true"
     >

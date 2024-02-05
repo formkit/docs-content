@@ -10,6 +10,7 @@ import carBrands from './car-brands.js'
       label="Search and select a car brand"
       placeholder="Example: Toyota"
       :options="carBrands"
+      popover
       selection-appearance="option"
       :value="['audi', 'bmw']"
       multiple

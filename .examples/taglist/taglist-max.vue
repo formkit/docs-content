@@ -12,6 +12,7 @@ import countries from './countries.js'
     type="taglist"
     label="Taglist with max prop set to 2"
     :options="countries"
+    popover
     max="2"
   />
   </FormKit>

@@ -38,6 +38,7 @@ async function loadMovie(id, cachedOption) {
       name="currentlyPopularMovie"
       label="Choose a currently popular movie"
       placeholder="Example placeholder"
+      popover
       :options="loadCurrentlyPopularMovies"
       :option-loader="loadMovie"
     />

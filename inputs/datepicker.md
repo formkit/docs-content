@@ -605,6 +605,12 @@ data: [
     type: "string",
     default: "YYYY",
     description: "The date format token used to render the years in the `year` panel."
+  },
+  {
+    prop: "popover",
+    type: "boolean",
+    default: "false",
+    description: "Renders the input's UI panel using the browser Popover API."
   }
 ]
 ---

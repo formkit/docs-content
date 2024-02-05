@@ -12,6 +12,7 @@ const flavors = ['Chocolate', 'Vanilla', 'Strawberry'];
       type="taglist"
       name="flavors"
       label="Select or add a flavor"
+      popover
       :options="flavors"
       :value="['Chocolate', 'Vanilla']"
       :allow-new-values="true"

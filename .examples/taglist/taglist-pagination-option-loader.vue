@@ -48,6 +48,7 @@ async function loadMovie(id, cachedOption) {
       type="taglist"
       label="Search for your favorite movie"
       placeholder="Example: Harry Potter"
+      popover
       :options="searchMovies"
       :value="[597]"
       :option-loader="loadMovie"

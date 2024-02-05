@@ -39,6 +39,7 @@ async function searchMovies({ search, page, hasNextPage }) {
       :options="searchMovies"
       selection-appearance="option"
       multiple
+      popover
     >
       <!--HERE WE ARE DEFINING OUR TAG SLOT-->
       <template #tag="{ handlers, option, classes }">

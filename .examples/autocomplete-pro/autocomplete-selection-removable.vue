@@ -15,6 +15,7 @@ import countries from './countries.js'
       placeholder="Example: United States"
       :options="countries"
       value="US"
+      popover
       selection-removable
     />
     <pre wrap>{{ value }}</pre>

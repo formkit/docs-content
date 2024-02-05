@@ -9,6 +9,7 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://s3.amazona
     label="Single-select"
     placeholder="Example placeholder"
     :options="frameworks"
+    popover
     value="vue"
   >
     <!--SELECTION SLOT-->

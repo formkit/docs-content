@@ -16,6 +16,7 @@ const frameworks = [
       placeholder="Example placeholder"
       :options="frameworks"
       value="vue"
+      popover
       selection-removable
       open-on-remove
     />

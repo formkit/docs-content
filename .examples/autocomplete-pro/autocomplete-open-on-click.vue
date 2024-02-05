@@ -11,6 +11,7 @@ import countries from './countries.js'
     placeholder="Example: United States"
     :options="countries"
     open-on-click
+    popover
   />
   <!-- %partial% -->
 </template>

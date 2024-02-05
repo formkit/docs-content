@@ -9,6 +9,7 @@ const carBrands = [{ label: 'Audi', value: 'audi', logo: 'https://s3.amazonaws.c
     label="Search and select a car brand"
     placeholder="Example: Toyota"
     :options="carBrands"
+    popover
     selection-appearance="option"
     value="audi"
   >

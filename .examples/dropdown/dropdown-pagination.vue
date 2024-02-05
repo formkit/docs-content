@@ -17,6 +17,7 @@ async function loadCurrentlyPopularMovies({ page, hasNextPage }) {
     type="dropdown"
     label="Choose a currently popular movie"
     :options="loadCurrentlyPopularMovies"
+    popover
     placeholder="Terminator 12"
   />
 </template>

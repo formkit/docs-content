@@ -8,6 +8,7 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://s3.amazona
     name="framework"
     label="Choose a frontend framework"
     placeholder="Example placeholder"
+    popover
     :options="frameworks"
   >
     <template #option="{ option, classes }">

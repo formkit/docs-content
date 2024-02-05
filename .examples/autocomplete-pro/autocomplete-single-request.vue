@@ -27,6 +27,7 @@ async function searchMovies({ search }) {
     type="autocomplete"
     label="Search for your favorite movie"
     placeholder="Example: Shawshank Redemption"
+    popover
     :options="searchMovies"
   />
 </template>

@@ -38,6 +38,7 @@ const swatches = [
     type="colorpicker"
     label="I accept pasted values"
     help="This is a big timesaver."
+    popover
     value="#68B9CD"
   />
 
@@ -49,6 +50,7 @@ const swatches = [
     allow-paste="false"
     panel-controls="false"
     panel-format="false"
+    popover
     :options="swatches"
   />
   <!-- %partial% -->

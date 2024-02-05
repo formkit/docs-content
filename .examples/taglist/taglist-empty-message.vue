@@ -13,6 +13,7 @@ import countries from './countries.js'
       name="taglist"
       label="Search for a country"
       :options="countries"
+      popover
       placeholder="Example: United States"
       empty-message="No countries found"
     />

@@ -30,6 +30,7 @@ async function searchMovies({ search, page, hasNextPage }) {
       type="taglist"
       label="Search for your favorite movie"
       placeholder="Example: Lord of the Rings"
+      popover
       :options="searchMovies"
     />
     <pre wrap>{{ value }}</pre>

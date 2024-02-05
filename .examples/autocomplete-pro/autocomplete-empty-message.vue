@@ -11,6 +11,7 @@ import countries from './countries.js'
     :options="countries"
     placeholder="Example: United States"
     empty-message="No countries found"
+    popover
   />
   <!-- %partial% -->
 </template>

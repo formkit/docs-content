@@ -39,6 +39,7 @@ async function loadMovie(id, cachedOption) {
     :options="loadCurrentlyPopularMovies"
     :option-loader="loadMovie"
     multiple
+    popover
     :value="[597, 598]"
   />
 </template>

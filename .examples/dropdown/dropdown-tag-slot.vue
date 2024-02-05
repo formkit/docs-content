@@ -31,6 +31,7 @@ const frameworks = [
       :options="frameworks"
       :value="vue"
       multiple
+      popover
 			selection-appearance="tags"
     >
       <!--TAG SLOT-->

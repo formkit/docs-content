@@ -32,6 +32,7 @@ async function searchMovies({ search }) {
       type="taglist"
       label="Search for your favorite movie"
       placeholder="Example: Shawshank Redemption"
+      popovers
       :options="searchMovies"
     />
     <pre wrap>{{ value }}</pre>

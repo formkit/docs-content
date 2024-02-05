@@ -51,6 +51,7 @@ async function loadMovie(id, cachedOption) {
       :options="searchMovies"
       :value="597"
       :option-loader="loadMovie"
+      popover
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

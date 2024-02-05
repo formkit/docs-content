@@ -11,6 +11,7 @@ import countries from './countries.js'
       placeholder="Afghanistan, Albania..."
       :options="countries"
       multiple
+      popover
 			:value="['US', 'BZ', 'GE', 'IT', 'RU', 'AU', 'CN']"
     />
     <pre wrap>{{ value }}</pre>

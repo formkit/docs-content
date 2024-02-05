@@ -407,6 +407,12 @@ data: [
     "type": "boolean",
     "default": "true",
     "description": "When set to `false`, the end-user cannot deselect a selected option form the listbox."
+  },
+  {
+    prop: "popover",
+    type: "boolean",
+    default: "false",
+    description: "Renders the input's listbox using the browser Popover API."
   }
 ]
 ---

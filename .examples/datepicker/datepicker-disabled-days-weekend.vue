@@ -16,6 +16,7 @@ function disabledDays(node, date) {
     label="Next available workday"
     placeholder="Select a workday"
     picker-only
+    popover
     min-date="2023-01-01"
     max-date="2025-01-01"
     :disabled-days="disabledDays"

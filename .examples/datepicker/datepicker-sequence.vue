@@ -9,6 +9,7 @@
       format="full"
       :sequence="['year', 'month', 'day']"
       picker-only
+      popover
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

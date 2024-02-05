@@ -7,6 +7,7 @@
       format="MMMM D"
       :min-date="new Date()"
       overlay
+      popover
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

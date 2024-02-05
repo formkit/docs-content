@@ -475,6 +475,12 @@ data: [
     "type": "number | string",
     "default": "undefined",
     "description": "If you would like to limit the number of options that can be selected, you can use the `max` prop (applies only to multi-select)."
+  },
+  {
+    prop: "popover",
+    type: "boolean",
+    default: "false",
+    description: "Renders the input's listbox using the browser Popover API."
   }
 ]
 ---

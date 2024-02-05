@@ -31,6 +31,7 @@ let showDropdown = ref(false)
     type="dropdown"
     label="Select a horror movie"
     placeholder="Example placeholder"
+    popover
     :options="loadHorrorMovies"
     load-on-created
   />

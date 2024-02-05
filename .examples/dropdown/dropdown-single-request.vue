@@ -24,6 +24,7 @@ async function loadHorrorMovies() {
     type="dropdown"
     label="Select a horror movie"
     placeholder="Example placeholder"
+    popover
     :options="loadHorrorMovies"
   />
 </template>

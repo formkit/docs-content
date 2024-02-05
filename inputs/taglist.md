@@ -380,6 +380,12 @@ data: [
     type: "boolean",
     default: "false",
     "description": "When set to `true`, the taglist will load the options when the node is created."
+  },
+  {
+    prop: "popover",
+    type: "boolean",
+    default: "false",
+    description: "Renders the input's listbox using the browser Popover API."
   }
 ]
 ---

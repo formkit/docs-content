@@ -29,6 +29,7 @@ async function searchMovies({ search }) {
     label="Search for your favorite movie"
     placeholder="Example: Shawshank Redemption"
     :options="searchMovies"
+    popover
     load-on-created
   />
 </template>

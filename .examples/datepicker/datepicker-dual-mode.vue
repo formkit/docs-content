@@ -5,6 +5,7 @@
       name="date"
       label="Meeting date"
       :format="{ date: 'short' }"
+      popover
       help="What date should we schedule the meeting?"
     />
     <pre wrap>{{ value }}</pre>
