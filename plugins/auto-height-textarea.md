@@ -37,6 +37,10 @@ export default config
 
 To enable auto-height on a text area add the `auto-height` prop to a FormKit input of type `textarea`.
 
+Available field props:
+
+- **max-auto-height** *Number* Establishes the upper limit for the expansion of a text area, allowing it to dynamically grow in height while ensuring it does not exceed the specified maximum height.
+
 ::Example
 ---
 name: "Auto-Height Textarea"
