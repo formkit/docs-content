@@ -197,6 +197,24 @@ file: [
 ---
 ::
 
+## Programatic Nagivation
+
+The multi-step node is equipped with convenient helper functions designed to facilitate programmatic navigation between any of its steps. These functions include:
+
+- `next`: It goes to the next `step` from the current selected step.
+- `previous`: It goes to the previous `step` from the current selected step.
+- `goTo`: It accepts a `step` argument to move to that step from the current selected step, it accepts the index or the name of the step.
+
+::Example
+---
+name: "programaticNavigation"
+file: [
+'/\_content/_examples/multi-step/programatic-navigation/programatic-navigation.vue',
+'/\_content/_examples/multi-step/formkit.config.js'
+]
+---
+::
+
 ## Props & Attributes (multi-step)
 
 ::ReferenceTable
