@@ -595,7 +595,7 @@ data: [
     description: "The day of the week to start the `day` panel’s calendar on. 0-6 where 0 = Sunday and 6 = Saturday."
   },
   {
-    prop: "week-day-format",
+    prop: "weekday-format",
     type: "string",
     default: "d",
     description: "The date format token used to render the day of the week column headers."
