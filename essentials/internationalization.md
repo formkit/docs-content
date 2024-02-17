@@ -130,10 +130,6 @@ When using Vue’s options API, you have access to `this.$formkit` which contain
 ---
 ::
 
-### Using `changeLocale`
-
-When using the composition API, you won’t have access to `this.$formkit`. Instead, you can fetch and modify the root FormKit configuration object. This is made available globally via Vue’s `inject` mechanism and a unique Symbol:
-
 ### Using root `config`
 
 When using the composition API, you won’t have access to `this.$formkit`. Instead, you can fetch and modify the root FormKit configuration object. This is made available globally via Vue’s `inject` mechanism and a unique Symbol:
