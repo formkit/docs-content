@@ -79,7 +79,7 @@ export default {
 .double {
   display: flex;
 }
-.double .formkit-outer {
+.double > *:first-child {
   margin-right: 1em;
 }
 </style>

@@ -21,7 +21,7 @@ The <code>form</code> type automatically adds a submit button. Add classes so it
 
 ::ExampleCard
 ---
-href: "https://formkit.link/469d06dfe2742c12703c6a6ad5a68bec"
+href: "https://formkit.link/89345c29dafb8b9fe48ff295445fbcfe"
 title: "Using a list to repeat an input"
 ---
 Using the <code>list</code> type, we can create repeater inputs that can have multiple values. This example uses a loop to let users add/remove email addresses.
@@ -47,7 +47,7 @@ Use the <code>FormKitSchema</code> component to render the multi-step form from 
 
 ::ExampleCard
 ---
-href: "https://formkit.link/a1fe49306a5096e8bffb9a09c0f4fa71"
+href: "https://formkit.link/4b2d12a695cbeff5f01d43d96962c804"
 title: "Custom schema submit button with disabled state and loading spinner"
 ---
 Create a custom schema-powered submit button that dynamically disables while the form is submitting and provides a loading spinner.
@@ -55,7 +55,7 @@ Create a custom schema-powered submit button that dynamically disables while the
 
 ::ExampleCard
 ---
-href: "https://formkit.link/793ea66a222f54d54167d9293d8335a1"
+href: "https://formkit.link/31b5b2db729dcf02819873e218f6299b"
 title: "Add a maxlength coutdown to a textarea"
 ---
 Adds a simple countdown of characters left in a textarea with a hover tooltip based on the textarea's maxlength prop
@@ -65,7 +65,7 @@ Adds a simple countdown of characters left in a textarea with a hover tooltip ba
 
 ::ExampleCard
 ---
-href: "https://formkit.link/d5a3b4c118e7aa205317329780cfc128"
+href: "https://formkit.link/2501ecc507c5c87ff6f9f5996110c9c5"
 title: "Add an asterisk to the labels of all required inputs"
 ---
 Use a plugin to add an asterisk (\*) to the label area of inputs that have the "required" rule.
@@ -81,15 +81,7 @@ Use a plugin to cast string values to numbers. Useful if you want inputs of type
 
 ::ExampleCard
 ---
-href: "https://formkit.link/8da382e1be36fd3b6bfb75d663a4a9cf"
-title: "Remove the inner wrapper on all checkboxes"
----
-Use a plugin to modify the HTML of all descendant checkbox inputs.
-::
-
-::ExampleCard
----
-href: "https://formkit.link/48e054ec122c82813dcc2365448a5367"
+href: "https://formkit.link/92bd5e0280272f1fc37e242033f0ce5a"
 title: "Add an icon before validation messages"
 ---
 Use a plugin to append an icon before validation messages by extending the schema definition.
@@ -97,7 +89,7 @@ Use a plugin to append an icon before validation messages by extending the schem
 
 ::ExampleCard
 ---
-href: "https://formkit.link/a09cb95750c894237577650b5648f52b"
+href: "https://formkit.link/084bc870824bdd31242b3f35658c6ac4"
 title: "Set initial values to empty strings instead of undefined"
 ---
 Use a plugin to set all initial input values to an empty string <code>""</code> instead of <code>undefined</code>.
@@ -105,7 +97,7 @@ Use a plugin to set all initial input values to an empty string <code>""</code> 
 
 ::ExampleCard
 ---
-href: "https://formkit.link/78705726f6791f546376225eb90f8ff5"
+href: "https://formkit.link/35903e50377a701718c6fed0e72485e2"
 title: "Add a manually toggleable loading spinner to 'button'-type inputs"
 ---
 Use a plugin to allow inputs in the <code>button</code> family to have a loading spinner that can be toggled at-will with a new <code>loading</code> prop.
@@ -121,7 +113,7 @@ Use a plugin to automatically set an input's <code>name</code>, <code>label</cod
 
 ::ExampleCard
 ---
-href: "https://formkit.link/1cabbfff0934788fc0897627017860b2"
+href: "https://formkit.link/51f76f8678e596423656f031bf6b42f8"
 title: "Adds attribute for libraries like @testing-library for testing"
 ---
 A plugin that adds the attribute <code>data-testid</code> with the node id for testing libraries.
@@ -129,7 +121,7 @@ A plugin that adds the attribute <code>data-testid</code> with the node id for t
 
 ::ExampleCard
 ---
-href: "https://formkit.link/ceaa7ae0cdc7662f080d289839db02b0"
+href: "https://formkit.link/3f66cdbd1c2430f890d5b350cfa30ab0"
 title: "Scroll to the first validation or error on the form."
 ---
 A plugin that automatically scrolls to the first error on the page on submit or when backend errors are added.
@@ -139,7 +131,7 @@ A plugin that automatically scrolls to the first error on the page on submit or 
 
 ::ExampleCard
 ---
-href: "https://formkit.link/fda2e9edf171f52971fbde1cf12cdcfa"
+href: "https://formkit.link/6baa2eb395745befd60d41c1a36a27fb"
 title: "Number input with custom step buttons"
 ---
 A custom input with +1 and -1 step buttons. Made using <code>createInput()</code>.
@@ -147,7 +139,7 @@ A custom input with +1 and -1 step buttons. Made using <code>createInput()</code
 
 ::ExampleCard
 ---
-href: "https://formkit.link/64b491248a0323b6d574ee05ab221d95"
+href: "https://formkit.link/68e51abc7431687edc8f9ff008477b3d"
 title: "A currency input with currency selector"
 ---
 A simple custom input that allows users to select a currency and enter a value. Made using <code>createInput()</code>.
@@ -155,7 +147,7 @@ A simple custom input that allows users to select a currency and enter a value. 
 
 ::ExampleCard
 ---
-href: "https://formkit.link/577824c5b5d563120e20abcaecc0c051"
+href: "https://formkit.link/de8e6530b80717f5229813258e739e7b"
 title: "Add a link (<a> tag) to a label"
 ---
 Use slots or the <code>:sections-schema</code> feature to modify a label's HTML.
@@ -171,7 +163,7 @@ Conditionally update the <code>options</code> of a <code>select</code> input bas
 
 ::ExampleCard
 ---
-href: "https://formkit.link/35864d8156cb9c9173a216a1ac9b219f"
+href: "https://formkit.link/636db65605305d28dd6efe47f89c025d"
 title: "Style radio input options to look like cards"
 ---
 Using only new styles (Tailwind Classes in this example) apply a card treatment to the default FormKit Radio input structure.
@@ -181,7 +173,7 @@ Using only new styles (Tailwind Classes in this example) apply a card treatment 
 
 ::ExampleCard
 ---
-href: "https://formkit.link/9741f666840a11954233982ee189ab43"
+href: "https://formkit.link/1651eb2ab9a75efbf85941f43dcbc875"
 title: "Add a loading indicator for async validation rules"
 ---
 Add a loading spinner to your input when an async validation rule is pending validation.
@@ -213,15 +205,15 @@ A working starter project on StackBlitz with Nuxt, FormKit and Tailwind CSS.
 
 ::ExampleCard
 ---
-href: "https://formkit.link/648b2fb96bdf8dd1b2ff6f646ac453a4"
+href: "https://formkit.link/3f8dc94953130131549b4abc8a3b64d1"
 title: "Produce dynamic classes based on an input's state"
 ---
-Use the <code>rootClasses</code> config function and FormKit props to produce a dynamic classes based on input state. Helpful for Tailwind and other CSS utility libraries.
+Use the <code>classes</code> config object and FormKit props to produce a dynamic classes based on input state. Helpful for Tailwind and other CSS utility libraries.
 ::
 
 ::ExampleCard
 ---
-href: "https://formkit.link/ff5873ed046024331002687c3730db9e"
+href: "https://formkit.link/44e1285084158fe8e2ef2ae598660ffa"
 title: "Create reactive UI variations of FormKit inputs using “features”"
 ---
 Create UI variations of FormKit inputs (like buttons) that update based on reactive data in your components.

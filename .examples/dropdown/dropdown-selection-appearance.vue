@@ -8,6 +8,7 @@ import countries from './countries.js'
     label="Single-select"
     placheolder="Pick a country"
     :options="countries"
+    popover
     value="FR"
   />
   <FormKit
@@ -15,6 +16,7 @@ import countries from './countries.js'
     label="Truncate appearance"
     placheolder="Pick a country"
     :options="countries"
+    popover
     multiple
     :value="['FR', 'GR', 'ES']"
   />
@@ -23,6 +25,7 @@ import countries from './countries.js'
     label="Tags appearance"
     placheolder="Pick a country"
     :options="countries"
+    popover
     multiple
     selection-appearance="tags"
     :value="['FR', 'GR', 'ES']"

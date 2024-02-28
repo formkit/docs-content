@@ -4,14 +4,15 @@ import { reactive, onMounted } from 'vue'
 const schema = [
   {
     $el: 'h1',
-    children: 'Fast click game'
+    children: 'Fast click game',
+    attrs: {
+      class: 'text-2xl font-bold mb-4',
+    },
   },
   {
-    $el: 'button',
-    attrs: {
-      onClick: '$handleClick'
-    },
-    children: '$slots.default'
+    $formkit: 'button',
+    onClick: '$handleClick',
+    children: '$slots.default',
   },
   {
     $el: 'p',
@@ -21,9 +22,9 @@ const schema = [
         then: {
           $el: 'span',
           attrs: {
-            style: { color: 'green' }
+            style: { color: 'green' },
           },
-          children: 'You won!!!!'
+          children: 'You won!!!!',
         },
         else: {
           if: '$state === "lost"',
@@ -32,13 +33,13 @@ const schema = [
             attrs: {
               style: { color: 'red' },
             },
-            children: 'Sorry, you lost — try again!'
+            children: 'Sorry, you lost — try again!',
           },
-          else: 'Try to click when the button reads between 500 and 600!'
-        }
-      }
-    ]
-  }
+          else: 'Try to click when the button reads between 500 and 600!',
+        },
+      },
+    ],
+  },
 ]
 
 const handleClick = () => {
@@ -56,7 +57,7 @@ const handleClick = () => {
 const data = reactive({
   state: 'play',
   label: 0,
-  handleClick
+  handleClick,
 })
 
 const tick = () => {
@@ -69,10 +70,7 @@ onMounted(tick)
 </script>
 
 <template>
-  <FormKitSchema
-    :schema="schema"
-    :data="data"
-  >
+  <FormKitSchema :schema="schema" :data="data">
     <template #default="{ label }">
       <span style="width: 6em">{{ label }}</span>
     </template>

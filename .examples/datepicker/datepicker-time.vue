@@ -9,6 +9,7 @@
       format="MMM D \at hh:mm A"
       :sequence="['day', 'time']"
       picker-only
+      popover
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

@@ -16,6 +16,7 @@ const airlines = {
     help="Which airlines do you prefer to fly on?"
     type="checkbox"
     :options="airlines"
+    option-class="!mb-0"
   >
     <template #label="context">
       <img

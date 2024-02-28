@@ -1,9 +1,13 @@
-// formkit.config.js
-import { defaultConfig } from '@formkit/vue'
+import { genesisIcons } from "@formkit/icons"
+import { rootClasses } from './formkit.theme.js'
 import { createMultiStepPlugin } from '@formkit/addons'
 
-const config = defaultConfig({
+export default {
   plugins: [createMultiStepPlugin()],
-})
-
-export default config
+  icons: {
+    ...genesisIcons
+  },
+  config: {
+    rootClasses
+  }
+}

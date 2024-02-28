@@ -9,16 +9,18 @@ const carBrands = [{ label: 'Audi', value: 'audi', logo: 'https://s3.amazonaws.c
     label="Search and select a car brand"
     placeholder="Example: Toyota"
     :options="carBrands"
+    popover
     selection-appearance="option"
     value="audi"
   >
     <!--SELECTION SLOT-->
-      <template #selection="{ option, handlers }">
-        <div class="formkit-selection">
-          <div class="formkit-option">
+      <template #selection="{ option, classes }">
+        <div :class="classes.selection">
+          <div :class="`${classes.option} flex items-center`">
             <img
               :src="option.logo"
               :alt="option.label + ' logo'"
+              class="w-10 h-10 p-2"
             />
             <span>
               {{ option.label }}
@@ -39,12 +41,13 @@ const carBrands = [{ label: 'Audi', value: 'audi', logo: 'https://s3.amazonaws.c
     :value="['toyota', 'honda']"
   >
     <!--SELECTION SLOT-->
-      <template #selection="{ option }">
-        <div class="formkit-selection">
-          <div class="formkit-option">
+      <template #selection="{ option, classes }">
+        <div :class="`${classes.selection} !p-0`">
+          <div :class="`${classes.option} flex items-center`">
             <img
               :src="option.logo"
               :alt="option.label + ' logo'"
+              class="w-10 h-10 p-2"
             />
             <span>
               {{ option.label }}
@@ -60,11 +63,5 @@ const carBrands = [{ label: 'Audi', value: 'audi', logo: 'https://s3.amazonaws.c
 .formkit-option {
   display: flex;
   align-items: center;
-}
-
-.formkit-option img {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
 }
 </style>

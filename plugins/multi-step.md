@@ -22,7 +22,13 @@ youtube-id: "Jkd8duonUtc"
 
 ## Installation
 
-To get started, import `createMultiStepPlugin` from `@formkit/addons` along with the accompanying styles. The styles are completely standalone and have no dependency on the `genesis` theme that ships with FormKit. This means that if you are using Tailwind to style your inputs, your input styles will still display as expected when wrapped in the `multi-step` input type.
+To use this plugin with FormKit, install `@formkit/addons`:
+
+```bash
+yarn add @formkit/addons
+```
+
+Once you've installed the addons package, you'll need to register the plugin with FormKit and include the supporting CSS styles:
 
 ```js
 // formkit.config.js
@@ -186,6 +192,24 @@ Your `beforeStepChange` function should return a `Boolean`. Returning `false` wi
 name: "beforeStepChange"
 file: [
 '/\_content/_examples/multi-step/before-step-change/before-step-change.vue',
+'/\_content/_examples/multi-step/formkit.config.js'
+]
+---
+::
+
+## Programatic Nagivation
+
+The multi-step node is equipped with convenient helper functions designed to facilitate programmatic navigation between any of its steps. These functions include:
+
+- `next`: It goes to the next `step` from the current selected step.
+- `previous`: It goes to the previous `step` from the current selected step.
+- `goTo`: It accepts a `step` argument to move to that step from the current selected step, it accepts the index or the name of the step.
+
+::Example
+---
+name: "programaticNavigation"
+file: [
+'/\_content/_examples/multi-step/programatic-navigation/programatic-navigation.vue',
 '/\_content/_examples/multi-step/formkit.config.js'
 ]
 ---

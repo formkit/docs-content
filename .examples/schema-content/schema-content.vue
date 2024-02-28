@@ -15,7 +15,15 @@
               attrs: {
                 style: { color: 'green' },
               },
-              children: ' Thats our name too!',
+              children: [
+                {
+                  $el: 'span',
+                  children: 'That\'s our name too!',
+                  attrs: {
+                    class: 'ml-2',
+                  },
+                },
+              ],
             },
           },
         ],

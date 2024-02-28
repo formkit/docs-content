@@ -16,8 +16,10 @@ import { FormKitIcon } from '@formkit/vue'
     :options="['One', 'Two', 'Three']"
     help="I'm a select with a custom select icon"
   />
-  <h2>Also works with standalone icons</h2>
-  <FormKitIcon icon="jedi" />
+  <h2 class="text-xl font-bold mb-4">Also works with standalone icons</h2>
+  <div class="w-32">
+    <FormKitIcon icon="jedi" />
+  </div>
   <!-- %partial% -->
 </template>
 <style>

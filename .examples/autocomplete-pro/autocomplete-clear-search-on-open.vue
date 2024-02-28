@@ -12,6 +12,7 @@ import countries from './countries.js'
       :options="countries"
       clear-search-on-open
       value="US"
+      popover
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

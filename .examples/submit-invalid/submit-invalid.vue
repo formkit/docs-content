@@ -17,7 +17,7 @@ function showErrors(node) {
 </script>
 
 <template>
-  <h2>Support ticket</h2>
+  <h2 class="text-xl font-bold mb-4">Support ticket</h2>
   <FormKit type="form" @submit-invalid="showErrors">
     <ul class="validation-errors" v-if="messages.length">
       <li v-for="message in messages">{{ message }}</li>

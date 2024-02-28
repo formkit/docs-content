@@ -4,6 +4,7 @@
     type="colorpicker"
     value="#DE1B1B"
     label="A default colorpicker input"
+    popover
     help="Just the way it comes out of the box."
   />
 

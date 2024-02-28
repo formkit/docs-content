@@ -615,6 +615,8 @@ layout: "auto"
 
 Checks multiple inputs and passes if any of them have a value.
 
+Note: the two inputs must be in the same `group` or `form`.
+
 ::Example
 ---
 name: "Required One"

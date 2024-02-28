@@ -23,11 +23,11 @@ const swatches = [
 </script>
 
 <template>
-  <h2>
+  <h2 class="text-2xl font-bold mb-4">
     Try pasting in these color values when your focus is in or on the
     colorpicker!
   </h2>
-  <ul>
+  <ul class="mb-4">
     <li><pre>#FF0000</pre></li>
     <li><pre>hsla(24, 51%, 56%, 0.8)</pre></li>
     <li><pre>rgba(189, 210, 224, 1)</pre></li>
@@ -38,6 +38,7 @@ const swatches = [
     type="colorpicker"
     label="I accept pasted values"
     help="This is a big timesaver."
+    popover
     value="#68B9CD"
   />
 
@@ -49,6 +50,7 @@ const swatches = [
     allow-paste="false"
     panel-controls="false"
     panel-format="false"
+    popover
     :options="swatches"
   />
   <!-- %partial% -->

@@ -11,6 +11,7 @@ const myInput = createInput(
   },
   {
     props: ['location'],
+    family: ['text'], // inherit theme classes from text family
   }
 )
 </script>

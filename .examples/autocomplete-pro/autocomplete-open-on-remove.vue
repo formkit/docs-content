@@ -12,6 +12,7 @@ import countries from './countries.js'
       :options="countries"
       open-on-remove
       selection-removable
+      popover
       value="US"
     />
     <pre wrap>{{ value }}</pre>

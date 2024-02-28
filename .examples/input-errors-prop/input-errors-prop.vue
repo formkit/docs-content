@@ -8,7 +8,7 @@
       gasLimit: 'Just put a giant number in here.',
     }"
   >
-    <h2>Donate to FormKit</h2>
+    <h2 class="text-xl font-bold mb-4">Donate to FormKit</h2>
     <FormKit
       name="to"
       label="Ethereum address"

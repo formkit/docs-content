@@ -41,6 +41,7 @@ const swatches = [
     :options="swatches"
     panel-controls="false"
     panel-format="false"
+    popover
     close-on-select
   />
   <!-- %partial% -->

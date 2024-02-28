@@ -12,6 +12,9 @@ const schema = [
         then: '$value + " is between 5 and 10"',
         else: '$value + " is more than 10"'
       }
+    },
+    attrs: {
+      class: 'text-xl font-bold'
     }
   }
 ]

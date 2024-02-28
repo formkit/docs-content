@@ -43,6 +43,7 @@ async function loadMovie(id, option) {
       label="Choose a currently popular movie"
       placeholder="Example placeholder"
       :options="loadCurrentlyPopularMovies"
+      popover
       :option-loader="loadMovie"
     />
     <pre class="movie-review">{{ movieReview }}</pre>

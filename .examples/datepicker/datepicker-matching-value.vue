@@ -7,6 +7,7 @@
       placeholder="Date of closing"
       help="When did you close on your home?"
       overlay
+      popover
       value-format="MMM DD YYYY"
       value-locale="en"
       value="Feb 28 2019"

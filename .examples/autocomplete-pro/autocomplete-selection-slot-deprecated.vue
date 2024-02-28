@@ -23,6 +23,7 @@ function getFlagEmoji(countryCode) {
     label="Search and select a country"
     :options="countries"
     value="US"
+    popover
     selection-appearance="option"
   >
     <!--SELECTION SLOT-->

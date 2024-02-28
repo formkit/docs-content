@@ -198,10 +198,11 @@ The `input` section in the diagram above is typically what you’ll swap out whe
 
 #### Using `createInput` to extend the base schema
 
-To create inputs using the base schema you can use the `createInput()` utility from the `@formkit/vue` package. This function accepts 2 arguments:
+To create inputs using the base schema you can use the `createInput()` utility from the `@formkit/vue` package. This function accepts 3 arguments:
 
 - (required) A schema node _or_ a Vue component, which it inserts into the base schema at the `input` section (see diagram above).
 - (optional) An object of [input definition](#input-definition) properties to merge with an auto-generated one.
+- (optional) A sections-schema object (just [like the sections-schema prop](/essentials/inputs#sections-schema)) to merge with the base schema. This lets you modify the wrapping structure of the input.
 
 The function returns a ready-to-use [input definition](#input-definition).
 
@@ -239,6 +240,14 @@ file: "_content/_examples/scratch-schema-input/scratch-schema-input.vue"
 In the above example, we were able to re-create the same features as the `createInput` example — namely — label, help text, and validation message output. However, we are still missing a number of "standard" FormKit features like slot support. If you are attempting to publish your input or maintain API compatibility with the other FormKit inputs, take a look at the [input checklist](#input-checklist).
 
 ## Component inputs
+
+::Callout
+---
+type: "info"
+label: "Custom inputs vs Vue component wrappers"
+---
+When writing a custom FormKit input while using Vue components it is recommended to not use the FormKit components inside, custom inputs are meant to be written like regular inputs with the advantage of using the FormKit context prop to add the functionality that FormKit requires, if your case is to use a FormKit component with default values, it is recommended instead to use a Vue component wrapper and directly call that component, FormKit inputs work in any level of nesting, or you can also consider using FormKit's <a href="/guides/export-and-restructure-inputs">input export feature</a> to add features and change attrs and props.
+::
 
 For most users, [passing a Vue component to `createInput`](#using-createinput-to-extend-the-base-schema) provides a good balance between customization and value-added features. If you’d like to completely eject from schema-based inputs all together, you can pass a component directly to an input definition.
 
@@ -314,12 +323,22 @@ The only time the uncommitted input <code>_value</code> should be used is for di
 
 The [standard FormKit props](/essentials/inputs#props--attributes) that you can pass to the `<FormKit>` component (like `label` or `type`) are available in the root of the [context object](/essentials/configuration) and in the [core node `props`](/essentials/architecture#config--props), and you can use these props in your schema by directly referencing them in expressions (ex: `$label`). Any props passed to a `<FormKit>` component that are not _node props_ end up in the `context.attrs` object (just `$attrs` in the schema).
 
-If you need additional props, you can declare them in your input definition. Props can also be used for internal input state (much like a `ref` in a Vue 3 component). FormKit uses the `props` namespace for both purposes (see the autocomplete example below for an example of this). Props should _always_ be defined in camelCase and used in your Vue templates with kebab-case.
+If you need additional props, you can declare them in your input definition. Props can also be used to accept new props from the `<FormKit>` component but they are also used for internal input state (much like a `ref` in a Vue 3 component).
+
+FormKit uses the `props` namespace for both purposes (see the autocomplete example below for an example of this). Props should _always_ be defined in camelCase and used in your Vue templates with kebab-case. There are 2 ways to define props:
+
+1. [Array notation](#array-notation).
+2. [Object notation](#object-notation).
+3. [The node.addProps() method](#add-props-method)
+
+### Array notation
 
 ::Example
 ---
 name: "Custom props"
-file: "_content/_examples/custom-props/custom-props.vue"
+file: [
+  "_content/_examples/custom-props/custom-props.vue"
+]
 ---
 ::
 
@@ -328,7 +347,39 @@ When extending the base schema by using the `createInput` helper, pass a second 
 ::Example
 ---
 name: "Custom props - createInput"
-file: "_content/_examples/custom-props-create-input/custom-props-create-input.vue"
+file: [
+  "_content/_examples/custom-props-create-input/custom-props-create-input.vue"
+]
+---
+::
+
+### Object notation
+
+Object notation gives you fine grained control over how your props are defined by giving you the ability to:
+
+- Define a default value.
+- Define `boolean` props that can be passed without a value.
+- Define custom getter/setter functions.
+
+::Example
+---
+name: "Custom props - object notation"
+file: [
+  "_content/_examples/custom-props-create-input/custom-props-object-notation.vue"
+]
+---
+::
+
+### Add props method (`node.addProps()`)
+
+You can dynamically add props using the `node.addProps()` method in any runtime environment where you have access to the node. For custom inputs this is particularly helpful when used in a features. Both array notation and object notation are supported (see above).
+
+::Example
+---
+name: "Custom props - node.addProps"
+file: [
+  "_content/_examples/custom-props-create-input/custom-props-add-props.vue"
+]
 ---
 ::
 
@@ -343,7 +394,10 @@ As an example, let's imagine you want to build an input that allows users to ent
 ::Example
 ---
   name: "Custom input - sum numbers"
-  file: "_content/_examples/custom-sum/custom-sum.vue"
+  file: [
+    "_content/_examples/custom-sum/custom-sum.vue",
+    "_content/_examples/custom-sum/formkit.config.js"
+  ]
 ---
 ::
 
@@ -454,7 +508,12 @@ Let’s take a look at a slightly more complex example that utilizes `createInpu
 ::Example
 ---
 name: "Create input"
-file: "_content/_examples/autocomplete/autocomplete.vue"
+file: [
+  "_content/_examples/autocomplete/autocomplete.vue",
+  "_content/_examples/autocomplete/autocompleteInput.js",
+  "_content/_examples/autocomplete/formkit.config.js"
+]
+initFileTab: 'autocompleteInput.js'
 ---
 ::
 

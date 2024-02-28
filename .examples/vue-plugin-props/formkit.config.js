@@ -4,8 +4,17 @@
  * @formkit/vue plugin with the Vue app:
  */
 
+import { genesisIcons } from '@formkit/icons'
+import { rootClasses } from './formkit.theme.js'
+
 export default {
   props: {
     validation: 'required|length:5,20',
+  },
+  icons: {
+    ...genesisIcons,
+  },
+  config: {
+    rootClasses,
   },
 }

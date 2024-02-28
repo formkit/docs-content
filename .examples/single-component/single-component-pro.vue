@@ -1,7 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import { createAutoAnimatePlugin } from '@formkit/addons'
-const autoAnimatePlugin = createAutoAnimatePlugin()
 const addReview = ref(false)
 async function searchMovies({ search }) {
   if (!search) return []
@@ -24,7 +22,7 @@ async function searchMovies({ search }) {
 </script>
 
 <template>
-  <FormKit type="form" :actions="false" :plugins="[autoAnimatePlugin]">
+  <FormKit type="form" :actions="false">
     <!-- %partial%::html:: -->
     <FormKit type="repeater" label="My Movies" add-label="Add Movie">
       <FormKit

@@ -12,6 +12,7 @@ import countries from './countries.js'
     multiple
     :close-on-select="false"
     placeholder="Example: United States"
+    popover
   />
   <!-- %partial% -->
 </template>

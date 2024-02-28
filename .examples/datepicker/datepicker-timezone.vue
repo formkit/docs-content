@@ -23,6 +23,7 @@ async function reserve(_data, node) {
       :min-date="new Date()"
       timezone="Asia/Kolkata"
       overlay
+      popover
     />
     <FormKit
       type="datepicker"
@@ -35,6 +36,7 @@ async function reserve(_data, node) {
       help="Select a date and time to return your rental car."
       timezone="Asia/Kolkata"
       overlay
+      popover
     />
     <!-- %partial%::html:: -->
   </FormKit>

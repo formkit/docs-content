@@ -22,6 +22,7 @@ const value = {
       help="Which airline do you prefer to fly on?"
       type="radio"
       :options="airlines"
+      option-class="!mb-0"
     >
       <template #label="context">
         <img
@@ -34,12 +35,3 @@ const value = {
     <!-- %partial% -->
   </FormKit>
 </template>
-
-<style>
-img {
-  aspect-ratio: 120 / 46;
-}
-.formkit-option {
-  margin-bottom: 0 !important;
-}
-</style>

@@ -7,6 +7,7 @@
       placeholder="Select a date"
       help="When would you like to request catering service?"
       overlay
+      popover
       :value-format="{ date: 'long' }"
       value-locale="en-US"
     />

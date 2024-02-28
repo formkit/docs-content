@@ -26,6 +26,7 @@ async function searchMovies({ search, page, hasNextPage }) {
     label="Search for your favorite movie"
     placeholder="Example: Lord of the Rings"
     :options="searchMovies"
+    popover
   />
 </template>
 

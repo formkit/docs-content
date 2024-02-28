@@ -21,7 +21,6 @@ label: "Pro Alternative"
 Need more flexibility than the native HTML `email` input provides? <a href="/inputs/mask">Check out the `mask` input</a> available in FormKit Pro.
 ::
 
-
 ## An example
 
 ::Example
@@ -41,7 +40,6 @@ input: "email"
 attrs: ['placeholder']
 ---
 ::
-
 
 ## Sections
 
@@ -65,3 +63,20 @@ primary: "section-key"
 ---
 ::
 
+## Accessibility
+
+All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
+
+:AccessibilityChecks
+
+:AccessibilityTable
+
+### Keyboard Interactions
+
+:KeyboardEventsTable
+
+:AccessibilityTable
+
+### Keyboard Interactions
+
+:KeyboardEventsTable

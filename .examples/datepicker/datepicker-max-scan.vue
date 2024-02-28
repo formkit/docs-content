@@ -13,6 +13,7 @@ function disableEvenMonths(_node, date) {
     help="Use the keyboard to advance past an entire disabled month."
     :max-scan="32"
     picker-only
+    popover
     :disabled-days="disableEvenMonths"
   />
 </template>

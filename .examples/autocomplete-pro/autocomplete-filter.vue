@@ -9,6 +9,7 @@ import countries from './countries.js'
     label="Search for a country"
     :options="countries"
     placeholder="Example: United States"
+    popover
     :filter="
       (option, search) =>
         option.label.toLowerCase().startsWith(search.toLowerCase())

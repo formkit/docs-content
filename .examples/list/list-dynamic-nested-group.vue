@@ -22,13 +22,13 @@
           label="Guest age"
         />
 
-        <button type="button" @click="() => node.input(value.filter((_, i) => i !== index))">
+        <button type="button" @click="() => node.input(value.filter((_, i) => i !== index))" class="border border-blue-600 text-blue-600 p-3">
           - Remove
         </button>
       </div>
     </FormKit>
     
-    <button type="button" @click="() => node.input(value.concat({}))">
+    <button type="button" @click="() => node.input(value.concat({}))" class="border border-blue-600 text-blue-600 p-3 mb-4">
       + Add another
     </button>
 

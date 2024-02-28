@@ -26,7 +26,9 @@ export default {
       help="What email address should we send our newsletter to?"
     />
   </FormKit>
-  <p>This button is not part of the above form:</p>
+  <p class="text-xs font-italic mb-2">
+    This button is not part of the above form:
+  </p>
   <!-- 👀 Look, this is not part of the form. -->
-  <button @click="submitForm">Signup for newsletter</button>
+  <FormKit type="button" @click="submitForm">Signup for newsletter</FormKit>
 </template>

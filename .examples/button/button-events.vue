@@ -5,7 +5,7 @@ const randomColor = (e) => {
     .toString(16)
   e.target.setAttribute(
     'style',
-    'background-color: #' + hex
+    'background-color: #' + hex + '88;'
   )
 }
 </script>

@@ -5,6 +5,8 @@ description: Follow this guide to learn how to slim down your FormKit installati
 
 # Optimizing for production
 
+:PageToc
+
 FormKit ships with a lot of functionality out of the box. This is great for getting started, but the `defaultConfig` may include features and inputs you aren’t using. In this guide, we'll learn how to slim down our FormKit installation for production.
 
 ## Examining the defaultConfig
@@ -60,7 +62,7 @@ async function submit () {
 
 In this case, we only want to use the singular `required` rule, only the `text` input, and only the `required` message in English and German. We can create this tree-shakable custom configuration by not using the `defaultConfig` and instead performing our own plugin instantiations:
 
-### Using the global plugin:
+### Using the global plugin
 
 ```ts
 // file: main.ts
@@ -83,7 +85,7 @@ app.use(plugin, {
 })
 ```
 
-### Using the Nuxt module:
+### Using the Nuxt module
 
 If you are using the `@formkit/nuxt` module, you can opt out of the `defaultConfig` by providing the `defaultConfig: false` option to the module:
 

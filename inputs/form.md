@@ -92,7 +92,7 @@ Forms are usually submitted through user actions like clicking a submit button o
 type: "warning"
 label: "Avoid v-model for collecting and submitting form data"
 ---
-Using <code>v-model</code> data in your submit handler can lead to unintended form mutations. FormKit <em>automatically</em> collects form data for you, so use the unbound copy of your form’s data that is passed to your submission handler instead. 
+Using <code>v-model</code> data in your submit handler can lead to unintended form mutations. FormKit <em>automatically</em> collects form data for you, so use the unbound copy of your form’s data that is passed to your submission handler instead.
 ::
 
 ### Submitting via XHR/Fetch request
@@ -125,7 +125,7 @@ file: "_content/_examples/form-page/form-page.vue"
 
 While submitting a form using any standard HTML method is valid (like clicking a `submit` button, or hitting `enter` on a text input) — you may also submit a form programmatically. There are 2 ways to do this:
 
-- Using `this.$formkit.submit('form-id')` (`submitForm('form-id')` for the composition api).
+- Using `this.$formkit.submit('form-id')` (`submitForm('form-id')` for the composition API).
 - Using a [core node](/essentials/architecture#node) object.
 
 #### Submitting with `$formkit.submit()`
@@ -147,6 +147,50 @@ name: "Text example"
 file: "_content/_examples/node-submit/node-submit.vue"
 ---
 ::
+
+## Disabling
+
+To disable all the inputs in a given form, including the submit button, you can use the `disabled` prop.
+
+::Example
+---
+name: "Disabled example"
+file: "_content/_examples/form-disabled/form-disabled.vue"
+---
+::
+
+::Callout
+---
+type: "tip"
+label: "Disabled automatically"
+---
+When using an async <code>@submit</code> handler, FormKit will automatically disable the form (and set the state to <code>loading</code>) while the submit handler is pending.
+::
+
+## Resetting
+
+You can reset your form (or any input) back to its initial state by calling `$formkit.reset(formId)`.
+
+::Example
+---
+name: "Reset example"
+file: "_content/_examples/reset-form/reset-form.vue"
+---
+::
+
+::Callout
+---
+type: "tip"
+label: "Composition API"
+---
+When using the composition API, you can directly access the reset function by importing it from core: <code>import { reset } from '@formkit/core'</code>.
+::
+
+### Initial values
+
+It’s important to note that the "initial state" of a form is not necessarily an empty form. If you have a default `:value` or `v-model` on the form or on individual inputs in the form, FormKit automatically merges these together to produce your initial value, and will restore to this merged state on reset.
+
+Optionally you can provide a second argument to `reset(formId, initialState)` if you would prefer an alternative reset state.
 
 ## Validation
 
@@ -203,53 +247,9 @@ label: "Getting the context object"
 In the above example we extract the context object from the <code>#default</code> slot, but there are other ways as well. The context object is available on each input’s core node on the <code>node.context</code> property, and you can fetch an input’s node <a href="/essentials/architecture#getting-a-components-node">a number of ways</a>.
 ::
 
-## Disabling
-
-To disable all the inputs in a given form, including the submit button, you can use the `disabled` prop.
-
-::Example
----
-name: "Disabled example"
-file: "_content/_examples/form-disabled/form-disabled.vue"
----
-::
-
-::Callout
----
-type: "tip"
-label: "Disabled automatically"
----
-When using an async <code>@submit</code> handler FormKit will automatically disable the form (and set the state to <code>loading</code>) while the submit handler is pending.
-::
-
-## Resetting
-
-You can reset your form (or any input) back to it’s initial state by calling `$formkit.reset(formId)`.
-
-::Example
----
-name: "Reset example"
-file: "_content/_examples/reset-form/reset-form.vue"
----
-::
-
-::Callout
----
-type: "tip"
-label: "Composition API"
----
-When using the composition api you can directly access the reset function by importing it from core: <code>import { reset } from '@formkit/core'</code>.
-::
-
-### Initial values
-
-It’s important to note that the "initial state" of a form is not necessarily an empty form. You can have a default `:value` or `v-model` on the form and on individual inputs in the form — FormKit automatically merges these together to produce your initial value, and will restore to this merged state on reset.
-
-Optionally you can provide a second argument to `reset(formId, initialState)` if you would prefer an alternative reset state.
-
 ## Error handling
 
-With FormKit, adding front end validation to your form is easy — but what about errors produced by your backend framework, or ones you want to manually assign? There are two types of errors you can assign to a form:
+With FormKit, adding front-end validation to your form is easy — but what about errors produced by your backend framework, or ones you want to manually assign? There are two types of errors you can assign to a form:
 
 - [Form errors](#form-errors). These are displayed at the bottom of the form above the submit button. An example would be a global message like "Sorry, our server isn’t working right now”.
 - [Input errors](#input-errors). Errors to be placed on specific inputs within your form, typically these are validation errors from your backend, like "Sorry this username is already taken".
@@ -360,7 +360,7 @@ file: "_content/_examples/input-errors-prop/input-errors-prop.vue"
 
 It can be helpful for accessibility to provide a summary of validation and error messages at the top of your form. FormKit provides a `<FormKitSummary />` component to render this summary for you.
 
-This component will automatically render all of a form’s validation and error messages with jump links to the inputs they apply to. These errors are only shown *after* submitting the form but they are wrapped in an `aria-live` region to ensure screen readers will be notified when the errors present themselves. Additionally the page will automatically be scrolled to the summary box and focused on the first error listed.
+This component will automatically render all of a form’s validation and error messages with jump links to the inputs they apply to. These errors are only shown *after* submitting the form, but they are wrapped in an `aria-live` region to ensure screen readers will be notified when the errors present themselves. Additionally, the page will automatically scroll to the summary box and focus on the first error listed.
 
 `<FormKitSummary />` is not a globally registered component — you must import it:
 
@@ -430,7 +430,7 @@ The `<FormKitMessages />` component has a few additional configuration options:
 
 ## Unmounting inputs
 
-When inputs are unmounted from a form — for example when using `v-if` — the key and value is removed from the form’s data. However, in some circumstances it may be preferable to keep the key/value pair even after the input has been removed. This can be accomplished by using the `preserve` prop:
+When an input is unmounted from a form — for example when using `v-if` — its key and value are removed from the form’s data. However, in some circumstances it may be preferable to keep the key/value pair even after the input has been removed. This can be accomplished by using the `preserve` prop:
 
 ::Example
 ---
@@ -439,7 +439,7 @@ file: "_content/_examples/preserve-prop/preserve-prop.vue"
 ---
 ::
 
-## Props
+## Props & Attributes
 
 Forms are technically considered `input` types — so they share many of the universal props that standard inputs use.
 
@@ -450,7 +450,7 @@ Forms are technically considered `input` types — so they share many of the uni
 ::ReferenceTable
 ---
 type: "sectionKeys"
-primary: "section-key" 
+primary: "section-key"
 data: [
   {
     "section-key": "form",
@@ -472,3 +472,8 @@ without: ['outer', 'wrapper','inner', 'label', 'input','help']
 ---
 ::
 
+## Accessibility
+
+All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml):
+
+:AccessibilityChecks

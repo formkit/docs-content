@@ -9,7 +9,7 @@ const handleSubmit = () => alert('Password reset!')
     @submit="handleSubmit"
     #default="{ state: { valid } }"
   >
-    <h2>Password reset</h2>
+    <h2 class="text-xl font-bold mb-4">Password reset</h2>
     <FormKit
       type="email"
       label="Email address"

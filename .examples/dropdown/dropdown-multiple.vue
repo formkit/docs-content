@@ -11,6 +11,7 @@ const sandwichToppings = [{ label: 'Lettuce', value: 'lettuce' }, { label: 'Toma
       placeholder="Lettuce, tomato, onion, etc."
       :options="sandwichToppings"
       multiple
+      popover
       :value="['lettuce', 'tomato']"
     />
     <pre wrap>{{ value }}</pre>

@@ -9,6 +9,7 @@ const frameworks = [{ label: 'React', value: 'react' }, { label: 'Vue', value: '
       name="framework"
       label="Choose your favorite frontend framework"
       placeholder="Backbone.js"
+      popover
       :options="frameworks"
     />
     <pre wrap>{{ value }}</pre>

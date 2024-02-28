@@ -11,6 +11,7 @@
       name="users"
       type="repeater"
       label="Users"
+      draggable="true"
       #default="{ index }"
     >
       <FormKit

@@ -1,10 +1,14 @@
-// formkit.config.js
-import { defaultConfig } from '@formkit/vue'
+import { genesisIcons } from '@formkit/icons'
+import { rootClasses } from './formkit.theme.js'
 import { createFloatingLabelsPlugin } from '@formkit/addons'
 import '@formkit/addons/css/floatingLabels'
 
-const config = defaultConfig({
+export default {
   plugins: [createFloatingLabelsPlugin()],
-})
-
-export default config
+  icons: {
+    ...genesisIcons,
+  },
+  config: {
+    rootClasses,
+  },
+}

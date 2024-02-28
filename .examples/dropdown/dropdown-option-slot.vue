@@ -8,11 +8,12 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://s3.amazona
     name="framework"
     label="Choose a frontend framework"
     placeholder="Example placeholder"
+    popover
     :options="frameworks"
   >
     <template #option="{ option, classes }">
-      <div :class="classes.option">
-        <img :src="option.asset" alt="optionAvatar" />
+      <div :class="`${classes.option} flex items-center`">
+        <img :src="option.asset" alt="optionAvatar" class="w-5 mr-2" />
         <span>
           {{ option.label }}
         </span>
@@ -20,15 +21,3 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://s3.amazona
     </template>
   </FormKit>
 </template>
-
-<style>
-.formkit-option {
-  display: flex;
-  align-items: center;
-}
-.formkit-option img {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-}
-</style>

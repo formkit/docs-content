@@ -9,6 +9,7 @@ import countries from './countries.js'
     :options="countries"
     selection-appearance="option"
     multiple
+    popover
     max="2"
   />
   <FormKit
@@ -17,6 +18,7 @@ import countries from './countries.js'
     :options="countries"
     selection-appearance="text-input"
     multiple
+    popover
     max="2"
   />
 </template>

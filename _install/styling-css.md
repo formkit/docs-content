@@ -1,6 +1,16 @@
 ## Theming
 
-The default FormKit theme (called "genesis") can be added by installing the `@formkit/themes` package.
+::Callout
+---
+type: "warning"
+label: "Legacy Genesis CSS Theme"
+---
+FormKit now ships much more configurable Tailwind themes available at [themes.formkit.com](https://themes.formkit.com). If you are using the legacy Genesis CSS theme then follow the instructions below — but we encourage you to consider using one of the new Tailwind powered customizable FormKit themes to make your life much simpler.
+
+Eventually the legacy Genesis CSS theme will be deprecated and no longer supported by new Pro inputs.
+::
+
+FormKit ships a (legacy) CSS theme called `genesis` which can be added by installed from the `@formkit/themes` package.
 
 ### CDN Usage
 

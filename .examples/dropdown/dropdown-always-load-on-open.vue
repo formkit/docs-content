@@ -23,6 +23,7 @@ async function loadHorrorMovies() {
     label="Select a horror movie"
     placeholder="Example placeholder"
     :options="loadHorrorMovies"
+    popover
     always-load-on-open
   />
   <!-- %partial% -->

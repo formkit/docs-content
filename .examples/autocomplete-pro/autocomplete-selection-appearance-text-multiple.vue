@@ -16,6 +16,7 @@ import countries from './countries.js'
       selection-appearance="text-input"
       multiple
       open-on-click
+      popover
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

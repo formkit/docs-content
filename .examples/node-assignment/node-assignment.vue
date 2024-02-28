@@ -17,5 +17,5 @@ function addValidation() {
     validation-visibility="live"
   />
 
-  <button @click="addValidation">Add validation</button>
+  <FormKit type="button" @click="addValidation">Add validation</FormKit>
 </template>

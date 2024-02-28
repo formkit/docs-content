@@ -8,6 +8,7 @@
       :format="{ date: 'short', time: 'short' }"
       :sequence="['day', 'time']"
       overlay
+      popover
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

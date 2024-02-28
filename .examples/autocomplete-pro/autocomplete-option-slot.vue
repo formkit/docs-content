@@ -10,6 +10,7 @@ import carBrands from './car-brands.js'
     placeholder="Example: Toyota"
     :options="carBrands"
     selection-appearance="option"
+    popover
   >
     <!--OPTION SLOT-->
       <template #option="{ option, classes }">

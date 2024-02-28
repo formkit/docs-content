@@ -19,7 +19,7 @@ Community involvement and contributions are one of the most important aspects of
 
 ### Platinum sponsors
 
-<a class="no-underline" href="https://vueschool.io/">
+<a class="no-underline" href="https://vueschool.io?utm_source=formkit&utm_medium=web">
     <img
         class="docs-partner"
         src="https://cdn.formk.it/web-assets/sponsors/vueschool.png"
@@ -41,18 +41,27 @@ Community involvement and contributions are one of the most important aspects of
 
 ### Silver sponsors
 
-<a class="no-underline" href="https://www.peakcrypto.com/">
+<a class="no-underline" href="https://www.peakcrypto.com?utm_source=formkit&utm_medium=web">
     <img
         class="docs-partner"
         src="https://cdn.formk.it/web-assets/sponsors/peak-crypto.svg"
-        alt="Peak Crypto"
+        alt="Peak Crypto logo"
         style="display:inline-block;vertical-align: middle;width: 135px;margin-right: 25px;margin-top: 10px;"
+    />
+</a>
+
+<a class="no-underline" href="https://surveyjs.io?utm_source=formkit&utm_medium=web">
+    <img
+        class="docs-partner"
+        src="https://cdn.formk.it/web-assets/sponsors/surveyjs.svg"
+        alt="SurveyJS logo"
+        style="display:inline-block;vertical-align: middle;width: 115px;margin-right: 25px;margin-top: 15px;"
     />
 </a>
 
 ### Bronze sponsors
 
-<a class="no-underline" href="https://www.perbyte.com">
+<a class="no-underline" href="https://www.perbyte.com?utm_source=formkit&utm_medium=web">
     <img
         class="docs-partner"
         src="https://cdn.formk.it/web-assets/sponsors/bronze-sponsor_perbyte.png"
@@ -61,7 +70,7 @@ Community involvement and contributions are one of the most important aspects of
     />
 </a>
 
-<a class="no-underline" href="https://zammad.com">
+<a class="no-underline" href="https://zammad.com?utm_source=formkit&utm_medium=web">
     <img
         class="docs-partner"
         src="https://cdn.formk.it/web-assets/sponsors/zammad_logo-transparent.png"

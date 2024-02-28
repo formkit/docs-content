@@ -6,6 +6,7 @@ const year = date.getFullYear()
 const addYear = month > 6 ? 1 : month === 6 ? (day > 21 ? 1 : 0) : 0
 const summerStart = new Date(`${year + addYear}-6-21`)
 const summerEnd = new Date(`${year + addYear}-9-22`)
+const invalidDate = `${year + addYear}-02-12`
 </script>
 
 <template>
@@ -16,6 +17,7 @@ const summerEnd = new Date(`${year + addYear}-9-22`)
     help="Select a date next summer"
     :validation="[['date_between', summerStart, summerEnd]]"
     validation-visibility="live"
+    :value="invalidDate"
   />
   <!-- %partial%::html:: -->
 </template>

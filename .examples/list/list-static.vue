@@ -3,7 +3,7 @@ import { nbaTopPlayers } from 'nba-top-players.js'
 </script>
 
 <template>
-  <h2>NBA All Time Starting Five</h2>
+  <h2 class="text-2xl font-bold mb-4">NBA All Time Starting Five</h2>
   <FormKit type="list" #default="{ value }">
     <FormKit
       label="Point Guard"

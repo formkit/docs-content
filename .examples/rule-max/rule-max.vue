@@ -4,8 +4,9 @@
     type="number"
     name="Quantity"
     label="Quantity"
-    value="1"
     validation="max:5"
+    validation-visibility="live"
+    value="6"
   />
   <!-- %partial%::html:: -->
 </template>

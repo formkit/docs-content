@@ -13,7 +13,13 @@ When validating against a Zod schema all validation errors will be mapped to the
 
 ## Installation
 
-The Zod Plugin is intended to run on a FormKit form. Your usage of the plugin will be on a per-form basis and each form that requires validation with a Zod schema will create a new instance of the plugin using the `createZodPlugin` function.
+To use this plugin with FormKit, install `@formkit/zod`:
+
+```bash
+yarn add @formkit/zod
+```
+
+Once you've installed the `@formkit/zod` package, you'll need to register the plugin on a per-form basis and each form that requires validation with a Zod schema will create a new instance of the plugin using the `createZodPlugin` function.
 
 ## Usage
 

@@ -11,17 +11,20 @@ euroInputs.library = (node) => {
     attrs: {
       onInput: '$handlers.DOMInput',
       value: '$_value',
+      class: 'border border-gray-700 mb-4',
     },
   }
   switch (node.props.type) {
     case 'italy':
       return node.define({
         type: 'input',
+        family: 'text',
         schema: ['🇮🇹', text],
       })
     case 'france':
       return node.define({
         type: 'input',
+        family: 'text',
         schema: ['🇫🇷', text],
       })
   }

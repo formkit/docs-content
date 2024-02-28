@@ -1,14 +1,18 @@
-// formkit.config.js
-import { defaultConfig } from '@formkit/vue'
+import { genesisIcons } from "@formkit/icons"
+import { rootClasses } from './formkit.theme.js'
 import { createLocalStoragePlugin } from '@formkit/addons'
 
-const config = defaultConfig({
+export default {
   plugins: [
     createLocalStoragePlugin({
       prefix: 'formkit',
       maxAge: 1000 * 60 * 60, // 1 hour
     }),
   ],
-})
-
-export default config
+  icons: {
+    ...genesisIcons
+  },
+  config: {
+    rootClasses
+  }
+}

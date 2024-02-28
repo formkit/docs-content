@@ -11,11 +11,13 @@ Using the `createAutoHeightTextareaPlugin` function from `@formkit/addons` you c
 
 ## Installation
 
-To install the auto-height textarea plugin, we need to:
+To use this plugin with FormKit, install `@formkit/addons`:
 
-1. import it from `@formkit/addons`.
-2. Add it to our FormKit config as a plugin.
-3. Add the new `auto-height` prop to any `textarea`.
+```bash
+yarn add @formkit/addons
+```
+
+Once you've installed the addons package, you'll need to register the plugin with FormKit:
 
 ```js
 // formkit.config.js
@@ -34,6 +36,10 @@ export default config
 ## Usage
 
 To enable auto-height on a text area add the `auto-height` prop to a FormKit input of type `textarea`.
+
+Available field props:
+
+- **max-auto-height** *Number* Establishes the upper limit for the expansion of a text area, allowing it to dynamically grow in height while ensuring it does not exceed the specified maximum height.
 
 ::Example
 ---

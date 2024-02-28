@@ -16,6 +16,7 @@
         },
       }"
       overlay
+      popover
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

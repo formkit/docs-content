@@ -11,6 +11,7 @@ import countries from './countries.js'
       placeholder="Example: United States"
       :options="countries"
       multiple
+      popover
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

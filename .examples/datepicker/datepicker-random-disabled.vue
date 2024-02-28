@@ -33,6 +33,7 @@ function disabledDays(node, date) {
     :min-date="new Date()"
     :max-date="new Date(new Date().setDate(new Date().getDate() + 90))"
     :disabled-days="disabledDays"
+    popover
     picker-only
   >
     <template #day="{ classes, day, fns, minDate, maxDate }">

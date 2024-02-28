@@ -8,6 +8,7 @@ import carBrands from './car-brands.js'
       type="taglist"
       name="car_brands"
       label="Search for your favorite car brands"
+      popover
       :options="carBrands"
       :value="['honda', 'toyota']"
     />

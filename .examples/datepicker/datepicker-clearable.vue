@@ -7,6 +7,7 @@
       help="Please select the date you would like to start your vacation."
       placeholder="Select a date"
       :value="new Date()"
+      popover
       clearable
     />
     <pre wrap>{{ value }}</pre>

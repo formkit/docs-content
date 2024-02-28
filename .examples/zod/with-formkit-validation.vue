@@ -24,7 +24,7 @@ const [zodPlugin, submitHandler] = createZodPlugin(
 </script>
 
 <template>
-  <h1>Zod with FormKit Validation</h1>
+  <h1 class="text-2xl font-bold mb-4">Zod with FormKit Validation</h1>
   <FormKit type="form" :plugins="[zodPlugin]" @submit="submitHandler">
     <FormKit type="group" name="personalInfo">
       <FormKit

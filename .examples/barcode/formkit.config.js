@@ -1,11 +1,16 @@
-import { defaultConfig } from '@formkit/vue'
+import { genesisIcons } from "@formkit/icons"
+import { rootClasses } from './formkit.theme.js'
 import { barcode } from '@formkit/barcode'
 import '@formkit/barcode/genesis'
 
-const config = defaultConfig({
+export default {
   inputs: {
     barcode,
   },
-})
-
-export default config
+  icons: {
+    ...genesisIcons
+  },
+  config: {
+    rootClasses
+  }
+}

@@ -12,6 +12,7 @@ import countries from './countries.js'
       label="Search for a country"
       placeholder="Example: United States"
       selection-appearance="option"
+      popover
     />
     <!-- %partial%::html:: -->
   </FormKit>

@@ -12,6 +12,7 @@ import countries from './countries.js'
       :options="countries"
       selection-appearance="tags"
       multiple
+      popover
       :value="['US']"
     />
     <pre wrap>{{ value }}</pre>

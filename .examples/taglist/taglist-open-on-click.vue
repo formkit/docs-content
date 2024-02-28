@@ -9,6 +9,7 @@ import countries from './countries.js'
     label="Search for a country"
     placeholder="Example: United States"
     :options="countries"
+    popover
     open-on-click
   />
 </template>

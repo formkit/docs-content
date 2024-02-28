@@ -18,7 +18,9 @@ const value = ref(false)
       :options="['Facebook', 'Twitter', 'Instagram']"
     >
       <template #default="context">
-        <FormKitIcon :icon="context.option.value.toLowerCase()" />
+        <div class="w-5 h-5">
+          <FormKitIcon :icon="context.option.value.toLowerCase()" />
+        </div>
       </template>
     </FormKit>
     <!-- %partial%::html:: -->

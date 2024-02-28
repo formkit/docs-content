@@ -10,6 +10,7 @@
       :value-format="{ date: 'long', time: 'short' }"
       value-locale="uk"
       value="14 березня 2023 р. о 17:02"
+      popover
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

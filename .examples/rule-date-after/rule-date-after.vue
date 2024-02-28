@@ -9,6 +9,7 @@
     :validation-messages="{
       date_after: 'Sorry — no olds allowed.',
     }"
+    value="1988-05-14"
   />
   <!-- %partial%::html:: -->
 </template>

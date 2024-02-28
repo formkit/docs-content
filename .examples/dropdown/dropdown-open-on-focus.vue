@@ -22,6 +22,7 @@ function focusDropdown() {
       placeholder="Example placeholder"
       :options="frameworks"
       value="vue"
+      popover
       open-on-focus
     />
   </div>

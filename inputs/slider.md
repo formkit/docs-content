@@ -272,8 +272,7 @@ By combining the provided props for the `slider` component you can create a robu
 ---
 name: "Kitchen Sink"
 file: [
-  "_content/_examples/slider/kitchen-sink.vue", 
-  "_content/_examples/slider/formkit.config.js"
+  "_content/_examples/slider/kitchen-sink.vue",
 ]
 ---
 ::
@@ -643,3 +642,43 @@ data: [
 ---
 ::
 
+## Accessibility
+
+All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
+
+:AccessibilityChecks
+
+::AccessibilityTable
+---
+data: [
+  {
+    sectionKey: "maxValue",
+    attributes: [
+      { attribute: "tabindex", value: "-1", description: "Prioritizes keyboard focus order by setting it to -1 when input is disabled." },
+    ]
+  },
+  {
+    sectionKey: "minValue",
+    attributes: [
+      { attribute: "tabindex", value: "-1", description: "Prioritizes keyboard focus order by setting it to -1 when input is disabled." },
+    ]
+  },
+  {
+    sectionKey: "handleMax",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when input is disabled and 0 when its not." },
+    ]
+  },
+  {
+    sectionKey: "handleMin",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when input is disabled and 0 when its not." },
+    ]
+  },
+]
+---
+::
+
+### Keyboard Interactions
+
+:KeyboardEventsTable

@@ -13,10 +13,7 @@ function focusAutocomplete() {
 
 <template>
   <!-- %partial% -->
-  <FormKit
-    type="button"
-    @click="focusAutocomplete"
-  >
+  <FormKit type="button" @click="focusAutocomplete">
     Click me to focus autocomplete
   </FormKit>
   <FormKit
@@ -27,6 +24,7 @@ function focusAutocomplete() {
     placeholder="Example placeholder"
     :options="frameworks"
     open-on-focus
+    popover
   />
   <!-- %partial% -->
 </template>

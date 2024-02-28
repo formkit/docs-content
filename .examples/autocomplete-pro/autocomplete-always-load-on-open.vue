@@ -35,6 +35,7 @@ async function searchMovies({ search }) {
       placeholder="Example: Shawshank Redemption"
       :options="searchMovies"
       always-load-on-open
+      popover
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

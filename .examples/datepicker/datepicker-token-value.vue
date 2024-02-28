@@ -6,6 +6,7 @@
       label="Signature date"
       placeholder="Date of signature"
       overlay
+      popover
       value-format="\D\ay D of MMMM in t\he ye\ar YYYY"
     />
     <pre wrap>{{ value }}</pre>

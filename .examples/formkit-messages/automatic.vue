@@ -24,6 +24,6 @@ async function submitHandler(_data, node) {
       validation="required|min:2"
     />
 
-    <p><em><small>Submit to see moved messages. Normally messages are at the bottom.</small></em></p>
+    <p><em><small class="mb-4">Submit to see moved messages. Normally messages are at the bottom.</small></em></p>
   </FormKit>
 </template>

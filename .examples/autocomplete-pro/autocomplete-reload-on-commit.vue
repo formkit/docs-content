@@ -13,6 +13,7 @@ import countries from './countries.js'
     :reload-on-commit="true"
     :close-on-select="false"
     multiple
+    popover
   />
   <!-- %partial% -->
 </template>

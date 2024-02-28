@@ -16,6 +16,7 @@ import countries from './countries.js'
       :value="['US']"
       selection-appearance="option"
       multiple
+      popover
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

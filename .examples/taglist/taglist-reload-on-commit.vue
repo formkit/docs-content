@@ -8,6 +8,7 @@ import countries from './countries.js'
     name="country"
     label="Search for a country"
     placeholder="Example: United States"
+    popover
     :options="countries"
     :reload-on-commit="true"
     :close-on-select="false"

@@ -9,6 +9,9 @@ const schema = [
       ' + 5 = ',
       '$add($count, 5)'
     ],
+    attrs: {
+      class: 'text-2xl font-bold mb-4'
+    }
   }
 ]
 
@@ -23,5 +26,5 @@ const data = reactive({
     :schema="schema"
     :data="data"
   />
-  <button @click="data.count++">Add To Count</button>
+  <FormKit type="button" @click="data.count++">Add To Count</FormKit>
 </template>

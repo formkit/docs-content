@@ -193,6 +193,12 @@ data: [
     default: "true",
     description: "Allows pasting any valid color string of <code>Hex</code>, <code>HSLA</code>, or <code>RGBA</code> format into a <code>colorpicker</code> that contains the user's focus. The pasted string will immediately be set as the value of the <code>colorpicker</code> and converted to the desired format.",
   },
+  {
+    prop: "popover",
+    type: "boolean",
+    default: "false",
+    description: "Renders the input's UI panel using the browser Popover API."
+  }
 ]
 ---
 ::
@@ -840,3 +846,193 @@ data: [
 ---
 ::
 
+## Accessibility
+
+All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
+
+:AccessibilityChecks
+
+::AccessibilityTable
+---
+data: [
+  {
+    sectionKey: "swatchPreview",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "role", value: "button", description: "Indicates to assistive technologies that this element functions as a button." },
+      { attribute: "aria-valuetext", description: "Defines the human-readable text of the value." },
+    ]
+  },
+  {
+    sectionKey: "panel",
+    attributes: [
+      { attribute: "aria-role", value: "dialog", description: "When layout is set to popover it adds this attribute." },
+      { attribute: "aria-modal", value: "true", description: "When layout is set to popover it adds this attribute." },
+      { attribute: "aria-label", description: "Provides an accessible name." },
+    ]
+  },
+  {
+    sectionKey: "panelClose",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when panel is closed and 0 when openned." },
+      { attribute: "aria-label", description: "Provides an accessible name." },
+    ]
+  },
+  {
+    sectionKey: "controlGroup",
+    attributes: [
+      { attribute: "role", value: "group", description: "Indicates to assistive technologies that this element functions as a group." },
+    ]
+  },
+  {
+    sectionKey: "canvasLS",
+    attributes: [
+      { attribute: "aria-hidden", value: "true", description: "Makes this element not exposed to the accessibility API." },
+    ]
+  },
+  {
+    sectionKey: "controlLS",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "role", value: "slider", description: "Indicates to assistive technologies that this element functions as a slider." },
+      { attribute: "aria-valuemin", description: "Defines the minimum allowed value." },
+      { attribute: "aria-valuemax", description: "Defines the maximum allowed value." },
+      { attribute: "aria-valuetext", description: "Defines the human-readable text of the value." },
+    ]
+  },
+  {
+    sectionKey: "canvasHue",
+    attributes: [
+      { attribute: "aria-hidden", value: "true", description: "Makes this element not exposed to the accessibility API." },
+    ]
+  },
+  {
+    sectionKey: "controlHue",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "role", value: "slider", description: "Indicates to assistive technologies that this element functions as a slider." },
+      { attribute: "aria-valuemin", description: "Defines the minimum allowed value." },
+      { attribute: "aria-valuemax", description: "Defines the maximum allowed value." },
+      { attribute: "aria-valuenow", description: "Defines the human-readable text of the value." },
+    ]
+  },
+  {
+    sectionKey: "canvasAlpha",
+    attributes: [
+      { attribute: "aria-hidden", value: "true", description: "Makes this element not exposed to the accessibility API." },
+    ]
+  },
+  {
+    sectionKey: "controlAlpha",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "role", value: "slider", description: "Indicates to assistive technologies that this element functions as a slider." },
+      { attribute: "aria-valuemin", description: "Defines the minimum allowed value." },
+      { attribute: "aria-valuemax", description: "Defines the maximum allowed value." },
+      { attribute: "aria-valuenow", description: "Defines the human-readable text of the value." },
+    ]
+  },
+  {
+    sectionKey: "canvasPreview",
+    attributes: [
+      { attribute: "aria-hidden", value: "true", description: "Makes this element not exposed to the accessibility API." },
+    ]
+  },
+  {
+    sectionKey: "canvasSwatchPreview",
+    attributes: [
+      { attribute: "aria-hidden", value: "true", description: "Makes this element not exposed to the accessibility API." },
+    ]
+  },
+  {
+    sectionKey: "eyeDropper",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "role", value: "button", description: "Indicates to assistive technologies that this element functions as a button." },
+    ]
+  },
+  {
+    sectionKey: "colorInputGroup",
+    attributes: [
+      { attribute: "aria-role", value: "group", description: "Indicates to assistive technologies that this element functions as a group." },
+    ]
+  },
+  {
+    sectionKey: "hexField",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
+    ]
+  },
+  {
+    sectionKey: "rField",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
+    ]
+  },
+  {
+    sectionKey: "gField",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
+    ]
+  },
+  {
+    sectionKey: "bField",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
+    ]
+  },
+  {
+    sectionKey: "aField",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
+    ]
+  },
+  {
+    sectionKey: "hField",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
+    ]
+  },
+  {
+    sectionKey: "sField",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
+    ]
+  },
+  {
+    sectionKey: "lField",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
+    ]
+  },
+  {
+    sectionKey: "formatSwitcher",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "role", value: "button", description: "Indicates to assistive technologies that this element functions as a button." },
+      { attribute: "aria-label", description: "Provides an accessible name." },
+    ]
+  },
+  {
+    sectionKey: "swatch",
+    attributes: [
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "role", value: "button", description: "Indicates to assistive technologies that this element functions as a button." },
+      { attribute: "aria-label", description: "Provides an accessible name." },
+    ]
+  },
+]
+---
+::
+
+### Keyboard Interactions
+
+:KeyboardEventsTable

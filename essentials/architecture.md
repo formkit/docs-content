@@ -415,7 +415,7 @@ Notice how traversing the `list` uses numeric keys, this is because the `list` t
 type: "tip"
 label: "Array paths"
 ---
-Node addresses may also be expressed as arrays. For example <code>node.at('foo.bar')</code> could be expressed as <code>node.at(['foo', 'bar'])</code>.
+Node addresses may also be expressed as arrays. For example `node.at('foo.bar')` could be expressed as `node.at(['foo', 'bar'])`.
 ::
 
 ### Traversal tokens
@@ -556,6 +556,7 @@ The following is a comprehensive list of all events emitted by `@formkit/core`.Â
 | `message-added`           | `FormKitMessage`                | yes     | Emitted when a new `node.store` message was added.                                                                     |
 | `message-removed`         | `FormKitMessage`                | yes     | Emitted when a `node.store` message was removed.                                                                       |
 | `message-updated`         | `FormKitMessage`                | yes     | Emitted when a `node.store` message was changed.                                                                       |
+| `mounted`                 | none                            | yes     | Emitted when the `<FormKit>` component that owns this node is mounted to the dom.                                      |
 | `prop:{propName}`         | any (the value)                 | yes     | Emitted any time a specific prop is set or changed.                                                                    |
 | `prop`                    | `{ prop: string, value: any }`  | yes     | Emitted any time a prop is set or changed.                                                                             |
 | `reset`                   | `FormKitNode`                   | yes     | Emitted any time a form or group is reset.                                                                             |

@@ -10,6 +10,7 @@ import countries from './countries.js'
       label="Search for a country"
       placeholder="Example: United States"
       :options="countries"
+      popover
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

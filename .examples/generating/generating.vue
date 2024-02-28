@@ -9,6 +9,9 @@ export default {
           {
             $el: 'h1',
             children: 'Register',
+            attrs: {
+              class: 'text-2xl font-bold mb-4',
+            },
           },
           {
             $formkit: 'text',
@@ -53,7 +56,7 @@ export default {
             },
             help: 'How often should we display a cookie notice?',
           },
-        ]
+        ],
       // %partial%::javascript::
     }
   },

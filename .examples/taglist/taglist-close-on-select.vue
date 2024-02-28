@@ -12,6 +12,7 @@ import countries from './countries.js'
       type="taglist"
       name="taglist"
       label="Search for a country"
+      popover
       :options="countries"
       :close-on-select="false"
     />

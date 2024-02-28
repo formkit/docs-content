@@ -10,7 +10,7 @@ const sum = createInput(
     {
       $el: 'input',
       attrs: {
-        class: '$classes.addend',
+        class: '$classes.addend', // set in formkit.config.js
         type: 'number',
         onInput: '$handlers.numberA',
       },
@@ -19,7 +19,7 @@ const sum = createInput(
     {
       $el: 'input',
       attrs: {
-        class: '$classes.addend',
+        class: '$classes.addend', // set in formkit.config.js
         type: 'number',
         onInput: '$handlers.numberB',
       },
@@ -29,6 +29,7 @@ const sum = createInput(
   ],
   {
     features: [addHandlers],
+    family: 'text', // inherit theme classes from text family
   }
 )
 
@@ -76,20 +77,3 @@ const groupValues = ref({})
   </FormKit>
   <pre wrap>{{ groupValues }}</pre>
 </template>
-
-<style>
-.formkit-addend {
-  border: 0;
-  background-color: #efefef;
-  margin: 0 0.25em;
-  width: 4em;
-  padding: 0.5em;
-}
-.formkit-addend:first-child {
-  margin-left: 0;
-  border-radius: 0.25em 0 0 0.25em;
-}
-.formkit-addend:focus {
-  outline: 0;
-}
-</style>
