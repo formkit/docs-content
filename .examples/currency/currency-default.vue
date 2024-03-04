@@ -10,7 +10,11 @@ const value = ref(false)
   -->
   <FormKit type="form" #default="{ value }" :actions="false">
     <!-- %partial%::html:: -->
-    <FormKit type="currency" name="currency" />
+    <FormKit
+      type="currency"
+      name="currency"
+      value="12345678.90"
+    />
     <!-- %partial%::html:: -->
     <pre wrap>{{ value }}</pre>
   </FormKit>

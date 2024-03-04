@@ -20,6 +20,7 @@ const value = ref(false)
       displayLocale="en-US"
       decimals="4"
       minDecimals="2"
+      value="123.1234"
     />
     <!-- %partial%::html:: -->
     <pre wrap>{{ value }}</pre>
