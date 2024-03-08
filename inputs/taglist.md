@@ -37,7 +37,7 @@ The `taglist` input allows users to search through a list of options and apply a
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: [
   "_content/_examples/taglist/taglist-base.vue",
   "_content/_examples/_data/car-brands.js"
@@ -52,7 +52,7 @@ The taglist input will filter options with its own internal search function. You
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: [
   "_content/_examples/taglist/taglist-filter.vue",
   "_content/_examples/_data/countries.js"
@@ -67,7 +67,7 @@ The taglist input, unlike the dropdown or autocomplete inputs, allows you to ent
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: "_content/_examples/taglist/taglist-allow-new-values.vue"
 ---
 ::
@@ -83,7 +83,7 @@ In this example, we'll assign the `options` prop the `searchMovies` function. By
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: "_content/_examples/taglist/taglist-single-request.vue"
 ---
 ::
@@ -96,7 +96,7 @@ A likely scenario you'll encounter is needing to search through a paginated API.
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: "_content/_examples/taglist/taglist-pagination.vue"
 ---
 ::
@@ -114,7 +114,7 @@ FormKit's taglist input also provides an `optionLoader` prop that allows you to 
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: "_content/_examples/taglist/taglist-pagination-option-loader.vue"
 ---
 ::
@@ -147,7 +147,7 @@ In this example, we are going to use the `tag` slot to customize the look of the
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: [
   "_content/_examples/taglist/taglist-slots.vue",
   "_content/_examples/_data/car-brands.js"
@@ -178,7 +178,7 @@ The `max` prop allows you to limit the number of options that can be selected. W
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: [
   "_content/_examples/taglist/taglist-max.vue",
   "_content/_examples/_data/countries.js"
@@ -193,7 +193,7 @@ If you would like the taglist's listbox to remain open in between selections, se
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: [
   "_content/_examples/taglist/taglist-close-on-select.vue",
   "_content/_examples/_data/countries.js"
@@ -274,7 +274,7 @@ Now let's combine what we've learned so far by leveraging the `tag` slot for cus
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: [
   "_content/_examples/taglist/taglist-full-example.vue",
   "_content/_examples/topMovies.js"
