@@ -449,6 +449,7 @@ The `useFormKitContext` is a composable that returns the form’s context object
 ::Example
 ---
 name: "useFormKitContext"
+init-file-tab: 'Address.vue'
 file: [
   "_content/_examples/use-formkit-context/MyForm.vue",
   "_content/_examples/use-formkit-context/Address.vue"
@@ -460,9 +461,27 @@ file: [
 
 Similar to `useFormKitContext` this composable finds any `<FormKit>` context object if that component has been given an explicit `id`. Optionally you can provide an effect callback that will be invoked whenever the node becomes available.
 
+::Example
+---
+name: "useFormKitContextById"
+file: [
+  "_content/_examples/use-formkit-context-by-id/MyForm.vue",
+]
+---
+::
+
 ### useFormKitNodeById
 
 Fetches any FormKit node that has an explicit `id`. It returns a `Ref` that will populate with the core node whenever it is mounted. Optionally you can provide an effect callback that will be invoked whenever the node becomes available.
+
+::Example
+---
+name: "useFormKitNodeById"
+file: [
+  "_content/_examples/use-formkit-node-by-id/MyForm.vue",
+]
+---
+::
 
 ::Callout
 ---
