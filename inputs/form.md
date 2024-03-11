@@ -438,7 +438,7 @@ file: "_content/_examples/preserve-prop/preserve-prop.vue"
 ---
 ::
 
-## Composables
+## Composables <span class="badge" data-version="1.6.0"></span>
 
 FormKit provides a few composables to help you access the form’s data and context. These are available to be imported from the `@formkit/vue` package:
 
