@@ -4,12 +4,12 @@ To configure FormKit, create a `formkit.config.ts` in the root of your Nuxt proj
 
 ### formkit.config.ts
 ```js
-import { fr } from '@formkit/i18n'
 import { defineFormKitConfig } from '@formkit/vue'
 
 export default defineFormKitConfig({
-  locales: { fr },
-  locale: 'fr',
+  // rules: {},
+  // locales: {},
+  // etc. 
 })
 ```
 
@@ -66,8 +66,8 @@ In the future, this will become the default. To enable it today set `autoImport:
 
 ### Without extending `defaultConfig`
 
-By default, your configuration will _extend_ the `defaultConfig` that ships with FormKit. This is the desired behavior
-for the majority of projects. However, if you need to define the entire FormKit config yourself — from scratch — you may do so
+By default, your configuration will _extend_ FormKit's `defaultConfig`. This is desired
+for most projects. However, if you need to define the entire FormKit config yourself, you may do so
 by setting the `defaultConfig` option for the module to `false`:
 
 ```js

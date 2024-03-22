@@ -1,6 +1,6 @@
 ## Adding Pro Inputs
 
-Installing FormKit Pro is easy! Here are the steps:
+Nuxt Installing FormKit Pro is easy! Here are the steps:
 
 #### 1. Get a Project Key
 
@@ -19,7 +19,8 @@ npm install @formkit/pro
 Import the `createProPlugin` helper and any desired Pro Inputs from `@formkit/pro`:
 
 ```js
-// main.js or formkit.config.ts
+// formkit.config.{ts|js}
+import { defineFormKitConfig } from '@formkit/vue'
 import { createProPlugin, rating, toggle } from '@formkit/pro'
 
 // Create the Pro plugin with your `Project Key` and desired Pro Inputs:
@@ -29,9 +30,8 @@ const proPlugin = createProPlugin('fk-00000000000', {
   // any other Pro Inputs
 })
 
-// add the plugin to your FormKit config:
-const config = defaultConfig({
-  plugins: [proPlugin],
+export default defineFormKitConfig({
+    plugins: [proPlugin],
 })
 ```
 

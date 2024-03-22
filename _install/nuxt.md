@@ -28,4 +28,4 @@ export default defineNuxtConfig({
 })
 ```
 
-That's it! An unstyled FormKit is now registered using the default config and you can start using the `<FormKit>` component.
+Though unstyled, FormKit is now registered using the default config and you can start using the `<FormKit>` component.
