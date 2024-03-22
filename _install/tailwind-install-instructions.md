@@ -1,7 +1,7 @@
 
 ### Using the Web UI
 
-The easiest way to get started with FormKit Themes (for Tailwind) is to head directly to [https://themes.formkit.com](https://themes.formkit.com), customize a chosen theme to your liking, and then choose `Download theme` to be given specific commands to run in the root of your project.
+The easiest way to get started with FormKit Themes (for Tailwind) is to head to [themes.formkit.com](https://themes.formkit.com), customize a theme to your liking, and then choose `Download theme`:
 
 ::ArticleCard
 ---

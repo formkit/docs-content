@@ -1,6 +1,6 @@
 ## Configuration
 
-To configure FormKit create a `formkit.config.ts` in the root of your Nuxt project. The provided Nuxt module automatically uses the `formkit.config.ts` that is at the root of your project to extend FormKit's functionality. Your config file should export a [configuration object](/essentials/configuration#what-is-defaultconfig).
+To configure FormKit, create a `formkit.config.ts` in the root of your Nuxt project. The Nuxt module automatically uses the `formkit.config.ts` at the root of your project to extend FormKit's functionality. Your config file should export a [configuration object](/essentials/configuration#what-is-defaultconfig).
 
 ### formkit.config.ts
 ```js
@@ -15,10 +15,9 @@ export default defineFormKitConfig({
 
 ### Using environment variables in formkit.config.ts
 
-There may be instances where you want to use Nuxt's `runtimeConfig` variables inside of your `formkit.config.ts` file — such as keeping a FormKit Pro API key from being published in your codebase. To achieve this you can provide a function to `defineFormKitConfig` which returns a configuration object. Your function will be called by Nuxt and have access to `runtimeConfig`.
+There may be instances where you want to use Nuxt's `runtimeConfig` variables inside of your `formkit.config.ts` file — such as keeping a FormKit Pro API key from being published in your codebase. To achieve this you can provide a function to `defineFormKitConfig` which returns a configuration object. Your function will be called by Nuxt and have access to `runtimeConfig`:
 
 ```js
-import { fr } from '@formkit/i18n'
 import { defineFormKitConfig } from '@formkit/vue'
 import { createProPlugin, inputs } from '@formkit/pro'
 
@@ -34,9 +33,7 @@ export default defineFormKitConfig(() => {
   const pro = createProPlugin(config.FORMKIT_PRO_KEY, inputs)
 
   return {
-    plugins: [pro],
-    locales: { fr },
-    locale: 'fr',
+    plugins: [pro]
   }
 })
 ```
@@ -61,9 +58,9 @@ export default defineNuxtConfig({
 type: "tip"
 label: "Auto loading"
 ---
-In the past FormKit used a global plugin to install itself. This has the negative side effect of including itself Nuxt’s entry bundle. To avoid this FormKit now supports an `autoImport` option. When enabled FormKit no longer uses a global plugin but automatically injects the "global" configuration options only on the pages or components that use it.
+In the past, FormKit used a global plugin to install itself, thus including itself in Nuxt’s entry bundle. To avoid this, FormKit now supports an `autoImport` option. When enabled, FormKit injects the "global" configuration options only on the pages or components that use FormKit.
 
-In the future this will become the default. To enable it today set `autoImport: true` in your `nuxt.config.ts`
+In the future, this will become the default. To enable it today set `autoImport: true` in your `nuxt.config.ts`
 ::
 
 
