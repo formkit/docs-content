@@ -13,6 +13,9 @@ Using FormKit with Nuxt requires minimal setup. First include the Nuxt module as
 
 ```sh
 npm install @formkit/nuxt
+
+# If you're using PNPM you should also install some dependency packages.
+# pnpm install @formkit/core @formkit/vue
 ```
 
 Then in your `nuxt.config` file add the module to your modules list:

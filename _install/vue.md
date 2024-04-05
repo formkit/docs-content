@@ -4,6 +4,9 @@ Most new projects use a build tool like Vite, Snowpack, or webpack. This makes i
 
 ```sh
 npm install @formkit/vue
+
+# If you're using PNPM you should also install some dependency packages.
+# pnpm install @formkit/core
 ```
 
 The `@formkit/vue` package ships with a Vue plugin and a default configuration for easy setup:
