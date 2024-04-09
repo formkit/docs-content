@@ -67,7 +67,7 @@ FormKit provides a starter theme — which comes with structural styles and plen
 To get started, run the following command in your terminal:
 
 ```bash
-npx formkit create-theme
+npx formkit@latest create-theme
 ```
 
 This will download a clean copy of the starter theme for you to work off of. The starter theme is a fully functional Vite application that includes a "Kitchen Sink" to help you see how your classes affect every available FormKit input.

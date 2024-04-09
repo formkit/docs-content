@@ -20,7 +20,7 @@ href: "https://themes.formkit.com"
 Alternatively, you can use the FormKit CLI to select a theme for your project. Run the following command in the same directory as your `formkit.config.{ts|js}` file:
 
 ```bash
-npx formkit theme
+npx formkit@latest theme
 ```
 
 This command will create a `formkit.theme.{ts|js}` file in the root of your project. To complete the setup you will need use the `rootClasses` from this theme file in your `formkit.config.{ts|js}`:
@@ -59,7 +59,7 @@ If you run the command again, you will be taken to [https://themes.formkit.com](
 
 ```bash
 # with existing formkit.theme file in your project root
-> npx formkit theme
+> npx formkit@latest theme
 ? Found local theme file for <themeName>, edit this theme? › (Y/n)
 ```
 

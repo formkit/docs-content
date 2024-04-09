@@ -16,7 +16,7 @@ In this guide, we'll export the text input, and restructure it to better support
 FormKit comes with its own CLI to make exporting inputs a breeze. At the base directory of your project, run:
 
 ```sh
-npx formkit export
+npx formkit@latest export
 ```
 
 Running this command prompts you to select any of FormKit's open source
