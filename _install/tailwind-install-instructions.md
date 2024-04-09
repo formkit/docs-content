@@ -1,10 +1,6 @@
 ### Using the Web UI
 
-The easiest way to get started with FormKit Tailwind Themes is to install the themes package and head to [themes.formkit.com](https://themes.formkit.com), customize a theme, and choose `Download theme`:
-
-```sh
-npm install @formkit/themes
-```
+The easiest way to get started with FormKit Tailwind Themes is to install the themes package and head to [themes.formkit.com](https://themes.formkit.com), customize a theme, and choose `Download theme`.
 
 ::ArticleCard
 ---
