@@ -5,8 +5,6 @@ description: FormKit provides a reactive context object to expose data to slots,
 
 # Context object
 
-:PageToc
-
 ## Introduction
 
 FormKit inputs use a reactive object to expose data to template slots, rules, and the [schema](/essentials/schema) that defines each input. This is called the `context` object and is found in the each input's [core `node` object](/essentials/architecture#node) at `node.context`.

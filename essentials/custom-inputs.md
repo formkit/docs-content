@@ -5,8 +5,6 @@ description: Create your own inputs that automatically inherit FormKit’s value
 
 # Custom inputs
 
-:PageToc
-
 ::Cta
 ---
 label: "Building your first custom input?" 

@@ -1,6 +1,8 @@
 ---
 title: Range Input
 description: A native HTML range input.
+navigation:
+  title: 'Range'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A native HTML range input.
 type: "Range"
 ---
 ::
-
-:PageToc
 
 The `range` input uses HTML's [native range input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) to let user select a number with a graphic slider.
 

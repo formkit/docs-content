@@ -1,6 +1,8 @@
 ---
 title: Hidden Input
 description: A native HTML hidden input.
+navigation:
+  title: 'Hidden'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A native HTML hidden input.
 type: "Hidden"
 ---
 ::
-
-:PageToc
 
 The `hidden` input uses HTML's [native hidden input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/hidden). It is not a visible element, and should only be used to provide data that is not entered by a user.
 

@@ -5,8 +5,6 @@ description: Learn to customize your forms to your precise needs.
 
 # Configuration
 
-:PageToc
-
 ## Introduction
 
 FormKit uses a unique hierarchical configuration system that is well suited for forms. To understand how this configuration works, there are 4 questions we need to answer:

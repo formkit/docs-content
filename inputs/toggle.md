@@ -1,6 +1,8 @@
 ---
 title: Toggle Input
 description: The toggle input is used to choose one of two values; it is a good choice when you want the user to make a binary choice such as turning a feature on or off.
+navigation:
+  title: 'Toggle'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: The toggle input is used to choose one of two values; it is a good 
 type: "Toggle"
 ---
 ::
-
-:PageToc
 
 :ProInstallSnippet
 

@@ -1,6 +1,8 @@
 ---
 title: Colorpicker Input
 description: A colorpicker with support for alpha transparency, pre-loaded swatches, and multiple color output formats.
+navigation:
+  title: 'Colorpicker'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A colorpicker with support for alpha transparency, pre-loaded swatc
 type: "Color"
 ---
 ::
-
-:PageToc
 
 The `colorpicker` input allows for advanced color selection — including alpha channel support. It supports colors in `Hex`, `HSLA` and `RGBA` formats and can be configured to provide a preset list of colors.
 

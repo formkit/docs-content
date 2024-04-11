@@ -1,6 +1,8 @@
 ---
 title: Color Input
 description: A native HTML color picker.
+navigation:
+  title: 'Color'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A native HTML color picker.
 type: "Color"
 ---
 ::
-
-:PageToc
 
 The `color` input uses HTML's [native color picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color) to allow users to easily select a hexadecimal color.
 

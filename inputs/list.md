@@ -1,6 +1,8 @@
 ---
 title: List Input
 description: An invisible FormKit input that allows you to logically structure your form data as an array.
+navigation:
+  title: 'list'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: An invisible FormKit input that allows you to logically structure y
 type: "List"
 ---
 ::
-
-:PageToc
 
 The `list` input allows you to structure data from child inputs as an array. The list itself outputs no markup (by default) and can be used in conjunction with any other type of input — including nested [groups](/inputs/group) and lists.
 

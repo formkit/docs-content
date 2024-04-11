@@ -5,8 +5,6 @@ description: Automatically adjust the height of your textareas based on their co
 
 # Auto-Height Textarea Plugin
 
-:PageToc
-
 Using the `createAutoHeightTextareaPlugin` function from `@formkit/addons` you can use a new prop (`auto-height`) on your Formkit inputs of type `textarea` to have them automatically grow and shrink in size based on their content.
 
 ## Installation

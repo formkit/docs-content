@@ -1,6 +1,8 @@
 ---
 title: Datepicker Input
 description: A Pro input that allows users to select a date via pop up calendar or typing the date in using their preferred localization.
+navigation:
+  title: 'Datepicker'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A Pro input that allows users to select a date via pop up calendar 
 type: "Datepicker"
 ---
 ::
-
-:PageToc
 
 :ProInstallSnippet
 

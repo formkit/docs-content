@@ -1,6 +1,8 @@
 ---
 title: Password Input
 description: A native HTML password input.
+navigation:
+  title: 'Password'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A native HTML password input.
 type: "Password"
 ---
 ::
-
-:PageToc
 
 The `password` input uses HTML's [native password input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/password). It allows a user to privately enter their password. When creating new passwords, this input is often compiled with the `confirm` validation rule.
 

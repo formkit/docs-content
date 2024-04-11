@@ -1,6 +1,8 @@
 ---
 title: Time Input
 description: A native HTML time input.
+navigation:
+  title: 'Time'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A native HTML time input.
 type: "Time"
 ---
 ::
-
-:PageToc
 
 The `time` input uses HTML's [native time input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/time). It allows a user to enter a single line of time.
 

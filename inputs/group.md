@@ -1,6 +1,8 @@
 ---
 title: Group Input
 description: An invisible FormKit input that allows you to logically structure your form data as an object.
+navigation:
+  title: 'Group'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: An invisible FormKit input that allows you to logically structure y
 type: "Group"
 ---
 ::
-
-:PageToc
 
 The `group` input allows you to structure data from child inputs as an object. The group itself outputs no markup by default and can be used in conjunction with any other type of input — including nested groups and [lists](/inputs/list).
 

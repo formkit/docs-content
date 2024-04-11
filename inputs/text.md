@@ -1,6 +1,8 @@
 ---
 title: Text Input
 description: A native HTML text input.
+navigation:
+  title: 'Text'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A native HTML text input.
 type: "Text"
 ---
 ::
-
-:PageToc
 
 The `text` input uses HTML's [native text input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text). It allows a user to enter a single line of text.
 

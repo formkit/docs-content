@@ -1,6 +1,8 @@
 ---
 title: Number Input
 description: A native HTML number input
+navigation:
+  title: 'Number'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A native HTML number input
 type: "Number"
 ---
 ::
-
-:PageToc
 
 The `number` input uses HTML's [native number input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number). It allows a user to enter a single integer or decimal value.
 

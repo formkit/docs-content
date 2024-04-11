@@ -5,8 +5,6 @@ description: Examples you can use in your project today.
 
 # Examples
 
-:PageToc
-
 A broad collection of examples with working code you can use in your project today.
 
 ## Forms & structure

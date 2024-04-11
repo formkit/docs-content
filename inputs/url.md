@@ -1,6 +1,8 @@
 ---
 title: URL Input
 description: A native HTML url input.
+navigation:
+  title: 'URL'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A native HTML url input.
 type: "URL"
 ---
 ::
-
-:PageToc
 
 The `url` input uses HTML's [native url input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url). It allows a user to enter a single URL.
 

@@ -5,8 +5,6 @@ description: A zero-dependency package that is responsible for nearly all of For
 
 # Architecture
 
-:PageToc
-
 ## Introduction
 
 At the heart of the FormKit framework is `@formkit/core`. This zero-dependency package is responsible for nearly all of FormKit's low-level critical functions, such as:

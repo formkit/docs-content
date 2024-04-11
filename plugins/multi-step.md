@@ -5,8 +5,6 @@ description: Easily add multi-step sections to your FormKit forms.
 
 # Multi-Step Input Plugin
 
-:PageToc
-
 ## Introduction
 
 FormKit ships with a first-party multi-step input plugin available from the `@formkit/addons` package. This input allows you to build a wizard or easily break your forms into multiple steps. Breaking forms into multiple steps can improve the user-experience of larger forms by keeping them feeling small and approachable compared to listing all inputs at once.

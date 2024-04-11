@@ -1,6 +1,8 @@
 ---
 title: Week Input
 description: A native HTML week picker.
+navigation:
+  title: 'Week'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A native HTML week picker.
 type: "Week"
 ---
 ::
-
-:PageToc
 
 The `week` input uses the HTML's [native week picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/week) to allow users to easily
 select a week.

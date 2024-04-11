@@ -1,6 +1,8 @@
 ---
 title: Datetime-local Input
 description: A native HTML datetime-local picker.
+navigation:
+  title: 'Datetime-local'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A native HTML datetime-local picker.
 type: "Datetime-local"
 ---
 ::
-
-:PageToc
 
 The `datetime-local` input uses HTML's [native datetime-local picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local) to allow users to easily select a date and time based on their browser’s locale.
 

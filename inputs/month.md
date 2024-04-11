@@ -1,6 +1,8 @@
 ---
 title: Month Input
 description: A native HTML month picker.
+navigation:
+  title: 'Month'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A native HTML month picker.
 type: "Month"
 ---
 ::
-
-:PageToc
 
 The `month` input uses HTML's [native month picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/month) to allow users to easily select a month.
 

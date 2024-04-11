@@ -1,6 +1,8 @@
 ---
 title: Repeater Input
 description: A Pro input that allows users to add, remove, and re-arrange repeatable input groups.
+navigation:
+  title: 'Repeater'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A Pro input that allows users to add, remove, and re-arrange repeat
 type: "Repeater"
 ---
 ::
-
-:PageToc
 
 :ProInstallSnippet
 

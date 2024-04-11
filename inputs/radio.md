@@ -1,6 +1,8 @@
 ---
 title: Radio Input
 description: A native HTML radio input with support for one or many nested options elements.
+navigation:
+  title: 'Radio'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A native HTML radio input with support for one or many nested optio
 type: "Radio"
 ---
 ::
-
-:PageToc
 
 The `radio` input uses HTML's [native radio inputs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio) to allow a user to select one value from a series of options. The `options` prop is required for radio inputs and can be provided in 3 ways:
 

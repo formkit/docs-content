@@ -1,6 +1,8 @@
 ---
 title: Email Input
 description: A native HTML email input.
+navigation:
+  title: 'Email'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A native HTML email input.
 type: "Email"
 ---
 ::
-
-:PageToc
 
 The `email` input uses HTML's [native email input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email).
 

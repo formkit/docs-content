@@ -1,6 +1,8 @@
 ---
 title: File Input
 description: A native HTML file input with support for multiple files, drag and drop, clearing the input, and repopulating from an array.
+navigation:
+  title: 'File'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A native HTML file input with support for multiple files, drag and 
 type: "File"
 ---
 ::
-
-:PageToc
 
 The `file` input uses HTML's [native file input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file). It allows users to select files from their device for upload. In addition to native input features, it adds support for:
 

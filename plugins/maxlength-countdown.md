@@ -5,8 +5,6 @@ description: easily add a visual countdown of remaining characters for text base
 
 # Maxlength Countdown Plugin
 
-:PageToc
-
 Using the `createMaxLengthCountdownPlugin` function from `@formkit/addons` you can easily add a visual countdown of remaining characters for any `text` family (`text`, `email`, `password`, etc) or `textarea` FormKit input just by setting the `maxlength` prop.
 
 ## Installation

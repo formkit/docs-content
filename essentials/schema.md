@@ -5,8 +5,6 @@ description: Harness all the power of FormKit in a serializable, JSON-compatible
 
 # Schema
 
-:PageToc
-
 ## Introduction
 
 FormKit's schema is a JSON-serializable data format for storing DOM structures and component implementations, including FormKit forms. Although created specifically for implementing and generating forms, the format is capable of generating any HTML markup or using any third-party components.

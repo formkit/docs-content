@@ -5,8 +5,6 @@ description: easily add floating labels to your text and textarea inputs.
 
 # Floating Labels Plugin
 
-:PageToc
-
 Using the `createFloatingLabelsPlugin` function from `@formkit/addons` you can easily add a floating label treatment to any `text` family (`text`, `email`, `url`, `date`, etc) or `textarea` FormKit input.
 
 ## Installation

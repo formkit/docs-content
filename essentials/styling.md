@@ -5,8 +5,6 @@ description: Add custom styling to your FormKit components - both globally and p
 
 # Styling
 
-:PageToc
-
 FormKit ships robust and accessible markup — but with no assumptions about your
 desired styles. FormKit provides _optional_ themes you are welcome to use in your project — or you can create your own.
 

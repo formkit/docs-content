@@ -1,11 +1,11 @@
 ---
 title: Create a Tailwind CSS theme
 description: Follow this guide to learn how to leverage Tailwind CSS with your FormKit forms and inputs
+navigation:
+  title: 'Create a Tailwind Theme'
 ---
 
 # Create a Tailwind CSS theme
-
-:PageToc
 
 In this guide, we’ll walk through the process of creating a custom Tailwind theme for your forms and inputs. Tailwind has risen to the forefront of CSS utility class libraries, and FormKit was authored with its capabilities in mind. Let’s get started!
 

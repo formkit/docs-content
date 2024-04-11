@@ -1,6 +1,8 @@
 ---
 title: Slider Input
 description: An advanced range input with support for multiple values.
+navigation:
+  title: 'Slider'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: An advanced range input with support for multiple values.
 type: "Slider"
 ---
 ::
-
-:PageToc
 
 :ProInstallSnippet
 

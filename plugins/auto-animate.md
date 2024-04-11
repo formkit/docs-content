@@ -5,8 +5,6 @@ description: Add smoothing transitions to your FormKit inputs using AutoAnimate.
 
 # AutoAnimate Plugin
 
-:PageToc
-
 [AutoAnimate](https://auto-animate.formkit.com/) is a zero-config, drop-in animation utility that adds smooth transitions to any web app. It also works great with FormKit.
 
 FormKit doesn't need much animation, but a small tasteful amount can make it clear when elements pop on and off a page, or move around — such as validation messages.

@@ -1,11 +1,11 @@
 ---
 title: Create a custom input
 description: Follow this guide to learn how to create, register, and use a custom FormKit input in your project.
+navigation:
+  title: 'Create a Custom Input'
 ---
 
 # Create a custom input
-
-:PageToc
 
 In this guide, we’ll walk through the process of creating, registering, and using a custom input. Specifically, we’re going create a "one-time password" input ("OTP" for short). OTPs are commonly used for two-factor authentication when a user is required to type in a code sent via SMS or authenticator app. Let’s get started!
 

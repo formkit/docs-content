@@ -1,11 +1,11 @@
 ---
 title: Build a multi-step form
 description: Follow this guide to learn how to build a multi-step form with FormKit.
+navigation:
+  title: 'Build a Multi-Step Form'
 ---
 
 # Build a multi-step form
-
-:PageToc
 
 ::Callout
 ---

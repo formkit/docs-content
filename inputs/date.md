@@ -1,6 +1,8 @@
 ---
 title: Date Input
 description: A native HTML date picker.
+navigation:
+  title: 'Date'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A native HTML date picker.
 type: "Date"
 ---
 ::
-
-:PageToc
 
 The `date` input uses HTML's [native date picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date) to allow users to easily select a date.
 

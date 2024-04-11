@@ -1,6 +1,8 @@
 ---
 title: Toggle Buttons
 description: The toggle buttons are used to choose between one or more choices with a button aesthetic.
+navigation:
+  title: 'Toggle Buttons'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: The toggle buttons are used to choose between one or more choices w
 type: "Toggle Buttons"
 ---
 ::
-
-:PageToc
 
 :ProInstallSnippet
 

@@ -1,11 +1,11 @@
 ---
 title: Export and restructure inputs
 description: Follow this guide to learn how to create, register, and use a custom FormKit input in your project.
+navigation:
+  title: 'Exporting & Restructuring Inputs'
 ---
 
 # Export and restructure inputs
-
-:PageToc
 
 FormKit inputs ship with a lot of markup. This is useful for ensuring inputs are written in an accessible manner. However, sometimes it makes sense to modify the existing structure of a FormKit input. Using the FormKit CLI, we can export FormKit's open source inputs and modify their original structure — or even their functionality.
 

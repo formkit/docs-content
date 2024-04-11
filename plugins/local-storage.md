@@ -5,8 +5,6 @@ description: Save unsubmitted user form input to localStorage to prevent data lo
 
 # LocalStorage Plugin
 
-:PageToc
-
 Using the `createLocalStoragePlugin` function from `@formkit/addons`, you can easily save unsubmitted user form inputs to localStorage which will be restored on page load. This is great for preventing data loss in the event a user's browser crashes, tab is closed, or other unforeseen issue causes your application to reload before the user can submit their data.
 
 LocalStorage data is automatically cleared when a form `submit` is called.

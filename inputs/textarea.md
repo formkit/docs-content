@@ -1,6 +1,8 @@
 ---
 title: Textarea Input
 description: A native HTML textarea input.
+navigation:
+  title: 'Textarea'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A native HTML textarea input.
 type: "Textarea"
 ---
 ::
-
-:PageToc
 
 The `textarea` input uses HTML's [native textarea input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea). It allows a user to enter multiple lines of text and is resizable in most browsers.
 

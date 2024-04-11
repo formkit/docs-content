@@ -1,6 +1,8 @@
 ---
 title: Meta Input
 description: A hidden input that stores arbitrary data.
+navigation:
+  title: 'Meta'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A hidden input that stores arbitrary data.
 type: "Meta"
 ---
 ::
-
-:PageToc
 
 The `meta` input is meant to store arbitrary data that is not intended for display to end users. This input is hidden by default and can be used to store data that is not part of the form's schema.
 

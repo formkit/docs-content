@@ -1,6 +1,8 @@
 ---
 title: Search Input
 description: A native HTML search input.
+navigation:
+  title: 'Search'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A native HTML search input.
 type: "Search"
 ---
 ::
-
-:PageToc
 
 The `search` input uses HTML's [native search input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/search). Generally, search inputs are the same as text inputs, but may have different styling or features based on the browser. For example, browsers often add a small "X" to clear the input when it has a value.
 

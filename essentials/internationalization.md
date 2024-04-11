@@ -5,8 +5,6 @@ description: Translate FormKit UI and validation messages into supported languag
 
 # Internationalization (i18n)
 
-:PageToc
-
 FormKit ships with internationalization support for all of its interfaces and validation messages.
 
 ## Available languages

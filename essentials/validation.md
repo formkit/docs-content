@@ -5,8 +5,6 @@ description: Provide instant feedback to users on the validity of their form dat
 
 # Validation
 
-:PageToc
-
 FormKit makes front end validation simple by letting you declare your validation rules directly on your inputs. It's easy to write custom rules too, but you'll rarely need to with 20+ production-ready rules.
 
 ## Declaring rules

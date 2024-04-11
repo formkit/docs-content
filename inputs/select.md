@@ -1,6 +1,8 @@
 ---
 title: Select Input
 description: A native HTML select input. Supports both single-value and multi-value selections.
+navigation:
+  title: 'Select'
 ---
 
 ::InputPageHero
@@ -8,8 +10,6 @@ description: A native HTML select input. Supports both single-value and multi-va
 type: "Select"
 ---
 ::
-
-:PageToc
 
 The select input uses HTML's [native select input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select). Select inputs can be single value selections, or multi-value selections by using the `multiple` attribute. There are 4 ways to provide options to a select input:
 
