@@ -4,7 +4,6 @@ title: formkit/inputs
 
 # @formkit/inputs
 
-<page-toc></page-toc>
 
 ## Introduction
 
@@ -18,13 +17,10 @@ Applies attributes to a given schema section by applying a higher order function
 
 #### Signature
 
-<client-only>
 
 ```typescript
 $attrs(attrs: FormKitSchemaAttributes | (() => FormKitSchemaAttributes), section: FormKitSchemaExtendableSection): FormKitSchemaExtendableSection;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -41,13 +37,10 @@ Extends a schema node with a given set of extensions.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 $extend(section: FormKitSchemaExtendableSection, extendWith: Partial<FormKitSchemaNode>): FormKitSchemaExtendableSection;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -64,13 +57,10 @@ Applies a condition to a given schema section.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 $for(varName: string, inName: string, section: FormKitSchemaExtendableSection): (extensions: Record<string, Partial<FormKitSchemaNode>>) => FormKitSchemaNode;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -88,13 +78,10 @@ Applies a condition to a given schema section.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 $if(condition: string, then: FormKitSchemaExtendableSection, otherwise?: FormKitSchemaExtendableSection): FormKitSchemaExtendableSection;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -112,13 +99,10 @@ Creates a root schema section.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 $root(section: FormKitSchemaExtendableSection): FormKitExtendableSchemaRoot;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -136,13 +120,10 @@ A feature that adds checkbox selection support.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 checkboxes(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -154,13 +135,10 @@ Adds icon props definition.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 defaultIcon(sectionKey: string, defaultIcon: string): (node: FormKitNode) => void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -177,13 +155,10 @@ A feature to add file handling support to an input.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 files(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -195,13 +170,10 @@ A feature that ensures the input has an `initialValue` prop.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 initialValue(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -213,13 +185,10 @@ Creates a new feature that generates a localization message of type ui for use o
 
 #### Signature
 
-<client-only>
 
 ```typescript
 localize(key: string, value?: string): (node: FormKitNode) => void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -236,7 +205,6 @@ A feature that normalizes box types (checkboxes, radios).
 
 #### Signature
 
-<client-only>
 
 ```typescript
 normalizeBoxes(node: FormKitNode): FormKitMiddleware<{
@@ -244,8 +212,6 @@ normalizeBoxes(node: FormKitNode): FormKitMiddleware<{
     value: any;
 }>;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -261,13 +227,10 @@ A feature that converts the options prop to usable values, to be used by a featu
 
 #### Signature
 
-<client-only>
 
 ```typescript
 options(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -279,13 +242,10 @@ A feature to check if the value being checked is the current value.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 radios(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -299,13 +259,10 @@ A feature that allows casting to numbers.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 casts(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -317,13 +274,10 @@ Creates a plugin based on a list of [FormKitLibrary](/api-reference/formkit-core
 
 #### Signature
 
-<client-only>
 
 ```typescript
 createLibraryPlugin(...libraries: FormKitLibrary[]): FormKitPlugin;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -339,15 +293,12 @@ Creates a new reusable section.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 createSection(section: string, el: string | null | (() => FormKitSchemaNode), fragment: true): FormKitSection<FormKitExtendableSchemaRoot>;
 createSection(section: string, el: string | null | (() => FormKitSchemaNode)): FormKitSection<FormKitSchemaExtendableSection>;
 createSection(section: string, el: string | (() => FormKitSchemaNode), fragment: false): FormKitSection<FormKitSchemaExtendableSection>;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -365,13 +316,10 @@ A feature that allows disabling children of this node.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 disables(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -383,13 +331,10 @@ Runs a callback over every section in a schema. if stopOnCallbackReturn is true 
 
 #### Signature
 
-<client-only>
 
 ```typescript
 eachSection<T>(schema: FormKitSchemaDefinition, callback: (section: FormKitSchemaComponent | FormKitSchemaDOMNode, schemaParent: FormKitSchemaNode[], schema: FormKitSchemaCondition) => T, stopOnCallbackReturn?: boolean, schemaParent?: FormKitSchemaNode[]): T | void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -406,13 +351,10 @@ Extends a single schema node with an extension. The extension can be any partial
 
 #### Signature
 
-<client-only>
 
 ```typescript
 extendSchema(schema: FormKitSchemaNode, extension?: Partial<FormKitSchemaNode>): FormKitSchemaNode;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -429,13 +371,10 @@ Finds a seciton by name in a schema.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 findSection(schema: FormKitSchemaDefinition, target: string): [false, false] | [FormKitSchemaNode[] | false, FormKitSchemaCondition];
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -452,13 +391,10 @@ A feature to add a submit handler and actions section.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 form(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -470,13 +406,10 @@ A feature that applies `ignore="true"` by default.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 ignore(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -488,13 +421,10 @@ A helper to determine if an option is a group or an option.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 isGroupOption(option: FormKitOptionsItem | FormKitOptionsGroupItem | FormKitOptionsGroupItemProp): option is FormKitOptionsGroupItem;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -506,13 +436,10 @@ Type guard for schema objects.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 isSchemaObject(schema: Partial<FormKitSchemaNode>): schema is FormKitSchemaDOMNode | FormKitSchemaComponent | FormKitSchemaFormKit;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -528,7 +455,6 @@ Checks if the current schema node is a slot condition.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 isSlotCondition(node: FormKitSchemaNode): node is {
@@ -537,8 +463,6 @@ isSlotCondition(node: FormKitSchemaNode): node is {
     else: FormKitSchemaNode | FormKitSchemaNode[];
 };
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -550,7 +474,6 @@ isSlotCondition(node: FormKitSchemaNode): node is {
 
 #### Examples
 
-<client-only>
 
 ```js
 {
@@ -560,21 +483,16 @@ isSlotCondition(node: FormKitSchemaNode): node is {
 } // this schema node would return true.
 ```
 
-</client-only>
-
 ### normalizeOptions()
 
 A function to normalize an array of objects, array of strings, or object of key-values to use an array of objects with value and label properties.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 normalizeOptions<T extends FormKitOptionsPropWithGroups>(options: T): T extends FormKitOptionsProp ? FormKitOptionsList : FormKitOptionsListWithGroups;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -591,13 +509,10 @@ Automatically rename any radio inputs.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 renamesRadios(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -611,13 +526,10 @@ Converts the options prop to usable values.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 select(node: FormKitNode): void;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -629,13 +541,10 @@ Creates an input schema with all of the wrapping base schema.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 useSchema(inputSection: FormKitSection): FormKitSchemaExtendableSection;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -651,7 +560,6 @@ useSchema(inputSection: FormKitSection): FormKitSchemaExtendableSection;
 
 General input events available to all FormKit inputs.
 
-<client-only>
 
 ```typescript
 interface FormKitBaseEvents<Props extends FormKitInputs<Props>> {
@@ -664,13 +572,10 @@ interface FormKitBaseEvents<Props extends FormKitInputs<Props>> {
 }
 ```
 
-</client-only>
-
 ### FormKitBaseProps
 
 Base props that should be applied to all FormKit inputs. These are not actual runtime props and are pulled from the context.attrs object. Many of these are just html attributes that are passed through to the input element.
 
-<client-only>
 
 ```typescript
 interface FormKitBaseProps {
@@ -694,13 +599,10 @@ interface FormKitBaseProps {
 }
 ```
 
-</client-only>
-
 ### FormKitBaseSlots
 
 Nearly all inputs in FormKit have a "base" set of slots. This is the "sandwich" around the input itself, like the wrappers, help text, error messages etc. Several other input’s slots extend this base interface.
 
-<client-only>
 
 ```typescript
 interface FormKitBaseSlots<Props extends FormKitInputs<Props>> {
@@ -721,13 +623,10 @@ interface FormKitBaseSlots<Props extends FormKitInputs<Props>> {
 }
 ```
 
-</client-only>
-
 ### FormKitBoxSlots
 
 The slots available to the radio and checkbox inputs when options are provided.
 
-<client-only>
 
 ```typescript
 interface FormKitBoxSlots<Props extends FormKitInputs<Props>> {
@@ -754,13 +653,10 @@ interface FormKitBoxSlots<Props extends FormKitInputs<Props>> {
 }
 ```
 
-</client-only>
-
 ### FormKitConditionalProps
 
 These are props that are used as conditionals in one or more inputs, and as such they need to be defined on all input types. These should all be defined explicitly as "undefined" here, and then defined as their specific type in the FormKitInputProps interface only on the inputs that use them.
 
-<client-only>
 
 ```typescript
 interface FormKitConditionalProps {
@@ -770,8 +666,6 @@ interface FormKitConditionalProps {
     options: undefined;
 }
 ```
-
-</client-only>
 
 ### FormKitEventsAsProps
 
@@ -783,7 +677,6 @@ This means we have no way to get the event names out of the interface so we cann
 
 This interface is used to manually patch that gap in the type system. These types should match up 1-1 with the events defined in FormKitBaseEvents as well as FormKitInputEvents.
 
-<client-only>
 
 ```typescript
 interface FormKitEventsAsProps {
@@ -794,13 +687,10 @@ interface FormKitEventsAsProps {
 }
 ```
 
-</client-only>
-
 ### FormKitFile
 
 A single file object in FormKit’s synthetic "FileList".
 
-<client-only>
 
 ```typescript
 interface FormKitFile {
@@ -809,13 +699,10 @@ interface FormKitFile {
 }
 ```
 
-</client-only>
-
 ### FormKitFileSlots
 
 The slots available to the file input, these extend the base slots.
 
-<client-only>
 
 ```typescript
 interface FormKitFileSlots<Props extends FormKitInputs<Props>> extends FormKitBaseSlots<Props> {
@@ -837,13 +724,10 @@ interface FormKitFileSlots<Props extends FormKitInputs<Props>> extends FormKitBa
 }
 ```
 
-</client-only>
-
 ### FormKitInputEvents
 
 Unique events emitted by each FormKit input. The shape of this interface is:
 
-<client-only>
 
 ```ts
 interface FormKitInputEvents<Props extends Inputs> {
@@ -851,11 +735,8 @@ interface FormKitInputEvents<Props extends Inputs> {
 }
 ```
 
-</client-only>
-
 All inputs will also inherit all events from FormKitBaseInputEvents.
 
-<client-only>
 
 ```typescript
 interface FormKitInputEvents<Props extends FormKitInputs<Props>> {
@@ -867,13 +748,10 @@ interface FormKitInputEvents<Props extends FormKitInputs<Props>> {
 }
 ```
 
-</client-only>
-
 ### FormKitInputEventsAsProps
 
 See the comment tome on  for why this type is necessary.
 
-<client-only>
 
 ```typescript
 interface FormKitInputEventsAsProps<Props extends FormKitInputs<Props>> {
@@ -885,13 +763,10 @@ interface FormKitInputEventsAsProps<Props extends FormKitInputs<Props>> {
 }
 ```
 
-</client-only>
-
 ### FormKitInputProps
 
 This is the base interface for providing prop definitions to the FormKit component. It is used to define the props that are available to the each component in the FormKit library by using a discriminated union type. The structure of this interface is:
 
-<client-only>
 
 ```ts
 interface FormKitInputProps {
@@ -899,13 +774,10 @@ interface FormKitInputProps {
 }
 ```
 
-</client-only>
-
 All inputs will also inherit all props from FormKitBaseInputProps.
 
 Note: It is important that all inputs provide a type and a value prop.
 
-<client-only>
 
 ```typescript
 interface FormKitInputProps<Props extends FormKitInputs<Props>> {
@@ -1037,13 +909,10 @@ interface FormKitInputProps<Props extends FormKitInputs<Props>> {
 }
 ```
 
-</client-only>
-
 ### FormKitInputSlots
 
 Slots provided by each FormKit input. The shape of this interface is:
 
-<client-only>
 
 ```ts
 interface FormKitInputSlots<Props extends Inputs> {
@@ -1051,11 +920,8 @@ interface FormKitInputSlots<Props extends Inputs> {
 }
 ```
 
-</client-only>
-
 There is no automatic inheritance of slots — each slot must be explicitly defined for each input.
 
-<client-only>
 
 ```typescript
 interface FormKitInputSlots<Props extends FormKitInputs<Props>> {
@@ -1105,13 +971,10 @@ interface FormKitInputSlots<Props extends FormKitInputs<Props>> {
 }
 ```
 
-</client-only>
-
 ### FormKitOptionsGroupItem
 
 Option groups should always be formatted as an array of objects with group and nested options
 
-<client-only>
 
 ```typescript
 interface FormKitOptionsGroupItem {
@@ -1121,13 +984,10 @@ interface FormKitOptionsGroupItem {
 }
 ```
 
-</client-only>
-
 ### FormKitOptionsGroupItemProp
 
 Option groups should always be formatted as an array of objects with group and nested options
 
-<client-only>
 
 ```typescript
 interface FormKitOptionsGroupItemProp {
@@ -1137,13 +997,10 @@ interface FormKitOptionsGroupItemProp {
 }
 ```
 
-</client-only>
-
 ### FormKitOptionsItem
 
 Options should always be formatted as an array of objects with label and value properties.
 
-<client-only>
 
 ```typescript
 interface FormKitOptionsItem<V = unknown> {
@@ -1157,13 +1014,10 @@ interface FormKitOptionsItem<V = unknown> {
 }
 ```
 
-</client-only>
-
 ### FormKitOptionsPropExtensions
 
 Allows for prop extensions to be defined by using an interface whose keys are ignored, but values are applied to a union type. This allows for any third party code to extend the options prop by using module augmentation to add new values to the union type.
 
-<client-only>
 
 ```typescript
 interface FormKitOptionsPropExtensions {
@@ -1174,15 +1028,12 @@ interface FormKitOptionsPropExtensions {
 }
 ```
 
-</client-only>
-
 ### FormKitRuntimeProps
 
 Typings for all the built in runtime props.
 
 Warning: As of writing these are only specific to Vue’s runtime prop requirements and should not be used as any kind of external API as they are subject to change.
 
-<client-only>
 
 ```typescript
 interface FormKitRuntimeProps<Props extends FormKitInputs<Props>> {
@@ -1211,13 +1062,10 @@ interface FormKitRuntimeProps<Props extends FormKitInputs<Props>> {
 }
 ```
 
-</client-only>
-
 ### FormKitSchemaExtendableSection
 
 A function that is called with an extensions argument and returns a valid schema node.
 
-<client-only>
 
 ```typescript
 interface FormKitSchemaExtendableSection {
@@ -1226,13 +1074,10 @@ interface FormKitSchemaExtendableSection {
 }
 ```
 
-</client-only>
-
 ### FormKitSection
 
 A function that when called, returns a function that can in turn be called with an extension parameter.
 
-<client-only>
 
 ```typescript
 interface FormKitSection<T = FormKitSchemaExtendableSection> {
@@ -1240,13 +1085,10 @@ interface FormKitSection<T = FormKitSchemaExtendableSection> {
 }
 ```
 
-</client-only>
-
 ### FormKitSelectSlots
 
 The slots available to the sekect input, these extend the base slots.
 
-<client-only>
 
 ```typescript
 interface FormKitSelectSlots<Props extends FormKitInputs<Props>> extends FormKitBaseSlots<Props> {
@@ -1256,13 +1098,10 @@ interface FormKitSelectSlots<Props extends FormKitInputs<Props>> extends FormKit
 }
 ```
 
-</client-only>
-
 ### FormKitSlotData
 
 The shape of the context object that is passed to each slot.
 
-<client-only>
 
 ```typescript
 interface FormKitSlotData<Props extends FormKitInputs<Props>, E extends Record<string, any> = {}> {
@@ -1270,26 +1109,20 @@ interface FormKitSlotData<Props extends FormKitInputs<Props>, E extends Record<s
 }
 ```
 
-</client-only>
-
 ### FormKitTextSlots
 
 The slots available to the FormKitText input, these extend the base slots.
 
-<client-only>
 
 ```typescript
 interface FormKitTextSlots<Props extends FormKitInputs<Props>> extends FormKitBaseSlots<Props> {
 }
 ```
 
-</client-only>
-
 ### OptionSlotData
 
 The data available to slots that have an option in scope.
 
-<client-only>
 
 ```typescript
 interface OptionSlotData<Props extends FormKitInputs<Props>> {
@@ -1297,25 +1130,19 @@ interface OptionSlotData<Props extends FormKitInputs<Props>> {
 }
 ```
 
-</client-only>
-
 ### AllReals
 
 An attempt to capture all non-undefined values. This is used to define various conditionals where undefined is not a concrete type, but all other values need to take one logical branch.
 
-<client-only>
 
 ```typescript
 export type AllReals = number | string | boolean | CallableFunction | Array<any> | null | Record<any, any>;
 ```
 
-</client-only>
-
 ### FormKitButtonSlots
 
 The slots available to the button input, these extend the base slots.
 
-<client-only>
 
 ```typescript
 export type FormKitButtonSlots<Props extends FormKitInputs<Props>> = Omit<FormKitBaseSlots<Props>, 'inner'> & {
@@ -1323,157 +1150,118 @@ export type FormKitButtonSlots<Props extends FormKitInputs<Props>> = Omit<FormKi
 };
 ```
 
-</client-only>
-
 ### FormKitEvents
 
 All FormKit events should be included for a given set of props.
 
-<client-only>
 
 ```typescript
 export type FormKitEvents<Props extends FormKitInputs<Props>> = MergedEvents<Props>;
 ```
 
-</client-only>
-
 ### FormKitFileValue
 
 A synthetic array-based "FileList".
 
-<client-only>
 
 ```typescript
 export type FormKitFileValue = FormKitFile[];
 ```
 
-</client-only>
-
 ### FormKitInputs
 
 All FormKit inputs should be included for this type.
 
-<client-only>
 
 ```typescript
 export type FormKitInputs<Props extends FormKitInputs<Props>> = MergedProps<Props>[keyof MergedProps<Props>];
 ```
 
-</client-only>
-
 ### FormKitInputSchema
 
 Either a schema node, or a function that returns a schema node.
 
-<client-only>
 
 ```typescript
 export type FormKitInputSchema = ((children?: FormKitSchemaDefinition) => FormKitSchemaNode) | FormKitSchemaNode;
 ```
 
-</client-only>
-
 ### FormKitOptionsList
 
 An array of option items.
 
-<client-only>
 
 ```typescript
 export type FormKitOptionsList = FormKitOptionsItem[];
 ```
 
-</client-only>
-
 ### FormKitOptionsListWithGroups
 
 An array of option items with a group.
 
-<client-only>
 
 ```typescript
 export type FormKitOptionsListWithGroups = Array<FormKitOptionsItem | FormKitOptionsGroupItem>;
 ```
 
-</client-only>
-
 ### FormKitOptionsListWithGroupsProp
 
 An array of option items with a group support — where the `option` of the groups can be any valid FormKitOptionsProp type.
 
-<client-only>
 
 ```typescript
 export type FormKitOptionsListWithGroupsProp = Array<FormKitOptionsItem | FormKitOptionsGroupItemProp>;
 ```
 
-</client-only>
-
 ### FormKitOptionsProp
 
 The types of options that can be passed to the options prop.
 
-<client-only>
 
 ```typescript
 export type FormKitOptionsProp = FormKitOptionsPropExtensions[keyof FormKitOptionsPropExtensions];
 ```
 
-</client-only>
-
 ### FormKitOptionsPropWithGroups
 
 The types of options that can be passed to the options prop.
 
-<client-only>
 
 ```typescript
 export type FormKitOptionsPropWithGroups = FormKitOptionsProp | FormKitOptionsListWithGroupsProp;
 ```
 
-</client-only>
-
 ### FormKitOptionsValue
 
 The proper shape of data to be passed to options prop.
 
-<client-only>
 
 ```typescript
 export type FormKitOptionsValue<Options> = Options extends FormKitOptionsProp ? Options extends Record<infer T, string> ? T : Options extends FormKitOptionsItem[] ? Options[number]['value'] : Options extends Array<infer T> ? T : unknown : unknown;
 ```
 
-</client-only>
-
 ### InputType
 
 Selects the "type" from the props if it exists, otherwise it defaults to "text".
 
-<client-only>
 
 ```typescript
 export type InputType<Props extends FormKitInputs<Props>> = Props['type'] extends string ? Props['type'] : 'text';
 ```
 
-</client-only>
-
 ### MergedEvents
 
 Merge all events into a single type. This is then used as the structure for
 
-<client-only>
 
 ```typescript
 export type MergedEvents<Props extends FormKitInputs<Props>> = InputType<Props> extends keyof FormKitInputEvents<Props> ? FormKitBaseEvents<Props> & FormKitInputEvents<Props>[InputType<Props>] : FormKitBaseEvents<Props>;
 ```
 
-</client-only>
-
 ### MergedProps
 
 A merger of input props, base props, and conditional props. This is then used as the structure for the FormKitInputs type.
 
-<client-only>
 
 ```typescript
 export type MergedProps<Props extends FormKitInputs<Props>> = {
@@ -1481,13 +1269,10 @@ export type MergedProps<Props extends FormKitInputs<Props>> = {
 };
 ```
 
-</client-only>
-
 ### PropType
 
 Extracts the type from a given prop.
 
-<client-only>
 
 ```typescript
 export type PropType<Props extends FormKitInputs<Props>, T extends keyof FormKitInputs<Props>> = Extract<FormKitInputs<Props>, {

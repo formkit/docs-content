@@ -4,8 +4,6 @@ title: formkit/addons
 
 # @formkit/addons
 
-<page-toc></page-toc>
-
 ## Introduction
 
 Common, optional, first-party add on features for FormKit.
@@ -20,13 +18,9 @@ Adds auto-animate to each input automatically:
 
 #### Signature
 
-<client-only>
-
 ```typescript
 createAutoAnimatePlugin(options?: AutoAnimateOptions, animationTargets?: Record<string, string[]>): FormKitPlugin;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -39,7 +33,6 @@ createAutoAnimatePlugin(options?: AutoAnimateOptions, animationTargets?: Record<
 
 #### Examples
 
-<client-only>
 
 ```javascript
 import { createApp } from 'vue'
@@ -65,21 +58,16 @@ createApp(app).use(plugin, defaultPlugin({
 }))
 ```
 
-</client-only>
-
 ### createAutoHeightTextareaPlugin()
 
 Creates a new auto-height textarea plugin.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 createAutoHeightTextareaPlugin(): FormKitPlugin;
 ```
-
-</client-only>
 
 #### Returns
 
@@ -91,13 +79,10 @@ Creates a new floating label plugin.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 createFloatingLabelsPlugin(FloatingLabelsOptions?: FloatingLabelsOptions): FormKitPlugin;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -113,13 +98,10 @@ Creates a new save-to-local-storage plugin.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 createLocalStoragePlugin(localStorageOptions?: LocalStorageOptions): FormKitPlugin;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -135,13 +117,10 @@ Creates a new multi-step plugin.
 
 #### Signature
 
-<client-only>
 
 ```typescript
 createMultiStepPlugin(options?: MultiStepOptions): FormKitPlugin;
 ```
-
-</client-only>
 
 #### Parameters
 
@@ -157,7 +136,6 @@ createMultiStepPlugin(options?: MultiStepOptions): FormKitPlugin;
 
 The typing for the beforeStepChange function.
 
-<client-only>
 
 ```typescript
 interface BeforeStepChange {
@@ -165,11 +143,8 @@ interface BeforeStepChange {
 }
 ```
 
-</client-only>
-
 ### BeforeStepChangeData
 
-<client-only>
 
 ```typescript
 interface BeforeStepChangeData<T = unknown> {
@@ -179,13 +154,10 @@ interface BeforeStepChangeData<T = unknown> {
 }
 ```
 
-</client-only>
-
 ### FloatingLabelsOptions
 
 The options to be passed to [createFloatingLabelsPlugin](#createfloatinglabelsplugin)
 
-<client-only>
 
 ```typescript
 interface FloatingLabelsOptions {
@@ -193,11 +165,8 @@ interface FloatingLabelsOptions {
 }
 ```
 
-</client-only>
-
 ### FormKitMultiStepSlots
 
-<client-only>
 
 ```typescript
 interface FormKitMultiStepSlots<Props extends FormKitInputs<Props>> {
@@ -222,11 +191,8 @@ interface FormKitMultiStepSlots<Props extends FormKitInputs<Props>> {
 }
 ```
 
-</client-only>
-
 ### FormKitStepSlots
 
-<client-only>
 
 ```typescript
 interface FormKitStepSlots<Props extends FormKitInputs<Props>> {
@@ -238,13 +204,10 @@ interface FormKitStepSlots<Props extends FormKitInputs<Props>> {
 }
 ```
 
-</client-only>
-
 ### LocalStorageOptions
 
 The options to be passed to [createLocalStoragePlugin](#createlocalstorageplugin)
 
-<client-only>
 
 ```typescript
 interface LocalStorageOptions {
@@ -258,11 +221,8 @@ interface LocalStorageOptions {
 }
 ```
 
-</client-only>
-
 ### MultiStepHandlers
 
-<client-only>
 
 ```typescript
 interface MultiStepHandlers {
@@ -273,13 +233,10 @@ interface MultiStepHandlers {
 }
 ```
 
-</client-only>
-
 ### MultiStepNodeAdditions
 
 Additional arguments that are added to the FormKitNode of a multistep input.
 
-<client-only>
 
 ```typescript
 interface MultiStepNodeAdditions {
@@ -289,13 +246,10 @@ interface MultiStepNodeAdditions {
 }
 ```
 
-</client-only>
-
 ### MultiStepOptions
 
 The options to be passed to [createMultiStepPlugin](#createmultistepplugin)
 
-<client-only>
 
 ```typescript
 interface MultiStepOptions {
@@ -305,11 +259,8 @@ interface MultiStepOptions {
 }
 ```
 
-</client-only>
-
 ### MultiStepSlotData
 
-<client-only>
 
 ```typescript
 interface MultiStepSlotData {
@@ -325,11 +276,8 @@ interface MultiStepSlotData {
 }
 ```
 
-</client-only>
-
 ### StepHandlers
 
-<client-only>
 
 ```typescript
 interface StepHandlers {
@@ -339,13 +287,10 @@ interface StepHandlers {
 }
 ```
 
-</client-only>
-
 ### StepSlotData
 
 Slot data unique to the step input.
 
-<client-only>
 
 ```typescript
 interface StepSlotData {
@@ -373,25 +318,19 @@ interface StepSlotData {
 }
 ```
 
-</client-only>
-
 ### FormKitMultiStepNode
 
 The node type that is augmented with next and previous and goTo functions.
 
-<client-only>
 
 ```typescript
 export type FormKitMultiStepNode = FormKitNode & MultiStepNodeAdditions;
 ```
 
-</client-only>
-
 ### FormKitMultiStepSlotData
 
 The typing for the slot data for a FormKit multi-step input.
 
-<client-only>
 
 ```typescript
 export type FormKitMultiStepSlotData = FormKitFrameworkContext<Record<string, any>> & StepSlotData;

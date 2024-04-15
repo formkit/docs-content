@@ -4,7 +4,6 @@ title: formkit/common
 
 # @formkit/common
 
-<page-toc></page-toc>
 
 ## TypeScript
 
@@ -12,7 +11,6 @@ title: formkit/common
 
 The full library of available FormKit inputs.
 
-<client-only>
 
 ```typescript
 interface FormKitLibrary {
@@ -20,13 +18,10 @@ interface FormKitLibrary {
 }
 ```
 
-</client-only>
-
 ### FormKitTypeDefinition
 
 Definition of a library item — when registering a new library item, these are the required and available properties.
 
-<client-only>
 
 ```typescript
 type FormKitTypeDefinition = {
