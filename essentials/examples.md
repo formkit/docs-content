@@ -127,6 +127,14 @@ title: "Scroll to the first validation or error on the form."
 A plugin that automatically scrolls to the first error on the page on submit or when backend errors are added.
 ::
 
+::ExampleCard
+---
+href: "https://formkit.link/debcb256ce9bae22bc1c41e8c0ee0d9f"
+title: "Adds attributes to prevent autofill from password managers 1Password and LastPass"
+---
+A plugin that adds the attributes <code>data-1p-ignore</code> and <code>data-lpignore</code> to prevent autofill (you of course can add these yourself; this plugin automatically applies them to every email and password input).
+::
+
 ## Inputs
 
 ::ExampleCard
