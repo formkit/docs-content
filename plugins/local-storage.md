@@ -28,6 +28,7 @@ Once you've installed the addons package, you'll need to register the plugin wit
 - `debounce` - The debounce to apply to saving data to localStorage. Defaults to `200`ms
 - `beforeSave`: — An optional async callback that recieves the form data. Allows modification of form data before saving to localStorage.
 - `beforeLoad`: — An optional async callback that recives the form data. Allows modification of the localStorage data before applying to the form.
+- `clearOnSubmit`: — An optional config to control the clearing of local storage on submission of the form. Defaults to `true`.
 
 ```js
 // formkit.config.js
