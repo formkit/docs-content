@@ -150,7 +150,7 @@ data: [
     type: "String",
     default: "undefined",
     description:
-      "The `on` and `off` value labels will always default to being displayed outside and to the right of the toggle. Other accepted values include `inner` to set the value labels inside of the toggle, and `hidden` which hides the value labels.",
+      "The <code>on</code> and <code>off</code> value labels will always default to being displayed outside and to the right of the toggle. Other accepted values include <code>inner</code> to set the value labels inside of the toggle, and <code>hidden</code> which hides the value labels.",
   },
   {
     prop: "value-label-color-off",
@@ -192,28 +192,28 @@ data: [
     type: "String",
     default: "undefined",
     description:
-      "The color the icon should be set to when `toggle-icon` prop is set and the toggle is unchecked.",
+      "The color the icon should be set to when <code>toggle-icon</code> prop is set and the toggle is unchecked.",
   },
   {
     prop: "icon-color-on",
     type: "String",
     default: "undefined",
     description:
-      "The color the icon should be set to when `toggle-icon` prop is set and the toggle is checked.",
+      "The color the icon should be set to when <code>toggle-icon</code> prop is set and the toggle is checked.",
   },
   {
     prop: "track-color-off",
     type: "String",
     default: "undefined",
     description:
-      "Sets the background color of the `track` section when the toggle is unchecked.",
+      "Sets the background color of the <code>track</code> section when the toggle is unchecked.",
   },
   {
     prop: "track-color-on",
     type: "String",
     default: "undefined",
     description:
-      "Sets the background color of the `track` section when toggle is checked.",
+      "Sets the background color of the <code>track</code> section when toggle is checked.",
   },
 ]
 ---

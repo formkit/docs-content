@@ -166,7 +166,7 @@ data: [
     prop: "inline",
     type: "boolean",
     default: "false",
-    description: "When set to <code>true</code> the `colorpicker` will render its panel as an inline element rather than as a pop-over.",
+    description: "When set to <code>true</code> the <code>colorpicker</code> will render its panel as an inline element rather than as a pop-over.",
   },
   {
     prop: "options",

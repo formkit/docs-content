@@ -514,7 +514,7 @@ data: [
     prop: "disabled-days",
     type: "function",
     default: "min/max date logic",
-    description: "A function that is passed the core node and a `Date` object and must return if the date is disabled (`true` is disabled)."
+    description: "A function that is passed the core node and a <code>Date</code> object and must return if the date is disabled (<code>true</code> is disabled)."
   },
   {
     prop: "format",
@@ -574,25 +574,25 @@ data: [
     prop: "sequence",
     type: "array",
     default: "['day']",
-    description: "The sequence of panels to walk a user through when they open the datepicker calendar view. Options are `year`, `month`, `day`, `time`."
+    description: "The sequence of panels to walk a user through when they open the datepicker calendar view. Options are <code>year</code>, <code>month</code>, <code>day</code>, <code>time</code>."
   },
   {
     prop: "value-format",
     type: "string/object",
     default: "ISO8601",
-    description: "The format to record as the value of the input. This can be composed with any token format, date style, or `ISO8601`."
+    description: "The format to record as the value of the input. This can be composed with any token format, date style, or <code>ISO8601</code>."
   },
   {
     prop: "value-locale",
     type: "string",
-    default: "`node.props.locale`",
-    description: "The locale to use for the `valueFormat`. When using format tokens in the `valueFormat` prop it is highly recommend to set an explicit `valueFormat`."
+    default: "<code>node.props.locale</code>",
+    description: "The locale to use for the <code>valueFormat</code>. When using format tokens in the <code>valueFormat</code> prop it is highly recommend to set an explicit <code>valueFormat</code>."
   },
   {
     prop: "week-start",
     type: "number",
     default: "0",
-    description: "The day of the week to start the `day` panel’s calendar on. 0-6 where 0 = Sunday and 6 = Saturday."
+    description: "The day of the week to start the <code>day</code> panel’s calendar on. 0-6 where 0 = Sunday and 6 = Saturday."
   },
   {
     prop: "weekday-format",
@@ -604,7 +604,7 @@ data: [
     prop: "year-format",
     type: "string",
     default: "YYYY",
-    description: "The date format token used to render the years in the `year` panel."
+    description: "The date format token used to render the years in the <code>year</code> panel."
   },
   {
     prop: "popover",

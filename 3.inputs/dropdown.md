@@ -322,7 +322,7 @@ data: [
     "prop": "load-on-scroll",
     "type": "boolean",
     "default": "false",
-    "description": "When set to `true`, the dropdown will try loading more options based on the end-user`s scroll position"
+    "description": "When set to <code>true</code>, the dropdown will try loading more options based on the end-user`s scroll position"
   },
   {
     "prop": "option-loader",
@@ -340,7 +340,7 @@ data: [
     "prop": "selection-appearance",
     type: "string",
     default: "truncate",
-    "description": "For multi-select dropdowns, this prop allows you to customize the look and feel of the selected options. Possible values are `truncate` (the default) or `tags`."
+    "description": "For multi-select dropdowns, this prop allows you to customize the look and feel of the selected options. Possible values are <code>truncate</code> (the default) or <code>tags</code>."
   },
   {
     "prop": "selection-removable",
@@ -352,31 +352,31 @@ data: [
     "prop": "open-on-remove",
     type: "boolean",
     default: "false",
-    "description": "When the `selection-removable` prop is set to `true`, the dropdown will not open after the selected value is removed. You can change this behavior by setting the `open-on-remove` prop to `true`."
+    "description": "When the <code>selection-removable</code> prop is set to <code>true</code>, the dropdown will not open after the selected value is removed. You can change this behavior by setting the <code>open-on-remove</code> prop to <code>true</code>."
   },
   {
     "prop": "close-on-select",
     type: "boolean",
     default: "false",
-    "description": "When the `multiple` prop is set, the dropdown will not close after an option is selected. You can change this behavior by setting the `close-on-select` prop to `true`."
+    "description": "When the <code>multiple</code> prop is set, the dropdown will not close after an option is selected. You can change this behavior by setting the <code>close-on-select</code> prop to <code>true</code>."
   },
   {
     "prop": "open-on-focus",
     type: "boolean",
     default: "false",
-    "description": "If you would like expand the listbox as soon as the dropdown input is focused, you can use the `open-on-focus` prop."
+    "description": "If you would like expand the listbox as soon as the dropdown input is focused, you can use the <code>open-on-focus</code> prop."
   },
   {
     "prop": "options-appearance",
     type: "string",
     default: "undefined",
-    "description": "For multi-select dropdowns, this prop allows you to customize the look and feel of the selected options. Possible values are `default` (the default) or `checkbox`."
+    "description": "For multi-select dropdowns, this prop allows you to customize the look and feel of the selected options. Possible values are <code>default</code> (the default) or <code>checkbox</code>."
   },
   {
     "prop": "multiple",
     type: "boolean",
     default: "false",
-    "description": "When set to `true`, the dropdown will allow the user to select multiple options."
+    "description": "When set to <code>true</code>, the dropdown will allow the user to select multiple options."
   },
   {
     "prop": "behavior",
@@ -394,19 +394,19 @@ data: [
     name: "load-on-created",
     type: "boolean",
     default: "false",
-    "description": "When set to `true`, the dropdown will load the options when the node is created."
+    "description": "When set to <code>true</code>, the dropdown will load the options when the node is created."
   },
   {
     "name": "max",
     "type": "number | string",
     "default": "undefined",
-    "description": "If you would like to limit the number of options that can be selected, you can use the `max` prop (applies only to multi-select)."
+    "description": "If you would like to limit the number of options that can be selected, you can use the <code>max</code> prop (applies only to multi-select)."
   },
   {
     "name": "deselect",
     "type": "boolean",
     "default": "true",
-    "description": "When set to `false`, the end-user cannot deselect a selected option form the listbox."
+    "description": "When set to <code>false</code>, the end-user cannot deselect a selected option form the listbox."
   },
   {
     prop: "popover",

@@ -391,7 +391,7 @@ data: [
     prop: "load-on-scroll",
     type: "boolean",
     default: "false",
-    description: "When set to `true`, the autocomplete will try loading more options based on the end-user`s scroll position",
+    description: "When set to <code>true</code>, the autocomplete will try loading more options based on the end-user`s scroll position",
   },
   {
     prop: "selection-appearance",
@@ -439,7 +439,7 @@ data: [
     "prop": "open-on-remove",
     type: "boolean",
     default: "false",
-    "description": "When the `selection-removable` prop is set to `true`, the autocomplete will not open after the selected value is removed. You can change this behavior by setting the `open-on-remove` prop to `true`."
+    "description": "When the <code>selection-removable</code> prop is set to <code>true</code>, the autocomplete will not open after the selected value is removed. You can change this behavior by setting the <code>open-on-remove</code> prop to <code>true</code>."
   },
   {
     "prop": "open-on-focus",
@@ -450,7 +450,7 @@ data: [
     "prop": "options-appearance",
     type: "string",
     default: "undefined",
-    "description": "For multi-select autocompletes, this prop allows you to customize the look and feel of the selected options. Possible values are `default` (the default) or `checkbox`."
+    "description": "For multi-select autocompletes, this prop allows you to customize the look and feel of the selected options. Possible values are <code>default</code> (the default) or <code>checkbox</code>."
   },
   {
     "prop": "always-load-on-open",
@@ -462,19 +462,19 @@ data: [
     name: "load-on-created",
     type: "boolean",
     default: "false",
-    "description": "When set to `true`, the autocomplete will load the options when the node is created."
+    "description": "When set to <code>true</code>, the autocomplete will load the options when the node is created."
   },
   {
     name: "clear-search-on-open",
     type: "boolean",
     default: "false",
-    "description": "When set to `true`, the search input will be cleared when the listbox is opened."
+    "description": "When set to <code>true</code>, the search input will be cleared when the listbox is opened."
   },
   {
     "name": "max",
     "type": "number | string",
     "default": "undefined",
-    "description": "If you would like to limit the number of options that can be selected, you can use the `max` prop (applies only to multi-select)."
+    "description": "If you would like to limit the number of options that can be selected, you can use the <code>max</code> prop (applies only to multi-select)."
   },
   {
     prop: "popover",

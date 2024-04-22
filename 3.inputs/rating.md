@@ -121,7 +121,7 @@ data: [
     type: "Number",
     default: "1",
     description:
-      "The step or increment that should be applied to the `rating` icons. Accepted values are between `0.01` and `1`",
+      "The step or increment that should be applied to the <code>rating</code> icons. Accepted values are between <code>0.01</code> and <code>1</code>",
   },
   {
     prop: "hover-highlight",
