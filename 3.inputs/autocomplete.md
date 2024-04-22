@@ -3,6 +3,7 @@ title: Autocomplete Input
 description: A Pro input that allows users to search and select from a customizable options list. Supports single and multi-value selections.
 navigation:
   title: 'Autocomplete'
+  pro: true
 ---
 
 ::InputPageHero

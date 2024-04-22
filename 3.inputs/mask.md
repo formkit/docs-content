@@ -3,6 +3,7 @@ title: Mask Input
 description: An input that formats text to a given pattern as a user types.
 navigation:
   title: 'Mask'
+  pro: true
 ---
 
 ::InputPageHero

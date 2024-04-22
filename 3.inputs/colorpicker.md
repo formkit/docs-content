@@ -3,6 +3,7 @@ title: Colorpicker Input
 description: A colorpicker with support for alpha transparency, pre-loaded swatches, and multiple color output formats.
 navigation:
   title: 'Colorpicker'
+  pro: true
 ---
 
 ::InputPageHero

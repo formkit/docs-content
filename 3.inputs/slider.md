@@ -3,6 +3,7 @@ title: Slider Input
 description: An advanced range input with support for multiple values.
 navigation:
   title: 'Slider'
+  pro: true
 ---
 
 ::InputPageHero

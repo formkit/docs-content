@@ -3,6 +3,7 @@ title: Rating Input
 description: A Pro input that allows users to provide feedback based on a numeric scale represented by icons/images.
 navigation:
   title: 'Rating'
+  pro: true
 ---
 
 ::InputPageHero
