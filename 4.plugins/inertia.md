@@ -1,6 +1,8 @@
 ---
 title: Inertia Plugin
 description: A plugin for integrating FormKit with Laravel Inertia.
+navigation: 
+  new: true
 ---
 
 # Inertia Plugin
