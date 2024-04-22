@@ -1,34 +1,22 @@
 ---
-title: Integrating FormKit with Laravel 9 — Streamlining Form Creation and Validation
+title: Integrating FormKit with Laravel 10 — Streamlining Form Creation and Validation
 description: FormKit and Laravel are both powerful tools for building web applications, but they can be even more effective when used together.
 navigation: 
   title: "Integrating with Laravel 9"
   new: true
 ---
 
-# Integrating FormKit with Laravel 9: Streamlining form creation and validation
+# Laravel with FormKit
 
 ## Introduction
 
 FormKit and Laravel are both powerful tools for building web applications — and they're even more effective when used together.
 
-By integrating FormKit with Laravel, developers can streamline the form creation and validation process and take advantage of the benefits of both tools. In this article, we will explore how to integrate FormKit with Laravel 9, — covering everything you need to get started — and concluding with a plugin you can use in your own projects for effortless integration.
+By integrating FormKit with Laravel, developers can streamline the form creation and validation process and take advantage of the benefits of both tools. In this guide, we will explore how to integrate FormKit with Laravel 10, — covering everything you need to get started — and concluding with a plugin you can use in your own projects for effortless integration.
 
-## Why using FormKit will speed up your development
+## Installing Laravel 10 with Laravel Sail
 
-Witing our own components will work for a smaller form — but without a tremendous amount of manual effort it is difficult to fully meet the requirements of a complex web application. Here are a few reasons why using FormKit will help us build better forms:
-
-1. **Time-saving:** FormKit provides a simple, consistent, and easy-to-use API that allows you to quickly create and manage forms, saving us time and effort.
-2. **Accessibility:** FormKit has accessibility as a first concern and outputs an accessible DOM structure out-of the-box.
-3. **Value handling:** FormKit collects the values from child inputs to their parents automatically, making it data-collection effortless when submitting our form.
-4. **Error handling:** FormKit automatically handles front-end form validation and error messages, making it easy to ensure that our form data is accurate and the experience is user-friendly.
-5. **Customization:** FormKit allows us to extensively customize the look and feel of our forms, including adding arbitrary CSS classes and attributes at any depth of component markup.
-
-So let's walk through how to setup Laravel 9 and FormKit to together.
-
-## Installing Laravel 9 with Laravel Sail
-
-Laravel Sail is a light-weight command-line interface for interacting with Laravel's default Docker configuration. It allows us to spin up a local development environment with minimal setup. To install Laravel 9 with Laravel Sail, we will need to have Docker and Docker Compose installed on our system.
+Laravel Sail is a light-weight command-line interface for interacting with Laravel's default Docker configuration. It allows us to spin up a local development environment with minimal setup. To install Laravel 10 with Laravel Sail, we will need to have Docker and Docker Compose installed on our system.
 
 We can create a new Laravel Sail application by running the following command, where `laravel-formkit` is the name of our app:
 
@@ -52,20 +40,22 @@ This command will start up the Docker containers for our project and configure t
 
 Once the environment is up and running we can access our application in a browser by visiting `http://localhost`. For management of our Laravel project we can run any command inside the application's Docker container by using `./vendor/bin/sail` followed by the command we want to run.
 
-## Adding Vue.js with Laravel Breeze to a Laravel 9 Application
+## Adding Vue.js with Laravel Breeze to a Laravel 10 Application
 
-Laravel Breeze is a simple, minimal implementation of all of Laravel's authentication features. This includes login, registration, password reset, email verification, and more. Laravel Breeze also includes support for Vue.js out-of-the-box, making it simple to add authentication to our Laravel 9 applications.
+Laravel Breeze is a simple, minimal implementation of all of Laravel's authentication features. This includes login, registration, password reset, email verification, and more. Laravel Breeze also includes support for Vue.js out-of-the-box, making it simple to add authentication to our Laravel 10 applications.
 
-To add Laravel Breeze to our Laravel 9 application we need to install it using Composer:
+To add Laravel Breeze to our Laravel 10 application we need to install it using Composer:
 
 ```bash
 ./vendor/bin/sail composer require laravel/breeze --dev
 ```
 
-Next, we need to run the `breeze:install vue` command:
+Next, we need to run the `breeze:install` command and choose the vue frontend stack:
 
 ```bash
-./vendor/bin/sail artisan breeze:install vue
+./vendor/bin/sail artisan breeze:install
+
+./vendor/bin/sail artisan migrate
 ```
 
 This command will install the necessary views, routes, and controllers for authentication, as well as the Vue.js components that make up the default front-end of the Laravel authentication system.
@@ -81,7 +71,7 @@ npm install && npm run dev
 
 Now when we access the login page by at `http://localhost/login` or the registration page by at `http://localhost/register` we should see our application's Vue.js front-end.
 
-By adding Laravel Breeze to our Laravel 9 application we've quickly added authentication functionality to our application and we are set up to Vue.js for our applicaiton's front-end.
+By adding Laravel Breeze to our Laravel 10 application we've quickly added authentication functionality to our application and we are set up to Vue.js for our applicaiton's front-end.
 
 ## Adding FormKit to Vue.js: Enhancing Form Functionality
 
@@ -297,54 +287,37 @@ The process of integrating FormKit with Laravel is straightforward and it will h
 
 While it's great to understand how we can integrate FormKit with Inertia — it would still be difficult to do manually for every form in a larger project. It would be great if we could encapsulate this setup in a plugin and apply it across our entire project.
 
-Fortunately there is a [3rd-party plugin](https://github.com/GustavoFenilli/formkit-addon-inertia) (maintained by a FormKit team member) that integrates FormKit tightly with Inertia.
+Fortunately we already created a [plugin](/plugins/inertia) that integrates FormKit tightly with Inertia.
 
 First, we need to install it:
 
 ```bash
-npm install formkit-addon-inertia
+npm install @formkit/inertia
 ```
 
-Next, we need to add the plugin to our FormKit configuration by extending the `defaultConfig`:
+Next, we need to import and create a form helper using `useForm`:
 
-```js
-// app.js
+```ts
+import { useForm } from '@formkit/inertia'
 
-// we import the new InertiaPlugin here
-import { plugin as inertiaPlugin } from 'formkit-addon-inertia'
+const form = useForm(initialState)
+```
 
-return (
-  createApp({ render: () => h(App, props) })
-    .use(plugin)
-    .use(ZiggyVue, Ziggy)
-    // here we are extending the defaultConfig with out configuration
-    .use(
-      FormKitPlugin,
-      defaultConfig({
-        plugins: [inertiaPlugin],
-      })
-    )
-    .mount(el)
-)
+We also need to add the plugin that it returns to the FormKit `form` component:
+
+```html
+<FormKit type="form" @submit="submit" submit-label="Log in" :plugins="[form.plugin]">
+  <!-- The rest of the form -->
+</FormKit>
 ```
 
 Lastly, we go back to our submit function and update it:
 
 ```js
-const submit = (fields, node) => {
-  // we use our new context.inertia object from node added by the plugin instead.
-  // When using the plugin all of the disabled, loading and error states are handled for us automatically.
-  node.context.inertia.post(route('login'), fields, {
-    onFinish: (_, node) => {
-      // Our FormKit node is passed to our Inerta callbacks so that we can
-      // do clean up such as reseting the form after submit.
-      node.reset()
-    },
-  })
-}
+const submit = form.post('/login')
 ```
 
-With all of our previous logic encapsulated into a plugin it is now trivial to add FormKit to our project. Adding FormKit to a Laravel 9 application using Breeze with Vue.js and Inertia provides both developers and application end-users with a better overall form experience.
+With all of our previous logic encapsulated into a plugin it is now trivial to add FormKit to our project. Adding FormKit to a Laravel 10 application using Breeze with Vue.js and Inertia provides both developers and application end-users with a better overall form experience.
 
 ::Cta
 ---
