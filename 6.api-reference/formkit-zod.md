@@ -7,7 +7,7 @@ title: formkit/zod
 
 ## Introduction
 
-The first-party zod package/plugin for FormKit. Read the [documentation](https://formkit.com/essentials/zod) for usage instructions.
+The first-party zod package/plugin for FormKit. Read the [documentation](/plugins/zod) for usage instructions.
 
 ## Functions
 
