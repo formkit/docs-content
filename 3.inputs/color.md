@@ -5,11 +5,7 @@ navigation:
   title: 'Color'
 ---
 
-::InputPageHero
----
-type: "Color"
----
-::
+:InputPageHero
 
 The `color` input uses HTML's [native color picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color) to allow users to easily select a hexadecimal color.
 
@@ -57,8 +53,32 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 :AccessibilityTable
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["enter"],
+    description: "Opens the browser color picker panel when input is focused. Confirms color selection when color picker is focused.",
+  },
+  {
+    event: ["space"],
+    description: "Opens the browser color picker panel when input is focused.",
+  },
+  {
+    event: ["esc"],
+    description: "Closes the browser color picker panel.",
+  },
+  {
+    event: ["up", "down", "left", "right"],
+    separator: '',
+    description: "Adjusts selection of UI elements in browser color picker panel.",
+  },
+]
+---
+::

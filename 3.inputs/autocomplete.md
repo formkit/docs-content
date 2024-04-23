@@ -6,11 +6,7 @@ navigation:
   pro: true
 ---
 
-::InputPageHero
----
-type: "Autocomplete"
----
-::
+:InputPageHero
 
 :ProInstallSnippet
 
@@ -988,55 +984,154 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 ::AccessibilityTable
 ---
 data: [
   {
     sectionKey: "input",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
-      { attribute: "role", value: "combobox", description: "Indicates to assistive technologies that this element functions as a combobox." },
-      { attribute: "readonly", description: "Restrict user edits, ensuring data integrity and a controlled, informative user experience." },
-      { attribute: "aria-autocomplete", value: "list", description: "Guides input suggestions, presenting a collection of values that could complete the user's input." },
-      { attribute: "aria-activedescendant", description: "Manage focus to the current active descendent element." },
-      { attribute: "aria-expanded", description: "Conveys the expandable state when the element is in focus." },
-      { attribute: "aria-controls", description: "Associates the listbox element, with this element." },
-    ]
+      {
+        attribute: "tabindex",
+        value: "-1 or 0",
+        description:
+          "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled.",
+      },
+      {
+        attribute: "role",
+        value: "combobox",
+        description:
+          "Indicates to assistive technologies that this element functions as a combobox.",
+      },
+      {
+        attribute: "readonly",
+        description:
+          "Restrict user edits, ensuring data integrity and a controlled, informative user experience.",
+      },
+      {
+        attribute: "aria-autocomplete",
+        value: "list",
+        description:
+          "Guides input suggestions, presenting a collection of values that could complete the user's input.",
+      },
+      {
+        attribute: "aria-activedescendant",
+        description: "Manage focus to the current active descendent element.",
+      },
+      {
+        attribute: "aria-expanded",
+        description:
+          "Conveys the expandable state when the element is in focus.",
+      },
+      {
+        attribute: "aria-controls",
+        description: "Associates the listbox element, with this element.",
+      },
+    ],
   },
   {
     sectionKey: "listboxButton",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
-      { attribute: "role", value: "button", description: "Indicates to assistive technologies that this element functions as a button." },
-      { attribute: "aria-haspopup", value: "true", description: "Signals that an element triggers a pop-up or menu" },
-      { attribute: "aria-expanded", description: "Conveys the expandable state when the element is in focus." },
-      { attribute: "aria-controls", description: "Associates the listbox element, with this element." },
-      { attribute: "aria-disabled", description: "Communicates the disabled state when the input is disabled." },
-    ]
+      {
+        attribute: "tabindex",
+        value: "-1 or 0",
+        description:
+          "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled.",
+      },
+      {
+        attribute: "role",
+        value: "button",
+        description:
+          "Indicates to assistive technologies that this element functions as a button.",
+      },
+      {
+        attribute: "aria-haspopup",
+        value: "true",
+        description: "Signals that an element triggers a pop-up or menu",
+      },
+      {
+        attribute: "aria-expanded",
+        description:
+          "Conveys the expandable state when the element is in focus.",
+      },
+      {
+        attribute: "aria-controls",
+        description: "Associates the listbox element, with this element.",
+      },
+      {
+        attribute: "aria-disabled",
+        description:
+          "Communicates the disabled state when the input is disabled.",
+      },
+    ],
   },
   {
     sectionKey: "selectionWrapper",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." }, 
-    ]
+      {
+        attribute: "tabindex",
+        value: "-1 or 0",
+        description:
+          "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled.",
+      },
+    ],
   },
   {
     sectionKey: "selections",
     attributes: [
-      { attribute: "aria-live", value: "polite", description: "Communicates dynamic content changes when selections are on the screen." }, 
-    ]
+      {
+        attribute: "aria-live",
+        value: "polite",
+        description:
+          "Communicates dynamic content changes when selections are on the screen.",
+      },
+    ],
   },
   {
     sectionKey: "removeSelection",
     attributes: [
-      { attribute: "tabindex", value: "-1", description: "Removes the prioritization of keyboard focus on this element." },
-      { attribute: "aria-controls", description: "Associates the input element, with this element." },
-    ]
-  }
+      {
+        attribute: "tabindex",
+        value: "-1",
+        description:
+          "Removes the prioritization of keyboard focus on this element.",
+      },
+      {
+        attribute: "aria-controls",
+        description: "Associates the input element, with this element.",
+      },
+    ],
+  },
 ]
 ---
 ::
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["enter"],
+    description: "Opens the listbox when the input is focused. Selects an item when a list item is focused",
+  },
+  {
+    event: ["space"],
+    description: "Opens the listbox when the input is focused. Selects an item when a list item is focused",
+  },
+  {
+    event: ["esc"],
+    description: "Closes the listbox when the input is focused.",
+  },
+  {
+    event: ["up"],
+    description: "Navigates to previous list item in list box. Closes listbox if most-previous item is selected",
+  },
+  {
+    event: ["down"],
+    description: "Opens the listbox when input is focused. Navigates to next list item in list box.",
+  }
+]
+---
+::

@@ -5,11 +5,7 @@ navigation:
   title: 'Date'
 ---
 
-::InputPageHero
----
-type: "Date"
----
-::
+:InputPageHero
 
 The `date` input uses HTML's [native date picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date) to allow users to easily select a date.
 
@@ -79,8 +75,32 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 :AccessibilityTable
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["enter"],
+    description: "Opens the browser date picker panel when input is focused. Confirms date selection when date picker is focused.",
+  },
+  {
+    event: ["space"],
+    description: "Opens the browser date picker panel when input is focused.",
+  },
+  {
+    event: ["esc"],
+    description: "Closes the browser date picker panel.",
+  },
+  {
+    event: ["up", "down", "left", "right"],
+    separator: '',
+    description: "Adjusts selection of UI elements in browser date picker panel.",
+  },
+]
+---
+::

@@ -5,11 +5,7 @@ navigation:
   title: 'Radio'
 ---
 
-::InputPageHero
----
-type: "Radio"
----
-::
+:InputPageHero
 
 The `radio` input uses HTML's [native radio inputs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio) to allow a user to select one value from a series of options. The `options` prop is required for radio inputs and can be provided in 3 ways:
 
@@ -217,6 +213,8 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 ### Single radio
 
 ::AccessibilityTable
@@ -262,7 +260,7 @@ data: [
 data: [
   {
     event: ["space"],
-    description: "Enable radio toggling whenever the input is in focus."
+    description: "Selects the currently focused radio input."
   }
 ]
 ---

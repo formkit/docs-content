@@ -5,11 +5,7 @@ navigation:
   title: 'Month'
 ---
 
-::InputPageHero
----
-type: "Month"
----
-::
+:InputPageHero
 
 The `month` input uses HTML's [native month picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/month) to allow users to easily select a month.
 
@@ -74,8 +70,32 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 :AccessibilityTable
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["enter"],
+    description: "Opens the browser month picker panel when input is focused. Confirms month selection when month picker is focused.",
+  },
+  {
+    event: ["space"],
+    description: "Opens the browser month picker panel when input is focused.",
+  },
+  {
+    event: ["esc"],
+    description: "Closes the browser month picker panel.",
+  },
+  {
+    event: ["up", "down", "left", "right"],
+    separator: '',
+    description: "Adjusts selection of UI elements in browser month picker panel.",
+  },
+]
+---
+::

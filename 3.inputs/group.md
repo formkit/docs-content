@@ -5,10 +5,14 @@ navigation:
   title: 'Group'
 ---
 
-::InputPageHero
+:InputPageHero
+
+::Callout
 ---
-type: "Group"
+type: "warning"
+label: "Renderless Input"
 ---
+The `group` input does not render any output to the DOM. It is used exclusively for structuring data in your form. It is equivalent to an object in JavaScript.
 ::
 
 The `group` input allows you to structure data from child inputs as an object. The group itself outputs no markup by default and can be used in conjunction with any other type of input — including nested groups and [lists](/inputs/list).
@@ -69,11 +73,5 @@ without: ['help', 'label', 'prefix-icon', 'suffix-icon', 'validation', 'validati
 
 ## Sections
 
-::ReferenceTable
----
-type: "sectionKeys"
-primary: "section-key"
-without: ['outer','prefix', 'prefixIcon', 'suffix', 'suffixIcon', 'label','inner','input','help','messages','message']
----
-::
+The `group` input renders no output to the DOM so there are no sections to display. The `group` input is a renderless input that is used exclusively for structuring data in your form. It is equivalent to an object in JavaScript.
 

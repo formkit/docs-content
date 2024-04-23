@@ -5,11 +5,7 @@ navigation:
   title: 'Time'
 ---
 
-::InputPageHero
----
-type: "Time"
----
-::
+:InputPageHero
 
 The `time` input uses HTML's [native time input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/time). It allows a user to enter a single line of time.
 
@@ -71,8 +67,32 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 :AccessibilityTable
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["enter"],
+    description: "Opens the browser time picker panel when input is focused. Confirms time selection when time picker is focused.",
+  },
+  {
+    event: ["space"],
+    description: "Opens the browser time picker panel when input is focused.",
+  },
+  {
+    event: ["esc"],
+    description: "Closes the browser time picker panel.",
+  },
+  {
+    event: ["up", "down", "left", "right"],
+    separator: '',
+    description: "Adjusts selection of UI elements in browser time picker panel.",
+  },
+]
+---
+::

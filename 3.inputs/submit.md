@@ -5,11 +5,7 @@ navigation:
   title: 'Submit'
 ---
 
-::InputPageHero
----
-type: "Submit"
----
-::
+:InputPageHero
 
 The `submit` input uses HTML's [native button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button). The `label` prop is used to populate the text of the button — or alternatively you can use the default slot.
 
@@ -176,6 +172,8 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 ::AccessibilityTable
 ---
 without: ["label", "input"]
@@ -184,4 +182,13 @@ without: ["label", "input"]
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["enter"],
+    description: "Invokes the submit input when focused.",
+  },
+]
+---
+::

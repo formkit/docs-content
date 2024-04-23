@@ -6,11 +6,7 @@ navigation:
   pro: true
 ---
 
-::InputPageHero
----
-type: "Slider"
----
-::
+:InputPageHero
 
 :ProInstallSnippet
 
@@ -649,31 +645,33 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 ::AccessibilityTable
 ---
 data: [
   {
     sectionKey: "maxValue",
     attributes: [
-      { attribute: "tabindex", value: "-1", description: "Prioritizes keyboard focus order by setting it to -1 when input is disabled." },
+      { attribute: "tabindex", value: "-1", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when input is disabled." },
     ]
   },
   {
     sectionKey: "minValue",
     attributes: [
-      { attribute: "tabindex", value: "-1", description: "Prioritizes keyboard focus order by setting it to -1 when input is disabled." },
+      { attribute: "tabindex", value: "-1", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when input is disabled." },
     ]
   },
   {
     sectionKey: "handleMax",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when input is disabled and 0 when its not." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when input is disabled and <code>0</code> when its not." },
     ]
   },
   {
     sectionKey: "handleMin",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when input is disabled and 0 when its not." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when input is disabled and <code>0</code> when its not." },
     ]
   },
 ]
@@ -682,4 +680,57 @@ data: [
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["up"],
+    description: "Adjust the input value of the active handle up by the current <code>step</step>.",
+  },
+  {
+    event: ["right"],
+    description: "Adjust the input value of the active handle up by the current <code>step</step>.",
+  },
+  {
+    event: ["left"],
+    description: "Adjust the input value of the active handle down by the current <code>step</step>.",
+  },
+  {
+    event: ["down"],
+    description: "Adjust the input value of the active handle down by the current <code>step</step>.",
+  },
+  {
+    event: ["shift", "up"],
+    description: "Adjust the input value of the active handle up by 10x the current <code>step</step>.",
+  },
+  {
+    event: ["shift", "right"],
+    description: "Adjust the input value of the active handle up by 10x the current <code>step</step>.",
+  },
+  {
+    event: ["shift", "left"],
+    description: "Adjust the input value of the active handle down by 10x the current <code>step</step>.",
+  },
+  {
+    event: ["shift", "down"],
+    description: "Adjust the input value of the active handle down by 10x the current <code>step</step>.",
+  },
+  {
+    event: ["PageUp"],
+    description: "Adjust the input value of the active handle up by 10x the current <code>step</step>.",
+  },
+  {
+    event: ["PageDown"],
+    description: "Adjust the input value of the active handle down by 10x the current <code>step</step>.",
+  },
+  {
+    event: ["Home"],
+    description: "Set the input value of the active handle to the <code>min</code> value.",
+  },
+  {
+    event: ["End"],
+    description: "Set the input value of the active handle to the <code>max</code> value.",
+  },
+]
+---
+::

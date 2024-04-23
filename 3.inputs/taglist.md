@@ -6,11 +6,7 @@ navigation:
   pro: true
 ---
 
-::InputPageHero
----
-type: "Taglist"
----
-::
+:InputPageHero
 
 :ProInstallSnippet
 
@@ -476,6 +472,8 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 ::AccessibilityTable
 ---
 data: [
@@ -532,4 +530,37 @@ data: [
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["enter"],
+    description: "Opens the listbox when the input is focused. Selects an item when a list item is focused",
+  },
+  {
+    event: ["space"],
+    description: "Opens the listbox when the input is focused. Selects an item when a list item is focused",
+  },
+  {
+    event: ["esc"],
+    description: "Closes the listbox when the input is focused.",
+  },
+  {
+    event: ["up"],
+    description: "Navigates to previous list item in list box. Closes listbox if most-previous item is selected.",
+  },
+  {
+    event: ["down"],
+    description: "Opens the listbox when input is focused. Navigates to next list item in list box.",
+  },
+  {
+    event: ["left"],
+    description: "Navigates to previous existing tag in input list."
+  },
+  {
+    event: ["right"],
+    description: "Navigates to next existing tag in input list. If pressed from last-most tag then input is focused."
+  }
+]
+---
+::

@@ -2,13 +2,17 @@
 title: List Input
 description: An invisible FormKit input that allows you to logically structure your form data as an array.
 navigation:
-  title: 'list'
+  title: 'List'
 ---
 
-::InputPageHero
+:InputPageHero
+
+::Callout
 ---
-type: "List"
+type: "warning"
+label: "Renderless Input"
 ---
+The `list` input does not render any output to the DOM. It is used exclusively for structuring data in your form. It is equivalent to an array in JavaScript.
 ::
 
 The `list` input allows you to structure data from child inputs as an array. The list itself outputs no markup (by default) and can be used in conjunction with any other type of input — including nested [groups](/inputs/group) and lists.
@@ -172,11 +176,6 @@ without: ['help', 'label', 'prefix-icon', 'suffix-icon', 'validation', 'validati
 
 ## Sections
 
-::ReferenceTable
----
-type: "sectionKeys"
-primary: "section-key"
-without: ['outer','prefix', 'wrapper', 'suffix', 'prefixIcon', 'suffixIcon', 'label','inner','input','help','messages','message']
----
-::
+
+The `list` input renders no output to the DOM so there are no sections to display. The `list` input is a renderless input that is used exclusively for structuring data in your form. It is equivalent to an array in JavaScript.
 

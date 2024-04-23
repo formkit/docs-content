@@ -5,10 +5,14 @@ navigation:
   title: 'Hidden'
 ---
 
-::InputPageHero
+:InputPageHero
+
+::Callout
 ---
-type: "Hidden"
+type: "warning"
+label: "The HTML Hidden Input"
 ---
+Since <code>hidden</code> inputs are not intended for display to end users, FormKit does not render common user-facing features such as the <code>label</code>, <code>help</code> , or <code>messages</code>.<br><br>Validation rules can still be applied to a hidden input that will prevent a form from submitting, but please note that the errors will not be displayed on this hidden input.
 ::
 
 The `hidden` input uses HTML's [native hidden input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/hidden). It is not a visible element, and should only be used to provide data that is not entered by a user.
@@ -21,14 +25,6 @@ name: "Hidden input"
 file: "_content/_examples/hidden/hidden.vue"
 tabs: "html,render"
 ---
-::
-
-
-::Callout
----
-type: "warning"
----
-Since <code>hidden</code> inputs are not intended for display to end users, FormKit does not render common user-facing features such as the <code>label</code>, <code>help text</code> , or <code>messages</code>.<br><br>Validation rules can still be applied to a hidden input that will prevent a form from submitting, but please note that the errors will not be displayed on this hidden input.
 ::
 
 ## Cast to number

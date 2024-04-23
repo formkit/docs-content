@@ -5,11 +5,7 @@ navigation:
   title: 'Datetime-local'
 ---
 
-::InputPageHero
----
-type: "Datetime-local"
----
-::
+:InputPageHero
 
 The `datetime-local` input uses HTML's [native datetime-local picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local) to allow users to easily select a date and time based on their browser’s locale.
 
@@ -77,8 +73,32 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 :AccessibilityTable
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["enter"],
+    description: "Opens the browser datetime picker panel when input is focused. Confirms datetime selection when date picker is focused.",
+  },
+  {
+    event: ["space"],
+    description: "Opens the browser datetime picker panel when input is focused.",
+  },
+  {
+    event: ["esc"],
+    description: "Closes the browser datetime picker panel.",
+  },
+  {
+    event: ["up", "down", "left", "right"],
+    separator: '',
+    description: "Adjusts selection of UI elements in browser datetime picker panel.",
+  },
+]
+---
+::

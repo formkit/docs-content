@@ -7,11 +7,7 @@ navigation:
   free: true
 ---
 
-::InputPageHero
----
-type: "Repeater"
----
-::
+:InputPageHero
 
 :ProInstallSnippet
 
@@ -475,6 +471,8 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 ::AccessibilityTable
 ---
 without: ["input", "label", "icon"]
@@ -497,4 +495,17 @@ data: [
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["enter"],
+    description: "Invokes the currently selected UI control.",
+  },
+  {
+    event: ["space"],
+    description: "Invokes the currently selected UI control.",
+  },
+]
+---
+::

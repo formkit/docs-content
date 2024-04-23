@@ -7,11 +7,7 @@ navigation:
   free: true
 ---
 
-::InputPageHero
----
-type: "Toggle"
----
-::
+:InputPageHero
 
 :ProInstallSnippet
 
@@ -348,6 +344,8 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 ::AccessibilityTable
 ---
 without: ["input", "icon"]
@@ -376,4 +374,13 @@ data: [
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["space"],
+    description: "Changes the state of toggle input."
+  }
+]
+---
+::

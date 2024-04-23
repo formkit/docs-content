@@ -5,11 +5,7 @@ navigation:
   title: 'Range'
 ---
 
-::InputPageHero
----
-type: "Range"
----
-::
+:InputPageHero
 
 The `range` input uses HTML's [native range input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) to let user select a number with a graphic slider.
 
@@ -96,8 +92,47 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 :AccessibilityTable
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["up"],
+    description: "Adjust the input value up by the current <code>step</step>.",
+  },
+  {
+    event: ["right"],
+    description: "Adjust the input value up by the current <code>step</step>.",
+  },
+  {
+    event: ["left"],
+    description: "Adjust the input value down by the current <code>step</step>.",
+  },
+  {
+    event: ["down"],
+    description: "Adjust the input value down by the current <code>step</step>.",
+  },
+  {
+    event: ["PageUp"],
+    description: "Adjust the input value up by 10x the current <code>step</step>.",
+  },
+  {
+    event: ["PageDown"],
+    description: "Adjust the input value down by 10x the current <code>step</step>.",
+  },
+  {
+    event: ["Home"],
+    description: "Set the input value to the <code>min</code> value.",
+  },
+  {
+    event: ["End"],
+    description: "Set the input value to the <code>max</code> value.",
+  },
+]
+---
+::

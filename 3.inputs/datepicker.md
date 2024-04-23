@@ -6,11 +6,7 @@ navigation:
   pro: true
 ---
 
-::InputPageHero
----
-type: "Datepicker"
----
-::
+:InputPageHero
 
 :ProInstallSnippet
 
@@ -1651,13 +1647,15 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 ::AccessibilityTable
 ---
 data: [
   {
     sectionKey: "panelWrapper",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled." },
       { attribute: "aria-modal", value: "true", description: "Indicates the modal dialog is present and it blocks interaction with other elements on the page." },
       { attribute: "aria-label", description: "Provides an accessible name." },
     ]
@@ -1679,7 +1677,7 @@ data: [
   {
     sectionKey: "openButton",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when its in picker only mode and 0 when its not." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when its in picker only mode and <code>0</code> when its not." },
       { attribute: "aria-label", description: "Provides an accessible name." },
       { attribute: "aria-haspopup", value: "true", description: "Signals the presence of a pop-up menu or dialog triggered by this interaction." },
       { attribute: "aria-expanded", description: "Indicates whether the colorpicker element is currently expanded or collapsed." },
@@ -1731,4 +1729,18 @@ data: [
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["esc"],
+    description: "Closes the browser date picker panel.",
+  },
+  {
+    event: ["up", "down", "left", "right"],
+    separator: '',
+    description: "Adjusts selection of UI elements in browser date picker panel.",
+  },
+]
+---
+::

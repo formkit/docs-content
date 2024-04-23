@@ -6,11 +6,9 @@ navigation:
   pro: true
 ---
 
-::InputPageHero
----
-type: "Color"
----
-::
+:InputPageHero
+
+:ProInstallSnippet
 
 The `colorpicker` input allows for advanced color selection — including alpha channel support. It supports colors in `Hex`, `HSLA` and `RGBA` formats and can be configured to provide a preset list of colors.
 
@@ -853,13 +851,15 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 ::AccessibilityTable
 ---
 data: [
   {
     sectionKey: "swatchPreview",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled." },
       { attribute: "role", value: "button", description: "Indicates to assistive technologies that this element functions as a button." },
       { attribute: "aria-valuetext", description: "Defines the human-readable text of the value." },
     ]
@@ -875,7 +875,7 @@ data: [
   {
     sectionKey: "panelClose",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when panel is closed and 0 when openned." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when panel is closed and <code>0</code> when openned." },
       { attribute: "aria-label", description: "Provides an accessible name." },
     ]
   },
@@ -894,7 +894,7 @@ data: [
   {
     sectionKey: "controlLS",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled." },
       { attribute: "role", value: "slider", description: "Indicates to assistive technologies that this element functions as a slider." },
       { attribute: "aria-valuemin", description: "Defines the minimum allowed value." },
       { attribute: "aria-valuemax", description: "Defines the maximum allowed value." },
@@ -910,7 +910,7 @@ data: [
   {
     sectionKey: "controlHue",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled." },
       { attribute: "role", value: "slider", description: "Indicates to assistive technologies that this element functions as a slider." },
       { attribute: "aria-valuemin", description: "Defines the minimum allowed value." },
       { attribute: "aria-valuemax", description: "Defines the maximum allowed value." },
@@ -926,7 +926,7 @@ data: [
   {
     sectionKey: "controlAlpha",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled." },
       { attribute: "role", value: "slider", description: "Indicates to assistive technologies that this element functions as a slider." },
       { attribute: "aria-valuemin", description: "Defines the minimum allowed value." },
       { attribute: "aria-valuemax", description: "Defines the maximum allowed value." },
@@ -948,7 +948,7 @@ data: [
   {
     sectionKey: "eyeDropper",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled." },
       { attribute: "role", value: "button", description: "Indicates to assistive technologies that this element functions as a button." },
     ]
   },
@@ -961,63 +961,63 @@ data: [
   {
     sectionKey: "hexField",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled." },
       { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
     ]
   },
   {
     sectionKey: "rField",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled." },
       { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
     ]
   },
   {
     sectionKey: "gField",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled." },
       { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
     ]
   },
   {
     sectionKey: "bField",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled." },
       { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
     ]
   },
   {
     sectionKey: "aField",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled." },
       { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
     ]
   },
   {
     sectionKey: "hField",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled." },
       { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
     ]
   },
   {
     sectionKey: "sField",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled." },
       { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
     ]
   },
   {
     sectionKey: "lField",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled." },
       { attribute: "for", description: "Associates the label to an input element. Users can click on the label to focus the input or to toggle between states." },
     ]
   },
   {
     sectionKey: "formatSwitcher",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled." },
       { attribute: "role", value: "button", description: "Indicates to assistive technologies that this element functions as a button." },
       { attribute: "aria-label", description: "Provides an accessible name." },
     ]
@@ -1025,7 +1025,7 @@ data: [
   {
     sectionKey: "swatch",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when disabled and 0 when enabled." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when disabled and <code>0</code> when enabled." },
       { attribute: "role", value: "button", description: "Indicates to assistive technologies that this element functions as a button." },
       { attribute: "aria-label", description: "Provides an accessible name." },
     ]
@@ -1036,4 +1036,62 @@ data: [
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["enter"],
+    description: "Toggles the state of the color picker panel when input is focused.",
+  },
+  {
+    event: ["space"],
+    description: "Toggles the state of the color picker panel when input is focused. Invokes color picker panel UI buttons when focused.",
+  },
+  {
+    event: ["esc"],
+    description: "Closes the color picker panel.",
+  },
+  {
+    event: ["up", "down", "left", "right"],
+    separator: '',
+    description: "Adjusts selection of UI elements in the color picker panel.",
+  },
+  {
+    event: ["Shift", "up"],
+    description: "Adjusts selection of UI elements in the color picker panel at 10x rate.",
+  },
+  {
+    event: ["Shift", "down"],
+    description: "Adjusts selection of UI elements in the color picker panel at 10x rate.",
+  },
+  {
+    event: ["Shift", "left"],
+    description: "Adjusts selection of UI elements in the color picker panel at 10x rate.",
+  },
+  {
+    event: ["Shift", "right"],
+    description: "Adjusts selection of UI elements in the color picker panel at 10x rate.",
+  },
+  {
+    event: ["PageUp"],
+    description: "Adjusts selection of UI elements in the color picker panel at 10x rate.",
+  },
+   {
+    event: ["PageDown"],
+    description: "Adjusts selection of UI elements in the color picker panel at 10x rate.",
+  },
+  {
+    event: ["Home"],
+    description: "Snaps UI selection element to beginning of range",
+  },
+  {
+    event: ["End"],
+    description: "Snaps UI selection element to end of range",
+  },
+  {
+    event: ["Command", "v"],
+    description: "Pastes a color value into the input when focused. Its format is adjusted automatically.",
+  }
+]
+---
+::

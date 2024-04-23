@@ -5,11 +5,7 @@ navigation:
   title: 'Checkbox'
 ---
 
-::InputPageHero
----
-type: "Checkbox"
----
-::
+:InputPageHero
 
 The `checkbox` input uses HTML's [native checkbox input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox). It can display one or many options to a user and is a great way to allow users to select multiple items from a list. FormKit supports both single and multiple checkbox inputs.
 
@@ -328,7 +324,7 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
-### Single checkbox
+### Single checkbox accessibility attributes
 
 ::AccessibilityTable
 ---
@@ -344,7 +340,7 @@ data: [
 ---
 ::
 
-### Multiple checkbox
+### Multiple checkbox accessibility attributes
 
 ::AccessibilityTable
 ---
@@ -373,7 +369,7 @@ data: [
 data: [
   {
     event: ["space"],
-    description: "Enable checkbox toggling whenever the input is in focus."
+    description: "Toggles the checked state of the currently focused input."
   }
 ]
 ---

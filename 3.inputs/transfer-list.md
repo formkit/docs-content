@@ -6,11 +6,7 @@ navigation:
   pro: true
 ---
 
-::InputPageHero
----
-type: "Transfer List"
----
-::
+:InputPageHero
 
 :ProInstallSnippet
 
@@ -885,6 +881,8 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 ::AccessibilityTable
 ---
 without: ["label", "input", "icon"]
@@ -931,7 +929,7 @@ data: [
   {
     sectionKey: "sourceListItems",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when searchable or there are no source options and 0 when otherwise." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when searchable or there are no source options and <code>0</code> when otherwise." },
       { attribute: "aria-activedescendant", description: "Manage focus to the current active descendent element." },
       { attribute: "role", value: "listbox", description: "Indicates to assistive technologies that this element functions as a listbox." },
       { attribute: "aria-multiselectable", value: "true", description: "Indicate it allows multiple items to be selected simultaneously." },
@@ -980,7 +978,7 @@ data: [
   {
     sectionKey: "targetListItems",
     attributes: [
-      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to -1 when searchable or there are no source options and 0 when otherwise." },
+      { attribute: "tabindex", value: "-1 or 0", description: "Prioritizes keyboard focus order by setting it to <code>-1</code> when searchable or there are no source options and <code>0</code> when otherwise." },
       { attribute: "aria-activedescendant", description: "Manage focus to the current active descendent element." },
       { attribute: "role", value: "listbox", description: "Indicates to assistive technologies that this element functions as a listbox." },
       { attribute: "aria-multiselectable", value: "true", description: "Indicate it allows multiple items to be selected simultaneously." },
@@ -1037,4 +1035,21 @@ data: [
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["space"],
+    description: "Invokes the currently selected UI button."
+  },
+  {
+    event: ["enter"],
+    description: "Moves the currently selected list item between lists"
+  },
+  {
+    event: ["up", "down"],
+    description: "Moves focus between list items."
+  },
+]
+---
+::

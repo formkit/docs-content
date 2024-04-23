@@ -6,11 +6,7 @@ navigation:
   pro: true
 ---
 
-::InputPageHero
----
-type: "Mask"
----
-::
+:InputPageHero
 
 :ProInstallSnippet
 
@@ -502,8 +498,28 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 :AccessibilityTable
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["tab"],
+    description: "While in select mode, moves forward through available mask selection ranges. If at the end of available selection ranges the focus will be moved to the next focusable element on the page.",
+  },
+  {
+    event: ["shift", "tab"],
+    description: "While in select mode, moves backward through available mask selection ranges. if at the beginning of available selection ranges the focus will be moved to the previous focusable element on the page.",
+  },
+  {
+    event: ["up", "down"],
+    separator: '',
+    description: "While in select mode, navigates through available options for selection ranges that are enum tokens.",
+  }
+]
+---
+::

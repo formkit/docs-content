@@ -5,10 +5,14 @@ navigation:
   title: 'Meta'
 ---
 
-::InputPageHero
+:InputPageHero
+
+::Callout
 ---
-type: "Meta"
+type: "warning"
+label: "Renderless Input"
 ---
+The `meta` input does not render any output to the DOM. It is used exclusively for including arbitrary data in your forms without displaying it to end users.
 ::
 
 The `meta` input is meant to store arbitrary data that is not intended for display to end users. This input is hidden by default and can be used to store data that is not part of the form's schema.
@@ -22,14 +26,6 @@ Unlike the [hidden](/inputs/hidden) input (which renders an `<input type="hidden
 name: "Meta input"
 file: "_content/_examples/meta/meta.vue"
 ---
-::
-
-
-::Callout
----
-type: "warning"
----
-Since <code>meta</code> inputs are not intended for display to end users, FormKit does not render common user-facing features such as the <code>label</code>, <code>help text</code> , or <code>messages</code>.<br><br>Validation rules can still be applied to a hidden input that will prevent a form from submitting, but please note that the errors will not be displayed on this input.
 ::
 
 ## Props & Attributes
@@ -46,12 +42,4 @@ without: []
 
 ## Sections
 
-The meta input is made up of only
-
-::ReferenceTable
----
-type: "sectionKeys"
-primary: "section-key"
-without: ['outer', 'label', 'prefix', 'prefixIcon', 'inner', 'suffix', 'suffixIcon', 'input', 'help', 'messages', 'message']
----
-::
+The `meta` input renders no output to the DOM so there are no sections to display. The `meta` input is used exclusively for including arbitrary data in your forms without displaying it to end users.

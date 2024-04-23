@@ -5,11 +5,7 @@ navigation:
   title: 'Select'
 ---
 
-::InputPageHero
----
-type: "Select"
----
-::
+:InputPageHero
 
 The select input uses HTML's [native select input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select). Select inputs can be single value selections, or multi-value selections by using the `multiple` attribute. There are 4 ways to provide options to a select input:
 
@@ -278,8 +274,31 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 :AccessibilityTable
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["space"],
+    description: "Opens the select options when the input is focused. Selects an item when an option is focused",
+  },
+  {
+    event: ["esc"],
+    description: "Closes the select options when the input is focused.",
+  },
+  {
+    event: ["up"],
+    description: "Opens the listbox when input is focused. Navigates to previous option in select options.",
+  },
+  {
+    event: ["down"],
+    description: "Opens the listbox when input is focused. Navigates to next option in select options.",
+  }
+]
+---
+::

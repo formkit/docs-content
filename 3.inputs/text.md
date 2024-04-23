@@ -5,11 +5,7 @@ navigation:
   title: 'Text'
 ---
 
-::InputPageHero
----
-type: "Text"
----
-::
+:InputPageHero
 
 The `text` input uses HTML's [native text input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text). It allows a user to enter a single line of text.
 
@@ -83,6 +79,8 @@ primary: "section-key"
 All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml): 
 
 :AccessibilityChecks
+
+### Accessibility attributes
 
 :AccessibilityTable
 

@@ -5,11 +5,7 @@ navigation:
   title: 'Number'
 ---
 
-::InputPageHero
----
-type: "Number"
----
-::
+:InputPageHero
 
 The `number` input uses HTML's [native number input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number). It allows a user to enter a single integer or decimal value.
 
@@ -86,14 +82,20 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
-:AccessibilityTable
-
-### Keyboard Interactions
-
-:KeyboardEventsTable
+### Accessibility attributes
 
 :AccessibilityTable
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["up", "down"],
+    separator: '',
+    description: "Increments through input value by current <code>step</code> amount.",
+  },
+]
+---
+::

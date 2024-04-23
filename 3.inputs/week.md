@@ -5,11 +5,7 @@ navigation:
   title: 'Week'
 ---
 
-::InputPageHero
----
-type: "Week"
----
-::
+:InputPageHero
 
 The `week` input uses the HTML's [native week picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/week) to allow users to easily
 select a week.
@@ -80,8 +76,32 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 :AccessibilityTable
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["enter"],
+    description: "Opens the browser week picker panel when input is focused. Confirms week selection when week picker is focused.",
+  },
+  {
+    event: ["space"],
+    description: "Opens the browser week picker panel when input is focused.",
+  },
+  {
+    event: ["esc"],
+    description: "Closes the browser week picker panel.",
+  },
+  {
+    event: ["up", "down", "left", "right"],
+    separator: '',
+    description: "Adjusts selection of UI elements in browser week picker panel.",
+  },
+]
+---
+::

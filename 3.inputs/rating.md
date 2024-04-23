@@ -6,11 +6,7 @@ navigation:
   pro: true
 ---
 
-::InputPageHero
----
-type: "Rating"
----
-::
+:InputPageHero
 
 :ProInstallSnippet
 
@@ -283,6 +279,8 @@ All FormKit inputs are designed with the following accessibility considerations 
 
 :AccessibilityChecks
 
+### Accessibility attributes
+
 ::AccessibilityTable
 ---
 without: ["input"]
@@ -291,4 +289,33 @@ without: ["input"]
 
 ### Keyboard Interactions
 
-:KeyboardEventsTable
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["up"],
+    description: "Increases the rating input value by one <code>step</code>.",
+  },
+  {
+    event: ["right"],
+    description: "Increases the rating input value by one <code>step</code>.",
+  },
+  {
+    event: ["down"],
+    description: "Decreases the rating input value by one <code>step</code>.",
+  },
+  {
+    event: ["left"],
+    description: "Decreases the rating input value by one <code>step</code>.",
+  },
+  {
+    event: ["home"],
+    description: "Sets the rating input value to the <code>min</code> value.",
+  },
+  {
+    event: ["end"],
+    description: "Sets the rating input value to the <code>max</code> value.",
+  }
+]
+---
+::
