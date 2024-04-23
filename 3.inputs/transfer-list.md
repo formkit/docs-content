@@ -400,7 +400,7 @@ data: [
 ---
 ::
 
-## Sections
+## Sections & slot data
 
 You can target a specific section of an input using that section's "key", allowing you to modify that section's classes, HTML (via `:sections-schema`), or content (via slots). Read more about sections here.
 

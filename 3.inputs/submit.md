@@ -93,7 +93,7 @@ input: button
 ::
 
 
-## Sections
+## Sections & slot data
 
 :SectionKeysIntro
 

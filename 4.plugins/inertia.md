@@ -7,8 +7,6 @@ navigation:
 
 # Inertia Plugin
 
-:PageToc
-
 The `@formkit/inertia` plugin aims to seamlessly integrate Inertia.js with FormKit forms, leveraging a robust event system that harnesses Inertia.js event callbacks and FormKit plugins for a smooth and powerful web development experience.
 
 ## Installation

@@ -39,7 +39,7 @@ attrs: ['max', 'min', 'step']
 ::
 
 
-## Sections
+## Sections & slot data
 
 :SectionKeysIntro
 

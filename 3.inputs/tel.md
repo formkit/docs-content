@@ -49,7 +49,7 @@ attrs: ['maxlength', 'minlength', 'placeholder']
 ::
 
 
-## Sections
+## Sections & slot data
 
 :SectionKeysIntro
 

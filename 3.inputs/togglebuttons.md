@@ -192,7 +192,7 @@ data: [
 ::
 
 
-## Sections
+## Sections & slot data
 
 The toggle buttons input has a different construction depending on if it's a single or multiple configuration.
 
