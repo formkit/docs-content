@@ -627,12 +627,4 @@ export default [
       { label: 'Laramie', population: 32959, value: 'Laramie, Wyoming' },
     ],
   },
-  {
-    value: 1,
-    label: '1',
-  },
-  {
-    value: 2,
-    label: '2',
-  },
 ]
