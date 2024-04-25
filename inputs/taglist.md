@@ -266,6 +266,22 @@ file: [
 ---
 ::
 
+## Option groups
+
+If you would like the listitems in the listbox to be grouped, pass the `options` prop an array of objects and include the property `group`:
+
+::Example
+---
+name: "Taglist"
+min-height: 550
+file: [
+  "_content/_examples/taglist/taglist-option-groups.vue",
+  "_content/_examples/_data/citiesByState.js"
+]
+---
+::
+
+
 
 ## Full example
 
@@ -464,6 +480,229 @@ data: [
   {
     "section-key": "emptyMessageInner",
     description: "A span element that acts as a wrapper for the emptyMessage section."
+  }
+]
+---
+::
+
+## Sections
+
+:SectionKeysIntro
+
+### Listbox structure
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--dropdown"
+schema: [
+  {
+    name: "dropdownWrapper",
+    position: "right",
+    children: [
+      {
+        name: "listbox",
+        position: "right",
+        children: [
+        {
+            name: "emptyMessage",
+            children: [
+              {
+                name: "emptyMessageInner",
+                content: "No options to display.",
+              }
+            ]
+          },
+          {
+            name: "listitems",
+            children: [{
+              name: 'listitem',
+              class: "flex flex-grow",
+              position: "right",
+              children: [
+                {
+                  name: "selectedIcon",
+                  content: "✔️"
+                },
+                {
+                  name: "option",
+                  content: "Gray",
+                  position: "right",
+                  class: "flex flex-grow"
+                },
+              ]
+            }]
+          },
+          {
+            name: "loadMore",
+            children: [
+              {
+                name: "loadMoreInner",
+                children: [
+                  {
+                    name: "loaderIcon",
+                    content: "⏳",
+                    class: "text-center"
+                  }
+                ]
+              },
+            ]
+          },
+        ]
+      },
+    ]
+  }
+]
+---
+::
+
+### Grouped Listbox Structure
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--dropdown"
+schema: [
+  {
+    name: "dropdownWrapper",
+    position: "right",
+    children: [
+      {
+        name: "listbox",
+        position: "right",
+        children: [
+        {
+            name: "emptyMessage",
+            children: [
+              {
+                name: "emptyMessageInner",
+                content: "No options to display.",
+              }
+            ]
+          },
+          {
+            name: "listitems",
+            children: [
+              {
+                name: 'listitemGroup',
+                children: [
+                  {
+                    name: 'groupLabel'
+                  },
+                  {
+                    name: 'groupList',
+                    children: [
+                      {
+                        name: 'innerListitems',
+                        children: [{
+                          name: 'listitem',
+                          class: "flex flex-grow",
+                          position: "right",
+                          children: [
+                            {
+                              name: "selectedIcon",
+                              content: "✔️"
+                            },
+                            {
+                              name: "option",
+                              content: "Gray",
+                              position: "right",
+                              class: "flex flex-grow"
+                            },
+                          ]
+                        }]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: "loadMore",
+            children: [
+              {
+                name: "loadMoreInner",
+                children: [
+                  {
+                    name: "loaderIcon",
+                    content: "⏳",
+                    class: "text-center"
+                  }
+                ]
+              },
+            ]
+          },
+        ]
+      },
+    ]
+  }
+]
+---
+::
+
+#### Taglist selections
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--dropdown-outer"
+schema: [
+  {
+    name: "selector",
+    class: "flex flex-grow",
+    children: [
+      {
+        name: "tagsWrapper",
+        class: "flex flex-grow",
+        children: [
+          {
+            name: "tags",
+            class: "flex flex-grow border-solid",
+            children: [
+              {
+                name: "tagWrapper",
+                children: [
+                  {
+                    name: "tag",
+                    class: 'flex',
+                    children: [
+                      {
+                        name: "tagLabel",
+                        content: 'Gray'
+                      },
+                      {
+                        name: "removeSelection",
+                        content: '×'
+                      }
+                    ]
+                  },
+                ]
+              },
+              {
+                name: "tagWrapper",
+                children: [
+                  {
+                    name: "tag",
+                    class: 'flex',
+                    children: [
+                      {
+                        name: "tagLabel",
+                        content: 'Blue'
+                      },
+                      {
+                        name: "removeSelection",
+                        content: '×'
+                      }
+                    ]
+                  },
+                ]
+              }
+            ],
+          },
+        ]
+      },
+    ]
   }
 ]
 ---

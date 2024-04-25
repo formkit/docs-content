@@ -306,6 +306,22 @@ file: [
 ---
 ::
 
+## Option groups
+
+If you would like the listitems in the listbox to be grouped, pass the `options` prop an array of objects and include the property `group`:
+
+::Example
+---
+name: "Dropdown"
+min-height: 550
+file: [
+  "_content/_examples/dropdown/dropdown-option-groups.vue",
+  "_content/_examples/_data/citiesByState.js"
+]
+---
+::
+
+
 ## Props & Attributes
 
 ::ReferenceTable
@@ -538,20 +554,108 @@ schema: [
             ]
           },
           {
-            name: "listitem",
-            class: "flex flex-grow",
-            position: "right",
+            name: "listitems",
+            children: [{
+              name: 'listitem',
+              class: "flex flex-grow",
+              position: "right",
+              children: [
+                {
+                  name: "selectedIcon",
+                  content: "✔️"
+                },
+                {
+                  name: "option",
+                  content: "Gray",
+                  position: "right",
+                  class: "flex flex-grow"
+                },
+              ]
+            }]
+          },
+          {
+            name: "loadMore",
             children: [
               {
-                name: "selectedIcon",
-                content: "✔️"
+                name: "loadMoreInner",
+                children: [
+                  {
+                    name: "loaderIcon",
+                    content: "⏳",
+                    class: "text-center"
+                  }
+                ]
               },
+            ]
+          },
+        ]
+      },
+    ]
+  }
+]
+---
+::
+
+### Grouped Listbox Structure
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--dropdown"
+schema: [
+  {
+    name: "dropdownWrapper",
+    position: "right",
+    children: [
+      {
+        name: "listbox",
+        position: "right",
+        children: [
+        {
+            name: "emptyMessage",
+            children: [
               {
-                name: "option",
-                content: "Gray",
-                position: "right",
-                class: "flex flex-grow"
-              },
+                name: "emptyMessageInner",
+                content: "No options to display.",
+              }
+            ]
+          },
+          {
+            name: "listitems",
+            children: [
+              {
+                name: 'listitemGroup',
+                children: [
+                  {
+                    name: 'groupLabel'
+                  },
+                  {
+                    name: 'groupList',
+                    children: [
+                      {
+                        name: 'innerListitems',
+                        children: [{
+                          name: 'listitem',
+                          class: "flex flex-grow",
+                          position: "right",
+                          children: [
+                            {
+                              name: "selectedIcon",
+                              content: "✔️"
+                            },
+                            {
+                              name: "option",
+                              content: "Gray",
+                              position: "right",
+                              class: "flex flex-grow"
+                            },
+                          ]
+                        }]
+                      }
+                    ]
+                  }
+                ]
+              }
             ]
           },
           {
