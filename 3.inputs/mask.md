@@ -206,7 +206,7 @@ init-file-tab: "formkit.config.js"
 
 ### Modify tokens
 
-In addition to creating new tokens, the `tokens` prop can also modify existing tokens. Any value provided to the `tokens` prop will be merged into the existing tokens for that input. For example, the digit token’s (`#`) has no `selectFill` by default. To add one, simply extend it:
+In addition to creating new tokens, the `tokens` prop can also modify existing tokens. Any value provided to the `tokens` prop will be merged into the existing tokens for that input. For example, the digit token’s (`#`) has no `selectFill` by default. To add one, extend it:
 
 ::Example
 ---

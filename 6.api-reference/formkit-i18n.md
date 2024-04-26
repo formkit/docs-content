@@ -124,7 +124,7 @@ interface FormKitLocale {
 
 ### FormKitLocaleMessages
 
-A registry of locale messages — this is simply a keyed/value object with string keys (message name) and either string values (for simple returns) or functions that receive a context object.
+A registry of locale messages — this is a keyed/value object with string keys (message name) and either string values (for simple returns) or functions that receive a context object.
 
 
 ```typescript

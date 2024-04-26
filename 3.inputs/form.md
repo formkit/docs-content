@@ -7,7 +7,7 @@ navigation:
 
 :InputPageHero
 
-While you’re free to use `FormKit` inputs by themselves, you’ll usually want to group them into a form. To do this, simply wrap your inputs in a `<FormKit type="form">`.
+While you’re free to use `FormKit` inputs by themselves, you’ll usually want to group them into a form. To do this, wrap your inputs in a `<FormKit type="form">`.
 
 The `form` type will actively collect all the values from child inputs, using the `name` of each input as the property name in the resulting data object (just like [groups](/inputs/group)). You can also read and write to form values using v-model just as you would on any input.
 
@@ -107,7 +107,7 @@ file: "_content/_examples/form-xhr/form-xhr.vue"
 
 ### Submitting as a page request
 
-To submit a form via page request, simply leave off the `@submit` handler. Just like native HTML, you can also provide an `action` and optionally a `method` attribute.
+To submit a form via page request, leave off the `@submit` handler. Just like native HTML, you can also provide an `action` and optionally a `method` attribute.
 
 ::Example
 ---

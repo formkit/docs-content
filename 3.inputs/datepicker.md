@@ -221,7 +221,7 @@ The value format must contain all the necessary data to re-constitute a date obj
 
 ### Date styles
 
-To use a date style as the value, simply pass the style you’d like to use to the `value-format` prop:
+To use a date style as the value, pass the style you’d like to use to the `value-format` prop:
 
 ::Example
 ---
@@ -333,7 +333,7 @@ This would work for our restaurant app as long as a backend is able to attach an
 
 #### Options 2: Using the datepicker’s `timezone` prop
 
-Alternatively, the `timezone` prop of the datepicker will perform the offset correction for you automatically. Simply state "where" the datepicker is picking time for — in our example `timezone="Europe/Amsterdam"`. The user’s experience will not change at all, but the time they select will be in the target timezone. A user in `America/New_York` (`+0400`) who selects `2pm on March 13th` in their datepicker, will yield a UTC value of `2023-03-13T13:00:00Z` which is `2pm` in Amsterdam. This allows for simple storage and hydration of your date using a `UTC` format.
+Alternatively, the `timezone` prop of the datepicker will perform the offset correction for you automatically. State "where" the datepicker is picking time for — in our example `timezone="Europe/Amsterdam"`. The user’s experience will not change at all, but the time they select will be in the target timezone. A user in `America/New_York` (`+0400`) who selects `2pm on March 13th` in their datepicker, will yield a UTC value of `2023-03-13T13:00:00Z` which is `2pm` in Amsterdam. This allows for simple storage and hydration of your date using a `UTC` format.
 ::
 
 ### Indeterminate timezone

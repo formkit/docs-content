@@ -155,7 +155,7 @@ Fortunately for Nuxt users, the `@formkit/nuxt` module provides a solution to th
 
 Vite users can also leverage automatic injection by using [unplugin-formkit](https://github.com/formkit/unplugin-formkit).
 
-For users of other build tools or for use cases that don’t fit well within the supported features of `unplugin-formkit`, using the `<FormKitProvider>` component allows you to provide global configuration to your FormKit inputs at the point of use. Simply wrap your components in `<FormKitProvider>` and provide a `config` prop:
+For users of other build tools or for use cases that don’t fit well within the supported features of `unplugin-formkit`, using the `<FormKitProvider>` component allows you to provide global configuration to your FormKit inputs at the point of use. Wrap your components in `<FormKitProvider>` and provide a `config` prop:
 
 ```vue
 <script setup>
