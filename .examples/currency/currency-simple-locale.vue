@@ -13,7 +13,7 @@ const value = ref(false)
     <FormKit
       type="currency"
       currency="USD"
-      displayLocale="en-US"
+      display-locale="en"
       name="usd"
       value="12345678.90"
     />
@@ -21,7 +21,7 @@ const value = ref(false)
     <FormKit
       type="currency"
       currency="EUR"
-      displayLocale="de-DE"
+      display-locale="de"
       name="eur"
       value="12345678.90"
     />
@@ -29,7 +29,7 @@ const value = ref(false)
     <FormKit
       type="currency"
       currency="INR"
-      displayLocale="en-IN"
+      display-locale="en-IN"
       name="inr"
       value="12345678.90"
     />
@@ -37,7 +37,7 @@ const value = ref(false)
     <FormKit
       type="currency"
       currency="CNY"
-      displayLocale="zh-CN"
+      display-locale="zh-CN"
       name="cny"
       value="12345678.90"
     />

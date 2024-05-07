@@ -13,9 +13,9 @@ type: "Currency"
 
 :ProInstallSnippet
 
-## Currency Input
+## Basic example
 
-The currency input is used to create locale/currency specific parsed content
+The `currency` input allows for restricted input of values based on the provided currency and locale.
 
 ::Example
 ---
@@ -32,7 +32,7 @@ The `currency` prop is the three letter currency code and sets the proper format
 
 ### Locale
 
-By default the locale will use what you have set in your `formkit.config.ts` as the desired locale. However you can override this with the `displayLocale` prop. For example, `en-US`, `de-DE`, `en-IN`, `zh-CN`, etc, etc.
+By default, the locale used will be that of what is set in your `formkit.config.ts`. This can be overriden with the `display-locale` prop. For example, `en`, `de`, `en-IN`, `zh-CN`, etc, etc.
 
 
 ::Example
@@ -46,21 +46,17 @@ file: "_content/_examples/currency/currency-simple-locale.vue"
 
 ### Decimals
 
-By default the decimals will display when the value contains the currency/locale decimal separator and will automatically know how many decimal places to display for the given currency. If you would like to prevent decimals from being displayed, set `decimals` to `false` or `0`, the value will not allow decimals.
+If you would like to prevent decimals from being displayed, set `decimals` to `false` or `0`.
 
-You can also choose to set a minimum number of decimals with the `minDecimals` prop. For example, setting the prop `minDecimals="2"` will always show 2 decimal points.
+You can also choose to set a minimum number of decimals with the `min-decimals` prop. For example, setting the prop `min-decimals="2"` will always show 2 decimal points.
 
 ### Minimum and Maximum Values
 
-Similar to a number input, you can set a `min` and `max` value.
+Setting the props `min` or `max` will prevent entry of a higher or lower value.
 
 ### Step
 
-Again, similar to a number input you can use the up/down keys to step the value. By default the step is `1` but you can override that with this prop.
-
-### Value Formatting
-
-Default value output is the value as a string to reduce issues with large number enumertation issues. However you can format the value as a string and include the currency symbol, grouping, decimal, etc as it is shown in the input.
+Value scan be incremented and decremented by use of the up/down keys. The degree by which the value changes is determined by the `step` prop.
 
 ::Example
 ---
