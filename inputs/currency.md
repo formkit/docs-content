@@ -46,9 +46,9 @@ file: "_content/_examples/currency/currency-simple-locale.vue"
 
 ### Decimals
 
-By default the decimals will display when the value contains the currency/locale decimal separator and will automatically know how many decimal places to display for the given currency, however you can override this. By setting `decimals` to `false` or `0`, the value will not allow decimals.
+By default the decimals will display when the value contains the currency/locale decimal separator and will automatically know how many decimal places to display for the given currency. If you would like to prevent decimals from being displayed, set `decimals` to `false` or `0`, the value will not allow decimals.
 
-You can also choose to set a minimum number of decimals with the `minDecimals` prop. For example, you always want to show 2 decimal places you would set `minDecimals="2"`.
+You can also choose to set a minimum number of decimals with the `minDecimals` prop. For example, setting the prop `minDecimals="2"` to will always show 2 decimal points.
 
 ### Minimum and Maximum Values
 
