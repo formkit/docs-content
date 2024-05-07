@@ -314,7 +314,7 @@ file: "_content/_examples/preserve-errors-config/preserve-errors-config.vue"
 
 ::Callout
 ---
-type: "input"
+type: "info"
 label: "Composition API"
 ---
 When using Vue 3’s composition API, you can access <code>setErrors</code> and <code>clearErrors</code> by importing them directly from <code>@formkit/vue</code>.<br><br>
@@ -417,11 +417,15 @@ file: "_content/_examples/formkit-messages/toast.vue"
 
 The `<FormKitMessages />` component has a few additional configuration options:
 
+<div class="reference-table">
+
 | Prop              | Default   | Description                                                                                                                                                       |
 | ----------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `node`            | inherited | The core node to render messages for. By default this is inherited from the node’s parent (if it exists).                                                         |
 | `sectionsSchema`  | `{}`      | Override the internal `messages` and `message` sections (same default structure as other input’s messages section).                                               |
 | `defaultPosition` | `false`   | By default, `FormKitMessages` moves the rendered messages to a new location. If you would like to render the messages in both locations, set this prop to `true`. |
+
+</div>
 
 ## Unmounting inputs
 
