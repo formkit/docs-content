@@ -28,7 +28,7 @@ file: "_content/_examples/currency/currency-default.vue"
 
 ### Currency
 
-The `currency` prop is the three letter currency code and sets the proper formatting for the specified currency and also sets default decimal places for that currency. For a full list of supported currency types check: https://en.wikipedia.org/wiki/ISO_4217#List_of_ISO_4217_currency_codes
+The `currency` prop is the three letter currency code and sets the proper formatting for the specified currency. For a full list of supported currency types check: https://en.wikipedia.org/wiki/ISO_4217#List_of_ISO_4217_currency_codes
 
 ### Locale
 
