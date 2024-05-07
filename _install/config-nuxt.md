@@ -1,6 +1,6 @@
 ## Configuration
 
-To configure FormKit create a `formkit.config.js` in the root of your Nuxt project. The provided Nuxt module automatically uses the `formkit.config.js` that is at the root of your project to extend FormKit's functionality. Your config file should export a [configuration object](/essentials/configuration#what-is-defaultconfig).
+To configure FormKit, create a `formkit.config.js` in the root of your Nuxt project. The Nuxt module automatically uses the `formkit.config.js` at the root of your project to extend FormKit's functionality. Your config file should export a [configuration object](/essentials/configuration#what-is-defaultconfig).
 
 ### formkit.config.js
 ```js
@@ -60,15 +60,15 @@ export default defineNuxtConfig({
 type: "tip"
 label: "Auto loading"
 ---
-In the past FormKit used a global plugin to install itself. This has the negative side effect of including itself Nuxt’s entry bundle. To avoid this FormKit now supports an `autoImport` option. When enabled FormKit no longer uses a global plugin but automatically injects the "global" configuration options only on the pages or components that use it.
+In the past, FormKit used a global plugin to install itself, thus including itself in Nuxt’s entry bundle. To avoid this, FormKit now supports an `autoImport` option. When enabled, FormKit injects the "global" configuration options only on the pages or components that use FormKit.
 
-In the future this will become the default. To enable it today set `autoImport: true` in your `nuxt.config.ts`
+In the future, this will become the default. To enable it today set `autoImport: true` in your `nuxt.config.ts`
 ::
 
 ### Without extending `defaultConfig`
 
-By default, your configuration will _extend_ the `defaultConfig` that ships with FormKit. This is the desired behavior
-for the majority of projects. However, if you need to define the entire FormKit config yourself — from scratch — you may do so
+By default, your configuration will _extend_ FormKit's `defaultConfig`. This is desired for
+most projects. However, if you need to define the entire FormKit config yourself, you may do so
 by setting the `defaultConfig` option for the module to `false`:
 
 ```js

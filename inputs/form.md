@@ -44,7 +44,6 @@ Excluding backend functionality, here is a fully featured form with inputs (`for
   name: "Register example"
   file: "_content/_examples/register/register.vue"
   layout: "column"
-  data-render-fullsize: true
 ---
 ::
 
@@ -438,6 +437,63 @@ name: "input errors prop"
 file: "_content/_examples/preserve-prop/preserve-prop.vue"
 ---
 ::
+
+## Composables <span class="badge" data-version="1.6.0"></span>
+
+FormKit provides a few composables to help you access the form’s data and context. These are available to be imported from the `@formkit/vue` package:
+
+### useFormKitContext
+
+The `useFormKitContext` is a composable that returns the form’s context object as a vue `Ref` whenever it becomes available. This must be used in a component that is a child of a `<FormKit>` component (like the form). The first argument is an optional [traversal path](/essentials/architecture#traversal) that allows you to navigate to any node within your form tree. The second argument is an optional effect callback that will be invoked whenever the context becomes available.
+
+::Example
+---
+name: "useFormKitContext"
+init-file-tab: 'Address.vue'
+file: [
+  "_content/_examples/use-formkit-context/MyForm.vue",
+  "_content/_examples/use-formkit-context/Address.vue"
+]
+---
+::
+
+### useFormKitContextById
+
+Similar to `useFormKitContext` this composable finds any `<FormKit>` context object if that component has been given an explicit `id`. Optionally you can provide an effect callback that will be invoked whenever the node becomes available.
+
+::Example
+---
+name: "useFormKitContextById"
+file: [
+  "_content/_examples/use-formkit-context-by-id/MyForm.vue",
+]
+---
+::
+
+### useFormKitNodeById
+
+Fetches any FormKit node that has an explicit `id`. It returns a `Ref` that will populate with the core node whenever it is mounted. Optionally you can provide an effect callback that will be invoked whenever the node becomes available.
+
+::Example
+---
+name: "useFormKitNodeById"
+file: [
+  "_content/_examples/use-formkit-node-by-id/MyForm.vue",
+]
+---
+::
+
+::Callout
+---
+type: "info"
+label: "Node vs context"
+---
+The node itself is not reactive and should be used for imperative actions like `node.submit()`. The context object is reactive and should be used for reading and reacting to the form’s state.
+::
+
+## Autofill
+
+In order to prevent password managers such as 1Password and LastPass from autofilling your email and password input fields, set the respective props `data-1p-ignore` and `data-lpignore` to `true` on the inputs themselves. If you would like for this to be done automatically, check out the [adds attributes to prevent autofill](/essentials/examples) plugin.
 
 ## Props & Attributes
 

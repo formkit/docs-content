@@ -37,7 +37,7 @@ The `taglist` input allows users to search through a list of options and apply a
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: [
   "_content/_examples/taglist/taglist-base.vue",
   "_content/_examples/_data/car-brands.js"
@@ -52,7 +52,7 @@ The taglist input will filter options with its own internal search function. You
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: [
   "_content/_examples/taglist/taglist-filter.vue",
   "_content/_examples/_data/countries.js"
@@ -67,7 +67,7 @@ The taglist input, unlike the dropdown or autocomplete inputs, allows you to ent
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: "_content/_examples/taglist/taglist-allow-new-values.vue"
 ---
 ::
@@ -83,7 +83,7 @@ In this example, we'll assign the `options` prop the `searchMovies` function. By
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: "_content/_examples/taglist/taglist-single-request.vue"
 ---
 ::
@@ -96,7 +96,7 @@ A likely scenario you'll encounter is needing to search through a paginated API.
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: "_content/_examples/taglist/taglist-pagination.vue"
 ---
 ::
@@ -114,7 +114,7 @@ FormKit's taglist input also provides an `optionLoader` prop that allows you to 
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: "_content/_examples/taglist/taglist-pagination-option-loader.vue"
 ---
 ::
@@ -147,7 +147,7 @@ In this example, we are going to use the `tag` slot to customize the look of the
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: [
   "_content/_examples/taglist/taglist-slots.vue",
   "_content/_examples/_data/car-brands.js"
@@ -178,7 +178,7 @@ The `max` prop allows you to limit the number of options that can be selected. W
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: [
   "_content/_examples/taglist/taglist-max.vue",
   "_content/_examples/_data/countries.js"
@@ -193,7 +193,7 @@ If you would like the taglist's listbox to remain open in between selections, se
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: [
   "_content/_examples/taglist/taglist-close-on-select.vue",
   "_content/_examples/_data/countries.js"
@@ -266,6 +266,22 @@ file: [
 ---
 ::
 
+## Option groups
+
+If you would like the listitems in the listbox to be grouped, pass the `options` prop an array of objects and include the property `group`:
+
+::Example
+---
+name: "Taglist"
+min-height: 550
+file: [
+  "_content/_examples/taglist/taglist-option-groups.vue",
+  "_content/_examples/_data/citiesByState.js"
+]
+---
+::
+
+
 
 ## Full example
 
@@ -274,7 +290,7 @@ Now let's combine what we've learned so far by leveraging the `tag` slot for cus
 ::Example
 ---
 name: "Taglist"
-min-hight: 550
+min-height: 550
 file: [
   "_content/_examples/taglist/taglist-full-example.vue",
   "_content/_examples/topMovies.js"
@@ -464,6 +480,229 @@ data: [
   {
     "section-key": "emptyMessageInner",
     description: "A span element that acts as a wrapper for the emptyMessage section."
+  }
+]
+---
+::
+
+## Sections
+
+:SectionKeysIntro
+
+### Listbox structure
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--dropdown"
+schema: [
+  {
+    name: "dropdownWrapper",
+    position: "right",
+    children: [
+      {
+        name: "listbox",
+        position: "right",
+        children: [
+        {
+            name: "emptyMessage",
+            children: [
+              {
+                name: "emptyMessageInner",
+                content: "No options to display.",
+              }
+            ]
+          },
+          {
+            name: "listitems",
+            children: [{
+              name: 'listitem',
+              class: "flex flex-grow",
+              position: "right",
+              children: [
+                {
+                  name: "selectedIcon",
+                  content: "✔️"
+                },
+                {
+                  name: "option",
+                  content: "Gray",
+                  position: "right",
+                  class: "flex flex-grow"
+                },
+              ]
+            }]
+          },
+          {
+            name: "loadMore",
+            children: [
+              {
+                name: "loadMoreInner",
+                children: [
+                  {
+                    name: "loaderIcon",
+                    content: "⏳",
+                    class: "text-center"
+                  }
+                ]
+              },
+            ]
+          },
+        ]
+      },
+    ]
+  }
+]
+---
+::
+
+### Grouped Listbox Structure
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--dropdown"
+schema: [
+  {
+    name: "dropdownWrapper",
+    position: "right",
+    children: [
+      {
+        name: "listbox",
+        position: "right",
+        children: [
+        {
+            name: "emptyMessage",
+            children: [
+              {
+                name: "emptyMessageInner",
+                content: "No options to display.",
+              }
+            ]
+          },
+          {
+            name: "listitems",
+            children: [
+              {
+                name: 'listitemGroup',
+                children: [
+                  {
+                    name: 'groupLabel'
+                  },
+                  {
+                    name: 'groupList',
+                    children: [
+                      {
+                        name: 'innerListitems',
+                        children: [{
+                          name: 'listitem',
+                          class: "flex flex-grow",
+                          position: "right",
+                          children: [
+                            {
+                              name: "selectedIcon",
+                              content: "✔️"
+                            },
+                            {
+                              name: "option",
+                              content: "Gray",
+                              position: "right",
+                              class: "flex flex-grow"
+                            },
+                          ]
+                        }]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: "loadMore",
+            children: [
+              {
+                name: "loadMoreInner",
+                children: [
+                  {
+                    name: "loaderIcon",
+                    content: "⏳",
+                    class: "text-center"
+                  }
+                ]
+              },
+            ]
+          },
+        ]
+      },
+    ]
+  }
+]
+---
+::
+
+#### Taglist selections
+
+::FormKitInputDiagram
+---
+hide-on-small: true
+class: "input-diagram--dropdown-outer"
+schema: [
+  {
+    name: "selector",
+    class: "flex flex-grow",
+    children: [
+      {
+        name: "tagsWrapper",
+        class: "flex flex-grow",
+        children: [
+          {
+            name: "tags",
+            class: "flex flex-grow border-solid",
+            children: [
+              {
+                name: "tagWrapper",
+                children: [
+                  {
+                    name: "tag",
+                    class: 'flex',
+                    children: [
+                      {
+                        name: "tagLabel",
+                        content: 'Gray'
+                      },
+                      {
+                        name: "removeSelection",
+                        content: '×'
+                      }
+                    ]
+                  },
+                ]
+              },
+              {
+                name: "tagWrapper",
+                children: [
+                  {
+                    name: "tag",
+                    class: 'flex',
+                    children: [
+                      {
+                        name: "tagLabel",
+                        content: 'Blue'
+                      },
+                      {
+                        name: "removeSelection",
+                        content: '×'
+                      }
+                    ]
+                  },
+                ]
+              }
+            ],
+          },
+        ]
+      },
+    ]
   }
 ]
 ---

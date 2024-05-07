@@ -1,9 +1,9 @@
 ### Run the FormKit CLI
 
-At your terminal, run `npx formkit create-app` to start your new project:
+At your terminal, run `npx formkit@latest create-app` to start your new project:
 
 ```sh
-npx formkit create-app
+npx formkit@latest create-app
 ```
 
 `create-app` will ask you some questions about your project so it can determine what it needs to install and setup for you:

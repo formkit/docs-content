@@ -5,7 +5,7 @@
 type: "warning"
 label: "Legacy Genesis CSS Theme"
 ---
-FormKit now ships much more configurable Tailwind themes available at [themes.formkit.com](https://themes.formkit.com). If you are using the legacy Genesis CSS theme then follow the instructions below — but we encourage you to consider using one of the new Tailwind powered customizable FormKit themes to make your life much simpler.
+FormKit now ships much more configurable Tailwind themes available at [themes.formkit.com](https://themes.formkit.com). If you are using the legacy Genesis CSS theme, follow the instructions below — but we encourage you to consider using one of the new Tailwind-powered customizable FormKit themes to make your life much simpler.
 
 Eventually the legacy Genesis CSS theme will be deprecated and no longer supported by new Pro inputs.
 ::

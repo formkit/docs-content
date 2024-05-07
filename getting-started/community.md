@@ -39,25 +39,7 @@ Community involvement and contributions are one of the most important aspects of
     />
 </a>
 
-### Silver sponsors
-
-<a class="no-underline" href="https://www.peakcrypto.com?utm_source=formkit&utm_medium=web">
-    <img
-        class="docs-partner"
-        src="https://cdn.formk.it/web-assets/sponsors/peak-crypto.svg"
-        alt="Peak Crypto logo"
-        style="display:inline-block;vertical-align: middle;width: 135px;margin-right: 25px;margin-top: 10px;"
-    />
-</a>
-
-<a class="no-underline" href="https://surveyjs.io?utm_source=formkit&utm_medium=web">
-    <img
-        class="docs-partner"
-        src="https://cdn.formk.it/web-assets/sponsors/surveyjs.svg"
-        alt="SurveyJS logo"
-        style="display:inline-block;vertical-align: middle;width: 115px;margin-right: 25px;margin-top: 15px;"
-    />
-</a>
+<!-- ### Silver sponsors -->
 
 ### Bronze sponsors
 
@@ -76,6 +58,15 @@ Community involvement and contributions are one of the most important aspects of
         src="https://cdn.formk.it/web-assets/sponsors/zammad_logo-transparent.png"
         alt="PerByte logo"
         style="display:inline-block;vertical-align: middle;width: 120px;margin-right: 25px;"
+    />
+</a>
+
+<a class="no-underline" href="https://wedgworth.com?utm_source=formkit&utm_medium=web">
+    <img
+        class="docs-partner"
+        src="https://cdn.formk.it/web-assets/sponsors/bronze-sponsor_wedgworth.png"
+        alt="Wedgworth's Inc logo"
+        style="display:inline-block;vertical-align: middle;width: 60px;margin-right: 25px;"
     />
 </a>
 

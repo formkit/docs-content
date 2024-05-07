@@ -1,7 +1,6 @@
-
 ### Using the Web UI
 
-The easiest way to get started with FormKit Themes (for Tailwind) is to head directly to [https://themes.formkit.com](https://themes.formkit.com), customize a chosen theme to your liking, and then choose `Download theme` to be given specific commands to run in the root of your project.
+The easiest way to get started with FormKit Tailwind Themes is to install the themes package and head to [themes.formkit.com](https://themes.formkit.com), customize a theme, and choose `Download theme`.
 
 ::ArticleCard
 ---
@@ -14,23 +13,20 @@ href: "https://themes.formkit.com"
 
 ### Using the CLI 
 
-Alternatively you can use the FormKit cli to generate themes for your project. To get started run the following command in the same directory as your `formkit.config.{ts|js}` file:
+Alternatively, you can use the FormKit CLI to select a theme for your project. Run the following command in the same directory as your `formkit.config.{ts|js}` file:
 
 ```bash
-npx formkit theme
+npx formkit@latest theme
 ```
 
-You will be guided through choosing an existing theme as starting point for your project. This command will create a `formkit.theme.{ts|js}` file in the root of your project. To complete the setup you will need use the `rootClasses` from this theme file in your `formkit.config.{ts|js}`:
+This command will create a `formkit.theme.{ts|js}` file in the root of your project. To complete the setup you will need use the `rootClasses` from this theme file in your `formkit.config.{ts|js}`:
 
 ```js
 // formkit.config.ts
-import { fr } from '@formkit/i18n'
 import { defaultConfig } from '@formkit/vue'
 import { rootClasses } from './formkit.theme'
 
 export default defaultConfig({
-  locales: { fr },
-  locale: 'fr',
   config: {
     rootClasses,
   },
@@ -55,11 +51,11 @@ module.exports = {
 }
 ```
 
-If you run the command again and you will be taken to [https://themes.formkit.com](https://themes.formkit.com) where you can customize your chosen theme.
+If you run the command again, you will be taken to [https://themes.formkit.com](https://themes.formkit.com) where you can customize your chosen theme.
 
 ```bash
 # with existing formkit.theme file in your project root
-> npx formkit theme
+> npx formkit@latest theme
 ? Found local theme file for <themeName>, edit this theme? › (Y/n)
 ```
 

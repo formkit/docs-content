@@ -13,6 +13,9 @@ Using FormKit with Nuxt requires minimal setup. First include the Nuxt module as
 
 ```sh
 npm install @formkit/nuxt
+
+# If you're using PNPM you should also install some dependency packages.
+# pnpm install @formkit/core @formkit/vue
 ```
 
 Then in your `nuxt.config` file add the module to your modules list:
@@ -28,14 +31,4 @@ export default defineNuxtConfig({
 })
 ```
 
-That's it! FormKit is now registered in your project using the default config and you can start using the `<FormKit>` component.
-
-::Callout
----
-type: "tip"
-label: "Auto loading"
----
-In the past FormKit used a global plugin to install itself. This has the negative side effect of including itself Nuxt’s entry bundle. To avoid this FormKit now supports an `autoImport` option. When enabled FormKit no longer uses a global plugin but automatically injects the "global" configuration options only on the pages or components that use it.
-
-In the future this will become the default. To enable it today set `autoImport: true` in your `nuxt.config.ts`
-::
+Though unstyled, FormKit is now registered using the default config and you can start using the `<FormKit>` component.

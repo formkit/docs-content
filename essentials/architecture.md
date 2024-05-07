@@ -280,6 +280,7 @@ The <code>&lt;FormKit type="form"&gt;</code> input already incorporates this awa
 Sometimes it can be helpful to get the underlying instance of a node from the Vue `<FormKit>` component. There are three primary methods of fetching an input’s node.
 
 - Using `getNode()` (or the Vue plugin’s `$formkit.get()` for Options API)
+- Using `useFormKitNodeById`
 - Using the `@node` event.
 - Using a template `ref`.
 
@@ -307,6 +308,26 @@ type: "info"
 label: "Options API"
 ---
 When using Vue’s Options API You can access the same `getNode()` behavior by using `this.$formkit.get()`.
+::
+
+#### Using `useFormKitNodeById()`
+
+The `useFormKitNodeById` composition function allows you to access a node by its `id` from within a Vue component by returning a Vue `ref` that will be populated with the `FormKitNode` instance as soon as it has been created.
+
+For other similar composition functions see the [composables](/inputs/form#composables) documentation.
+
+::Callout
+---
+type: "warning"
+---
+You must assign the input an `id` to use this method.
+::
+
+::Example
+---
+  name: "Get core node"
+  file: "_content/_examples/use-formkit-node-by-id/MyForm.vue"
+---
 ::
 
 #### Using the node event
@@ -548,6 +569,7 @@ The following is a comprehensive list of all events emitted by `@formkit/core`.�
 | `config:{property}`       | any (the value)                 | yes     | Emitted any time a specific configuration option is set or changed.                                                    |
 | `count:{property}`        | any (the value)                 | no      | Emitted any time a a ledger’s counter value changes.                                                                   |
 | `child`                   | `FormKitNode`                   | yes     | Emitted when a new child node is added, created or assigned to a parent.                                               |
+| `childRemoved`            | `FormKitNode`                   | yes     | Emitted when a new child node is removed from a parent.                                               |
 | `created`                 | `FormKitNode`                   | yes     | Emitted immediately _before_ the node is returned when calling `createNode()` (plugins and features have already run). |
 | `defined`                 | `FormKitTypeDefinition`         | yes     | Emitted when the node’s "type" is defined, this typically happens during `createNode()`.                               |
 | `destroying`              | `FormKitNode`                   | yes     | Emitted when the `node.destroy()` is called, after it has been detached from any parents.                              |
