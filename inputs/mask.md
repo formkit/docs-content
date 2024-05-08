@@ -319,24 +319,6 @@ label: "Values can't match the mask"
   Your prefix and suffix content can't match the mask. For instance, if your mask has a digit token <code>#</code>, your prefix/suffix can't contain numbers.
 ::
 
-## Running the mask in reverse
-
-In specific circumstances, you may want to run your mask in reverse. The mask will test if user input fulfills the mask from right to left. This is common in currency-type inputs and can be applied by adding the `reverse` prop:
-
-::Example
----
-name: "Mask input"
-file: "_content/_examples/mask/reverse.vue"
----
-::
-
-::Callout
----
-type: "warning"
-label: "Shift mode requirement"
----
-Running a mask in reverse only works in shift mode.
-::
 
 ## Mask values
 
