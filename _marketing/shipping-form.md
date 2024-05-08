@@ -6,6 +6,7 @@
       type="text"
       name="full_name"
       label="Full Name"
+      prefix-icon="avatar"
       validation="required"
       help="Please enter your first and last name"
     />
