@@ -148,7 +148,7 @@ data: [
   {
     event: ["up", "down"],
     separator: '',
-    description: "Increments through input value by current amount.",
+    description: "Increments through input value by current step amount.",
   },
 ]
 ---
