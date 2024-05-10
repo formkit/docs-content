@@ -140,3 +140,16 @@ help-content: "How much do you want to donate?"
 message-content: "That's a lot of money"
 ---
 ::
+### Keyboard Interactions
+
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["up", "down"],
+    separator: '',
+    description: "Increments through input value by current amount.",
+  },
+]
+---
+::
