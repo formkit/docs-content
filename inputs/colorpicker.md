@@ -51,6 +51,18 @@ There may be times where you wish to show one format to users as a default but r
 ---
 ::
 
+### Disabling the alpha channel
+
+You can disable the alpha channel in the `colorpicker` by setting the `alpha` prop to `false`. This will enforce full opacity on values. Any values with an alpha channel will be converted to full opacity.
+
+::Example
+---
+  name: "Color input"
+  file: "_content/_examples/colorpicker/alpha.vue"
+  minHeight: 400
+---
+::
+
 ## Swatches
 
 Swatches are provided using the `options` prop and use the same `options` API as the `select`, `dropdown`, `autocomplete` and `taglist` inputs from FormKit.
@@ -137,6 +149,12 @@ data: [
     type: "string",
     default: "hex",
     description: "The format that the <code>colorpicker</code> input should show in the input preview and be the default setting for the picker panel input. Can be set to <code>hex</code>, <code>hsla</code> or <code>rgba</code>.",
+  },
+  {
+    prop: "alpha",
+    type: "boolean",
+    default: "true",
+    description: "When set to <code>false</code> the alpha channel will be disabled in the color picker.",
   },
   {
     prop: "value-format",
