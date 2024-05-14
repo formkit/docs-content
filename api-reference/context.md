@@ -176,10 +176,25 @@ Current state of the input:
    */
   errors: boolean
   /**
+   * Determines if the input should be considered "invalid" — note that this
+   * is not the opposite of the valid state. A valid input is one where the
+   * input is not loading, not pending validation, not unsettled, and
+   * passes all validation rules. An invalid input is one whose validation
+   * rules are not explicitly not passing, and those rules are visible to the user.
+   */
+  invalid: boolean | undefined
+  /**
    * The loading state of the input or form. This property is only added while
    * the input is loading and is removed when loading is complete.
    */
   loading: true | undefined
+  /**
+   * If the input is passing all validation rules. This state will remain
+   * in its current state until validation has completed, so if the input
+   * is not passing, and you have a long running validation rule this will
+   * remaining not passing until that rule has resolved.
+   */
+  passing?: boolean
   /**
    * Indicates if the input is has the "required" validation rule.
    */
