@@ -1,5 +1,5 @@
-```html
 <template>
+  <!-- %partial% -->
   <FormKit 
     type="form" 
     @submit="updateProfile"
@@ -9,5 +9,5 @@
     <UserAccountFields />
     <UserMessagingPreferences />
   </FormKit>
+  <!-- %partial% -->
 </template>
-```

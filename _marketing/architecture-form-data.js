@@ -1,4 +1,3 @@
-```js
 {
   user: {
     name: 'John FormKit',
@@ -21,4 +20,3 @@
     'updates'
   ]
 }
-```
