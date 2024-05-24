@@ -379,7 +379,13 @@ data: [
     prop: "searchable",
     type: "boolean",
     default: "false",
-    description: "Enables the search input."
+    description: "Enables the search input for the source list."
+  },
+  {
+    prop: "target-searchable",
+    type: "boolean",
+    default: "false",
+    description: "Enables the search input for the target list."
   },
   {
     prop: "source-label",
@@ -663,6 +669,31 @@ schema: [
             name: "targetHeaderItemCount",
             content: "3",
             class: "small"
+          }
+        ]
+      },
+      {
+        name: "targetControls",
+        children: [
+          {
+            name: "targetSearch",
+            class: "flex",
+            children: [
+              {
+                name: "targetSearchInput",
+                class: "large"
+              },
+              {
+                name: "targetSearchClear",
+                class: "small",
+                children: [
+                  {
+                    name: "closeIcon",
+                    content: "✕"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
