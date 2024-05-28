@@ -1,4 +1,4 @@
-export const topMovies = [
+export default [
   {
     label: 'The Shawshank Redemption',
     value: 278,

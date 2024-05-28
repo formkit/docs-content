@@ -1,5 +1,5 @@
 {
-  user: {
+  account: {
     name: 'John FormKit',
     email: 'hello@formkit.com',
     bio: 'I love building forms with FormKit!',

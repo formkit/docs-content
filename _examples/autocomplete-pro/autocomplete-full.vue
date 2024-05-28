@@ -1,5 +1,5 @@
 <script setup>
-import { topMovies } from './topMovies.js'
+import topMovies from '@content/_examples/_data/top-movies.js'
 // Search movie receives FormKit's context object
 // which we are destructuring to get the search value,
 // the page, and the hasNextPage parameters.

@@ -22,7 +22,7 @@ Need more flexibility than the native HTML `email` input provides? <a href="/inp
 ::Example
 ---
 name: "Email input"
-file: "_content/_examples/email-example/email-example.vue"
+file: "_examples/email-example/email-example.vue"
 ---
 ::
 

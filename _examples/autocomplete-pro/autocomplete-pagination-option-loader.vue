@@ -57,7 +57,7 @@ async function loadMovie(id, cachedOption) {
   </FormKit>
 </template>
 e
-<style>
+<style scoped>
 .formkit-option {
   display: flex;
   align-items: center;

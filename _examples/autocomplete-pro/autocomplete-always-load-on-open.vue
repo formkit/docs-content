@@ -2,9 +2,13 @@
 // Search movie receives FormKit's context object
 // which we are destructuring to get the search value.
 async function searchMovies({ search }) {
-	await new Promise(resolve => setTimeout(resolve, 1000))
-	if (!search) return search = 'Harry Potter'
-  const res = await fetch(`https://api.themoviedb.org/3/search/movie?query=${search || ''}&api_key=f48bcc9ed9cbce41f6c28ea181b67e14&language=en-US&page=1&include_adult=false`)
+  await new Promise((resolve) => setTimeout(resolve, 1000))
+  if (!search) return (search = 'Harry Potter')
+  const res = await fetch(
+    `https://api.themoviedb.org/3/search/movie?query=${
+      search || ''
+    }&api_key=f48bcc9ed9cbce41f6c28ea181b67e14&language=en-US&page=1&include_adult=false`
+  )
   if (res.ok) {
     const data = await res.json()
     // Iterating over results to set the required
@@ -12,7 +16,7 @@ async function searchMovies({ search }) {
     return data.results.map((result) => {
       return {
         label: result.title,
-        value: result.id
+        value: result.id,
       }
     })
   }
@@ -22,11 +26,7 @@ async function searchMovies({ search }) {
 </script>
 
 <template>
-  <FormKit
-    type="form"
-    #default="{ value }"
-    :actions="false"
-  >
+  <FormKit type="form" #default="{ value }" :actions="false">
     <!--Setting the `options` prop to async function `loadHorrorMovies`-->
     <FormKit
       name="movie"
@@ -41,7 +41,7 @@ async function searchMovies({ search }) {
   </FormKit>
 </template>
 
-<style>
+<style scoped>
 .formkit-option {
   display: flex;
   align-items: center;

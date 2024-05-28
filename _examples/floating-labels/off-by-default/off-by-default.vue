@@ -10,13 +10,10 @@
     label="Floating Textarea Label via prop"
     :floating-label="true"
   />
-  <FormKit 
-    type="text" 
-    label="I have a standard label" 
-  />
+  <FormKit type="text" label="I have a standard label" />
   <!-- %partial% -->
 </template>
 
-<style>
-@import "https://cdn.jsdelivr.net/npm/@formkit/addons@latest/dist/css/floatingLabels.css";
+<style scoped>
+@import 'https://cdn.jsdelivr.net/npm/@formkit/addons@latest/dist/css/floatingLabels.css';
 </style>

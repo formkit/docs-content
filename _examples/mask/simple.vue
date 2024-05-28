@@ -13,14 +13,12 @@ const color = ref(null)
     label="Favorite Color in Hex"
     help="Enter your favorite color in hexadecimal format. Or try FFA500."
   />
-  <div class="box" :style="{backgroundColor: color}"></div>
+  <div class="box" :style="{ backgroundColor: color }"></div>
 </template>
 
-<style>
+<style scoped>
 .box {
   width: 30px;
   height: 30px;
 }
 </style>
-
-

@@ -1,5 +1,11 @@
+<script setup lang="ts">
+async function handleSubmit() {
+  await new Promise((resolve) => setTimeout(resolve, 1000))
+  alert('Recipe updated!')
+}
+</script>
+
 <template>
-  <!-- %twoslash% -->
   <!-- %partial% -->
   <FormKit type="form" @submit="handleSubmit" submit-label="Save Recipe">
     <div class="grid grid-cols-2 gap-4">
@@ -11,7 +17,7 @@
       <div class="grid grid-cols-3 gap-4">
         <FormKit type="text" name="name" label="Name" />
         <FormKit type="number" name="quantity" label="Quantity" />
-        <FormKit type="select" placeholder="Choose" name="unit" label="Unit" :options="['cup', 'lb', 'oz', 'tsp', 'tbsp']" />
+        <FormKit type="dropdown" placeholder="Choose" name="unit" label="Unit" :options="['cup', 'lb', 'oz', 'tsp', 'tbsp']" />
       </div>
     </FormKit>
   </FormKit>

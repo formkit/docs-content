@@ -1,13 +1,9 @@
 <script setup>
-import countries from './countries.js'
+import countries from '@content/_examples/_data/countries.js'
 </script>
 
 <template>
-  <FormKit
-    type="form"
-    #default="{ value }"
-    :actions="false"
-  >
+  <FormKit type="form" #default="{ value }" :actions="false">
     <FormKit
       type="taglist"
       name="taglist"
@@ -19,4 +15,3 @@ import countries from './countries.js'
     <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>
-

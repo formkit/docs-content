@@ -14,7 +14,7 @@ The `password` input uses HTML's [native password input](https://developer.mozil
 ::Example
 ---
 name: "Password input"
-file: "_content/_examples/password/password.vue"
+file: "_examples/password/password.vue"
 ---
 ::
 
@@ -25,7 +25,7 @@ By leveraging the [icons](/essentials/icons) support built in to FormKit you can
 ::Example
 ---
 name: "Password input"
-file: "_content/_examples/icons/handle-click.vue"
+file: "_examples/icons/handle-click.vue"
 ---
 ::
 

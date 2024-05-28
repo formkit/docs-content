@@ -15,7 +15,7 @@
         suffixIcon: {
           // change wrapper to a button for accessibility
           $el: 'button',
-        }
+        },
       }"
     />
     <FormKit type="button" @click="() => node.input(value.concat(''))">
@@ -25,7 +25,7 @@
   </FormKit>
 </template>
 
-<style>
+<style scoped>
 .formkit-suffix-icon {
   appearance: none;
   background: none;

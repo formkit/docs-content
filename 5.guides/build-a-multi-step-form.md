@@ -46,7 +46,7 @@ We'll include a mix of validation rules for each input, and limit each section t
 ::Example
 ---
 file: [
-  '_content/_examples/guides/multi-step-form/basic-form/example.vue'
+  '_examples/guides/multi-step-form/basic-form/example.vue'
 ]
 bp: 880
 editable: true
@@ -115,7 +115,7 @@ label: "Styles not included"
 ::Example
 ---
 file: [
-  '_content/_examples/guides/multi-step-form/form-in-steps/example.vue'
+  '_examples/guides/multi-step-form/form-in-steps/example.vue'
 ]
 bp: 880
 editable: true
@@ -209,9 +209,9 @@ We'll also make a few other improvements:
 ::Example
 ---
 file: [
-  '_content/_examples/guides/multi-step-form/showing-validity/example.vue',
-  '_content/_examples/guides/multi-step-form/showing-validity/useSteps.js',
-  '_content/_examples/guides/multi-step-form/showing-validity/utils.js',
+  '_examples/guides/multi-step-form/showing-validity/example.vue',
+  '_examples/guides/multi-step-form/showing-validity/useSteps.js',
+  '_examples/guides/multi-step-form/showing-validity/utils.js',
 ]
 bp: 880
 editable: true
@@ -321,9 +321,9 @@ We are almost to the finish line! Here's our current form — which can now tell
 ::Example
 ---
 file: [
-  '_content/_examples/guides/multi-step-form/showing-all-state/example.vue',
-  '_content/_examples/guides/multi-step-form/showing-all-state/useSteps.js',
-  '_content/_examples/guides/multi-step-form/showing-all-state/utils.js',
+  '_examples/guides/multi-step-form/showing-all-state/example.vue',
+  '_examples/guides/multi-step-form/showing-all-state/useSteps.js',
+  '_examples/guides/multi-step-form/showing-all-state/utils.js',
 ]
 bp: 880
 editable: true
@@ -374,9 +374,9 @@ Here it is — a fully functioning multi-step form:
 ::Example
 ---
 file: [
-  '_content/_examples/guides/multi-step-form/final-form/example.vue',
-  '_content/_examples/guides/multi-step-form/final-form/useSteps.js',
-  '_content/_examples/guides/multi-step-form/final-form/utils.js'
+  '_examples/guides/multi-step-form/final-form/example.vue',
+  '_examples/guides/multi-step-form/final-form/useSteps.js',
+  '_examples/guides/multi-step-form/final-form/utils.js'
 ]
 bp: 880
 editable: true

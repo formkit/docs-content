@@ -1,13 +1,10 @@
 <script setup>
-import countries from './countries.js'
+import countries from '@content/_examples/_data/countries.js'
 </script>
 
 <template>
-  <FormKit
-    type="form"
-    :actions="false"
-  >
-  <!-- %partial%::html:: -->
+  <FormKit type="form" :actions="false">
+    <!-- %partial%::html:: -->
     <FormKit
       value="US"
       type="autocomplete"
@@ -20,4 +17,3 @@ import countries from './countries.js'
     <!-- %partial%::html:: -->
   </FormKit>
 </template>
-

@@ -44,6 +44,4 @@ async function loadMovie(id, cachedOption) {
   />
 </template>
 
-<style>
-
-</style>
+<style scoped></style>

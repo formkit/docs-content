@@ -1,5 +1,5 @@
 <script setup>
-import countries from './countries.js'
+import countries from '@content/_examples/_data/countries.js'
 </script>
 
 <template>
@@ -12,12 +12,10 @@ import countries from './countries.js'
       :options="countries"
       multiple
       popover
-			:value="['US', 'BZ', 'GE', 'IT', 'RU', 'AU', 'CN']"
+      :value="['US', 'BZ', 'GE', 'IT', 'RU', 'AU', 'CN']"
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>
 
-<style>
-
-</style>
+<style scoped></style>

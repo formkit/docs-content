@@ -29,4 +29,4 @@ function focusAutocomplete() {
   <!-- %partial% -->
 </template>
 
-<style></style>
+<style scoped></style>

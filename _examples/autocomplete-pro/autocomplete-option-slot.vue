@@ -1,5 +1,5 @@
 <script setup>
-import carBrands from './car-brands.js'
+import carBrands from '@content/_examples/_data/car-brands.js'
 </script>
 
 <template>
@@ -13,22 +13,19 @@ import carBrands from './car-brands.js'
     popover
   >
     <!--OPTION SLOT-->
-      <template #option="{ option, classes }">
-        <div :class="classes.option">
-          <img
-            :src="option.logo"
-            :alt="option.label + ' logo'"
-          />
-          <span>
-            {{ option.label }}
-          </span>
-        </div>
-      </template>
+    <template #option="{ option, classes }">
+      <div :class="classes.option">
+        <img :src="option.logo" :alt="option.label + ' logo'" />
+        <span>
+          {{ option.label }}
+        </span>
+      </div>
+    </template>
     <!--/OPTION SLOT-->
   </FormKit>
 </template>
 
-<style>
+<style scoped>
 .formkit-option {
   display: flex;
   align-items: center;

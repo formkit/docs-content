@@ -1,5 +1,5 @@
 <script setup>
-import countries from './countries.js'
+import countries from '@content/_examples/_data/countries.js'
 
 function getFlagEmoji(countryCode) {
   const codePoints = countryCode
@@ -11,37 +11,33 @@ function getFlagEmoji(countryCode) {
 </script>
 
 <template>
-<FormKit
-  type="form"
-  #default="{ value }"
-  :actions="false"
->
-  <FormKit
-    type="autocomplete"
-    name="autocomplete"
-    label="Search for a country"
-    :options="countries"
-    value="US"
-    popover
-    selection-appearance="option"
-  >
-    <!--OPTION SLOT-->
-    <template #option="{ option, classes }">
-      <div :class="classes.option">
-        <span class="decorator">
-          {{ getFlagEmoji(option.value) }}
-        </span>
-        <span>
-          {{ option.label }}
-        </span>
-      </div>
-    </template>
-    <!--/OPTION SLOT-->
-  </FormKit>
+  <FormKit type="form" #default="{ value }" :actions="false">
+    <FormKit
+      type="autocomplete"
+      name="autocomplete"
+      label="Search for a country"
+      :options="countries"
+      value="US"
+      popover
+      selection-appearance="option"
+    >
+      <!--OPTION SLOT-->
+      <template #option="{ option, classes }">
+        <div :class="classes.option">
+          <span class="decorator">
+            {{ getFlagEmoji(option.value) }}
+          </span>
+          <span>
+            {{ option.label }}
+          </span>
+        </div>
+      </template>
+      <!--/OPTION SLOT-->
+    </FormKit>
   </FormKit>
 </template>
 
-<style>
+<style scoped>
 .decorator {
   margin-right: 10px;
 }

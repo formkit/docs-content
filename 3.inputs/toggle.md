@@ -18,7 +18,7 @@ The `toggle` input — sometimes called a "switch" — offers a choice between o
 ::Example
 ---
 name: "Toggle"
-file: "_content/_examples/toggle/toggle-base.vue"
+file: "_examples/toggle/toggle-base.vue"
 ---
 ::
 
@@ -29,7 +29,7 @@ The values for the toggle are `undefined` if not-interacted with, `true` if chec
 ::Example
 ---
 name: "Toggle"
-file: "_content/_examples/toggle/toggle-values.vue"
+file: "_examples/toggle/toggle-values.vue"
 ---
 ::
 
@@ -42,7 +42,7 @@ By default, the toggle input supports a primary label like the `label` prop on a
 ::Example
 ---
 name: "Toggle"
-file: "_content/_examples/toggle/toggle-primary-label.vue"
+file: "_examples/toggle/toggle-primary-label.vue"
 ---
 ::
 
@@ -53,7 +53,7 @@ If you would like the label to be displayed above the toggle, you can use the `a
 ::Example
 ---
 name: "Toggle"
-file: "_content/_examples/toggle/toggle-alt-label-position.vue"
+file: "_examples/toggle/toggle-alt-label-position.vue"
 ---
 ::
 
@@ -64,7 +64,7 @@ Additionally, you may specify secondary labels by setting the `on-value-label` a
 ::Example
 ---
 name: "Toggle"
-file: "_content/_examples/toggle/toggle-value-labels.vue"
+file: "_examples/toggle/toggle-value-labels.vue"
 ---
 ::
 
@@ -76,7 +76,7 @@ Additionally, you can set the `value-label-display` prop to `inner` to render th
 ::Example
 ---
 name: "Toggle"
-file: "_content/_examples/toggle/toggle-labels-inner.vue"
+file: "_examples/toggle/toggle-labels-inner.vue"
 ---
 ::
 
@@ -88,7 +88,7 @@ The `thumb-icon` prop allows you to insert an icon into the `thumb` section of t
 ::Example
 ---
 name: "Toggle"
-file: "_content/_examples/toggle/toggle-icon.vue"
+file: "_examples/toggle/toggle-icon.vue"
 ---
 ::
 
@@ -100,7 +100,7 @@ The toggle input supports color props for its various sections for easy styling.
 ::Example
 ---
 name: "Toggle"
-file: "_content/_examples/toggle/toggle-icon-colors.vue"
+file: "_examples/toggle/toggle-icon-colors.vue"
 ---
 ::
 

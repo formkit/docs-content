@@ -54,7 +54,7 @@ async function submitHandler(_data, node) {
   </div>
 </template>
 
-<style>
+<style scoped>
 .toast {
   position: fixed;
   top: 0;

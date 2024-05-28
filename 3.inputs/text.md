@@ -14,7 +14,7 @@ The `text` input uses HTML's [native text input](https://developer.mozilla.org/e
 ::Example
 ---
 name: "Text input"
-file: "_content/_examples/text/text.vue"
+file: "_examples/text/text.vue"
 ---
 ::
 
@@ -27,7 +27,7 @@ These options use `parseFloat` (default) or `parseInt` respectively. If the valu
 ::Example
 ---
 name: "Range cast input"
-file: "_content/_examples/text/text-cast.vue"
+file: "_examples/text/text-cast.vue"
 ---
 ::
 

@@ -47,8 +47,8 @@ We’ll call this sample form `Register.vue`:
 ---
 name: "One-time password - register"
 file: [
-  '_content/_examples/otp-register/Register.vue',
-  '_content/_examples/otp-register/OneTimePassword.vue',
+  '_examples/otp-register/Register.vue',
+  '_examples/otp-register/OneTimePassword.vue',
 ]
 ---
 ::
@@ -68,8 +68,8 @@ All custom inputs are passed the almighty [context object](/essentials/configura
 name: "One-time password - first value"
 init-file-tab: "OneTimePassword.vue"
 file: [
-  '_content/_examples/otp-first-value/Register.vue',
-  '_content/_examples/otp-first-value/OneTimePassword.vue',
+  '_examples/otp-first-value/Register.vue',
+  '_examples/otp-first-value/OneTimePassword.vue',
 ]
 ---
 ::
@@ -104,8 +104,8 @@ We now have access to `context.digits`. Back in `OneTimePassword.vue`, let's use
 name: "One-time password - input tags"
 init-file-tab: "OneTimePassword.vue"
 file: [
-  '_content/_examples/otp-tags/Register.vue',
-  '_content/_examples/otp-tags/OneTimePassword.vue',
+  '_examples/otp-tags/Register.vue',
+  '_examples/otp-tags/OneTimePassword.vue',
 ]
 ---
 ::
@@ -135,8 +135,8 @@ Notice in the above example that when you type into one input all the other inpu
 name: "One-time password - input handlers"
 init-file-tab: "OneTimePassword.vue"
 file: [
-  '_content/_examples/otp-handlers/Register.vue',
-  '_content/_examples/otp-handlers/OneTimePassword.vue',
+  '_examples/otp-handlers/Register.vue',
+  '_examples/otp-handlers/OneTimePassword.vue',
 ]
 ---
 ::
@@ -175,8 +175,8 @@ handlePaste(e) {
 name: "One-time password - copy paste"
 init-file-tab: "OneTimePassword.vue"
 file: [
-  '_content/_examples/otp-copy-paste/Register.vue',
-  '_content/_examples/otp-copy-paste/OneTimePassword.vue',
+  '_examples/otp-copy-paste/Register.vue',
+  '_examples/otp-copy-paste/OneTimePassword.vue',
 ]
 ---
 ::

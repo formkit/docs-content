@@ -1,5 +1,5 @@
 <script setup>
-import KitchenSinkForm from './KitchenSinkForm.vue';
+import KitchenSinkForm from './KitchenSinkForm.vue'
 </script>
 
 <template>
@@ -8,7 +8,7 @@ import KitchenSinkForm from './KitchenSinkForm.vue';
   </div>
 </template>
 
-<style>
+<style scoped>
 .form-wrapper {
   width: 100%;
   max-width: 450px;

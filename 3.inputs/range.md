@@ -23,7 +23,7 @@ Need more flexibility than the native HTML `range` input provides? <a href="/inp
 ::Example
 ---
 name: "Range input"
-file: "_content/_examples/range/range.vue"
+file: "_examples/range/range.vue"
 ---
 ::
 
@@ -36,7 +36,7 @@ These options use `parseFloat` (default) or `parseInt` respectively. If the valu
 ::Example
 ---
 name: "Range cast input"
-file: "_content/_examples/range/range-cast.vue"
+file: "_examples/range/range-cast.vue"
 ---
 ::
 

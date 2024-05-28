@@ -1,11 +1,6 @@
 <template>
   <div>
-    <FormKit
-      label="No options"
-      :options="[]"
-      type="dropdown"
-      popover
-    />
+    <FormKit label="No options" :options="[]" type="dropdown" popover />
     <FormKit
       label="No options, empty message set."
       :options="[]"
@@ -16,5 +11,4 @@
   </div>
 </template>
 
-<style>
-</style>
+<style scoped></style>

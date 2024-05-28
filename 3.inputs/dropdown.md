@@ -37,7 +37,7 @@ The dropdown input will render in single-select mode by default.
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-single.vue"
+file: "_examples/dropdown/dropdown-single.vue"
 ---
 ::
 
@@ -49,7 +49,7 @@ Dropdown inputs with the prop `multiple` set will render in multi-select mode.
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-multiple.vue"
+file: "_examples/dropdown/dropdown-multiple.vue"
 ---
 ::
 
@@ -74,7 +74,7 @@ In this example, the function, `loadHorrorMovies`, makes a request to the API fo
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-single-request.vue"
+file: "_examples/dropdown/dropdown-single-request.vue"
 ---
 ::
 
@@ -86,7 +86,7 @@ By default the dropdown will only load options asynchronously once (upon the lis
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-always-load-on-open.vue"
+file: "_examples/dropdown/dropdown-always-load-on-open.vue"
 ---
 ::
 
@@ -98,7 +98,7 @@ The prop `load-on-created` will cause the dropdown to load options as soon as it
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-load-on-created.vue"
+file: "_examples/dropdown/dropdown-load-on-created.vue"
 ---
 ::
 
@@ -110,7 +110,7 @@ A function assigned the options prop will be passed two arguments: `page` and `h
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-pagination.vue"
+file: "_examples/dropdown/dropdown-pagination.vue"
 ---
 ::
 
@@ -122,7 +122,7 @@ If you would rather allow the user to load more options without having to click 
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-pagination-load-on-scroll.vue"
+file: "_examples/dropdown/dropdown-pagination-load-on-scroll.vue"
 ---
 ::
 
@@ -134,7 +134,7 @@ FormKit's dropdown input also provides an `optionLoader` prop that allows you to
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-option-loader.vue"
+file: "_examples/dropdown/dropdown-option-loader.vue"
 ---
 ::
 
@@ -153,7 +153,7 @@ The dropdown input allows you to customize the look and feel of each option by u
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-option-slot.vue"
+file: "_examples/dropdown/dropdown-option-slot.vue"
 ---
 ::
 
@@ -171,8 +171,8 @@ When using the dropdown input as a `multi-select`, you can customize the look an
 name: "Dropdown"
 min-height: 550
 file: [
-  "_content/_examples/dropdown/dropdown-selection-appearance.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/dropdown/dropdown-selection-appearance.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -185,7 +185,7 @@ If you only want to customize the display of the selected option, use the select
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-selection-slot.vue"
+file: "_examples/dropdown/dropdown-selection-slot.vue"
 ---
 
 ::
@@ -210,7 +210,7 @@ The dropdown input, by default, will be rendered in a disabled state if no optio
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-empty-message.vue"
+file: "_examples/dropdown/dropdown-empty-message.vue"
 ---
 ::
 
@@ -230,7 +230,7 @@ The selection-removable prop cannot be used for multi-selects.
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-selection-removable.vue"
+file: "_examples/dropdown/dropdown-selection-removable.vue"
 ---
 ::
 
@@ -242,7 +242,7 @@ By default, when the `selection-removable` prop is set to `true`, the dropdown w
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-open-on-remove.vue"
+file: "_examples/dropdown/dropdown-open-on-remove.vue"
 ---
 ::
 
@@ -255,8 +255,8 @@ By default, when the `multiple` prop is set, the dropdown will not close after a
 name: "Dropdown"
 min-height: 550
 file: [
-  "_content/_examples/dropdown/dropdown-close-on-select.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/dropdown/dropdown-close-on-select.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -269,7 +269,7 @@ If you would like expand the listbox as soon as the dropdown input is focused, y
 ---
 name: "Dropdown"
 min-height: 550
-file: "_content/_examples/dropdown/dropdown-open-on-focus.vue"
+file: "_examples/dropdown/dropdown-open-on-focus.vue"
 ---
 ::
 
@@ -282,8 +282,8 @@ When using the dropdown with static options, FormKit's dropdown also comes with 
 name: "Dropdown"
 min-height: 550
 file: [
-  "_content/_examples/dropdown/dropdown-overscroll.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/dropdown/dropdown-overscroll.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -297,8 +297,8 @@ If you would like to limit the number of options that can be selected, you can u
 name: "Dropdown"
 min-height: 550
 file: [
-  "_content/_examples/dropdown/dropdown-max.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/dropdown/dropdown-max.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::

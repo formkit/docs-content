@@ -47,7 +47,7 @@ async function searchMovies({ search }) {
   </FormKit>
 </template>
 
-<style>
+<style scoped>
 .formkit-option {
   display: flex;
   align-items: center;

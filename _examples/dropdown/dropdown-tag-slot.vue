@@ -32,7 +32,7 @@ const frameworks = [
       :value="vue"
       multiple
       popover
-			selection-appearance="tags"
+      selection-appearance="tags"
     >
       <!--TAG SLOT-->
       <template #tag="{ handlers, option, classes }">
@@ -57,19 +57,19 @@ const frameworks = [
                 <path
                   d="M2,12.5c-.13,0-.26-.05-.35-.15-.2-.2-.2-.51,0-.71L9.65,3.65c.2-.2,.51-.2,.71,0,.2,.2,.2,.51,0,.71L2.35,12.35c-.1,.1-.23,.15-.35,.15Z"
                   fill="currentColor"
-                ></path></svg>
-              </span>
+                ></path>
+              </svg>
+            </span>
           </button>
         </div>
       </template>
       <!--/TAG SLOT-->
-		</FormKit>
+    </FormKit>
     <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>
 
-<style>
-
+<style scoped>
 .formkit-tag {
   display: flex;
   align-items: center;
@@ -80,4 +80,3 @@ const frameworks = [
   margin-right: 10px;
 }
 </style>
-

@@ -29,9 +29,14 @@ const airlines = {
 </template>
 %partial%
 
-<style>
+<style scoped>
 img {
   aspect-ratio: 120 / 46;
+}
+.dark img {
+  /* mask to white in dark mode */
+  filter: invert(1) grayscale(1) brightness(1.1) contrast(2);
+  mix-blend-mode: lighten;
 }
 .formkit-option {
   margin-bottom: 0;

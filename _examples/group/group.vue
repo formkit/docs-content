@@ -104,7 +104,7 @@ const states = {
   <!-- %partial% -->
 </template>
 
-<style>
+<style scoped>
 .double {
   display: flex;
   justify-content: space-between;

@@ -62,11 +62,11 @@ You can now use the `barcode` input type in your `<FormKit />` components. By in
 ---
 name: "Barcode basic usage"
 file: [
-  '/\_content/_examples/barcode/basic.vue',
-  '/\_content/_examples/barcode/formkit.config.js',
+  '_examples/barcode/basic.vue',
+  '_examples/barcode/formkit.config.js',
 ]
 show-import-map: true
-import-map: '/\_content/_examples/barcode/importMap.json'
+import-map: '_examples/barcode/importMap.json'
 min-height: 500
 ---
 ::
@@ -79,11 +79,11 @@ By default the `barcode` input will scan every supported barcode type. The list 
 ---
 name: "Barcode formats"
 file: [
-  '/\_content/_examples/barcode/formats.vue',
-  '/\_content/_examples/barcode/formkit.config.js',
+  '_examples/barcode/formats.vue',
+  '_examples/barcode/formkit.config.js',
 ]
 show-import-map: true
-import-map: '/\_content/_examples/barcode/importMap.json'
+import-map: '_examples/barcode/importMap.json'
 min-height: 500
 ---
 ::

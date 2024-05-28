@@ -24,7 +24,7 @@ The value of a list input is an array where each item is the value of the input 
 ::Example
 ---
 name: "List input"
-file: "_content/_examples/list/list.vue"
+file: "_examples/list/list.vue"
 ---
 ::
 
@@ -53,8 +53,8 @@ Static lists are the simplest type of list to create. Wrap any inputs in a `<For
 ---
 name: "Simple static list"
 file: [
-  "_content/_examples/list/list-static.vue",
-  '_content/_examples/transfer-list/nba-top-players.js'
+  "_examples/list/list-static.vue",
+  '_examples/transfer-list/nba-top-players.js'
 ]
 ---
 ::
@@ -91,7 +91,7 @@ To use a prebuilt repeater, check out the free [FormKit Pro repeater input](/inp
 ::Example
 ---
 name: "Dynamic list"
-file: "_content/_examples/list/list-dynamic.vue"
+file: "_examples/list/list-dynamic.vue"
 ---
 ::
 
@@ -100,7 +100,7 @@ file: "_content/_examples/list/list-dynamic.vue"
 ::Example
 ---
 name: "Dynamic list"
-file: "_content/_examples/list/list-dynamic-nested-group.vue"
+file: "_examples/list/list-dynamic-nested-group.vue"
 ---
 ::
 
@@ -110,7 +110,7 @@ file: "_content/_examples/list/list-dynamic-nested-group.vue"
 ---
 name: "Dynamic list"
 file: [
-  "_content/_examples/list/list-dynamic-v-model.vue",
+  "_examples/list/list-dynamic-v-model.vue",
 ]
 ---
 ::
@@ -121,7 +121,7 @@ file: [
 ---
 name: "Dynamic list"
 file: [
-  "_content/_examples/list/list-dynamic-schema.vue",
+  "_examples/list/list-dynamic-schema.vue",
 ]
 ---
 ::
@@ -134,7 +134,7 @@ Lists (and [groups](/inputs/group)) are always aware of the validation state of 
 ::Example
 ---
 name: "List input"
-file: "_content/_examples/list-validity/list-validity.vue"
+file: "_examples/list-validity/list-validity.vue"
 ---
 ::
 

@@ -45,7 +45,7 @@ const styledMarks = [
   />
 </template>
 
-<style>
+<style scoped>
 [data-type='slider'] .formkit-mark {
   box-shadow: 0 0 0 0.1em rgba(0, 0, 0, 0.75);
 }

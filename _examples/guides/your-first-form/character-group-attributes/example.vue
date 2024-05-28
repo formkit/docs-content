@@ -90,7 +90,7 @@ const createCharacter = async (fields) => {
 </template>
 <!-- %partial%::html:: -->
 
-<style>
+<style scoped>
 pre[wrap] {
   margin-bottom: 20px !important;
 }
@@ -98,7 +98,7 @@ pre[wrap] {
 .form-label {
   font-size: 14px;
   font-weight: 500;
-  margin: 0 0 -.5rem;
+  margin: 0 0 -0.5rem;
   padding: 5px;
   border-radius: 5px;
   display: inline-block !important;

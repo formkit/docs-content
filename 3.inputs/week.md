@@ -15,7 +15,7 @@ select a week.
 ::Example
 ---
 name: "Week input"
-file: "_content/_examples/week/week.vue"
+file: "_examples/week/week.vue"
 ---
 ::
 

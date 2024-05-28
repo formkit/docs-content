@@ -14,11 +14,18 @@ const createCharacter = async (fields) => {
 </script>
 
 <template>
-  <div><h4 class="form-label">Adding the createCharacter submit handler</h4></div>
+  <div>
+    <h4 class="form-label">Adding the createCharacter submit handler</h4>
+  </div>
   <h1>New Character</h1>
 
   <!-- form is also an input, so it also accepts plugins -->
-  <FormKit type="form" @submit="createCharacter" :plugins="[castRangeToNumber]" #default="{ value }">
+  <FormKit
+    type="form"
+    @submit="createCharacter"
+    :plugins="[castRangeToNumber]"
+    #default="{ value }"
+  >
     <FormKit
       type="text"
       name="name"
@@ -81,11 +88,13 @@ const createCharacter = async (fields) => {
     <pre wrap>{{ value }}</pre>
   </FormKit>
 
-  <p><em><small>Press submit to see the collected form data.</small></em></p>
+  <p>
+    <em><small>Press submit to see the collected form data.</small></em>
+  </p>
 </template>
 <!-- %partial%::html:: -->
 
-<style>
+<style scoped>
 pre[wrap] {
   margin-bottom: 20px !important;
 }
@@ -93,7 +102,7 @@ pre[wrap] {
 .form-label {
   font-size: 14px;
   font-weight: 500;
-  margin: 0 0 -.5rem;
+  margin: 0 0 -0.5rem;
   padding: 5px;
   border-radius: 5px;
   display: inline-block !important;

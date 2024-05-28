@@ -43,8 +43,8 @@ Available field props:
 ---
 name: "Auto-Height Textarea"
 file: [
-'/\_content/_examples/auto-height-textarea/index.vue',
-'/\_content/_examples/auto-height-textarea/formkit.config.js'
+'_examples/auto-height-textarea/index.vue',
+'_examples/auto-height-textarea/formkit.config.js'
 ]
 ---
 ::

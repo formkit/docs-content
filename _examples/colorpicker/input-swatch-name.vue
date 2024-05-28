@@ -175,7 +175,7 @@ function handleColorInput() {
   <!-- %partial% -->
 </template>
 
-<style>
+<style scoped>
 .input-color-name {
   display: flex;
   flex-direction: row;

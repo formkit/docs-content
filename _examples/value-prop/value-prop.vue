@@ -1,4 +1,9 @@
+<script setup lang="ts">
+import { FormKit } from '@formkit/vue'
+</script>
+
 <template>
+  <!-- %twoslash% -->
   <!-- %partial% -->
   <FormKit
     label="Username"

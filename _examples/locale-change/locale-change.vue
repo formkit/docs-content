@@ -35,7 +35,7 @@ export default {
 </template>
 %partial%
 
-<style>
+<style scoped>
 a {
   margin-bottom: 2em;
 }

@@ -20,7 +20,7 @@ By default, the repeater input has the ability to shift, add, and remove items:
 ::Example
 ---
 name: "Repeater"
-file: "_content/_examples/repeater/repeater-base.vue"
+file: "_examples/repeater/repeater-base.vue"
 ---
 ::
 
@@ -34,7 +34,7 @@ Like all other FormKit inputs, the Repeater is able to be used in a form written
 ::Example
 ---
 name: "Repeater"
-file: "_content/_examples/repeater/repeater-schema.vue"
+file: "_examples/repeater/repeater-schema.vue"
 ---
 ::
 
@@ -45,7 +45,7 @@ In the previous example, the 'Add Users' button is provided by default, and the 
 ::Example
 ---
 name: "Repeater"
-file: "_content/_examples/repeater/repeater-add-button-attrs.vue"
+file: "_examples/repeater/repeater-add-button-attrs.vue"
 ---
 ::
 
@@ -57,7 +57,7 @@ Like many other FormKit inputs, the repeater comes with a `min` and `max` prop. 
 ::Example
 ---
 name: "Repeater"
-file: "_content/_examples/repeater/repeater-min-max.vue"
+file: "_examples/repeater/repeater-min-max.vue"
 ---
 ::
 
@@ -68,7 +68,7 @@ When a repeater is allowed to be empty by having its `min` prop set to `0` and h
 ::Example
 ---
 name: "Repeater"
-file: "_content/_examples/repeater/repeater-empty-state.vue"
+file: "_examples/repeater/repeater-empty-state.vue"
 ---
 ::
 
@@ -80,7 +80,7 @@ The repeater input by default comes with a set of controls that allow you to shi
 ::Example
 ---
 name: "Repeater"
-file: "_content/_examples/repeater/repeater-insert-control.vue"
+file: "_examples/repeater/repeater-insert-control.vue"
 ---
 ::
 
@@ -92,7 +92,7 @@ With FormKit's repeater, you are not restricted to our default controls. You can
 ::Example
 ---
 name: "Repeater"
-file: "_content/_examples/repeater/repeater-controls.vue"
+file: "_examples/repeater/repeater-controls.vue"
 ---
 ::
 
@@ -123,7 +123,7 @@ returning errors for both the repeater and one child:
 ::Example
 ---
 name: "Repeater"
-file: "_content/_examples/repeater/errors/repeater-errors.vue"
+file: "_examples/repeater/errors/repeater-errors.vue"
 ---
 ::
 

@@ -36,8 +36,8 @@ The `taglist` input allows users to search through a list of options and apply a
 name: "Taglist"
 min-height: 550
 file: [
-  "_content/_examples/taglist/taglist-base.vue",
-  "_content/_examples/_data/car-brands.js"
+  "_examples/taglist/taglist-base.vue",
+  "_examples/_data/car-brands.js"
 ]
 ---
 ::
@@ -51,8 +51,8 @@ The taglist input will filter options with its own internal search function. You
 name: "Taglist"
 min-height: 550
 file: [
-  "_content/_examples/taglist/taglist-filter.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/taglist/taglist-filter.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -65,7 +65,7 @@ The taglist input, unlike the dropdown or autocomplete inputs, allows you to ent
 ---
 name: "Taglist"
 min-height: 550
-file: "_content/_examples/taglist/taglist-allow-new-values.vue"
+file: "_examples/taglist/taglist-allow-new-values.vue"
 ---
 ::
 
@@ -81,7 +81,7 @@ In this example, we'll assign the `options` prop the `searchMovies` function. By
 ---
 name: "Taglist"
 min-height: 550
-file: "_content/_examples/taglist/taglist-single-request.vue"
+file: "_examples/taglist/taglist-single-request.vue"
 ---
 ::
 
@@ -94,7 +94,7 @@ A likely scenario you'll encounter is needing to search through a paginated API.
 ---
 name: "Taglist"
 min-height: 550
-file: "_content/_examples/taglist/taglist-pagination.vue"
+file: "_examples/taglist/taglist-pagination.vue"
 ---
 ::
 
@@ -112,7 +112,7 @@ FormKit's taglist input also provides an `optionLoader` prop that allows you to 
 ---
 name: "Taglist"
 min-height: 550
-file: "_content/_examples/taglist/taglist-pagination-option-loader.vue"
+file: "_examples/taglist/taglist-pagination-option-loader.vue"
 ---
 ::
 
@@ -130,7 +130,7 @@ If you would rather load options when the taglist is created, you can set the `l
 ---
 name: "Taglist"
 min-height: 550
-file: "_content/_examples/taglist/taglist-load-on-created.vue"
+file: "_examples/taglist/taglist-load-on-created.vue"
 ---
 ::
 
@@ -146,8 +146,8 @@ In this example, we are going to use the `tag` slot to customize the look of the
 name: "Taglist"
 min-height: 550
 file: [
-  "_content/_examples/taglist/taglist-slots.vue",
-  "_content/_examples/_data/car-brands.js"
+  "_examples/taglist/taglist-slots.vue",
+  "_examples/_data/car-brands.js"
 ]
 ---
 ::
@@ -162,8 +162,8 @@ The taglist input, by default, will not expand the listbox when no search result
 name: "taglist"
 min-height: 550
 file: [
-  "_content/_examples/taglist/taglist-empty-message.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/taglist/taglist-empty-message.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -177,8 +177,8 @@ The `max` prop allows you to limit the number of options that can be selected. W
 name: "Taglist"
 min-height: 550
 file: [
-  "_content/_examples/taglist/taglist-max.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/taglist/taglist-max.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -192,8 +192,8 @@ If you would like the taglist's listbox to remain open in between selections, se
 name: "Taglist"
 min-height: 550
 file: [
-  "_content/_examples/taglist/taglist-close-on-select.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/taglist/taglist-close-on-select.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -207,8 +207,8 @@ If you want the options to be reloaded (with static options, this would filter t
 name: "Autocomplete"
 min-height: 550
 file: [
-  "_content/_examples/taglist/taglist-reload-on-commit.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/taglist/taglist-reload-on-commit.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -222,8 +222,8 @@ To enable opening the taglist's listbox on click of its search input, set the `o
 name: "taglist"
 min-height: 550
 file: [
-  "_content/_examples/taglist/taglist-open-on-click.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/taglist/taglist-open-on-click.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -236,7 +236,7 @@ If you would like to open the taglist's listbox anytime its search input is focu
 ---
 name: "taglist"
 min-height: 550
-file: "_content/_examples/taglist/taglist-open-on-focus.vue"
+file: "_examples/taglist/taglist-open-on-focus.vue"
 ---
 ::
 
@@ -257,8 +257,8 @@ If you want the listbox to expand when an selection is removed, use the `open-on
 name: "Autocomplete"
 min-height: 550
 file: [
-  "_content/_examples/taglist/taglist-open-on-remove.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/taglist/taglist-open-on-remove.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -273,8 +273,8 @@ Now let's combine what we've learned so far by leveraging the `tag` slot for cus
 name: "Taglist"
 min-height: 550
 file: [
-  "_content/_examples/taglist/taglist-full-example.vue",
-  "_content/_examples/topMovies.js"
+  "_examples/taglist/taglist-full-example.vue",
+  "_examples/_data/top-movies.js"
 ]
 ---
 ::

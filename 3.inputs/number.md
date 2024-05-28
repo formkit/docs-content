@@ -14,7 +14,7 @@ The `number` input uses HTML's [native number input](https://developer.mozilla.o
 ::Example
 ---
 name: "Number input"
-file: "_content/_examples/number/number.vue"
+file: "_examples/number/number.vue"
 ---
 ::
 
@@ -27,7 +27,7 @@ These options use `parseFloat` (default) or `parseInt` respectively. If the valu
 ::Example
 ---
 name: "Number cast input"
-file: "_content/_examples/number/number-cast.vue"
+file: "_examples/number/number-cast.vue"
 ---
 ::
 

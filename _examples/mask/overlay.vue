@@ -61,7 +61,7 @@ const tokens = {
   />
 </template>
 
-<style>
+<style scoped>
 .red {
   color: red;
 }

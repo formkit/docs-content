@@ -1,6 +1,6 @@
 <!-- %partial%::html:: -->
 <script setup>
-import { castRangeToNumber, updateAttributesPlugin } from 'plugins.js'
+import { castRangeToNumber, updateAttributesPlugin } from './plugins.js'
 
 const createCharacter = async (fields) => {
   await new Promise((r) => setTimeout(r, 1000))
@@ -84,18 +84,25 @@ const createCharacter = async (fields) => {
     <pre wrap>{{ value }}</pre>
   </FormKit>
 
-  <p><em><small>Change the character's class to see the changes in attribute values.</small></em></p>
+  <p>
+    <em
+      ><small
+        >Change the character's class to see the changes in attribute
+        values.</small
+      ></em
+    >
+  </p>
 </template>
 <!-- %partial%::html:: -->
 
-<style>
+<style scoped>
 pre[wrap] {
   margin-bottom: 20px !important;
 }
 .form-label {
   font-size: 14px;
   font-weight: 500;
-  margin: 0 0 -.5rem;
+  margin: 0 0 -0.5rem;
   padding: 5px;
   border-radius: 5px;
   display: inline-block !important;
@@ -103,4 +110,3 @@ pre[wrap] {
   color: white;
 }
 </style>
-

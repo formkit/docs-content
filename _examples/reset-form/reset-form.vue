@@ -40,7 +40,7 @@ export default {
 </template>
 <!-- %partial% -->
 
-<style>
+<style scoped>
 .success {
   padding: 0.75em;
   border-radius: 0.5em;

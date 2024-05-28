@@ -38,7 +38,7 @@ async function searchMovies({ search }) {
   </FormKit>
 </template>
 
-<style>
+<style scoped>
 .formkit-form {
   max-width: 32em;
 }

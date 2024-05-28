@@ -43,7 +43,7 @@ async function reserve(_data, node) {
   <pre wrap>{{ value }}</pre>
 </template>
 
-<style>
+<style scoped>
 .rental-car-card {
   padding: 1em;
   background-color: #f5f5f5;

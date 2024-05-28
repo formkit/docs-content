@@ -22,7 +22,7 @@ Need more flexibility than the native HTML `datetime-local` input provides? <a h
 ::Example
 ---
   name: "Datetime-local input"
-  file: "_content/_examples/datetime-local-example/datetime-local-example.vue"
+  file: "_examples/datetime-local-example/datetime-local-example.vue"
 ---
 ::
 

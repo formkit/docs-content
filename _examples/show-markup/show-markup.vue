@@ -1,11 +1,11 @@
 <script>
 export default {
-  data () {
+  data() {
     return {
-      output: ''
+      output: '',
     }
   },
-  mounted () {
+  mounted() {
     if (this.$refs && this.$refs.source) {
       this.output = window.hljs.highlight(
         this.format(this.$refs.source).innerHTML,
@@ -19,36 +19,32 @@ export default {
       let indentAfter = new Array(level - 1).join('  ')
       let textNode
 
-
       for (var i = 0; i < node.children.length; i++) {
-          textNode = document.createTextNode('\n' + indentBefore);
-          node.insertBefore(textNode, node.children[i]);
-          this.format(node.children[i], level);
-          if (node.lastElementChild == node.children[i]) {
-            textNode = document.createTextNode('\n' + indentAfter);
-            node.appendChild(textNode);
-          }
+        textNode = document.createTextNode('\n' + indentBefore)
+        node.insertBefore(textNode, node.children[i])
+        this.format(node.children[i], level)
+        if (node.lastElementChild == node.children[i]) {
+          textNode = document.createTextNode('\n' + indentAfter)
+          node.appendChild(textNode)
+        }
       }
-      return node;
-    }
-  }
+      return node
+    },
+  },
 }
 </script>
 
 <template>
   <div>
-    <div
-      class="source-content"
-      ref="source"
-    >
+    <div class="source-content" ref="source">
       <!-- %partial%::html:: -->
-        <FormKit
-          type="text"
-          label="Your username"
-          value="calypso"
-          help="Pick a username people will remember!"
-        />
-        <!-- %partial%::html:: -->
+      <FormKit
+        type="text"
+        label="Your username"
+        value="calypso"
+        help="Pick a username people will remember!"
+      />
+      <!-- %partial%::html:: -->
     </div>
     <div class="output">
       <pre v-html="output" />
@@ -56,11 +52,15 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 html {
   background-color: #132427;
-  background-image:
-    linear-gradient(to right, #0c404b 1px, transparent 1px, transparent 100%),
+  background-image: linear-gradient(
+      to right,
+      #0c404b 1px,
+      transparent 1px,
+      transparent 100%
+    ),
     linear-gradient(to bottom, #0c404b 1px, transparent 1px, transparent 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -77,7 +77,7 @@ html {
   line-height: 1.6;
   margin-top: -1rem;
   font-size: 0.875em;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 
 .hljs-name {

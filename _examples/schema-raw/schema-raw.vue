@@ -32,7 +32,7 @@ const schema = [
 </template>
 <!-- %partial% -->
 
-<style>
+<style scoped>
 .formkit-prefix {
   padding: 0 0.5em;
   font-size: 0.875em;

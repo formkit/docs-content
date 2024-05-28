@@ -1,5 +1,5 @@
 <script setup>
-import carBrands from './car-brands.js'
+import carBrands from '@content/_examples/_data/car-brands.js'
 </script>
 
 <template>

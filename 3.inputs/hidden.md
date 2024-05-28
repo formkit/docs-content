@@ -22,7 +22,7 @@ The `hidden` input uses HTML's [native hidden input](https://developer.mozilla.o
 ::Example
 ---
 name: "Hidden input"
-file: "_content/_examples/hidden/hidden.vue"
+file: "_examples/hidden/hidden.vue"
 tabs: "html,render"
 ---
 ::
@@ -36,7 +36,7 @@ These options use `parseFloat` (default) or `parseInt` respectively. If the valu
 ::Example
 ---
 name: "Hidden cast input"
-file: "_content/_examples/hidden/hidden-cast.vue"
+file: "_examples/hidden/hidden-cast.vue"
 ---
 ::
 

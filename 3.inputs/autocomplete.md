@@ -39,8 +39,8 @@ By default, the autocomplete input will render in single-select mode:
 name: "Autocomplete"
 min-height: 550
 file: [
-  "_content/_examples/autocomplete-pro/autocomplete-single.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/autocomplete-pro/autocomplete-single.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -54,8 +54,8 @@ By setting the `multiple` prop the autocomplete input will render in multi-selec
 name: "Autocomplete"
 min-height: 550
 file: [
-  "_content/_examples/autocomplete-pro/autocomplete-multiple.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/autocomplete-pro/autocomplete-multiple.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -78,8 +78,8 @@ The autocomplete input will filter options with its own internal search function
 name: "Autocomplete"
 min-height: 550
 file: [
-  "_content/_examples/autocomplete-pro/autocomplete-filter.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/autocomplete-pro/autocomplete-filter.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -96,7 +96,7 @@ In this example, we'll assign the `options` prop the `searchMovies` function. By
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-single-request.vue"
+file: "_examples/autocomplete-pro/autocomplete-single-request.vue"
 ---
 ::
 
@@ -108,7 +108,7 @@ A likely scenario you'll encounter is needing to search through a paginated API.
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-pagination.vue"
+file: "_examples/autocomplete-pro/autocomplete-pagination.vue"
 ---
 ::
 
@@ -122,7 +122,7 @@ FormKit's autocomplete input also provides an `optionLoader` prop that allows yo
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-pagination-option-loader.vue"
+file: "_examples/autocomplete-pro/autocomplete-pagination-option-loader.vue"
 ---
 ::
 
@@ -140,7 +140,7 @@ If you would rather load options when the autocomplete is created, you can set t
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-load-on-created.vue"
+file: "_examples/autocomplete-pro/autocomplete-load-on-created.vue"
 ---
 ::
 
@@ -155,8 +155,8 @@ The autocomplete input allows you to customize the look and feel of each option 
 name: "Autocomplete"
 min-height: 550
 file: [
-  "_content/_examples/autocomplete-pro/autocomplete-option-slot.vue",
-  "_content/_examples/_data/car-brands.js"
+  "_examples/autocomplete-pro/autocomplete-option-slot.vue",
+  "_examples/_data/car-brands.js"
 ]
 ---
 ::
@@ -175,8 +175,8 @@ autocomplete, you can set the selection-appearance prop to `text-input` (default
 name: "Autocomplete"
 min-height: 550
 file: [
-  "_content/_examples/autocomplete-pro/autocomplete-selection-appearance.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/autocomplete-pro/autocomplete-selection-appearance.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -190,8 +190,8 @@ If you only want to customize the display of the selected option, set the select
 name: "Autocomplete"
 min-height: 550
 file: [
-  "_content/_examples/autocomplete-pro/autocomplete-slot-selection.vue",
-  "_content/_examples/_data/car-brands.js"
+  "_examples/autocomplete-pro/autocomplete-slot-selection.vue",
+  "_examples/_data/car-brands.js"
 ]
 ---
 
@@ -209,8 +209,8 @@ The autocomplete input, by default, will not expand the listbox when no search r
 name: "Autocomplete"
 min-height: 550
 file: [
-  "_content/_examples/autocomplete-pro/autocomplete-empty-message.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/autocomplete-pro/autocomplete-empty-message.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -224,8 +224,8 @@ If you would like the listbox to remain expanded after selecting a value, you ca
 name: "Autocomplete"
 min-height: 550
 file: [
-  "_content/_examples/autocomplete-pro/autocomplete-close-on-select.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/autocomplete-pro/autocomplete-close-on-select.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -239,8 +239,8 @@ If you want the options to be reloaded when the user commits a selection, use th
 name: "Autocomplete"
 min-height: 550
 file: [
-  "_content/_examples/autocomplete-pro/autocomplete-reload-on-commit.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/autocomplete-pro/autocomplete-reload-on-commit.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -255,8 +255,8 @@ To enable opening the autocomplete's listbox on click of its search input, set t
 name: "Autocomplete"
 min-height: 550
 file: [
-  "_content/_examples/autocomplete-pro/autocomplete-open-on-click.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/autocomplete-pro/autocomplete-open-on-click.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -269,7 +269,7 @@ If you would like to open the autocomplete's listbox anytime the input is clicke
 ---
 name: "Autocomplete"
 min-height: 550
-file: "_content/_examples/autocomplete-pro/autocomplete-open-on-focus.vue"
+file: "_examples/autocomplete-pro/autocomplete-open-on-focus.vue"
 ---
 ::
 
@@ -290,8 +290,8 @@ For single-select autocompletes only, if you would like to clear the search inpu
 name: "Autocomplete"
 min-height: 550
 file: [
-  "_content/_examples/autocomplete-pro/autocomplete-clear-search-on-open.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/autocomplete-pro/autocomplete-clear-search-on-open.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -314,8 +314,8 @@ The <code>selection-removable</code> prop cannot be used for multi-selects.
 name: "Autocomplete"
 min-height: 550
 file: [
-  "_content/_examples/autocomplete-pro/autocomplete-selection-removable.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/autocomplete-pro/autocomplete-selection-removable.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -329,8 +329,8 @@ If you want the listbox to expand when an selection is removed, use the `open-on
 name: "Autocomplete"
 min-height: 550
 file: [
-  "_content/_examples/autocomplete-pro/autocomplete-open-on-remove.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/autocomplete-pro/autocomplete-open-on-remove.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -344,8 +344,8 @@ If you would like to limit the number of options that can be selected, you can u
 name: "Autocomplete"
 min-height: 550
 file: [
-  "_content/_examples/autocomplete-pro/autocomplete-max.vue",
-  "_content/_examples/_data/countries.js"
+  "_examples/autocomplete-pro/autocomplete-max.vue",
+  "_examples/_data/countries.js"
 ]
 ---
 ::
@@ -360,8 +360,8 @@ Now let's combine what we've learned so far by leveraging the `option` slot for 
 name: "Autocomplete"
 min-height: 550
 file: [
-  "_content/_examples/autocomplete-pro/autocomplete-full.vue",
-  "_content/_examples/topMovies.js"
+  "_examples/autocomplete-pro/autocomplete-full.vue",
+  "_examples/_data/top-movies.js"
 ]
 ---
 ::

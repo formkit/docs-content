@@ -29,7 +29,7 @@ const data = reactive({
   <FormKitSchema :schema="schema" :data="data" />
 </template>
 
-<style>
+<style scoped>
 .red {
   color: red;
 }

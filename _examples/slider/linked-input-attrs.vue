@@ -24,7 +24,7 @@
   <!-- %partial%::html:: -->
 </template>
 
-<style>
+<style scoped>
 [data-type='slider'] .formkit-linked-values .formkit-inner {
   padding-left: 0.5em;
 }

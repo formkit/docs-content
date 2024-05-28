@@ -50,7 +50,7 @@ async function loadCurrentlyPopularMovies({ page, hasNextPage }) {
   </FormKit>
 </template>
 
-<style>
+<style scoped>
 .formkit-option {
   display: flex;
   align-items: center;

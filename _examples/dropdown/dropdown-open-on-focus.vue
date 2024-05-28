@@ -13,7 +13,9 @@ function focusDropdown() {
 
 <template>
   <div>
-    <FormKit type="button" @click="focusDropdown">Click me to focus dropdown</FormKit>
+    <FormKit type="button" @click="focusDropdown"
+      >Click me to focus dropdown</FormKit
+    >
     <FormKit
       id="dropdown"
       type="dropdown"
@@ -28,4 +30,4 @@ function focusDropdown() {
   </div>
 </template>
 
-<style></style>
+<style scoped></style>

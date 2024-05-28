@@ -24,4 +24,4 @@ const frameworks = [
   </FormKit>
 </template>
 
-<style></style>
+<style scoped></style>

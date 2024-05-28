@@ -31,7 +31,7 @@ const changeLocale = () => {
 </template>
 %partial%
 
-<style>
+<style scoped>
 a {
   margin-bottom: 2em;
 }

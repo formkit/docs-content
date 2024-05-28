@@ -1,5 +1,5 @@
 <script setup>
-import countries from './countries.js'
+import countries from '@content/_examples/_data/countries.js'
 </script>
 
 <template>
@@ -13,4 +13,3 @@ import countries from './countries.js'
     open-on-click
   />
 </template>
-

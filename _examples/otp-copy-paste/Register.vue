@@ -28,7 +28,7 @@ const otp = createInput(OneTimePassword, {
 </template>
 <!-- %partial% -->
 
-<style>
+<style scoped>
 .formkit-inner {
   box-shadow: none;
 }

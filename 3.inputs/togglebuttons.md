@@ -24,7 +24,7 @@ To output multiple toggle buttons use the `options` prop. Options can be specifi
 ::Example
 ---
 name: "Toggle Buttons Simple Options"
-file: "_content/_examples/togglebuttons/togglebuttons-multiple-basic.vue"
+file: "_examples/togglebuttons/togglebuttons-multiple-basic.vue"
 ---
 ::
 
@@ -37,7 +37,7 @@ The `togglebuttons` input, by default, only allows one option to be selected. Yo
 ::Example
 ---
 name: "Multiple"
-file: "_content/_examples/togglebuttons/togglebuttons-multiple.vue"
+file: "_examples/togglebuttons/togglebuttons-multiple.vue"
 ---
 ::
 
@@ -48,7 +48,7 @@ By default `togglebuttons` will allow you to select and deselect allowing for an
 ::Example
 ---
 name: "Multiple"
-file: "_content/_examples/togglebuttons/togglebuttons-single-enforced.vue"
+file: "_examples/togglebuttons/togglebuttons-single-enforced.vue"
 ---
 ::
 
@@ -59,7 +59,7 @@ Assuming you are using the default FormKit styles, the `vertical` prop applies d
 ::Example
 ---
 name: "Vertical"
-file: "_content/_examples/togglebuttons/togglebuttons-vertical.vue"
+file: "_examples/togglebuttons/togglebuttons-vertical.vue"
 ---
 ::
 
@@ -68,7 +68,7 @@ More prop examples and combinations:
 ::Example
 ---
 name: "Toggle Buttons Multiple Enforced"
-file: "_content/_examples/togglebuttons/togglebuttons-enforced.vue"
+file: "_examples/togglebuttons/togglebuttons-enforced.vue"
 ---
 ::
 
@@ -81,7 +81,7 @@ The `togglebuttons` input offers choices between one or more values; it's a grea
 ::Example
 ---
 name: "Single Toggle Button"
-file: "_content/_examples/togglebuttons/togglebuttons-simple.vue"
+file: "_examples/togglebuttons/togglebuttons-simple.vue"
 ---
 ::
 
@@ -93,7 +93,7 @@ The values for the toggle buttons are `undefined` if not-interacted with, `true`
 ::Example
 ---
 name: "On / Off Values"
-file: "_content/_examples/togglebuttons/togglebuttons-basic-values.vue"
+file: "_examples/togglebuttons/togglebuttons-basic-values.vue"
 ---
 ::
 
@@ -104,7 +104,7 @@ Additionally, you may specify secondary labels by setting the `on-label` and the
 ::Example
 ---
 name: "On / Off Labels"
-file: "_content/_examples/togglebuttons/togglebuttons-value-labels.vue"
+file: "_examples/togglebuttons/togglebuttons-value-labels.vue"
 ---
 ::
 
@@ -117,7 +117,7 @@ For multiple options you can use the `default` slot to set the toggle's content.
 ::Example
 ---
 name: "Toggle Buttons Options Slot"
-file: "_content/_examples/togglebuttons/togglebuttons-options-slots.vue"
+file: "_examples/togglebuttons/togglebuttons-options-slots.vue"
 ---
 ::
 
@@ -128,7 +128,7 @@ For a single toggle you can use the default slot for setting the toggle content.
 ::Example
 ---
 name: "Toggle Buttons Default Slot"
-file: "_content/_examples/togglebuttons/togglebuttons-single-slots.vue"
+file: "_examples/togglebuttons/togglebuttons-single-slots.vue"
 ---
 ::
 

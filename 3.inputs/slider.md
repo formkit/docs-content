@@ -36,7 +36,7 @@ youtube-id: "BtY1FcpqRJk"
 ::Example
 ---
 name: "Slider Input"
-file: "_content/_examples/slider/basic.vue"
+file: "_examples/slider/basic.vue"
 ---
 ::
 
@@ -47,7 +47,7 @@ if you're familar with using the native HTML `range` input you'll find than many
 ::Example
 ---
 name: "Slider Input"
-file: "_content/_examples/slider/native-props.vue"
+file: "_examples/slider/native-props.vue"
 ---
 ::
 
@@ -66,7 +66,7 @@ To render two value handles on a `slider` input supply an array as the input's v
 ::Example
 ---
 name: "Slider Input"
-file: "_content/_examples/slider/multiple-values.vue"
+file: "_examples/slider/multiple-values.vue"
 ---
 ::
 
@@ -77,7 +77,7 @@ Using the `maxHandleInner` (default) and `minHandleInner` slots you can customiz
 ::Example
 ---
 name: "Slider Input"
-file: "_content/_examples/slider/customizing-handle.vue"
+file: "_examples/slider/customizing-handle.vue"
 ---
 ::
 
@@ -90,7 +90,7 @@ By default `slider` tooltips show on hover and when a selection handle is being 
 ::Example
 ---
 name: "Slider Input"
-file: "_content/_examples/slider/tooltip-visibility.vue"
+file: "_examples/slider/tooltip-visibility.vue"
 ---
 ::
 
@@ -104,7 +104,7 @@ By providing a function to the `tooltip-format` prop you can customize the value
 ::Example
 ---
 name: "Slider Input"
-file: "_content/_examples/slider/tooltip-formatting.vue"
+file: "_examples/slider/tooltip-formatting.vue"
 ---
 ::
 
@@ -113,7 +113,7 @@ By using the `tooltip-format` prop you can introduce variety to your `slider` in
 ::Example
 ---
 name: "Slider Input"
-file: "_content/_examples/slider/fun-formatting.vue"
+file: "_examples/slider/fun-formatting.vue"
 ---
 ::
 
@@ -124,7 +124,7 @@ Sometimes a range-style input is more useful for users if they're also able to d
 ::Example
 ---
 name: "Linked Inputs"
-file: "_content/_examples/slider/linked-inputs.vue"
+file: "_examples/slider/linked-inputs.vue"
 ---
 ::
 
@@ -139,7 +139,7 @@ The linked `number` inputs are FormKit inputs. You can apply props to them using
 ::Example
 ---
 name: "Linked Inputs"
-file: "_content/_examples/slider/linked-input-attrs.vue"
+file: "_examples/slider/linked-input-attrs.vue"
 ---
 ::
 
@@ -152,7 +152,7 @@ The `slider` input supports the rendering of marks on the input's track. By sett
 ::Example
 ---
 name: "Marks"
-file: "_content/_examples/slider/marks.vue"
+file: "_examples/slider/marks.vue"
 ---
 ::
 
@@ -163,7 +163,7 @@ You can enable labels for your marks by setting the `mark-labels` prop to `true`
 ::Example
 ---
 name: "Marks with Labels"
-file: "_content/_examples/slider/mark-labels.vue"
+file: "_examples/slider/mark-labels.vue"
 ---
 ::
 
@@ -179,7 +179,7 @@ By supplying an array of objects to the `marks` prop instead of a boolean you ca
 ::Example
 ---
 name: "Custom Marks"
-file: "_content/_examples/slider/custom-marks.vue"
+file: "_examples/slider/custom-marks.vue"
 ---
 ::
 
@@ -190,7 +190,7 @@ When supplying custom marks you may want to force the selection to snap to the p
 ::Example
 ---
 name: "Snap to Marks"
-file: "_content/_examples/slider/snap-to-marks.vue"
+file: "_examples/slider/snap-to-marks.vue"
 ---
 ::
 
@@ -201,7 +201,7 @@ You can apply custom classes to your marks and mark labels by using the `class` 
 ::Example
 ---
 name: "Custom Marks"
-file: "_content/_examples/slider/styling-marks.vue"
+file: "_examples/slider/styling-marks.vue"
 ---
 ::
 
@@ -221,8 +221,8 @@ The `scaling-function` prop accepts 3 values:
 ---
 name: "Scaling functions"
 file: [
-  "_content/_examples/slider/scaling-functions.vue",
-  "_content/_examples/slider/scaling-functions.js"
+  "_examples/slider/scaling-functions.vue",
+  "_examples/slider/scaling-functions.js"
 ]
 ---
 ::
@@ -241,7 +241,7 @@ It's important to note that the visual representation of intervals on a `slider`
 ::Example
 ---
 name: "Intervals"
-file: "_content/_examples/slider/intervals.vue"
+file: "_examples/slider/intervals.vue"
 ---
 ::
 
@@ -257,7 +257,7 @@ The `slider` input will iterate over you `chart` array and determine the largest
 ::Example
 ---
 name: "Chart"
-file: "_content/_examples/slider/chart.vue"
+file: "_examples/slider/chart.vue"
 ---
 ::
 
@@ -269,7 +269,7 @@ By combining the provided props for the `slider` component you can create a robu
 ---
 name: "Kitchen Sink"
 file: [
-  "_content/_examples/slider/kitchen-sink.vue",
+  "_examples/slider/kitchen-sink.vue",
 ]
 ---
 ::

@@ -124,7 +124,7 @@ const sortIt = () => {
   </FormKit>
 </template>
 
-<style>
+<style scoped>
 table {
   margin-bottom: 2em;
 }

@@ -16,7 +16,7 @@ By default the checkbox type will render a single checkbox and uses `boolean` va
 ::Example
 ---
 name: "Checkbox input"
-file: "_content/_examples/checkbox-single/checkbox-single.vue"
+file: "_examples/checkbox-single/checkbox-single.vue"
 ---
 ::
 
@@ -46,7 +46,7 @@ The simplest way to provide options is an array of strings. The provided strings
 ::Example
 ---
 name: "Checkbox input"
-file: "_content/_examples/checkbox-strings/checkbox-strings.vue"
+file: "_examples/checkbox-strings/checkbox-strings.vue"
 ---
 ::
 
@@ -58,7 +58,7 @@ You may also provide the `options` prop where the keys are values and the values
 ::Example
 ---
 name: "Checkbox input"
-file: "_content/_examples/checkbox-object/checkbox-object.vue"
+file: "_examples/checkbox-object/checkbox-object.vue"
 ---
 ::
 
@@ -70,7 +70,7 @@ The most flexible way to define options is by providing an array of objects. The
 ::Example
 ---
 name: "Checkbox input"
-file: "_content/_examples/checkbox-objects/checkbox-objects.vue"
+file: "_examples/checkbox-objects/checkbox-objects.vue"
 ---
 ::
 

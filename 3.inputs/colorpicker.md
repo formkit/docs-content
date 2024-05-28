@@ -21,7 +21,7 @@ The `colorpicker` input is fully keyboard navigable and ships with accessible ma
 ::Example
 ---
   name: "Color input"
-  file: "_content/_examples/colorpicker/intro.vue"
+  file: "_examples/colorpicker/intro.vue"
 ---
 ::
 
@@ -33,7 +33,7 @@ The `colorpicker` supports formats in `Hex`, `HSLA` and `RGBA` formats. You can 
 ::Example
 ---
   name: "Color input"
-  file: "_content/_examples/colorpicker/format.vue"
+  file: "_examples/colorpicker/format.vue"
   minHeight: 500
 ---
 ::
@@ -45,7 +45,7 @@ There may be times where you wish to show one format to users as a default but r
 ::Example
 ---
   name: "Color input"
-  file: "_content/_examples/colorpicker/value-format.vue"
+  file: "_examples/colorpicker/value-format.vue"
   minHeight: 400
 ---
 ::
@@ -61,7 +61,7 @@ Here is a simple set of swatches using the `options` prop and providing it with 
 ::Example
 ---
   name: "Color input"
-  file: "_content/_examples/colorpicker/simple-swatches.vue"
+  file: "_examples/colorpicker/simple-swatches.vue"
 ---
 ::
 
@@ -72,7 +72,7 @@ The `colorpicker` also supports grouped `options`. This allows you to create set
 ::Example
 ---
   name: "Color input"
-  file: "_content/_examples/colorpicker/grouped-swatches.vue"
+  file: "_examples/colorpicker/grouped-swatches.vue"
 ---
 ::
 
@@ -85,7 +85,7 @@ When showing only swatches in pop-over mode (the default) adding the `close-on-s
 ::Example
 ---
   name: "Color input"
-  file: "_content/_examples/colorpicker/swatch-only.vue"
+  file: "_examples/colorpicker/swatch-only.vue"
 ---
 ::
 
@@ -96,7 +96,7 @@ If your provided swatches via the `options` prop have `label`s then you can call
 ::Example
 ---
   name: "Color input"
-  file: "_content/_examples/colorpicker/input-swatch-name.vue"
+  file: "_examples/colorpicker/input-swatch-name.vue"
 ---
 ::
 
@@ -107,7 +107,7 @@ The `colorpicker` input supports the browser-native [EyeDropper API](https://dev
 ::Example
 ---
   name: "Color input"
-  file: "_content/_examples/colorpicker/eye-dropper.vue"
+  file: "_examples/colorpicker/eye-dropper.vue"
 ---
 ::
 
@@ -120,7 +120,7 @@ You can disable the ability to paste a value by setting the `allow-paste` prop t
 ::Example
 ---
   name: "Color input"
-  file: "_content/_examples/colorpicker/paste.vue"
+  file: "_examples/colorpicker/paste.vue"
   min-height: 650
 ---
 ::

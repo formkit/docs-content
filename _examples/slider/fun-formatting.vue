@@ -53,7 +53,7 @@ function emotionClass(node) {
   <!-- %partial%::html:: -->
 </template>
 
-<style>
+<style scoped>
 @keyframes hyperbg {
   0% {
     background-position: 0%;

@@ -75,7 +75,7 @@ export default {
   </FormKit>
 </template>
 
-<style>
+<style scoped>
 .double {
   display: flex;
 }

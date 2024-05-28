@@ -22,7 +22,7 @@ import { FormKitIcon } from '@formkit/vue'
   </div>
   <!-- %partial% -->
 </template>
-<style>
+<style scoped>
 .formkit-icon {
   max-width: 5em;
 }

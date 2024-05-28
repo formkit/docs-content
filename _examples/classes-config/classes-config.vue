@@ -20,7 +20,7 @@
   <!-- %partial%::html:: -->
 </template>
 
-<style>
+<style scoped>
 .super-red {
   color: red !important;
 }

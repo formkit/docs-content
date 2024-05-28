@@ -1,19 +1,20 @@
-
 <script setup>
 // This is just a mock of an actual axios instance.
 const axios = {
-  post: () => new Promise(r => setTimeout(r, 2000))
+  post: () => new Promise((r) => setTimeout(r, 2000)),
 }
-  
-async function submitTeamMembers (teamMembers, formNode) {
+
+async function submitTeamMembers(teamMembers, formNode) {
   const res = await axios.post(teamMembers)
-  
+
   formNode.setErrors(
     null, // no form errors
     {
       // THE MAGIC IS HERE
-      'teamMembers': ['There was a problem with 1 of your team members.'],
-      'teamMembers.1.email': ['emily@formkit.com is already on a team. Please remove her from that team before adding her to this team.'],
+      teamMembers: ['There was a problem with 1 of your team members.'],
+      'teamMembers.1.email': [
+        'emily@formkit.com is already on a team. Please remove her from that team before adding her to this team.',
+      ],
     }
   )
 }
@@ -35,10 +36,7 @@ async function submitTeamMembers (teamMembers, formNode) {
       type="repeater"
       label="Additional Team Members"
       add-label="Add Team Member"
-      :value="[
-        { email: 'john@formkit.com'  },
-        { email: 'emily@formkit.com' },
-      ]"
+      :value="[{ email: 'john@formkit.com' }, { email: 'emily@formkit.com' }]"
     >
       <FormKit
         type="email"
@@ -52,6 +50,8 @@ async function submitTeamMembers (teamMembers, formNode) {
   </FormKit>
 </template>
 
-<style>
-#teamMemberForm pre { margin-bottom: 20px; }
+<style scoped>
+#teamMemberForm pre {
+  margin-bottom: 20px;
+}
 </style>

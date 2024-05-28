@@ -38,7 +38,7 @@ Excluding backend functionality, here is a fully featured form with inputs (`for
 ::Example
 ---
   name: "Register example"
-  file: "_content/_examples/register/register.vue"
+  file: "_examples/register/register.vue"
   layout: "column"
 ---
 ::
@@ -59,7 +59,7 @@ You can populate an entire form by providing a `value` prop to the `<FormKit typ
 ::Example
 ---
 name: "Text example"
-file: "_content/_examples/form-population/form-population.vue"
+file: "_examples/form-population/form-population.vue"
 ---
 ::
 
@@ -101,7 +101,7 @@ The most common method of form submission in a modern SPA is an XHR request (thi
 ::Example
 ---
 name: "Text example"
-file: "_content/_examples/form-xhr/form-xhr.vue"
+file: "_examples/form-xhr/form-xhr.vue"
 ---
 ::
 
@@ -112,7 +112,7 @@ To submit a form via page request, leave off the `@submit` handler. Just like na
 ::Example
 ---
 name: "Text example"
-file: "_content/_examples/form-page/form-page.vue"
+file: "_examples/form-page/form-page.vue"
 ---
 ::
 
@@ -128,7 +128,7 @@ While submitting a form using any standard HTML method is valid (like clicking a
 ::Example
 ---
 name: "Text example"
-file: "_content/_examples/form-submit/form-submit.vue"
+file: "_examples/form-submit/form-submit.vue"
 ---
 ::
 
@@ -139,7 +139,7 @@ You can also submit a form programmatically by calling `node.submit()` on the fo
 ::Example
 ---
 name: "Text example"
-file: "_content/_examples/node-submit/node-submit.vue"
+file: "_examples/node-submit/node-submit.vue"
 ---
 ::
 
@@ -150,7 +150,7 @@ To disable all the inputs in a given form, including the submit button, you can 
 ::Example
 ---
 name: "Disabled example"
-file: "_content/_examples/form-disabled/form-disabled.vue"
+file: "_examples/form-disabled/form-disabled.vue"
 ---
 ::
 
@@ -169,7 +169,7 @@ You can reset your form (or any input) back to its initial state by calling `$fo
 ::Example
 ---
 name: "Reset example"
-file: "_content/_examples/reset-form/reset-form.vue"
+file: "_examples/reset-form/reset-form.vue"
 ---
 ::
 
@@ -198,7 +198,7 @@ In addition to not firing the submit event, a message is displayed above the sub
 ::Example
 ---
 name: "Text example"
-file: "_content/_examples/incomplete-message/incomplete-message.vue"
+file: "_examples/incomplete-message/incomplete-message.vue"
 ---
 ::
 
@@ -219,7 +219,7 @@ For example, we could use this event to alert our users of the failing validatio
 ::Example
 ---
 name: "Submit invalid"
-file: "_content/_examples/submit-invalid/submit-invalid.vue"
+file: "_examples/submit-invalid/submit-invalid.vue"
 ---
 ::
 
@@ -230,7 +230,7 @@ The validity of all inputs within a form is tracked automatically in the [contex
 ::Example
 ---
 name: "Text example"
-file: "_content/_examples/form-validity/form-validity.vue"
+file: "_examples/form-validity/form-validity.vue"
 ---
 ::
 
@@ -264,7 +264,7 @@ Like with any FormKit input, you can directly assign errors using the `errors` p
 ::Example
 ---
 name: "Form errors prop example"
-file: "_content/_examples/form-errors/form-errors.vue"
+file: "_examples/form-errors/form-errors.vue"
 ---
 ::
 
@@ -275,7 +275,7 @@ Setting your form’s errors using `node.setErrors` is convenient since your sub
 ::Example
 ---
 name: "setErrors"
-file: "_content/_examples/node-set-errors/node-set-errors.vue"
+file: "_examples/node-set-errors/node-set-errors.vue"
 ---
 ::
 
@@ -286,7 +286,7 @@ Alternatively, you can set errors directly on a form by giving the form an `id` 
 ::Example
 ---
 name: "setErrors"
-file: "_content/_examples/set-errors/set-errors.vue"
+file: "_examples/set-errors/set-errors.vue"
 ---
 ::
 
@@ -299,7 +299,7 @@ To clear all the errors on the form (regardless of the `preserve-errors` prop) c
 ::Example
 ---
 name: "clearErrors"
-file: "_content/_examples/auto-clear-errors/auto-clear-errors.vue"
+file: "_examples/auto-clear-errors/auto-clear-errors.vue"
 ---
 ::
 
@@ -308,7 +308,7 @@ If you prefer to preserve errors by default, you can change the default behavior
 ::Example
 ---
 name: "preserveErrors"
-file: "_content/_examples/preserve-errors-config/preserve-errors-config.vue"
+file: "_examples/preserve-errors-config/preserve-errors-config.vue"
 ---
 ::
 
@@ -336,7 +336,7 @@ The most basic way to display errors on a form is using the `errors` prop that i
 ::Example
 ---
 name: "errors prop"
-file: "_content/_examples/errors-prop/errors-prop.vue"
+file: "_examples/errors-prop/errors-prop.vue"
 ---
 ::
 
@@ -347,7 +347,7 @@ You can also conveniently set error messages for all inputs in your form (or [gr
 ::Example
 ---
 name: "input errors prop"
-file: "_content/_examples/input-errors-prop/input-errors-prop.vue"
+file: "_examples/input-errors-prop/input-errors-prop.vue"
 ---
 ::
 
@@ -366,7 +366,7 @@ import { FormKitSummary } from '@formkit/vue'
 ::Example
 ---
 name: "Summary component"
-file: "_content/_examples/summary/summary.vue"
+file: "_examples/summary/summary.vue"
 ---
 ::
 
@@ -398,7 +398,7 @@ Place a `<FormKitMessages />` component anywhere _inside_ your form, and the for
 ::Example
 ---
 name: "input errors prop"
-file: "_content/_examples/formkit-messages/automatic.vue"
+file: "_examples/formkit-messages/automatic.vue"
 ---
 ::
 
@@ -409,7 +409,7 @@ To move messages anywhere in the DOM — even _outside_ the form — you can pas
 ::Example
 ---
 name: "input errors prop"
-file: "_content/_examples/formkit-messages/toast.vue"
+file: "_examples/formkit-messages/toast.vue"
 ---
 ::
 
@@ -434,7 +434,7 @@ When an input is unmounted from a form — for example when using `v-if` — its
 ::Example
 ---
 name: "input errors prop"
-file: "_content/_examples/preserve-prop/preserve-prop.vue"
+file: "_examples/preserve-prop/preserve-prop.vue"
 ---
 ::
 
@@ -451,8 +451,8 @@ The `useFormKitContext` is a composable that returns the form’s context object
 name: "useFormKitContext"
 init-file-tab: 'Address.vue'
 file: [
-  "_content/_examples/use-formkit-context/MyForm.vue",
-  "_content/_examples/use-formkit-context/Address.vue"
+  "_examples/use-formkit-context/MyForm.vue",
+  "_examples/use-formkit-context/Address.vue"
 ]
 ---
 ::
@@ -465,7 +465,7 @@ Similar to `useFormKitContext` this composable finds any `<FormKit>` context obj
 ---
 name: "useFormKitContextById"
 file: [
-  "_content/_examples/use-formkit-context-by-id/MyForm.vue",
+  "_examples/use-formkit-context-by-id/MyForm.vue",
 ]
 ---
 ::
@@ -478,7 +478,7 @@ Fetches any FormKit node that has an explicit `id`. It returns a `Ref` that will
 ---
 name: "useFormKitNodeById"
 file: [
-  "_content/_examples/use-formkit-node-by-id/MyForm.vue",
+  "_examples/use-formkit-node-by-id/MyForm.vue",
 ]
 ---
 ::

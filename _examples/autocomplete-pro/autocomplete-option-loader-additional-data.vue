@@ -50,7 +50,7 @@ async function loadMovie(id, option) {
   </FormKit>
 </template>
 
-<style>
+<style scoped>
 .movie-review {
   white-space: pre-wrap;
 }

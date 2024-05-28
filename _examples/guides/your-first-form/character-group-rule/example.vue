@@ -1,7 +1,7 @@
 <!-- %partial%::html:: -->
 <script setup>
-import { castRangeToNumber, updateAttributesPlugin } from 'plugins.js'
-import { max_sum } from 'rules.js'
+import { castRangeToNumber, updateAttributesPlugin } from './plugins.js'
+import { max_sum } from './rules.js'
 
 const createCharacter = async (fields) => {
   await new Promise((r) => setTimeout(r, 1000))
@@ -10,7 +10,11 @@ const createCharacter = async (fields) => {
 </script>
 
 <template>
-  <div><h4 class="form-label">Add a custom validation rule to the attributes group.</h4></div>
+  <div>
+    <h4 class="form-label">
+      Add a custom validation rule to the attributes group.
+    </h4>
+  </div>
   <h1>New Character</h1>
 
   <FormKit
@@ -28,7 +32,7 @@ const createCharacter = async (fields) => {
       label="Name"
       help="Your full name"
       placeholder="Please add your name"
-    /> 
+    />
 
     <FormKit
       type="select"
@@ -44,7 +48,6 @@ const createCharacter = async (fields) => {
       <h4>Character Attributes</h4>
       <p>You have a max budget of 20 points for character attributes.</p>
 
-
       <FormKit
         type="group"
         name="attributes"
@@ -53,7 +56,8 @@ const createCharacter = async (fields) => {
         validation-visibility="live"
         validation="max_sum"
         :validation-messages="{
-          max_sum: ({ name, args }) => `${name} has exceeded the max budget of 20. Your character can't be that strong!`,
+          max_sum: ({ name, args }) =>
+            `${name} has exceeded the max budget of 20. Your character can't be that strong!`,
         }"
         #default="{ id, messages, fns, classes }"
       >
@@ -95,7 +99,7 @@ const createCharacter = async (fields) => {
 
         <!-- By default groups do not show validation messages, so we need to add it manually -->
         <ul :class="classes.messages" v-if="fns.length(messages)">
-          <li 
+          <li
             v-for="message in messages"
             :key="message.key"
             :class="classes.message"
@@ -108,23 +112,37 @@ const createCharacter = async (fields) => {
       </FormKit>
     </div>
 
-    <p><em><small>Try using greater than the alloted 20 point budget for the attributes.</small></em></p>
+    <p>
+      <em
+        ><small
+          >Try using greater than the alloted 20 point budget for the
+          attributes.</small
+        ></em
+      >
+    </p>
 
     <pre wrap>{{ value }}</pre>
   </FormKit>
 
-  <p><em><small>Change the character's class to see the changes in attribute values.</small></em></p>
+  <p>
+    <em
+      ><small
+        >Change the character's class to see the changes in attribute
+        values.</small
+      ></em
+    >
+  </p>
 </template>
 <!-- %partial%::html:: -->
 
-<style>
+<style scoped>
 pre[wrap] {
   margin-bottom: 20px !important;
 }
 .form-label {
   font-size: 14px;
   font-weight: 500;
-  margin: 0 0 -.5rem;
+  margin: 0 0 -0.5rem;
   padding: 5px;
   border-radius: 5px;
   display: inline-block !important;
@@ -143,4 +161,3 @@ pre[wrap] {
   margin: 0 0 1rem;
 }
 </style>
-

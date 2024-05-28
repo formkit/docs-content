@@ -24,7 +24,7 @@ Unlike the [hidden](/inputs/hidden) input (which renders an `<input type="hidden
 ::Example
 ---
 name: "Meta input"
-file: "_content/_examples/meta/meta.vue"
+file: "_examples/meta/meta.vue"
 ---
 ::
 

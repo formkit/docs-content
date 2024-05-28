@@ -25,4 +25,4 @@ async function loadCurrentlyPopularMovies({ page, hasNextPage }) {
   <!-- %partial% -->
 </template>
 
-<style></style>
+<style scoped></style>

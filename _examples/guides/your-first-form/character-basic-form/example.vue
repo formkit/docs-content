@@ -66,7 +66,7 @@
 </template>
 <!-- %partial%::html:: -->
 
-<style>
+<style scoped>
 .form-label {
   font-size: 14px;
   font-weight: 500;

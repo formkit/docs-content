@@ -1,34 +1,19 @@
 <template>
   <!-- %partial%::html:: -->
   <h2 class="text-2xl font-bold mb-4">Register</h2>
-  <FormKit
-    name="account"
-    type="group"
-  >
+  <FormKit name="account" type="group">
     <template #default="{ state: { valid } }">
-      <div
-        v-if="!valid"
-        class="not-valid"
-      >
+      <div v-if="!valid" class="not-valid">
         Your account details are not complete!
       </div>
-      <div
-        v-else
-        class="valid"
-      >
-        It all looks good 👍
-      </div>
+      <div v-else class="valid">It all looks good 👍</div>
       <FormKit
         label="Username"
         name="username"
         help="Select a new username"
         validation="required|alpha"
       />
-      <FormKit
-        label="Password"
-        name="password"
-        validation="required"
-      />
+      <FormKit label="Password" name="password" validation="required" />
       <FormKit
         label="Password"
         name="password_confirm"
@@ -40,10 +25,10 @@
   <!-- %partial%::html:: -->
 </template>
 
-<style>
+<style scoped>
 .valid,
 .not-valid {
-  padding: .5em;
+  padding: 0.5em;
   color: white;
   margin: 1em 0;
   border-radius: 5px;

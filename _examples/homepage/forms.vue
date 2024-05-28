@@ -53,7 +53,7 @@ async function handleSubmit() {
   <!-- %partial% -->
 </template>
 
-<style>
+<style scoped>
 pre[wrap] {
   margin-bottom: 1em !important;
 }

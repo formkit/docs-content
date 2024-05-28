@@ -51,8 +51,8 @@ Available field props:
 ---
 name: "Maxlength Countdown Example"
 file: [
-'/\_content/_examples/maxlength-countdown/index.vue',
-'/\_content/_examples/maxlength-countdown/formkit.config.js'
+'_examples/maxlength-countdown/index.vue',
+'_examples/maxlength-countdown/formkit.config.js'
 ]
 ---
 ::

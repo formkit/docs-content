@@ -46,7 +46,7 @@ async function loadMovie(id, cachedOption) {
   </FormKit>
 </template>
 
-<style>
+<style scoped>
 .movie-review {
   white-space: pre-wrap;
 }

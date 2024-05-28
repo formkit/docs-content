@@ -23,7 +23,7 @@ Need more flexibility than the native HTML `tel` input provides? <a href="/input
 ::Example
 ---
 name: "Tel input"
-file: "_content/_examples/tel/tel.vue"
+file: "_examples/tel/tel.vue"
 ---
 ::
 

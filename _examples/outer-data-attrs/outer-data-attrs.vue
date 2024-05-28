@@ -1,4 +1,5 @@
 <template>
+  {{ config }}
   <FormKit
     type="text"
     label="Email address"
@@ -8,7 +9,7 @@
   />
 </template>
 
-<style>
+<style scoped>
 [data-invalid] .formkit-inner {
   border-color: red;
   box-shadow: 0 0 0 1px red;
