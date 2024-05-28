@@ -21,7 +21,7 @@
 </template>
 
 <style scoped>
-.super-red {
+div :deep(.super-red) {
   color: red !important;
 }
 </style>

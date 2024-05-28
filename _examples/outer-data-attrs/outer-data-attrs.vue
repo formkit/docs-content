@@ -1,5 +1,4 @@
 <template>
-  {{ config }}
   <FormKit
     type="text"
     label="Email address"
@@ -10,16 +9,16 @@
 </template>
 
 <style scoped>
-[data-invalid] .formkit-inner {
+.formkit-outer[data-invalid] :deep(.formkit-inner) {
   border-color: red;
   box-shadow: 0 0 0 1px red;
 }
 
-[data-complete] .formkit-inner {
+.formkit-outer[data-complete] :deep(.formkit-inner) {
   border-color: red;
   box-shadow: 0 0 0 1px green;
 }
-[data-complete] .formkit-inner::after {
+.formkit-outer[data-complete] :deep(.formkit-inner::after) {
   content: '✅';
   display: block;
   padding: 0.5em;
