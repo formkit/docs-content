@@ -1,6 +1,6 @@
 <script setup>
-import { nbaTopPlayers } from 'nba-top-players.js'
-import { michaelJordan } from 'utils.js'
+import { nbaTopPlayers } from './nba-top-players.js'
+import { michaelJordan } from './utils.js'
 </script>
 
 <template>
@@ -18,13 +18,13 @@ import { michaelJordan } from 'utils.js'
     :validation-rules="{ michaelJordan }"
     validation-visibility="dirty"
     :validation-messages="{
-      michaelJordan: 'Michael Jordan is the undisputed GOAT.'
+      michaelJordan: 'Michael Jordan is the undisputed GOAT.',
     }"
   >
     <template #sourceOption="{ option }">
       <div class="flex">
         <span class="avatar">
-          <img :src="option.img_url" alt="">
+          <img :src="option.img_url" alt="" />
         </span>
         <span class="name">
           {{ option.label }}
@@ -37,7 +37,7 @@ import { michaelJordan } from 'utils.js'
           {{ index + 1 }}
         </span>
         <span class="avatar">
-          <img :src="option.img_url" alt="">
+          <img :src="option.img_url" alt="" />
         </span>
         <span class="name">
           {{ option.label }}
@@ -73,7 +73,6 @@ import { michaelJordan } from 'utils.js'
   flex: 0 0 2em;
   margin-right: 0.5em;
 }
-
 
 img {
   width: 100%;

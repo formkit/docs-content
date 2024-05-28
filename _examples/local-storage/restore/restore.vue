@@ -11,7 +11,12 @@ const failingSubmitHandler = async function (payload, node) {
 
 <template>
   <p>
-    <em><small>Data can be recovered with node.restoreCache()<br>If you reload after submit the data will persist.</small></em>
+    <em
+      ><small
+        >Data can be recovered with node.restoreCache()<br />If you reload after
+        submit the data will persist.</small
+      ></em
+    >
   </p>
   <FormKit
     type="form"

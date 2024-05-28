@@ -1,5 +1,5 @@
 <script setup>
-import { nbaTopPlayers } from 'nba-top-players.js'
+import { nbaTopPlayers } from './nba-top-players.js'
 </script>
 
 <template>

@@ -31,8 +31,9 @@ const schema = [
 .wrapper {
   display: flex;
 }
-.half {
+
+:deep(.half) {
   flex: 0 0 50%;
-  padding-right: 20px;
+  padding-right: 10px;
 }
 </style>

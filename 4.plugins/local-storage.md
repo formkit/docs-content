@@ -60,7 +60,7 @@ To enable saving to localStorage add the `use-local-storage` to your FormKit `fo
 ---
 name: "Save to LocalStorage"
 file: [
-'_examples/local-storage/basic/index.vue',
+'_examples/local-storage/basic/basic.vue',
 '_examples/local-storage/basic/formkit.config.js'
 ]
 ---
@@ -76,7 +76,7 @@ When a user submits your form the matching localStorage entry for the form is de
 ---
 name: "Save with Key"
 file: [
-'_examples/local-storage/restore/index.vue',
+'_examples/local-storage/restore/restore.vue',
 '_examples/local-storage/restore/formkit.config.js'
 ]
 ---
@@ -90,7 +90,7 @@ If you are saving data to localStorage in the context of an app where multiple u
 ---
 name: "Save with Key"
 file: [
-'_examples/local-storage/key/index.vue'
+'_examples/local-storage/key/key.vue'
 ]
 ---
 ::
@@ -104,7 +104,7 @@ You can allow a user to opt-in to saving their form data to localStorage by supp
 ---
 name: "Save with Control"
 file: [
-'_examples/local-storage/control/index.vue'
+'_examples/local-storage/control/control.vue'
 ]
 ---
 ::
@@ -119,7 +119,7 @@ Note that the form is disabled when loading data from localStorage until our `be
 ---
 name: "Save with Modification"
 file: [
-'_examples/local-storage/modification/index.vue'
+'_examples/local-storage/modification/modification.vue'
 ]
 ---
 ::
