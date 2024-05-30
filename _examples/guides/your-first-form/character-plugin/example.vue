@@ -46,8 +46,6 @@ const createCharacter = async (fields) => {
         id="strength"
         label="Strength"
         value="5"
-        validation="min:2|max:9"
-        validation-visibility="live"
         min="1"
         max="10"
         step="1"
@@ -84,29 +82,12 @@ const createCharacter = async (fields) => {
     <pre wrap>{{ value }}</pre>
   </FormKit>
 
-  <p>
-    <em
-      ><small
-        >Change the character's class to see the changes in attribute
-        values.</small
-      ></em
-    >
-  </p>
+  <p>Change the character's class to see the changes in attribute values.</p>
 </template>
 <!-- %partial%::html:: -->
 
 <style scoped>
-pre[wrap] {
-  margin-bottom: 20px !important;
-}
 .form-label {
-  font-size: 14px;
-  font-weight: 500;
-  margin: 0 0 -0.5rem;
-  padding: 5px;
-  border-radius: 5px;
-  display: inline-block !important;
-  background-color: #444;
-  color: white;
+  @apply text-sm text-slate-800 mb-4 p-2 rounded bg-slate-100 dark:bg-slate-800 dark:text-slate-100;
 }
 </style>

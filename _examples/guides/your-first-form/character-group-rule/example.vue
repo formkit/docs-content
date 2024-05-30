@@ -113,25 +113,13 @@ const createCharacter = async (fields) => {
     </div>
 
     <p>
-      <em
-        ><small
-          >Try using greater than the alloted 20 point budget for the
-          attributes.</small
-        ></em
-      >
+      Try using greater than the alloted 20 point budget for the attributes.
     </p>
 
     <pre wrap>{{ value }}</pre>
   </FormKit>
 
-  <p>
-    <em
-      ><small
-        >Change the character's class to see the changes in attribute
-        values.</small
-      ></em
-    >
-  </p>
+  <p>Change the character's class to see the changes in attribute values.</p>
 </template>
 <!-- %partial%::html:: -->
 
@@ -140,24 +128,14 @@ pre[wrap] {
   margin-bottom: 20px !important;
 }
 .form-label {
-  font-size: 14px;
-  font-weight: 500;
-  margin: 0 0 -0.5rem;
-  padding: 5px;
-  border-radius: 5px;
-  display: inline-block !important;
-  background-color: #444;
-  color: white;
+  @apply text-sm text-slate-800 mb-4 p-2 rounded bg-slate-100 dark:bg-slate-800 dark:text-slate-100;
 }
 
 .character-attributes {
-  padding: 20px;
-  border: 1px solid #ccc;
-  margin-bottom: 1rem;
-  border-radius: 5px;
+  @apply p-5 border border-slate-300 mb-6 rounded dark:border-slate-800;
 }
 
 .character-attributes h4 {
-  margin: 0 0 1rem;
+  @apply mb-6;
 }
 </style>

@@ -8,18 +8,18 @@ export const castRangeToNumber = (node) => {
 export const updateAttributesPlugin = (node) => {
   const CHARACTER_BASE_STATS = {
     Warrior: {
-      strength: 9,
-      skill: 1,
-      dexterity: 5,
+      strength: 10,
+      skill: 4,
+      dexterity: 6,
     },
     Mage: {
-      strength: 5,
+      strength: 3,
       skill: 10,
-      dexterity: 8,
+      dexterity: 7,
     },
     Assassin: {
       strength: 5,
-      skill: 4,
+      skill: 5,
       dexterity: 10,
     },
   }

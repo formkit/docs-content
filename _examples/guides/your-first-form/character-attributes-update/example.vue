@@ -119,13 +119,7 @@ const createCharacter = async (fields) => {
     <pre wrap>{{ value }}</pre>
   </FormKit>
 
-  <p>
-    <em>
-      <small>
-        Change the character's class to see the changes in attribute values.
-      </small>
-    </em>
-  </p>
+  <p>Change the character's class to see the changes in attribute values.</p>
 </template>
 <!-- %partial%::html:: -->
 
@@ -135,13 +129,6 @@ pre[wrap] {
 }
 
 .form-label {
-  font-size: 14px;
-  font-weight: 500;
-  margin: 0 0 -0.5rem;
-  padding: 5px;
-  border-radius: 5px;
-  display: inline-block !important;
-  background-color: #444;
-  color: white;
+  @apply text-sm text-slate-800 mb-4 p-2 rounded bg-slate-100 dark:bg-slate-800 dark:text-slate-100;
 }
 </style>

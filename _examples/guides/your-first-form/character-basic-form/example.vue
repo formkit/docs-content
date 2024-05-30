@@ -29,8 +29,6 @@
       id="strength"
       label="Strength"
       value="5"
-      validation="min:2|max:9"
-      validation-visibility="live"
       min="1"
       max="10"
       step="1"
@@ -68,13 +66,6 @@
 
 <style scoped>
 .form-label {
-  font-size: 14px;
-  font-weight: 500;
-  margin: 0 0 -0.5rem;
-  padding: 5px;
-  border-radius: 5px;
-  display: inline-block !important;
-  background-color: #444;
-  color: white;
+  @apply text-sm text-slate-800 mb-4 p-2 rounded bg-slate-100 dark:bg-slate-800 dark:text-slate-100;
 }
 </style>

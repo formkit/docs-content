@@ -11,8 +11,6 @@ const castNumber = (node) => {
     id="strength"
     label="Strength"
     value="5"
-    validation="min:2|max:9"
-    validation-visibility="live"
     min="1"
     max="10"
     step="1"
@@ -20,5 +18,5 @@ const castNumber = (node) => {
     :plugins="[castNumber]"
   />
 
-  <p><em><small class="mb-4">Strength is now a Number instead of a String.</small></em></p>
+  <p>Strength is now a Number instead of a String.</p>
 </template>
