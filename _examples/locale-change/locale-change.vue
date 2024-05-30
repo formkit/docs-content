@@ -20,7 +20,7 @@ export default {
     <span v-if="current === 'en'">🇩🇪 setLocale('de')</span>
     <span v-if="current === 'de'">🇺🇸 setLocale('en')</span>
   </a>
-  <FormKit type="form">
+  <FormKit type="form" @submit="() => false">
     <FormKit
       type="email"
       label="Email"

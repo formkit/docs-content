@@ -22,7 +22,7 @@ Once you've installed the addons package, you'll need to register the plugin wit
 - **fieldTypes** *Array* Default `['textarea']`
 
 ```js
-// formkit.config.js
+// formkit.config.ts
 import { defaultConfig } from '@formkit/vue'
 import { createMaxLengthCountdownPlugin } from '@formkit/addons'
 import '@formkit/addons/css/maxlengthCountdown'
@@ -52,7 +52,7 @@ Available field props:
 name: "Maxlength Countdown Example"
 file: [
 '_examples/maxlength-countdown/countdown.vue',
-'_examples/maxlength-countdown/formkit.config.js'
+'_examples/maxlength-countdown/formkit.config.ts'
 ]
 ---
 ::

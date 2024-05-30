@@ -3,7 +3,7 @@
   <div><h4 class="form-label">Creating the form</h4></div>
   <h1>New Character</h1>
 
-  <FormKit type="form">
+  <FormKit type="form" @submit="() => false">
     <FormKit
       type="text"
       name="name"

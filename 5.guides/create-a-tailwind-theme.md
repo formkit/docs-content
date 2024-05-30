@@ -384,10 +384,10 @@ This command will produce a `formkit.theme.(mjs|ts)` file in your project's root
 
 ```js
 // formkit.config.ts
-import { defaultConfig } from '@formkit/vue'
+import { defineFormKitConfig } from '@formkit/vue'
 import { rootClasses } from './formkit.theme'
 
-export default defaultConfig({
+export default defineFormKitConfig({
   ...
   config: {
     rootClasses,
@@ -401,7 +401,7 @@ module.exports = {
   ...
   content: [
     "./app.vue",
-    "./formkit.theme.ts" // <-- add your theme file
+    "~/formkit.theme" // <-- add your theme file
   ]
 }
 ```

@@ -1,9 +1,10 @@
-import { genesisIcons } from "@formkit/icons"
-import { rootClasses } from './formkit.theme.js'
+import { defineFormKitConfig } from '@formkit/vue'
+import { genesisIcons } from '@formkit/icons'
+import { rootClasses } from '~/formkit.theme'
 
-export default {
+export default defineFormKitConfig({
   icons: {
-    ...genesisIcons
+    ...genesisIcons,
   },
   config: {
     rootClasses,
@@ -16,5 +17,5 @@ export default {
         selectDirection: 'left',
       },
     },
-  }
-}
+  },
+})

@@ -1,6 +1,7 @@
-import { rootClasses } from './formkit.theme.js'
+import { defineFormKitConfig } from '@formkit/vue'
+import { rootClasses } from '~/formkit.theme'
 
-export default {
+export default defineFormKitConfig({
   iconLoader: (iconName) => {
     // Return a Promise that resolves
     // to a string or undefined.
@@ -24,4 +25,4 @@ export default {
   config: {
     rootClasses,
   },
-}
+})

@@ -1,12 +1,11 @@
 import { defineFormKitConfig } from '@formkit/vue'
-import { createProPlugin, inputs } from '@formkit/pro'
 import { genesisIcons } from '@formkit/icons'
 import { rootClasses } from '~/formkit.theme'
-
-const pro = createProPlugin(import.meta.env.VITE_FORMKIT_PRO_KEY, inputs)
+import { createFloatingLabelsPlugin } from '@formkit/addons'
+import '@formkit/addons/css/floatingLabels'
 
 export default defineFormKitConfig({
-  plugins: [pro],
+  plugins: [createFloatingLabelsPlugin()],
   icons: {
     ...genesisIcons,
   },

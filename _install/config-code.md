@@ -1,4 +1,4 @@
-### formkit.config.js
+### formkit.config.ts
 ```js
 import { fr } from '@formkit/i18n'
 
@@ -13,7 +13,7 @@ export default config
 ### app.js (or equivalent)
 ```js
 // ...
-import config from 'formkit.config.js'
+import config from 'formkit.config.ts'
 
 app.use(plugin, defaultConfig(config))
 ```

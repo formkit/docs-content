@@ -148,7 +148,7 @@ file: "_examples/autocomplete-pro/autocomplete-load-on-created.vue"
 
 ### Option slot
 
-The autocomplete input allows you to customize the look and feel of each option by using the option slot. In this example, we are using the option slot to display each option's asset; logo and name:
+The autocomplete input allows you to customize the look and feel of each option by using the option slot. In this example, we are using the option slot to display each option's asset, logo, and name:
 
 ::Example
 ---

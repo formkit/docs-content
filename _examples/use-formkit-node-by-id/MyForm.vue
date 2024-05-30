@@ -8,7 +8,7 @@ const nodeRef = useFormKitNodeById('student_id', (node) => {
 </script>
 
 <template>
-  <FormKit type="form">
+  <FormKit type="form" @submit="() => false">
     <FormKit
       id="student_id"
       type="mask"

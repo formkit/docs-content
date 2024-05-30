@@ -28,7 +28,7 @@ Once you've installed the addons package, you'll need to register the plugin wit
 - `beforeLoad`: — An optional async callback that recives the form data. Allows modification of the localStorage data before applying to the form.
 
 ```js
-// formkit.config.js
+// formkit.config.ts
 import { defaultConfig } from '@formkit/vue'
 import { createLocalStoragePlugin } from '@formkit/addons'
 
@@ -61,7 +61,7 @@ To enable saving to localStorage add the `use-local-storage` to your FormKit `fo
 name: "Save to LocalStorage"
 file: [
 '_examples/local-storage/basic/basic.vue',
-'_examples/local-storage/basic/formkit.config.js'
+'_examples/local-storage/basic/formkit.config.ts'
 ]
 ---
 ::
@@ -77,7 +77,7 @@ When a user submits your form the matching localStorage entry for the form is de
 name: "Save with Key"
 file: [
 '_examples/local-storage/restore/restore.vue',
-'_examples/local-storage/restore/formkit.config.js'
+'_examples/local-storage/restore/formkit.config.ts'
 ]
 ---
 ::

@@ -242,7 +242,7 @@ After adding appropriate styling, we can see that our new custom input has its `
 file: [
   '_examples/guides/export-inputs/final-result/example.vue',
   '_examples/guides/export-inputs/final-result/floatingLabelTextInput.js',
-  '_examples/guides/export-inputs/final-result/formkit.config.js',
+  '_examples/guides/export-inputs/final-result/formkit.config.ts',
 ]
 init-file-tab: "example.vue"
 editable: true

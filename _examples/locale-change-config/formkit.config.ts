@@ -1,7 +1,8 @@
+import { defineFormKitConfig } from '@formkit/vue'
 import { genesisIcons } from '@formkit/icons'
-import { rootClasses } from './formkit.theme.js'
+import { rootClasses } from '~/formkit.theme'
 
-export default {
+export default defineFormKitConfig({
   locales: {
     de: {
       ui: {
@@ -23,4 +24,4 @@ export default {
   config: {
     rootClasses,
   },
-}
+})

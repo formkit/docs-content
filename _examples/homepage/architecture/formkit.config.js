@@ -3,7 +3,7 @@ It will automatically be injected into the playground for you.
 Imports from other playground files are supported. */
 
 import { genesisIcons } from '@formkit/icons'
-import { rootClasses } from './formkit.theme.js'
+import { rootClasses } from '~/formkit.theme'
 import { createMultiStepPlugin } from '@formkit/addons'
 
 const multiStepPlugin = createMultiStepPlugin({

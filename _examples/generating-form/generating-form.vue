@@ -3,13 +3,13 @@ const schema = [
   {
     $formkit: 'email',
     label: 'Email address',
-    validation: 'required'
-  }
+    validation: 'required',
+  },
 ]
 </script>
 
 <template>
-  <FormKit type="form">
+  <FormKit type="form" @submit="() => false">
     <FormKitSchema :schema="schema" />
   </FormKit>
 </template>

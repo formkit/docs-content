@@ -23,10 +23,10 @@ This command will create a `formkit.theme.{ts|js}` file in the root of your proj
 
 ```js
 // formkit.config.ts
-import { defaultConfig } from '@formkit/vue'
+import { defineFormKitConfig } from '@formkit/vue'
 import { rootClasses } from './formkit.theme'
 
-export default defaultConfig({
+export default defineFormKitConfig({
   config: {
     rootClasses,
   },
@@ -41,7 +41,7 @@ Finally, you’ll need to add the `formkit.theme.{ts|js}` file to your Tailwind 
 module.exports = {
   content: [
     "./app.vue",
-    "./formkit.theme.ts" // <-- add your theme file
+    "~/formkit.theme" // <-- add your theme file
   ],
   darkMode: 'class',
   theme: {

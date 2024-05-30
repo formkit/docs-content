@@ -1,9 +1,10 @@
+import { defineFormKitConfig } from '@formkit/vue'
 import { genesisIcons } from '@formkit/icons'
 import { generateClasses } from '@formkit/themes'
-import { rootClasses } from './formkit.theme.js'
-import autocomplete from './autocompleteInput.js'
+import { rootClasses } from '~/formkit.theme'
+import autocomplete from './autocomplete-input.js'
 
-export default {
+export default defineFormKitConfig({
   icons: {
     ...genesisIcons,
   },
@@ -25,4 +26,4 @@ export default {
       },
     }),
   },
-}
+})

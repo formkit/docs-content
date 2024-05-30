@@ -1,8 +1,8 @@
 ## Configuration
 
-To configure FormKit, create a `formkit.config.js` in the root of your Nuxt project. The Nuxt module automatically uses the `formkit.config.js` at the root of your project to extend FormKit's functionality. Your config file should export a [configuration object](/essentials/configuration#what-is-defaultconfig).
+To configure FormKit, create a `formkit.config.ts` in the root of your Nuxt project. The Nuxt module automatically uses the `formkit.config.ts` at the root of your project to extend FormKit's functionality. Your config file should export a [configuration object](/essentials/configuration#what-is-defaultconfig).
 
-### formkit.config.js
+### formkit.config.ts
 ```js
 import { fr } from '@formkit/i18n'
 
@@ -12,9 +12,9 @@ export default {
 }
 ```
 
-### Using environment variables in formkit.config.js
+### Using environment variables in formkit.config.ts
 
-There may be instances where you want to use Nuxt's `runtimeConfig` variables inside of your `formkit.config.js` file — such as keeping a FormKit Pro API key from being published in your codebase. To achieve this you can provide a function to `defineFormKitConfig` which returns a configuration object. Your function will be called by Nuxt and have access to `runtimeConfig`.
+There may be instances where you want to use Nuxt's `runtimeConfig` variables inside of your `formkit.config.ts` file — such as keeping a FormKit Pro API key from being published in your codebase. To achieve this you can provide a function to `defineFormKitConfig` which returns a configuration object. Your function will be called by Nuxt and have access to `runtimeConfig`.
 
 ```js
 import { fr } from '@formkit/i18n'
@@ -50,7 +50,7 @@ export default defineNuxtConfig({
   modules: ['@formkit/nuxt'],
   formkit: {
     autoImport: true,
-    configFile: './my-configs/formkit.config.js',
+    configFile: './my-configs/formkit.config.ts',
   },
 })
 ```
@@ -78,7 +78,7 @@ export default defineNuxtConfig({
   formkit: {
     autoImport: true,
     defaultConfig: false,
-    configFile: './my-configs/formkit.config.js',
+    configFile: './my-configs/formkit.config.ts',
     // ^ this is now a full config replacement, not override.
   },
 })

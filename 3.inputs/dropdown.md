@@ -147,7 +147,7 @@ Unlike native select elements, the dropdown input can be customized via. markup.
 
 ### Option slot
 
-The dropdown input allows you to customize the look and feel of each option by using the option slot. In this example, we are using the option slot to display each option's asset; logo and name:
+The dropdown input allows you to customize the look and feel of each option by using the option slot. In this example, we are using the option slot to display each option's asset, logo, and name:
 
 ::Example
 ---

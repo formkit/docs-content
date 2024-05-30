@@ -63,10 +63,10 @@ If you've installed it correctly, you should have smooth transitions when showin
 ::Example
 ---
 name: "AutoAnimate example"
-init-file-tab: "formkit.config.js"
+init-file-tab: "formkit.config.ts"
 file: [
 '_examples/auto-animate/auto-animate.vue',
-'_examples/auto-animate/formkit.config.js'
+'_examples/auto-animate/formkit.config.ts'
 ]
 ---
 ::

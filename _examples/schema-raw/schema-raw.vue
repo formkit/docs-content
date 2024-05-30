@@ -17,7 +17,7 @@ const schema = [
           $el: 'div',
           attrs: {
             class:
-              '$classes.prefix + " py-0 px-2 text-sm stretch flex items-center bg-gray-200 mr-2 rounded"',
+              '$classes.prefix + " py-0 px-2 text-sm stretch flex items-center bg-gray-200 mr-2 rounded dark:bg-gray-800"',
           },
           children: '$label',
         },

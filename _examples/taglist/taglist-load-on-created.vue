@@ -39,17 +39,17 @@ async function searchMovies({ search }) {
 </template>
 
 <style scoped>
-.formkit-option {
+:deep(.formkit-option) {
   display: flex;
   align-items: center;
 }
 
-.formkit-option img {
+:deep(.formkit-option img) {
   width: 20%;
   margin-right: 20px;
 }
 
-.option-overview {
+:deep(.option-overview) {
   font-size: 12px;
 }
 </style>

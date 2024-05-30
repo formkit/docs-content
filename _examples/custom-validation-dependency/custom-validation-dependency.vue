@@ -18,8 +18,14 @@ function distinct(node) {
 <template>
   <FormKit
     type="form"
+    @submit="() => false"
     :config="{
       validationVisibility: 'live',
+    }"
+    :value="{
+      first: 'Same',
+      second: 'Same',
+      third: 'Different',
     }"
   >
     <FormKit

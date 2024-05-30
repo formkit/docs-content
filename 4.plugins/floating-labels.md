@@ -18,7 +18,7 @@ yarn add @formkit/addons
 Once you've installed the addons package, you'll need to register the plugin with FormKit and include the supporting CSS styles. The `createFloatingLabelsPlugin` has one option you can configure which controls whether the floating label treatment is the default treatment on applicable inputs:
 
 ```js
-// formkit.config.js
+// formkit.config.ts
 import { defaultConfig } from '@formkit/vue'
 import { createFloatingLabelsPlugin } from '@formkit/addons'
 import '@formkit/addons/css/floatingLabels'
@@ -43,7 +43,7 @@ By default the floating label plugin only takes effect on a FormKit input if you
 name: "Floating Label Manual"
 file: [
 '_examples/floating-labels/off-by-default/off-by-default.vue',
-'_examples/floating-labels/off-by-default/formkit.config.js'
+'_examples/floating-labels/off-by-default/formkit.config.ts'
 ]
 ---
 ::
@@ -51,7 +51,7 @@ file: [
 If you would like to use floating labels by default then pass the `useAsDefault` option to the plugin when you install it.
 
 ```js
-// formkit.config.js
+// formkit.config.ts
 ...
 plugins: [
   createFloatingLabelsPlugin({
@@ -68,7 +68,7 @@ When floating labels are set as the default you can still disable them on a Form
 name: "Floating Label Automatic"
 file: [
 '_examples/floating-labels/on-by-default/on-by-default.vue',
-'_examples/floating-labels/on-by-default/formkit.config.js'
+'_examples/floating-labels/on-by-default/formkit.config.ts'
 ]
 ---
 ::

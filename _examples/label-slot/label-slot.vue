@@ -38,7 +38,7 @@ img {
   filter: invert(1) grayscale(1) brightness(1.1) contrast(2);
   mix-blend-mode: lighten;
 }
-.formkit-option {
+:deep(.formkit-option) {
   margin-bottom: 0;
 }
 </style>

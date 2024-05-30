@@ -1,5 +1,5 @@
 <template>
-  <FormKit type="form">
+  <FormKit type="form" @submit="() => false">
     <FormKit
       type="checkbox"
       label="Shirt style"

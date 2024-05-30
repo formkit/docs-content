@@ -41,11 +41,6 @@ function showErrors(node) {
 
 <style scoped>
 .validation-errors {
-  padding: 0;
-  margin: 0 0 2em 0;
-  border: 2px solid red;
-  list-style-type: none;
-  border-radius: 0.25em;
-  padding: 1em;
+  @apply p-4 mb-6 rounded bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100;
 }
 </style>

@@ -1,12 +1,10 @@
 import { defineFormKitConfig } from '@formkit/vue'
-import { createProPlugin, inputs } from '@formkit/pro'
 import { genesisIcons } from '@formkit/icons'
 import { rootClasses } from '~/formkit.theme'
-
-const pro = createProPlugin(import.meta.env.VITE_FORMKIT_PRO_KEY, inputs)
+import { createAutoAnimatePlugin } from '@formkit/addons'
 
 export default defineFormKitConfig({
-  plugins: [pro],
+  plugins: [createAutoAnimatePlugin()],
   icons: {
     ...genesisIcons,
   },

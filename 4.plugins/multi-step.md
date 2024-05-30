@@ -29,7 +29,7 @@ yarn add @formkit/addons
 Once you've installed the addons package, you'll need to register the plugin with FormKit and include the supporting CSS styles:
 
 ```js
-// formkit.config.js
+// formkit.config.ts
 import { defaultConfig } from '@formkit/vue'
 import { createMultiStepPlugin } from '@formkit/addons'
 import '@formkit/addons/css/multistep'
@@ -51,7 +51,7 @@ file: [
 '_examples/multi-step/stepOne.vue',
 '_examples/multi-step/stepTwo.vue',
 '_examples/multi-step/stepThree.vue',
-'_examples/multi-step/formkit.config.js'
+'_examples/multi-step/formkit.config.ts'
 ]
 ---
 ::
@@ -88,7 +88,7 @@ name: "Multi-Step Introduction"
 file: [
 '_examples/multi-step/tab-style/tab-style.vue',
 '_examples/multi-step/tab-style/multi-step-content.vue',
-'_examples/multi-step/formkit.config.js'
+'_examples/multi-step/formkit.config.ts'
 ]
 ---
 ::
@@ -106,7 +106,7 @@ By default the `multi-step` input will use the `name` attribute of its child `st
 name: "Step Labels"
 file: [
 '_examples/multi-step/step-labels/step-labels.vue',
-'_examples/multi-step/formkit.config.js'
+'_examples/multi-step/formkit.config.ts'
 ]
 ---
 ::
@@ -123,7 +123,7 @@ file: [
 '_examples/multi-step/stepOne.vue',
 '_examples/multi-step/stepTwo.vue',
 '_examples/multi-step/stepThree.vue',
-'_examples/multi-step/formkit.config.js'
+'_examples/multi-step/formkit.config.ts'
 ]
 ---
 ::
@@ -142,7 +142,7 @@ You can either:
 name: "Valid Step Icon"
 file: [
 '_examples/multi-step/valid-step-icon/valid-step-icon.vue',
-'_examples/multi-step/formkit.config.js'
+'_examples/multi-step/formkit.config.ts'
 ]
 ---
 ::
@@ -168,7 +168,7 @@ By default, the <code>stepNext</code> in a multi-step input uses event listeners
 name: "Customizing step actions"
 file: [
 '_examples/multi-step/step-actions/step-actions.vue',
-'_examples/multi-step/formkit.config.js'
+'_examples/multi-step/formkit.config.ts'
 ]
 ---
 ::
@@ -190,7 +190,7 @@ Your `beforeStepChange` function should return a `Boolean`. Returning `false` wi
 name: "beforeStepChange"
 file: [
 '_examples/multi-step/before-step-change/before-step-change.vue',
-'_examples/multi-step/formkit.config.js'
+'_examples/multi-step/formkit.config.ts'
 ]
 ---
 ::
@@ -208,7 +208,7 @@ The multi-step node is equipped with convenient helper functions designed to fac
 name: "programaticNavigation"
 file: [
 '_examples/multi-step/programatic-navigation/programatic-navigation.vue',
-'_examples/multi-step/formkit.config.js'
+'_examples/multi-step/formkit.config.ts'
 ]
 ---
 ::

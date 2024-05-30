@@ -10,7 +10,7 @@ const sum = createInput(
     {
       $el: 'input',
       attrs: {
-        class: '$classes.addend', // set in formkit.config.js
+        class: '$classes.addend', // set in formkit.config.ts
         type: 'number',
         onInput: '$handlers.numberA',
       },
@@ -19,7 +19,7 @@ const sum = createInput(
     {
       $el: 'input',
       attrs: {
-        class: '$classes.addend', // set in formkit.config.js
+        class: '$classes.addend', // set in formkit.config.ts
         type: 'number',
         onInput: '$handlers.numberB',
       },

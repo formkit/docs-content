@@ -16,7 +16,7 @@ const changeLocale = () => {
     <span v-if="current === 'en'">🇩🇪 config.locale = 'de'</span>
     <span v-if="current === 'de'">🇺🇸 config.locale = 'en'</span>
   </a>
-  <FormKit type="form">
+  <FormKit type="form" @submit="() => false">
     <FormKit
       type="email"
       label="Email"

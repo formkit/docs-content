@@ -60,7 +60,7 @@ import carBrands from '@content/_examples/_data/car-brands.js'
 </template>
 
 <style scoped>
-.formkit-option {
+:deep(.formkit-option) {
   display: flex;
   align-items: center;
 }

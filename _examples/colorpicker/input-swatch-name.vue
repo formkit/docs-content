@@ -162,8 +162,11 @@ function handleColorInput() {
       label="Input a named CSS color"
       help="Try 'red', 'blue', or 'papayawhip'"
       @keydown.enter="handleColorInput"
-    />
-    <FormKit type="button" label="Set color" @click="handleColorInput" />
+    >
+      <template #suffix>
+        <FormKit type="button" label="Set color" @click="handleColorInput" outer-class="!mb-0" input-class="!mb-0 whitespace-nowrap" />
+      </template>
+    </FormKit>
   </div>
 
   <FormKit
@@ -174,17 +177,3 @@ function handleColorInput() {
   />
   <!-- %partial% -->
 </template>
-
-<style scoped>
-.input-color-name {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.input-color-name > *:first-child {
-  margin-right: 0.5rem;
-}
-#colorpickerInput .formkit-swatches {
-  display: none;
-}
-</style>

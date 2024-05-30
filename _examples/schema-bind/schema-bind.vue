@@ -12,12 +12,12 @@ const schema = [
 
 const data = reactive({
   someAttributes: {
-    class: 'red',
+    class: '!text-red-500',
     onClick: () => {
-      if (data.someAttributes.class === 'red') {
-        data.someAttributes.class = 'blue'
+      if (data.someAttributes.class === '!text-red-500') {
+        data.someAttributes.class = '!text-blue-500'
       } else {
-        data.someAttributes.class = 'red'
+        data.someAttributes.class = '!text-red-500'
       }
     },
     'data-fruit': 'I like fruit',
@@ -28,12 +28,3 @@ const data = reactive({
 <template>
   <FormKitSchema :schema="schema" :data="data" />
 </template>
-
-<style scoped>
-.red {
-  color: red;
-}
-.blue {
-  color: blue;
-}
-</style>

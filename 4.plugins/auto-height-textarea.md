@@ -18,7 +18,7 @@ yarn add @formkit/addons
 Once you've installed the addons package, you'll need to register the plugin with FormKit:
 
 ```js
-// formkit.config.js
+// formkit.config.ts
 import { defaultConfig } from '@formkit/vue'
 import { createAutoHeightTextareaPlugin } from '@formkit/addons'
 
@@ -44,7 +44,7 @@ Available field props:
 name: "Auto-Height Textarea"
 file: [
 '_examples/auto-height-textarea/auto-height.vue',
-'_examples/auto-height-textarea/formkit.config.js'
+'_examples/auto-height-textarea/formkit.config.ts'
 ]
 ---
 ::
