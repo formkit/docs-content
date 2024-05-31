@@ -1,63 +1,22 @@
 <script setup>
-import { ref } from 'vue'
-
-const values = ref({
-  letters: ['A', 'C'],
-  users: [{ name: 'foofoo' }, { name: 'barbar' }],
-})
-
-const unshiftValue = () => {
-  values.value.users.unshift({ name: 'first' })
-}
-
-const pushLast = () => {
-  values.value.users.push({ name: 'moomoo' })
-}
-
-const changeFirst = () => {
-  values.value.users[1] = { name: 'booboo' }
-}
-
-const spliceIt = () => {
-  values.value.users.splice(
-    1,
-    2,
-    { name: 'spliced' },
-    { name: 'double splice' }
-  )
-}
-
-const shiftFirst = () => {
-  values.value.users.shift()
-}
-
-const popValue = () => {
-  values.value.users.pop()
-}
-
-const spliceRemove = async () => {
-  values.value.users.splice(1, 4)
-  await new Promise((r) => setTimeout(r, 200))
-}
-
-const replaceIt = () => {
-  values.value.users = [
-    { name: 'first' },
-    { name: 'second' },
-    { name: 'third' },
-  ]
-}
-
-const injectAtIndexOne = () => {
-  values.value.users.splice(1, 0, { name: 'injected' })
-}
-
-const sortIt = () => {
-  values.value.users.sort((a, b) => (a.name > b.name ? 1 : -1))
-}
+import {
+  values,
+  unshiftValue,
+  pushLast,
+  changeFirst,
+  spliceIt,
+  shiftFirst,
+  popValue,
+  spliceRemove,
+  replaceIt,
+  injectAtIndexOne,
+  sortIt,
+} from './controls'
 </script>
 
 <template>
+  <!-- %partial% -->
+  <!-- Imports hidden for brevity -->
   <FormKit #default="{ value }" v-model="values" type="group">
     <FormKit
       id="repeater"
@@ -117,35 +76,17 @@ const sortIt = () => {
         </tr>
       </tbody>
     </table>
-    <div class="values">
-      <pre id="innerValue">{{ value }}</pre>
-      <pre id="vmodel">{{ values }}</pre>
-    </div>
+    <pre wrap>{{ value }}</pre>
   </FormKit>
+  <!-- %partial% -->
 </template>
 
 <style scoped>
-table {
-  margin-bottom: 2em;
+table td {
+  @apply text-center w-1/3;
 }
-
 table button {
-  padding: 0.75em 1em;
-  border: 1px solid #000;
-  font-size: 0.85rem;
-  line-height: 1;
-  width: 100%;
-}
-
-.values {
-  display: flex;
-  justify-content: space-between;
-}
-
-.values pre {
-  width: calc(50% - 0.5em);
-  background-color: lightgray;
-  padding: 1em;
-  box-sizing: border-box;
+  @apply p-2 w-full text-balance border border-blue-300 bg-blue-100 text-blue-800 rounded leading-tight;
+  @apply dark:border-blue-600 dark:bg-blue-900 dark:text-blue-100;
 }
 </style>

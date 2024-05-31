@@ -1,5 +1,5 @@
 <script setup>
-import { guests } from 'guests.js'
+import { guests } from './guests.js'
 </script>
 
 <template>
@@ -7,7 +7,7 @@ import { guests } from 'guests.js'
     type="form"
     #default="{ value }"
     :value="{
-      vips: ['Monica Baker', 'Marion Blanchard']
+      vips: ['Monica Baker', 'Marion Blanchard'],
     }"
     :actions="false"
   >
@@ -23,6 +23,6 @@ import { guests } from 'guests.js'
       searchable
       placeholder="Search guests"
     />
-    <pre>{{ value }}</pre>
+    <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>

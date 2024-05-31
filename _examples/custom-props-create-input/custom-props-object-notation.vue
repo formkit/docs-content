@@ -72,6 +72,6 @@ const myInput = createInput(
       help="How much are you willing to pay?"
       input-class="border-2 border-gray-300 mr-2 px-2 py-1 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm aria-[selected=true]:bg-gray-200"
     />
-    <pre>{{ value }}</pre>
+    <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>

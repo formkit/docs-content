@@ -2,7 +2,7 @@
 <script setup>
 import { ref } from 'vue'
 import { createInput } from '@formkit/vue'
-import OneTimePassword from 'OneTimePassword.vue'
+import OneTimePassword from './one-time-password.vue'
 
 const values = ref({})
 const otp = createInput(OneTimePassword, {
@@ -47,3 +47,4 @@ const otp = createInput(OneTimePassword, {
   border-radius: var(--fk-border-radius);
 }
 </style>
+./one-time-password.vue

@@ -18,12 +18,7 @@ import { FormKitIcon } from '@formkit/vue'
   />
   <h2 class="text-xl font-bold mb-4">Also works with standalone icons</h2>
   <div class="w-32">
-    <FormKitIcon icon="qrcode" />
+    <FormKitIcon icon="qrcode" class="text-slate-800 dark:text-slate-300" />
   </div>
   <!-- %partial% -->
 </template>
-<style scoped>
-.formkit-icon {
-  max-width: 5em;
-}
-</style>

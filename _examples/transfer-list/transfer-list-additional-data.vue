@@ -1,13 +1,9 @@
 <script setup>
-import { getGuests, loadGuest } from 'api.js'
+import { getGuests, loadGuest } from './api.js'
 </script>
 
 <template>
-  <FormKit
-    type="form"
-    #default="{ value }"
-    :actions="false"
-  >
+  <FormKit type="form" #default="{ value }" :actions="false">
     <FormKit
       name="vips"
       type="transferlist"
@@ -19,6 +15,6 @@ import { getGuests, loadGuest } from 'api.js'
       :options="getGuests"
       :option-loader="loadGuest"
     />
-    <pre>{{ value }}</pre>
+    <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>

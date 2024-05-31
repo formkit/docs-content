@@ -142,7 +142,7 @@ const checkStepValidity = (stepName) => {
 
       <details>
         <summary>Form data</summary>
-        <pre>{{ value }}</pre>
+        <pre wrap>{{ value }}</pre>
       </details>
     </div>
 

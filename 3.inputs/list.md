@@ -54,7 +54,7 @@ Static lists are the simplest type of list to create. Wrap any inputs in a `<For
 name: "Simple static list"
 file: [
   "_examples/list/list-static.vue",
-  '_examples/transfer-list/nba-top-players.js'
+  '_examples/_data/nba-top-players.js'
 ]
 ---
 ::

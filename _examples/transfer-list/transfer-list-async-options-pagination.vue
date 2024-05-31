@@ -1,13 +1,9 @@
 <script setup>
-import { paginateGuests } from 'api.js'
+import { paginateGuests } from './api.js'
 </script>
 
 <template>
-  <FormKit
-    type="form"
-    #default="{ value }"
-    :actions="false"
-  >
+  <FormKit type="form" #default="{ value }" :actions="false">
     <FormKit
       name="vips"
       type="transferlist"
@@ -18,6 +14,6 @@ import { paginateGuests } from 'api.js'
       target-empty-message="No VIPs selected"
       :options="paginateGuests"
     />
-    <pre>{{ value }}</pre>
+    <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>

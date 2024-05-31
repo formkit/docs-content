@@ -32,7 +32,6 @@ Once you've installed the addons package, you'll need to register the plugin wit
 // formkit.config.ts
 import { defaultConfig } from '@formkit/vue'
 import { createMultiStepPlugin } from '@formkit/addons'
-import '@formkit/addons/css/multistep'
 
 const config = defaultConfig({
   plugins: [createMultiStepPlugin()],
@@ -46,11 +45,12 @@ export default config
 ::Example
 ---
 name: "Multi-Step Introduction"
+layout: "column"
 file: [
 '_examples/multi-step/intro/intro.vue',
-'_examples/multi-step/stepOne.vue',
-'_examples/multi-step/stepTwo.vue',
-'_examples/multi-step/stepThree.vue',
+'_examples/multi-step/step-one.vue',
+'_examples/multi-step/step-two.vue',
+'_examples/multi-step/step-three.vue',
 '_examples/multi-step/formkit.config.ts'
 ]
 ---
@@ -85,6 +85,7 @@ The `multi-step` input ships with two available tab styles.
 ::Example
 ---
 name: "Multi-Step Introduction"
+layout: "column"
 file: [
 '_examples/multi-step/tab-style/tab-style.vue',
 '_examples/multi-step/tab-style/multi-step-content.vue',
@@ -104,6 +105,7 @@ By default the `multi-step` input will use the `name` attribute of its child `st
 ::Example
 ---
 name: "Step Labels"
+layout: "column"
 file: [
 '_examples/multi-step/step-labels/step-labels.vue',
 '_examples/multi-step/formkit.config.ts'
@@ -118,11 +120,12 @@ By default the `multi-step` input will allow advancing to later steps even if th
 ::Example
 ---
 name: "Allow Incomplete"
+layout: "column"
 file: [
 '_examples/multi-step/allow-incomplete/allow-incomplete.vue',
-'_examples/multi-step/stepOne.vue',
-'_examples/multi-step/stepTwo.vue',
-'_examples/multi-step/stepThree.vue',
+'_examples/multi-step/step-one.vue',
+'_examples/multi-step/step-two.vue',
+'_examples/multi-step/step-three.vue',
 '_examples/multi-step/formkit.config.ts'
 ]
 ---
@@ -140,6 +143,7 @@ You can either:
 ::Example
 ---
 name: "Valid Step Icon"
+layout: "column"
 file: [
 '_examples/multi-step/valid-step-icon/valid-step-icon.vue',
 '_examples/multi-step/formkit.config.ts'
@@ -166,6 +170,7 @@ By default, the <code>stepNext</code> in a multi-step input uses event listeners
 ::Example
 ---
 name: "Customizing step actions"
+layout: "column"
 file: [
 '_examples/multi-step/step-actions/step-actions.vue',
 '_examples/multi-step/formkit.config.ts'
@@ -188,6 +193,7 @@ Your `beforeStepChange` function should return a `Boolean`. Returning `false` wi
 ::Example
 ---
 name: "beforeStepChange"
+layout: "column"
 file: [
 '_examples/multi-step/before-step-change/before-step-change.vue',
 '_examples/multi-step/formkit.config.ts'
@@ -195,7 +201,7 @@ file: [
 ---
 ::
 
-## Programatic Nagivation
+## Programmatic Navigation
 
 The multi-step node is equipped with convenient helper functions designed to facilitate programmatic navigation between any of its steps. These functions include:
 
@@ -205,9 +211,10 @@ The multi-step node is equipped with convenient helper functions designed to fac
 
 ::Example
 ---
-name: "programaticNavigation"
+name: "programmaticNavigation"
+layout: "column"
 file: [
-'_examples/multi-step/programatic-navigation/programatic-navigation.vue',
+'_examples/multi-step/programmatic-navigation/programmatic-navigation.vue',
 '_examples/multi-step/formkit.config.ts'
 ]
 ---

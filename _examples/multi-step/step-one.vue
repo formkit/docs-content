@@ -12,9 +12,8 @@
     validation="required|email"
   />
   <FormKit
-    type="mask"
+    type="text"
     name="phone"
-    mask="(###) ###-####"
     label="Phone"
     prefix-icon="telephone"
     validation="required"

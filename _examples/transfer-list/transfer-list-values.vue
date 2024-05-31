@@ -1,13 +1,9 @@
 <script setup>
-import { guests } from 'guests.js'
+import { guests } from './guests.js'
 </script>
 
 <template>
-  <FormKit
-    type="form"
-    #default="{ value }"
-    :actions="false"
-  >
+  <FormKit type="form" #default="{ value }" :actions="false">
     <FormKit
       name="vips"
       type="transferlist"
@@ -18,6 +14,6 @@ import { guests } from 'guests.js'
       target-empty-message="No VIPs selected"
       :options="guests"
     />
-    <pre>{{ value }}</pre>
+    <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>

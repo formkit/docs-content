@@ -1,13 +1,9 @@
 <script setup>
-import { searchGuests } from 'api.js'
+import { searchGuests } from './api.js'
 </script>
 
 <template>
-  <FormKit
-    type="form"
-    #default="{ value }"
-    :actions="false"
-  >
+  <FormKit type="form" #default="{ value }" :actions="false">
     <FormKit
       name="vips"
       type="transferlist"
@@ -20,6 +16,6 @@ import { searchGuests } from 'api.js'
       searchable
       placeholder="Search guests"
     />
-    <pre>{{ value }}</pre>
+    <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>

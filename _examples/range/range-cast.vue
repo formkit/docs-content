@@ -10,7 +10,7 @@
       min="7"
       max="120"
     />
-    <pre wrap>{{ JSON.stringify(value) }}</pre>
+    <pre wrap>{{ value }}</pre>
     <!-- %partial%::html:: -->
   </FormKit>
 </template>

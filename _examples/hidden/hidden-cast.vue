@@ -7,7 +7,7 @@
       name="account_id"
       value="98213321"
     />
-    <pre wrap>{{ JSON.stringify(value) }}</pre>
+    <pre wrap>{{ value }}</pre>
     <!-- %partial%::html:: -->
   </FormKit>
 </template>

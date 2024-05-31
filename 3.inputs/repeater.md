@@ -17,6 +17,8 @@ The `repeater` input is for repeating groups of inputs. You can use any number o
 
 By default, the repeater input has the ability to shift, add, and remove items:
 
+<!-- TODO: determine why drag and drop is not working on example -->
+
 ::Example
 ---
 name: "Repeater"
@@ -92,7 +94,10 @@ With FormKit's repeater, you are not restricted to our default controls. You can
 ::Example
 ---
 name: "Repeater"
-file: "_examples/repeater/repeater-controls.vue"
+file: [
+  "_examples/repeater/repeater-controls.vue",
+  "_examples/repeater/controls.ts"
+]
 ---
 ::
 

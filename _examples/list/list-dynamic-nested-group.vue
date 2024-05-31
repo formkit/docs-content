@@ -1,6 +1,5 @@
-<script setup></script>
-
 <template>
+  <!-- %partial -->
   <h2>Guest list</h2>
   <FormKit type="list" :value="[{}]" dynamic #default="{ items, node, value }">
     <FormKit
@@ -9,7 +8,7 @@
       :key="item"
       :index="index"
     >
-      <div class="group">
+      <div class="flex gap-2 p-4 mb-6 items-center border border-gray-400 dark:border-gray-800">
         <FormKit
           type="text"
           name="name"
@@ -22,7 +21,7 @@
         <button
           type="button"
           @click="() => node.input(value.filter((_, i) => i !== index))"
-          class="border border-blue-600 text-blue-600 p-3"
+          class="text-sm whitespace-nowrap border border-blue-600 text-blue-600 p-3 mt-2"
         >
           - Remove
         </button>
@@ -39,20 +38,5 @@
 
     <pre wrap>{{ value }}</pre>
   </FormKit>
+  <!-- %partial -->
 </template>
-
-<style scoped>
-.group {
-  position: relative;
-  padding: 10px;
-  border: 1px solid grey;
-  border-radius: 10px;
-  margin-bottom: 5px;
-}
-
-.group button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-</style>

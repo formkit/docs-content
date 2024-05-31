@@ -1,8 +1,7 @@
 import { defineFormKitConfig } from '@formkit/vue'
 import { genesisIcons } from '@formkit/icons'
-import { rootClasses } from './formkit.theme.js'
+import { rootClasses } from '~/formkit.theme'
 import { barcode } from '@formkit/barcode'
-import '@formkit/barcode/genesis'
 
 export default defineFormKitConfig({
   inputs: {

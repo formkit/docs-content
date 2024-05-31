@@ -1,7 +1,7 @@
 <script setup>
-import StepOne from './stepOne.vue'
-import StepTwo from './stepTwo.vue'
-import StepThree from './stepThree.vue'
+import StepOne from '@content/_examples/multi-step/step-one.vue'
+import StepTwo from '@content/_examples/multi-step/step-two.vue'
+import StepThree from '@content/_examples/multi-step/step-three.vue'
 </script>
 <!-- %partial% -->
 <template>
@@ -30,3 +30,4 @@ import StepThree from './stepThree.vue'
   </FormKit>
 </template>
 <!-- %partial% -->
+./stepOne.vue./stepThree.vue./stepTwo.vue../stepOne.vue../stepThree.vue../stepTwo.vue

@@ -35,5 +35,5 @@ const stepInformation = ref({})
   <!-- %partial% -->
 
   <h2>beforeStepChange Data:</h2>
-  <pre>{{ stepInformation.value }}</pre>
+  <pre wrap>{{ stepInformation.value }}</pre>
 </template>

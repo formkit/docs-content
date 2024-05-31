@@ -4,12 +4,12 @@ import { markRaw } from 'vue'
 // A custom component, typically imported from elsewhere
 const CustomComponent = {
   props: ['name'],
-  template: `Hello {{ name }}`
+  template: `Hello {{ name }}`,
 }
 
 // Assign the custom component a library
 const library = markRaw({
-  MyComponent: CustomComponent
+  MyComponent: CustomComponent,
 })
 
 // Reference the key of the desired component from
@@ -18,15 +18,15 @@ const schema = [
   {
     $cmp: 'MyComponent',
     props: {
-      name: 'Jane'
-    }
-  }
+      name: 'Jane',
+    },
+  },
 ]
 </script>
 
 <template>
-  <FormKitSchema
-    :schema="schema"
-    :library="library"
+  <FormKitSchema 
+    :schema="schema" 
+    :library="library" 
   />
 </template>

@@ -1,5 +1,5 @@
 <script setup>
-import { searchGuests, getGuest } from 'api.js'
+import { searchGuests, getGuest } from './api.js'
 </script>
 
 <template>
@@ -7,9 +7,7 @@ import { searchGuests, getGuest } from 'api.js'
     type="form"
     #default="{ value }"
     :value="{
-      vips: [
-        22, 10
-      ]
+      vips: [22, 10],
     }"
     :actions="false"
   >
@@ -26,6 +24,6 @@ import { searchGuests, getGuest } from 'api.js'
       placeholder="Search guests"
       :option-loader="getGuest"
     />
-    <pre>{{ value }}</pre>
+    <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>

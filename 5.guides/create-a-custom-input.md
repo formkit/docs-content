@@ -19,7 +19,7 @@ This guide assumes you are using a standard Vue 3 build tool like Vite, Nuxt 3, 
 
 ## Creating a component
 
-To get started, let's create our input’s component file. We'll call it `OneTimePassword.vue`:
+To get started, let's create our input’s component file. We'll call it `one-time-password.vue`:
 
 ```html
 <script setup>
@@ -37,39 +37,39 @@ FormKit provides a lot of input features out-of-the-box that we're going to want
 
 As we build out our input, we’ll want to visualize its progress, so let’s create a sample form to:
 
-1. Import `OneTimePassword.vue`
+1. Import `one-time-password.vue`
 2. Pass that imported component to `createInput()`
 3. Use the return value (an [input definition](/essentials/custom-inputs#input-definition)) as the `type` prop of a `<FormKit>` component.
 
-We’ll call this sample form `Register.vue`:
+We’ll call this sample form `register.vue`:
 
 ::Example
 ---
 name: "One-time password - register"
 file: [
-  '_examples/otp-register/Register.vue',
-  '_examples/otp-register/OneTimePassword.vue',
+  '_examples/otp-register/register.vue',
+  '_examples/otp-register/one-time-password.vue',
 ]
 ---
 ::
 
-Excellent! Now we can iterate on our `OneTimePassword.vue` file and see the results. One of the first things to notice is how our input already supports labels, help text, validation, and other universal FormKit props. Those features come courtesy of `createInput()`.
+Excellent! Now we can iterate on our `one-time-password.vue` file and see the results. One of the first things to notice is how our input already supports labels, help text, validation, and other universal FormKit props. Those features come courtesy of `createInput()`.
 
 Also, notice that `<pre>` tag in the above example? It is outputting the current state of the form’s data. We'll use this visualize the value of our custom input. Since our input currently has no value, it does not appear in the form’s data. Time to change that!
 
 ## Input & output
 
-Let’s open up `OneTimePassword.vue` again and change our `<div>` to an `<input>` tag. We’ll start with a single text input, and work our way up from there. But how do we actually set and display the value of our custom input?
+Let’s open up `one-time-password.vue` again and change our `<div>` to an `<input>` tag. We’ll start with a single text input, and work our way up from there. But how do we actually set and display the value of our custom input?
 
 All custom inputs are passed the almighty [context object](/essentials/configuration) as the `context` prop. In order for our input to _set_ its value, it needs to call `context.node.input(value)`. To properly _display_ the value of our input, we should set the input’s `:value` attribute to `context._value`.
 
 ::Example
 ---
 name: "One-time password - first value"
-init-file-tab: "OneTimePassword.vue"
+init-file-tab: "one-time-password.vue"
 file: [
-  '_examples/otp-first-value/Register.vue',
-  '_examples/otp-first-value/OneTimePassword.vue',
+  '_examples/otp-first-value/register.vue',
+  '_examples/otp-first-value/one-time-password.vue',
 ]
 ---
 ::
@@ -92,20 +92,20 @@ Ok, now that we understand how to create an input, how to use it, and how to rea
 For our first requirement, we need `n` `<input>` tags. Perhaps it would be best to expose the number of digits as a prop. To do that, we need to inform our `createInput` function that we want to accept a new prop:
 
 ```js
-createInput(OneTimePassword, {
+createInput(one-time-password, {
   props: ['digits'],
 })
 ```
 
-We now have access to `context.digits`. Back in `OneTimePassword.vue`, let's use that to output the correct number of `<input>` tags.
+We now have access to `context.digits`. Back in `one-time-password.vue`, let's use that to output the correct number of `<input>` tags.
 
 ::Example
 ---
 name: "One-time password - input tags"
-init-file-tab: "OneTimePassword.vue"
+init-file-tab: "one-time-password.vue"
 file: [
-  '_examples/otp-tags/Register.vue',
-  '_examples/otp-tags/OneTimePassword.vue',
+  '_examples/otp-tags/register.vue',
+  '_examples/otp-tags/one-time-password.vue',
 ]
 ---
 ::
@@ -133,10 +133,10 @@ Notice in the above example that when you type into one input all the other inpu
 ::Example
 ---
 name: "One-time password - input handlers"
-init-file-tab: "OneTimePassword.vue"
+init-file-tab: "one-time-password.vue"
 file: [
-  '_examples/otp-handlers/Register.vue',
-  '_examples/otp-handlers/OneTimePassword.vue',
+  '_examples/otp-handlers/register.vue',
+  '_examples/otp-handlers/one-time-password.vue',
 ]
 ---
 ::
@@ -173,10 +173,10 @@ handlePaste(e) {
 ::Example
 ---
 name: "One-time password - copy paste"
-init-file-tab: "OneTimePassword.vue"
+init-file-tab: "one-time-password.vue"
 file: [
-  '_examples/otp-copy-paste/Register.vue',
-  '_examples/otp-copy-paste/OneTimePassword.vue',
+  '_examples/otp-copy-paste/register.vue',
+  '_examples/otp-copy-paste/one-time-password.vue',
 ]
 ---
 ::
@@ -190,7 +190,7 @@ Now that we've worked up an excellent input, let’s register it with our applic
 ```js
 import { createApp } from 'Vue'
 import App from 'App.vue'
-import OneTimePassword from './OneTimePassword.vue'
+import one-time-password from './one-time-password.vue'
 import { plugin, defaultConfig, createInput } from '@formkit/vue'
 
 const app = createApp(App)
@@ -198,7 +198,7 @@ app.use(
   plugin,
   defaultConfig({
     inputs: {
-      otp: createInput(OneTimePassword, {
+      otp: createInput(one-time-password, {
         props: ['digits'],
       }),
     },

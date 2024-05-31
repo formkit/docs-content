@@ -17,7 +17,7 @@
       name="age_integer"
       value="25"
     />
-    <pre wrap>{{ JSON.stringify(values) }}</pre>
+    <pre wrap>{{ values }}</pre>
     <!-- %partial%::html:: -->
   </FormKit>
 </template>

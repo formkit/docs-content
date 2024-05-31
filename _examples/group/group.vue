@@ -1,7 +1,4 @@
 <script setup>
-import { ref } from 'vue'
-const address = ref({})
-
 const states = {
   AL: 'Alabama',
   AK: 'Alaska',
@@ -66,53 +63,46 @@ const states = {
 </script>
 
 <template>
-  <!-- %partial%::html:: -->
-  <FormKit type="group" v-model="address">
-    <FormKit
-      type="text"
-      label="Street address"
-      name="street"
-      placeholder="Your street"
-      validation="required"
-    />
-    <FormKit
-      type="text"
-      label="City"
-      placeholder="Your city"
-      name="city"
-      validation="required"
-    />
-    <div class="double">
+  <FormKit
+    type="form"
+    #default="{ value }"
+    :actions="false"
+    :value="{
+      address: {
+        street: '123 Main St',
+        city: 'Anytown',
+        state: 'CA',
+        zip: '12345',
+      },
+    }"
+  >
+    <!-- %partial%::html:: -->
+    <FormKit type="group" name="address">
       <FormKit
-        type="select"
-        label="State"
-        name="state"
-        placeholder="Your state"
-        :options="states"
-        validation="required"
+        type="text"
+        label="Street address"
+        name="street"
       />
       <FormKit
         type="text"
-        name="zip"
-        label="Zip"
-        placeholder="Your zip"
-        validation="required|number"
+        label="City"
+        name="city"
       />
-    </div>
+      <div class="flex gap-4">
+        <FormKit
+          type="select"
+          label="State"
+          name="state"
+          :options="states"
+        />
+        <FormKit
+          type="text"
+          name="zip"
+          label="Zip"
+        />
+      </div>
+    </FormKit>
+    <!-- %partial% -->
+    <pre wrap>"address": {{ value.address }}</pre>
   </FormKit>
-  <pre wrap>{{ address }}</pre>
-  <!-- %partial% -->
 </template>
-
-<style scoped>
-.double {
-  display: flex;
-  justify-content: space-between;
-}
-.double > * {
-  width: calc(50% - 1em);
-}
-.double > *:first-child {
-  margin-right: 1em;
-}
-</style>

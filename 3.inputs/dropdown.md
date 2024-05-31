@@ -277,6 +277,8 @@ file: "_examples/dropdown/dropdown-open-on-focus.vue"
 
 When using the dropdown with static options, FormKit's dropdown also comes with a feature called `overscroll`. Setting the `behavior` prop to overscroll will render the listbox directly over the input to maximize the available size for the list:
 
+<!-- TODO: Figure out why scroll is jumping when selecting value on overscroll example -->
+
 ::Example
 ---
 name: "Dropdown"

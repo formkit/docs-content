@@ -1,17 +1,14 @@
 <script setup>
-import { getGuests, loadGuest } from 'api.js'
-import  { initials } from 'utils.js'
+import { getGuests, loadGuest } from './api.js'
+import { initials } from './utils.js'
 </script>
-
 
 <template>
   <FormKit
     type="form"
     :actions="false"
     :value="{
-      vips: [
-        3, 6
-      ]
+      vips: [3, 6],
     }"
   >
     <!-- %partial%::html:: -->

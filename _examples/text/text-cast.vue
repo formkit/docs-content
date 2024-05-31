@@ -9,7 +9,7 @@
       help="My value will be a number if it can be parsed by parseFloat"
       value="29.82"
     />
-    <pre wrap>{{ JSON.stringify(value) }}</pre>
+    <pre wrap>{{ value }}</pre>
     <!-- %partial%::html:: -->
   </FormKit>
 </template>

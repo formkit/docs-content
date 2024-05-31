@@ -1,5 +1,5 @@
 <script setup>
-import { guests } from 'guests.js'
+import { guests } from './guests.js'
 </script>
 
 <template>

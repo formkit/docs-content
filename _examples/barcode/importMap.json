@@ -1,7 +1,6 @@
-// %partial
+// %partial%
 {
   "@zxing/library": "https://cdn.jsdelivr.net/npm/@zxing/library@0.20.0/+esm",
-  "@formkit/barcode": "https://cdn.jsdelivr.net/npm/@formkit/barcode/dist/index.min.mjs",
-  "@formkit/barcode/genesis": "https://cdn.jsdelivr.net/npm/@formkit/barcode@latest/dist/assets/barcodeReader.css"
+  "@formkit/barcode": "https://cdn.jsdelivr.net/npm/@formkit/barcode/dist/index.min.mjs"
 }
-// %partial
+// %partial%

@@ -1,13 +1,9 @@
 <script setup>
-import { getGuests } from 'api.js'
+import { getGuests } from './api.js'
 </script>
 
 <template>
-  <FormKit
-    type="form"
-    #default="{ value }"
-    :actions="false"
-  >
+  <FormKit type="form" #default="{ value }" :actions="false">
     <FormKit
       name="vips"
       type="transferlist"
@@ -18,6 +14,6 @@ import { getGuests } from 'api.js'
       target-empty-message="No VIPs selected"
       :options="getGuests"
     />
-    <pre>{{ value }}</pre>
+    <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>

@@ -8,8 +8,8 @@ const fruit = ref(null)
 </script>
 
 <template>
-  <!-- %partial% -->
   <FormKit type="form" @submit="submitApp">
+    <!-- %partial% -->
     <FormKit type="repeater">
       <FormKit
         label="username"
@@ -36,17 +36,6 @@ const fruit = ref(null)
       name="fruit"
       placeholder="Select the best country"
       :options="['None', 'Apple', 'Strawberry', 'Banana']"
-      :sections-schema="{
-        // custom override of AutoAniate config settings
-        // just for this input
-        outer: {
-          meta: {
-            autoAnimate: {
-              duration: 2000,
-            },
-          },
-        },
-      }"
     />
     <FormKit
       v-if="fruit && fruit !== 'None'"
@@ -55,6 +44,6 @@ const fruit = ref(null)
       validation-label="Confirmation"
       :label="`Please confirm that you meant to select ${fruit}.`"
     />
+    <!-- %partial% -->
   </FormKit>
-  <!-- %partial% -->
 </template>

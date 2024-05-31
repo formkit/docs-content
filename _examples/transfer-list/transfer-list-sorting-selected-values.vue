@@ -1,5 +1,5 @@
 <script setup>
-import { guests } from 'guests.js'
+import { guests } from './guests.js'
 
 const primaryVip = (node) => {
   return node.value[0] === 'Lulu Cabrera'
@@ -21,7 +21,7 @@ const primaryVip = (node) => {
     :validation-rules="{ primaryVip }"
     validation="primaryVip"
     :validation-messages="{
-      primaryVip: 'Lulu Cabrera is first in line for this party.'
+      primaryVip: 'Lulu Cabrera is first in line for this party.',
     }"
   />
 </template>

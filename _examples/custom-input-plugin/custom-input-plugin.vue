@@ -17,7 +17,7 @@ myPlugin.library = (node) => {
 </script>
 
 <template>
-  <FormKit type="form" :plugins="[myPlugin]">
+  <FormKit type="form" :plugins="[myPlugin]" @submit="() => false">
     <FormKit type="hello" />
   </FormKit>
 </template>

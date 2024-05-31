@@ -1,5 +1,5 @@
 <script setup>
-import { guests } from 'guests.js'
+import { guests } from './guests.js'
 
 const customFilter = (option, search) =>
   option.label.toLowerCase().startsWith(search.toLowerCase())
@@ -10,7 +10,7 @@ const customFilter = (option, search) =>
     type="form"
     #default="{ value }"
     :value="{
-      vips: ['Monica Baker', 'Marion Blanchard']
+      vips: ['Monica Baker', 'Marion Blanchard'],
     }"
     :actions="false"
   >
@@ -28,6 +28,6 @@ const customFilter = (option, search) =>
       :filter="customFilter"
       :transfer-on-select="false"
     />
-    <pre>{{ value }}</pre>
+    <pre wrap>{{ value }}</pre>
   </FormKit>
 </template>
