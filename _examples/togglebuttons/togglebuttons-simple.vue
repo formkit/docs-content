@@ -10,7 +10,11 @@ const value = ref(false)
   -->
   <FormKit type="form" #default="{ value }" :actions="false">
     <!-- %partial%::html:: -->
-    <FormKit type="togglebuttons" label="Toggle Me" />
+    <FormKit 
+      type="togglebuttons" 
+      name="toggle"
+      label="Toggle Me" 
+    />
     <!-- %partial%::html:: -->
     <pre wrap>{{ value }}</pre>
   </FormKit>

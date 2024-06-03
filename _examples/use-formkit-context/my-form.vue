@@ -1,5 +1,5 @@
 <script setup>
-import Address from './Address.vue'
+import Address from './address.vue'
 </script>
 
 <template>

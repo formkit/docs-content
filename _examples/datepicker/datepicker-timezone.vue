@@ -53,6 +53,10 @@ async function reserve(_data, node) {
   display: flex;
   align-items: center;
 }
+.dark .rental-car-card {
+  background-color: #26262f;
+  border-color: #34373e;
+}
 
 .rental-car-card::before {
   content: '';

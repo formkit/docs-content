@@ -61,7 +61,7 @@ const myInput = createInput(
       label="Select a hospitable planet"
       capitalize
       options="earth,mars,venus"
-      input-class="border-2 border-gray-300 mr-2 px-2 py-1 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm aria-[selected=true]:bg-gray-200"
+      input-class="border-2 border-gray-300 mr-2 mb-2 px-2 py-1 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm aria-[selected=true]:bg-gray-200 dark:bg-gray-800 dark:aria-[selected=true]:bg-blue-900 dark:border-gray-700 dark:focus:ring-gray-500 dark:focus:border-gray-500"
     />
     <FormKit
       :type="myInput"
@@ -70,7 +70,7 @@ const myInput = createInput(
       currency="$"
       :options="['10.00', '12.99', '15.00']"
       help="How much are you willing to pay?"
-      input-class="border-2 border-gray-300 mr-2 px-2 py-1 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm aria-[selected=true]:bg-gray-200"
+      input-class="border-2 border-gray-300 mr-2 mb-2 px-2 py-1 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm aria-[selected=true]:bg-gray-200 dark:bg-gray-800 dark:aria-[selected=true]:bg-blue-900 dark:border-gray-700 dark:focus:ring-gray-500 dark:focus:border-gray-500"
     />
     <pre wrap>{{ value }}</pre>
   </FormKit>

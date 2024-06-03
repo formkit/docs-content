@@ -2,7 +2,7 @@
   <FormKit type="form" #default="{ value }" :actions="false">
     <FormKit
       type="datepicker"
-      name="date"
+      name="meeting_date"
       label="Meeting date"
       :format="{ date: 'short' }"
       popover

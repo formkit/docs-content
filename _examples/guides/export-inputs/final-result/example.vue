@@ -7,28 +7,33 @@
   />
 </template>
 
-<style scoped>
-.formkit-inner {
+<style>
+[data-type="floatingLabelTextInput"] .formkit-inner {
   position: relative;
 }
 
-.formkit-label-floating {
+[data-type="floatingLabelTextInput"] .formkit-label {
   position: absolute;
   left: 0.5em;
-  color: grey;
   transition: all 0.25s;
-  bottom: calc(100% - 0.5em);
+  bottom: calc(100% - 0.75em);
   transform: translateY(100%);
   padding: 0.25em;
   box-sizing: border-box;
 }
 
-input:focus ~ .formkit-label-floating,
-textarea:focus ~ .formkit-label-floating,
-.formkit-label-floating[data-has-value='true'] {
+[data-type="floatingLabelTextInput"] input:focus ~ .formkit-label[data-floating-label='true'],
+[data-type="floatingLabelTextInput"] textarea:focus ~ .formkit-label[data-floating-label='true'],
+[data-type="floatingLabelTextInput"] .formkit-label[data-floating-label='true'][data-has-value='true'] {
   font-size: 0.7em;
   transform: translateY(50%);
   background-color: white;
   bottom: 100%;
+}
+
+.dark [data-type="floatingLabelTextInput"] input:focus ~ .formkit-label[data-floating-label='true'],
+.dark [data-type="floatingLabelTextInput"] textarea:focus ~ .formkit-label[data-floating-label='true'],
+.dark [data-type="floatingLabelTextInput"] .formkit-label[data-floating-label='true'][data-has-value='true'] {
+  background-color: rgb(15 23 42);
 }
 </style>

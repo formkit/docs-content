@@ -335,5 +335,3 @@ The typing for the slot data for a FormKit multi-step input.
 ```typescript
 export type FormKitMultiStepSlotData = FormKitFrameworkContext<Record<string, any>> & StepSlotData;
 ```
-
-</client-only>

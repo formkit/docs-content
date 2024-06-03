@@ -2073,5 +2073,3 @@ The signature for a node's trap setter — these are more rare than getter traps
 ```typescript
 export type TrapSetter = ((node: FormKitNode, context: FormKitContext, property: string | number | symbol, value: any) => boolean | never) | false;
 ```
-
-</client-only>

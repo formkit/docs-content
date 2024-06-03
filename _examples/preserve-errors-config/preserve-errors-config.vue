@@ -13,6 +13,7 @@ export default {
   <!-- %partial%::html:: -->
   <FormKit
     type="form"
+    @submit="() => false"
     id="register"
     :config="{ preserveErrors: true }"
   >

@@ -106,6 +106,7 @@ const guests = [
 <template>
   <FormKit
     type="form"
+    @submit="() => false"
     #default="{ value }"
     :value="{
       vips: ['Monica Baker', 'Marion Blanchard'],

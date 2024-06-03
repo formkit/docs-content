@@ -29,5 +29,3 @@ type FormKitTypeDefinition = {
     schema: FormKitSchemaNode[] | FormKitSchemaCondition;
 };
 ```
-
-</client-only>

@@ -1,6 +1,7 @@
 <template>
   <FormKit
     type="form"
+    @submit="() => false"
     submit-label="Send"
     :input-errors="{
       to: 'Make sure you use the right address.',

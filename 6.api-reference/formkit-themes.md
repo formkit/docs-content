@@ -87,5 +87,3 @@ interface FormKitIconLoaderUrl {
     (iconName: string): string | undefined;
 }
 ```
-
-</client-only>

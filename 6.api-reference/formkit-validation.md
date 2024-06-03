@@ -161,5 +161,3 @@ export type FormKitValidationRule = {
     ruleName?: string;
 } & Partial<FormKitValidationHints>;
 ```
-
-</client-only>

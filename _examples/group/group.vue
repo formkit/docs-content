@@ -65,6 +65,7 @@ const states = {
 <template>
   <FormKit
     type="form"
+    @submit="() => false"
     #default="{ value }"
     :actions="false"
     :value="{
@@ -78,28 +79,11 @@ const states = {
   >
     <!-- %partial%::html:: -->
     <FormKit type="group" name="address">
-      <FormKit
-        type="text"
-        label="Street address"
-        name="street"
-      />
-      <FormKit
-        type="text"
-        label="City"
-        name="city"
-      />
+      <FormKit type="text" label="Street address" name="street" />
+      <FormKit type="text" label="City" name="city" />
       <div class="flex gap-4">
-        <FormKit
-          type="select"
-          label="State"
-          name="state"
-          :options="states"
-        />
-        <FormKit
-          type="text"
-          name="zip"
-          label="Zip"
-        />
+        <FormKit type="select" label="State" name="state" :options="states" />
+        <FormKit type="text" name="zip" label="Zip" />
       </div>
     </FormKit>
     <!-- %partial% -->

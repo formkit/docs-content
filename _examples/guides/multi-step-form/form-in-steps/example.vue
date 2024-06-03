@@ -57,7 +57,7 @@ const camel2title = (str) =>
         </FormKit>
       </section>
 
-      <details>
+      <details class="docs-content-child">
         <summary>Form data</summary>
         <pre wrap>{{ value }}</pre>
       </details>

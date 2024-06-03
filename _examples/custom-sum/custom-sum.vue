@@ -65,7 +65,7 @@ const groupValues = ref({})
 
 <template>
   <FormKit type="group" v-model="groupValues">
-    <p>
+    <p class="mb-4">
       To illustrate the final value of this input, let's stick it in a group.
     </p>
     <FormKit

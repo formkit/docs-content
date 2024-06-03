@@ -136,5 +136,3 @@ export type FormKitObserverReceipts = Map<FormKitNode, {
     [index: string]: string;
 }>;
 ```
-
-</client-only>

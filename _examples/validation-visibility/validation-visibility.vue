@@ -3,6 +3,7 @@
   <!-- config is passed down to descendant inputs: -->
   <FormKit
     type="form"
+    @submit="() => false"
     :config="{ validationVisibility: 'submit' }"
   >
     <FormKit

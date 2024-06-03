@@ -143,5 +143,3 @@ interface FormKitLocaleRegistry {
     [index: string]: FormKitLocale;
 }
 ```
-
-</client-only>

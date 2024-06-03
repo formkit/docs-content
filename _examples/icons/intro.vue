@@ -1,10 +1,11 @@
 <template>
   <FormKit
     type="form"
+    @submit="() => false"
     submit-label="Let's gooo"
     :submit-attrs="{
       'suffix-icon': 'submit',
-      help: 'With 130+ icons built in, it’s easy to get started!'
+      help: 'With 130+ icons built in, it’s easy to get started!',
     }"
   >
     <FormKit
@@ -32,7 +33,13 @@
       select-icon="caretDown"
       label="How likely are you to use icons?"
       help="You can replace default icons such as the select input control."
-      :options="['Very Likely', 'Likely', 'Unsure', 'Unlikely', 'Very Unlikely']"
+      :options="[
+        'Very Likely',
+        'Likely',
+        'Unsure',
+        'Unlikely',
+        'Very Unlikely',
+      ]"
     />
     <FormKit
       type="color"

@@ -11,7 +11,7 @@ euroInputs.library = (node) => {
     attrs: {
       onInput: '$handlers.DOMInput',
       value: '$_value',
-      class: 'border border-gray-700 mb-4',
+      class: 'border border-gray-700 mb-4 bg-transparent dark:border-gray-500',
     },
   }
   switch (node.props.type) {

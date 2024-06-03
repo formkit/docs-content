@@ -22,4 +22,3 @@ const otp = createInput(OneTimePassword)
   <!-- This is just to help us visualize the data in our form: -->
   <pre wrap>{{ values }}</pre>
 </template>
-./one-time-password.vue

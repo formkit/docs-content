@@ -27,24 +27,3 @@ const otp = createInput(OneTimePassword, {
   <pre wrap>{{ values }}</pre>
 </template>
 <!-- %partial% -->
-
-<style scoped>
-.formkit-inner {
-  box-shadow: none;
-}
-.formkit-inner:focus-within {
-  box-shadow: none;
-}
-
-.formkit-digit {
-  appearance: none;
-  padding: 0.5em;
-  box-sizing: border-box;
-  width: 2em;
-  margin-right: 0.25em;
-  text-align: center;
-  border: var(--fk-border);
-  border-radius: var(--fk-border-radius);
-}
-</style>
-./one-time-password.vue

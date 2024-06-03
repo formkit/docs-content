@@ -417,7 +417,7 @@ file: "_examples/formkit-messages/toast.vue"
 
 The `<FormKitMessages />` component has a few additional configuration options:
 
-<div class="reference-table">
+<div class="reference-table docs-content-child">
 
 | Prop              | Default   | Description                                                                                                                                                       |
 | ----------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -451,8 +451,8 @@ The `useFormKitContext` is a composable that returns the form’s context object
 name: "useFormKitContext"
 init-file-tab: 'Address.vue'
 file: [
-  "_examples/use-formkit-context/MyForm.vue",
-  "_examples/use-formkit-context/Address.vue"
+  "_examples/use-formkit-context/my-form.vue",
+  "_examples/use-formkit-context/address.vue"
 ]
 ---
 ::
@@ -465,7 +465,7 @@ Similar to `useFormKitContext` this composable finds any `<FormKit>` context obj
 ---
 name: "useFormKitContextById"
 file: [
-  "_examples/use-formkit-context-by-id/MyForm.vue",
+  "_examples/use-formkit-context-by-id/my-form.vue",
 ]
 ---
 ::
@@ -478,7 +478,7 @@ Fetches any FormKit node that has an explicit `id`. It returns a `Ref` that will
 ---
 name: "useFormKitNodeById"
 file: [
-  "_examples/use-formkit-node-by-id/MyForm.vue",
+  "_examples/use-formkit-node-by-id/my-form.vue",
 ]
 ---
 ::

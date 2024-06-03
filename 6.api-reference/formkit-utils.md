@@ -704,5 +704,3 @@ The date token strings that can be used for date formatting.
 ```typescript
 export type FormKitDateTokens = 'MM' | 'M' | 'DD' | 'D' | 'YYYY' | 'YY';
 ```
-
-</client-only>

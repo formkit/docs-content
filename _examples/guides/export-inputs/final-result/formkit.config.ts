@@ -1,8 +1,9 @@
+import { defineFormKitConfig } from '@formkit/vue'
 import { genesisIcons } from '@formkit/icons'
 import { rootClasses } from '~/formkit.theme'
-import { floatingLabelTextInput } from './floatingLabelTextInput.js'
+import { floatingLabelTextInput } from './floating-label-text-input.js'
 
-export default {
+export default defineFormKitConfig({
   inputs: {
     floatingLabelTextInput,
   },
@@ -12,4 +13,4 @@ export default {
   config: {
     rootClasses,
   },
-}
+})

@@ -263,5 +263,3 @@ A simple text node.
 ```typescript
 type FormKitSchemaTextNode = string;
 ```
-
-</client-only>

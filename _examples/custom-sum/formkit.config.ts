@@ -10,7 +10,7 @@ export default defineFormKitConfig({
     rootClasses,
     classes: {
       // adding custom classes for our $classes.addend calls
-      addend: 'appearance-none bg-gray-100 my-0 mx-2 w-16 px-1',
+      addend: 'appearance-none bg-transparent my-0 mx-2 w-16 px-1',
     },
   },
 })

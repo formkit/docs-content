@@ -265,5 +265,3 @@ export type VirtualNode = VNode<RendererNode, RendererElement, {
     [key: string]: any;
 }>;
 ```
-
-</client-only>

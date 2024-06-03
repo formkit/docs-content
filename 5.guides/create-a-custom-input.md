@@ -106,6 +106,7 @@ init-file-tab: "one-time-password.vue"
 file: [
   '_examples/otp-tags/register.vue',
   '_examples/otp-tags/one-time-password.vue',
+  '_examples/otp-tags/formkit.config.ts'
 ]
 ---
 ::
@@ -137,6 +138,7 @@ init-file-tab: "one-time-password.vue"
 file: [
   '_examples/otp-handlers/register.vue',
   '_examples/otp-handlers/one-time-password.vue',
+  '_examples/otp-handlers/formkit.config.ts'
 ]
 ---
 ::
@@ -177,6 +179,7 @@ init-file-tab: "one-time-password.vue"
 file: [
   '_examples/otp-copy-paste/register.vue',
   '_examples/otp-copy-paste/one-time-password.vue',
+  '_examples/otp-copy-paste/formkit.config.ts'
 ]
 ---
 ::

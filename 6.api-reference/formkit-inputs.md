@@ -1279,5 +1279,3 @@ export type PropType<Props extends FormKitInputs<Props>, T extends keyof FormKit
     type: Props['type'] extends string ? Props['type'] : 'text';
 }>[T];
 ```
-
-</client-only>

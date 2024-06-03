@@ -10,7 +10,7 @@ const simpleText = {
       attrs: {
         onInput: '$handlers.DOMInput',
         value: '$_value',
-        class: 'border border-gray-900',
+        class: 'border border-gray-900 bg-transparent dark:border-gray-500',
       },
     },
   ],

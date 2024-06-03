@@ -144,9 +144,13 @@ file: [
 ::
 
 
-<callout type="info" label="Only the options are searched">
+::Callout
+---
+type: "info" 
+label: "Only the options are searched"
+---
 The search input only searches through the options in the source options list. It does not return options that have already been transferred to the target list.
-</callout>
+::
 
 #### Filtering
 

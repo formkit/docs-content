@@ -29,11 +29,11 @@ export const floatingLabelTextInput = {
         prefix(),
         textInput(),
         /*
-         * New label placemenet
+         * New label placement
          */
         $attrs(
           {
-            class: '$classes.labelFloating',
+            'data-floating-label': true,
             'data-has-value': '$_value !== "" && $_value !== undefined',
             for: '$id',
           },

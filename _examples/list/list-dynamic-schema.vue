@@ -33,6 +33,7 @@ const schema = {
     },
     {
       $el: 'pre',
+      attrs: { wrap: true },
       children: '$stringify($value)',
     },
   ],
