@@ -1,4 +1,5 @@
-{
+export default {
+  /* %partial% */
   account: {
     name: 'John FormKit',
     email: 'hello@formkit.com',
@@ -19,4 +20,5 @@
     'marketing',
     'updates'
   ]
+  /* %partial% */
 }
