@@ -1,5 +1,5 @@
 <script setup>
-import Address from './address.vue'
+import Address from '@content/_examples/use-formkit-context/address.vue'
 </script>
 
 <template>
