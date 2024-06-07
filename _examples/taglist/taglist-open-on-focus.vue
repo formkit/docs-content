@@ -12,7 +12,7 @@ function focusTaglist() {
 </script>
 
 <template>
-  <div>
+  <FormKit type="form" #default="{ value }" :actions="false">
     <FormKit type="button" @click="focusTaglist"
       >Click me to focus taglist</FormKit
     >
@@ -27,7 +27,6 @@ function focusTaglist() {
       popover
       open-on-focus
     />
-  </div>
+    <pre wrap>{{ value }}</pre>
+  </FormKit>
 </template>
-
-<style scoped></style>

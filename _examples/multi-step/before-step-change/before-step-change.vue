@@ -7,7 +7,6 @@ const stepInformation = ref({})
   <!-- %partial% -->
   <FormKit
     type="multi-step"
-    :disabled="disabled"
     :before-step-change="
       ({ currentStep, targetStep, delta }) => {
         stepInformation.value = {
