@@ -197,7 +197,7 @@ file: [
 ---
 ::
 
-## Programatic Nagivation
+## Programmatic Navigation
 
 The multi-step node is equipped with convenient helper functions designed to facilitate programmatic navigation between any of its steps. These functions include:
 
