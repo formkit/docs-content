@@ -1,5 +1,30 @@
 <script setup>
-const frameworks = [{ label: 'React', value: 'react', asset: 'https://s3.amazonaws.com/cdn.formk.it/example-assets/frontend-framework-logos/react-logo.png'}, { label: 'Vue', value: 'vue', asset: 'https://s3.amazonaws.com/cdn.formk.it/example-assets/frontend-framework-logos/vue-logo.png'}, { label: 'Angular', value: 'angular', asset: 'https://s3.amazonaws.com/cdn.formk.it/example-assets/frontend-framework-logos/angular-logo.png',}, { label: 'Svelte', value: 'svelte', asset: 'https://s3.amazonaws.com/cdn.formk.it/example-assets/frontend-framework-logos/svelte-logo.png'}]
+const frameworks = [
+  {
+    label: 'React',
+    value: 'react',
+    asset:
+      'https://s3.amazonaws.com/cdn.formk.it/example-assets/frontend-framework-logos/react-logo.png',
+  },
+  {
+    label: 'Vue',
+    value: 'vue',
+    asset:
+      'https://s3.amazonaws.com/cdn.formk.it/example-assets/frontend-framework-logos/vue-logo.png',
+  },
+  {
+    label: 'Angular',
+    value: 'angular',
+    asset:
+      'https://s3.amazonaws.com/cdn.formk.it/example-assets/frontend-framework-logos/angular-logo.png',
+  },
+  {
+    label: 'Svelte',
+    value: 'svelte',
+    asset:
+      'https://s3.amazonaws.com/cdn.formk.it/example-assets/frontend-framework-logos/svelte-logo.png',
+  },
+]
 </script>
 
 <template>
@@ -13,16 +38,17 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://s3.amazona
     value="vue"
   >
     <!--SELECTION SLOT-->
-    <template #selection="{ option }">
+    <template #selection="{ option, classes }">
       <div class="flex items-center">
         <img :src="option.asset" alt="optionAvatar" class="w-5 mr-2" />
-        <span>
+        <span :class="classes.selection">
           {{ option.label }}
         </span>
       </div>
     </template>
     <!---->
   </FormKit>
+
   <FormKit
     type="dropdown"
     name="framework"
@@ -40,11 +66,11 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://s3.amazona
         <span :class="classes.tagLabel">
           {{ option.label }}
         </span>
-        <button
+        <span
           @click.prevent="handlers.removeSelection(option)()"
           tabindex="-1"
           type="button"
-          aria-controls="input_1"
+          role="button"
           :class="classes.removeSelection"
         >
           <span :class="`${classes.closeIcon} ${classes.icon}`"
@@ -59,9 +85,9 @@ const frameworks = [{ label: 'React', value: 'react', asset: 'https://s3.amazona
               ></path>
             </svg>
           </span>
-        </button>
+        </span>
       </div>
     </template>
     <!--/TAG SLOT-->
   </FormKit>
-</template>s
+</template>

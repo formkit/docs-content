@@ -1,13 +1,13 @@
 ```js
-import { createProPlugin, datepicker, mask } from '@formkit/pro'
+import { defineFormKitConfig } from '@formkit/vue'
+import { createProPlugin, datepicker } from '@formkit/pro'
 
-const proPlugin = createProPlugin('fk-#########', {
+const proPlugin = createProPlugin('fk-############', {
   datepicker, 
-  mask,
   // any other Pro Inputs
 })
 
-const config = defaultConfig({
+export default defineFormKitConfig({
   plugins: [proPlugin],
 })
 ```

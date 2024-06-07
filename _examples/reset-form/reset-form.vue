@@ -11,14 +11,14 @@ export default {
       // Our api request:
       await new Promise((r) => setTimeout(r, 1000))
       this.complete = true
-      this.$formkit.reset('myForm')
+      this.$formkit.reset('newsletterForm')
     },
   },
 }
 </script>
 
 <template>
-  <FormKit type="form" id="myForm" @submit="handleSubmit">
+  <FormKit type="form" id="newsletterForm" @submit="handleSubmit">
     <h2 class="text-xl font-bold mb-2">Newsletter</h2>
     <p class="text-base mb-4">When this form is submitted the form is reset.</p>
     <div class="success" v-if="complete">Submitted successfully!</div>

@@ -1,10 +1,6 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 const value = ref([])
-const sum = computed(() => {
-  return new Intl.NumberFormat('en-US')
-    .format(value.value.reduce((sum, price) => Number(price) + sum, 0))
-})
 </script>
 
 <template>
@@ -23,7 +19,7 @@ const sum = computed(() => {
         value: 'item-55',
         label: 'Vada Pav (out of stock)',
         help: 'Fried vegetarian dumplings.',
-        attrs: { disabled: true }
+        attrs: { disabled: true },
       },
       {
         value: 'item-22',
@@ -34,7 +30,7 @@ const sum = computed(() => {
         value: 'item-44',
         label: 'Halwa',
         help: 'Pudding made with flour.',
-      }
+      },
     ]"
     help="Select your favorite Indian dishes."
   />

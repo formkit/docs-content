@@ -31,9 +31,11 @@ import {
     </FormKit>
     <table>
       <thead>
-        <th>Add</th>
-        <th>Modify</th>
-        <th>Remove</th>
+        <tr>
+          <th>Add</th>
+          <th>Modify</th>
+          <th>Remove</th>
+        </tr>
       </thead>
       <tbody>
         <tr>
