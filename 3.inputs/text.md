@@ -56,16 +56,7 @@ data: [
 
 :SectionKeysIntro
 
-::FormKitInputDiagram
----
-prefix-icon-content: "👩🏽‍💼"
-suffix-icon-content: ""
-label-content: "First name"
-input-content: "Sunita"
-help-content: "Enter your first name only."
-message-content: "First name is required."
----
-::
+:FormKitInputDiagrams
 
 ::ReferenceTable
 ---

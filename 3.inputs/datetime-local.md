@@ -49,16 +49,7 @@ attrs: ['min', 'max', 'step']
 
 :SectionKeysIntro
 
-::FormKitInputDiagram
----
-prefix-icon-content: ⏰"
-suffix-icon-content: 👍"
-label-content: Appointment time"
-input-content: Jan. 1 1970 12:00:00"
-help-content: Please choose a date and time for your appointment."
-message-content: Date and time are required."
----
-::
+:FormKitInputDiagrams
 
 ::ReferenceTable
 ---

@@ -5,7 +5,7 @@ navigation:
   title: 'Toggle Buttons'
   pro: true
   free: true
-  new: true
+  new: false
 ---
 
 :InputPageHero

@@ -34,17 +34,7 @@ attrs: ['cols', 'maxlength', 'minlength', 'placeholder', 'rows']
 
 :SectionKeysIntro
 
-::FormKitInputDiagram
----
-class: "input-diagram--textarea"
-prefix-icon-content: "📕"
-suffix-icon-content: ""
-label-content: "Brief biography"
-input-content: "The year was 1982. The season was Autumn. My parents were living in Peru at the time..."
-help-content: "Tell us a little about yourself."
-message-content: "Brief biography must be between 300 and 500 characters."
----
-::
+:FormKitInputDiagrams
 
 ::ReferenceTable
 ---
