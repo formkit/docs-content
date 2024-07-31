@@ -13,7 +13,7 @@ type: "Meta"
 
 The `meta` input is meant to store arbitrary data that is not intended for display to end users. This input is hidden by default and can be used to store data that is not part of the form's schema.
 
-Unlike the [hidden](/inputs/hidden) input (which renders an `<input type="hidden">` element), `meta` does not render *any* DOM elements so it’s value is in memory only and as such it can store any value type. In TypeScript its value is defined as `any`.
+Unlike the [hidden](/inputs/hidden) input (which renders an `<input type="hidden">` element), `meta` does not render *any* DOM elements so its value is in memory only and as such it can store any value type. In TypeScript its value is defined as `any`.
 
 ## Basic example
 
