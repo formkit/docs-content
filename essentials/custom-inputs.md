@@ -49,7 +49,7 @@ New inputs require an [input definition](#input-definition). Input definitions c
 
 ### Input definition
 
-Input definitions are objects that contain the necessary information to initialize an input — like which [props to accept](#adding-props), what [schema or component to render](#schema-vs-component), and if any additional [feature functions](#adding-features) should be included. The shape of the definition object is:
+Input definitions are objects that contain the necessary information to initialize an input — like which [props to accept](#adding-props), what [schema or component to render](#schema-vs-component), and any additional [feature functions](#adding-features) that should be included. The shape of the definition object is:
 
 ```js
 {
@@ -78,7 +78,7 @@ file: "_content/_examples/custom-input/custom-input.vue"
 ---
 ::
 
-Even though this simplistic example doesn’t contain any input/output mechanism, it still qualifies as a full input. It can have a value, run validation rules (they wont be displayed, but they can block form submissions), and execute plugins. Fundamentally, all inputs are [core nodes](/essentials/architecture#node) and the input’s definition provides the mechanisms to interact with that node.
+Even though this simple example doesn’t contain any input/output mechanism, it still qualifies as a full input. It can have a value, run validation rules (they won’t be displayed, but they can block form submissions), and execute plugins. Fundamentally, all inputs are [core nodes](/essentials/architecture#node) and the input’s definition provides the mechanisms to interact with that node.
 
 ### Global custom inputs
 
@@ -167,7 +167,7 @@ The primary takeaway is if you are planning to use a custom input on multiple pr
 
 ### Future proofing
 
-In the future, FormKit may expand to support additional frameworks (ex: React or Svelte. If this is something you are interested in, <a href="mailto:feedback@formkit.com">let us know!</a>.) Writing your inputs using schema means your inputs will be compatible (perhaps minimal changes) with those frameworks too.
+In the future, FormKit may expand to support additional frameworks (ex: React or Svelte. If this is something you are interested in, <a href="mailto:feedback@formkit.com">let us know!</a>.) Writing your inputs using schema means your inputs will be compatible (perhaps with minimal changes) with those frameworks too.
 
 ## Schema inputs
 
@@ -198,7 +198,7 @@ The `input` section in the diagram above is typically what you’ll swap out whe
 
 #### Using `createInput` to extend the base schema
 
-To create inputs using the base schema you can use the `createInput()` utility from the `@formkit/vue` package. This function accepts 3 arguments:
+To create inputs using the base schema, you can use the `createInput()` utility from the `@formkit/vue` package. This function accepts 3 arguments:
 
 - (required) A schema node _or_ a Vue component, which it inserts into the base schema at the `input` section (see diagram above).
 - (optional) An object of [input definition](#input-definition) properties to merge with an auto-generated one.
@@ -246,12 +246,12 @@ In the above example, we were able to re-create the same features as the `create
 type: "info"
 label: "Custom inputs vs Vue component wrappers"
 ---
-When writing a custom FormKit input while using Vue components it is recommended to not use the FormKit components inside, custom inputs are meant to be written like regular inputs with the advantage of using the FormKit context prop to add the functionality that FormKit requires, if your case is to use a FormKit component with default values, it is recommended instead to use a Vue component wrapper and directly call that component, FormKit inputs work in any level of nesting, or you can also consider using FormKit's <a href="/guides/export-and-restructure-inputs">input export feature</a> to add features and change attrs and props.
+When writing a custom FormKit input while using Vue components, it is recommended to not use the FormKit components inside. Custom inputs are meant to be written like regular inputs with the advantage of using the FormKit context prop to add the functionality that FormKit requires. If your case is to use a FormKit component with default values, it is recommended instead to use a Vue component wrapper and directly call that component because FormKit inputs work in any level of nesting. Alternatively, you could use FormKit's <a href="/guides/export-and-restructure-inputs">input export feature</a> to add features and change attrs and props.
 ::
 
 For most users, [passing a Vue component to `createInput`](#using-createinput-to-extend-the-base-schema) provides a good balance between customization and value-added features. If you’d like to completely eject from schema-based inputs all together, you can pass a component directly to an input definition.
 
-Component inputs receive a single prop — [the `context` object](/essentials/configuration). It’s then up to you to write a component to encompasses the desired features of FormKit (labels, help text, message display, etc.). Checkout the [input checklist](#input-checklist) for a list of what you’ll want to output.
+Component inputs receive a single prop — [the `context` object](/essentials/configuration). It’s then up to you to write a component that encompasses the desired features of FormKit (labels, help text, message display, etc.). Checkout the [input checklist](#input-checklist) for a list of what you’ll want to output.
 
 ## Input & output values
 
@@ -262,7 +262,7 @@ Inputs have two critical roles:
 
 ### Receiving input
 
-You can receive input from any user interaction and the input can set its value to any type of data. Inputs are _not_ limited to strings and numbers — they can happily store Arrays, Objects, or custom data structures.
+You can receive input from any user interaction, and the input can set its value to any type of data. Inputs are _not_ limited to strings and numbers — they can happily store Arrays, Objects, or custom data structures.
 
 Fundamentally, all an input needs to do is call `node.input(value)` with a value. The `node.input()` method is automatically debounced, so feel free to call it frequently — like every keystroke. Typically, this looks like binding to the `input` event.
 
@@ -372,7 +372,7 @@ file: [
 
 ### Add props method (`node.addProps()`)
 
-You can dynamically add props using the `node.addProps()` method in any runtime environment where you have access to the node. For custom inputs this is particularly helpful when used in a features. Both array notation and object notation are supported (see above).
+You can dynamically add props using the `node.addProps()` method in any runtime environment where you have access to the node. For custom inputs this is particularly helpful when used in a features array. Both array notation and object notation are supported (see above).
 
 ::Example
 ---
@@ -403,11 +403,11 @@ As an example, let's imagine you want to build an input that allows users to ent
 
 ## TypeScript support
 
-FormKit is written in TypeScript and includes type definitions for all of its core inputs. If you are writing your own inputs and would like to provide TypeScript support you can define your own inputs using two module augmentations:
+FormKit is written in TypeScript and includes type definitions for all of its core inputs. If you are writing your own inputs and would like to provide TypeScript support, you can define your own inputs using two module augmentations:
 
 ### Adding prop types
 
-The `type` prop of the `<FormKit>` component is a string that is used as the key of a discriminated union of props (`FormKitInputProps`). By augmenting this type your custom inputs can define their own prop types. To do so you must augment the `FormKitInputProps` type to add your own custom types:
+The `type` prop of the `<FormKit>` component is a string that is used as the key of a discriminated union of props (`FormKitInputProps`). By augmenting this type, your custom inputs can define their own prop types. To do so, you must augment the `FormKitInputProps` type to add your own custom types:
 
 ```ts
 declare module '@formkit/inputs' {
@@ -450,7 +450,7 @@ declare module '@formkit/inputs' {
 }
 ```
 
-In the example above, we use `FormKitBaseSlots` — a TypeScript utility to add all the "basic" slots that most custom inputs implement, like `outer`, `label`, `help`, `message`, etc. However you could also define your own slots entirely from scratch, or augment `FormKitBaseSlots` to add additional slots (`FormKitBaseSlots<Props> & YourCustomSlots`).
+In the example above, we use `FormKitBaseSlots` — a TypeScript utility to add all the "basic" slots that most custom inputs implement, like `outer`, `label`, `help`, `message`, etc. However, you could also define your own slots entirely from scratch, or augment `FormKitBaseSlots` to add additional slots (`FormKitBaseSlots<Props> & YourCustomSlots`).
 
 ```ts
 declare module '@formkit/inputs' {
@@ -484,7 +484,7 @@ Below are some examples of custom inputs. They are not intended to be comprehens
 
 ### Simple text input
 
-This is the simplest possible input and does not leverage any of FormKit’s built in DOM structure and only outputs a text input — however it is a fully functional member of the group it is nested inside of and able to read and write values.
+This is the simplest possible input and does not leverage any of FormKit’s built-in DOM structure. It only outputs a text input — however, it is a fully functional member of the group it is nested inside of and able to read and write values.
 
 ::Example
 ---
