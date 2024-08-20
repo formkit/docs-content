@@ -2,7 +2,7 @@
 <script setup>
 import { ref } from 'vue'
 import { createInput } from '@formkit/vue'
-import OneTimePassword from './one-time-password.vue'
+import OneTimePassword from '@content/_examples/otp-handlers/one-time-password.vue'
 
 const values = ref({})
 const otp = createInput(OneTimePassword, {
