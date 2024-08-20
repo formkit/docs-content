@@ -1,6 +1,6 @@
 ---
 title: Unit
-description: The unit input is used to create locale/unit specific parsed content for percentages, temperatures and measurements.
+description: The unit input allows for restricted input of values based on the provided unit (distance, weight, temperature, etc.) and locale.
 ---
 
 ::InputPageHero
@@ -60,7 +60,7 @@ Default value output is the value as a string to reduce issues with large number
 
 ### Value unit
 
-The unit input also allowed for first-party conversion of one unit type to another. In this example, we will use `unit` of type `mile`, but the value
+The unit input also allows for first-party conversion of one unit type to another. In this example, we will use `unit` of type `mile`, but the value
 itself will be converted to `kilometers` when setting `value-unit` to `kilometer`.
 
 ::Example
@@ -166,7 +166,7 @@ data: [
 prefix-icon-content: ""
 suffix-icon-content: ""
 label-content: "Unit Input"
-input-content: "1,234.56%"
+input-content: "100 mi"
 help-content: "Help text goes here"
 message-content: "Any messages would appear here"
 ---
