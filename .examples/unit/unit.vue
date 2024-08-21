@@ -16,11 +16,36 @@ const initialValues = {
     :value="initialValues"
   >
     <!-- %partial%::html:: -->
-    <FormKit type="unit" unit="meter" name="distance" />
-    <FormKit type="unit" unit="celsius" name="temperature" />
-    <FormKit type="unit" unit="day" name="time" />
-    <FormKit type="unit" unit="fluid-ounce" name="volume" />
-    <FormKit type="unit" unit="megabyte" name="digital-unit" />
+    <FormKit
+      type="unit"
+      unit="kilometer"
+      name="distance"
+      label="Distance in meters"
+    />
+    <FormKit
+      type="unit"
+      unit="celsius"
+      name="temperature"
+      label="Temperature in Celsius"
+    />
+    <FormKit
+      type="unit"
+      unit="nanosecond"
+      name="time"
+      label="Time in nanoseconds"
+    />
+    <FormKit
+      type="unit"
+      unit="fluid-ounce"
+      name="volume"
+      label="Volume in fluid ounces"
+    />
+    <FormKit
+      type="unit"
+      unit="megabyte"
+      name="digital-unit"
+      label="Digital unit in megabytes"
+    />
     <pre wrap>{{ value }}</pre>
     <!-- %partial%::html:: -->
   </FormKit>
