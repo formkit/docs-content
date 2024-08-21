@@ -20,7 +20,7 @@ The `unit` input allows for restricted input of values based on the provided uni
 ::Example
 ---
 name: "Unit input defaults"
-file: "_content/_examples/unit/unit-default.vue"
+file: "_content/_examples/unit/unit.vue"
 ---
 ::
 
@@ -36,9 +36,27 @@ listItems: ['acre', 'bit', 'byte', 'celsius', 'centimeter', 'day', 'degree', 'fa
 ---
 ::
 
+### Unit display
+
+The display length can be modified by the `unitDisplay` property. Accepted values are `short`, `narrow`, and `long`.
+
+::Example
+---
+name: "Unit input defaults"
+file: "_content/_examples/unit/unit-display.vue"
+---
+::
+
 ### Locale
 
 By default the locale will use what you have set in your `formkit.config.ts` as the desired locale. However you can override this with the `displayLocale` prop. For example, `en-US`, `de-DE`, `en-IN`, `zh-CN`, etc, etc.
+
+::Example
+---
+name: "Unit input defaults"
+file: "_content/_examples/unit/unit-locale.vue"
+---
+::
 
 ### Decimals
 
@@ -46,17 +64,45 @@ By default the decimals will display when the value contains the unit/locale dec
 
 You can also choose to set a minimum number of decimals with the `minDecimals` prop. For example, you always want to show 2 decimal places you would set `minDecimals="2"`.
 
+::Example
+---
+name: "Unit input defaults"
+file: "_content/_examples/unit/unit-decimals.vue"
+---
+::
+
 ### Minimum and Maximum Values
 
 Similar to a number input, you can set a `min` and `max` value.
+
+::Example
+---
+name: "Unit input defaults"
+file: "_content/_examples/unit/unit-min-max.vue"
+---
+::
 
 ### Step
 
 Again, similar to a number input you can use the up/down keys to step the value. By default the step is `1` but you can override that with this prop.
 
+::Example
+---
+name: "Unit input defaults"
+file: "_content/_examples/unit/unit-step.vue"
+---
+::
+
 ### Value Formatting
 
-Default value output is the value as a string to reduce issues with large number enumertation issues. However you can format the value as a string and include the currency symbol, grouping, decimal, etc as it is shown in the input.
+The value of the input itself defaults to a number but can be formatted as a string to include information about the unit itself.
+
+::Example
+---
+name: "Unit input defaults"
+file: "_content/_examples/unit/unit-value-format.vue"
+---
+::
 
 ### Value unit
 
