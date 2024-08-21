@@ -191,10 +191,10 @@ data: [
     description: "Used to convert the user-inputted value from one unit to another"
   },
   {
-    prop: "unitFormatting",
-    type: "string | boolean",
-    default: true,
-    description: "When set to false, no formatting will be applied for the given unit type."
+    prop: "unitDisplay",
+    type: "string ('narrow' | 'short' | 'long')",
+    default: "short",
+    description: "Determines the length of the how the unit is represented."
   },
 ]
 ---
