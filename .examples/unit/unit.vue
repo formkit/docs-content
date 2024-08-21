@@ -21,7 +21,7 @@ const initialValues = {
     <FormKit type="unit" unit="day" name="time" />
     <FormKit type="unit" unit="fluid-ounce" name="volume" />
     <FormKit type="unit" unit="megabyte" name="digital-unit" />
-    {{ value }}
+    <pre wrap>{{ value }}</pre>
     <!-- %partial%::html:: -->
   </FormKit>
 </template>
