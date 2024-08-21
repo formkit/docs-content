@@ -112,7 +112,7 @@ itself will be converted to `kilometers` when setting `value-unit` to `kilometer
 ::Example
 ---
 name: "Unit type examples"
-file: "_content/_examples/unit/unit-value-unit.vue"
+file: "_content/_examples/unit/value-unit.vue"
 ---
 ::
 

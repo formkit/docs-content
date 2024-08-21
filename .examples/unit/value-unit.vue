@@ -7,8 +7,6 @@
       name="value"
       value-unit="kilometer"
     />
-    <span style="display: flex">
-      <pre>In kilometers: {{ value && value.value }}</pre>
-    </span>
+    <pre wrap>In kilometers: {{ value && value.value }}</pre>
   </FormKit>
 </template>
