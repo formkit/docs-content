@@ -116,6 +116,18 @@ file: "_content/_examples/unit/value-unit.vue"
 ---
 ::
 
+### Unitless
+
+The `unit` prop is optional, allowing for unitless values.
+
+::Example
+---
+name: "Unit type examples"
+file: "_content/_examples/unit/unitless.vue"
+---
+::
+
+
 ::Callout
 ---
 type: "warning"
@@ -128,13 +140,13 @@ In order to convert one unit to another, they must be in the same taxonomy (so f
 
 ::ReferenceTable
 ---
-input: "unit" 
+input: "unit"
 data: [
   {
     prop: "unit",
-    type: "string",
-    default: "percent",
-    description: "Set the specified unit to use for this input"
+    type: "string | undefined",
+    description: "Set the specified unit to use for this input. If undefined, will
+    allow for unitless values."
   },
   {
     prop: "displayLocale",
