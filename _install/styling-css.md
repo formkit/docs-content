@@ -10,7 +10,7 @@ FormKit now ships much more configurable Tailwind themes available at [themes.fo
 Eventually the legacy Genesis CSS theme will be deprecated and no longer supported by new Pro inputs.
 ::
 
-FormKit ships a (legacy) CSS theme called `genesis` which can be added by installed from the `@formkit/themes` package.
+FormKit ships a (legacy) CSS theme called `genesis` which can be added by installing from the `@formkit/themes` package.
 
 ### CDN Usage
 
@@ -39,7 +39,7 @@ import '@formkit/themes/genesis'
 
 ### Add required icons
 
-By default the icons required by the `genesis` theme will be loaded from CDN when requested. If you prefer to include the icons directly in your bundle for increased perfomance, to avoid any pop-in, or to alleviate possible SSR issues then import the `genesisIcons` set from `@formkit/icons` and spread them into the `icons` property of your FormKit config.
+By default the icons required by the `genesis` theme will be loaded from CDN when requested. If you prefer to include the icons directly in your bundle for increased performance, to avoid any pop-in, or to alleviate possible SSR issues, then import the `genesisIcons` set from `@formkit/icons` and spread them into the `icons` property of your FormKit config.
 
 ```js
 import { genesisIcons } from '@formkit/icons'

@@ -6,7 +6,7 @@ At your terminal, run `npx formkit@latest create-app` to start your new project:
 npx formkit@latest create-app
 ```
 
-`create-app` will ask you some questions about your project so it can determine what it needs to install and setup for you:
+`create-app` will ask you some questions about your project so it can determine what it needs to install and set up for you:
 
 ```sh
 ✔ Please enter a name for the project › <your-project-name>

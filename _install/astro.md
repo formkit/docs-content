@@ -40,7 +40,7 @@ label: "Vue Components"
 Astro does not let you use <code>FormKit</code> directly inside Astro files, so you should create a wrapper around your forms.
 ::
 
-Now you can add FormKit to your Astro Vue components, so that you can create a component inside the components folder:
+Now you can add FormKit to your Astro Vue components by creating a component inside the components folder:
 
 ```html
 <script setup>
