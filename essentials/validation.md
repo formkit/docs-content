@@ -167,7 +167,7 @@ You can use rule hints together. To do so, just place multiple hints before the 
 
 ## Available rules
 
-FormKit ships with over 20 production-ready validation rules, covering most validation needs. If you don’t find one that meets your exact requirement, you can add a [custom rule](#custom-rules) to suit your needs.
+FormKit ships with over 35 production-ready validation rules, covering most validation needs. If you don't find one that meets your exact requirement, you can add a [custom rule](#custom-rules) to suit your needs.
 
 - [accepted](#accepted)
 - [alpha](#alpha)
@@ -185,6 +185,10 @@ FormKit ships with over 20 production-ready validation rules, covering most vali
 - [date_after](#date-after)
 - [date_before](#date-before)
 - [date_between](#date-between)
+- [date_before_or_equal](#date-before-or-equal)
+- [date_after_or_equal](#date-after-or-equal)
+- [date_before_node](#date-before-node)
+- [date_after_node](#date-after-node)
 - [date_format](#date-format)
 - [email](#email)
 - [ends_with](#ends-with)
@@ -265,7 +269,7 @@ layout: "auto"
 
 ### Confirm
 
-Checks if the value of one input matches the value of another input — often used for password confirmations. There are two ways to specify which input to match:
+Checks if the value of one input matches the value of another input — often used for password confirmations. There are two ways to specify which input to match:
 
 - Append `_confirm` to the `name` attribute of the second input.
 - Pass the `name` of the first input as an argument to the confirm rule in the second input `confirm:name_of_input_1` (more specific).
@@ -400,9 +404,57 @@ layout: "auto"
 ---
 ::
 
+### Date before or equal
+
+Determines if a date is before or equal to the current date or a date supplied as the rule's argument. Dates used can either be JavaScript `Date` objects or strings that can be parsed by [`Date.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse).
+
+::Example
+---
+name: "Date before or equal"
+file: "_content/_examples/rule-date-before-or-equal/rule-date-before-or-equal.vue"
+layout: "auto"
+---
+::
+
+### Date after or equal
+
+Determines if a date is after or equal to the current date or a date supplied as the rule's argument. Dates used can either be JavaScript `Date` objects or strings that can be parsed by [`Date.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse).
+
+::Example
+---
+name: "Date after or equal"
+file: "_content/_examples/rule-date-after-or-equal/rule-date-after-or-equal.vue"
+layout: "auto"
+---
+::
+
+### Date before node
+
+Determines if a date is before the date in another node specified by its address. The address is provided as an argument to the rule. Dates used can either be JavaScript `Date` objects or strings that can be parsed by [`Date.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse).
+
+::Example
+---
+name: "Date before node"
+file: "_content/_examples/rule-date-before-node/rule-date-before-node.vue"
+layout: "auto"
+---
+::
+
+### Date after node
+
+Determines if a date is after the date in another node specified by its address. The address is provided as an argument to the rule. Dates used can either be JavaScript `Date` objects or strings that can be parsed by [`Date.parse()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse).
+
+::Example
+---
+name: "Date after node"
+file: "_content/_examples/rule-date-after-node/rule-date-after-node.vue"
+layout: "auto"
+---
+::
+
 ### Date format
 
-Ensures the format of an input’s date matches a specific date format. The format should be specified using the following formatting tokens:
+Ensures the format of an input's date matches a specific date format. The format should be specified using the following formatting tokens:
 
 | Token | Valid values                                                  |
 | ----- | ------------------------------------------------------------- |
@@ -418,7 +470,7 @@ Ensures the format of an input’s date matches a specific date format. The form
 type: "warning"
 label: ""
 ---
-Native date inputs always output the same format <code>YYYY-MM-DD ...</code> even though they display dates according to the browser’s locale. Using this rule to specify a <em>different</em> format would result in an input that can never be valid.
+Native date inputs always output the same format <code>YYYY-MM-DD ...</code> even though they display dates according to the browser's locale. Using this rule to specify a <em>different</em> format would result in an input that can never be valid.
 ::
 
 ::Example
@@ -467,7 +519,7 @@ layout: "auto"
 
 ### Length
 
-Checks that the input’s value is over a given length, or between two length values. It works to validate arrays (like [lists](/inputs/list)), objects (like [groups](/inputs/group)), or string lengths. Can be used to simulate the native `maxlength` and `minlength` as well.
+Checks that the input's value is over a given length, or between two length values. It works to validate arrays (like [lists](/inputs/list)), objects (like [groups](/inputs/group)), or string lengths. Can be used to simulate the native `maxlength` and `minlength` as well.
 
 ::Example
 ---
@@ -676,220 +728,3 @@ layout: "auto"
 ## Custom rules
 
 Validation rules are functions that accept a [core node](/essentials/architecture#node) and return a boolean value — `true` for passing and `false` for failing. Additionally, any arguments passed to the validation rule are available as arguments `1-n`. Writing your own is straight forward — for example:
-
-```js
-/**
- * File: my-custom-rules/monday.js
- *
- * A contrived validation rule that ensures the input’s value is monday or mon.
- */
-const monday = function (node) {
-  return node.value === 'monday' || node.value === 'mon'
-}
-
-export default monday
-```
-
-### Defining custom rule behaviors
-
-As mentioned in the [validation rule hints](#rule-hints) section, validation rules — including your custom rules — operate according to default behaviors: they run in sequence, are skipped when the input's value is empty, are synchronous, and are blocking. If you want your rule's defaults to operate differently, you can override these on your custom validation rule:
-
-```js
-/**
- * A contrived validation rule that ensures the input’s value is monday or mon.
- */
-const monday = function (node) {
-  return node.value === 'monday' || node.value === 'mon'
-}
-
-// override default rule behaviors for your custom rule
-monday.blocking = false
-monday.skipEmpty = false
-monday.debounce = 20 // milliseconds
-monday.force = true
-
-export default monday
-```
-
-You can also override these behaviors on a case-by-case basis with [rule hints](#rule-hints).
-
-Once you have a validation function written — you need to register the validation rule with FormKit — either globally or specifically on an input.
-
-### Multi-input validation rules
-
-Validation rules can depend on values from other inputs in your [form’s tree](/essentials/architecture). To do so, use node traversal to locate another node and access its value:
-
-::Example
----
-name: "Custom validation dependency"
-file: "_content/_examples/custom-validation-dependency/custom-validation-dependency.vue"
-layout: "auto"
----
-::
-
-
-::Callout
----
-type: "warning"
-label: "Pure functions"
----
-Validation rules should always be pure functions. Use only the arguments passed in and do not perform any side effects.
-::
-
-### Adding a rule globally
-
-To use a validation rule anywhere in your project, you can specify it wherever your FormKit plugin is registered with Vue.
-
-```js
-import { createApp } from 'vue'
-import App from './App.vue'
-import { plugin, defaultConfig } from '@formkit/vue'
-import monday from './my-custom-rules/monday'
-
-// prettier-ignore
-createApp(App).use(plugin, defaultConfig({
-  rules: { monday },
-})).mount('#app')
-```
-
-Once installed you can use your validation rule in anywhere in your project.
-
-```html
-<FormKit validation="required|monday" />
-```
-
-To customize the error message which shows up when your custom validation fails, follow the instructions [here](#global-validation-message).
-
-### Adding a rule via prop
-
-To add a validation to a specific input use the `validation-rules` prop.
-
-::Example
----
-name: "Custom validation rules"
-file: "_content/_examples/validation-custom/validation-custom.vue"
-layout: "auto"
----
-::
-
-::Callout
----
-type: "tip"
-label: "Custom message"
----
-Your custom rules probably need a custom message — the next section of the docs will cover that.
-::
-
-## Custom messages
-
-There are several ways to customize your validation message. The most basic of which is to use the <code>validation-label</code> prop — allowing you to change the name of the field as used in the pre-defined validation messages.
-
-::Example
----
-name: "Custom validation rules"
-file: "_content/_examples/validation-label/validation-label.vue"
-layout: "auto"
----
-::
-
-If you need to be more specific you have two options:
-
-- Override a rule’s message using a prop.
-- Override a validation rule’s message globally.
-
-### Validation message prop
-
-You can easily override validation messages directly on your `FormKit` input by providing an object of strings or functions.
-
-#### Using strings
-
-To override a validation message on a single FormKit input, add the `validation-messages` prop with an object of rule names and a corresponding message.
-
-::Example
----
-name: "Custom validation rules"
-file: "_content/_examples/validation-custom-messages/validation-custom-messages.vue"
-layout: "auto"
----
-::
-
-#### Using functions
-
-If you need more power for your validation rules, you can use a function instead of a string. The function is passed a context object.
-
-##### Validation message context object:
-
-| Behavior | Description                                                                                                                                     |
-| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| args     | An array of arguments passed to the rule. For example <code>['Vue', 'React', 'Angular']</code> from the rule <code>is:Vue,React,Angular</code>. |
-| name     | The name of the field (first available from: <code>validation-label</code>, <code>label</code>, then <code>name</code>).                        |
-| node     | The [FormKit core <code>node</code>](/essentials/architecture).                                                                                 |
-
-Let’s re-write the above example using a function instead of a string for even more control of the <code>validation-messages</code> prop:
-
-::Example
----
-name: "Custom validation rules"
-file: "_content/_examples/validation-custom-messages/validation-custom-messages-function.vue"
-layout: "auto"
----
-::
-
-### Global validation message
-
-If there are validation rule messages you'd like to override (or add) across your entire project, you can define those message rules when registering FormKit under the language key you'd like to override:
-
-```js
-import { createApp } from 'vue'
-import App from './App.vue'
-import { plugin, defaultConfig } from '@formkit/vue'
-import monday from './my-custom-rules/monday'
-
-// prettier-ignore
-createApp(App).use(plugin, defaultConfig({
-  messages: {
-    en: {
-      validation: {
-        required({ name }) {
-          return `Please fill out the ${name} field.`
-        }
-      }
-    }
-  }
-})).mount('#app')
-```
-
-## Moving validation messages
-
-If you would like to render an input’s validation messages outside of the `<FormKit />` component, you can leverage the `<FormKitMessages />` component by passing the input’s node as a prop. Using this component disables the default display of messages (located beneath the input) and moves them to wherever the `<FormKitMessages />` component is located:
-
-::Example
----
-name: "Submit invalid"
-file: "_content/_examples/formkit-messages/normal-input.vue"
----
-::
-
-## Extracting messages
-
-::Callout
----
-type: "tip"
-label: "The <FormKitSummary> component"
----
-FormKit 1.0.0 introduced the [FormKitSummary](/inputs/form#validation-and-error-summary) component which provides an "out of the box" solution to for displaying all the validation messages in a given form or subtree.
-::
-
-To get all the validation messages from an [input’s core node](/essentials/architecture), you can use the `getValidationMessages` function exported from `@formkit/validation`. This function will recursively check the given node and all children for validation messages and return a Map of core nodes to validation messages, making it ideal for use with forms:
-
-::Example
----
-name: "Submit invalid"
-file: "_content/_examples/submit-invalid/submit-invalid.vue"
----
-::
-
-
-## Triggering validation
-
-Trying to manually trigger validation is an anti-pattern in FormKit and should be avoided. Validation is continually computed via fine-grained reactivity. If a value or prop that is used in a validation rule changes, the validation will be automatically be re-run. This ensures validity state, settlement state, submission state and any other validation-related properties can always be trusted.
