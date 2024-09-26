@@ -19,7 +19,7 @@ Alternatively, you can use the FormKit CLI to select a theme for your project. R
 npx formkit@latest theme
 ```
 
-This command will create a `formkit.theme.{ts|js}` file in the root of your project. To complete the setup you will need use the `rootClasses` from this theme file in your `formkit.config.{ts|js}`:
+This command will create a `formkit.theme.{ts|js}` file in the root of your project. To complete the setup you will need to use the `rootClasses` from this theme file in your `formkit.config.{ts|js}`:
 
 ```js
 // formkit.config.ts
