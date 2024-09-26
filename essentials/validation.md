@@ -728,3 +728,220 @@ layout: "auto"
 ## Custom rules
 
 Validation rules are functions that accept a [core node](/essentials/architecture#node) and return a boolean value — `true` for passing and `false` for failing. Additionally, any arguments passed to the validation rule are available as arguments `1-n`. Writing your own is straight forward — for example:
+
+```js
+/**
+ * File: my-custom-rules/monday.js
+ *
+ * A contrived validation rule that ensures the input’s value is monday or mon.
+ */
+const monday = function (node) {
+  return node.value === 'monday' || node.value === 'mon'
+}
+
+export default monday
+```
+
+### Defining custom rule behaviors
+
+As mentioned in the [validation rule hints](#rule-hints) section, validation rules — including your custom rules — operate according to default behaviors: they run in sequence, are skipped when the input's value is empty, are synchronous, and are blocking. If you want your rule's defaults to operate differently, you can override these on your custom validation rule:
+
+```js
+/**
+ * A contrived validation rule that ensures the input’s value is monday or mon.
+ */
+const monday = function (node) {
+  return node.value === 'monday' || node.value === 'mon'
+}
+
+// override default rule behaviors for your custom rule
+monday.blocking = false
+monday.skipEmpty = false
+monday.debounce = 20 // milliseconds
+monday.force = true
+
+export default monday
+```
+
+You can also override these behaviors on a case-by-case basis with [rule hints](#rule-hints).
+
+Once you have a validation function written — you need to register the validation rule with FormKit — either globally or specifically on an input.
+
+### Multi-input validation rules
+
+Validation rules can depend on values from other inputs in your [form’s tree](/essentials/architecture). To do so, use node traversal to locate another node and access its value:
+
+::Example
+---
+name: "Custom validation dependency"
+file: "_content/_examples/custom-validation-dependency/custom-validation-dependency.vue"
+layout: "auto"
+---
+::
+
+
+::Callout
+---
+type: "warning"
+label: "Pure functions"
+---
+Validation rules should always be pure functions. Use only the arguments passed in and do not perform any side effects.
+::
+
+### Adding a rule globally
+
+To use a validation rule anywhere in your project, you can specify it wherever your FormKit plugin is registered with Vue.
+
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+import { plugin, defaultConfig } from '@formkit/vue'
+import monday from './my-custom-rules/monday'
+
+// prettier-ignore
+createApp(App).use(plugin, defaultConfig({
+  rules: { monday },
+})).mount('#app')
+```
+
+Once installed you can use your validation rule in anywhere in your project.
+
+```html
+<FormKit validation="required|monday" />
+```
+
+To customize the error message which shows up when your custom validation fails, follow the instructions [here](#global-validation-message).
+
+### Adding a rule via prop
+
+To add a validation to a specific input use the `validation-rules` prop.
+
+::Example
+---
+name: "Custom validation rules"
+file: "_content/_examples/validation-custom/validation-custom.vue"
+layout: "auto"
+---
+::
+
+::Callout
+---
+type: "tip"
+label: "Custom message"
+---
+Your custom rules probably need a custom message — the next section of the docs will cover that.
+::
+
+## Custom messages
+
+There are several ways to customize your validation message. The most basic of which is to use the <code>validation-label</code> prop — allowing you to change the name of the field as used in the pre-defined validation messages.
+
+::Example
+---
+name: "Custom validation rules"
+file: "_content/_examples/validation-label/validation-label.vue"
+layout: "auto"
+---
+::
+
+If you need to be more specific you have two options:
+
+- Override a rule’s message using a prop.
+- Override a validation rule’s message globally.
+
+### Validation message prop
+
+You can easily override validation messages directly on your `FormKit` input by providing an object of strings or functions.
+
+#### Using strings
+
+To override a validation message on a single FormKit input, add the `validation-messages` prop with an object of rule names and a corresponding message.
+
+::Example
+---
+name: "Custom validation rules"
+file: "_content/_examples/validation-custom-messages/validation-custom-messages.vue"
+layout: "auto"
+---
+::
+
+#### Using functions
+
+If you need more power for your validation rules, you can use a function instead of a string. The function is passed a context object.
+
+##### Validation message context object:
+
+| Behavior | Description                                                                                                                                     |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| args     | An array of arguments passed to the rule. For example <code>['Vue', 'React', 'Angular']</code> from the rule <code>is:Vue,React,Angular</code>. |
+| name     | The name of the field (first available from: <code>validation-label</code>, <code>label</code>, then <code>name</code>).                        |
+| node     | The [FormKit core <code>node</code>](/essentials/architecture).                                                                                 |
+
+Let’s re-write the above example using a function instead of a string for even more control of the <code>validation-messages</code> prop:
+
+::Example
+---
+name: "Custom validation rules"
+file: "_content/_examples/validation-custom-messages/validation-custom-messages-function.vue"
+layout: "auto"
+---
+::
+
+### Global validation message
+
+If there are validation rule messages you'd like to override (or add) across your entire project, you can define those message rules when registering FormKit under the language key you'd like to override:
+
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+import { plugin, defaultConfig } from '@formkit/vue'
+import monday from './my-custom-rules/monday'
+
+// prettier-ignore
+createApp(App).use(plugin, defaultConfig({
+  messages: {
+    en: {
+      validation: {
+        required({ name }) {
+          return `Please fill out the ${name} field.`
+        }
+      }
+    }
+  }
+})).mount('#app')
+```
+
+## Moving validation messages
+
+If you would like to render an input’s validation messages outside of the `<FormKit />` component, you can leverage the `<FormKitMessages />` component by passing the input’s node as a prop. Using this component disables the default display of messages (located beneath the input) and moves them to wherever the `<FormKitMessages />` component is located:
+
+::Example
+---
+name: "Submit invalid"
+file: "_content/_examples/formkit-messages/normal-input.vue"
+---
+::
+
+## Extracting messages
+
+::Callout
+---
+type: "tip"
+label: "The <FormKitSummary> component"
+---
+FormKit 1.0.0 introduced the [FormKitSummary](/inputs/form#validation-and-error-summary) component which provides an "out of the box" solution to for displaying all the validation messages in a given form or subtree.
+::
+
+To get all the validation messages from an [input’s core node](/essentials/architecture), you can use the `getValidationMessages` function exported from `@formkit/validation`. This function will recursively check the given node and all children for validation messages and return a Map of core nodes to validation messages, making it ideal for use with forms:
+
+::Example
+---
+name: "Submit invalid"
+file: "_content/_examples/submit-invalid/submit-invalid.vue"
+---
+::
+
+
+## Triggering validation
+
+Trying to manually trigger validation is an anti-pattern in FormKit and should be avoided. Validation is continually computed via fine-grained reactivity. If a value or prop that is used in a validation rule changes, the validation will be automatically be re-run. This ensures validity state, settlement state, submission state and any other validation-related properties can always be trusted.
