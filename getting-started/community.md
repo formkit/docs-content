@@ -75,7 +75,7 @@ Community involvement and contributions are one of the most important aspects of
         class="docs-partner"
         src="https://cdn.formk.it/web-assets/sponsors/bronze-sponsor_mast.png"
         alt="Masts's Inc logo"
-        style="display:inline-block;vertical-align: middle;width: 60px;margin-right: 25px;"
+        style="display:inline-block;vertical-align: middle;width: 75px;margin-right: 25px;"
     />
 </a>
 
