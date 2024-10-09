@@ -204,7 +204,7 @@ The `@formkit/nuxt` module with `autoImport: true` enabled automatically wraps y
 label: "Shadow Root"
 type: "warning"
 ---
-Formkit inputs being used inside of a ShadowRoot will need their context's root to reference the shadowRoot instead of document. Vue applications can place `<FormKitRoot />` near the root of your shadowRoot to inform their child.  
+FormKit inputs being used inside of a ShadowRoot will need their context's root to reference the shadowRoot instead of document. Vue applications can place `<FormKitRoot />` near the root of your shadowRoot to inform their child.  
 ::
 
 ## What is node config?
