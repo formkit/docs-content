@@ -199,6 +199,14 @@ type: 'tip'
 The `@formkit/nuxt` module with `autoImport: true` enabled automatically wraps your components that use FormKit in a `<FormKitProvider>` component. This keeps formkit from being included in your entry bundle.
 ::
 
+::Callout
+---
+label: "Shadow Root"
+type: "warning"
+---
+Formkit inputs being used inside of a ShadowRoot will need their context's root to reference the shadowRoot instead of document. Vue applications can place `<FormKitRoot />` near the root of your shadowRoot to inform their child.  
+::
+
 ## What is node config?
 
 Props are pretty powerful, but in addition to `node.props`, core nodes all have a config object `node.config`. This is where configuration hierarchy comes in. The `node.config` object acts like initial values for `node.props`. If a given prop is requested, like `node.props.validation`, and that property is not explicitly set using any of the [methods discussed above](#what-are-node-props), then FormKit will check the `node.config` object to see if it has a value. If it does not have a value, then it recursively checks the node parent's config object — then the grandparent's config object — and so on — until a value is found or it reaches a node with no parent.
