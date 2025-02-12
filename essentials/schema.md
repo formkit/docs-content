@@ -11,6 +11,17 @@ description: Harness all the power of FormKit in a serializable, JSON-compatible
 
 FormKit's schema is a JSON-serializable data format for storing DOM structures and component implementations, including FormKit forms. Although created specifically for implementing and generating forms, the format is capable of generating any HTML markup or using any third-party components.
 
+
+
+::Callout
+---
+type: "tip" 
+name: "Using FormKitSchema"
+---
+The `<FormKitSchema/>` component is globally available in Nuxt and ready to use like the FormKit component when autoImport: false.
+::
+
+
 Schemas are rendered using FormKit's `<FormKitSchema>` component, which is not registered globally by default. You will need to import it:
 
 ```js
