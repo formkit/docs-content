@@ -52,16 +52,7 @@ attrs: ['min', 'max', 'step']
 
 :SectionKeysIntro
 
-::FormKitInputDiagram
----
-prefix-icon-content: "🗓"
-suffix-icon-content: ""
-label-content: "Installation week"
-input-content: "2022-W42"
-help-content: "Which week will work best for your patio installation?"
-message-content: "Installation week is required."
----
-::
+:FormKitInputDiagrams
 
 ::ReferenceTable
 ---

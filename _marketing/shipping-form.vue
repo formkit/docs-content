@@ -10,6 +10,7 @@
       validation="required"
       help="Please enter your first and last name"
     />
+    <!-- 👀 No bindings -->
     <AddressInputGroup />
   </FormKit>
   <!-- %partial% -->

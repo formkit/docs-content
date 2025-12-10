@@ -388,6 +388,11 @@ data: [
 ---
 ::
 
+## Sections & slot data
+
+:SectionKeysIntro
+
+:FormKitInputDiagrams
 
 ::ReferenceTable
 ---

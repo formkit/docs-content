@@ -335,77 +335,9 @@ without: [
 
 ## Sections
 
-::FormKitInputDiagram
----
-class: "input-diagram--multi-step multi-step"
-schema: [
-  {
-    name: "outer",
-    position: "right",
-    children: [
-      {
-        name: "wrapper",
-        position: "right",
-        children: [
-          {
-            name: "tabs",
-            children: [
-              {
-                name: "tab",
-                class: "flex",
-                children: [
-                  {
-                    name: "tabLabel",
-                    content: "Step Name"
-                  },
-                  {
-                    name: "badge",
-                    position: "right",
-                    content: "⚠️",
-                    class: "grow-0"
-                  }
-                ]
-              },
-            ]
-          },
-          {
-            name: "steps",
-            children: [
-              {
-                name: "step",
-                children: [
-                  {
-                    name: "stepInner",
-                    position: "right",
-                    class: "text-center",
-                    content: "... Step content ..."
-                  },
-                  {
-                    name: "stepActions",
-                    class: "flex",
-                    children: [
-                      {
-                        name: "stepPrevious",
-                        content: "Back"
-                      },
-                      {
-                        name: "stepNext",
-                        position: "right",
-                        content: "Next"
-                      }
-                    ]
-                  }
-                ]
-              },
-            ]
-          },
-        ]
-      }
-    ]
-  }
-]
----
-::
+:SectionKeysIntro
+
+:FormKitInputDiagrams
 
 ::ReferenceTable
 ---

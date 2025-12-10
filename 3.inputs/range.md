@@ -65,19 +65,7 @@ data: [
 
 :SectionKeysIntro
 
-::FormKitInputDiagram
----
-class: "input-diagram--range"
-prefix-icon-content: "😭"
-prefix-content: "$0"
-suffix-content: "$1B"
-suffix-icon-content: "💰"
-label-content: "Net worth"
-input-content: ""
-help-content: "What's your approximate net worth?"
-message-content: "Sorry. Our service is only for low-income families."
----
-::
+:FormKitInputDiagrams
 
 ::ReferenceTable
 ---

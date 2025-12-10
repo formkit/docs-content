@@ -44,16 +44,7 @@ attrs: ['minlength', 'maxlength', 'placeholder']
 
 :SectionKeysIntro
 
-::FormKitInputDiagram
----
-prefix-icon-content: "🌎"
-suffix-icon-content: ""
-label-content: "Personal website URL"
-input-content: "https://mywebsite.com"
-help-content: "Tell us where to find your personal website."
-message-content: "Please include a valid url."
----
-::
+:FormKitInputDiagrams
 
 ::ReferenceTable
 ---

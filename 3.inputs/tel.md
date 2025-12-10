@@ -53,16 +53,7 @@ attrs: ['maxlength', 'minlength', 'placeholder']
 
 :SectionKeysIntro
 
-::FormKitInputDiagram
----
-prefix-icon-content: "📞"
-suffix-icon-content: ""
-label-content: "Phone number"
-input-content: "444-555-6666"
-help-content: "Enter your phone number using the xxx-xxx-xxxx format."
-message-content: "Phone number must be of the xxx-xxx-xxxx format."
----
-::
+:FormKitInputDiagrams
 
 ::ReferenceTable
 ---

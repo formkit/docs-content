@@ -56,18 +56,7 @@ data: [
 
 :SectionKeysIntro
 
-::FormKitInputDiagram
----
-label-content: "Age you learned Algebra"
-prefix-icon-content: "="
-prefix-content: ""
-input-content: "13"
-suffix-content: ""
-suffix-icon-content: "✔️"
-help-content: "We'll incorporate this into our survey data."
-message-content: "Age you learned Algebra is required."
----
-::
+:FormKitInputDiagrams
 
 ::ReferenceTable
 ---

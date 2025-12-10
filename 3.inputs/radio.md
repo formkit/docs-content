@@ -78,97 +78,7 @@ data: [
 
 :SectionKeysIntro
 
-::FormKitInputDiagram
----
-class: "input-diagram--radio radio-multiple"
-schema: [
-  {
-    name: "outer",
-    children: [
-      {
-        name: "fieldset",
-        children: [
-          {
-            name: "legend",
-            content: "Mowing time preference",
-            class: "margin-collapse",
-            position: "right",
-          },
-          {
-            name: "help",
-            content: "Choose which time is least disruptive to you.",
-            position: "right",
-          },
-          {
-            name: "options",
-            position: "right",
-            children: [
-              {
-                name: "option",
-                position: "right",
-                children: [
-                  {
-                    name: "wrapper",
-                    position: "right",
-                    children: [
-                      {
-                        name: "inner",
-                        children: [
-                          {
-                            name: "prefix",
-                          },
-                          {
-                            name: "input",
-                          },
-                          {
-                            name: "decorator",
-                            children: [
-                              {
-                                name: "decoratorIcon",
-                                content: "🔘",
-                              }
-                            ]
-                          },
-                          {
-                            name: "suffix",
-                          },
-                        ]
-                      },
-                      {
-                        name: "label",
-                        content: "Morning",
-                        position: "right",
-                        class: "margin-standard center-vert"
-                      }
-                    ]
-                  },
-                  {
-                    name: "optionHelp",
-                    content: "We`ll come between 7-11 am on Tuesdays.",
-                    position: "right",
-                  },
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-          name: "messages",
-          position: "right",
-          children: [
-            {
-              name: "message",
-              content: "You must make a selection.",
-              position: "right",
-            }
-          ]
-        }
-    ]
-  }
-]
----
-::
+:FormKitInputDiagrams
 
 ::ReferenceTable
 ---
@@ -214,24 +124,6 @@ All FormKit inputs are designed with the following accessibility considerations 
 :AccessibilityChecks
 
 ### Accessibility attributes
-
-### Single radio
-
-::AccessibilityTable
----
-without: ["label"]
-data: [
-  {
-    sectionKey: "decorator",
-    attributes: [
-      { attribute: "aria-hidden", value: "true", description: "Hides the decorator from screen readers." }
-    ]
-  }
-]
----
-::
-
-### Multiple radio
 
 ::AccessibilityTable
 ---

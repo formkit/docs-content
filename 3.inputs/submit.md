@@ -97,66 +97,7 @@ input: button
 
 :SectionKeysIntro
 
-::FormKitInputDiagram
----
-class: "input-diagram--button"
-schema: [
-  {
-    name: "outer",
-    children: [
-      {
-        name: "messages",
-        position: "right",
-        children: [
-          {
-            name: "message",
-            content: "You were too slow. Try again.",
-            position: "right"
-          }
-        ]
-      },
-      {
-        name: "wrapper",
-        position: "right",
-        children: [
-          {
-            name: "input",
-            position: "left",
-            class: "flex button button--pro",
-            children: [
-              {
-                name: "prefixIcon",
-                content: "🧑‍🦰"
-              },
-              {
-                name: "prefix",
-              },
-              {
-                name: "label",
-                content: "Create profile",
-              },
-              {
-                name: "suffix",
-                position: "right",
-              },
-              {
-                name: "suffixIcon",
-                position: "right",
-                content: "🚀"
-              }
-            ]
-          },
-        ]
-      },
-      {
-        name: "help",
-        content: "Quick double tap to submit."
-      }
-    ]
-  }
-]
----
-::
+:FormKitInputDiagrams
 
 ::ReferenceTable
 ---

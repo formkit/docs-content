@@ -67,67 +67,7 @@ input: "button"
 
 :SectionKeysIntro
 
-::FormKitInputDiagram
----
-class: "input-diagram--button"
-schema: [
-  {
-    name: "outer",
-    children: [
-      {
-        name: "messages",
-        position: "right",
-        children: [
-          {
-            name: "message",
-            content: "Validation messages about the button.",
-            position: "right"
-          }
-        ]
-      },
-      {
-        name: "wrapper",
-        position: "right",
-        children: [
-          {
-            name: "input",
-            position: "left",
-            class: "flex button button--pro",
-            children: [
-              {
-                name: "prefixIcon",
-                content: "🤟"
-              },
-              {
-                name: "prefix",
-              },
-              {
-                name: "label",
-                content: "Submit application",
-              },
-              {
-                name: "suffix",
-                position: "right",
-              },
-              {
-                name: "suffixIcon",
-                position: "right",
-                content: "🚀"
-              },
-            ]
-          },
-        ]
-      },
-      {
-        name: "help",
-        position: "right",
-        content: "Click this button to submit your application. "
-      }
-    ]
-  }
-]
----
-::
+:FormKitInputDiagrams
 
 ::ReferenceTable
 ---
