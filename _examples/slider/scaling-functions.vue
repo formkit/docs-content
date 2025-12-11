@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { customQuad, customSine } from './scaling-functions.js'
+import { customQuad, customSine } from './scaling-utils.js'
 
 const scalingValue = ref([25, 75])
 const scalingMarks = [
