@@ -2,8 +2,9 @@
   <!-- %partial% -->
   <FormKit type="form">
     <!-- 👀 No bindings, no modeling -->
-    <UserAccountFields />
-    <UserMessagingPreferences />
+    <UserAccount />
+    <UserNetworks />
+    <UserPreferences />
   </FormKit>
   <!-- %partial% -->
 </template>
