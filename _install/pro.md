@@ -34,24 +34,3 @@ const config = defaultConfig({
   plugins: [proPlugin],
 })
 ```
-
-### Adding the Legacy Pro Genesis Theme
-
-::Callout
----
-type: "warning"
-label: "Legacy Genesis Theme"
----
-If you are using the legacy Genesis CSS theme, then follow the instructions below. 
-
-Note: All Tailwind themes from [themes.formkit.com](https://themes.formkit.com) ship with support for Pro Inputs so the instructions below are not required for Tailwind users.
-::
-
-If you are using the legacy Genesis CSS theme, you will need to install the accompanying Pro CSS as well:
-
-```js
-// main.js or formkit.config.ts
-// Genesis for Pro is dependent on Genesis
-import '@formkit/themes/genesis'
-import '@formkit/pro/genesis'
-```
