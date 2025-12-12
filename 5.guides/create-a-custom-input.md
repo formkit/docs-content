@@ -47,8 +47,8 @@ We’ll call this sample form `register.vue`:
 ---
 name: "One-time password - register"
 file: [
-  '_examples/otp-register/register.vue',
-  '_examples/otp-register/one-time-password.vue',
+  "_examples/otp-register/register.vue",
+  "_examples/otp-register/one-time-password.vue",
 ]
 ---
 ::
@@ -68,8 +68,8 @@ All custom inputs are passed the almighty [context object](/essentials/configura
 name: "One-time password - first value"
 init-file-tab: "one-time-password.vue"
 file: [
-  '_examples/otp-first-value/register.vue',
-  '_examples/otp-first-value/one-time-password.vue',
+  "_examples/otp-first-value/register.vue",
+  "_examples/otp-first-value/one-time-password.vue",
 ]
 ---
 ::
@@ -104,9 +104,9 @@ We now have access to `context.digits`. Back in `one-time-password.vue`, let's u
 name: "One-time password - input tags"
 init-file-tab: "one-time-password.vue"
 file: [
-  '_examples/otp-tags/register.vue',
-  '_examples/otp-tags/one-time-password.vue',
-  '_examples/otp-tags/formkit.config.ts'
+  "_examples/otp-tags/register.vue",
+  "_examples/otp-tags/one-time-password.vue",
+  "_examples/otp-tags/formkit.config.ts"
 ]
 ---
 ::
@@ -136,9 +136,9 @@ Notice in the above example that when you type into one input all the other inpu
 name: "One-time password - input handlers"
 init-file-tab: "one-time-password.vue"
 file: [
-  '_examples/otp-handlers/register.vue',
-  '_examples/otp-handlers/one-time-password.vue',
-  '_examples/otp-handlers/formkit.config.ts'
+  "_examples/otp-handlers/register.vue",
+  "_examples/otp-handlers/one-time-password.vue",
+  "_examples/otp-handlers/formkit.config.ts"
 ]
 ---
 ::
@@ -177,9 +177,9 @@ handlePaste(e) {
 name: "One-time password - copy paste"
 init-file-tab: "one-time-password.vue"
 file: [
-  '_examples/otp-copy-paste/register.vue',
-  '_examples/otp-copy-paste/one-time-password.vue',
-  '_examples/otp-copy-paste/formkit.config.ts'
+  "_examples/otp-copy-paste/register.vue",
+  "_examples/otp-copy-paste/one-time-password.vue",
+  "_examples/otp-copy-paste/formkit.config.ts"
 ]
 ---
 ::

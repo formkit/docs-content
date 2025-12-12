@@ -199,7 +199,7 @@ To register your mask tokens globally, extend the `config` property of your glob
 ::Example
 ---
 name: "Mask input global"
-file: ['_examples/mask/tokens-global.vue', '_examples/mask/formkit.config.ts']
+file: ["_examples/mask/tokens-global.vue", "_examples/mask/formkit.config.ts"]
 init-file-tab: "formkit.config.ts"
 ---
 ::

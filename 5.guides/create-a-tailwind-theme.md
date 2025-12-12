@@ -34,8 +34,8 @@ If your component represents your entire form and your project only requires a s
 ::Example
 ---
 file: [
-"_examples/guides/tailwind-theme/inline-usage/example.vue",
-"_examples/_no-tailwind/formkit.config.ts"
+  "_examples/guides/tailwind-theme/inline-usage/example.vue",
+  "_examples/_no-tailwind/formkit.config.ts"
 ]
 editable: true
 ---

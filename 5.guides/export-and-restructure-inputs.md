@@ -22,7 +22,7 @@ npx formkit@latest export
 Running this command prompts you to select any of FormKit's open source
 inputs to export:
 
-```text
+```bash
 ? What input do you want to export? ›
 ❯   button
     submit
@@ -39,7 +39,7 @@ inputs to export:
 We're going to select the text input and allow the CLI to create a new `/inputs`
 directory within `/src`:
 
-```text
+```bash
 ✔ What input do you want to export? › text
 ✔ What language should be used? › JavaScript
 ? Where should the input be exported to (relative to the current directory)? ›
@@ -240,9 +240,9 @@ After adding appropriate styling, we can see that our new custom input has its `
 ::Example
 ---
 file: [
-  '_examples/guides/export-inputs/final-result/example.vue',
-  '_examples/guides/export-inputs/final-result/floating-label-text-input.js',
-  '_examples/guides/export-inputs/final-result/formkit.config.ts',
+  "_examples/guides/export-inputs/final-result/example.vue",
+  "_examples/guides/export-inputs/final-result/floating-label-text-input.js",
+  "_examples/guides/export-inputs/final-result/formkit.config.ts",
 ]
 ---
 ::
