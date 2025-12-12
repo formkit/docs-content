@@ -39,7 +39,7 @@ Excluding backend functionality, here is a fully featured form with inputs (`for
 ---
   name: "Register example"
   file: "_examples/register/register.vue"
-  layout: "column"
+  layout: "auto"
 ---
 ::
 
