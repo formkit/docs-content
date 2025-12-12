@@ -30,4 +30,3 @@ import StepThree from '@content/_examples/multi-step/step-three.vue'
   </FormKit>
 </template>
 <!-- %partial% -->
-./stepOne.vue./stepThree.vue./stepTwo.vue../stepOne.vue../stepThree.vue../stepTwo.vue
