@@ -113,6 +113,7 @@ FormKit's taglist input also provides an `optionLoader` prop that allows you to 
 name: "Taglist"
 min-height: 550
 file: "_examples/taglist/taglist-pagination-option-loader.vue"
+ssr: false
 ---
 ::
 

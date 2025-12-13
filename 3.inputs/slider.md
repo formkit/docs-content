@@ -222,8 +222,9 @@ The `scaling-function` prop accepts 3 values:
 name: "Scaling functions"
 file: [
   "_examples/slider/scaling-functions.vue",
-  "_examples/slider/scaling-functions.js"
+  "_examples/slider/scaling-utils.js"
 ]
+ssr: false
 ---
 ::
 
@@ -271,6 +272,7 @@ name: "Kitchen Sink"
 file: [
   "_examples/slider/kitchen-sink.vue",
 ]
+ssr: false
 ---
 ::
 

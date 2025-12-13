@@ -22,6 +22,7 @@ The `colorpicker` input is fully keyboard navigable and ships with accessible ma
 ---
   name: "Color input"
   file: "_examples/colorpicker/intro.vue"
+  ssr: false
 ---
 ::
 
@@ -35,6 +36,7 @@ The `colorpicker` supports formats in `Hex`, `HSLA` and `RGBA` formats. You can 
   name: "Color input"
   file: "_examples/colorpicker/format.vue"
   minHeight: 500
+  ssr: false
 ---
 ::
 
@@ -47,6 +49,7 @@ There may be times where you wish to show one format to users as a default but r
   name: "Color input"
   file: "_examples/colorpicker/value-format.vue"
   minHeight: 400
+  ssr: false
 ---
 ::
 
@@ -62,6 +65,7 @@ Here is a simple set of swatches using the `options` prop and providing it with 
 ---
   name: "Color input"
   file: "_examples/colorpicker/simple-swatches.vue"
+  ssr: false
 ---
 ::
 
@@ -73,6 +77,7 @@ The `colorpicker` also supports grouped `options`. This allows you to create set
 ---
   name: "Color input"
   file: "_examples/colorpicker/grouped-swatches.vue"
+  ssr: false
 ---
 ::
 
@@ -86,6 +91,7 @@ When showing only swatches in pop-over mode (the default) adding the `close-on-s
 ---
   name: "Color input"
   file: "_examples/colorpicker/swatch-only.vue"
+  ssr: false
 ---
 ::
 
@@ -97,6 +103,7 @@ If your provided swatches via the `options` prop have `label`s then you can call
 ---
   name: "Color input"
   file: "_examples/colorpicker/input-swatch-name.vue"
+  ssr: false
 ---
 ::
 
@@ -108,6 +115,7 @@ The `colorpicker` input supports the browser-native [EyeDropper API](https://dev
 ---
   name: "Color input"
   file: "_examples/colorpicker/eye-dropper.vue"
+  ssr: false
 ---
 ::
 
@@ -122,6 +130,7 @@ You can disable the ability to paste a value by setting the `allow-paste` prop t
   name: "Color input"
   file: "_examples/colorpicker/paste.vue"
   min-height: 650
+  ssr: false
 ---
 ::
 

@@ -389,6 +389,7 @@ The default genesis theme automatically supports the overlay and applies light g
 ---
 name: "Mask input - overlay"
 file: "_examples/mask/overlay.vue"
+ssr: false
 ---
 ::
 
