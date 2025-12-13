@@ -56,9 +56,3 @@ All FormKit inputs are designed with the following accessibility considerations 
 ### Keyboard Interactions
 
 :KeyboardEventsTable
-
-:AccessibilityTable
-
-### Keyboard Interactions
-
-:KeyboardEventsTable
