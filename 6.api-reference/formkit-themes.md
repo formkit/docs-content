@@ -11,8 +11,7 @@ This package contains the official themes for FormKit. Read the [installation do
 
 ## Functions
 
-### createIconHandler()
-
+::api-entry{name="createIconHandler()" type="function"}
 Returns a function responsible for loading an icon by name.
 
 #### Signature
@@ -26,9 +25,9 @@ createIconHandler(iconLoader?: FormKitIconLoader, iconLoaderUrl?: FormKitIconLoa
 
 - `iconLoader` *optional* — a function for loading an icon when it's not found in the iconRegistry.
 - `iconLoaderUrl` *optional* — a function that returns a remote URL for retrieving an SVG icon by name.
+::
 
-### createThemePlugin()
-
+::api-entry{name="createThemePlugin()" type="function"}
 Creates the theme plugin based on a given theme name.
 
 #### Signature
@@ -44,9 +43,9 @@ createThemePlugin(theme?: string, icons?: Record<string, string | undefined>, ic
 - `icons` *optional* — Icons you want to add to the global icon registry.
 - `iconLoaderUrl` *optional* — A function that returns a remote url for retrieving an SVG icon by name.
 - `iconLoader` *optional* — A function that handles loading an icon when it is not found in the registry.
+::
 
-### generateClasses()
-
+::api-entry{name="generateClasses()" type="function"}
 A function to generate FormKit class functions from a JavaScript object.
 
 #### Signature
@@ -63,11 +62,11 @@ generateClasses(classes: Record<string, Record<string, string>>): Record<string,
 #### Returns
 
  An object of sectionKeys with class functions.
+::
 
 ## TypeScript
 
-### FormKitIconLoader
-
+::api-entry{name="FormKitIconLoader" type="interface"}
 A function that returns an icon SVG string.
 
 
@@ -76,9 +75,9 @@ interface FormKitIconLoader {
     (iconName: string): string | undefined | Promise<string | undefined>;
 }
 ```
+::
 
-### FormKitIconLoaderUrl
-
+::api-entry{name="FormKitIconLoaderUrl" type="interface"}
 A function that returns a remote URL for retrieving an SVG icon by name.
 
 
@@ -87,3 +86,4 @@ interface FormKitIconLoaderUrl {
     (iconName: string): string | undefined;
 }
 ```
+::

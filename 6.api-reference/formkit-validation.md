@@ -11,8 +11,7 @@ The first-party validation package/plugin for FormKit. Read the [validation docu
 
 ## Functions
 
-### createMessageName()
-
+::api-entry{name="createMessageName()" type="function"}
 Given a node, this returns the name that should be used in validation messages. This is either the `validationLabel` prop, the `label` prop, or the name of the input (in that order).
 
 #### Signature
@@ -25,11 +24,9 @@ createMessageName(node: FormKitNode): string;
 #### Parameters
 
 - `node` — The node to display
+::
 
-#### Returns
-
-### createValidationPlugin()
-
+::api-entry{name="createValidationPlugin()" type="function"}
 The actual validation plugin function. Everything must be bootstrapped here.
 
 #### Signature
@@ -42,9 +39,9 @@ createValidationPlugin(baseRules?: FormKitValidationRules): (node: FormKitNode) 
 #### Parameters
 
 - `baseRules` *optional* — Base validation rules to include in the plugin. By default, FormKit makes all rules in the @formkit/rules package available via the defaultConfig.
+::
 
-### getValidationMessages()
-
+::api-entry{name="getValidationMessages()" type="function"}
 Extracts all validation messages from the given node and all its descendants. This is not reactive and must be re-called each time the messages change.
 
 #### Signature
@@ -57,11 +54,11 @@ getValidationMessages(node: FormKitNode): Map<FormKitNode, FormKitMessage[]>;
 #### Parameters
 
 - `node` — The FormKit node to extract validation rules from — as well as its descendants.
+::
 
 ## TypeScript
 
-### FormKitValidationHints
-
+::api-entry{name="FormKitValidationHints" type="interface"}
 Special validation properties that affect the way validations are applied.
 
 
@@ -74,9 +71,9 @@ interface FormKitValidationHints {
     skipEmpty: boolean;
 }
 ```
+::
 
-### FormKitValidationMessage
-
+::api-entry{name="FormKitValidationMessage" type="interface"}
 The interface for the localized validation message function.
 
 
@@ -85,9 +82,9 @@ interface FormKitValidationMessage {
     (...args: FormKitValidationI18NArgs): string;
 }
 ```
+::
 
-### FormKitValidationMessages
-
+::api-entry{name="FormKitValidationMessages" type="interface"}
 The interface for the localized validation message registry.
 
 
@@ -96,9 +93,9 @@ interface FormKitValidationMessages {
     [index: string]: string | FormKitValidationMessage;
 }
 ```
+::
 
-### FormKitValidationRules
-
+::api-entry{name="FormKitValidationRules" type="interface"}
 FormKit validation rules are structured as on object of key/function pairs where the key of the object is the validation rule name.
 
 
@@ -107,9 +104,9 @@ interface FormKitValidationRules {
     [index: string]: FormKitValidationRule;
 }
 ```
+::
 
-### FormKitValidation
-
+::api-entry{name="FormKitValidation" type="type"}
 Defines what fully parsed validation rules look like.
 
 
@@ -124,9 +121,9 @@ export type FormKitValidation = {
     messageObserver?: FormKitObservedNode;
 } & FormKitValidationHints;
 ```
+::
 
-### FormKitValidationI18NArgs
-
+::api-entry{name="FormKitValidationI18NArgs" type="type"}
 The arguments that are passed to the validation messages in the i18n plugin.
 
 
@@ -140,18 +137,18 @@ export type FormKitValidationI18NArgs = [
     }
 ];
 ```
+::
 
-### FormKitValidationIntent
-
+::api-entry{name="FormKitValidationIntent" type="type"}
 Defines what validation rules look like when they are parsed, but have not necessarily had validation rules substituted in yet.
 
 
 ```typescript
 export type FormKitValidationIntent = [string | FormKitValidationRule, ...any[]];
 ```
+::
 
-### FormKitValidationRule
-
+::api-entry{name="FormKitValidationRule" type="type"}
 Signature for a generic validation rule. It accepts an input — often a string — but should be able to accept any input type, and returns a boolean indicating whether or not it passed validation.
 
 
@@ -161,3 +158,4 @@ export type FormKitValidationRule = {
     ruleName?: string;
 } & Partial<FormKitValidationHints>;
 ```
+::

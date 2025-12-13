@@ -11,8 +11,7 @@ FormKit Observer is a utility to wrap a FormKitNode in a dependency tracking obs
 
 ## Functions
 
-### createObserver()
-
+::api-entry{name="createObserver()" type="function"}
 Creates the observer.
 
 #### Signature
@@ -30,9 +29,9 @@ createObserver(node: FormKitNode, dependencies?: FormKitDependencies): FormKitOb
 #### Returns
 
  Returns a [FormKitObservedNode](/api-reference/formkit-observer#formkitobservednode).
+::
 
-### diffDeps()
-
+::api-entry{name="diffDeps()" type="function"}
 Determines which nodes should be added as dependencies and which should be removed.
 
 #### Signature
@@ -50,9 +49,9 @@ diffDeps(previous: FormKitDependencies, current: FormKitDependencies): [FormKitD
 #### Returns
 
  A tuple of maps: `toAdd` and `toRemove`.
+::
 
-### isKilled()
-
+::api-entry{name="isKilled()" type="function"}
 Checks if the given node is revoked.
 
 #### Signature
@@ -69,9 +68,9 @@ isKilled(node: FormKitObservedNode): boolean;
 #### Returns
 
  A `boolean` indicating if the node is revoked.
+::
 
-### removeListeners()
-
+::api-entry{name="removeListeners()" type="function"}
 Remove all the receipts from the observed node and subtree.
 
 #### Signature
@@ -84,11 +83,11 @@ removeListeners(receipts: FormKitObserverReceipts): void;
 #### Parameters
 
 - `receipts` — The FormKit observer receipts to remove.
+::
 
 ## TypeScript
 
-### FormKitObservedNode
-
+::api-entry{name="FormKitObservedNode" type="interface"}
 An API-compatible FormKitNode that is able to determine the full dependency tree of nodes and their values.
 
 
@@ -103,9 +102,9 @@ interface FormKitObservedNode extends FormKitNode {
     watch:<TextendsFormKitWatchable>(block: T, after?: (value: ReturnType<T>) => void) => void;
 }
 ```
+::
 
-### FormKitWatchable
-
+::api-entry{name="FormKitWatchable" type="interface"}
 A callback to watch for nodes.
 
 
@@ -114,9 +113,9 @@ interface FormKitWatchable<T = unknown> {
     (node: FormKitObservedNode): T;
 }
 ```
+::
 
-### FormKitDependencies
-
+::api-entry{name="FormKitDependencies" type="type"}
 The dependent nodes and the events that are required to watch for changes.
 
 
@@ -125,9 +124,9 @@ export type FormKitDependencies = Map<FormKitNode, Set<string>> & {
     active?: boolean;
 };
 ```
+::
 
-### FormKitObserverReceipts
-
+::api-entry{name="FormKitObserverReceipts" type="type"}
 A Map of nodes with the values being Maps of eventsName: receipt
 
 
@@ -136,3 +135,4 @@ export type FormKitObserverReceipts = Map<FormKitNode, {
     [index: string]: string;
 }>;
 ```
+::

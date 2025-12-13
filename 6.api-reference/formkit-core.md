@@ -7,7 +7,7 @@ title: formkit/core
 
 ## Introduction
 
-The official FormKit core library. This package is responsible for most of FormKit’s internal functionality. You can read documentation specifically on how it works at formkit.com.
+The official FormKit core library. This package is responsible for most of FormKit's internal functionality. You can read documentation specifically on how it works at formkit.com.
 
 You can add this package by using `npm install @formkit/core` or `yarn add @formkit/core`.
 
@@ -16,8 +16,7 @@ You can add this package by using `npm install @formkit/core` or `yarn add @form
 FormKit's Node object produced by createNode(). Every `<FormKit />` input has 1 FormKitNode ("core node") associated with it. All inputs, forms, and groups are instances of nodes. Read more about core nodes in the [architecture
 documentation.](https://formkit.com/essentials/architecture#node)
 
-### add()
-
+::api-entry{name="add()" type="function"}
 Add a child to a node. The node must be a group or list.
 
 #### Signature
@@ -29,15 +28,15 @@ add: (node: FormKitNode, index?: number) => FormKitNode
 
 #### Parameters
 
-- node — A [FormKitNode](#formkitnode). 
+- node — A [FormKitNode](#formkitnode).
 - index *optional* — A index to where it will added to.
 
 #### Returns
 
 The added [FormKitNode](#formkitnode).
+::
 
-### address
-
+::api-entry{name="address" type="property"}
 The address of the current node from the root of the tree.
 
 #### Signature
@@ -50,9 +49,9 @@ address: FormKitAddress
 #### Returns
 
 A [FormKitAddress](#formkitaddress).
+::
 
-### addProps()
-
+::api-entry{name="addProps()" type="function"}
 Adds props to the given node by removing them from node.props.attrs and moving them to the top-level node.props object.
 
 #### Signature
@@ -69,13 +68,13 @@ addProps: (props: string[]) => FormKitNode
 #### Returns
 
 The [FormKitNode](#formkitnode).
+::
 
-### at()
-
+::api-entry{name="at()" type="function"}
 Gets a node at another address. Addresses are dot-syntax paths (or arrays) of node names. For example: `form.users.0.first_name`. There are a few "special" traversal tokens as well:
 
-- `$root` — Selects the root node. 
-- `$parent` — Selects the parent node. 
+- `$root` — Selects the root node.
+- `$parent` — Selects the parent node.
 - `$self` — Selects the current node.
 
 #### Signature
@@ -92,9 +91,9 @@ at: (address: FormKitAddress | string) => FormKitNode | undefined
 #### Returns
 
 The found [FormKitNode](#formkitnode) or `undefined`.
+::
 
-### children
-
+::api-entry{name="children" type="property"}
 An array of child nodes (groups and lists).
 
 #### Signature
@@ -107,9 +106,9 @@ children: Array<FormKitNode>
 #### Returns
 
 An array of [FormKitNode](#formkitnode).
+::
 
-### clearErrors()
-
+::api-entry{name="clearErrors()" type="function"}
 Clears the errors of the node, and optionally all the children.
 
 #### Signature
@@ -121,17 +120,16 @@ clearErrors: (clearChildren?: boolean, sourceKey?: string) => FormKitNode
 
 #### Parameters
 
-- `clearChildren` *optional* — If it should clear the children. 
+- `clearChildren` *optional* — If it should clear the children.
 - `sourceKey` *optional* — A source key to use for reset.
 
 #### Returns
 
 The [FormKitNode](#formkitnode).
+::
 
-### config
-
-An object of [FormKitConfig](#formkitconfig) that is shared tree
--wide with various configuration options that should be applied to the entire tree.
+::api-entry{name="config" type="property"}
+An object of [FormKitConfig](#formkitconfig) that is shared tree-wide with various configuration options that should be applied to the entire tree.
 
 #### Signature
 
@@ -143,9 +141,9 @@ config: FormKitConfig
 #### Returns
 
 A [FormKitConfig](#formkitconfig).
+::
 
-### define()
-
+::api-entry{name="define()" type="function"}
 Defines the current input's library type definition including node type, schema, and props.
 
 #### Signature
@@ -158,9 +156,9 @@ define: (definition: FormKitTypeDefinition) => void
 #### Parameters
 
 - `definition` — A [FormKitTypeDefinition](#formkittypedefinition).
+::
 
-### destroy()
-
+::api-entry{name="destroy()" type="function"}
 Removes the node from the global registry, its parent, and emits the 'destroying' event.
 
 #### Signature
@@ -169,9 +167,9 @@ Removes the node from the global registry, its parent, and emits the 'destroying
 ```typescript
 destroy: () => void
 ```
+::
 
-### each()
-
+::api-entry{name="each()" type="function"}
 Perform given callback on each of the given node's children.
 
 #### Signature
@@ -184,9 +182,9 @@ each: (callback: FormKitChildCallback) => void
 #### Parameters
 
 - `callback` — A [FormKitChildCallback](#formkitchildcallback) to be called for each child.
+::
 
-### emit()
-
+::api-entry{name="emit()" type="function"}
 Emit an event from the node so it can be listened by [on](#formkitnode).
 
 #### Signature
@@ -198,16 +196,16 @@ emit: (event: string, payload?: any, bubble?: boolean, meta: Record<string, unkn
 
 #### Parameters
 
-- `event` — The event name to be emitted. 
-- `payload` *optional* — A value to be passed together with the event. 
+- `event` — The event name to be emitted.
+- `payload` *optional* — A value to be passed together with the event.
 - `bubble` *optional* — If the event should bubble to the parent.
 
 #### Returns
 
 The [FormKitNode](#formkitnode).
+::
 
-### extend()
-
+::api-entry{name="extend()" type="function"}
 Extend a [FormKitNode](#formkitnode) by adding arbitrary properties that are accessible via `node.{property}()`.
 
 #### Signature
@@ -219,15 +217,15 @@ extend: (property: string, trap: FormKitTrap) => FormKitNode
 
 #### Parameters
 
-- `property` — The property to add the core node (`node.{property}`). 
+- `property` — The property to add the core node (`node.{property}`).
 - `trap` — An object with a get and set property.
 
 #### Returns
 
 The [FormKitNode](#formkitnode).
+::
 
-### find()
-
+::api-entry{name="find()" type="function"}
 Within a given tree, find a node matching a given selector. Selectors can be simple strings or a function.
 
 #### Signature
@@ -242,15 +240,15 @@ find: (
 
 #### Parameters
 
-- `selector` — A selector string. 
+- `selector` — A selector string.
 - `searcher` *optional* — A keyof [FormKitNode](#formkitnode) or [FormKitSearchFunction](#formkitsearchfunction).
 
 #### Returns
 
 The found [FormKitNode](#formkitnode) or `undefined`.
+::
 
-### hook
-
+::api-entry{name="hook" type="property"}
 Set of hooks.
 
 #### Signature
@@ -263,9 +261,9 @@ hook: FormKitHooks
 #### Returns
 
 The [FormKitHooks](#formkithooks).
+::
 
-### index
-
+::api-entry{name="index" type="property"}
 The index of a node compared to its siblings. This is only applicable in cases where a node is a child of a list.
 
 #### Signature
@@ -278,9 +276,9 @@ index: number
 #### Returns
 
 A `number`.
+::
 
-### input()
-
+::api-entry{name="input()" type="function"}
 The function used to set the value of a node. All changes to a node's value should use this function as it ensures the tree's state is always fully tracked.
 
 #### Signature
@@ -292,15 +290,15 @@ input: (value: unknown, async?: boolean) => Promise<unknown>
 
 #### Parameters
 
-- `value` — Any value to used for the node. 
+- `value` — Any value to used for the node.
 - `async` *optional* — If the input should happen asynchronously.
 
 #### Returns
 
 A `Promise<unknown>`.
+::
 
-### isCreated
-
+::api-entry{name="isCreated" type="property"}
 Begins as false, set to true when the node is finished being created.
 
 #### Signature
@@ -313,9 +311,9 @@ isCreated: boolean
 #### Returns
 
 A `boolean`.
+::
 
-### isSettled
-
+::api-entry{name="isSettled" type="property"}
 Boolean reflecting the settlement state of the node and its subtree.
 
 #### Signature
@@ -328,9 +326,9 @@ isSettled: boolean
 #### Returns
 
 A `boolean`.
+::
 
-### ledger
-
+::api-entry{name="ledger" type="property"}
 A counting ledger for arbitrary message counters.
 
 #### Signature
@@ -343,9 +341,9 @@ ledger: FormKitLedger
 #### Returns
 
 A [FormKitLedger](#formkitledger).
+::
 
-### name
-
+::api-entry{name="name" type="property"}
 The name of the input in the node tree. When a node is a child of a list, this automatically becomes its index.
 
 #### Signature
@@ -358,9 +356,9 @@ name: string
 #### Returns
 
 A `string`.
+::
 
-### off()
-
+::api-entry{name="off()" type="function"}
 Removes an event listener by its token. Receipts can be shared among many event listeners by explicitly declaring the "receipt" property of the listener function.
 
 #### Signature
@@ -377,9 +375,9 @@ off: (receipt: string) => FormKitNode
 #### Returns
 
 A receipt `string`.
+::
 
-### on()
-
+::api-entry{name="on()" type="function"}
 Adds an event listener for a given event, and returns a "receipt" which is a random string token. This token should be used to remove the listener in the future. Alternatively you can assign a "receipt" property to the listener function and that receipt will be used instead. This allows multiple listeners to all be de-registered with a single off() call if they share the same receipt.
 
 #### Signature
@@ -391,15 +389,15 @@ on: (eventName: string, listener: FormKitEventListener) => string
 
 #### Parameters
 
-- `eventName` — The event name to listen to. 
+- `eventName` — The event name to listen to.
 - `listener` — A [FormKitEventListener](#formkiteventlistener) to run when the event happens.
 
 #### Returns
 
 A receipt `string`.
+::
 
-### parent
-
+::api-entry{name="parent" type="property"}
 The parent of a node.
 
 #### Signature
@@ -412,9 +410,9 @@ parent: FormKitNode | null
 #### Returns
 
 If found a [FormKitNode](#formkitnode) or `null`.
+::
 
-### props
-
+::api-entry{name="props" type="property"}
 An proxied object of props. These are typically provided by the adapter of choice.
 
 #### Signature
@@ -427,9 +425,9 @@ props: Partial<FormKitProps>
 #### Returns
 
 An optional list of [FormKitProps](#formkitprops).
+::
 
-### remove()
-
+::api-entry{name="remove()" type="function"}
 Removes a child from the node.
 
 #### Signature
@@ -446,10 +444,10 @@ remove: (node: FormKitNode) => FormKitNode
 #### Returns
 
 The [FormKitNode](#formkitnode).
+::
 
-### reset()
-
-Resets the node’s value back to its original value.
+::api-entry{name="reset()" type="function"}
+Resets the node's value back to its original value.
 
 #### Signature
 
@@ -461,9 +459,9 @@ reset: () => FormKitNode
 #### Returns
 
 The [FormKitNode](#formkitnode).
+::
 
-### root
-
+::api-entry{name="root" type="property"}
 Retrieves the root node of a tree. This is accomplished via tree-traversal on-request, and as such should not be used in frequently called functions.
 
 #### Signature
@@ -476,9 +474,9 @@ root: FormKitNode
 #### Returns
 
 The [FormKitNode](#formkitnode).
+::
 
-### setErrors()
-
+::api-entry{name="setErrors()" type="function"}
 Sets errors on the input, and optionally to child inputs.
 
 #### Signature
@@ -490,11 +488,11 @@ setErrors: (localErrors: ErrorMessages, childErrors?: ErrorMessages) => void
 
 #### Parameters
 
-- `localErrors` — A [ErrorMessages](#errormessages) to be used. 
+- `localErrors` — A [ErrorMessages](#errormessages) to be used.
 - `childErrors` *optional* — A [ErrorMessages](#errormessages) to be used for children.
+::
 
-### settled
-
+::api-entry{name="settled" type="property"}
 A promise that resolves when a node and its entire subtree is settled. In other words — all the inputs are done committing their values.
 
 #### Signature
@@ -507,9 +505,9 @@ settled: Promise<unknown>
 #### Returns
 
 A `Promise<unknown>`.
+::
 
-### store
-
+::api-entry{name="store" type="property"}
 The internal node store.
 
 #### Signature
@@ -522,9 +520,9 @@ store: FormKitStore
 #### Returns
 
 A [FormKitStore](#formkitstore).
+::
 
-### submit()
-
+::api-entry{name="submit()" type="function"}
 Triggers a submit event on the nearest form.
 
 #### Signature
@@ -533,9 +531,9 @@ Triggers a submit event on the nearest form.
 ```typescript
 submit: () => void
 ```
+::
 
-### t()
-
+::api-entry{name="t()" type="function"}
 A text or translation function that exposes a given string to the "text" hook. All text shown to users should be passed through this function before being displayed — especially for core and plugin authors.
 
 #### Signature
@@ -552,9 +550,9 @@ t: (key: string | FormKitTextFragment) => string
 #### Returns
 
 The translated `string`.
+::
 
-### type
-
+::api-entry{name="type" type="property"}
 The type of node, should only be 'input', 'list', or 'group'.
 
 #### Signature
@@ -567,9 +565,9 @@ type: FormKitNodeType
 #### Returns
 
 A [FormKitNodeType](#formkitnodetype).
+::
 
-### use()
-
+::api-entry{name="use()" type="function"}
 Registers a new plugin on the node and its subtree.
 
 #### Signature
@@ -585,16 +583,16 @@ use: (
 
 #### Parameters
 
-- `plugin` — A [FormKitPlugin](#formkitplugin) or an Array or Set of [FormKitPlugin](#formkitplugin). 
-- `run` *optional* — Should the plugin be executed on creation. 
+- `plugin` — A [FormKitPlugin](#formkitplugin) or an Array or Set of [FormKitPlugin](#formkitplugin).
+- `run` *optional* — Should the plugin be executed on creation.
 - `library` *optional* — Should the plugin's library function be executed on creation.
 
 #### Returns
 
 The [FormKitNode](#formkitnode).
+::
 
-### value
-
+::api-entry{name="value" type="property"}
 The value of the input. This should never be directly modified. Any desired mutations should be made through [input](#formkitnode).
 
 #### Signature
@@ -603,9 +601,9 @@ The value of the input. This should never be directly modified. Any desired muta
 ```typescript
 readonly value: unknown
 ```
+::
 
-### walk()
-
+::api-entry{name="walk()" type="function"}
 Performs a function on every node in its subtree (but not the node itself). This is an expensive operation so it should be done very rarely and only lifecycle events that are relatively rare like boot up and shut down.
 
 #### Signature
@@ -617,13 +615,13 @@ walk: (callback: FormKitChildCallback, stopOnFalse?: boolean, recurseOnFalse?: b
 
 #### Parameters
 
-- `callback` — A [FormKitChildCallback](#formkitchildcallback) to be executed for each child. 
+- `callback` — A [FormKitChildCallback](#formkitchildcallback) to be executed for each child.
 - `stopOnFalse` *optional* — If it should stop when the return is false.
+::
 
 ## Functions
 
-### bfs()
-
+::api-entry{name="bfs()" type="function"}
 Perform a breadth-first search on a node subtree and locate the first instance of a match.
 
 #### Signature
@@ -642,9 +640,9 @@ bfs(tree: FormKitNode, searchValue: string | number, searchGoal?: keyof FormKitN
 #### Returns
 
  A [FormKitNode](#formkitnode) or `undefined`.
+::
 
-### clearErrors()
-
+::api-entry{name="clearErrors()" type="function"}
 Clears errors on the node and optionally its children.
 
 #### Signature
@@ -658,9 +656,9 @@ clearErrors(id: string, clearChildren?: boolean): void;
 
 - `id` — The id of the node you want to clear errors for.
 - `clearChildren` *optional* — Determines if the children of this node should have their errors cleared.
+::
 
-### compile()
-
+::api-entry{name="compile()" type="function"}
 Compiles a logical string like `"a != z || b == c"` into a single function. The return value is an object with a "provide" method that iterates over all requirement tokens to use as replacements.
 
 #### Signature
@@ -691,9 +689,9 @@ const condition = compile("$name == 'bob'").provide((token) => {
 
 condition() // false
 ```
+::
 
-### createClasses()
-
+::api-entry{name="createClasses()" type="function"}
 Function that produces a standardized object representation of CSS classes.
 
 #### Signature
@@ -712,9 +710,9 @@ createClasses(propertyKey: string, node: FormKitNode, sectionClassList?: FormKit
 #### Returns
 
  `Record<string, boolean>`
+::
 
-### createConfig()
-
+::api-entry{name="createConfig()" type="function"}
 Creates a new instance of a global configuration option. This object is essentially just a FormKitOption object, but it can be used as the root for FormKitConfig's proxy and retain event "emitting".
 
 #### Signature
@@ -731,9 +729,9 @@ createConfig(options?: Partial<FormKitConfig>): FormKitRootConfig;
 #### Returns
 
  A [FormKitRootConfig](#formkitrootconfig).
+::
 
-### createMessage()
-
+::api-entry{name="createMessage()" type="function"}
 Creates a new FormKitMessage object.
 
 #### Signature
@@ -751,9 +749,9 @@ createMessage(conf: Partial<FormKitMessage>, node?: FormKitNode): FormKitMessage
 #### Returns
 
  A [FormKitMessageProps](#formkitmessageprops).
+::
 
-### createNode()
-
+::api-entry{name="createNode()" type="function"}
 Creates a new instance of a FormKit Node. Nodes are the atomic unit of a FormKit graph.
 
 #### Signature
@@ -785,9 +783,9 @@ const input = createNode({
 console.log(input.value)
 // 'hello node world'
 ```
+::
 
-### createValue()
-
+::api-entry{name="createValue()" type="function"}
 Creates the initial value for a node based on the options passed in and the type of the input.
 
 #### Signature
@@ -804,9 +802,9 @@ createValue(options: FormKitOptions): unknown;
 #### Returns
 
  `unknown`
+::
 
-### deregister()
-
+::api-entry{name="deregister()" type="function"}
 Deregister a node from the registry.
 
 #### Signature
@@ -819,9 +817,9 @@ deregister(node: FormKitNode): void;
 #### Parameters
 
 - `node` — A [FormKitNode](#formkitnode).
+::
 
-### error()
-
+::api-entry{name="error()" type="function"}
 Emits an error. Generally should result in an exception.
 
 #### Signature
@@ -835,9 +833,9 @@ error(code: number, data?: any): never;
 
 - `code` — The integer error code.
 - `data` *optional* — Usually an object of information to include.
+::
 
-### generateClassList()
-
+::api-entry{name="generateClassList()" type="function"}
 Combines multiple class lists into a single list.
 
 #### Signature
@@ -856,9 +854,9 @@ generateClassList(node: FormKitNode, property: string, ...args: Record<string, b
 #### Returns
 
  `string | null`
+::
 
-### getNode()
-
+::api-entry{name="getNode()" type="function"}
 Get a node by a particular id.
 
 #### Signature
@@ -875,9 +873,9 @@ getNode(id: string): FormKitNode | undefined;
 #### Returns
 
  A [FormKitNode](#formkitnode) or `undefined`.
+::
 
-### isComponent()
-
+::api-entry{name="isComponent()" type="function"}
 Type narrow that a node is a DOM node.
 
 #### Signature
@@ -894,9 +892,9 @@ isComponent(node: string | Record<PropertyKey, any>): node is FormKitSchemaCompo
 #### Returns
 
  `boolean`
+::
 
-### isConditional()
-
+::api-entry{name="isConditional()" type="function"}
 Determines if a node is conditionally rendered or not.
 
 #### Signature
@@ -914,9 +912,9 @@ isConditional(node: FormKitSchemaAttributesCondition | FormKitSchemaAttributes):
 #### Returns
 
  `boolean`
+::
 
-### isDOM()
-
+::api-entry{name="isDOM()" type="function"}
 Type narrow that a node is a DOM node.
 
 #### Signature
@@ -933,9 +931,9 @@ isDOM(node: string | Record<PropertyKey, any>): node is FormKitSchemaDOMNode;
 #### Returns
 
  `boolean`
+::
 
-### isList()
-
+::api-entry{name="isList()" type="function"}
 A simple type guard to determine if the context being evaluated is a list type.
 
 #### Signature
@@ -952,9 +950,9 @@ isList(arg: FormKitContextShape): arg is FormKitListContext;
 #### Returns
 
  Returns a `boolean`.
+::
 
-### isNode()
-
+::api-entry{name="isNode()" type="function"}
 Determine if a given object is a node.
 
 #### Signature
@@ -991,9 +989,9 @@ isNode(obj)
 isNode(input)
 // true
 ```
+::
 
-### isPlaceholder()
-
+::api-entry{name="isPlaceholder()" type="function"}
 Determines if a node is a placeholder node.
 
 #### Signature
@@ -1006,11 +1004,9 @@ isPlaceholder(node: FormKitNode | FormKitPlaceholderNode): node is FormKitPlaceh
 #### Parameters
 
 - `node` — A [FormKitNode](#formkitnode)
+::
 
-#### Returns
-
-### isSugar()
-
+::api-entry{name="isSugar()" type="function"}
 Determines if the node is syntactic sugar or not.
 
 #### Signature
@@ -1027,9 +1023,9 @@ isSugar(node: FormKitSchemaNode): node is FormKitSchemaFormKit;
 #### Returns
 
  `boolean`
+::
 
-### names()
-
+::api-entry{name="names()" type="function"}
 Create a name-based dictionary of all children in an array.
 
 #### Signature
@@ -1048,9 +1044,9 @@ names(children: FormKitNode[]): {
 #### Returns
 
  A dictionary of named [FormKitNode](#formkitnode).
+::
 
-### register()
-
+::api-entry{name="register()" type="function"}
 Registers a node to the registry _if_ the node is a root node, _or_ if the node has an explicit node.props.alias. If these two things are not true, then no node is registered (idempotent).
 
 #### Signature
@@ -1063,9 +1059,9 @@ register(node: FormKitNode): void;
 #### Parameters
 
 - `node` — A [FormKitNode](#formkitnode).
+::
 
-### reset()
-
+::api-entry{name="reset()" type="function"}
 Resets an input to its "initial" value. If the input is a group or list it resets all the children as well.
 
 #### Signature
@@ -1083,9 +1079,9 @@ reset(id: string | FormKitNode, resetTo?: unknown): FormKitNode | undefined;
 #### Returns
 
  A [FormKitNode](#formkitnode) or `undefined`.
+::
 
-### resetCount()
-
+::api-entry{name="resetCount()" type="function"}
 Resets the global number of node registrations, useful for deterministic node naming.
 
 #### Signature
@@ -1094,9 +1090,9 @@ Resets the global number of node registrations, useful for deterministic node na
 ```typescript
 resetCount(): void;
 ```
+::
 
-### resetRegistry()
-
+::api-entry{name="resetRegistry()" type="function"}
 Resets the entire registry. Deregisters all nodes and removes all listeners.
 
 #### Signature
@@ -1105,9 +1101,9 @@ Resets the entire registry. Deregisters all nodes and removes all listeners.
 ```typescript
 resetRegistry(): void;
 ```
+::
 
-### setErrors()
-
+::api-entry{name="setErrors()" type="function"}
 Sets errors on a form, group, or input.
 
 #### Signature
@@ -1120,11 +1116,11 @@ setErrors(id: string, localErrors: ErrorMessages, childErrors?: ErrorMessages): 
 #### Parameters
 
 - `id` — The id of a form.
-- `localErrors` — The errors to set on the form or the form’s inputs in the format of [ErrorMessages](#errormessages).
-- `childErrors` *optional* — (optional) The errors to set on the form or the form’s inputs in the format of [ErrorMessages](#errormessages).
+- `localErrors` — The errors to set on the form or the form's inputs in the format of [ErrorMessages](#errormessages).
+- `childErrors` *optional* — (optional) The errors to set on the form or the form's inputs in the format of [ErrorMessages](#errormessages).
+::
 
-### submitForm()
-
+::api-entry{name="submitForm()" type="function"}
 Submits a FormKit form programmatically.
 
 #### Signature
@@ -1137,9 +1133,9 @@ submitForm(id: string): void;
 #### Parameters
 
 - `id` — The id of the form.
+::
 
-### sugar()
-
+::api-entry{name="sugar()" type="function"}
 Converts syntactic sugar nodes to standard nodes.
 
 #### Signature
@@ -1156,9 +1152,9 @@ sugar<T extends FormKitSchemaNode>(node: T): Exclude<FormKitSchemaNode, string |
 #### Returns
 
  A [FormKitSchemaNode](#formkitschemanode) without the properties of [FormKitSchemaFormKit](#formkitschemaformkit).
+::
 
-### warn()
-
+::api-entry{name="warn()" type="function"}
 Globally emits a warning.
 
 #### Signature
@@ -1172,9 +1168,9 @@ warn(code: number, data?: any): void;
 
 - `code` — The integer warning code.
 - `data` *optional* — Usually an object of information to include.
+::
 
-### watchRegistry()
-
+::api-entry{name="watchRegistry()" type="function"}
 A way of watching changes in the global registry.
 
 #### Signature
@@ -1186,14 +1182,13 @@ watchRegistry(id: string, callback: FormKitEventListener): void;
 
 #### Parameters
 
-- `id` — A dot
--syntax id where the node is located.
+- `id` — A dot-syntax id where the node is located.
 - `callback` — A callback in the format of [FormKitEventListener](#formkiteventlistener) to notify when the node is set or removed.
+::
 
 ## TypeScript
 
-### FormKitChildCallback
-
+::api-entry{name="FormKitChildCallback" type="interface"}
 The callback type for node.each().
 
 
@@ -1202,9 +1197,9 @@ interface FormKitChildCallback {
     (child: FormKitNode): any;
 }
 ```
+::
 
-### FormKitChildValue
-
+::api-entry{name="FormKitChildValue" type="interface"}
 A descriptor of a child value, generally passed up a node tree.
 
 
@@ -1215,9 +1210,9 @@ interface FormKitChildValue {
     value: any;
 }
 ```
+::
 
-### FormKitClasses
-
+::api-entry{name="FormKitClasses" type="interface"}
 Definition for a function that produces CSS classes.
 
 
@@ -1226,9 +1221,9 @@ interface FormKitClasses {
     (node: FormKitNode, sectionKey: string): string | Record<string, boolean>;
 }
 ```
+::
 
-### FormKitCompilerOutput
-
+::api-entry{name="FormKitCompilerOutput" type="interface"}
 The compiler output, a function that adds the required tokens.
 
 
@@ -1238,9 +1233,9 @@ interface FormKitCompilerOutput {
     provide: FormKitCompilerProvider;
 }
 ```
+::
 
-### FormKitConfig
-
+::api-entry{name="FormKitConfig" type="interface"}
 General "app" like configuration options, these are automatically inherited by all children — they are not reactive.
 
 
@@ -1253,9 +1248,9 @@ interface FormKitConfig {
     rootConfig?: FormKitRootConfig;
 }
 ```
+::
 
-### FormKitContext
-
+::api-entry{name="FormKitContext" type="interface"}
 The interface of a FormKit node's context object. A FormKit node is a proxy of this object.
 
 
@@ -1286,9 +1281,9 @@ interface FormKitContext {
     value: unknown;
 }
 ```
+::
 
-### FormKitContextShape
-
+::api-entry{name="FormKitContextShape" type="interface"}
 Define the most basic shape of a context object for type guards trying to reason about a context's value.
 
 
@@ -1299,9 +1294,9 @@ interface FormKitContextShape {
     value: unknown;
 }
 ```
+::
 
-### FormKitCounter
-
+::api-entry{name="FormKitCounter" type="interface"}
 The counter object used to perform instance counting within a tree.
 
 
@@ -1315,9 +1310,9 @@ interface FormKitCounter {
     resolve: () => void;
 }
 ```
+::
 
-### FormKitCounterCondition
-
+::api-entry{name="FormKitCounterCondition" type="interface"}
 Ledger counters require a condition function that determines if a given message applies to it or not.
 
 
@@ -1326,9 +1321,9 @@ interface FormKitCounterCondition {
     (message: FormKitMessage): boolean;
 }
 ```
+::
 
-### FormKitDispatcher
-
+::api-entry{name="FormKitDispatcher" type="interface"}
 The FormKitDispatcher interface is responsible creating/running "hooks".
 
 
@@ -1340,9 +1335,9 @@ interface FormKitDispatcher<T> {
     unshift: (dispatchable: FormKitMiddleware<T>) => number;
 }
 ```
+::
 
-### FormKitEvent
-
+::api-entry{name="FormKitEvent" type="interface"}
 The internal structure of a FormKitEvent.
 
 
@@ -1355,9 +1350,9 @@ interface FormKitEvent {
     payload: any;
 }
 ```
+::
 
-### FormKitEventEmitter
-
+::api-entry{name="FormKitEventEmitter" type="interface"}
 The FormKitEventEmitter definition.
 
 
@@ -1371,9 +1366,9 @@ interface FormKitEventEmitter {
     play: (node?: FormKitNode) => void;
 }
 ```
+::
 
-### FormKitEventListener
-
+::api-entry{name="FormKitEventListener" type="interface"}
 Event listener functions definition.
 
 
@@ -1383,9 +1378,9 @@ interface FormKitEventListener {
     receipt?: string;
 }
 ```
+::
 
-### FormKitExtendableSchemaRoot
-
+::api-entry{name="FormKitExtendableSchemaRoot" type="interface"}
 Defines a function that allows selectively overriding a given schema.
 
 
@@ -1395,9 +1390,9 @@ interface FormKitExtendableSchemaRoot {
     memoKey?: string;
 }
 ```
+::
 
-### FormKitFrameworkContext
-
+::api-entry{name="FormKitFrameworkContext" type="interface"}
 Context object to be created by and used by each respective UI framework. No values are created or output by FormKitCore, but this interface should be followed by each respective plugin.
 
 
@@ -1432,10 +1427,10 @@ interface FormKitFrameworkContext<T = any> {
     value: T;
 }
 ```
+::
 
-### FormKitFrameworkContextState
-
-The state inside a node’s framework context. Usually used to track things like blurred and validity states.
+::api-entry{name="FormKitFrameworkContextState" type="interface"}
+The state inside a node's framework context. Usually used to track things like blurred and validity states.
 
 
 ```typescript
@@ -1452,9 +1447,9 @@ interface FormKitFrameworkContextState {
     validationVisible: boolean;
 }
 ```
+::
 
-### FormKitGroupValue
-
+::api-entry{name="FormKitGroupValue" type="interface"}
 FormKit inputs of type 'group' must have keyed values by default.
 
 
@@ -1464,9 +1459,9 @@ interface FormKitGroupValue {
     [index: string]: unknown;
 }
 ```
+::
 
-### FormKitHandlerPayload
-
+::api-entry{name="FormKitHandlerPayload" type="interface"}
 Describes the data passing through the error and warning handlers.
 
 
@@ -1477,9 +1472,9 @@ interface FormKitHandlerPayload {
     message?: string;
 }
 ```
+::
 
-### FormKitHooks
-
+::api-entry{name="FormKitHooks" type="interface"}
 The available hooks for middleware.
 
 
@@ -1507,9 +1502,9 @@ interface FormKitHooks {
     text: FormKitDispatcher<FormKitTextFragment>;
 }
 ```
+::
 
-### FormKitInputMessages
-
+::api-entry{name="FormKitInputMessages" type="interface"}
 A registry of input messages that should be applied to children of the node they are passed to — where the string key of the object is the address of the node to apply the messages on and the value is the message itself.
 
 
@@ -1518,9 +1513,9 @@ interface FormKitInputMessages {
     [address: string]: FormKitMessage[];
 }
 ```
+::
 
-### FormKitLedger
-
+::api-entry{name="FormKitLedger" type="interface"}
 The FormKit ledger, a general-purpose message counting service provided by FormKit core for counting messages throughout a tree.
 
 
@@ -1534,9 +1529,9 @@ interface FormKitLedger {
     value: (name: string) => number;
 }
 ```
+::
 
-### FormKitLibrary
-
+::api-entry{name="FormKitLibrary" type="interface"}
 A library of inputs, keyed by the name of the type.
 
 
@@ -1545,9 +1540,9 @@ interface FormKitLibrary {
     [index: string]: FormKitTypeDefinition;
 }
 ```
+::
 
-### FormKitListContext
-
+::api-entry{name="FormKitListContext" type="interface"}
 The simplest definition for a context of type "list".
 
 
@@ -1558,9 +1553,9 @@ interface FormKitListContext {
     value: FormKitListContextValue;
 }
 ```
+::
 
-### FormKitMessageMeta
-
+::api-entry{name="FormKitMessageMeta" type="interface"}
 Messages have can have any arbitrary meta data attached to them.
 
 
@@ -1571,9 +1566,9 @@ interface FormKitMessageMeta {
     messageKey?: string;
 }
 ```
+::
 
-### FormKitMessageProps
-
+::api-entry{name="FormKitMessageProps" type="interface"}
 The structure of a core FormKitMessage. These messages are used to store information about the state of a node.
 
 
@@ -1587,9 +1582,9 @@ interface FormKitMessageProps {
     visible: boolean;
 }
 ```
+::
 
-### FormKitMessageStore
-
+::api-entry{name="FormKitMessageStore" type="interface"}
 Defines the actual store of messages.
 
 
@@ -1598,9 +1593,9 @@ interface FormKitMessageStore {
     [index: string]: FormKitMessage;
 }
 ```
+::
 
-### FormKitNodeExtensions
-
+::api-entry{name="FormKitNodeExtensions" type="interface"}
 An empty interface for adding FormKit node extensions.
 
 
@@ -1608,9 +1603,9 @@ An empty interface for adding FormKit node extensions.
 interface FormKitNodeExtensions {
 }
 ```
+::
 
-### FormKitPlaceholderNode
-
+::api-entry{name="FormKitPlaceholderNode" type="interface"}
 A faux node that is used as a placeholder in the children node array during various node manipulations.
 
 
@@ -1627,9 +1622,9 @@ interface FormKitPlaceholderNode<V = unknown> {
     value: V;
 }
 ```
+::
 
-### FormKitPlugin
-
+::api-entry{name="FormKitPlugin" type="interface"}
 The base interface definition for a FormKitPlugin. It's just a function that accepts a node argument.
 
 
@@ -1639,9 +1634,9 @@ interface FormKitPlugin {
     library?: (node: FormKitNode) => void;
 }
 ```
+::
 
-### FormKitSchemaAttributesCondition
-
+::api-entry{name="FormKitSchemaAttributesCondition" type="interface"}
 Conditions nested inside attribute declarations.
 
 
@@ -1652,9 +1647,9 @@ interface FormKitSchemaAttributesCondition {
     then: FormKitAttributeValue;
 }
 ```
+::
 
-### FormKitSchemaComposable
-
+::api-entry{name="FormKitSchemaComposable" type="interface"}
 Definition for a function that can extend a given schema node.
 
 
@@ -1663,9 +1658,9 @@ interface FormKitSchemaComposable {
     (extendWith?: Partial<FormKitSchemaNode>, children?: string | FormKitSchemaNode[] | FormKitSchemaCondition, ...args: any[]): FormKitSchemaNode;
 }
 ```
+::
 
-### FormKitSchemaContext
-
+::api-entry{name="FormKitSchemaContext" type="interface"}
 The context that is passed from one schema render to the next.
 
 
@@ -1675,9 +1670,9 @@ interface FormKitSchemaContext {
     [index: string]: any;
 }
 ```
+::
 
-### FormKitSchemaProps
-
+::api-entry{name="FormKitSchemaProps" type="interface"}
 Properties available in all schema nodes.
 
 
@@ -1691,9 +1686,9 @@ interface FormKitSchemaProps {
     meta?: FormKitSchemaMeta;
 }
 ```
+::
 
-### FormKitStoreTraps
-
+::api-entry{name="FormKitStoreTraps" type="interface"}
 The available traps on the FormKit store.
 
 
@@ -1708,9 +1703,9 @@ interface FormKitStoreTraps {
     touch: () => void;
 }
 ```
+::
 
-### FormKitTrap
-
+::api-entry{name="FormKitTrap" type="interface"}
 The definition of a FormKitTrap. These are somewhat like methods on each FormKitNode. They are always symmetrical (get/set) — although it's acceptable for either to throw an Exception.
 
 
@@ -1720,9 +1715,9 @@ interface FormKitTrap {
     set: TrapSetter;
 }
 ```
+::
 
-### KeyedValue
-
+::api-entry{name="KeyedValue" type="interface"}
 Arbitrary data that has properties. Could be a POJO, could be an array.
 
 
@@ -1732,108 +1727,108 @@ interface KeyedValue {
     [index: string]: any;
 }
 ```
+::
 
-### ChildMessageBuffer
-
+::api-entry{name="ChildMessageBuffer" type="type"}
 Child messages that were not immediately applied due to the child not existing.
 
 
 ```typescript
 export type ChildMessageBuffer = Map<string, Array<[FormKitMessage[], MessageClearer | undefined]>>;
 ```
+::
 
-### ErrorMessages
-
+::api-entry{name="ErrorMessages" type="type"}
 Error messages.
 
 
 ```typescript
 export type ErrorMessages = string | string[] | Record<string, string | string[]>;
 ```
+::
 
-### FormKitAddress
-
+::api-entry{name="FormKitAddress" type="type"}
 Describes the path to a particular node from the top of the tree.
 
 
 ```typescript
 export type FormKitAddress = Array<string | number>;
 ```
+::
 
-### FormKitAttributeValue
-
+::api-entry{name="FormKitAttributeValue" type="type"}
 The possible value types of attributes (in the schema).
 
 
 ```typescript
 export type FormKitAttributeValue = string | number | boolean | undefined | FormKitSchemaAttributes | FormKitSchemaAttributesCondition;
 ```
+::
 
-### FormKitCompilerProvider
-
+::api-entry{name="FormKitCompilerProvider" type="type"}
 A function that accepts a callback with a token as the only argument, and must return a function that provides the true value of the token.
 
 
 ```typescript
 export type FormKitCompilerProvider = (callback: (requirements: string[]) => Record<string, () => any>) => FormKitCompilerOutput;
 ```
+::
 
-### FormKitListContextValue
-
+::api-entry{name="FormKitListContextValue" type="type"}
 FormKit inputs of type 'list' must have array values by default.
 
 
 ```typescript
 export type FormKitListContextValue<T = any> = Array<T>;
 ```
+::
 
-### FormKitListStatement
-
+::api-entry{name="FormKitListStatement" type="type"}
 A full loop statement in tuple syntax. Can be read like "foreach value, key? in list".
 
 
 ```typescript
 export type FormKitListStatement = [value: any, key: number | string, list: FormKitListValue] | [value: any, list: FormKitListValue];
 ```
+::
 
-### FormKitListValue
-
+::api-entry{name="FormKitListValue" type="type"}
 The value being listed out. Can be an array, an object, or a number.
 
 
 ```typescript
 export type FormKitListValue = string | Record<string, any> | Array<string | number | Record<string, any>> | number;
 ```
+::
 
-### FormKitMessage
-
+::api-entry{name="FormKitMessage" type="type"}
 A FormKit message is immutable, so all properties should be readonly.
 
 
 ```typescript
 export type FormKitMessage = Readonly<FormKitMessageProps>;
 ```
+::
 
-### FormKitMiddleware
-
+::api-entry{name="FormKitMiddleware" type="type"}
 All FormKitMiddleware conform to the pattern of accepting a payload and a `next()` function. They can either pass the payload to the next middleware explicitly (as an argument of next), or implicitly (no argument for next).
 
 
 ```typescript
 export type FormKitMiddleware<T = unknown> = (payload: T, next: (payload: T) => T) => T;
 ```
+::
 
-### FormKitNodeType
-
+::api-entry{name="FormKitNodeType" type="type"}
 These are the types of nodes that can be created. These are different from the type of inputs available and rather describe their purpose in the tree.
 
 
 ```typescript
 export type FormKitNodeType = 'input' | 'list' | 'group';
 ```
+::
 
-### FormKitOptions
-
+::api-entry{name="FormKitOptions" type="type"}
 Options that can be used to instantiate a new node via `createNode()`.
 
 
@@ -1849,9 +1844,9 @@ export type FormKitOptions = Partial<Omit<FormKitContext, 'children' | 'plugins'
     schemaAlias: string;
 }>;
 ```
+::
 
-### FormKitProps
-
+::api-entry{name="FormKitProps" type="type"}
 The user-land per-instance "props", which are generally akin to the props passed into components on the front end.
 
 
@@ -1872,9 +1867,9 @@ export type FormKitProps = {
     [index: string]: any;
 } & FormKitConfig;
 ```
+::
 
-### FormKitRootConfig
-
+::api-entry{name="FormKitRootConfig" type="type"}
 Global configuration options.
 
 
@@ -1884,9 +1879,9 @@ export type FormKitRootConfig = Partial<FormKitConfig> & {
     _rm: (node: FormKitNode) => void;
 };
 ```
+::
 
-### FormKitSchemaAttributes
-
+::api-entry{name="FormKitSchemaAttributes" type="type"}
 DOM attributes are simple string dictionaries.
 
 
@@ -1895,9 +1890,9 @@ export type FormKitSchemaAttributes = {
     [index: string]: FormKitAttributeValue;
 } | null | FormKitSchemaAttributesCondition;
 ```
+::
 
-### FormKitSchemaComponent
-
+::api-entry{name="FormKitSchemaComponent" type="type"}
 Properties available when defining a generic non-FormKit component.
 
 
@@ -1907,9 +1902,9 @@ export type FormKitSchemaComponent = {
     props?: Record<string, any>;
 } & FormKitSchemaProps;
 ```
+::
 
-### FormKitSchemaCondition
-
+::api-entry{name="FormKitSchemaCondition" type="type"}
 A schema node that determines _which_ content to render.
 
 
@@ -1920,18 +1915,18 @@ export type FormKitSchemaCondition = {
     else?: FormKitSchemaNode | FormKitSchemaNode[];
 };
 ```
+::
 
-### FormKitSchemaDefinition
-
+::api-entry{name="FormKitSchemaDefinition" type="type"}
 An entire schema object or subtree from any entry point. Can be a single node, an array of nodes, or a conditional. This is the type that is passed to the FormKitSchema constructor.
 
 
 ```typescript
 export type FormKitSchemaDefinition = FormKitSchemaNode | FormKitSchemaNode[] | FormKitSchemaCondition;
 ```
+::
 
-### FormKitSchemaDOMNode
-
+::api-entry{name="FormKitSchemaDOMNode" type="type"}
 Properties available when using a DOM node.
 
 
@@ -1941,9 +1936,9 @@ export type FormKitSchemaDOMNode = {
     attrs?: FormKitSchemaAttributes;
 } & FormKitSchemaProps;
 ```
+::
 
-### FormKitSchemaFormKit
-
+::api-entry{name="FormKitSchemaFormKit" type="type"}
 Syntactic sugar for a FormKitSchemaComponent node that uses FormKit.
 
 
@@ -1952,9 +1947,9 @@ export type FormKitSchemaFormKit = {
     $formkit: string;
 } & Record<string, any> & FormKitSchemaProps;
 ```
+::
 
-### FormKitSchemaMeta
-
+::api-entry{name="FormKitSchemaMeta" type="type"}
 Meta attributes are not used when parsing the schema, but can be used to create tooling.
 
 
@@ -1963,36 +1958,36 @@ export type FormKitSchemaMeta = {
     [key: string]: string | number | boolean | undefined | null | CallableFunction | FormKitSchemaMeta;
 };
 ```
+::
 
-### FormKitSchemaNode
-
+::api-entry{name="FormKitSchemaNode" type="type"}
 Properties available then defining a schema node.
 
 
 ```typescript
 export type FormKitSchemaNode = FormKitSchemaDOMNode | FormKitSchemaComponent | FormKitSchemaTextNode | FormKitSchemaCondition | FormKitSchemaFormKit;
 ```
+::
 
-### FormKitSchemaTextNode
-
+::api-entry{name="FormKitSchemaTextNode" type="type"}
 A simple text node.
 
 
 ```typescript
 export type FormKitSchemaTextNode = string;
 ```
+::
 
-### FormKitSearchFunction
-
+::api-entry{name="FormKitSearchFunction" type="type"}
 Breadth and depth-first searches can use a callback of this notation.
 
 
 ```typescript
 export type FormKitSearchFunction = (node: FormKitNode, searchTerm?: string | number) => boolean;
 ```
+::
 
-### FormKitStore
-
+::api-entry{name="FormKitStore" type="type"}
 The message store contains all of the messages that pertain to a given node.
 
 
@@ -2005,9 +2000,9 @@ export type FormKitStore = FormKitMessageStore & {
     buffer: boolean;
 } & FormKitStoreTraps;
 ```
+::
 
-### FormKitTextFragment
-
+::api-entry{name="FormKitTextFragment" type="type"}
 Text fragments are small pieces of text used for things like interface validation messages, or errors that may be exposed for modification or even translation.
 
 
@@ -2018,18 +2013,18 @@ export type FormKitTextFragment = Partial<FormKitMessageProps> & {
     type: string;
 };
 ```
+::
 
-### FormKitTraps
-
+::api-entry{name="FormKitTraps" type="type"}
 The map signature for a node's traps Map.
 
 
 ```typescript
 export type FormKitTraps = Map<string | symbol, FormKitTrap>;
 ```
+::
 
-### FormKitTypeDefinition
-
+::api-entry{name="FormKitTypeDefinition" type="type"}
 Definition of a library item — when registering a new library item, these are the required and available properties.
 
 
@@ -2046,30 +2041,31 @@ export type FormKitTypeDefinition = {
     schemaMemoKey?: string;
 };
 ```
+::
 
-### MessageClearer
-
+::api-entry{name="MessageClearer" type="type"}
 A string or function that allows clearing messages.
 
 
 ```typescript
 export type MessageClearer = string | ((message: FormKitMessage) => boolean);
 ```
+::
 
-### TrapGetter
-
+::api-entry{name="TrapGetter" type="type"}
 Signature for any of the node's getter traps. Keep in mind that because these are traps and not class methods, their response types are declared explicitly in the FormKitNode interface.
 
 
 ```typescript
 export type TrapGetter = ((node: FormKitNode, context: FormKitContext, ...args: any[]) => unknown) | false;
 ```
+::
 
-### TrapSetter
-
+::api-entry{name="TrapSetter" type="type"}
 The signature for a node's trap setter — these are more rare than getter traps, but can be useful for blocking access to certain context properties or modifying the behavior of an assignment (ex. see setParent).
 
 
 ```typescript
 export type TrapSetter = ((node: FormKitNode, context: FormKitContext, property: string | number | symbol, value: any) => boolean | never) | false;
 ```
+::

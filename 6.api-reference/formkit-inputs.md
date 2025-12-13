@@ -11,8 +11,7 @@ The official FormKit Inputs plugin. This package contains the source code for al
 
 ## Helpers
 
-### $attrs()
-
+::api-entry{name="$attrs()" type="function"}
 Applies attributes to a given schema section by applying a higher order function that merges a given set of attributes into the node.
 
 #### Signature
@@ -30,9 +29,9 @@ $attrs(attrs: FormKitSchemaAttributes | (() => FormKitSchemaAttributes), section
 #### Returns
 
  [FormKitSchemaExtendableSection](#formkitschemaextendablesection)
+::
 
-### $extend()
-
+::api-entry{name="$extend()" type="function"}
 Extends a schema node with a given set of extensions.
 
 #### Signature
@@ -50,9 +49,9 @@ $extend(section: FormKitSchemaExtendableSection, extendWith: Partial<FormKitSche
 #### Returns
 
  [FormKitSchemaExtendableSection](#formkitschemaextendablesection)
+::
 
-### $for()
-
+::api-entry{name="$for()" type="function"}
 Applies a condition to a given schema section.
 
 #### Signature
@@ -71,9 +70,9 @@ $for(varName: string, inName: string, section: FormKitSchemaExtendableSection): 
 #### Returns
 
  [FormKitSchemaExtendableSection](#formkitschemaextendablesection)
+::
 
-### $if()
-
+::api-entry{name="$if()" type="function"}
 Applies a condition to a given schema section.
 
 #### Signature
@@ -92,9 +91,9 @@ $if(condition: string, then: FormKitSchemaExtendableSection, otherwise?: FormKit
 #### Returns
 
  [FormKitSchemaExtendableSection](#formkitschemaextendablesection)
+::
 
-### $root()
-
+::api-entry{name="$root()" type="function"}
 Creates a root schema section.
 
 #### Signature
@@ -111,11 +110,11 @@ $root(section: FormKitSchemaExtendableSection): FormKitExtendableSchemaRoot;
 #### Returns
 
  [FormKitSchemaExtendableSection](#formkitschemaextendablesection)
+::
 
 ## Features
 
-### checkboxes()
-
+::api-entry{name="checkboxes()" type="function"}
 A feature that adds checkbox selection support.
 
 #### Signature
@@ -128,9 +127,9 @@ checkboxes(node: FormKitNode): void;
 #### Parameters
 
 * `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+::
 
-### defaultIcon()
-
+::api-entry{name="defaultIcon()" type="function"}
 Adds icon props definition.
 
 #### Signature
@@ -148,9 +147,9 @@ defaultIcon(sectionKey: string, defaultIcon: string): (node: FormKitNode) => voi
 #### Returns
 
  A [FormKitPlugin](/api-reference/formkit-core#formkitplugin).
+::
 
-### files()
-
+::api-entry{name="files()" type="function"}
 A feature to add file handling support to an input.
 
 #### Signature
@@ -163,9 +162,9 @@ files(node: FormKitNode): void;
 #### Parameters
 
 * `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+::
 
-### initialValue()
-
+::api-entry{name="initialValue()" type="function"}
 A feature that ensures the input has an `initialValue` prop.
 
 #### Signature
@@ -178,9 +177,9 @@ initialValue(node: FormKitNode): void;
 #### Parameters
 
 * `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+::
 
-### localize()
-
+::api-entry{name="localize()" type="function"}
 Creates a new feature that generates a localization message of type ui for use on a given component.
 
 #### Signature
@@ -193,14 +192,14 @@ localize(key: string, value?: string): (node: FormKitNode) => void;
 #### Parameters
 
 * `key` — The key of the message.
-* `value` * optional * — The value of the message.
+* `value` *optional* — The value of the message.
 
 #### Returns
 
  A [FormKitPlugin](/api-reference/formkit-core#formkitplugin).
+::
 
-### normalizeBoxes()
-
+::api-entry{name="normalizeBoxes()" type="function"}
 A feature that normalizes box types (checkboxes, radios).
 
 #### Signature
@@ -220,9 +219,9 @@ normalizeBoxes(node: FormKitNode): FormKitMiddleware<{
 #### Returns
 
  A [FormKitMiddleware](/api-reference/formkit-node#formkitmiddleware).
+::
 
-### options()
-
+::api-entry{name="options()" type="function"}
 A feature that converts the options prop to usable values, to be used by a feature or a plugin.
 
 #### Signature
@@ -235,9 +234,9 @@ options(node: FormKitNode): void;
 #### Parameters
 
 * `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+::
 
-### radios()
-
+::api-entry{name="radios()" type="function"}
 A feature to check if the value being checked is the current value.
 
 #### Signature
@@ -250,11 +249,11 @@ radios(node: FormKitNode): void;
 #### Parameters
 
 * `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+::
 
 ## Functions
 
-### casts()
-
+::api-entry{name="casts()" type="function"}
 A feature that allows casting to numbers.
 
 #### Signature
@@ -267,9 +266,9 @@ casts(node: FormKitNode): void;
 #### Parameters
 
 * `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+::
 
-### createLibraryPlugin()
-
+::api-entry{name="createLibraryPlugin()" type="function"}
 Creates a plugin based on a list of [FormKitLibrary](/api-reference/formkit-core#formkitlibrary).
 
 #### Signature
@@ -286,9 +285,9 @@ createLibraryPlugin(...libraries: FormKitLibrary[]): FormKitPlugin;
 #### Returns
 
  [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+::
 
-### createSection()
-
+::api-entry{name="createSection()" type="function"}
 Creates a new reusable section.
 
 #### Signature
@@ -309,9 +308,9 @@ createSection(section: string, el: string | (() => FormKitSchemaNode), fragment:
 #### Returns
 
  Returns a [FormKitExtendableSchemaRoot](/api-reference/formkit-core#formkitextendableschemaroot) or a [FormKitSchemaExtendableSection](/api-reference/formkit-core#formkitschemaextendablesection).
+::
 
-### disables()
-
+::api-entry{name="disables()" type="function"}
 A feature that allows disabling children of this node.
 
 #### Signature
@@ -324,9 +323,9 @@ disables(node: FormKitNode): void;
 #### Parameters
 
 * `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+::
 
-### eachSection()
-
+::api-entry{name="eachSection()" type="function"}
 Runs a callback over every section in a schema. if stopOnCallbackReturn is true and the callback returns a value, the loop will stop and return that value.
 
 #### Signature
@@ -340,13 +339,11 @@ eachSection<T>(schema: FormKitSchemaDefinition, callback: (section: FormKitSchem
 
 * `schema` — A [FormKitSchemaNode](/api-reference/formkit-core#formkitschemanode) array.
 * `callback` — A callback to run on every section.
-* `stopOnCallbackReturn` * optional * — If true, the loop will stop if the callback returns a value.
-* `schemaParent` * optional * — The parent of the current schema node.
+* `stopOnCallbackReturn` *optional* — If true, the loop will stop if the callback returns a value.
+* `schemaParent` *optional* — The parent of the current schema node.
+::
 
-#### Returns
-
-### extendSchema()
-
+::api-entry{name="extendSchema()" type="function"}
 Extends a single schema node with an extension. The extension can be any partial node including strings.
 
 #### Signature
@@ -359,14 +356,14 @@ extendSchema(schema: FormKitSchemaNode, extension?: Partial<FormKitSchemaNode>):
 #### Parameters
 
 * `schema` — The base schema node.
-* `extension` * optional * — The values to extend on the base schema node.
+* `extension` *optional* — The values to extend on the base schema node.
 
 #### Returns
 
  [FormKitSchemaNode](/api-reference/formkit-core#formkitschemanode)
+::
 
-### findSection()
-
+::api-entry{name="findSection()" type="function"}
 Finds a seciton by name in a schema.
 
 #### Signature
@@ -384,9 +381,9 @@ findSection(schema: FormKitSchemaDefinition, target: string): [false, false] | [
 #### Returns
 
  a tuple of the schema and the section or a tuple of `false` and `false` if not found.
+::
 
-### form()
-
+::api-entry{name="form()" type="function"}
 A feature to add a submit handler and actions section.
 
 #### Signature
@@ -399,9 +396,9 @@ form(node: FormKitNode): void;
 #### Parameters
 
 * `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+::
 
-### ignore()
-
+::api-entry{name="ignore()" type="function"}
 A feature that applies `ignore="true"` by default.
 
 #### Signature
@@ -414,9 +411,9 @@ ignore(node: FormKitNode): void;
 #### Parameters
 
 * `node` — A [FormKitNode](/api-reference/formkit-core#formkitnode).
+::
 
-### isGroupOption()
-
+::api-entry{name="isGroupOption()" type="function"}
 A helper to determine if an option is a group or an option.
 
 #### Signature
@@ -429,9 +426,9 @@ isGroupOption(option: FormKitOptionsItem | FormKitOptionsGroupItem | FormKitOpti
 #### Parameters
 
 * `option` — An option
+::
 
-### isSchemaObject()
-
+::api-entry{name="isSchemaObject()" type="function"}
 Type guard for schema objects.
 
 #### Signature
@@ -448,9 +445,9 @@ isSchemaObject(schema: Partial<FormKitSchemaNode>): schema is FormKitSchemaDOMNo
 #### Returns
 
  `boolean`
+::
 
-### isSlotCondition()
-
+::api-entry{name="isSlotCondition()" type="function"}
 Checks if the current schema node is a slot condition.
 
 #### Signature
@@ -482,9 +479,9 @@ isSlotCondition(node: FormKitSchemaNode): node is {
  else: []
 } // this schema node would return true.
 ```
+::
 
-### normalizeOptions()
-
+::api-entry{name="normalizeOptions()" type="function"}
 A function to normalize an array of objects, array of strings, or object of key-values to use an array of objects with value and label properties.
 
 #### Signature
@@ -496,15 +493,14 @@ normalizeOptions<T extends FormKitOptionsPropWithGroups>(options: T): T extends 
 
 #### Parameters
 
-* `options` — An un
--normalized [FormKitOptionsProp](#formkitoptionsprop).
+* `options` — An un-normalized [FormKitOptionsProp](#formkitoptionsprop).
 
 #### Returns
 
  A list of [FormKitOptionsList](#formkitoptionslist).
+::
 
-### renamesRadios()
-
+::api-entry{name="renamesRadios()" type="function"}
 Automatically rename any radio inputs.
 
 #### Signature
@@ -517,11 +513,9 @@ renamesRadios(node: FormKitNode): void;
 #### Parameters
 
 * `node` — A formkit node.
+::
 
-#### Returns
-
-### select()
-
+::api-entry{name="select()" type="function"}
 Converts the options prop to usable values.
 
 #### Signature
@@ -534,9 +528,9 @@ select(node: FormKitNode): void;
 #### Parameters
 
 * `node` — A formkit node.
+::
 
-### useSchema()
-
+::api-entry{name="useSchema()" type="function"}
 Creates an input schema with all of the wrapping base schema.
 
 #### Signature
@@ -553,11 +547,11 @@ useSchema(inputSection: FormKitSection): FormKitSchemaExtendableSection;
 #### Returns
 
  [FormKitExtendableSchemaRoot](/api-reference/formkit-core#formkitextendableschemaroot)
+::
 
 ## TypeScript
 
-### FormKitBaseEvents
-
+::api-entry{name="FormKitBaseEvents" type="interface"}
 General input events available to all FormKit inputs.
 
 
@@ -571,9 +565,9 @@ interface FormKitBaseEvents<Props extends FormKitInputs<Props>> {
     (event:'node', node: FormKitNode): any;
 }
 ```
+::
 
-### FormKitBaseProps
-
+::api-entry{name="FormKitBaseProps" type="interface"}
 Base props that should be applied to all FormKit inputs. These are not actual runtime props and are pulled from the context.attrs object. Many of these are just html attributes that are passed through to the input element.
 
 
@@ -598,10 +592,10 @@ interface FormKitBaseProps {
     step: string | number;
 }
 ```
+::
 
-### FormKitBaseSlots
-
-Nearly all inputs in FormKit have a "base" set of slots. This is the "sandwich" around the input itself, like the wrappers, help text, error messages etc. Several other input’s slots extend this base interface.
+::api-entry{name="FormKitBaseSlots" type="interface"}
+Nearly all inputs in FormKit have a "base" set of slots. This is the "sandwich" around the input itself, like the wrappers, help text, error messages etc. Several other input's slots extend this base interface.
 
 
 ```typescript
@@ -622,9 +616,9 @@ interface FormKitBaseSlots<Props extends FormKitInputs<Props>> {
     wrapper: FormKitSlotData<Props>;
 }
 ```
+::
 
-### FormKitBoxSlots
-
+::api-entry{name="FormKitBoxSlots" type="interface"}
 The slots available to the radio and checkbox inputs when options are provided.
 
 
@@ -652,9 +646,9 @@ interface FormKitBoxSlots<Props extends FormKitInputs<Props>> {
     wrapper: FormKitSlotData<Props, OptionSlotData<Props>>;
 }
 ```
+::
 
-### FormKitConditionalProps
-
+::api-entry{name="FormKitConditionalProps" type="interface"}
 These are props that are used as conditionals in one or more inputs, and as such they need to be defined on all input types. These should all be defined explicitly as "undefined" here, and then defined as their specific type in the FormKitInputProps interface only on the inputs that use them.
 
 
@@ -666,30 +660,10 @@ interface FormKitConditionalProps {
     options: undefined;
 }
 ```
+::
 
-### FormKitEventsAsProps
-
-In a perfect world this interface would not be required at all. However, Vue expects the interfaces to be defined as method overloads. Unfortunately since our events interface uses generics UnionToIntersection is not able to be used meaning that we lose event data if we store the events as a standard interface with property keys. The only way we have found to reliably get Volar (as of June 2023) to properly recognize all defined events is to use a the "standard" method overload approach (see FormKitBaseEvents).
-
-(Basically we cannot use the events in this interface to automatically produce the FormKitBaseEvents without Volar loosing event data)
-
-This means we have no way to get the event names out of the interface so we cannot properly use them in our props. This matters for things like TSX support where the event names need to be available as `onEventName` props.
-
-This interface is used to manually patch that gap in the type system. These types should match up 1-1 with the events defined in FormKitBaseEvents as well as FormKitInputEvents.
-
-
-```typescript
-interface FormKitEventsAsProps {
-    'onUpdate: modelValue': (value: unknown, node: FormKitNode) => any;
-    onInput: (value: unknown, node: FormKitNode) => any;
-    onInputRaw: (value: unknown, node: FormKitNode) => any;
-    onNode: (node: FormKitNode) => any;
-}
-```
-
-### FormKitFile
-
-A single file object in FormKit’s synthetic "FileList".
+::api-entry{name="FormKitFile" type="interface"}
+A single file object in FormKit's synthetic "FileList".
 
 
 ```typescript
@@ -698,9 +672,9 @@ interface FormKitFile {
     name: string;
 }
 ```
+::
 
-### FormKitFileSlots
-
+::api-entry{name="FormKitFileSlots" type="interface"}
 The slots available to the file input, these extend the base slots.
 
 
@@ -723,256 +697,9 @@ interface FormKitFileSlots<Props extends FormKitInputs<Props>> extends FormKitBa
     noFiles: FormKitSlotData<Props>;
 }
 ```
+::
 
-### FormKitInputEvents
-
-Unique events emitted by each FormKit input. The shape of this interface is:
-
-
-```ts
-interface FormKitInputEvents<Props extends Inputs> {
-  typeString: { customEvent: (value: PropType<Props, 'value'>) => any } // <-- All unique events
-}
-```
-
-All inputs will also inherit all events from FormKitBaseInputEvents.
-
-
-```typescript
-interface FormKitInputEvents<Props extends FormKitInputs<Props>> {
-    form:{
-        (event:'submit-raw', e: Event, node: FormKitNode): any;
-        (event:'submit-invalid', node: FormKitNode): any;
-        (event:'submit', data: any, node: FormKitNode): any;
-    };
-}
-```
-
-### FormKitInputEventsAsProps
-
-See the comment tome on  for why this type is necessary.
-
-
-```typescript
-interface FormKitInputEventsAsProps<Props extends FormKitInputs<Props>> {
-    form:{
-        onSubmitRaw: (e: Event, node: FormKitNode) => any;
-        onSubmitInvalid: (node: FormKitNode) => any;
-        onSubmit: (data: any, node: FormKitNode) => any;
-    };
-}
-```
-
-### FormKitInputProps
-
-This is the base interface for providing prop definitions to the FormKit component. It is used to define the props that are available to the each component in the FormKit library by using a discriminated union type. The structure of this interface is:
-
-
-```ts
-interface FormKitInputProps {
- typeString: { type: 'string'; value?: string } // <-- All unique props
-}
-```
-
-All inputs will also inherit all props from FormKitBaseInputProps.
-
-Note: It is important that all inputs provide a type and a value prop.
-
-
-```typescript
-interface FormKitInputProps<Props extends FormKitInputs<Props>> {
-    _:{
-        type?: Props['type']extendskeyofFormKitInputProps<Props>?never: Props['type'];
-        value?: string;
-    };
-    button:{
-        type:'button';
-        value?: undefined;
-    };
-    checkbox:{
-        type:'checkbox';
-        options?: FormKitOptionsProp;
-        onValue?: any;
-        offValue?: any;
-        value?: Props['options']extendsRecord<inferT, string>?T[]: Props['options']extendsFormKitOptionsItem[]?Array<Props['options'][number]['value']>: Props['options']extendsArray<inferT>?T[]: (Props['onValue']extendsAllReals?Props['onValue']: true) | (Props['offValue']extendsAllReals?Props['offValue']: false);
-    };
-    color:{
-        type:'color';
-        value?: string;
-    };
-    date:{
-        type:'date';
-        value?: string;
-    };
-    datetimeLocal:{
-        type:'datetimeLocal';
-        value?: string;
-    };
-    email:{
-        type:'email';
-        value?: string;
-    };
-    file:{
-        type:'file';
-        value?: FormKitFile[];
-    };
-    form:{
-        type:'form';
-        value?: FormKitGroupValue;
-        actions?: boolean | string;
-        submitAttrs?: Record<string, any>;
-        submitBehavior?:'disabled' | 'live';
-        incompleteMessage?: false | string;
-    };
-    group:{
-        type:'group';
-        value?: FormKitGroupValue;
-    };
-    hidden:{
-        type:'hidden';
-        value?: Props['number']extendsAllReals?number: string;
-        number?:'integer' | 'float' | 'true' | true;
-    };
-    list:{
-        type:'list';
-        value?: unknown[];
-        dynamic?: boolean | 'true' | 'false';
-        sync?: boolean | 'true' | 'false';
-    };
-    meta:{
-        type:'meta';
-        value?: any;
-    };
-    month:{
-        type:'month';
-        value?: string;
-    };
-    number:{
-        type:'number';
-        value?: Props['number']extendsAllReals?number: string;
-        number?:'integer' | 'float' | 'true' | true;
-    };
-    password:{
-        type:'password';
-        value?: string;
-    };
-    radio:{
-        type:'radio';
-        options: FormKitOptionsProp;
-        value?: FormKitOptionsValue<Props['options']>;
-    };
-    range:{
-        type:'range';
-        value?: Props['number']extendsAllReals?number: string;
-        number?:'integer' | 'float' | 'true' | true;
-    };
-    search:{
-        type:'search';
-        value?: Props['number']extendsAllReals?number | string: string;
-        number?:'integer' | 'float' | 'true' | true;
-    };
-    select:{
-        type:'select';
-        options?: FormKitOptionsPropWithGroups;
-        value?: FormKitOptionsValue<Props['options']>;
-    };
-    submit:{
-        type:'submit';
-        value?: string;
-    };
-    tel:{
-        type:'tel';
-        value?: Props['number']extendsAllReals?number | string: string;
-        number?:'integer' | 'float' | 'true' | true;
-    };
-    text:{
-        type:'text';
-        value?: Props['number']extendsAllReals?number | string: string;
-        number?:'integer' | 'float' | 'true' | true;
-    };
-    textarea:{
-        type:'textarea';
-        value?: string;
-    };
-    time:{
-        type:'time';
-        value?: string;
-    };
-    url:{
-        type:'url';
-        value?: string;
-    };
-    week:{
-        type:'week';
-        value?: string;
-    };
-}
-```
-
-### FormKitInputSlots
-
-Slots provided by each FormKit input. The shape of this interface is:
-
-
-```ts
-interface FormKitInputSlots<Props extends Inputs> {
-  typeString: { default: (value: PropType<Props, 'value'>) => any } // <-- All unique slots
-}
-```
-
-There is no automatic inheritance of slots — each slot must be explicitly defined for each input.
-
-
-```typescript
-interface FormKitInputSlots<Props extends FormKitInputs<Props>> {
-    'datetime-local': FormKitTextSlots<Props>;
-    button: FormKitButtonSlots<Props>;
-    checkbox: Props['options']extendsAllReals?FormKitBoxSlots<Props>: FormKitBaseSlots<Props>;
-    color: FormKitTextSlots<Props>;
-    date: FormKitTextSlots<Props>;
-    email: FormKitTextSlots<Props>;
-    file: FormKitFileSlots<Props>;
-    form:{
-        form: FormKitSlotData<Props>;
-        default: FormKitSlotData<Props>;
-        message: FormKitSlotData<Props, {
-        message: FormKitMessage;
-    }>;
-        messages: FormKitSlotData<Props>;
-        actions: FormKitSlotData<Props>;
-        submit: FormKitSlotData<Props>;
-    };
-    group:{
-        default: FormKitSlotData<Props>;
-    };
-    hidden:{
-        input: FormKitSlotData<Props>;
-    };
-    list:{
-        default: FormKitSlotData<Props>;
-    };
-    meta:{
-        wrapper: FormKitSlotData<Props>;
-    };
-    month: FormKitTextSlots<Props>;
-    number: FormKitTextSlots<Props>;
-    password: FormKitTextSlots<Props>;
-    radio: Props['options']extendsAllReals?FormKitBoxSlots<Props>: FormKitBaseSlots<Props>;
-    range: FormKitTextSlots<Props>;
-    search: FormKitTextSlots<Props>;
-    select: FormKitSelectSlots<Props>;
-    submit: FormKitButtonSlots<Props>;
-    tel: FormKitTextSlots<Props>;
-    text: FormKitTextSlots<Props>;
-    textarea: FormKitTextSlots<Props>;
-    time: FormKitTextSlots<Props>;
-    url: FormKitTextSlots<Props>;
-    week: FormKitTextSlots<Props>;
-}
-```
-
-### FormKitOptionsGroupItem
-
+::api-entry{name="FormKitOptionsGroupItem" type="interface"}
 Option groups should always be formatted as an array of objects with group and nested options
 
 
@@ -983,9 +710,9 @@ interface FormKitOptionsGroupItem {
     options: FormKitOptionsList;
 }
 ```
+::
 
-### FormKitOptionsGroupItemProp
-
+::api-entry{name="FormKitOptionsGroupItemProp" type="interface"}
 Option groups should always be formatted as an array of objects with group and nested options
 
 
@@ -996,9 +723,9 @@ interface FormKitOptionsGroupItemProp {
     options: FormKitOptionsProp;
 }
 ```
+::
 
-### FormKitOptionsItem
-
+::api-entry{name="FormKitOptionsItem" type="interface"}
 Options should always be formatted as an array of objects with label and value properties.
 
 
@@ -1013,9 +740,9 @@ interface FormKitOptionsItem<V = unknown> {
     value: V;
 }
 ```
+::
 
-### FormKitOptionsPropExtensions
-
+::api-entry{name="FormKitOptionsPropExtensions" type="interface"}
 Allows for prop extensions to be defined by using an interface whose keys are ignored, but values are applied to a union type. This allows for any third party code to extend the options prop by using module augmentation to add new values to the union type.
 
 
@@ -1027,43 +754,9 @@ interface FormKitOptionsPropExtensions {
     valueLabelPojo: Record<string | number, string>;
 }
 ```
+::
 
-### FormKitRuntimeProps
-
-Typings for all the built in runtime props.
-
-Warning: As of writing these are only specific to Vue’s runtime prop requirements and should not be used as any kind of external API as they are subject to change.
-
-
-```typescript
-interface FormKitRuntimeProps<Props extends FormKitInputs<Props>> {
-    classes: Record<string, string | Record<string, boolean> | FormKitClasses>;
-    config: Record<string, any>;
-    delay: number;
-    errors: string[];
-    id: string;
-    index: number;
-    inputErrors: Record<string, string[]>;
-    modelValue: PropType<Props, 'value'>;
-    name: string;
-    parent: FormKitNode;
-    plugins: FormKitPlugin[];
-    sectionsSchema: Record<string, Partial<FormKitSchemaNode> | FormKitSchemaCondition>;
-    sync: boolean | undefined;
-    type: string | FormKitTypeDefinition;
-    validation: string | Array<[rule: string, ...args: any]>;
-    validationLabel: string | ((node: FormKitNode) => string);
-    validationMessages: Record<string, string | ((ctx:{
-        node: FormKitNode;
-        name: string;
-        args: any[];
-    }) => string)>;
-    validationRules: Record<string, (node: FormKitNode) => boolean | Promise<boolean>>;
-}
-```
-
-### FormKitSchemaExtendableSection
-
+::api-entry{name="FormKitSchemaExtendableSection" type="interface"}
 A function that is called with an extensions argument and returns a valid schema node.
 
 
@@ -1073,9 +766,9 @@ interface FormKitSchemaExtendableSection {
     (extensions: Record<string, Partial<FormKitSchemaNode>>): FormKitSchemaNode;
 }
 ```
+::
 
-### FormKitSection
-
+::api-entry{name="FormKitSection" type="interface"}
 A function that when called, returns a function that can in turn be called with an extension parameter.
 
 
@@ -1084,9 +777,9 @@ interface FormKitSection<T = FormKitSchemaExtendableSection> {
     (...children: Array<FormKitSchemaExtendableSection | string | FormKitSchemaCondition>): T;
 }
 ```
+::
 
-### FormKitSelectSlots
-
+::api-entry{name="FormKitSelectSlots" type="interface"}
 The slots available to the sekect input, these extend the base slots.
 
 
@@ -1097,9 +790,9 @@ interface FormKitSelectSlots<Props extends FormKitInputs<Props>> extends FormKit
     selectIcon: FormKitSlotData<Props>;
 }
 ```
+::
 
-### FormKitSlotData
-
+::api-entry{name="FormKitSlotData" type="interface"}
 The shape of the context object that is passed to each slot.
 
 
@@ -1108,9 +801,9 @@ interface FormKitSlotData<Props extends FormKitInputs<Props>, E extends Record<s
     (context: FormKitFrameworkContext<PropType<Props, 'value'>>&E): any;
 }
 ```
+::
 
-### FormKitTextSlots
-
+::api-entry{name="FormKitTextSlots" type="interface"}
 The slots available to the FormKitText input, these extend the base slots.
 
 
@@ -1118,9 +811,9 @@ The slots available to the FormKitText input, these extend the base slots.
 interface FormKitTextSlots<Props extends FormKitInputs<Props>> extends FormKitBaseSlots<Props> {
 }
 ```
+::
 
-### OptionSlotData
-
+::api-entry{name="OptionSlotData" type="interface"}
 The data available to slots that have an option in scope.
 
 
@@ -1129,18 +822,18 @@ interface OptionSlotData<Props extends FormKitInputs<Props>> {
     option: FormKitOptionsItem<PropType<Props, 'value'>>;
 }
 ```
+::
 
-### AllReals
-
+::api-entry{name="AllReals" type="type"}
 An attempt to capture all non-undefined values. This is used to define various conditionals where undefined is not a concrete type, but all other values need to take one logical branch.
 
 
 ```typescript
 export type AllReals = number | string | boolean | CallableFunction | Array<any> | null | Record<any, any>;
 ```
+::
 
-### FormKitButtonSlots
-
+::api-entry{name="FormKitButtonSlots" type="type"}
 The slots available to the button input, these extend the base slots.
 
 
@@ -1149,117 +842,117 @@ export type FormKitButtonSlots<Props extends FormKitInputs<Props>> = Omit<FormKi
     default: FormKitSlotData<Props>;
 };
 ```
+::
 
-### FormKitEvents
-
+::api-entry{name="FormKitEvents" type="type"}
 All FormKit events should be included for a given set of props.
 
 
 ```typescript
 export type FormKitEvents<Props extends FormKitInputs<Props>> = MergedEvents<Props>;
 ```
+::
 
-### FormKitFileValue
-
+::api-entry{name="FormKitFileValue" type="type"}
 A synthetic array-based "FileList".
 
 
 ```typescript
 export type FormKitFileValue = FormKitFile[];
 ```
+::
 
-### FormKitInputs
-
+::api-entry{name="FormKitInputs" type="type"}
 All FormKit inputs should be included for this type.
 
 
 ```typescript
 export type FormKitInputs<Props extends FormKitInputs<Props>> = MergedProps<Props>[keyof MergedProps<Props>];
 ```
+::
 
-### FormKitInputSchema
-
+::api-entry{name="FormKitInputSchema" type="type"}
 Either a schema node, or a function that returns a schema node.
 
 
 ```typescript
 export type FormKitInputSchema = ((children?: FormKitSchemaDefinition) => FormKitSchemaNode) | FormKitSchemaNode;
 ```
+::
 
-### FormKitOptionsList
-
+::api-entry{name="FormKitOptionsList" type="type"}
 An array of option items.
 
 
 ```typescript
 export type FormKitOptionsList = FormKitOptionsItem[];
 ```
+::
 
-### FormKitOptionsListWithGroups
-
+::api-entry{name="FormKitOptionsListWithGroups" type="type"}
 An array of option items with a group.
 
 
 ```typescript
 export type FormKitOptionsListWithGroups = Array<FormKitOptionsItem | FormKitOptionsGroupItem>;
 ```
+::
 
-### FormKitOptionsListWithGroupsProp
-
+::api-entry{name="FormKitOptionsListWithGroupsProp" type="type"}
 An array of option items with a group support — where the `option` of the groups can be any valid FormKitOptionsProp type.
 
 
 ```typescript
 export type FormKitOptionsListWithGroupsProp = Array<FormKitOptionsItem | FormKitOptionsGroupItemProp>;
 ```
+::
 
-### FormKitOptionsProp
-
+::api-entry{name="FormKitOptionsProp" type="type"}
 The types of options that can be passed to the options prop.
 
 
 ```typescript
 export type FormKitOptionsProp = FormKitOptionsPropExtensions[keyof FormKitOptionsPropExtensions];
 ```
+::
 
-### FormKitOptionsPropWithGroups
-
+::api-entry{name="FormKitOptionsPropWithGroups" type="type"}
 The types of options that can be passed to the options prop.
 
 
 ```typescript
 export type FormKitOptionsPropWithGroups = FormKitOptionsProp | FormKitOptionsListWithGroupsProp;
 ```
+::
 
-### FormKitOptionsValue
-
+::api-entry{name="FormKitOptionsValue" type="type"}
 The proper shape of data to be passed to options prop.
 
 
 ```typescript
 export type FormKitOptionsValue<Options> = Options extends FormKitOptionsProp ? Options extends Record<infer T, string> ? T : Options extends FormKitOptionsItem[] ? Options[number]['value'] : Options extends Array<infer T> ? T : unknown : unknown;
 ```
+::
 
-### InputType
-
+::api-entry{name="InputType" type="type"}
 Selects the "type" from the props if it exists, otherwise it defaults to "text".
 
 
 ```typescript
 export type InputType<Props extends FormKitInputs<Props>> = Props['type'] extends string ? Props['type'] : 'text';
 ```
+::
 
-### MergedEvents
-
+::api-entry{name="MergedEvents" type="type"}
 Merge all events into a single type. This is then used as the structure for
 
 
 ```typescript
 export type MergedEvents<Props extends FormKitInputs<Props>> = InputType<Props> extends keyof FormKitInputEvents<Props> ? FormKitBaseEvents<Props> & FormKitInputEvents<Props>[InputType<Props>] : FormKitBaseEvents<Props>;
 ```
+::
 
-### MergedProps
-
+::api-entry{name="MergedProps" type="type"}
 A merger of input props, base props, and conditional props. This is then used as the structure for the FormKitInputs type.
 
 
@@ -1268,9 +961,9 @@ export type MergedProps<Props extends FormKitInputs<Props>> = {
     [K in keyof FormKitInputProps<Props>]: Omit<Partial<FormKitBaseProps>, keyof FormKitInputProps<Props>[K]> & Omit<Partial<FormKitRuntimeProps<Props>>, keyof FormKitInputProps<Props>[K]> & Omit<Partial<FormKitConditionalProps>, keyof FormKitInputProps<Props>[K]> & Partial<K extends keyof FormKitInputEventsAsProps<Props> ? Omit<FormKitEventsAsProps, keyof FormKitInputEventsAsProps<Props>[K]> & FormKitInputEventsAsProps<Props>[K] : FormKitEventsAsProps> & FormKitInputProps<Props>[K];
 };
 ```
+::
 
-### PropType
-
+::api-entry{name="PropType" type="type"}
 Extracts the type from a given prop.
 
 
@@ -1279,3 +972,4 @@ export type PropType<Props extends FormKitInputs<Props>, T extends keyof FormKit
     type: Props['type'] extends string ? Props['type'] : 'text';
 }>[T];
 ```
+::

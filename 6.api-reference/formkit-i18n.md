@@ -11,8 +11,7 @@ The official FormKit internationalization (i18n) plugin. This package contains t
 
 ## Functions
 
-### createI18nPlugin()
-
+::api-entry{name="createI18nPlugin()" type="function"}
 Create a new internationalization plugin for FormKit.
 
 #### Signature
@@ -29,9 +28,9 @@ createI18nPlugin(registry: FormKitLocaleRegistry): FormKitPlugin;
 #### Returns
 
  [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+::
 
-### date()
-
+::api-entry{name="date()" type="function"}
 Given a string or a date, return a nice human-readable version.
 
 #### Signature
@@ -48,9 +47,9 @@ date(date: string | Date): string;
 #### Returns
 
  `string`
+::
 
-### list()
-
+::api-entry{name="list()" type="function"}
 Creates an oxford-comma separated list of items.
 
 #### Signature
@@ -68,9 +67,9 @@ list(items: string[], conjunction?: string): string;
 #### Returns
 
  `string`
+::
 
-### order()
-
+::api-entry{name="order()" type="function"}
 Orders two variables from smallest to largest.
 
 #### Signature
@@ -88,9 +87,9 @@ order(first: string | number, second: string | number): [smaller: number | strin
 #### Returns
 
  `[smaller: number | string, larger: number | string]`
+::
 
-### sentence()
-
+::api-entry{name="sentence()" type="function"}
 Given a string, convert it to sentence case.
 
 #### Signature
@@ -107,11 +106,11 @@ sentence(str: string): string;
 #### Returns
 
  `string`
+::
 
 ## TypeScript
 
-### FormKitLocale
-
+::api-entry{name="FormKitLocale" type="interface"}
 A locale is just a collection of locale message registries, they are keyed by the type (like a namespace) ex: "validation" or "ui". Plugin authors can declare their own types too.
 
 
@@ -121,9 +120,9 @@ interface FormKitLocale {
     ui: FormKitLocaleMessages;
 }
 ```
+::
 
-### FormKitLocaleMessages
-
+::api-entry{name="FormKitLocaleMessages" type="interface"}
 A registry of locale messages — this is a keyed/value object with string keys (message name) and either string values (for simple returns) or functions that receive a context object.
 
 
@@ -132,9 +131,9 @@ interface FormKitLocaleMessages {
     [index: string]: string | ((...args: any[]) => string);
 }
 ```
+::
 
-### FormKitLocaleRegistry
-
+::api-entry{name="FormKitLocaleRegistry" type="interface"}
 The locale registry is just a key-value pair of locale indexes ('ar', 'en', 'it', etc.) to their respective locales.
 
 
@@ -143,3 +142,4 @@ interface FormKitLocaleRegistry {
     [index: string]: FormKitLocale;
 }
 ```
+::

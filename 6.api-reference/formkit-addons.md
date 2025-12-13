@@ -12,8 +12,7 @@ You can add this package by using `npm install @formkit/addons` or `yarn add @fo
 
 ## Functions
 
-### createAutoAnimatePlugin()
-
+::api-entry{name="createAutoAnimatePlugin()" type="function"}
 Adds auto-animate to each input automatically:
 
 #### Signature
@@ -29,7 +28,7 @@ createAutoAnimatePlugin(options?: AutoAnimateOptions, animationTargets?: Record<
 
 #### Returns
 
- [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+[FormKitPlugin](/api-reference/formkit-core#formkitplugin)
 
 #### Examples
 
@@ -57,9 +56,9 @@ createApp(app).use(plugin, defaultPlugin({
   ]
 }))
 ```
+::
 
-### createAutoHeightTextareaPlugin()
-
+::api-entry{name="createAutoHeightTextareaPlugin()" type="function"}
 Creates a new auto-height textarea plugin.
 
 #### Signature
@@ -71,10 +70,10 @@ createAutoHeightTextareaPlugin(): FormKitPlugin;
 
 #### Returns
 
- A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+[FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+::
 
-### createFloatingLabelsPlugin()
-
+::api-entry{name="createFloatingLabelsPlugin()" type="function"}
 Creates a new floating label plugin.
 
 #### Signature
@@ -90,10 +89,10 @@ createFloatingLabelsPlugin(FloatingLabelsOptions?: FloatingLabelsOptions): FormK
 
 #### Returns
 
- A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+[FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+::
 
-### createLocalStoragePlugin()
-
+::api-entry{name="createLocalStoragePlugin()" type="function"}
 Creates a new save-to-local-storage plugin.
 
 #### Signature
@@ -109,10 +108,10 @@ createLocalStoragePlugin(localStorageOptions?: LocalStorageOptions): FormKitPlug
 
 #### Returns
 
- A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+[FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+::
 
-### createMultiStepPlugin()
-
+::api-entry{name="createMultiStepPlugin()" type="function"}
 Creates a new multi-step plugin.
 
 #### Signature
@@ -128,12 +127,12 @@ createMultiStepPlugin(options?: MultiStepOptions): FormKitPlugin;
 
 #### Returns
 
- A [FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+[FormKitPlugin](/api-reference/formkit-core#formkitplugin)
+::
 
 ## TypeScript
 
-### BeforeStepChange
-
+::api-entry{name="BeforeStepChange" type="interface"}
 The typing for the beforeStepChange function.
 
 
@@ -142,9 +141,9 @@ interface BeforeStepChange {
     (data: BeforeStepChangeData): any;
 }
 ```
+::
 
-### BeforeStepChangeData
-
+::api-entry{name="BeforeStepChangeData" type="interface"}
 
 ```typescript
 interface BeforeStepChangeData<T = unknown> {
@@ -153,9 +152,9 @@ interface BeforeStepChangeData<T = unknown> {
     nextStep: FormKitFrameworkContext<T>;
 }
 ```
+::
 
-### FloatingLabelsOptions
-
+::api-entry{name="FloatingLabelsOptions" type="interface"}
 The options to be passed to [createFloatingLabelsPlugin](#createfloatinglabelsplugin)
 
 
@@ -164,9 +163,9 @@ interface FloatingLabelsOptions {
     useAsDefault?: boolean;
 }
 ```
+::
 
-### FormKitMultiStepSlots
-
+::api-entry{name="FormKitMultiStepSlots" type="interface"}
 
 ```typescript
 interface FormKitMultiStepSlots<Props extends FormKitInputs<Props>> {
@@ -190,9 +189,9 @@ interface FormKitMultiStepSlots<Props extends FormKitInputs<Props>> {
     wrapper: FormKitSlotData<Props, MultiStepSlotData>;
 }
 ```
+::
 
-### FormKitStepSlots
-
+::api-entry{name="FormKitStepSlots" type="interface"}
 
 ```typescript
 interface FormKitStepSlots<Props extends FormKitInputs<Props>> {
@@ -203,9 +202,9 @@ interface FormKitStepSlots<Props extends FormKitInputs<Props>> {
     stepPrevious: FormKitSlotData<Props, StepSlotData>;
 }
 ```
+::
 
-### LocalStorageOptions
-
+::api-entry{name="LocalStorageOptions" type="interface"}
 The options to be passed to [createLocalStoragePlugin](#createlocalstorageplugin)
 
 
@@ -220,9 +219,9 @@ interface LocalStorageOptions {
     prefix?: string;
 }
 ```
+::
 
-### MultiStepHandlers
-
+::api-entry{name="MultiStepHandlers" type="interface"}
 
 ```typescript
 interface MultiStepHandlers {
@@ -232,9 +231,9 @@ interface MultiStepHandlers {
     triggerStepValidations: (step: FormKitFrameworkContext) => void;
 }
 ```
+::
 
-### MultiStepNodeAdditions
-
+::api-entry{name="MultiStepNodeAdditions" type="interface"}
 Additional arguments that are added to the FormKitNode of a multistep input.
 
 
@@ -245,9 +244,9 @@ interface MultiStepNodeAdditions {
     previous: () => void;
 }
 ```
+::
 
-### MultiStepOptions
-
+::api-entry{name="MultiStepOptions" type="interface"}
 The options to be passed to [createMultiStepPlugin](#createmultistepplugin)
 
 
@@ -258,9 +257,9 @@ interface MultiStepOptions {
     tabStyle?:'tab' | 'progress';
 }
 ```
+::
 
-### MultiStepSlotData
-
+::api-entry{name="MultiStepSlotData" type="interface"}
 
 ```typescript
 interface MultiStepSlotData {
@@ -275,9 +274,9 @@ interface MultiStepSlotData {
     validStepIcon: string | undefined;
 }
 ```
+::
 
-### StepHandlers
-
+::api-entry{name="StepHandlers" type="interface"}
 
 ```typescript
 interface StepHandlers {
@@ -286,9 +285,9 @@ interface StepHandlers {
     previous: () => void;
 }
 ```
+::
 
-### StepSlotData
-
+::api-entry{name="StepSlotData" type="interface"}
 Slot data unique to the step input.
 
 
@@ -317,21 +316,22 @@ interface StepSlotData {
     validStepIcon?: string;
 }
 ```
+::
 
-### FormKitMultiStepNode
-
+::api-entry{name="FormKitMultiStepNode" type="type"}
 The node type that is augmented with next and previous and goTo functions.
 
 
 ```typescript
 export type FormKitMultiStepNode = FormKitNode & MultiStepNodeAdditions;
 ```
+::
 
-### FormKitMultiStepSlotData
-
+::api-entry{name="FormKitMultiStepSlotData" type="type"}
 The typing for the slot data for a FormKit multi-step input.
 
 
 ```typescript
 export type FormKitMultiStepSlotData = FormKitFrameworkContext<Record<string, any>> & StepSlotData;
 ```
+::

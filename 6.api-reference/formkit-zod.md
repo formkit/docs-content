@@ -11,8 +11,7 @@ The first-party zod package/plugin for FormKit. Read the [documentation](/plugin
 
 ## Functions
 
-### createZodPlugin()
-
+::api-entry{name="createZodPlugin()" type="function"}
 Creates a new Zod schema plugin for form validation.
 
 #### Signature
@@ -30,3 +29,4 @@ createZodPlugin<Z extends z.ZodTypeAny>(zodSchema: Z, submitCallback: (payload: 
 #### Returns
 
  A tuple of a [FormKitPlugin](/api-reference/formkit-core#formkitplugin) and a submit handler.
+::

@@ -13,10 +13,8 @@ You can add this package by using `npm install @formkit/utils` or `yarn add @for
 
 ## Functions
 
-### assignDeep()
-
-Performs a recursive `Object.assign`
--like operation.
+::api-entry{name="assignDeep()" type="function"}
+Performs a recursive `Object.assign`-like operation.
 
 #### Signature
 
@@ -33,9 +31,9 @@ assignDeep<A extends Record<PropertyKey, any>, B extends Record<PropertyKey, any
 #### Returns
 
  `A & B`
+::
 
-### camel()
-
+::api-entry{name="camel()" type="function"}
 This converts kebab-case to camelCase. It ONLY converts from kebab to camel.
 
 #### Signature
@@ -52,9 +50,9 @@ camel(str: string): string;
 #### Returns
 
  `string`
+::
 
-### clone()
-
+::api-entry{name="clone()" type="function"}
 Perform a recursive clone on a given object. Only intended to be used for simple objects like arrays and POJOs.
 
 #### Signature
@@ -72,9 +70,9 @@ clone<T extends Record<string, unknown> | unknown[] | null>(obj: T, explicit?: s
 #### Returns
 
  `T`
+::
 
-### cloneAny()
-
+::api-entry{name="cloneAny()" type="function"}
 Clones anything. If the item is scalar, no worries, it passes it back. If it is an object, it performs a (fast/loose) clone operation.
 
 #### Signature
@@ -91,9 +89,9 @@ cloneAny<T>(obj: T): T;
 #### Returns
 
  `T`
+::
 
-### dedupe()
-
+::api-entry{name="dedupe()" type="function"}
 Given 2 arrays, return them as a combined array with no duplicates.
 
 #### Signature
@@ -111,9 +109,9 @@ dedupe<T extends any[] | Set<any>, X extends any[] | Set<any>>(arr1: T, arr2?: X
 #### Returns
 
  `any[]`
+::
 
-### empty()
-
+::api-entry{name="empty()" type="function"}
 Determines if a value is empty or not.
 
 #### Signature
@@ -130,9 +128,9 @@ empty(value: any): boolean;
 #### Returns
 
  `boolean`
+::
 
-### eq()
-
+::api-entry{name="eq()" type="function"}
 Compare two values for equality, optionally at depth.
 
 #### Signature
@@ -152,9 +150,9 @@ eq(valA: any, valB: any, deep?: boolean, explicit?: string[]): boolean;
 #### Returns
 
  `boolean`
+::
 
-### eqRegExp()
-
+::api-entry{name="eqRegExp()" type="function"}
 A regular expression to test for a valid date string.
 
 #### Signature
@@ -168,9 +166,9 @@ eqRegExp(x: RegExp, y: RegExp): boolean;
 
 - `x` — A RegExp to compare.
 - `y` — A RegExp to compare.
+::
 
-### escapeExp()
-
+::api-entry{name="escapeExp()" type="function"}
 Escape a string for use in regular expressions.
 
 #### Signature
@@ -187,9 +185,9 @@ escapeExp(string: string): string;
 #### Returns
 
  `string`
+::
 
-### except()
-
+::api-entry{name="except()" type="function"}
 Return a new (shallow) object with any desired props removed.
 
 #### Signature
@@ -207,9 +205,9 @@ except(obj: Record<string, any>, toRemove: Array<string | RegExp>): Record<strin
 #### Returns
 
  `Record<string, any>`
+::
 
-### extend()
-
+::api-entry{name="extend()" type="function"}
 Recursively merge data from additional into original returning a new object.
 
 #### Signature
@@ -229,11 +227,9 @@ extend(original: Record<string, any>, additional: Record<string, any> | string |
 #### Returns
 
  `Record<string, any> | string | null`
+::
 
-__NO_SIDE_EFFECTS__
-
-### getAt()
-
+::api-entry{name="getAt()" type="function"}
 Get a specific value via dot notation.
 
 #### Signature
@@ -251,9 +247,9 @@ getAt(obj: any, addr: string): unknown;
 #### Returns
 
  `unknown`
+::
 
-### has()
-
+::api-entry{name="has()" type="function"}
 Checks if the given property exists on the given object.
 
 #### Signature
@@ -274,9 +270,9 @@ has(obj: {
 #### Returns
 
  `boolean`
+::
 
-### init()
-
+::api-entry{name="init()" type="function"}
 Defines an object as an initial value.
 
 #### Signature
@@ -295,9 +291,9 @@ init<T extends object>(obj: T): T & {
 #### Returns
 
  `T & { __init?: true }`
+::
 
-### isObject()
-
+::api-entry{name="isObject()" type="function"}
 Checks if an object is a simple array or record.
 
 #### Signature
@@ -314,9 +310,9 @@ isObject(o: unknown): o is Record<PropertyKey, unknown> | unknown[];
 #### Returns
 
  `boolean`
+::
 
-### isPojo()
-
+::api-entry{name="isPojo()" type="function"}
 Attempts to determine if an object is a POJO (Plain Old JavaScript Object). Mostly lifted from is-plain-object: https://github.com/jonschlinkert/is-plain-object Copyright (c) 2014-2017, Jon Schlinkert.
 
 #### Signature
@@ -333,9 +329,9 @@ isPojo(o: any): o is Record<string, any>;
 #### Returns
 
  `boolean`
+::
 
-### isQuotedString()
-
+::api-entry{name="isQuotedString()" type="function"}
 Determine if the given string is fully quoted.
 
 #### Signature
@@ -366,9 +362,9 @@ hello - false
 "hello""there" - false
 'hello === world' - true
 ```
+::
 
-### isRecord()
-
+::api-entry{name="isRecord()" type="function"}
 Determines if an object is an object.
 
 #### Signature
@@ -385,9 +381,9 @@ isRecord(o: unknown): o is Record<PropertyKey, unknown>;
 #### Returns
 
  `boolean`
+::
 
-### kebab()
-
+::api-entry{name="kebab()" type="function"}
 This converts camel-case to kebab case. It ONLY converts from camel to kebab.
 
 #### Signature
@@ -404,9 +400,9 @@ kebab(str: string): string;
 #### Returns
 
  `string`
+::
 
-### nodeProps()
-
+::api-entry{name="nodeProps()" type="function"}
 Filters out values from an object that should not be considered "props" of a core node, like "value" and "name".
 
 #### Signature
@@ -423,9 +419,9 @@ nodeProps(...sets: Array<Record<string, any>>): Record<string, any>;
 #### Returns
 
  `Record<string, any>`
+::
 
-### nodeType()
-
+::api-entry{name="nodeType()" type="function"}
 Given a FormKit input type, returns the correct lowerCased() type.
 
 #### Signature
@@ -442,9 +438,9 @@ nodeType(type: string): 'list' | 'group' | 'input';
 #### Returns
 
  `'list' | 'group' | 'input'`
+::
 
-### oncePerTick()
-
+::api-entry{name="oncePerTick()" type="function"}
 Given a function only 1 call will be made per call stack. All others will be discarded.
 
 #### Signature
@@ -457,11 +453,9 @@ oncePerTick<T extends CallableFunction>(fn: T): T;
 #### Parameters
 
 - `fn` — The function to be called once per tick.
+::
 
-#### Returns
-
-### only()
-
+::api-entry{name="only()" type="function"}
 Extracts a set of keys from a given object. Importantly, this will extract values even if they are not set on the original object — they will just have an undefined value.
 
 #### Signature
@@ -479,9 +473,9 @@ only(obj: Record<string, any>, include: Array<string | RegExp>): Record<string, 
 #### Returns
 
  `Record<string, any>`
+::
 
-### parseArgs()
-
+::api-entry{name="parseArgs()" type="function"}
 Parse a string for comma-separated arguments.
 
 #### Signature
@@ -498,9 +492,9 @@ parseArgs(str: string): string[];
 #### Returns
 
  `string[]`
+::
 
-### regexForFormat()
-
+::api-entry{name="regexForFormat()" type="function"}
 Given a string date format, return a regex to match against.
 
 #### Signature
@@ -524,9 +518,9 @@ regexForFormat(format: string): RegExp;
 ```javascript
 regexForFormat('MM') // returns '(0[1-9]|1[012])'
 ```
+::
 
-### rmEscapes()
-
+::api-entry{name="rmEscapes()" type="function"}
 Remove extra escape characters.
 
 #### Signature
@@ -543,9 +537,9 @@ rmEscapes(str: string): string;
 #### Returns
 
  `string`
+::
 
-### setify()
-
+::api-entry{name="setify()" type="function"}
 Creates a new set of the specified type and uses the values from an Array or an existing Set.
 
 #### Signature
@@ -572,9 +566,9 @@ import { setify } from '@formkit/utils'
 const tk = setify(['a', 'b'])
 // Set(2) {'a', 'b'}
 ```
+::
 
-### shallowClone()
-
+::api-entry{name="shallowClone()" type="function"}
 Shallowly clones the given object.
 
 #### Signature
@@ -592,9 +586,9 @@ shallowClone<T>(obj: T, explicit?: string[]): T;
 #### Returns
 
  `T`
+::
 
-### slugify()
-
+::api-entry{name="slugify()" type="function"}
 Turn any string into a URL/DOM-safe string.
 
 #### Signature
@@ -606,15 +600,14 @@ slugify(str: string): string;
 
 #### Parameters
 
-- `str` — String to be slugified to a URL
--safe string.
+- `str` — String to be slugified to a URL-safe string.
 
 #### Returns
 
  `string`
+::
 
-### spread()
-
+::api-entry{name="spread()" type="function"}
 Spreads an object or an array, otherwise returns the same value.
 
 #### Signature
@@ -632,9 +625,9 @@ spread<T>(obj: T, explicit?: string[]): T;
 #### Returns
 
  `T`
+::
 
-### token()
-
+::api-entry{name="token()" type="function"}
 Generates a random string.
 
 #### Signature
@@ -657,9 +650,9 @@ import { token } from '@formkit/utils'
 const tk = token()
 // 'jkbyqnphqm'
 ```
+::
 
-### undefine()
-
+::api-entry{name="undefine()" type="function"}
 Determines if the value of a prop that is either present (true) or not present (undefined). For example, the prop disabled should disable by just existing, but what if it is set to the string "false" — then it should not be disabled.
 
 #### Signature
@@ -676,9 +669,9 @@ undefine(value: unknown): true | undefined;
 #### Returns
 
  `true | undefined`
+::
 
-### whenAvailable()
-
+::api-entry{name="whenAvailable()" type="function"}
 Uses a global mutation observer to wait for a given element to appear in the DOM.
 
 #### Signature
@@ -693,14 +686,15 @@ whenAvailable(childId: string, callback: (el: Element) => void, root?: Document 
 - `childId` — The id of the child node.
 - `callback` — The callback to call when the child node is found.
 - `root` *optional*
+::
 
 ## TypeScript
 
-### FormKitDateTokens
-
+::api-entry{name="FormKitDateTokens" type="type"}
 The date token strings that can be used for date formatting.
 
 
 ```typescript
 export type FormKitDateTokens = 'MM' | 'M' | 'DD' | 'D' | 'YYYY' | 'YY';
 ```
+::

@@ -7,8 +7,7 @@ title: formkit/schema
 
 ## Functions
 
-### compile()
-
+::api-entry{name="compile()" type="function"}
 Compiles a logical string like "a != z || b == c" into a single function. The return value is an object with a "provide" method that iterates over all requirement tokens to use as replacements.
 
 
@@ -33,11 +32,9 @@ compile(expr: string): FormKitConditionCompiler;
 #### Parameters
 
 - `expr` — A string to compile
+::
 
-#### Returns
-
-### isComponent()
-
+::api-entry{name="isComponent()" type="function"}
 Type narrow that a node is a DOM node.
 
 #### Signature
@@ -50,11 +47,9 @@ isComponent(node: string | Record<PropertyKey, any>): node is FormKitSchemaCompo
 #### Parameters
 
 - `node` — A schema node to check
+::
 
-#### Returns
-
-### isConditional()
-
+::api-entry{name="isConditional()" type="function"}
 Determines if a node is conditionally rendered or not.
 
 #### Signature
@@ -68,11 +63,9 @@ isConditional(node: FormKitSchemaAttributesCondition | FormKitSchemaAttributes):
 #### Parameters
 
 - `node` — A schema node to check
+::
 
-#### Returns
-
-### isDOM()
-
+::api-entry{name="isDOM()" type="function"}
 Type narrow that a node is a DOM node.
 
 #### Signature
@@ -85,11 +78,9 @@ isDOM(node: string | Record<PropertyKey, any>): node is FormKitSchemaDOMNode;
 #### Parameters
 
 - `node` — A schema node to check
+::
 
-#### Returns
-
-### isNode()
-
+::api-entry{name="isNode()" type="function"}
 Determines if t a node is a $formkit schema node.
 
 #### Signature
@@ -102,13 +93,11 @@ isNode(node: string | Record<PropertyKey, any>): node is FormKitSchemaFormKitNod
 #### Parameters
 
 - `node` — A schema node to check
-
-#### Returns
+::
 
 ## TypeScript
 
-### FormKitExtendableSchemaRoot
-
+::api-entry{name="FormKitExtendableSchemaRoot" type="interface"}
 Defines a function that allows selectively overriding a given schema.
 
 
@@ -117,9 +106,9 @@ interface FormKitExtendableSchemaRoot {
     (extensions: Record<string, Partial<FormKitSchemaNode> | FormKitSchemaCondition>): FormKitSchemaNode[];
 }
 ```
+::
 
-### FormKitSchemaAttributesCondition
-
+::api-entry{name="FormKitSchemaAttributesCondition" type="interface"}
 Conditions nested inside attribute declarations
 
 
@@ -130,9 +119,9 @@ interface FormKitSchemaAttributesCondition {
     then: FormKitAttributeValue;
 }
 ```
+::
 
-### FormKitSchemaComposable
-
+::api-entry{name="FormKitSchemaComposable" type="interface"}
 Definition for a function that can extend a given schema node.
 
 
@@ -141,9 +130,9 @@ interface FormKitSchemaComposable {
     (extendWith?: Partial<FormKitSchemaNode>, children?: string | FormKitSchemaNode[] | FormKitSchemaCondition): FormKitSchemaNode;
 }
 ```
+::
 
-### FormKitSchemaContext
-
+::api-entry{name="FormKitSchemaContext" type="interface"}
 The context that is passed from one schema render to the next.
 
 
@@ -153,36 +142,36 @@ interface FormKitSchemaContext {
     [index: string]: any;
 }
 ```
+::
 
-### FormKitAttributeValue
-
+::api-entry{name="FormKitAttributeValue" type="type"}
 The possible value types of attributes (in the schema)
 
 
 ```typescript
 type FormKitAttributeValue = string | number | boolean | undefined | FormKitSchemaAttributes | FormKitSchemaAttributesCondition;
 ```
+::
 
-### FormKitListStatement
-
+::api-entry{name="FormKitListStatement" type="type"}
 A full loop statement in tuple syntax. Can be read like "foreach value, key? in list"
 
 
 ```typescript
 type FormKitListStatement = [value: any, key: number | string, list: FormKitListValue] | [value: any, list: FormKitListValue];
 ```
+::
 
-### FormKitListValue
-
+::api-entry{name="FormKitListValue" type="type"}
 The value being listed out. Can be an array, an object, or a number.
 
 
 ```typescript
 type FormKitListValue = string | Record<string, any> | Array<string | number | Record<string, any>> | number;
 ```
+::
 
-### FormKitSchemaAttributes
-
+::api-entry{name="FormKitSchemaAttributes" type="type"}
 DOM attributes are simple string dictionaries.
 
 
@@ -191,9 +180,9 @@ type FormKitSchemaAttributes = {
     [index: string]: FormKitAttributeValue;
 } | null | FormKitSchemaAttributesCondition;
 ```
+::
 
-### FormKitSchemaComponent
-
+::api-entry{name="FormKitSchemaComponent" type="type"}
 Properties available when defining a generic non-formkit component.
 
 
@@ -205,9 +194,9 @@ type FormKitSchemaComponent = {
     };
 } & FormKitSchemaProps;
 ```
+::
 
-### FormKitSchemaCondition
-
+::api-entry{name="FormKitSchemaCondition" type="type"}
 A schema node that determines _which_ content to render.
 
 
@@ -218,9 +207,9 @@ type FormKitSchemaCondition = {
     else?: FormKitSchemaNode | FormKitSchemaNode[];
 };
 ```
+::
 
-### FormKitSchemaDOMNode
-
+::api-entry{name="FormKitSchemaDOMNode" type="type"}
 Properties available when using a DOM node.
 
 
@@ -230,9 +219,9 @@ type FormKitSchemaDOMNode = {
     attrs?: FormKitSchemaAttributes;
 } & FormKitSchemaProps;
 ```
+::
 
-### FormKitSchemaFormKitNode
-
+::api-entry{name="FormKitSchemaFormKitNode" type="type"}
 Properties available when using a formkit input.
 
 
@@ -245,21 +234,22 @@ type FormKitSchemaFormKitNode = {
     value?: any;
 } & FormKitSchemaProps;
 ```
+::
 
-### FormKitSchemaNode
-
+::api-entry{name="FormKitSchemaNode" type="type"}
 Properties available then defining a schema node.
 
 
 ```typescript
 type FormKitSchemaNode = FormKitSchemaFormKitNode | FormKitSchemaDOMNode | FormKitSchemaComponent | FormKitSchemaTextNode | FormKitSchemaCondition;
 ```
+::
 
-### FormKitSchemaTextNode
-
+::api-entry{name="FormKitSchemaTextNode" type="type"}
 A simple text node.
 
 
 ```typescript
 type FormKitSchemaTextNode = string;
 ```
+::
