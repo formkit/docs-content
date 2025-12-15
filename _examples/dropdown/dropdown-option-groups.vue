@@ -1,5 +1,5 @@
 <script setup>
-import citiesByState from './citiesByState.js'
+import citiesByState from '@content/_examples/_data/citiesByState.js'
 </script>
 
 <template>

@@ -14,13 +14,11 @@ navigation:
 
 The `unit` input allows for restricted input of values based on the provided unit (distance, weight, temperature, etc.) and locale.
 
-## ::Example
-
-name: "Unit input defaults"
-file: "\_examples/unit/unit.vue"
-
+::Example
 ---
-
+name: "Unit input defaults"
+file: "_examples/unit/unit.vue"
+---
 ::
 
 ## Props
@@ -29,36 +27,32 @@ file: "\_examples/unit/unit.vue"
 
 The `unit` prop is the type of unit you want to display. A full list of allowed unit types are listed below:
 
-## ::ColumnList
-
-## listItems: ['acre', 'bit', 'byte', 'celsius', 'centimeter', 'day', 'degree', 'fahrenheit', 'fluid-ounce', 'foot', 'gallon', 'gigabit', 'gigabyte', 'gram', 'hectare', 'hour', 'inch', 'kilobit', 'kilobyte', 'kilogram', 'kilometer', 'liter', 'megabit', 'megabyte', 'meter', 'microsecond', 'mile', 'mile-scandinavian', 'milliliter', 'millimeter', 'millisecond', 'minute', 'month', 'nanosecond', 'ounce', 'percent', 'petabyte', 'pound', 'second', 'stone', 'terabit', 'terabyte', 'week', 'yard', 'year']
-
+::ColumnList
+---
+listItems: ['acre', 'bit', 'byte', 'celsius', 'centimeter', 'day', 'degree', 'fahrenheit', 'fluid-ounce', 'foot', 'gallon', 'gigabit', 'gigabyte', 'gram', 'hectare', 'hour', 'inch', 'kilobit', 'kilobyte', 'kilogram', 'kilometer', 'liter', 'megabit', 'megabyte', 'meter', 'microsecond', 'mile', 'mile-scandinavian', 'milliliter', 'millimeter', 'millisecond', 'minute', 'month', 'nanosecond', 'ounce', 'percent', 'petabyte', 'pound', 'second', 'stone', 'terabit', 'terabyte', 'week', 'yard', 'year']
+---
 ::
 
 ### Unit display
 
 The display length can be modified by the `unitDisplay` property. Accepted values are `short`, `narrow`, and `long`.
 
-## ::Example
-
-name: "Unit input defaults"
-file: "\_examples/unit/unit-display.vue"
-
+::Example
 ---
-
+name: "Unit input defaults"
+file: "_examples/unit/unit-display.vue"
+---
 ::
 
 ### Locale
 
 By default the locale will use what you have set in your `formkit.config.ts` as the desired locale. However you can override this with the `displayLocale` prop. For example, `en-US`, `de-DE`, `en-IN`, `zh-CN`, etc, etc.
 
-## ::Example
-
-name: "Unit input defaults"
-file: "\_examples/unit/unit-locale.vue"
-
+::Example
 ---
-
+name: "Unit input defaults"
+file: "_examples/unit/unit-locale.vue"
+---
 ::
 
 ### Decimals
@@ -67,52 +61,44 @@ By default the decimals will display when the value contains the unit/locale dec
 
 You can also choose to set a minimum number of decimals with the `minDecimals` prop. For example, you always want to show 2 decimal places you would set `minDecimals="2"`.
 
-## ::Example
-
-name: "Unit input defaults"
-file: "\_examples/unit/unit-decimals.vue"
-
+::Example
 ---
-
+name: "Unit input defaults"
+file: "_examples/unit/unit-decimals.vue"
+---
 ::
 
 ### Minimum and Maximum Values
 
 Similar to a number input, you can set a `min` and `max` value.
 
-## ::Example
-
-name: "Unit input defaults"
-file: "\_examples/unit/unit-min-max.vue"
-
+::Example
 ---
-
+name: "Unit input defaults"
+file: "_examples/unit/unit-min-max.vue"
+---
 ::
 
 ### Step
 
 Again, similar to a number input you can use the up/down keys to step the value. By default the step is `1` but you can override that with this prop.
 
-## ::Example
-
-name: "Unit input defaults"
-file: "\_examples/unit/unit-step.vue"
-
+::Example
 ---
-
+name: "Unit input defaults"
+file: "_examples/unit/unit-step.vue"
+---
 ::
 
 ### Value Formatting
 
 The value of the input itself defaults to a number but can be formatted as a string to include information about the unit itself.
 
-## ::Example
-
-name: "Unit input defaults"
-file: "\_examples/unit/unit-value-format.vue"
-
+::Example
 ---
-
+name: "Unit input defaults"
+file: "_examples/unit/unit-value-format.vue"
+---
 ::
 
 ### Value unit
@@ -120,114 +106,105 @@ file: "\_examples/unit/unit-value-format.vue"
 The unit input also allows for first-party conversion of one unit type to another. In this example, we will use `unit` of type `mile`, but the value
 itself will be converted to `kilometers` when setting `value-unit` to `kilometer`.
 
-## ::Example
-
-name: "Unit type examples"
-file: "\_examples/unit/value-unit.vue"
-
+::Example
 ---
-
+name: "Unit type examples"
+file: "_examples/unit/value-unit.vue"
+---
 ::
 
 ### Unitless
 
 The `unit` prop is optional, allowing for unitless values.
 
-## ::Example
-
-name: "Unit type examples"
-file: "\_examples/unit/unitless.vue"
-
+::Example
 ---
-
+name: "Unit type examples"
+file: "_examples/unit/unitless.vue"
+---
 ::
 
-## ::Callout
-
+::Callout
+---
 type: "warning"
 label: "Mixed unit types"
-
 ---
-
 In order to convert one unit to another, they must be in the same taxonomy (so for example, you can not convert kilometers to liters).
 ::
 
 ## Props & Attributes
 
-## ::ReferenceTable
-
+::ReferenceTable
+---
 input: "unit"
 data: [
-{
-prop: "unit",
-type: "string | undefined",
-description: "Set the specified unit to use for this input. If undefined, will
-allow for unitless values."
-},
-{
-prop: "displayLocale",
-type: "string",
-default: "en-US",
-description: "Set the desired display locale to use for this input"
-},
-{
-prop: "decimals",
-type: "boolean|number",
-default: "null",
-description: "Choose to either completely disallow decimals or override the maximum number of decimals for the input"
-},
-{
-prop: "minDecimals",
-type: "number",
-default: "null",
-description: "Choose to show a minimum number of decimals should your input require this"
-},
-{
-prop: "min",
-type: "number",
-default: "null",
-description: "Minimum numeric value allowed. If zero or above, negatives will not be allowed"
-},
-{
-prop: "max",
-type: "number",
-default: "null",
-description: "Maximum numeric value allowed for this input"
-},
-{
-prop: "step",
-type: "number",
-default: "1",
-description: "When using the up/down keys, how much to modify the current value."
-},
-{
-prop: "valueDecimals",
-type: "string | number",
-default: undefined,
-description: "Determines the allowed number of decimals for the valueUnit."
-},
-{
-prop: "valueFormat",
-type: "string",
-default: "number",
-description: "Choose between <code>number</code> and <code>string</code> whether you want a numeric value or a parsed string value"
-},
-{
-prop: "valueUnit",
-type: "string",
-default: "undefined",
-description: "Used to convert the user-inputted value from one unit to another"
-},
-{
-prop: "unitDisplay",
-type: "string ('narrow' | 'short' | 'long')",
-default: "short",
-description: "Determines the length of the how the unit is represented."
-},
+  {
+    prop: "unit",
+    type: "string | undefined",
+    description: "Set the specified unit to use for this input. If undefined, will allow for unitless values."
+  },
+  {
+    prop: "displayLocale",
+    type: "string",
+    default: "en-US",
+    description: "Set the desired display locale to use for this input"
+  },
+  {
+    prop: "decimals",
+    type: "boolean|number",
+    default: "null",
+    description: "Choose to either completely disallow decimals or override the maximum number of decimals for the input"
+  },
+  {
+    prop: "minDecimals",
+    type: "number",
+    default: "null",
+    description: "Choose to show a minimum number of decimals should your input require this"
+  },
+  {
+    prop: "min",
+    type: "number",
+    default: "null",
+    description: "Minimum numeric value allowed. If zero or above, negatives will not be allowed"
+  },
+  {
+    prop: "max",
+    type: "number",
+    default: "null",
+    description: "Maximum numeric value allowed for this input"
+  },
+  {
+    prop: "step",
+    type: "number",
+    default: "1",
+    description: "When using the up/down keys, how much to modify the current value."
+  },
+  {
+    prop: "valueDecimals",
+    type: "string | number",
+    default: "undefined",
+    description: "Determines the allowed number of decimals for the valueUnit."
+  },
+  {
+    prop: "valueFormat",
+    type: "string",
+    default: "number",
+    description: "Choose between <code>number</code> and <code>string</code> whether you want a numeric value or a parsed string value"
+  },
+  {
+    prop: "valueUnit",
+    type: "string",
+    default: "undefined",
+    description: "Used to convert the user-inputted value from one unit to another"
+  },
+  {
+    prop: "unitDisplay",
+    type: "string ('narrow' | 'short' | 'long')",
+    default: "short",
+    description: "Determines the length of the how the unit is represented."
+  },
 ]
-
 ---
-
 ::
 
 ## Sections
@@ -237,3 +214,27 @@ description: "Determines the length of the how the unit is represented."
 ### Unit input diagram
 
 :FormKitInputDiagrams
+
+## Accessibility
+
+All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml):
+
+:AccessibilityChecks
+
+### Accessibility attributes
+
+:AccessibilityTable
+
+### Keyboard Interactions
+
+::KeyboardEventsTable
+---
+data: [
+  {
+    event: ["up", "down"],
+    separator: '',
+    description: "Increments through input value by current <code>step</code> amount.",
+  },
+]
+---
+::
