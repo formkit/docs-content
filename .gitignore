@@ -4,3 +4,4 @@ node_modules
 /pt-br
 /fr
 /pirate
+.node_modules_tmp
