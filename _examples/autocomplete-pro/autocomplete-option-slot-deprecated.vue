@@ -1,5 +1,5 @@
 <script setup>
-import countries from '@content/_examples/_data/countries.js'
+import countries from './countries.js'
 
 function getFlagEmoji(countryCode) {
   const codePoints = countryCode
@@ -12,6 +12,7 @@ function getFlagEmoji(countryCode) {
 
 <template>
   <FormKit type="form" #default="{ value }" :actions="false">
+    <!-- %partial% -->
     <FormKit
       type="autocomplete"
       name="autocomplete"
@@ -34,10 +35,11 @@ function getFlagEmoji(countryCode) {
       </template>
       <!--/OPTION SLOT-->
     </FormKit>
+    <!-- %partial% -->
   </FormKit>
 </template>
 
-<style scoped>
+<style>
 .decorator {
   margin-right: 10px;
 }

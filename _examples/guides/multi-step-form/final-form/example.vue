@@ -17,153 +17,146 @@ const submitApp = async (formData, node) => {
 }
 
 const checkStepValidity = (stepName) => {
-  return (
-    (steps[stepName].errorCount > 0 || steps[stepName].blockingCount > 0) &&
-    visitedSteps.value.includes(stepName)
-  )
+  return (steps[stepName].errorCount > 0 || steps[stepName].blockingCount > 0) && visitedSteps.value.includes(stepName)
 }
+
 </script>
 
 <template>
-  <h1 class="text-2xl font-bold mb-4">Carbon Sequestration Grant</h1>
+<h1 class="text-2xl font-bold mb-4">Carbon Sequestration Grant</h1>
 
-  <FormKit
-    type="form"
-    #default="{ value, state: { valid } }"
-    :plugins="[stepPlugin]"
-    @submit="submitApp"
-    :actions="false"
-  >
-    <ul class="steps">
-      <li
-        v-for="(step, stepName) in steps"
-        :class="['step', { 'has-errors': checkStepValidity(stepName) }]"
-        @click="activeStep = stepName"
-        :data-step-valid="step.valid && step.errorCount === 0"
-        :data-step-active="activeStep === stepName"
+<FormKit
+  type="form"
+  #default="{ value, state: { valid } }"
+  :plugins="[stepPlugin]"
+  @submit="submitApp"
+  :actions="false"
+>
+  <ul class="steps">
+    <li
+      v-for="(step, stepName) in steps"
+      :class="['step', { 'has-errors': checkStepValidity(stepName) }]"
+      @click="activeStep = stepName"
+      :data-step-valid="step.valid && step.errorCount === 0"
+      :data-step-active="activeStep === stepName"
+    >
+      <span
+        v-if="checkStepValidity(stepName)"
+        class="step--errors"
+        v-text="step.errorCount + step.blockingCount"
+      />
+      {{ camel2title(stepName) }}
+    </li>
+  </ul>
+
+  <!-- .form-body solely for styling -->
+  <div class="form-body">
+    <section v-show="activeStep === 'contactInfo'">
+      <FormKit
+        type="group"
+        id="contactInfo"
+        name="contactInfo"
       >
-        <span
-          v-if="checkStepValidity(stepName)"
-          class="step--errors"
-          v-text="step.errorCount + step.blockingCount"
-        />
-        {{ camel2title(stepName) }}
-      </li>
-    </ul>
-
-    <!-- .form-body solely for styling -->
-    <div class="form-body">
-      <section v-show="activeStep === 'contactInfo'">
-        <FormKit type="group" id="contactInfo" name="contactInfo">
-          <FormKit
-            type="text"
-            label="*Full name"
-            name="full_name"
-            placeholder="First Last"
-            validation="required"
-          />
-
-          <FormKit
-            type="email"
-            name="email"
-            label="*Email address"
-            placeholder="email@domain.com"
-            validation="required|email"
-          />
-
-          <FormKit
-            type="mask"
-            name="tel"
-            label="*Telephone"
-            mask="+1 (###) ###-####"
-          />
-        </FormKit>
-      </section>
-
-      <section v-show="activeStep === 'organizationInfo'">
-        <FormKit id="organizationInfo" type="group" name="organizationInfo">
-          <FormKit
-            type="text"
-            label="*Organization name"
-            name="org_name"
-            placeholder="MyOrg, Inc."
-            help="Enter your official organization name."
-            validation="required|length:3"
-          />
-
-          <FormKit
-            type="date"
-            label="Date of incorporation"
-            :validation="date_rule"
-            name="date_inc"
-          />
-        </FormKit>
-      </section>
-
-      <section v-show="activeStep === 'application'">
-        <FormKit id="application" type="group" name="application">
-          <FormKit
-            type="checkbox"
-            label="*I'm not a previous grant recipient"
-            help="Have you received a grant from us before?"
-            name="not_previous_recipient"
-            validation="required|accepted"
-            :validation-messages="{
-              accepted: 'We can only give one grant per organization.',
-            }"
-          />
-          <FormKit
-            type="textarea"
-            label="*How will you use the money?"
-            name="how_money"
-            help="Must be between 20 and 500 characters."
-            placeholder="Describe how the grant will accelerate your efforts."
-            validation="required|length:20,500"
-          />
-        </FormKit>
-      </section>
-
-      <!-- NEW: Adds Next / Previous navigation buttons. -->
-      <div class="step-nav">
         <FormKit
-          type="button"
-          :disabled="activeStep == 'contactInfo'"
-          @click="setStep(-1)"
-          v-text="'Previous step'"
+          type="text"
+          label="*Full name"
+          name="full_name"
+          placeholder="First Last"
+          validation="required"
+        />
+
+        <FormKit
+          type="email"
+          name="email"
+          label="*Email address"
+          placeholder="email@domain.com"
+          validation="required|email"
+        />
+
+        <FormKit
+          type="mask"
+          name="tel"
+          label="*Telephone"
+          mask="+1 (###) ###-####"
+        />
+      </FormKit>
+    </section>
+
+    <section v-show="activeStep === 'organizationInfo'">
+      <FormKit
+        id="organizationInfo"
+        type="group"
+        name="organizationInfo"
+      >
+        <FormKit
+          type="text"
+          label="*Organization name"
+          name="org_name"
+          placeholder="MyOrg, Inc."
+          help="Enter your official organization name."
+          validation="required|length:3"
+        />
+
+        <FormKit
+          type="date"
+          label="Date of incorporation"
+          :validation="date_rule"
+          name="date_inc"
+        />
+      </FormKit>
+    </section>
+
+    <section v-show="activeStep === 'application'">
+      <FormKit
+        id="application"
+        type="group"
+        name="application"
+      >
+        <FormKit
+          type="checkbox"
+          label="*I'm not a previous grant recipient"
+          help="Have you received a grant from us before?"
+          name="not_previous_recipient"
+          validation="required|accepted"
+          :validation-messages="{
+            accepted: 'We can only give one grant per organization.'
+          }"
         />
         <FormKit
-          type="button"
-          class="next"
-          :disabled="activeStep == 'application'"
-          @click="setStep(1)"
-          v-text="'Next step'"
+          type="textarea"
+          label="*How will you use the money?"
+          name="how_money"
+          help="Must be between 20 and 500 characters."
+          placeholder="Describe how the grant will accelerate your efforts."
+          validation="required|length:20,500"
         />
-      </div>
+      </FormKit>
+    </section>
 
-      <details class="docs-content-child">
-        <summary>Form data</summary>
-        <pre wrap>{{ value }}</pre>
-      </details>
+    <!-- NEW: Adds Next / Previous navigation buttons. -->
+    <div class="step-nav">
+      <FormKit type="button" :disabled="activeStep == 'contactInfo'" @click="setStep(-1)" v-text="'Previous step'" />
+      <FormKit type="button" class="next" :disabled="activeStep == 'application' " @click="setStep(1)" v-text="'Next step'"/>
     </div>
 
-    <!-- NEW: Adds submit button. -->
-    <FormKit type="submit" label="Submit Application" :disabled="!valid" />
-  </FormKit>
+    <details>
+      <summary>Form data</summary>
+      <pre>{{ value }}</pre>
+    </details>
+  </div>
 
-  <p>
-    <small
-      ><em
-        >*All the contents of this form are fictional (the company, grant, and
-        form) for the purposes of demonstrating the capabilities of FormKit.</em
-      ></small
-    >
-  </p>
+  <!-- NEW: Adds submit button. -->
+  <FormKit type="submit" label="Submit Application" :disabled="!valid" />
+</FormKit>
+
+<p><small><em>*All the contents of this form are fictional (the company, grant, and form)
+  for the purposes of demonstrating the capabilities of FormKit.</em></small></p>
 </template>
 
-<style scoped>
+<style>
 /* Styles imported for brevity */
 /* CSS for multi-step forms is not included in the default Genesis theme.
    styles were custom-written for this example and you will need to provide
    your own. */
-@import 'https://cdn.formk.it/web-assets/multistep-form.css';
+@import "https://cdn.formk.it/web-assets/multistep-form.css";
 </style>

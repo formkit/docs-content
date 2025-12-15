@@ -1,18 +1,16 @@
 <script setup>
-import countries from '@content/_examples/_data/countries.js'
+import countries from './countries.js'
 </script>
 
 <template>
-  <FormKit type="form" #default="{ value }" :actions="false">
-    <FormKit
-      type="taglist"
-      name="country"
-      label="Search for a country"
-      placeholder="Example: United States"
-      :options="countries"
-      popover
-      open-on-click
-    />
-    <pre wrap>{{ value }}</pre>
-  </FormKit>
+  <FormKit
+    type="taglist"
+    name="country"
+    label="Search for a country"
+    placeholder="Example: United States"
+    :options="countries"
+    popover
+    open-on-click
+  />
 </template>
+
