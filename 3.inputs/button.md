@@ -44,10 +44,9 @@ file: "_examples/button/button-events.vue"
 
 ## Ignored input
 
-:IgnoredInputDocs
+<ignored-input-docs></ignored-input-docs>
 
-
-```html
+```vue
 <FormKit type="button" :ignore="false">
   Add a section
 </FormKit>
