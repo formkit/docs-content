@@ -39,7 +39,7 @@ Except as otherwise expressly authorized in these Terms, you will not, and will 
 
 ## Charges and Payment
 
-**Pricing.** Services are offered under multiple pricing plans, the specifications of which are available at [www.formkit.com/pro](www.formkit.com/pro) or on individual feature and product pages. Your rights and obligations depend partly on the pricing plan or features you use. We reserve the right to update prices at any time.
+**Pricing.** Services are offered under multiple pricing plans, the specifications of which are available at [formkit.com/pro](https://formkit.com/pro) or on individual feature and product pages. Your rights and obligations depend partly on the pricing plan or features you use. We reserve the right to update prices at any time.
 
 **Payment Terms and Recurring Charges.** When you purchase Services or use Services in production, you expressly authorize us or our third-party payment processor to charge you for such Services on a recurring monthly or annual basis and to be automatically charged using your Payment Methods. You represent and warrant that you have the legal right to use all payment methods that you provide to us. We reserve the right to deactivate, terminate, prevent access to, disable services for, and delete any accounts or access to Services at any time at our sole discretion, including for nonpayment, late payment, or failure to charge your Payment Methods upon invoicing.
 
@@ -55,7 +55,7 @@ If you wish to terminate your account, you may do so only if you are not activel
 
 ## Privacy Policy
 
-Our [Privacy Policy](www.formkit.com/privacy) governs how we collect, use and disclose your personal information.
+Our [Privacy Policy](/privacy) governs how we collect, use and disclose your personal information.
 
 ## Intellectual Property
 
@@ -99,7 +99,7 @@ You agree that regardless of any statute or law to the contrary, any claim or ca
 
 ## Entire Agreement
 
-These Terms and our [Privacy Policy](/privacy-policy) constitute the entire agreement between you and FormKit regarding the Services and supersede all prior and contemporaneous agreements, representations, and warranties.
+These Terms and our [Privacy Policy](/privacy) constitute the entire agreement between you and FormKit regarding the Services and supersede all prior and contemporaneous agreements, representations, and warranties.
 
 ## Severability
 
