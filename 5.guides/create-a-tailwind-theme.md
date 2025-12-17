@@ -380,7 +380,7 @@ npx formkit@latest theme --theme=formkit-theme-my-theme
 This command will produce a `formkit.theme.(mjs|ts)` file in your project's root directory. To complete the setup you will need to do the following two things:
 
 - Import the `rootClasses` function from your built theme into your `formkit.config` file
-- Add the `formkit.theme` file to your `tailwind.config` file's `content` array.
+- Add a `@source` directive for the `formkit.theme` file in your CSS
 
 ```js
 // formkit.config.ts
@@ -395,16 +395,29 @@ export default defineFormKitConfig({
 })
 ```
 
+```css
+/* main.css (or your primary CSS file) */
+@import "tailwindcss";
+@source "./formkit.theme.ts";
+@source "./formkit.config.ts";
+```
+
+::Callout
+---
+type: "tip"
+label: "Tailwind CSS 3"
+---
+If you're using Tailwind CSS 3, add the theme file to your `tailwind.config.js` content array instead:
 ```js
 // tailwind.config.js
 module.exports = {
-  ...
   content: [
     "./app.vue",
-    "~/formkit.theme" // <-- add your theme file
+    "./formkit.theme.ts"
   ]
 }
 ```
+::
 
 ## Customizing the variables of a published theme
 
@@ -429,7 +442,7 @@ Now you can use the `formkit` CLI to build your theme with your customizations a
 npx formkit@latest theme --theme=formkit.theme.config.ts
 ```
 
-Install the resulting `formkit.theme.(mjs|ts)` file by following the same instructions from the section above — adding the `rootClasses` to your `formkit.config` file and including the `formkit.theme.(mjs|ts)` file in your `tailwind.config` file's content array.
+Install the resulting `formkit.theme.(mjs|ts)` file by following the same instructions from the section above — adding the `rootClasses` to your `formkit.config` file and including the `formkit.theme.(mjs|ts)` file via `@source` directives in your CSS.
 
 ## Submitting your theme to themes.formkit.com
 

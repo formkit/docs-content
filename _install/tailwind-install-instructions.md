@@ -33,23 +33,31 @@ export default defineFormKitConfig({
 })
 ```
 
-Finally, you’ll need to add the `formkit.theme.{ts|js}` file to your Tailwind config file’s content property. This will ensure that the theme’s styles are included in your project’s CSS:
+Finally, you'll need to add the `formkit.theme.{ts|js}` file to your CSS using a `@source` directive. This ensures Tailwind scans the theme file for class names to include in your CSS:
 
+```css
+/* main.css (or your primary CSS file) */
+@import "tailwindcss";
+@source "./formkit.theme.ts";
+@source "./formkit.config.ts";
+```
+
+::Callout
+---
+type: "tip"
+label: "Tailwind CSS 3"
+---
+If you're using Tailwind CSS 3, add the theme file to your `tailwind.config.js` content array instead:
 ```js
 // tailwind.config.js
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./app.vue",
-    "~/formkit.theme" // <-- add your theme file
-  ],
-  darkMode: 'class',
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+    "./formkit.theme.ts"
+  ]
 }
 ```
+::
 
 If you run the command again, you will be taken to [https://themes.formkit.com](https://themes.formkit.com) where you can customize your chosen theme.
 
