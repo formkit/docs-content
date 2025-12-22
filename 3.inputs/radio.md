@@ -48,6 +48,14 @@ file: "_examples/radio-objects/radio-objects.vue"
 ---
 ::
 
+::Callout
+---
+type: "tip"
+label: "Multiple same-named radios"
+---
+If you have multiple radio inputs with the same name spread across different parts of your template, you may need to use the <code>mergeStrategy</code> config option on a parent node to keep their values synchronized. See <a href="/essentials/architecture#syncing-multiple-nodes-with-the-same-name">Syncing multiple nodes with the same name</a> in the architecture documentation.
+::
+
 ## Props & Attributes
 
 ::ReferenceTable
