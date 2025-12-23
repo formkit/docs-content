@@ -1,0 +1,17 @@
+name: Trigger Docs Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger docs-ui deploy
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.DOCS_DEPLOY_TOKEN }}
+          repository: formkit/docs-ui
+          event-type: docs-content-updated
