@@ -13,5 +13,5 @@ jobs:
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.DOCS_DEPLOY_TOKEN }}
-          repository: formkit/docs-ui
+          repository: formkit/docs-ui-2
           event-type: docs-content-updated
