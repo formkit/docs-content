@@ -15,6 +15,8 @@ The `text` input uses HTML's [native text input](https://developer.mozilla.org/e
 ---
 name: "Text input"
 file: "_examples/text/text.vue"
+react-file: "_examples/text/text.react.jsx"
+react-import-map-file: "_examples/text/text.react.importMap.json"
 ---
 ::
 
