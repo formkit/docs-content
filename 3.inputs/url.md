@@ -15,6 +15,7 @@ The `url` input uses HTML's [native url input](https://developer.mozilla.org/en-
 ---
 name: "URL input"
 file: "_examples/url/url.vue"
+react-file: "_examples/url/url.react.jsx"
 ---
 ::
 

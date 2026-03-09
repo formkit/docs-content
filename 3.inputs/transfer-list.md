@@ -32,6 +32,11 @@ file: [
   "_examples/transfer-list/api.js",
   "_examples/transfer-list/utils.js"
 ]
+react-file: [
+  "_examples/transfer-list/transfer-list-full-example.react.jsx",
+  "_examples/transfer-list/api.js",
+  "_examples/transfer-list/utils.js"
+]
 ---
 ::
 
@@ -49,6 +54,7 @@ Below is an example of the transfer list input with the minimum required props. 
 name: "Transfer List"
 layout: "auto"
 file: "_examples/transfer-list/transfer-list-base.vue"
+react-file: "_examples/transfer-list/transfer-list-base.react.jsx"
 ---
 ::
 
@@ -61,6 +67,7 @@ Let's add some label props to make clear to the end-user how to use the transfer
 name: "Transfer List"
 layout: "auto"
 file: "_examples/transfer-list/transfer-list-labels.vue"
+react-file: "_examples/transfer-list/transfer-list-labels.react.jsx"
 ---
 ::
 
@@ -73,6 +80,7 @@ In this state, with no options passed and no values selected, we can display a c
 name: "Transfer List"
 layout: "auto"
 file: "_examples/transfer-list/transfer-list-empty-messages.vue"
+react-file: "_examples/transfer-list/transfer-list-empty-messages.react.jsx"
 ---
 ::
 
@@ -95,6 +103,10 @@ file: [
   "_examples/transfer-list/transfer-list-options.vue",
   "_examples/transfer-list/guests.js"
 ]
+react-file: [
+  "_examples/transfer-list/transfer-list-options.react.jsx",
+  "_examples/transfer-list/guests.js"
+]
 ---
 ::
 
@@ -108,6 +120,10 @@ name: "Transfer List"
 layout: "auto"
 file: [
   "_examples/transfer-list/transfer-list-values.vue",
+  "_examples/transfer-list/guests.js"
+]
+react-file: [
+  "_examples/transfer-list/transfer-list-values.react.jsx",
   "_examples/transfer-list/guests.js"
 ]
 ---
@@ -125,6 +141,10 @@ file: [
   "_examples/transfer-list/transfer-list-initial-values.vue",
   "_examples/transfer-list/guests.js"
 ]
+react-file: [
+  "_examples/transfer-list/transfer-list-initial-values.react.jsx",
+  "_examples/transfer-list/guests.js"
+]
 ---
 ::
 
@@ -138,6 +158,10 @@ name: "Transfer List"
 layout: "auto"
 file: [
   "_examples/transfer-list/transfer-list-searchable.vue",
+  "_examples/transfer-list/guests.js"
+]
+react-file: [
+  "_examples/transfer-list/transfer-list-searchable.react.jsx",
   "_examples/transfer-list/guests.js"
 ]
 ---
@@ -164,6 +188,10 @@ file: [
   "_examples/transfer-list/transfer-list-filter.vue",
   "_examples/transfer-list/guests.js"
 ]
+react-file: [
+  "_examples/transfer-list/transfer-list-filter.react.jsx",
+  "_examples/transfer-list/guests.js"
+]
 ---
 ::
 
@@ -183,6 +211,10 @@ file: [
   "_examples/transfer-list/transfer-list-max.vue",
   "_examples/transfer-list/guests.js"
 ]
+react-file: [
+  "_examples/transfer-list/transfer-list-max.react.jsx",
+  "_examples/transfer-list/guests.js"
+]
 ---
 ::
 
@@ -196,6 +228,10 @@ name: "Transfer List"
 layout: "auto"
 file: [
   "_examples/transfer-list/transfer-list-transfer-on-select.vue",
+  "_examples/transfer-list/guests.js"
+]
+react-file: [
+  "_examples/transfer-list/transfer-list-transfer-on-select.react.jsx",
   "_examples/transfer-list/guests.js"
 ]
 ---
@@ -215,6 +251,10 @@ file: [
   "_examples/transfer-list/transfer-list-async-options.vue",
   "_examples/transfer-list/api.js"
 ]
+react-file: [
+  "_examples/transfer-list/transfer-list-async-options.react.jsx",
+  "_examples/transfer-list/api.js"
+]
 ---
 ::
 
@@ -232,6 +272,10 @@ file: [
   "_examples/transfer-list/transfer-list-async-options-pagination.vue",
   "_examples/transfer-list/api.js"
 ]
+react-file: [
+  "_examples/transfer-list/transfer-list-async-options-pagination.react.jsx",
+  "_examples/transfer-list/api.js"
+]
 ---
 ::
 
@@ -245,6 +289,10 @@ name: "Transfer List"
 layout: "auto"
 file: [
   "_examples/transfer-list/transfer-list-async-options-search.vue",
+  "_examples/transfer-list/api.js"
+]
+react-file: [
+  "_examples/transfer-list/transfer-list-async-options-search.react.jsx",
   "_examples/transfer-list/api.js"
 ]
 ---
@@ -264,6 +312,10 @@ file: [
   "_examples/transfer-list/transfer-list-rehydrating-values.vue",
   "_examples/transfer-list/api.js"
 ]
+react-file: [
+  "_examples/transfer-list/transfer-list-rehydrating-values.react.jsx",
+  "_examples/transfer-list/api.js"
+]
 ---
 ::
 
@@ -279,6 +331,10 @@ name: "Transfer List"
 layout: "auto"
 file: [
   "_examples/transfer-list/transfer-list-additional-data.vue",
+  "_examples/transfer-list/api.js"
+]
+react-file: [
+  "_examples/transfer-list/transfer-list-additional-data.react.jsx",
   "_examples/transfer-list/api.js"
 ]
 ---
@@ -301,6 +357,11 @@ file: [
   "_examples/transfer-list/api.js",
   "_examples/transfer-list/utils.js"
 ]
+react-file: [
+  "_examples/transfer-list/transfer-list-options-slot.react.jsx",
+  "_examples/transfer-list/api.js",
+  "_examples/transfer-list/utils.js"
+]
 ---
 ::
 
@@ -316,6 +377,11 @@ name: "Transfer List"
 layout: "auto"
 file: [
   "_examples/transfer-list/transfer-list-ranking.vue",
+  "_examples/_data/nba-top-players.js",
+  "_examples/transfer-list/utils.js"
+]
+react-file: [
+  "_examples/transfer-list/transfer-list-ranking.react.jsx",
   "_examples/_data/nba-top-players.js",
   "_examples/transfer-list/utils.js"
 ]

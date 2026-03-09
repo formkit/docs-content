@@ -46,5 +46,9 @@ file: [
   "_examples/auto-height-textarea/auto-height.vue",
   "_examples/auto-height-textarea/formkit.config.ts"
 ]
+react-file: [
+  "_examples/auto-height-textarea/auto-height.react.jsx",
+  "_examples/auto-height-textarea/formkit.config.react.jsx"
+]
 ---
 ::

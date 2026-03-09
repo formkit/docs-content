@@ -52,6 +52,13 @@ file: [
   "_examples/multi-step/step-three.vue",
   "_examples/multi-step/formkit.config.ts"
 ]
+react-file: [
+  "_examples/multi-step/intro/intro.react.jsx",
+  "_examples/multi-step/step-one.react.jsx",
+  "_examples/multi-step/step-two.react.jsx",
+  "_examples/multi-step/step-three.react.jsx",
+  "_examples/multi-step/formkit.config.react.jsx"
+]
 ---
 ::
 
@@ -89,6 +96,11 @@ file: [
   "_examples/multi-step/tab-style/multi-step-content.vue",
   "_examples/multi-step/formkit.config.ts"
 ]
+react-file: [
+  "_examples/multi-step/tab-style/tab-style.react.jsx",
+  "_examples/multi-step/tab-style/multi-step-content.react.jsx",
+  "_examples/multi-step/formkit.config.react.jsx"
+]
 ---
 ::
 
@@ -107,6 +119,10 @@ file: [
   "_examples/multi-step/step-labels/step-labels.vue",
   "_examples/multi-step/formkit.config.ts"
 ]
+react-file: [
+  "_examples/multi-step/step-labels/step-labels.react.jsx",
+  "_examples/multi-step/formkit.config.react.jsx"
+]
 ---
 ::
 
@@ -123,6 +139,13 @@ file: [
   "_examples/multi-step/step-two.vue",
   "_examples/multi-step/step-three.vue",
   "_examples/multi-step/formkit.config.ts"
+]
+react-file: [
+  "_examples/multi-step/allow-incomplete/allow-incomplete.react.jsx",
+  "_examples/multi-step/step-one.react.jsx",
+  "_examples/multi-step/step-two.react.jsx",
+  "_examples/multi-step/step-three.react.jsx",
+  "_examples/multi-step/formkit.config.react.jsx"
 ]
 ---
 ::
@@ -142,6 +165,10 @@ name: "Valid Step Icon"
 file: [
   "_examples/multi-step/valid-step-icon/valid-step-icon.vue",
   "_examples/multi-step/formkit.config.ts"
+]
+react-file: [
+  "_examples/multi-step/valid-step-icon/valid-step-icon.react.jsx",
+  "_examples/multi-step/formkit.config.react.jsx"
 ]
 ---
 ::
@@ -169,6 +196,10 @@ file: [
   "_examples/multi-step/step-actions/step-actions.vue",
   "_examples/multi-step/formkit.config.ts"
 ]
+react-file: [
+  "_examples/multi-step/step-actions/step-actions.react.jsx",
+  "_examples/multi-step/formkit.config.react.jsx"
+]
 ---
 ::
 
@@ -191,6 +222,10 @@ file: [
   "_examples/multi-step/before-step-change/before-step-change.vue",
   "_examples/multi-step/formkit.config.ts"
 ]
+react-file: [
+  "_examples/multi-step/before-step-change/before-step-change.react.jsx",
+  "_examples/multi-step/formkit.config.react.jsx"
+]
 ---
 ::
 
@@ -208,6 +243,10 @@ name: "programmaticNavigation"
 file: [
   "_examples/multi-step/programmatic-navigation/programmatic-navigation.vue",
   "_examples/multi-step/formkit.config.ts"
+]
+react-file: [
+  "_examples/multi-step/programmatic-navigation/programmatic-navigation.react.jsx",
+  "_examples/multi-step/formkit.config.react.jsx"
 ]
 ---
 ::
@@ -258,13 +297,11 @@ without: ['help', 'prefix-icon', 'suffix-icon']
 ---
 ::
 
-
 ## Props & Attributes (step)
 
 ::ReferenceTable
 ---
-
-input: step 
+input: step
 data: [
   {
     prop: "label",
@@ -324,7 +361,6 @@ without: [
 ---
 ::
 
-
 ## Sections
 
 :SectionKeysIntro
@@ -376,7 +412,7 @@ data: [
     "section-key": "stepNext",
     description: "A wrapper around the action button for navigating to the next step."
   }
-] 
+]
 without: [
   "label",
   "prefix",

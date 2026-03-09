@@ -24,6 +24,7 @@ Need more flexibility than the native HTML `range` input provides? <a href="/inp
 ---
 name: "Range input"
 file: "_examples/range/range.vue"
+react-file: "_examples/range/range.react.jsx"
 ---
 ::
 
@@ -37,6 +38,7 @@ These options use `parseFloat` (default) or `parseInt` respectively. If the valu
 ---
 name: "Range cast input"
 file: "_examples/range/range-cast.vue"
+react-file: "_examples/range/range-cast.react.jsx"
 ---
 ::
 

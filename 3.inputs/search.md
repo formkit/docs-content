@@ -15,6 +15,7 @@ The `search` input uses HTML's [native search input](https://developer.mozilla.o
 ---
 name: "Search input"
 file: "_examples/search/search.vue"
+react-file: "_examples/search/search.react.jsx"
 ---
 ::
 

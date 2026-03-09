@@ -50,6 +50,10 @@ file: [
   "_examples/otp-register/register.vue",
   "_examples/otp-register/one-time-password.vue",
 ]
+react-file: [
+  "_examples/otp-register/register.react.jsx",
+  "_examples/otp-register/one-time-password.react.jsx"
+]
 ---
 ::
 
@@ -70,6 +74,10 @@ init-file-tab: "one-time-password.vue"
 file: [
   "_examples/otp-first-value/register.vue",
   "_examples/otp-first-value/one-time-password.vue",
+]
+react-file: [
+  "_examples/otp-first-value/register.react.jsx",
+  "_examples/otp-first-value/one-time-password.react.jsx"
 ]
 ---
 ::
@@ -108,6 +116,11 @@ file: [
   "_examples/otp-tags/one-time-password.vue",
   "_examples/otp-tags/formkit.config.ts"
 ]
+react-file: [
+  "_examples/otp-tags/register.react.jsx",
+  "_examples/otp-tags/one-time-password.react.jsx",
+  "_examples/otp-tags/formkit.config.react.jsx"
+]
 ---
 ::
 
@@ -139,6 +152,11 @@ file: [
   "_examples/otp-handlers/register.vue",
   "_examples/otp-handlers/one-time-password.vue",
   "_examples/otp-handlers/formkit.config.ts"
+]
+react-file: [
+  "_examples/otp-handlers/register.react.jsx",
+  "_examples/otp-handlers/one-time-password.react.jsx",
+  "_examples/otp-handlers/formkit.config.react.jsx"
 ]
 ---
 ::
@@ -180,6 +198,11 @@ file: [
   "_examples/otp-copy-paste/register.vue",
   "_examples/otp-copy-paste/one-time-password.vue",
   "_examples/otp-copy-paste/formkit.config.ts"
+]
+react-file: [
+  "_examples/otp-copy-paste/register.react.jsx",
+  "_examples/otp-copy-paste/one-time-password.react.jsx",
+  "_examples/otp-copy-paste/formkit.config.react.jsx"
 ]
 ---
 ::

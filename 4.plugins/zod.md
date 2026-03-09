@@ -43,6 +43,7 @@ name: 'Zod Validation'
 file: [
   "_examples/zod/validation.vue",
 ]
+react-file: "_examples/zod/validation.react.jsx"
 import-map-file: "_examples/zod/importMap.json"
 ---
 ::
@@ -67,6 +68,7 @@ name: 'Zod Validation with FormKit Validation'
 file: [
   "_examples/zod/with-formkit-validation.vue",
 ]
+react-file: "_examples/zod/with-formkit-validation.react.jsx"
 import-map-file: "_examples/zod/importMap.json"
 ---
 ::
@@ -81,6 +83,7 @@ name: 'Zod Errors'
 file: [
   "_examples/zod/errors.vue",
 ]
+react-file: "_examples/zod/errors.react.jsx"
 import-map-file: "_examples/zod/importMap.json"
 ---
 ::

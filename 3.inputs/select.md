@@ -34,6 +34,7 @@ The simplest way to provide options is an array of strings. The provided strings
 ---
 name: "Select input - strings"
 file: "_examples/select-strings/select-strings.vue"
+react-file: "_examples/select-strings/select-strings.react.jsx"
 ---
 ::
 
@@ -46,6 +47,7 @@ You may also provide the `options` prop where the keys are values and the values
 ---
 name: "Select input"
 file: "_examples/select/select.vue"
+react-file: "_examples/select/select.react.jsx"
 ---
 ::
 
@@ -58,6 +60,7 @@ The most flexible way to define options is by providing an array of objects. The
 ---
 name: "Select input - objects"
 file: "_examples/select-objects/select-objects.vue"
+react-file: "_examples/select-objects/select-objects.react.jsx"
 ---
 ::
 
@@ -89,6 +92,7 @@ Using the [array of objects](#array-of-objects) syntax you can also create optio
 ---
 name: "Option groups"
 file: "_examples/select-groups/select-groups.vue"
+react-file: "_examples/select-groups/select-groups.react.jsx"
 ---
 ::
 ### Default slot
@@ -99,6 +103,7 @@ Sometimes it may be desirable to manually output the contents of a select list i
 ---
 name: "Select input - objects"
 file: "_examples/select-slot/select-slot.vue"
+react-file: "_examples/select-slot/select-slot.react.jsx"
 ---
 ::
 
@@ -118,6 +123,7 @@ The `select` input also supports a `multiple` attribute that allows for multi-se
 ---
 name: "Select input - objects"
 file: "_examples/select-multiple/select-multiple.vue"
+react-file: "_examples/select-multiple/select-multiple.react.jsx"
 ---
 ::
 

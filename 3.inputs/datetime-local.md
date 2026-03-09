@@ -23,6 +23,7 @@ Need more flexibility than the native HTML `datetime-local` input provides? <a h
 ---
   name: "Datetime-local input"
   file: "_examples/datetime-local-example/datetime-local-example.vue"
+  react-file: "_examples/datetime-local-example/datetime-local-example.react.jsx"
 ---
 ::
 

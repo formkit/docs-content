@@ -37,6 +37,7 @@ youtube-id: "BtY1FcpqRJk"
 ---
 name: "Slider Input"
 file: "_examples/slider/basic.vue"
+react-file: "_examples/slider/basic.react.jsx"
 ---
 ::
 
@@ -48,6 +49,7 @@ if you're familar with using the native HTML `range` input you'll find than many
 ---
 name: "Slider Input"
 file: "_examples/slider/native-props.vue"
+react-file: "_examples/slider/native-props.react.jsx"
 ---
 ::
 
@@ -67,6 +69,7 @@ To render two value handles on a `slider` input supply an array as the input's v
 ---
 name: "Slider Input"
 file: "_examples/slider/multiple-values.vue"
+react-file: "_examples/slider/multiple-values.react.jsx"
 ---
 ::
 
@@ -78,6 +81,7 @@ Using the `maxHandleInner` (default) and `minHandleInner` slots you can customiz
 ---
 name: "Slider Input"
 file: "_examples/slider/customizing-handle.vue"
+react-file: "_examples/slider/customizing-handle.react.jsx"
 ---
 ::
 
@@ -91,6 +95,7 @@ By default `slider` tooltips show on hover and when a selection handle is being 
 ---
 name: "Slider Input"
 file: "_examples/slider/tooltip-visibility.vue"
+react-file: "_examples/slider/tooltip-visibility.react.jsx"
 ---
 ::
 
@@ -105,6 +110,7 @@ By providing a function to the `tooltip-format` prop you can customize the value
 ---
 name: "Slider Input"
 file: "_examples/slider/tooltip-formatting.vue"
+react-file: "_examples/slider/tooltip-formatting.react.jsx"
 ---
 ::
 
@@ -114,6 +120,7 @@ By using the `tooltip-format` prop you can introduce variety to your `slider` in
 ---
 name: "Slider Input"
 file: "_examples/slider/fun-formatting.vue"
+react-file: "_examples/slider/fun-formatting.react.jsx"
 ---
 ::
 
@@ -125,6 +132,7 @@ Sometimes a range-style input is more useful for users if they're also able to d
 ---
 name: "Linked Inputs"
 file: "_examples/slider/linked-inputs.vue"
+react-file: "_examples/slider/linked-inputs.react.jsx"
 ---
 ::
 
@@ -140,6 +148,7 @@ The linked `number` inputs are FormKit inputs. You can apply props to them using
 ---
 name: "Linked Inputs"
 file: "_examples/slider/linked-input-attrs.vue"
+react-file: "_examples/slider/linked-input-attrs.react.jsx"
 ---
 ::
 
@@ -153,6 +162,7 @@ The `slider` input supports the rendering of marks on the input's track. By sett
 ---
 name: "Marks"
 file: "_examples/slider/marks.vue"
+react-file: "_examples/slider/marks.react.jsx"
 ---
 ::
 
@@ -164,6 +174,7 @@ You can enable labels for your marks by setting the `mark-labels` prop to `true`
 ---
 name: "Marks with Labels"
 file: "_examples/slider/mark-labels.vue"
+react-file: "_examples/slider/mark-labels.react.jsx"
 ---
 ::
 
@@ -180,6 +191,7 @@ By supplying an array of objects to the `marks` prop instead of a boolean you ca
 ---
 name: "Custom Marks"
 file: "_examples/slider/custom-marks.vue"
+react-file: "_examples/slider/custom-marks.react.jsx"
 ---
 ::
 
@@ -191,6 +203,7 @@ When supplying custom marks you may want to force the selection to snap to the p
 ---
 name: "Snap to Marks"
 file: "_examples/slider/snap-to-marks.vue"
+react-file: "_examples/slider/snap-to-marks.react.jsx"
 ---
 ::
 
@@ -202,6 +215,7 @@ You can apply custom classes to your marks and mark labels by using the `class` 
 ---
 name: "Custom Marks"
 file: "_examples/slider/styling-marks.vue"
+react-file: "_examples/slider/styling-marks.react.jsx"
 ---
 ::
 
@@ -224,6 +238,10 @@ file: [
   "_examples/slider/scaling-functions.vue",
   "_examples/slider/scaling-utils.js"
 ]
+react-file: [
+  "_examples/slider/scaling-functions.react.jsx",
+  "_examples/slider/scaling-utils.js"
+]
 ssr: false
 ---
 ::
@@ -243,6 +261,7 @@ It's important to note that the visual representation of intervals on a `slider`
 ---
 name: "Intervals"
 file: "_examples/slider/intervals.vue"
+react-file: "_examples/slider/intervals.react.jsx"
 ---
 ::
 
@@ -259,6 +278,7 @@ The `slider` input will iterate over you `chart` array and determine the largest
 ---
 name: "Chart"
 file: "_examples/slider/chart.vue"
+react-file: "_examples/slider/chart.react.jsx"
 ---
 ::
 
@@ -271,6 +291,9 @@ By combining the provided props for the `slider` component you can create a robu
 name: "Kitchen Sink"
 file: [
   "_examples/slider/kitchen-sink.vue",
+]
+react-file: [
+  "_examples/slider/kitchen-sink.react.jsx",
 ]
 ssr: false
 ---

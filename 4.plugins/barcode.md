@@ -65,6 +65,10 @@ file: [
   "_examples/barcode/basic.vue",
   "_examples/barcode/formkit.config.ts",
 ]
+react-file: [
+  "_examples/barcode/basic.react.jsx",
+  "_examples/barcode/formkit.config.react.jsx",
+]
 show-import-map: true
 import-map-file: "_examples/barcode/importMap.json"
 min-height: 500
@@ -81,6 +85,10 @@ name: "Barcode formats"
 file: [
   "_examples/barcode/formats.vue",
   "_examples/barcode/formkit.config.ts",
+]
+react-file: [
+  "_examples/barcode/formats.react.jsx",
+  "_examples/barcode/formkit.config.react.jsx",
 ]
 show-import-map: true
 import-map-file: "_examples/barcode/importMap.json"

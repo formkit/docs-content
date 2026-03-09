@@ -22,6 +22,7 @@ The `colorpicker` input is fully keyboard navigable and ships with accessible ma
 ---
   name: "Color input"
   file: "_examples/colorpicker/intro.vue"
+  react-file: "_examples/colorpicker/intro.react.jsx"
   ssr: false
 ---
 ::
@@ -35,6 +36,7 @@ The `colorpicker` supports formats in `Hex`, `HSLA` and `RGBA` formats. You can 
 ---
   name: "Color input"
   file: "_examples/colorpicker/format.vue"
+  react-file: "_examples/colorpicker/format.react.jsx"
   minHeight: 500
   ssr: false
 ---
@@ -48,6 +50,7 @@ There may be times where you wish to show one format to users as a default but r
 ---
   name: "Color input"
   file: "_examples/colorpicker/value-format.vue"
+  react-file: "_examples/colorpicker/value-format.react.jsx"
   minHeight: 400
   ssr: false
 ---
@@ -65,6 +68,7 @@ Here is a simple set of swatches using the `options` prop and providing it with 
 ---
   name: "Color input"
   file: "_examples/colorpicker/simple-swatches.vue"
+  react-file: "_examples/colorpicker/simple-swatches.react.jsx"
   ssr: false
 ---
 ::
@@ -77,6 +81,7 @@ The `colorpicker` also supports grouped `options`. This allows you to create set
 ---
   name: "Color input"
   file: "_examples/colorpicker/grouped-swatches.vue"
+  react-file: "_examples/colorpicker/grouped-swatches.react.jsx"
   ssr: false
 ---
 ::
@@ -91,6 +96,7 @@ When showing only swatches in pop-over mode (the default) adding the `close-on-s
 ---
   name: "Color input"
   file: "_examples/colorpicker/swatch-only.vue"
+  react-file: "_examples/colorpicker/swatch-only.react.jsx"
   ssr: false
 ---
 ::
@@ -103,6 +109,7 @@ If your provided swatches via the `options` prop have `label`s then you can call
 ---
   name: "Color input"
   file: "_examples/colorpicker/input-swatch-name.vue"
+  react-file: "_examples/colorpicker/input-swatch-name.react.jsx"
   ssr: false
 ---
 ::
@@ -115,6 +122,7 @@ The `colorpicker` input supports the browser-native [EyeDropper API](https://dev
 ---
   name: "Color input"
   file: "_examples/colorpicker/eye-dropper.vue"
+  react-file: "_examples/colorpicker/eye-dropper.react.jsx"
   ssr: false
 ---
 ::
@@ -129,6 +137,7 @@ You can disable the ability to paste a value by setting the `allow-paste` prop t
 ---
   name: "Color input"
   file: "_examples/colorpicker/paste.vue"
+  react-file: "_examples/colorpicker/paste.react.jsx"
   min-height: 650
   ssr: false
 ---

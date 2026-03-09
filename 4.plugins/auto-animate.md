@@ -68,6 +68,10 @@ file: [
   "_examples/auto-animate/auto-animate.vue",
   "_examples/auto-animate/formkit.config.ts"
 ]
+react-file: [
+  "_examples/auto-animate/auto-animate.react.jsx",
+  "_examples/auto-animate/formkit.config.react.jsx"
+]
 ---
 ::
 

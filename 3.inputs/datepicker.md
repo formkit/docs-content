@@ -27,6 +27,7 @@ youtube-id: "c-P-DUZeU1U"
 ---
   name: "Datepicker basic"
   file: "_examples/datepicker/datepicker-basic.vue"
+  react-file: "_examples/datepicker/datepicker-basic.react.jsx"
   min-height: 500
 ---
 ::
@@ -43,6 +44,7 @@ FormKit uses a unique masking solution to allow users to type dates into the dat
 ---
   name: "Datepicker basic"
   file: "_examples/datepicker/datepicker-dual-mode.vue"
+  react-file: "_examples/datepicker/datepicker-dual-mode.react.jsx"
   min-height: 500
 ---
 ::
@@ -63,6 +65,7 @@ You can disable the text-entry mechanism and ensure someone uses the datepicker 
 ---
   name: "Datepicker picker-only"
   file: "_examples/datepicker/datepicker-picker-only.vue"
+  react-file: "_examples/datepicker/datepicker-picker-only.react.jsx"
   min-height: 500
 ---
 ::
@@ -82,6 +85,7 @@ The `format` prop can accept a simple string like `long` or `medium`, in which c
 ---
   name: "Datepicker style formats"
   file: "_examples/datepicker/datepicker-styles.vue"
+  react-file: "_examples/datepicker/datepicker-styles.react.jsx"
   min-height: 500
 ---
 ::
@@ -156,6 +160,7 @@ Although FormKit will internationalize your tokens automatically — if your for
 ---
   name: "Datepicker tokens"
   file: "_examples/datepicker/datepicker-tokens.vue"
+  react-file: "_examples/datepicker/datepicker-tokens.react.jsx"
   min-height: 500
 ---
 ::
@@ -168,6 +173,7 @@ To include letters in the your format that are themselves tokens (like `a`), you
 ---
   name: "Datepicker escape tokens"
   file: "_examples/datepicker/datepicker-escape-tokens.vue"
+  react-file: "_examples/datepicker/datepicker-escape-tokens.react.jsx"
   min-height: 500
 ---
 ::
@@ -189,6 +195,7 @@ For example, when selecting a birthday, it is natural to first select the birth 
 ---
   name: "Datepicker sequence"
   file: "_examples/datepicker/datepicker-sequence.vue"
+  react-file: "_examples/datepicker/datepicker-sequence.react.jsx"
   min-height: 500
 ---
 ::
@@ -201,6 +208,7 @@ The `time` panel can be used to allow a user to select a specific time of day. I
 ---
   name: "Datepicker time"
   file: "_examples/datepicker/datepicker-time.vue"
+  react-file: "_examples/datepicker/datepicker-time.react.jsx"
   min-height: 500
 ---
 ::
@@ -227,6 +235,7 @@ To use a date style as the value, pass the style you’d like to use to the `val
 ---
   name: "Datepicker style value"
   file: "_examples/datepicker/datepicker-style-value.vue"
+  react-file: "_examples/datepicker/datepicker-style-value.react.jsx"
   min-height: 500
 ---
 ::
@@ -239,6 +248,7 @@ Values can also be represented in any arbitrary format by using formatting token
 ---
   name: "Datepicker token value"
   file: "_examples/datepicker/datepicker-token-value.vue"
+  react-file: "_examples/datepicker/datepicker-token-value.react.jsx"
   min-height: 500
 ---
 ::
@@ -259,6 +269,7 @@ Although native `Date` objects are always accepted as valid *inputs* for a datep
 ---
   name: "Datepicker value locale"
   file: "_examples/datepicker/datepicker-matching-value.vue"
+  react-file: "_examples/datepicker/datepicker-matching-value.react.jsx"
   min-height: 500
 ---
 ::
@@ -269,6 +280,7 @@ Although native `Date` objects are always accepted as valid *inputs* for a datep
 ---
   name: "Datepicker value locale"
   file: "_examples/datepicker/datepicker-native-date.vue"
+  react-file: "_examples/datepicker/datepicker-native-date.react.jsx"
   min-height: 500
 ---
 ::
@@ -290,6 +302,7 @@ Changing the `value-locale` has no effect on the `timezone` of the date being pi
 ---
   name: "Datepicker value locale"
   file: "_examples/datepicker/datepicker-value-locale.vue"
+  react-file: "_examples/datepicker/datepicker-value-locale.react.jsx"
   min-height: 500
 ---
 ::
@@ -348,6 +361,7 @@ You can achieve indeterminate time with the datepicker by providing no timezone 
 ---
   name: "Datepicker indeterminate"
   file: "_examples/datepicker/datepicker-indeterminate.vue"
+  react-file: "_examples/datepicker/datepicker-indeterminate.react.jsx"
   min-height: 600
 ---
 ::
@@ -374,6 +388,7 @@ In the example below, a user needs to pickup a rental car in Kolkata, India afte
 ---
   name: "Datepicker timezone"
   file: "_examples/datepicker/datepicker-timezone.vue"
+  react-file: "_examples/datepicker/datepicker-timezone.react.jsx"
   min-height: 600
 ---
 ::
@@ -404,6 +419,7 @@ Often it is necessary to disable dates that are prior to a particular date. For 
 ---
   name: "Datepicker min-date"
   file: "_examples/datepicker/datepicker-min-date.vue"
+  react-file: "_examples/datepicker/datepicker-min-date.react.jsx"
   min-height: 500
 ---
 ::
@@ -416,6 +432,7 @@ To disable all dates after a given date, use the `max-date` prop. For example, a
 ---
   name: "Datepicker min-date"
   file: "_examples/datepicker/datepicker-max-date.vue"
+  react-file: "_examples/datepicker/datepicker-max-date.react.jsx"
   min-height: 500
 ---
 ::
@@ -449,6 +466,7 @@ It’s important that the provided function is fast and synchronous — it will
 ---
   name: "Datepicker disabled weekends"
   file: "_examples/datepicker/datepicker-disabled-days-weekend.vue"
+  react-file: "_examples/datepicker/datepicker-disabled-days-weekend.react.jsx"
   min-height: 500
 ---
 ::
@@ -458,6 +476,7 @@ It’s important that the provided function is fast and synchronous — it will
 ---
   name: "Datepicker random disabled"
   file: "_examples/datepicker/datepicker-random-disabled.vue"
+  react-file: "_examples/datepicker/datepicker-random-disabled.react.jsx"
   min-height: 500
 ---
 ::
@@ -473,6 +492,7 @@ To make the user experience better, the datepicker will automatically scan forwa
 ---
   name: "Datepicker max-scan"
   file: "_examples/datepicker/datepicker-max-scan.vue"
+  react-file: "_examples/datepicker/datepicker-max-scan.react.jsx"
   min-height: 500
 ---
 ::
@@ -485,6 +505,7 @@ The datepicker input can be cleared by clicking the "clear" button that appears 
 ---
   name: "Datepicker clearable"
   file: "_examples/datepicker/datepicker-clearable.vue"
+  react-file: "_examples/datepicker/datepicker-clearable.react.jsx"
   min-height: 500
 ---
 ::

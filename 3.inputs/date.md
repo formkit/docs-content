@@ -23,6 +23,7 @@ Need more flexibility than the native HTML `date` input provides? <a href="/inpu
 ---
   name: "Date input"
   file: "_examples/date-example/date-example.vue"
+  react-file: "_examples/date-example/date-example.react.jsx"
 ---
 ::
 

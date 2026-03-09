@@ -15,6 +15,7 @@ The `textarea` input uses HTML's [native textarea input](https://developer.mozil
 ---
 name: "Textarea input"
 file: "_examples/textarea/textarea.vue"
+react-file: "_examples/textarea/textarea.react.jsx"
 ---
 ::
 

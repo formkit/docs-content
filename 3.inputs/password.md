@@ -15,6 +15,7 @@ The `password` input uses HTML's [native password input](https://developer.mozil
 ---
 name: "Password input"
 file: "_examples/password/password.vue"
+react-file: "_examples/password/password.react.jsx"
 ---
 ::
 
@@ -26,6 +27,7 @@ By leveraging the [icons](/essentials/icons) support built in to FormKit you can
 ---
 name: "Password input"
 file: "_examples/icons/handle-click.vue"
+react-file: "_examples/icons/handle-click.react.jsx"
 ---
 ::
 

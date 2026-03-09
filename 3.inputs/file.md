@@ -19,6 +19,7 @@ The `file` input uses HTML's [native file input](https://developer.mozilla.org/e
 ---
 name: "File input"
 file: "_examples/file/file.vue"
+react-file: "_examples/file/file.react.jsx"
 ---
 ::
 
@@ -32,6 +33,7 @@ This structure can be used to pre-populate a file input with previously uploaded
 ---
 name: "File input"
 file: "_examples/file-populate/file-populate.vue"
+react-file: "_examples/file-populate/file-populate.react.jsx"
 ---
 ::
 
@@ -51,6 +53,7 @@ The file upload process is left to your form’s submission handler. When submit
 ---
   name: "File input"
   file: "_examples/file-upload/file-upload.vue"
+  react-file: "_examples/file-upload/file-upload.react.jsx"
 ---
 ::
 

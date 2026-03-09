@@ -30,6 +30,7 @@ These options use `parseFloat` (default) or `parseInt` respectively. If the valu
 ---
 name: "Range cast input"
 file: "_examples/text/text-cast.vue"
+react-file: "_examples/text/text-cast.react.jsx"
 ---
 ::
 

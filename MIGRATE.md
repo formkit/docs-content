@@ -6,17 +6,17 @@ Migrating content from `origin/master` to `feature/ui-rewrite`.
 
 The feature branch restructured directories:
 
-| master | feature/ui-rewrite |
-|--------|-------------------|
+| master             | feature/ui-rewrite   |
+| ------------------ | -------------------- |
 | `getting-started/` | `1.getting-started/` |
-| `essentials/` | `2.essentials/` |
-| `inputs/` | `3.inputs/` |
-| `plugins/` | `4.plugins/` |
-| `guides/` | `5.guides/` |
-| `api-reference/` | `6.api-reference/` |
-| `changelog-pro/` | `_changelog-pro/` |
-| `changelog/` | `_changelog/` |
-| `.examples/` | `_examples/` |
+| `essentials/`      | `2.essentials/`      |
+| `inputs/`          | `3.inputs/`          |
+| `plugins/`         | `4.plugins/`         |
+| `guides/`          | `5.guides/`          |
+| `api-reference/`   | `6.api-reference/`   |
+| `changelog-pro/`   | `_changelog-pro/`    |
+| `changelog/`       | `_changelog/`        |
+| `.examples/`       | `_examples/`         |
 
 **Numbered prefixes** control navigation order. **Underscore prefixes** hide directories from main navigation.
 
@@ -29,6 +29,7 @@ The feature branch restructured directories:
 No transformation needed. Copy files with same names.
 
 **Pro changelogs** (v0.123.0 → v0.127.23):
+
 ```bash
 # From docs-content root:
 for f in $(git show origin/master --name-only | grep "^changelog-pro/"); do
@@ -39,6 +40,7 @@ done
 Files: `68.v.0.123.0.md` through `128.v0.127.23.md`
 
 **Core changelogs** (v1.6.2 → v1.6.8):
+
 ```
 33.v1.6.2.md
 34.v1.6.3.md
@@ -53,10 +55,10 @@ Files: `68.v.0.123.0.md` through `128.v0.127.23.md`
 
 These inputs have old-style `::FormKitInputDiagram` blocks that must be converted:
 
-| File | Target |
-|------|--------|
+| File                 | Target                 |
+| -------------------- | ---------------------- |
 | `inputs/currency.md` | `3.inputs/currency.md` |
-| `inputs/unit.md` | `3.inputs/unit.md` |
+| `inputs/unit.md`     | `3.inputs/unit.md`     |
 
 Note: `meta.md` already exists on the feature branch (adapted to new system).
 
@@ -67,6 +69,7 @@ Note: `meta.md` already exists on the feature branch (adapted to new system).
 Copy from `.examples/` to `_examples/`:
 
 Key new examples:
+
 - `_data/citiesByState.js`
 - `currency/` (3 files)
 - `barcode/basic.vue`, `barcode/formats.vue`, `barcode/formkit.config.js`
@@ -89,6 +92,7 @@ api-reference/context.md → 6.api-reference/context.md
 ### 6. Typo/Content Fixes - MANUAL REVIEW
 
 Various PRs fixed typos across existing files. Review these commits and apply relevant fixes manually:
+
 - `custom-inputs.md` punctuation fixes
 - `installation.md` fixes
 - Validation rule example updates
@@ -100,25 +104,30 @@ Various PRs fixed typos across existing files. Review these commits and apply re
 ### The Problem
 
 **Old format** (master) embeds diagram content in markdown:
+
 ```markdown
-::FormKitInputDiagram
----
+## ::FormKitInputDiagram
+
 prefix-icon-content: ""
 suffix-icon-content: ""
 label-content: "Currency Input"
 input-content: "$1,234.56"
 help-content: "How much do you want to donate?"
 message-content: "That's a lot of money"
+
 ---
+
 ::
 ```
 
 **New format** (feature/ui-rewrite) uses TypeScript definitions:
+
 ```markdown
 :FormKitInputDiagrams
 ```
 
 The component derives the input name from the route and dynamically imports:
+
 - `docs-ui/assets/content/input-definitions/sections/{inputName}.ts`
 - `docs-ui/assets/content/input-definitions/slot-data/{inputName}.ts`
 
@@ -129,6 +138,7 @@ For each new input (`currency`, `unit`, `meta`):
 #### Step 1: Extract content from old markdown
 
 From the old `::FormKitInputDiagram` block, note:
+
 - `label-content` → becomes `data.label` in sections file
 - `input-content` → becomes `data.input`
 - `help-content` → becomes `data.help`
@@ -137,6 +147,7 @@ From the old `::FormKitInputDiagram` block, note:
 #### Step 2: Analyze the FormKit schema
 
 Find the input's schema definition:
+
 - **Pro inputs**: `~/Sites/formkit-pro/src/inputs/{input}.ts`
 - **Pro sections**: `~/Sites/formkit-pro/src/sections/{input}Sections.ts`
 
@@ -148,14 +159,14 @@ Create `docs-ui/assets/content/input-definitions/sections/{inputName}.ts`:
 
 ```typescript
 const data = {
-  label: 'Currency Input',        // from old label-content
-  input: '$1,234.56',             // from old input-content
-  help: 'How much to donate?',    // from old help-content
-  message: 'Validation error',    // from old message-content
+  label: 'Currency Input', // from old label-content
+  input: '$1,234.56', // from old input-content
+  help: 'How much to donate?', // from old help-content
+  message: 'Validation error', // from old message-content
 }
 
 export default {
-  family: 'text',  // or 'dropdown', 'box', etc.
+  family: 'text', // or 'dropdown', 'box', etc.
   specimens: [
     {
       label: 'Default',
@@ -184,9 +195,7 @@ export default {
             { name: 'help', content: data.help },
             {
               name: 'messages',
-              children: [
-                { name: 'message', content: data.message },
-              ],
+              children: [{ name: 'message', content: data.message }],
             },
           ],
         },
@@ -214,7 +223,12 @@ const slotData: Record<string, any>[] = [
   // Add input-specific slot properties
 ]
 
-const specimens = generateSpecimens(sections, baseSlotData, slotData, sectionData)
+const specimens = generateSpecimens(
+  sections,
+  baseSlotData,
+  slotData,
+  sectionData
+)
 
 export default specimens
 ```
@@ -222,15 +236,17 @@ export default specimens
 #### Step 5: Update the markdown
 
 Replace the old diagram block:
+
 ```markdown
-::FormKitInputDiagram
----
-...
----
+## ::FormKitInputDiagram
+
+## ...
+
 ::
 ```
 
 With:
+
 ```markdown
 :FormKitInputDiagrams
 ```
@@ -244,6 +260,7 @@ docs-ui/assets/content/input-definitions/CLAUDE.md
 ```
 
 This file contains:
+
 - Complete guide to creating input definitions
 - Section hierarchy patterns for each input family (text, dropdown, box)
 - Section properties reference (`name`, `content`, `class`, `children`, etc.)
@@ -253,6 +270,7 @@ This file contains:
 - Verification steps
 
 **Also see:**
+
 - `docs-ui/assets/content/input-definitions/sections/_data.ts` - Base section metadata
 - `docs-ui/assets/content/input-definitions/slot-data/_base.ts` - Common slot data
 - `docs-ui/assets/content/input-definitions/slot-data/_utils.ts` - Helper utilities
@@ -287,16 +305,19 @@ Note: `_content/` prefix is removed.
 ## Migration Checklist
 
 ### Phase 1: Changelogs
+
 - [ ] Copy Pro changelogs (68.v.0.123.0.md → 128.v0.127.23.md)
 - [ ] Copy Core changelogs (33.v1.6.2.md → 39.v1.6.8.md)
 
 ### Phase 2: New Inputs
+
 - [ ] Create `currency` sections + slot-data files in docs-ui
 - [ ] Create `unit` sections + slot-data files in docs-ui
 - [ ] Copy `currency.md` to `3.inputs/`, update diagram syntax
 - [ ] Copy `unit.md` to `3.inputs/`, update diagram syntax
 
 ### Phase 3: Examples
+
 - [ ] Copy `_data/citiesByState.js`
 - [ ] Copy `currency/` examples (3 files)
 - [ ] Copy `barcode/` examples (3 files)
@@ -305,9 +326,11 @@ Note: `_content/` prefix is removed.
 - [ ] Update any example file paths in markdown
 
 ### Phase 4: Guides & API
+
 - [ ] Copy Laravel/Inertia guide
 - [ ] Copy context.md API reference
 
 ### Phase 5: Content Fixes
+
 - [ ] Review typo fix commits
 - [ ] Apply relevant fixes to feature branch files

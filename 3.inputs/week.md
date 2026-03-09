@@ -16,6 +16,7 @@ select a week.
 ---
 name: "Week input"
 file: "_examples/week/week.vue"
+react-file: "_examples/week/week.react.jsx"
 ---
 ::
 

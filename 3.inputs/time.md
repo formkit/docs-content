@@ -15,6 +15,7 @@ The `time` input uses HTML's [native time input](https://developer.mozilla.org/e
 ---
 name: "Time input"
 file: "_examples/time/time.vue"
+react-file: "_examples/time/time.react.jsx"
 ---
 ::
 

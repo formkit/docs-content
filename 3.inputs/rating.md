@@ -18,6 +18,7 @@ The `rating` input allows users to provide feedback based on a numeric scale rep
 ---
 name: "Rating"
 file: "_examples/rating/rating-base.vue"
+react-file: "_examples/rating/rating-base.react.jsx"
 ---
 ::
 
@@ -30,6 +31,7 @@ The `min` and `max` props define the minimum and maximum values an end-user can 
 ---
 name: "Rating"
 file: "_examples/rating/rating-min-max.vue"
+react-file: "_examples/rating/rating-min-max.react.jsx"
 ---
 ::
 
@@ -42,6 +44,7 @@ By default, the `rating` input will increment by 1. The `step` prop will allow y
 ---
 name: "Rating"
 file: "_examples/rating/rating-step.vue"
+react-file: "_examples/rating/rating-step.react.jsx"
 ---
 ::
 
@@ -54,6 +57,7 @@ By default, the `rating` input uses FormKit's own star icon. You can change whic
 ---
 name: "Rating"
 file: "_examples/rating/rating-icon.vue"
+react-file: "_examples/rating/rating-icon.react.jsx"
 ---
 ::
 
@@ -68,6 +72,7 @@ Instead of specifying an icon via the FormKit icon plugin, you can pass a raw SV
 ---
 name: "Rating"
 file: "_examples/rating/rating-default-slot.vue"
+react-file: "_examples/rating/rating-default-slot.react.jsx"
 ---
 ::
 
@@ -80,6 +85,7 @@ Lastly, you can use the `offItem` and `onItem` slots to pass whatever assets you
 ---
 name: "Rating"
 file: "_examples/rating/rating-named-slots.vue"
+react-file: "_examples/rating/rating-named-slots.react.jsx"
 ---
 ::
 
@@ -92,6 +98,7 @@ In addition to supplying an icon, you can also specify the color via props. Sett
 ---
 name: "Rating"
 file: "_examples/rating/rating-colors.vue"
+react-file: "_examples/rating/rating-colors.react.jsx"
 ---
 ::
 

@@ -39,6 +39,10 @@ file: [
   "_examples/taglist/taglist-base.vue",
   "_examples/_data/car-brands.js"
 ]
+react-file: [
+  "_examples/taglist/taglist-base.react.jsx",
+  "_examples/_data/car-brands.js"
+]
 ---
 ::
 
@@ -54,6 +58,10 @@ file: [
   "_examples/taglist/taglist-filter.vue",
   "_examples/_data/countries.js"
 ]
+react-file: [
+  "_examples/taglist/taglist-filter.react.jsx",
+  "_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -66,6 +74,7 @@ The taglist input, unlike the dropdown or autocomplete inputs, allows you to ent
 name: "Taglist"
 min-height: 550
 file: "_examples/taglist/taglist-allow-new-values.vue"
+react-file: "_examples/taglist/taglist-allow-new-values.react.jsx"
 ---
 ::
 
@@ -82,6 +91,7 @@ In this example, we'll assign the `options` prop the `searchMovies` function. By
 name: "Taglist"
 min-height: 550
 file: "_examples/taglist/taglist-single-request.vue"
+react-file: "_examples/taglist/taglist-single-request.react.jsx"
 ---
 ::
 
@@ -95,6 +105,7 @@ A likely scenario you'll encounter is needing to search through a paginated API.
 name: "Taglist"
 min-height: 550
 file: "_examples/taglist/taglist-pagination.vue"
+react-file: "_examples/taglist/taglist-pagination.react.jsx"
 ---
 ::
 
@@ -113,6 +124,7 @@ FormKit's taglist input also provides an `optionLoader` prop that allows you to 
 name: "Taglist"
 min-height: 550
 file: "_examples/taglist/taglist-pagination-option-loader.vue"
+react-file: "_examples/taglist/taglist-pagination-option-loader.react.jsx"
 ssr: false
 ---
 ::
@@ -132,6 +144,7 @@ If you would rather load options when the taglist is created, you can set the `l
 name: "Taglist"
 min-height: 550
 file: "_examples/taglist/taglist-load-on-created.vue"
+react-file: "_examples/taglist/taglist-load-on-created.react.jsx"
 ---
 ::
 
@@ -150,6 +163,10 @@ file: [
   "_examples/taglist/taglist-slots.vue",
   "_examples/_data/car-brands.js"
 ]
+react-file: [
+  "_examples/taglist/taglist-slots.react.jsx",
+  "_examples/_data/car-brands.js"
+]
 ---
 ::
 ## Behavioral props
@@ -164,6 +181,10 @@ name: "taglist"
 min-height: 550
 file: [
   "_examples/taglist/taglist-empty-message.vue",
+  "_examples/_data/countries.js"
+]
+react-file: [
+  "_examples/taglist/taglist-empty-message.react.jsx",
   "_examples/_data/countries.js"
 ]
 ---
@@ -181,6 +202,10 @@ file: [
   "_examples/taglist/taglist-max.vue",
   "_examples/_data/countries.js"
 ]
+react-file: [
+  "_examples/taglist/taglist-max.react.jsx",
+  "_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -194,6 +219,10 @@ name: "Taglist"
 min-height: 550
 file: [
   "_examples/taglist/taglist-close-on-select.vue",
+  "_examples/_data/countries.js"
+]
+react-file: [
+  "_examples/taglist/taglist-close-on-select.react.jsx",
   "_examples/_data/countries.js"
 ]
 ---
@@ -211,6 +240,10 @@ file: [
   "_examples/taglist/taglist-reload-on-commit.vue",
   "_examples/_data/countries.js"
 ]
+react-file: [
+  "_examples/taglist/taglist-reload-on-commit.react.jsx",
+  "_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -226,6 +259,10 @@ file: [
   "_examples/taglist/taglist-open-on-click.vue",
   "_examples/_data/countries.js"
 ]
+react-file: [
+  "_examples/taglist/taglist-open-on-click.react.jsx",
+  "_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -238,6 +275,7 @@ If you would like to open the taglist's listbox anytime its search input is focu
 name: "taglist"
 min-height: 550
 file: "_examples/taglist/taglist-open-on-focus.vue"
+react-file: "_examples/taglist/taglist-open-on-focus.react.jsx"
 ---
 ::
 
@@ -261,6 +299,10 @@ file: [
   "_examples/taglist/taglist-open-on-remove.vue",
   "_examples/_data/countries.js"
 ]
+react-file: [
+  "_examples/taglist/taglist-open-on-remove.react.jsx",
+  "_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -275,6 +317,10 @@ name: "Taglist"
 min-height: 550
 file: [
   "_examples/taglist/taglist-full-example.vue",
+  "_examples/_data/top-movies.js"
+]
+react-file: [
+  "_examples/taglist/taglist-full-example.react.jsx",
   "_examples/_data/top-movies.js"
 ]
 ---

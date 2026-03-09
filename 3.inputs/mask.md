@@ -29,6 +29,7 @@ youtube-id: "J4mkd7UsjIM"
 ---
 name: "Mask input"
 file: "_examples/mask/basic.vue"
+react-file: "_examples/mask/basic.react.jsx"
 ---
 ::
 
@@ -54,6 +55,7 @@ The mask input comes with 4 built-in tokens:
 ---
 name: "Mask input"
 file: "_examples/mask/simple.vue"
+react-file: "_examples/mask/simple.react.jsx"
 ---
 ::
 
@@ -81,6 +83,7 @@ By default, the characters of a mask are automatically shifted forward when typi
 ---
 name: "Mask input - shift vs replace"
 file: "_examples/mask/shift-replace.vue"
+react-file: "_examples/mask/shift-replace.react.jsx"
 ---
 ::
 
@@ -94,6 +97,7 @@ Additionally, when an input is in select mode, the user can use the arrow or tab
 ---
 name: "Mask input - select"
 file: "_examples/mask/select.vue"
+react-file: "_examples/mask/select.react.jsx"
 ---
 ::
 
@@ -189,6 +193,7 @@ expects an object with keys that match the `token` property. For example, our ne
 ---
 name: "Mask input"
 file: "_examples/mask/tokens-prop.vue"
+react-file: "_examples/mask/tokens-prop.react.jsx"
 ---
 ::
 
@@ -200,6 +205,10 @@ To register your mask tokens globally, extend the `config` property of your glob
 ---
 name: "Mask input global"
 file: ["_examples/mask/tokens-global.vue", "_examples/mask/formkit.config.ts"]
+react-file: [
+  "_examples/mask/tokens-global.react.jsx",
+  "_examples/mask/formkit.config.react.jsx"
+]
 init-file-tab: "formkit.config.ts"
 ---
 ::
@@ -212,6 +221,7 @@ In addition to creating new tokens, the `tokens` prop can also modify existing t
 ---
 name: "Mask input - select fill"
 file: "_examples/mask/select-fill.vue"
+react-file: "_examples/mask/select-fill.react.jsx"
 ---
 ::
 
@@ -239,6 +249,7 @@ A date with auto-completing month names could be well represented with enums:
 ---
 name: "Mask input – enum"
 file: "_examples/mask/enum.vue"
+react-file: "_examples/mask/enum.react.jsx"
 ---
 ::
 
@@ -286,6 +297,7 @@ You can string group options together:
 ---
 name: "Mask input"
 file: "_examples/mask/groups.vue"
+react-file: "_examples/mask/groups.react.jsx"
 ---
 ::
 
@@ -305,6 +317,7 @@ You can ensure certain characters always appear at the beginning or end of an in
 ---
 name: "Mask input"
 file: "_examples/mask/prefix-suffix.vue"
+react-file: "_examples/mask/prefix-suffix.react.jsx"
 ---
 ::
 
@@ -324,6 +337,7 @@ In specific circumstances, you may want to run your mask in reverse. The mask wi
 ---
 name: "Mask input"
 file: "_examples/mask/reverse.vue"
+react-file: "_examples/mask/reverse.react.jsx"
 ---
 ::
 
@@ -345,6 +359,7 @@ A mask’s value is not considered "complete" until the user has filled the enti
 ---
 name: "Mask input - allow incomplete"
 file: "_examples/mask/allow-incomplete.vue"
+react-file: "_examples/mask/allow-incomplete.react.jsx"
 ---
 ::
 
@@ -356,6 +371,7 @@ By default, the value of a mask input includes the formatting provided via the `
 ---
 name: "Mask input - unmask value"
 file: "_examples/mask/unmask-value.vue"
+react-file: "_examples/mask/unmask-value.react.jsx"
 ---
 ::
 
@@ -367,6 +383,7 @@ By default, the `mask` input displays each token’s placeholder character. You 
 ---
 name: "Mask input - show mask"
 file: "_examples/mask/show-mask.vue"
+react-file: "_examples/mask/show-mask.react.jsx"
 ---
 ::
 
@@ -389,6 +406,7 @@ The default genesis theme automatically supports the overlay and applies light g
 ---
 name: "Mask input - overlay"
 file: "_examples/mask/overlay.vue"
+react-file: "_examples/mask/overlay.react.jsx"
 ssr: false
 ---
 ::

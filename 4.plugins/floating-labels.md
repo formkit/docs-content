@@ -45,6 +45,10 @@ file: [
   "_examples/floating-labels/off-by-default/off-by-default.vue",
   "_examples/floating-labels/off-by-default/formkit.config.ts"
 ]
+react-file: [
+  "_examples/floating-labels/off-by-default/off-by-default.react.jsx",
+  "_examples/floating-labels/off-by-default/formkit.config.react.jsx"
+]
 ---
 ::
 
@@ -69,6 +73,10 @@ name: "Floating Label Automatic"
 file: [
   "_examples/floating-labels/on-by-default/on-by-default.vue",
   "_examples/floating-labels/on-by-default/formkit.config.ts"
+]
+react-file: [
+  "_examples/floating-labels/on-by-default/on-by-default.react.jsx",
+  "_examples/floating-labels/on-by-default/formkit.config.react.jsx"
 ]
 ---
 ::

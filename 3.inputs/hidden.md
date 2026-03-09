@@ -23,6 +23,7 @@ The `hidden` input uses HTML's [native hidden input](https://developer.mozilla.o
 ---
 name: "Hidden input"
 file: "_examples/hidden/hidden.vue"
+react-file: "_examples/hidden/hidden.react.jsx"
 tabs: "html,render"
 ---
 ::
@@ -37,6 +38,7 @@ These options use `parseFloat` (default) or `parseInt` respectively. If the valu
 ---
 name: "Hidden cast input"
 file: "_examples/hidden/hidden-cast.vue"
+react-file: "_examples/hidden/hidden-cast.react.jsx"
 ---
 ::
 

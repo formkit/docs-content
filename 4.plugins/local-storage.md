@@ -63,6 +63,10 @@ file: [
   "_examples/local-storage/basic/basic.vue",
   "_examples/local-storage/basic/formkit.config.ts"
 ]
+react-file: [
+  "_examples/local-storage/basic/basic.react.jsx",
+  "_examples/local-storage/basic/formkit.config.react.jsx"
+]
 ---
 ::
 
@@ -79,6 +83,10 @@ file: [
   "_examples/local-storage/restore/restore.vue",
   "_examples/local-storage/restore/formkit.config.ts"
 ]
+react-file: [
+  "_examples/local-storage/restore/restore.react.jsx",
+  "_examples/local-storage/restore/formkit.config.react.jsx"
+]
 ---
 ::
 
@@ -91,6 +99,9 @@ If you are saving data to localStorage in the context of an app where multiple u
 name: "Save with Key"
 file: [
   "_examples/local-storage/key/key.vue"
+]
+react-file: [
+  "_examples/local-storage/key/key.react.jsx"
 ]
 ---
 ::
@@ -106,6 +117,9 @@ name: "Save with Control"
 file: [
   "_examples/local-storage/control/control.vue"
 ]
+react-file: [
+  "_examples/local-storage/control/control.react.jsx"
+]
 ---
 ::
 
@@ -120,6 +134,9 @@ Note that the form is disabled when loading data from localStorage until our `be
 name: "Save with Modification"
 file: [
   "_examples/local-storage/modification/modification.vue"
+]
+react-file: [
+  "_examples/local-storage/modification/modification.react.jsx"
 ]
 ---
 ::

@@ -25,6 +25,7 @@ To output multiple toggle buttons use the `options` prop. Options can be specifi
 ---
 name: "Toggle Buttons Simple Options"
 file: "_examples/togglebuttons/togglebuttons-multiple-basic.vue"
+react-file: "_examples/togglebuttons/togglebuttons-multiple-basic.react.jsx"
 ---
 ::
 
@@ -38,6 +39,7 @@ The `togglebuttons` input, by default, only allows one option to be selected. Yo
 ---
 name: "Multiple"
 file: "_examples/togglebuttons/togglebuttons-multiple.vue"
+react-file: "_examples/togglebuttons/togglebuttons-multiple.react.jsx"
 ---
 ::
 
@@ -49,6 +51,7 @@ By default `togglebuttons` will allow you to select and deselect allowing for an
 ---
 name: "Multiple"
 file: "_examples/togglebuttons/togglebuttons-single-enforced.vue"
+react-file: "_examples/togglebuttons/togglebuttons-single-enforced.react.jsx"
 ---
 ::
 
@@ -60,6 +63,7 @@ Assuming you are using the default FormKit styles, the `vertical` prop applies d
 ---
 name: "Vertical"
 file: "_examples/togglebuttons/togglebuttons-vertical.vue"
+react-file: "_examples/togglebuttons/togglebuttons-vertical.react.jsx"
 ---
 ::
 
@@ -69,6 +73,7 @@ More prop examples and combinations:
 ---
 name: "Toggle Buttons Multiple Enforced"
 file: "_examples/togglebuttons/togglebuttons-enforced.vue"
+react-file: "_examples/togglebuttons/togglebuttons-enforced.react.jsx"
 ---
 ::
 
@@ -82,6 +87,7 @@ The `togglebuttons` input offers choices between one or more values; it's a grea
 ---
 name: "Single Toggle Button"
 file: "_examples/togglebuttons/togglebuttons-simple.vue"
+react-file: "_examples/togglebuttons/togglebuttons-simple.react.jsx"
 ---
 ::
 
@@ -94,6 +100,7 @@ The values for the toggle buttons are `undefined` if not-interacted with, `true`
 ---
 name: "On / Off Values"
 file: "_examples/togglebuttons/togglebuttons-basic-values.vue"
+react-file: "_examples/togglebuttons/togglebuttons-basic-values.react.jsx"
 ---
 ::
 
@@ -105,6 +112,7 @@ Additionally, you may specify secondary labels by setting the `on-label` and the
 ---
 name: "On / Off Labels"
 file: "_examples/togglebuttons/togglebuttons-value-labels.vue"
+react-file: "_examples/togglebuttons/togglebuttons-value-labels.react.jsx"
 ---
 ::
 
@@ -118,6 +126,7 @@ For multiple options you can use the `default` slot to set the toggle's content.
 ---
 name: "Toggle Buttons Options Slot"
 file: "_examples/togglebuttons/togglebuttons-options-slots.vue"
+react-file: "_examples/togglebuttons/togglebuttons-options-slots.react.jsx"
 ---
 ::
 
@@ -129,6 +138,7 @@ For a single toggle you can use the default slot for setting the toggle content.
 ---
 name: "Toggle Buttons Default Slot"
 file: "_examples/togglebuttons/togglebuttons-single-slots.vue"
+react-file: "_examples/togglebuttons/togglebuttons-single-slots.react.jsx"
 ---
 ::
 

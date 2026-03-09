@@ -21,6 +21,7 @@ The simplest way to provide options is an array of strings. The provided strings
 ---
 name: "Radio input"
 file: "_examples/radio-strings/radio-strings.vue"
+react-file: "_examples/radio-strings/radio-strings.react.jsx"
 ---
 ::
 
@@ -33,6 +34,7 @@ You may also provide the `options` prop where the keys are values and the values
 ---
 name: "Radio input"
 file: "_examples/radio-object/radio-object.vue"
+react-file: "_examples/radio-object/radio-object.react.jsx"
 ---
 ::
 
@@ -45,6 +47,7 @@ The most flexible way to define options is by providing an array of objects. The
 ---
 name: "Radio input"
 file: "_examples/radio-objects/radio-objects.vue"
+react-file: "_examples/radio-objects/radio-objects.react.jsx"
 ---
 ::
 

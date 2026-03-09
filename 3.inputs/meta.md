@@ -25,6 +25,7 @@ Unlike the [hidden](/inputs/hidden) input (which renders an `<input type="hidden
 ---
 name: "Meta input"
 file: "_examples/meta/meta.vue"
+react-file: "_examples/meta/meta.react.jsx"
 ---
 ::
 

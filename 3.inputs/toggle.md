@@ -19,6 +19,7 @@ The `toggle` input — sometimes called a "switch" — offers a choice between o
 ---
 name: "Toggle"
 file: "_examples/toggle/toggle-base.vue"
+react-file: "_examples/toggle/toggle-base.react.jsx"
 ---
 ::
 
@@ -30,6 +31,7 @@ The values for the toggle are `undefined` if not-interacted with, `true` if chec
 ---
 name: "Toggle"
 file: "_examples/toggle/toggle-values.vue"
+react-file: "_examples/toggle/toggle-values.react.jsx"
 ---
 ::
 
@@ -43,6 +45,7 @@ By default, the toggle input supports a primary label like the `label` prop on a
 ---
 name: "Toggle"
 file: "_examples/toggle/toggle-primary-label.vue"
+react-file: "_examples/toggle/toggle-primary-label.react.jsx"
 ---
 ::
 
@@ -54,6 +57,7 @@ If you would like the label to be displayed above the toggle, you can use the `a
 ---
 name: "Toggle"
 file: "_examples/toggle/toggle-alt-label-position.vue"
+react-file: "_examples/toggle/toggle-alt-label-position.react.jsx"
 ---
 ::
 
@@ -65,6 +69,7 @@ Additionally, you may specify secondary labels by setting the `on-value-label` a
 ---
 name: "Toggle"
 file: "_examples/toggle/toggle-value-labels.vue"
+react-file: "_examples/toggle/toggle-value-labels.react.jsx"
 ---
 ::
 
@@ -77,6 +82,7 @@ Additionally, you can set the `value-label-display` prop to `inner` to render th
 ---
 name: "Toggle"
 file: "_examples/toggle/toggle-labels-inner.vue"
+react-file: "_examples/toggle/toggle-labels-inner.react.jsx"
 ---
 ::
 
@@ -89,6 +95,7 @@ The `thumb-icon` prop allows you to insert an icon into the `thumb` section of t
 ---
 name: "Toggle"
 file: "_examples/toggle/toggle-icon.vue"
+react-file: "_examples/toggle/toggle-icon.react.jsx"
 ---
 ::
 
@@ -101,6 +108,7 @@ The toggle input supports color props for its various sections for easy styling.
 ---
 name: "Toggle"
 file: "_examples/toggle/toggle-icon-colors.vue"
+react-file: "_examples/toggle/toggle-icon-colors.react.jsx"
 ---
 ::
 

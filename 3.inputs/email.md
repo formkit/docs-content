@@ -23,6 +23,7 @@ Need more flexibility than the native HTML `email` input provides? <a href="/inp
 ---
 name: "Email input"
 file: "_examples/email-example/email-example.vue"
+react-file: "_examples/email-example/email-example.react.jsx"
 ---
 ::
 

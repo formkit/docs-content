@@ -25,6 +25,7 @@ The value of a list input is an array where each item is the value of the input 
 ---
 name: "List input"
 file: "_examples/list/list.vue"
+react-file: "_examples/list/list.react.jsx"
 ---
 ::
 
@@ -54,6 +55,10 @@ Static lists are the simplest type of list to create. Wrap any inputs in a `<For
 name: "Simple static list"
 file: [
   "_examples/list/list-static.vue",
+  "_examples/_data/nba-top-players.js"
+]
+react-file: [
+  "_examples/list/list-static.react.jsx",
   "_examples/_data/nba-top-players.js"
 ]
 ---
@@ -92,6 +97,7 @@ To use a prebuilt repeater, check out the free [FormKit Pro repeater input](/inp
 ---
 name: "Dynamic list"
 file: "_examples/list/list-dynamic.vue"
+react-file: "_examples/list/list-dynamic.react.jsx"
 ---
 ::
 
@@ -101,6 +107,7 @@ file: "_examples/list/list-dynamic.vue"
 ---
 name: "Dynamic list"
 file: "_examples/list/list-dynamic-nested-group.vue"
+react-file: "_examples/list/list-dynamic-nested-group.react.jsx"
 ---
 ::
 
@@ -112,6 +119,9 @@ name: "Dynamic list"
 file: [
   "_examples/list/list-dynamic-v-model.vue",
 ]
+react-file: [
+  "_examples/list/list-dynamic-v-model.react.jsx",
+]
 ---
 ::
 
@@ -122,6 +132,9 @@ file: [
 name: "Dynamic list"
 file: [
   "_examples/list/list-dynamic-schema.vue",
+]
+react-file: [
+  "_examples/list/list-dynamic-schema.react.jsx",
 ]
 ---
 ::
@@ -135,6 +148,7 @@ Lists (and [groups](/inputs/group)) are always aware of the validation state of 
 ---
 name: "List input"
 file: "_examples/list-validity/list-validity.vue"
+react-file: "_examples/list-validity/list-validity.react.jsx"
 ---
 ::
 
@@ -178,4 +192,3 @@ without: ['help', 'label', 'prefix-icon', 'suffix-icon', 'validation', 'validati
 
 
 The `list` input renders no output to the DOM so there are no sections to display. The `list` input is a renderless input that is used exclusively for structuring data in your form. It is equivalent to an array in JavaScript.
-

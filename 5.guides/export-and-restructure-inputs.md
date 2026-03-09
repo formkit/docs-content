@@ -113,6 +113,7 @@ src/
 
 In `floatingLabelTextInput.js`, let's change the name of the
 exported variable to `floatingLabelTextInput` from `text`.
+
 ```js
 ...
 export const t̶e̶x̶t̶ floatingLabelTextInput = {
@@ -244,9 +245,13 @@ file: [
   "_examples/guides/export-inputs/final-result/floating-label-text-input.js",
   "_examples/guides/export-inputs/final-result/formkit.config.ts",
 ]
+react-file: [
+  "_examples/guides/export-inputs/final-result/example.react.jsx",
+  "_examples/guides/export-inputs/final-result/floating-label-text-input.js",
+  "_examples/guides/export-inputs/final-result/formkit.config.react.jsx",
+]
 ---
 ::
-
 
 ## Next steps
 
@@ -254,8 +259,8 @@ In this guide we exported the built-in `text` input using FormKit's [CLI tool](#
 
 ::Cta
 ---
-label: "Learn more about creating custom inputs." 
-button: "Read the guide" 
+label: "Learn more about creating custom inputs."
+button: "Read the guide"
 href: "/guides/create-a-custom-input"
 ---
 ::

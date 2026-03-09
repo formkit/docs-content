@@ -24,6 +24,7 @@ Need more flexibility than the native HTML `tel` input provides? <a href="/input
 ---
 name: "Tel input"
 file: "_examples/tel/tel.vue"
+react-file: "_examples/tel/tel.react.jsx"
 ---
 ::
 

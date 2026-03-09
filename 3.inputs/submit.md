@@ -25,6 +25,7 @@ The easiest way to set the `label` of a `submit` button is with the `label` prop
 ---
 name: "Submit input"
 file: "_examples/submit/submit-base.vue"
+react-file: "_examples/submit/submit-base.react.jsx"
 ---
 ::
 
@@ -37,6 +38,7 @@ The default slot can also be used to add text and UI to the button:
 ---
 name: "Submit input"
 file: "_examples/submit/submit-default-slot.vue"
+react-file: "_examples/submit/submit-default-slot.react.jsx"
 ---
 ::
 
@@ -49,6 +51,7 @@ You can also bind event listeners:
 ---
 name: "Submit input"
 file: "_examples/submit/submit-events.vue"
+react-file: "_examples/submit/submit-events.react.jsx"
 ---
 ::
 

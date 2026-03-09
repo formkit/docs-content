@@ -15,6 +15,7 @@ The `number` input uses HTML's [native number input](https://developer.mozilla.o
 ---
 name: "Number input"
 file: "_examples/number/number.vue"
+react-file: "_examples/number/number.react.jsx"
 ---
 ::
 
@@ -28,6 +29,7 @@ These options use `parseFloat` (default) or `parseInt` respectively. If the valu
 ---
 name: "Number cast input"
 file: "_examples/number/number-cast.vue"
+react-file: "_examples/number/number-cast.react.jsx"
 ---
 ::
 

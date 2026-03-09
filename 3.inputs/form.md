@@ -39,6 +39,7 @@ Excluding backend functionality, here is a fully featured form with inputs (`for
 ---
   name: "Register example"
   file: "_examples/register/register.vue"
+  react-file: "_examples/form/register.react.jsx"
   layout: "auto"
 ---
 ::
@@ -60,6 +61,7 @@ You can populate an entire form by providing a `value` prop to the `<FormKit typ
 ---
 name: "Text example"
 file: "_examples/form-population/form-population.vue"
+react-file: "_examples/form/form-population.react.jsx"
 ---
 ::
 
@@ -102,6 +104,7 @@ The most common method of form submission in a modern SPA is an XHR request (thi
 ---
 name: "Text example"
 file: "_examples/form-xhr/form-xhr.vue"
+react-file: "_examples/form/form-xhr.react.jsx"
 ---
 ::
 
@@ -113,6 +116,7 @@ To submit a form via page request, leave off the `@submit` handler. Just like na
 ---
 name: "Text example"
 file: "_examples/form-page/form-page.vue"
+react-file: "_examples/form/form-page.react.jsx"
 ---
 ::
 
@@ -129,6 +133,7 @@ While submitting a form using any standard HTML method is valid (like clicking a
 ---
 name: "Text example"
 file: "_examples/form-submit/form-submit.vue"
+react-file: "_examples/form/form-submit.react.jsx"
 ---
 ::
 
@@ -140,6 +145,7 @@ You can also submit a form programmatically by calling `node.submit()` on the fo
 ---
 name: "Text example"
 file: "_examples/node-submit/node-submit.vue"
+react-file: "_examples/form/node-submit.react.jsx"
 ---
 ::
 
@@ -151,6 +157,7 @@ To disable all the inputs in a given form, including the submit button, you can 
 ---
 name: "Disabled example"
 file: "_examples/form-disabled/form-disabled.vue"
+react-file: "_examples/form/form-disabled.react.jsx"
 ---
 ::
 
@@ -170,6 +177,7 @@ You can reset your form (or any input) back to its initial state by calling `$fo
 ---
 name: "Reset example"
 file: "_examples/reset-form/reset-form.vue"
+react-file: "_examples/form/reset-form.react.jsx"
 ---
 ::
 
@@ -199,6 +207,7 @@ In addition to not firing the submit event, a message is displayed above the sub
 ---
 name: "Text example"
 file: "_examples/incomplete-message/incomplete-message.vue"
+react-file: "_examples/form/incomplete-message.react.jsx"
 ---
 ::
 
@@ -220,6 +229,7 @@ For example, we could use this event to alert our users of the failing validatio
 ---
 name: "Submit invalid"
 file: "_examples/submit-invalid/submit-invalid.vue"
+react-file: "_examples/form/submit-invalid.react.jsx"
 ---
 ::
 
@@ -231,6 +241,7 @@ The validity of all inputs within a form is tracked automatically in the [contex
 ---
 name: "Text example"
 file: "_examples/form-validity/form-validity.vue"
+react-file: "_examples/form/form-validity.react.jsx"
 ---
 ::
 
@@ -265,6 +276,7 @@ Like with any FormKit input, you can directly assign errors using the `errors` p
 ---
 name: "Form errors prop example"
 file: "_examples/form-errors/form-errors.vue"
+react-file: "_examples/form/form-errors.react.jsx"
 ---
 ::
 
@@ -276,6 +288,7 @@ Setting your form’s errors using `node.setErrors` is convenient since your sub
 ---
 name: "setErrors"
 file: "_examples/node-set-errors/node-set-errors.vue"
+react-file: "_examples/form/node-set-errors.react.jsx"
 ---
 ::
 
@@ -287,6 +300,7 @@ Alternatively, you can set errors directly on a form by giving the form an `id` 
 ---
 name: "setErrors"
 file: "_examples/set-errors/set-errors.vue"
+react-file: "_examples/form/set-errors.react.jsx"
 ---
 ::
 
@@ -300,6 +314,7 @@ To clear all the errors on the form (regardless of the `preserve-errors` prop) c
 ---
 name: "clearErrors"
 file: "_examples/auto-clear-errors/auto-clear-errors.vue"
+react-file: "_examples/form/auto-clear-errors.react.jsx"
 ---
 ::
 
@@ -309,6 +324,7 @@ If you prefer to preserve errors by default, you can change the default behavior
 ---
 name: "preserveErrors"
 file: "_examples/preserve-errors-config/preserve-errors-config.vue"
+react-file: "_examples/form/preserve-errors-config.react.jsx"
 ---
 ::
 
@@ -337,6 +353,7 @@ The most basic way to display errors on a form is using the `errors` prop that i
 ---
 name: "errors prop"
 file: "_examples/errors-prop/errors-prop.vue"
+react-file: "_examples/form/errors-prop.react.jsx"
 ---
 ::
 
@@ -348,6 +365,7 @@ You can also conveniently set error messages for all inputs in your form (or [gr
 ---
 name: "input errors prop"
 file: "_examples/input-errors-prop/input-errors-prop.vue"
+react-file: "_examples/form/input-errors-prop.react.jsx"
 ---
 ::
 
@@ -367,6 +385,7 @@ import { FormKitSummary } from '@formkit/vue'
 ---
 name: "Summary component"
 file: "_examples/summary/summary.vue"
+react-file: "_examples/form/summary.react.jsx"
 ---
 ::
 
@@ -399,6 +418,7 @@ Place a `<FormKitMessages />` component anywhere _inside_ your form, and the for
 ---
 name: "input errors prop"
 file: "_examples/formkit-messages/automatic.vue"
+react-file: "_examples/form/formkit-messages/automatic.react.jsx"
 ---
 ::
 
@@ -410,6 +430,7 @@ To move messages anywhere in the DOM — even _outside_ the form — you can pas
 ---
 name: "input errors prop"
 file: "_examples/formkit-messages/toast.vue"
+react-file: "_examples/form/formkit-messages/toast.react.jsx"
 ---
 ::
 
@@ -435,6 +456,7 @@ When an input is unmounted from a form — for example when using `v-if` — its
 ---
 name: "input errors prop"
 file: "_examples/preserve-prop/preserve-prop.vue"
+react-file: "_examples/form/preserve-prop.react.jsx"
 ---
 ::
 
@@ -454,6 +476,10 @@ file: [
   "_examples/use-formkit-context/my-form.vue",
   "_examples/use-formkit-context/address.vue"
 ]
+react-file: [
+  "_examples/form/use-formkit-context/my-form.react.jsx",
+  "_examples/form/use-formkit-context/address.react.jsx"
+]
 ---
 ::
 
@@ -467,6 +493,9 @@ name: "useFormKitContextById"
 file: [
   "_examples/use-formkit-context-by-id/my-form.vue",
 ]
+react-file: [
+  "_examples/form/use-formkit-context-by-id/my-form.react.jsx"
+]
 ---
 ::
 
@@ -479,6 +508,9 @@ Fetches any FormKit node that has an explicit `id`. It returns a `Ref` that will
 name: "useFormKitNodeById"
 file: [
   "_examples/use-formkit-node-by-id/my-form.vue",
+]
+react-file: [
+  "_examples/form/use-formkit-node-by-id/my-form.react.jsx"
 ]
 ---
 ::
@@ -527,9 +559,3 @@ data: [
 without: ['outer', 'wrapper','inner', 'label', 'input','help']
 ---
 ::
-
-## Accessibility
-
-All FormKit inputs are designed with the following accessibility considerations in mind. Help us continually improve accessibility for all by filing accessibility issues [here](https://github.com/formkit/formkit/issues/new?assignees=&labels=%F0%9F%90%9B+bug-report%2C%E2%9B%91+Needs+triage&projects=&template=bug-report.yml):
-
-:AccessibilityChecks
