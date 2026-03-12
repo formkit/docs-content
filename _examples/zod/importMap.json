@@ -1,5 +1,5 @@
-// %partial
+// %partial%
 {
-  "zod": "https://cdn.jsdelivr.net/npm/zod@3.21.4/lib/index.umd.min.js"
+  "zod": "https://cdn.jsdelivr.net/npm/zod@3.21.4/+esm"
 }
-// %partial
+// %partial%

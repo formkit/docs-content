@@ -15,14 +15,14 @@ To use this plugin with FormKit, install `@formkit/addons`:
 yarn add @formkit/addons
 ```
 
-Once you've installed the addons package, you'll need to register the plugin with FormKit and include the supporting CSS styles. The `createFloatingLabelsPlugin` has one option you can configure which controls whether the floating label treatment is the default treatment on applicable inputs:
+Once you've installed the addons package, you'll need to register the plugin with FormKit. Tailwind and other `rootClasses`-based setups can style the plugin directly, while Genesis or custom CSS setups should include the supporting stylesheet or provide their own styles. The `createFloatingLabelsPlugin` has one option you can configure which controls whether the floating label treatment is the default treatment on applicable inputs:
 
 ::FrameworkOnly{framework="vue"}
+
 ```js
 // formkit.config.ts
 import { defaultConfig } from '@formkit/vue'
 import { createFloatingLabelsPlugin } from '@formkit/addons'
-import '@formkit/addons/css/floatingLabels'
 
 const config = defaultConfig({
   plugins: [
@@ -34,14 +34,15 @@ const config = defaultConfig({
 
 export default config
 ```
+
 ::
 
 ::FrameworkOnly{framework="react"}
+
 ```jsx
 // formkit.config.react.jsx
 import { defineFormKitConfig } from '@formkit/react'
 import { createFloatingLabelsPlugin } from '@formkit/addons'
-import '@formkit/addons/css/floatingLabels.css'
 
 export default defineFormKitConfig({
   plugins: [
@@ -51,6 +52,7 @@ export default defineFormKitConfig({
   ],
 })
 ```
+
 ::
 
 ## Usage
@@ -76,6 +78,7 @@ react-file: [
 If you would like to use floating labels by default then pass the `useAsDefault` option to the plugin when you install it.
 
 ::FrameworkOnly{framework="vue"}
+
 ```js
 // formkit.config.ts
 ...
@@ -86,9 +89,11 @@ plugins: [
 ],
 ...
 ```
+
 ::
 
 ::FrameworkOnly{framework="react"}
+
 ```jsx
 // formkit.config.react.jsx
 ...
@@ -99,6 +104,7 @@ plugins: [
 ],
 ...
 ```
+
 ::
 
 When floating labels are set as the default you can still disable them on a FormKit input by setting the `floating-label` prop to `false`.
