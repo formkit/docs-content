@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
 const groupStyle = {
   position: 'relative',
@@ -27,9 +26,9 @@ const addStyle = {
   marginBottom: '1rem',
 }
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={defaultConfig()}>
+    <>
       {/* %partial% */}
       <h2>Guest list</h2>
       <FormKit type="list" value={[{}]} dynamic>
@@ -48,7 +47,9 @@ function App() {
                   <button
                     type="button"
                     onClick={() =>
-                      node.input(value.filter((_, itemIndex) => itemIndex !== index))
+                      node.input(
+                        value.filter((_, itemIndex) => itemIndex !== index)
+                      )
                     }
                     style={removeStyle}
                   >
@@ -71,8 +72,6 @@ function App() {
         )}
       </FormKit>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

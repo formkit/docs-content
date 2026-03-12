@@ -1,12 +1,9 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
-import formkitConfig from './formkit.config.react.jsx'
+import { FormKit } from '@formkit/react'
+export { default as formkitConfig } from './formkit.config.react.jsx'
 
-const config = defaultConfig(formkitConfig())
-
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={config}>
+    <>
       {/* %partial% */}
       <FormKit
         type="mask"
@@ -16,8 +13,6 @@ function App() {
         label="Tracking number"
       />
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

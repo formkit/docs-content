@@ -1,18 +1,17 @@
-import { createRoot } from 'react-dom/client'
 import { genesisIcons } from '@formkit/icons'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit, defineFormKitConfig } from '@formkit/react'
 import { createProPlugin, inputs as proInputs } from '@formkit/pro'
 import carBrands from '../_data/car-brands.js'
 
 const pro = createProPlugin('fk-52971f34220', proInputs)
-const config = defaultConfig({
+export const formkitConfig = defineFormKitConfig({
   plugins: [pro],
   icons: { ...genesisIcons },
 })
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={config}>
+    <>
       {/* %partial% */}
       <FormKit
         type="autocomplete"
@@ -24,14 +23,16 @@ function App() {
         selectionAppearance="option"
         defaultValue="audi"
         slots={{
-          selection: ({ option }) => (
-            <div className="flex items-center">
-              <img
-                src={option.logo}
-                alt={`${option.label} logo`}
-                className="h-10 w-10 p-2"
-              />
-              <span>{option.label}</span>
+          selection: ({ option, classes }) => (
+            <div className={classes.selection}>
+              <div className={`${classes.option} flex items-center`}>
+                <img
+                  src={option.logo}
+                  alt={`${option.label} logo`}
+                  className="h-10 w-10 p-2"
+                />
+                <span>{option.label}</span>
+              </div>
             </div>
           ),
         }}
@@ -45,23 +46,22 @@ function App() {
         selectionAppearance="option"
         multiple
         defaultValue={['toyota', 'honda']}
-        selectionClass="!p-0"
         slots={{
-          selection: ({ option }) => (
-            <div className="flex items-center">
-              <img
-                src={option.logo}
-                alt={`${option.label} logo`}
-                className="h-10 w-10 p-2"
-              />
-              <span>{option.label}</span>
+          selection: ({ option, classes }) => (
+            <div className={`${classes.selection} !p-0`}>
+              <div className={`${classes.option} flex items-center`}>
+                <img
+                  src={option.logo}
+                  alt={`${option.label} logo`}
+                  className="h-10 w-10 p-2"
+                />
+                <span>{option.label}</span>
+              </div>
             </div>
           ),
         }}
       />
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

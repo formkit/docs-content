@@ -1,6 +1,5 @@
-import { createRoot } from 'react-dom/client'
 import { useState } from 'react'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
+
 /* %partial% */
 import { FormKit } from '@formkit/react'
 
@@ -36,12 +35,6 @@ function StandardTextInputExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <StandardTextInputExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <StandardTextInputExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

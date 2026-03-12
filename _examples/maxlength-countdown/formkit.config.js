@@ -1,14 +1,12 @@
 // formkit.config.js
-import { defaultConfig } from '@formkit/vue'
+import { defineFormKitConfig } from '@formkit/vue'
 import { createMaxLengthCountdownPlugin } from '@formkit/addons'
 import '@formkit/addons/css/maxlengthCountdown'
 
-const config = defaultConfig({
+export default defineFormKitConfig({
   plugins: [
     createMaxLengthCountdownPlugin({
-      useAsDefault: true
+      useAsDefault: true,
     }),
   ],
 })
-
-export default config

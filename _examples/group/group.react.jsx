@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
 const states = {
   AL: 'Alabama',
@@ -63,40 +62,41 @@ const states = {
   WY: 'Wyoming',
 }
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={defaultConfig()}>
-      <FormKit
-        type="form"
-        onSubmit={() => false}
-        actions={false}
-        value={{
-          address: {
-            street: '123 Main St',
-            city: 'Anytown',
-            state: 'CA',
-            zip: '12345',
-          },
-        }}
-      >
-        {({ value }) => (
-          <>
-            {/* %partial% */}
-            <FormKit type="group" name="address">
-              <FormKit type="text" label="Street address" name="street" />
-              <FormKit type="text" label="City" name="city" />
-              <div className="flex gap-4">
-                <FormKit type="select" label="State" name="state" options={states} />
-                <FormKit type="text" name="zip" label="Zip" />
-              </div>
-            </FormKit>
-            {/* %partial% */}
-            <pre>{`"address": ${JSON.stringify(value.address, null, 2)}`}</pre>
-          </>
-        )}
-      </FormKit>
-    </FormKitProvider>
+    <FormKit
+      type="form"
+      onSubmit={() => false}
+      actions={false}
+      value={{
+        address: {
+          street: '123 Main St',
+          city: 'Anytown',
+          state: 'CA',
+          zip: '12345',
+        },
+      }}
+    >
+      {({ value }) => (
+        <>
+          {/* %partial% */}
+          <FormKit type="group" name="address">
+            <FormKit type="text" label="Street address" name="street" />
+            <FormKit type="text" label="City" name="city" />
+            <div className="flex gap-4">
+              <FormKit
+                type="select"
+                label="State"
+                name="state"
+                options={states}
+              />
+              <FormKit type="text" name="zip" label="Zip" />
+            </div>
+          </FormKit>
+          {/* %partial% */}
+          <pre>{`"address": ${JSON.stringify(value.address, null, 2)}`}</pre>
+        </>
+      )}
+    </FormKit>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

@@ -11,6 +11,8 @@ FormKit inputs ship with a lot of markup. This is useful for ensuring inputs are
 
 In this guide, we'll export the text input, and restructure it to better support a floating label design.
 
+The exported input definition itself is framework-agnostic. The framework-specific part is how you register that input with your FormKit config.
+
 ## Export via CLI
 
 FormKit comes with its own CLI to make exporting inputs a breeze. At the base directory of your project, run:
@@ -126,6 +128,7 @@ export const t̶e̶x̶t̶ floatingLabelTextInput = {
 
 To globally register our "new" input, we need add our `floatingLabelTextInput` to the global config. We can do this wherever we are registering the FormKit plugin:
 
+::FrameworkOnly{framework="vue"}
 ```js
 //main.js
 import { createApp } from 'vue'
@@ -142,6 +145,25 @@ const config = defaultConfig({
 
 createApp(App).use(plugin, config).mount('#app')
 ```
+::
+
+::FrameworkOnly{framework="react"}
+```jsx
+// formkit.config.react.jsx
+import { defineFormKitConfig } from '@formkit/react'
+import { genesisIcons } from '@formkit/icons'
+import { floatingLabelTextInput } from '../src/inputs/floatingLabelTextInput'
+
+export default defineFormKitConfig({
+  inputs: {
+    floatingLabelTextInput,
+  },
+  icons: {
+    ...genesisIcons,
+  },
+})
+```
+::
 
 ## Modifying schema
 

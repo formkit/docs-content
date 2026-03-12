@@ -1,34 +1,51 @@
-import { createRoot } from 'react-dom/client'
 // %partial%
-import { useMemo, useState } from 'react'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
-import baseConfig from './formkit.config.react.jsx'
+import { useEffect, useState } from 'react'
+import { FormKit, changeLocale } from '@formkit/react'
+export { default as formkitConfig } from './formkit.config.react.jsx'
 
-function App() {
+const styles = `
+  .locale-switch {
+    display: inline-block;
+    margin-bottom: 2em;
+  }
+
+  .locale-note {
+    display: block;
+    margin-top: 1em;
+    color: SlateGray;
+  }
+`
+
+export default function App() {
   const [current, setCurrent] = useState('en')
-  const config = useMemo(
-    () =>
-      defaultConfig({
-        ...baseConfig(),
-        locale: current,
-      }),
-    [current]
-  )
 
-  const changeLocale = () => {
+  useEffect(() => {
+    changeLocale(current)
+
+    return () => {
+      changeLocale('en')
+    }
+  }, [current])
+
+  const toggleLocale = () => {
     setCurrent((locale) => (locale === 'en' ? 'de' : 'en'))
   }
 
   return (
-    <FormKitProvider config={config}>
-      <a onClick={(event) => {
-        event.preventDefault()
-        changeLocale()
-      }} href="#">
+    <>
+      <style>{styles}</style>
+      <a
+        className="locale-switch"
+        onClick={(event) => {
+          event.preventDefault()
+          toggleLocale()
+        }}
+        href="#"
+      >
         {current === 'en' ? (
-          <span>DE config.locale = 'de'</span>
+          <span>🇩🇪 config.locale = 'de'</span>
         ) : (
-          <span>US config.locale = 'en'</span>
+          <span>🇺🇸 config.locale = 'en'</span>
         )}
       </a>
       <FormKit type="form" onSubmit={() => false}>
@@ -39,13 +56,11 @@ function App() {
           validation="required|email"
         />
       </FormKit>
-      <small>
+      <small className="locale-note">
         Note: this example does not contain a full german locale, only the
         messages required for this example (submit, required, email).
       </small>
-    </FormKitProvider>
+    </>
   )
 }
 // %partial%
-
-createRoot(document.getElementById('app')).render(<App />)

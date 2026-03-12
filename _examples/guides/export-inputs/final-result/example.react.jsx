@@ -1,6 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider } from '@formkit/react'
-import config from './formkit.config.react.jsx'
+export { default as formkitConfig } from './formkit.config.react.jsx'
 /* %partial% */
 import { FormKit } from '@formkit/react'
 
@@ -44,12 +42,6 @@ function ExportInputsFinalResultExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={config}>
-      <ExportInputsFinalResultExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <ExportInputsFinalResultExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

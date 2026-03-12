@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 import { FormKit } from '@formkit/react'
 
 function DelayPropExample() {
@@ -27,12 +25,6 @@ function DelayPropExample() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <DelayPropExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <DelayPropExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 import { FormKit } from '@formkit/react'
 
 function SimpleValidationExample() {
@@ -18,12 +16,6 @@ function SimpleValidationExample() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <SimpleValidationExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <SimpleValidationExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

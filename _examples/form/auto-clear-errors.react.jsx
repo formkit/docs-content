@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 /* %partial% */
 import { useEffect } from 'react'
 import { FormKit, setErrors } from '@formkit/react'
@@ -41,12 +39,6 @@ function AutoClearErrorsExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <AutoClearErrorsExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <AutoClearErrorsExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

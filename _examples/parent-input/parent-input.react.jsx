@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 import { FormKit } from '@formkit/react'
 
 function ParentInputExample() {
@@ -33,12 +31,6 @@ function ParentInputExample() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <ParentInputExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <ParentInputExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

@@ -1,6 +1,5 @@
-import { createRoot } from 'react-dom/client'
 import { genesisIcons } from '@formkit/icons'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit, defineFormKitConfig } from '@formkit/react'
 import { createProPlugin, inputs as proInputs } from '@formkit/pro'
 
 const swatches = [
@@ -26,22 +25,28 @@ const swatches = [
 ]
 
 const pro = createProPlugin('fk-52971f34220', proInputs)
-const config = defaultConfig({
+export const formkitConfig = defineFormKitConfig({
   plugins: [pro],
   icons: { ...genesisIcons },
 })
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={config}>
+    <>
       <h2 className="text-2xl font-bold mb-4">
         Try pasting in these color values when your focus is in or on the
         colorpicker!
       </h2>
       <ul className="mb-4">
-        <li><pre>#FF0000</pre></li>
-        <li><pre>hsla(24, 51%, 56%, 0.8)</pre></li>
-        <li><pre>rgba(189, 210, 224, 1)</pre></li>
+        <li>
+          <pre>#FF0000</pre>
+        </li>
+        <li>
+          <pre>hsla(24, 51%, 56%, 0.8)</pre>
+        </li>
+        <li>
+          <pre>rgba(189, 210, 224, 1)</pre>
+        </li>
       </ul>
 
       {/* %partial% */}
@@ -65,8 +70,6 @@ function App() {
         options={swatches}
       />
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

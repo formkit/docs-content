@@ -1,4 +1,3 @@
-import { createRoot } from 'react-dom/client'
 import { FormKitSchema } from '@formkit/react'
 
 // %partial%
@@ -14,8 +13,6 @@ const schema = [
 ]
 // %partial%
 
-function App() {
+export default function App() {
   return <FormKitSchema schema={schema} />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

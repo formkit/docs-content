@@ -1,9 +1,8 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={defaultConfig()}>
+    <>
       {/* %partial% */}
       {/* config is passed down to descendant inputs: */}
       <FormKit
@@ -21,7 +20,9 @@ function App() {
           type="date"
           label="Birthday"
           validation="required|date_between:1990-01-01 00:00:00,1999-12-31 23:59:59"
-          validationMessages={{ date_between: 'Only for those born in the 90s.' }}
+          validationMessages={{
+            date_between: 'Only for those born in the 90s.',
+          }}
           help="Enter your date of birth"
         />
         {/* We override validation-visibility for the input below: */}
@@ -35,8 +36,6 @@ function App() {
         />
       </FormKit>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

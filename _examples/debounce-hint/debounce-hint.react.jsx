@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
 // %partial%
 // Let's pretend this is an expensive API call.
@@ -24,12 +23,6 @@ function DebounceHintExample() {
 }
 // %partial%
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <DebounceHintExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <DebounceHintExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

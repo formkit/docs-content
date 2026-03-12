@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
 // %partial%
 const customMessage = ({ name, args, node }) => {
@@ -25,12 +24,6 @@ function ValidationCustomMessagesFunctionExample() {
 }
 // %partial%
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <ValidationCustomMessagesFunctionExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <ValidationCustomMessagesFunctionExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

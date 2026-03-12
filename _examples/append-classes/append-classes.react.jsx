@@ -1,6 +1,5 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider } from '@formkit/react'
-import config from '../_no-tailwind/formkit.config.react.jsx'
+import { FormKit } from '@formkit/react'
+export { default as formkitConfig } from '../_no-tailwind/formkit.config.react.jsx'
 
 function AppendClassesExample() {
   return (
@@ -18,12 +17,6 @@ function AppendClassesExample() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={config}>
-      <AppendClassesExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <AppendClassesExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

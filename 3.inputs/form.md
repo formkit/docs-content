@@ -9,13 +9,15 @@ navigation:
 
 While you’re free to use `FormKit` inputs by themselves, you’ll usually want to group them into a form. To do this, wrap your inputs in a `<FormKit type="form">`.
 
-The `form` type will actively collect all the values from child inputs, using the `name` of each input as the property name in the resulting data object (just like [groups](/inputs/group)). You can also read and write to form values using v-model just as you would on any input.
+The `form` type will actively collect all the values from child inputs, using the `name` of each input as the property name in the resulting data object (just like [groups](/inputs/group)). You can also read and write to form values using :FrameworkText{vue="<code>v-model</code>" react="<code>modelValue</code> and <code>onUpdateModelValue</code>"} just as you would on any input.
 
 A `<FormKit type="form">` tracks the form's validation state and prevents users from submitting the form if any inputs are invalid.
 
 ### Provided submit button
 
-As a convenience, the `form` outputs a submit [button](/inputs/button) automatically, and provided themes also include a loading spinner. You can alter this button with the `submit-label` and `submit-attrs` props, or disable with `:actions="false"`. You can pass any FormKit props to `submit-attrs`. In the example below, we pass classes, `data` attributes, help text, and even [tell the included submit button to be un-ignored](/inputs/submit#ignored-input):
+As a convenience, the `form` outputs a submit [button](/inputs/button) automatically, and provided themes also include a loading spinner. You can alter this button with the `submitLabel` and `submitAttrs` props, or disable it with :FrameworkText{vue="<code>:actions=&quot;false&quot;</code>" react="<code>actions={false}</code>"}. You can pass any FormKit props to `submitAttrs`. In the examples below, we pass classes, `data` attributes, help text, and even [tell the included submit button to be un-ignored](/inputs/submit#ignored-input):
+
+::FrameworkOnly{framework="vue"}
 
 ```html
 <FormKit
@@ -30,6 +32,26 @@ As a convenience, the `form` outputs a submit [button](/inputs/button) automatic
   }"
 ></FormKit>
 ```
+
+::
+
+::FrameworkOnly{framework="react"}
+
+```jsx
+<FormKit
+  type="form"
+  submitLabel="Update"
+  submitAttrs={{
+    inputClass: 'my-input-class',
+    wrapperClass: 'my-wrapper-class',
+    'data-theme': 'dark',
+    help: 'My button help text',
+    ignore: false,
+  }}
+/>
+```
+
+::
 
 ### Full example form
 
@@ -55,7 +77,7 @@ external-vid: "https://vueschool.io/lessons/form-population-and-submission?frien
 ---
 ::
 
-You can populate an entire form by providing a `value` prop to the `<FormKit type="form">`. The `value` prop should be an object of input name to input value pairs. You may also use `v-model` to populate a form if you require two-way data binding:
+You can populate an entire form by providing a `value` prop to the `<FormKit type="form">`. The `value` prop should be an object of input name to input value pairs. If you require two-way data binding, use :FrameworkText{vue="<code>v-model</code>" react="<code>modelValue</code> and <code>onUpdateModelValue</code>"}:
 
 ::Example
 ---
@@ -65,6 +87,8 @@ react-file: "_examples/form/form-population.react.jsx"
 ---
 ::
 
+::FrameworkOnly{framework="vue"}
+
 ::Callout
 ---
 type: "danger"
@@ -73,30 +97,44 @@ label: "v-model and reactive objects"
 Be sure to either <code>v-model</code> a <code>ref</code> or a property of a <code>reactive</code> object. Do not <code>v-model</code> the reactive object itself as it <a href="https://github.com/formkit/formkit/issues/58#issuecomment-1029250016">leads to unexpected behavior</a>.
 ::
 
+::
+
+::FrameworkOnly{framework="react"}
+
+::Callout
+---
+type: "tip"
+label: "Controlled forms in React"
+---
+When controlling a form in React, use <code>modelValue</code> together with <code>onUpdateModelValue</code>. Reserve the <code>value</code> prop for initial state only.
+::
+
+::
+
 ## Submitting
 
 Forms are usually submitted through user actions like clicking a submit button or hitting the `enter` key on a text node within the form. Upon submission, the form (in sequence):
 
 1. Ensures all inputs are settled (finished debouncing).
-2. Emits the `@submit-raw` event.
+2. Emits the :FrameworkText{vue="<code>@submit-raw</code>" react="<code>onSubmitRaw</code>"} event.
 3. Sets the `submitted` state to true on all inputs — displaying any remaining validation errors (regardless of the `validation-visibility`).
-4. If the form has validation errors the `@submit-invalid` event is fired.
-5. If all inputs are valid it fires the `@submit` event.
-6. If the `@submit` handler returns a `Promise`, sets the form’s state to `loading` until it resolves.
+4. If the form has validation errors the :FrameworkText{vue="<code>@submit-invalid</code>" react="<code>onSubmitInvalid</code>"} event is fired.
+5. If all inputs are valid it fires the :FrameworkText{vue="<code>@submit</code>" react="<code>onSubmit</code>"} handler.
+6. If the submit handler returns a `Promise`, sets the form’s state to `loading` until it resolves.
 
 ::Callout
 ---
 type: "warning"
-label: "Avoid v-model for collecting and submitting form data"
+label: "Avoid bound state for collecting and submitting form data"
 ---
-Using <code>v-model</code> data in your submit handler can lead to unintended form mutations. FormKit <em>automatically</em> collects form data for you, so use the unbound copy of your form’s data that is passed to your submission handler instead.
+Using :FrameworkText{vue="<code>v-model</code>" react="<code>modelValue</code>"} data directly in your submit handler can lead to unintended form mutations. FormKit <em>automatically</em> collects form data for you, so use the unbound copy of your form’s data that is passed to your submission handler instead.
 ::
 
 ### Submitting via XHR/Fetch request
 
 The most common method of form submission in a modern SPA is an XHR request (think [axios](https://axios-http.com/) or [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)). FormKit is well suited to this task:
 
-- It hands your `@submit` handler 1) the collected form data as a single request-ready object (no `v-model` needed), and 2) the `form` input's core node, as a convenience.
+- It hands your submit handler 1) the collected form data as a single request-ready object (no :FrameworkText{vue="<code>v-model</code>" react="<code>modelValue</code>"} needed), and 2) the `form` input's core node, as a convenience.
 - If you use an async submit handler, it will disable your form’s inputs and apply a loading state to your form (`loading` becomes true at `context.state.loading` and a spinner is displayed on the `genesis` theme).
 - It handles [backend errors](#error-handling) by placing error messages directly on the failing inputs.
 
@@ -110,7 +148,7 @@ react-file: "_examples/form/form-xhr.react.jsx"
 
 ### Submitting as a page request
 
-To submit a form via page request, leave off the `@submit` handler. Just like native HTML, you can also provide an `action` and optionally a `method` attribute.
+To submit a form via page request, leave off the submit handler. Just like native HTML, you can also provide an `action` and optionally a `method` attribute.
 
 ::Example
 ---
@@ -124,10 +162,10 @@ react-file: "_examples/form/form-page.react.jsx"
 
 While submitting a form using any standard HTML method is valid (like clicking a `submit` button, or hitting `enter` on a text input) — you may also submit a form programmatically. There are 2 ways to do this:
 
-- Using `this.$formkit.submit('form-id')` (`submitForm('form-id')` for the composition API).
+- Using :FrameworkText{vue="<code>this.$formkit.submit('form-id')</code> in the Vue Options API, or <code>submitForm('form-id')</code> in the Composition API" react="<code>submitForm('form-id')</code>"}.
 - Using a [core node](/essentials/architecture#node) object.
 
-#### Submitting with `$formkit.submit()`
+#### Submitting with a helper
 
 ::Example
 ---
@@ -166,12 +204,12 @@ react-file: "_examples/form/form-disabled.react.jsx"
 type: "tip"
 label: "Disabled automatically"
 ---
-When using an async <code>@submit</code> handler, FormKit will automatically disable the form (and set the state to <code>loading</code>) while the submit handler is pending.
+When using an async submit handler, FormKit will automatically disable the form (and set the state to <code>loading</code>) while the submit handler is pending.
 ::
 
 ## Resetting
 
-You can reset your form (or any input) back to its initial state by calling `$formkit.reset(formId)`.
+You can reset your form (or any input) back to its initial state by calling :FrameworkText{vue="<code>$formkit.reset(formId)</code> or <code>reset(formId)</code>" react="<code>reset(formId)</code>"}.
 
 ::Example
 ---
@@ -184,14 +222,14 @@ react-file: "_examples/form/reset-form.react.jsx"
 ::Callout
 ---
 type: "tip"
-label: "Composition API"
+label: "Reset Helper"
 ---
-When using the composition API, you can directly access the reset function by importing it from core: <code>import { reset } from '@formkit/core'</code>.
+You can import <code>reset</code> directly from :FrameworkText{vue="<code>@formkit/vue</code>" react="<code>@formkit/react</code>"}.
 ::
 
 ### Initial values
 
-It’s important to note that the "initial state" of a form is not necessarily an empty form. If you have a default `:value` or `v-model` on the form or on individual inputs in the form, FormKit automatically merges these together to produce your initial value, and will restore to this merged state on reset.
+It’s important to note that the "initial state" of a form is not necessarily an empty form. If you have a default `value` prop or use :FrameworkText{vue="<code>v-model</code>" react="<code>modelValue</code>"} on the form or on individual inputs in the form, FormKit automatically merges these together to produce your initial value, and will restore to this merged state on reset.
 
 Optionally you can provide a second argument to `reset(formId, initialState)` if you would prefer an alternative reset state.
 
@@ -221,7 +259,7 @@ If you want to change the incomplete message across all forms on your project, y
 
 ### Submit invalid event
 
-When a user attempts to submit a form containing inputs that have failing validations, the `@submit-invalid` event is fired.
+When a user attempts to submit a form containing inputs that have failing validations, the :FrameworkText{vue="<code>@submit-invalid</code>" react="<code>onSubmitInvalid</code>"} event is fired.
 
 For example, we could use this event to alert our users of the failing validation rules.
 
@@ -250,7 +288,7 @@ react-file: "_examples/form/form-validity.react.jsx"
 type: "tip"
 label: "Getting the context object"
 ---
-In the above example we extract the context object from the <code>#default</code> slot, but there are other ways as well. The context object is available on each input’s core node on the <code>node.context</code> property, and you can fetch an input’s node <a href="/essentials/architecture#getting-a-components-node">a number of ways</a>.
+In the above example we extract the context object from :FrameworkText{vue="the <code>#default</code> slot" react="the render-prop child function"}, but there are other ways as well. The context object is available on each input’s core node on the <code>node.context</code> property, and you can fetch an input’s node <a href="/essentials/architecture#getting-a-components-node">a number of ways</a>.
 ::
 
 ## Error handling
@@ -266,7 +304,7 @@ Form errors (ones that apply to the entire form) can be set three ways.
 
 - Using the `errors` prop on a `<FormKit type="form">`.
 - Using a core node `node.setErrors()`.
-- Using the `$formkit.setErrors()` Vue plugin method.
+- Using :FrameworkText{vue="<code>$formkit.setErrors()</code>" react="<code>setErrors()</code>"}.
 
 #### Using the `errors` prop
 
@@ -292,9 +330,9 @@ react-file: "_examples/form/node-set-errors.react.jsx"
 ---
 ::
 
-#### Using `$formkit.setErrors()`
+#### Using `setErrors()`
 
-Alternatively, you can set errors directly on a form by giving the form an `id` and then calling `$formkit.setErrors('id', ['Form error here'])`. The `setErrors` method must be passed the `id` of the form, and then can handle 1 or 2 additional arguments — the form errors, and the input errors:
+Alternatively, you can set errors directly on a form by giving the form an `id` and then calling :FrameworkText{vue="<code>$formkit.setErrors('id', ['Form error here'])</code>" react="<code>setErrors('id', ['Form error here'])</code>"}. The `setErrors` method must be passed the `id` of the form, and then can handle 1 or 2 additional arguments — the form errors, and the input errors:
 
 ::Example
 ---
@@ -331,10 +369,25 @@ react-file: "_examples/form/preserve-errors-config.react.jsx"
 ::Callout
 ---
 type: "info"
-label: "Composition API"
+label: "Helper imports"
 ---
-When using Vue 3’s composition API, you can access <code>setErrors</code> and <code>clearErrors</code> by importing them directly from <code>@formkit/vue</code>.<br><br>
-<code>import { setErrors, clearErrors } from '@formkit/vue'</code>
+You can access <code>setErrors</code> and <code>clearErrors</code> by importing them directly from your framework package.
+
+::FrameworkOnly{framework="vue"}
+
+```js
+import { setErrors, clearErrors } from '@formkit/vue'
+```
+
+::
+
+::FrameworkOnly{framework="react"}
+
+```js
+import { setErrors, clearErrors } from '@formkit/react'
+```
+
+::
 ::
 
 ### Input errors
@@ -343,7 +396,7 @@ Input errors (ones to be displayed with specific inputs in a form) can be applie
 
 - Manually using the `errors` prop on each individual input.
 - Using the `input-errors` prop on the form (also works with groups and lists).
-- Using the `$formkit.setErrors()` Vue plugin method (see [example above](#using-formkitseterrors)).
+- Using :FrameworkText{vue="<code>$formkit.setErrors()</code>" react="<code>setErrors()</code>"} (see [example above](#using-seterrors)).
 
 #### Manually using `errors` prop
 
@@ -377,9 +430,21 @@ This component will automatically render all of a form’s validation and error 
 
 `<FormKitSummary />` is not a globally registered component — you must import it:
 
+::FrameworkOnly{framework="vue"}
+
 ```js
 import { FormKitSummary } from '@formkit/vue'
 ```
+
+::
+
+::FrameworkOnly{framework="react"}
+
+```js
+import { FormKitSummary } from '@formkit/react'
+```
+
+::
 
 ::Example
 ---
@@ -401,9 +466,21 @@ The summary component should generally be nested in the form it is summarizing. 
 
 By default, a form’s validation and error messages are placed directly above the form’s actions section. However, you can choose to render these anywhere on your page by using the `<FormKitMessages />` component. `<FormKitMessages />` is not a globally registered component — you must import it:
 
+::FrameworkOnly{framework="vue"}
+
 ```js
 import { FormKitMessages } from '@formkit/vue'
 ```
+
+::
+
+::FrameworkOnly{framework="react"}
+
+```js
+import { FormKitMessages } from '@formkit/react'
+```
+
+::
 
 There are two ways to use `<FormKitMessages />`:
 
@@ -450,7 +527,7 @@ The `<FormKitMessages />` component has a few additional configuration options:
 
 ## Unmounting inputs
 
-When an input is unmounted from a form — for example when using `v-if` — its key and value are removed from the form’s data. However, in some circumstances it may be preferable to keep the key/value pair even after the input has been removed. This can be accomplished by using the `preserve` prop:
+When an input is unmounted from a form — for example when using :FrameworkText{vue="<code>v-if</code>" react="conditional rendering"} — its key and value are removed from the form’s data. However, in some circumstances it may be preferable to keep the key/value pair even after the input has been removed. This can be accomplished by using the `preserve` prop:
 
 ::Example
 ---
@@ -462,11 +539,11 @@ react-file: "_examples/form/preserve-prop.react.jsx"
 
 ## Composables <span class="badge" data-version="1.6.0"></span>
 
-FormKit provides a few composables to help you access the form’s data and context. These are available to be imported from the `@formkit/vue` package:
+FormKit provides a few composables to help you access the form’s data and context. These are available to be imported from :FrameworkText{vue="<code>@formkit/vue</code>" react="<code>@formkit/react</code>"}.
 
 ### useFormKitContext
 
-The `useFormKitContext` is a composable that returns the form’s context object as a vue `Ref` whenever it becomes available. This must be used in a component that is a child of a `<FormKit>` component (like the form). The first argument is an optional [traversal path](/essentials/architecture#traversal) that allows you to navigate to any node within your form tree. The second argument is an optional effect callback that will be invoked whenever the context becomes available.
+The `useFormKitContext` composable returns the form’s context object whenever it becomes available. In Vue it is returned as a `Ref`; in React the hook returns the context object directly. This must be used in a component that is a child of a `<FormKit>` component (like the form). The first argument is an optional [traversal path](/essentials/architecture#traversal) that allows you to navigate to any node within your form tree. The second argument is an optional effect callback that will be invoked whenever the context becomes available.
 
 ::Example
 ---
@@ -485,7 +562,7 @@ react-file: [
 
 ### useFormKitContextById
 
-Similar to `useFormKitContext` this composable finds any `<FormKit>` context object if that component has been given an explicit `id`. Optionally you can provide an effect callback that will be invoked whenever the node becomes available.
+Similar to `useFormKitContext`, this composable finds any `<FormKit>` context object if that component has been given an explicit `id`. Optionally you can provide an effect callback that will be invoked whenever the context becomes available.
 
 ::Example
 ---
@@ -501,7 +578,7 @@ react-file: [
 
 ### useFormKitNodeById
 
-Fetches any FormKit node that has an explicit `id`. It returns a `Ref` that will populate with the core node whenever it is mounted. Optionally you can provide an effect callback that will be invoked whenever the node becomes available.
+Fetches any FormKit node that has an explicit `id`. In Vue it returns a `Ref` that will populate with the core node whenever it is mounted; in React the hook returns the node directly. Optionally you can provide an effect callback that will be invoked whenever the node becomes available.
 
 ::Example
 ---

@@ -9,6 +9,8 @@ navigation:
 
 The `number` input uses HTML's [native number input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number). It allows a user to enter a single integer or decimal value.
 
+When controlling this input in React, prefer <code>modelValue</code> and <code>onUpdateModelValue</code> instead of wiring directly to the native input element.
+
 ## Basic example
 
 ::Example

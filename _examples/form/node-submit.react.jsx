@@ -1,6 +1,5 @@
-import { createRoot } from 'react-dom/client'
 import { genesisIcons } from '@formkit/icons'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
+import { defineFormKitConfig } from '@formkit/react'
 /* %partial% */
 import { useRef } from 'react'
 import { FormKit } from '@formkit/react'
@@ -51,16 +50,10 @@ function NodeSubmitExample() {
 }
 /* %partial% */
 
-const config = defaultConfig({
+export const formkitConfig = defineFormKitConfig({
   icons: { ...genesisIcons },
 })
 
-function App() {
-  return (
-    <FormKitProvider config={config}>
-      <NodeSubmitExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <NodeSubmitExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

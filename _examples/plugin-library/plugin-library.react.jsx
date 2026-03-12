@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 /* %partial% */
 import { useState } from 'react'
 import { FormKit } from '@formkit/react'
@@ -52,12 +50,6 @@ function PluginLibraryExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <PluginLibraryExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <PluginLibraryExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

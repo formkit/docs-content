@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 import { FormKit } from '@formkit/react'
 
 function SingleComponentExample() {
@@ -13,12 +11,6 @@ function SingleComponentExample() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <SingleComponentExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <SingleComponentExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

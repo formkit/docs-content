@@ -1,6 +1,5 @@
-import { createRoot } from 'react-dom/client'
 import { genesisIcons } from '@formkit/icons'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
+import { defineFormKitConfig } from '@formkit/react'
 /* %partial% */
 import { FormKitIcon } from '@formkit/react'
 
@@ -10,7 +9,7 @@ function IconComponentExample() {
       <h2>
         Using <code>FormKitIcon</code> you can output any loaded icon anywhere.
       </h2>
-      <div style={{ maxWidth: '5em' }}>
+      <div className="[&>.formkit-icon]:block [&>.formkit-icon]:max-w-[5em]">
         <FormKitIcon icon="heart" />
       </div>
     </>
@@ -18,16 +17,10 @@ function IconComponentExample() {
 }
 /* %partial% */
 
-const config = defaultConfig({
+export const formkitConfig = defineFormKitConfig({
   icons: { ...genesisIcons },
 })
 
-function App() {
-  return (
-    <FormKitProvider config={config}>
-      <IconComponentExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <IconComponentExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

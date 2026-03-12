@@ -1,9 +1,8 @@
 /* %partial% */
 import { useEffect } from 'react'
-import { getNode } from '@formkit/core'
 /* %partial% */
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+
+import { FormKit, useFormKitNodeById } from '@formkit/react'
 
 const formLabelStyle = {
   fontSize: '0.875rem',
@@ -39,10 +38,10 @@ const CHARACTER_BASE_STATS = {
 }
 
 function useAttributeUpdater() {
-  useEffect(() => {
-    const classNode = getNode('class')
-    const attributesNode = getNode('attributes')
+  const classNode = useFormKitNodeById('class')
+  const attributesNode = useFormKitNodeById('attributes')
 
+  useEffect(() => {
     if (!classNode || !attributesNode) return
 
     const receipt = classNode.on('commit', ({ payload }) => {
@@ -54,7 +53,7 @@ function useAttributeUpdater() {
     return () => {
       classNode.off(receipt)
     }
-  }, [])
+  }, [attributesNode, classNode])
 }
 
 const createCharacter = async (fields) => {
@@ -143,18 +142,14 @@ function CharacterAttributesUpdateExample() {
         )}
       </FormKit>
 
-      <p>Change the character's class to see the changes in attribute values.</p>
+      <p>
+        Change the character's class to see the changes in attribute values.
+      </p>
       {/* %partial% */}
     </>
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <CharacterAttributesUpdateExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <CharacterAttributesUpdateExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

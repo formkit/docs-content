@@ -1,17 +1,16 @@
-import { createRoot } from 'react-dom/client'
 import { useState } from 'react'
 import { genesisIcons } from '@formkit/icons'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit, defineFormKitConfig } from '@formkit/react'
 
-const config = defaultConfig({
+export const formkitConfig = defineFormKitConfig({
   icons: { ...genesisIcons },
 })
 
-function App() {
+export default function App() {
   const [value, setValue] = useState([])
 
   return (
-    <FormKitProvider config={config}>
+    <>
       {/* %partial% */}
       <FormKit
         modelValue={value}
@@ -25,8 +24,6 @@ function App() {
       />
       <pre>{JSON.stringify(value, null, 2)}</pre>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

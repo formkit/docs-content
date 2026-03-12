@@ -14,6 +14,8 @@ navigation:
 
 The `unit` input allows for restricted input of values based on the provided unit (distance, weight, temperature, etc.) and locale.
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>display-locale</code>, <code>min-decimals</code>, <code>value-format</code>, <code>value-unit</code>, and <code>unit-display</code>" react="<code>displayLocale</code>, <code>minDecimals</code>, <code>valueFormat</code>, <code>valueUnit</code>, and <code>unitDisplay</code>"} use the standard prop casing for that framework.
+
 ::Example
 ---
 name: "Unit input defaults"

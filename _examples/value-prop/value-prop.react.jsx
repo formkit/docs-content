@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 import { FormKit } from '@formkit/react'
 
 function ValuePropExample() {
@@ -18,12 +16,6 @@ function ValuePropExample() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <ValuePropExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <ValuePropExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

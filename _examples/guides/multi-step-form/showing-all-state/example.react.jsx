@@ -1,4 +1,3 @@
-import { createRoot } from 'react-dom/client'
 /* %partial% */
 import { useEffect } from 'react'
 import { FormKit } from '@formkit/react'
@@ -41,9 +40,13 @@ function ShowingAllStateExample() {
               {Object.entries(steps).map(([stepName, step]) => (
                 <li
                   key={stepName}
-                  className={`step${checkStepValidity(stepName) ? ' has-errors' : ''}`}
+                  className={`step${
+                    checkStepValidity(stepName) ? ' has-errors' : ''
+                  }`}
                   onClick={() => setActiveStep(stepName)}
-                  data-step-valid={Boolean(step.valid) && (step.errorCount ?? 0) === 0}
+                  data-step-valid={
+                    Boolean(step.valid) && (step.errorCount ?? 0) === 0
+                  }
                   data-step-active={activeStep === stepName}
                 >
                   {checkStepValidity(stepName) ? (
@@ -104,17 +107,15 @@ function ShowingAllStateExample() {
   )
 }
 /* %partial% */
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 
-const styles = "@import url('https://cdn.formk.it/web-assets/multistep-form.css');"
+const styles =
+  "@import url('https://cdn.formk.it/web-assets/multistep-form.css');"
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={defaultConfig()}>
+    <>
       <style>{styles}</style>
       <ShowingAllStateExample />
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

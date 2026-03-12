@@ -3,7 +3,7 @@ import { getNode } from '@formkit/core'
 
 function addValidation() {
   const node = getNode('ssn')
-  node.props.validation = 'required|matches:/\\d{3}-\\d{2}-\\2{4}/'
+  node.props.validation = 'required|matches:/\\d{3}-\\d{2}-\\d{4}/'
 }
 </script>
 

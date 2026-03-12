@@ -9,6 +9,8 @@ navigation:
 
 The `url` input uses HTML's [native url input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url). It allows a user to enter a single URL.
 
+When controlling this input in React, prefer <code>modelValue</code> and <code>onUpdateModelValue</code> instead of wiring directly to the native input element.
+
 ## Basic example
 
 ::Example

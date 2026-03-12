@@ -12,6 +12,8 @@ navigation:
 
 The `autocomplete` input allows you to search through a list of options.
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>selection-appearance</code>, <code>load-on-created</code>, and <code>empty-message</code>" react="<code>selectionAppearance</code>, <code>loadOnCreated</code>, and <code>emptyMessage</code>"} follow each framework's normal prop casing.
+
 The `options` prop can accept three different formats of values:
 
 - An array of objects with `value` and `label` keys (see example above)
@@ -166,6 +168,8 @@ react-file: "_examples/autocomplete-pro/autocomplete-load-on-created.react.jsx"
 
 The autocomplete input allows you to customize the look and feel of each option by using the option slot. In this example, we are using the option slot to display each option's asset, logo, and name:
 
+In :FrameworkText{vue="Vue this is typically implemented with the <code>#option</code> slot." react="React this is typically implemented with an <code>option</code> entry on the <code>slots</code> prop."}
+
 ::Example
 ---
 name: "Autocomplete"
@@ -208,6 +212,8 @@ react-file: [
 ### Selection slot
 
 If you only want to customize the display of the selected option, set the selection appearance to `option`.
+
+In :FrameworkText{vue="Vue this is typically implemented with the <code>#selection</code> slot." react="React this is typically implemented with a <code>selection</code> entry on the <code>slots</code> prop."}
 
 ::Example
 ---

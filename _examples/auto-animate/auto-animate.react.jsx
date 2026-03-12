@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider } from '@formkit/react'
-import config from './formkit.config.react.jsx'
 
-function App() {
+import { FormKit } from '@formkit/react'
+export { default as formkitConfig } from './formkit.config.react.jsx'
+
+export default function App() {
   // %partial%
   const [fruit, setFruit] = useState(null)
 
@@ -14,7 +14,7 @@ function App() {
   // %partial%
 
   return (
-    <FormKitProvider config={config}>
+    <>
       {/* %partial% */}
       <FormKit type="form" onSubmit={submitApp}>
         <FormKit type="repeater">
@@ -57,8 +57,6 @@ function App() {
         ) : null}
       </FormKit>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

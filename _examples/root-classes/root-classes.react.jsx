@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
 /* %partial% */
 function rootClasses(sectionKey) {
@@ -13,12 +12,6 @@ function RootClassesExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <RootClassesExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <RootClassesExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

@@ -16,6 +16,8 @@ Most importantly, unlike the native `color` input, the `colorpicker` provides a 
 
 The `colorpicker` input is fully keyboard navigable and ships with accessible markup.
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>value-format</code>, <code>panel-controls</code>, <code>eye-dropper</code>, and <code>allow-paste</code>" react="<code>valueFormat</code>, <code>panelControls</code>, <code>eyeDropper</code>, and <code>allowPaste</code>"} use the standard prop casing for that framework.
+
 ## Basic example
 
 ::Example
@@ -104,6 +106,8 @@ When showing only swatches in pop-over mode (the default) adding the `close-on-s
 ### Inputting by swatch name
 
 If your provided swatches via the `options` prop have `label`s then you can call `node.input()` with a swatch name and the associated color will be set for you.
+
+In React, the paired example looks up the input node with <code>useFormKitNodeById()</code> before calling <code>node.input()</code>.
 
 ::Example
 ---

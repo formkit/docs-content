@@ -9,6 +9,8 @@ navigation:
 
 The `password` input uses HTML's [native password input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/password). It allows a user to privately enter their password. When creating new passwords, this input is often compiled with the `confirm` validation rule.
 
+When controlling this input in React, prefer <code>modelValue</code> and <code>onUpdateModelValue</code>. If you use icon props for visibility toggles in JSX, remember they follow camelCase prop names like <code>suffixIcon</code>.
+
 ## Example
 
 ::Example

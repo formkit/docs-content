@@ -1,8 +1,6 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider } from '@formkit/react'
 /* %partial% */
 import { FormKit, FormKitIcon } from '@formkit/react'
-import config from './formkit.config.react.jsx'
+export { default as formkitConfig } from './formkit.config.react.jsx'
 
 function FontAwesomeIconsExample() {
   return (
@@ -44,12 +42,6 @@ function FontAwesomeIconsExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={config}>
-      <FontAwesomeIconsExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <FontAwesomeIconsExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

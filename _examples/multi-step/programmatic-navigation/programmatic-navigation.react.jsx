@@ -1,28 +1,25 @@
-import { createRoot } from 'react-dom/client'
-import { getNode } from '@formkit/core'
-import { FormKit, FormKitProvider } from '@formkit/react'
-import config from '../formkit.config.react.jsx'
+import { FormKit, useFormKitNodeById } from '@formkit/react'
+export { default as formkitConfig } from '../formkit.config.react.jsx'
 
-// %partial%
-const next = () => {
-  const node = getNode('multi-step')
-  node?.next()
-}
+export default function App() {
+  const node = useFormKitNodeById('multi-step')
 
-const previous = () => {
-  const node = getNode('multi-step')
-  node?.previous()
-}
+  // %partial%
+  const next = () => {
+    node?.next()
+  }
 
-const goTo = () => {
-  const node = getNode('multi-step')
-  node?.goTo('favoriteThing')
-}
-// %partial%
+  const previous = () => {
+    node?.previous()
+  }
 
-function App() {
+  const goTo = () => {
+    node?.goTo('favoriteThing')
+  }
+  // %partial%
+
   return (
-    <FormKitProvider config={config}>
+    <>
       {/* %partial% */}
       <FormKit type="multi-step" id="multi-step">
         <FormKit type="step" name="personalInfo" id="personalInfo">
@@ -42,8 +39,6 @@ function App() {
       <FormKit type="button" onClick={previous} label="Previous" />
       <FormKit type="button" onClick={goTo} label="Go to Favorite thing" />
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

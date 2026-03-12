@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 import { FormKit } from '@formkit/react'
 
 function SchemaOverridesExample() {
@@ -23,12 +21,6 @@ function SchemaOverridesExample() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <SchemaOverridesExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <SchemaOverridesExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

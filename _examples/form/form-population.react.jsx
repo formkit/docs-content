@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
 function FormPopulationExample() {
   const save = () => {
@@ -52,12 +51,6 @@ function FormPopulationExample() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <FormPopulationExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <FormPopulationExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

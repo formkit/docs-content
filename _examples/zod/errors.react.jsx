@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 import { createZodPlugin } from '@formkit/zod'
 import { z } from 'zod'
 
@@ -12,12 +11,9 @@ const zodSchema = z.object({
   missingField: z.number(),
 })
 
-const [zodPlugin, submitHandler] = createZodPlugin(
-  zodSchema,
-  async () => {
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-  }
-)
+const [zodPlugin, submitHandler] = createZodPlugin(zodSchema, async () => {
+  await new Promise((resolve) => setTimeout(resolve, 2000))
+})
 
 function setupFormNode(node) {
   const invalidValues = {
@@ -29,16 +25,16 @@ function setupFormNode(node) {
 }
 // %partial%
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={defaultConfig()}>
+    <>
       {/* %partial% */}
       <h1 className="text-2xl font-bold mb-2">
         Errors set with node.setZodErrors()
       </h1>
       <p className="text-base mb-4">
-        This form cannot be successfully submitted because
-        the form fields do not match the provided schema.
+        This form cannot be successfully submitted because the form fields do
+        not match the provided schema.
         <br />
         This is done to illustrate hydration of form-level errors.
         <br />
@@ -56,8 +52,6 @@ function App() {
         </FormKit>
       </FormKit>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

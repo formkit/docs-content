@@ -1,18 +1,38 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
-function App() {
+const badgeStyle = {
+  padding: '0.5em',
+  color: 'white',
+  margin: '1em 0',
+  borderRadius: '5px',
+}
+
+const invalidStyle = {
+  ...badgeStyle,
+  backgroundColor: 'darkred',
+}
+
+const validStyle = {
+  ...badgeStyle,
+  backgroundColor: 'green',
+}
+
+export default function App() {
   return (
-    <FormKitProvider config={defaultConfig()}>
+    <>
       {/* %partial% */}
       <h2 className="text-2xl font-bold mb-4">Register</h2>
       <FormKit name="account" type="group">
         {({ state: { valid } }) => (
           <>
             {!valid ? (
-              <div className="not-valid">Your account details are not complete!</div>
+              <div className="not-valid" style={invalidStyle}>
+                Your account details are not complete!
+              </div>
             ) : (
-              <div className="valid">It all looks good</div>
+              <div className="valid" style={validStyle}>
+                It all looks good 👍
+              </div>
             )}
             <FormKit
               label="Username"
@@ -31,8 +51,6 @@ function App() {
         )}
       </FormKit>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

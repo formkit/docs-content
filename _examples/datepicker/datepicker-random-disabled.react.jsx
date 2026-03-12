@@ -1,11 +1,10 @@
-import { createRoot } from 'react-dom/client'
 import { useEffect, useState } from 'react'
 import { genesisIcons } from '@formkit/icons'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit, defineFormKitConfig } from '@formkit/react'
 import { createProPlugin, inputs as proInputs } from '@formkit/pro'
 
 const pro = createProPlugin('fk-52971f34220', proInputs)
-const config = defaultConfig({
+export const formkitConfig = defineFormKitConfig({
   plugins: [pro],
   icons: { ...genesisIcons },
 })
@@ -21,7 +20,9 @@ function Example() {
     fetch(UNAVAILABLE_DATES_URL)
       .then((response) => response.json())
       .then((data) => {
-        setUnavailableDates(data.map(([start, end]) => [new Date(start), new Date(end)]))
+        setUnavailableDates(
+          data.map(([start, end]) => [new Date(start), new Date(end)])
+        )
       })
       .catch((error) => console.error(error))
   }, [])
@@ -78,12 +79,6 @@ function Example() {
 }
 // %partial%
 
-function App() {
-  return (
-    <FormKitProvider config={config}>
-      <Example />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <Example />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

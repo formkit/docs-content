@@ -38,6 +38,7 @@ When optimizing your FormKit installation for production, you may want to create
 
 For example, consider a project with a simple form that only uses a text input and the `required` rule. Something like this:
 
+::FrameworkOnly{framework="vue"}
 ```vue
 <script setup>
 async function submit () {
@@ -45,10 +46,7 @@ async function submit () {
 }
 </script>
 <template>
-  <FormKit
-    type="form"
-    @submit="submit"
-  >
+  <FormKit type="form" @submit="submit">
     <FormKit
       type="text"
       name="name"
@@ -59,6 +57,29 @@ async function submit () {
   </FormKit>
 </template>
 ```
+::
+
+::FrameworkOnly{framework="react"}
+```jsx
+async function submit(fields) {
+  // ... submit the things
+}
+
+export default function Example() {
+  return (
+    <FormKit type="form" onSubmit={submit}>
+      <FormKit
+        type="text"
+        name="name"
+        label="Name"
+        help="What do people call you?"
+        validation="required"
+      />
+    </FormKit>
+  )
+}
+```
+::
 
 In this case, we only want to use the singular `required` rule, only the `text` input, and only the `required` message in English and German. We can create this tree-shakable custom configuration by not using the `defaultConfig` and instead performing our own plugin instantiations:
 
@@ -180,4 +201,3 @@ href: "/essentials/configuration"
 label: "Read more about how to configure FormKit."
 button: "Configuration docs"
 ---
-

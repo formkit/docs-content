@@ -1,11 +1,5 @@
-import { createRoot } from 'react-dom/client'
 import { useState } from 'react'
-import {
-  FormKit,
-  FormKitIcon,
-  FormKitProvider,
-  defaultConfig,
-} from '@formkit/react'
+import { FormKit, FormKitIcon, defineFormKitConfig } from '@formkit/react'
 import { genesisIcons } from '@formkit/icons'
 
 const todoStyle = {
@@ -41,7 +35,13 @@ const closeStyle = {
   color: 'var(--fk-color-danger)',
 }
 
-function App() {
+export const formkitConfig = defineFormKitConfig({
+  icons: {
+    ...genesisIcons,
+  },
+})
+
+export default function App() {
   const [todos, setTodos] = useState([
     'Buy groceries',
     'Do laundry',
@@ -59,13 +59,7 @@ function App() {
   }
 
   return (
-    <FormKitProvider
-      config={defaultConfig({
-        icons: {
-          ...genesisIcons,
-        },
-      })}
-    >
+    <>
       {/* %partial% */}
       <h1>Todo list</h1>
       <FormKit
@@ -126,8 +120,6 @@ function App() {
         )}
       </FormKit>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

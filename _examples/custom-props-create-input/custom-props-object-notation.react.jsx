@@ -1,6 +1,5 @@
-import { createRoot } from 'react-dom/client'
 import { useState } from 'react'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
+
 /* %partial% */
 import { FormKit, createInput } from '@formkit/react'
 
@@ -85,12 +84,6 @@ function CustomPropsObjectNotationExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <CustomPropsObjectNotationExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <CustomPropsObjectNotationExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

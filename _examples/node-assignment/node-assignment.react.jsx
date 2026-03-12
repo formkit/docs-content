@@ -1,16 +1,16 @@
-import { createRoot } from 'react-dom/client'
-import { getNode } from '@formkit/core'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
-
-// %partial%
-function addValidation() {
-  const node = getNode('ssn')
-  if (node) {
-    node.props.validation = 'required|matches:/\\d{3}-\\d{2}-\\2{4}/'
-  }
-}
+import { FormKit, useFormKitNodeById } from '@formkit/react'
 
 function NodeAssignmentExample() {
+  const node = useFormKitNodeById('ssn')
+
+  // %partial%
+  function addValidation() {
+    if (node) {
+      node.props.validation = 'required|matches:/\\d{3}-\\d{2}-\\d{4}/'
+    }
+  }
+  // %partial%
+
   return (
     <>
       <FormKit
@@ -30,12 +30,6 @@ function NodeAssignmentExample() {
 }
 // %partial%
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <NodeAssignmentExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <NodeAssignmentExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

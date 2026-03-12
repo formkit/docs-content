@@ -17,6 +17,7 @@ yarn add @formkit/addons
 
 Once you've installed the addons package, you'll need to register the plugin with FormKit:
 
+::FrameworkOnly{framework="vue"}
 ```js
 // formkit.config.ts
 import { defaultConfig } from '@formkit/vue'
@@ -30,10 +31,25 @@ const config = defaultConfig({
 
 export default config
 ```
+::
+
+::FrameworkOnly{framework="react"}
+```jsx
+// formkit.config.react.jsx
+import { defineFormKitConfig } from '@formkit/react'
+import { createAutoHeightTextareaPlugin } from '@formkit/addons'
+
+export default defineFormKitConfig({
+  plugins: [createAutoHeightTextareaPlugin()],
+})
+```
+::
 
 ## Usage
 
 To enable auto-height on a text area add the `auto-height` prop to a FormKit input of type `textarea`.
+
+In :FrameworkText{vue="Vue templates these props are written as <code>auto-height</code> and <code>max-auto-height</code>." react="React JSX these props are written as <code>autoHeight</code> and <code>maxAutoHeight</code>."}
 
 Available field props:
 

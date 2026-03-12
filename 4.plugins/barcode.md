@@ -35,6 +35,7 @@ npm install @formkit/barcode
 
 Then, in your FormKit configuration file import the input and its styles. Then add the input to your global FormKit configuration.
 
+::FrameworkOnly{framework="vue"}
 ```js
 // formkit.config
 ...
@@ -51,12 +52,29 @@ const config = defaultConfig({
 
 ...
 ```
+::
+
+::FrameworkOnly{framework="react"}
+```jsx
+import { defineFormKitConfig } from '@formkit/react'
+import { barcode } from '@formkit/barcode'
+import '@formkit/barcode/genesis'
+
+export default defineFormKitConfig({
+  inputs: {
+    barcode,
+  },
+})
+```
+::
 
 ## Usage
 
 ### Basic
 
 You can now use the `barcode` input type in your `<FormKit />` components. By interacting with the barcode icon you can open an overlay with a video feed from a connected camera. You will need to approve access to the camera via your browser.
+
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>barcode-icon</code>, <code>loader-icon</code>, and <code>close-icon</code>" react="<code>barcodeIcon</code>, <code>loaderIcon</code>, and <code>closeIcon</code>"} use the standard prop casing for that framework.
 
 ::Example
 ---

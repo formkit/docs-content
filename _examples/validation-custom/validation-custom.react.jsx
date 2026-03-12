@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
 // %partial%
 function day(node, group = 'weekdays') {
@@ -44,12 +43,6 @@ function ValidationCustomExample() {
 }
 // %partial%
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <ValidationCustomExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <ValidationCustomExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

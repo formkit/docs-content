@@ -1,9 +1,7 @@
-import { createRoot } from 'react-dom/client'
 /* %partial% */
 import { useState } from 'react'
 import { FormKit } from '@formkit/react'
 /* %partial% */
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 
 /* %partial% */
 function VModelExample() {
@@ -44,12 +42,6 @@ function VModelExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <VModelExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <VModelExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

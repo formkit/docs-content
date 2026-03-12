@@ -1,5 +1,6 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
+
+const units = ['cup', 'lb', 'oz', 'tsp', 'tbsp']
 
 async function handleSubmit() {
   await new Promise((resolve) => setTimeout(resolve, 1000))
@@ -20,7 +21,7 @@ function OneComponentForm() {
           <div className="grid grid-cols-3 gap-4">
             <FormKit type="text" name="name" label="Name" />
             <FormKit type="number" name="quantity" label="Quantity" />
-            <FormKit type="dropdown" placeholder="Choose" name="unit" label="Unit" options={['cup', 'lb', 'oz', 'tsp', 'tbsp']} />
+            <FormKit type="dropdown" placeholder="Choose" name="unit" label="Unit" options={units} />
           </div>
         </FormKit>
       </FormKit>
@@ -29,12 +30,4 @@ function OneComponentForm() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <OneComponentForm />
-    </FormKitProvider>
-  )
-}
-
-createRoot(document.getElementById('app')).render(<App />)
+export default OneComponentForm

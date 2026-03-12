@@ -1,18 +1,17 @@
-import { createRoot } from 'react-dom/client'
 import { genesisIcons } from '@formkit/icons'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit, defineFormKitConfig } from '@formkit/react'
 import { createProPlugin, inputs as proInputs } from '@formkit/pro'
 import carBrands from '../_data/car-brands.js'
 
 const pro = createProPlugin('fk-52971f34220', proInputs)
-const config = defaultConfig({
+export const formkitConfig = defineFormKitConfig({
   plugins: [pro],
   icons: { ...genesisIcons },
 })
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={config}>
+    <>
       {/* %partial% */}
       <FormKit
         type="autocomplete"
@@ -36,8 +35,6 @@ function App() {
         }}
       />
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

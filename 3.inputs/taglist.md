@@ -12,6 +12,8 @@ navigation:
 
 The `taglist` input allows users to search through a list of options and apply any number of tags. Users can also drag and drop tags to re-order:
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>allow-new-values</code>, <code>load-on-created</code>, <code>empty-message</code>, and <code>reload-on-commit</code>" react="<code>allowNewValues</code>, <code>loadOnCreated</code>, <code>emptyMessage</code>, and <code>reloadOnCommit</code>"} use the standard prop casing for that framework.
+
 The `options` prop can accept three different formats of values:
 
 - An array of objects with `value` and `label` keys (see example above)
@@ -152,6 +154,8 @@ react-file: "_examples/taglist/taglist-load-on-created.react.jsx"
 ## Tag appearance
 
 Just like the [taglist input](/inputs/taglist) or [Autocomplete input](/inputs/autocomplete), the taglist input allows you to utilize slots to customize the look and feel of the options list and the selected option by leveraging the [renderless component pattern](https://adamwathan.me/renderless-components-in-vuejs/).
+
+In :FrameworkText{vue="Vue this is typically implemented with named slots." react="React this is typically implemented with <code>tag</code>, <code>option</code>, and related entries on the <code>slots</code> prop."}
 
 In this example, we are going to use the `tag` slot to customize the look of the tags:
 

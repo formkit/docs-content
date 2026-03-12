@@ -1,11 +1,10 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider } from '@formkit/react'
-import config from '../formkit.config.react.jsx'
+import { FormKit } from '@formkit/react'
+export { default as formkitConfig } from '../formkit.config.react.jsx'
 import MultiStepContent from './multi-step-content.react.jsx'
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={config}>
+    <>
       {/* %partial% */}
       {/* default tab style */}
       <FormKit type="multi-step" tabStyle="tab">
@@ -22,8 +21,6 @@ function App() {
         <MultiStepContent />
       </FormKit>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

@@ -1,10 +1,9 @@
-import { createRoot } from 'react-dom/client'
 import { genesisIcons } from '@formkit/icons'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit, defineFormKitConfig } from '@formkit/react'
 import { createProPlugin, inputs as proInputs } from '@formkit/pro'
 
 const pro = createProPlugin('fk-52971f34220', proInputs)
-const config = defaultConfig({
+export const formkitConfig = defineFormKitConfig({
   plugins: [pro],
   icons: { ...genesisIcons },
 })
@@ -36,7 +35,9 @@ const tokens = {
     token: 'day',
     placeholder: 'day',
     selectDirection: 'left',
-    values: Array.from({ length: 31 }, (_, index) => `${index}`.padStart(2, '0')),
+    values: Array.from({ length: 31 }, (_, index) =>
+      `${index}`.padStart(2, '0')
+    ),
   },
   year: {
     type: 'enum',
@@ -48,9 +49,9 @@ const tokens = {
 }
 /* %partial% */
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={config}>
+    <>
       {/* %partial% */}
       <FormKit
         type="mask"
@@ -61,8 +62,6 @@ function App() {
         help="Select a token and then type to autocomplete, or use the up/down arrows to select a value."
       />
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

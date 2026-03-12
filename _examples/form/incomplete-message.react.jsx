@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 /* %partial% */
 import { FormKit } from '@formkit/react'
 
@@ -47,12 +45,6 @@ function IncompleteMessageExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <IncompleteMessageExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <IncompleteMessageExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

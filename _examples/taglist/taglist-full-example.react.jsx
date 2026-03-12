@@ -1,11 +1,5 @@
-import { createRoot } from 'react-dom/client'
 import { genesisIcons } from '@formkit/icons'
-import {
-  FormKit,
-  FormKitIcon,
-  FormKitProvider,
-  defaultConfig,
-} from '@formkit/react'
+import { FormKit, FormKitIcon, defineFormKitConfig } from '@formkit/react'
 import { createProPlugin, inputs as proInputs } from '@formkit/pro'
 
 // %partial%
@@ -83,17 +77,11 @@ function TaglistExample() {
 // %partial%
 
 const pro = createProPlugin('fk-52971f34220', proInputs)
-const config = defaultConfig({
+export const formkitConfig = defineFormKitConfig({
   plugins: [pro],
   icons: { ...genesisIcons },
 })
 
-function App() {
-  return (
-    <FormKitProvider config={config}>
-      <TaglistExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <TaglistExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

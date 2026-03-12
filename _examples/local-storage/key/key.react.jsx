@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+
+import { FormKit } from '@formkit/react'
 import { createLocalStoragePlugin } from '@formkit/addons'
 
-function App() {
+export default function App() {
   // %partial%
   const [user, setUser] = useState(1)
 
@@ -17,15 +17,15 @@ function App() {
       typeof value === 'number'
         ? value
         : Number.isNaN(Number(value))
-          ? 1
-          : Number(value)
+        ? 1
+        : Number(value)
     setUser(nextUser)
     window.location.reload()
   }
   // %partial%
 
   return (
-    <FormKitProvider config={defaultConfig()}>
+    <>
       {/* %partial% */}
       <FormKit
         type="form"
@@ -71,8 +71,6 @@ function App() {
         </FormKit>
       </div>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

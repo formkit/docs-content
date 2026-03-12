@@ -13,6 +13,8 @@ The `file` input uses HTML's [native file input](https://developer.mozilla.org/e
 - Clearing the input
 - Repopulating from an array
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} the icon props on this input are written as :FrameworkText{vue="<code>file-item-icon</code>, <code>file-remove-icon</code>, and <code>no-files-icon</code>" react="<code>fileItemIcon</code>, <code>fileRemoveIcon</code>, and <code>noFilesIcon</code>"}.
+
 ## Basic example
 
 ::Example

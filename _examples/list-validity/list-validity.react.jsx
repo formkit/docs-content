@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
 const statusStyle = {
   padding: '0.5em',
@@ -18,9 +17,9 @@ const invalidStyle = {
   backgroundColor: 'darkred',
 }
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={defaultConfig()}>
+    <>
       {/* %partial% */}
       <FormKit name="social" type="list">
         {({ state: { valid } }) => (
@@ -30,7 +29,9 @@ function App() {
               Please provide a your twitter and facebook social media profiles.
             </p>
             {!valid ? (
-              <div style={invalidStyle}>Your social profile is not complete!</div>
+              <div style={invalidStyle}>
+                Your social profile is not complete!
+              </div>
             ) : (
               <div style={validStyle}>{`It all looks good \u{1F44D}`}</div>
             )}
@@ -50,8 +51,6 @@ function App() {
         )}
       </FormKit>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

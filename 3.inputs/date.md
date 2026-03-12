@@ -9,6 +9,8 @@ navigation:
 
 The `date` input uses HTML's [native date picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date) to allow users to easily select a date.
 
+When controlling this input in React, prefer <code>modelValue</code> and <code>onUpdateModelValue</code> instead of wiring directly to the native input element.
+
 ::Callout
 ---
 type: "tip"

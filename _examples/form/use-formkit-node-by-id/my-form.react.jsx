@@ -1,6 +1,5 @@
-import { createRoot } from 'react-dom/client'
 import { genesisIcons } from '@formkit/icons'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
+import { defineFormKitConfig } from '@formkit/react'
 import { createProPlugin, inputs as proInputs } from '@formkit/pro'
 /* %partial% */
 import { FormKit, useFormKitNodeById } from '@formkit/react'
@@ -25,17 +24,11 @@ function UseFormKitNodeByIdExample() {
 /* %partial% */
 
 const pro = createProPlugin('fk-52971f34220', proInputs)
-const config = defaultConfig({
+export const formkitConfig = defineFormKitConfig({
   plugins: [pro],
   icons: { ...genesisIcons },
 })
 
-function App() {
-  return (
-    <FormKitProvider config={config}>
-      <UseFormKitNodeByIdExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <UseFormKitNodeByIdExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

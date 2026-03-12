@@ -14,6 +14,8 @@ navigation:
 
 The `mask` input automatically transforms user input to match a provided format. Used appropriately, mask inputs can provide an improved user experience by removing any ambiguity for the desired value (for example a phone number or social security number).
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>show-mask</code>, <code>select-direction</code>, and <code>select-fill</code>" react="<code>showMask</code>, <code>selectDirection</code>, and <code>selectFill</code>"} use the standard prop casing for that framework. When registering tokens globally in React, use <code>defineFormKitConfig()</code> in the same way the paired config example does.
+
 ::VideoCard
 ---
 title: "Mask Input Overview"

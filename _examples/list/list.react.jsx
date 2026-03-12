@@ -1,8 +1,7 @@
-import { createRoot } from 'react-dom/client'
 import { useState } from 'react'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
-function App() {
+export default function App() {
   const [list, setList] = useState([
     'john@formkit.com',
     'sasha@formkit.com',
@@ -10,7 +9,7 @@ function App() {
   ])
 
   return (
-    <FormKitProvider config={defaultConfig()}>
+    <>
       {/* %partial% */}
       <FormKit modelValue={list} onUpdateModelValue={setList} type="list">
         <p className="text-base mb-4">Please provide a list of emails.</p>
@@ -20,8 +19,6 @@ function App() {
       </FormKit>
       <pre>{JSON.stringify(list, null, 2)}</pre>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

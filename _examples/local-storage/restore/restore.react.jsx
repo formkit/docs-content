@@ -1,6 +1,5 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider } from '@formkit/react'
-import config from './formkit.config.react.jsx'
+import { FormKit } from '@formkit/react'
+export { default as formkitConfig } from './formkit.config.react.jsx'
 
 // %partial%
 const failingSubmitHandler = async (_payload, node) => {
@@ -10,9 +9,9 @@ const failingSubmitHandler = async (_payload, node) => {
 }
 // %partial%
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={config}>
+    <>
       {/* %partial% */}
       <p>
         <em>
@@ -34,8 +33,6 @@ function App() {
         <FormKit type="textarea" name="message" label="Your message" />
       </FormKit>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

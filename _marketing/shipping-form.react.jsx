@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 import AddressInputGroup from './address-input-group.react.jsx'
 
 function ShippingForm() {
@@ -24,12 +23,4 @@ function ShippingForm() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <ShippingForm />
-    </FormKitProvider>
-  )
-}
-
-createRoot(document.getElementById('app')).render(<App />)
+export default ShippingForm

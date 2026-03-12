@@ -1,10 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import {
-  FormKit,
-  FormKitProvider,
-  defaultConfig,
-  setErrors,
-} from '@formkit/react'
+import { FormKit, setErrors } from '@formkit/react'
 import { useEffect } from 'react'
 
 function PreserveErrorsConfigExample() {
@@ -36,12 +30,6 @@ function PreserveErrorsConfigExample() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <PreserveErrorsConfigExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <PreserveErrorsConfigExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

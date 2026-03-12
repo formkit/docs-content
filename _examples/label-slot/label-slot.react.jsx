@@ -1,4 +1,3 @@
-import { createRoot } from 'react-dom/client'
 /* %partial% */
 import { FormKit } from '@formkit/react'
 
@@ -32,11 +31,10 @@ function LabelSlotExample() {
   )
 }
 /* %partial% */
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={defaultConfig()}>
+    <>
       <style>{`
         img {
           aspect-ratio: 120 / 46;
@@ -47,8 +45,6 @@ function App() {
         }
       `}</style>
       <LabelSlotExample />
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

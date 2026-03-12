@@ -1,12 +1,11 @@
-import { createRoot } from 'react-dom/client'
 // %partial%
-import { FormKit, FormKitProvider } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 import { changeLocale } from '@formkit/i18n'
-import config from './formkit.config.react.jsx'
+export { default as formkitConfig } from './formkit.config.react.jsx'
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={config}>
+    <>
       <button
         className="border-2 px-2 py-1 mb-4"
         onClick={() => changeLocale('zh')}
@@ -19,9 +18,7 @@ function App() {
         name="username"
         validationVisibility="live"
       />
-    </FormKitProvider>
+    </>
   )
 }
 // %partial%
-
-createRoot(document.getElementById('app')).render(<App />)

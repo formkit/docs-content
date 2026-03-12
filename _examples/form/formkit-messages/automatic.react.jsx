@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 /* %partial% */
 import { FormKit, FormKitMessages } from '@formkit/react'
 
@@ -40,12 +38,6 @@ function AutomaticMessagesExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <AutomaticMessagesExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <AutomaticMessagesExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

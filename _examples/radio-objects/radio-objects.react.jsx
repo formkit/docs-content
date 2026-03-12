@@ -1,12 +1,11 @@
-import { createRoot } from 'react-dom/client'
 import { useState } from 'react'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
-function App() {
+export default function App() {
   const [value, setValue] = useState('saving-ryan')
 
   return (
-    <FormKitProvider config={defaultConfig()}>
+    <>
       {/* %partial% */}
       <FormKit
         modelValue={value}
@@ -16,7 +15,11 @@ function App() {
         options={[
           { label: 'Shawshank redemption', value: 'shawshank' },
           { label: 'The Godfather', value: 'godfather' },
-          { label: 'Casablanca (too old)', value: 'casablanca', attrs: { disabled: true } },
+          {
+            label: 'Casablanca (too old)',
+            value: 'casablanca',
+            attrs: { disabled: true },
+          },
           { label: 'The Lord of the Rings', value: 'lotr' },
           { label: 'Saving Private Ryan', value: 'saving-ryan' },
         ]}
@@ -24,8 +27,6 @@ function App() {
       />
       <pre>{value}</pre>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

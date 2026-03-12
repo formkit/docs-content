@@ -1,11 +1,5 @@
-import { createRoot } from 'react-dom/client'
 import { useState } from 'react'
-import {
-  FormKit,
-  FormKitProvider,
-  FormKitSchema,
-  defaultConfig,
-} from '@formkit/react'
+import { FormKit, FormKitSchema } from '@formkit/react'
 
 // %partial%
 const schema = [
@@ -85,12 +79,6 @@ function Example() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <Example />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <Example />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

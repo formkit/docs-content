@@ -1,7 +1,6 @@
-import { createRoot } from 'react-dom/client'
 import { useState } from 'react'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
-import config from './formkit.config.react.jsx'
+
+export { default as formkitConfig } from './formkit.config.react.jsx'
 /* %partial% */
 import { FormKit, createInput } from '@formkit/react'
 import OneTimePassword from './one-time-password.react.jsx'
@@ -37,12 +36,6 @@ function OtpCopyPasteExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig(config())}>
-      <OtpCopyPasteExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <OtpCopyPasteExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 /* %partial% */
 import { FormKit } from '@formkit/react'
 
@@ -18,12 +16,6 @@ function InlineSvgExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <InlineSvgExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <InlineSvgExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

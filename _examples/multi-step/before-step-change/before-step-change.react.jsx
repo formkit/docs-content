@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider } from '@formkit/react'
-import config from '../formkit.config.react.jsx'
 
-function App() {
+import { FormKit } from '@formkit/react'
+export { default as formkitConfig } from '../formkit.config.react.jsx'
+
+export default function App() {
   // %partial%
   const [stepInformation, setStepInformation] = useState({})
 
@@ -19,7 +19,7 @@ function App() {
   // %partial%
 
   return (
-    <FormKitProvider config={config}>
+    <>
       {/* %partial% */}
       <FormKit type="multi-step" beforeStepChange={handleBeforeStepChange}>
         <FormKit type="step" name="personalInfo">
@@ -38,8 +38,6 @@ function App() {
 
       <h2>beforeStepChange Data:</h2>
       <pre>{JSON.stringify(stepInformation, null, 2)}</pre>
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

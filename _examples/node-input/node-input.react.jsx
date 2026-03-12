@@ -1,15 +1,13 @@
-import { createRoot } from 'react-dom/client'
 /* %partial% */
 import { useEffect } from 'react'
-import { getNode } from '@formkit/core'
-import { FormKit } from '@formkit/react'
+import { FormKit, useFormKitNodeById } from '@formkit/react'
 /* %partial% */
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 
 /* %partial% */
 function NodeInputExample() {
+  const node = useFormKitNodeById('coffee')
+
   useEffect(() => {
-    const node = getNode('coffee')
     if (!node) return
     let index = 0
     const coffee = ['Latte', 'Americano', 'Doppio', 'Allonge', 'Macchiato']
@@ -19,7 +17,7 @@ function NodeInputExample() {
       else index = 0
     }, 250)
     return () => clearInterval(interval)
-  }, [])
+  }, [node])
 
   return (
     <FormKit
@@ -31,12 +29,6 @@ function NodeInputExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <NodeInputExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <NodeInputExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

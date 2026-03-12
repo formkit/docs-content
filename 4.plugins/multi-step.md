@@ -28,6 +28,7 @@ yarn add @formkit/addons
 
 Once you've installed the addons package, you'll need to register the plugin with FormKit and include the supporting CSS styles:
 
+::FrameworkOnly{framework="vue"}
 ```js
 // formkit.config.ts
 import { defaultConfig } from '@formkit/vue'
@@ -39,6 +40,19 @@ const config = defaultConfig({
 
 export default config
 ```
+::
+
+::FrameworkOnly{framework="react"}
+```jsx
+// formkit.config.react.jsx
+import { defineFormKitConfig } from '@formkit/react'
+import { createMultiStepPlugin } from '@formkit/addons'
+
+export default defineFormKitConfig({
+  plugins: [createMultiStepPlugin()],
+})
+```
+::
 
 #### A quick demonstration of the `multi-step` input type in action:
 
@@ -179,7 +193,7 @@ Each `step` in a `multi-step` input has default buttons rendered for moving betw
 
 If you want to add a custom action such as a form submit to a `multi-step` — useful if you're using the `multi-step` as your whole form — you can do so by overriding the `stepNext` slot on the desired step. In this case we'll add a `submit` input to the last step in our `multi-step` input to submit the form.
 
-The `stepNext` and `stepPrevious` sections have access to the `incrementStep` handler — which returns a callable function — to enable programatic navigation.
+The `stepNext` and `stepPrevious` sections have access to the `incrementStep` handler — which returns a callable function — to enable programatic navigation. In :FrameworkText{vue="Vue this is typically done with named slots" react="React this is typically done with the <code>slots</code> prop"}.
 
 ::Callout
 ---
@@ -192,6 +206,7 @@ By default, the <code>stepNext</code> in a multi-step input uses event listeners
 ::Example
 ---
 name: "Customizing step actions"
+hydrate: false
 file: [
   "_examples/multi-step/step-actions/step-actions.vue",
   "_examples/multi-step/formkit.config.ts"

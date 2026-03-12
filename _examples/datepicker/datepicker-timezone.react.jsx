@@ -1,7 +1,6 @@
-import { createRoot } from 'react-dom/client'
 import { useEffect, useState } from 'react'
 import { genesisIcons } from '@formkit/icons'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit, defineFormKitConfig } from '@formkit/react'
 import { createProPlugin, inputs as proInputs } from '@formkit/pro'
 
 const rentalCarStyles = `
@@ -38,12 +37,12 @@ const rentalCarStyles = `
 `
 
 const pro = createProPlugin('fk-52971f34220', proInputs)
-const config = defaultConfig({
+export const formkitConfig = defineFormKitConfig({
   plugins: [pro],
   icons: { ...genesisIcons },
 })
 
-function App() {
+export default function App() {
   const [value, setValue] = useState({})
 
   useEffect(() => {
@@ -60,7 +59,7 @@ function App() {
   }
 
   return (
-    <FormKitProvider config={config}>
+    <>
       <FormKit
         type="form"
         modelValue={value}
@@ -99,8 +98,6 @@ function App() {
         {/* %partial% */}
       </FormKit>
       <pre>{JSON.stringify(value, null, 2)}</pre>
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

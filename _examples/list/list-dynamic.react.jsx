@@ -1,14 +1,13 @@
-import { createRoot } from 'react-dom/client'
 import { genesisIcons } from '@formkit/icons'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit, defineFormKitConfig } from '@formkit/react'
 
-function App() {
+export const formkitConfig = defineFormKitConfig({
+  icons: { ...genesisIcons },
+})
+
+export default function App() {
   return (
-    <FormKitProvider
-      config={defaultConfig({
-        icons: { ...genesisIcons },
-      })}
-    >
+    <>
       {/* %partial% */}
       <h2 className="text-2xl font-bold mb-4">Guest list</h2>
       <FormKit type="list" value={['']} dynamic>
@@ -22,7 +21,9 @@ function App() {
                 placeholder="Guest name"
                 suffixIcon="trash"
                 onSuffixIconClick={() =>
-                  node.input(value.filter((_, itemIndex) => itemIndex !== index))
+                  node.input(
+                    value.filter((_, itemIndex) => itemIndex !== index)
+                  )
                 }
                 sectionsSchema={{
                   suffixIcon: {
@@ -39,8 +40,6 @@ function App() {
         )}
       </FormKit>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

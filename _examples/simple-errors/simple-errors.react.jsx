@@ -1,9 +1,7 @@
-import { createRoot } from 'react-dom/client'
 /* %partial% */
 import { useState } from 'react'
 import { FormKit } from '@formkit/react'
 /* %partial% */
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 
 /* %partial% */
 function SimpleErrorsExample() {
@@ -24,12 +22,6 @@ function SimpleErrorsExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <SimpleErrorsExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <SimpleErrorsExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

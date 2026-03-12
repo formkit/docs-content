@@ -1,10 +1,9 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider } from '@formkit/react'
-import config from '../formkit.config.react.jsx'
+import { FormKit } from '@formkit/react'
+export { default as formkitConfig } from '../formkit.config.react.jsx'
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={config}>
+    <>
       {/* %partial% */}
       <FormKit type="multi-step">
         <FormKit
@@ -25,8 +24,6 @@ function App() {
         </FormKit>
       </FormKit>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

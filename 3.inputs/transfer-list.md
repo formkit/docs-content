@@ -23,6 +23,8 @@ youtube-id: "7sl29qqye3A"
 
 The transfer list input is ideal for situations where the end-user needs to select and sort multiple values from a list of options. In this example, we are allowing the end-user to select from a group of guests and move them to a VIP list:
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>source-label</code>, <code>target-label</code>, <code>source-empty-message</code>, <code>target-empty-message</code>, <code>clear-on-select</code>, and <code>transfer-on-select</code>" react="<code>sourceLabel</code>, <code>targetLabel</code>, <code>sourceEmptyMessage</code>, <code>targetEmptyMessage</code>, <code>clearOnSelect</code>, and <code>transferOnSelect</code>"} use the standard prop casing for that framework.
+
 ::Example
 ---
 name: "Transfer List"

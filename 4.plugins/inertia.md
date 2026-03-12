@@ -5,6 +5,18 @@ description: A plugin for integrating FormKit with Laravel Inertia.
 
 # Inertia Plugin
 
+::FrameworkOnly{framework="react"}
+::Callout
+---
+type: "warning"
+label: "Vue-only guide"
+---
+The current <code>@formkit/inertia</code> guide and examples target Vue + Inertia workflows. If you are browsing the React docs, treat this page as package reference material rather than a React integration guide.
+::
+:::
+
+::FrameworkOnly{framework="vue"}
+
 The `@formkit/inertia` plugin aims to seamlessly integrate Inertia.js with FormKit forms, leveraging a robust event system that harnesses Inertia.js event callbacks and FormKit plugins for a smooth and powerful web development experience.
 
 ## Installation
@@ -138,3 +150,4 @@ If you need a single event callback `useForm()` also returns `on()` directly:
   })
 </script>
 ```
+:::

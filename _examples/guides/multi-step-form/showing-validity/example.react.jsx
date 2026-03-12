@@ -1,4 +1,3 @@
-import { createRoot } from 'react-dom/client'
 /* %partial% */
 import { FormKit } from '@formkit/react'
 import { camel2title } from './utils.js'
@@ -76,17 +75,15 @@ function ShowingValidityExample() {
   )
 }
 /* %partial% */
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 
-const styles = "@import url('https://cdn.formk.it/web-assets/multistep-form.css');"
+const styles =
+  "@import url('https://cdn.formk.it/web-assets/multistep-form.css');"
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={defaultConfig()}>
+    <>
       <style>{styles}</style>
       <ShowingValidityExample />
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

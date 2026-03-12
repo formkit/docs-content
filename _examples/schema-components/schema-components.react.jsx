@@ -1,4 +1,3 @@
-import { createRoot } from 'react-dom/client'
 // %partial%
 import { FormKitSchema } from '@formkit/react'
 
@@ -24,8 +23,6 @@ function Example() {
 }
 // %partial%
 
-function App() {
+export default function App() {
   return <Example />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

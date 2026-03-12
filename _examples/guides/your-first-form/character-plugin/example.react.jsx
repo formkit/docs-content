@@ -1,8 +1,8 @@
 /* %partial% */
 import { castRangeToNumber, updateAttributesPlugin } from './plugins.js'
 /* %partial% */
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+
+import { FormKit } from '@formkit/react'
 
 const formLabelStyle = {
   fontSize: '0.875rem',
@@ -102,18 +102,14 @@ function CharacterPluginExample() {
         )}
       </FormKit>
 
-      <p>Change the character's class to see the changes in attribute values.</p>
+      <p>
+        Change the character's class to see the changes in attribute values.
+      </p>
       {/* %partial% */}
     </>
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <CharacterPluginExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <CharacterPluginExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

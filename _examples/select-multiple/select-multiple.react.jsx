@@ -1,12 +1,11 @@
-import { createRoot } from 'react-dom/client'
 import { useState } from 'react'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
-function App() {
+export default function App() {
   const [values, setValues] = useState(['allergies'])
 
   return (
-    <FormKitProvider config={defaultConfig()}>
+    <>
       {/* %partial% */}
       <FormKit
         modelValue={values}
@@ -25,8 +24,6 @@ function App() {
       />
       <pre>{JSON.stringify(values, null, 2)}</pre>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

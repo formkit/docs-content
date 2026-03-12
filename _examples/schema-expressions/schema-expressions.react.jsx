@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 // %partial%
 import { useMemo, useState } from 'react'
 import { FormKit, FormKitSchema } from '@formkit/react'
@@ -22,7 +20,8 @@ const schema = [
 function Example() {
   const [count, setCount] = useState(1)
   const format = useMemo(
-    () => Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format,
+    () =>
+      Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format,
     []
   )
   const data = {
@@ -35,7 +34,11 @@ function Example() {
   return (
     <>
       <FormKitSchema schema={schema} data={data} />
-      <FormKit type="button" onClick={() => setCount((current) => current + 1)} outerClass="mt-6">
+      <FormKit
+        type="button"
+        onClick={() => setCount((current) => current + 1)}
+        outerClass="mt-6"
+      >
         Add to cart
       </FormKit>
     </>
@@ -43,12 +46,6 @@ function Example() {
 }
 // %partial%
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <Example />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <Example />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

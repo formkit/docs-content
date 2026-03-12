@@ -1,6 +1,5 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider } from '@formkit/react'
-import config from '../_no-tailwind/formkit.config.react.jsx'
+import { FormKit } from '@formkit/react'
+export { default as formkitConfig } from '../_no-tailwind/formkit.config.react.jsx'
 
 function RemovingClassesExample() {
   return (
@@ -17,12 +16,6 @@ function RemovingClassesExample() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={config}>
-      <RemovingClassesExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <RemovingClassesExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

@@ -1,10 +1,9 @@
-import { createRoot } from 'react-dom/client'
 import { genesisIcons } from '@formkit/icons'
-import { FormKit, FormKitProvider, defaultConfig, setErrors } from '@formkit/react'
+import { FormKit, setErrors, defineFormKitConfig } from '@formkit/react'
 import { createProPlugin, inputs as proInputs } from '@formkit/pro'
 
 const pro = createProPlugin('fk-52971f34220', proInputs)
-const config = defaultConfig({
+export const formkitConfig = defineFormKitConfig({
   plugins: [pro],
   icons: { ...genesisIcons },
 })
@@ -28,9 +27,9 @@ const preStyle = {
   marginBottom: '20px',
 }
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={config}>
+    <>
       {/* %partial% */}
       <p>
         <em>Submit to see the errors.</em>
@@ -50,7 +49,7 @@ function App() {
               type="repeater"
               label="Additional Team Members"
               addLabel="Add Team Member"
-              value={[
+              defaultValue={[
                 { email: 'john@formkit.com' },
                 { email: 'emily@formkit.com' },
               ]}
@@ -68,8 +67,6 @@ function App() {
         )}
       </FormKit>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 import { FormKit } from '@formkit/react'
 
 function SchemaContentExample() {
@@ -42,12 +40,6 @@ function SchemaContentExample() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <SchemaContentExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <SchemaContentExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

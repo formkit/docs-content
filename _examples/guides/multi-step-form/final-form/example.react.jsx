@@ -1,6 +1,5 @@
-import { createRoot } from 'react-dom/client'
 import { genesisIcons } from '@formkit/icons'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
+import { defineFormKitConfig } from '@formkit/react'
 import { createProPlugin, inputs as proInputs } from '@formkit/pro'
 /* %partial% */
 import { FormKit } from '@formkit/react'
@@ -20,8 +19,14 @@ async function submitApp(formData, node) {
 }
 
 function FinalFormExample() {
-  const { steps, visitedSteps, activeStep, setActiveStep, setStep, stepPlugin } =
-    useSteps()
+  const {
+    steps,
+    visitedSteps,
+    activeStep,
+    setActiveStep,
+    setStep,
+    stepPlugin,
+  } = useSteps()
 
   function checkStepValidity(stepName) {
     const step = steps[stepName] || {}
@@ -47,9 +52,13 @@ function FinalFormExample() {
               {Object.entries(steps).map(([stepName, step]) => (
                 <li
                   key={stepName}
-                  className={`step${checkStepValidity(stepName) ? ' has-errors' : ''}`}
+                  className={`step${
+                    checkStepValidity(stepName) ? ' has-errors' : ''
+                  }`}
                   onClick={() => setActiveStep(stepName)}
-                  data-step-valid={Boolean(step.valid) && (step.errorCount ?? 0) === 0}
+                  data-step-valid={
+                    Boolean(step.valid) && (step.errorCount ?? 0) === 0
+                  }
                   data-step-active={activeStep === stepName}
                 >
                   {checkStepValidity(stepName) ? (
@@ -161,7 +170,11 @@ function FinalFormExample() {
               </details>
             </div>
 
-            <FormKit type="submit" label="Submit Application" disabled={!valid} />
+            <FormKit
+              type="submit"
+              label="Submit Application"
+              disabled={!valid}
+            />
           </>
         )}
       </FormKit>
@@ -181,19 +194,18 @@ function FinalFormExample() {
 /* %partial% */
 
 const pro = createProPlugin('fk-52971f34220', proInputs)
-const config = defaultConfig({
+export const formkitConfig = defineFormKitConfig({
   plugins: [pro],
   icons: { ...genesisIcons },
 })
-const styles = "@import url('https://cdn.formk.it/web-assets/multistep-form.css');"
+const styles =
+  "@import url('https://cdn.formk.it/web-assets/multistep-form.css');"
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={config}>
+    <>
       <style>{styles}</style>
       <FinalFormExample />
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

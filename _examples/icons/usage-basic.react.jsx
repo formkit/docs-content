@@ -1,14 +1,13 @@
-import { createRoot } from 'react-dom/client'
 import { genesisIcons } from '@formkit/icons'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit, defineFormKitConfig } from '@formkit/react'
 
-const config = defaultConfig({
+export const formkitConfig = defineFormKitConfig({
   icons: { ...genesisIcons },
 })
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={config}>
+    <>
       {/* %partial% */}
       <FormKit
         prefixIcon="filePdf"
@@ -24,8 +23,6 @@ function App() {
         help="Add a file to see the trash icon."
       />
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

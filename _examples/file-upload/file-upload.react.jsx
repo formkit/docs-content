@@ -1,8 +1,7 @@
-import { createRoot } from 'react-dom/client'
 import { useState } from 'react'
-import { FormKit, FormKitProvider, defaultConfig, setErrors } from '@formkit/react'
+import { FormKit, setErrors } from '@formkit/react'
 
-function App() {
+export default function App() {
   const [complete, setComplete] = useState(false)
 
   async function submitHandler(data) {
@@ -26,7 +25,7 @@ function App() {
   }
 
   return (
-    <FormKitProvider config={defaultConfig()}>
+    <>
       {/* %partial% */}
       {!complete ? (
         <FormKit id="licenseForm" type="form" onSubmit={submitHandler}>
@@ -50,8 +49,6 @@ function App() {
         <div className="complete">License upload complete</div>
       )}
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

@@ -1,4 +1,4 @@
-import { createMessage, getNode } from '@formkit/core'
+import { createMessage } from '@formkit/core'
 import { useRef, useState } from 'react'
 
 export default function useSteps() {
@@ -7,6 +7,7 @@ export default function useSteps() {
   const [visitedStepsState, setVisitedStepsState] = useState([])
   const activeStep = useRef('')
   const steps = useRef({})
+  const stepNodes = useRef({})
   const visitedSteps = useRef([])
 
   function updateSteps(updater) {
@@ -19,7 +20,7 @@ export default function useSteps() {
 
   function showVisitedValidation(stepNames) {
     stepNames.forEach((stepName) => {
-      const node = getNode(stepName)
+      const node = stepNodes.current[stepName]
       node?.walk((currentNode) => {
         currentNode.store.set(
           createMessage({
@@ -63,12 +64,17 @@ export default function useSteps() {
   function stepPlugin(node) {
     if (node.props.type === 'group') {
       const name = String(node.name)
+      stepNodes.current[name] = node
 
       node.on('created', () => {
         syncStep(name, node)
         if (!activeStep.current) {
           setActiveStep(name)
         }
+      })
+
+      node.on('destroyed', () => {
+        delete stepNodes.current[name]
       })
 
       node.on('count:blocking', ({ payload: count }) => {

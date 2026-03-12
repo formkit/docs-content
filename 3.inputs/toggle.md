@@ -15,6 +15,8 @@ navigation:
 
 The `toggle` input — sometimes called a "switch" — offers a choice between one of two values; it's a great option when you want the user to toggle a feature on or off:
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>alt-label-position</code>, <code>on-value</code>, <code>off-value</code>, <code>on-value-label</code>, <code>off-value-label</code>, and <code>thumb-icon</code>" react="<code>altLabelPosition</code>, <code>onValue</code>, <code>offValue</code>, <code>onValueLabel</code>, <code>offValueLabel</code>, and <code>thumbIcon</code>"} use the standard prop casing for that framework.
+
 ::Example
 ---
 name: "Toggle"

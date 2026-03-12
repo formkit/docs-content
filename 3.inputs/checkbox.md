@@ -9,6 +9,8 @@ navigation:
 
 The `checkbox` input uses HTML's [native checkbox input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox). It can display one or many options to a user and is a great way to allow users to select multiple items from a list. FormKit supports both single and multiple checkbox inputs.
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>on-value</code>, <code>off-value</code>, and <code>decorator-icon</code>" react="<code>onValue</code>, <code>offValue</code>, and <code>decoratorIcon</code>"} use the standard prop casing for that framework.
+
 ## Single checkbox
 
 By default the checkbox type will render a single checkbox and uses `boolean` values. In order for a single checkbox to be checked — the current value of the input must match the `on-value` of that input (by default, a single checkbox uses `true` as the `on-value`).

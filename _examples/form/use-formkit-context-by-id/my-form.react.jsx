@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 /* %partial% */
 import { FormKit, useFormKitContextById } from '@formkit/react'
 
@@ -19,12 +17,6 @@ function UseFormKitContextByIdExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <UseFormKitContextByIdExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <UseFormKitContextByIdExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

@@ -14,6 +14,8 @@ navigation:
 
 The `currency` input allows for restricted input of values based on the provided currency and locale.
 
+When controlling this input in React, prefer <code>modelValue</code> and <code>onUpdateModelValue</code>. Currency-specific props like <code>displayLocale</code> and <code>valueFormat</code> also use standard camelCase JSX prop names.
+
 ::Example
 ---
 name: "Currency input defaults"

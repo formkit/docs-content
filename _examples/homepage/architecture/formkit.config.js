@@ -2,6 +2,7 @@
 It will automatically be injected into the playground for you.
 Imports from other playground files are supported. */
 
+import { defineFormKitConfig } from '@formkit/vue'
 import { genesisIcons } from '@formkit/icons'
 import { rootClasses } from '~/formkit.theme'
 import { createMultiStepPlugin } from '@formkit/addons'
@@ -11,7 +12,7 @@ const multiStepPlugin = createMultiStepPlugin({
   allowIncomplete: false,
 })
 
-export default {
+export default defineFormKitConfig({
   plugins: [multiStepPlugin],
   icons: {
     ...genesisIcons,
@@ -19,4 +20,4 @@ export default {
   config: {
     rootClasses,
   },
-}
+})

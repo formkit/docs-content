@@ -1,7 +1,6 @@
-import { createRoot } from 'react-dom/client'
 import { useState } from 'react'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
-import config from './formkit.config.react.jsx'
+
+export { default as formkitConfig } from './formkit.config.react.jsx'
 /* %partial% */
 import { FormKit, createInput } from '@formkit/react'
 
@@ -77,12 +76,6 @@ function CustomSumExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig(config())}>
-      <CustomSumExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <CustomSumExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

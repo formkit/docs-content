@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
 function FormPageExample() {
   return (
@@ -28,12 +27,6 @@ function FormPageExample() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <FormPageExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <FormPageExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

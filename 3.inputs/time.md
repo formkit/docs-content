@@ -9,6 +9,8 @@ navigation:
 
 The `time` input uses HTML's [native time input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/time). It allows a user to enter a single line of time.
 
+When controlling this input in React, prefer <code>modelValue</code> and <code>onUpdateModelValue</code> instead of wiring directly to the native input element.
+
 ## Basic example
 
 ::Example

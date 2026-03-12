@@ -1,6 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
-import config from './formkit.config.react.jsx'
+export { default as formkitConfig } from './formkit.config.react.jsx'
 
 const stateList = [
   'Alabama',
@@ -72,12 +70,6 @@ function AutocompleteExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig(config())}>
-      <AutocompleteExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <AutocompleteExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

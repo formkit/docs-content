@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 /* %partial% */
 import { getNode } from '@formkit/core'
 import { useEffect } from 'react'
@@ -23,12 +21,6 @@ function NodeGetExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <NodeGetExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <NodeGetExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 /* %partial% */
 import { useEffect, useState } from 'react'
 import { FormKit } from '@formkit/react'
@@ -37,12 +35,6 @@ function CountVisibleExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <CountVisibleExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <CountVisibleExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

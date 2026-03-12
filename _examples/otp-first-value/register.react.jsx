@@ -1,6 +1,5 @@
-import { createRoot } from 'react-dom/client'
 import { useState } from 'react'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
+
 /* %partial% */
 import { FormKit, createInput } from '@formkit/react'
 import OneTimePassword from './one-time-password.react.jsx'
@@ -33,12 +32,6 @@ function FirstValueExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <FirstValueExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <FirstValueExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

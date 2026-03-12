@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 /* %partial% */
 import { FormKit } from '@formkit/react'
 
@@ -27,12 +25,6 @@ function NodeSetErrorsExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <NodeSetErrorsExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <NodeSetErrorsExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

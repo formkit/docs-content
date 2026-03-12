@@ -1,13 +1,12 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider } from '@formkit/react'
-import config from '../formkit.config.react.jsx'
+import { FormKit } from '@formkit/react'
+export { default as formkitConfig } from '../formkit.config.react.jsx'
 import StepOne from '../step-one.react.jsx'
 import StepTwo from '../step-two.react.jsx'
 import StepThree from '../step-three.react.jsx'
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={config}>
+    <>
       <h2>
         You can NOT advance through this multi-step input without completing
         each step.
@@ -30,8 +29,6 @@ function App() {
         </FormKit>
       </FormKit>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

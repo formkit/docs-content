@@ -1,6 +1,5 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider } from '@formkit/react'
-import config from '../_no-tailwind/formkit.config.react.jsx'
+import { FormKit } from '@formkit/react'
+export { default as formkitConfig } from '../_no-tailwind/formkit.config.react.jsx'
 
 function OuterDataAttrsExample() {
   return (
@@ -36,12 +35,6 @@ function OuterDataAttrsExample() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={config}>
-      <OuterDataAttrsExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <OuterDataAttrsExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

@@ -1,12 +1,11 @@
-import { createRoot } from 'react-dom/client'
 import { useState } from 'react'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
-function App() {
+export default function App() {
   const [value, setValue] = useState('lama')
 
   return (
-    <FormKitProvider config={defaultConfig()}>
+    <>
       {/* %partial% */}
       <FormKit
         modelValue={value}
@@ -23,8 +22,6 @@ function App() {
       />
       <pre>{value}</pre>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

@@ -1,9 +1,17 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 /* %partial% */
 import { useState } from 'react'
 import { getValidationMessages } from '@formkit/validation'
 import { FormKit } from '@formkit/react'
+
+const styles = `
+  .validation-errors {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.375rem;
+    background: rgb(254 226 226);
+    color: rgb(153 27 27);
+  }
+`
 
 function SubmitInvalidExample() {
   const [messages, setMessages] = useState([])
@@ -21,6 +29,7 @@ function SubmitInvalidExample() {
 
   return (
     <>
+      <style>{styles}</style>
       <h2 className="text-xl font-bold mb-4">Support ticket</h2>
       <FormKit type="form" onSubmitInvalid={showErrors}>
         {messages.length ? (
@@ -49,12 +58,6 @@ function SubmitInvalidExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <SubmitInvalidExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <SubmitInvalidExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
 /* %partial% */
 const castNumber = (node) => {
@@ -30,12 +29,6 @@ function InputCastNumberExample() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <InputCastNumberExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <InputCastNumberExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

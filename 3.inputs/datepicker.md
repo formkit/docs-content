@@ -14,6 +14,8 @@ navigation:
 
 The `datepicker` input allows users to select a date from a customizable calendar, and type the date directly into the input with full internationalization support.
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>picker-only</code>, <code>value-format</code>, and <code>value-locale</code>" react="<code>pickerOnly</code>, <code>valueFormat</code>, and <code>valueLocale</code>"} use the standard prop casing for that framework.
+
 ::VideoCard
 ---
 title: "Datepicker Overview"

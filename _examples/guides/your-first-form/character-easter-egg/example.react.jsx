@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 import { castRangeToNumber, updateAttributesPlugin } from './plugins.js'
 import { max_sum } from './rules.js'
 
@@ -71,8 +70,12 @@ function CharacterEasterEggExample() {
             />
 
             <div style={characterAttributesStyle}>
-              <h4 style={characterAttributesHeadingStyle}>Character Attributes</h4>
-              <p>You have a max budget of 20 points for character attributes.</p>
+              <h4 style={characterAttributesHeadingStyle}>
+                Character Attributes
+              </h4>
+              <p>
+                You have a max budget of 20 points for character attributes.
+              </p>
 
               {/* %partial% */}
               <FormKit
@@ -154,7 +157,8 @@ function CharacterEasterEggExample() {
             </div>
 
             <p>
-              Try using greater than the alloted 20 point budget for the attributes.
+              Try using greater than the alloted 20 point budget for the
+              attributes.
             </p>
 
             <pre>{JSON.stringify(value, null, 2)}</pre>
@@ -162,17 +166,13 @@ function CharacterEasterEggExample() {
         )}
       </FormKit>
 
-      <p>Change the character's class to see the changes in attribute values.</p>
+      <p>
+        Change the character's class to see the changes in attribute values.
+      </p>
     </>
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <CharacterEasterEggExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <CharacterEasterEggExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

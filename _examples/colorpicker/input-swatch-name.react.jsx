@@ -1,7 +1,9 @@
-import { getNode } from '@formkit/core'
-import { createRoot } from 'react-dom/client'
 import { genesisIcons } from '@formkit/icons'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import {
+  FormKit,
+  defineFormKitConfig,
+  useFormKitNodeById,
+} from '@formkit/react'
 import { createProPlugin, inputs as proInputs } from '@formkit/pro'
 
 const htmlNamedColors = [
@@ -149,21 +151,22 @@ const htmlNamedColors = [
 ]
 
 const pro = createProPlugin('fk-52971f34220', proInputs)
-const config = defaultConfig({
+export const formkitConfig = defineFormKitConfig({
   plugins: [pro],
   icons: { ...genesisIcons },
 })
 
-function applyColorInput() {
-  const textNode = getNode('textInput')
-  const colorpickerNode = getNode('colorpickerInput')
-  colorpickerNode?.input(textNode?.value)
-  textNode?.input('')
-}
+export default function App() {
+  const textNode = useFormKitNodeById('textInput')
+  const colorpickerNode = useFormKitNodeById('colorpickerInput')
 
-function App() {
+  function applyColorInput() {
+    colorpickerNode?.input(textNode?.value)
+    textNode?.input('')
+  }
+
   return (
-    <FormKitProvider config={config}>
+    <>
       {/* %partial% */}
       <div className="input-color-name">
         <FormKit
@@ -198,8 +201,6 @@ function App() {
         options={htmlNamedColors}
       />
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

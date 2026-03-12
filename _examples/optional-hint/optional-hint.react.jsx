@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
 // %partial%
 const submit = async () => {
@@ -31,12 +30,6 @@ function OptionalHintExample() {
 }
 // %partial%
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <OptionalHintExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <OptionalHintExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

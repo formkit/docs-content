@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 import { createZodPlugin } from '@formkit/zod'
 import { z } from 'zod'
 
@@ -23,9 +22,9 @@ const [zodPlugin, submitHandler] = createZodPlugin(
 )
 // %partial%
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={defaultConfig()}>
+    <>
       {/* %partial% */}
       <h1 className="text-2xl font-bold mb-4">Zod with FormKit Validation</h1>
       <FormKit type="form" plugins={[zodPlugin]} onSubmit={submitHandler}>
@@ -59,8 +58,6 @@ function App() {
         />
       </FormKit>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

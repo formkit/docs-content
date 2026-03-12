@@ -1,19 +1,18 @@
-import { createRoot } from 'react-dom/client'
 import { genesisIcons } from '@formkit/icons'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit, defineFormKitConfig } from '@formkit/react'
 import { autocomplete, createProPlugin } from '@formkit/pro'
 import { nbaTopPlayers } from '../_data/nba-top-players.js'
 
 const pro = createProPlugin('fk-52971f34220', { autocomplete })
 
-function App() {
+export const formkitConfig = defineFormKitConfig({
+  plugins: [pro],
+  icons: { ...genesisIcons },
+})
+
+export default function App() {
   return (
-    <FormKitProvider
-      config={defaultConfig({
-        plugins: [pro],
-        icons: { ...genesisIcons },
-      })}
-    >
+    <>
       {/* %partial% */}
       <h2 className="text-2xl font-bold mb-4">NBA All Time Starting Five</h2>
       <FormKit type="list">
@@ -54,8 +53,6 @@ function App() {
         )}
       </FormKit>
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 /* %partial% */
 import { FormKit } from '@formkit/react'
 
@@ -19,12 +17,6 @@ function CustomPropsExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <CustomPropsExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <CustomPropsExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

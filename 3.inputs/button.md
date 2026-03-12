@@ -7,7 +7,7 @@ navigation:
 
 :InputPageHero
 
-The `button` input uses HTML's [native button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button). The `label` prop is used to populate the text of the button — or alternatively you can use the default slot.
+The `button` input uses HTML's [native button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button). The `label` prop is used to populate the text of the button — or alternatively you can use :FrameworkText{vue="the default slot" react="child content"}.
 
 ## Basic example
 
@@ -35,7 +35,7 @@ react-file: "_examples/button/button-default-slot.react.jsx"
 
 ## Event listeners
 
-You can also bind event listeners:
+You can also bind event listeners. In :FrameworkText{vue="Vue templates this usually means props like <code>@click</code>" react="React JSX this means normal camelCased props like <code>onClick</code>"}:
 
 ::Example
 ---
@@ -49,11 +49,21 @@ react-file: "_examples/button/button-events.react.jsx"
 
 <ignored-input-docs></ignored-input-docs>
 
+::FrameworkOnly{framework="vue"}
 ```vue
 <FormKit type="button" :ignore="false">
   Add a section
 </FormKit>
 ```
+::
+
+::FrameworkOnly{framework="react"}
+```jsx
+<FormKit type="button" ignore={false}>
+  Add a section
+</FormKit>
+```
+::
 
 ## Props & Attributes
 

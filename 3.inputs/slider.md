@@ -22,6 +22,8 @@ The `slider` input is an advanced and highly configurable version of the native 
 - Force selection to snap to tick marks.
 - Render bar chart data linked to selection values.
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>tooltip-format</code>, <code>show-input</code>, <code>input-attrs</code>, <code>mark-labels</code>, and <code>snap-to-marks</code>" react="<code>tooltipFormat</code>, <code>showInput</code>, <code>inputAttrs</code>, <code>markLabels</code>, and <code>snapToMarks</code>"} use the standard prop casing for that framework.
+
 ::VideoCard
 ---
 title: "Slider Overview"
@@ -76,6 +78,8 @@ react-file: "_examples/slider/multiple-values.react.jsx"
 ## Customizing handles
 
 Using the `maxHandleInner` (default) and `minHandleInner` slots you can customize the appearance of your `slider` handles. The `maxHandleInner` slot is used for single-value `slider` inputs.
+
+In :FrameworkText{vue="Vue this is typically implemented with the <code>#maxHandleInner</code> and <code>#minHandleInner</code> slots." react="React this is typically implemented with <code>maxHandleInner</code> and <code>minHandleInner</code> entries on the <code>slots</code> prop."}
 
 ::Example
 ---

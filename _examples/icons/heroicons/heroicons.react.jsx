@@ -1,8 +1,6 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider } from '@formkit/react'
 /* %partial% */
 import { FormKit, FormKitIcon } from '@formkit/react'
-import config from './formkit.config.react.jsx'
+export { default as formkitConfig } from './formkit.config.react.jsx'
 
 function HeroiconsExample() {
   return (
@@ -33,12 +31,6 @@ function HeroiconsExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={config}>
-      <HeroiconsExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <HeroiconsExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

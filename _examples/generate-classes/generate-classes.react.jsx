@@ -1,6 +1,5 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider } from '@formkit/react'
-import config from './formkit.config.react.jsx'
+import { FormKit } from '@formkit/react'
+export { default as formkitConfig } from './formkit.config.react.jsx'
 
 function GenerateClassesExample() {
   return (
@@ -13,12 +12,6 @@ function GenerateClassesExample() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={config}>
-      <GenerateClassesExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <GenerateClassesExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
 const formLabelStyle = {
   fontSize: '0.875rem',
@@ -82,12 +81,6 @@ function CharacterBasicFormExample() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <CharacterBasicFormExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <CharacterBasicFormExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

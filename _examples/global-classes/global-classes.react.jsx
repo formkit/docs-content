@@ -1,16 +1,15 @@
 /* %partial% */
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
+import { defineFormKitConfig } from '@formkit/react'
 
-createRoot(document.getElementById('app')).render(
-  <FormKitProvider
-    config={defaultConfig({
-      config: {
-        classes: {
-          input: 'my-class',
-        },
-      },
-    })}
-  />
-)
+export const formkitConfig = defineFormKitConfig({
+  config: {
+    classes: {
+      input: 'my-class',
+    },
+  },
+})
+
+export default function App() {
+  return null
+}
 /* %partial% */

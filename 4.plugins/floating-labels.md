@@ -17,6 +17,7 @@ yarn add @formkit/addons
 
 Once you've installed the addons package, you'll need to register the plugin with FormKit and include the supporting CSS styles. The `createFloatingLabelsPlugin` has one option you can configure which controls whether the floating label treatment is the default treatment on applicable inputs:
 
+::FrameworkOnly{framework="vue"}
 ```js
 // formkit.config.ts
 import { defaultConfig } from '@formkit/vue'
@@ -33,10 +34,30 @@ const config = defaultConfig({
 
 export default config
 ```
+::
+
+::FrameworkOnly{framework="react"}
+```jsx
+// formkit.config.react.jsx
+import { defineFormKitConfig } from '@formkit/react'
+import { createFloatingLabelsPlugin } from '@formkit/addons'
+import '@formkit/addons/css/floatingLabels.css'
+
+export default defineFormKitConfig({
+  plugins: [
+    createFloatingLabelsPlugin({
+      useAsDefault: true,
+    }),
+  ],
+})
+```
+::
 
 ## Usage
 
 By default the floating label plugin only takes effect on a FormKit input if you set the new `floating-label` prop to `true`.
+
+In :FrameworkText{vue="Vue templates this prop is written as <code>floating-label</code>." react="React JSX this prop is written as <code>floatingLabel</code>."}
 
 ::Example
 ---
@@ -54,6 +75,7 @@ react-file: [
 
 If you would like to use floating labels by default then pass the `useAsDefault` option to the plugin when you install it.
 
+::FrameworkOnly{framework="vue"}
 ```js
 // formkit.config.ts
 ...
@@ -64,6 +86,20 @@ plugins: [
 ],
 ...
 ```
+::
+
+::FrameworkOnly{framework="react"}
+```jsx
+// formkit.config.react.jsx
+...
+plugins: [
+  createFloatingLabelsPlugin({
+    useAsDefault: true,
+  }),
+],
+...
+```
+::
 
 When floating labels are set as the default you can still disable them on a FormKit input by setting the `floating-label` prop to `false`.
 

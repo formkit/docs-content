@@ -12,15 +12,16 @@ In this guide, we’ll walk through the process of creating, registering, and us
 ::Callout
 ---
 type: "tip"
-label: "SFC Build tool"
+label: "Build tool"
 ---
-This guide assumes you are using a standard Vue 3 build tool like Vite, Nuxt 3, or Vue CLI that will allow you to import <code>.vue</code> single file components.
+This guide assumes you are using a standard build tool that supports your framework’s component format.
 ::
 
 ## Creating a component
 
-To get started, let's create our input’s component file. We'll call it `one-time-password.vue`:
+To get started, let's create our input’s component file. We'll call it :FrameworkText{vue="<code>one-time-password.vue</code>" react="<code>one-time-password.react.jsx</code>"}:
 
+::FrameworkOnly{framework="vue"}
 ```html
 <script setup>
   const props = defineProps({
@@ -32,16 +33,25 @@ To get started, let's create our input’s component file. We'll call it `one-ti
   <div>More to come here...</div>
 </template>
 ```
+::
 
-FormKit provides a lot of input features out-of-the-box that we're going to want to preserve — like labels, help text, and showing error messages. All we really want to modify is the input section of our input. We can preserve these standard FormKit features by using the `createInput` utility function from the `@formkit/vue` package.
+::FrameworkOnly{framework="react"}
+```jsx
+export default function OneTimePassword({ context }) {
+  return <div>More to come here...</div>
+}
+```
+::
+
+FormKit provides a lot of input features out-of-the-box that we're going to want to preserve — like labels, help text, and showing error messages. All we really want to modify is the input section of our input. We can preserve these standard FormKit features by using the `createInput` utility function from :FrameworkText{vue="<code>@formkit/vue</code>" react="<code>@formkit/react</code>"}.
 
 As we build out our input, we’ll want to visualize its progress, so let’s create a sample form to:
 
-1. Import `one-time-password.vue`
+1. Import :FrameworkText{vue="<code>one-time-password.vue</code>" react="<code>one-time-password.react.jsx</code>"}
 2. Pass that imported component to `createInput()`
 3. Use the return value (an [input definition](/essentials/custom-inputs#input-definition)) as the `type` prop of a `<FormKit>` component.
 
-We’ll call this sample form `register.vue`:
+We’ll call this sample form :FrameworkText{vue="<code>register.vue</code>" react="<code>register.react.jsx</code>"}:
 
 ::Example
 ---
@@ -57,13 +67,13 @@ react-file: [
 ---
 ::
 
-Excellent! Now we can iterate on our `one-time-password.vue` file and see the results. One of the first things to notice is how our input already supports labels, help text, validation, and other universal FormKit props. Those features come courtesy of `createInput()`.
+Excellent! Now we can iterate on our component file and see the results. One of the first things to notice is how our input already supports labels, help text, validation, and other universal FormKit props. Those features come courtesy of `createInput()`.
 
 Also, notice that `<pre>` tag in the above example? It is outputting the current state of the form’s data. We'll use this visualize the value of our custom input. Since our input currently has no value, it does not appear in the form’s data. Time to change that!
 
 ## Input & output
 
-Let’s open up `one-time-password.vue` again and change our `<div>` to an `<input>` tag. We’ll start with a single text input, and work our way up from there. But how do we actually set and display the value of our custom input?
+Let’s open up our component file again and change our `<div>` to an `<input>` tag. We’ll start with a single text input, and work our way up from there. But how do we actually set and display the value of our custom input?
 
 All custom inputs are passed the almighty [context object](/essentials/configuration) as the `context` prop. In order for our input to _set_ its value, it needs to call `context.node.input(value)`. To properly _display_ the value of our input, we should set the input’s `:value` attribute to `context._value`.
 

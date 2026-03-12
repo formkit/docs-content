@@ -1,12 +1,11 @@
-import { createRoot } from 'react-dom/client'
 import { useState } from 'react'
 import { genesisIcons } from '@formkit/icons'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit, defineFormKitConfig } from '@formkit/react'
 import { createProPlugin, inputs as proInputs } from '@formkit/pro'
 import { customQuad, customSine } from './scaling-utils.js'
 
 const pro = createProPlugin('fk-52971f34220', proInputs)
-const config = defaultConfig({
+export const formkitConfig = defineFormKitConfig({
   plugins: [pro],
   icons: { ...genesisIcons },
 })
@@ -28,11 +27,11 @@ const sharedProps = {
   delay: 0,
 }
 
-function App() {
+export default function App() {
   const [scalingValue, setScalingValue] = useState([25, 75])
 
   return (
-    <FormKitProvider config={config}>
+    <>
       {/* %partial% */}
       <FormKit
         modelValue={scalingValue}
@@ -67,8 +66,6 @@ function App() {
         {...sharedProps}
       />
       {/* %partial% */}
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

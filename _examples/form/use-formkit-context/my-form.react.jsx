@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 /* %partial% */
 import { FormKit } from '@formkit/react'
 import Address from './address.react.jsx'
@@ -14,12 +12,6 @@ function MyFormExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <MyFormExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <MyFormExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

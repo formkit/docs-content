@@ -14,6 +14,8 @@ navigation:
 
 The `rating` input allows users to provide feedback based on a numeric scale represented by icons/images:
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>rating-icon</code>, <code>hover-highlight</code>, <code>off-color</code>, and <code>on-color</code>" react="<code>ratingIcon</code>, <code>hoverHighlight</code>, <code>offColor</code>, and <code>onColor</code>"} use the standard prop casing for that framework.
+
 ::Example
 ---
 name: "Rating"
@@ -68,6 +70,8 @@ react-file: "_examples/rating/rating-icon.react.jsx"
 
 Instead of specifying an icon via the FormKit icon plugin, you can pass a raw SVG using the `default` slot:
 
+In :FrameworkText{vue="Vue this is usually implemented with the component slot." react="React this is usually implemented with a <code>default</code> entry on the <code>slots</code> prop."}
+
 ::Example
 ---
 name: "Rating"
@@ -80,6 +84,8 @@ react-file: "_examples/rating/rating-default-slot.react.jsx"
 #### Named slots
 
 Lastly, you can use the `offItem` and `onItem` slots to pass whatever assets you want.In this example, we'll use different images for the `off` and `on` states:
+
+In :FrameworkText{vue="Vue this uses the <code>#offItem</code> and <code>#onItem</code> slots." react="React this uses <code>offItem</code> and <code>onItem</code> entries on the <code>slots</code> prop."}
 
 ::Example
 ---

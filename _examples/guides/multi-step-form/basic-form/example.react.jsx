@@ -1,7 +1,7 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
-const styles = "@import url('https://cdn.formk.it/web-assets/multistep-form.css');"
+const styles =
+  "@import url('https://cdn.formk.it/web-assets/multistep-form.css');"
 
 function BasicFormExample() {
   return (
@@ -13,7 +13,11 @@ function BasicFormExample() {
         {({ value }) => (
           <div className="form-body">
             <h3 className="text-lg font-bold mb-2">Contact info</h3>
-            <FormKit type="email" label="*Email address" validation="required|email" />
+            <FormKit
+              type="email"
+              label="*Email address"
+              validation="required|email"
+            />
 
             <h3 className="text-lg font-bold mb-2">Organization info</h3>
             <FormKit
@@ -41,13 +45,11 @@ function BasicFormExample() {
   )
 }
 
-function App() {
+export default function App() {
   return (
-    <FormKitProvider config={defaultConfig()}>
+    <>
       <style>{styles}</style>
       <BasicFormExample />
-    </FormKitProvider>
+    </>
   )
 }
-
-createRoot(document.getElementById('app')).render(<App />)

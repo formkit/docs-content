@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKit, FormKitProvider, defaultConfig } from '@formkit/react'
+import { FormKit } from '@formkit/react'
 
 const formLabelStyle = {
   fontSize: '0.875rem',
@@ -27,7 +26,9 @@ function CharacterFormSubmitExample() {
     <>
       {/* %partial% */}
       <div>
-        <h4 style={formLabelStyle}>Adding the createCharacter submit handler</h4>
+        <h4 style={formLabelStyle}>
+          Adding the createCharacter submit handler
+        </h4>
       </div>
       <h1>New Character</h1>
 
@@ -106,12 +107,6 @@ function CharacterFormSubmitExample() {
   )
 }
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <CharacterFormSubmitExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <CharacterFormSubmitExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

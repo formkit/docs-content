@@ -1,5 +1,3 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider, defaultConfig } from '@formkit/react'
 /* %partial% */
 import { useState } from 'react'
 import { FormKit, reset } from '@formkit/react'
@@ -39,12 +37,6 @@ function ResetFormExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={defaultConfig()}>
-      <ResetFormExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <ResetFormExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)

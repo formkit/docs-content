@@ -12,6 +12,8 @@ navigation:
 
 The `dropdown` input allows users to select a value from a list of options. Unlike native select elements, the dropdown input allows you to customize both its appearance and behavior.
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>selection-appearance</code>, <code>always-load-on-open</code>, <code>load-on-created</code>, and <code>selection-removable</code>" react="<code>selectionAppearance</code>, <code>alwaysLoadOnOpen</code>, <code>loadOnCreated</code>, and <code>selectionRemovable</code>"} use the standard prop casing for that framework.
+
 The `options` prop can accept three different formats of values:
 
 - An array of objects with `value` and `label` keys (see example above)
@@ -157,6 +159,8 @@ Unlike native select elements, the dropdown input can be customized via. markup.
 
 The dropdown input allows you to customize the look and feel of each option by using the option slot. In this example, we are using the option slot to display each option's asset, logo, and name:
 
+In :FrameworkText{vue="Vue this is typically implemented with the <code>#option</code> slot." react="React this is typically implemented with an <code>option</code> entry on the <code>slots</code> prop."}
+
 ::Example
 ---
 name: "Dropdown"
@@ -193,6 +197,8 @@ react-file: [
 ### Selection slot
 
 If you only want to customize the display of the selected option, use the selection slot (as opposed to the option slot mentioned above):
+
+In :FrameworkText{vue="Vue this is typically implemented with the <code>#selection</code> or <code>#tag</code> slots." react="React this is typically implemented with <code>selection</code> or <code>tag</code> entries on the <code>slots</code> prop."}
 
 ::Example
 ---

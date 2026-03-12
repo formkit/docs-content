@@ -1,6 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import { FormKitProvider } from '@formkit/react'
-import config from '../../../_no-tailwind/formkit.config.react.jsx'
+export { default as formkitConfig } from '../../../_no-tailwind/formkit.config.react.jsx'
 /* %partial% */
 import { FormKit } from '@formkit/react'
 
@@ -38,12 +36,6 @@ function TailwindThemeInlineUsageExample() {
 }
 /* %partial% */
 
-function App() {
-  return (
-    <FormKitProvider config={config}>
-      <TailwindThemeInlineUsageExample />
-    </FormKitProvider>
-  )
+export default function App() {
+  return <TailwindThemeInlineUsageExample />
 }
-
-createRoot(document.getElementById('app')).render(<App />)
