@@ -1,5 +1,68 @@
 ### Astro
 
+::FrameworkOnly{framework="react"}
+First, we need to install Astro's React integration. You can refer to [Astro's React integration docs](https://docs.astro.build/en/guides/integrations-guide/react/) for more detail.
+
+Inside of Astro's config file (`astro.config.*`), enable the React integration:
+
+```js
+// astro.config.mjs
+import { defineConfig } from 'astro/config'
+import react from '@astrojs/react'
+
+export default defineConfig({
+  integrations: [react()],
+})
+```
+
+Next, install the packages FormKit needs in a React Astro project:
+
+```sh
+npm install @formkit/react react react-dom
+```
+
+Now you can create a React wrapper component for your form:
+
+```jsx
+// src/components/Form.jsx
+import { FormKit } from '@formkit/react'
+
+export default function Form() {
+  async function submitHandler(fields) {
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+    console.log(fields)
+  }
+
+  return (
+    <FormKit type="form" onSubmit={submitHandler}>
+      <FormKit type="text" label="Name" name="name" />
+      <FormKit type="email" label="Email" name="email" />
+    </FormKit>
+  )
+}
+```
+
+After that, import and use it inside your Astro files:
+
+::Callout
+---
+type: "warning"
+label: "Client Hydration"
+---
+FormKit works best with client hydration enabled, so make sure to use `client:visible` or `client:load`.
+::
+
+```astro
+---
+import Form from '../components/Form.jsx'
+---
+
+<Form client:visible />
+```
+::
+
+::FrameworkOnly{framework="vue"}
+
 First, we need to install Astro's Vue integration. You can refer to [Astro's Vue integration docs](https://docs.astro.build/en/guides/integrations-guide/vue/) for more detail.
 
 Inside of Astro's config file (`astro.config.*`), let's add an entrypoint `_app`. The `_app` entrypoint file is just a configuration file for Vue:
@@ -81,3 +144,4 @@ import Form from '../components/Form.vue';
 ```
 
 That's it! You're now ready to use the `<FormKit>` component in your Astro application.
+::
