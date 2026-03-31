@@ -13,7 +13,6 @@ export default function App() {
     <FormKit type="form" actions={false}>
       {/* %partial% */}
       <FormKit
-        id="repeater"
         name="users"
         type="repeater"
         label="Philosophy Department Teaching Staff"

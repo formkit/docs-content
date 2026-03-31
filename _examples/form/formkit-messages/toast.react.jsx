@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { FormKit, FormKitMessages } from '@formkit/react'
 
 const toastStyle = {
-  position: 'fixed',
+  position: 'absolute',
   top: 0,
   right: 0,
   width: '300px',
@@ -31,10 +31,17 @@ async function submitHandler(_data, node) {
 
 function ToastMessagesExample() {
   const [formNode, setFormNode] = useState(undefined)
+  const [showToast, setShowToast] = useState(false)
+
+  async function handleSubmit(data, node) {
+    setShowToast(false)
+    await submitHandler(data, node)
+    setShowToast(true)
+  }
 
   return (
-    <>
-      <FormKit type="form" onSubmit={submitHandler} onNode={setFormNode}>
+    <div style={{ position: 'relative', width: '100%' }}>
+      <FormKit type="form" onSubmit={handleSubmit} onNode={setFormNode}>
         <FormKit
           type="checkbox"
           label="Soccer nations"
@@ -69,12 +76,14 @@ function ToastMessagesExample() {
         />
       </FormKit>
 
-      <div style={toastStyle}>
-        <div style={toastPanelStyle}>
-          <FormKitMessages node={formNode} />
+      {showToast ? (
+        <div style={toastStyle}>
+          <div style={toastPanelStyle}>
+            <FormKitMessages node={formNode} />
+          </div>
         </div>
-      </div>
-    </>
+      ) : null}
+    </div>
   )
 }
 /* %partial% */

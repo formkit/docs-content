@@ -45,7 +45,7 @@ function RegisterExample() {
 
   return (
     <>
-      <style>{styles}</style>
+      <style dangerouslySetInnerHTML={{ __html: styles }} />
       <FormKit
         type="form"
         id="registration-example"

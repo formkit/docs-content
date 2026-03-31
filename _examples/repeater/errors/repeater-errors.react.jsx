@@ -44,7 +44,6 @@ export default function App() {
         {({ value }) => (
           <>
             <FormKit
-              id="repeater"
               name="teamMembers"
               type="repeater"
               label="Additional Team Members"

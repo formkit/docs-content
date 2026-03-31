@@ -19,7 +19,6 @@ import {
   <!-- Imports hidden for brevity -->
   <FormKit #default="{ value }" v-model="values" type="group">
     <FormKit
-      id="repeater"
       name="users"
       type="repeater"
       label="Users"
