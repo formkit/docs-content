@@ -5,7 +5,6 @@
 >
 <!-- %partial%::html:: -->
 <FormKit
-  id="repeater"
   name="users"
   type="repeater"
   label="Philosophy Department Teaching Staff"

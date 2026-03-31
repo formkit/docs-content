@@ -31,7 +31,6 @@ async function submitTeamMembers(teamMembers, formNode) {
     help="hello"
   >
     <FormKit
-      id="repeater"
       name="teamMembers"
       type="repeater"
       label="Additional Team Members"

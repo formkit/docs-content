@@ -17,8 +17,6 @@ The `repeater` input is for repeating groups of inputs. You can use any number o
 
 By default, the repeater input has the ability to shift, add, and remove items:
 
-<!-- TODO: determine why drag and drop is not working on example -->
-
 ::Example
 ---
 name: "Repeater"

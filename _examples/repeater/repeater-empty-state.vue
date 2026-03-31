@@ -1,7 +1,6 @@
 <template>
   <FormKit #default="{ value }" type="form" :actions="false">
     <FormKit
-      id="repeater"
       name="users"
       type="repeater"
       label="Users"

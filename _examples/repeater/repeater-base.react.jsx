@@ -19,7 +19,6 @@ export default function App() {
         <>
           {/* %partial% */}
           <FormKit
-            id="repeater"
             name="users"
             type="repeater"
             label="Users"

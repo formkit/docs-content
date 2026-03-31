@@ -5,7 +5,6 @@
     :actions="false"
   >
     <FormKit
-      id="repeater"
       name="users"
       type="repeater"
       label="Users"
