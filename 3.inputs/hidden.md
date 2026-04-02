@@ -17,12 +17,15 @@ Since <code>hidden</code> inputs are not intended for display to end users, Form
 
 The `hidden` input uses HTML's [native hidden input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/hidden). It is not a visible element, and should only be used to provide data that is not entered by a user.
 
+In React, hidden values are still best controlled through <code>modelValue</code>, <code>onUpdateModelValue</code>, or a parent form value object rather than by mutating the DOM directly.
+
 ## Basic example
 
 ::Example
 ---
 name: "Hidden input"
 file: "_examples/hidden/hidden.vue"
+react-file: "_examples/hidden/hidden.react.jsx"
 tabs: "html,render"
 ---
 ::
@@ -37,6 +40,7 @@ These options use `parseFloat` (default) or `parseInt` respectively. If the valu
 ---
 name: "Hidden cast input"
 file: "_examples/hidden/hidden-cast.vue"
+react-file: "_examples/hidden/hidden-cast.react.jsx"
 ---
 ::
 

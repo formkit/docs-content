@@ -1,0 +1,15 @@
+{
+  "react": "https://esm.sh/react@18?dev",
+  "react/jsx-runtime": "https://esm.sh/react@18/jsx-runtime?dev",
+  "react-dom/client": "https://esm.sh/react-dom@18/client?dev",
+  "@formkit/react": "https://cdn.jsdelivr.net/npm/@formkit/react@next/dist/index.mjs",
+  "@formkit/core": "https://cdn.jsdelivr.net/npm/@formkit/core@next/dist/index.min.mjs",
+  "@formkit/dev": "https://cdn.jsdelivr.net/npm/@formkit/dev@next/dist/index.min.mjs",
+  "@formkit/i18n": "https://cdn.jsdelivr.net/npm/@formkit/i18n@next/dist/index.min.mjs",
+  "@formkit/inputs": "https://cdn.jsdelivr.net/npm/@formkit/inputs@next/dist/index.min.mjs",
+  "@formkit/observer": "https://cdn.jsdelivr.net/npm/@formkit/observer@next/dist/index.min.mjs",
+  "@formkit/rules": "https://cdn.jsdelivr.net/npm/@formkit/rules@next/dist/index.min.mjs",
+  "@formkit/themes": "https://cdn.jsdelivr.net/npm/@formkit/themes@next/dist/index.min.mjs",
+  "@formkit/utils": "https://cdn.jsdelivr.net/npm/@formkit/utils@next/dist/index.min.mjs",
+  "@formkit/validation": "https://cdn.jsdelivr.net/npm/@formkit/validation@next/dist/index.min.mjs"
+}

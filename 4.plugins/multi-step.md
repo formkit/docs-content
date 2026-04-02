@@ -28,6 +28,7 @@ yarn add @formkit/addons
 
 Once you've installed the addons package, you'll need to register the plugin with FormKit and include the supporting CSS styles:
 
+::FrameworkOnly{framework="vue"}
 ```js
 // formkit.config.ts
 import { defaultConfig } from '@formkit/vue'
@@ -39,6 +40,19 @@ const config = defaultConfig({
 
 export default config
 ```
+::
+
+::FrameworkOnly{framework="react"}
+```jsx
+// formkit.config.react.jsx
+import { defineFormKitConfig } from '@formkit/react'
+import { createMultiStepPlugin } from '@formkit/addons'
+
+export default defineFormKitConfig({
+  plugins: [createMultiStepPlugin()],
+})
+```
+::
 
 #### A quick demonstration of the `multi-step` input type in action:
 
@@ -51,6 +65,13 @@ file: [
   "_examples/multi-step/step-two.vue",
   "_examples/multi-step/step-three.vue",
   "_examples/multi-step/formkit.config.ts"
+]
+react-file: [
+  "_examples/multi-step/intro/intro.react.jsx",
+  "_examples/multi-step/step-one.react.jsx",
+  "_examples/multi-step/step-two.react.jsx",
+  "_examples/multi-step/step-three.react.jsx",
+  "_examples/multi-step/formkit.config.react.jsx"
 ]
 ---
 ::
@@ -89,6 +110,11 @@ file: [
   "_examples/multi-step/tab-style/multi-step-content.vue",
   "_examples/multi-step/formkit.config.ts"
 ]
+react-file: [
+  "_examples/multi-step/tab-style/tab-style.react.jsx",
+  "_examples/multi-step/tab-style/multi-step-content.react.jsx",
+  "_examples/multi-step/formkit.config.react.jsx"
+]
 ---
 ::
 
@@ -107,6 +133,10 @@ file: [
   "_examples/multi-step/step-labels/step-labels.vue",
   "_examples/multi-step/formkit.config.ts"
 ]
+react-file: [
+  "_examples/multi-step/step-labels/step-labels.react.jsx",
+  "_examples/multi-step/formkit.config.react.jsx"
+]
 ---
 ::
 
@@ -123,6 +153,13 @@ file: [
   "_examples/multi-step/step-two.vue",
   "_examples/multi-step/step-three.vue",
   "_examples/multi-step/formkit.config.ts"
+]
+react-file: [
+  "_examples/multi-step/allow-incomplete/allow-incomplete.react.jsx",
+  "_examples/multi-step/step-one.react.jsx",
+  "_examples/multi-step/step-two.react.jsx",
+  "_examples/multi-step/step-three.react.jsx",
+  "_examples/multi-step/formkit.config.react.jsx"
 ]
 ---
 ::
@@ -143,6 +180,10 @@ file: [
   "_examples/multi-step/valid-step-icon/valid-step-icon.vue",
   "_examples/multi-step/formkit.config.ts"
 ]
+react-file: [
+  "_examples/multi-step/valid-step-icon/valid-step-icon.react.jsx",
+  "_examples/multi-step/formkit.config.react.jsx"
+]
 ---
 ::
 
@@ -152,7 +193,7 @@ Each `step` in a `multi-step` input has default buttons rendered for moving betw
 
 If you want to add a custom action such as a form submit to a `multi-step` — useful if you're using the `multi-step` as your whole form — you can do so by overriding the `stepNext` slot on the desired step. In this case we'll add a `submit` input to the last step in our `multi-step` input to submit the form.
 
-The `stepNext` and `stepPrevious` sections have access to the `incrementStep` handler — which returns a callable function — to enable programatic navigation.
+The `stepNext` and `stepPrevious` sections have access to the `incrementStep` handler — which returns a callable function — to enable programatic navigation. In :FrameworkText{vue="Vue this is typically done with named slots" react="React this is typically done with the <code>slots</code> prop"}.
 
 ::Callout
 ---
@@ -165,9 +206,14 @@ By default, the <code>stepNext</code> in a multi-step input uses event listeners
 ::Example
 ---
 name: "Customizing step actions"
+hydrate: false
 file: [
   "_examples/multi-step/step-actions/step-actions.vue",
   "_examples/multi-step/formkit.config.ts"
+]
+react-file: [
+  "_examples/multi-step/step-actions/step-actions.react.jsx",
+  "_examples/multi-step/formkit.config.react.jsx"
 ]
 ---
 ::
@@ -191,6 +237,10 @@ file: [
   "_examples/multi-step/before-step-change/before-step-change.vue",
   "_examples/multi-step/formkit.config.ts"
 ]
+react-file: [
+  "_examples/multi-step/before-step-change/before-step-change.react.jsx",
+  "_examples/multi-step/formkit.config.react.jsx"
+]
 ---
 ::
 
@@ -208,6 +258,10 @@ name: "programmaticNavigation"
 file: [
   "_examples/multi-step/programmatic-navigation/programmatic-navigation.vue",
   "_examples/multi-step/formkit.config.ts"
+]
+react-file: [
+  "_examples/multi-step/programmatic-navigation/programmatic-navigation.react.jsx",
+  "_examples/multi-step/formkit.config.react.jsx"
 ]
 ---
 ::
@@ -258,13 +312,11 @@ without: ['help', 'prefix-icon', 'suffix-icon']
 ---
 ::
 
-
 ## Props & Attributes (step)
 
 ::ReferenceTable
 ---
-
-input: step 
+input: step
 data: [
   {
     prop: "label",
@@ -324,7 +376,6 @@ without: [
 ---
 ::
 
-
 ## Sections
 
 :SectionKeysIntro
@@ -376,7 +427,7 @@ data: [
     "section-key": "stepNext",
     description: "A wrapper around the action button for navigating to the next step."
   }
-] 
+]
 without: [
   "label",
   "prefix",

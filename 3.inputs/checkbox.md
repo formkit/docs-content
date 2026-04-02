@@ -9,6 +9,8 @@ navigation:
 
 The `checkbox` input uses HTML's [native checkbox input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox). It can display one or many options to a user and is a great way to allow users to select multiple items from a list. FormKit supports both single and multiple checkbox inputs.
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>on-value</code>, <code>off-value</code>, and <code>decorator-icon</code>" react="<code>onValue</code>, <code>offValue</code>, and <code>decoratorIcon</code>"} use the standard prop casing for that framework.
+
 ## Single checkbox
 
 By default the checkbox type will render a single checkbox and uses `boolean` values. In order for a single checkbox to be checked — the current value of the input must match the `on-value` of that input (by default, a single checkbox uses `true` as the `on-value`).
@@ -17,6 +19,7 @@ By default the checkbox type will render a single checkbox and uses `boolean` va
 ---
 name: "Checkbox input"
 file: "_examples/checkbox-single/checkbox-single.vue"
+react-file: "_examples/checkbox-single/checkbox-single.react.jsx"
 ---
 ::
 
@@ -47,6 +50,7 @@ The simplest way to provide options is an array of strings. The provided strings
 ---
 name: "Checkbox input"
 file: "_examples/checkbox-strings/checkbox-strings.vue"
+react-file: "_examples/checkbox-strings/checkbox-strings.react.jsx"
 ---
 ::
 
@@ -59,6 +63,7 @@ You may also provide the `options` prop where the keys are values and the values
 ---
 name: "Checkbox input"
 file: "_examples/checkbox-object/checkbox-object.vue"
+react-file: "_examples/checkbox-object/checkbox-object.react.jsx"
 ---
 ::
 
@@ -71,6 +76,7 @@ The most flexible way to define options is by providing an array of objects. The
 ---
 name: "Checkbox input"
 file: "_examples/checkbox-objects/checkbox-objects.vue"
+react-file: "_examples/checkbox-objects/checkbox-objects.react.jsx"
 ---
 ::
 

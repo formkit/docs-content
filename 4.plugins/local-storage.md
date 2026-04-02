@@ -27,6 +27,7 @@ Once you've installed the addons package, you'll need to register the plugin wit
 - `beforeSave`: — An optional async callback that recieves the form data. Allows modification of form data before saving to localStorage.
 - `beforeLoad`: — An optional async callback that recives the form data. Allows modification of the localStorage data before applying to the form.
 
+::FrameworkOnly{framework="vue"}
 ```js
 // formkit.config.ts
 import { defaultConfig } from '@formkit/vue'
@@ -49,10 +50,34 @@ const config = defaultConfig({
 
 export default config
 ```
+::
+
+::FrameworkOnly{framework="react"}
+```jsx
+import { defineFormKitConfig } from '@formkit/react'
+import { createLocalStoragePlugin } from '@formkit/addons'
+
+export default defineFormKitConfig({
+  plugins: [
+    createLocalStoragePlugin({
+      prefix: 'formkit',
+      key: undefined,
+      control: undefined,
+      maxAge: 3600000,
+      debounce: 200,
+      beforeSave: undefined,
+      beforeLoad: undefined,
+    }),
+  ],
+})
+```
+::
 
 ## Usage
 
 To enable saving to localStorage add the `use-local-storage` to your FormKit `form`. The localStorage key will be your provided `prefix` (default is `formkit`) and your form `name` eg. `formkit-contact`.
+
+In :FrameworkText{vue="Vue templates this prop is written as <code>use-local-storage</code>." react="React JSX this prop is written as <code>useLocalStorage</code>."}
 
 ### Basic example
 
@@ -62,6 +87,10 @@ name: "Save to LocalStorage"
 file: [
   "_examples/local-storage/basic/basic.vue",
   "_examples/local-storage/basic/formkit.config.ts"
+]
+react-file: [
+  "_examples/local-storage/basic/basic.react.jsx",
+  "_examples/local-storage/basic/formkit.config.react.jsx"
 ]
 ---
 ::
@@ -79,6 +108,10 @@ file: [
   "_examples/local-storage/restore/restore.vue",
   "_examples/local-storage/restore/formkit.config.ts"
 ]
+react-file: [
+  "_examples/local-storage/restore/restore.react.jsx",
+  "_examples/local-storage/restore/formkit.config.react.jsx"
+]
 ---
 ::
 
@@ -91,6 +124,9 @@ If you are saving data to localStorage in the context of an app where multiple u
 name: "Save with Key"
 file: [
   "_examples/local-storage/key/key.vue"
+]
+react-file: [
+  "_examples/local-storage/key/key.react.jsx"
 ]
 ---
 ::
@@ -106,6 +142,9 @@ name: "Save with Control"
 file: [
   "_examples/local-storage/control/control.vue"
 ]
+react-file: [
+  "_examples/local-storage/control/control.react.jsx"
+]
 ---
 ::
 
@@ -120,6 +159,9 @@ Note that the form is disabled when loading data from localStorage until our `be
 name: "Save with Modification"
 file: [
   "_examples/local-storage/modification/modification.vue"
+]
+react-file: [
+  "_examples/local-storage/modification/modification.react.jsx"
 ]
 ---
 ::

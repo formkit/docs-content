@@ -9,12 +9,16 @@ navigation:
 
 The `text` input uses HTML's [native text input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text). It allows a user to enter a single line of text.
 
+When controlling this input in React, prefer <code>modelValue</code> and <code>onUpdateModelValue</code> instead of wiring directly to the native input element.
+
 ## Basic example
 
 ::Example
 ---
 name: "Text input"
 file: "_examples/text/text.vue"
+react-file: "_examples/text/text.react.jsx"
+react-import-map-file: "_examples/text/text.react.importMap.json"
 ---
 ::
 
@@ -28,6 +32,7 @@ These options use `parseFloat` (default) or `parseInt` respectively. If the valu
 ---
 name: "Range cast input"
 file: "_examples/text/text-cast.vue"
+react-file: "_examples/text/text-cast.react.jsx"
 ---
 ::
 

@@ -25,6 +25,7 @@ The value of a group input is an object where the keys are the names of the inpu
 ---
 name: "Group input"
 file: "_examples/group/group.vue"
+react-file: "_examples/group/group.react.jsx"
 ---
 ::
 
@@ -37,6 +38,7 @@ Groups are always aware of the validation state of their children (including nes
 ---
 name: "Group input"
 file: "_examples/group-validity/group-validity.vue"
+react-file: "_examples/group-validity/group-validity.react.jsx"
 ---
 ::
 
@@ -74,4 +76,3 @@ without: ['help', 'label', 'prefix-icon', 'suffix-icon', 'validation', 'validati
 ## Sections
 
 The `group` input renders no output to the DOM so there are no sections to display. The `group` input is a renderless input that is used exclusively for structuring data in your form. It is equivalent to an object in JavaScript.
-

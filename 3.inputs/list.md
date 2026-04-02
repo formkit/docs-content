@@ -25,6 +25,7 @@ The value of a list input is an array where each item is the value of the input 
 ---
 name: "List input"
 file: "_examples/list/list.vue"
+react-file: "_examples/list/list.react.jsx"
 ---
 ::
 
@@ -34,7 +35,7 @@ file: "_examples/list/list.vue"
 type: "tip"
 label: "Performance"
 ---
-Vue’s handy <code>v-model</code> is fully supported in FormKit with bi-directional data flow even on lists and groups. However, if your form needs extremely high performance consider using the <a href="/essentials/architecture">core node</a> to read/write instead of v-model.
+FormKit supports :FrameworkText{vue="<code>v-model</code>" react="<code>modelValue</code> and <code>onUpdateModelValue</code>"} even on lists and groups. However, if your form needs extremely high performance, consider using the <a href="/essentials/architecture">core node</a> to read and write values instead of keeping every change in bound component state.
 ::
 
 
@@ -54,6 +55,10 @@ Static lists are the simplest type of list to create. Wrap any inputs in a `<For
 name: "Simple static list"
 file: [
   "_examples/list/list-static.vue",
+  "_examples/_data/nba-top-players.js"
+]
+react-file: [
+  "_examples/list/list-static.react.jsx",
   "_examples/_data/nba-top-players.js"
 ]
 ---
@@ -76,7 +81,7 @@ hydrate the inputs inside the list. Dynamic lists are useful for creating dynami
 
 You can mutate the structure of your dynamic list by adding and removing items from the value array. FormKit will automatically update the underlying form structure to match the new value.
 
-In order for dynamic lists to keep your data in sync, you must use `items` from the default slot to create your `v-for` and you must also pass the `index` of the `v-for` as the `index` prop to each item in of the list.
+In order for dynamic lists to keep your data in sync, you must use `items` from :FrameworkText{vue="the default slot" react="the render-prop child function"} to render each row, and you must also pass the current `index` as the `index` prop to each child input in the list.
 
 ::Callout
 ---
@@ -92,6 +97,7 @@ To use a prebuilt repeater, check out the free [FormKit Pro repeater input](/inp
 ---
 name: "Dynamic list"
 file: "_examples/list/list-dynamic.vue"
+react-file: "_examples/list/list-dynamic.react.jsx"
 ---
 ::
 
@@ -101,16 +107,20 @@ file: "_examples/list/list-dynamic.vue"
 ---
 name: "Dynamic list"
 file: "_examples/list/list-dynamic-nested-group.vue"
+react-file: "_examples/list/list-dynamic-nested-group.react.jsx"
 ---
 ::
 
-#### Dynamic list using v-model
+#### Dynamic list using bound state
 
 ::Example
 ---
 name: "Dynamic list"
 file: [
   "_examples/list/list-dynamic-v-model.vue",
+]
+react-file: [
+  "_examples/list/list-dynamic-v-model.react.jsx",
 ]
 ---
 ::
@@ -122,6 +132,9 @@ file: [
 name: "Dynamic list"
 file: [
   "_examples/list/list-dynamic-schema.vue",
+]
+react-file: [
+  "_examples/list/list-dynamic-schema.react.jsx",
 ]
 ---
 ::
@@ -135,12 +148,13 @@ Lists (and [groups](/inputs/group)) are always aware of the validation state of 
 ---
 name: "List input"
 file: "_examples/list-validity/list-validity.vue"
+react-file: "_examples/list-validity/list-validity.react.jsx"
 ---
 ::
 
 ## Showing error & validation messages
 
-Even though a `list` can have validation rules and input errors, it does not include any functionality to show validation messages and errors by default. The list ships no HTML at all. If you’d like to display those errors — you can add the `<FormKitMessages />` as a child of the `list`.
+Even though a `list` can have validation rules and input errors, it does not include any functionality to show validation messages and errors by default. The list ships no HTML at all. If you’d like to display those errors, you can add the `<FormKitMessages />` component as a child of the `list`.
 
 ::Callout
 ---
@@ -166,7 +180,7 @@ data: [
     prop: "dynamic",
     type: "Boolean",
     default: "false",
-    description: "Enables dynamic mode for the list and provides <code>items</code> in the default slot creating an iterator (<code>v-for</code>).",
+    description: "Enables dynamic mode for the list and provides <code>items</code> to the default slot or render-prop child function for iteration.",
   },
 ]
 without: ['help', 'label', 'prefix-icon', 'suffix-icon', 'validation', 'validation-visibility', 'validation-label']
@@ -178,4 +192,3 @@ without: ['help', 'label', 'prefix-icon', 'suffix-icon', 'validation', 'validati
 
 
 The `list` input renders no output to the DOM so there are no sections to display. The `list` input is a renderless input that is used exclusively for structuring data in your form. It is equivalent to an array in JavaScript.
-

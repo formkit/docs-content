@@ -28,6 +28,9 @@ yarn add @formkit/addons
 
 Once you've installed the addons package, you'll need to register the AutoAnimate plugin with FormKit:
 
+In :FrameworkText{vue="Vue this usually means adding the plugin to <code>defaultConfig()</code>." react="React this usually means exporting a config from <code>defineFormKitConfig()</code>."}
+
+::FrameworkOnly{framework="vue"}
 ```js
 import { createApp } from 'vue'
 import App from 'App.vue'
@@ -55,6 +58,31 @@ createApp(App).use(plugin, defaultConfig({
   ]
 }).mount('#app')
 ```
+::
+
+::FrameworkOnly{framework="react"}
+```jsx
+import { defineFormKitConfig } from '@formkit/react'
+import { createAutoAnimatePlugin } from '@formkit/addons'
+
+export default defineFormKitConfig({
+  plugins: [
+    createAutoAnimatePlugin(
+      {
+        duration: 250,
+        easing: 'ease-in-out',
+        delay: 0,
+      },
+      {
+        global: ['outer', 'inner'],
+        form: ['form'],
+        repeater: ['items'],
+      }
+    ),
+  ],
+})
+```
+::
 
 If you've installed it correctly, you should have smooth transitions when showing and hiding validation messages:
 
@@ -67,6 +95,10 @@ init-file-tab: "formkit.config.ts"
 file: [
   "_examples/auto-animate/auto-animate.vue",
   "_examples/auto-animate/formkit.config.ts"
+]
+react-file: [
+  "_examples/auto-animate/auto-animate.react.jsx",
+  "_examples/auto-animate/formkit.config.react.jsx"
 ]
 ---
 ::

@@ -13,6 +13,8 @@ The `radio` input uses HTML's [native radio inputs](https://developer.mozilla.or
 - An object of value/label pairs
 - An array of objects with `label` and `value` properties (the same as the [checkbox](/inputs/checkbox) and [select](/inputs/select) inputs)
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>decorator-icon</code>" react="<code>decoratorIcon</code>"} follow the usual prop casing for that framework.
+
 ### Array of strings
 
 The simplest way to provide options is an array of strings. The provided strings will be used for both the label and the value of the option.
@@ -21,6 +23,7 @@ The simplest way to provide options is an array of strings. The provided strings
 ---
 name: "Radio input"
 file: "_examples/radio-strings/radio-strings.vue"
+react-file: "_examples/radio-strings/radio-strings.react.jsx"
 ---
 ::
 
@@ -33,6 +36,7 @@ You may also provide the `options` prop where the keys are values and the values
 ---
 name: "Radio input"
 file: "_examples/radio-object/radio-object.vue"
+react-file: "_examples/radio-object/radio-object.react.jsx"
 ---
 ::
 
@@ -45,6 +49,7 @@ The most flexible way to define options is by providing an array of objects. The
 ---
 name: "Radio input"
 file: "_examples/radio-objects/radio-objects.vue"
+react-file: "_examples/radio-objects/radio-objects.react.jsx"
 ---
 ::
 

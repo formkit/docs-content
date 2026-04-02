@@ -9,6 +9,8 @@ navigation:
 
 The `tel` input uses HTML's [native tel input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel) and allows a user to enter a telephone number. Telephone numbers can also be entered with standard text inputs but some browsers (especially mobile ones) may improve the experience of entering telephone numbers by showing a different keypad.
 
+When controlling this input in React, prefer <code>modelValue</code> and <code>onUpdateModelValue</code> instead of wiring directly to the native input element.
+
 ::Callout
 ---
 type: "tip"
@@ -24,6 +26,7 @@ Need more flexibility than the native HTML `tel` input provides? <a href="/input
 ---
 name: "Tel input"
 file: "_examples/tel/tel.vue"
+react-file: "_examples/tel/tel.react.jsx"
 ---
 ::
 

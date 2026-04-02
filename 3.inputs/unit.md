@@ -14,10 +14,13 @@ navigation:
 
 The `unit` input allows for restricted input of values based on the provided unit (distance, weight, temperature, etc.) and locale.
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>display-locale</code>, <code>min-decimals</code>, <code>value-format</code>, <code>value-unit</code>, and <code>unit-display</code>" react="<code>displayLocale</code>, <code>minDecimals</code>, <code>valueFormat</code>, <code>valueUnit</code>, and <code>unitDisplay</code>"} use the standard prop casing for that framework.
+
 ::Example
 ---
 name: "Unit input defaults"
 file: "_examples/unit/unit.vue"
+react-file: "_examples/unit/unit.react.jsx"
 ---
 ::
 
@@ -41,6 +44,7 @@ The display length can be modified by the `unitDisplay` property. Accepted value
 ---
 name: "Unit input defaults"
 file: "_examples/unit/unit-display.vue"
+react-file: "_examples/unit/unit-display.react.jsx"
 ---
 ::
 
@@ -52,6 +56,7 @@ By default the locale will use what you have set in your `formkit.config.ts` as 
 ---
 name: "Unit input defaults"
 file: "_examples/unit/unit-locale.vue"
+react-file: "_examples/unit/unit-locale.react.jsx"
 ---
 ::
 
@@ -65,6 +70,7 @@ You can also choose to set a minimum number of decimals with the `minDecimals` p
 ---
 name: "Unit input defaults"
 file: "_examples/unit/unit-decimals.vue"
+react-file: "_examples/unit/unit-decimals.react.jsx"
 ---
 ::
 
@@ -76,6 +82,7 @@ Similar to a number input, you can set a `min` and `max` value.
 ---
 name: "Unit input defaults"
 file: "_examples/unit/unit-min-max.vue"
+react-file: "_examples/unit/unit-min-max.react.jsx"
 ---
 ::
 
@@ -87,6 +94,7 @@ Again, similar to a number input you can use the up/down keys to step the value.
 ---
 name: "Unit input defaults"
 file: "_examples/unit/unit-step.vue"
+react-file: "_examples/unit/unit-step.react.jsx"
 ---
 ::
 
@@ -98,6 +106,7 @@ The value of the input itself defaults to a number but can be formatted as a str
 ---
 name: "Unit input defaults"
 file: "_examples/unit/unit-value-format.vue"
+react-file: "_examples/unit/unit-value-format.react.jsx"
 ---
 ::
 
@@ -110,6 +119,7 @@ itself will be converted to `kilometers` when setting `value-unit` to `kilometer
 ---
 name: "Unit type examples"
 file: "_examples/unit/value-unit.vue"
+react-file: "_examples/unit/value-unit.react.jsx"
 ---
 ::
 
@@ -121,6 +131,7 @@ The `unit` prop is optional, allowing for unitless values.
 ---
 name: "Unit type examples"
 file: "_examples/unit/unitless.vue"
+react-file: "_examples/unit/unitless.react.jsx"
 ---
 ::
 

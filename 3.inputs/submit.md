@@ -25,6 +25,7 @@ The easiest way to set the `label` of a `submit` button is with the `label` prop
 ---
 name: "Submit input"
 file: "_examples/submit/submit-base.vue"
+react-file: "_examples/submit/submit-base.react.jsx"
 ---
 ::
 
@@ -37,6 +38,7 @@ The default slot can also be used to add text and UI to the button:
 ---
 name: "Submit input"
 file: "_examples/submit/submit-default-slot.vue"
+react-file: "_examples/submit/submit-default-slot.react.jsx"
 ---
 ::
 
@@ -49,6 +51,7 @@ You can also bind event listeners:
 ---
 name: "Submit input"
 file: "_examples/submit/submit-events.vue"
+react-file: "_examples/submit/submit-events.react.jsx"
 ---
 ::
 
@@ -59,8 +62,9 @@ Note that FormKit forms automatically [output a submit button](/inputs/form#prov
 
 ### Disable your submit while the form is disabled
 
-If you use your own submit button, you can dynamically disable it according to the form's disabled status (`context.disabled`), which you can pull from the `#default` slot prop:
+If you use your own submit button, you can dynamically disable it according to the form's disabled status (`context.disabled`), which you can pull from :FrameworkText{vue="the <code>#default</code> slot prop" react="the render-prop child function"}:
 
+::FrameworkOnly{framework="vue"}
 ```html
 <FormKit
   type="form"
@@ -71,6 +75,15 @@ If you use your own submit button, you can dynamically disable it according to t
   <FormKit type="submit" :disabled="disabled" />
 </FormKit>
 ```
+::
+
+::FrameworkOnly{framework="react"}
+```jsx
+<FormKit type="form" actions={false} onSubmit={yourSubmitHandler}>
+  {({ disabled }) => <FormKit type="submit" disabled={disabled} />}
+</FormKit>
+```
+::
 
 You can also disable your own submit button [via schema](https://formkit.link/6e6d3e9b251a3662af15bd0c1c55e4be).
 

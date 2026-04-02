@@ -31,7 +31,7 @@ The `createZodPlugin` function takes two arguments:
 The `createZodPlugin` will return a tuple of:
 
 - `zodPlugin`: The plugin that should be applied to your target form's `plugins` prop.
-- `submitHandler`: The submit handler that should be attached to your form's `@submit` action. When the form data passes validation of your provided Zod schema your `submitCallback` will fire.
+- `submitHandler`: The submit handler that should be attached to your form's :FrameworkText{vue="<code>@submit</code>" react="<code>onSubmit</code>"} action. When the form data passes validation of your provided Zod schema your `submitCallback` will fire.
 
 ### For form validation
 
@@ -43,6 +43,7 @@ name: 'Zod Validation'
 file: [
   "_examples/zod/validation.vue",
 ]
+react-file: "_examples/zod/validation.react.jsx"
 import-map-file: "_examples/zod/importMap.json"
 ---
 ::
@@ -67,6 +68,7 @@ name: 'Zod Validation with FormKit Validation'
 file: [
   "_examples/zod/with-formkit-validation.vue",
 ]
+react-file: "_examples/zod/with-formkit-validation.react.jsx"
 import-map-file: "_examples/zod/importMap.json"
 ---
 ::
@@ -81,6 +83,7 @@ name: 'Zod Errors'
 file: [
   "_examples/zod/errors.vue",
 ]
+react-file: "_examples/zod/errors.react.jsx"
 import-map-file: "_examples/zod/importMap.json"
 ---
 ::

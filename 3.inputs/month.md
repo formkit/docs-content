@@ -9,6 +9,8 @@ navigation:
 
 The `month` input uses HTML's [native month picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/month) to allow users to easily select a month.
 
+When controlling this input in React, prefer <code>modelValue</code> and <code>onUpdateModelValue</code> instead of wiring directly to the native input element.
+
 ::Callout
 ---
 type: "danger"
@@ -23,6 +25,7 @@ Month inputs are not currently supported in FireFox or Safari.
 ---
 name: "Month input"
 file: "_examples/month/month.vue"
+react-file: "_examples/month/month.react.jsx"
 ---
 ::
 

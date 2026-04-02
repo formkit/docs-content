@@ -1,0 +1,24 @@
+import { FormKit } from '@formkit/react'
+
+export default function App() {
+  return (
+    <>
+      {/* %partial% */}
+      <FormKit
+        type="select"
+        label="What country makes the best food?"
+        name="country"
+        placeholder="Select a country"
+        options={[
+          { label: 'France', value: 'fr', attrs: { disabled: true } },
+          { label: 'Germany', value: 'de', attrs: { disabled: true } },
+          { label: 'Spain', value: 'es', attrs: { disabled: true } },
+          { label: 'Italy', value: 'ie' },
+          { label: 'Greece', value: 'gr', attrs: { disabled: true } },
+        ]}
+        help="Don't worry, you can't get this one wrong."
+      />
+      {/* %partial% */}
+    </>
+  )
+}

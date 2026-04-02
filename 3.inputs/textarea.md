@@ -9,12 +9,15 @@ navigation:
 
 The `textarea` input uses HTML's [native textarea input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea). It allows a user to enter multiple lines of text and is resizable in most browsers.
 
+When controlling this input in React, prefer <code>modelValue</code> and <code>onUpdateModelValue</code> instead of wiring directly to the native textarea element.
+
 ## Basic example
 
 ::Example
 ---
 name: "Textarea input"
 file: "_examples/textarea/textarea.vue"
+react-file: "_examples/textarea/textarea.react.jsx"
 ---
 ::
 

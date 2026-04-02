@@ -9,6 +9,8 @@ navigation:
 
 The `email` input uses HTML's [native email input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email).
 
+When controlling this input in React, prefer <code>modelValue</code> and <code>onUpdateModelValue</code> instead of wiring directly to the native input element.
+
 ::Callout
 ---
 type: "tip"
@@ -23,6 +25,7 @@ Need more flexibility than the native HTML `email` input provides? <a href="/inp
 ---
 name: "Email input"
 file: "_examples/email-example/email-example.vue"
+react-file: "_examples/email-example/email-example.react.jsx"
 ---
 ::
 

@@ -11,6 +11,8 @@ FormKit inputs ship with a lot of markup. This is useful for ensuring inputs are
 
 In this guide, we'll export the text input, and restructure it to better support a floating label design.
 
+The exported input definition itself is framework-agnostic. The framework-specific part is how you register that input with your FormKit config.
+
 ## Export via CLI
 
 FormKit comes with its own CLI to make exporting inputs a breeze. At the base directory of your project, run:
@@ -113,6 +115,7 @@ src/
 
 In `floatingLabelTextInput.js`, let's change the name of the
 exported variable to `floatingLabelTextInput` from `text`.
+
 ```js
 ...
 export const t̶e̶x̶t̶ floatingLabelTextInput = {
@@ -125,6 +128,7 @@ export const t̶e̶x̶t̶ floatingLabelTextInput = {
 
 To globally register our "new" input, we need add our `floatingLabelTextInput` to the global config. We can do this wherever we are registering the FormKit plugin:
 
+::FrameworkOnly{framework="vue"}
 ```js
 //main.js
 import { createApp } from 'vue'
@@ -141,6 +145,25 @@ const config = defaultConfig({
 
 createApp(App).use(plugin, config).mount('#app')
 ```
+::
+
+::FrameworkOnly{framework="react"}
+```jsx
+// formkit.config.react.jsx
+import { defineFormKitConfig } from '@formkit/react'
+import { genesisIcons } from '@formkit/icons'
+import { floatingLabelTextInput } from '../src/inputs/floatingLabelTextInput'
+
+export default defineFormKitConfig({
+  inputs: {
+    floatingLabelTextInput,
+  },
+  icons: {
+    ...genesisIcons,
+  },
+})
+```
+::
 
 ## Modifying schema
 
@@ -244,9 +267,13 @@ file: [
   "_examples/guides/export-inputs/final-result/floating-label-text-input.js",
   "_examples/guides/export-inputs/final-result/formkit.config.ts",
 ]
+react-file: [
+  "_examples/guides/export-inputs/final-result/example.react.jsx",
+  "_examples/guides/export-inputs/final-result/floating-label-text-input.js",
+  "_examples/guides/export-inputs/final-result/formkit.config.react.jsx",
+]
 ---
 ::
-
 
 ## Next steps
 
@@ -254,8 +281,8 @@ In this guide we exported the built-in `text` input using FormKit's [CLI tool](#
 
 ::Cta
 ---
-label: "Learn more about creating custom inputs." 
-button: "Read the guide" 
+label: "Learn more about creating custom inputs."
+button: "Read the guide"
 href: "/guides/create-a-custom-input"
 ---
 ::

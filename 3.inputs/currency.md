@@ -14,10 +14,13 @@ navigation:
 
 The `currency` input allows for restricted input of values based on the provided currency and locale.
 
+When controlling this input in React, prefer <code>modelValue</code> and <code>onUpdateModelValue</code>. Currency-specific props like <code>displayLocale</code> and <code>valueFormat</code> also use standard camelCase JSX prop names.
+
 ::Example
 ---
 name: "Currency input defaults"
 file: "_examples/currency/currency-default.vue"
+react-file: "_examples/currency/currency-default.react.jsx"
 ---
 ::
 
@@ -35,6 +38,7 @@ By default, the locale used will be that of what is set in your `formkit.config.
 ---
 name: "Currency and Locale settings"
 file: "_examples/currency/currency-simple-locale.vue"
+react-file: "_examples/currency/currency-simple-locale.react.jsx"
 ---
 ::
 
@@ -58,6 +62,7 @@ Values can be incremented and decremented by use of the up/down keys. The degree
 ---
 name: "Currency Prop Exploration"
 file: "_examples/currency/currency-props-explore.vue"
+react-file: "_examples/currency/currency-props-explore.react.jsx"
 ---
 ::
 

@@ -12,6 +12,8 @@ navigation:
 
 The `dropdown` input allows users to select a value from a list of options. Unlike native select elements, the dropdown input allows you to customize both its appearance and behavior.
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>selection-appearance</code>, <code>always-load-on-open</code>, <code>load-on-created</code>, and <code>selection-removable</code>" react="<code>selectionAppearance</code>, <code>alwaysLoadOnOpen</code>, <code>loadOnCreated</code>, and <code>selectionRemovable</code>"} use the standard prop casing for that framework.
+
 The `options` prop can accept three different formats of values:
 
 - An array of objects with `value` and `label` keys (see example above)
@@ -38,6 +40,7 @@ The dropdown input will render in single-select mode by default.
 name: "Dropdown"
 min-height: 550
 file: "_examples/dropdown/dropdown-single.vue"
+react-file: "_examples/dropdown/dropdown-single.react.jsx"
 ---
 ::
 
@@ -50,6 +53,7 @@ Dropdown inputs with the prop `multiple` set will render in multi-select mode.
 name: "Dropdown"
 min-height: 550
 file: "_examples/dropdown/dropdown-multiple.vue"
+react-file: "_examples/dropdown/dropdown-multiple.react.jsx"
 ---
 ::
 
@@ -75,6 +79,7 @@ In this example, the function, `loadHorrorMovies`, makes a request to the API fo
 name: "Dropdown"
 min-height: 550
 file: "_examples/dropdown/dropdown-single-request.vue"
+react-file: "_examples/dropdown/dropdown-single-request.react.jsx"
 ---
 ::
 
@@ -87,6 +92,7 @@ By default the dropdown will only load options asynchronously once (upon the lis
 name: "Dropdown"
 min-height: 550
 file: "_examples/dropdown/dropdown-always-load-on-open.vue"
+react-file: "_examples/dropdown/dropdown-always-load-on-open.react.jsx"
 ---
 ::
 
@@ -99,6 +105,7 @@ The prop `load-on-created` will cause the dropdown to load options as soon as it
 name: "Dropdown"
 min-height: 550
 file: "_examples/dropdown/dropdown-load-on-created.vue"
+react-file: "_examples/dropdown/dropdown-load-on-created.react.jsx"
 ---
 ::
 
@@ -111,6 +118,7 @@ A function assigned the options prop will be passed two arguments: `page` and `h
 name: "Dropdown"
 min-height: 550
 file: "_examples/dropdown/dropdown-pagination.vue"
+react-file: "_examples/dropdown/dropdown-pagination.react.jsx"
 ---
 ::
 
@@ -123,6 +131,7 @@ If you would rather allow the user to load more options without having to click 
 name: "Dropdown"
 min-height: 550
 file: "_examples/dropdown/dropdown-pagination-load-on-scroll.vue"
+react-file: "_examples/dropdown/dropdown-pagination-load-on-scroll.react.jsx"
 ---
 ::
 
@@ -135,6 +144,7 @@ FormKit's dropdown input also provides an `optionLoader` prop that allows you to
 name: "Dropdown"
 min-height: 550
 file: "_examples/dropdown/dropdown-option-loader.vue"
+react-file: "_examples/dropdown/dropdown-option-loader.react.jsx"
 ---
 ::
 
@@ -149,11 +159,14 @@ Unlike native select elements, the dropdown input can be customized via. markup.
 
 The dropdown input allows you to customize the look and feel of each option by using the option slot. In this example, we are using the option slot to display each option's asset, logo, and name:
 
+In :FrameworkText{vue="Vue this is typically implemented with the <code>#option</code> slot." react="React this is typically implemented with an <code>option</code> entry on the <code>slots</code> prop."}
+
 ::Example
 ---
 name: "Dropdown"
 min-height: 550
 file: "_examples/dropdown/dropdown-option-slot.vue"
+react-file: "_examples/dropdown/dropdown-option-slot.react.jsx"
 ---
 ::
 
@@ -174,6 +187,10 @@ file: [
   "_examples/dropdown/dropdown-selection-appearance.vue",
   "_examples/_data/countries.js"
 ]
+react-file: [
+  "_examples/dropdown/dropdown-selection-appearance.react.jsx",
+  "_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -181,11 +198,14 @@ file: [
 
 If you only want to customize the display of the selected option, use the selection slot (as opposed to the option slot mentioned above):
 
+In :FrameworkText{vue="Vue this is typically implemented with the <code>#selection</code> or <code>#tag</code> slots." react="React this is typically implemented with <code>selection</code> or <code>tag</code> entries on the <code>slots</code> prop."}
+
 ::Example
 ---
 name: "Dropdown"
 min-height: 550
 file: "_examples/dropdown/dropdown-selection-slot.vue"
+react-file: "_examples/dropdown/dropdown-selection-slot.react.jsx"
 ---
 
 ::
@@ -211,6 +231,7 @@ The dropdown input, by default, will be rendered in a disabled state if no optio
 name: "Dropdown"
 min-height: 550
 file: "_examples/dropdown/dropdown-empty-message.vue"
+react-file: "_examples/dropdown/dropdown-empty-message.react.jsx"
 ---
 ::
 
@@ -231,6 +252,7 @@ The selection-removable prop cannot be used for multi-selects.
 name: "Dropdown"
 min-height: 550
 file: "_examples/dropdown/dropdown-selection-removable.vue"
+react-file: "_examples/dropdown/dropdown-selection-removable.react.jsx"
 ---
 ::
 
@@ -243,6 +265,7 @@ By default, when the `selection-removable` prop is set to `true`, the dropdown w
 name: "Dropdown"
 min-height: 550
 file: "_examples/dropdown/dropdown-open-on-remove.vue"
+react-file: "_examples/dropdown/dropdown-open-on-remove.react.jsx"
 ---
 ::
 
@@ -258,6 +281,10 @@ file: [
   "_examples/dropdown/dropdown-close-on-select.vue",
   "_examples/_data/countries.js"
 ]
+react-file: [
+  "_examples/dropdown/dropdown-close-on-select.react.jsx",
+  "_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -270,6 +297,7 @@ If you would like expand the listbox as soon as the dropdown input is focused, y
 name: "Dropdown"
 min-height: 550
 file: "_examples/dropdown/dropdown-open-on-focus.vue"
+react-file: "_examples/dropdown/dropdown-open-on-focus.react.jsx"
 ---
 ::
 
@@ -287,6 +315,10 @@ file: [
   "_examples/dropdown/dropdown-overscroll.vue",
   "_examples/_data/countries.js"
 ]
+react-file: [
+  "_examples/dropdown/dropdown-overscroll.react.jsx",
+  "_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -300,6 +332,10 @@ name: "Dropdown"
 min-height: 550
 file: [
   "_examples/dropdown/dropdown-max.vue",
+  "_examples/_data/countries.js"
+]
+react-file: [
+  "_examples/dropdown/dropdown-max.react.jsx",
   "_examples/_data/countries.js"
 ]
 ---

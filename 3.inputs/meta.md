@@ -19,12 +19,15 @@ The `meta` input is meant to store arbitrary data that is not intended for displ
 
 Unlike the [hidden](/inputs/hidden) input (which renders an `<input type="hidden">` element), `meta` does not render *any* DOM elements so it’s value is in memory only and as such it can store any value type. In TypeScript its value is defined as `any`.
 
+In React, you can still provide and read this value through <code>modelValue</code>, <code>onUpdateModelValue</code>, or the parent form's value object even though no DOM element is rendered.
+
 ## Basic example
 
 ::Example
 ---
 name: "Meta input"
 file: "_examples/meta/meta.vue"
+react-file: "_examples/meta/meta.react.jsx"
 ---
 ::
 

@@ -37,6 +37,10 @@ file: [
   "_examples/guides/tailwind-theme/inline-usage/example.vue",
   "_examples/_no-tailwind/formkit.config.ts"
 ]
+react-file: [
+  "_examples/guides/tailwind-theme/inline-usage/example.react.jsx",
+  "_examples/_no-tailwind/formkit.config.react.jsx"
+]
 editable: true
 ---
 ::
@@ -47,7 +51,7 @@ Let's explore how we can create a Tailwind theme — with configurable options 
 
 ## Creating a configurable FormKit theme
 
-By following the instructions below we will create a theme like the ones available at [https://themes.formkit.com](https://themes.formkit.com). This includes support for user-configurable variables if you choose to provide them. 
+By following the instructions below we will create a theme like the ones available at [https://themes.formkit.com](https://themes.formkit.com). This includes support for user-configurable variables if you choose to provide them.
 
 ::ArticleCard
 ---
@@ -62,7 +66,7 @@ Once your theme is complete you can submit your theme to be included on [https:/
 
 ### Initialize a copy of the starter theme
 
-FormKit provides a starter theme — which comes with structural styles and plentiful comments — that is intended to help new authors cerate their own themes. 
+FormKit provides a starter theme — which comes with structural styles and plentiful comments — that is intended to help new authors cerate their own themes.
 
 To get started, run the following command in your terminal:
 
@@ -109,7 +113,7 @@ Variables are a powerful way to re-use values across your theme and to allow the
 ```js
 // global.ts
 export default {
-  outer: `$myVariable`
+  outer: `$myVariable`,
 }
 ```
 
@@ -151,7 +155,7 @@ Variables can be used in your input's class lists using the following syntax:
 // globals.ts
 export default {
   // becomes 'text-lg'
-  label: 'text-$textSize'
+  label: 'text-$textSize',
 }
 ```
 
@@ -159,16 +163,16 @@ Putting shared common values into variables allows theme authors to quickly adju
 
 ### Variables with scales
 
-One of the best aspects of Tailwind is that all values operate on predictable scales. This means that we can provided a "range" for a variable and then move up and down the scale as needed within our theme. 
+One of the best aspects of Tailwind is that all values operate on predictable scales. This means that we can provided a "range" for a variable and then move up and down the scale as needed within our theme.
 
 For example, a `spacing` variable might operate using the following Tailwind scale (`0`, `px`, `0.5`, `1`, `1.5`, `2`, `2.5`, `3` etc). By providing a `scale` and default `value` we can give ourselves the ability to step up and down the scale at will.
 
 ```js
 spacing: {
   value: "2",
-  // We can define a scale that we can step through. 
+  // We can define a scale that we can step through.
   // The default value will be used as the starting point.
-  // Because we are defining the scale we can omit default 
+  // Because we are defining the scale we can omit default
   // Tailwind values like '0' and 'px` if they don't make
   // sense for our use case.
   scale: ["0.5", "1", "1.5", "2", "2.5", "3", "4", "6"]
@@ -196,7 +200,7 @@ Variables can never exceed the limits of their scales, so `mb-$spacing(100)` wou
 
 ### Variables with user-controllable values
 
-Variables are cool — but the real power comes from exposing variables to end-users of our theme and allowing them to configure the values to their own liking. 
+Variables are cool — but the real power comes from exposing variables to end-users of our theme and allowing them to configure the values to their own liking.
 
 To do this we provide an `editor` value for our variable. The `editor` determines which UI control is exposed in the theme customization panel. The available `editor` values are as follows:
 
@@ -204,7 +208,7 @@ To do this we provide an `editor` value for our variable. The `editor` determine
 - `color`: A set of swatches each representing a default Tailwind color. By default includes a scale of all 22 available Tailwind colors.
 - `fontSize`: A set of buttons with the letter `A` in different sizes. By default includes a scale from `xs` to `9xl`.
 - `radius`: A set of buttons each depicting a different intensity of border radius. By default includes a scale from `rounded-none` to `rounded-full`.
-- `shadow`: A stepper with a depiction of the selected shadow level. By default includes a scale from `shadow-none` to `shadow-2xl`. 
+- `shadow`: A stepper with a depiction of the selected shadow level. By default includes a scale from `shadow-none` to `shadow-2xl`.
 - `spacing`: A slider with a range of values with depictions of tighter spacing at the beginning and wider spacing at the end. By default includes a scale from `0` to `96`.
 - `select`: A standard HTML select list that can contain any number of values. Theme authors must provide their own scale.
 
@@ -255,17 +259,17 @@ You can also provide a wildcard `*` symbol as the 2nd argument to allow any vali
 ```js
 // globals.ts
 export default {
-  // steps up 5 steps on the scale. 
-  // sets the min value to 3 
+  // steps up 5 steps on the scale.
+  // sets the min value to 3
   // and the max value to 8
   outer: 'mb-$spacing(5, 3, 8)',
   // steps down 2 steps on the scale
-  // sets the minimum value to 1 
+  // sets the minimum value to 1
   // and the max value to 2
   label: 'mb-$spacing(-2, 1, 2)',
   // steps down 2 steps on the scale
   // allows any valid value on the scale
-  help: 'mb-$spacing(-2,*)'
+  help: 'mb-$spacing(-2,*)',
 }
 ```
 
@@ -326,7 +330,7 @@ scale: {
 },
 ```
 
-There are many more comments in the `@formkit/theme-starter` theme itself to help you along your way as you work. 
+There are many more comments in the `@formkit/theme-starter` theme itself to help you along your way as you work.
 
 ## Publishing your theme
 
@@ -365,9 +369,11 @@ type: "warning"
 label: "PNPM requires formkit CLI dependency"
 ---
 If you are using `pnpm` you will need to ensure you have the `formkit` command line package as a dev dependency in your project. If you are not using `pnpm` you can skip this step.
+
 ```bash
 pnpm add -D formkit
 ```
+
 ::
 
 Once the theme has been installed as dependency you can build your theme with the `formkit` CLI `theme` command.
@@ -397,7 +403,7 @@ export default defineFormKitConfig({
 
 ```css
 /* main.css (or your primary CSS file) */
-@import "tailwindcss";
+@import 'tailwindcss';
 @source "./formkit.theme.ts";
 @source "./formkit.config.ts";
 ```
@@ -408,15 +414,14 @@ type: "tip"
 label: "Tailwind CSS 3"
 ---
 If you're using Tailwind CSS 3, add the theme file to your `tailwind.config.js` content array instead:
+
 ```js
 // tailwind.config.js
 module.exports = {
-  content: [
-    "./app.vue",
-    "./formkit.theme.ts"
-  ]
+  content: ['./app.vue', './formkit.theme.ts'],
 }
 ```
+
 ::
 
 ## Customizing the variables of a published theme
@@ -431,7 +436,7 @@ export default myTheme({
   // modify any variables that are available in your theme
   radius: 'rounded-full',
   spacing: '2.5',
-  accentColor: 'violet'
+  accentColor: 'violet',
 })
 ```
 
@@ -446,7 +451,7 @@ Install the resulting `formkit.theme.(mjs|ts)` file by following the same instru
 
 ## Submitting your theme to themes.formkit.com
 
-Proud of your theme? Offering something unique that other FormKit users would enjoy using? 
+Proud of your theme? Offering something unique that other FormKit users would enjoy using?
 
 [Open a pull request](https://github.com/formkit/themes.formkit.com/pulls) against the `themes.formkit.com` repo and submit your theme! Once approved it'll be listed in the theme gallery and be available for anyone to use in their project as easily as the provided 1st-party FormKit themes.
 
@@ -459,4 +464,4 @@ npx formkit@latest theme --theme=my-theme
 
 Writing a comprehensive FormKit theme is a large undertaking. If you get stuck, need ideas, or otherwise want to talk about creating themes for FormKit be sure to join us in our official Discord community. We're happy to help!
 
-::LinkDiscord
+<LinkDiscord></LinkDiscord>

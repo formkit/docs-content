@@ -9,12 +9,15 @@ navigation:
 
 The `search` input uses HTML's [native search input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/search). Generally, search inputs are the same as text inputs, but may have different styling or features based on the browser. For example, browsers often add a small "X" to clear the input when it has a value.
 
+When controlling this input in React, prefer <code>modelValue</code> and <code>onUpdateModelValue</code> instead of wiring directly to the native input element.
+
 ## Basic example
 
 ::Example
 ---
 name: "Search input"
 file: "_examples/search/search.vue"
+react-file: "_examples/search/search.react.jsx"
 ---
 ::
 

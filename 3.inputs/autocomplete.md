@@ -12,6 +12,8 @@ navigation:
 
 The `autocomplete` input allows you to search through a list of options.
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>selection-appearance</code>, <code>load-on-created</code>, and <code>empty-message</code>" react="<code>selectionAppearance</code>, <code>loadOnCreated</code>, and <code>emptyMessage</code>"} follow each framework's normal prop casing.
+
 The `options` prop can accept three different formats of values:
 
 - An array of objects with `value` and `label` keys (see example above)
@@ -42,6 +44,10 @@ file: [
   "_examples/autocomplete-pro/autocomplete-single.vue",
   "_examples/_data/countries.js"
 ]
+react-file: [
+  "_examples/autocomplete-pro/autocomplete-single.react.jsx",
+  "_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -55,6 +61,10 @@ name: "Autocomplete"
 min-height: 550
 file: [
   "_examples/autocomplete-pro/autocomplete-multiple.vue",
+  "_examples/_data/countries.js"
+]
+react-file: [
+  "_examples/autocomplete-pro/autocomplete-multiple.react.jsx",
   "_examples/_data/countries.js"
 ]
 ---
@@ -81,6 +91,10 @@ file: [
   "_examples/autocomplete-pro/autocomplete-filter.vue",
   "_examples/_data/countries.js"
 ]
+react-file: [
+  "_examples/autocomplete-pro/autocomplete-filter.react.jsx",
+  "_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -97,6 +111,7 @@ In this example, we'll assign the `options` prop the `searchMovies` function. By
 name: "Autocomplete"
 min-height: 550
 file: "_examples/autocomplete-pro/autocomplete-single-request.vue"
+react-file: "_examples/autocomplete-pro/autocomplete-single-request.react.jsx"
 ---
 ::
 
@@ -109,6 +124,7 @@ A likely scenario you'll encounter is needing to search through a paginated API.
 name: "Autocomplete"
 min-height: 550
 file: "_examples/autocomplete-pro/autocomplete-pagination.vue"
+react-file: "_examples/autocomplete-pro/autocomplete-pagination.react.jsx"
 ---
 ::
 
@@ -123,6 +139,7 @@ FormKit's autocomplete input also provides an `optionLoader` prop that allows yo
 name: "Autocomplete"
 min-height: 550
 file: "_examples/autocomplete-pro/autocomplete-pagination-option-loader.vue"
+react-file: "_examples/autocomplete-pro/autocomplete-pagination-option-loader.react.jsx"
 ---
 ::
 
@@ -141,6 +158,7 @@ If you would rather load options when the autocomplete is created, you can set t
 name: "Autocomplete"
 min-height: 550
 file: "_examples/autocomplete-pro/autocomplete-load-on-created.vue"
+react-file: "_examples/autocomplete-pro/autocomplete-load-on-created.react.jsx"
 ---
 ::
 
@@ -150,12 +168,18 @@ file: "_examples/autocomplete-pro/autocomplete-load-on-created.vue"
 
 The autocomplete input allows you to customize the look and feel of each option by using the option slot. In this example, we are using the option slot to display each option's asset, logo, and name:
 
+In :FrameworkText{vue="Vue this is typically implemented with the <code>#option</code> slot." react="React this is typically implemented with an <code>option</code> entry on the <code>slots</code> prop."}
+
 ::Example
 ---
 name: "Autocomplete"
 min-height: 550
 file: [
   "_examples/autocomplete-pro/autocomplete-option-slot.vue",
+  "_examples/_data/car-brands.js"
+]
+react-file: [
+  "_examples/autocomplete-pro/autocomplete-option-slot.react.jsx",
   "_examples/_data/car-brands.js"
 ]
 ---
@@ -178,6 +202,10 @@ file: [
   "_examples/autocomplete-pro/autocomplete-selection-appearance.vue",
   "_examples/_data/countries.js"
 ]
+react-file: [
+  "_examples/autocomplete-pro/autocomplete-selection-appearance.react.jsx",
+  "_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -185,12 +213,18 @@ file: [
 
 If you only want to customize the display of the selected option, set the selection appearance to `option`.
 
+In :FrameworkText{vue="Vue this is typically implemented with the <code>#selection</code> slot." react="React this is typically implemented with a <code>selection</code> entry on the <code>slots</code> prop."}
+
 ::Example
 ---
 name: "Autocomplete"
 min-height: 550
 file: [
   "_examples/autocomplete-pro/autocomplete-slot-selection.vue",
+  "_examples/_data/car-brands.js"
+]
+react-file: [
+  "_examples/autocomplete-pro/autocomplete-slot-selection.react.jsx",
   "_examples/_data/car-brands.js"
 ]
 ---
@@ -212,6 +246,10 @@ file: [
   "_examples/autocomplete-pro/autocomplete-empty-message.vue",
   "_examples/_data/countries.js"
 ]
+react-file: [
+  "_examples/autocomplete-pro/autocomplete-empty-message.react.jsx",
+  "_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -227,6 +265,10 @@ file: [
   "_examples/autocomplete-pro/autocomplete-close-on-select.vue",
   "_examples/_data/countries.js"
 ]
+react-file: [
+  "_examples/autocomplete-pro/autocomplete-close-on-select.react.jsx",
+  "_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -240,6 +282,10 @@ name: "Autocomplete"
 min-height: 550
 file: [
   "_examples/autocomplete-pro/autocomplete-reload-on-commit.vue",
+  "_examples/_data/countries.js"
+]
+react-file: [
+  "_examples/autocomplete-pro/autocomplete-reload-on-commit.react.jsx",
   "_examples/_data/countries.js"
 ]
 ---
@@ -258,6 +304,10 @@ file: [
   "_examples/autocomplete-pro/autocomplete-open-on-click.vue",
   "_examples/_data/countries.js"
 ]
+react-file: [
+  "_examples/autocomplete-pro/autocomplete-open-on-click.react.jsx",
+  "_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -270,6 +320,7 @@ If you would like to open the autocomplete's listbox anytime the input is clicke
 name: "Autocomplete"
 min-height: 550
 file: "_examples/autocomplete-pro/autocomplete-open-on-focus.vue"
+react-file: "_examples/autocomplete-pro/autocomplete-open-on-focus.react.jsx"
 ---
 ::
 
@@ -291,6 +342,10 @@ name: "Autocomplete"
 min-height: 550
 file: [
   "_examples/autocomplete-pro/autocomplete-clear-search-on-open.vue",
+  "_examples/_data/countries.js"
+]
+react-file: [
+  "_examples/autocomplete-pro/autocomplete-clear-search-on-open.react.jsx",
   "_examples/_data/countries.js"
 ]
 ---
@@ -317,6 +372,10 @@ file: [
   "_examples/autocomplete-pro/autocomplete-selection-removable.vue",
   "_examples/_data/countries.js"
 ]
+react-file: [
+  "_examples/autocomplete-pro/autocomplete-selection-removable.react.jsx",
+  "_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -330,6 +389,10 @@ name: "Autocomplete"
 min-height: 550
 file: [
   "_examples/autocomplete-pro/autocomplete-open-on-remove.vue",
+  "_examples/_data/countries.js"
+]
+react-file: [
+  "_examples/autocomplete-pro/autocomplete-open-on-remove.react.jsx",
   "_examples/_data/countries.js"
 ]
 ---
@@ -347,6 +410,10 @@ file: [
   "_examples/autocomplete-pro/autocomplete-max.vue",
   "_examples/_data/countries.js"
 ]
+react-file: [
+  "_examples/autocomplete-pro/autocomplete-max.react.jsx",
+  "_examples/_data/countries.js"
+]
 ---
 ::
 
@@ -361,6 +428,10 @@ name: "Autocomplete"
 min-height: 550
 file: [
   "_examples/autocomplete-pro/autocomplete-full.vue",
+  "_examples/_data/top-movies.js"
+]
+react-file: [
+  "_examples/autocomplete-pro/autocomplete-full.react.jsx",
   "_examples/_data/top-movies.js"
 ]
 ---

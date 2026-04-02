@@ -1,0 +1,67 @@
+import { genesisIcons } from '@formkit/icons'
+import { FormKit, defineFormKitConfig } from '@formkit/react'
+import { createProPlugin, inputs as proInputs } from '@formkit/pro'
+import carBrands from '../_data/car-brands.js'
+
+const pro = createProPlugin('fk-52971f34220', proInputs)
+export const formkitConfig = defineFormKitConfig({
+  plugins: [pro],
+  icons: { ...genesisIcons },
+})
+
+export default function App() {
+  return (
+    <>
+      {/* %partial% */}
+      <FormKit
+        type="autocomplete"
+        name="autocomplete"
+        label="Search and select a car brand"
+        placeholder="Example: Toyota"
+        options={carBrands}
+        popover
+        selectionAppearance="option"
+        defaultValue="audi"
+        slots={{
+          selection: ({ option, classes }) => (
+            <div className={classes.selection}>
+              <div className={`${classes.option} flex items-center`}>
+                <img
+                  src={option.logo}
+                  alt={`${option.label} logo`}
+                  className="h-10 w-10 p-2"
+                />
+                <span>{option.label}</span>
+              </div>
+            </div>
+          ),
+        }}
+      />
+      <FormKit
+        type="autocomplete"
+        name="autocomplete"
+        label="Search and select a car brand"
+        placeholder="Example: Toyota"
+        options={carBrands}
+        selectionAppearance="option"
+        multiple
+        defaultValue={['toyota', 'honda']}
+        slots={{
+          selection: ({ option, classes }) => (
+            <div className={`${classes.selection} !p-0`}>
+              <div className={`${classes.option} flex items-center`}>
+                <img
+                  src={option.logo}
+                  alt={`${option.label} logo`}
+                  className="h-10 w-10 p-2"
+                />
+                <span>{option.label}</span>
+              </div>
+            </div>
+          ),
+        }}
+      />
+      {/* %partial% */}
+    </>
+  )
+}

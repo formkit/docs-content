@@ -21,10 +21,13 @@ To output multiple toggle buttons use the `options` prop. Options can be specifi
 - An array of objects with `label` and `value` properties (the same as the [select](/inputs/select) and [radio](/inputs/radio) inputs).
   - Additional parameters can be passed to set `disabled`, `help`, `onLabel`, and/or `offLabel` on a per option basis.
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>on-value</code>, <code>off-value</code>, <code>on-label</code>, and <code>off-label</code>" react="<code>onValue</code>, <code>offValue</code>, <code>onLabel</code>, and <code>offLabel</code>"} use the standard prop casing for that framework.
+
 ::Example
 ---
 name: "Toggle Buttons Simple Options"
 file: "_examples/togglebuttons/togglebuttons-multiple-basic.vue"
+react-file: "_examples/togglebuttons/togglebuttons-multiple-basic.react.jsx"
 ---
 ::
 
@@ -38,6 +41,7 @@ The `togglebuttons` input, by default, only allows one option to be selected. Yo
 ---
 name: "Multiple"
 file: "_examples/togglebuttons/togglebuttons-multiple.vue"
+react-file: "_examples/togglebuttons/togglebuttons-multiple.react.jsx"
 ---
 ::
 
@@ -49,6 +53,7 @@ By default `togglebuttons` will allow you to select and deselect allowing for an
 ---
 name: "Multiple"
 file: "_examples/togglebuttons/togglebuttons-single-enforced.vue"
+react-file: "_examples/togglebuttons/togglebuttons-single-enforced.react.jsx"
 ---
 ::
 
@@ -60,6 +65,7 @@ Assuming you are using the default FormKit styles, the `vertical` prop applies d
 ---
 name: "Vertical"
 file: "_examples/togglebuttons/togglebuttons-vertical.vue"
+react-file: "_examples/togglebuttons/togglebuttons-vertical.react.jsx"
 ---
 ::
 
@@ -69,6 +75,7 @@ More prop examples and combinations:
 ---
 name: "Toggle Buttons Multiple Enforced"
 file: "_examples/togglebuttons/togglebuttons-enforced.vue"
+react-file: "_examples/togglebuttons/togglebuttons-enforced.react.jsx"
 ---
 ::
 
@@ -82,6 +89,7 @@ The `togglebuttons` input offers choices between one or more values; it's a grea
 ---
 name: "Single Toggle Button"
 file: "_examples/togglebuttons/togglebuttons-simple.vue"
+react-file: "_examples/togglebuttons/togglebuttons-simple.react.jsx"
 ---
 ::
 
@@ -94,6 +102,7 @@ The values for the toggle buttons are `undefined` if not-interacted with, `true`
 ---
 name: "On / Off Values"
 file: "_examples/togglebuttons/togglebuttons-basic-values.vue"
+react-file: "_examples/togglebuttons/togglebuttons-basic-values.react.jsx"
 ---
 ::
 
@@ -105,6 +114,7 @@ Additionally, you may specify secondary labels by setting the `on-label` and the
 ---
 name: "On / Off Labels"
 file: "_examples/togglebuttons/togglebuttons-value-labels.vue"
+react-file: "_examples/togglebuttons/togglebuttons-value-labels.react.jsx"
 ---
 ::
 
@@ -114,10 +124,13 @@ file: "_examples/togglebuttons/togglebuttons-value-labels.vue"
 
 For multiple options you can use the `default` slot to set the toggle's content.
 
+In :FrameworkText{vue="Vue this is usually a default slot implementation." react="React this is usually implemented with a <code>default</code> entry on the <code>slots</code> prop."}
+
 ::Example
 ---
 name: "Toggle Buttons Options Slot"
 file: "_examples/togglebuttons/togglebuttons-options-slots.vue"
+react-file: "_examples/togglebuttons/togglebuttons-options-slots.react.jsx"
 ---
 ::
 
@@ -125,10 +138,13 @@ file: "_examples/togglebuttons/togglebuttons-options-slots.vue"
 
 For a single toggle you can use the default slot for setting the toggle content. Also available are `on` and `off` slots to change the content based on whether the toggle is activated or not.
 
+In :FrameworkText{vue="Vue this uses the <code>default</code>, <code>on</code>, and <code>off</code> slots." react="React this uses <code>default</code>, <code>on</code>, and <code>off</code> entries on the <code>slots</code> prop, or children for simple label content."}
+
 ::Example
 ---
 name: "Toggle Buttons Default Slot"
 file: "_examples/togglebuttons/togglebuttons-single-slots.vue"
+react-file: "_examples/togglebuttons/togglebuttons-single-slots.react.jsx"
 ---
 ::
 

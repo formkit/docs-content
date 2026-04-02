@@ -10,12 +10,15 @@ navigation:
 The `week` input uses the HTML's [native week picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/week) to allow users to easily
 select a week.
 
+When controlling this input in React, prefer <code>modelValue</code> and <code>onUpdateModelValue</code> instead of wiring directly to the native input element.
+
 ## Basic example
 
 ::Example
 ---
 name: "Week input"
 file: "_examples/week/week.vue"
+react-file: "_examples/week/week.react.jsx"
 ---
 ::
 

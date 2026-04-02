@@ -9,12 +9,15 @@ navigation:
 
 The `color` input uses HTML's [native color picker](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color) to allow users to easily select a hexadecimal color.
 
+When controlling this input in React, prefer <code>modelValue</code> and <code>onUpdateModelValue</code> instead of wiring directly to the native input element.
+
 ## Basic example
 
 ::Example
 ---
   name: "Color input"
   file: "_examples/color-example/color-example.vue"
+  react-file: "_examples/color-example/color-example.react.jsx"
 ---
 ::
 

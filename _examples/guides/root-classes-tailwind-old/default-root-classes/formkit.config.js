@@ -1,9 +1,11 @@
-export default {
+import { defineFormKitConfig } from '@formkit/vue'
+
+export default defineFormKitConfig({
   config: {
-    rootClasses (sectionKey, node) {
+    rootClasses(sectionKey, node) {
       return {
-        [`formkit-${sectionKey}`]: true
+        [`formkit-${sectionKey}`]: true,
       }
-    }
-  }
-}
+    },
+  },
+})

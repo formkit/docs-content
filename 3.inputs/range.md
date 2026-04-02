@@ -9,6 +9,8 @@ navigation:
 
 The `range` input uses HTML's [native range input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) to let user select a number with a graphic slider.
 
+When controlling this input in React, prefer <code>modelValue</code> and <code>onUpdateModelValue</code> instead of wiring directly to the native input element.
+
 ::Callout
 ---
 type: "tip"
@@ -24,6 +26,7 @@ Need more flexibility than the native HTML `range` input provides? <a href="/inp
 ---
 name: "Range input"
 file: "_examples/range/range.vue"
+react-file: "_examples/range/range.react.jsx"
 ---
 ::
 
@@ -37,6 +40,7 @@ These options use `parseFloat` (default) or `parseInt` respectively. If the valu
 ---
 name: "Range cast input"
 file: "_examples/range/range-cast.vue"
+react-file: "_examples/range/range-cast.react.jsx"
 ---
 ::
 

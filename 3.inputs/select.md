@@ -14,6 +14,8 @@ The select input uses HTML's [native select input](https://developer.mozilla.org
 - An array of objects with `label` and `value` properties (the same as the [checkbox](/inputs/checkbox) and [radio](/inputs/radio) inputs)
 - Using `<option>` tags directly inside the `default` slot.
 
+In :FrameworkText{vue="Vue templates" react="React JSX"} props like :FrameworkText{vue="<code>select-icon</code>" react="<code>selectIcon</code>"} follow the usual prop casing for that framework. When controlling the input in React, prefer <code>modelValue</code> and <code>onUpdateModelValue</code> as shown in the paired examples.
+
 ::Callout
 ---
 type: "tip"
@@ -34,6 +36,7 @@ The simplest way to provide options is an array of strings. The provided strings
 ---
 name: "Select input - strings"
 file: "_examples/select-strings/select-strings.vue"
+react-file: "_examples/select-strings/select-strings.react.jsx"
 ---
 ::
 
@@ -46,6 +49,7 @@ You may also provide the `options` prop where the keys are values and the values
 ---
 name: "Select input"
 file: "_examples/select/select.vue"
+react-file: "_examples/select/select.react.jsx"
 ---
 ::
 
@@ -58,6 +62,7 @@ The most flexible way to define options is by providing an array of objects. The
 ---
 name: "Select input - objects"
 file: "_examples/select-objects/select-objects.vue"
+react-file: "_examples/select-objects/select-objects.react.jsx"
 ---
 ::
 
@@ -89,16 +94,20 @@ Using the [array of objects](#array-of-objects) syntax you can also create optio
 ---
 name: "Option groups"
 file: "_examples/select-groups/select-groups.vue"
+react-file: "_examples/select-groups/select-groups.react.jsx"
 ---
 ::
 ### Default slot
 
 Sometimes it may be desirable to manually output the contents of a select list in order to create specialized structures. This can be done by using the `default` slot to explicitly output your options.
 
+In :FrameworkText{vue="Vue this means rendering the options inside the component's default slot." react="React this means passing <code>&lt;option&gt;</code> and <code>&lt;optgroup&gt;</code> children directly to <code>&lt;FormKit /&gt;</code>."}
+
 ::Example
 ---
 name: "Select input - objects"
 file: "_examples/select-slot/select-slot.vue"
+react-file: "_examples/select-slot/select-slot.react.jsx"
 ---
 ::
 
@@ -118,6 +127,7 @@ The `select` input also supports a `multiple` attribute that allows for multi-se
 ---
 name: "Select input - objects"
 file: "_examples/select-multiple/select-multiple.vue"
+react-file: "_examples/select-multiple/select-multiple.react.jsx"
 ---
 ::
 
