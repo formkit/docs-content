@@ -69,7 +69,7 @@ react-file: [
 
 Excellent! Now we can iterate on our component file and see the results. One of the first things to notice is how our input already supports labels, help text, validation, and other universal FormKit props. Those features come courtesy of `createInput()`.
 
-Also, notice that `<pre>` tag in the above example? It is outputting the current state of the form’s data. We'll use this visualize the value of our custom input. Since our input currently has no value, it does not appear in the form’s data. Time to change that!
+Also, notice that `<pre>` tag in the above example? It is outputting the current state of the form’s data. We'll use this to visualize the value of our custom input. Since our input currently has no value, it does not appear in the form’s data. Time to change that!
 
 ## Input & output
 
