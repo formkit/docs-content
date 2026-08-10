@@ -21,7 +21,7 @@ Once you've installed the `@formkit/zod` package, you'll need to register the pl
 
 ## Usage
 
-To use the Zod plugin we need to import the `createZodPlugin` function from `@formkit/zod`, call the `createZodPlugin` function to create receive our `zodPlugin` and `submitHandler`, and then add them both to our FormKit form.
+To use the Zod plugin we need to import the `createZodPlugin` function from `@formkit/zod`, call the `createZodPlugin` function to receive our `zodPlugin` and `submitHandler`, and then add them both to our FormKit form.
 
 The `createZodPlugin` function takes two arguments:
 
@@ -31,7 +31,7 @@ The `createZodPlugin` function takes two arguments:
 The `createZodPlugin` will return a tuple of:
 
 - `zodPlugin`: The plugin that should be applied to your target form's `plugins` prop.
-- `submitHandler`: The submit handler that should be attached to your form's :FrameworkText{vue="<code>@submit</code>" react="<code>onSubmit</code>"} action. When the form data passes validation of your provided Zod schema your `submitCallback` will fire.
+- `submitHandler`: The submit handler that should be attached to your form's :FrameworkText{vue="<code>@submit</code>" react="<code>onSubmit</code>"} action. When the form data passes validation of your provided Zod schema, your `submitCallback` will fire.
 
 ### For form validation
 
@@ -48,19 +48,19 @@ import-map-file: "_examples/zod/importMap.json"
 ---
 ::
 
-Now your FormKit form will use your Zod Schema for validation — and all messages will adjacent to each matching FormKit just live native FormKit validation!
+Now your FormKit form will use your Zod Schema for validation — and all messages will appear adjacent to each matching FormKit input, just like native FormKit validation!
 
 ### In addition to FormKit validation
 
-Using Zod to validate your form doesn't mean you have to forgo using FormKit's built-in validation messages. If you add FormKit validation to your FormKit inputs then Zod validation errors will only show if all FormKit validations have been satisfied and there are remaining unsatisfied Zod validations.
+Using Zod to validate your form doesn't mean you have to forgo using FormKit's built-in validation messages. If you add FormKit validation to your FormKit inputs, then Zod validation errors will only show if all FormKit validations have been satisfied and there are remaining unsatisfied Zod validations.
 
 This has a few benefits:
 
 - You can use FormKit's built-in rules such as `confirm` which don't have easy-to-use equivalents within Zod.
-- Your messages can be translated to one of the many existing languges in `@formkit/i18n` without any additional effort on your part.
+- Your messages can be translated to one of the many existing languages in `@formkit/i18n` without any additional effort on your part.
 - The built-in FormKit validation messages are written to be contextually aware of your input names and knowing that they will be attached directly to their corresponding inputs — so they are more precise and easier to understand than their generic Zod counterparts.
 
-Here's the same form as before, but now using FormKit validation messages in addition to Zod schema validaiton.
+Here's the same form as before, but now using FormKit validation messages in addition to Zod schema validation.
 
 ::Example
 ---
@@ -75,14 +75,14 @@ import-map-file: "_examples/zod/importMap.json"
 
 ### For setting form errors
 
-If you need to set errors on your form you can do so with the `node.setZodErrors` function that is made available by the `zodPlugin`. The `node.setZodErrors` function accepts a `ZodError` object and will map the errors to each input. Any non-matching errors will be shown as form-level errors.
+If you need to set errors on your form, you can do so with the `node.setZodErrors` function that is made available by the `zodPlugin`. The `node.setZodErrors` function accepts a `ZodError` object and will map the errors to each input. Any non-matching errors will be shown as form-level errors.
 
 ::Example
 ---
 name: 'Zod Errors'
 file: [
   "_examples/zod/errors.vue",
-]
+  ]
 react-file: "_examples/zod/errors.react.jsx"
 import-map-file: "_examples/zod/importMap.json"
 ---
