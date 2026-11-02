@@ -16,13 +16,14 @@ Creates a new input from schema or a Vue component with the "standard" FormKit f
 #### Signature
 
 ```typescript
-createInput(schemaOrComponent: FormKitSchemaNode | FormKitSection | Component, definitionOptions?: Partial<FormKitTypeDefinition>): FormKitTypeDefinition;
+createInput(schemaOrComponent: FormKitSchemaNode | FormKitSection | Component, definitionOptions?: Partial<FormKitTypeDefinition>, sectionsSchema?: FormKitSectionsSchema): FormKitTypeDefinition;
 ```
 
 #### Parameters
 
 - `schemaOrComponent` — The actual schema of the input or the component.
 - `definitionOptions` *optional* — Any options in the FormKitTypeDefinition you want to define.
+- `sectionsSchema` *optional* — Section overrides (the same shape as the `sectionsSchema` prop) applied to the input's base schema.
 
 #### Returns
 
