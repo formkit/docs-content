@@ -233,6 +233,14 @@ It’s important to note that the "initial state" of a form is not necessarily a
 
 Optionally you can provide a second argument to `reset(formId, initialState)` if you would prefer an alternative reset state.
 
+::Callout
+---
+type: "warning"
+label: "Resetting and then setting a value"
+---
+To reset a form and immediately give one field a new value, pass it as the reset state: `reset(formId, { email: 'new@example.com' })`. Setting a bound model right after `reset()` in the same tick (for example `reset(formId); email.value = 'new'`) can leave that input out of sync, because the model ends the tick with the same value it started with. If you need to do it in two steps, `await nextTick()` between them.
+::
+
 ## Validation
 
 Forms will not submit until all the inputs in the form are passing their validation rules.
