@@ -42,6 +42,10 @@ react-file: "_examples/currency/currency-simple-locale.react.jsx"
 ---
 ::
 
+### Currency display
+
+The `currency-display` prop controls how the currency is shown: `symbol` (default, e.g. `$`), `narrowSymbol`, `code` (e.g. `USD`), or `name` (e.g. `US dollars`). Set it to `none` to keep the currency's formatting and precision while hiding the currency entirely — handy when the currency is shown elsewhere in your UI (`@formkit/pro` 0.130.4+).
+
 ## Currency Additional Props
 
 ### Decimals
@@ -77,6 +81,12 @@ data: [
     type: "string",
     default: "USD",
     description: "Set the specified currency to use for this input"
+  },
+  {
+    prop: "currencyDisplay",
+    type: "string",
+    default: "symbol",
+    description: "How the currency is shown: symbol, narrowSymbol, code, name, or none to hide it (0.130.4+)"
   },
   {
     prop: "displayLocale",
