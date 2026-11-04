@@ -418,6 +418,20 @@ react-file: [
 ::
 
 
+### Allow new values
+
+Set `allow-new-values` on a single-select autocomplete to accept free text as well as options. Whatever the user types becomes the value when they press <kbd>Enter</kbd> or leave the input. If the text exactly matches an option's label (or string value, case-insensitive), that option is selected instead. Clicking an option still selects it, and <kbd>Escape</kbd> abandons the typed text. When a real option is already selected, typing and then leaving restores that selection — press <kbd>Enter</kbd> to replace it with the typed text. Use this when the options are suggestions rather than the only allowed answers (`@formkit/pro` 0.130.5+):
+
+```vue
+<FormKit
+  type="autocomplete"
+  name="city"
+  label="City"
+  :options="['Amsterdam', 'Berlin', 'Lisbon']"
+  allow-new-values
+/>
+```
+
 ## Full example
 
 Now let's combine what we've learned so far by leveraging the `option` slot for custom markup, and setting the `options` prop to a function that will return pages of movies from an API:
@@ -454,6 +468,12 @@ data: [
     type: "any",
     default: "[]",
     description: "The list of options the user can select from.",
+  },
+  {
+    prop: "allow-new-values",
+    type: "boolean",
+    default: "false",
+    description: "Single-select only: keeps the user's typed text as the value (on Enter or blur) when it doesn't match an option. Matching text selects that option.",
   },
   {
     prop: "load-on-scroll",
