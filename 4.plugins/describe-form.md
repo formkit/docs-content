@@ -96,13 +96,13 @@ for (const field of describeForm(form).children ?? []) {
 ```ts
 describeForm(node, {
   values: true,       // include current values (default: false)
-  redact: ['password'], // input types whose values are never included
+  redact: ['email'],  // extra input types to redact (added to the defaults)
   errors: 'visible',  // only errors currently shown to the user (default: 'all')
 })
 ```
 
 - `values` — Values are **left out by default**, so a description can be logged or sent to an agent without leaking user data. Set `values: true` to include them.
-- `redact` — Input types whose values are never included, even with `values: true`. Defaults to `['password']`; redacted fields are marked `redacted: true`. Pass `redact: []` to include everything.
+- `redact` — Extra input types whose values are never included, even with `values: true`. They're **added** to the defaults — `password` and `hidden` (CSRF tokens and the like) are always redacted. Redacted fields are marked `redacted: true`. Pass `redact: false` to include everything.
 - `errors` — `'all'` (default) includes every blocking validation and error message; `'visible'` includes only messages the user can currently see, respecting each input's `validation-visibility`.
 
 ## What's included
@@ -117,11 +117,11 @@ describeForm(node, {
 | `disabled`, `multiple` | Present (and `true`) when set. |
 | `required` | Whether the `required` rule is applied. |
 | `rules` | Validation rules with their arguments. |
-| `options` | Static options (option groups are flattened, disabled options are flagged). |
-| `optionsLoader` | `true` when options are loaded by a function. The function is never called. |
+| `options` | Options with their real values (option groups are flattened, with each option's `group` label; disabled options are flagged). |
+| `optionsLoader` | `true` when options are loaded by a function. The function is never called; options it has already loaded are included. |
 | `valid` | `true` when neither the node nor its descendants have blocking messages. |
 | `errors` | Error message strings for the node. |
 | `value` | The current value, when `values: true` and not redacted. |
 | `children` | Descriptions of child nodes, for groups and lists. |
 
-The output is always JSON-serializable: dates become ISO strings, and functions or circular references are dropped.
+The output is JSON-serializable: dates become ISO strings, regular expressions their source (e.g. `"/^\\d+$/"`), Maps and Sets arrays, and Files `{ name, size, type }`. Functions and circular references are dropped, and other non-plain objects are copied as plain objects, so some detail can be lost.
