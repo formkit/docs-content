@@ -91,6 +91,32 @@ for (const field of describeForm(form).children ?? []) {
 }
 ```
 
+### Filling a form with `fillForm()`
+
+The write side of `describeForm()`. `fillForm()` sets values by address (or nested objects), accepts option **labels** for select-like inputs, waits for the form to settle (debounces and async validation), and reports what happened (`@formkit/addons` 2.4.0+):
+
+```ts
+import { getNode } from '@formkit/core'
+import { fillForm } from '@formkit/addons'
+
+const result = await fillForm(
+  getNode('signup')!,
+  { email: 'ada@example.com', plan: 'Pro', 'address.city': 'Lisbon' },
+  { submit: true }
+)
+// {
+//   valid: true,
+//   submitted: true,
+//   unknown: [],
+//   fields: [{ address: 'email', valid: true, errors: [] }, …]
+// }
+```
+
+- Keys are the same `address` values `describeForm()` returns (`users.0.name`), or nested objects that mirror groups.
+- `plan: 'Pro'` sets the option whose label is "Pro" (case-insensitive); real values work too.
+- `submit: true` submits through the form's normal submit handler (validation, `onSubmit`, loading state) and reports `submitted`.
+- `strict: true` throws when an address doesn't match any input; otherwise it's listed in `unknown`.
+
 ## Options
 
 ```ts
