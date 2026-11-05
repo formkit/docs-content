@@ -597,6 +597,12 @@ data: [
     description: "The sequence of panels to walk a user through when they open the datepicker calendar view. Options are <code>year</code>, <code>month</code>, <code>day</code>, <code>time</code>."
   },
   {
+    prop: "paginated-panels",
+    type: "array",
+    default: "['day', 'year']",
+    description: "Panels that show the previous/next buttons. Add <code>month</code> to page the month panel a year at a time — handy for month-only pickers with a <code>min-date</code>/<code>max-date</code> that spans two years (0.130.5+)."
+  },
+  {
     prop: "value-format",
     type: "string/object",
     default: "ISO8601",
