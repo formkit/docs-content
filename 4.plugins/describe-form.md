@@ -91,44 +91,6 @@ for (const field of describeForm(form).children ?? []) {
 }
 ```
 
-### Filling a form with `fillForm()`
-
-The write side of `describeForm()`. `fillForm()` sets values by address (or nested objects/arrays), accepts option **labels** for inputs with options, waits for the form to settle (debounces and async validation), and reports what happened (`@formkit/addons` 2.4.0+):
-
-```ts
-import { getNode } from '@formkit/core'
-import { fillForm } from '@formkit/addons'
-
-const result = await fillForm(
-  getNode('signup')!,
-  { email: 'ada@example.com', plan: 'Pro', 'address.city': 'Lisbon' },
-  { submit: true }
-)
-```
-
-```json
-{
-  "valid": true,
-  "settled": true,
-  "submitted": true,
-  "fields": [{ "address": "email", "valid": true, "errors": [] }],
-  "invalid": [],
-  "errors": [],
-  "unknown": [],
-  "unmatched": [],
-  "skipped": []
-}
-```
-
-- **Addresses** are the `address` values `describeForm()` returns (`users.0.name`), or nested objects/arrays that mirror groups and lists. They're matched by literal child names — existing list items can be filled, but new list items (repeater rows) aren't created.
-- **Options**: give an option's value or its label (case-insensitive; values win, first match wins). A value that matches no option is **not written** and is listed in `unmatched` (`no-such-option`). If the options load asynchronously, the value is written and flagged `options-not-loaded`.
-- **Disabled** inputs and non-input targets are listed in `skipped`, not written.
-- `invalid` lists every input, group or list with errors — not just the ones you filled — including server errors set with `setErrors()` (for example from `onSubmit`). `errors` has messages on the form itself. `valid` is `false` if anything is blocking **or** has an error message.
-- `submit: true` submits through the form's normal handler. `submitted` is `true` only if `onSubmit` ran and completed; a thrown/rejected `onSubmit` is reported as `submitError`.
-- `timeout` (default `5000` ms) bounds the wait for validation *and* for `onSubmit`; `settled: false` means it ran out (and a submit is skipped). In tests with fake timers, advance timers while awaiting `fillForm()`.
-- `submitted` is detected through the form's `submit` hook: a custom submit middleware that never calls `next()` will report `submitted: false`.
-- `strict: true` throws — before writing anything — on unknown addresses, unmatched options, or skipped fields.
-
 ## Options
 
 ```ts
