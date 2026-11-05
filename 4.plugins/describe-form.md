@@ -93,7 +93,7 @@ for (const field of describeForm(form).children ?? []) {
 
 ### Filling a form with `fillForm()`
 
-The write side of `describeForm()`. `fillForm()` sets values by address (or nested objects), accepts option **labels** for select-like inputs, waits for the form to settle (debounces and async validation), and reports what happened (`@formkit/addons` 2.4.0+):
+The write side of `describeForm()`. `fillForm()` sets values by address (or nested objects/arrays), accepts option **labels** for inputs with options, waits for the form to settle (debounces and async validation), and reports what happened (`@formkit/addons` 2.4.0+):
 
 ```ts
 import { getNode } from '@formkit/core'
@@ -104,18 +104,29 @@ const result = await fillForm(
   { email: 'ada@example.com', plan: 'Pro', 'address.city': 'Lisbon' },
   { submit: true }
 )
-// {
-//   valid: true,
-//   submitted: true,
-//   unknown: [],
-//   fields: [{ address: 'email', valid: true, errors: [] }, …]
-// }
 ```
 
-- Keys are the same `address` values `describeForm()` returns (`users.0.name`), or nested objects that mirror groups.
-- `plan: 'Pro'` sets the option whose label is "Pro" (case-insensitive); real values work too.
-- `submit: true` submits through the form's normal submit handler (validation, `onSubmit`, loading state) and reports `submitted`.
-- `strict: true` throws when an address doesn't match any input; otherwise it's listed in `unknown`.
+```json
+{
+  "valid": true,
+  "settled": true,
+  "submitted": true,
+  "fields": [{ "address": "email", "valid": true, "errors": [] }],
+  "invalid": [],
+  "errors": [],
+  "unknown": [],
+  "unmatched": [],
+  "skipped": []
+}
+```
+
+- **Addresses** are the `address` values `describeForm()` returns (`users.0.name`), or nested objects/arrays that mirror groups and lists. They're matched by literal child names — existing list items can be filled, but new list items (repeater rows) aren't created.
+- **Options**: give an option's value or its label (case-insensitive; values win, first match wins). A value that matches no option is **not written** and is listed in `unmatched` (`no-such-option`). If the options load asynchronously, the value is written and flagged `options-not-loaded`.
+- **Disabled** inputs and non-input targets are listed in `skipped`, not written.
+- `invalid` lists every input in the form with errors — not just the ones you filled. `errors` has form-level messages (like `setErrors()` errors).
+- `submit: true` submits through the form's normal handler. `submitted` is `true` only if `onSubmit` ran and completed; a thrown/rejected `onSubmit` is reported as `submitError`.
+- `timeout` (default `5000` ms) bounds the wait; `settled: false` means it ran out.
+- `strict: true` throws — before writing anything — on unknown addresses, unmatched options, or skipped fields.
 
 ## Options
 
