@@ -409,7 +409,7 @@ It is often necessary to disable specific dates in the datepicker. There are thr
 
 - `min-date` - a prop to control what the first available date is.
 - `max-date` - a prop to control what the last available date is.
-- `disabled-dates` - a prop to control whether or not any arbitrary date should be disabled.
+- `disabled-days` - a prop to control whether or not any arbitrary date should be disabled.
 
 `min-date` and `max-date` are inclusive and compared by whole day — the time portion is ignored, so a `max-date` of `2027-08-15` keeps all of August 15th selectable.
 
@@ -453,7 +453,7 @@ You can use `min-date` and `max-date` at the same time. Not only will this limit
 
 Often our applications require substantially more granularity when disabling dates than `min-date` and `max-date` allows. The datepicker allows fine-grained control by leveraging the `disabled-days` prop.
 
-The `disabled-days` prop expects a function that is passed 2 arguments: the [core node](http://localhost:3000/essentials/architecture#node) and a `Date` object. The responsibility of the function is to return a boolean indicating if the date is disabled (`true` is disabled).
+The `disabled-days` prop expects a function that is passed 2 arguments: the [core node](/essentials/architecture#node) and a `Date` object. The responsibility of the function is to return a boolean indicating if the date is disabled (`true` is disabled).
 
 The `disabled-days` prop supersedes `min-date` and `max-date` — you can choose to re-implement the base functionality by accessing `node.props.minDate` or `node.props.maxDate`.
 
