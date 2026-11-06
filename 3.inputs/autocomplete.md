@@ -420,8 +420,9 @@ react-file: [
 
 ### Allow new values
 
-Set `allow-new-values` on a single-select autocomplete to accept free text as well as options. Whatever the user types becomes the value when they press <kbd>Enter</kbd> or leave the input. If the text exactly matches an option's label (or string value, case-insensitive), that option is selected instead. Clicking an option still selects it, and <kbd>Escape</kbd> abandons the typed text. When a real option is already selected, typing and then leaving restores that selection — press <kbd>Enter</kbd> to replace it with the typed text. Use this when the options are suggestions rather than the only allowed answers (`@formkit/pro` 0.130.5+):
+Set :FrameworkText{vue="<code>allow-new-values</code>" react="<code>allowNewValues</code>"} on a single-select autocomplete to accept free text as well as options. Whatever the user types becomes the value when they press <kbd>Enter</kbd> or leave the input. If the text exactly matches an option's label (or string value, case-insensitive), that option is selected instead. Clicking an option still selects it, and <kbd>Escape</kbd> abandons the typed text. When a real option is already selected, typing and then leaving restores that selection — press <kbd>Enter</kbd> to replace it with the typed text. Use this when the options are suggestions rather than the only allowed answers (`@formkit/pro` 0.130.5+):
 
+::FrameworkOnly{framework="vue"}
 ```vue
 <FormKit
   type="autocomplete"
@@ -431,6 +432,19 @@ Set `allow-new-values` on a single-select autocomplete to accept free text as we
   allow-new-values
 />
 ```
+::
+
+::FrameworkOnly{framework="react"}
+```jsx
+<FormKit
+  type="autocomplete"
+  name="city"
+  label="City"
+  options={['Amsterdam', 'Berlin', 'Lisbon']}
+  allowNewValues
+/>
+```
+::
 
 ## Full example
 

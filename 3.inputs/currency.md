@@ -44,7 +44,19 @@ react-file: "_examples/currency/currency-simple-locale.react.jsx"
 
 ### Currency display
 
-The `currency-display` prop controls how the currency is shown: `symbol` (default, e.g. `$`), `narrowSymbol`, `code` (e.g. `USD`), or `name` (e.g. `US dollars`). Set it to `none` to keep the currency's formatting and precision while hiding the currency entirely — handy when the currency is shown elsewhere in your UI (`@formkit/pro` 0.130.4+).
+The :FrameworkText{vue="<code>currency-display</code>" react="<code>currencyDisplay</code>"} prop controls how the currency is shown: `symbol` (default, e.g. `$`), `narrowSymbol`, `code` (e.g. `USD`), or `name` (e.g. `US dollars`). Set it to `none` to keep the currency's formatting and precision while hiding the currency entirely — handy when the currency is shown elsewhere in your UI (`@formkit/pro` 0.130.4+).
+
+::FrameworkOnly{framework="vue"}
+```vue
+<FormKit type="currency" currency="EUR" currency-display="none" />
+```
+::
+
+::FrameworkOnly{framework="react"}
+```jsx
+<FormKit type="currency" currency="EUR" currencyDisplay="none" />
+```
+::
 
 ## Currency Additional Props
 

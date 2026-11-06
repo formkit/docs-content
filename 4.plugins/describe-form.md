@@ -37,6 +37,39 @@ const form = getNode('signup')!
 const description = describeForm(form)
 ```
 
+Any FormKit node works — get it with `getNode(id)`, or from a ref:
+
+::FrameworkOnly{framework="vue"}
+```vue
+<script setup>
+import { ref } from 'vue'
+import { describeForm } from '@formkit/addons'
+
+const signup = ref()
+const describe = () => describeForm(signup.value.node)
+</script>
+
+<template>
+  <FormKit ref="signup" type="form">…</FormKit>
+</template>
+```
+::
+
+::FrameworkOnly{framework="react"}
+```jsx
+import { useRef } from 'react'
+import { FormKit } from '@formkit/react'
+import { describeForm } from '@formkit/addons'
+
+export function Signup() {
+  // In React, the <FormKit> ref is the node itself.
+  const signup = useRef(null)
+  const describe = () => describeForm(signup.current)
+  return <FormKit ref={signup} type="form">…</FormKit>
+}
+```
+::
+
 For a form with an email, a password, and a select, the result looks like this:
 
 ```json
