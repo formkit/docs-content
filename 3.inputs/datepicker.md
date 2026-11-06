@@ -409,9 +409,9 @@ It is often necessary to disable specific dates in the datepicker. There are thr
 
 - `min-date` - a prop to control what the first available date is.
 - `max-date` - a prop to control what the last available date is.
-
-Both are inclusive and compared by whole day — the time portion is ignored, so a `max-date` of `2027-08-15` keeps all of August 15th selectable.
 - `disabled-dates` - a prop to control whether or not any arbitrary date should be disabled.
+
+`min-date` and `max-date` are inclusive and compared by whole day — the time portion is ignored, so a `max-date` of `2027-08-15` keeps all of August 15th selectable.
 
 Any date that is disabled cannot be selected in the datepicker’s pop up, however an unavailable date can still be set as the initial value or by typing it into the input (when it isn’t in `picker-only` mode). To handle these edge cases the datepicker has a built-in validation rule (that cannot be disabled) that ensures only valid dates can be submitted. The validation rule’s key is `invalidDate`.
 
