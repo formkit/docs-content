@@ -219,6 +219,12 @@ data: [
     type: "boolean",
     default: "false",
     description: "Renders the input's UI panel using the browser Popover API."
+  },
+  {
+    prop: "popover-position",
+    type: "string",
+    default: "auto",
+    description: "With <code>popover</code> enabled: where the popover opens — <code>auto</code> (below, flipping above when there isn't room), <code>above</code> or <code>below</code>. (0.130.5+)"
   }
 ]
 ---
