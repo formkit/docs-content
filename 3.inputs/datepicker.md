@@ -72,6 +72,19 @@ You can disable the text-entry mechanism and ensure someone uses the datepicker 
 ---
 ::
 
+### Inline
+
+Add the `inline` prop to render the calendar directly below the input instead of in a popup. An inline calendar is always open: picking a date sets the value and keeps the calendar visible (when using a [panel sequence](#panel-sequence) it starts the sequence over), and it never takes focus until someone clicks or tabs into it. Typing a date in the input still works.
+
+::Example
+---
+  name: "Datepicker inline"
+  file: "_examples/datepicker/datepicker-inline.vue"
+  react-file: "_examples/datepicker/datepicker-inline.react.jsx"
+  min-height: 550
+---
+::
+
 ## Date format
 
 The datepicker supports [`Intl.DateTimeFormat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) "styled dates", as well as token-based date formats. To change the format displayed to the user, modify the `format` prop.
@@ -579,6 +592,12 @@ data: [
     type: "boolean",
     default: "false",
     description: "Whether or not to display a mask overlay. Read more about overlays in the mask input documentation (has no effect in pickerOnly` mode)."
+  },
+  {
+    prop: "inline",
+    type: "boolean",
+    default: "false",
+    description: "Renders the calendar in place below the input instead of in a popup. The calendar is always open and does not close after a date is picked."
   },
   {
     prop: "picker-only",
