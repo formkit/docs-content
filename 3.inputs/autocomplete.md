@@ -418,6 +418,19 @@ react-file: [
 ::
 
 
+### Allow duplicates
+
+By default each option can be selected once. Set `allow-duplicates` to let the same option be picked more than once (requires `multiple`) — every pick adds another occurrence, the listbox stops marking options as selected, and removing a tag removes just that one occurrence. `max` counts every occurrence.
+
+::Example
+---
+name: "Autocomplete"
+min-height: 450
+file: "_examples/autocomplete/autocomplete-allow-duplicates.vue"
+react-file: "_examples/autocomplete/autocomplete-allow-duplicates.react.jsx"
+---
+::
+
 ### Allow new values
 
 Set :FrameworkText{vue="<code>allow-new-values</code>" react="<code>allowNewValues</code>"} on a single-select autocomplete to accept free text as well as options. Whatever the user types becomes the value when they press <kbd>Enter</kbd> or leave the input. If the text exactly matches an option's label (or string value, case-insensitive), that option is selected instead. Clicking an option still selects it, and <kbd>Escape</kbd> abandons the typed text. When a real option is already selected, typing and then leaving restores that selection — press <kbd>Enter</kbd> to replace it with the typed text. Use this when the options are suggestions rather than the only allowed answers (`@formkit/pro` 0.130.5+):
@@ -506,6 +519,12 @@ data: [
     type: "boolean",
     default: "false",
     description: "Allows for multiple selections.",
+  },
+  {
+    "prop": "allow-duplicates",
+    type: "boolean",
+    default: "false",
+    "description": "Allows the same option to be selected more than once (requires <code>multiple</code>). Each selection is a separate occurrence; removing a tag removes only that occurrence."
   },
   {
     prop: "open-on-click",

@@ -213,6 +213,19 @@ react-file: [
 ---
 ::
 
+### Allow duplicates
+
+By default each option can be selected once. Set `allow-duplicates` to let the same option be picked more than once — every pick adds another occurrence, the listbox stops marking options as selected, and removing a tag removes just that one occurrence. `max` counts every occurrence.
+
+::Example
+---
+name: "Taglist"
+min-height: 450
+file: "_examples/taglist/taglist-allow-duplicates.vue"
+react-file: "_examples/taglist/taglist-allow-duplicates.react.jsx"
+---
+::
+
 ### Close on select
 
 If you would like the taglist's listbox to remain open in between selections, set the `close-on-select` prop to `false`:
@@ -393,6 +406,12 @@ data: [
     type: "number",
     default: "undefined",
     description: "Limits the number of options that can be selected."
+  },
+  {
+    prop: "allow-duplicates",
+    type: "boolean",
+    default: "false",
+    description: "Allows the same option to be selected more than once. Each selection is a separate occurrence; removing a tag removes only that occurrence."
   },
   {
     prop: "close-on-select",
