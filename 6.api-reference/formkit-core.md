@@ -128,6 +128,29 @@ clearErrors: (clearChildren?: boolean, sourceKey?: string) => FormKitNode
 The [FormKitNode](#formkitnode).
 ::
 
+::api-entry{name="closest()" type="function"}
+Starting with this node and walking up through its ancestors, return the first node matching a given selector (like `Element.closest()` in the DOM). Selectors can be simple strings or a function.
+
+#### Signature
+
+
+```typescript
+closest: (
+ selector: string,
+ searcher?: keyof FormKitNode | FormKitSearchFunction
+) => FormKitNode | undefined
+```
+
+#### Parameters
+
+- `selector` — A selector string.
+- `searcher` *optional* — A keyof [FormKitNode](#formkitnode) (defaults to `name`) or [FormKitSearchFunction](#formkitsearchfunction).
+
+#### Returns
+
+The found [FormKitNode](#formkitnode) (possibly this node itself) or `undefined`.
+::
+
 ::api-entry{name="config" type="property"}
 An object of [FormKitConfig](#formkitconfig) that is shared tree-wide with various configuration options that should be applied to the entire tree.
 
