@@ -193,6 +193,19 @@ To include letters in the your format that are themselves tokens (like `a`), you
 ---
 ::
 
+#### Token placeholders
+
+While a token-formatted date is incomplete, the input shows each unfilled token (`DD.MM.YYYY`). To show different characters — for example localized ones — pass `token-placeholders` a map of token → placeholder:
+
+::Example
+---
+  name: "Datepicker token placeholders"
+  file: "_examples/datepicker/datepicker-token-placeholders.vue"
+  react-file: "_examples/datepicker/datepicker-token-placeholders.react.jsx"
+  min-height: 500
+---
+::
+
 ## Panel sequence
 
 The datepicker’s calendar popup has four "panels":
@@ -586,6 +599,12 @@ data: [
     type: "string",
     default: "MMMM",
     description: "The date format token to use for each of the 12 months on the month panel."
+  },
+  {
+    prop: "token-placeholders",
+    type: "object",
+    default: "undefined",
+    description: "A map of format token to the characters shown while that part of the date is unfilled, e.g. <code>{ DD: 'TT', YYYY: 'JJJJ' }</code>."
   },
   {
     prop: "overlay",
