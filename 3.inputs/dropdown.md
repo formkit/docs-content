@@ -341,6 +341,19 @@ react-file: [
 ---
 ::
 
+### Allow duplicates
+
+By default each option can be selected once. Set `allow-duplicates` to let the same option be picked more than once (requires `multiple`) — every pick adds another occurrence, the listbox stops marking options as selected, and removing a tag removes just that one occurrence. `max` counts every occurrence.
+
+::Example
+---
+name: "Dropdown"
+min-height: 450
+file: "_examples/dropdown/dropdown-allow-duplicates.vue"
+react-file: "_examples/dropdown/dropdown-allow-duplicates.react.jsx"
+---
+::
+
 ## Props & Attributes
 
 ::ReferenceTable
@@ -412,6 +425,12 @@ data: [
     type: "boolean",
     default: "false",
     "description": "When set to <code>true</code>, the dropdown will allow the user to select multiple options."
+  },
+  {
+    "prop": "allow-duplicates",
+    type: "boolean",
+    default: "false",
+    "description": "Allows the same option to be selected more than once (requires <code>multiple</code>). Each selection is a separate occurrence; removing a tag removes only that occurrence."
   },
   {
     "prop": "behavior",
