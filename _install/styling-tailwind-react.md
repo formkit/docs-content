@@ -38,3 +38,17 @@ Finally, make sure Tailwind scans both your FormKit theme file and config file:
 ```
 
 If you're using Tailwind CSS 3, add those files to the `content` array in `tailwind.config.js` instead.
+
+### Using a Tailwind prefix
+
+If your project uses a [Tailwind prefix](https://tailwindcss.com/docs/styling-with-utility-classes#using-the-prefix-option), pass the same prefix to the CLI and every class in the generated theme will be prefixed to match:
+
+```bash
+# Tailwind v4 — @import "tailwindcss" prefix(tw);
+npx formkit@latest theme --prefix tw
+
+# Tailwind v3 — prefix: 'tw-' in tailwind.config.js
+npx formkit@latest theme --prefix tw-
+```
+
+The prefix is saved in the theme file, so re-running `npx formkit@latest theme` to edit your theme keeps it.
