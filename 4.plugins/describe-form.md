@@ -249,7 +249,7 @@ Every `type="form"` registers its tools when it is created and unregisters them 
 | `formkit_fill_<id>` | `{ values, strict? }` | Runs `fillForm(form, values, { strict })` and returns its result. On a `strict` failure it returns `{ error }` instead of throwing. |
 | `formkit_submit_<id>` | none | Only registered when `submit: true`. Submits through the form's normal handler (validation runs first, so an invalid form is not submitted) and returns `{ valid, errors, submitted, submitError? }`. Marked `consequentialHint`. |
 
-The `fill` tool's `inputSchema` is generated from the form. `values` has one property per enabled input, keyed by its `describeForm()` address (`email`, `address.city`). Each property has a JSON type (`string`, `number`, `boolean`, or `array` for multi-value inputs), an `enum` built from static option values, and a description made from the label, help text, and rules. The schema is regenerated when fields are added or removed, or when their options, labels, or disabled state change. Hidden inputs and disabled inputs are left out of the schema.
+The `fill` tool's `inputSchema` is generated from the form. `values` has one property per enabled input, keyed by its `describeForm()` address (`email`, `address.city`). Each property has a JSON type (`string`, `number`, `boolean`, or `array` for multi-value inputs), an `enum` built from static option values, and a description made from the label, help text, and rules. The schema is regenerated when fields are added or removed, or when their options, labels, or disabled state change. Hidden, password, and disabled inputs are left out of the schema. Password inputs are included only when you set `sensitive: true`.
 
 ### WebMCP options
 
@@ -258,6 +258,7 @@ createWebMCPPlugin({
   forms: (node) => node.props.id !== 'internal', // which forms to expose
   values: false,      // include current values in describe results
   submit: false,      // register formkit_submit_<id>
+  sensitive: false,   // allow agents to fill password inputs
   wrapResult: undefined,
   modelContext: undefined, // defaults to document/navigator.modelContext
 })
@@ -268,6 +269,7 @@ createWebMCPPlugin({
 | `forms` | — | `(node) => boolean`. Return `false` to skip a form. |
 | `values` | `false` | Include current values in the `describe` result. `password` and `hidden` values are always redacted. |
 | `submit` | `false` | Register a `formkit_submit_<id>` tool. |
+| `sensitive` | `false` | Let agents fill `password` inputs. When it's off, password inputs are left out of the fill schema and `fill` refuses them. Password values are never returned either way. |
 | `wrapResult` | — | `(result, kind) => unknown`. Transforms each tool result. By default the plain JSON object is returned, as the current WebMCP draft expects. Pass the exported `webMCPTextResult` to return MCP-style `{ content: [{ type: 'text', text }] }` instead, for polyfills or agents that expect that shape. |
 | `modelContext` | `document.modelContext ?? navigator.modelContext` | The object tools are registered with. Pass a polyfill or a test double here. |
 
@@ -283,4 +285,5 @@ To opt out a single form, add `data-agent="off"`:
 - **Submitting is off by default.** With `submit: true`, submissions still go through validation and your `onSubmit` handler, just as when a user submits. The tool is marked `consequentialHint` so browsers can ask the user to confirm, but that's up to the browser. Enforce anything important (authentication, CSRF, rate limits, confirmations for payments) on the server.
 - **Values stay private by default.** `describe` doesn't return values unless you set `values: true`, and `password` and `hidden` values are never returned. `fill` results never echo values back.
 - **Validation still applies.** `fill` writes through `node.input()`, so validation, dirty state, and events behave as if a user typed. The browser doesn't validate tool arguments against `inputSchema`, so `fillForm()` reports any unknown addresses and unmatched options in its result.
-- **Hidden inputs can't be filled.** `fill` refuses to write `hidden` inputs (it returns `{ error }` and writes nothing), so an agent can't overwrite tokens or ids your app sets. Disabled inputs are skipped, as with `fillForm()`. Password inputs *can* be filled; opt the form out if you don't want that.
+- **Hidden and password inputs can't be filled.** `fill` refuses to write `hidden` inputs, so an agent can't overwrite tokens or ids your app sets. It also refuses `password` inputs unless you set `sensitive: true`. When a fill is refused, `fill` returns `{ error }` and writes nothing. Hidden inputs stay locked even with `sensitive: true`. Disabled inputs are skipped, as with `fillForm()`.
+- **No cost without WebMCP.** When the browser has no `modelContext`, the plugin reads only the node's `type` and returns. It adds no listeners and never describes the form.
