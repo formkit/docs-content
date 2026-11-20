@@ -48,6 +48,20 @@ react-file: "_examples/unit/unit-display.react.jsx"
 ---
 ::
 
+### Custom units
+
+The unit input supports every unit `Intl.NumberFormat` knows. For anything else — tons, trucks, pallets — pass :FrameworkText{vue="<code>unit-labels</code>" react="<code>unitLabels</code>"} with the labels to display. `long` can be a plural map (`{ one, other, … }`) and is chosen with `Intl.PluralRules` for the display locale:
+
+::Example
+---
+name: "Unit input custom labels"
+file: "_examples/unit/unit-custom-labels.vue"
+react-file: "_examples/unit/unit-custom-labels.react.jsx"
+---
+::
+
+`value-unit` conversion only works between built-in units, so it is skipped for custom units.
+
 ### Locale
 
 By default the locale will use what you have set in your `formkit.config.ts` as the desired locale. However you can override this with the `displayLocale` prop. For example, `en-US`, `de-DE`, `en-IN`, `zh-CN`, etc, etc.
@@ -153,6 +167,12 @@ data: [
     prop: "unit",
     type: "string | undefined",
     description: "Set the specified unit to use for this input. If undefined, will allow for unitless values."
+  },
+  {
+    prop: "unitLabels",
+    type: "object",
+    default: "undefined",
+    description: "Labels for a unit Intl.NumberFormat doesn't support: <code>{ short?, long?, narrow? }</code>, where <code>long</code> may be a plural map like <code>{ one: 'ton', other: 'tons' }</code>."
   },
   {
     prop: "displayLocale",
