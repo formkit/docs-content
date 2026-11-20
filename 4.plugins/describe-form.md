@@ -196,3 +196,91 @@ describeForm(node, {
 | `children` | Descriptions of child nodes, for groups and lists. |
 
 The output is JSON-serializable: dates become ISO strings, regular expressions their source (e.g. `"/^\\d+$/"`), Maps and Sets arrays, and Files `{ name, size, type }`. Functions and circular references are dropped, and other non-plain objects are copied as plain objects, so some detail can be lost.
+
+## Expose forms to browser agents (WebMCP)
+
+::Callout
+---
+type: "warning"
+label: "Experimental"
+---
+`createWebMCPPlugin()` is **experimental** (`@formkit/addons` 2.9.0+). It targets [WebMCP](https://github.com/webmachinelearning/webmcp), a draft browser API that is still changing, so this plugin's options and tool shapes may change in minor releases.
+::
+
+[WebMCP](https://developer.chrome.com/docs/ai/webmcp/imperative-api) lets a page hand **tools** directly to an AI agent running in the browser, through `document.modelContext` (older drafts use `navigator.modelContext`). With `createWebMCPPlugin()`, every FormKit form registers tools built on `describeForm()` and `fillForm()`. An agent can then read the form, fill it in, and (if you allow it) submit it through the real FormKit node, without scraping the DOM.
+
+::FrameworkOnly{framework="vue"}
+```js
+// formkit.config.ts
+import { defaultConfig } from '@formkit/vue'
+import { createWebMCPPlugin } from '@formkit/addons'
+
+export default defaultConfig({
+  plugins: [
+    createWebMCPPlugin({
+      submit: true, // also register a submit tool (off by default)
+    }),
+  ],
+})
+```
+::
+
+::FrameworkOnly{framework="react"}
+```jsx
+// formkit.config.react.jsx
+import { defineFormKitConfig } from '@formkit/react'
+import { createWebMCPPlugin } from '@formkit/addons'
+
+export default defineFormKitConfig({
+  plugins: [createWebMCPPlugin({ submit: true })],
+})
+```
+::
+
+Every `type="form"` registers its tools when it is created and unregisters them when it is destroyed. If the browser has no `modelContext`, for example because it doesn't support WebMCP or the code is running during SSR, the plugin does nothing.
+
+### WebMCP tools
+
+`<id>` is the form's `id`, lowercased, with every character outside `[a-z0-9_]` replaced by `_`. For example, `id="sign-up"` becomes `formkit_fill_sign_up`. Give each form a stable, unique `id`; if two forms produce the same tool name, only the first one is registered.
+
+| Tool | Arguments | Does |
+| --- | --- | --- |
+| `formkit_describe_<id>` | none | Returns `describeForm(form, { values })`. Marked `readOnlyHint`. |
+| `formkit_fill_<id>` | `{ values, strict? }` | Runs `fillForm(form, values, { strict })` and returns its result. On a `strict` failure it returns `{ error }` instead of throwing. |
+| `formkit_submit_<id>` | none | Only registered when `submit: true`. Submits through the form's normal handler (validation runs first, so an invalid form is not submitted) and returns `{ valid, errors, submitted, submitError? }`. Marked `consequentialHint`. |
+
+The `fill` tool's `inputSchema` is generated from the form. `values` has one property per enabled input, keyed by its `describeForm()` address (`email`, `address.city`). Each property has a JSON type (`string`, `number`, `boolean`, or `array` for multi-value inputs), an `enum` built from static option values, and a description made from the label, help text, and rules. The schema is regenerated when fields are added or removed, or when their options, labels, or disabled state change. Hidden inputs and disabled inputs are left out of the schema.
+
+### WebMCP options
+
+```ts
+createWebMCPPlugin({
+  forms: (node) => node.props.id !== 'internal', // which forms to expose
+  values: false,      // include current values in describe results
+  submit: false,      // register formkit_submit_<id>
+  wrapResult: undefined,
+  modelContext: undefined, // defaults to document/navigator.modelContext
+})
+```
+
+| Option | Default | Description |
+| --- | --- | --- |
+| `forms` | — | `(node) => boolean`. Return `false` to skip a form. |
+| `values` | `false` | Include current values in the `describe` result. `password` and `hidden` values are always redacted. |
+| `submit` | `false` | Register a `formkit_submit_<id>` tool. |
+| `wrapResult` | — | `(result, kind) => unknown`. Transforms each tool result. By default the plain JSON object is returned, as the current WebMCP draft expects. Pass the exported `webMCPTextResult` to return MCP-style `{ content: [{ type: 'text', text }] }` instead, for polyfills or agents that expect that shape. |
+| `modelContext` | `document.modelContext ?? navigator.modelContext` | The object tools are registered with. Pass a polyfill or a test double here. |
+
+To opt out a single form, add `data-agent="off"`:
+
+```html
+<FormKit type="form" id="payment" data-agent="off">…</FormKit>
+```
+
+### WebMCP safety
+
+- **Agents act as the user.** Anything a tool does, the agent can do without the user touching the page. Only expose forms you'd be comfortable having an agent fill in, and opt out the rest with `data-agent="off"` or `forms`.
+- **Submitting is off by default.** With `submit: true`, submissions still go through validation and your `onSubmit` handler, just as when a user submits. The tool is marked `consequentialHint` so browsers can ask the user to confirm, but that's up to the browser. Enforce anything important (authentication, CSRF, rate limits, confirmations for payments) on the server.
+- **Values stay private by default.** `describe` doesn't return values unless you set `values: true`, and `password` and `hidden` values are never returned. `fill` results never echo values back.
+- **Validation still applies.** `fill` writes through `node.input()`, so validation, dirty state, and events behave as if a user typed. The browser doesn't validate tool arguments against `inputSchema`, so `fillForm()` reports any unknown addresses and unmatched options in its result.
+- **Hidden inputs can't be filled.** `fill` refuses to write `hidden` inputs (it returns `{ error }` and writes nothing), so an agent can't overwrite tokens or ids your app sets. Disabled inputs are skipped, as with `fillForm()`. Password inputs *can* be filled; opt the form out if you don't want that.
