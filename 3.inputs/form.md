@@ -612,6 +612,27 @@ The node itself is not reactive and should be used for imperative actions like `
 
 In order to prevent password managers such as 1Password and LastPass from autofilling your email and password input fields, set the respective props `data-1p-ignore` and `data-lpignore` to `true` on the inputs themselves. If you would like for this to be done automatically, check out the [adds attributes to prevent autofill](/essentials/examples) plugin.
 
+## Very large forms
+
+In Chromium- and WebKit-based browsers (Chrome, Edge, Safari), inserting named form controls into a `<form>` one at a time gets slower as the form grows — a browser behavior, not something specific to FormKit (Firefox is unaffected). For forms with many hundreds or thousands of inputs, wrap the inputs in a single element so they enter the form in one insertion:
+
+```vue
+<FormKit type="form">
+  <div>
+    <!-- hundreds of inputs -->
+  </div>
+</FormKit>
+```
+
+```jsx
+// React
+<FormKit type="form">
+  <div>{/* hundreds of inputs */}</div>
+</FormKit>
+```
+
+In our benchmark (Chrome, flat form of text inputs) this cut mount time by ~16% at 450 inputs and ~31% at 1,500. If the extra element affects your layout, give it `display: contents`.
+
 ## Props & Attributes
 
 Forms are technically considered `input` types — so they share many of the universal props that standard inputs use.
