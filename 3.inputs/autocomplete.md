@@ -521,6 +521,18 @@ data: [
     description: "Allows for multiple selections.",
   },
   {
+    prop: "close-on-select",
+    type: "boolean",
+    default: "true",
+    description: "Closes the listbox after an option is selected (also with <code>multiple</code>). Set to <code>false</code> to keep it open so users can pick several options in a row.",
+  },
+  {
+    prop: "selection-removable",
+    type: "boolean",
+    default: "undefined",
+    description: "Single-select only: shows a remove button next to the selected option so the user can clear it. On by default when <code>selection-appearance</code> is <code>option</code>; set to <code>false</code> to hide it.",
+  },
+  {
     "prop": "allow-duplicates",
     type: "boolean",
     default: "false",
