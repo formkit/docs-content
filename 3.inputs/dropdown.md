@@ -403,6 +403,12 @@ data: [
     "description": "When the <code>selection-removable</code> prop is set to <code>true</code>, the dropdown will not open after the selected value is removed. You can change this behavior by setting the <code>open-on-remove</code> prop to <code>true</code>."
   },
   {
+    "prop": "max",
+    "type": "number",
+    "default": "undefined",
+    "description": "With <code>multiple</code>, limits the number of options that can be selected."
+  },
+  {
     "prop": "close-on-select",
     type: "boolean",
     default: "false",
@@ -571,16 +577,16 @@ data: [
     "description": "A span element that contains the removeSelection icon."
   },
   {
-    "section-key": "selectorSelectionsWrapper",
-    "description": "A div element that wraps the selectorSelections section."
+    "section-key": "selectionsWrapper",
+    "description": "A div element that wraps the selections section."
   },
   {
-    "section-key": "selectorSelections",
-    "description": "A div element that contains the selectorSelectionsItem sections."
+    "section-key": "selections",
+    "description": "A div element that contains the selectionsItem sections."
   },
   {
-    "section-key": "selectorSelectionsItem",
-    "description": "A div element that contains the selectorSelectionsItem content."
+    "section-key": "selectionsItem",
+    "description": "A div element that contains the selectionsItem content."
   },
   {
     "section-key": "truncationCount",
