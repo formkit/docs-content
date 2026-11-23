@@ -261,7 +261,7 @@ if (!validate(requestBody)) {
 }
 ```
 
-Pass `{ dialect: 'draft-07' }` for draft-07 consumers, `{ labels: true }` to include option labels as `oneOf` titles, or `{ strict: true }` to close every object and require every property. `{ values: true }` includes current input values as defaults, except passwords and hidden inputs; treat the resulting schema as potentially sensitive. List item schemas are inferred from existing children; an empty list has an unconstrained item schema. Formats and unmappable rules depend on the validator and must also be enforced by the server where needed.
+Pass `{ dialect: 'draft-07' }` for draft-07 consumers, `{ labels: true }` to include option labels as `oneOf` titles, or `{ strict: true }` for strict structured-output modes: every object is closed (`additionalProperties: false`) and every property is listed in `required`, with optional fields made nullable (e.g. `["integer", "null"]`) so the model can leave them empty. `{ values: true }` includes current input values as defaults, except passwords and hidden inputs; treat the resulting schema as potentially sensitive. List item schemas are inferred from existing children; an empty list has an unconstrained item schema. Formats and unmappable rules depend on the validator and must also be enforced by the server where needed.
 
 ## Expose forms to browser agents (WebMCP)
 
