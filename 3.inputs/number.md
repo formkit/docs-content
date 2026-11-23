@@ -35,6 +35,18 @@ react-file: "_examples/number/number-cast.react.jsx"
 ---
 ::
 
+## Decimal values and `step`
+
+The browser's own validation of `<input type="number">` only accepts values that are a multiple of `step`, and `step` defaults to `1`. So entering a decimal like `2.5` makes the browser block form submission with a native "please enter a valid value" message. Set `step` to match your precision, or to `any` to allow any decimal:
+
+::Callout
+---
+type: "tip"
+label: "Allowing decimals"
+---
+Use :FrameworkText{vue="<code>step=\"any\"</code> (or e.g. <code>step=\"0.01\"</code> for cents)" react="<code>step=\"any\"</code> (or e.g. <code>step=\"0.01\"</code> for cents)"} on number inputs that accept decimals. Pair it with the <code>number</code> prop to get a real <code>number</code> value.
+::
+
 ## Props & Attributes
 
 The `number` input has only one unique prop, `number`, which can be used to cast the value of the input to a `number` type. Additionally, the native HTML `number` input has a few attributes that can be used to control the input.
