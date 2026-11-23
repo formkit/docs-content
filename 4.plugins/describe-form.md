@@ -197,6 +197,72 @@ describeForm(node, {
 
 The output is JSON-serializable: dates become ISO strings, regular expressions their source (e.g. `"/^\\d+$/"`), Maps and Sets arrays, and Files `{ name, size, type }`. Functions and circular references are dropped, and other non-plain objects are copied as plain objects, so some detail can be lost.
 
+## Export JSON Schema
+
+`toJSONSchema()` converts a form node into JSON Schema 2020-12. It uses the same node description as `describeForm()` and works in Vue and React. Groups become objects and lists become arrays; disabled and ignored nodes are omitted. Rules that cannot be represented are retained in `x-formkit-rules` and the description, so JSON Schema validation is not a replacement for FormKit validation.
+
+::FrameworkOnly{framework="vue"}
+```vue
+<script setup>
+import { ref } from 'vue'
+import { toJSONSchema } from '@formkit/addons'
+
+const signup = ref()
+const schema = () => toJSONSchema(signup.value.node)
+</script>
+
+<template>
+  <FormKit ref="signup" type="form">…</FormKit>
+</template>
+```
+::
+
+::FrameworkOnly{framework="react"}
+```jsx
+import { useRef } from 'react'
+import { FormKit } from '@formkit/react'
+import { toJSONSchema } from '@formkit/addons'
+
+export function Signup() {
+  const signup = useRef(null)
+  const schema = () => toJSONSchema(signup.current)
+  return <FormKit ref={signup} type="form">…</FormKit>
+}
+```
+::
+
+For a tool-calling API, pass the schema in the shape expected by your provider, then fill the form with the returned arguments:
+
+```ts
+import { getNode } from '@formkit/core'
+import { fillForm, toJSONSchema } from '@formkit/addons'
+
+const form = getNode('signup')!
+const tools = [{
+  name: 'fill_signup',
+  description: 'Extract signup details',
+  input_schema: toJSONSchema(form),
+}]
+// Send `tools` to your model provider and parse its tool arguments.
+await fillForm(form, toolArguments)
+```
+
+For server-side validation, export the schema from a form configured with the same fields and rules, then send or save it for your server. With Ajv and its formats plugin installed:
+
+```ts
+import Ajv2020 from 'ajv/dist/2020.js'
+import addFormats from 'ajv-formats'
+
+const ajv = new Ajv2020({ strict: false }) // permits x-formkit-rules
+addFormats(ajv)
+const validate = ajv.compile(schema)
+if (!validate(requestBody)) {
+  console.error(validate.errors)
+}
+```
+
+Pass `{ dialect: 'draft-07' }` for draft-07 consumers, `{ labels: true }` to include option labels as `oneOf` titles, or `{ strict: true }` to close every object and require every property. `{ values: true }` includes current input values as defaults, except passwords and hidden inputs; treat the resulting schema as potentially sensitive. List item schemas are inferred from existing children; an empty list has an unconstrained item schema. Formats and unmappable rules depend on the validator and must also be enforced by the server where needed.
+
 ## Expose forms to browser agents (WebMCP)
 
 ::Callout
